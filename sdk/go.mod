@@ -1,22 +1,8 @@
-.idea
-.code
-**/vendor/
-.pulumi
-**/bin/
-**/obj/
-Pulumi.*.yaml
-**/node_modules/
+module github.com/pulumi/pulumi-wavefront/sdk
 
-**/command-output/
+go 1.14
 
-.idea/
-*.iml
-
-yarn.lock
-**/pulumiManifest.go
-
-ci-scripts
-**/schema.go
-**/version.txt
-**/nuget
-**/dist
+require (
+	github.com/pkg/errors v0.9.1
+	github.com/pulumi/pulumi/sdk/v2 v2.2.1
+)

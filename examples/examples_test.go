@@ -10,7 +10,8 @@ import (
 func getBaseOptions(t *testing.T) integration.ProgramTestOptions {
 	checkWavefrontToken(t)
 	return integration.ProgramTestOptions{
-		ExpectRefreshChanges: true,
+		ExpectRefreshChanges:     true,
+		AllowEmptyPreviewChanges: true,
 	}
 }
 
