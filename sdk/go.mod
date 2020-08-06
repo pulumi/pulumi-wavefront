@@ -1,3 +1,22 @@
-module github.com/pulumi/pulumi-xyz/sdk
+.idea
+.code
+**/vendor/
+.pulumi
+**/bin/
+**/obj/
+Pulumi.*.yaml
+**/node_modules/
 
-go 1.14
+**/command-output/
+
+.idea/
+*.iml
+
+yarn.lock
+**/pulumiManifest.go
+
+ci-scripts
+**/schema.go
+**/version.txt
+**/nuget
+**/dist

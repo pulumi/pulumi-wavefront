@@ -12,23 +12,22 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package xyz
+package wavefront
 
 import (
 	"unicode"
 
-	"github.com/hashicorp/terraform-plugin-sdk/helper/schema"
 	"github.com/hashicorp/terraform-plugin-sdk/terraform"
 	"github.com/pulumi/pulumi-terraform-bridge/v2/pkg/tfbridge"
 	"github.com/pulumi/pulumi/sdk/v2/go/common/resource"
 	"github.com/pulumi/pulumi/sdk/v2/go/common/tokens"
-	"github.com/terraform-providers/terraform-provider-xyz/xyz"
+	"github.com/terraform-providers/terraform-provider-wavefront/wavefront"
 )
 
 // all of the token components used below.
 const (
 	// packages:
-	mainPkg = "xyz"
+	mainPkg = "wavefront"
 	// modules:
 	mainMod = "index" // the y module
 )
@@ -59,20 +58,6 @@ func makeResource(mod string, res string) tokens.Type {
 	return makeType(mod+"/"+fn, res)
 }
 
-// boolRef returns a reference to the bool argument.
-func boolRef(b bool) *bool {
-	return &b
-}
-
-// stringValue gets a string value from a property map if present, else ""
-func stringValue(vars resource.PropertyMap, prop resource.PropertyKey) string {
-	val, ok := vars[prop]
-	if ok && val.IsString() {
-		return val.StringValue()
-	}
-	return ""
-}
-
 // preConfigureCallback is called before the providerConfigure function of the underlying provider.
 // It should validate that the provider can be configured, and provide actionable errors in the case
 // it cannot be. Configuration variables can be read from `vars` using the `stringValue` function -
@@ -81,56 +66,65 @@ func preConfigureCallback(vars resource.PropertyMap, c *terraform.ResourceConfig
 	return nil
 }
 
-// managedByPulumi is a default used for some managed resources, in the absence of something more meaningful.
-var managedByPulumi = &tfbridge.DefaultInfo{Value: "Managed by Pulumi"}
-
 // Provider returns additional overlaid schema and metadata associated with the provider..
 func Provider() tfbridge.ProviderInfo {
 	// Instantiate the Terraform provider
-	p := xyz.Provider().(*schema.Provider)
+	p := wavefront.Provider()
 
 	// Create a Pulumi provider mapping
 	prov := tfbridge.ProviderInfo{
 		P:           p,
-		Name:        "xyz",
-		Description: "A Pulumi package for creating and managing xyz cloud resources.",
-		Keywords:    []string{"pulumi", "xyz"},
+		Name:        "wavefront",
+		Description: "A Pulumi package for creating and managing wavefront cloud resources.",
+		Keywords:    []string{"pulumi", "wavefront"},
 		License:     "Apache-2.0",
 		Homepage:    "https://pulumi.io",
-		Repository:  "https://github.com/pulumi/pulumi-xyz",
-		Config:      map[string]*tfbridge.SchemaInfo{
-			// Add any required configuration here, or remove the example below if
-			// no additional points are required.
-			// "region": {
-			// 	Type: makeType("region", "Region"),
-			// 	Default: &tfbridge.DefaultInfo{
-			// 		EnvVars: []string{"AWS_REGION", "AWS_DEFAULT_REGION"},
-			// 	},
-			// },
+		Repository:  "https://github.com/pulumi/pulumi-wavefront",
+		Config: map[string]*tfbridge.SchemaInfo{
+			"address": {
+				Default: &tfbridge.DefaultInfo{
+					EnvVars: []string{"WAVEFRONT_ADDRESS"},
+				},
+			},
+			"token": {
+				Default: &tfbridge.DefaultInfo{
+					EnvVars: []string{"WAVEFRONT_TOKEN"},
+				},
+			},
 		},
 		PreConfigureCallback: preConfigureCallback,
-		Resources:            map[string]*tfbridge.ResourceInfo{
-			// Map each resource in the Terraform provider to a Pulumi type. Two examples
-			// are below - the single line form is the common case. The multi-line form is
-			// needed only if you wish to override types or other default options.
-			//
-			// "aws_iam_role": {Tok: makeResource(mainMod, "IamRole")}
-			//
-			// "aws_acm_certificate": {
-			// 	Tok: makeResource(mainMod, "Certificate"),
-			// 	Fields: map[string]*tfbridge.SchemaInfo{
-			// 		"tags": {Type: makeType(mainPkg, "Tags")},
-			// 	},
-			// },
+		Resources: map[string]*tfbridge.ResourceInfo{
+			"wavefront_alert":                                {Tok: makeResource(mainMod, "Alert")},
+			"wavefront_alert_target":                         {Tok: makeResource(mainMod, "AlertTarget")},
+			"wavefront_cloud_integration_app_dynamics":       {Tok: makeResource(mainMod, "CloudIntegrationAppDynamics")},
+			"wavefront_cloud_integration_aws_external_id":    {Tok: makeResource(mainMod, "CloudIntegrationAwsExternalId")},
+			"wavefront_cloud_integration_azure":              {Tok: makeResource(mainMod, "CloudIntegrationAzure")},
+			"wavefront_cloud_integration_azure_activity_log": {Tok: makeResource(mainMod, "CloudIntegrationAzureActivityLog")},
+			"wavefront_cloud_integration_cloudtrail":         {Tok: makeResource(mainMod, "CloudIntegrationCloudTrail")},
+			"wavefront_cloud_integration_cloudwatch":         {Tok: makeResource(mainMod, "CloudIntegrationCloudWatch")},
+			"wavefront_cloud_integration_ec2":                {Tok: makeResource(mainMod, "CloudIntegrationEc2")},
+			"wavefront_cloud_integration_gcp":                {Tok: makeResource(mainMod, "CloudIntegrationGcp")},
+			"wavefront_cloud_integration_gcp_billing":        {Tok: makeResource(mainMod, "CloudIntegrationGcpBilling")},
+			"wavefront_cloud_integration_newrelic":           {Tok: makeResource(mainMod, "CloudIntegrationNewRelic")},
+			"wavefront_cloud_integration_tesla":              {Tok: makeResource(mainMod, "CloudIntegrationTesla")},
+			"wavefront_dashboard":                            {Tok: makeResource(mainMod, "Dashboard")},
+			"wavefront_dashboard_json": {
+				Tok: makeResource(mainMod, "DashboardJson"),
+				Fields: map[string]*tfbridge.SchemaInfo{
+					"dashboard_json": {
+						CSharpName: "JSON",
+					},
+				},
+			},
+			"wavefront_derived_metric": {Tok: makeResource(mainMod, "DerivedMetric")},
+			"wavefront_role":           {Tok: makeResource(mainMod, "Role")},
+			"wavefront_user":           {Tok: makeResource(mainMod, "User")},
+			"wavefront_user_group":     {Tok: makeResource(mainMod, "UserGroup")},
 		},
 		DataSources: map[string]*tfbridge.DataSourceInfo{
-			// Map each resource in the Terraform provider to a Pulumi function. An example
-			// is below.
-			// "aws_ami": {Tok: makeDataSource(mainMod, "getAmi")},
+			"wavefront_default_user_group": {Tok: makeDataSource(mainMod, "getDefaultUserGroup")},
 		},
 		JavaScript: &tfbridge.JavaScriptInfo{
-			AsyncDataSources: true,
-			// List any npm dependencies and their versions
 			Dependencies: map[string]string{
 				"@pulumi/pulumi": "^2.0.0",
 			},
@@ -138,10 +132,6 @@ func Provider() tfbridge.ProviderInfo {
 				"@types/node": "^8.0.25", // so we can access strongly typed node definitions.
 				"@types/mime": "^2.0.0",
 			},
-			// See the documentation for tfbridge.OverlayInfo for how to lay out this
-			// section, or refer to the AWS provider. Delete this section if there are
-			// no overlay files.
-			//Overlay: &tfbridge.OverlayInfo{},
 		},
 		Python: &tfbridge.PythonInfo{
 			// List any Python dependencies and their version ranges
@@ -153,6 +143,9 @@ func Provider() tfbridge.ProviderInfo {
 			PackageReferences: map[string]string{
 				"Pulumi":                       "2.*",
 				"System.Collections.Immutable": "1.6.0",
+			},
+			Namespaces: map[string]string{
+				"wavefront": "Wavefront",
 			},
 		},
 	}
