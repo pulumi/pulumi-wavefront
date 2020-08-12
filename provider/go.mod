@@ -2,7 +2,11 @@ module github.com/pulumi/pulumi-wavefront/provider
 
 go 1.14
 
-replace github.com/Azure/go-autorest => github.com/Azure/go-autorest v12.4.3+incompatible
+replace (
+	github.com/Azure/go-autorest => github.com/Azure/go-autorest v12.4.3+incompatible
+	//Temporary replacement due to the upstream bug waiting to be fixed
+	github.com/terraform-providers/terraform-provider-wavefront => github.com/stack72/terraform-provider-wavefront-1 v0.0.0-20200807193123-b466e196e207
+)
 
 require (
 	github.com/hashicorp/terraform-plugin-sdk v1.11.0

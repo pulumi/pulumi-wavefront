@@ -56,7 +56,7 @@ export class User extends pulumi.CustomResource {
      * `agentManagement`, `alertsManagement`, `dashboardManagement`, `embeddedCharts`, `eventsManagement`, `externalLinksManagement`,
      * `hostTagManagement`, `metricsManagement`, `userManagement`
      */
-    public readonly permissions!: pulumi.Output<string[] | undefined>;
+    public readonly permissions!: pulumi.Output<string[]>;
     /**
      * List of user groups to this user
      */
