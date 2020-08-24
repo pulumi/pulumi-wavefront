@@ -5,84 +5,34 @@
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Union
+from typing import Any, Dict, List, Mapping, Optional, Tuple, Union
 from . import _utilities, _tables
+
+__all__ = ['Alert']
 
 
 class Alert(pulumi.CustomResource):
-    additional_information: pulumi.Output[str]
-    """
-    User-supplied additional explanatory information for this alert.
-    Useful for linking runbooks, migrations...etc
-    """
-    alert_type: pulumi.Output[str]
-    """
-    The type of alert in Wavefront.  Either `CLASSIC` (default) 
-    or `THRESHOLD`
-    """
-    can_modifies: pulumi.Output[list]
-    """
-    A list of users or groups that can modify this resource.
-    """
-    can_views: pulumi.Output[list]
-    """
-    A list of users or groups that can view this resource.
-    """
-    condition: pulumi.Output[str]
-    """
-    A Wavefront query that is evaluated at regular intervals (default 1m).
-    The alert fires and notifications are triggered when data series matching this query evaluates
-    to a non-zero value for a set number of consecutive minutes.
-    """
-    conditions: pulumi.Output[dict]
-    """
-    a string->string map of `severity` to `condition` 
-    for which this alert will trigger.
-    """
-    display_expression: pulumi.Output[str]
-    """
-    A second query whose results are displayed in the alert user
-    interface instead of the condition query.  This field is often used to display a version
-    of the condition query with Boolean operators removed so that numerical values are plotted.
-    """
-    minutes: pulumi.Output[float]
-    """
-    The number of consecutive minutes that a series matching the condition query must 
-    evaluate to "true" (non-zero value) before the alert fires.
-    """
-    name: pulumi.Output[str]
-    """
-    The name of the alert as it is displayed in Wavefront.
-    """
-    notification_resend_frequency_minutes: pulumi.Output[float]
-    """
-    How often to re-trigger a continually failing alert. 
-    If absent or <= 0, no re-triggering occur.
-    """
-    resolve_after_minutes: pulumi.Output[float]
-    """
-    The number of consecutive minutes that a firing series matching the condition
-    query must evaluate to "false" (zero value) before the alert resolves.  When unset, this default sto
-    the same value as `minutes`.
-    """
-    severity: pulumi.Output[str]
-    """
-    - Severity of the alert, valid values are `INFO`, `SMOKE`, `WARN`, `SEVERE`.
-    """
-    tags: pulumi.Output[list]
-    """
-    A set of tags to assign to this resource.
-    """
-    target: pulumi.Output[str]
-    """
-    A comma-separated list of the email address or integration endpoint 
-    (such as PagerDuty or web hook) to notify when the alert status changes.
-    """
-    threshold_targets: pulumi.Output[dict]
-    """
-    Targets for severity
-    """
-    def __init__(__self__, resource_name, opts=None, additional_information=None, alert_type=None, can_modifies=None, can_views=None, condition=None, conditions=None, display_expression=None, minutes=None, name=None, notification_resend_frequency_minutes=None, resolve_after_minutes=None, severity=None, tags=None, target=None, threshold_targets=None, __props__=None, __name__=None, __opts__=None):
+    def __init__(__self__,
+                 resource_name,
+                 opts: Optional[pulumi.ResourceOptions] = None,
+                 additional_information: Optional[pulumi.Input[str]] = None,
+                 alert_type: Optional[pulumi.Input[str]] = None,
+                 can_modifies: Optional[pulumi.Input[List[pulumi.Input[str]]]] = None,
+                 can_views: Optional[pulumi.Input[List[pulumi.Input[str]]]] = None,
+                 condition: Optional[pulumi.Input[str]] = None,
+                 conditions: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 display_expression: Optional[pulumi.Input[str]] = None,
+                 minutes: Optional[pulumi.Input[float]] = None,
+                 name: Optional[pulumi.Input[str]] = None,
+                 notification_resend_frequency_minutes: Optional[pulumi.Input[float]] = None,
+                 resolve_after_minutes: Optional[pulumi.Input[float]] = None,
+                 severity: Optional[pulumi.Input[str]] = None,
+                 tags: Optional[pulumi.Input[List[pulumi.Input[str]]]] = None,
+                 target: Optional[pulumi.Input[str]] = None,
+                 threshold_targets: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 __props__=None,
+                 __name__=None,
+                 __opts__=None):
         """
         Provides a Wavefront Alert resource.  This allows alerts to be created, updated, and deleted.
 
@@ -111,12 +61,12 @@ class Alert(pulumi.CustomResource):
                Useful for linking runbooks, migrations...etc
         :param pulumi.Input[str] alert_type: The type of alert in Wavefront.  Either `CLASSIC` (default) 
                or `THRESHOLD`
-        :param pulumi.Input[list] can_modifies: A list of users or groups that can modify this resource.
-        :param pulumi.Input[list] can_views: A list of users or groups that can view this resource.
+        :param pulumi.Input[List[pulumi.Input[str]]] can_modifies: A list of users or groups that can modify this resource.
+        :param pulumi.Input[List[pulumi.Input[str]]] can_views: A list of users or groups that can view this resource.
         :param pulumi.Input[str] condition: A Wavefront query that is evaluated at regular intervals (default 1m).
                The alert fires and notifications are triggered when data series matching this query evaluates
                to a non-zero value for a set number of consecutive minutes.
-        :param pulumi.Input[dict] conditions: a string->string map of `severity` to `condition` 
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] conditions: a string->string map of `severity` to `condition` 
                for which this alert will trigger.
         :param pulumi.Input[str] display_expression: A second query whose results are displayed in the alert user
                interface instead of the condition query.  This field is often used to display a version
@@ -130,10 +80,10 @@ class Alert(pulumi.CustomResource):
                query must evaluate to "false" (zero value) before the alert resolves.  When unset, this default sto
                the same value as `minutes`.
         :param pulumi.Input[str] severity: - Severity of the alert, valid values are `INFO`, `SMOKE`, `WARN`, `SEVERE`.
-        :param pulumi.Input[list] tags: A set of tags to assign to this resource.
+        :param pulumi.Input[List[pulumi.Input[str]]] tags: A set of tags to assign to this resource.
         :param pulumi.Input[str] target: A comma-separated list of the email address or integration endpoint 
                (such as PagerDuty or web hook) to notify when the alert status changes.
-        :param pulumi.Input[dict] threshold_targets: Targets for severity
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] threshold_targets: Targets for severity
         """
         if __name__ is not None:
             warnings.warn("explicit use of __name__ is deprecated", DeprecationWarning)
@@ -178,24 +128,41 @@ class Alert(pulumi.CustomResource):
             opts)
 
     @staticmethod
-    def get(resource_name, id, opts=None, additional_information=None, alert_type=None, can_modifies=None, can_views=None, condition=None, conditions=None, display_expression=None, minutes=None, name=None, notification_resend_frequency_minutes=None, resolve_after_minutes=None, severity=None, tags=None, target=None, threshold_targets=None):
+    def get(resource_name: str,
+            id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            additional_information: Optional[pulumi.Input[str]] = None,
+            alert_type: Optional[pulumi.Input[str]] = None,
+            can_modifies: Optional[pulumi.Input[List[pulumi.Input[str]]]] = None,
+            can_views: Optional[pulumi.Input[List[pulumi.Input[str]]]] = None,
+            condition: Optional[pulumi.Input[str]] = None,
+            conditions: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+            display_expression: Optional[pulumi.Input[str]] = None,
+            minutes: Optional[pulumi.Input[float]] = None,
+            name: Optional[pulumi.Input[str]] = None,
+            notification_resend_frequency_minutes: Optional[pulumi.Input[float]] = None,
+            resolve_after_minutes: Optional[pulumi.Input[float]] = None,
+            severity: Optional[pulumi.Input[str]] = None,
+            tags: Optional[pulumi.Input[List[pulumi.Input[str]]]] = None,
+            target: Optional[pulumi.Input[str]] = None,
+            threshold_targets: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None) -> 'Alert':
         """
         Get an existing Alert resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
 
         :param str resource_name: The unique name of the resulting resource.
-        :param str id: The unique provider ID of the resource to lookup.
+        :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] additional_information: User-supplied additional explanatory information for this alert.
                Useful for linking runbooks, migrations...etc
         :param pulumi.Input[str] alert_type: The type of alert in Wavefront.  Either `CLASSIC` (default) 
                or `THRESHOLD`
-        :param pulumi.Input[list] can_modifies: A list of users or groups that can modify this resource.
-        :param pulumi.Input[list] can_views: A list of users or groups that can view this resource.
+        :param pulumi.Input[List[pulumi.Input[str]]] can_modifies: A list of users or groups that can modify this resource.
+        :param pulumi.Input[List[pulumi.Input[str]]] can_views: A list of users or groups that can view this resource.
         :param pulumi.Input[str] condition: A Wavefront query that is evaluated at regular intervals (default 1m).
                The alert fires and notifications are triggered when data series matching this query evaluates
                to a non-zero value for a set number of consecutive minutes.
-        :param pulumi.Input[dict] conditions: a string->string map of `severity` to `condition` 
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] conditions: a string->string map of `severity` to `condition` 
                for which this alert will trigger.
         :param pulumi.Input[str] display_expression: A second query whose results are displayed in the alert user
                interface instead of the condition query.  This field is often used to display a version
@@ -209,10 +176,10 @@ class Alert(pulumi.CustomResource):
                query must evaluate to "false" (zero value) before the alert resolves.  When unset, this default sto
                the same value as `minutes`.
         :param pulumi.Input[str] severity: - Severity of the alert, valid values are `INFO`, `SMOKE`, `WARN`, `SEVERE`.
-        :param pulumi.Input[list] tags: A set of tags to assign to this resource.
+        :param pulumi.Input[List[pulumi.Input[str]]] tags: A set of tags to assign to this resource.
         :param pulumi.Input[str] target: A comma-separated list of the email address or integration endpoint 
                (such as PagerDuty or web hook) to notify when the alert status changes.
-        :param pulumi.Input[dict] threshold_targets: Targets for severity
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] threshold_targets: Targets for severity
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -235,8 +202,141 @@ class Alert(pulumi.CustomResource):
         __props__["threshold_targets"] = threshold_targets
         return Alert(resource_name, opts=opts, __props__=__props__)
 
+    @property
+    @pulumi.getter(name="additionalInformation")
+    def additional_information(self) -> Optional[str]:
+        """
+        User-supplied additional explanatory information for this alert.
+        Useful for linking runbooks, migrations...etc
+        """
+        return pulumi.get(self, "additional_information")
+
+    @property
+    @pulumi.getter(name="alertType")
+    def alert_type(self) -> Optional[str]:
+        """
+        The type of alert in Wavefront.  Either `CLASSIC` (default) 
+        or `THRESHOLD`
+        """
+        return pulumi.get(self, "alert_type")
+
+    @property
+    @pulumi.getter(name="canModifies")
+    def can_modifies(self) -> List[str]:
+        """
+        A list of users or groups that can modify this resource.
+        """
+        return pulumi.get(self, "can_modifies")
+
+    @property
+    @pulumi.getter(name="canViews")
+    def can_views(self) -> Optional[List[str]]:
+        """
+        A list of users or groups that can view this resource.
+        """
+        return pulumi.get(self, "can_views")
+
+    @property
+    @pulumi.getter
+    def condition(self) -> Optional[str]:
+        """
+        A Wavefront query that is evaluated at regular intervals (default 1m).
+        The alert fires and notifications are triggered when data series matching this query evaluates
+        to a non-zero value for a set number of consecutive minutes.
+        """
+        return pulumi.get(self, "condition")
+
+    @property
+    @pulumi.getter
+    def conditions(self) -> Optional[Mapping[str, str]]:
+        """
+        a string->string map of `severity` to `condition` 
+        for which this alert will trigger.
+        """
+        return pulumi.get(self, "conditions")
+
+    @property
+    @pulumi.getter(name="displayExpression")
+    def display_expression(self) -> Optional[str]:
+        """
+        A second query whose results are displayed in the alert user
+        interface instead of the condition query.  This field is often used to display a version
+        of the condition query with Boolean operators removed so that numerical values are plotted.
+        """
+        return pulumi.get(self, "display_expression")
+
+    @property
+    @pulumi.getter
+    def minutes(self) -> float:
+        """
+        The number of consecutive minutes that a series matching the condition query must 
+        evaluate to "true" (non-zero value) before the alert fires.
+        """
+        return pulumi.get(self, "minutes")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        The name of the alert as it is displayed in Wavefront.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter(name="notificationResendFrequencyMinutes")
+    def notification_resend_frequency_minutes(self) -> Optional[float]:
+        """
+        How often to re-trigger a continually failing alert. 
+        If absent or <= 0, no re-triggering occur.
+        """
+        return pulumi.get(self, "notification_resend_frequency_minutes")
+
+    @property
+    @pulumi.getter(name="resolveAfterMinutes")
+    def resolve_after_minutes(self) -> Optional[float]:
+        """
+        The number of consecutive minutes that a firing series matching the condition
+        query must evaluate to "false" (zero value) before the alert resolves.  When unset, this default sto
+        the same value as `minutes`.
+        """
+        return pulumi.get(self, "resolve_after_minutes")
+
+    @property
+    @pulumi.getter
+    def severity(self) -> Optional[str]:
+        """
+        - Severity of the alert, valid values are `INFO`, `SMOKE`, `WARN`, `SEVERE`.
+        """
+        return pulumi.get(self, "severity")
+
+    @property
+    @pulumi.getter
+    def tags(self) -> List[str]:
+        """
+        A set of tags to assign to this resource.
+        """
+        return pulumi.get(self, "tags")
+
+    @property
+    @pulumi.getter
+    def target(self) -> Optional[str]:
+        """
+        A comma-separated list of the email address or integration endpoint 
+        (such as PagerDuty or web hook) to notify when the alert status changes.
+        """
+        return pulumi.get(self, "target")
+
+    @property
+    @pulumi.getter(name="thresholdTargets")
+    def threshold_targets(self) -> Optional[Mapping[str, str]]:
+        """
+        Targets for severity
+        """
+        return pulumi.get(self, "threshold_targets")
+
     def translate_output_property(self, prop):
         return _tables.CAMEL_TO_SNAKE_CASE_TABLE.get(prop) or prop
 
     def translate_input_property(self, prop):
         return _tables.SNAKE_TO_CAMEL_CASE_TABLE.get(prop) or prop
+

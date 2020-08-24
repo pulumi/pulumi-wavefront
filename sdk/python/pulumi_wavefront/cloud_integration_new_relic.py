@@ -5,51 +5,30 @@
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Union
+from typing import Any, Dict, List, Mapping, Optional, Tuple, Union
 from . import _utilities, _tables
+from . import outputs
+from ._inputs import *
+
+__all__ = ['CloudIntegrationNewRelic']
 
 
 class CloudIntegrationNewRelic(pulumi.CustomResource):
-    additional_tags: pulumi.Output[dict]
-    """
-    A list of point tag key-values to add to every point ingested using this integration
-    """
-    api_key: pulumi.Output[str]
-    """
-    NewRelic REST api key
-    """
-    app_filter_regex: pulumi.Output[str]
-    """
-    A regular expression that an application name must match (case-insensitively) iun order to collect metrics
-    """
-    force_save: pulumi.Output[bool]
-    """
-    Forces this resource to save, even if errors are present
-    """
-    host_filter_regex: pulumi.Output[str]
-    """
-    A regular expression that a host name must match (case-insensitively) in order to collect metrics
-    """
-    metric_filters: pulumi.Output[list]
-    """
-    See Metric Filter
-
-      * `appName` (`str`) - The name of a NewRelic App
-      * `metric_filter_regex` (`str`) - A regular expression that a metric name must match (case-insensitively) in order to be ingested
-    """
-    name: pulumi.Output[str]
-    """
-    The human-readable name of this integration
-    """
-    service: pulumi.Output[str]
-    """
-    A value denoting which cloud service this service integrates with
-    """
-    service_refresh_rate_in_minutes: pulumi.Output[float]
-    """
-    How often, in minutes, to refresh the service
-    """
-    def __init__(__self__, resource_name, opts=None, additional_tags=None, api_key=None, app_filter_regex=None, force_save=None, host_filter_regex=None, metric_filters=None, name=None, service=None, service_refresh_rate_in_minutes=None, __props__=None, __name__=None, __opts__=None):
+    def __init__(__self__,
+                 resource_name,
+                 opts: Optional[pulumi.ResourceOptions] = None,
+                 additional_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 api_key: Optional[pulumi.Input[str]] = None,
+                 app_filter_regex: Optional[pulumi.Input[str]] = None,
+                 force_save: Optional[pulumi.Input[bool]] = None,
+                 host_filter_regex: Optional[pulumi.Input[str]] = None,
+                 metric_filters: Optional[pulumi.Input[List[pulumi.Input[pulumi.InputType['CloudIntegrationNewRelicMetricFilterArgs']]]]] = None,
+                 name: Optional[pulumi.Input[str]] = None,
+                 service: Optional[pulumi.Input[str]] = None,
+                 service_refresh_rate_in_minutes: Optional[pulumi.Input[float]] = None,
+                 __props__=None,
+                 __name__=None,
+                 __opts__=None):
         """
         Provides a Wavefront Cloud Integration for NewRelic. This allows NewRelic cloud integrations to be created,
         updated, and deleted.
@@ -65,20 +44,15 @@ class CloudIntegrationNewRelic(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[dict] additional_tags: A list of point tag key-values to add to every point ingested using this integration
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] additional_tags: A list of point tag key-values to add to every point ingested using this integration
         :param pulumi.Input[str] api_key: NewRelic REST api key
         :param pulumi.Input[str] app_filter_regex: A regular expression that an application name must match (case-insensitively) iun order to collect metrics
         :param pulumi.Input[bool] force_save: Forces this resource to save, even if errors are present
         :param pulumi.Input[str] host_filter_regex: A regular expression that a host name must match (case-insensitively) in order to collect metrics
-        :param pulumi.Input[list] metric_filters: See Metric Filter
+        :param pulumi.Input[List[pulumi.Input[pulumi.InputType['CloudIntegrationNewRelicMetricFilterArgs']]]] metric_filters: See Metric Filter
         :param pulumi.Input[str] name: The human-readable name of this integration
         :param pulumi.Input[str] service: A value denoting which cloud service this service integrates with
         :param pulumi.Input[float] service_refresh_rate_in_minutes: How often, in minutes, to refresh the service
-
-        The **metric_filters** object supports the following:
-
-          * `appName` (`pulumi.Input[str]`) - The name of a NewRelic App
-          * `metric_filter_regex` (`pulumi.Input[str]`) - A regular expression that a metric name must match (case-insensitively) in order to be ingested
         """
         if __name__ is not None:
             warnings.warn("explicit use of __name__ is deprecated", DeprecationWarning)
@@ -117,28 +91,34 @@ class CloudIntegrationNewRelic(pulumi.CustomResource):
             opts)
 
     @staticmethod
-    def get(resource_name, id, opts=None, additional_tags=None, api_key=None, app_filter_regex=None, force_save=None, host_filter_regex=None, metric_filters=None, name=None, service=None, service_refresh_rate_in_minutes=None):
+    def get(resource_name: str,
+            id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            additional_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+            api_key: Optional[pulumi.Input[str]] = None,
+            app_filter_regex: Optional[pulumi.Input[str]] = None,
+            force_save: Optional[pulumi.Input[bool]] = None,
+            host_filter_regex: Optional[pulumi.Input[str]] = None,
+            metric_filters: Optional[pulumi.Input[List[pulumi.Input[pulumi.InputType['CloudIntegrationNewRelicMetricFilterArgs']]]]] = None,
+            name: Optional[pulumi.Input[str]] = None,
+            service: Optional[pulumi.Input[str]] = None,
+            service_refresh_rate_in_minutes: Optional[pulumi.Input[float]] = None) -> 'CloudIntegrationNewRelic':
         """
         Get an existing CloudIntegrationNewRelic resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
 
         :param str resource_name: The unique name of the resulting resource.
-        :param str id: The unique provider ID of the resource to lookup.
+        :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[dict] additional_tags: A list of point tag key-values to add to every point ingested using this integration
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] additional_tags: A list of point tag key-values to add to every point ingested using this integration
         :param pulumi.Input[str] api_key: NewRelic REST api key
         :param pulumi.Input[str] app_filter_regex: A regular expression that an application name must match (case-insensitively) iun order to collect metrics
         :param pulumi.Input[bool] force_save: Forces this resource to save, even if errors are present
         :param pulumi.Input[str] host_filter_regex: A regular expression that a host name must match (case-insensitively) in order to collect metrics
-        :param pulumi.Input[list] metric_filters: See Metric Filter
+        :param pulumi.Input[List[pulumi.Input[pulumi.InputType['CloudIntegrationNewRelicMetricFilterArgs']]]] metric_filters: See Metric Filter
         :param pulumi.Input[str] name: The human-readable name of this integration
         :param pulumi.Input[str] service: A value denoting which cloud service this service integrates with
         :param pulumi.Input[float] service_refresh_rate_in_minutes: How often, in minutes, to refresh the service
-
-        The **metric_filters** object supports the following:
-
-          * `appName` (`pulumi.Input[str]`) - The name of a NewRelic App
-          * `metric_filter_regex` (`pulumi.Input[str]`) - A regular expression that a metric name must match (case-insensitively) in order to be ingested
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -155,8 +135,81 @@ class CloudIntegrationNewRelic(pulumi.CustomResource):
         __props__["service_refresh_rate_in_minutes"] = service_refresh_rate_in_minutes
         return CloudIntegrationNewRelic(resource_name, opts=opts, __props__=__props__)
 
+    @property
+    @pulumi.getter(name="additionalTags")
+    def additional_tags(self) -> Optional[Mapping[str, str]]:
+        """
+        A list of point tag key-values to add to every point ingested using this integration
+        """
+        return pulumi.get(self, "additional_tags")
+
+    @property
+    @pulumi.getter(name="apiKey")
+    def api_key(self) -> str:
+        """
+        NewRelic REST api key
+        """
+        return pulumi.get(self, "api_key")
+
+    @property
+    @pulumi.getter(name="appFilterRegex")
+    def app_filter_regex(self) -> Optional[str]:
+        """
+        A regular expression that an application name must match (case-insensitively) iun order to collect metrics
+        """
+        return pulumi.get(self, "app_filter_regex")
+
+    @property
+    @pulumi.getter(name="forceSave")
+    def force_save(self) -> Optional[bool]:
+        """
+        Forces this resource to save, even if errors are present
+        """
+        return pulumi.get(self, "force_save")
+
+    @property
+    @pulumi.getter(name="hostFilterRegex")
+    def host_filter_regex(self) -> Optional[str]:
+        """
+        A regular expression that a host name must match (case-insensitively) in order to collect metrics
+        """
+        return pulumi.get(self, "host_filter_regex")
+
+    @property
+    @pulumi.getter(name="metricFilters")
+    def metric_filters(self) -> Optional[List['outputs.CloudIntegrationNewRelicMetricFilter']]:
+        """
+        See Metric Filter
+        """
+        return pulumi.get(self, "metric_filters")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        The human-readable name of this integration
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def service(self) -> str:
+        """
+        A value denoting which cloud service this service integrates with
+        """
+        return pulumi.get(self, "service")
+
+    @property
+    @pulumi.getter(name="serviceRefreshRateInMinutes")
+    def service_refresh_rate_in_minutes(self) -> Optional[float]:
+        """
+        How often, in minutes, to refresh the service
+        """
+        return pulumi.get(self, "service_refresh_rate_in_minutes")
+
     def translate_output_property(self, prop):
         return _tables.CAMEL_TO_SNAKE_CASE_TABLE.get(prop) or prop
 
     def translate_input_property(self, prop):
         return _tables.SNAKE_TO_CAMEL_CASE_TABLE.get(prop) or prop
+

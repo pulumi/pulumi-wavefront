@@ -5,17 +5,20 @@
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Union
+from typing import Any, Dict, List, Mapping, Optional, Tuple, Union
 from . import _utilities, _tables
+
+__all__ = ['DashboardJson']
 
 
 class DashboardJson(pulumi.CustomResource):
-    dashboard_json: pulumi.Output[str]
-    """
-    See [Wavefront API Documentation](https://docs.wavefront.com/wavefront_api.html#api-documentation-wavefront-instance) 
-    for instructions on how to get to your API documentation for more details.
-    """
-    def __init__(__self__, resource_name, opts=None, dashboard_json=None, __props__=None, __name__=None, __opts__=None):
+    def __init__(__self__,
+                 resource_name,
+                 opts: Optional[pulumi.ResourceOptions] = None,
+                 dashboard_json: Optional[pulumi.Input[str]] = None,
+                 __props__=None,
+                 __name__=None,
+                 __opts__=None):
         """
         Provides a Wavefront Dashboard JSON resource.  This allows dashboards to be created, updated, and deleted.
 
@@ -158,13 +161,16 @@ class DashboardJson(pulumi.CustomResource):
             opts)
 
     @staticmethod
-    def get(resource_name, id, opts=None, dashboard_json=None):
+    def get(resource_name: str,
+            id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            dashboard_json: Optional[pulumi.Input[str]] = None) -> 'DashboardJson':
         """
         Get an existing DashboardJson resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
 
         :param str resource_name: The unique name of the resulting resource.
-        :param str id: The unique provider ID of the resource to lookup.
+        :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] dashboard_json: See [Wavefront API Documentation](https://docs.wavefront.com/wavefront_api.html#api-documentation-wavefront-instance) 
                for instructions on how to get to your API documentation for more details.
@@ -176,8 +182,18 @@ class DashboardJson(pulumi.CustomResource):
         __props__["dashboard_json"] = dashboard_json
         return DashboardJson(resource_name, opts=opts, __props__=__props__)
 
+    @property
+    @pulumi.getter(name="dashboardJson")
+    def dashboard_json(self) -> str:
+        """
+        See [Wavefront API Documentation](https://docs.wavefront.com/wavefront_api.html#api-documentation-wavefront-instance) 
+        for instructions on how to get to your API documentation for more details.
+        """
+        return pulumi.get(self, "dashboard_json")
+
     def translate_output_property(self, prop):
         return _tables.CAMEL_TO_SNAKE_CASE_TABLE.get(prop) or prop
 
     def translate_input_property(self, prop):
         return _tables.SNAKE_TO_CAMEL_CASE_TABLE.get(prop) or prop
+

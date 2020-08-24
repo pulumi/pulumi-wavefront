@@ -5,234 +5,39 @@
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Union
+from typing import Any, Dict, List, Mapping, Optional, Tuple, Union
 from . import _utilities, _tables
+from . import outputs
+from ._inputs import *
+
+__all__ = ['Dashboard']
 
 
 class Dashboard(pulumi.CustomResource):
-    can_modifies: pulumi.Output[list]
-    """
-    A list of users that have modify ACL access to the dashboard
-    """
-    can_views: pulumi.Output[list]
-    """
-    A list of users that have view ACL access to the dashboard
-    """
-    description: pulumi.Output[str]
-    """
-    Human-readable description of the dashboard
-    """
-    display_query_parameters: pulumi.Output[bool]
-    """
-    Whether the dashboard parameters section is opened by default when the dashboard
-    is shown
-    """
-    display_section_table_of_contents: pulumi.Output[bool]
-    """
-    Whether the "pills" quick-linked the sections of the dashboard are 
-    displayed by default when the dashboard is shown
-    """
-    event_filter_type: pulumi.Output[str]
-    """
-    How charts belonging to this dashboard should display events. BYCHART is default if 
-    unspecified; Valid options are: `BYCHART`, `AUTOMATIC`, `ALL`, `NONE`, `BYDASHBOARD`, and `BYCHARTANDDASHBOARD`
-    """
-    name: pulumi.Output[str]
-    """
-    Name of the dashboard
-    """
-    parameter_details: pulumi.Output[list]
-    """
-    The current JSON representation of dashboard parameters. See parameter details
-
-      * `defaultValue` (`str`) - The default value of the parameter
-      * `dynamicFieldType` (`str`) - For `DYNAMIC` parameter types, the type of the field. Valid options are `SOURCE`,
-        `SOURCE_TAG`, `METRIC_NAME`, `TAG_KEY`, `MATCHING_SOURCE_TAG`
-      * `hideFromView` (`bool`) - If `true` the parameter will only be shown on the edit view of the dashboard
-      * `label` (`str`) - The label for the parameter
-      * `name` (`str`) - The name of the parameters
-      * `parameterType` (`str`) - The type of the parameter. `SIMPLE`, `LIST`, or `DYNAMIC`
-      * `queryValue` (`str`) - For `DYNAMIC` parameter types, the query to execute to return values
-      * `tagKey` (`str`) - for `TAG_KEY` dynamic field types, the tag key to return
-      * `valuesToReadableStrings` (`dict`) - A string->string map.  At least one of the keys must match the value of
-        `default_value`
-    """
-    sections: pulumi.Output[list]
-    """
-    Dashboard chart sections. See dashboard sections
-
-      * `name` (`str`) - Name of this section
-      * `rows` (`list`) - See dashboard section rows
-        * `charts` (`list`) - Charts in this section. See dashboard chart
-          * `chartSetting` (`dict`) - Chart settings. See chart settings
-            * `autoColumnTags` (`bool`) - deprecated
-            * `columnTags` (`str`) - deprecated
-            * `customTags` (`list`) - For the tabular view, a list of point tags to display when using the `custom` tag display mode
-            * `expectedDataSpacing` (`float`) - Threshold (in seconds) for time delta between consecutive points in a series
-              above which a dotted line will replace a solid in in line plots. Default 60
-            * `fixedLegendDisplayStats` (`list`) - For a chart with a fixed legend, a list of statistics to display in the legend
-            * `fixedLegendEnabled` (`bool`) - Whether to enable a fixed tabular legend adjacent to the chart
-            * `fixedLegendFilterField` (`str`) - Statistic to use for determining whether a series is displayed on the fixed legend.
-              Valid options are `CURRENT`, `MEAN`, `MEDIAN`, `SUM`, `MIN`, `MAX`, `COUNT`
-            * `fixedLegendFilterLimit` (`float`) - Number of series to include in the fixed legend
-            * `fixedLegendFilterSort` (`str`) - Whether to display `TOP` or `BOTTOM` ranked series in a fixed legend. Valid options
-              are `TOP`, and `BOTTOM`
-            * `fixedLegendHideLabel` (`bool`) - deprecated
-            * `fixedLegendPosition` (`str`) - Where the fixed legend should be displayed with respect ot the chart.
-              Valid options are `RIGHt`, `TOP`, `LEFT`, `BOTTOM`
-            * `fixedLegendUseRawStats` (`bool`) - If `true`, the legend uses non-summarized stats instead of summarized
-            * `groupBySource` (`bool`) - For the tabular view, whether to group multi metrics into a single row by a common source.
-              If `false`, each source is displayed in its own row.  if `true`, multiple metrics for the same host will be displayed as different
-              columns in the same row
-            * `invertDynamicLegendHoverControl` (`bool`) - Whether to disable the display of the floating legend (but
-              reenable it when the ctrl-key is pressed)
-            * `lineType` (`str`) - Plot interpolation type.  `linear` is default. Valid options are `linear`, `step-before`, 
-              `step-after`, `basis`, `cardinal`, `monotone`
-            * `max` (`float`) - Max value of the Y-axis. Set to null or leave blank for auto
-            * `min` (`float`) - Min value of the Y-axis. Set to null or leave blank for auto
-            * `numTags` (`float`) - For the tabular view, how many point tags to display
-            * `plainMarkdownContent` (`str`) - The markdown content for a Markdown display, in plain text.
-            * `showHosts` (`bool`) - For the tabular view, whether to display sources. Default is `true`
-            * `showLabels` (`bool`) - For the tabular view, whether to display labels. Default is `true`
-            * `showRawValues` (`bool`) - For the tabular view, whether to display raw values. Default is `false`
-            * `sortValuesDescending` (`bool`) - For the tabular view, whether to display display values in descending order. Default is `false`
-            * `sparklineDecimalPrecision` (`float`) - For the single stat view, the decimal precision of the displayed number
-            * `sparklineDisplayColor` (`str`) - For the single stat view, the color of the displayed text (when not dynamically determined). 
-              Values should be in `rgba(,,,,)` format
-            * `sparklineDisplayFontSize` (`str`) - For the single stat view, the font size of the displayed text, in percent
-            * `sparklineDisplayHorizontalPosition` (`str`) - For the single stat view, the horizontal position of the displayed text.
-              Valid options are `MIDDLE`, `LEFT`, `RIGHT`
-            * `sparklineDisplayPostfix` (`str`) - For the single stat view, a string to append to the displayed text
-            * `sparklineDisplayPrefix` (`str`) - For the single stat view, a string to add before the displayed text
-            * `sparklineDisplayValueType` (`str`) - For the single stat view, where to display the name of the query or the value of the query.
-              Valid options are `VALUE` or `LABEL`
-            * `sparklineDisplayVerticalPosition` (`str`) - deprecated
-            * `sparklineFillColor` (`str`) - For the single stat view, the color of the background fill.  Values should be
-              in `rgba(,,,,)`
-            * `sparklineLineColor` (`str`) - For the single stat view, the color of the line.  Values should be in `rgba(,,,,)` format
-            * `sparklineSize` (`str`) - For the single stat view, This determines whether the sparkline of the statistic is displayed in the chart `BACKGROUND`, `BOTTOM`, or `NONE`.
-              Valid options are `BACKGROUND`, `BOTTOM`, `NONE`
-            * `sparklineValueColorMapApplyTo` (`str`) - For the single stat view, whether to apply dyunamic color settings to 
-              the displayed `TEXT` or `BACKGROUND`. Valid options are `TEXT` or `BACKGROUND`
-            * `sparklineValueColorMapColors` (`list`) - For the single stat view, A list of colors that differing query values map to. 
-              Must contain one more element than `sparkline_value_color_map_values_v2`. Values should be in `rgba(,,,,)`
-            * `sparklineValueColorMapValues` (`list`) - deprecated
-            * `sparklineValueColorMapValuesV2s` (`list`) - For the single stat view, a list of boundaries for mapping different
-              query values to colors.  Must contain one less element than `sparkline_value_color_map_colors`
-            * `sparklineValueTextMapTexts` (`list`) - For the single stat view, a list of display text values that different query
-              values map to.  Must contain one more element than `sparkline_value_text_map_thresholds`
-            * `sparklineValueTextMapThresholds` (`list`) - For the single stat view, a list of threshold boundaries for 
-              mapping different query values to display text.  Must contain one less element than `sparkline_value_text_map_text`
-            * `stackType` (`str`) - Type of stacked chart (applicable only if chart type is `stacked`). `zero` (default) means
-              stacked from y=0. `expand` means normalized from 0 to 1.  `wiggle` means minimize weighted changes. `silhouette` means to
-              center the stream. Valid options are `zero`, `expand`, `wiggle`, `silhouette`, `bars`
-            * `tagMode` (`str`) - For the tabular view, which mode to use to determine which point tags to display.
-              Valid options are `all`, `top`, or `custom`
-            * `timeBasedColoring` (`bool`) - For x-y scatterplots, whether to color more recent points as darker than older points
-            * `type` (`str`) - Chart Type. `line` refers to the Line Plot, `scatter` to the Point Plot, `stacked-area` to 
-              the Stacked Area plot, `table` to the Tabular View, `scatterploy-xy` to Scatter Plot, `markdown-widget` to the
-              Markdown display, and `sparkline` to the Single Stat view. Valid options are `line`, `scatterplot`,
-              `stacked-area`, `stacked-column`, `table`, `scatterplot-xy`, `markdown-widget`, `sparkline`, `globe`, `nodemap`,
-              `top-k`, `status-list`, `histogram`
-            * `windowSize` (`float`) - Width, in minutes, of the time window to use for `last` windowing
-            * `windowing` (`str`) - For the tabular view, whether to use the full time window for the query or the last X minutes.
-              Valid options are `full` or `last`
-            * `xmax` (`float`) - For x-y scatterplots, max value for the X-axis. Set to null for auto
-            * `xmin` (`float`) - For x-y scatterplots, min value for the X-axis. Set to null for auto
-            * `y0ScaleSiBy1024` (`bool`) - Whether to scale numerical magnitude labels for left Y-axis by 1024 in the IEC/Binary manner (instead of by 1000 like SI)
-            * `y0UnitAutoscaling` (`bool`) - Whether to automatically adjust magnitude labels and units for the left Y-axis to favor smaller magnitudes and larger units
-            * `y1ScaleSiBy1024` (`bool`) - Whether to scale numerical magnitude labels for right Y-axis by 1024 in the IEC/Binary manner (instead of by 1000 like SI)
-            * `y1UnitAutoscaling` (`bool`) - Whether to automatically adjust magnitude labels and units for the right Y-axis to favor smaller magnitudes and larger units
-            * `y1Units` (`str`) - For plots with multiple Y-axes, units for right side Y-axis
-            * `y1max` (`float`) - For plots with multiple Y-axes, max value for the right side Y-axis. Set null for auto
-            * `y1min` (`float`) - For plots with multiple Y-axes, min value for the right side Y-axis. Set null for auto
-            * `ymax` (`float`) - For x-y scatterplots, max value for the Y-axis. Set to null for auto
-            * `ymin` (`float`) - For x-y scatterplots, min value for the Y-axis. Set to null for auto
-
-          * `description` (`str`) - Description of the chart
-          * `name` (`str`) - Name of the source
-          * `sources` (`list`) - Query expression to plot on the chart. See chart source queries
-            * `disabled` (`bool`) - Whether the source is disabled
-            * `name` (`str`) - Name of the source
-            * `query` (`str`) - Query expression to plot on the chart
-            * `queryBuilderEnabled` (`bool`) - Whether oir not this source line should have the query builder enabled
-            * `scatterPlotSource` (`str`) - For scatter plots, does this query source the X-axis or the Y-axis, `X`, or `Y`.
-            * `sourceDescription` (`str`) - A description for the purpose of this source
-
-          * `summarization` (`str`) - Summarization strategy for the chart. MEAN is default. Valid options are, `MEAN`, 
-            `MEDIAN`, `MIN`, `MAX`, `SUM`, `COUNT`, `LAST`, `FIRST`
-          * `units` (`str`) - String to label the units of the chart on the Y-Axis
-    """
-    tags: pulumi.Output[list]
-    """
-    A set of tags to assign to this resource.
-    """
-    url: pulumi.Output[str]
-    """
-    Unique identifier, also URL slug, of the dashboard
-    """
-    def __init__(__self__, resource_name, opts=None, can_modifies=None, can_views=None, description=None, display_query_parameters=None, display_section_table_of_contents=None, event_filter_type=None, name=None, parameter_details=None, sections=None, tags=None, url=None, __props__=None, __name__=None, __opts__=None):
+    def __init__(__self__,
+                 resource_name,
+                 opts: Optional[pulumi.ResourceOptions] = None,
+                 can_modifies: Optional[pulumi.Input[List[pulumi.Input[str]]]] = None,
+                 can_views: Optional[pulumi.Input[List[pulumi.Input[str]]]] = None,
+                 description: Optional[pulumi.Input[str]] = None,
+                 display_query_parameters: Optional[pulumi.Input[bool]] = None,
+                 display_section_table_of_contents: Optional[pulumi.Input[bool]] = None,
+                 event_filter_type: Optional[pulumi.Input[str]] = None,
+                 name: Optional[pulumi.Input[str]] = None,
+                 parameter_details: Optional[pulumi.Input[List[pulumi.Input[pulumi.InputType['DashboardParameterDetailArgs']]]]] = None,
+                 sections: Optional[pulumi.Input[List[pulumi.Input[pulumi.InputType['DashboardSectionArgs']]]]] = None,
+                 tags: Optional[pulumi.Input[List[pulumi.Input[str]]]] = None,
+                 url: Optional[pulumi.Input[str]] = None,
+                 __props__=None,
+                 __name__=None,
+                 __opts__=None):
         """
         Provides a Wavefront Dashboard resource.  This allows dashboards to be created, updated, and deleted.
 
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_wavefront as wavefront
-
-        basic = wavefront.User("basic",
-            email="test+tftesting@example.com",
-            groups=[
-                "agent_management",
-                "alerts_management",
-            ])
-        test_dashboard = wavefront.Dashboard("testDashboard",
-            description="testing, testing",
-            url="tftestcreate",
-            display_section_table_of_contents=True,
-            display_query_parameters=True,
-            can_views=[basic.id],
-            sections=[{
-                "name": "section 1",
-                "rows": [{
-                    "charts": [{
-                        "name": "chart 1",
-                        "description": "chart number 1",
-                        "units": "something per unit",
-                        "sources": [{
-                            "name": "source name",
-                            "query": "ts()",
-                        }],
-                        "chartSetting": {
-                            "type": "linear",
-                        },
-                        "summarization": "MEAN",
-                    }],
-                }],
-            }],
-            parameter_details=[{
-                "name": "param1",
-                "label": "param1",
-                "defaultValue": "Label",
-                "hideFromView": False,
-                "parameterType": "SIMPLE",
-                "valuesToReadableStrings": {
-                    "Label": "test",
-                },
-            }],
-            tags=[
-                "b",
-                "terraform",
-                "a",
-                "test",
-            ])
-        ```
-
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[list] can_modifies: A list of users that have modify ACL access to the dashboard
-        :param pulumi.Input[list] can_views: A list of users that have view ACL access to the dashboard
+        :param pulumi.Input[List[pulumi.Input[str]]] can_modifies: A list of users that have modify ACL access to the dashboard
+        :param pulumi.Input[List[pulumi.Input[str]]] can_views: A list of users that have view ACL access to the dashboard
         :param pulumi.Input[str] description: Human-readable description of the dashboard
         :param pulumi.Input[bool] display_query_parameters: Whether the dashboard parameters section is opened by default when the dashboard
                is shown
@@ -241,128 +46,10 @@ class Dashboard(pulumi.CustomResource):
         :param pulumi.Input[str] event_filter_type: How charts belonging to this dashboard should display events. BYCHART is default if 
                unspecified; Valid options are: `BYCHART`, `AUTOMATIC`, `ALL`, `NONE`, `BYDASHBOARD`, and `BYCHARTANDDASHBOARD`
         :param pulumi.Input[str] name: Name of the dashboard
-        :param pulumi.Input[list] parameter_details: The current JSON representation of dashboard parameters. See parameter details
-        :param pulumi.Input[list] sections: Dashboard chart sections. See dashboard sections
-        :param pulumi.Input[list] tags: A set of tags to assign to this resource.
+        :param pulumi.Input[List[pulumi.Input[pulumi.InputType['DashboardParameterDetailArgs']]]] parameter_details: The current JSON representation of dashboard parameters. See parameter details
+        :param pulumi.Input[List[pulumi.Input[pulumi.InputType['DashboardSectionArgs']]]] sections: Dashboard chart sections. See dashboard sections
+        :param pulumi.Input[List[pulumi.Input[str]]] tags: A set of tags to assign to this resource.
         :param pulumi.Input[str] url: Unique identifier, also URL slug, of the dashboard
-
-        The **parameter_details** object supports the following:
-
-          * `defaultValue` (`pulumi.Input[str]`) - The default value of the parameter
-          * `dynamicFieldType` (`pulumi.Input[str]`) - For `DYNAMIC` parameter types, the type of the field. Valid options are `SOURCE`,
-            `SOURCE_TAG`, `METRIC_NAME`, `TAG_KEY`, `MATCHING_SOURCE_TAG`
-          * `hideFromView` (`pulumi.Input[bool]`) - If `true` the parameter will only be shown on the edit view of the dashboard
-          * `label` (`pulumi.Input[str]`) - The label for the parameter
-          * `name` (`pulumi.Input[str]`) - The name of the parameters
-          * `parameterType` (`pulumi.Input[str]`) - The type of the parameter. `SIMPLE`, `LIST`, or `DYNAMIC`
-          * `queryValue` (`pulumi.Input[str]`) - For `DYNAMIC` parameter types, the query to execute to return values
-          * `tagKey` (`pulumi.Input[str]`) - for `TAG_KEY` dynamic field types, the tag key to return
-          * `valuesToReadableStrings` (`pulumi.Input[dict]`) - A string->string map.  At least one of the keys must match the value of
-            `default_value`
-
-        The **sections** object supports the following:
-
-          * `name` (`pulumi.Input[str]`) - Name of this section
-          * `rows` (`pulumi.Input[list]`) - See dashboard section rows
-            * `charts` (`pulumi.Input[list]`) - Charts in this section. See dashboard chart
-              * `chartSetting` (`pulumi.Input[dict]`) - Chart settings. See chart settings
-                * `autoColumnTags` (`pulumi.Input[bool]`) - deprecated
-                * `columnTags` (`pulumi.Input[str]`) - deprecated
-                * `customTags` (`pulumi.Input[list]`) - For the tabular view, a list of point tags to display when using the `custom` tag display mode
-                * `expectedDataSpacing` (`pulumi.Input[float]`) - Threshold (in seconds) for time delta between consecutive points in a series
-                  above which a dotted line will replace a solid in in line plots. Default 60
-                * `fixedLegendDisplayStats` (`pulumi.Input[list]`) - For a chart with a fixed legend, a list of statistics to display in the legend
-                * `fixedLegendEnabled` (`pulumi.Input[bool]`) - Whether to enable a fixed tabular legend adjacent to the chart
-                * `fixedLegendFilterField` (`pulumi.Input[str]`) - Statistic to use for determining whether a series is displayed on the fixed legend.
-                  Valid options are `CURRENT`, `MEAN`, `MEDIAN`, `SUM`, `MIN`, `MAX`, `COUNT`
-                * `fixedLegendFilterLimit` (`pulumi.Input[float]`) - Number of series to include in the fixed legend
-                * `fixedLegendFilterSort` (`pulumi.Input[str]`) - Whether to display `TOP` or `BOTTOM` ranked series in a fixed legend. Valid options
-                  are `TOP`, and `BOTTOM`
-                * `fixedLegendHideLabel` (`pulumi.Input[bool]`) - deprecated
-                * `fixedLegendPosition` (`pulumi.Input[str]`) - Where the fixed legend should be displayed with respect ot the chart.
-                  Valid options are `RIGHt`, `TOP`, `LEFT`, `BOTTOM`
-                * `fixedLegendUseRawStats` (`pulumi.Input[bool]`) - If `true`, the legend uses non-summarized stats instead of summarized
-                * `groupBySource` (`pulumi.Input[bool]`) - For the tabular view, whether to group multi metrics into a single row by a common source.
-                  If `false`, each source is displayed in its own row.  if `true`, multiple metrics for the same host will be displayed as different
-                  columns in the same row
-                * `invertDynamicLegendHoverControl` (`pulumi.Input[bool]`) - Whether to disable the display of the floating legend (but
-                  reenable it when the ctrl-key is pressed)
-                * `lineType` (`pulumi.Input[str]`) - Plot interpolation type.  `linear` is default. Valid options are `linear`, `step-before`, 
-                  `step-after`, `basis`, `cardinal`, `monotone`
-                * `max` (`pulumi.Input[float]`) - Max value of the Y-axis. Set to null or leave blank for auto
-                * `min` (`pulumi.Input[float]`) - Min value of the Y-axis. Set to null or leave blank for auto
-                * `numTags` (`pulumi.Input[float]`) - For the tabular view, how many point tags to display
-                * `plainMarkdownContent` (`pulumi.Input[str]`) - The markdown content for a Markdown display, in plain text.
-                * `showHosts` (`pulumi.Input[bool]`) - For the tabular view, whether to display sources. Default is `true`
-                * `showLabels` (`pulumi.Input[bool]`) - For the tabular view, whether to display labels. Default is `true`
-                * `showRawValues` (`pulumi.Input[bool]`) - For the tabular view, whether to display raw values. Default is `false`
-                * `sortValuesDescending` (`pulumi.Input[bool]`) - For the tabular view, whether to display display values in descending order. Default is `false`
-                * `sparklineDecimalPrecision` (`pulumi.Input[float]`) - For the single stat view, the decimal precision of the displayed number
-                * `sparklineDisplayColor` (`pulumi.Input[str]`) - For the single stat view, the color of the displayed text (when not dynamically determined). 
-                  Values should be in `rgba(,,,,)` format
-                * `sparklineDisplayFontSize` (`pulumi.Input[str]`) - For the single stat view, the font size of the displayed text, in percent
-                * `sparklineDisplayHorizontalPosition` (`pulumi.Input[str]`) - For the single stat view, the horizontal position of the displayed text.
-                  Valid options are `MIDDLE`, `LEFT`, `RIGHT`
-                * `sparklineDisplayPostfix` (`pulumi.Input[str]`) - For the single stat view, a string to append to the displayed text
-                * `sparklineDisplayPrefix` (`pulumi.Input[str]`) - For the single stat view, a string to add before the displayed text
-                * `sparklineDisplayValueType` (`pulumi.Input[str]`) - For the single stat view, where to display the name of the query or the value of the query.
-                  Valid options are `VALUE` or `LABEL`
-                * `sparklineDisplayVerticalPosition` (`pulumi.Input[str]`) - deprecated
-                * `sparklineFillColor` (`pulumi.Input[str]`) - For the single stat view, the color of the background fill.  Values should be
-                  in `rgba(,,,,)`
-                * `sparklineLineColor` (`pulumi.Input[str]`) - For the single stat view, the color of the line.  Values should be in `rgba(,,,,)` format
-                * `sparklineSize` (`pulumi.Input[str]`) - For the single stat view, This determines whether the sparkline of the statistic is displayed in the chart `BACKGROUND`, `BOTTOM`, or `NONE`.
-                  Valid options are `BACKGROUND`, `BOTTOM`, `NONE`
-                * `sparklineValueColorMapApplyTo` (`pulumi.Input[str]`) - For the single stat view, whether to apply dyunamic color settings to 
-                  the displayed `TEXT` or `BACKGROUND`. Valid options are `TEXT` or `BACKGROUND`
-                * `sparklineValueColorMapColors` (`pulumi.Input[list]`) - For the single stat view, A list of colors that differing query values map to. 
-                  Must contain one more element than `sparkline_value_color_map_values_v2`. Values should be in `rgba(,,,,)`
-                * `sparklineValueColorMapValues` (`pulumi.Input[list]`) - deprecated
-                * `sparklineValueColorMapValuesV2s` (`pulumi.Input[list]`) - For the single stat view, a list of boundaries for mapping different
-                  query values to colors.  Must contain one less element than `sparkline_value_color_map_colors`
-                * `sparklineValueTextMapTexts` (`pulumi.Input[list]`) - For the single stat view, a list of display text values that different query
-                  values map to.  Must contain one more element than `sparkline_value_text_map_thresholds`
-                * `sparklineValueTextMapThresholds` (`pulumi.Input[list]`) - For the single stat view, a list of threshold boundaries for 
-                  mapping different query values to display text.  Must contain one less element than `sparkline_value_text_map_text`
-                * `stackType` (`pulumi.Input[str]`) - Type of stacked chart (applicable only if chart type is `stacked`). `zero` (default) means
-                  stacked from y=0. `expand` means normalized from 0 to 1.  `wiggle` means minimize weighted changes. `silhouette` means to
-                  center the stream. Valid options are `zero`, `expand`, `wiggle`, `silhouette`, `bars`
-                * `tagMode` (`pulumi.Input[str]`) - For the tabular view, which mode to use to determine which point tags to display.
-                  Valid options are `all`, `top`, or `custom`
-                * `timeBasedColoring` (`pulumi.Input[bool]`) - For x-y scatterplots, whether to color more recent points as darker than older points
-                * `type` (`pulumi.Input[str]`) - Chart Type. `line` refers to the Line Plot, `scatter` to the Point Plot, `stacked-area` to 
-                  the Stacked Area plot, `table` to the Tabular View, `scatterploy-xy` to Scatter Plot, `markdown-widget` to the
-                  Markdown display, and `sparkline` to the Single Stat view. Valid options are `line`, `scatterplot`,
-                  `stacked-area`, `stacked-column`, `table`, `scatterplot-xy`, `markdown-widget`, `sparkline`, `globe`, `nodemap`,
-                  `top-k`, `status-list`, `histogram`
-                * `windowSize` (`pulumi.Input[float]`) - Width, in minutes, of the time window to use for `last` windowing
-                * `windowing` (`pulumi.Input[str]`) - For the tabular view, whether to use the full time window for the query or the last X minutes.
-                  Valid options are `full` or `last`
-                * `xmax` (`pulumi.Input[float]`) - For x-y scatterplots, max value for the X-axis. Set to null for auto
-                * `xmin` (`pulumi.Input[float]`) - For x-y scatterplots, min value for the X-axis. Set to null for auto
-                * `y0ScaleSiBy1024` (`pulumi.Input[bool]`) - Whether to scale numerical magnitude labels for left Y-axis by 1024 in the IEC/Binary manner (instead of by 1000 like SI)
-                * `y0UnitAutoscaling` (`pulumi.Input[bool]`) - Whether to automatically adjust magnitude labels and units for the left Y-axis to favor smaller magnitudes and larger units
-                * `y1ScaleSiBy1024` (`pulumi.Input[bool]`) - Whether to scale numerical magnitude labels for right Y-axis by 1024 in the IEC/Binary manner (instead of by 1000 like SI)
-                * `y1UnitAutoscaling` (`pulumi.Input[bool]`) - Whether to automatically adjust magnitude labels and units for the right Y-axis to favor smaller magnitudes and larger units
-                * `y1Units` (`pulumi.Input[str]`) - For plots with multiple Y-axes, units for right side Y-axis
-                * `y1max` (`pulumi.Input[float]`) - For plots with multiple Y-axes, max value for the right side Y-axis. Set null for auto
-                * `y1min` (`pulumi.Input[float]`) - For plots with multiple Y-axes, min value for the right side Y-axis. Set null for auto
-                * `ymax` (`pulumi.Input[float]`) - For x-y scatterplots, max value for the Y-axis. Set to null for auto
-                * `ymin` (`pulumi.Input[float]`) - For x-y scatterplots, min value for the Y-axis. Set to null for auto
-
-              * `description` (`pulumi.Input[str]`) - Description of the chart
-              * `name` (`pulumi.Input[str]`) - Name of the source
-              * `sources` (`pulumi.Input[list]`) - Query expression to plot on the chart. See chart source queries
-                * `disabled` (`pulumi.Input[bool]`) - Whether the source is disabled
-                * `name` (`pulumi.Input[str]`) - Name of the source
-                * `query` (`pulumi.Input[str]`) - Query expression to plot on the chart
-                * `queryBuilderEnabled` (`pulumi.Input[bool]`) - Whether oir not this source line should have the query builder enabled
-                * `scatterPlotSource` (`pulumi.Input[str]`) - For scatter plots, does this query source the X-axis or the Y-axis, `X`, or `Y`.
-                * `sourceDescription` (`pulumi.Input[str]`) - A description for the purpose of this source
-
-              * `summarization` (`pulumi.Input[str]`) - Summarization strategy for the chart. MEAN is default. Valid options are, `MEAN`, 
-                `MEDIAN`, `MIN`, `MAX`, `SUM`, `COUNT`, `LAST`, `FIRST`
-              * `units` (`pulumi.Input[str]`) - String to label the units of the chart on the Y-Axis
         """
         if __name__ is not None:
             warnings.warn("explicit use of __name__ is deprecated", DeprecationWarning)
@@ -407,16 +94,29 @@ class Dashboard(pulumi.CustomResource):
             opts)
 
     @staticmethod
-    def get(resource_name, id, opts=None, can_modifies=None, can_views=None, description=None, display_query_parameters=None, display_section_table_of_contents=None, event_filter_type=None, name=None, parameter_details=None, sections=None, tags=None, url=None):
+    def get(resource_name: str,
+            id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            can_modifies: Optional[pulumi.Input[List[pulumi.Input[str]]]] = None,
+            can_views: Optional[pulumi.Input[List[pulumi.Input[str]]]] = None,
+            description: Optional[pulumi.Input[str]] = None,
+            display_query_parameters: Optional[pulumi.Input[bool]] = None,
+            display_section_table_of_contents: Optional[pulumi.Input[bool]] = None,
+            event_filter_type: Optional[pulumi.Input[str]] = None,
+            name: Optional[pulumi.Input[str]] = None,
+            parameter_details: Optional[pulumi.Input[List[pulumi.Input[pulumi.InputType['DashboardParameterDetailArgs']]]]] = None,
+            sections: Optional[pulumi.Input[List[pulumi.Input[pulumi.InputType['DashboardSectionArgs']]]]] = None,
+            tags: Optional[pulumi.Input[List[pulumi.Input[str]]]] = None,
+            url: Optional[pulumi.Input[str]] = None) -> 'Dashboard':
         """
         Get an existing Dashboard resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
 
         :param str resource_name: The unique name of the resulting resource.
-        :param str id: The unique provider ID of the resource to lookup.
+        :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[list] can_modifies: A list of users that have modify ACL access to the dashboard
-        :param pulumi.Input[list] can_views: A list of users that have view ACL access to the dashboard
+        :param pulumi.Input[List[pulumi.Input[str]]] can_modifies: A list of users that have modify ACL access to the dashboard
+        :param pulumi.Input[List[pulumi.Input[str]]] can_views: A list of users that have view ACL access to the dashboard
         :param pulumi.Input[str] description: Human-readable description of the dashboard
         :param pulumi.Input[bool] display_query_parameters: Whether the dashboard parameters section is opened by default when the dashboard
                is shown
@@ -425,128 +125,10 @@ class Dashboard(pulumi.CustomResource):
         :param pulumi.Input[str] event_filter_type: How charts belonging to this dashboard should display events. BYCHART is default if 
                unspecified; Valid options are: `BYCHART`, `AUTOMATIC`, `ALL`, `NONE`, `BYDASHBOARD`, and `BYCHARTANDDASHBOARD`
         :param pulumi.Input[str] name: Name of the dashboard
-        :param pulumi.Input[list] parameter_details: The current JSON representation of dashboard parameters. See parameter details
-        :param pulumi.Input[list] sections: Dashboard chart sections. See dashboard sections
-        :param pulumi.Input[list] tags: A set of tags to assign to this resource.
+        :param pulumi.Input[List[pulumi.Input[pulumi.InputType['DashboardParameterDetailArgs']]]] parameter_details: The current JSON representation of dashboard parameters. See parameter details
+        :param pulumi.Input[List[pulumi.Input[pulumi.InputType['DashboardSectionArgs']]]] sections: Dashboard chart sections. See dashboard sections
+        :param pulumi.Input[List[pulumi.Input[str]]] tags: A set of tags to assign to this resource.
         :param pulumi.Input[str] url: Unique identifier, also URL slug, of the dashboard
-
-        The **parameter_details** object supports the following:
-
-          * `defaultValue` (`pulumi.Input[str]`) - The default value of the parameter
-          * `dynamicFieldType` (`pulumi.Input[str]`) - For `DYNAMIC` parameter types, the type of the field. Valid options are `SOURCE`,
-            `SOURCE_TAG`, `METRIC_NAME`, `TAG_KEY`, `MATCHING_SOURCE_TAG`
-          * `hideFromView` (`pulumi.Input[bool]`) - If `true` the parameter will only be shown on the edit view of the dashboard
-          * `label` (`pulumi.Input[str]`) - The label for the parameter
-          * `name` (`pulumi.Input[str]`) - The name of the parameters
-          * `parameterType` (`pulumi.Input[str]`) - The type of the parameter. `SIMPLE`, `LIST`, or `DYNAMIC`
-          * `queryValue` (`pulumi.Input[str]`) - For `DYNAMIC` parameter types, the query to execute to return values
-          * `tagKey` (`pulumi.Input[str]`) - for `TAG_KEY` dynamic field types, the tag key to return
-          * `valuesToReadableStrings` (`pulumi.Input[dict]`) - A string->string map.  At least one of the keys must match the value of
-            `default_value`
-
-        The **sections** object supports the following:
-
-          * `name` (`pulumi.Input[str]`) - Name of this section
-          * `rows` (`pulumi.Input[list]`) - See dashboard section rows
-            * `charts` (`pulumi.Input[list]`) - Charts in this section. See dashboard chart
-              * `chartSetting` (`pulumi.Input[dict]`) - Chart settings. See chart settings
-                * `autoColumnTags` (`pulumi.Input[bool]`) - deprecated
-                * `columnTags` (`pulumi.Input[str]`) - deprecated
-                * `customTags` (`pulumi.Input[list]`) - For the tabular view, a list of point tags to display when using the `custom` tag display mode
-                * `expectedDataSpacing` (`pulumi.Input[float]`) - Threshold (in seconds) for time delta between consecutive points in a series
-                  above which a dotted line will replace a solid in in line plots. Default 60
-                * `fixedLegendDisplayStats` (`pulumi.Input[list]`) - For a chart with a fixed legend, a list of statistics to display in the legend
-                * `fixedLegendEnabled` (`pulumi.Input[bool]`) - Whether to enable a fixed tabular legend adjacent to the chart
-                * `fixedLegendFilterField` (`pulumi.Input[str]`) - Statistic to use for determining whether a series is displayed on the fixed legend.
-                  Valid options are `CURRENT`, `MEAN`, `MEDIAN`, `SUM`, `MIN`, `MAX`, `COUNT`
-                * `fixedLegendFilterLimit` (`pulumi.Input[float]`) - Number of series to include in the fixed legend
-                * `fixedLegendFilterSort` (`pulumi.Input[str]`) - Whether to display `TOP` or `BOTTOM` ranked series in a fixed legend. Valid options
-                  are `TOP`, and `BOTTOM`
-                * `fixedLegendHideLabel` (`pulumi.Input[bool]`) - deprecated
-                * `fixedLegendPosition` (`pulumi.Input[str]`) - Where the fixed legend should be displayed with respect ot the chart.
-                  Valid options are `RIGHt`, `TOP`, `LEFT`, `BOTTOM`
-                * `fixedLegendUseRawStats` (`pulumi.Input[bool]`) - If `true`, the legend uses non-summarized stats instead of summarized
-                * `groupBySource` (`pulumi.Input[bool]`) - For the tabular view, whether to group multi metrics into a single row by a common source.
-                  If `false`, each source is displayed in its own row.  if `true`, multiple metrics for the same host will be displayed as different
-                  columns in the same row
-                * `invertDynamicLegendHoverControl` (`pulumi.Input[bool]`) - Whether to disable the display of the floating legend (but
-                  reenable it when the ctrl-key is pressed)
-                * `lineType` (`pulumi.Input[str]`) - Plot interpolation type.  `linear` is default. Valid options are `linear`, `step-before`, 
-                  `step-after`, `basis`, `cardinal`, `monotone`
-                * `max` (`pulumi.Input[float]`) - Max value of the Y-axis. Set to null or leave blank for auto
-                * `min` (`pulumi.Input[float]`) - Min value of the Y-axis. Set to null or leave blank for auto
-                * `numTags` (`pulumi.Input[float]`) - For the tabular view, how many point tags to display
-                * `plainMarkdownContent` (`pulumi.Input[str]`) - The markdown content for a Markdown display, in plain text.
-                * `showHosts` (`pulumi.Input[bool]`) - For the tabular view, whether to display sources. Default is `true`
-                * `showLabels` (`pulumi.Input[bool]`) - For the tabular view, whether to display labels. Default is `true`
-                * `showRawValues` (`pulumi.Input[bool]`) - For the tabular view, whether to display raw values. Default is `false`
-                * `sortValuesDescending` (`pulumi.Input[bool]`) - For the tabular view, whether to display display values in descending order. Default is `false`
-                * `sparklineDecimalPrecision` (`pulumi.Input[float]`) - For the single stat view, the decimal precision of the displayed number
-                * `sparklineDisplayColor` (`pulumi.Input[str]`) - For the single stat view, the color of the displayed text (when not dynamically determined). 
-                  Values should be in `rgba(,,,,)` format
-                * `sparklineDisplayFontSize` (`pulumi.Input[str]`) - For the single stat view, the font size of the displayed text, in percent
-                * `sparklineDisplayHorizontalPosition` (`pulumi.Input[str]`) - For the single stat view, the horizontal position of the displayed text.
-                  Valid options are `MIDDLE`, `LEFT`, `RIGHT`
-                * `sparklineDisplayPostfix` (`pulumi.Input[str]`) - For the single stat view, a string to append to the displayed text
-                * `sparklineDisplayPrefix` (`pulumi.Input[str]`) - For the single stat view, a string to add before the displayed text
-                * `sparklineDisplayValueType` (`pulumi.Input[str]`) - For the single stat view, where to display the name of the query or the value of the query.
-                  Valid options are `VALUE` or `LABEL`
-                * `sparklineDisplayVerticalPosition` (`pulumi.Input[str]`) - deprecated
-                * `sparklineFillColor` (`pulumi.Input[str]`) - For the single stat view, the color of the background fill.  Values should be
-                  in `rgba(,,,,)`
-                * `sparklineLineColor` (`pulumi.Input[str]`) - For the single stat view, the color of the line.  Values should be in `rgba(,,,,)` format
-                * `sparklineSize` (`pulumi.Input[str]`) - For the single stat view, This determines whether the sparkline of the statistic is displayed in the chart `BACKGROUND`, `BOTTOM`, or `NONE`.
-                  Valid options are `BACKGROUND`, `BOTTOM`, `NONE`
-                * `sparklineValueColorMapApplyTo` (`pulumi.Input[str]`) - For the single stat view, whether to apply dyunamic color settings to 
-                  the displayed `TEXT` or `BACKGROUND`. Valid options are `TEXT` or `BACKGROUND`
-                * `sparklineValueColorMapColors` (`pulumi.Input[list]`) - For the single stat view, A list of colors that differing query values map to. 
-                  Must contain one more element than `sparkline_value_color_map_values_v2`. Values should be in `rgba(,,,,)`
-                * `sparklineValueColorMapValues` (`pulumi.Input[list]`) - deprecated
-                * `sparklineValueColorMapValuesV2s` (`pulumi.Input[list]`) - For the single stat view, a list of boundaries for mapping different
-                  query values to colors.  Must contain one less element than `sparkline_value_color_map_colors`
-                * `sparklineValueTextMapTexts` (`pulumi.Input[list]`) - For the single stat view, a list of display text values that different query
-                  values map to.  Must contain one more element than `sparkline_value_text_map_thresholds`
-                * `sparklineValueTextMapThresholds` (`pulumi.Input[list]`) - For the single stat view, a list of threshold boundaries for 
-                  mapping different query values to display text.  Must contain one less element than `sparkline_value_text_map_text`
-                * `stackType` (`pulumi.Input[str]`) - Type of stacked chart (applicable only if chart type is `stacked`). `zero` (default) means
-                  stacked from y=0. `expand` means normalized from 0 to 1.  `wiggle` means minimize weighted changes. `silhouette` means to
-                  center the stream. Valid options are `zero`, `expand`, `wiggle`, `silhouette`, `bars`
-                * `tagMode` (`pulumi.Input[str]`) - For the tabular view, which mode to use to determine which point tags to display.
-                  Valid options are `all`, `top`, or `custom`
-                * `timeBasedColoring` (`pulumi.Input[bool]`) - For x-y scatterplots, whether to color more recent points as darker than older points
-                * `type` (`pulumi.Input[str]`) - Chart Type. `line` refers to the Line Plot, `scatter` to the Point Plot, `stacked-area` to 
-                  the Stacked Area plot, `table` to the Tabular View, `scatterploy-xy` to Scatter Plot, `markdown-widget` to the
-                  Markdown display, and `sparkline` to the Single Stat view. Valid options are `line`, `scatterplot`,
-                  `stacked-area`, `stacked-column`, `table`, `scatterplot-xy`, `markdown-widget`, `sparkline`, `globe`, `nodemap`,
-                  `top-k`, `status-list`, `histogram`
-                * `windowSize` (`pulumi.Input[float]`) - Width, in minutes, of the time window to use for `last` windowing
-                * `windowing` (`pulumi.Input[str]`) - For the tabular view, whether to use the full time window for the query or the last X minutes.
-                  Valid options are `full` or `last`
-                * `xmax` (`pulumi.Input[float]`) - For x-y scatterplots, max value for the X-axis. Set to null for auto
-                * `xmin` (`pulumi.Input[float]`) - For x-y scatterplots, min value for the X-axis. Set to null for auto
-                * `y0ScaleSiBy1024` (`pulumi.Input[bool]`) - Whether to scale numerical magnitude labels for left Y-axis by 1024 in the IEC/Binary manner (instead of by 1000 like SI)
-                * `y0UnitAutoscaling` (`pulumi.Input[bool]`) - Whether to automatically adjust magnitude labels and units for the left Y-axis to favor smaller magnitudes and larger units
-                * `y1ScaleSiBy1024` (`pulumi.Input[bool]`) - Whether to scale numerical magnitude labels for right Y-axis by 1024 in the IEC/Binary manner (instead of by 1000 like SI)
-                * `y1UnitAutoscaling` (`pulumi.Input[bool]`) - Whether to automatically adjust magnitude labels and units for the right Y-axis to favor smaller magnitudes and larger units
-                * `y1Units` (`pulumi.Input[str]`) - For plots with multiple Y-axes, units for right side Y-axis
-                * `y1max` (`pulumi.Input[float]`) - For plots with multiple Y-axes, max value for the right side Y-axis. Set null for auto
-                * `y1min` (`pulumi.Input[float]`) - For plots with multiple Y-axes, min value for the right side Y-axis. Set null for auto
-                * `ymax` (`pulumi.Input[float]`) - For x-y scatterplots, max value for the Y-axis. Set to null for auto
-                * `ymin` (`pulumi.Input[float]`) - For x-y scatterplots, min value for the Y-axis. Set to null for auto
-
-              * `description` (`pulumi.Input[str]`) - Description of the chart
-              * `name` (`pulumi.Input[str]`) - Name of the source
-              * `sources` (`pulumi.Input[list]`) - Query expression to plot on the chart. See chart source queries
-                * `disabled` (`pulumi.Input[bool]`) - Whether the source is disabled
-                * `name` (`pulumi.Input[str]`) - Name of the source
-                * `query` (`pulumi.Input[str]`) - Query expression to plot on the chart
-                * `queryBuilderEnabled` (`pulumi.Input[bool]`) - Whether oir not this source line should have the query builder enabled
-                * `scatterPlotSource` (`pulumi.Input[str]`) - For scatter plots, does this query source the X-axis or the Y-axis, `X`, or `Y`.
-                * `sourceDescription` (`pulumi.Input[str]`) - A description for the purpose of this source
-
-              * `summarization` (`pulumi.Input[str]`) - Summarization strategy for the chart. MEAN is default. Valid options are, `MEAN`, 
-                `MEDIAN`, `MIN`, `MAX`, `SUM`, `COUNT`, `LAST`, `FIRST`
-              * `units` (`pulumi.Input[str]`) - String to label the units of the chart on the Y-Axis
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -565,8 +147,100 @@ class Dashboard(pulumi.CustomResource):
         __props__["url"] = url
         return Dashboard(resource_name, opts=opts, __props__=__props__)
 
+    @property
+    @pulumi.getter(name="canModifies")
+    def can_modifies(self) -> List[str]:
+        """
+        A list of users that have modify ACL access to the dashboard
+        """
+        return pulumi.get(self, "can_modifies")
+
+    @property
+    @pulumi.getter(name="canViews")
+    def can_views(self) -> Optional[List[str]]:
+        """
+        A list of users that have view ACL access to the dashboard
+        """
+        return pulumi.get(self, "can_views")
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        """
+        Human-readable description of the dashboard
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="displayQueryParameters")
+    def display_query_parameters(self) -> Optional[bool]:
+        """
+        Whether the dashboard parameters section is opened by default when the dashboard
+        is shown
+        """
+        return pulumi.get(self, "display_query_parameters")
+
+    @property
+    @pulumi.getter(name="displaySectionTableOfContents")
+    def display_section_table_of_contents(self) -> Optional[bool]:
+        """
+        Whether the "pills" quick-linked the sections of the dashboard are 
+        displayed by default when the dashboard is shown
+        """
+        return pulumi.get(self, "display_section_table_of_contents")
+
+    @property
+    @pulumi.getter(name="eventFilterType")
+    def event_filter_type(self) -> Optional[str]:
+        """
+        How charts belonging to this dashboard should display events. BYCHART is default if 
+        unspecified; Valid options are: `BYCHART`, `AUTOMATIC`, `ALL`, `NONE`, `BYDASHBOARD`, and `BYCHARTANDDASHBOARD`
+        """
+        return pulumi.get(self, "event_filter_type")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Name of the dashboard
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter(name="parameterDetails")
+    def parameter_details(self) -> Optional[List['outputs.DashboardParameterDetail']]:
+        """
+        The current JSON representation of dashboard parameters. See parameter details
+        """
+        return pulumi.get(self, "parameter_details")
+
+    @property
+    @pulumi.getter
+    def sections(self) -> List['outputs.DashboardSection']:
+        """
+        Dashboard chart sections. See dashboard sections
+        """
+        return pulumi.get(self, "sections")
+
+    @property
+    @pulumi.getter
+    def tags(self) -> List[str]:
+        """
+        A set of tags to assign to this resource.
+        """
+        return pulumi.get(self, "tags")
+
+    @property
+    @pulumi.getter
+    def url(self) -> str:
+        """
+        Unique identifier, also URL slug, of the dashboard
+        """
+        return pulumi.get(self, "url")
+
     def translate_output_property(self, prop):
         return _tables.CAMEL_TO_SNAKE_CASE_TABLE.get(prop) or prop
 
     def translate_input_property(self, prop):
         return _tables.SNAKE_TO_CAMEL_CASE_TABLE.get(prop) or prop
+
