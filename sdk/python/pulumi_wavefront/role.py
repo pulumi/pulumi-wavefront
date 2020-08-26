@@ -5,30 +5,23 @@
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Union
+from typing import Any, Dict, List, Mapping, Optional, Tuple, Union
 from . import _utilities, _tables
+
+__all__ = ['Role']
 
 
 class Role(pulumi.CustomResource):
-    assignees: pulumi.Output[list]
-    """
-    A list of user groups or accounts to assign to this role.
-    """
-    description: pulumi.Output[str]
-    """
-    A short description of the user group
-    """
-    name: pulumi.Output[str]
-    """
-    The name of the user group
-    """
-    permissions: pulumi.Output[list]
-    """
-    A list of permissions to assign to this role. Valid options are 
-    `agent_management`, `alerts_management`, `dashboard_management`, `embedded_charts`, `events_management`, `external_links_management`,
-    `host_tag_management`, `metrics_management`, `user_management`
-    """
-    def __init__(__self__, resource_name, opts=None, assignees=None, description=None, name=None, permissions=None, __props__=None, __name__=None, __opts__=None):
+    def __init__(__self__,
+                 resource_name,
+                 opts: Optional[pulumi.ResourceOptions] = None,
+                 assignees: Optional[pulumi.Input[List[pulumi.Input[str]]]] = None,
+                 description: Optional[pulumi.Input[str]] = None,
+                 name: Optional[pulumi.Input[str]] = None,
+                 permissions: Optional[pulumi.Input[List[pulumi.Input[str]]]] = None,
+                 __props__=None,
+                 __name__=None,
+                 __opts__=None):
         """
         Provides a Wavefront Role Resource. This allows user groups to be created, updated, and deleted.
 
@@ -43,10 +36,10 @@ class Role(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[list] assignees: A list of user groups or accounts to assign to this role.
+        :param pulumi.Input[List[pulumi.Input[str]]] assignees: A list of user groups or accounts to assign to this role.
         :param pulumi.Input[str] description: A short description of the user group
         :param pulumi.Input[str] name: The name of the user group
-        :param pulumi.Input[list] permissions: A list of permissions to assign to this role. Valid options are 
+        :param pulumi.Input[List[pulumi.Input[str]]] permissions: A list of permissions to assign to this role. Valid options are 
                `agent_management`, `alerts_management`, `dashboard_management`, `embedded_charts`, `events_management`, `external_links_management`,
                `host_tag_management`, `metrics_management`, `user_management`
         """
@@ -78,18 +71,24 @@ class Role(pulumi.CustomResource):
             opts)
 
     @staticmethod
-    def get(resource_name, id, opts=None, assignees=None, description=None, name=None, permissions=None):
+    def get(resource_name: str,
+            id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            assignees: Optional[pulumi.Input[List[pulumi.Input[str]]]] = None,
+            description: Optional[pulumi.Input[str]] = None,
+            name: Optional[pulumi.Input[str]] = None,
+            permissions: Optional[pulumi.Input[List[pulumi.Input[str]]]] = None) -> 'Role':
         """
         Get an existing Role resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
 
         :param str resource_name: The unique name of the resulting resource.
-        :param str id: The unique provider ID of the resource to lookup.
+        :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[list] assignees: A list of user groups or accounts to assign to this role.
+        :param pulumi.Input[List[pulumi.Input[str]]] assignees: A list of user groups or accounts to assign to this role.
         :param pulumi.Input[str] description: A short description of the user group
         :param pulumi.Input[str] name: The name of the user group
-        :param pulumi.Input[list] permissions: A list of permissions to assign to this role. Valid options are 
+        :param pulumi.Input[List[pulumi.Input[str]]] permissions: A list of permissions to assign to this role. Valid options are 
                `agent_management`, `alerts_management`, `dashboard_management`, `embedded_charts`, `events_management`, `external_links_management`,
                `host_tag_management`, `metrics_management`, `user_management`
         """
@@ -103,8 +102,43 @@ class Role(pulumi.CustomResource):
         __props__["permissions"] = permissions
         return Role(resource_name, opts=opts, __props__=__props__)
 
+    @property
+    @pulumi.getter
+    def assignees(self) -> Optional[List[str]]:
+        """
+        A list of user groups or accounts to assign to this role.
+        """
+        return pulumi.get(self, "assignees")
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[str]:
+        """
+        A short description of the user group
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        The name of the user group
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def permissions(self) -> Optional[List[str]]:
+        """
+        A list of permissions to assign to this role. Valid options are 
+        `agent_management`, `alerts_management`, `dashboard_management`, `embedded_charts`, `events_management`, `external_links_management`,
+        `host_tag_management`, `metrics_management`, `user_management`
+        """
+        return pulumi.get(self, "permissions")
+
     def translate_output_property(self, prop):
         return _tables.CAMEL_TO_SNAKE_CASE_TABLE.get(prop) or prop
 
     def translate_input_property(self, prop):
         return _tables.SNAKE_TO_CAMEL_CASE_TABLE.get(prop) or prop
+

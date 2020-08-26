@@ -1,3 +1,11 @@
+[![Actions Status](https://github.com/pulumi/pulumi-wavefront/workflows/master/badge.svg)](https://github.com/pulumi/pulumi-wavefront/actions)
+[![Slack](http://www.pulumi.com/images/docs/badges/slack.svg)](https://slack.pulumi.com)
+[![NPM version](https://badge.fury.io/js/%40pulumi%2Fwavefront.svg)](https://www.npmjs.com/package/@pulumi/wavefront)
+[![Python version](https://badge.fury.io/py/pulumi-wavefront.svg)](https://pypi.org/project/pulumi-wavefront)
+[![NuGet version](https://badge.fury.io/nu/pulumi.wavefront.svg)](https://badge.fury.io/nu/pulumi.wavefront)
+[![PkgGoDev](https://pkg.go.dev/badge/github.com/pulumi/pulumi-wavefront/sdk/go)](https://pkg.go.dev/github.com/pulumi/pulumi-wavefront/sdk/go)
+[![License](https://img.shields.io/npm/l/%40pulumi%2Fpulumi.svg)](https://github.com/pulumi/pulumi-wavefront/blob/master/LICENSE)
+
 # Wavefront Resource Provider
 
 The Wavefront Resource Provider lets you manage Wavefront resources.
