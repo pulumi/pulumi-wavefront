@@ -15,7 +15,7 @@ __all__ = ['Dashboard']
 
 class Dashboard(pulumi.CustomResource):
     def __init__(__self__,
-                 resource_name,
+                 resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  can_modifies: Optional[pulumi.Input[List[pulumi.Input[str]]]] = None,
                  can_views: Optional[pulumi.Input[List[pulumi.Input[str]]]] = None,
@@ -149,7 +149,7 @@ class Dashboard(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="canModifies")
-    def can_modifies(self) -> List[str]:
+    def can_modifies(self) -> pulumi.Output[List[str]]:
         """
         A list of users that have modify ACL access to the dashboard
         """
@@ -157,7 +157,7 @@ class Dashboard(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="canViews")
-    def can_views(self) -> Optional[List[str]]:
+    def can_views(self) -> pulumi.Output[Optional[List[str]]]:
         """
         A list of users that have view ACL access to the dashboard
         """
@@ -165,7 +165,7 @@ class Dashboard(pulumi.CustomResource):
 
     @property
     @pulumi.getter
-    def description(self) -> str:
+    def description(self) -> pulumi.Output[str]:
         """
         Human-readable description of the dashboard
         """
@@ -173,7 +173,7 @@ class Dashboard(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="displayQueryParameters")
-    def display_query_parameters(self) -> Optional[bool]:
+    def display_query_parameters(self) -> pulumi.Output[Optional[bool]]:
         """
         Whether the dashboard parameters section is opened by default when the dashboard
         is shown
@@ -182,7 +182,7 @@ class Dashboard(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="displaySectionTableOfContents")
-    def display_section_table_of_contents(self) -> Optional[bool]:
+    def display_section_table_of_contents(self) -> pulumi.Output[Optional[bool]]:
         """
         Whether the "pills" quick-linked the sections of the dashboard are 
         displayed by default when the dashboard is shown
@@ -191,7 +191,7 @@ class Dashboard(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="eventFilterType")
-    def event_filter_type(self) -> Optional[str]:
+    def event_filter_type(self) -> pulumi.Output[Optional[str]]:
         """
         How charts belonging to this dashboard should display events. BYCHART is default if 
         unspecified; Valid options are: `BYCHART`, `AUTOMATIC`, `ALL`, `NONE`, `BYDASHBOARD`, and `BYCHARTANDDASHBOARD`
@@ -200,7 +200,7 @@ class Dashboard(pulumi.CustomResource):
 
     @property
     @pulumi.getter
-    def name(self) -> str:
+    def name(self) -> pulumi.Output[str]:
         """
         Name of the dashboard
         """
@@ -208,7 +208,7 @@ class Dashboard(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="parameterDetails")
-    def parameter_details(self) -> Optional[List['outputs.DashboardParameterDetail']]:
+    def parameter_details(self) -> pulumi.Output[Optional[List['outputs.DashboardParameterDetail']]]:
         """
         The current JSON representation of dashboard parameters. See parameter details
         """
@@ -216,7 +216,7 @@ class Dashboard(pulumi.CustomResource):
 
     @property
     @pulumi.getter
-    def sections(self) -> List['outputs.DashboardSection']:
+    def sections(self) -> pulumi.Output[List['outputs.DashboardSection']]:
         """
         Dashboard chart sections. See dashboard sections
         """
@@ -224,7 +224,7 @@ class Dashboard(pulumi.CustomResource):
 
     @property
     @pulumi.getter
-    def tags(self) -> List[str]:
+    def tags(self) -> pulumi.Output[List[str]]:
         """
         A set of tags to assign to this resource.
         """
@@ -232,7 +232,7 @@ class Dashboard(pulumi.CustomResource):
 
     @property
     @pulumi.getter
-    def url(self) -> str:
+    def url(self) -> pulumi.Output[str]:
         """
         Unique identifier, also URL slug, of the dashboard
         """

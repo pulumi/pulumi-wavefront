@@ -13,7 +13,7 @@ __all__ = ['DerivedMetric']
 
 class DerivedMetric(pulumi.CustomResource):
     def __init__(__self__,
-                 resource_name,
+                 resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  additional_information: Optional[pulumi.Input[str]] = None,
                  minutes: Optional[pulumi.Input[float]] = None,
@@ -113,7 +113,7 @@ class DerivedMetric(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="additionalInformation")
-    def additional_information(self) -> Optional[str]:
+    def additional_information(self) -> pulumi.Output[Optional[str]]:
         """
         User-supplied additional explanatory information for the derived metric
         """
@@ -121,7 +121,7 @@ class DerivedMetric(pulumi.CustomResource):
 
     @property
     @pulumi.getter
-    def minutes(self) -> float:
+    def minutes(self) -> pulumi.Output[float]:
         """
         How frequently the query generating the derived metric is run
         """
@@ -129,7 +129,7 @@ class DerivedMetric(pulumi.CustomResource):
 
     @property
     @pulumi.getter
-    def name(self) -> str:
+    def name(self) -> pulumi.Output[str]:
         """
         The name of the Derived Metric in Wavefront
         """
@@ -137,7 +137,7 @@ class DerivedMetric(pulumi.CustomResource):
 
     @property
     @pulumi.getter
-    def query(self) -> str:
+    def query(self) -> pulumi.Output[str]:
         """
         A Wavefront query that is evaluated at regular intervals (default `1m`)
         """
@@ -145,7 +145,7 @@ class DerivedMetric(pulumi.CustomResource):
 
     @property
     @pulumi.getter
-    def tags(self) -> Optional[List[str]]:
+    def tags(self) -> pulumi.Output[Optional[List[str]]]:
         """
         A set of tags to assign to this resource.
         """

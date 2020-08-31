@@ -13,7 +13,7 @@ __all__ = ['Alert']
 
 class Alert(pulumi.CustomResource):
     def __init__(__self__,
-                 resource_name,
+                 resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  additional_information: Optional[pulumi.Input[str]] = None,
                  alert_type: Optional[pulumi.Input[str]] = None,
@@ -204,7 +204,7 @@ class Alert(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="additionalInformation")
-    def additional_information(self) -> Optional[str]:
+    def additional_information(self) -> pulumi.Output[Optional[str]]:
         """
         User-supplied additional explanatory information for this alert.
         Useful for linking runbooks, migrations...etc
@@ -213,7 +213,7 @@ class Alert(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="alertType")
-    def alert_type(self) -> Optional[str]:
+    def alert_type(self) -> pulumi.Output[Optional[str]]:
         """
         The type of alert in Wavefront.  Either `CLASSIC` (default) 
         or `THRESHOLD`
@@ -222,7 +222,7 @@ class Alert(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="canModifies")
-    def can_modifies(self) -> List[str]:
+    def can_modifies(self) -> pulumi.Output[List[str]]:
         """
         A list of users or groups that can modify this resource.
         """
@@ -230,7 +230,7 @@ class Alert(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="canViews")
-    def can_views(self) -> Optional[List[str]]:
+    def can_views(self) -> pulumi.Output[Optional[List[str]]]:
         """
         A list of users or groups that can view this resource.
         """
@@ -238,7 +238,7 @@ class Alert(pulumi.CustomResource):
 
     @property
     @pulumi.getter
-    def condition(self) -> Optional[str]:
+    def condition(self) -> pulumi.Output[Optional[str]]:
         """
         A Wavefront query that is evaluated at regular intervals (default 1m).
         The alert fires and notifications are triggered when data series matching this query evaluates
@@ -248,7 +248,7 @@ class Alert(pulumi.CustomResource):
 
     @property
     @pulumi.getter
-    def conditions(self) -> Optional[Mapping[str, str]]:
+    def conditions(self) -> pulumi.Output[Optional[Mapping[str, str]]]:
         """
         a string->string map of `severity` to `condition` 
         for which this alert will trigger.
@@ -257,7 +257,7 @@ class Alert(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="displayExpression")
-    def display_expression(self) -> Optional[str]:
+    def display_expression(self) -> pulumi.Output[Optional[str]]:
         """
         A second query whose results are displayed in the alert user
         interface instead of the condition query.  This field is often used to display a version
@@ -267,7 +267,7 @@ class Alert(pulumi.CustomResource):
 
     @property
     @pulumi.getter
-    def minutes(self) -> float:
+    def minutes(self) -> pulumi.Output[float]:
         """
         The number of consecutive minutes that a series matching the condition query must 
         evaluate to "true" (non-zero value) before the alert fires.
@@ -276,7 +276,7 @@ class Alert(pulumi.CustomResource):
 
     @property
     @pulumi.getter
-    def name(self) -> str:
+    def name(self) -> pulumi.Output[str]:
         """
         The name of the alert as it is displayed in Wavefront.
         """
@@ -284,7 +284,7 @@ class Alert(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="notificationResendFrequencyMinutes")
-    def notification_resend_frequency_minutes(self) -> Optional[float]:
+    def notification_resend_frequency_minutes(self) -> pulumi.Output[Optional[float]]:
         """
         How often to re-trigger a continually failing alert. 
         If absent or <= 0, no re-triggering occur.
@@ -293,7 +293,7 @@ class Alert(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="resolveAfterMinutes")
-    def resolve_after_minutes(self) -> Optional[float]:
+    def resolve_after_minutes(self) -> pulumi.Output[Optional[float]]:
         """
         The number of consecutive minutes that a firing series matching the condition
         query must evaluate to "false" (zero value) before the alert resolves.  When unset, this default sto
@@ -303,7 +303,7 @@ class Alert(pulumi.CustomResource):
 
     @property
     @pulumi.getter
-    def severity(self) -> Optional[str]:
+    def severity(self) -> pulumi.Output[Optional[str]]:
         """
         - Severity of the alert, valid values are `INFO`, `SMOKE`, `WARN`, `SEVERE`.
         """
@@ -311,7 +311,7 @@ class Alert(pulumi.CustomResource):
 
     @property
     @pulumi.getter
-    def tags(self) -> List[str]:
+    def tags(self) -> pulumi.Output[List[str]]:
         """
         A set of tags to assign to this resource.
         """
@@ -319,7 +319,7 @@ class Alert(pulumi.CustomResource):
 
     @property
     @pulumi.getter
-    def target(self) -> Optional[str]:
+    def target(self) -> pulumi.Output[Optional[str]]:
         """
         A comma-separated list of the email address or integration endpoint 
         (such as PagerDuty or web hook) to notify when the alert status changes.
@@ -328,7 +328,7 @@ class Alert(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="thresholdTargets")
-    def threshold_targets(self) -> Optional[Mapping[str, str]]:
+    def threshold_targets(self) -> pulumi.Output[Optional[Mapping[str, str]]]:
         """
         Targets for severity
         """

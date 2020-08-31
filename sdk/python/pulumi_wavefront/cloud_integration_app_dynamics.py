@@ -13,7 +13,7 @@ __all__ = ['CloudIntegrationAppDynamics']
 
 class CloudIntegrationAppDynamics(pulumi.CustomResource):
     def __init__(__self__,
-                 resource_name,
+                 resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  additional_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  app_filter_regexes: Optional[pulumi.Input[List[pulumi.Input[str]]]] = None,
@@ -194,7 +194,7 @@ class CloudIntegrationAppDynamics(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="additionalTags")
-    def additional_tags(self) -> Optional[Mapping[str, str]]:
+    def additional_tags(self) -> pulumi.Output[Optional[Mapping[str, str]]]:
         """
         A list of point tag key-values to add to every point ingested using this integration
         """
@@ -202,7 +202,7 @@ class CloudIntegrationAppDynamics(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="appFilterRegexes")
-    def app_filter_regexes(self) -> Optional[List[str]]:
+    def app_filter_regexes(self) -> pulumi.Output[Optional[List[str]]]:
         """
         List of regular expressions that a application name must match (case-insensitively) 
         in order to be ingested
@@ -211,7 +211,7 @@ class CloudIntegrationAppDynamics(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="controllerName")
-    def controller_name(self) -> str:
+    def controller_name(self) -> pulumi.Output[str]:
         """
         Name of the SaaS controller
         """
@@ -219,7 +219,7 @@ class CloudIntegrationAppDynamics(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="enableAppInfraMetrics")
-    def enable_app_infra_metrics(self) -> Optional[bool]:
+    def enable_app_infra_metrics(self) -> pulumi.Output[Optional[bool]]:
         """
         Boolean flag to control Application Infrastructure metric injection
         """
@@ -227,7 +227,7 @@ class CloudIntegrationAppDynamics(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="enableBackendMetrics")
-    def enable_backend_metrics(self) -> Optional[bool]:
+    def enable_backend_metrics(self) -> pulumi.Output[Optional[bool]]:
         """
         Boolean flag to control Backend metric injection
         """
@@ -235,7 +235,7 @@ class CloudIntegrationAppDynamics(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="enableBusinessTrxMetrics")
-    def enable_business_trx_metrics(self) -> Optional[bool]:
+    def enable_business_trx_metrics(self) -> pulumi.Output[Optional[bool]]:
         """
         Boolean flag to control Business Transaction metric injection
         """
@@ -243,7 +243,7 @@ class CloudIntegrationAppDynamics(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="enableErrorMetrics")
-    def enable_error_metrics(self) -> Optional[bool]:
+    def enable_error_metrics(self) -> pulumi.Output[Optional[bool]]:
         """
         Boolean flag to control Error metric injection
         """
@@ -251,7 +251,7 @@ class CloudIntegrationAppDynamics(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="enableIndividualNodeMetrics")
-    def enable_individual_node_metrics(self) -> Optional[bool]:
+    def enable_individual_node_metrics(self) -> pulumi.Output[Optional[bool]]:
         """
         Boolean flag to control Individual Node metric injection
         """
@@ -259,7 +259,7 @@ class CloudIntegrationAppDynamics(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="enableOverallPerfMetrics")
-    def enable_overall_perf_metrics(self) -> Optional[bool]:
+    def enable_overall_perf_metrics(self) -> pulumi.Output[Optional[bool]]:
         """
         Boolean flag to control Overall Performance metric injection
         """
@@ -267,7 +267,7 @@ class CloudIntegrationAppDynamics(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="enableRollup")
-    def enable_rollup(self) -> Optional[bool]:
+    def enable_rollup(self) -> pulumi.Output[Optional[bool]]:
         """
         Set this to `false` to get separate results for all values within the time range, 
         by default it is `true`
@@ -276,7 +276,7 @@ class CloudIntegrationAppDynamics(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="enableServiceEndpointMetrics")
-    def enable_service_endpoint_metrics(self) -> Optional[bool]:
+    def enable_service_endpoint_metrics(self) -> pulumi.Output[Optional[bool]]:
         """
         Boolean flag to control Service End point metric injection
         """
@@ -284,7 +284,7 @@ class CloudIntegrationAppDynamics(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="encryptedPassword")
-    def encrypted_password(self) -> str:
+    def encrypted_password(self) -> pulumi.Output[str]:
         """
         Password for AppDynamics user
         """
@@ -292,7 +292,7 @@ class CloudIntegrationAppDynamics(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="forceSave")
-    def force_save(self) -> Optional[bool]:
+    def force_save(self) -> pulumi.Output[Optional[bool]]:
         """
         Forces this resource to save, even if errors are present
         """
@@ -300,7 +300,7 @@ class CloudIntegrationAppDynamics(pulumi.CustomResource):
 
     @property
     @pulumi.getter
-    def name(self) -> str:
+    def name(self) -> pulumi.Output[str]:
         """
         The human-readable name of this integration
         """
@@ -308,7 +308,7 @@ class CloudIntegrationAppDynamics(pulumi.CustomResource):
 
     @property
     @pulumi.getter
-    def service(self) -> str:
+    def service(self) -> pulumi.Output[str]:
         """
         A value denoting which cloud service this service integrates with
         """
@@ -316,7 +316,7 @@ class CloudIntegrationAppDynamics(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="serviceRefreshRateInMinutes")
-    def service_refresh_rate_in_minutes(self) -> Optional[float]:
+    def service_refresh_rate_in_minutes(self) -> pulumi.Output[Optional[float]]:
         """
         How often, in minutes, to refresh the service
         """
@@ -324,7 +324,7 @@ class CloudIntegrationAppDynamics(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="userName")
-    def user_name(self) -> str:
+    def user_name(self) -> pulumi.Output[str]:
         """
         Username is a combination of userName and the account name
         """

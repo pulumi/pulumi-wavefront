@@ -13,7 +13,7 @@ __all__ = ['CloudIntegrationCloudTrail']
 
 class CloudIntegrationCloudTrail(pulumi.CustomResource):
     def __init__(__self__,
-                 resource_name,
+                 resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  additional_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  bucket_name: Optional[pulumi.Input[str]] = None,
@@ -158,7 +158,7 @@ class CloudIntegrationCloudTrail(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="additionalTags")
-    def additional_tags(self) -> Optional[Mapping[str, str]]:
+    def additional_tags(self) -> pulumi.Output[Optional[Mapping[str, str]]]:
         """
         A list of point tag key-values to add to every point ingested using this integration
         """
@@ -166,7 +166,7 @@ class CloudIntegrationCloudTrail(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="bucketName")
-    def bucket_name(self) -> str:
+    def bucket_name(self) -> pulumi.Output[str]:
         """
         Name of the S3 bucket where CloudTrail logs are stored
         """
@@ -174,7 +174,7 @@ class CloudIntegrationCloudTrail(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="externalId")
-    def external_id(self) -> str:
+    def external_id(self) -> pulumi.Output[str]:
         """
         The Role ARN that the customer has created in AWS IAM to allow access to Wavefront
         """
@@ -182,7 +182,7 @@ class CloudIntegrationCloudTrail(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="filterRule")
-    def filter_rule(self) -> Optional[str]:
+    def filter_rule(self) -> pulumi.Output[Optional[str]]:
         """
         Rule to filter CloudTrail log event
         """
@@ -190,7 +190,7 @@ class CloudIntegrationCloudTrail(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="forceSave")
-    def force_save(self) -> Optional[bool]:
+    def force_save(self) -> pulumi.Output[Optional[bool]]:
         """
         Forces this resource to save, even if errors are present
         """
@@ -198,7 +198,7 @@ class CloudIntegrationCloudTrail(pulumi.CustomResource):
 
     @property
     @pulumi.getter
-    def name(self) -> str:
+    def name(self) -> pulumi.Output[str]:
         """
         The human-readable name of this integration
         """
@@ -206,7 +206,7 @@ class CloudIntegrationCloudTrail(pulumi.CustomResource):
 
     @property
     @pulumi.getter
-    def prefix(self) -> Optional[str]:
+    def prefix(self) -> pulumi.Output[Optional[str]]:
         """
         The common prefix, if any, appended to all CloudTrail log files.
         """
@@ -214,7 +214,7 @@ class CloudIntegrationCloudTrail(pulumi.CustomResource):
 
     @property
     @pulumi.getter
-    def region(self) -> str:
+    def region(self) -> pulumi.Output[str]:
         """
         The AWS region of the S3 bucket where CloudTrail logs are stored
         """
@@ -222,7 +222,7 @@ class CloudIntegrationCloudTrail(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="roleArn")
-    def role_arn(self) -> str:
+    def role_arn(self) -> pulumi.Output[str]:
         """
         The external id corresponding to the Role ARN
         """
@@ -230,7 +230,7 @@ class CloudIntegrationCloudTrail(pulumi.CustomResource):
 
     @property
     @pulumi.getter
-    def service(self) -> str:
+    def service(self) -> pulumi.Output[str]:
         """
         A value denoting which cloud service this service integrates with
         """
@@ -238,7 +238,7 @@ class CloudIntegrationCloudTrail(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="serviceRefreshRateInMinutes")
-    def service_refresh_rate_in_minutes(self) -> Optional[float]:
+    def service_refresh_rate_in_minutes(self) -> pulumi.Output[Optional[float]]:
         """
         How often, in minutes, to refresh the service
         """

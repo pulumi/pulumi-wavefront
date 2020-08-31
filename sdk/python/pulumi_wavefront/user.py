@@ -13,7 +13,7 @@ __all__ = ['User']
 
 class User(pulumi.CustomResource):
     def __init__(__self__,
-                 resource_name,
+                 resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  customer: Optional[pulumi.Input[str]] = None,
                  email: Optional[pulumi.Input[str]] = None,
@@ -104,12 +104,12 @@ class User(pulumi.CustomResource):
 
     @property
     @pulumi.getter
-    def customer(self) -> str:
+    def customer(self) -> pulumi.Output[str]:
         return pulumi.get(self, "customer")
 
     @property
     @pulumi.getter
-    def email(self) -> str:
+    def email(self) -> pulumi.Output[str]:
         """
         The (unique) identifier of the user to create. Must be a valid email address
         """
@@ -117,7 +117,7 @@ class User(pulumi.CustomResource):
 
     @property
     @pulumi.getter
-    def permissions(self) -> List[str]:
+    def permissions(self) -> pulumi.Output[List[str]]:
         """
         List of permission to grant to this user.  Valid options are
         `agent_management`, `alerts_management`, `dashboard_management`, `embedded_charts`, `events_management`, `external_links_management`,
@@ -127,7 +127,7 @@ class User(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="userGroups")
-    def user_groups(self) -> List[str]:
+    def user_groups(self) -> pulumi.Output[List[str]]:
         """
         List of user groups to this user
         """
