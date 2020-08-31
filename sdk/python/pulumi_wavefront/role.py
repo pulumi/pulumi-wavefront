@@ -13,7 +13,7 @@ __all__ = ['Role']
 
 class Role(pulumi.CustomResource):
     def __init__(__self__,
-                 resource_name,
+                 resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  assignees: Optional[pulumi.Input[List[pulumi.Input[str]]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
@@ -104,7 +104,7 @@ class Role(pulumi.CustomResource):
 
     @property
     @pulumi.getter
-    def assignees(self) -> Optional[List[str]]:
+    def assignees(self) -> pulumi.Output[Optional[List[str]]]:
         """
         A list of user groups or accounts to assign to this role.
         """
@@ -112,7 +112,7 @@ class Role(pulumi.CustomResource):
 
     @property
     @pulumi.getter
-    def description(self) -> Optional[str]:
+    def description(self) -> pulumi.Output[Optional[str]]:
         """
         A short description of the user group
         """
@@ -120,7 +120,7 @@ class Role(pulumi.CustomResource):
 
     @property
     @pulumi.getter
-    def name(self) -> str:
+    def name(self) -> pulumi.Output[str]:
         """
         The name of the user group
         """
@@ -128,7 +128,7 @@ class Role(pulumi.CustomResource):
 
     @property
     @pulumi.getter
-    def permissions(self) -> Optional[List[str]]:
+    def permissions(self) -> pulumi.Output[Optional[List[str]]]:
         """
         A list of permissions to assign to this role. Valid options are 
         `agent_management`, `alerts_management`, `dashboard_management`, `embedded_charts`, `events_management`, `external_links_management`,

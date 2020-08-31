@@ -13,7 +13,7 @@ __all__ = ['CloudIntegrationTesla']
 
 class CloudIntegrationTesla(pulumi.CustomResource):
     def __init__(__self__,
-                 resource_name,
+                 resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  additional_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  email: Optional[pulumi.Input[str]] = None,
@@ -127,7 +127,7 @@ class CloudIntegrationTesla(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="additionalTags")
-    def additional_tags(self) -> Optional[Mapping[str, str]]:
+    def additional_tags(self) -> pulumi.Output[Optional[Mapping[str, str]]]:
         """
         A list of point tag key-values to add to every point ingested using this integration
         """
@@ -135,7 +135,7 @@ class CloudIntegrationTesla(pulumi.CustomResource):
 
     @property
     @pulumi.getter
-    def email(self) -> str:
+    def email(self) -> pulumi.Output[str]:
         """
         Email address for the Tesla account login
         """
@@ -143,7 +143,7 @@ class CloudIntegrationTesla(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="forceSave")
-    def force_save(self) -> Optional[bool]:
+    def force_save(self) -> pulumi.Output[Optional[bool]]:
         """
         Forces this resource to save, even if errors are present
         """
@@ -151,7 +151,7 @@ class CloudIntegrationTesla(pulumi.CustomResource):
 
     @property
     @pulumi.getter
-    def name(self) -> str:
+    def name(self) -> pulumi.Output[str]:
         """
         The human-readable name of this integration
         """
@@ -159,7 +159,7 @@ class CloudIntegrationTesla(pulumi.CustomResource):
 
     @property
     @pulumi.getter
-    def password(self) -> str:
+    def password(self) -> pulumi.Output[str]:
         """
         Password for the Tesla account login
         """
@@ -167,7 +167,7 @@ class CloudIntegrationTesla(pulumi.CustomResource):
 
     @property
     @pulumi.getter
-    def service(self) -> str:
+    def service(self) -> pulumi.Output[str]:
         """
         A value denoting which cloud service this service integrates with
         """
@@ -175,7 +175,7 @@ class CloudIntegrationTesla(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="serviceRefreshRateInMinutes")
-    def service_refresh_rate_in_minutes(self) -> Optional[float]:
+    def service_refresh_rate_in_minutes(self) -> pulumi.Output[Optional[float]]:
         """
         How often, in minutes, to refresh the service
         """

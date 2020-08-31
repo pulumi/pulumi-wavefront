@@ -13,7 +13,7 @@ __all__ = ['CloudIntegrationCloudWatch']
 
 class CloudIntegrationCloudWatch(pulumi.CustomResource):
     def __init__(__self__,
-                 resource_name,
+                 resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  additional_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  external_id: Optional[pulumi.Input[str]] = None,
@@ -169,7 +169,7 @@ class CloudIntegrationCloudWatch(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="additionalTags")
-    def additional_tags(self) -> Optional[Mapping[str, str]]:
+    def additional_tags(self) -> pulumi.Output[Optional[Mapping[str, str]]]:
         """
         A list of point tag key-values to add to every point ingested using this integration
         """
@@ -177,7 +177,7 @@ class CloudIntegrationCloudWatch(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="externalId")
-    def external_id(self) -> str:
+    def external_id(self) -> pulumi.Output[str]:
         """
         The Role ARN that the customer has created in AWS IAM to allow access to Wavefront
         """
@@ -185,7 +185,7 @@ class CloudIntegrationCloudWatch(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="forceSave")
-    def force_save(self) -> Optional[bool]:
+    def force_save(self) -> pulumi.Output[Optional[bool]]:
         """
         Forces this resource to save, even if errors are present
         """
@@ -193,7 +193,7 @@ class CloudIntegrationCloudWatch(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="instanceSelectionTags")
-    def instance_selection_tags(self) -> Optional[Mapping[str, str]]:
+    def instance_selection_tags(self) -> pulumi.Output[Optional[Mapping[str, str]]]:
         """
         A string->string map whitelist of instance tag-value pairs (in AWS).
         If the instance's AWS tags match this whitelist, CloudWatch data about this instance is ingested.
@@ -203,7 +203,7 @@ class CloudIntegrationCloudWatch(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="metricFilterRegex")
-    def metric_filter_regex(self) -> Optional[str]:
+    def metric_filter_regex(self) -> pulumi.Output[Optional[str]]:
         """
         A regular expression that a CloudWatch metric name must match (case-insensitively) in order to be ingested
         """
@@ -211,7 +211,7 @@ class CloudIntegrationCloudWatch(pulumi.CustomResource):
 
     @property
     @pulumi.getter
-    def name(self) -> str:
+    def name(self) -> pulumi.Output[str]:
         """
         The human-readable name of this integration
         """
@@ -219,7 +219,7 @@ class CloudIntegrationCloudWatch(pulumi.CustomResource):
 
     @property
     @pulumi.getter
-    def namespaces(self) -> Optional[List[str]]:
+    def namespaces(self) -> pulumi.Output[Optional[List[str]]]:
         """
         A list of namespaces that limit what we query from CloudWatch
         """
@@ -227,7 +227,7 @@ class CloudIntegrationCloudWatch(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="pointTagFilterRegex")
-    def point_tag_filter_regex(self) -> Optional[str]:
+    def point_tag_filter_regex(self) -> pulumi.Output[Optional[str]]:
         """
         A regular expression that AWS tag key name must match (case-insensitively)
         in order to be ingested
@@ -236,7 +236,7 @@ class CloudIntegrationCloudWatch(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="roleArn")
-    def role_arn(self) -> str:
+    def role_arn(self) -> pulumi.Output[str]:
         """
         The external id corresponding to the Role ARN
         """
@@ -244,7 +244,7 @@ class CloudIntegrationCloudWatch(pulumi.CustomResource):
 
     @property
     @pulumi.getter
-    def service(self) -> str:
+    def service(self) -> pulumi.Output[str]:
         """
         A value denoting which cloud service this service integrates with
         """
@@ -252,7 +252,7 @@ class CloudIntegrationCloudWatch(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="serviceRefreshRateInMinutes")
-    def service_refresh_rate_in_minutes(self) -> Optional[float]:
+    def service_refresh_rate_in_minutes(self) -> pulumi.Output[Optional[float]]:
         """
         How often, in minutes, to refresh the service
         """
@@ -260,7 +260,7 @@ class CloudIntegrationCloudWatch(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="volumeSelectionTags")
-    def volume_selection_tags(self) -> Optional[Mapping[str, str]]:
+    def volume_selection_tags(self) -> pulumi.Output[Optional[Mapping[str, str]]]:
         """
         A string->string map of whitelist of volume tag-value pairs (in AWS).
         If the volume's AWS tags match this whitelist, CloudWatch data about this volume is ingested.

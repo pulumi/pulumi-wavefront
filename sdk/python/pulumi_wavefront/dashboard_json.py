@@ -13,7 +13,7 @@ __all__ = ['DashboardJson']
 
 class DashboardJson(pulumi.CustomResource):
     def __init__(__self__,
-                 resource_name,
+                 resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  dashboard_json: Optional[pulumi.Input[str]] = None,
                  __props__=None,
@@ -184,7 +184,7 @@ class DashboardJson(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="dashboardJson")
-    def dashboard_json(self) -> str:
+    def dashboard_json(self) -> pulumi.Output[str]:
         """
         See [Wavefront API Documentation](https://docs.wavefront.com/wavefront_api.html#api-documentation-wavefront-instance) 
         for instructions on how to get to your API documentation for more details.

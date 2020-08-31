@@ -13,7 +13,7 @@ __all__ = ['CloudIntegrationAzureActivityLog']
 
 class CloudIntegrationAzureActivityLog(pulumi.CustomResource):
     def __init__(__self__,
-                 resource_name,
+                 resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  additional_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  category_filters: Optional[pulumi.Input[List[pulumi.Input[str]]]] = None,
@@ -143,7 +143,7 @@ class CloudIntegrationAzureActivityLog(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="additionalTags")
-    def additional_tags(self) -> Optional[Mapping[str, str]]:
+    def additional_tags(self) -> pulumi.Output[Optional[Mapping[str, str]]]:
         """
         A list of point tag key-values to add to every point ingested using this integration
         """
@@ -151,7 +151,7 @@ class CloudIntegrationAzureActivityLog(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="categoryFilters")
-    def category_filters(self) -> Optional[List[str]]:
+    def category_filters(self) -> pulumi.Output[Optional[List[str]]]:
         """
         A list of Azure services (such as Microsoft.Compute/virtualMachines) from which to pull metrics
         """
@@ -159,7 +159,7 @@ class CloudIntegrationAzureActivityLog(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="clientId")
-    def client_id(self) -> str:
+    def client_id(self) -> pulumi.Output[str]:
         """
         Client id for an azure service account within your project
         """
@@ -167,7 +167,7 @@ class CloudIntegrationAzureActivityLog(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="clientSecret")
-    def client_secret(self) -> str:
+    def client_secret(self) -> pulumi.Output[str]:
         """
         Client secret for an Azure service account within your project
         """
@@ -175,7 +175,7 @@ class CloudIntegrationAzureActivityLog(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="forceSave")
-    def force_save(self) -> Optional[bool]:
+    def force_save(self) -> pulumi.Output[Optional[bool]]:
         """
         Forces this resource to save, even if errors are present
         """
@@ -183,7 +183,7 @@ class CloudIntegrationAzureActivityLog(pulumi.CustomResource):
 
     @property
     @pulumi.getter
-    def name(self) -> str:
+    def name(self) -> pulumi.Output[str]:
         """
         The human-readable name of this integration
         """
@@ -191,7 +191,7 @@ class CloudIntegrationAzureActivityLog(pulumi.CustomResource):
 
     @property
     @pulumi.getter
-    def service(self) -> str:
+    def service(self) -> pulumi.Output[str]:
         """
         A value denoting which cloud service this service integrates with
         """
@@ -199,7 +199,7 @@ class CloudIntegrationAzureActivityLog(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="serviceRefreshRateInMinutes")
-    def service_refresh_rate_in_minutes(self) -> Optional[float]:
+    def service_refresh_rate_in_minutes(self) -> pulumi.Output[Optional[float]]:
         """
         How often, in minutes, to refresh the service
         """
@@ -207,7 +207,7 @@ class CloudIntegrationAzureActivityLog(pulumi.CustomResource):
 
     @property
     @pulumi.getter
-    def tenant(self) -> str:
+    def tenant(self) -> pulumi.Output[str]:
         """
         Tenant Id for an Azure service account within your project
         """
