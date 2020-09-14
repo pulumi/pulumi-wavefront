@@ -7,7 +7,7 @@
     ],
     "homepage": "https://pulumi.io",
     "license": "Apache-2.0",
-    "attribution": "This Pulumi package is based on the [`wavefront` Terraform Provider](https://github.com/terraform-providers/terraform-provider-wavefront).",
+    "attribution": "This Pulumi package is based on the [`wavefront` Terraform Provider](https://github.com/vmware/terraform-provider-wavefront).",
     "repository": "https://github.com/pulumi/pulumi-wavefront",
     "meta": {
         "moduleFormat": "(.*)(?:/[^/]*)"
@@ -1256,7 +1256,7 @@
                     "items": {
                         "type": "string"
                     },
-                    "description": "A list of occurrences on which this webhook will be fired. Valid values are `ALERT_OPENED`,\n`ALERT_UPDATED`, `ALERT_RESOLVED`, `ALERT_MAINTENANCE`, `ALERT_SNOOZED`, `ALERT_INVALID`, `ALERT_NO_LONGER_INVALID`,\n`ALERT_RETRIGGERED`, `ALERT_NO_DATA`, `ALERT_NO_DATA_RESOLVED`, `ALERT_NO_DATA_MAINTENANCE`, `ALERT_SEVERITY_UPDATE`.\n"
+                    "description": "A list of occurrences on which this webhook will be fired. Valid values are `ALERT_OPENED`,\n`ALERT_UPDATED`, `ALERT_RESOLVED`, `ALERT_MAINTENANCE`, `ALERT_SNOOZED`, `ALERT_NO_DATA`, `ALERT_NO_DATA_RESOLVED`, `ALERT_NO_DATA_MAINTENANCE`.\n"
                 }
             },
             "required": [
@@ -1319,7 +1319,7 @@
                     "items": {
                         "type": "string"
                     },
-                    "description": "A list of occurrences on which this webhook will be fired. Valid values are `ALERT_OPENED`,\n`ALERT_UPDATED`, `ALERT_RESOLVED`, `ALERT_MAINTENANCE`, `ALERT_SNOOZED`, `ALERT_INVALID`, `ALERT_NO_LONGER_INVALID`,\n`ALERT_RETRIGGERED`, `ALERT_NO_DATA`, `ALERT_NO_DATA_RESOLVED`, `ALERT_NO_DATA_MAINTENANCE`, `ALERT_SEVERITY_UPDATE`.\n"
+                    "description": "A list of occurrences on which this webhook will be fired. Valid values are `ALERT_OPENED`,\n`ALERT_UPDATED`, `ALERT_RESOLVED`, `ALERT_MAINTENANCE`, `ALERT_SNOOZED`, `ALERT_NO_DATA`, `ALERT_NO_DATA_RESOLVED`, `ALERT_NO_DATA_MAINTENANCE`.\n"
                 }
             },
             "requiredInputs": [
@@ -1385,7 +1385,7 @@
                         "items": {
                             "type": "string"
                         },
-                        "description": "A list of occurrences on which this webhook will be fired. Valid values are `ALERT_OPENED`,\n`ALERT_UPDATED`, `ALERT_RESOLVED`, `ALERT_MAINTENANCE`, `ALERT_SNOOZED`, `ALERT_INVALID`, `ALERT_NO_LONGER_INVALID`,\n`ALERT_RETRIGGERED`, `ALERT_NO_DATA`, `ALERT_NO_DATA_RESOLVED`, `ALERT_NO_DATA_MAINTENANCE`, `ALERT_SEVERITY_UPDATE`.\n"
+                        "description": "A list of occurrences on which this webhook will be fired. Valid values are `ALERT_OPENED`,\n`ALERT_UPDATED`, `ALERT_RESOLVED`, `ALERT_MAINTENANCE`, `ALERT_SNOOZED`, `ALERT_NO_DATA`, `ALERT_NO_DATA_RESOLVED`, `ALERT_NO_DATA_MAINTENANCE`.\n"
                     }
                 },
                 "type": "object"
@@ -3460,6 +3460,105 @@
                 "type": "object"
             }
         },
+        "wavefront:index/serviceAccount:ServiceAccount": {
+            "description": "Provides a Wavefront Service Account Resource. This allows service accounts to be created, updated, and deleted.\n\n{{% examples %}}\n## Example Usage\n{{% example %}}\n\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as wavefront from \"@pulumi/wavefront\";\n\nconst basic = new wavefront.ServiceAccount(\"basic\", {\n    active: true,\n    identifier: \"sa::tftesting\",\n});\n```\n```python\nimport pulumi\nimport pulumi_wavefront as wavefront\n\nbasic = wavefront.ServiceAccount(\"basic\",\n    active=True,\n    identifier=\"sa::tftesting\")\n```\n```csharp\nusing Pulumi;\nusing Wavefront = Pulumi.Wavefront;\n\nclass MyStack : Stack\n{\n    public MyStack()\n    {\n        var basic = new Wavefront.ServiceAccount(\"basic\", new Wavefront.ServiceAccountArgs\n        {\n            Active = true,\n            Identifier = \"sa::tftesting\",\n        });\n    }\n\n}\n```\n```go\npackage main\n\nimport (\n\t\"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront\"\n\t\"github.com/pulumi/pulumi/sdk/v2/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := wavefront.NewServiceAccount(ctx, \"basic\", \u0026wavefront.ServiceAccountArgs{\n\t\t\tActive:     pulumi.Bool(true),\n\t\t\tIdentifier: pulumi.String(\"sa::tftesting\"),\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n{{% /example %}}\n{{% /examples %}}",
+            "properties": {
+                "active": {
+                    "type": "boolean",
+                    "description": "Whether or not the service account is active\n"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "The description of the service account\n"
+                },
+                "identifier": {
+                    "type": "string",
+                    "description": "The (unique) identifier of the service account to create. Must start with sa::\n"
+                },
+                "permissions": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "List of permission to grant to this service account.  Valid options are\n`agent_management`, `alerts_management`, `dashboard_management`, `embedded_charts`, `events_management`, `external_links_management`,\n`host_tag_management`, `metrics_management`, `user_management`\n"
+                },
+                "userGroups": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "List of user groups for this service account\n"
+                }
+            },
+            "required": [
+                "identifier",
+                "permissions",
+                "userGroups"
+            ],
+            "inputProperties": {
+                "active": {
+                    "type": "boolean",
+                    "description": "Whether or not the service account is active\n"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "The description of the service account\n"
+                },
+                "identifier": {
+                    "type": "string",
+                    "description": "The (unique) identifier of the service account to create. Must start with sa::\n"
+                },
+                "permissions": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "List of permission to grant to this service account.  Valid options are\n`agent_management`, `alerts_management`, `dashboard_management`, `embedded_charts`, `events_management`, `external_links_management`,\n`host_tag_management`, `metrics_management`, `user_management`\n"
+                },
+                "userGroups": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "List of user groups for this service account\n"
+                }
+            },
+            "requiredInputs": [
+                "identifier"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering ServiceAccount resources.\n",
+                "properties": {
+                    "active": {
+                        "type": "boolean",
+                        "description": "Whether or not the service account is active\n"
+                    },
+                    "description": {
+                        "type": "string",
+                        "description": "The description of the service account\n"
+                    },
+                    "identifier": {
+                        "type": "string",
+                        "description": "The (unique) identifier of the service account to create. Must start with sa::\n"
+                    },
+                    "permissions": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "List of permission to grant to this service account.  Valid options are\n`agent_management`, `alerts_management`, `dashboard_management`, `embedded_charts`, `events_management`, `external_links_management`,\n`host_tag_management`, `metrics_management`, `user_management`\n"
+                    },
+                    "userGroups": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "List of user groups for this service account\n"
+                    }
+                },
+                "type": "object"
+            }
+        },
         "wavefront:index/user:User": {
             "description": "Provides a Wavefront User Resource. This allows users to be created, updated, and deleted.\n\n{{% examples %}}\n## Example Usage\n{{% example %}}\n\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as wavefront from \"@pulumi/wavefront\";\n\nconst basic = new wavefront.User(\"basic\", {\n    email: \"test+tftesting@example.com\",\n});\n```\n```python\nimport pulumi\nimport pulumi_wavefront as wavefront\n\nbasic = wavefront.User(\"basic\", email=\"test+tftesting@example.com\")\n```\n```csharp\nusing Pulumi;\nusing Wavefront = Pulumi.Wavefront;\n\nclass MyStack : Stack\n{\n    public MyStack()\n    {\n        var basic = new Wavefront.User(\"basic\", new Wavefront.UserArgs\n        {\n            Email = \"test+tftesting@example.com\",\n        });\n    }\n\n}\n```\n```go\npackage main\n\nimport (\n\t\"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront\"\n\t\"github.com/pulumi/pulumi/sdk/v2/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := wavefront.NewUser(ctx, \"basic\", \u0026wavefront.UserArgs{\n\t\t\tEmail: pulumi.String(\"test+tftesting@example.com\"),\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n{{% /example %}}\n{{% /examples %}}",
             "properties": {
@@ -3634,11 +3733,11 @@
             "disableUnionOutputTypes": true,
             "packageDescription": "A Pulumi package for creating and managing wavefront cloud resources.",
             "packageName": "",
-            "readme": "\u003e This provider is a derived work of the [Terraform Provider](https://github.com/terraform-providers/terraform-provider-wavefront)\n\u003e distributed under [MPL 2.0](https://www.mozilla.org/en-US/MPL/2.0/). If you encounter a bug or missing feature,\n\u003e first check the [`pulumi/pulumi-wavefront` repo](https://github.com/pulumi/pulumi-wavefront/issues); however, if that doesn't turn up anything,\n\u003e please consult the source [`terraform-providers/terraform-provider-wavefront` repo](https://github.com/terraform-providers/terraform-provider-wavefront/issues).",
+            "readme": "\u003e This provider is a derived work of the [Terraform Provider](https://github.com/vmware/terraform-provider-wavefront)\n\u003e distributed under [MPL 2.0](https://www.mozilla.org/en-US/MPL/2.0/). If you encounter a bug or missing feature,\n\u003e first check the [`pulumi/pulumi-wavefront` repo](https://github.com/pulumi/pulumi-wavefront/issues); however, if that doesn't turn up anything,\n\u003e please consult the source [`vmware/terraform-provider-wavefront` repo](https://github.com/vmware/terraform-provider-wavefront/issues).",
             "typescriptVersion": ""
         },
         "python": {
-            "readme": "\u003e This provider is a derived work of the [Terraform Provider](https://github.com/terraform-providers/terraform-provider-wavefront)\n\u003e distributed under [MPL 2.0](https://www.mozilla.org/en-US/MPL/2.0/). If you encounter a bug or missing feature,\n\u003e first check the [`pulumi/pulumi-wavefront` repo](https://github.com/pulumi/pulumi-wavefront/issues); however, if that doesn't turn up anything,\n\u003e please consult the source [`terraform-providers/terraform-provider-wavefront` repo](https://github.com/terraform-providers/terraform-provider-wavefront/issues).",
+            "readme": "\u003e This provider is a derived work of the [Terraform Provider](https://github.com/vmware/terraform-provider-wavefront)\n\u003e distributed under [MPL 2.0](https://www.mozilla.org/en-US/MPL/2.0/). If you encounter a bug or missing feature,\n\u003e first check the [`pulumi/pulumi-wavefront` repo](https://github.com/pulumi/pulumi-wavefront/issues); however, if that doesn't turn up anything,\n\u003e please consult the source [`vmware/terraform-provider-wavefront` repo](https://github.com/vmware/terraform-provider-wavefront/issues).",
             "requires": {
                 "pulumi": "\u003e=2.9.0,\u003c3.0.0"
             },

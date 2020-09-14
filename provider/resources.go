@@ -21,7 +21,7 @@ import (
 	"github.com/pulumi/pulumi-terraform-bridge/v2/pkg/tfbridge"
 	"github.com/pulumi/pulumi/sdk/v2/go/common/resource"
 	"github.com/pulumi/pulumi/sdk/v2/go/common/tokens"
-	"github.com/terraform-providers/terraform-provider-wavefront/wavefront"
+	"github.com/vmware/terraform-provider-wavefront/wavefront"
 )
 
 // all of the token components used below.
@@ -80,6 +80,7 @@ func Provider() tfbridge.ProviderInfo {
 		License:     "Apache-2.0",
 		Homepage:    "https://pulumi.io",
 		Repository:  "https://github.com/pulumi/pulumi-wavefront",
+		GitHubOrg:   "vmware",
 		Config: map[string]*tfbridge.SchemaInfo{
 			"address": {
 				Default: &tfbridge.DefaultInfo{
@@ -116,10 +117,11 @@ func Provider() tfbridge.ProviderInfo {
 					},
 				},
 			},
-			"wavefront_derived_metric": {Tok: makeResource(mainMod, "DerivedMetric")},
-			"wavefront_role":           {Tok: makeResource(mainMod, "Role")},
-			"wavefront_user":           {Tok: makeResource(mainMod, "User")},
-			"wavefront_user_group":     {Tok: makeResource(mainMod, "UserGroup")},
+			"wavefront_derived_metric":  {Tok: makeResource(mainMod, "DerivedMetric")},
+			"wavefront_role":            {Tok: makeResource(mainMod, "Role")},
+			"wavefront_user":            {Tok: makeResource(mainMod, "User")},
+			"wavefront_user_group":      {Tok: makeResource(mainMod, "UserGroup")},
+			"wavefront_service_account": {Tok: makeResource(mainMod, "ServiceAccount")},
 		},
 		DataSources: map[string]*tfbridge.DataSourceInfo{
 			"wavefront_default_user_group": {Tok: makeDataSource(mainMod, "getDefaultUserGroup")},

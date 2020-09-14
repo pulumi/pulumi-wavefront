@@ -157,8 +157,7 @@ export class AlertTarget extends pulumi.CustomResource {
     public readonly template!: pulumi.Output<string>;
     /**
      * A list of occurrences on which this webhook will be fired. Valid values are `ALERT_OPENED`,
-     * `ALERT_UPDATED`, `ALERT_RESOLVED`, `ALERT_MAINTENANCE`, `ALERT_SNOOZED`, `ALERT_INVALID`, `ALERT_NO_LONGER_INVALID`,
-     * `ALERT_RETRIGGERED`, `ALERT_NO_DATA`, `ALERT_NO_DATA_RESOLVED`, `ALERT_NO_DATA_MAINTENANCE`, `ALERT_SEVERITY_UPDATE`.
+     * `ALERT_UPDATED`, `ALERT_RESOLVED`, `ALERT_MAINTENANCE`, `ALERT_SNOOZED`, `ALERT_NO_DATA`, `ALERT_NO_DATA_RESOLVED`, `ALERT_NO_DATA_MAINTENANCE`.
      */
     public readonly triggers!: pulumi.Output<string[]>;
 
@@ -273,8 +272,7 @@ export interface AlertTargetState {
     readonly template?: pulumi.Input<string>;
     /**
      * A list of occurrences on which this webhook will be fired. Valid values are `ALERT_OPENED`,
-     * `ALERT_UPDATED`, `ALERT_RESOLVED`, `ALERT_MAINTENANCE`, `ALERT_SNOOZED`, `ALERT_INVALID`, `ALERT_NO_LONGER_INVALID`,
-     * `ALERT_RETRIGGERED`, `ALERT_NO_DATA`, `ALERT_NO_DATA_RESOLVED`, `ALERT_NO_DATA_MAINTENANCE`, `ALERT_SEVERITY_UPDATE`.
+     * `ALERT_UPDATED`, `ALERT_RESOLVED`, `ALERT_MAINTENANCE`, `ALERT_SNOOZED`, `ALERT_NO_DATA`, `ALERT_NO_DATA_RESOLVED`, `ALERT_NO_DATA_MAINTENANCE`.
      */
     readonly triggers?: pulumi.Input<pulumi.Input<string>[]>;
 }
@@ -327,8 +325,7 @@ export interface AlertTargetArgs {
     readonly template: pulumi.Input<string>;
     /**
      * A list of occurrences on which this webhook will be fired. Valid values are `ALERT_OPENED`,
-     * `ALERT_UPDATED`, `ALERT_RESOLVED`, `ALERT_MAINTENANCE`, `ALERT_SNOOZED`, `ALERT_INVALID`, `ALERT_NO_LONGER_INVALID`,
-     * `ALERT_RETRIGGERED`, `ALERT_NO_DATA`, `ALERT_NO_DATA_RESOLVED`, `ALERT_NO_DATA_MAINTENANCE`, `ALERT_SEVERITY_UPDATE`.
+     * `ALERT_UPDATED`, `ALERT_RESOLVED`, `ALERT_MAINTENANCE`, `ALERT_SNOOZED`, `ALERT_NO_DATA`, `ALERT_NO_DATA_RESOLVED`, `ALERT_NO_DATA_MAINTENANCE`.
      */
     readonly triggers: pulumi.Input<pulumi.Input<string>[]>;
 }

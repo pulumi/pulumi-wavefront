@@ -21,6 +21,7 @@ export * from "./derivedMetric";
 export * from "./getDefaultUserGroup";
 export * from "./provider";
 export * from "./role";
+export * from "./serviceAccount";
 export * from "./user";
 export * from "./userGroup";
 

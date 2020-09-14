@@ -137,8 +137,7 @@ type AlertTarget struct {
 	// A mustache template that will form the body of the POST request, email and summary of the PagerDuty.
 	Template pulumi.StringOutput `pulumi:"template"`
 	// A list of occurrences on which this webhook will be fired. Valid values are `ALERT_OPENED`,
-	// `ALERT_UPDATED`, `ALERT_RESOLVED`, `ALERT_MAINTENANCE`, `ALERT_SNOOZED`, `ALERT_INVALID`, `ALERT_NO_LONGER_INVALID`,
-	// `ALERT_RETRIGGERED`, `ALERT_NO_DATA`, `ALERT_NO_DATA_RESOLVED`, `ALERT_NO_DATA_MAINTENANCE`, `ALERT_SEVERITY_UPDATE`.
+	// `ALERT_UPDATED`, `ALERT_RESOLVED`, `ALERT_MAINTENANCE`, `ALERT_SNOOZED`, `ALERT_NO_DATA`, `ALERT_NO_DATA_RESOLVED`, `ALERT_NO_DATA_MAINTENANCE`.
 	Triggers pulumi.StringArrayOutput `pulumi:"triggers"`
 }
 
@@ -206,8 +205,7 @@ type alertTargetState struct {
 	// A mustache template that will form the body of the POST request, email and summary of the PagerDuty.
 	Template *string `pulumi:"template"`
 	// A list of occurrences on which this webhook will be fired. Valid values are `ALERT_OPENED`,
-	// `ALERT_UPDATED`, `ALERT_RESOLVED`, `ALERT_MAINTENANCE`, `ALERT_SNOOZED`, `ALERT_INVALID`, `ALERT_NO_LONGER_INVALID`,
-	// `ALERT_RETRIGGERED`, `ALERT_NO_DATA`, `ALERT_NO_DATA_RESOLVED`, `ALERT_NO_DATA_MAINTENANCE`, `ALERT_SEVERITY_UPDATE`.
+	// `ALERT_UPDATED`, `ALERT_RESOLVED`, `ALERT_MAINTENANCE`, `ALERT_SNOOZED`, `ALERT_NO_DATA`, `ALERT_NO_DATA_RESOLVED`, `ALERT_NO_DATA_MAINTENANCE`.
 	Triggers []string `pulumi:"triggers"`
 }
 
@@ -236,8 +234,7 @@ type AlertTargetState struct {
 	// A mustache template that will form the body of the POST request, email and summary of the PagerDuty.
 	Template pulumi.StringPtrInput
 	// A list of occurrences on which this webhook will be fired. Valid values are `ALERT_OPENED`,
-	// `ALERT_UPDATED`, `ALERT_RESOLVED`, `ALERT_MAINTENANCE`, `ALERT_SNOOZED`, `ALERT_INVALID`, `ALERT_NO_LONGER_INVALID`,
-	// `ALERT_RETRIGGERED`, `ALERT_NO_DATA`, `ALERT_NO_DATA_RESOLVED`, `ALERT_NO_DATA_MAINTENANCE`, `ALERT_SEVERITY_UPDATE`.
+	// `ALERT_UPDATED`, `ALERT_RESOLVED`, `ALERT_MAINTENANCE`, `ALERT_SNOOZED`, `ALERT_NO_DATA`, `ALERT_NO_DATA_RESOLVED`, `ALERT_NO_DATA_MAINTENANCE`.
 	Triggers pulumi.StringArrayInput
 }
 
@@ -269,8 +266,7 @@ type alertTargetArgs struct {
 	// A mustache template that will form the body of the POST request, email and summary of the PagerDuty.
 	Template string `pulumi:"template"`
 	// A list of occurrences on which this webhook will be fired. Valid values are `ALERT_OPENED`,
-	// `ALERT_UPDATED`, `ALERT_RESOLVED`, `ALERT_MAINTENANCE`, `ALERT_SNOOZED`, `ALERT_INVALID`, `ALERT_NO_LONGER_INVALID`,
-	// `ALERT_RETRIGGERED`, `ALERT_NO_DATA`, `ALERT_NO_DATA_RESOLVED`, `ALERT_NO_DATA_MAINTENANCE`, `ALERT_SEVERITY_UPDATE`.
+	// `ALERT_UPDATED`, `ALERT_RESOLVED`, `ALERT_MAINTENANCE`, `ALERT_SNOOZED`, `ALERT_NO_DATA`, `ALERT_NO_DATA_RESOLVED`, `ALERT_NO_DATA_MAINTENANCE`.
 	Triggers []string `pulumi:"triggers"`
 }
 
@@ -299,8 +295,7 @@ type AlertTargetArgs struct {
 	// A mustache template that will form the body of the POST request, email and summary of the PagerDuty.
 	Template pulumi.StringInput
 	// A list of occurrences on which this webhook will be fired. Valid values are `ALERT_OPENED`,
-	// `ALERT_UPDATED`, `ALERT_RESOLVED`, `ALERT_MAINTENANCE`, `ALERT_SNOOZED`, `ALERT_INVALID`, `ALERT_NO_LONGER_INVALID`,
-	// `ALERT_RETRIGGERED`, `ALERT_NO_DATA`, `ALERT_NO_DATA_RESOLVED`, `ALERT_NO_DATA_MAINTENANCE`, `ALERT_SEVERITY_UPDATE`.
+	// `ALERT_UPDATED`, `ALERT_RESOLVED`, `ALERT_MAINTENANCE`, `ALERT_SNOOZED`, `ALERT_NO_DATA`, `ALERT_NO_DATA_RESOLVED`, `ALERT_NO_DATA_MAINTENANCE`.
 	Triggers pulumi.StringArrayInput
 }
 

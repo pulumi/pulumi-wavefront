@@ -122,8 +122,7 @@ class AlertTarget(pulumi.CustomResource):
         :param pulumi.Input[List[pulumi.Input[pulumi.InputType['AlertTargetRouteArgs']]]] routes: List of routing targets that this alert target will notify. See Route
         :param pulumi.Input[str] template: A mustache template that will form the body of the POST request, email and summary of the PagerDuty.
         :param pulumi.Input[List[pulumi.Input[str]]] triggers: A list of occurrences on which this webhook will be fired. Valid values are `ALERT_OPENED`,
-               `ALERT_UPDATED`, `ALERT_RESOLVED`, `ALERT_MAINTENANCE`, `ALERT_SNOOZED`, `ALERT_INVALID`, `ALERT_NO_LONGER_INVALID`,
-               `ALERT_RETRIGGERED`, `ALERT_NO_DATA`, `ALERT_NO_DATA_RESOLVED`, `ALERT_NO_DATA_MAINTENANCE`, `ALERT_SEVERITY_UPDATE`.
+               `ALERT_UPDATED`, `ALERT_RESOLVED`, `ALERT_MAINTENANCE`, `ALERT_SNOOZED`, `ALERT_NO_DATA`, `ALERT_NO_DATA_RESOLVED`, `ALERT_NO_DATA_MAINTENANCE`.
         """
         if __name__ is not None:
             warnings.warn("explicit use of __name__ is deprecated", DeprecationWarning)
@@ -204,8 +203,7 @@ class AlertTarget(pulumi.CustomResource):
         :param pulumi.Input[List[pulumi.Input[pulumi.InputType['AlertTargetRouteArgs']]]] routes: List of routing targets that this alert target will notify. See Route
         :param pulumi.Input[str] template: A mustache template that will form the body of the POST request, email and summary of the PagerDuty.
         :param pulumi.Input[List[pulumi.Input[str]]] triggers: A list of occurrences on which this webhook will be fired. Valid values are `ALERT_OPENED`,
-               `ALERT_UPDATED`, `ALERT_RESOLVED`, `ALERT_MAINTENANCE`, `ALERT_SNOOZED`, `ALERT_INVALID`, `ALERT_NO_LONGER_INVALID`,
-               `ALERT_RETRIGGERED`, `ALERT_NO_DATA`, `ALERT_NO_DATA_RESOLVED`, `ALERT_NO_DATA_MAINTENANCE`, `ALERT_SEVERITY_UPDATE`.
+               `ALERT_UPDATED`, `ALERT_RESOLVED`, `ALERT_MAINTENANCE`, `ALERT_SNOOZED`, `ALERT_NO_DATA`, `ALERT_NO_DATA_RESOLVED`, `ALERT_NO_DATA_MAINTENANCE`.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -317,8 +315,7 @@ class AlertTarget(pulumi.CustomResource):
     def triggers(self) -> pulumi.Output[List[str]]:
         """
         A list of occurrences on which this webhook will be fired. Valid values are `ALERT_OPENED`,
-        `ALERT_UPDATED`, `ALERT_RESOLVED`, `ALERT_MAINTENANCE`, `ALERT_SNOOZED`, `ALERT_INVALID`, `ALERT_NO_LONGER_INVALID`,
-        `ALERT_RETRIGGERED`, `ALERT_NO_DATA`, `ALERT_NO_DATA_RESOLVED`, `ALERT_NO_DATA_MAINTENANCE`, `ALERT_SEVERITY_UPDATE`.
+        `ALERT_UPDATED`, `ALERT_RESOLVED`, `ALERT_MAINTENANCE`, `ALERT_SNOOZED`, `ALERT_NO_DATA`, `ALERT_NO_DATA_RESOLVED`, `ALERT_NO_DATA_MAINTENANCE`.
         """
         return pulumi.get(self, "triggers")
 
