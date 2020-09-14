@@ -9,27 +9,6 @@ using Pulumi.Serialization;
 
 namespace Pulumi.Wavefront
 {
-    /// <summary>
-    /// Provides an External ID for use in AWS IAM Roles.  This allows External IDs to be created and deleted.
-    /// 
-    /// ## Example Usage
-    /// 
-    /// ```csharp
-    /// using Pulumi;
-    /// using Wavefront = Pulumi.Wavefront;
-    /// 
-    /// class MyStack : Stack
-    /// {
-    ///     public MyStack()
-    ///     {
-    ///         var externalId = new Wavefront.CloudIntegrationAwsExternalId("externalId", new Wavefront.CloudIntegrationAwsExternalIdArgs
-    ///         {
-    ///         });
-    ///     }
-    /// 
-    /// }
-    /// ```
-    /// </summary>
     public partial class CloudIntegrationAwsExternalId : Pulumi.CustomResource
     {
         /// <summary>

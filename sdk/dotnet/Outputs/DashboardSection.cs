@@ -13,13 +13,7 @@ namespace Pulumi.Wavefront.Outputs
     [OutputType]
     public sealed class DashboardSection
     {
-        /// <summary>
-        /// Name of this section
-        /// </summary>
         public readonly string Name;
-        /// <summary>
-        /// See dashboard section rows
-        /// </summary>
         public readonly ImmutableArray<Outputs.DashboardSectionRow> Rows;
 
         [OutputConstructor]

@@ -4,20 +4,6 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
-/**
- * Provides a Wavefront User Resource. This allows users to be created, updated, and deleted.
- *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as wavefront from "@pulumi/wavefront";
- *
- * const basic = new wavefront.User("basic", {
- *     email: "test+tftesting@example.com",
- * });
- * ```
- */
 export class User extends pulumi.CustomResource {
     /**
      * Get an existing User resource's state with the given name, ID, and optional extra
@@ -47,19 +33,8 @@ export class User extends pulumi.CustomResource {
     }
 
     public readonly customer!: pulumi.Output<string>;
-    /**
-     * The (unique) identifier of the user to create. Must be a valid email address
-     */
     public readonly email!: pulumi.Output<string>;
-    /**
-     * List of permission to grant to this user.  Valid options are
-     * `agentManagement`, `alertsManagement`, `dashboardManagement`, `embeddedCharts`, `eventsManagement`, `externalLinksManagement`,
-     * `hostTagManagement`, `metricsManagement`, `userManagement`
-     */
     public readonly permissions!: pulumi.Output<string[]>;
-    /**
-     * List of user groups to this user
-     */
     public readonly userGroups!: pulumi.Output<string[]>;
 
     /**
@@ -104,19 +79,8 @@ export class User extends pulumi.CustomResource {
  */
 export interface UserState {
     readonly customer?: pulumi.Input<string>;
-    /**
-     * The (unique) identifier of the user to create. Must be a valid email address
-     */
     readonly email?: pulumi.Input<string>;
-    /**
-     * List of permission to grant to this user.  Valid options are
-     * `agentManagement`, `alertsManagement`, `dashboardManagement`, `embeddedCharts`, `eventsManagement`, `externalLinksManagement`,
-     * `hostTagManagement`, `metricsManagement`, `userManagement`
-     */
     readonly permissions?: pulumi.Input<pulumi.Input<string>[]>;
-    /**
-     * List of user groups to this user
-     */
     readonly userGroups?: pulumi.Input<pulumi.Input<string>[]>;
 }
 
@@ -125,18 +89,7 @@ export interface UserState {
  */
 export interface UserArgs {
     readonly customer?: pulumi.Input<string>;
-    /**
-     * The (unique) identifier of the user to create. Must be a valid email address
-     */
     readonly email: pulumi.Input<string>;
-    /**
-     * List of permission to grant to this user.  Valid options are
-     * `agentManagement`, `alertsManagement`, `dashboardManagement`, `embeddedCharts`, `eventsManagement`, `externalLinksManagement`,
-     * `hostTagManagement`, `metricsManagement`, `userManagement`
-     */
     readonly permissions?: pulumi.Input<pulumi.Input<string>[]>;
-    /**
-     * List of user groups to this user
-     */
     readonly userGroups?: pulumi.Input<pulumi.Input<string>[]>;
 }

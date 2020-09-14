@@ -4,22 +4,6 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
-/**
- * Provides a Wavefront Derived Metric Resource. This allows derived metrics to be created,
- * updated, and deleted.
- *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as wavefront from "@pulumi/wavefront";
- *
- * const derived = new wavefront.DerivedMetric("derived", {
- *     minutes: 5,
- *     query: "aliasMetric(5, \"some.metric\")",
- * });
- * ```
- */
 export class DerivedMetric extends pulumi.CustomResource {
     /**
      * Get an existing DerivedMetric resource's state with the given name, ID, and optional extra
@@ -48,25 +32,10 @@ export class DerivedMetric extends pulumi.CustomResource {
         return obj['__pulumiType'] === DerivedMetric.__pulumiType;
     }
 
-    /**
-     * User-supplied additional explanatory information for the derived metric
-     */
     public readonly additionalInformation!: pulumi.Output<string | undefined>;
-    /**
-     * How frequently the query generating the derived metric is run
-     */
     public readonly minutes!: pulumi.Output<number>;
-    /**
-     * The name of the Derived Metric in Wavefront
-     */
     public readonly name!: pulumi.Output<string>;
-    /**
-     * A Wavefront query that is evaluated at regular intervals (default `1m`)
-     */
     public readonly query!: pulumi.Output<string>;
-    /**
-     * A set of tags to assign to this resource.
-     */
     public readonly tags!: pulumi.Output<string[] | undefined>;
 
     /**
@@ -115,25 +84,10 @@ export class DerivedMetric extends pulumi.CustomResource {
  * Input properties used for looking up and filtering DerivedMetric resources.
  */
 export interface DerivedMetricState {
-    /**
-     * User-supplied additional explanatory information for the derived metric
-     */
     readonly additionalInformation?: pulumi.Input<string>;
-    /**
-     * How frequently the query generating the derived metric is run
-     */
     readonly minutes?: pulumi.Input<number>;
-    /**
-     * The name of the Derived Metric in Wavefront
-     */
     readonly name?: pulumi.Input<string>;
-    /**
-     * A Wavefront query that is evaluated at regular intervals (default `1m`)
-     */
     readonly query?: pulumi.Input<string>;
-    /**
-     * A set of tags to assign to this resource.
-     */
     readonly tags?: pulumi.Input<pulumi.Input<string>[]>;
 }
 
@@ -141,24 +95,9 @@ export interface DerivedMetricState {
  * The set of arguments for constructing a DerivedMetric resource.
  */
 export interface DerivedMetricArgs {
-    /**
-     * User-supplied additional explanatory information for the derived metric
-     */
     readonly additionalInformation?: pulumi.Input<string>;
-    /**
-     * How frequently the query generating the derived metric is run
-     */
     readonly minutes: pulumi.Input<number>;
-    /**
-     * The name of the Derived Metric in Wavefront
-     */
     readonly name?: pulumi.Input<string>;
-    /**
-     * A Wavefront query that is evaluated at regular intervals (default `1m`)
-     */
     readonly query: pulumi.Input<string>;
-    /**
-     * A set of tags to assign to this resource.
-     */
     readonly tags?: pulumi.Input<pulumi.Input<string>[]>;
 }

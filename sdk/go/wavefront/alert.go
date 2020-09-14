@@ -10,84 +10,24 @@ import (
 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 )
 
-// Provides a Wavefront Alert resource.  This allows alerts to be created, updated, and deleted.
-//
-// ## Example Usage
-//
-// ```go
-// package main
-//
-// import (
-// 	"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront"
-// 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
-// )
-//
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := wavefront.NewAlert(ctx, "foobar", &wavefront.AlertArgs{
-// 			Condition:           pulumi.String("100-ts(\"cpu.usage_idle\", environment=preprod and cpu=cpu-total ) > 80"),
-// 			DisplayExpression:   pulumi.String("100-ts(\"cpu.usage_idle\", environment=preprod and cpu=cpu-total )"),
-// 			Minutes:             pulumi.Int(5),
-// 			ResolveAfterMinutes: pulumi.Int(5),
-// 			Severity:            pulumi.String("WARN"),
-// 			Tags: pulumi.StringArray{
-// 				pulumi.String("terraform"),
-// 				pulumi.String("test"),
-// 			},
-// 			Target: pulumi.String("test@example.com"),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
-// ```
 type Alert struct {
 	pulumi.CustomResourceState
 
-	// User-supplied additional explanatory information for this alert.
-	// Useful for linking runbooks, migrations...etc
-	AdditionalInformation pulumi.StringPtrOutput `pulumi:"additionalInformation"`
-	// The type of alert in Wavefront.  Either `CLASSIC` (default)
-	// or `THRESHOLD`
-	AlertType pulumi.StringPtrOutput `pulumi:"alertType"`
-	// A list of users or groups that can modify this resource.
-	CanModifies pulumi.StringArrayOutput `pulumi:"canModifies"`
-	// A list of users or groups that can view this resource.
-	CanViews pulumi.StringArrayOutput `pulumi:"canViews"`
-	// A Wavefront query that is evaluated at regular intervals (default 1m).
-	// The alert fires and notifications are triggered when data series matching this query evaluates
-	// to a non-zero value for a set number of consecutive minutes.
-	Condition pulumi.StringPtrOutput `pulumi:"condition"`
-	// a string->string map of `severity` to `condition`
-	// for which this alert will trigger.
-	Conditions pulumi.StringMapOutput `pulumi:"conditions"`
-	// A second query whose results are displayed in the alert user
-	// interface instead of the condition query.  This field is often used to display a version
-	// of the condition query with Boolean operators removed so that numerical values are plotted.
-	DisplayExpression pulumi.StringPtrOutput `pulumi:"displayExpression"`
-	// The number of consecutive minutes that a series matching the condition query must
-	// evaluate to "true" (non-zero value) before the alert fires.
-	Minutes pulumi.IntOutput `pulumi:"minutes"`
-	// The name of the alert as it is displayed in Wavefront.
-	Name pulumi.StringOutput `pulumi:"name"`
-	// How often to re-trigger a continually failing alert.
-	// If absent or <= 0, no re-triggering occur.
-	NotificationResendFrequencyMinutes pulumi.IntPtrOutput `pulumi:"notificationResendFrequencyMinutes"`
-	// The number of consecutive minutes that a firing series matching the condition
-	// query must evaluate to "false" (zero value) before the alert resolves.  When unset, this default sto
-	// the same value as `minutes`.
-	ResolveAfterMinutes pulumi.IntPtrOutput `pulumi:"resolveAfterMinutes"`
-	// - Severity of the alert, valid values are `INFO`, `SMOKE`, `WARN`, `SEVERE`.
-	Severity pulumi.StringPtrOutput `pulumi:"severity"`
-	// A set of tags to assign to this resource.
-	Tags pulumi.StringArrayOutput `pulumi:"tags"`
-	// A comma-separated list of the email address or integration endpoint
-	// (such as PagerDuty or web hook) to notify when the alert status changes.
-	Target pulumi.StringPtrOutput `pulumi:"target"`
-	// Targets for severity
-	ThresholdTargets pulumi.StringMapOutput `pulumi:"thresholdTargets"`
+	AdditionalInformation              pulumi.StringPtrOutput   `pulumi:"additionalInformation"`
+	AlertType                          pulumi.StringPtrOutput   `pulumi:"alertType"`
+	CanModifies                        pulumi.StringArrayOutput `pulumi:"canModifies"`
+	CanViews                           pulumi.StringArrayOutput `pulumi:"canViews"`
+	Condition                          pulumi.StringPtrOutput   `pulumi:"condition"`
+	Conditions                         pulumi.StringMapOutput   `pulumi:"conditions"`
+	DisplayExpression                  pulumi.StringPtrOutput   `pulumi:"displayExpression"`
+	Minutes                            pulumi.IntOutput         `pulumi:"minutes"`
+	Name                               pulumi.StringOutput      `pulumi:"name"`
+	NotificationResendFrequencyMinutes pulumi.IntPtrOutput      `pulumi:"notificationResendFrequencyMinutes"`
+	ResolveAfterMinutes                pulumi.IntPtrOutput      `pulumi:"resolveAfterMinutes"`
+	Severity                           pulumi.StringPtrOutput   `pulumi:"severity"`
+	Tags                               pulumi.StringArrayOutput `pulumi:"tags"`
+	Target                             pulumi.StringPtrOutput   `pulumi:"target"`
+	ThresholdTargets                   pulumi.StringMapOutput   `pulumi:"thresholdTargets"`
 }
 
 // NewAlert registers a new resource with the given unique name, arguments, and options.
@@ -124,93 +64,39 @@ func GetAlert(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering Alert resources.
 type alertState struct {
-	// User-supplied additional explanatory information for this alert.
-	// Useful for linking runbooks, migrations...etc
-	AdditionalInformation *string `pulumi:"additionalInformation"`
-	// The type of alert in Wavefront.  Either `CLASSIC` (default)
-	// or `THRESHOLD`
-	AlertType *string `pulumi:"alertType"`
-	// A list of users or groups that can modify this resource.
-	CanModifies []string `pulumi:"canModifies"`
-	// A list of users or groups that can view this resource.
-	CanViews []string `pulumi:"canViews"`
-	// A Wavefront query that is evaluated at regular intervals (default 1m).
-	// The alert fires and notifications are triggered when data series matching this query evaluates
-	// to a non-zero value for a set number of consecutive minutes.
-	Condition *string `pulumi:"condition"`
-	// a string->string map of `severity` to `condition`
-	// for which this alert will trigger.
-	Conditions map[string]string `pulumi:"conditions"`
-	// A second query whose results are displayed in the alert user
-	// interface instead of the condition query.  This field is often used to display a version
-	// of the condition query with Boolean operators removed so that numerical values are plotted.
-	DisplayExpression *string `pulumi:"displayExpression"`
-	// The number of consecutive minutes that a series matching the condition query must
-	// evaluate to "true" (non-zero value) before the alert fires.
-	Minutes *int `pulumi:"minutes"`
-	// The name of the alert as it is displayed in Wavefront.
-	Name *string `pulumi:"name"`
-	// How often to re-trigger a continually failing alert.
-	// If absent or <= 0, no re-triggering occur.
-	NotificationResendFrequencyMinutes *int `pulumi:"notificationResendFrequencyMinutes"`
-	// The number of consecutive minutes that a firing series matching the condition
-	// query must evaluate to "false" (zero value) before the alert resolves.  When unset, this default sto
-	// the same value as `minutes`.
-	ResolveAfterMinutes *int `pulumi:"resolveAfterMinutes"`
-	// - Severity of the alert, valid values are `INFO`, `SMOKE`, `WARN`, `SEVERE`.
-	Severity *string `pulumi:"severity"`
-	// A set of tags to assign to this resource.
-	Tags []string `pulumi:"tags"`
-	// A comma-separated list of the email address or integration endpoint
-	// (such as PagerDuty or web hook) to notify when the alert status changes.
-	Target *string `pulumi:"target"`
-	// Targets for severity
-	ThresholdTargets map[string]string `pulumi:"thresholdTargets"`
+	AdditionalInformation              *string           `pulumi:"additionalInformation"`
+	AlertType                          *string           `pulumi:"alertType"`
+	CanModifies                        []string          `pulumi:"canModifies"`
+	CanViews                           []string          `pulumi:"canViews"`
+	Condition                          *string           `pulumi:"condition"`
+	Conditions                         map[string]string `pulumi:"conditions"`
+	DisplayExpression                  *string           `pulumi:"displayExpression"`
+	Minutes                            *int              `pulumi:"minutes"`
+	Name                               *string           `pulumi:"name"`
+	NotificationResendFrequencyMinutes *int              `pulumi:"notificationResendFrequencyMinutes"`
+	ResolveAfterMinutes                *int              `pulumi:"resolveAfterMinutes"`
+	Severity                           *string           `pulumi:"severity"`
+	Tags                               []string          `pulumi:"tags"`
+	Target                             *string           `pulumi:"target"`
+	ThresholdTargets                   map[string]string `pulumi:"thresholdTargets"`
 }
 
 type AlertState struct {
-	// User-supplied additional explanatory information for this alert.
-	// Useful for linking runbooks, migrations...etc
-	AdditionalInformation pulumi.StringPtrInput
-	// The type of alert in Wavefront.  Either `CLASSIC` (default)
-	// or `THRESHOLD`
-	AlertType pulumi.StringPtrInput
-	// A list of users or groups that can modify this resource.
-	CanModifies pulumi.StringArrayInput
-	// A list of users or groups that can view this resource.
-	CanViews pulumi.StringArrayInput
-	// A Wavefront query that is evaluated at regular intervals (default 1m).
-	// The alert fires and notifications are triggered when data series matching this query evaluates
-	// to a non-zero value for a set number of consecutive minutes.
-	Condition pulumi.StringPtrInput
-	// a string->string map of `severity` to `condition`
-	// for which this alert will trigger.
-	Conditions pulumi.StringMapInput
-	// A second query whose results are displayed in the alert user
-	// interface instead of the condition query.  This field is often used to display a version
-	// of the condition query with Boolean operators removed so that numerical values are plotted.
-	DisplayExpression pulumi.StringPtrInput
-	// The number of consecutive minutes that a series matching the condition query must
-	// evaluate to "true" (non-zero value) before the alert fires.
-	Minutes pulumi.IntPtrInput
-	// The name of the alert as it is displayed in Wavefront.
-	Name pulumi.StringPtrInput
-	// How often to re-trigger a continually failing alert.
-	// If absent or <= 0, no re-triggering occur.
+	AdditionalInformation              pulumi.StringPtrInput
+	AlertType                          pulumi.StringPtrInput
+	CanModifies                        pulumi.StringArrayInput
+	CanViews                           pulumi.StringArrayInput
+	Condition                          pulumi.StringPtrInput
+	Conditions                         pulumi.StringMapInput
+	DisplayExpression                  pulumi.StringPtrInput
+	Minutes                            pulumi.IntPtrInput
+	Name                               pulumi.StringPtrInput
 	NotificationResendFrequencyMinutes pulumi.IntPtrInput
-	// The number of consecutive minutes that a firing series matching the condition
-	// query must evaluate to "false" (zero value) before the alert resolves.  When unset, this default sto
-	// the same value as `minutes`.
-	ResolveAfterMinutes pulumi.IntPtrInput
-	// - Severity of the alert, valid values are `INFO`, `SMOKE`, `WARN`, `SEVERE`.
-	Severity pulumi.StringPtrInput
-	// A set of tags to assign to this resource.
-	Tags pulumi.StringArrayInput
-	// A comma-separated list of the email address or integration endpoint
-	// (such as PagerDuty or web hook) to notify when the alert status changes.
-	Target pulumi.StringPtrInput
-	// Targets for severity
-	ThresholdTargets pulumi.StringMapInput
+	ResolveAfterMinutes                pulumi.IntPtrInput
+	Severity                           pulumi.StringPtrInput
+	Tags                               pulumi.StringArrayInput
+	Target                             pulumi.StringPtrInput
+	ThresholdTargets                   pulumi.StringMapInput
 }
 
 func (AlertState) ElementType() reflect.Type {
@@ -218,94 +104,40 @@ func (AlertState) ElementType() reflect.Type {
 }
 
 type alertArgs struct {
-	// User-supplied additional explanatory information for this alert.
-	// Useful for linking runbooks, migrations...etc
-	AdditionalInformation *string `pulumi:"additionalInformation"`
-	// The type of alert in Wavefront.  Either `CLASSIC` (default)
-	// or `THRESHOLD`
-	AlertType *string `pulumi:"alertType"`
-	// A list of users or groups that can modify this resource.
-	CanModifies []string `pulumi:"canModifies"`
-	// A list of users or groups that can view this resource.
-	CanViews []string `pulumi:"canViews"`
-	// A Wavefront query that is evaluated at regular intervals (default 1m).
-	// The alert fires and notifications are triggered when data series matching this query evaluates
-	// to a non-zero value for a set number of consecutive minutes.
-	Condition *string `pulumi:"condition"`
-	// a string->string map of `severity` to `condition`
-	// for which this alert will trigger.
-	Conditions map[string]string `pulumi:"conditions"`
-	// A second query whose results are displayed in the alert user
-	// interface instead of the condition query.  This field is often used to display a version
-	// of the condition query with Boolean operators removed so that numerical values are plotted.
-	DisplayExpression *string `pulumi:"displayExpression"`
-	// The number of consecutive minutes that a series matching the condition query must
-	// evaluate to "true" (non-zero value) before the alert fires.
-	Minutes int `pulumi:"minutes"`
-	// The name of the alert as it is displayed in Wavefront.
-	Name *string `pulumi:"name"`
-	// How often to re-trigger a continually failing alert.
-	// If absent or <= 0, no re-triggering occur.
-	NotificationResendFrequencyMinutes *int `pulumi:"notificationResendFrequencyMinutes"`
-	// The number of consecutive minutes that a firing series matching the condition
-	// query must evaluate to "false" (zero value) before the alert resolves.  When unset, this default sto
-	// the same value as `minutes`.
-	ResolveAfterMinutes *int `pulumi:"resolveAfterMinutes"`
-	// - Severity of the alert, valid values are `INFO`, `SMOKE`, `WARN`, `SEVERE`.
-	Severity *string `pulumi:"severity"`
-	// A set of tags to assign to this resource.
-	Tags []string `pulumi:"tags"`
-	// A comma-separated list of the email address or integration endpoint
-	// (such as PagerDuty or web hook) to notify when the alert status changes.
-	Target *string `pulumi:"target"`
-	// Targets for severity
-	ThresholdTargets map[string]string `pulumi:"thresholdTargets"`
+	AdditionalInformation              *string           `pulumi:"additionalInformation"`
+	AlertType                          *string           `pulumi:"alertType"`
+	CanModifies                        []string          `pulumi:"canModifies"`
+	CanViews                           []string          `pulumi:"canViews"`
+	Condition                          *string           `pulumi:"condition"`
+	Conditions                         map[string]string `pulumi:"conditions"`
+	DisplayExpression                  *string           `pulumi:"displayExpression"`
+	Minutes                            int               `pulumi:"minutes"`
+	Name                               *string           `pulumi:"name"`
+	NotificationResendFrequencyMinutes *int              `pulumi:"notificationResendFrequencyMinutes"`
+	ResolveAfterMinutes                *int              `pulumi:"resolveAfterMinutes"`
+	Severity                           *string           `pulumi:"severity"`
+	Tags                               []string          `pulumi:"tags"`
+	Target                             *string           `pulumi:"target"`
+	ThresholdTargets                   map[string]string `pulumi:"thresholdTargets"`
 }
 
 // The set of arguments for constructing a Alert resource.
 type AlertArgs struct {
-	// User-supplied additional explanatory information for this alert.
-	// Useful for linking runbooks, migrations...etc
-	AdditionalInformation pulumi.StringPtrInput
-	// The type of alert in Wavefront.  Either `CLASSIC` (default)
-	// or `THRESHOLD`
-	AlertType pulumi.StringPtrInput
-	// A list of users or groups that can modify this resource.
-	CanModifies pulumi.StringArrayInput
-	// A list of users or groups that can view this resource.
-	CanViews pulumi.StringArrayInput
-	// A Wavefront query that is evaluated at regular intervals (default 1m).
-	// The alert fires and notifications are triggered when data series matching this query evaluates
-	// to a non-zero value for a set number of consecutive minutes.
-	Condition pulumi.StringPtrInput
-	// a string->string map of `severity` to `condition`
-	// for which this alert will trigger.
-	Conditions pulumi.StringMapInput
-	// A second query whose results are displayed in the alert user
-	// interface instead of the condition query.  This field is often used to display a version
-	// of the condition query with Boolean operators removed so that numerical values are plotted.
-	DisplayExpression pulumi.StringPtrInput
-	// The number of consecutive minutes that a series matching the condition query must
-	// evaluate to "true" (non-zero value) before the alert fires.
-	Minutes pulumi.IntInput
-	// The name of the alert as it is displayed in Wavefront.
-	Name pulumi.StringPtrInput
-	// How often to re-trigger a continually failing alert.
-	// If absent or <= 0, no re-triggering occur.
+	AdditionalInformation              pulumi.StringPtrInput
+	AlertType                          pulumi.StringPtrInput
+	CanModifies                        pulumi.StringArrayInput
+	CanViews                           pulumi.StringArrayInput
+	Condition                          pulumi.StringPtrInput
+	Conditions                         pulumi.StringMapInput
+	DisplayExpression                  pulumi.StringPtrInput
+	Minutes                            pulumi.IntInput
+	Name                               pulumi.StringPtrInput
 	NotificationResendFrequencyMinutes pulumi.IntPtrInput
-	// The number of consecutive minutes that a firing series matching the condition
-	// query must evaluate to "false" (zero value) before the alert resolves.  When unset, this default sto
-	// the same value as `minutes`.
-	ResolveAfterMinutes pulumi.IntPtrInput
-	// - Severity of the alert, valid values are `INFO`, `SMOKE`, `WARN`, `SEVERE`.
-	Severity pulumi.StringPtrInput
-	// A set of tags to assign to this resource.
-	Tags pulumi.StringArrayInput
-	// A comma-separated list of the email address or integration endpoint
-	// (such as PagerDuty or web hook) to notify when the alert status changes.
-	Target pulumi.StringPtrInput
-	// Targets for severity
-	ThresholdTargets pulumi.StringMapInput
+	ResolveAfterMinutes                pulumi.IntPtrInput
+	Severity                           pulumi.StringPtrInput
+	Tags                               pulumi.StringArrayInput
+	Target                             pulumi.StringPtrInput
+	ThresholdTargets                   pulumi.StringMapInput
 }
 
 func (AlertArgs) ElementType() reflect.Type {

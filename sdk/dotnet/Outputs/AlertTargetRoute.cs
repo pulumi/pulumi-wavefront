@@ -14,9 +14,6 @@ namespace Pulumi.Wavefront.Outputs
     public sealed class AlertTargetRoute
     {
         public readonly ImmutableDictionary<string, string>? Filter;
-        /// <summary>
-        /// The notification method used for notification target. One of `WEBHOOK`, `EMAIL`, `PAGERDUTY`.
-        /// </summary>
         public readonly string Method;
         public readonly string Target;
 

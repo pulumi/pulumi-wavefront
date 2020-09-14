@@ -9,52 +9,17 @@ using Pulumi.Serialization;
 
 namespace Pulumi.Wavefront
 {
-    /// <summary>
-    /// Provides a Wavefront Role Resource. This allows user groups to be created, updated, and deleted.
-    /// 
-    /// ## Example Usage
-    /// 
-    /// ```csharp
-    /// using Pulumi;
-    /// using Wavefront = Pulumi.Wavefront;
-    /// 
-    /// class MyStack : Stack
-    /// {
-    ///     public MyStack()
-    ///     {
-    ///         var role = new Wavefront.Role("role", new Wavefront.RoleArgs
-    ///         {
-    ///         });
-    ///     }
-    /// 
-    /// }
-    /// ```
-    /// </summary>
     public partial class Role : Pulumi.CustomResource
     {
-        /// <summary>
-        /// A list of user groups or accounts to assign to this role.
-        /// </summary>
         [Output("assignees")]
         public Output<ImmutableArray<string>> Assignees { get; private set; } = null!;
 
-        /// <summary>
-        /// A short description of the user group
-        /// </summary>
         [Output("description")]
         public Output<string?> Description { get; private set; } = null!;
 
-        /// <summary>
-        /// The name of the user group
-        /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
 
-        /// <summary>
-        /// A list of permissions to assign to this role. Valid options are 
-        /// `agent_management`, `alerts_management`, `dashboard_management`, `embedded_charts`, `events_management`, `external_links_management`,
-        /// `host_tag_management`, `metrics_management`, `user_management`
-        /// </summary>
         [Output("permissions")]
         public Output<ImmutableArray<string>> Permissions { get; private set; } = null!;
 
@@ -106,36 +71,20 @@ namespace Pulumi.Wavefront
     {
         [Input("assignees")]
         private InputList<string>? _assignees;
-
-        /// <summary>
-        /// A list of user groups or accounts to assign to this role.
-        /// </summary>
         public InputList<string> Assignees
         {
             get => _assignees ?? (_assignees = new InputList<string>());
             set => _assignees = value;
         }
 
-        /// <summary>
-        /// A short description of the user group
-        /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
-        /// <summary>
-        /// The name of the user group
-        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         [Input("permissions")]
         private InputList<string>? _permissions;
-
-        /// <summary>
-        /// A list of permissions to assign to this role. Valid options are 
-        /// `agent_management`, `alerts_management`, `dashboard_management`, `embedded_charts`, `events_management`, `external_links_management`,
-        /// `host_tag_management`, `metrics_management`, `user_management`
-        /// </summary>
         public InputList<string> Permissions
         {
             get => _permissions ?? (_permissions = new InputList<string>());
@@ -151,36 +100,20 @@ namespace Pulumi.Wavefront
     {
         [Input("assignees")]
         private InputList<string>? _assignees;
-
-        /// <summary>
-        /// A list of user groups or accounts to assign to this role.
-        /// </summary>
         public InputList<string> Assignees
         {
             get => _assignees ?? (_assignees = new InputList<string>());
             set => _assignees = value;
         }
 
-        /// <summary>
-        /// A short description of the user group
-        /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
-        /// <summary>
-        /// The name of the user group
-        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         [Input("permissions")]
         private InputList<string>? _permissions;
-
-        /// <summary>
-        /// A list of permissions to assign to this role. Valid options are 
-        /// `agent_management`, `alerts_management`, `dashboard_management`, `embedded_charts`, `events_management`, `external_links_management`,
-        /// `host_tag_management`, `metrics_management`, `user_management`
-        /// </summary>
         public InputList<string> Permissions
         {
             get => _permissions ?? (_permissions = new InputList<string>());

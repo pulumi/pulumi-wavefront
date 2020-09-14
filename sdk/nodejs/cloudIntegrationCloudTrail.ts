@@ -4,25 +4,6 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
-/**
- * Provides a Wavefront Cloud Integration for CloudTrail. This allows CloudTrail cloud integrations to be created,
- * updated, and deleted.
- *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as wavefront from "@pulumi/wavefront";
- *
- * const extId = new wavefront.CloudIntegrationAwsExternalId("extId", {});
- * const cloudtrail = new wavefront.CloudIntegrationCloudTrail("cloudtrail", {
- *     roleArn: "arn:aws::1234567:role/example-arn",
- *     externalId: extId.id,
- *     region: "us-west-2",
- *     bucketName: "example-s3-bucket",
- * });
- * ```
- */
 export class CloudIntegrationCloudTrail extends pulumi.CustomResource {
     /**
      * Get an existing CloudIntegrationCloudTrail resource's state with the given name, ID, and optional extra
@@ -51,49 +32,16 @@ export class CloudIntegrationCloudTrail extends pulumi.CustomResource {
         return obj['__pulumiType'] === CloudIntegrationCloudTrail.__pulumiType;
     }
 
-    /**
-     * A list of point tag key-values to add to every point ingested using this integration
-     */
     public readonly additionalTags!: pulumi.Output<{[key: string]: string} | undefined>;
-    /**
-     * Name of the S3 bucket where CloudTrail logs are stored
-     */
     public readonly bucketName!: pulumi.Output<string>;
-    /**
-     * The Role ARN that the customer has created in AWS IAM to allow access to Wavefront
-     */
     public readonly externalId!: pulumi.Output<string>;
-    /**
-     * Rule to filter CloudTrail log event
-     */
     public readonly filterRule!: pulumi.Output<string | undefined>;
-    /**
-     * Forces this resource to save, even if errors are present
-     */
     public readonly forceSave!: pulumi.Output<boolean | undefined>;
-    /**
-     * The human-readable name of this integration
-     */
     public readonly name!: pulumi.Output<string>;
-    /**
-     * The common prefix, if any, appended to all CloudTrail log files.
-     */
     public readonly prefix!: pulumi.Output<string | undefined>;
-    /**
-     * The AWS region of the S3 bucket where CloudTrail logs are stored
-     */
     public readonly region!: pulumi.Output<string>;
-    /**
-     * The external id corresponding to the Role ARN
-     */
     public readonly roleArn!: pulumi.Output<string>;
-    /**
-     * A value denoting which cloud service this service integrates with
-     */
     public readonly service!: pulumi.Output<string>;
-    /**
-     * How often, in minutes, to refresh the service
-     */
     public readonly serviceRefreshRateInMinutes!: pulumi.Output<number | undefined>;
 
     /**
@@ -163,49 +111,16 @@ export class CloudIntegrationCloudTrail extends pulumi.CustomResource {
  * Input properties used for looking up and filtering CloudIntegrationCloudTrail resources.
  */
 export interface CloudIntegrationCloudTrailState {
-    /**
-     * A list of point tag key-values to add to every point ingested using this integration
-     */
     readonly additionalTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
-    /**
-     * Name of the S3 bucket where CloudTrail logs are stored
-     */
     readonly bucketName?: pulumi.Input<string>;
-    /**
-     * The Role ARN that the customer has created in AWS IAM to allow access to Wavefront
-     */
     readonly externalId?: pulumi.Input<string>;
-    /**
-     * Rule to filter CloudTrail log event
-     */
     readonly filterRule?: pulumi.Input<string>;
-    /**
-     * Forces this resource to save, even if errors are present
-     */
     readonly forceSave?: pulumi.Input<boolean>;
-    /**
-     * The human-readable name of this integration
-     */
     readonly name?: pulumi.Input<string>;
-    /**
-     * The common prefix, if any, appended to all CloudTrail log files.
-     */
     readonly prefix?: pulumi.Input<string>;
-    /**
-     * The AWS region of the S3 bucket where CloudTrail logs are stored
-     */
     readonly region?: pulumi.Input<string>;
-    /**
-     * The external id corresponding to the Role ARN
-     */
     readonly roleArn?: pulumi.Input<string>;
-    /**
-     * A value denoting which cloud service this service integrates with
-     */
     readonly service?: pulumi.Input<string>;
-    /**
-     * How often, in minutes, to refresh the service
-     */
     readonly serviceRefreshRateInMinutes?: pulumi.Input<number>;
 }
 
@@ -213,48 +128,15 @@ export interface CloudIntegrationCloudTrailState {
  * The set of arguments for constructing a CloudIntegrationCloudTrail resource.
  */
 export interface CloudIntegrationCloudTrailArgs {
-    /**
-     * A list of point tag key-values to add to every point ingested using this integration
-     */
     readonly additionalTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
-    /**
-     * Name of the S3 bucket where CloudTrail logs are stored
-     */
     readonly bucketName: pulumi.Input<string>;
-    /**
-     * The Role ARN that the customer has created in AWS IAM to allow access to Wavefront
-     */
     readonly externalId: pulumi.Input<string>;
-    /**
-     * Rule to filter CloudTrail log event
-     */
     readonly filterRule?: pulumi.Input<string>;
-    /**
-     * Forces this resource to save, even if errors are present
-     */
     readonly forceSave?: pulumi.Input<boolean>;
-    /**
-     * The human-readable name of this integration
-     */
     readonly name?: pulumi.Input<string>;
-    /**
-     * The common prefix, if any, appended to all CloudTrail log files.
-     */
     readonly prefix?: pulumi.Input<string>;
-    /**
-     * The AWS region of the S3 bucket where CloudTrail logs are stored
-     */
     readonly region: pulumi.Input<string>;
-    /**
-     * The external id corresponding to the Role ARN
-     */
     readonly roleArn: pulumi.Input<string>;
-    /**
-     * A value denoting which cloud service this service integrates with
-     */
     readonly service: pulumi.Input<string>;
-    /**
-     * How often, in minutes, to refresh the service
-     */
     readonly serviceRefreshRateInMinutes?: pulumi.Input<number>;
 }

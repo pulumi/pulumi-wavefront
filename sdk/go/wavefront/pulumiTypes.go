@@ -12,9 +12,8 @@ import (
 
 type AlertTargetRoute struct {
 	Filter map[string]string `pulumi:"filter"`
-	// The notification method used for notification target. One of `WEBHOOK`, `EMAIL`, `PAGERDUTY`.
-	Method string `pulumi:"method"`
-	Target string `pulumi:"target"`
+	Method string            `pulumi:"method"`
+	Target string            `pulumi:"target"`
 }
 
 // AlertTargetRouteInput is an input type that accepts AlertTargetRouteArgs and AlertTargetRouteOutput values.
@@ -30,9 +29,8 @@ type AlertTargetRouteInput interface {
 
 type AlertTargetRouteArgs struct {
 	Filter pulumi.StringMapInput `pulumi:"filter"`
-	// The notification method used for notification target. One of `WEBHOOK`, `EMAIL`, `PAGERDUTY`.
-	Method pulumi.StringInput `pulumi:"method"`
-	Target pulumi.StringInput `pulumi:"target"`
+	Method pulumi.StringInput    `pulumi:"method"`
+	Target pulumi.StringInput    `pulumi:"target"`
 }
 
 func (AlertTargetRouteArgs) ElementType() reflect.Type {
@@ -90,7 +88,6 @@ func (o AlertTargetRouteOutput) Filter() pulumi.StringMapOutput {
 	return o.ApplyT(func(v AlertTargetRoute) map[string]string { return v.Filter }).(pulumi.StringMapOutput)
 }
 
-// The notification method used for notification target. One of `WEBHOOK`, `EMAIL`, `PAGERDUTY`.
 func (o AlertTargetRouteOutput) Method() pulumi.StringOutput {
 	return o.ApplyT(func(v AlertTargetRoute) string { return v.Method }).(pulumi.StringOutput)
 }
@@ -120,9 +117,7 @@ func (o AlertTargetRouteArrayOutput) Index(i pulumi.IntInput) AlertTargetRouteOu
 }
 
 type CloudIntegrationNewRelicMetricFilter struct {
-	// The name of a NewRelic App
-	AppName string `pulumi:"appName"`
-	// A regular expression that a metric name must match (case-insensitively) in order to be ingested
+	AppName           string `pulumi:"appName"`
 	MetricFilterRegex string `pulumi:"metricFilterRegex"`
 }
 
@@ -138,9 +133,7 @@ type CloudIntegrationNewRelicMetricFilterInput interface {
 }
 
 type CloudIntegrationNewRelicMetricFilterArgs struct {
-	// The name of a NewRelic App
-	AppName pulumi.StringInput `pulumi:"appName"`
-	// A regular expression that a metric name must match (case-insensitively) in order to be ingested
+	AppName           pulumi.StringInput `pulumi:"appName"`
 	MetricFilterRegex pulumi.StringInput `pulumi:"metricFilterRegex"`
 }
 
@@ -195,12 +188,10 @@ func (o CloudIntegrationNewRelicMetricFilterOutput) ToCloudIntegrationNewRelicMe
 	return o
 }
 
-// The name of a NewRelic App
 func (o CloudIntegrationNewRelicMetricFilterOutput) AppName() pulumi.StringOutput {
 	return o.ApplyT(func(v CloudIntegrationNewRelicMetricFilter) string { return v.AppName }).(pulumi.StringOutput)
 }
 
-// A regular expression that a metric name must match (case-insensitively) in order to be ingested
 func (o CloudIntegrationNewRelicMetricFilterOutput) MetricFilterRegex() pulumi.StringOutput {
 	return o.ApplyT(func(v CloudIntegrationNewRelicMetricFilter) string { return v.MetricFilterRegex }).(pulumi.StringOutput)
 }
@@ -226,25 +217,14 @@ func (o CloudIntegrationNewRelicMetricFilterArrayOutput) Index(i pulumi.IntInput
 }
 
 type DashboardParameterDetail struct {
-	// The default value of the parameter
-	DefaultValue string `pulumi:"defaultValue"`
-	// For `DYNAMIC` parameter types, the type of the field. Valid options are `SOURCE`,
-	// `SOURCE_TAG`, `METRIC_NAME`, `TAG_KEY`, `MATCHING_SOURCE_TAG`
-	DynamicFieldType *string `pulumi:"dynamicFieldType"`
-	// If `true` the parameter will only be shown on the edit view of the dashboard
-	HideFromView bool `pulumi:"hideFromView"`
-	// The label for the parameter
-	Label string `pulumi:"label"`
-	// The name of the parameters
-	Name string `pulumi:"name"`
-	// The type of the parameter. `SIMPLE`, `LIST`, or `DYNAMIC`
-	ParameterType string `pulumi:"parameterType"`
-	// For `DYNAMIC` parameter types, the query to execute to return values
-	QueryValue *string `pulumi:"queryValue"`
-	// for `TAG_KEY` dynamic field types, the tag key to return
-	TagKey *string `pulumi:"tagKey"`
-	// A string->string map.  At least one of the keys must match the value of
-	// `defaultValue`
+	DefaultValue            string            `pulumi:"defaultValue"`
+	DynamicFieldType        *string           `pulumi:"dynamicFieldType"`
+	HideFromView            bool              `pulumi:"hideFromView"`
+	Label                   string            `pulumi:"label"`
+	Name                    string            `pulumi:"name"`
+	ParameterType           string            `pulumi:"parameterType"`
+	QueryValue              *string           `pulumi:"queryValue"`
+	TagKey                  *string           `pulumi:"tagKey"`
 	ValuesToReadableStrings map[string]string `pulumi:"valuesToReadableStrings"`
 }
 
@@ -260,25 +240,14 @@ type DashboardParameterDetailInput interface {
 }
 
 type DashboardParameterDetailArgs struct {
-	// The default value of the parameter
-	DefaultValue pulumi.StringInput `pulumi:"defaultValue"`
-	// For `DYNAMIC` parameter types, the type of the field. Valid options are `SOURCE`,
-	// `SOURCE_TAG`, `METRIC_NAME`, `TAG_KEY`, `MATCHING_SOURCE_TAG`
-	DynamicFieldType pulumi.StringPtrInput `pulumi:"dynamicFieldType"`
-	// If `true` the parameter will only be shown on the edit view of the dashboard
-	HideFromView pulumi.BoolInput `pulumi:"hideFromView"`
-	// The label for the parameter
-	Label pulumi.StringInput `pulumi:"label"`
-	// The name of the parameters
-	Name pulumi.StringInput `pulumi:"name"`
-	// The type of the parameter. `SIMPLE`, `LIST`, or `DYNAMIC`
-	ParameterType pulumi.StringInput `pulumi:"parameterType"`
-	// For `DYNAMIC` parameter types, the query to execute to return values
-	QueryValue pulumi.StringPtrInput `pulumi:"queryValue"`
-	// for `TAG_KEY` dynamic field types, the tag key to return
-	TagKey pulumi.StringPtrInput `pulumi:"tagKey"`
-	// A string->string map.  At least one of the keys must match the value of
-	// `defaultValue`
+	DefaultValue            pulumi.StringInput    `pulumi:"defaultValue"`
+	DynamicFieldType        pulumi.StringPtrInput `pulumi:"dynamicFieldType"`
+	HideFromView            pulumi.BoolInput      `pulumi:"hideFromView"`
+	Label                   pulumi.StringInput    `pulumi:"label"`
+	Name                    pulumi.StringInput    `pulumi:"name"`
+	ParameterType           pulumi.StringInput    `pulumi:"parameterType"`
+	QueryValue              pulumi.StringPtrInput `pulumi:"queryValue"`
+	TagKey                  pulumi.StringPtrInput `pulumi:"tagKey"`
 	ValuesToReadableStrings pulumi.StringMapInput `pulumi:"valuesToReadableStrings"`
 }
 
@@ -333,49 +302,38 @@ func (o DashboardParameterDetailOutput) ToDashboardParameterDetailOutputWithCont
 	return o
 }
 
-// The default value of the parameter
 func (o DashboardParameterDetailOutput) DefaultValue() pulumi.StringOutput {
 	return o.ApplyT(func(v DashboardParameterDetail) string { return v.DefaultValue }).(pulumi.StringOutput)
 }
 
-// For `DYNAMIC` parameter types, the type of the field. Valid options are `SOURCE`,
-// `SOURCE_TAG`, `METRIC_NAME`, `TAG_KEY`, `MATCHING_SOURCE_TAG`
 func (o DashboardParameterDetailOutput) DynamicFieldType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DashboardParameterDetail) *string { return v.DynamicFieldType }).(pulumi.StringPtrOutput)
 }
 
-// If `true` the parameter will only be shown on the edit view of the dashboard
 func (o DashboardParameterDetailOutput) HideFromView() pulumi.BoolOutput {
 	return o.ApplyT(func(v DashboardParameterDetail) bool { return v.HideFromView }).(pulumi.BoolOutput)
 }
 
-// The label for the parameter
 func (o DashboardParameterDetailOutput) Label() pulumi.StringOutput {
 	return o.ApplyT(func(v DashboardParameterDetail) string { return v.Label }).(pulumi.StringOutput)
 }
 
-// The name of the parameters
 func (o DashboardParameterDetailOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v DashboardParameterDetail) string { return v.Name }).(pulumi.StringOutput)
 }
 
-// The type of the parameter. `SIMPLE`, `LIST`, or `DYNAMIC`
 func (o DashboardParameterDetailOutput) ParameterType() pulumi.StringOutput {
 	return o.ApplyT(func(v DashboardParameterDetail) string { return v.ParameterType }).(pulumi.StringOutput)
 }
 
-// For `DYNAMIC` parameter types, the query to execute to return values
 func (o DashboardParameterDetailOutput) QueryValue() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DashboardParameterDetail) *string { return v.QueryValue }).(pulumi.StringPtrOutput)
 }
 
-// for `TAG_KEY` dynamic field types, the tag key to return
 func (o DashboardParameterDetailOutput) TagKey() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DashboardParameterDetail) *string { return v.TagKey }).(pulumi.StringPtrOutput)
 }
 
-// A string->string map.  At least one of the keys must match the value of
-// `defaultValue`
 func (o DashboardParameterDetailOutput) ValuesToReadableStrings() pulumi.StringMapOutput {
 	return o.ApplyT(func(v DashboardParameterDetail) map[string]string { return v.ValuesToReadableStrings }).(pulumi.StringMapOutput)
 }
@@ -401,9 +359,7 @@ func (o DashboardParameterDetailArrayOutput) Index(i pulumi.IntInput) DashboardP
 }
 
 type DashboardSection struct {
-	// Name of this section
-	Name string `pulumi:"name"`
-	// See dashboard section rows
+	Name string                `pulumi:"name"`
 	Rows []DashboardSectionRow `pulumi:"rows"`
 }
 
@@ -419,9 +375,7 @@ type DashboardSectionInput interface {
 }
 
 type DashboardSectionArgs struct {
-	// Name of this section
-	Name pulumi.StringInput `pulumi:"name"`
-	// See dashboard section rows
+	Name pulumi.StringInput            `pulumi:"name"`
 	Rows DashboardSectionRowArrayInput `pulumi:"rows"`
 }
 
@@ -476,12 +430,10 @@ func (o DashboardSectionOutput) ToDashboardSectionOutputWithContext(ctx context.
 	return o
 }
 
-// Name of this section
 func (o DashboardSectionOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v DashboardSection) string { return v.Name }).(pulumi.StringOutput)
 }
 
-// See dashboard section rows
 func (o DashboardSectionOutput) Rows() DashboardSectionRowArrayOutput {
 	return o.ApplyT(func(v DashboardSection) []DashboardSectionRow { return v.Rows }).(DashboardSectionRowArrayOutput)
 }
@@ -507,7 +459,6 @@ func (o DashboardSectionArrayOutput) Index(i pulumi.IntInput) DashboardSectionOu
 }
 
 type DashboardSectionRow struct {
-	// Charts in this section. See dashboard chart
 	Charts []DashboardSectionRowChart `pulumi:"charts"`
 }
 
@@ -523,7 +474,6 @@ type DashboardSectionRowInput interface {
 }
 
 type DashboardSectionRowArgs struct {
-	// Charts in this section. See dashboard chart
 	Charts DashboardSectionRowChartArrayInput `pulumi:"charts"`
 }
 
@@ -578,7 +528,6 @@ func (o DashboardSectionRowOutput) ToDashboardSectionRowOutputWithContext(ctx co
 	return o
 }
 
-// Charts in this section. See dashboard chart
 func (o DashboardSectionRowOutput) Charts() DashboardSectionRowChartArrayOutput {
 	return o.ApplyT(func(v DashboardSectionRow) []DashboardSectionRowChart { return v.Charts }).(DashboardSectionRowChartArrayOutput)
 }
@@ -604,19 +553,12 @@ func (o DashboardSectionRowArrayOutput) Index(i pulumi.IntInput) DashboardSectio
 }
 
 type DashboardSectionRowChart struct {
-	// Chart settings. See chart settings
-	ChartSetting DashboardSectionRowChartChartSetting `pulumi:"chartSetting"`
-	// Description of the chart
-	Description *string `pulumi:"description"`
-	// Name of the source
-	Name string `pulumi:"name"`
-	// Query expression to plot on the chart. See chart source queries
-	Sources []DashboardSectionRowChartSource `pulumi:"sources"`
-	// Summarization strategy for the chart. MEAN is default. Valid options are, `MEAN`,
-	// `MEDIAN`, `MIN`, `MAX`, `SUM`, `COUNT`, `LAST`, `FIRST`
-	Summarization string `pulumi:"summarization"`
-	// String to label the units of the chart on the Y-Axis
-	Units string `pulumi:"units"`
+	ChartSetting  DashboardSectionRowChartChartSetting `pulumi:"chartSetting"`
+	Description   *string                              `pulumi:"description"`
+	Name          string                               `pulumi:"name"`
+	Sources       []DashboardSectionRowChartSource     `pulumi:"sources"`
+	Summarization string                               `pulumi:"summarization"`
+	Units         string                               `pulumi:"units"`
 }
 
 // DashboardSectionRowChartInput is an input type that accepts DashboardSectionRowChartArgs and DashboardSectionRowChartOutput values.
@@ -631,19 +573,12 @@ type DashboardSectionRowChartInput interface {
 }
 
 type DashboardSectionRowChartArgs struct {
-	// Chart settings. See chart settings
-	ChartSetting DashboardSectionRowChartChartSettingInput `pulumi:"chartSetting"`
-	// Description of the chart
-	Description pulumi.StringPtrInput `pulumi:"description"`
-	// Name of the source
-	Name pulumi.StringInput `pulumi:"name"`
-	// Query expression to plot on the chart. See chart source queries
-	Sources DashboardSectionRowChartSourceArrayInput `pulumi:"sources"`
-	// Summarization strategy for the chart. MEAN is default. Valid options are, `MEAN`,
-	// `MEDIAN`, `MIN`, `MAX`, `SUM`, `COUNT`, `LAST`, `FIRST`
-	Summarization pulumi.StringInput `pulumi:"summarization"`
-	// String to label the units of the chart on the Y-Axis
-	Units pulumi.StringInput `pulumi:"units"`
+	ChartSetting  DashboardSectionRowChartChartSettingInput `pulumi:"chartSetting"`
+	Description   pulumi.StringPtrInput                     `pulumi:"description"`
+	Name          pulumi.StringInput                        `pulumi:"name"`
+	Sources       DashboardSectionRowChartSourceArrayInput  `pulumi:"sources"`
+	Summarization pulumi.StringInput                        `pulumi:"summarization"`
+	Units         pulumi.StringInput                        `pulumi:"units"`
 }
 
 func (DashboardSectionRowChartArgs) ElementType() reflect.Type {
@@ -697,33 +632,26 @@ func (o DashboardSectionRowChartOutput) ToDashboardSectionRowChartOutputWithCont
 	return o
 }
 
-// Chart settings. See chart settings
 func (o DashboardSectionRowChartOutput) ChartSetting() DashboardSectionRowChartChartSettingOutput {
 	return o.ApplyT(func(v DashboardSectionRowChart) DashboardSectionRowChartChartSetting { return v.ChartSetting }).(DashboardSectionRowChartChartSettingOutput)
 }
 
-// Description of the chart
 func (o DashboardSectionRowChartOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DashboardSectionRowChart) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
-// Name of the source
 func (o DashboardSectionRowChartOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v DashboardSectionRowChart) string { return v.Name }).(pulumi.StringOutput)
 }
 
-// Query expression to plot on the chart. See chart source queries
 func (o DashboardSectionRowChartOutput) Sources() DashboardSectionRowChartSourceArrayOutput {
 	return o.ApplyT(func(v DashboardSectionRowChart) []DashboardSectionRowChartSource { return v.Sources }).(DashboardSectionRowChartSourceArrayOutput)
 }
 
-// Summarization strategy for the chart. MEAN is default. Valid options are, `MEAN`,
-// `MEDIAN`, `MIN`, `MAX`, `SUM`, `COUNT`, `LAST`, `FIRST`
 func (o DashboardSectionRowChartOutput) Summarization() pulumi.StringOutput {
 	return o.ApplyT(func(v DashboardSectionRowChart) string { return v.Summarization }).(pulumi.StringOutput)
 }
 
-// String to label the units of the chart on the Y-Axis
 func (o DashboardSectionRowChartOutput) Units() pulumi.StringOutput {
 	return o.ApplyT(func(v DashboardSectionRowChart) string { return v.Units }).(pulumi.StringOutput)
 }
@@ -749,146 +677,63 @@ func (o DashboardSectionRowChartArrayOutput) Index(i pulumi.IntInput) DashboardS
 }
 
 type DashboardSectionRowChartChartSetting struct {
-	// deprecated
-	AutoColumnTags *bool `pulumi:"autoColumnTags"`
-	// deprecated
-	ColumnTags *string `pulumi:"columnTags"`
-	// For the tabular view, a list of point tags to display when using the `custom` tag display mode
-	CustomTags []string `pulumi:"customTags"`
-	// Threshold (in seconds) for time delta between consecutive points in a series
-	// above which a dotted line will replace a solid in in line plots. Default 60
-	ExpectedDataSpacing *int `pulumi:"expectedDataSpacing"`
-	// For a chart with a fixed legend, a list of statistics to display in the legend
-	FixedLegendDisplayStats []string `pulumi:"fixedLegendDisplayStats"`
-	// Whether to enable a fixed tabular legend adjacent to the chart
-	FixedLegendEnabled *bool `pulumi:"fixedLegendEnabled"`
-	// Statistic to use for determining whether a series is displayed on the fixed legend.
-	// Valid options are `CURRENT`, `MEAN`, `MEDIAN`, `SUM`, `MIN`, `MAX`, `COUNT`
-	FixedLegendFilterField *string `pulumi:"fixedLegendFilterField"`
-	// Number of series to include in the fixed legend
-	FixedLegendFilterLimit *int `pulumi:"fixedLegendFilterLimit"`
-	// Whether to display `TOP` or `BOTTOM` ranked series in a fixed legend. Valid options
-	// are `TOP`, and `BOTTOM`
-	FixedLegendFilterSort *string `pulumi:"fixedLegendFilterSort"`
-	// deprecated
-	FixedLegendHideLabel *bool `pulumi:"fixedLegendHideLabel"`
-	// Where the fixed legend should be displayed with respect ot the chart.
-	// Valid options are `RIGHt`, `TOP`, `LEFT`, `BOTTOM`
-	FixedLegendPosition *string `pulumi:"fixedLegendPosition"`
-	// If `true`, the legend uses non-summarized stats instead of summarized
-	FixedLegendUseRawStats *bool `pulumi:"fixedLegendUseRawStats"`
-	// For the tabular view, whether to group multi metrics into a single row by a common source.
-	// If `false`, each source is displayed in its own row.  if `true`, multiple metrics for the same host will be displayed as different
-	// columns in the same row
-	GroupBySource *bool `pulumi:"groupBySource"`
-	// Whether to disable the display of the floating legend (but
-	// reenable it when the ctrl-key is pressed)
-	InvertDynamicLegendHoverControl *bool `pulumi:"invertDynamicLegendHoverControl"`
-	// Plot interpolation type.  `linear` is default. Valid options are `linear`, `step-before`,
-	// `step-after`, `basis`, `cardinal`, `monotone`
-	LineType *string `pulumi:"lineType"`
-	// Max value of the Y-axis. Set to null or leave blank for auto
-	Max *float64 `pulumi:"max"`
-	// Min value of the Y-axis. Set to null or leave blank for auto
-	Min *float64 `pulumi:"min"`
-	// For the tabular view, how many point tags to display
-	NumTags *int `pulumi:"numTags"`
-	// The markdown content for a Markdown display, in plain text.
-	PlainMarkdownContent *string `pulumi:"plainMarkdownContent"`
-	// For the tabular view, whether to display sources. Default is `true`
-	ShowHosts *bool `pulumi:"showHosts"`
-	// For the tabular view, whether to display labels. Default is `true`
-	ShowLabels *bool `pulumi:"showLabels"`
-	// For the tabular view, whether to display raw values. Default is `false`
-	ShowRawValues *bool `pulumi:"showRawValues"`
-	// For the tabular view, whether to display display values in descending order. Default is `false`
-	SortValuesDescending *bool `pulumi:"sortValuesDescending"`
-	// For the single stat view, the decimal precision of the displayed number
-	SparklineDecimalPrecision *int `pulumi:"sparklineDecimalPrecision"`
-	// For the single stat view, the color of the displayed text (when not dynamically determined).
-	// Values should be in `rgba(,,,,)` format
-	SparklineDisplayColor *string `pulumi:"sparklineDisplayColor"`
-	// For the single stat view, the font size of the displayed text, in percent
-	SparklineDisplayFontSize *string `pulumi:"sparklineDisplayFontSize"`
-	// For the single stat view, the horizontal position of the displayed text.
-	// Valid options are `MIDDLE`, `LEFT`, `RIGHT`
-	SparklineDisplayHorizontalPosition *string `pulumi:"sparklineDisplayHorizontalPosition"`
-	// For the single stat view, a string to append to the displayed text
-	SparklineDisplayPostfix *string `pulumi:"sparklineDisplayPostfix"`
-	// For the single stat view, a string to add before the displayed text
-	SparklineDisplayPrefix *string `pulumi:"sparklineDisplayPrefix"`
-	// For the single stat view, where to display the name of the query or the value of the query.
-	// Valid options are `VALUE` or `LABEL`
-	SparklineDisplayValueType *string `pulumi:"sparklineDisplayValueType"`
-	// deprecated
-	SparklineDisplayVerticalPosition *string `pulumi:"sparklineDisplayVerticalPosition"`
-	// For the single stat view, the color of the background fill.  Values should be
-	// in `rgba(,,,,)`
-	SparklineFillColor *string `pulumi:"sparklineFillColor"`
-	// For the single stat view, the color of the line.  Values should be in `rgba(,,,,)` format
-	SparklineLineColor *string `pulumi:"sparklineLineColor"`
-	// For the single stat view, This determines whether the sparkline of the statistic is displayed in the chart `BACKGROUND`, `BOTTOM`, or `NONE`.
-	// Valid options are `BACKGROUND`, `BOTTOM`, `NONE`
-	SparklineSize *string `pulumi:"sparklineSize"`
-	// For the single stat view, whether to apply dyunamic color settings to
-	// the displayed `TEXT` or `BACKGROUND`. Valid options are `TEXT` or `BACKGROUND`
-	SparklineValueColorMapApplyTo *string `pulumi:"sparklineValueColorMapApplyTo"`
-	// For the single stat view, A list of colors that differing query values map to.
-	// Must contain one more element than `sparklineValueColorMapValuesV2`. Values should be in `rgba(,,,,)`
-	SparklineValueColorMapColors []string `pulumi:"sparklineValueColorMapColors"`
-	// deprecated
-	SparklineValueColorMapValues []int `pulumi:"sparklineValueColorMapValues"`
-	// For the single stat view, a list of boundaries for mapping different
-	// query values to colors.  Must contain one less element than `sparklineValueColorMapColors`
-	SparklineValueColorMapValuesV2s []float64 `pulumi:"sparklineValueColorMapValuesV2s"`
-	// For the single stat view, a list of display text values that different query
-	// values map to.  Must contain one more element than `sparklineValueTextMapThresholds`
-	SparklineValueTextMapTexts []string `pulumi:"sparklineValueTextMapTexts"`
-	// For the single stat view, a list of threshold boundaries for
-	// mapping different query values to display text.  Must contain one less element than `sparklineValueTextMapText`
-	SparklineValueTextMapThresholds []float64 `pulumi:"sparklineValueTextMapThresholds"`
-	// Type of stacked chart (applicable only if chart type is `stacked`). `zero` (default) means
-	// stacked from y=0. `expand` means normalized from 0 to 1.  `wiggle` means minimize weighted changes. `silhouette` means to
-	// center the stream. Valid options are `zero`, `expand`, `wiggle`, `silhouette`, `bars`
-	StackType *string `pulumi:"stackType"`
-	// For the tabular view, which mode to use to determine which point tags to display.
-	// Valid options are `all`, `top`, or `custom`
-	TagMode *string `pulumi:"tagMode"`
-	// For x-y scatterplots, whether to color more recent points as darker than older points
-	TimeBasedColoring *bool `pulumi:"timeBasedColoring"`
-	// Chart Type. `line` refers to the Line Plot, `scatter` to the Point Plot, `stacked-area` to
-	// the Stacked Area plot, `table` to the Tabular View, `scatterploy-xy` to Scatter Plot, `markdown-widget` to the
-	// Markdown display, and `sparkline` to the Single Stat view. Valid options are `line`, `scatterplot`,
-	// `stacked-area`, `stacked-column`, `table`, `scatterplot-xy`, `markdown-widget`, `sparkline`, `globe`, `nodemap`,
-	// `top-k`, `status-list`, `histogram`
-	Type string `pulumi:"type"`
-	// Width, in minutes, of the time window to use for `last` windowing
-	WindowSize *int `pulumi:"windowSize"`
-	// For the tabular view, whether to use the full time window for the query or the last X minutes.
-	// Valid options are `full` or `last`
-	Windowing *string `pulumi:"windowing"`
-	// For x-y scatterplots, max value for the X-axis. Set to null for auto
-	Xmax *float64 `pulumi:"xmax"`
-	// For x-y scatterplots, min value for the X-axis. Set to null for auto
-	Xmin *float64 `pulumi:"xmin"`
-	// Whether to scale numerical magnitude labels for left Y-axis by 1024 in the IEC/Binary manner (instead of by 1000 like SI)
-	Y0ScaleSiBy1024 *bool `pulumi:"y0ScaleSiBy1024"`
-	// Whether to automatically adjust magnitude labels and units for the left Y-axis to favor smaller magnitudes and larger units
-	Y0UnitAutoscaling *bool `pulumi:"y0UnitAutoscaling"`
-	// Whether to scale numerical magnitude labels for right Y-axis by 1024 in the IEC/Binary manner (instead of by 1000 like SI)
-	Y1ScaleSiBy1024 *bool `pulumi:"y1ScaleSiBy1024"`
-	// Whether to automatically adjust magnitude labels and units for the right Y-axis to favor smaller magnitudes and larger units
-	Y1UnitAutoscaling *bool `pulumi:"y1UnitAutoscaling"`
-	// For plots with multiple Y-axes, units for right side Y-axis
-	Y1Units *string `pulumi:"y1Units"`
-	// For plots with multiple Y-axes, max value for the right side Y-axis. Set null for auto
-	Y1max *float64 `pulumi:"y1max"`
-	// For plots with multiple Y-axes, min value for the right side Y-axis. Set null for auto
-	Y1min *float64 `pulumi:"y1min"`
-	// For x-y scatterplots, max value for the Y-axis. Set to null for auto
-	Ymax *float64 `pulumi:"ymax"`
-	// For x-y scatterplots, min value for the Y-axis. Set to null for auto
-	Ymin *float64 `pulumi:"ymin"`
+	AutoColumnTags                     *bool     `pulumi:"autoColumnTags"`
+	ColumnTags                         *string   `pulumi:"columnTags"`
+	CustomTags                         []string  `pulumi:"customTags"`
+	ExpectedDataSpacing                *int      `pulumi:"expectedDataSpacing"`
+	FixedLegendDisplayStats            []string  `pulumi:"fixedLegendDisplayStats"`
+	FixedLegendEnabled                 *bool     `pulumi:"fixedLegendEnabled"`
+	FixedLegendFilterField             *string   `pulumi:"fixedLegendFilterField"`
+	FixedLegendFilterLimit             *int      `pulumi:"fixedLegendFilterLimit"`
+	FixedLegendFilterSort              *string   `pulumi:"fixedLegendFilterSort"`
+	FixedLegendHideLabel               *bool     `pulumi:"fixedLegendHideLabel"`
+	FixedLegendPosition                *string   `pulumi:"fixedLegendPosition"`
+	FixedLegendUseRawStats             *bool     `pulumi:"fixedLegendUseRawStats"`
+	GroupBySource                      *bool     `pulumi:"groupBySource"`
+	InvertDynamicLegendHoverControl    *bool     `pulumi:"invertDynamicLegendHoverControl"`
+	LineType                           *string   `pulumi:"lineType"`
+	Max                                *float64  `pulumi:"max"`
+	Min                                *float64  `pulumi:"min"`
+	NumTags                            *int      `pulumi:"numTags"`
+	PlainMarkdownContent               *string   `pulumi:"plainMarkdownContent"`
+	ShowHosts                          *bool     `pulumi:"showHosts"`
+	ShowLabels                         *bool     `pulumi:"showLabels"`
+	ShowRawValues                      *bool     `pulumi:"showRawValues"`
+	SortValuesDescending               *bool     `pulumi:"sortValuesDescending"`
+	SparklineDecimalPrecision          *int      `pulumi:"sparklineDecimalPrecision"`
+	SparklineDisplayColor              *string   `pulumi:"sparklineDisplayColor"`
+	SparklineDisplayFontSize           *string   `pulumi:"sparklineDisplayFontSize"`
+	SparklineDisplayHorizontalPosition *string   `pulumi:"sparklineDisplayHorizontalPosition"`
+	SparklineDisplayPostfix            *string   `pulumi:"sparklineDisplayPostfix"`
+	SparklineDisplayPrefix             *string   `pulumi:"sparklineDisplayPrefix"`
+	SparklineDisplayValueType          *string   `pulumi:"sparklineDisplayValueType"`
+	SparklineDisplayVerticalPosition   *string   `pulumi:"sparklineDisplayVerticalPosition"`
+	SparklineFillColor                 *string   `pulumi:"sparklineFillColor"`
+	SparklineLineColor                 *string   `pulumi:"sparklineLineColor"`
+	SparklineSize                      *string   `pulumi:"sparklineSize"`
+	SparklineValueColorMapApplyTo      *string   `pulumi:"sparklineValueColorMapApplyTo"`
+	SparklineValueColorMapColors       []string  `pulumi:"sparklineValueColorMapColors"`
+	SparklineValueColorMapValues       []int     `pulumi:"sparklineValueColorMapValues"`
+	SparklineValueColorMapValuesV2s    []float64 `pulumi:"sparklineValueColorMapValuesV2s"`
+	SparklineValueTextMapTexts         []string  `pulumi:"sparklineValueTextMapTexts"`
+	SparklineValueTextMapThresholds    []float64 `pulumi:"sparklineValueTextMapThresholds"`
+	StackType                          *string   `pulumi:"stackType"`
+	TagMode                            *string   `pulumi:"tagMode"`
+	TimeBasedColoring                  *bool     `pulumi:"timeBasedColoring"`
+	Type                               string    `pulumi:"type"`
+	WindowSize                         *int      `pulumi:"windowSize"`
+	Windowing                          *string   `pulumi:"windowing"`
+	Xmax                               *float64  `pulumi:"xmax"`
+	Xmin                               *float64  `pulumi:"xmin"`
+	Y0ScaleSiBy1024                    *bool     `pulumi:"y0ScaleSiBy1024"`
+	Y0UnitAutoscaling                  *bool     `pulumi:"y0UnitAutoscaling"`
+	Y1ScaleSiBy1024                    *bool     `pulumi:"y1ScaleSiBy1024"`
+	Y1UnitAutoscaling                  *bool     `pulumi:"y1UnitAutoscaling"`
+	Y1Units                            *string   `pulumi:"y1Units"`
+	Y1max                              *float64  `pulumi:"y1max"`
+	Y1min                              *float64  `pulumi:"y1min"`
+	Ymax                               *float64  `pulumi:"ymax"`
+	Ymin                               *float64  `pulumi:"ymin"`
 }
 
 // DashboardSectionRowChartChartSettingInput is an input type that accepts DashboardSectionRowChartChartSettingArgs and DashboardSectionRowChartChartSettingOutput values.
@@ -903,146 +748,63 @@ type DashboardSectionRowChartChartSettingInput interface {
 }
 
 type DashboardSectionRowChartChartSettingArgs struct {
-	// deprecated
-	AutoColumnTags pulumi.BoolPtrInput `pulumi:"autoColumnTags"`
-	// deprecated
-	ColumnTags pulumi.StringPtrInput `pulumi:"columnTags"`
-	// For the tabular view, a list of point tags to display when using the `custom` tag display mode
-	CustomTags pulumi.StringArrayInput `pulumi:"customTags"`
-	// Threshold (in seconds) for time delta between consecutive points in a series
-	// above which a dotted line will replace a solid in in line plots. Default 60
-	ExpectedDataSpacing pulumi.IntPtrInput `pulumi:"expectedDataSpacing"`
-	// For a chart with a fixed legend, a list of statistics to display in the legend
-	FixedLegendDisplayStats pulumi.StringArrayInput `pulumi:"fixedLegendDisplayStats"`
-	// Whether to enable a fixed tabular legend adjacent to the chart
-	FixedLegendEnabled pulumi.BoolPtrInput `pulumi:"fixedLegendEnabled"`
-	// Statistic to use for determining whether a series is displayed on the fixed legend.
-	// Valid options are `CURRENT`, `MEAN`, `MEDIAN`, `SUM`, `MIN`, `MAX`, `COUNT`
-	FixedLegendFilterField pulumi.StringPtrInput `pulumi:"fixedLegendFilterField"`
-	// Number of series to include in the fixed legend
-	FixedLegendFilterLimit pulumi.IntPtrInput `pulumi:"fixedLegendFilterLimit"`
-	// Whether to display `TOP` or `BOTTOM` ranked series in a fixed legend. Valid options
-	// are `TOP`, and `BOTTOM`
-	FixedLegendFilterSort pulumi.StringPtrInput `pulumi:"fixedLegendFilterSort"`
-	// deprecated
-	FixedLegendHideLabel pulumi.BoolPtrInput `pulumi:"fixedLegendHideLabel"`
-	// Where the fixed legend should be displayed with respect ot the chart.
-	// Valid options are `RIGHt`, `TOP`, `LEFT`, `BOTTOM`
-	FixedLegendPosition pulumi.StringPtrInput `pulumi:"fixedLegendPosition"`
-	// If `true`, the legend uses non-summarized stats instead of summarized
-	FixedLegendUseRawStats pulumi.BoolPtrInput `pulumi:"fixedLegendUseRawStats"`
-	// For the tabular view, whether to group multi metrics into a single row by a common source.
-	// If `false`, each source is displayed in its own row.  if `true`, multiple metrics for the same host will be displayed as different
-	// columns in the same row
-	GroupBySource pulumi.BoolPtrInput `pulumi:"groupBySource"`
-	// Whether to disable the display of the floating legend (but
-	// reenable it when the ctrl-key is pressed)
-	InvertDynamicLegendHoverControl pulumi.BoolPtrInput `pulumi:"invertDynamicLegendHoverControl"`
-	// Plot interpolation type.  `linear` is default. Valid options are `linear`, `step-before`,
-	// `step-after`, `basis`, `cardinal`, `monotone`
-	LineType pulumi.StringPtrInput `pulumi:"lineType"`
-	// Max value of the Y-axis. Set to null or leave blank for auto
-	Max pulumi.Float64PtrInput `pulumi:"max"`
-	// Min value of the Y-axis. Set to null or leave blank for auto
-	Min pulumi.Float64PtrInput `pulumi:"min"`
-	// For the tabular view, how many point tags to display
-	NumTags pulumi.IntPtrInput `pulumi:"numTags"`
-	// The markdown content for a Markdown display, in plain text.
-	PlainMarkdownContent pulumi.StringPtrInput `pulumi:"plainMarkdownContent"`
-	// For the tabular view, whether to display sources. Default is `true`
-	ShowHosts pulumi.BoolPtrInput `pulumi:"showHosts"`
-	// For the tabular view, whether to display labels. Default is `true`
-	ShowLabels pulumi.BoolPtrInput `pulumi:"showLabels"`
-	// For the tabular view, whether to display raw values. Default is `false`
-	ShowRawValues pulumi.BoolPtrInput `pulumi:"showRawValues"`
-	// For the tabular view, whether to display display values in descending order. Default is `false`
-	SortValuesDescending pulumi.BoolPtrInput `pulumi:"sortValuesDescending"`
-	// For the single stat view, the decimal precision of the displayed number
-	SparklineDecimalPrecision pulumi.IntPtrInput `pulumi:"sparklineDecimalPrecision"`
-	// For the single stat view, the color of the displayed text (when not dynamically determined).
-	// Values should be in `rgba(,,,,)` format
-	SparklineDisplayColor pulumi.StringPtrInput `pulumi:"sparklineDisplayColor"`
-	// For the single stat view, the font size of the displayed text, in percent
-	SparklineDisplayFontSize pulumi.StringPtrInput `pulumi:"sparklineDisplayFontSize"`
-	// For the single stat view, the horizontal position of the displayed text.
-	// Valid options are `MIDDLE`, `LEFT`, `RIGHT`
-	SparklineDisplayHorizontalPosition pulumi.StringPtrInput `pulumi:"sparklineDisplayHorizontalPosition"`
-	// For the single stat view, a string to append to the displayed text
-	SparklineDisplayPostfix pulumi.StringPtrInput `pulumi:"sparklineDisplayPostfix"`
-	// For the single stat view, a string to add before the displayed text
-	SparklineDisplayPrefix pulumi.StringPtrInput `pulumi:"sparklineDisplayPrefix"`
-	// For the single stat view, where to display the name of the query or the value of the query.
-	// Valid options are `VALUE` or `LABEL`
-	SparklineDisplayValueType pulumi.StringPtrInput `pulumi:"sparklineDisplayValueType"`
-	// deprecated
-	SparklineDisplayVerticalPosition pulumi.StringPtrInput `pulumi:"sparklineDisplayVerticalPosition"`
-	// For the single stat view, the color of the background fill.  Values should be
-	// in `rgba(,,,,)`
-	SparklineFillColor pulumi.StringPtrInput `pulumi:"sparklineFillColor"`
-	// For the single stat view, the color of the line.  Values should be in `rgba(,,,,)` format
-	SparklineLineColor pulumi.StringPtrInput `pulumi:"sparklineLineColor"`
-	// For the single stat view, This determines whether the sparkline of the statistic is displayed in the chart `BACKGROUND`, `BOTTOM`, or `NONE`.
-	// Valid options are `BACKGROUND`, `BOTTOM`, `NONE`
-	SparklineSize pulumi.StringPtrInput `pulumi:"sparklineSize"`
-	// For the single stat view, whether to apply dyunamic color settings to
-	// the displayed `TEXT` or `BACKGROUND`. Valid options are `TEXT` or `BACKGROUND`
-	SparklineValueColorMapApplyTo pulumi.StringPtrInput `pulumi:"sparklineValueColorMapApplyTo"`
-	// For the single stat view, A list of colors that differing query values map to.
-	// Must contain one more element than `sparklineValueColorMapValuesV2`. Values should be in `rgba(,,,,)`
-	SparklineValueColorMapColors pulumi.StringArrayInput `pulumi:"sparklineValueColorMapColors"`
-	// deprecated
-	SparklineValueColorMapValues pulumi.IntArrayInput `pulumi:"sparklineValueColorMapValues"`
-	// For the single stat view, a list of boundaries for mapping different
-	// query values to colors.  Must contain one less element than `sparklineValueColorMapColors`
-	SparklineValueColorMapValuesV2s pulumi.Float64ArrayInput `pulumi:"sparklineValueColorMapValuesV2s"`
-	// For the single stat view, a list of display text values that different query
-	// values map to.  Must contain one more element than `sparklineValueTextMapThresholds`
-	SparklineValueTextMapTexts pulumi.StringArrayInput `pulumi:"sparklineValueTextMapTexts"`
-	// For the single stat view, a list of threshold boundaries for
-	// mapping different query values to display text.  Must contain one less element than `sparklineValueTextMapText`
-	SparklineValueTextMapThresholds pulumi.Float64ArrayInput `pulumi:"sparklineValueTextMapThresholds"`
-	// Type of stacked chart (applicable only if chart type is `stacked`). `zero` (default) means
-	// stacked from y=0. `expand` means normalized from 0 to 1.  `wiggle` means minimize weighted changes. `silhouette` means to
-	// center the stream. Valid options are `zero`, `expand`, `wiggle`, `silhouette`, `bars`
-	StackType pulumi.StringPtrInput `pulumi:"stackType"`
-	// For the tabular view, which mode to use to determine which point tags to display.
-	// Valid options are `all`, `top`, or `custom`
-	TagMode pulumi.StringPtrInput `pulumi:"tagMode"`
-	// For x-y scatterplots, whether to color more recent points as darker than older points
-	TimeBasedColoring pulumi.BoolPtrInput `pulumi:"timeBasedColoring"`
-	// Chart Type. `line` refers to the Line Plot, `scatter` to the Point Plot, `stacked-area` to
-	// the Stacked Area plot, `table` to the Tabular View, `scatterploy-xy` to Scatter Plot, `markdown-widget` to the
-	// Markdown display, and `sparkline` to the Single Stat view. Valid options are `line`, `scatterplot`,
-	// `stacked-area`, `stacked-column`, `table`, `scatterplot-xy`, `markdown-widget`, `sparkline`, `globe`, `nodemap`,
-	// `top-k`, `status-list`, `histogram`
-	Type pulumi.StringInput `pulumi:"type"`
-	// Width, in minutes, of the time window to use for `last` windowing
-	WindowSize pulumi.IntPtrInput `pulumi:"windowSize"`
-	// For the tabular view, whether to use the full time window for the query or the last X minutes.
-	// Valid options are `full` or `last`
-	Windowing pulumi.StringPtrInput `pulumi:"windowing"`
-	// For x-y scatterplots, max value for the X-axis. Set to null for auto
-	Xmax pulumi.Float64PtrInput `pulumi:"xmax"`
-	// For x-y scatterplots, min value for the X-axis. Set to null for auto
-	Xmin pulumi.Float64PtrInput `pulumi:"xmin"`
-	// Whether to scale numerical magnitude labels for left Y-axis by 1024 in the IEC/Binary manner (instead of by 1000 like SI)
-	Y0ScaleSiBy1024 pulumi.BoolPtrInput `pulumi:"y0ScaleSiBy1024"`
-	// Whether to automatically adjust magnitude labels and units for the left Y-axis to favor smaller magnitudes and larger units
-	Y0UnitAutoscaling pulumi.BoolPtrInput `pulumi:"y0UnitAutoscaling"`
-	// Whether to scale numerical magnitude labels for right Y-axis by 1024 in the IEC/Binary manner (instead of by 1000 like SI)
-	Y1ScaleSiBy1024 pulumi.BoolPtrInput `pulumi:"y1ScaleSiBy1024"`
-	// Whether to automatically adjust magnitude labels and units for the right Y-axis to favor smaller magnitudes and larger units
-	Y1UnitAutoscaling pulumi.BoolPtrInput `pulumi:"y1UnitAutoscaling"`
-	// For plots with multiple Y-axes, units for right side Y-axis
-	Y1Units pulumi.StringPtrInput `pulumi:"y1Units"`
-	// For plots with multiple Y-axes, max value for the right side Y-axis. Set null for auto
-	Y1max pulumi.Float64PtrInput `pulumi:"y1max"`
-	// For plots with multiple Y-axes, min value for the right side Y-axis. Set null for auto
-	Y1min pulumi.Float64PtrInput `pulumi:"y1min"`
-	// For x-y scatterplots, max value for the Y-axis. Set to null for auto
-	Ymax pulumi.Float64PtrInput `pulumi:"ymax"`
-	// For x-y scatterplots, min value for the Y-axis. Set to null for auto
-	Ymin pulumi.Float64PtrInput `pulumi:"ymin"`
+	AutoColumnTags                     pulumi.BoolPtrInput      `pulumi:"autoColumnTags"`
+	ColumnTags                         pulumi.StringPtrInput    `pulumi:"columnTags"`
+	CustomTags                         pulumi.StringArrayInput  `pulumi:"customTags"`
+	ExpectedDataSpacing                pulumi.IntPtrInput       `pulumi:"expectedDataSpacing"`
+	FixedLegendDisplayStats            pulumi.StringArrayInput  `pulumi:"fixedLegendDisplayStats"`
+	FixedLegendEnabled                 pulumi.BoolPtrInput      `pulumi:"fixedLegendEnabled"`
+	FixedLegendFilterField             pulumi.StringPtrInput    `pulumi:"fixedLegendFilterField"`
+	FixedLegendFilterLimit             pulumi.IntPtrInput       `pulumi:"fixedLegendFilterLimit"`
+	FixedLegendFilterSort              pulumi.StringPtrInput    `pulumi:"fixedLegendFilterSort"`
+	FixedLegendHideLabel               pulumi.BoolPtrInput      `pulumi:"fixedLegendHideLabel"`
+	FixedLegendPosition                pulumi.StringPtrInput    `pulumi:"fixedLegendPosition"`
+	FixedLegendUseRawStats             pulumi.BoolPtrInput      `pulumi:"fixedLegendUseRawStats"`
+	GroupBySource                      pulumi.BoolPtrInput      `pulumi:"groupBySource"`
+	InvertDynamicLegendHoverControl    pulumi.BoolPtrInput      `pulumi:"invertDynamicLegendHoverControl"`
+	LineType                           pulumi.StringPtrInput    `pulumi:"lineType"`
+	Max                                pulumi.Float64PtrInput   `pulumi:"max"`
+	Min                                pulumi.Float64PtrInput   `pulumi:"min"`
+	NumTags                            pulumi.IntPtrInput       `pulumi:"numTags"`
+	PlainMarkdownContent               pulumi.StringPtrInput    `pulumi:"plainMarkdownContent"`
+	ShowHosts                          pulumi.BoolPtrInput      `pulumi:"showHosts"`
+	ShowLabels                         pulumi.BoolPtrInput      `pulumi:"showLabels"`
+	ShowRawValues                      pulumi.BoolPtrInput      `pulumi:"showRawValues"`
+	SortValuesDescending               pulumi.BoolPtrInput      `pulumi:"sortValuesDescending"`
+	SparklineDecimalPrecision          pulumi.IntPtrInput       `pulumi:"sparklineDecimalPrecision"`
+	SparklineDisplayColor              pulumi.StringPtrInput    `pulumi:"sparklineDisplayColor"`
+	SparklineDisplayFontSize           pulumi.StringPtrInput    `pulumi:"sparklineDisplayFontSize"`
+	SparklineDisplayHorizontalPosition pulumi.StringPtrInput    `pulumi:"sparklineDisplayHorizontalPosition"`
+	SparklineDisplayPostfix            pulumi.StringPtrInput    `pulumi:"sparklineDisplayPostfix"`
+	SparklineDisplayPrefix             pulumi.StringPtrInput    `pulumi:"sparklineDisplayPrefix"`
+	SparklineDisplayValueType          pulumi.StringPtrInput    `pulumi:"sparklineDisplayValueType"`
+	SparklineDisplayVerticalPosition   pulumi.StringPtrInput    `pulumi:"sparklineDisplayVerticalPosition"`
+	SparklineFillColor                 pulumi.StringPtrInput    `pulumi:"sparklineFillColor"`
+	SparklineLineColor                 pulumi.StringPtrInput    `pulumi:"sparklineLineColor"`
+	SparklineSize                      pulumi.StringPtrInput    `pulumi:"sparklineSize"`
+	SparklineValueColorMapApplyTo      pulumi.StringPtrInput    `pulumi:"sparklineValueColorMapApplyTo"`
+	SparklineValueColorMapColors       pulumi.StringArrayInput  `pulumi:"sparklineValueColorMapColors"`
+	SparklineValueColorMapValues       pulumi.IntArrayInput     `pulumi:"sparklineValueColorMapValues"`
+	SparklineValueColorMapValuesV2s    pulumi.Float64ArrayInput `pulumi:"sparklineValueColorMapValuesV2s"`
+	SparklineValueTextMapTexts         pulumi.StringArrayInput  `pulumi:"sparklineValueTextMapTexts"`
+	SparklineValueTextMapThresholds    pulumi.Float64ArrayInput `pulumi:"sparklineValueTextMapThresholds"`
+	StackType                          pulumi.StringPtrInput    `pulumi:"stackType"`
+	TagMode                            pulumi.StringPtrInput    `pulumi:"tagMode"`
+	TimeBasedColoring                  pulumi.BoolPtrInput      `pulumi:"timeBasedColoring"`
+	Type                               pulumi.StringInput       `pulumi:"type"`
+	WindowSize                         pulumi.IntPtrInput       `pulumi:"windowSize"`
+	Windowing                          pulumi.StringPtrInput    `pulumi:"windowing"`
+	Xmax                               pulumi.Float64PtrInput   `pulumi:"xmax"`
+	Xmin                               pulumi.Float64PtrInput   `pulumi:"xmin"`
+	Y0ScaleSiBy1024                    pulumi.BoolPtrInput      `pulumi:"y0ScaleSiBy1024"`
+	Y0UnitAutoscaling                  pulumi.BoolPtrInput      `pulumi:"y0UnitAutoscaling"`
+	Y1ScaleSiBy1024                    pulumi.BoolPtrInput      `pulumi:"y1ScaleSiBy1024"`
+	Y1UnitAutoscaling                  pulumi.BoolPtrInput      `pulumi:"y1UnitAutoscaling"`
+	Y1Units                            pulumi.StringPtrInput    `pulumi:"y1Units"`
+	Y1max                              pulumi.Float64PtrInput   `pulumi:"y1max"`
+	Y1min                              pulumi.Float64PtrInput   `pulumi:"y1min"`
+	Ymax                               pulumi.Float64PtrInput   `pulumi:"ymax"`
+	Ymin                               pulumi.Float64PtrInput   `pulumi:"ymin"`
 }
 
 func (DashboardSectionRowChartChartSettingArgs) ElementType() reflect.Type {
@@ -1071,330 +833,241 @@ func (o DashboardSectionRowChartChartSettingOutput) ToDashboardSectionRowChartCh
 	return o
 }
 
-// deprecated
 func (o DashboardSectionRowChartChartSettingOutput) AutoColumnTags() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v DashboardSectionRowChartChartSetting) *bool { return v.AutoColumnTags }).(pulumi.BoolPtrOutput)
 }
 
-// deprecated
 func (o DashboardSectionRowChartChartSettingOutput) ColumnTags() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DashboardSectionRowChartChartSetting) *string { return v.ColumnTags }).(pulumi.StringPtrOutput)
 }
 
-// For the tabular view, a list of point tags to display when using the `custom` tag display mode
 func (o DashboardSectionRowChartChartSettingOutput) CustomTags() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v DashboardSectionRowChartChartSetting) []string { return v.CustomTags }).(pulumi.StringArrayOutput)
 }
 
-// Threshold (in seconds) for time delta between consecutive points in a series
-// above which a dotted line will replace a solid in in line plots. Default 60
 func (o DashboardSectionRowChartChartSettingOutput) ExpectedDataSpacing() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v DashboardSectionRowChartChartSetting) *int { return v.ExpectedDataSpacing }).(pulumi.IntPtrOutput)
 }
 
-// For a chart with a fixed legend, a list of statistics to display in the legend
 func (o DashboardSectionRowChartChartSettingOutput) FixedLegendDisplayStats() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v DashboardSectionRowChartChartSetting) []string { return v.FixedLegendDisplayStats }).(pulumi.StringArrayOutput)
 }
 
-// Whether to enable a fixed tabular legend adjacent to the chart
 func (o DashboardSectionRowChartChartSettingOutput) FixedLegendEnabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v DashboardSectionRowChartChartSetting) *bool { return v.FixedLegendEnabled }).(pulumi.BoolPtrOutput)
 }
 
-// Statistic to use for determining whether a series is displayed on the fixed legend.
-// Valid options are `CURRENT`, `MEAN`, `MEDIAN`, `SUM`, `MIN`, `MAX`, `COUNT`
 func (o DashboardSectionRowChartChartSettingOutput) FixedLegendFilterField() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DashboardSectionRowChartChartSetting) *string { return v.FixedLegendFilterField }).(pulumi.StringPtrOutput)
 }
 
-// Number of series to include in the fixed legend
 func (o DashboardSectionRowChartChartSettingOutput) FixedLegendFilterLimit() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v DashboardSectionRowChartChartSetting) *int { return v.FixedLegendFilterLimit }).(pulumi.IntPtrOutput)
 }
 
-// Whether to display `TOP` or `BOTTOM` ranked series in a fixed legend. Valid options
-// are `TOP`, and `BOTTOM`
 func (o DashboardSectionRowChartChartSettingOutput) FixedLegendFilterSort() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DashboardSectionRowChartChartSetting) *string { return v.FixedLegendFilterSort }).(pulumi.StringPtrOutput)
 }
 
-// deprecated
 func (o DashboardSectionRowChartChartSettingOutput) FixedLegendHideLabel() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v DashboardSectionRowChartChartSetting) *bool { return v.FixedLegendHideLabel }).(pulumi.BoolPtrOutput)
 }
 
-// Where the fixed legend should be displayed with respect ot the chart.
-// Valid options are `RIGHt`, `TOP`, `LEFT`, `BOTTOM`
 func (o DashboardSectionRowChartChartSettingOutput) FixedLegendPosition() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DashboardSectionRowChartChartSetting) *string { return v.FixedLegendPosition }).(pulumi.StringPtrOutput)
 }
 
-// If `true`, the legend uses non-summarized stats instead of summarized
 func (o DashboardSectionRowChartChartSettingOutput) FixedLegendUseRawStats() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v DashboardSectionRowChartChartSetting) *bool { return v.FixedLegendUseRawStats }).(pulumi.BoolPtrOutput)
 }
 
-// For the tabular view, whether to group multi metrics into a single row by a common source.
-// If `false`, each source is displayed in its own row.  if `true`, multiple metrics for the same host will be displayed as different
-// columns in the same row
 func (o DashboardSectionRowChartChartSettingOutput) GroupBySource() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v DashboardSectionRowChartChartSetting) *bool { return v.GroupBySource }).(pulumi.BoolPtrOutput)
 }
 
-// Whether to disable the display of the floating legend (but
-// reenable it when the ctrl-key is pressed)
 func (o DashboardSectionRowChartChartSettingOutput) InvertDynamicLegendHoverControl() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v DashboardSectionRowChartChartSetting) *bool { return v.InvertDynamicLegendHoverControl }).(pulumi.BoolPtrOutput)
 }
 
-// Plot interpolation type.  `linear` is default. Valid options are `linear`, `step-before`,
-// `step-after`, `basis`, `cardinal`, `monotone`
 func (o DashboardSectionRowChartChartSettingOutput) LineType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DashboardSectionRowChartChartSetting) *string { return v.LineType }).(pulumi.StringPtrOutput)
 }
 
-// Max value of the Y-axis. Set to null or leave blank for auto
 func (o DashboardSectionRowChartChartSettingOutput) Max() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v DashboardSectionRowChartChartSetting) *float64 { return v.Max }).(pulumi.Float64PtrOutput)
 }
 
-// Min value of the Y-axis. Set to null or leave blank for auto
 func (o DashboardSectionRowChartChartSettingOutput) Min() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v DashboardSectionRowChartChartSetting) *float64 { return v.Min }).(pulumi.Float64PtrOutput)
 }
 
-// For the tabular view, how many point tags to display
 func (o DashboardSectionRowChartChartSettingOutput) NumTags() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v DashboardSectionRowChartChartSetting) *int { return v.NumTags }).(pulumi.IntPtrOutput)
 }
 
-// The markdown content for a Markdown display, in plain text.
 func (o DashboardSectionRowChartChartSettingOutput) PlainMarkdownContent() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DashboardSectionRowChartChartSetting) *string { return v.PlainMarkdownContent }).(pulumi.StringPtrOutput)
 }
 
-// For the tabular view, whether to display sources. Default is `true`
 func (o DashboardSectionRowChartChartSettingOutput) ShowHosts() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v DashboardSectionRowChartChartSetting) *bool { return v.ShowHosts }).(pulumi.BoolPtrOutput)
 }
 
-// For the tabular view, whether to display labels. Default is `true`
 func (o DashboardSectionRowChartChartSettingOutput) ShowLabels() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v DashboardSectionRowChartChartSetting) *bool { return v.ShowLabels }).(pulumi.BoolPtrOutput)
 }
 
-// For the tabular view, whether to display raw values. Default is `false`
 func (o DashboardSectionRowChartChartSettingOutput) ShowRawValues() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v DashboardSectionRowChartChartSetting) *bool { return v.ShowRawValues }).(pulumi.BoolPtrOutput)
 }
 
-// For the tabular view, whether to display display values in descending order. Default is `false`
 func (o DashboardSectionRowChartChartSettingOutput) SortValuesDescending() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v DashboardSectionRowChartChartSetting) *bool { return v.SortValuesDescending }).(pulumi.BoolPtrOutput)
 }
 
-// For the single stat view, the decimal precision of the displayed number
 func (o DashboardSectionRowChartChartSettingOutput) SparklineDecimalPrecision() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v DashboardSectionRowChartChartSetting) *int { return v.SparklineDecimalPrecision }).(pulumi.IntPtrOutput)
 }
 
-// For the single stat view, the color of the displayed text (when not dynamically determined).
-// Values should be in `rgba(,,,,)` format
 func (o DashboardSectionRowChartChartSettingOutput) SparklineDisplayColor() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DashboardSectionRowChartChartSetting) *string { return v.SparklineDisplayColor }).(pulumi.StringPtrOutput)
 }
 
-// For the single stat view, the font size of the displayed text, in percent
 func (o DashboardSectionRowChartChartSettingOutput) SparklineDisplayFontSize() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DashboardSectionRowChartChartSetting) *string { return v.SparklineDisplayFontSize }).(pulumi.StringPtrOutput)
 }
 
-// For the single stat view, the horizontal position of the displayed text.
-// Valid options are `MIDDLE`, `LEFT`, `RIGHT`
 func (o DashboardSectionRowChartChartSettingOutput) SparklineDisplayHorizontalPosition() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DashboardSectionRowChartChartSetting) *string { return v.SparklineDisplayHorizontalPosition }).(pulumi.StringPtrOutput)
 }
 
-// For the single stat view, a string to append to the displayed text
 func (o DashboardSectionRowChartChartSettingOutput) SparklineDisplayPostfix() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DashboardSectionRowChartChartSetting) *string { return v.SparklineDisplayPostfix }).(pulumi.StringPtrOutput)
 }
 
-// For the single stat view, a string to add before the displayed text
 func (o DashboardSectionRowChartChartSettingOutput) SparklineDisplayPrefix() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DashboardSectionRowChartChartSetting) *string { return v.SparklineDisplayPrefix }).(pulumi.StringPtrOutput)
 }
 
-// For the single stat view, where to display the name of the query or the value of the query.
-// Valid options are `VALUE` or `LABEL`
 func (o DashboardSectionRowChartChartSettingOutput) SparklineDisplayValueType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DashboardSectionRowChartChartSetting) *string { return v.SparklineDisplayValueType }).(pulumi.StringPtrOutput)
 }
 
-// deprecated
 func (o DashboardSectionRowChartChartSettingOutput) SparklineDisplayVerticalPosition() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DashboardSectionRowChartChartSetting) *string { return v.SparklineDisplayVerticalPosition }).(pulumi.StringPtrOutput)
 }
 
-// For the single stat view, the color of the background fill.  Values should be
-// in `rgba(,,,,)`
 func (o DashboardSectionRowChartChartSettingOutput) SparklineFillColor() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DashboardSectionRowChartChartSetting) *string { return v.SparklineFillColor }).(pulumi.StringPtrOutput)
 }
 
-// For the single stat view, the color of the line.  Values should be in `rgba(,,,,)` format
 func (o DashboardSectionRowChartChartSettingOutput) SparklineLineColor() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DashboardSectionRowChartChartSetting) *string { return v.SparklineLineColor }).(pulumi.StringPtrOutput)
 }
 
-// For the single stat view, This determines whether the sparkline of the statistic is displayed in the chart `BACKGROUND`, `BOTTOM`, or `NONE`.
-// Valid options are `BACKGROUND`, `BOTTOM`, `NONE`
 func (o DashboardSectionRowChartChartSettingOutput) SparklineSize() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DashboardSectionRowChartChartSetting) *string { return v.SparklineSize }).(pulumi.StringPtrOutput)
 }
 
-// For the single stat view, whether to apply dyunamic color settings to
-// the displayed `TEXT` or `BACKGROUND`. Valid options are `TEXT` or `BACKGROUND`
 func (o DashboardSectionRowChartChartSettingOutput) SparklineValueColorMapApplyTo() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DashboardSectionRowChartChartSetting) *string { return v.SparklineValueColorMapApplyTo }).(pulumi.StringPtrOutput)
 }
 
-// For the single stat view, A list of colors that differing query values map to.
-// Must contain one more element than `sparklineValueColorMapValuesV2`. Values should be in `rgba(,,,,)`
 func (o DashboardSectionRowChartChartSettingOutput) SparklineValueColorMapColors() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v DashboardSectionRowChartChartSetting) []string { return v.SparklineValueColorMapColors }).(pulumi.StringArrayOutput)
 }
 
-// deprecated
 func (o DashboardSectionRowChartChartSettingOutput) SparklineValueColorMapValues() pulumi.IntArrayOutput {
 	return o.ApplyT(func(v DashboardSectionRowChartChartSetting) []int { return v.SparklineValueColorMapValues }).(pulumi.IntArrayOutput)
 }
 
-// For the single stat view, a list of boundaries for mapping different
-// query values to colors.  Must contain one less element than `sparklineValueColorMapColors`
 func (o DashboardSectionRowChartChartSettingOutput) SparklineValueColorMapValuesV2s() pulumi.Float64ArrayOutput {
 	return o.ApplyT(func(v DashboardSectionRowChartChartSetting) []float64 { return v.SparklineValueColorMapValuesV2s }).(pulumi.Float64ArrayOutput)
 }
 
-// For the single stat view, a list of display text values that different query
-// values map to.  Must contain one more element than `sparklineValueTextMapThresholds`
 func (o DashboardSectionRowChartChartSettingOutput) SparklineValueTextMapTexts() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v DashboardSectionRowChartChartSetting) []string { return v.SparklineValueTextMapTexts }).(pulumi.StringArrayOutput)
 }
 
-// For the single stat view, a list of threshold boundaries for
-// mapping different query values to display text.  Must contain one less element than `sparklineValueTextMapText`
 func (o DashboardSectionRowChartChartSettingOutput) SparklineValueTextMapThresholds() pulumi.Float64ArrayOutput {
 	return o.ApplyT(func(v DashboardSectionRowChartChartSetting) []float64 { return v.SparklineValueTextMapThresholds }).(pulumi.Float64ArrayOutput)
 }
 
-// Type of stacked chart (applicable only if chart type is `stacked`). `zero` (default) means
-// stacked from y=0. `expand` means normalized from 0 to 1.  `wiggle` means minimize weighted changes. `silhouette` means to
-// center the stream. Valid options are `zero`, `expand`, `wiggle`, `silhouette`, `bars`
 func (o DashboardSectionRowChartChartSettingOutput) StackType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DashboardSectionRowChartChartSetting) *string { return v.StackType }).(pulumi.StringPtrOutput)
 }
 
-// For the tabular view, which mode to use to determine which point tags to display.
-// Valid options are `all`, `top`, or `custom`
 func (o DashboardSectionRowChartChartSettingOutput) TagMode() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DashboardSectionRowChartChartSetting) *string { return v.TagMode }).(pulumi.StringPtrOutput)
 }
 
-// For x-y scatterplots, whether to color more recent points as darker than older points
 func (o DashboardSectionRowChartChartSettingOutput) TimeBasedColoring() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v DashboardSectionRowChartChartSetting) *bool { return v.TimeBasedColoring }).(pulumi.BoolPtrOutput)
 }
 
-// Chart Type. `line` refers to the Line Plot, `scatter` to the Point Plot, `stacked-area` to
-// the Stacked Area plot, `table` to the Tabular View, `scatterploy-xy` to Scatter Plot, `markdown-widget` to the
-// Markdown display, and `sparkline` to the Single Stat view. Valid options are `line`, `scatterplot`,
-// `stacked-area`, `stacked-column`, `table`, `scatterplot-xy`, `markdown-widget`, `sparkline`, `globe`, `nodemap`,
-// `top-k`, `status-list`, `histogram`
 func (o DashboardSectionRowChartChartSettingOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v DashboardSectionRowChartChartSetting) string { return v.Type }).(pulumi.StringOutput)
 }
 
-// Width, in minutes, of the time window to use for `last` windowing
 func (o DashboardSectionRowChartChartSettingOutput) WindowSize() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v DashboardSectionRowChartChartSetting) *int { return v.WindowSize }).(pulumi.IntPtrOutput)
 }
 
-// For the tabular view, whether to use the full time window for the query or the last X minutes.
-// Valid options are `full` or `last`
 func (o DashboardSectionRowChartChartSettingOutput) Windowing() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DashboardSectionRowChartChartSetting) *string { return v.Windowing }).(pulumi.StringPtrOutput)
 }
 
-// For x-y scatterplots, max value for the X-axis. Set to null for auto
 func (o DashboardSectionRowChartChartSettingOutput) Xmax() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v DashboardSectionRowChartChartSetting) *float64 { return v.Xmax }).(pulumi.Float64PtrOutput)
 }
 
-// For x-y scatterplots, min value for the X-axis. Set to null for auto
 func (o DashboardSectionRowChartChartSettingOutput) Xmin() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v DashboardSectionRowChartChartSetting) *float64 { return v.Xmin }).(pulumi.Float64PtrOutput)
 }
 
-// Whether to scale numerical magnitude labels for left Y-axis by 1024 in the IEC/Binary manner (instead of by 1000 like SI)
 func (o DashboardSectionRowChartChartSettingOutput) Y0ScaleSiBy1024() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v DashboardSectionRowChartChartSetting) *bool { return v.Y0ScaleSiBy1024 }).(pulumi.BoolPtrOutput)
 }
 
-// Whether to automatically adjust magnitude labels and units for the left Y-axis to favor smaller magnitudes and larger units
 func (o DashboardSectionRowChartChartSettingOutput) Y0UnitAutoscaling() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v DashboardSectionRowChartChartSetting) *bool { return v.Y0UnitAutoscaling }).(pulumi.BoolPtrOutput)
 }
 
-// Whether to scale numerical magnitude labels for right Y-axis by 1024 in the IEC/Binary manner (instead of by 1000 like SI)
 func (o DashboardSectionRowChartChartSettingOutput) Y1ScaleSiBy1024() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v DashboardSectionRowChartChartSetting) *bool { return v.Y1ScaleSiBy1024 }).(pulumi.BoolPtrOutput)
 }
 
-// Whether to automatically adjust magnitude labels and units for the right Y-axis to favor smaller magnitudes and larger units
 func (o DashboardSectionRowChartChartSettingOutput) Y1UnitAutoscaling() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v DashboardSectionRowChartChartSetting) *bool { return v.Y1UnitAutoscaling }).(pulumi.BoolPtrOutput)
 }
 
-// For plots with multiple Y-axes, units for right side Y-axis
 func (o DashboardSectionRowChartChartSettingOutput) Y1Units() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DashboardSectionRowChartChartSetting) *string { return v.Y1Units }).(pulumi.StringPtrOutput)
 }
 
-// For plots with multiple Y-axes, max value for the right side Y-axis. Set null for auto
 func (o DashboardSectionRowChartChartSettingOutput) Y1max() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v DashboardSectionRowChartChartSetting) *float64 { return v.Y1max }).(pulumi.Float64PtrOutput)
 }
 
-// For plots with multiple Y-axes, min value for the right side Y-axis. Set null for auto
 func (o DashboardSectionRowChartChartSettingOutput) Y1min() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v DashboardSectionRowChartChartSetting) *float64 { return v.Y1min }).(pulumi.Float64PtrOutput)
 }
 
-// For x-y scatterplots, max value for the Y-axis. Set to null for auto
 func (o DashboardSectionRowChartChartSettingOutput) Ymax() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v DashboardSectionRowChartChartSetting) *float64 { return v.Ymax }).(pulumi.Float64PtrOutput)
 }
 
-// For x-y scatterplots, min value for the Y-axis. Set to null for auto
 func (o DashboardSectionRowChartChartSettingOutput) Ymin() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v DashboardSectionRowChartChartSetting) *float64 { return v.Ymin }).(pulumi.Float64PtrOutput)
 }
 
 type DashboardSectionRowChartSource struct {
-	// Whether the source is disabled
-	Disabled *bool `pulumi:"disabled"`
-	// Name of the source
-	Name string `pulumi:"name"`
-	// Query expression to plot on the chart
-	Query string `pulumi:"query"`
-	// Whether oir not this source line should have the query builder enabled
-	QueryBuilderEnabled *bool `pulumi:"queryBuilderEnabled"`
-	// For scatter plots, does this query source the X-axis or the Y-axis, `X`, or `Y`.
-	ScatterPlotSource *string `pulumi:"scatterPlotSource"`
-	// A description for the purpose of this source
-	SourceDescription *string `pulumi:"sourceDescription"`
+	Disabled            *bool   `pulumi:"disabled"`
+	Name                string  `pulumi:"name"`
+	Query               string  `pulumi:"query"`
+	QueryBuilderEnabled *bool   `pulumi:"queryBuilderEnabled"`
+	ScatterPlotSource   *string `pulumi:"scatterPlotSource"`
+	SourceDescription   *string `pulumi:"sourceDescription"`
 }
 
 // DashboardSectionRowChartSourceInput is an input type that accepts DashboardSectionRowChartSourceArgs and DashboardSectionRowChartSourceOutput values.
@@ -1409,18 +1082,12 @@ type DashboardSectionRowChartSourceInput interface {
 }
 
 type DashboardSectionRowChartSourceArgs struct {
-	// Whether the source is disabled
-	Disabled pulumi.BoolPtrInput `pulumi:"disabled"`
-	// Name of the source
-	Name pulumi.StringInput `pulumi:"name"`
-	// Query expression to plot on the chart
-	Query pulumi.StringInput `pulumi:"query"`
-	// Whether oir not this source line should have the query builder enabled
-	QueryBuilderEnabled pulumi.BoolPtrInput `pulumi:"queryBuilderEnabled"`
-	// For scatter plots, does this query source the X-axis or the Y-axis, `X`, or `Y`.
-	ScatterPlotSource pulumi.StringPtrInput `pulumi:"scatterPlotSource"`
-	// A description for the purpose of this source
-	SourceDescription pulumi.StringPtrInput `pulumi:"sourceDescription"`
+	Disabled            pulumi.BoolPtrInput   `pulumi:"disabled"`
+	Name                pulumi.StringInput    `pulumi:"name"`
+	Query               pulumi.StringInput    `pulumi:"query"`
+	QueryBuilderEnabled pulumi.BoolPtrInput   `pulumi:"queryBuilderEnabled"`
+	ScatterPlotSource   pulumi.StringPtrInput `pulumi:"scatterPlotSource"`
+	SourceDescription   pulumi.StringPtrInput `pulumi:"sourceDescription"`
 }
 
 func (DashboardSectionRowChartSourceArgs) ElementType() reflect.Type {
@@ -1474,32 +1141,26 @@ func (o DashboardSectionRowChartSourceOutput) ToDashboardSectionRowChartSourceOu
 	return o
 }
 
-// Whether the source is disabled
 func (o DashboardSectionRowChartSourceOutput) Disabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v DashboardSectionRowChartSource) *bool { return v.Disabled }).(pulumi.BoolPtrOutput)
 }
 
-// Name of the source
 func (o DashboardSectionRowChartSourceOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v DashboardSectionRowChartSource) string { return v.Name }).(pulumi.StringOutput)
 }
 
-// Query expression to plot on the chart
 func (o DashboardSectionRowChartSourceOutput) Query() pulumi.StringOutput {
 	return o.ApplyT(func(v DashboardSectionRowChartSource) string { return v.Query }).(pulumi.StringOutput)
 }
 
-// Whether oir not this source line should have the query builder enabled
 func (o DashboardSectionRowChartSourceOutput) QueryBuilderEnabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v DashboardSectionRowChartSource) *bool { return v.QueryBuilderEnabled }).(pulumi.BoolPtrOutput)
 }
 
-// For scatter plots, does this query source the X-axis or the Y-axis, `X`, or `Y`.
 func (o DashboardSectionRowChartSourceOutput) ScatterPlotSource() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DashboardSectionRowChartSource) *string { return v.ScatterPlotSource }).(pulumi.StringPtrOutput)
 }
 
-// A description for the purpose of this source
 func (o DashboardSectionRowChartSourceOutput) SourceDescription() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DashboardSectionRowChartSource) *string { return v.SourceDescription }).(pulumi.StringPtrOutput)
 }

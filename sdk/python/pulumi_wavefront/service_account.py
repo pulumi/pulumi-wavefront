@@ -8,20 +8,23 @@ import pulumi.runtime
 from typing import Any, Dict, List, Mapping, Optional, Tuple, Union
 from . import _utilities, _tables
 
-__all__ = ['UserGroup']
+__all__ = ['ServiceAccount']
 
 
-class UserGroup(pulumi.CustomResource):
+class ServiceAccount(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 active: Optional[pulumi.Input[bool]] = None,
                  description: Optional[pulumi.Input[str]] = None,
-                 name: Optional[pulumi.Input[str]] = None,
+                 identifier: Optional[pulumi.Input[str]] = None,
+                 permissions: Optional[pulumi.Input[List[pulumi.Input[str]]]] = None,
+                 user_groups: Optional[pulumi.Input[List[pulumi.Input[str]]]] = None,
                  __props__=None,
                  __name__=None,
                  __opts__=None):
         """
-        Create a UserGroup resource with the given unique name, props, and options.
+        Create a ServiceAccount resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         """
@@ -42,12 +45,15 @@ class UserGroup(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = dict()
 
-            if description is None:
-                raise TypeError("Missing required property 'description'")
+            __props__['active'] = active
             __props__['description'] = description
-            __props__['name'] = name
-        super(UserGroup, __self__).__init__(
-            'wavefront:index/userGroup:UserGroup',
+            if identifier is None:
+                raise TypeError("Missing required property 'identifier'")
+            __props__['identifier'] = identifier
+            __props__['permissions'] = permissions
+            __props__['user_groups'] = user_groups
+        super(ServiceAccount, __self__).__init__(
+            'wavefront:index/serviceAccount:ServiceAccount',
             resource_name,
             __props__,
             opts)
@@ -56,10 +62,13 @@ class UserGroup(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
+            active: Optional[pulumi.Input[bool]] = None,
             description: Optional[pulumi.Input[str]] = None,
-            name: Optional[pulumi.Input[str]] = None) -> 'UserGroup':
+            identifier: Optional[pulumi.Input[str]] = None,
+            permissions: Optional[pulumi.Input[List[pulumi.Input[str]]]] = None,
+            user_groups: Optional[pulumi.Input[List[pulumi.Input[str]]]] = None) -> 'ServiceAccount':
         """
-        Get an existing UserGroup resource's state with the given name, id, and optional extra
+        Get an existing ServiceAccount resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
 
         :param str resource_name: The unique name of the resulting resource.
@@ -70,19 +79,37 @@ class UserGroup(pulumi.CustomResource):
 
         __props__ = dict()
 
+        __props__["active"] = active
         __props__["description"] = description
-        __props__["name"] = name
-        return UserGroup(resource_name, opts=opts, __props__=__props__)
+        __props__["identifier"] = identifier
+        __props__["permissions"] = permissions
+        __props__["user_groups"] = user_groups
+        return ServiceAccount(resource_name, opts=opts, __props__=__props__)
 
     @property
     @pulumi.getter
-    def description(self) -> pulumi.Output[str]:
+    def active(self) -> pulumi.Output[Optional[bool]]:
+        return pulumi.get(self, "active")
+
+    @property
+    @pulumi.getter
+    def description(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter
-    def name(self) -> pulumi.Output[str]:
-        return pulumi.get(self, "name")
+    def identifier(self) -> pulumi.Output[str]:
+        return pulumi.get(self, "identifier")
+
+    @property
+    @pulumi.getter
+    def permissions(self) -> pulumi.Output[List[str]]:
+        return pulumi.get(self, "permissions")
+
+    @property
+    @pulumi.getter(name="userGroups")
+    def user_groups(self) -> pulumi.Output[List[str]]:
+        return pulumi.get(self, "user_groups")
 
     def translate_output_property(self, prop):
         return _tables.CAMEL_TO_SNAKE_CASE_TABLE.get(prop) or prop

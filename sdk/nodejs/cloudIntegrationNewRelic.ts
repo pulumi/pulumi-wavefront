@@ -6,21 +6,6 @@ import * as inputs from "./types/input";
 import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
-/**
- * Provides a Wavefront Cloud Integration for NewRelic. This allows NewRelic cloud integrations to be created,
- * updated, and deleted.
- *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as wavefront from "@pulumi/wavefront";
- *
- * const newrelic = new wavefront.CloudIntegrationNewRelic("newrelic", {
- *     apiKey: "example-api-key",
- * });
- * ```
- */
 export class CloudIntegrationNewRelic extends pulumi.CustomResource {
     /**
      * Get an existing CloudIntegrationNewRelic resource's state with the given name, ID, and optional extra
@@ -49,41 +34,14 @@ export class CloudIntegrationNewRelic extends pulumi.CustomResource {
         return obj['__pulumiType'] === CloudIntegrationNewRelic.__pulumiType;
     }
 
-    /**
-     * A list of point tag key-values to add to every point ingested using this integration
-     */
     public readonly additionalTags!: pulumi.Output<{[key: string]: string} | undefined>;
-    /**
-     * NewRelic REST api key
-     */
     public readonly apiKey!: pulumi.Output<string>;
-    /**
-     * A regular expression that an application name must match (case-insensitively) iun order to collect metrics
-     */
     public readonly appFilterRegex!: pulumi.Output<string | undefined>;
-    /**
-     * Forces this resource to save, even if errors are present
-     */
     public readonly forceSave!: pulumi.Output<boolean | undefined>;
-    /**
-     * A regular expression that a host name must match (case-insensitively) in order to collect metrics
-     */
     public readonly hostFilterRegex!: pulumi.Output<string | undefined>;
-    /**
-     * See Metric Filter
-     */
     public readonly metricFilters!: pulumi.Output<outputs.CloudIntegrationNewRelicMetricFilter[] | undefined>;
-    /**
-     * The human-readable name of this integration
-     */
     public readonly name!: pulumi.Output<string>;
-    /**
-     * A value denoting which cloud service this service integrates with
-     */
     public readonly service!: pulumi.Output<string>;
-    /**
-     * How often, in minutes, to refresh the service
-     */
     public readonly serviceRefreshRateInMinutes!: pulumi.Output<number | undefined>;
 
     /**
@@ -140,41 +98,14 @@ export class CloudIntegrationNewRelic extends pulumi.CustomResource {
  * Input properties used for looking up and filtering CloudIntegrationNewRelic resources.
  */
 export interface CloudIntegrationNewRelicState {
-    /**
-     * A list of point tag key-values to add to every point ingested using this integration
-     */
     readonly additionalTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
-    /**
-     * NewRelic REST api key
-     */
     readonly apiKey?: pulumi.Input<string>;
-    /**
-     * A regular expression that an application name must match (case-insensitively) iun order to collect metrics
-     */
     readonly appFilterRegex?: pulumi.Input<string>;
-    /**
-     * Forces this resource to save, even if errors are present
-     */
     readonly forceSave?: pulumi.Input<boolean>;
-    /**
-     * A regular expression that a host name must match (case-insensitively) in order to collect metrics
-     */
     readonly hostFilterRegex?: pulumi.Input<string>;
-    /**
-     * See Metric Filter
-     */
     readonly metricFilters?: pulumi.Input<pulumi.Input<inputs.CloudIntegrationNewRelicMetricFilter>[]>;
-    /**
-     * The human-readable name of this integration
-     */
     readonly name?: pulumi.Input<string>;
-    /**
-     * A value denoting which cloud service this service integrates with
-     */
     readonly service?: pulumi.Input<string>;
-    /**
-     * How often, in minutes, to refresh the service
-     */
     readonly serviceRefreshRateInMinutes?: pulumi.Input<number>;
 }
 
@@ -182,40 +113,13 @@ export interface CloudIntegrationNewRelicState {
  * The set of arguments for constructing a CloudIntegrationNewRelic resource.
  */
 export interface CloudIntegrationNewRelicArgs {
-    /**
-     * A list of point tag key-values to add to every point ingested using this integration
-     */
     readonly additionalTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
-    /**
-     * NewRelic REST api key
-     */
     readonly apiKey: pulumi.Input<string>;
-    /**
-     * A regular expression that an application name must match (case-insensitively) iun order to collect metrics
-     */
     readonly appFilterRegex?: pulumi.Input<string>;
-    /**
-     * Forces this resource to save, even if errors are present
-     */
     readonly forceSave?: pulumi.Input<boolean>;
-    /**
-     * A regular expression that a host name must match (case-insensitively) in order to collect metrics
-     */
     readonly hostFilterRegex?: pulumi.Input<string>;
-    /**
-     * See Metric Filter
-     */
     readonly metricFilters?: pulumi.Input<pulumi.Input<inputs.CloudIntegrationNewRelicMetricFilter>[]>;
-    /**
-     * The human-readable name of this integration
-     */
     readonly name?: pulumi.Input<string>;
-    /**
-     * A value denoting which cloud service this service integrates with
-     */
     readonly service: pulumi.Input<string>;
-    /**
-     * How often, in minutes, to refresh the service
-     */
     readonly serviceRefreshRateInMinutes?: pulumi.Input<number>;
 }

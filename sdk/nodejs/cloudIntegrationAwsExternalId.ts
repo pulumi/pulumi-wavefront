@@ -4,18 +4,6 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
-/**
- * Provides an External ID for use in AWS IAM Roles.  This allows External IDs to be created and deleted.
- *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as wavefront from "@pulumi/wavefront";
- *
- * const externalId = new wavefront.CloudIntegrationAwsExternalId("external_id", {});
- * ```
- */
 export class CloudIntegrationAwsExternalId extends pulumi.CustomResource {
     /**
      * Get an existing CloudIntegrationAwsExternalId resource's state with the given name, ID, and optional extra

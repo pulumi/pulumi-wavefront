@@ -22,6 +22,7 @@ from .derived_metric import *
 from .get_default_user_group import *
 from .provider import *
 from .role import *
+from .service_account import *
 from .user import *
 from .user_group import *
 from ._inputs import *

@@ -9,13 +9,16 @@ using Pulumi.Serialization;
 
 namespace Pulumi.Wavefront
 {
-    public partial class User : Pulumi.CustomResource
+    public partial class ServiceAccount : Pulumi.CustomResource
     {
-        [Output("customer")]
-        public Output<string> Customer { get; private set; } = null!;
+        [Output("active")]
+        public Output<bool?> Active { get; private set; } = null!;
 
-        [Output("email")]
-        public Output<string> Email { get; private set; } = null!;
+        [Output("description")]
+        public Output<string?> Description { get; private set; } = null!;
+
+        [Output("identifier")]
+        public Output<string> Identifier { get; private set; } = null!;
 
         [Output("permissions")]
         public Output<ImmutableArray<string>> Permissions { get; private set; } = null!;
@@ -25,19 +28,19 @@ namespace Pulumi.Wavefront
 
 
         /// <summary>
-        /// Create a User resource with the given unique name, arguments, and options.
+        /// Create a ServiceAccount resource with the given unique name, arguments, and options.
         /// </summary>
         ///
         /// <param name="name">The unique name of the resource</param>
         /// <param name="args">The arguments used to populate this resource's properties</param>
         /// <param name="options">A bag of options that control this resource's behavior</param>
-        public User(string name, UserArgs args, CustomResourceOptions? options = null)
-            : base("wavefront:index/user:User", name, args ?? new UserArgs(), MakeResourceOptions(options, ""))
+        public ServiceAccount(string name, ServiceAccountArgs args, CustomResourceOptions? options = null)
+            : base("wavefront:index/serviceAccount:ServiceAccount", name, args ?? new ServiceAccountArgs(), MakeResourceOptions(options, ""))
         {
         }
 
-        private User(string name, Input<string> id, UserState? state = null, CustomResourceOptions? options = null)
-            : base("wavefront:index/user:User", name, state, MakeResourceOptions(options, id))
+        private ServiceAccount(string name, Input<string> id, ServiceAccountState? state = null, CustomResourceOptions? options = null)
+            : base("wavefront:index/serviceAccount:ServiceAccount", name, state, MakeResourceOptions(options, id))
         {
         }
 
@@ -53,7 +56,7 @@ namespace Pulumi.Wavefront
             return merged;
         }
         /// <summary>
-        /// Get an existing User resource's state with the given name, ID, and optional extra
+        /// Get an existing ServiceAccount resource's state with the given name, ID, and optional extra
         /// properties used to qualify the lookup.
         /// </summary>
         ///
@@ -61,19 +64,22 @@ namespace Pulumi.Wavefront
         /// <param name="id">The unique provider ID of the resource to lookup.</param>
         /// <param name="state">Any extra arguments used during the lookup.</param>
         /// <param name="options">A bag of options that control this resource's behavior</param>
-        public static User Get(string name, Input<string> id, UserState? state = null, CustomResourceOptions? options = null)
+        public static ServiceAccount Get(string name, Input<string> id, ServiceAccountState? state = null, CustomResourceOptions? options = null)
         {
-            return new User(name, id, state, options);
+            return new ServiceAccount(name, id, state, options);
         }
     }
 
-    public sealed class UserArgs : Pulumi.ResourceArgs
+    public sealed class ServiceAccountArgs : Pulumi.ResourceArgs
     {
-        [Input("customer")]
-        public Input<string>? Customer { get; set; }
+        [Input("active")]
+        public Input<bool>? Active { get; set; }
 
-        [Input("email", required: true)]
-        public Input<string> Email { get; set; } = null!;
+        [Input("description")]
+        public Input<string>? Description { get; set; }
+
+        [Input("identifier", required: true)]
+        public Input<string> Identifier { get; set; } = null!;
 
         [Input("permissions")]
         private InputList<string>? _permissions;
@@ -91,18 +97,21 @@ namespace Pulumi.Wavefront
             set => _userGroups = value;
         }
 
-        public UserArgs()
+        public ServiceAccountArgs()
         {
         }
     }
 
-    public sealed class UserState : Pulumi.ResourceArgs
+    public sealed class ServiceAccountState : Pulumi.ResourceArgs
     {
-        [Input("customer")]
-        public Input<string>? Customer { get; set; }
+        [Input("active")]
+        public Input<bool>? Active { get; set; }
 
-        [Input("email")]
-        public Input<string>? Email { get; set; }
+        [Input("description")]
+        public Input<string>? Description { get; set; }
+
+        [Input("identifier")]
+        public Input<string>? Identifier { get; set; }
 
         [Input("permissions")]
         private InputList<string>? _permissions;
@@ -120,7 +129,7 @@ namespace Pulumi.Wavefront
             set => _userGroups = value;
         }
 
-        public UserState()
+        public ServiceAccountState()
         {
         }
     }

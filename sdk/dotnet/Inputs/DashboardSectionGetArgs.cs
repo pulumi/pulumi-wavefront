@@ -12,18 +12,11 @@ namespace Pulumi.Wavefront.Inputs
 
     public sealed class DashboardSectionGetArgs : Pulumi.ResourceArgs
     {
-        /// <summary>
-        /// Name of this section
-        /// </summary>
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
 
         [Input("rows", required: true)]
         private InputList<Inputs.DashboardSectionRowGetArgs>? _rows;
-
-        /// <summary>
-        /// See dashboard section rows
-        /// </summary>
         public InputList<Inputs.DashboardSectionRowGetArgs> Rows
         {
             get => _rows ?? (_rows = new InputList<Inputs.DashboardSectionRowGetArgs>());

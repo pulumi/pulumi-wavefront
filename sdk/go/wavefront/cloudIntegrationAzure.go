@@ -10,58 +10,20 @@ import (
 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 )
 
-// Provides a Wavefront Cloud Integration for Azure. This allows azure cloud integrations to be created,
-// updated, and deleted.
-//
-// ## Example Usage
-//
-// ```go
-// package main
-//
-// import (
-// 	"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront"
-// 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
-// )
-//
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := wavefront.NewCloudIntegrationAzureActivityLog(ctx, "azureActivityLog", &wavefront.CloudIntegrationAzureActivityLogArgs{
-// 			ClientId:     pulumi.String("client-id2"),
-// 			ClientSecret: pulumi.String("client-secret2"),
-// 			Tenant:       pulumi.String("my-tenant2"),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
-// ```
 type CloudIntegrationAzure struct {
 	pulumi.CustomResourceState
 
-	// A list of point tag key-values to add to every point ingested using this integration
-	AdditionalTags pulumi.StringMapOutput `pulumi:"additionalTags"`
-	// A list of Azure Activity Log categories.
-	CategoryFilters pulumi.StringArrayOutput `pulumi:"categoryFilters"`
-	// Client id for an azure service account within your project
-	ClientId pulumi.StringOutput `pulumi:"clientId"`
-	// Client secret for an Azure service account within your project
-	ClientSecret pulumi.StringOutput `pulumi:"clientSecret"`
-	// Forces this resource to save, even if errors are present
-	ForceSave pulumi.BoolPtrOutput `pulumi:"forceSave"`
-	// A regular expression that a metric name must match (case-insensitively) in order to be ingested
-	MetricFilterRegex pulumi.StringPtrOutput `pulumi:"metricFilterRegex"`
-	// The human-readable name of this integration
-	Name pulumi.StringOutput `pulumi:"name"`
-	// A list of Azure resource groups from which to pull metrics
-	ResourceGroupFilters pulumi.StringArrayOutput `pulumi:"resourceGroupFilters"`
-	// A value denoting which cloud service this service integrates with
-	Service pulumi.StringOutput `pulumi:"service"`
-	// How often, in minutes, to refresh the service
-	ServiceRefreshRateInMinutes pulumi.IntPtrOutput `pulumi:"serviceRefreshRateInMinutes"`
-	// Tenant Id for an Azure service account within your project
-	Tenant pulumi.StringOutput `pulumi:"tenant"`
+	AdditionalTags              pulumi.StringMapOutput   `pulumi:"additionalTags"`
+	CategoryFilters             pulumi.StringArrayOutput `pulumi:"categoryFilters"`
+	ClientId                    pulumi.StringOutput      `pulumi:"clientId"`
+	ClientSecret                pulumi.StringOutput      `pulumi:"clientSecret"`
+	ForceSave                   pulumi.BoolPtrOutput     `pulumi:"forceSave"`
+	MetricFilterRegex           pulumi.StringPtrOutput   `pulumi:"metricFilterRegex"`
+	Name                        pulumi.StringOutput      `pulumi:"name"`
+	ResourceGroupFilters        pulumi.StringArrayOutput `pulumi:"resourceGroupFilters"`
+	Service                     pulumi.StringOutput      `pulumi:"service"`
+	ServiceRefreshRateInMinutes pulumi.IntPtrOutput      `pulumi:"serviceRefreshRateInMinutes"`
+	Tenant                      pulumi.StringOutput      `pulumi:"tenant"`
 }
 
 // NewCloudIntegrationAzure registers a new resource with the given unique name, arguments, and options.
@@ -104,53 +66,31 @@ func GetCloudIntegrationAzure(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering CloudIntegrationAzure resources.
 type cloudIntegrationAzureState struct {
-	// A list of point tag key-values to add to every point ingested using this integration
-	AdditionalTags map[string]string `pulumi:"additionalTags"`
-	// A list of Azure Activity Log categories.
-	CategoryFilters []string `pulumi:"categoryFilters"`
-	// Client id for an azure service account within your project
-	ClientId *string `pulumi:"clientId"`
-	// Client secret for an Azure service account within your project
-	ClientSecret *string `pulumi:"clientSecret"`
-	// Forces this resource to save, even if errors are present
-	ForceSave *bool `pulumi:"forceSave"`
-	// A regular expression that a metric name must match (case-insensitively) in order to be ingested
-	MetricFilterRegex *string `pulumi:"metricFilterRegex"`
-	// The human-readable name of this integration
-	Name *string `pulumi:"name"`
-	// A list of Azure resource groups from which to pull metrics
-	ResourceGroupFilters []string `pulumi:"resourceGroupFilters"`
-	// A value denoting which cloud service this service integrates with
-	Service *string `pulumi:"service"`
-	// How often, in minutes, to refresh the service
-	ServiceRefreshRateInMinutes *int `pulumi:"serviceRefreshRateInMinutes"`
-	// Tenant Id for an Azure service account within your project
-	Tenant *string `pulumi:"tenant"`
+	AdditionalTags              map[string]string `pulumi:"additionalTags"`
+	CategoryFilters             []string          `pulumi:"categoryFilters"`
+	ClientId                    *string           `pulumi:"clientId"`
+	ClientSecret                *string           `pulumi:"clientSecret"`
+	ForceSave                   *bool             `pulumi:"forceSave"`
+	MetricFilterRegex           *string           `pulumi:"metricFilterRegex"`
+	Name                        *string           `pulumi:"name"`
+	ResourceGroupFilters        []string          `pulumi:"resourceGroupFilters"`
+	Service                     *string           `pulumi:"service"`
+	ServiceRefreshRateInMinutes *int              `pulumi:"serviceRefreshRateInMinutes"`
+	Tenant                      *string           `pulumi:"tenant"`
 }
 
 type CloudIntegrationAzureState struct {
-	// A list of point tag key-values to add to every point ingested using this integration
-	AdditionalTags pulumi.StringMapInput
-	// A list of Azure Activity Log categories.
-	CategoryFilters pulumi.StringArrayInput
-	// Client id for an azure service account within your project
-	ClientId pulumi.StringPtrInput
-	// Client secret for an Azure service account within your project
-	ClientSecret pulumi.StringPtrInput
-	// Forces this resource to save, even if errors are present
-	ForceSave pulumi.BoolPtrInput
-	// A regular expression that a metric name must match (case-insensitively) in order to be ingested
-	MetricFilterRegex pulumi.StringPtrInput
-	// The human-readable name of this integration
-	Name pulumi.StringPtrInput
-	// A list of Azure resource groups from which to pull metrics
-	ResourceGroupFilters pulumi.StringArrayInput
-	// A value denoting which cloud service this service integrates with
-	Service pulumi.StringPtrInput
-	// How often, in minutes, to refresh the service
+	AdditionalTags              pulumi.StringMapInput
+	CategoryFilters             pulumi.StringArrayInput
+	ClientId                    pulumi.StringPtrInput
+	ClientSecret                pulumi.StringPtrInput
+	ForceSave                   pulumi.BoolPtrInput
+	MetricFilterRegex           pulumi.StringPtrInput
+	Name                        pulumi.StringPtrInput
+	ResourceGroupFilters        pulumi.StringArrayInput
+	Service                     pulumi.StringPtrInput
 	ServiceRefreshRateInMinutes pulumi.IntPtrInput
-	// Tenant Id for an Azure service account within your project
-	Tenant pulumi.StringPtrInput
+	Tenant                      pulumi.StringPtrInput
 }
 
 func (CloudIntegrationAzureState) ElementType() reflect.Type {
@@ -158,54 +98,32 @@ func (CloudIntegrationAzureState) ElementType() reflect.Type {
 }
 
 type cloudIntegrationAzureArgs struct {
-	// A list of point tag key-values to add to every point ingested using this integration
-	AdditionalTags map[string]string `pulumi:"additionalTags"`
-	// A list of Azure Activity Log categories.
-	CategoryFilters []string `pulumi:"categoryFilters"`
-	// Client id for an azure service account within your project
-	ClientId string `pulumi:"clientId"`
-	// Client secret for an Azure service account within your project
-	ClientSecret string `pulumi:"clientSecret"`
-	// Forces this resource to save, even if errors are present
-	ForceSave *bool `pulumi:"forceSave"`
-	// A regular expression that a metric name must match (case-insensitively) in order to be ingested
-	MetricFilterRegex *string `pulumi:"metricFilterRegex"`
-	// The human-readable name of this integration
-	Name *string `pulumi:"name"`
-	// A list of Azure resource groups from which to pull metrics
-	ResourceGroupFilters []string `pulumi:"resourceGroupFilters"`
-	// A value denoting which cloud service this service integrates with
-	Service string `pulumi:"service"`
-	// How often, in minutes, to refresh the service
-	ServiceRefreshRateInMinutes *int `pulumi:"serviceRefreshRateInMinutes"`
-	// Tenant Id for an Azure service account within your project
-	Tenant string `pulumi:"tenant"`
+	AdditionalTags              map[string]string `pulumi:"additionalTags"`
+	CategoryFilters             []string          `pulumi:"categoryFilters"`
+	ClientId                    string            `pulumi:"clientId"`
+	ClientSecret                string            `pulumi:"clientSecret"`
+	ForceSave                   *bool             `pulumi:"forceSave"`
+	MetricFilterRegex           *string           `pulumi:"metricFilterRegex"`
+	Name                        *string           `pulumi:"name"`
+	ResourceGroupFilters        []string          `pulumi:"resourceGroupFilters"`
+	Service                     string            `pulumi:"service"`
+	ServiceRefreshRateInMinutes *int              `pulumi:"serviceRefreshRateInMinutes"`
+	Tenant                      string            `pulumi:"tenant"`
 }
 
 // The set of arguments for constructing a CloudIntegrationAzure resource.
 type CloudIntegrationAzureArgs struct {
-	// A list of point tag key-values to add to every point ingested using this integration
-	AdditionalTags pulumi.StringMapInput
-	// A list of Azure Activity Log categories.
-	CategoryFilters pulumi.StringArrayInput
-	// Client id for an azure service account within your project
-	ClientId pulumi.StringInput
-	// Client secret for an Azure service account within your project
-	ClientSecret pulumi.StringInput
-	// Forces this resource to save, even if errors are present
-	ForceSave pulumi.BoolPtrInput
-	// A regular expression that a metric name must match (case-insensitively) in order to be ingested
-	MetricFilterRegex pulumi.StringPtrInput
-	// The human-readable name of this integration
-	Name pulumi.StringPtrInput
-	// A list of Azure resource groups from which to pull metrics
-	ResourceGroupFilters pulumi.StringArrayInput
-	// A value denoting which cloud service this service integrates with
-	Service pulumi.StringInput
-	// How often, in minutes, to refresh the service
+	AdditionalTags              pulumi.StringMapInput
+	CategoryFilters             pulumi.StringArrayInput
+	ClientId                    pulumi.StringInput
+	ClientSecret                pulumi.StringInput
+	ForceSave                   pulumi.BoolPtrInput
+	MetricFilterRegex           pulumi.StringPtrInput
+	Name                        pulumi.StringPtrInput
+	ResourceGroupFilters        pulumi.StringArrayInput
+	Service                     pulumi.StringInput
 	ServiceRefreshRateInMinutes pulumi.IntPtrInput
-	// Tenant Id for an Azure service account within your project
-	Tenant pulumi.StringInput
+	Tenant                      pulumi.StringInput
 }
 
 func (CloudIntegrationAzureArgs) ElementType() reflect.Type {

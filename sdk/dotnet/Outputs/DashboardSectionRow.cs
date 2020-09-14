@@ -13,9 +13,6 @@ namespace Pulumi.Wavefront.Outputs
     [OutputType]
     public sealed class DashboardSectionRow
     {
-        /// <summary>
-        /// Charts in this section. See dashboard chart
-        /// </summary>
         public readonly ImmutableArray<Outputs.DashboardSectionRowChart> Charts;
 
         [OutputConstructor]

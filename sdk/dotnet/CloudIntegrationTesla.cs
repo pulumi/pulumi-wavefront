@@ -9,71 +9,26 @@ using Pulumi.Serialization;
 
 namespace Pulumi.Wavefront
 {
-    /// <summary>
-    /// Provides a Wavefront Cloud Integration for Tesla. This allows NewRelic cloud integrations to be created,
-    /// updated, and deleted.
-    /// 
-    /// ## Example Usage
-    /// 
-    /// ```csharp
-    /// using Pulumi;
-    /// using Wavefront = Pulumi.Wavefront;
-    /// 
-    /// class MyStack : Stack
-    /// {
-    ///     public MyStack()
-    ///     {
-    ///         var tesla = new Wavefront.CloudIntegrationTesla("tesla", new Wavefront.CloudIntegrationTeslaArgs
-    ///         {
-    ///             Email = "email@example.com",
-    ///             Password = "password",
-    ///         });
-    ///     }
-    /// 
-    /// }
-    /// ```
-    /// </summary>
     public partial class CloudIntegrationTesla : Pulumi.CustomResource
     {
-        /// <summary>
-        /// A list of point tag key-values to add to every point ingested using this integration
-        /// </summary>
         [Output("additionalTags")]
         public Output<ImmutableDictionary<string, string>?> AdditionalTags { get; private set; } = null!;
 
-        /// <summary>
-        /// Email address for the Tesla account login
-        /// </summary>
         [Output("email")]
         public Output<string> Email { get; private set; } = null!;
 
-        /// <summary>
-        /// Forces this resource to save, even if errors are present
-        /// </summary>
         [Output("forceSave")]
         public Output<bool?> ForceSave { get; private set; } = null!;
 
-        /// <summary>
-        /// The human-readable name of this integration
-        /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
 
-        /// <summary>
-        /// Password for the Tesla account login
-        /// </summary>
         [Output("password")]
         public Output<string> Password { get; private set; } = null!;
 
-        /// <summary>
-        /// A value denoting which cloud service this service integrates with
-        /// </summary>
         [Output("service")]
         public Output<string> Service { get; private set; } = null!;
 
-        /// <summary>
-        /// How often, in minutes, to refresh the service
-        /// </summary>
         [Output("serviceRefreshRateInMinutes")]
         public Output<int?> ServiceRefreshRateInMinutes { get; private set; } = null!;
 
@@ -125,49 +80,27 @@ namespace Pulumi.Wavefront
     {
         [Input("additionalTags")]
         private InputMap<string>? _additionalTags;
-
-        /// <summary>
-        /// A list of point tag key-values to add to every point ingested using this integration
-        /// </summary>
         public InputMap<string> AdditionalTags
         {
             get => _additionalTags ?? (_additionalTags = new InputMap<string>());
             set => _additionalTags = value;
         }
 
-        /// <summary>
-        /// Email address for the Tesla account login
-        /// </summary>
         [Input("email", required: true)]
         public Input<string> Email { get; set; } = null!;
 
-        /// <summary>
-        /// Forces this resource to save, even if errors are present
-        /// </summary>
         [Input("forceSave")]
         public Input<bool>? ForceSave { get; set; }
 
-        /// <summary>
-        /// The human-readable name of this integration
-        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
-        /// <summary>
-        /// Password for the Tesla account login
-        /// </summary>
         [Input("password", required: true)]
         public Input<string> Password { get; set; } = null!;
 
-        /// <summary>
-        /// A value denoting which cloud service this service integrates with
-        /// </summary>
         [Input("service", required: true)]
         public Input<string> Service { get; set; } = null!;
 
-        /// <summary>
-        /// How often, in minutes, to refresh the service
-        /// </summary>
         [Input("serviceRefreshRateInMinutes")]
         public Input<int>? ServiceRefreshRateInMinutes { get; set; }
 
@@ -180,49 +113,27 @@ namespace Pulumi.Wavefront
     {
         [Input("additionalTags")]
         private InputMap<string>? _additionalTags;
-
-        /// <summary>
-        /// A list of point tag key-values to add to every point ingested using this integration
-        /// </summary>
         public InputMap<string> AdditionalTags
         {
             get => _additionalTags ?? (_additionalTags = new InputMap<string>());
             set => _additionalTags = value;
         }
 
-        /// <summary>
-        /// Email address for the Tesla account login
-        /// </summary>
         [Input("email")]
         public Input<string>? Email { get; set; }
 
-        /// <summary>
-        /// Forces this resource to save, even if errors are present
-        /// </summary>
         [Input("forceSave")]
         public Input<bool>? ForceSave { get; set; }
 
-        /// <summary>
-        /// The human-readable name of this integration
-        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
-        /// <summary>
-        /// Password for the Tesla account login
-        /// </summary>
         [Input("password")]
         public Input<string>? Password { get; set; }
 
-        /// <summary>
-        /// A value denoting which cloud service this service integrates with
-        /// </summary>
         [Input("service")]
         public Input<string>? Service { get; set; }
 
-        /// <summary>
-        /// How often, in minutes, to refresh the service
-        /// </summary>
         [Input("serviceRefreshRateInMinutes")]
         public Input<int>? ServiceRefreshRateInMinutes { get; set; }
 

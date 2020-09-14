@@ -10,69 +10,21 @@ import (
 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 )
 
-// Provides a Wavefront Cloud Integration for CloudTrail. This allows CloudTrail cloud integrations to be created,
-// updated, and delete
-//
-// ## Example Usage
-//
-// ```go
-// package main
-//
-// import (
-// 	"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront"
-// 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
-// )
-//
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		extId, err := wavefront.NewCloudIntegrationAwsExternalId(ctx, "extId", nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		_, err = wavefront.NewCloudIntegrationCloudWatch(ctx, "cloudwatch", &wavefront.CloudIntegrationCloudWatchArgs{
-// 			ForceSave:  pulumi.Bool(true),
-// 			RoleArn:    pulumi.String("arn:aws::1234567:role/example-arn"),
-// 			ExternalId: extId.ID(),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
-// ```
 type CloudIntegrationCloudWatch struct {
 	pulumi.CustomResourceState
 
-	// A list of point tag key-values to add to every point ingested using this integration
-	AdditionalTags pulumi.StringMapOutput `pulumi:"additionalTags"`
-	// The Role ARN that the customer has created in AWS IAM to allow access to Wavefront
-	ExternalId pulumi.StringOutput `pulumi:"externalId"`
-	// Forces this resource to save, even if errors are present
-	ForceSave pulumi.BoolPtrOutput `pulumi:"forceSave"`
-	// A string->string map whitelist of instance tag-value pairs (in AWS).
-	// If the instance's AWS tags match this whitelist, CloudWatch data about this instance is ingested.
-	// Multiple entries are OR'ed
-	InstanceSelectionTags pulumi.StringMapOutput `pulumi:"instanceSelectionTags"`
-	// A regular expression that a CloudWatch metric name must match (case-insensitively) in order to be ingested
-	MetricFilterRegex pulumi.StringPtrOutput `pulumi:"metricFilterRegex"`
-	// The human-readable name of this integration
-	Name pulumi.StringOutput `pulumi:"name"`
-	// A list of namespaces that limit what we query from CloudWatch
-	Namespaces pulumi.StringArrayOutput `pulumi:"namespaces"`
-	// A regular expression that AWS tag key name must match (case-insensitively)
-	// in order to be ingested
-	PointTagFilterRegex pulumi.StringPtrOutput `pulumi:"pointTagFilterRegex"`
-	// The external id corresponding to the Role ARN
-	RoleArn pulumi.StringOutput `pulumi:"roleArn"`
-	// A value denoting which cloud service this service integrates with
-	Service pulumi.StringOutput `pulumi:"service"`
-	// How often, in minutes, to refresh the service
-	ServiceRefreshRateInMinutes pulumi.IntPtrOutput `pulumi:"serviceRefreshRateInMinutes"`
-	// A string->string map of whitelist of volume tag-value pairs (in AWS).
-	// If the volume's AWS tags match this whitelist, CloudWatch data about this volume is ingested.
-	// Multiple entries are OR'ed
-	VolumeSelectionTags pulumi.StringMapOutput `pulumi:"volumeSelectionTags"`
+	AdditionalTags              pulumi.StringMapOutput   `pulumi:"additionalTags"`
+	ExternalId                  pulumi.StringOutput      `pulumi:"externalId"`
+	ForceSave                   pulumi.BoolPtrOutput     `pulumi:"forceSave"`
+	InstanceSelectionTags       pulumi.StringMapOutput   `pulumi:"instanceSelectionTags"`
+	MetricFilterRegex           pulumi.StringPtrOutput   `pulumi:"metricFilterRegex"`
+	Name                        pulumi.StringOutput      `pulumi:"name"`
+	Namespaces                  pulumi.StringArrayOutput `pulumi:"namespaces"`
+	PointTagFilterRegex         pulumi.StringPtrOutput   `pulumi:"pointTagFilterRegex"`
+	RoleArn                     pulumi.StringOutput      `pulumi:"roleArn"`
+	Service                     pulumi.StringOutput      `pulumi:"service"`
+	ServiceRefreshRateInMinutes pulumi.IntPtrOutput      `pulumi:"serviceRefreshRateInMinutes"`
+	VolumeSelectionTags         pulumi.StringMapOutput   `pulumi:"volumeSelectionTags"`
 }
 
 // NewCloudIntegrationCloudWatch registers a new resource with the given unique name, arguments, and options.
@@ -112,67 +64,33 @@ func GetCloudIntegrationCloudWatch(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering CloudIntegrationCloudWatch resources.
 type cloudIntegrationCloudWatchState struct {
-	// A list of point tag key-values to add to every point ingested using this integration
-	AdditionalTags map[string]string `pulumi:"additionalTags"`
-	// The Role ARN that the customer has created in AWS IAM to allow access to Wavefront
-	ExternalId *string `pulumi:"externalId"`
-	// Forces this resource to save, even if errors are present
-	ForceSave *bool `pulumi:"forceSave"`
-	// A string->string map whitelist of instance tag-value pairs (in AWS).
-	// If the instance's AWS tags match this whitelist, CloudWatch data about this instance is ingested.
-	// Multiple entries are OR'ed
-	InstanceSelectionTags map[string]string `pulumi:"instanceSelectionTags"`
-	// A regular expression that a CloudWatch metric name must match (case-insensitively) in order to be ingested
-	MetricFilterRegex *string `pulumi:"metricFilterRegex"`
-	// The human-readable name of this integration
-	Name *string `pulumi:"name"`
-	// A list of namespaces that limit what we query from CloudWatch
-	Namespaces []string `pulumi:"namespaces"`
-	// A regular expression that AWS tag key name must match (case-insensitively)
-	// in order to be ingested
-	PointTagFilterRegex *string `pulumi:"pointTagFilterRegex"`
-	// The external id corresponding to the Role ARN
-	RoleArn *string `pulumi:"roleArn"`
-	// A value denoting which cloud service this service integrates with
-	Service *string `pulumi:"service"`
-	// How often, in minutes, to refresh the service
-	ServiceRefreshRateInMinutes *int `pulumi:"serviceRefreshRateInMinutes"`
-	// A string->string map of whitelist of volume tag-value pairs (in AWS).
-	// If the volume's AWS tags match this whitelist, CloudWatch data about this volume is ingested.
-	// Multiple entries are OR'ed
-	VolumeSelectionTags map[string]string `pulumi:"volumeSelectionTags"`
+	AdditionalTags              map[string]string `pulumi:"additionalTags"`
+	ExternalId                  *string           `pulumi:"externalId"`
+	ForceSave                   *bool             `pulumi:"forceSave"`
+	InstanceSelectionTags       map[string]string `pulumi:"instanceSelectionTags"`
+	MetricFilterRegex           *string           `pulumi:"metricFilterRegex"`
+	Name                        *string           `pulumi:"name"`
+	Namespaces                  []string          `pulumi:"namespaces"`
+	PointTagFilterRegex         *string           `pulumi:"pointTagFilterRegex"`
+	RoleArn                     *string           `pulumi:"roleArn"`
+	Service                     *string           `pulumi:"service"`
+	ServiceRefreshRateInMinutes *int              `pulumi:"serviceRefreshRateInMinutes"`
+	VolumeSelectionTags         map[string]string `pulumi:"volumeSelectionTags"`
 }
 
 type CloudIntegrationCloudWatchState struct {
-	// A list of point tag key-values to add to every point ingested using this integration
-	AdditionalTags pulumi.StringMapInput
-	// The Role ARN that the customer has created in AWS IAM to allow access to Wavefront
-	ExternalId pulumi.StringPtrInput
-	// Forces this resource to save, even if errors are present
-	ForceSave pulumi.BoolPtrInput
-	// A string->string map whitelist of instance tag-value pairs (in AWS).
-	// If the instance's AWS tags match this whitelist, CloudWatch data about this instance is ingested.
-	// Multiple entries are OR'ed
-	InstanceSelectionTags pulumi.StringMapInput
-	// A regular expression that a CloudWatch metric name must match (case-insensitively) in order to be ingested
-	MetricFilterRegex pulumi.StringPtrInput
-	// The human-readable name of this integration
-	Name pulumi.StringPtrInput
-	// A list of namespaces that limit what we query from CloudWatch
-	Namespaces pulumi.StringArrayInput
-	// A regular expression that AWS tag key name must match (case-insensitively)
-	// in order to be ingested
-	PointTagFilterRegex pulumi.StringPtrInput
-	// The external id corresponding to the Role ARN
-	RoleArn pulumi.StringPtrInput
-	// A value denoting which cloud service this service integrates with
-	Service pulumi.StringPtrInput
-	// How often, in minutes, to refresh the service
+	AdditionalTags              pulumi.StringMapInput
+	ExternalId                  pulumi.StringPtrInput
+	ForceSave                   pulumi.BoolPtrInput
+	InstanceSelectionTags       pulumi.StringMapInput
+	MetricFilterRegex           pulumi.StringPtrInput
+	Name                        pulumi.StringPtrInput
+	Namespaces                  pulumi.StringArrayInput
+	PointTagFilterRegex         pulumi.StringPtrInput
+	RoleArn                     pulumi.StringPtrInput
+	Service                     pulumi.StringPtrInput
 	ServiceRefreshRateInMinutes pulumi.IntPtrInput
-	// A string->string map of whitelist of volume tag-value pairs (in AWS).
-	// If the volume's AWS tags match this whitelist, CloudWatch data about this volume is ingested.
-	// Multiple entries are OR'ed
-	VolumeSelectionTags pulumi.StringMapInput
+	VolumeSelectionTags         pulumi.StringMapInput
 }
 
 func (CloudIntegrationCloudWatchState) ElementType() reflect.Type {
@@ -180,68 +98,34 @@ func (CloudIntegrationCloudWatchState) ElementType() reflect.Type {
 }
 
 type cloudIntegrationCloudWatchArgs struct {
-	// A list of point tag key-values to add to every point ingested using this integration
-	AdditionalTags map[string]string `pulumi:"additionalTags"`
-	// The Role ARN that the customer has created in AWS IAM to allow access to Wavefront
-	ExternalId string `pulumi:"externalId"`
-	// Forces this resource to save, even if errors are present
-	ForceSave *bool `pulumi:"forceSave"`
-	// A string->string map whitelist of instance tag-value pairs (in AWS).
-	// If the instance's AWS tags match this whitelist, CloudWatch data about this instance is ingested.
-	// Multiple entries are OR'ed
-	InstanceSelectionTags map[string]string `pulumi:"instanceSelectionTags"`
-	// A regular expression that a CloudWatch metric name must match (case-insensitively) in order to be ingested
-	MetricFilterRegex *string `pulumi:"metricFilterRegex"`
-	// The human-readable name of this integration
-	Name *string `pulumi:"name"`
-	// A list of namespaces that limit what we query from CloudWatch
-	Namespaces []string `pulumi:"namespaces"`
-	// A regular expression that AWS tag key name must match (case-insensitively)
-	// in order to be ingested
-	PointTagFilterRegex *string `pulumi:"pointTagFilterRegex"`
-	// The external id corresponding to the Role ARN
-	RoleArn string `pulumi:"roleArn"`
-	// A value denoting which cloud service this service integrates with
-	Service string `pulumi:"service"`
-	// How often, in minutes, to refresh the service
-	ServiceRefreshRateInMinutes *int `pulumi:"serviceRefreshRateInMinutes"`
-	// A string->string map of whitelist of volume tag-value pairs (in AWS).
-	// If the volume's AWS tags match this whitelist, CloudWatch data about this volume is ingested.
-	// Multiple entries are OR'ed
-	VolumeSelectionTags map[string]string `pulumi:"volumeSelectionTags"`
+	AdditionalTags              map[string]string `pulumi:"additionalTags"`
+	ExternalId                  string            `pulumi:"externalId"`
+	ForceSave                   *bool             `pulumi:"forceSave"`
+	InstanceSelectionTags       map[string]string `pulumi:"instanceSelectionTags"`
+	MetricFilterRegex           *string           `pulumi:"metricFilterRegex"`
+	Name                        *string           `pulumi:"name"`
+	Namespaces                  []string          `pulumi:"namespaces"`
+	PointTagFilterRegex         *string           `pulumi:"pointTagFilterRegex"`
+	RoleArn                     string            `pulumi:"roleArn"`
+	Service                     string            `pulumi:"service"`
+	ServiceRefreshRateInMinutes *int              `pulumi:"serviceRefreshRateInMinutes"`
+	VolumeSelectionTags         map[string]string `pulumi:"volumeSelectionTags"`
 }
 
 // The set of arguments for constructing a CloudIntegrationCloudWatch resource.
 type CloudIntegrationCloudWatchArgs struct {
-	// A list of point tag key-values to add to every point ingested using this integration
-	AdditionalTags pulumi.StringMapInput
-	// The Role ARN that the customer has created in AWS IAM to allow access to Wavefront
-	ExternalId pulumi.StringInput
-	// Forces this resource to save, even if errors are present
-	ForceSave pulumi.BoolPtrInput
-	// A string->string map whitelist of instance tag-value pairs (in AWS).
-	// If the instance's AWS tags match this whitelist, CloudWatch data about this instance is ingested.
-	// Multiple entries are OR'ed
-	InstanceSelectionTags pulumi.StringMapInput
-	// A regular expression that a CloudWatch metric name must match (case-insensitively) in order to be ingested
-	MetricFilterRegex pulumi.StringPtrInput
-	// The human-readable name of this integration
-	Name pulumi.StringPtrInput
-	// A list of namespaces that limit what we query from CloudWatch
-	Namespaces pulumi.StringArrayInput
-	// A regular expression that AWS tag key name must match (case-insensitively)
-	// in order to be ingested
-	PointTagFilterRegex pulumi.StringPtrInput
-	// The external id corresponding to the Role ARN
-	RoleArn pulumi.StringInput
-	// A value denoting which cloud service this service integrates with
-	Service pulumi.StringInput
-	// How often, in minutes, to refresh the service
+	AdditionalTags              pulumi.StringMapInput
+	ExternalId                  pulumi.StringInput
+	ForceSave                   pulumi.BoolPtrInput
+	InstanceSelectionTags       pulumi.StringMapInput
+	MetricFilterRegex           pulumi.StringPtrInput
+	Name                        pulumi.StringPtrInput
+	Namespaces                  pulumi.StringArrayInput
+	PointTagFilterRegex         pulumi.StringPtrInput
+	RoleArn                     pulumi.StringInput
+	Service                     pulumi.StringInput
 	ServiceRefreshRateInMinutes pulumi.IntPtrInput
-	// A string->string map of whitelist of volume tag-value pairs (in AWS).
-	// If the volume's AWS tags match this whitelist, CloudWatch data about this volume is ingested.
-	// Multiple entries are OR'ed
-	VolumeSelectionTags pulumi.StringMapInput
+	VolumeSelectionTags         pulumi.StringMapInput
 }
 
 func (CloudIntegrationCloudWatchArgs) ElementType() reflect.Type {

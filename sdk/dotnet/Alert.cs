@@ -9,139 +9,50 @@ using Pulumi.Serialization;
 
 namespace Pulumi.Wavefront
 {
-    /// <summary>
-    /// Provides a Wavefront Alert resource.  This allows alerts to be created, updated, and deleted.
-    /// 
-    /// ## Example Usage
-    /// 
-    /// ```csharp
-    /// using Pulumi;
-    /// using Wavefront = Pulumi.Wavefront;
-    /// 
-    /// class MyStack : Stack
-    /// {
-    ///     public MyStack()
-    ///     {
-    ///         var foobar = new Wavefront.Alert("foobar", new Wavefront.AlertArgs
-    ///         {
-    ///             Condition = "100-ts(\"cpu.usage_idle\", environment=preprod and cpu=cpu-total ) &gt; 80",
-    ///             DisplayExpression = "100-ts(\"cpu.usage_idle\", environment=preprod and cpu=cpu-total )",
-    ///             Minutes = 5,
-    ///             ResolveAfterMinutes = 5,
-    ///             Severity = "WARN",
-    ///             Tags = 
-    ///             {
-    ///                 "terraform",
-    ///                 "test",
-    ///             },
-    ///             Target = "test@example.com",
-    ///         });
-    ///     }
-    /// 
-    /// }
-    /// ```
-    /// </summary>
     public partial class Alert : Pulumi.CustomResource
     {
-        /// <summary>
-        /// User-supplied additional explanatory information for this alert.
-        /// Useful for linking runbooks, migrations...etc
-        /// </summary>
         [Output("additionalInformation")]
         public Output<string?> AdditionalInformation { get; private set; } = null!;
 
-        /// <summary>
-        /// The type of alert in Wavefront.  Either `CLASSIC` (default) 
-        /// or `THRESHOLD`
-        /// </summary>
         [Output("alertType")]
         public Output<string?> AlertType { get; private set; } = null!;
 
-        /// <summary>
-        /// A list of users or groups that can modify this resource.
-        /// </summary>
         [Output("canModifies")]
         public Output<ImmutableArray<string>> CanModifies { get; private set; } = null!;
 
-        /// <summary>
-        /// A list of users or groups that can view this resource.
-        /// </summary>
         [Output("canViews")]
         public Output<ImmutableArray<string>> CanViews { get; private set; } = null!;
 
-        /// <summary>
-        /// A Wavefront query that is evaluated at regular intervals (default 1m).
-        /// The alert fires and notifications are triggered when data series matching this query evaluates
-        /// to a non-zero value for a set number of consecutive minutes.
-        /// </summary>
         [Output("condition")]
         public Output<string?> Condition { get; private set; } = null!;
 
-        /// <summary>
-        /// a string-&gt;string map of `severity` to `condition` 
-        /// for which this alert will trigger.
-        /// </summary>
         [Output("conditions")]
         public Output<ImmutableDictionary<string, string>?> Conditions { get; private set; } = null!;
 
-        /// <summary>
-        /// A second query whose results are displayed in the alert user
-        /// interface instead of the condition query.  This field is often used to display a version
-        /// of the condition query with Boolean operators removed so that numerical values are plotted.
-        /// </summary>
         [Output("displayExpression")]
         public Output<string?> DisplayExpression { get; private set; } = null!;
 
-        /// <summary>
-        /// The number of consecutive minutes that a series matching the condition query must 
-        /// evaluate to "true" (non-zero value) before the alert fires.
-        /// </summary>
         [Output("minutes")]
         public Output<int> Minutes { get; private set; } = null!;
 
-        /// <summary>
-        /// The name of the alert as it is displayed in Wavefront.
-        /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
 
-        /// <summary>
-        /// How often to re-trigger a continually failing alert. 
-        /// If absent or &lt;= 0, no re-triggering occur.
-        /// </summary>
         [Output("notificationResendFrequencyMinutes")]
         public Output<int?> NotificationResendFrequencyMinutes { get; private set; } = null!;
 
-        /// <summary>
-        /// The number of consecutive minutes that a firing series matching the condition
-        /// query must evaluate to "false" (zero value) before the alert resolves.  When unset, this default sto
-        /// the same value as `minutes`.
-        /// </summary>
         [Output("resolveAfterMinutes")]
         public Output<int?> ResolveAfterMinutes { get; private set; } = null!;
 
-        /// <summary>
-        /// - Severity of the alert, valid values are `INFO`, `SMOKE`, `WARN`, `SEVERE`.
-        /// </summary>
         [Output("severity")]
         public Output<string?> Severity { get; private set; } = null!;
 
-        /// <summary>
-        /// A set of tags to assign to this resource.
-        /// </summary>
         [Output("tags")]
         public Output<ImmutableArray<string>> Tags { get; private set; } = null!;
 
-        /// <summary>
-        /// A comma-separated list of the email address or integration endpoint 
-        /// (such as PagerDuty or web hook) to notify when the alert status changes.
-        /// </summary>
         [Output("target")]
         public Output<string?> Target { get; private set; } = null!;
 
-        /// <summary>
-        /// Targets for severity
-        /// </summary>
         [Output("thresholdTargets")]
         public Output<ImmutableDictionary<string, string>?> ThresholdTargets { get; private set; } = null!;
 
@@ -191,26 +102,14 @@ namespace Pulumi.Wavefront
 
     public sealed class AlertArgs : Pulumi.ResourceArgs
     {
-        /// <summary>
-        /// User-supplied additional explanatory information for this alert.
-        /// Useful for linking runbooks, migrations...etc
-        /// </summary>
         [Input("additionalInformation")]
         public Input<string>? AdditionalInformation { get; set; }
 
-        /// <summary>
-        /// The type of alert in Wavefront.  Either `CLASSIC` (default) 
-        /// or `THRESHOLD`
-        /// </summary>
         [Input("alertType")]
         public Input<string>? AlertType { get; set; }
 
         [Input("canModifies")]
         private InputList<string>? _canModifies;
-
-        /// <summary>
-        /// A list of users or groups that can modify this resource.
-        /// </summary>
         public InputList<string> CanModifies
         {
             get => _canModifies ?? (_canModifies = new InputList<string>());
@@ -219,104 +118,54 @@ namespace Pulumi.Wavefront
 
         [Input("canViews")]
         private InputList<string>? _canViews;
-
-        /// <summary>
-        /// A list of users or groups that can view this resource.
-        /// </summary>
         public InputList<string> CanViews
         {
             get => _canViews ?? (_canViews = new InputList<string>());
             set => _canViews = value;
         }
 
-        /// <summary>
-        /// A Wavefront query that is evaluated at regular intervals (default 1m).
-        /// The alert fires and notifications are triggered when data series matching this query evaluates
-        /// to a non-zero value for a set number of consecutive minutes.
-        /// </summary>
         [Input("condition")]
         public Input<string>? Condition { get; set; }
 
         [Input("conditions")]
         private InputMap<string>? _conditions;
-
-        /// <summary>
-        /// a string-&gt;string map of `severity` to `condition` 
-        /// for which this alert will trigger.
-        /// </summary>
         public InputMap<string> Conditions
         {
             get => _conditions ?? (_conditions = new InputMap<string>());
             set => _conditions = value;
         }
 
-        /// <summary>
-        /// A second query whose results are displayed in the alert user
-        /// interface instead of the condition query.  This field is often used to display a version
-        /// of the condition query with Boolean operators removed so that numerical values are plotted.
-        /// </summary>
         [Input("displayExpression")]
         public Input<string>? DisplayExpression { get; set; }
 
-        /// <summary>
-        /// The number of consecutive minutes that a series matching the condition query must 
-        /// evaluate to "true" (non-zero value) before the alert fires.
-        /// </summary>
         [Input("minutes", required: true)]
         public Input<int> Minutes { get; set; } = null!;
 
-        /// <summary>
-        /// The name of the alert as it is displayed in Wavefront.
-        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
-        /// <summary>
-        /// How often to re-trigger a continually failing alert. 
-        /// If absent or &lt;= 0, no re-triggering occur.
-        /// </summary>
         [Input("notificationResendFrequencyMinutes")]
         public Input<int>? NotificationResendFrequencyMinutes { get; set; }
 
-        /// <summary>
-        /// The number of consecutive minutes that a firing series matching the condition
-        /// query must evaluate to "false" (zero value) before the alert resolves.  When unset, this default sto
-        /// the same value as `minutes`.
-        /// </summary>
         [Input("resolveAfterMinutes")]
         public Input<int>? ResolveAfterMinutes { get; set; }
 
-        /// <summary>
-        /// - Severity of the alert, valid values are `INFO`, `SMOKE`, `WARN`, `SEVERE`.
-        /// </summary>
         [Input("severity")]
         public Input<string>? Severity { get; set; }
 
         [Input("tags", required: true)]
         private InputList<string>? _tags;
-
-        /// <summary>
-        /// A set of tags to assign to this resource.
-        /// </summary>
         public InputList<string> Tags
         {
             get => _tags ?? (_tags = new InputList<string>());
             set => _tags = value;
         }
 
-        /// <summary>
-        /// A comma-separated list of the email address or integration endpoint 
-        /// (such as PagerDuty or web hook) to notify when the alert status changes.
-        /// </summary>
         [Input("target")]
         public Input<string>? Target { get; set; }
 
         [Input("thresholdTargets")]
         private InputMap<string>? _thresholdTargets;
-
-        /// <summary>
-        /// Targets for severity
-        /// </summary>
         public InputMap<string> ThresholdTargets
         {
             get => _thresholdTargets ?? (_thresholdTargets = new InputMap<string>());
@@ -330,26 +179,14 @@ namespace Pulumi.Wavefront
 
     public sealed class AlertState : Pulumi.ResourceArgs
     {
-        /// <summary>
-        /// User-supplied additional explanatory information for this alert.
-        /// Useful for linking runbooks, migrations...etc
-        /// </summary>
         [Input("additionalInformation")]
         public Input<string>? AdditionalInformation { get; set; }
 
-        /// <summary>
-        /// The type of alert in Wavefront.  Either `CLASSIC` (default) 
-        /// or `THRESHOLD`
-        /// </summary>
         [Input("alertType")]
         public Input<string>? AlertType { get; set; }
 
         [Input("canModifies")]
         private InputList<string>? _canModifies;
-
-        /// <summary>
-        /// A list of users or groups that can modify this resource.
-        /// </summary>
         public InputList<string> CanModifies
         {
             get => _canModifies ?? (_canModifies = new InputList<string>());
@@ -358,104 +195,54 @@ namespace Pulumi.Wavefront
 
         [Input("canViews")]
         private InputList<string>? _canViews;
-
-        /// <summary>
-        /// A list of users or groups that can view this resource.
-        /// </summary>
         public InputList<string> CanViews
         {
             get => _canViews ?? (_canViews = new InputList<string>());
             set => _canViews = value;
         }
 
-        /// <summary>
-        /// A Wavefront query that is evaluated at regular intervals (default 1m).
-        /// The alert fires and notifications are triggered when data series matching this query evaluates
-        /// to a non-zero value for a set number of consecutive minutes.
-        /// </summary>
         [Input("condition")]
         public Input<string>? Condition { get; set; }
 
         [Input("conditions")]
         private InputMap<string>? _conditions;
-
-        /// <summary>
-        /// a string-&gt;string map of `severity` to `condition` 
-        /// for which this alert will trigger.
-        /// </summary>
         public InputMap<string> Conditions
         {
             get => _conditions ?? (_conditions = new InputMap<string>());
             set => _conditions = value;
         }
 
-        /// <summary>
-        /// A second query whose results are displayed in the alert user
-        /// interface instead of the condition query.  This field is often used to display a version
-        /// of the condition query with Boolean operators removed so that numerical values are plotted.
-        /// </summary>
         [Input("displayExpression")]
         public Input<string>? DisplayExpression { get; set; }
 
-        /// <summary>
-        /// The number of consecutive minutes that a series matching the condition query must 
-        /// evaluate to "true" (non-zero value) before the alert fires.
-        /// </summary>
         [Input("minutes")]
         public Input<int>? Minutes { get; set; }
 
-        /// <summary>
-        /// The name of the alert as it is displayed in Wavefront.
-        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
-        /// <summary>
-        /// How often to re-trigger a continually failing alert. 
-        /// If absent or &lt;= 0, no re-triggering occur.
-        /// </summary>
         [Input("notificationResendFrequencyMinutes")]
         public Input<int>? NotificationResendFrequencyMinutes { get; set; }
 
-        /// <summary>
-        /// The number of consecutive minutes that a firing series matching the condition
-        /// query must evaluate to "false" (zero value) before the alert resolves.  When unset, this default sto
-        /// the same value as `minutes`.
-        /// </summary>
         [Input("resolveAfterMinutes")]
         public Input<int>? ResolveAfterMinutes { get; set; }
 
-        /// <summary>
-        /// - Severity of the alert, valid values are `INFO`, `SMOKE`, `WARN`, `SEVERE`.
-        /// </summary>
         [Input("severity")]
         public Input<string>? Severity { get; set; }
 
         [Input("tags")]
         private InputList<string>? _tags;
-
-        /// <summary>
-        /// A set of tags to assign to this resource.
-        /// </summary>
         public InputList<string> Tags
         {
             get => _tags ?? (_tags = new InputList<string>());
             set => _tags = value;
         }
 
-        /// <summary>
-        /// A comma-separated list of the email address or integration endpoint 
-        /// (such as PagerDuty or web hook) to notify when the alert status changes.
-        /// </summary>
         [Input("target")]
         public Input<string>? Target { get; set; }
 
         [Input("thresholdTargets")]
         private InputMap<string>? _thresholdTargets;
-
-        /// <summary>
-        /// Targets for severity
-        /// </summary>
         public InputMap<string> ThresholdTargets
         {
             get => _thresholdTargets ?? (_thresholdTargets = new InputMap<string>());

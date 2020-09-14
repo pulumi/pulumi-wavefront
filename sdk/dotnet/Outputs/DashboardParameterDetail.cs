@@ -13,43 +13,14 @@ namespace Pulumi.Wavefront.Outputs
     [OutputType]
     public sealed class DashboardParameterDetail
     {
-        /// <summary>
-        /// The default value of the parameter
-        /// </summary>
         public readonly string DefaultValue;
-        /// <summary>
-        /// For `DYNAMIC` parameter types, the type of the field. Valid options are `SOURCE`,
-        /// `SOURCE_TAG`, `METRIC_NAME`, `TAG_KEY`, `MATCHING_SOURCE_TAG`
-        /// </summary>
         public readonly string? DynamicFieldType;
-        /// <summary>
-        /// If `true` the parameter will only be shown on the edit view of the dashboard
-        /// </summary>
         public readonly bool HideFromView;
-        /// <summary>
-        /// The label for the parameter
-        /// </summary>
         public readonly string Label;
-        /// <summary>
-        /// The name of the parameters
-        /// </summary>
         public readonly string Name;
-        /// <summary>
-        /// The type of the parameter. `SIMPLE`, `LIST`, or `DYNAMIC`
-        /// </summary>
         public readonly string ParameterType;
-        /// <summary>
-        /// For `DYNAMIC` parameter types, the query to execute to return values
-        /// </summary>
         public readonly string? QueryValue;
-        /// <summary>
-        /// for `TAG_KEY` dynamic field types, the tag key to return
-        /// </summary>
         public readonly string? TagKey;
-        /// <summary>
-        /// A string-&gt;string map.  At least one of the keys must match the value of
-        /// `default_value`
-        /// </summary>
         public readonly ImmutableDictionary<string, string> ValuesToReadableStrings;
 
         [OutputConstructor]

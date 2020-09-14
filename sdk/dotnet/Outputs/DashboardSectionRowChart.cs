@@ -13,30 +13,11 @@ namespace Pulumi.Wavefront.Outputs
     [OutputType]
     public sealed class DashboardSectionRowChart
     {
-        /// <summary>
-        /// Chart settings. See chart settings
-        /// </summary>
         public readonly Outputs.DashboardSectionRowChartChartSetting ChartSetting;
-        /// <summary>
-        /// Description of the chart
-        /// </summary>
         public readonly string? Description;
-        /// <summary>
-        /// Name of the source
-        /// </summary>
         public readonly string Name;
-        /// <summary>
-        /// Query expression to plot on the chart. See chart source queries
-        /// </summary>
         public readonly ImmutableArray<Outputs.DashboardSectionRowChartSource> Sources;
-        /// <summary>
-        /// Summarization strategy for the chart. MEAN is default. Valid options are, `MEAN`, 
-        /// `MEDIAN`, `MIN`, `MAX`, `SUM`, `COUNT`, `LAST`, `FIRST`
-        /// </summary>
         public readonly string Summarization;
-        /// <summary>
-        /// String to label the units of the chart on the Y-Axis
-        /// </summary>
         public readonly string Units;
 
         [OutputConstructor]

@@ -9,181 +9,41 @@ using Pulumi.Serialization;
 
 namespace Pulumi.Wavefront
 {
-    /// <summary>
-    /// Provides a wavefront Alert Target resource. This allows alert targets to created, updated, and deleted.
-    /// 
-    /// ## Example Usage
-    /// 
-    /// ```csharp
-    /// using Pulumi;
-    /// using Wavefront = Pulumi.Wavefront;
-    /// 
-    /// class MyStack : Stack
-    /// {
-    ///     public MyStack()
-    ///     {
-    ///         var testTarget = new Wavefront.AlertTarget("testTarget", new Wavefront.AlertTargetArgs
-    ///         {
-    ///             ContentType = "application/json",
-    ///             CustomHeaders = 
-    ///             {
-    ///                 { "Testing", "true" },
-    ///             },
-    ///             Description = "Test target",
-    ///             Method = "WEBHOOK",
-    ///             Recipient = "https://hooks.slack.com/services/test/me",
-    ///             Template = "{}",
-    ///             Triggers = 
-    ///             {
-    ///                 "ALERT_OPENED",
-    ///                 "ALERT_RESOLVED",
-    ///             },
-    ///         });
-    ///     }
-    /// 
-    /// }
-    /// ```
-    /// ## Attributes Reference
-    /// 
-    /// * `target_id` - The target ID prefixed with `target:` for interpolating into a Wavefront Alert.
-    /// 
-    /// ### Route
-    /// 
-    /// The `route` mapping supports the following:
-    /// 
-    /// * `method` - (Required)  The notification method used for notification target. One of `WEBHOOK`, `EMAIL`, `PAGERDUTY`.
-    /// * `target` - (Required) The endpoint for the alert route. `EMAIL`: email address. `PAGERDUTY`: PagerDuty routing
-    ///   key. `WEBHOOK`: URL endpoint.
-    /// * `filter` - (Required) String that filters the route. Space delimited.  Currently only allows a single key value pair.
-    ///   (e.g. `env prod`)
-    /// 
-    /// ### Example
-    /// 
-    /// ```csharp
-    /// using Pulumi;
-    /// using Wavefront = Pulumi.Wavefront;
-    /// 
-    /// class MyStack : Stack
-    /// {
-    ///     public MyStack()
-    ///     {
-    ///         var testTarget = new Wavefront.AlertTarget("testTarget", new Wavefront.AlertTargetArgs
-    ///         {
-    ///             ContentType = "application/json",
-    ///             CustomHeaders = 
-    ///             {
-    ///                 { "Testing", "true" },
-    ///             },
-    ///             Description = "Test target",
-    ///             Method = "WEBHOOK",
-    ///             Recipient = "https://hooks.slack.com/services/test/me",
-    ///             Routes = 
-    ///             {
-    ///                 new Wavefront.Inputs.AlertTargetRouteArgs
-    ///                 {
-    ///                     Filter = 
-    ///                     {
-    ///                         { "key", "env" },
-    ///                         { "value", "prod" },
-    ///                     },
-    ///                     Method = "WEBHOOK",
-    ///                     Target = "https://hooks.slack.com/services/test/me/prod",
-    ///                 },
-    ///                 new Wavefront.Inputs.AlertTargetRouteArgs
-    ///                 {
-    ///                     Filter = 
-    ///                     {
-    ///                         { "key", "env" },
-    ///                         { "value", "dev" },
-    ///                     },
-    ///                     Method = "WEBHOOK",
-    ///                     Target = "https://hooks.slack.com/services/test/me/dev",
-    ///                 },
-    ///             },
-    ///             Template = "{}",
-    ///             Triggers = 
-    ///             {
-    ///                 "ALERT_OPENED",
-    ///                 "ALERT_RESOLVED",
-    ///             },
-    ///         });
-    ///     }
-    /// 
-    /// }
-    /// ```
-    /// </summary>
     public partial class AlertTarget : Pulumi.CustomResource
     {
-        /// <summary>
-        /// The value of the `Content-Type` header of the webhook.
-        /// </summary>
         [Output("contentType")]
         public Output<string?> ContentType { get; private set; } = null!;
 
-        /// <summary>
-        /// A `string-&gt;string` map specifying the custome HTTP header key/value pairs that will be 
-        /// sent in the requests with a method of `WEBHOOK`.
-        /// </summary>
         [Output("customHeaders")]
         public Output<ImmutableDictionary<string, string>?> CustomHeaders { get; private set; } = null!;
 
-        /// <summary>
-        /// Description describing this alert target.
-        /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
 
-        /// <summary>
-        /// The subject title of an email notification target.
-        /// </summary>
         [Output("emailSubject")]
         public Output<string?> EmailSubject { get; private set; } = null!;
 
-        /// <summary>
-        /// Determine whether the email alert content is sent as HTML or text.
-        /// </summary>
         [Output("isHtmlContent")]
         public Output<bool?> IsHtmlContent { get; private set; } = null!;
 
-        /// <summary>
-        /// The notification method used for notification target. One of `WEBHOOK`, `EMAIL`, `PAGERDUTY`.
-        /// </summary>
         [Output("method")]
         public Output<string?> Method { get; private set; } = null!;
 
-        /// <summary>
-        /// The name of the alert target as it is displayed in wavefront
-        /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
 
-        /// <summary>
-        /// The end point for the notification Target.  `EMAIL`: email address. `PAGERDUTY`: PagerDuty 
-        /// routing key. `WEBHOOK`: URL endpoint.
-        /// </summary>
         [Output("recipient")]
         public Output<string> Recipient { get; private set; } = null!;
 
-        /// <summary>
-        /// List of routing targets that this alert target will notify. See Route
-        /// </summary>
         [Output("routes")]
         public Output<ImmutableArray<Outputs.AlertTargetRoute>> Routes { get; private set; } = null!;
 
         [Output("targetId")]
         public Output<string> TargetId { get; private set; } = null!;
 
-        /// <summary>
-        /// A mustache template that will form the body of the POST request, email and summary of the PagerDuty.
-        /// </summary>
         [Output("template")]
         public Output<string> Template { get; private set; } = null!;
 
-        /// <summary>
-        /// A list of occurrences on which this webhook will be fired. Valid values are `ALERT_OPENED`,
-        /// `ALERT_UPDATED`, `ALERT_RESOLVED`, `ALERT_MAINTENANCE`, `ALERT_SNOOZED`, `ALERT_INVALID`, `ALERT_NO_LONGER_INVALID`,
-        /// `ALERT_RETRIGGERED`, `ALERT_NO_DATA`, `ALERT_NO_DATA_RESOLVED`, `ALERT_NO_DATA_MAINTENANCE`, `ALERT_SEVERITY_UPDATE`.
-        /// </summary>
         [Output("triggers")]
         public Output<ImmutableArray<string>> Triggers { get; private set; } = null!;
 
@@ -233,88 +93,48 @@ namespace Pulumi.Wavefront
 
     public sealed class AlertTargetArgs : Pulumi.ResourceArgs
     {
-        /// <summary>
-        /// The value of the `Content-Type` header of the webhook.
-        /// </summary>
         [Input("contentType")]
         public Input<string>? ContentType { get; set; }
 
         [Input("customHeaders")]
         private InputMap<string>? _customHeaders;
-
-        /// <summary>
-        /// A `string-&gt;string` map specifying the custome HTTP header key/value pairs that will be 
-        /// sent in the requests with a method of `WEBHOOK`.
-        /// </summary>
         public InputMap<string> CustomHeaders
         {
             get => _customHeaders ?? (_customHeaders = new InputMap<string>());
             set => _customHeaders = value;
         }
 
-        /// <summary>
-        /// Description describing this alert target.
-        /// </summary>
         [Input("description", required: true)]
         public Input<string> Description { get; set; } = null!;
 
-        /// <summary>
-        /// The subject title of an email notification target.
-        /// </summary>
         [Input("emailSubject")]
         public Input<string>? EmailSubject { get; set; }
 
-        /// <summary>
-        /// Determine whether the email alert content is sent as HTML or text.
-        /// </summary>
         [Input("isHtmlContent")]
         public Input<bool>? IsHtmlContent { get; set; }
 
-        /// <summary>
-        /// The notification method used for notification target. One of `WEBHOOK`, `EMAIL`, `PAGERDUTY`.
-        /// </summary>
         [Input("method")]
         public Input<string>? Method { get; set; }
 
-        /// <summary>
-        /// The name of the alert target as it is displayed in wavefront
-        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
-        /// <summary>
-        /// The end point for the notification Target.  `EMAIL`: email address. `PAGERDUTY`: PagerDuty 
-        /// routing key. `WEBHOOK`: URL endpoint.
-        /// </summary>
         [Input("recipient", required: true)]
         public Input<string> Recipient { get; set; } = null!;
 
         [Input("routes")]
         private InputList<Inputs.AlertTargetRouteArgs>? _routes;
-
-        /// <summary>
-        /// List of routing targets that this alert target will notify. See Route
-        /// </summary>
         public InputList<Inputs.AlertTargetRouteArgs> Routes
         {
             get => _routes ?? (_routes = new InputList<Inputs.AlertTargetRouteArgs>());
             set => _routes = value;
         }
 
-        /// <summary>
-        /// A mustache template that will form the body of the POST request, email and summary of the PagerDuty.
-        /// </summary>
         [Input("template", required: true)]
         public Input<string> Template { get; set; } = null!;
 
         [Input("triggers", required: true)]
         private InputList<string>? _triggers;
-
-        /// <summary>
-        /// A list of occurrences on which this webhook will be fired. Valid values are `ALERT_OPENED`,
-        /// `ALERT_UPDATED`, `ALERT_RESOLVED`, `ALERT_MAINTENANCE`, `ALERT_SNOOZED`, `ALERT_INVALID`, `ALERT_NO_LONGER_INVALID`,
-        /// `ALERT_RETRIGGERED`, `ALERT_NO_DATA`, `ALERT_NO_DATA_RESOLVED`, `ALERT_NO_DATA_MAINTENANCE`, `ALERT_SEVERITY_UPDATE`.
-        /// </summary>
         public InputList<string> Triggers
         {
             get => _triggers ?? (_triggers = new InputList<string>());
@@ -328,68 +148,37 @@ namespace Pulumi.Wavefront
 
     public sealed class AlertTargetState : Pulumi.ResourceArgs
     {
-        /// <summary>
-        /// The value of the `Content-Type` header of the webhook.
-        /// </summary>
         [Input("contentType")]
         public Input<string>? ContentType { get; set; }
 
         [Input("customHeaders")]
         private InputMap<string>? _customHeaders;
-
-        /// <summary>
-        /// A `string-&gt;string` map specifying the custome HTTP header key/value pairs that will be 
-        /// sent in the requests with a method of `WEBHOOK`.
-        /// </summary>
         public InputMap<string> CustomHeaders
         {
             get => _customHeaders ?? (_customHeaders = new InputMap<string>());
             set => _customHeaders = value;
         }
 
-        /// <summary>
-        /// Description describing this alert target.
-        /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
-        /// <summary>
-        /// The subject title of an email notification target.
-        /// </summary>
         [Input("emailSubject")]
         public Input<string>? EmailSubject { get; set; }
 
-        /// <summary>
-        /// Determine whether the email alert content is sent as HTML or text.
-        /// </summary>
         [Input("isHtmlContent")]
         public Input<bool>? IsHtmlContent { get; set; }
 
-        /// <summary>
-        /// The notification method used for notification target. One of `WEBHOOK`, `EMAIL`, `PAGERDUTY`.
-        /// </summary>
         [Input("method")]
         public Input<string>? Method { get; set; }
 
-        /// <summary>
-        /// The name of the alert target as it is displayed in wavefront
-        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
-        /// <summary>
-        /// The end point for the notification Target.  `EMAIL`: email address. `PAGERDUTY`: PagerDuty 
-        /// routing key. `WEBHOOK`: URL endpoint.
-        /// </summary>
         [Input("recipient")]
         public Input<string>? Recipient { get; set; }
 
         [Input("routes")]
         private InputList<Inputs.AlertTargetRouteGetArgs>? _routes;
-
-        /// <summary>
-        /// List of routing targets that this alert target will notify. See Route
-        /// </summary>
         public InputList<Inputs.AlertTargetRouteGetArgs> Routes
         {
             get => _routes ?? (_routes = new InputList<Inputs.AlertTargetRouteGetArgs>());
@@ -399,20 +188,11 @@ namespace Pulumi.Wavefront
         [Input("targetId")]
         public Input<string>? TargetId { get; set; }
 
-        /// <summary>
-        /// A mustache template that will form the body of the POST request, email and summary of the PagerDuty.
-        /// </summary>
         [Input("template")]
         public Input<string>? Template { get; set; }
 
         [Input("triggers")]
         private InputList<string>? _triggers;
-
-        /// <summary>
-        /// A list of occurrences on which this webhook will be fired. Valid values are `ALERT_OPENED`,
-        /// `ALERT_UPDATED`, `ALERT_RESOLVED`, `ALERT_MAINTENANCE`, `ALERT_SNOOZED`, `ALERT_INVALID`, `ALERT_NO_LONGER_INVALID`,
-        /// `ALERT_RETRIGGERED`, `ALERT_NO_DATA`, `ALERT_NO_DATA_RESOLVED`, `ALERT_NO_DATA_MAINTENANCE`, `ALERT_SEVERITY_UPDATE`.
-        /// </summary>
         public InputList<string> Triggers
         {
             get => _triggers ?? (_triggers = new InputList<string>());

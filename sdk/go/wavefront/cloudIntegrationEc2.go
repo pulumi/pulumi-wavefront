@@ -10,54 +10,17 @@ import (
 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 )
 
-// Provides a Wavefront Cloud Integration for EC2. This allows EC2 cloud integrations to be created,
-// updated, and delete
-//
-// ## Example Usage
-//
-// ```go
-// package main
-//
-// import (
-// 	"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront"
-// 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
-// )
-//
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		extId, err := wavefront.NewCloudIntegrationAwsExternalId(ctx, "extId", nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		_, err = wavefront.NewCloudIntegrationEc2(ctx, "ec2", &wavefront.CloudIntegrationEc2Args{
-// 			RoleArn:    pulumi.String("arn:aws::1234567:role/example-arn"),
-// 			ExternalId: extId.ID(),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
-// ```
 type CloudIntegrationEc2 struct {
 	pulumi.CustomResourceState
 
-	// A list of point tag key-values to add to every point ingested using this integration
-	AdditionalTags pulumi.StringMapOutput `pulumi:"additionalTags"`
-	// The Role ARN that the customer has created in AWS IAM to allow access to Wavefront
-	ExternalId pulumi.StringOutput `pulumi:"externalId"`
-	// Forces this resource to save, even if errors are present
-	ForceSave    pulumi.BoolPtrOutput     `pulumi:"forceSave"`
-	HostnameTags pulumi.StringArrayOutput `pulumi:"hostnameTags"`
-	// The human-readable name of this integration
-	Name pulumi.StringOutput `pulumi:"name"`
-	// The external id corresponding to the Role ARN
-	RoleArn pulumi.StringOutput `pulumi:"roleArn"`
-	// A value denoting which cloud service this service integrates with
-	Service pulumi.StringOutput `pulumi:"service"`
-	// How often, in minutes, to refresh the service
-	ServiceRefreshRateInMinutes pulumi.IntPtrOutput `pulumi:"serviceRefreshRateInMinutes"`
+	AdditionalTags              pulumi.StringMapOutput   `pulumi:"additionalTags"`
+	ExternalId                  pulumi.StringOutput      `pulumi:"externalId"`
+	ForceSave                   pulumi.BoolPtrOutput     `pulumi:"forceSave"`
+	HostnameTags                pulumi.StringArrayOutput `pulumi:"hostnameTags"`
+	Name                        pulumi.StringOutput      `pulumi:"name"`
+	RoleArn                     pulumi.StringOutput      `pulumi:"roleArn"`
+	Service                     pulumi.StringOutput      `pulumi:"service"`
+	ServiceRefreshRateInMinutes pulumi.IntPtrOutput      `pulumi:"serviceRefreshRateInMinutes"`
 }
 
 // NewCloudIntegrationEc2 registers a new resource with the given unique name, arguments, and options.
@@ -97,38 +60,24 @@ func GetCloudIntegrationEc2(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering CloudIntegrationEc2 resources.
 type cloudIntegrationEc2State struct {
-	// A list of point tag key-values to add to every point ingested using this integration
-	AdditionalTags map[string]string `pulumi:"additionalTags"`
-	// The Role ARN that the customer has created in AWS IAM to allow access to Wavefront
-	ExternalId *string `pulumi:"externalId"`
-	// Forces this resource to save, even if errors are present
-	ForceSave    *bool    `pulumi:"forceSave"`
-	HostnameTags []string `pulumi:"hostnameTags"`
-	// The human-readable name of this integration
-	Name *string `pulumi:"name"`
-	// The external id corresponding to the Role ARN
-	RoleArn *string `pulumi:"roleArn"`
-	// A value denoting which cloud service this service integrates with
-	Service *string `pulumi:"service"`
-	// How often, in minutes, to refresh the service
-	ServiceRefreshRateInMinutes *int `pulumi:"serviceRefreshRateInMinutes"`
+	AdditionalTags              map[string]string `pulumi:"additionalTags"`
+	ExternalId                  *string           `pulumi:"externalId"`
+	ForceSave                   *bool             `pulumi:"forceSave"`
+	HostnameTags                []string          `pulumi:"hostnameTags"`
+	Name                        *string           `pulumi:"name"`
+	RoleArn                     *string           `pulumi:"roleArn"`
+	Service                     *string           `pulumi:"service"`
+	ServiceRefreshRateInMinutes *int              `pulumi:"serviceRefreshRateInMinutes"`
 }
 
 type CloudIntegrationEc2State struct {
-	// A list of point tag key-values to add to every point ingested using this integration
-	AdditionalTags pulumi.StringMapInput
-	// The Role ARN that the customer has created in AWS IAM to allow access to Wavefront
-	ExternalId pulumi.StringPtrInput
-	// Forces this resource to save, even if errors are present
-	ForceSave    pulumi.BoolPtrInput
-	HostnameTags pulumi.StringArrayInput
-	// The human-readable name of this integration
-	Name pulumi.StringPtrInput
-	// The external id corresponding to the Role ARN
-	RoleArn pulumi.StringPtrInput
-	// A value denoting which cloud service this service integrates with
-	Service pulumi.StringPtrInput
-	// How often, in minutes, to refresh the service
+	AdditionalTags              pulumi.StringMapInput
+	ExternalId                  pulumi.StringPtrInput
+	ForceSave                   pulumi.BoolPtrInput
+	HostnameTags                pulumi.StringArrayInput
+	Name                        pulumi.StringPtrInput
+	RoleArn                     pulumi.StringPtrInput
+	Service                     pulumi.StringPtrInput
 	ServiceRefreshRateInMinutes pulumi.IntPtrInput
 }
 
@@ -137,39 +86,25 @@ func (CloudIntegrationEc2State) ElementType() reflect.Type {
 }
 
 type cloudIntegrationEc2Args struct {
-	// A list of point tag key-values to add to every point ingested using this integration
-	AdditionalTags map[string]string `pulumi:"additionalTags"`
-	// The Role ARN that the customer has created in AWS IAM to allow access to Wavefront
-	ExternalId string `pulumi:"externalId"`
-	// Forces this resource to save, even if errors are present
-	ForceSave    *bool    `pulumi:"forceSave"`
-	HostnameTags []string `pulumi:"hostnameTags"`
-	// The human-readable name of this integration
-	Name *string `pulumi:"name"`
-	// The external id corresponding to the Role ARN
-	RoleArn string `pulumi:"roleArn"`
-	// A value denoting which cloud service this service integrates with
-	Service string `pulumi:"service"`
-	// How often, in minutes, to refresh the service
-	ServiceRefreshRateInMinutes *int `pulumi:"serviceRefreshRateInMinutes"`
+	AdditionalTags              map[string]string `pulumi:"additionalTags"`
+	ExternalId                  string            `pulumi:"externalId"`
+	ForceSave                   *bool             `pulumi:"forceSave"`
+	HostnameTags                []string          `pulumi:"hostnameTags"`
+	Name                        *string           `pulumi:"name"`
+	RoleArn                     string            `pulumi:"roleArn"`
+	Service                     string            `pulumi:"service"`
+	ServiceRefreshRateInMinutes *int              `pulumi:"serviceRefreshRateInMinutes"`
 }
 
 // The set of arguments for constructing a CloudIntegrationEc2 resource.
 type CloudIntegrationEc2Args struct {
-	// A list of point tag key-values to add to every point ingested using this integration
-	AdditionalTags pulumi.StringMapInput
-	// The Role ARN that the customer has created in AWS IAM to allow access to Wavefront
-	ExternalId pulumi.StringInput
-	// Forces this resource to save, even if errors are present
-	ForceSave    pulumi.BoolPtrInput
-	HostnameTags pulumi.StringArrayInput
-	// The human-readable name of this integration
-	Name pulumi.StringPtrInput
-	// The external id corresponding to the Role ARN
-	RoleArn pulumi.StringInput
-	// A value denoting which cloud service this service integrates with
-	Service pulumi.StringInput
-	// How often, in minutes, to refresh the service
+	AdditionalTags              pulumi.StringMapInput
+	ExternalId                  pulumi.StringInput
+	ForceSave                   pulumi.BoolPtrInput
+	HostnameTags                pulumi.StringArrayInput
+	Name                        pulumi.StringPtrInput
+	RoleArn                     pulumi.StringInput
+	Service                     pulumi.StringInput
 	ServiceRefreshRateInMinutes pulumi.IntPtrInput
 }
 

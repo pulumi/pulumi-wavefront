@@ -10,37 +10,9 @@ import (
 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 )
 
-// Provides a Wavefront Dashboard JSON resource.  This allows dashboards to be created, updated, and deleted.
-//
-// ## Example Usage
-//
-// ```go
-// package main
-//
-// import (
-// 	"fmt"
-//
-// 	"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront"
-// 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
-// )
-//
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := wavefront.NewDashboardJson(ctx, "testDashboardJson", &wavefront.DashboardJsonArgs{
-// 			DashboardJson: pulumi.String(fmt.Sprintf("%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v", "{\n", "  \"name\": \"Terraform Test Dashboard Json\",\n", "  \"description\": \"a\",\n", "  \"eventFilterType\": \"BYCHART\",\n", "  \"eventQuery\": \"\",\n", "  \"defaultTimeWindow\": \"\",\n", "  \"url\": \"tftestimport\",\n", "  \"displayDescription\": false,\n", "  \"displaySectionTableOfContents\": true,\n", "  \"displayQueryParameters\": false,\n", "  \"sections\": [\n", "    {\n", "      \"name\": \"section 1\",\n", "      \"rows\": [\n", "        {\n", "          \"charts\": [\n", "            {\n", "              \"name\": \"chart 1\",\n", "              \"sources\": [\n", "                {\n", "                  \"name\": \"source 1\",\n", "                  \"query\": \"ts()\",\n", "                  \"scatterPlotSource\": \"Y\",\n", "                  \"querybuilderEnabled\": false,\n", "                  \"sourceDescription\": \"\"\n", "                }\n", "              ],\n", "              \"units\": \"someunit\",\n", "              \"base\": 0,\n", "              \"noDefaultEvents\": false,\n", "              \"interpolatePoints\": false,\n", "              \"includeObsoleteMetrics\": false,\n", "              \"description\": \"This is chart 1, showing something\",\n", "              \"chartSettings\": {\n", "                \"type\": \"markdown-widget\",\n", "                \"max\": 100,\n", "                \"expectedDataSpacing\": 120,\n", "                \"windowing\": \"full\",\n", "                \"windowSize\": 10,\n", "                \"autoColumnTags\": false,\n", "                \"columnTags\": \"deprecated\",\n", "                \"tagMode\": \"all\",\n", "                \"numTags\": 2,\n", "                \"customTags\": [\n", "                  \"tag1\",\n", "                  \"tag2\"\n", "                ],\n", "                \"groupBySource\": true,\n", "                \"y1Max\": 100,\n", "                \"y1Units\": \"units\",\n", "                \"y0ScaleSIBy1024\": true,\n", "                \"y1ScaleSIBy1024\": true,\n", "                \"y0UnitAutoscaling\": true,\n", "                \"y1UnitAutoscaling\": true,\n", "                \"fixedLegendEnabled\": true,\n", "                \"fixedLegendUseRawStats\": true,\n", "                \"fixedLegendPosition\": \"RIGHT\",\n", "                \"fixedLegendDisplayStats\": [\n", "                  \"stat1\",\n", "                  \"stat2\"\n", "                ],\n", "                \"fixedLegendFilterSort\": \"TOP\",\n", "                \"fixedLegendFilterLimit\": 1,\n", "                \"fixedLegendFilterField\": \"CURRENT\",\n", "                \"plainMarkdownContent\": \"markdown content\"\n", "              },\n", "              \"summarization\": \"MEAN\"\n", "            }\n", "          ],\n", "          \"heightFactor\": 50\n", "        }\n", "      ]\n", "    }\n", "  ],\n", "  \"parameterDetails\": {\n", "    \"param\": {\n", "      \"hideFromView\": false,\n", "      \"description\": null,\n", "      \"allowAll\": null,\n", "      \"tagKey\": null,\n", "      \"queryValue\": null,\n", "      \"dynamicFieldType\": null,\n", "      \"reverseDynSort\": null,\n", "      \"parameterType\": \"SIMPLE\",\n", "      \"label\": \"test\",\n", "      \"defaultValue\": \"Label\",\n", "      \"valuesToReadableStrings\": {\n", "        \"Label\": \"test\"\n", "      },\n", "      \"selectedLabel\": \"Label\",\n", "      \"value\": \"test\"\n", "    }\n", "  },\n", "  \"tags\" :{\n", "    \"customerTags\":  [\"terraform\"]\n", "  }\n", "}\n", "\n")),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
-// ```
 type DashboardJson struct {
 	pulumi.CustomResourceState
 
-	// See [Wavefront API Documentation](https://docs.wavefront.com/wavefront_api.html#api-documentation-wavefront-instance)
-	// for instructions on how to get to your API documentation for more details.
 	DashboardJson pulumi.StringOutput `pulumi:"dashboardJson"`
 }
 
@@ -75,14 +47,10 @@ func GetDashboardJson(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering DashboardJson resources.
 type dashboardJsonState struct {
-	// See [Wavefront API Documentation](https://docs.wavefront.com/wavefront_api.html#api-documentation-wavefront-instance)
-	// for instructions on how to get to your API documentation for more details.
 	DashboardJson *string `pulumi:"dashboardJson"`
 }
 
 type DashboardJsonState struct {
-	// See [Wavefront API Documentation](https://docs.wavefront.com/wavefront_api.html#api-documentation-wavefront-instance)
-	// for instructions on how to get to your API documentation for more details.
 	DashboardJson pulumi.StringPtrInput
 }
 
@@ -91,15 +59,11 @@ func (DashboardJsonState) ElementType() reflect.Type {
 }
 
 type dashboardJsonArgs struct {
-	// See [Wavefront API Documentation](https://docs.wavefront.com/wavefront_api.html#api-documentation-wavefront-instance)
-	// for instructions on how to get to your API documentation for more details.
 	DashboardJson string `pulumi:"dashboardJson"`
 }
 
 // The set of arguments for constructing a DashboardJson resource.
 type DashboardJsonArgs struct {
-	// See [Wavefront API Documentation](https://docs.wavefront.com/wavefront_api.html#api-documentation-wavefront-instance)
-	// for instructions on how to get to your API documentation for more details.
 	DashboardJson pulumi.StringInput
 }
 

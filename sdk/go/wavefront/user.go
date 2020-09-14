@@ -10,42 +10,13 @@ import (
 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 )
 
-// Provides a Wavefront User Resource. This allows users to be created, updated, and deleted.
-//
-// ## Example Usage
-//
-// ```go
-// package main
-//
-// import (
-// 	"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront"
-// 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
-// )
-//
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := wavefront.NewUser(ctx, "basic", &wavefront.UserArgs{
-// 			Email: pulumi.String("test+tftesting@example.com"),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
-// ```
 type User struct {
 	pulumi.CustomResourceState
 
-	Customer pulumi.StringOutput `pulumi:"customer"`
-	// The (unique) identifier of the user to create. Must be a valid email address
-	Email pulumi.StringOutput `pulumi:"email"`
-	// List of permission to grant to this user.  Valid options are
-	// `agentManagement`, `alertsManagement`, `dashboardManagement`, `embeddedCharts`, `eventsManagement`, `externalLinksManagement`,
-	// `hostTagManagement`, `metricsManagement`, `userManagement`
+	Customer    pulumi.StringOutput      `pulumi:"customer"`
+	Email       pulumi.StringOutput      `pulumi:"email"`
 	Permissions pulumi.StringArrayOutput `pulumi:"permissions"`
-	// List of user groups to this user
-	UserGroups pulumi.StringArrayOutput `pulumi:"userGroups"`
+	UserGroups  pulumi.StringArrayOutput `pulumi:"userGroups"`
 }
 
 // NewUser registers a new resource with the given unique name, arguments, and options.
@@ -79,27 +50,17 @@ func GetUser(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering User resources.
 type userState struct {
-	Customer *string `pulumi:"customer"`
-	// The (unique) identifier of the user to create. Must be a valid email address
-	Email *string `pulumi:"email"`
-	// List of permission to grant to this user.  Valid options are
-	// `agentManagement`, `alertsManagement`, `dashboardManagement`, `embeddedCharts`, `eventsManagement`, `externalLinksManagement`,
-	// `hostTagManagement`, `metricsManagement`, `userManagement`
+	Customer    *string  `pulumi:"customer"`
+	Email       *string  `pulumi:"email"`
 	Permissions []string `pulumi:"permissions"`
-	// List of user groups to this user
-	UserGroups []string `pulumi:"userGroups"`
+	UserGroups  []string `pulumi:"userGroups"`
 }
 
 type UserState struct {
-	Customer pulumi.StringPtrInput
-	// The (unique) identifier of the user to create. Must be a valid email address
-	Email pulumi.StringPtrInput
-	// List of permission to grant to this user.  Valid options are
-	// `agentManagement`, `alertsManagement`, `dashboardManagement`, `embeddedCharts`, `eventsManagement`, `externalLinksManagement`,
-	// `hostTagManagement`, `metricsManagement`, `userManagement`
+	Customer    pulumi.StringPtrInput
+	Email       pulumi.StringPtrInput
 	Permissions pulumi.StringArrayInput
-	// List of user groups to this user
-	UserGroups pulumi.StringArrayInput
+	UserGroups  pulumi.StringArrayInput
 }
 
 func (UserState) ElementType() reflect.Type {
@@ -107,28 +68,18 @@ func (UserState) ElementType() reflect.Type {
 }
 
 type userArgs struct {
-	Customer *string `pulumi:"customer"`
-	// The (unique) identifier of the user to create. Must be a valid email address
-	Email string `pulumi:"email"`
-	// List of permission to grant to this user.  Valid options are
-	// `agentManagement`, `alertsManagement`, `dashboardManagement`, `embeddedCharts`, `eventsManagement`, `externalLinksManagement`,
-	// `hostTagManagement`, `metricsManagement`, `userManagement`
+	Customer    *string  `pulumi:"customer"`
+	Email       string   `pulumi:"email"`
 	Permissions []string `pulumi:"permissions"`
-	// List of user groups to this user
-	UserGroups []string `pulumi:"userGroups"`
+	UserGroups  []string `pulumi:"userGroups"`
 }
 
 // The set of arguments for constructing a User resource.
 type UserArgs struct {
-	Customer pulumi.StringPtrInput
-	// The (unique) identifier of the user to create. Must be a valid email address
-	Email pulumi.StringInput
-	// List of permission to grant to this user.  Valid options are
-	// `agentManagement`, `alertsManagement`, `dashboardManagement`, `embeddedCharts`, `eventsManagement`, `externalLinksManagement`,
-	// `hostTagManagement`, `metricsManagement`, `userManagement`
+	Customer    pulumi.StringPtrInput
+	Email       pulumi.StringInput
 	Permissions pulumi.StringArrayInput
-	// List of user groups to this user
-	UserGroups pulumi.StringArrayInput
+	UserGroups  pulumi.StringArrayInput
 }
 
 func (UserArgs) ElementType() reflect.Type {
