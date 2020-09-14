@@ -9,17 +9,50 @@ using Pulumi.Serialization;
 
 namespace Pulumi.Wavefront
 {
+    /// <summary>
+    /// Provides a Wavefront User Resource. This allows users to be created, updated, and deleted.
+    /// 
+    /// ## Example Usage
+    /// 
+    /// ```csharp
+    /// using Pulumi;
+    /// using Wavefront = Pulumi.Wavefront;
+    /// 
+    /// class MyStack : Stack
+    /// {
+    ///     public MyStack()
+    ///     {
+    ///         var basic = new Wavefront.User("basic", new Wavefront.UserArgs
+    ///         {
+    ///             Email = "test+tftesting@example.com",
+    ///         });
+    ///     }
+    /// 
+    /// }
+    /// ```
+    /// </summary>
     public partial class User : Pulumi.CustomResource
     {
         [Output("customer")]
         public Output<string> Customer { get; private set; } = null!;
 
+        /// <summary>
+        /// The (unique) identifier of the user to create. Must be a valid email address
+        /// </summary>
         [Output("email")]
         public Output<string> Email { get; private set; } = null!;
 
+        /// <summary>
+        /// List of permission to grant to this user.  Valid options are
+        /// `agent_management`, `alerts_management`, `dashboard_management`, `embedded_charts`, `events_management`, `external_links_management`,
+        /// `host_tag_management`, `metrics_management`, `user_management`
+        /// </summary>
         [Output("permissions")]
         public Output<ImmutableArray<string>> Permissions { get; private set; } = null!;
 
+        /// <summary>
+        /// List of user groups to this user
+        /// </summary>
         [Output("userGroups")]
         public Output<ImmutableArray<string>> UserGroups { get; private set; } = null!;
 
@@ -72,11 +105,20 @@ namespace Pulumi.Wavefront
         [Input("customer")]
         public Input<string>? Customer { get; set; }
 
+        /// <summary>
+        /// The (unique) identifier of the user to create. Must be a valid email address
+        /// </summary>
         [Input("email", required: true)]
         public Input<string> Email { get; set; } = null!;
 
         [Input("permissions")]
         private InputList<string>? _permissions;
+
+        /// <summary>
+        /// List of permission to grant to this user.  Valid options are
+        /// `agent_management`, `alerts_management`, `dashboard_management`, `embedded_charts`, `events_management`, `external_links_management`,
+        /// `host_tag_management`, `metrics_management`, `user_management`
+        /// </summary>
         public InputList<string> Permissions
         {
             get => _permissions ?? (_permissions = new InputList<string>());
@@ -85,6 +127,10 @@ namespace Pulumi.Wavefront
 
         [Input("userGroups")]
         private InputList<string>? _userGroups;
+
+        /// <summary>
+        /// List of user groups to this user
+        /// </summary>
         public InputList<string> UserGroups
         {
             get => _userGroups ?? (_userGroups = new InputList<string>());
@@ -101,11 +147,20 @@ namespace Pulumi.Wavefront
         [Input("customer")]
         public Input<string>? Customer { get; set; }
 
+        /// <summary>
+        /// The (unique) identifier of the user to create. Must be a valid email address
+        /// </summary>
         [Input("email")]
         public Input<string>? Email { get; set; }
 
         [Input("permissions")]
         private InputList<string>? _permissions;
+
+        /// <summary>
+        /// List of permission to grant to this user.  Valid options are
+        /// `agent_management`, `alerts_management`, `dashboard_management`, `embedded_charts`, `events_management`, `external_links_management`,
+        /// `host_tag_management`, `metrics_management`, `user_management`
+        /// </summary>
         public InputList<string> Permissions
         {
             get => _permissions ?? (_permissions = new InputList<string>());
@@ -114,6 +169,10 @@ namespace Pulumi.Wavefront
 
         [Input("userGroups")]
         private InputList<string>? _userGroups;
+
+        /// <summary>
+        /// List of user groups to this user
+        /// </summary>
         public InputList<string> UserGroups
         {
             get => _userGroups ?? (_userGroups = new InputList<string>());

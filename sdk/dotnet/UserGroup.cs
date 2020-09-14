@@ -9,11 +9,39 @@ using Pulumi.Serialization;
 
 namespace Pulumi.Wavefront
 {
+    /// <summary>
+    /// Provides a Wavefront User Group Resource. This allows user groups to be created, updated, and deleted.
+    /// 
+    /// ## Example Usage
+    /// 
+    /// ```csharp
+    /// using Pulumi;
+    /// using Wavefront = Pulumi.Wavefront;
+    /// 
+    /// class MyStack : Stack
+    /// {
+    ///     public MyStack()
+    ///     {
+    ///         var basic = new Wavefront.UserGroup("basic", new Wavefront.UserGroupArgs
+    ///         {
+    ///             Description = "Basic User Group for Unit Tests",
+    ///         });
+    ///     }
+    /// 
+    /// }
+    /// ```
+    /// </summary>
     public partial class UserGroup : Pulumi.CustomResource
     {
+        /// <summary>
+        /// A short description of the user group
+        /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
 
+        /// <summary>
+        /// The name of the user group
+        /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
 
@@ -63,9 +91,15 @@ namespace Pulumi.Wavefront
 
     public sealed class UserGroupArgs : Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// A short description of the user group
+        /// </summary>
         [Input("description", required: true)]
         public Input<string> Description { get; set; } = null!;
 
+        /// <summary>
+        /// The name of the user group
+        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
@@ -76,9 +110,15 @@ namespace Pulumi.Wavefront
 
     public sealed class UserGroupState : Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// A short description of the user group
+        /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
+        /// <summary>
+        /// The name of the user group
+        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 

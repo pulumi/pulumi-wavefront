@@ -4,6 +4,23 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
+/**
+ * Provides a Wavefront Cloud Integration for Azure. This allows azure cloud integrations to be created,
+ * updated, and deleted.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as wavefront from "@pulumi/wavefront";
+ *
+ * const azureActivityLog = new wavefront.CloudIntegrationAzureActivityLog("azure_activity_log", {
+ *     clientId: "client-id2",
+ *     clientSecret: "client-secret2",
+ *     tenant: "my-tenant2",
+ * });
+ * ```
+ */
 export class CloudIntegrationAzure extends pulumi.CustomResource {
     /**
      * Get an existing CloudIntegrationAzure resource's state with the given name, ID, and optional extra
@@ -32,16 +49,49 @@ export class CloudIntegrationAzure extends pulumi.CustomResource {
         return obj['__pulumiType'] === CloudIntegrationAzure.__pulumiType;
     }
 
+    /**
+     * A list of point tag key-values to add to every point ingested using this integration
+     */
     public readonly additionalTags!: pulumi.Output<{[key: string]: string} | undefined>;
+    /**
+     * A list of Azure Activity Log categories.
+     */
     public readonly categoryFilters!: pulumi.Output<string[] | undefined>;
+    /**
+     * Client id for an azure service account within your project
+     */
     public readonly clientId!: pulumi.Output<string>;
+    /**
+     * Client secret for an Azure service account within your project
+     */
     public readonly clientSecret!: pulumi.Output<string>;
+    /**
+     * Forces this resource to save, even if errors are present
+     */
     public readonly forceSave!: pulumi.Output<boolean | undefined>;
+    /**
+     * A regular expression that a metric name must match (case-insensitively) in order to be ingested
+     */
     public readonly metricFilterRegex!: pulumi.Output<string | undefined>;
+    /**
+     * The human-readable name of this integration
+     */
     public readonly name!: pulumi.Output<string>;
+    /**
+     * A list of Azure resource groups from which to pull metrics
+     */
     public readonly resourceGroupFilters!: pulumi.Output<string[] | undefined>;
+    /**
+     * A value denoting which cloud service this service integrates with
+     */
     public readonly service!: pulumi.Output<string>;
+    /**
+     * How often, in minutes, to refresh the service
+     */
     public readonly serviceRefreshRateInMinutes!: pulumi.Output<number | undefined>;
+    /**
+     * Tenant Id for an Azure service account within your project
+     */
     public readonly tenant!: pulumi.Output<string>;
 
     /**
@@ -108,16 +158,49 @@ export class CloudIntegrationAzure extends pulumi.CustomResource {
  * Input properties used for looking up and filtering CloudIntegrationAzure resources.
  */
 export interface CloudIntegrationAzureState {
+    /**
+     * A list of point tag key-values to add to every point ingested using this integration
+     */
     readonly additionalTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * A list of Azure Activity Log categories.
+     */
     readonly categoryFilters?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * Client id for an azure service account within your project
+     */
     readonly clientId?: pulumi.Input<string>;
+    /**
+     * Client secret for an Azure service account within your project
+     */
     readonly clientSecret?: pulumi.Input<string>;
+    /**
+     * Forces this resource to save, even if errors are present
+     */
     readonly forceSave?: pulumi.Input<boolean>;
+    /**
+     * A regular expression that a metric name must match (case-insensitively) in order to be ingested
+     */
     readonly metricFilterRegex?: pulumi.Input<string>;
+    /**
+     * The human-readable name of this integration
+     */
     readonly name?: pulumi.Input<string>;
+    /**
+     * A list of Azure resource groups from which to pull metrics
+     */
     readonly resourceGroupFilters?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * A value denoting which cloud service this service integrates with
+     */
     readonly service?: pulumi.Input<string>;
+    /**
+     * How often, in minutes, to refresh the service
+     */
     readonly serviceRefreshRateInMinutes?: pulumi.Input<number>;
+    /**
+     * Tenant Id for an Azure service account within your project
+     */
     readonly tenant?: pulumi.Input<string>;
 }
 
@@ -125,15 +208,48 @@ export interface CloudIntegrationAzureState {
  * The set of arguments for constructing a CloudIntegrationAzure resource.
  */
 export interface CloudIntegrationAzureArgs {
+    /**
+     * A list of point tag key-values to add to every point ingested using this integration
+     */
     readonly additionalTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * A list of Azure Activity Log categories.
+     */
     readonly categoryFilters?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * Client id for an azure service account within your project
+     */
     readonly clientId: pulumi.Input<string>;
+    /**
+     * Client secret for an Azure service account within your project
+     */
     readonly clientSecret: pulumi.Input<string>;
+    /**
+     * Forces this resource to save, even if errors are present
+     */
     readonly forceSave?: pulumi.Input<boolean>;
+    /**
+     * A regular expression that a metric name must match (case-insensitively) in order to be ingested
+     */
     readonly metricFilterRegex?: pulumi.Input<string>;
+    /**
+     * The human-readable name of this integration
+     */
     readonly name?: pulumi.Input<string>;
+    /**
+     * A list of Azure resource groups from which to pull metrics
+     */
     readonly resourceGroupFilters?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * A value denoting which cloud service this service integrates with
+     */
     readonly service: pulumi.Input<string>;
+    /**
+     * How often, in minutes, to refresh the service
+     */
     readonly serviceRefreshRateInMinutes?: pulumi.Input<number>;
+    /**
+     * Tenant Id for an Azure service account within your project
+     */
     readonly tenant: pulumi.Input<string>;
 }

@@ -10,21 +10,35 @@ import (
 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 )
 
+// Provides a Wavefront Dashboard resource.  This allows dashboards to be created, updated, and deleted.
 type Dashboard struct {
 	pulumi.CustomResourceState
 
-	CanModifies                   pulumi.StringArrayOutput            `pulumi:"canModifies"`
-	CanViews                      pulumi.StringArrayOutput            `pulumi:"canViews"`
-	Description                   pulumi.StringOutput                 `pulumi:"description"`
-	DisplayQueryParameters        pulumi.BoolPtrOutput                `pulumi:"displayQueryParameters"`
-	DisplaySectionTableOfContents pulumi.BoolPtrOutput                `pulumi:"displaySectionTableOfContents"`
-	EventFilterType               pulumi.StringPtrOutput              `pulumi:"eventFilterType"`
-	Name                          pulumi.StringOutput                 `pulumi:"name"`
-	ParameterDetails              DashboardParameterDetailArrayOutput `pulumi:"parameterDetails"`
-	// Sections of a Dashboard
+	// A list of users that have modify ACL access to the dashboard
+	CanModifies pulumi.StringArrayOutput `pulumi:"canModifies"`
+	// A list of users that have view ACL access to the dashboard
+	CanViews pulumi.StringArrayOutput `pulumi:"canViews"`
+	// Human-readable description of the dashboard
+	Description pulumi.StringOutput `pulumi:"description"`
+	// Whether the dashboard parameters section is opened by default when the dashboard
+	// is shown
+	DisplayQueryParameters pulumi.BoolPtrOutput `pulumi:"displayQueryParameters"`
+	// Whether the "pills" quick-linked the sections of the dashboard are
+	// displayed by default when the dashboard is shown
+	DisplaySectionTableOfContents pulumi.BoolPtrOutput `pulumi:"displaySectionTableOfContents"`
+	// How charts belonging to this dashboard should display events. BYCHART is default if
+	// unspecified; Valid options are: `BYCHART`, `AUTOMATIC`, `ALL`, `NONE`, `BYDASHBOARD`, and `BYCHARTANDDASHBOARD`
+	EventFilterType pulumi.StringPtrOutput `pulumi:"eventFilterType"`
+	// Name of the dashboard
+	Name pulumi.StringOutput `pulumi:"name"`
+	// The current JSON representation of dashboard parameters. See parameter details
+	ParameterDetails DashboardParameterDetailArrayOutput `pulumi:"parameterDetails"`
+	// Dashboard chart sections. See dashboard sections
 	Sections DashboardSectionArrayOutput `pulumi:"sections"`
-	Tags     pulumi.StringArrayOutput    `pulumi:"tags"`
-	Url      pulumi.StringOutput         `pulumi:"url"`
+	// A set of tags to assign to this resource.
+	Tags pulumi.StringArrayOutput `pulumi:"tags"`
+	// Unique identifier, also URL slug, of the dashboard
+	Url pulumi.StringOutput `pulumi:"url"`
 }
 
 // NewDashboard registers a new resource with the given unique name, arguments, and options.
@@ -67,33 +81,59 @@ func GetDashboard(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering Dashboard resources.
 type dashboardState struct {
-	CanModifies                   []string                   `pulumi:"canModifies"`
-	CanViews                      []string                   `pulumi:"canViews"`
-	Description                   *string                    `pulumi:"description"`
-	DisplayQueryParameters        *bool                      `pulumi:"displayQueryParameters"`
-	DisplaySectionTableOfContents *bool                      `pulumi:"displaySectionTableOfContents"`
-	EventFilterType               *string                    `pulumi:"eventFilterType"`
-	Name                          *string                    `pulumi:"name"`
-	ParameterDetails              []DashboardParameterDetail `pulumi:"parameterDetails"`
-	// Sections of a Dashboard
+	// A list of users that have modify ACL access to the dashboard
+	CanModifies []string `pulumi:"canModifies"`
+	// A list of users that have view ACL access to the dashboard
+	CanViews []string `pulumi:"canViews"`
+	// Human-readable description of the dashboard
+	Description *string `pulumi:"description"`
+	// Whether the dashboard parameters section is opened by default when the dashboard
+	// is shown
+	DisplayQueryParameters *bool `pulumi:"displayQueryParameters"`
+	// Whether the "pills" quick-linked the sections of the dashboard are
+	// displayed by default when the dashboard is shown
+	DisplaySectionTableOfContents *bool `pulumi:"displaySectionTableOfContents"`
+	// How charts belonging to this dashboard should display events. BYCHART is default if
+	// unspecified; Valid options are: `BYCHART`, `AUTOMATIC`, `ALL`, `NONE`, `BYDASHBOARD`, and `BYCHARTANDDASHBOARD`
+	EventFilterType *string `pulumi:"eventFilterType"`
+	// Name of the dashboard
+	Name *string `pulumi:"name"`
+	// The current JSON representation of dashboard parameters. See parameter details
+	ParameterDetails []DashboardParameterDetail `pulumi:"parameterDetails"`
+	// Dashboard chart sections. See dashboard sections
 	Sections []DashboardSection `pulumi:"sections"`
-	Tags     []string           `pulumi:"tags"`
-	Url      *string            `pulumi:"url"`
+	// A set of tags to assign to this resource.
+	Tags []string `pulumi:"tags"`
+	// Unique identifier, also URL slug, of the dashboard
+	Url *string `pulumi:"url"`
 }
 
 type DashboardState struct {
-	CanModifies                   pulumi.StringArrayInput
-	CanViews                      pulumi.StringArrayInput
-	Description                   pulumi.StringPtrInput
-	DisplayQueryParameters        pulumi.BoolPtrInput
+	// A list of users that have modify ACL access to the dashboard
+	CanModifies pulumi.StringArrayInput
+	// A list of users that have view ACL access to the dashboard
+	CanViews pulumi.StringArrayInput
+	// Human-readable description of the dashboard
+	Description pulumi.StringPtrInput
+	// Whether the dashboard parameters section is opened by default when the dashboard
+	// is shown
+	DisplayQueryParameters pulumi.BoolPtrInput
+	// Whether the "pills" quick-linked the sections of the dashboard are
+	// displayed by default when the dashboard is shown
 	DisplaySectionTableOfContents pulumi.BoolPtrInput
-	EventFilterType               pulumi.StringPtrInput
-	Name                          pulumi.StringPtrInput
-	ParameterDetails              DashboardParameterDetailArrayInput
-	// Sections of a Dashboard
+	// How charts belonging to this dashboard should display events. BYCHART is default if
+	// unspecified; Valid options are: `BYCHART`, `AUTOMATIC`, `ALL`, `NONE`, `BYDASHBOARD`, and `BYCHARTANDDASHBOARD`
+	EventFilterType pulumi.StringPtrInput
+	// Name of the dashboard
+	Name pulumi.StringPtrInput
+	// The current JSON representation of dashboard parameters. See parameter details
+	ParameterDetails DashboardParameterDetailArrayInput
+	// Dashboard chart sections. See dashboard sections
 	Sections DashboardSectionArrayInput
-	Tags     pulumi.StringArrayInput
-	Url      pulumi.StringPtrInput
+	// A set of tags to assign to this resource.
+	Tags pulumi.StringArrayInput
+	// Unique identifier, also URL slug, of the dashboard
+	Url pulumi.StringPtrInput
 }
 
 func (DashboardState) ElementType() reflect.Type {
@@ -101,34 +141,60 @@ func (DashboardState) ElementType() reflect.Type {
 }
 
 type dashboardArgs struct {
-	CanModifies                   []string                   `pulumi:"canModifies"`
-	CanViews                      []string                   `pulumi:"canViews"`
-	Description                   string                     `pulumi:"description"`
-	DisplayQueryParameters        *bool                      `pulumi:"displayQueryParameters"`
-	DisplaySectionTableOfContents *bool                      `pulumi:"displaySectionTableOfContents"`
-	EventFilterType               *string                    `pulumi:"eventFilterType"`
-	Name                          *string                    `pulumi:"name"`
-	ParameterDetails              []DashboardParameterDetail `pulumi:"parameterDetails"`
-	// Sections of a Dashboard
+	// A list of users that have modify ACL access to the dashboard
+	CanModifies []string `pulumi:"canModifies"`
+	// A list of users that have view ACL access to the dashboard
+	CanViews []string `pulumi:"canViews"`
+	// Human-readable description of the dashboard
+	Description string `pulumi:"description"`
+	// Whether the dashboard parameters section is opened by default when the dashboard
+	// is shown
+	DisplayQueryParameters *bool `pulumi:"displayQueryParameters"`
+	// Whether the "pills" quick-linked the sections of the dashboard are
+	// displayed by default when the dashboard is shown
+	DisplaySectionTableOfContents *bool `pulumi:"displaySectionTableOfContents"`
+	// How charts belonging to this dashboard should display events. BYCHART is default if
+	// unspecified; Valid options are: `BYCHART`, `AUTOMATIC`, `ALL`, `NONE`, `BYDASHBOARD`, and `BYCHARTANDDASHBOARD`
+	EventFilterType *string `pulumi:"eventFilterType"`
+	// Name of the dashboard
+	Name *string `pulumi:"name"`
+	// The current JSON representation of dashboard parameters. See parameter details
+	ParameterDetails []DashboardParameterDetail `pulumi:"parameterDetails"`
+	// Dashboard chart sections. See dashboard sections
 	Sections []DashboardSection `pulumi:"sections"`
-	Tags     []string           `pulumi:"tags"`
-	Url      string             `pulumi:"url"`
+	// A set of tags to assign to this resource.
+	Tags []string `pulumi:"tags"`
+	// Unique identifier, also URL slug, of the dashboard
+	Url string `pulumi:"url"`
 }
 
 // The set of arguments for constructing a Dashboard resource.
 type DashboardArgs struct {
-	CanModifies                   pulumi.StringArrayInput
-	CanViews                      pulumi.StringArrayInput
-	Description                   pulumi.StringInput
-	DisplayQueryParameters        pulumi.BoolPtrInput
+	// A list of users that have modify ACL access to the dashboard
+	CanModifies pulumi.StringArrayInput
+	// A list of users that have view ACL access to the dashboard
+	CanViews pulumi.StringArrayInput
+	// Human-readable description of the dashboard
+	Description pulumi.StringInput
+	// Whether the dashboard parameters section is opened by default when the dashboard
+	// is shown
+	DisplayQueryParameters pulumi.BoolPtrInput
+	// Whether the "pills" quick-linked the sections of the dashboard are
+	// displayed by default when the dashboard is shown
 	DisplaySectionTableOfContents pulumi.BoolPtrInput
-	EventFilterType               pulumi.StringPtrInput
-	Name                          pulumi.StringPtrInput
-	ParameterDetails              DashboardParameterDetailArrayInput
-	// Sections of a Dashboard
+	// How charts belonging to this dashboard should display events. BYCHART is default if
+	// unspecified; Valid options are: `BYCHART`, `AUTOMATIC`, `ALL`, `NONE`, `BYDASHBOARD`, and `BYCHARTANDDASHBOARD`
+	EventFilterType pulumi.StringPtrInput
+	// Name of the dashboard
+	Name pulumi.StringPtrInput
+	// The current JSON representation of dashboard parameters. See parameter details
+	ParameterDetails DashboardParameterDetailArrayInput
+	// Dashboard chart sections. See dashboard sections
 	Sections DashboardSectionArrayInput
-	Tags     pulumi.StringArrayInput
-	Url      pulumi.StringInput
+	// A set of tags to assign to this resource.
+	Tags pulumi.StringArrayInput
+	// Unique identifier, also URL slug, of the dashboard
+	Url pulumi.StringInput
 }
 
 func (DashboardArgs) ElementType() reflect.Type {

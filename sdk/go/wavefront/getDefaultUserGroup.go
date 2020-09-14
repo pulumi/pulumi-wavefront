@@ -7,6 +7,28 @@ import (
 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 )
 
+// Use this data source to get the Group ID of the `Everyone` group in Wavefront.
+//
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+// 	"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront"
+// 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
+// )
+//
+// func main() {
+// 	pulumi.Run(func(ctx *pulumi.Context) error {
+// 		_, err := wavefront.GetDefaultUserGroup(ctx, nil, nil)
+// 		if err != nil {
+// 			return err
+// 		}
+// 		return nil
+// 	})
+// }
+// ```
 func GetDefaultUserGroup(ctx *pulumi.Context, opts ...pulumi.InvokeOption) (*GetDefaultUserGroupResult, error) {
 	var rv GetDefaultUserGroupResult
 	err := ctx.Invoke("wavefront:index/getDefaultUserGroup:getDefaultUserGroup", nil, &rv, opts...)
@@ -18,6 +40,8 @@ func GetDefaultUserGroup(ctx *pulumi.Context, opts ...pulumi.InvokeOption) (*Get
 
 // A collection of values returned by getDefaultUserGroup.
 type GetDefaultUserGroupResult struct {
+	// Set to the Group ID of the `Everyone` group, suitable for referencing
+	// in other resources that support group memberships. s
 	GroupId string `pulumi:"groupId"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`

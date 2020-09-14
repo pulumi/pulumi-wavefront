@@ -6,6 +6,65 @@ import * as inputs from "./types/input";
 import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
+/**
+ * Provides a Wavefront Dashboard resource.  This allows dashboards to be created, updated, and deleted.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as wavefront from "@pulumi/wavefront";
+ *
+ * const basic = new wavefront.User("basic", {
+ *     email: "test+tftesting@example.com",
+ *     groups: [
+ *         "agent_management",
+ *         "alerts_management",
+ *     ],
+ * });
+ * const testDashboard = new wavefront.Dashboard("testDashboard", {
+ *     description: "testing, testing",
+ *     url: "tftestcreate",
+ *     displaySectionTableOfContents: true,
+ *     displayQueryParameters: true,
+ *     canViews: [basic.id],
+ *     sections: [{
+ *         name: "section 1",
+ *         rows: [{
+ *             charts: [{
+ *                 name: "chart 1",
+ *                 description: "chart number 1",
+ *                 units: "something per unit",
+ *                 sources: [{
+ *                     name: "source name",
+ *                     query: "ts()",
+ *                 }],
+ *                 chartSetting: {
+ *                     type: "linear",
+ *                 },
+ *                 summarization: "MEAN",
+ *             }],
+ *         }],
+ *     }],
+ *     parameterDetails: [{
+ *         name: "param1",
+ *         label: "param1",
+ *         defaultValue: "Label",
+ *         hideFromView: false,
+ *         parameterType: "SIMPLE",
+ *         valuesToReadableStrings: {
+ *             Label: "test",
+ *         },
+ *     }],
+ *     tags: [
+ *         "b",
+ *         "terraform",
+ *         "a",
+ *         "test",
+ *     ],
+ * });
+ * ```
+ */
 export class Dashboard extends pulumi.CustomResource {
     /**
      * Get an existing Dashboard resource's state with the given name, ID, and optional extra
@@ -34,19 +93,52 @@ export class Dashboard extends pulumi.CustomResource {
         return obj['__pulumiType'] === Dashboard.__pulumiType;
     }
 
+    /**
+     * A list of users that have modify ACL access to the dashboard
+     */
     public readonly canModifies!: pulumi.Output<string[]>;
+    /**
+     * A list of users that have view ACL access to the dashboard
+     */
     public readonly canViews!: pulumi.Output<string[] | undefined>;
+    /**
+     * Human-readable description of the dashboard
+     */
     public readonly description!: pulumi.Output<string>;
+    /**
+     * Whether the dashboard parameters section is opened by default when the dashboard
+     * is shown
+     */
     public readonly displayQueryParameters!: pulumi.Output<boolean | undefined>;
+    /**
+     * Whether the "pills" quick-linked the sections of the dashboard are 
+     * displayed by default when the dashboard is shown
+     */
     public readonly displaySectionTableOfContents!: pulumi.Output<boolean | undefined>;
+    /**
+     * How charts belonging to this dashboard should display events. BYCHART is default if 
+     * unspecified; Valid options are: `BYCHART`, `AUTOMATIC`, `ALL`, `NONE`, `BYDASHBOARD`, and `BYCHARTANDDASHBOARD`
+     */
     public readonly eventFilterType!: pulumi.Output<string | undefined>;
+    /**
+     * Name of the dashboard
+     */
     public readonly name!: pulumi.Output<string>;
+    /**
+     * The current JSON representation of dashboard parameters. See parameter details
+     */
     public readonly parameterDetails!: pulumi.Output<outputs.DashboardParameterDetail[] | undefined>;
     /**
-     * Sections of a Dashboard
+     * Dashboard chart sections. See dashboard sections
      */
     public readonly sections!: pulumi.Output<outputs.DashboardSection[]>;
+    /**
+     * A set of tags to assign to this resource.
+     */
     public readonly tags!: pulumi.Output<string[]>;
+    /**
+     * Unique identifier, also URL slug, of the dashboard
+     */
     public readonly url!: pulumi.Output<string>;
 
     /**
@@ -113,19 +205,52 @@ export class Dashboard extends pulumi.CustomResource {
  * Input properties used for looking up and filtering Dashboard resources.
  */
 export interface DashboardState {
+    /**
+     * A list of users that have modify ACL access to the dashboard
+     */
     readonly canModifies?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * A list of users that have view ACL access to the dashboard
+     */
     readonly canViews?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * Human-readable description of the dashboard
+     */
     readonly description?: pulumi.Input<string>;
+    /**
+     * Whether the dashboard parameters section is opened by default when the dashboard
+     * is shown
+     */
     readonly displayQueryParameters?: pulumi.Input<boolean>;
+    /**
+     * Whether the "pills" quick-linked the sections of the dashboard are 
+     * displayed by default when the dashboard is shown
+     */
     readonly displaySectionTableOfContents?: pulumi.Input<boolean>;
+    /**
+     * How charts belonging to this dashboard should display events. BYCHART is default if 
+     * unspecified; Valid options are: `BYCHART`, `AUTOMATIC`, `ALL`, `NONE`, `BYDASHBOARD`, and `BYCHARTANDDASHBOARD`
+     */
     readonly eventFilterType?: pulumi.Input<string>;
+    /**
+     * Name of the dashboard
+     */
     readonly name?: pulumi.Input<string>;
+    /**
+     * The current JSON representation of dashboard parameters. See parameter details
+     */
     readonly parameterDetails?: pulumi.Input<pulumi.Input<inputs.DashboardParameterDetail>[]>;
     /**
-     * Sections of a Dashboard
+     * Dashboard chart sections. See dashboard sections
      */
     readonly sections?: pulumi.Input<pulumi.Input<inputs.DashboardSection>[]>;
+    /**
+     * A set of tags to assign to this resource.
+     */
     readonly tags?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * Unique identifier, also URL slug, of the dashboard
+     */
     readonly url?: pulumi.Input<string>;
 }
 
@@ -133,18 +258,51 @@ export interface DashboardState {
  * The set of arguments for constructing a Dashboard resource.
  */
 export interface DashboardArgs {
+    /**
+     * A list of users that have modify ACL access to the dashboard
+     */
     readonly canModifies?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * A list of users that have view ACL access to the dashboard
+     */
     readonly canViews?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * Human-readable description of the dashboard
+     */
     readonly description: pulumi.Input<string>;
+    /**
+     * Whether the dashboard parameters section is opened by default when the dashboard
+     * is shown
+     */
     readonly displayQueryParameters?: pulumi.Input<boolean>;
+    /**
+     * Whether the "pills" quick-linked the sections of the dashboard are 
+     * displayed by default when the dashboard is shown
+     */
     readonly displaySectionTableOfContents?: pulumi.Input<boolean>;
+    /**
+     * How charts belonging to this dashboard should display events. BYCHART is default if 
+     * unspecified; Valid options are: `BYCHART`, `AUTOMATIC`, `ALL`, `NONE`, `BYDASHBOARD`, and `BYCHARTANDDASHBOARD`
+     */
     readonly eventFilterType?: pulumi.Input<string>;
+    /**
+     * Name of the dashboard
+     */
     readonly name?: pulumi.Input<string>;
+    /**
+     * The current JSON representation of dashboard parameters. See parameter details
+     */
     readonly parameterDetails?: pulumi.Input<pulumi.Input<inputs.DashboardParameterDetail>[]>;
     /**
-     * Sections of a Dashboard
+     * Dashboard chart sections. See dashboard sections
      */
     readonly sections: pulumi.Input<pulumi.Input<inputs.DashboardSection>[]>;
+    /**
+     * A set of tags to assign to this resource.
+     */
     readonly tags: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * Unique identifier, also URL slug, of the dashboard
+     */
     readonly url: pulumi.Input<string>;
 }

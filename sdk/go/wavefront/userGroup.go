@@ -10,11 +10,37 @@ import (
 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 )
 
+// Provides a Wavefront User Group Resource. This allows user groups to be created, updated, and deleted.
+//
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+// 	"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront"
+// 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
+// )
+//
+// func main() {
+// 	pulumi.Run(func(ctx *pulumi.Context) error {
+// 		_, err := wavefront.NewUserGroup(ctx, "basic", &wavefront.UserGroupArgs{
+// 			Description: pulumi.String("Basic User Group for Unit Tests"),
+// 		})
+// 		if err != nil {
+// 			return err
+// 		}
+// 		return nil
+// 	})
+// }
+// ```
 type UserGroup struct {
 	pulumi.CustomResourceState
 
+	// A short description of the user group
 	Description pulumi.StringOutput `pulumi:"description"`
-	Name        pulumi.StringOutput `pulumi:"name"`
+	// The name of the user group
+	Name pulumi.StringOutput `pulumi:"name"`
 }
 
 // NewUserGroup registers a new resource with the given unique name, arguments, and options.
@@ -48,13 +74,17 @@ func GetUserGroup(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering UserGroup resources.
 type userGroupState struct {
+	// A short description of the user group
 	Description *string `pulumi:"description"`
-	Name        *string `pulumi:"name"`
+	// The name of the user group
+	Name *string `pulumi:"name"`
 }
 
 type UserGroupState struct {
+	// A short description of the user group
 	Description pulumi.StringPtrInput
-	Name        pulumi.StringPtrInput
+	// The name of the user group
+	Name pulumi.StringPtrInput
 }
 
 func (UserGroupState) ElementType() reflect.Type {
@@ -62,14 +92,18 @@ func (UserGroupState) ElementType() reflect.Type {
 }
 
 type userGroupArgs struct {
-	Description string  `pulumi:"description"`
-	Name        *string `pulumi:"name"`
+	// A short description of the user group
+	Description string `pulumi:"description"`
+	// The name of the user group
+	Name *string `pulumi:"name"`
 }
 
 // The set of arguments for constructing a UserGroup resource.
 type UserGroupArgs struct {
+	// A short description of the user group
 	Description pulumi.StringInput
-	Name        pulumi.StringPtrInput
+	// The name of the user group
+	Name pulumi.StringPtrInput
 }
 
 func (UserGroupArgs) ElementType() reflect.Type {

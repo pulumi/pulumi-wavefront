@@ -9,32 +9,88 @@ using Pulumi.Serialization;
 
 namespace Pulumi.Wavefront
 {
+    /// <summary>
+    /// Provides a Wavefront Cloud Integration for Azure Activity Logs. This allows azure activity log cloud integrations to be created,
+    /// updated, and deleted.
+    /// 
+    /// ## Example Usage
+    /// 
+    /// ```csharp
+    /// using Pulumi;
+    /// using Wavefront = Pulumi.Wavefront;
+    /// 
+    /// class MyStack : Stack
+    /// {
+    ///     public MyStack()
+    ///     {
+    ///         var azureActivityLog = new Wavefront.CloudIntegrationAzureActivityLog("azureActivityLog", new Wavefront.CloudIntegrationAzureActivityLogArgs
+    ///         {
+    ///             CategoryFilters = 
+    ///             {
+    ///                 "ADMINISTRATIVE",
+    ///             },
+    ///             ClientId = "client-id2",
+    ///             ClientSecret = "client-secret2",
+    ///             Tenant = "my-tenant2",
+    ///         });
+    ///     }
+    /// 
+    /// }
+    /// ```
+    /// </summary>
     public partial class CloudIntegrationAzureActivityLog : Pulumi.CustomResource
     {
+        /// <summary>
+        /// A list of point tag key-values to add to every point ingested using this integration
+        /// </summary>
         [Output("additionalTags")]
         public Output<ImmutableDictionary<string, string>?> AdditionalTags { get; private set; } = null!;
 
+        /// <summary>
+        /// A list of Azure services (such as Microsoft.Compute/virtualMachines) from which to pull metrics
+        /// </summary>
         [Output("categoryFilters")]
         public Output<ImmutableArray<string>> CategoryFilters { get; private set; } = null!;
 
+        /// <summary>
+        /// Client id for an azure service account within your project
+        /// </summary>
         [Output("clientId")]
         public Output<string> ClientId { get; private set; } = null!;
 
+        /// <summary>
+        /// Client secret for an Azure service account within your project
+        /// </summary>
         [Output("clientSecret")]
         public Output<string> ClientSecret { get; private set; } = null!;
 
+        /// <summary>
+        /// Forces this resource to save, even if errors are present
+        /// </summary>
         [Output("forceSave")]
         public Output<bool?> ForceSave { get; private set; } = null!;
 
+        /// <summary>
+        /// The human-readable name of this integration
+        /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
 
+        /// <summary>
+        /// A value denoting which cloud service this service integrates with
+        /// </summary>
         [Output("service")]
         public Output<string> Service { get; private set; } = null!;
 
+        /// <summary>
+        /// How often, in minutes, to refresh the service
+        /// </summary>
         [Output("serviceRefreshRateInMinutes")]
         public Output<int?> ServiceRefreshRateInMinutes { get; private set; } = null!;
 
+        /// <summary>
+        /// Tenant Id for an Azure service account within your project
+        /// </summary>
         [Output("tenant")]
         public Output<string> Tenant { get; private set; } = null!;
 
@@ -86,6 +142,10 @@ namespace Pulumi.Wavefront
     {
         [Input("additionalTags")]
         private InputMap<string>? _additionalTags;
+
+        /// <summary>
+        /// A list of point tag key-values to add to every point ingested using this integration
+        /// </summary>
         public InputMap<string> AdditionalTags
         {
             get => _additionalTags ?? (_additionalTags = new InputMap<string>());
@@ -94,30 +154,55 @@ namespace Pulumi.Wavefront
 
         [Input("categoryFilters")]
         private InputList<string>? _categoryFilters;
+
+        /// <summary>
+        /// A list of Azure services (such as Microsoft.Compute/virtualMachines) from which to pull metrics
+        /// </summary>
         public InputList<string> CategoryFilters
         {
             get => _categoryFilters ?? (_categoryFilters = new InputList<string>());
             set => _categoryFilters = value;
         }
 
+        /// <summary>
+        /// Client id for an azure service account within your project
+        /// </summary>
         [Input("clientId", required: true)]
         public Input<string> ClientId { get; set; } = null!;
 
+        /// <summary>
+        /// Client secret for an Azure service account within your project
+        /// </summary>
         [Input("clientSecret", required: true)]
         public Input<string> ClientSecret { get; set; } = null!;
 
+        /// <summary>
+        /// Forces this resource to save, even if errors are present
+        /// </summary>
         [Input("forceSave")]
         public Input<bool>? ForceSave { get; set; }
 
+        /// <summary>
+        /// The human-readable name of this integration
+        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
+        /// <summary>
+        /// A value denoting which cloud service this service integrates with
+        /// </summary>
         [Input("service", required: true)]
         public Input<string> Service { get; set; } = null!;
 
+        /// <summary>
+        /// How often, in minutes, to refresh the service
+        /// </summary>
         [Input("serviceRefreshRateInMinutes")]
         public Input<int>? ServiceRefreshRateInMinutes { get; set; }
 
+        /// <summary>
+        /// Tenant Id for an Azure service account within your project
+        /// </summary>
         [Input("tenant", required: true)]
         public Input<string> Tenant { get; set; } = null!;
 
@@ -130,6 +215,10 @@ namespace Pulumi.Wavefront
     {
         [Input("additionalTags")]
         private InputMap<string>? _additionalTags;
+
+        /// <summary>
+        /// A list of point tag key-values to add to every point ingested using this integration
+        /// </summary>
         public InputMap<string> AdditionalTags
         {
             get => _additionalTags ?? (_additionalTags = new InputMap<string>());
@@ -138,30 +227,55 @@ namespace Pulumi.Wavefront
 
         [Input("categoryFilters")]
         private InputList<string>? _categoryFilters;
+
+        /// <summary>
+        /// A list of Azure services (such as Microsoft.Compute/virtualMachines) from which to pull metrics
+        /// </summary>
         public InputList<string> CategoryFilters
         {
             get => _categoryFilters ?? (_categoryFilters = new InputList<string>());
             set => _categoryFilters = value;
         }
 
+        /// <summary>
+        /// Client id for an azure service account within your project
+        /// </summary>
         [Input("clientId")]
         public Input<string>? ClientId { get; set; }
 
+        /// <summary>
+        /// Client secret for an Azure service account within your project
+        /// </summary>
         [Input("clientSecret")]
         public Input<string>? ClientSecret { get; set; }
 
+        /// <summary>
+        /// Forces this resource to save, even if errors are present
+        /// </summary>
         [Input("forceSave")]
         public Input<bool>? ForceSave { get; set; }
 
+        /// <summary>
+        /// The human-readable name of this integration
+        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
+        /// <summary>
+        /// A value denoting which cloud service this service integrates with
+        /// </summary>
         [Input("service")]
         public Input<string>? Service { get; set; }
 
+        /// <summary>
+        /// How often, in minutes, to refresh the service
+        /// </summary>
         [Input("serviceRefreshRateInMinutes")]
         public Input<int>? ServiceRefreshRateInMinutes { get; set; }
 
+        /// <summary>
+        /// Tenant Id for an Azure service account within your project
+        /// </summary>
         [Input("tenant")]
         public Input<string>? Tenant { get; set; }
 

@@ -10,14 +10,46 @@ import (
 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 )
 
+// Provides a Wavefront Service Account Resource. This allows service accounts to be created, updated, and deleted.
+//
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+// 	"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront"
+// 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
+// )
+//
+// func main() {
+// 	pulumi.Run(func(ctx *pulumi.Context) error {
+// 		_, err := wavefront.NewServiceAccount(ctx, "basic", &wavefront.ServiceAccountArgs{
+// 			Active:     pulumi.Bool(true),
+// 			Identifier: pulumi.String("sa::tftesting"),
+// 		})
+// 		if err != nil {
+// 			return err
+// 		}
+// 		return nil
+// 	})
+// }
+// ```
 type ServiceAccount struct {
 	pulumi.CustomResourceState
 
-	Active      pulumi.BoolPtrOutput     `pulumi:"active"`
-	Description pulumi.StringPtrOutput   `pulumi:"description"`
-	Identifier  pulumi.StringOutput      `pulumi:"identifier"`
+	// Whether or not the service account is active
+	Active pulumi.BoolPtrOutput `pulumi:"active"`
+	// The description of the service account
+	Description pulumi.StringPtrOutput `pulumi:"description"`
+	// The (unique) identifier of the service account to create. Must start with sa::
+	Identifier pulumi.StringOutput `pulumi:"identifier"`
+	// List of permission to grant to this service account.  Valid options are
+	// `agentManagement`, `alertsManagement`, `dashboardManagement`, `embeddedCharts`, `eventsManagement`, `externalLinksManagement`,
+	// `hostTagManagement`, `metricsManagement`, `userManagement`
 	Permissions pulumi.StringArrayOutput `pulumi:"permissions"`
-	UserGroups  pulumi.StringArrayOutput `pulumi:"userGroups"`
+	// List of user groups for this service account
+	UserGroups pulumi.StringArrayOutput `pulumi:"userGroups"`
 }
 
 // NewServiceAccount registers a new resource with the given unique name, arguments, and options.
@@ -51,19 +83,33 @@ func GetServiceAccount(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering ServiceAccount resources.
 type serviceAccountState struct {
-	Active      *bool    `pulumi:"active"`
-	Description *string  `pulumi:"description"`
-	Identifier  *string  `pulumi:"identifier"`
+	// Whether or not the service account is active
+	Active *bool `pulumi:"active"`
+	// The description of the service account
+	Description *string `pulumi:"description"`
+	// The (unique) identifier of the service account to create. Must start with sa::
+	Identifier *string `pulumi:"identifier"`
+	// List of permission to grant to this service account.  Valid options are
+	// `agentManagement`, `alertsManagement`, `dashboardManagement`, `embeddedCharts`, `eventsManagement`, `externalLinksManagement`,
+	// `hostTagManagement`, `metricsManagement`, `userManagement`
 	Permissions []string `pulumi:"permissions"`
-	UserGroups  []string `pulumi:"userGroups"`
+	// List of user groups for this service account
+	UserGroups []string `pulumi:"userGroups"`
 }
 
 type ServiceAccountState struct {
-	Active      pulumi.BoolPtrInput
+	// Whether or not the service account is active
+	Active pulumi.BoolPtrInput
+	// The description of the service account
 	Description pulumi.StringPtrInput
-	Identifier  pulumi.StringPtrInput
+	// The (unique) identifier of the service account to create. Must start with sa::
+	Identifier pulumi.StringPtrInput
+	// List of permission to grant to this service account.  Valid options are
+	// `agentManagement`, `alertsManagement`, `dashboardManagement`, `embeddedCharts`, `eventsManagement`, `externalLinksManagement`,
+	// `hostTagManagement`, `metricsManagement`, `userManagement`
 	Permissions pulumi.StringArrayInput
-	UserGroups  pulumi.StringArrayInput
+	// List of user groups for this service account
+	UserGroups pulumi.StringArrayInput
 }
 
 func (ServiceAccountState) ElementType() reflect.Type {
@@ -71,20 +117,34 @@ func (ServiceAccountState) ElementType() reflect.Type {
 }
 
 type serviceAccountArgs struct {
-	Active      *bool    `pulumi:"active"`
-	Description *string  `pulumi:"description"`
-	Identifier  string   `pulumi:"identifier"`
+	// Whether or not the service account is active
+	Active *bool `pulumi:"active"`
+	// The description of the service account
+	Description *string `pulumi:"description"`
+	// The (unique) identifier of the service account to create. Must start with sa::
+	Identifier string `pulumi:"identifier"`
+	// List of permission to grant to this service account.  Valid options are
+	// `agentManagement`, `alertsManagement`, `dashboardManagement`, `embeddedCharts`, `eventsManagement`, `externalLinksManagement`,
+	// `hostTagManagement`, `metricsManagement`, `userManagement`
 	Permissions []string `pulumi:"permissions"`
-	UserGroups  []string `pulumi:"userGroups"`
+	// List of user groups for this service account
+	UserGroups []string `pulumi:"userGroups"`
 }
 
 // The set of arguments for constructing a ServiceAccount resource.
 type ServiceAccountArgs struct {
-	Active      pulumi.BoolPtrInput
+	// Whether or not the service account is active
+	Active pulumi.BoolPtrInput
+	// The description of the service account
 	Description pulumi.StringPtrInput
-	Identifier  pulumi.StringInput
+	// The (unique) identifier of the service account to create. Must start with sa::
+	Identifier pulumi.StringInput
+	// List of permission to grant to this service account.  Valid options are
+	// `agentManagement`, `alertsManagement`, `dashboardManagement`, `embeddedCharts`, `eventsManagement`, `externalLinksManagement`,
+	// `hostTagManagement`, `metricsManagement`, `userManagement`
 	Permissions pulumi.StringArrayInput
-	UserGroups  pulumi.StringArrayInput
+	// List of user groups for this service account
+	UserGroups pulumi.StringArrayInput
 }
 
 func (ServiceAccountArgs) ElementType() reflect.Type {

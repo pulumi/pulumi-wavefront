@@ -4,6 +4,18 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
+/**
+ * Provides a Wavefront Role Resource. This allows user groups to be created, updated, and deleted.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as wavefront from "@pulumi/wavefront";
+ *
+ * const role = new wavefront.Role("role", {});
+ * ```
+ */
 export class Role extends pulumi.CustomResource {
     /**
      * Get an existing Role resource's state with the given name, ID, and optional extra
@@ -32,9 +44,23 @@ export class Role extends pulumi.CustomResource {
         return obj['__pulumiType'] === Role.__pulumiType;
     }
 
+    /**
+     * A list of user groups or accounts to assign to this role.
+     */
     public readonly assignees!: pulumi.Output<string[] | undefined>;
+    /**
+     * A short description of the user group
+     */
     public readonly description!: pulumi.Output<string | undefined>;
+    /**
+     * The name of the user group
+     */
     public readonly name!: pulumi.Output<string>;
+    /**
+     * A list of permissions to assign to this role. Valid options are 
+     * `agentManagement`, `alertsManagement`, `dashboardManagement`, `embeddedCharts`, `eventsManagement`, `externalLinksManagement`,
+     * `hostTagManagement`, `metricsManagement`, `userManagement`
+     */
     public readonly permissions!: pulumi.Output<string[] | undefined>;
 
     /**
@@ -75,9 +101,23 @@ export class Role extends pulumi.CustomResource {
  * Input properties used for looking up and filtering Role resources.
  */
 export interface RoleState {
+    /**
+     * A list of user groups or accounts to assign to this role.
+     */
     readonly assignees?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * A short description of the user group
+     */
     readonly description?: pulumi.Input<string>;
+    /**
+     * The name of the user group
+     */
     readonly name?: pulumi.Input<string>;
+    /**
+     * A list of permissions to assign to this role. Valid options are 
+     * `agentManagement`, `alertsManagement`, `dashboardManagement`, `embeddedCharts`, `eventsManagement`, `externalLinksManagement`,
+     * `hostTagManagement`, `metricsManagement`, `userManagement`
+     */
     readonly permissions?: pulumi.Input<pulumi.Input<string>[]>;
 }
 
@@ -85,8 +125,22 @@ export interface RoleState {
  * The set of arguments for constructing a Role resource.
  */
 export interface RoleArgs {
+    /**
+     * A list of user groups or accounts to assign to this role.
+     */
     readonly assignees?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * A short description of the user group
+     */
     readonly description?: pulumi.Input<string>;
+    /**
+     * The name of the user group
+     */
     readonly name?: pulumi.Input<string>;
+    /**
+     * A list of permissions to assign to this role. Valid options are 
+     * `agentManagement`, `alertsManagement`, `dashboardManagement`, `embeddedCharts`, `eventsManagement`, `externalLinksManagement`,
+     * `hostTagManagement`, `metricsManagement`, `userManagement`
+     */
     readonly permissions?: pulumi.Input<pulumi.Input<string>[]>;
 }

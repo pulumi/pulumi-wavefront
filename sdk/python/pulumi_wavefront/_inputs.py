@@ -25,6 +25,9 @@ class AlertTargetRouteArgs:
                  method: pulumi.Input[str],
                  target: pulumi.Input[str],
                  filter: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None):
+        """
+        :param pulumi.Input[str] method: The notification method used for notification target. One of `WEBHOOK`, `EMAIL`, `PAGERDUTY`.
+        """
         pulumi.set(__self__, "method", method)
         pulumi.set(__self__, "target", target)
         if filter is not None:
@@ -33,6 +36,9 @@ class AlertTargetRouteArgs:
     @property
     @pulumi.getter
     def method(self) -> pulumi.Input[str]:
+        """
+        The notification method used for notification target. One of `WEBHOOK`, `EMAIL`, `PAGERDUTY`.
+        """
         return pulumi.get(self, "method")
 
     @method.setter
@@ -63,12 +69,19 @@ class CloudIntegrationNewRelicMetricFilterArgs:
     def __init__(__self__, *,
                  app_name: pulumi.Input[str],
                  metric_filter_regex: pulumi.Input[str]):
+        """
+        :param pulumi.Input[str] app_name: The name of a NewRelic App
+        :param pulumi.Input[str] metric_filter_regex: A regular expression that a metric name must match (case-insensitively) in order to be ingested
+        """
         pulumi.set(__self__, "app_name", app_name)
         pulumi.set(__self__, "metric_filter_regex", metric_filter_regex)
 
     @property
     @pulumi.getter(name="appName")
     def app_name(self) -> pulumi.Input[str]:
+        """
+        The name of a NewRelic App
+        """
         return pulumi.get(self, "app_name")
 
     @app_name.setter
@@ -78,6 +91,9 @@ class CloudIntegrationNewRelicMetricFilterArgs:
     @property
     @pulumi.getter(name="metricFilterRegex")
     def metric_filter_regex(self) -> pulumi.Input[str]:
+        """
+        A regular expression that a metric name must match (case-insensitively) in order to be ingested
+        """
         return pulumi.get(self, "metric_filter_regex")
 
     @metric_filter_regex.setter
@@ -97,6 +113,19 @@ class DashboardParameterDetailArgs:
                  dynamic_field_type: Optional[pulumi.Input[str]] = None,
                  query_value: Optional[pulumi.Input[str]] = None,
                  tag_key: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] default_value: The default value of the parameter
+        :param pulumi.Input[bool] hide_from_view: If `true` the parameter will only be shown on the edit view of the dashboard
+        :param pulumi.Input[str] label: The label for the parameter
+        :param pulumi.Input[str] name: The name of the parameters
+        :param pulumi.Input[str] parameter_type: The type of the parameter. `SIMPLE`, `LIST`, or `DYNAMIC`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] values_to_readable_strings: A string->string map.  At least one of the keys must match the value of
+               `default_value`
+        :param pulumi.Input[str] dynamic_field_type: For `DYNAMIC` parameter types, the type of the field. Valid options are `SOURCE`,
+               `SOURCE_TAG`, `METRIC_NAME`, `TAG_KEY`, `MATCHING_SOURCE_TAG`
+        :param pulumi.Input[str] query_value: For `DYNAMIC` parameter types, the query to execute to return values
+        :param pulumi.Input[str] tag_key: for `TAG_KEY` dynamic field types, the tag key to return
+        """
         pulumi.set(__self__, "default_value", default_value)
         pulumi.set(__self__, "hide_from_view", hide_from_view)
         pulumi.set(__self__, "label", label)
@@ -113,6 +142,9 @@ class DashboardParameterDetailArgs:
     @property
     @pulumi.getter(name="defaultValue")
     def default_value(self) -> pulumi.Input[str]:
+        """
+        The default value of the parameter
+        """
         return pulumi.get(self, "default_value")
 
     @default_value.setter
@@ -122,6 +154,9 @@ class DashboardParameterDetailArgs:
     @property
     @pulumi.getter(name="hideFromView")
     def hide_from_view(self) -> pulumi.Input[bool]:
+        """
+        If `true` the parameter will only be shown on the edit view of the dashboard
+        """
         return pulumi.get(self, "hide_from_view")
 
     @hide_from_view.setter
@@ -131,6 +166,9 @@ class DashboardParameterDetailArgs:
     @property
     @pulumi.getter
     def label(self) -> pulumi.Input[str]:
+        """
+        The label for the parameter
+        """
         return pulumi.get(self, "label")
 
     @label.setter
@@ -140,6 +178,9 @@ class DashboardParameterDetailArgs:
     @property
     @pulumi.getter
     def name(self) -> pulumi.Input[str]:
+        """
+        The name of the parameters
+        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -149,6 +190,9 @@ class DashboardParameterDetailArgs:
     @property
     @pulumi.getter(name="parameterType")
     def parameter_type(self) -> pulumi.Input[str]:
+        """
+        The type of the parameter. `SIMPLE`, `LIST`, or `DYNAMIC`
+        """
         return pulumi.get(self, "parameter_type")
 
     @parameter_type.setter
@@ -158,6 +202,10 @@ class DashboardParameterDetailArgs:
     @property
     @pulumi.getter(name="valuesToReadableStrings")
     def values_to_readable_strings(self) -> pulumi.Input[Mapping[str, pulumi.Input[str]]]:
+        """
+        A string->string map.  At least one of the keys must match the value of
+        `default_value`
+        """
         return pulumi.get(self, "values_to_readable_strings")
 
     @values_to_readable_strings.setter
@@ -167,6 +215,10 @@ class DashboardParameterDetailArgs:
     @property
     @pulumi.getter(name="dynamicFieldType")
     def dynamic_field_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        For `DYNAMIC` parameter types, the type of the field. Valid options are `SOURCE`,
+        `SOURCE_TAG`, `METRIC_NAME`, `TAG_KEY`, `MATCHING_SOURCE_TAG`
+        """
         return pulumi.get(self, "dynamic_field_type")
 
     @dynamic_field_type.setter
@@ -176,6 +228,9 @@ class DashboardParameterDetailArgs:
     @property
     @pulumi.getter(name="queryValue")
     def query_value(self) -> Optional[pulumi.Input[str]]:
+        """
+        For `DYNAMIC` parameter types, the query to execute to return values
+        """
         return pulumi.get(self, "query_value")
 
     @query_value.setter
@@ -185,6 +240,9 @@ class DashboardParameterDetailArgs:
     @property
     @pulumi.getter(name="tagKey")
     def tag_key(self) -> Optional[pulumi.Input[str]]:
+        """
+        for `TAG_KEY` dynamic field types, the tag key to return
+        """
         return pulumi.get(self, "tag_key")
 
     @tag_key.setter
@@ -197,12 +255,19 @@ class DashboardSectionArgs:
     def __init__(__self__, *,
                  name: pulumi.Input[str],
                  rows: pulumi.Input[List[pulumi.Input['DashboardSectionRowArgs']]]):
+        """
+        :param pulumi.Input[str] name: Name of this section
+        :param pulumi.Input[List[pulumi.Input['DashboardSectionRowArgs']]] rows: See dashboard section rows
+        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "rows", rows)
 
     @property
     @pulumi.getter
     def name(self) -> pulumi.Input[str]:
+        """
+        Name of this section
+        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -212,6 +277,9 @@ class DashboardSectionArgs:
     @property
     @pulumi.getter
     def rows(self) -> pulumi.Input[List[pulumi.Input['DashboardSectionRowArgs']]]:
+        """
+        See dashboard section rows
+        """
         return pulumi.get(self, "rows")
 
     @rows.setter
@@ -223,11 +291,17 @@ class DashboardSectionArgs:
 class DashboardSectionRowArgs:
     def __init__(__self__, *,
                  charts: pulumi.Input[List[pulumi.Input['DashboardSectionRowChartArgs']]]):
+        """
+        :param pulumi.Input[List[pulumi.Input['DashboardSectionRowChartArgs']]] charts: Charts in this section. See dashboard chart
+        """
         pulumi.set(__self__, "charts", charts)
 
     @property
     @pulumi.getter
     def charts(self) -> pulumi.Input[List[pulumi.Input['DashboardSectionRowChartArgs']]]:
+        """
+        Charts in this section. See dashboard chart
+        """
         return pulumi.get(self, "charts")
 
     @charts.setter
@@ -244,6 +318,15 @@ class DashboardSectionRowChartArgs:
                  summarization: pulumi.Input[str],
                  units: pulumi.Input[str],
                  description: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input['DashboardSectionRowChartChartSettingArgs'] chart_setting: Chart settings. See chart settings
+        :param pulumi.Input[str] name: Name of the source
+        :param pulumi.Input[List[pulumi.Input['DashboardSectionRowChartSourceArgs']]] sources: Query expression to plot on the chart. See chart source queries
+        :param pulumi.Input[str] summarization: Summarization strategy for the chart. MEAN is default. Valid options are, `MEAN`, 
+               `MEDIAN`, `MIN`, `MAX`, `SUM`, `COUNT`, `LAST`, `FIRST`
+        :param pulumi.Input[str] units: String to label the units of the chart on the Y-Axis
+        :param pulumi.Input[str] description: Description of the chart
+        """
         pulumi.set(__self__, "chart_setting", chart_setting)
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "sources", sources)
@@ -255,6 +338,9 @@ class DashboardSectionRowChartArgs:
     @property
     @pulumi.getter(name="chartSetting")
     def chart_setting(self) -> pulumi.Input['DashboardSectionRowChartChartSettingArgs']:
+        """
+        Chart settings. See chart settings
+        """
         return pulumi.get(self, "chart_setting")
 
     @chart_setting.setter
@@ -264,6 +350,9 @@ class DashboardSectionRowChartArgs:
     @property
     @pulumi.getter
     def name(self) -> pulumi.Input[str]:
+        """
+        Name of the source
+        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -273,6 +362,9 @@ class DashboardSectionRowChartArgs:
     @property
     @pulumi.getter
     def sources(self) -> pulumi.Input[List[pulumi.Input['DashboardSectionRowChartSourceArgs']]]:
+        """
+        Query expression to plot on the chart. See chart source queries
+        """
         return pulumi.get(self, "sources")
 
     @sources.setter
@@ -282,6 +374,10 @@ class DashboardSectionRowChartArgs:
     @property
     @pulumi.getter
     def summarization(self) -> pulumi.Input[str]:
+        """
+        Summarization strategy for the chart. MEAN is default. Valid options are, `MEAN`, 
+        `MEDIAN`, `MIN`, `MAX`, `SUM`, `COUNT`, `LAST`, `FIRST`
+        """
         return pulumi.get(self, "summarization")
 
     @summarization.setter
@@ -291,6 +387,9 @@ class DashboardSectionRowChartArgs:
     @property
     @pulumi.getter
     def units(self) -> pulumi.Input[str]:
+        """
+        String to label the units of the chart on the Y-Axis
+        """
         return pulumi.get(self, "units")
 
     @units.setter
@@ -300,6 +399,9 @@ class DashboardSectionRowChartArgs:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
+        """
+        Description of the chart
+        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -367,6 +469,91 @@ class DashboardSectionRowChartChartSettingArgs:
                  y1min: Optional[pulumi.Input[float]] = None,
                  ymax: Optional[pulumi.Input[float]] = None,
                  ymin: Optional[pulumi.Input[float]] = None):
+        """
+        :param pulumi.Input[str] type: Chart Type. `line` refers to the Line Plot, `scatter` to the Point Plot, `stacked-area` to 
+               the Stacked Area plot, `table` to the Tabular View, `scatterploy-xy` to Scatter Plot, `markdown-widget` to the
+               Markdown display, and `sparkline` to the Single Stat view. Valid options are `line`, `scatterplot`,
+               `stacked-area`, `stacked-column`, `table`, `scatterplot-xy`, `markdown-widget`, `sparkline`, `globe`, `nodemap`,
+               `top-k`, `status-list`, `histogram`
+        :param pulumi.Input[bool] auto_column_tags: deprecated
+        :param pulumi.Input[str] column_tags: deprecated
+        :param pulumi.Input[List[pulumi.Input[str]]] custom_tags: For the tabular view, a list of point tags to display when using the `custom` tag display mode
+        :param pulumi.Input[float] expected_data_spacing: Threshold (in seconds) for time delta between consecutive points in a series
+               above which a dotted line will replace a solid in in line plots. Default 60
+        :param pulumi.Input[List[pulumi.Input[str]]] fixed_legend_display_stats: For a chart with a fixed legend, a list of statistics to display in the legend
+        :param pulumi.Input[bool] fixed_legend_enabled: Whether to enable a fixed tabular legend adjacent to the chart
+        :param pulumi.Input[str] fixed_legend_filter_field: Statistic to use for determining whether a series is displayed on the fixed legend.
+               Valid options are `CURRENT`, `MEAN`, `MEDIAN`, `SUM`, `MIN`, `MAX`, `COUNT`
+        :param pulumi.Input[float] fixed_legend_filter_limit: Number of series to include in the fixed legend
+        :param pulumi.Input[str] fixed_legend_filter_sort: Whether to display `TOP` or `BOTTOM` ranked series in a fixed legend. Valid options
+               are `TOP`, and `BOTTOM`
+        :param pulumi.Input[bool] fixed_legend_hide_label: deprecated
+        :param pulumi.Input[str] fixed_legend_position: Where the fixed legend should be displayed with respect ot the chart.
+               Valid options are `RIGHt`, `TOP`, `LEFT`, `BOTTOM`
+        :param pulumi.Input[bool] fixed_legend_use_raw_stats: If `true`, the legend uses non-summarized stats instead of summarized
+        :param pulumi.Input[bool] group_by_source: For the tabular view, whether to group multi metrics into a single row by a common source.
+               If `false`, each source is displayed in its own row.  if `true`, multiple metrics for the same host will be displayed as different
+               columns in the same row
+        :param pulumi.Input[bool] invert_dynamic_legend_hover_control: Whether to disable the display of the floating legend (but
+               reenable it when the ctrl-key is pressed)
+        :param pulumi.Input[str] line_type: Plot interpolation type.  `linear` is default. Valid options are `linear`, `step-before`, 
+               `step-after`, `basis`, `cardinal`, `monotone`
+        :param pulumi.Input[float] max: Max value of the Y-axis. Set to null or leave blank for auto
+        :param pulumi.Input[float] min: Min value of the Y-axis. Set to null or leave blank for auto
+        :param pulumi.Input[float] num_tags: For the tabular view, how many point tags to display
+        :param pulumi.Input[str] plain_markdown_content: The markdown content for a Markdown display, in plain text.
+        :param pulumi.Input[bool] show_hosts: For the tabular view, whether to display sources. Default is `true`
+        :param pulumi.Input[bool] show_labels: For the tabular view, whether to display labels. Default is `true`
+        :param pulumi.Input[bool] show_raw_values: For the tabular view, whether to display raw values. Default is `false`
+        :param pulumi.Input[bool] sort_values_descending: For the tabular view, whether to display display values in descending order. Default is `false`
+        :param pulumi.Input[float] sparkline_decimal_precision: For the single stat view, the decimal precision of the displayed number
+        :param pulumi.Input[str] sparkline_display_color: For the single stat view, the color of the displayed text (when not dynamically determined). 
+               Values should be in `rgba(,,,,)` format
+        :param pulumi.Input[str] sparkline_display_font_size: For the single stat view, the font size of the displayed text, in percent
+        :param pulumi.Input[str] sparkline_display_horizontal_position: For the single stat view, the horizontal position of the displayed text.
+               Valid options are `MIDDLE`, `LEFT`, `RIGHT`
+        :param pulumi.Input[str] sparkline_display_postfix: For the single stat view, a string to append to the displayed text
+        :param pulumi.Input[str] sparkline_display_prefix: For the single stat view, a string to add before the displayed text
+        :param pulumi.Input[str] sparkline_display_value_type: For the single stat view, where to display the name of the query or the value of the query.
+               Valid options are `VALUE` or `LABEL`
+        :param pulumi.Input[str] sparkline_display_vertical_position: deprecated
+        :param pulumi.Input[str] sparkline_fill_color: For the single stat view, the color of the background fill.  Values should be
+               in `rgba(,,,,)`
+        :param pulumi.Input[str] sparkline_line_color: For the single stat view, the color of the line.  Values should be in `rgba(,,,,)` format
+        :param pulumi.Input[str] sparkline_size: For the single stat view, This determines whether the sparkline of the statistic is displayed in the chart `BACKGROUND`, `BOTTOM`, or `NONE`.
+               Valid options are `BACKGROUND`, `BOTTOM`, `NONE`
+        :param pulumi.Input[str] sparkline_value_color_map_apply_to: For the single stat view, whether to apply dyunamic color settings to 
+               the displayed `TEXT` or `BACKGROUND`. Valid options are `TEXT` or `BACKGROUND`
+        :param pulumi.Input[List[pulumi.Input[str]]] sparkline_value_color_map_colors: For the single stat view, A list of colors that differing query values map to. 
+               Must contain one more element than `sparkline_value_color_map_values_v2`. Values should be in `rgba(,,,,)`
+        :param pulumi.Input[List[pulumi.Input[float]]] sparkline_value_color_map_values: deprecated
+        :param pulumi.Input[List[pulumi.Input[float]]] sparkline_value_color_map_values_v2s: For the single stat view, a list of boundaries for mapping different
+               query values to colors.  Must contain one less element than `sparkline_value_color_map_colors`
+        :param pulumi.Input[List[pulumi.Input[str]]] sparkline_value_text_map_texts: For the single stat view, a list of display text values that different query
+               values map to.  Must contain one more element than `sparkline_value_text_map_thresholds`
+        :param pulumi.Input[List[pulumi.Input[float]]] sparkline_value_text_map_thresholds: For the single stat view, a list of threshold boundaries for 
+               mapping different query values to display text.  Must contain one less element than `sparkline_value_text_map_text`
+        :param pulumi.Input[str] stack_type: Type of stacked chart (applicable only if chart type is `stacked`). `zero` (default) means
+               stacked from y=0. `expand` means normalized from 0 to 1.  `wiggle` means minimize weighted changes. `silhouette` means to
+               center the stream. Valid options are `zero`, `expand`, `wiggle`, `silhouette`, `bars`
+        :param pulumi.Input[str] tag_mode: For the tabular view, which mode to use to determine which point tags to display.
+               Valid options are `all`, `top`, or `custom`
+        :param pulumi.Input[bool] time_based_coloring: For x-y scatterplots, whether to color more recent points as darker than older points
+        :param pulumi.Input[float] window_size: Width, in minutes, of the time window to use for `last` windowing
+        :param pulumi.Input[str] windowing: For the tabular view, whether to use the full time window for the query or the last X minutes.
+               Valid options are `full` or `last`
+        :param pulumi.Input[float] xmax: For x-y scatterplots, max value for the X-axis. Set to null for auto
+        :param pulumi.Input[float] xmin: For x-y scatterplots, min value for the X-axis. Set to null for auto
+        :param pulumi.Input[bool] y0_scale_si_by1024: Whether to scale numerical magnitude labels for left Y-axis by 1024 in the IEC/Binary manner (instead of by 1000 like SI)
+        :param pulumi.Input[bool] y0_unit_autoscaling: Whether to automatically adjust magnitude labels and units for the left Y-axis to favor smaller magnitudes and larger units
+        :param pulumi.Input[bool] y1_scale_si_by1024: Whether to scale numerical magnitude labels for right Y-axis by 1024 in the IEC/Binary manner (instead of by 1000 like SI)
+        :param pulumi.Input[bool] y1_unit_autoscaling: Whether to automatically adjust magnitude labels and units for the right Y-axis to favor smaller magnitudes and larger units
+        :param pulumi.Input[str] y1_units: For plots with multiple Y-axes, units for right side Y-axis
+        :param pulumi.Input[float] y1max: For plots with multiple Y-axes, max value for the right side Y-axis. Set null for auto
+        :param pulumi.Input[float] y1min: For plots with multiple Y-axes, min value for the right side Y-axis. Set null for auto
+        :param pulumi.Input[float] ymax: For x-y scatterplots, max value for the Y-axis. Set to null for auto
+        :param pulumi.Input[float] ymin: For x-y scatterplots, min value for the Y-axis. Set to null for auto
+        """
         pulumi.set(__self__, "type", type)
         if auto_column_tags is not None:
             pulumi.set(__self__, "auto_column_tags", auto_column_tags)
@@ -484,6 +671,13 @@ class DashboardSectionRowChartChartSettingArgs:
     @property
     @pulumi.getter
     def type(self) -> pulumi.Input[str]:
+        """
+        Chart Type. `line` refers to the Line Plot, `scatter` to the Point Plot, `stacked-area` to 
+        the Stacked Area plot, `table` to the Tabular View, `scatterploy-xy` to Scatter Plot, `markdown-widget` to the
+        Markdown display, and `sparkline` to the Single Stat view. Valid options are `line`, `scatterplot`,
+        `stacked-area`, `stacked-column`, `table`, `scatterplot-xy`, `markdown-widget`, `sparkline`, `globe`, `nodemap`,
+        `top-k`, `status-list`, `histogram`
+        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -493,6 +687,9 @@ class DashboardSectionRowChartChartSettingArgs:
     @property
     @pulumi.getter(name="autoColumnTags")
     def auto_column_tags(self) -> Optional[pulumi.Input[bool]]:
+        """
+        deprecated
+        """
         return pulumi.get(self, "auto_column_tags")
 
     @auto_column_tags.setter
@@ -502,6 +699,9 @@ class DashboardSectionRowChartChartSettingArgs:
     @property
     @pulumi.getter(name="columnTags")
     def column_tags(self) -> Optional[pulumi.Input[str]]:
+        """
+        deprecated
+        """
         return pulumi.get(self, "column_tags")
 
     @column_tags.setter
@@ -511,6 +711,9 @@ class DashboardSectionRowChartChartSettingArgs:
     @property
     @pulumi.getter(name="customTags")
     def custom_tags(self) -> Optional[pulumi.Input[List[pulumi.Input[str]]]]:
+        """
+        For the tabular view, a list of point tags to display when using the `custom` tag display mode
+        """
         return pulumi.get(self, "custom_tags")
 
     @custom_tags.setter
@@ -520,6 +723,10 @@ class DashboardSectionRowChartChartSettingArgs:
     @property
     @pulumi.getter(name="expectedDataSpacing")
     def expected_data_spacing(self) -> Optional[pulumi.Input[float]]:
+        """
+        Threshold (in seconds) for time delta between consecutive points in a series
+        above which a dotted line will replace a solid in in line plots. Default 60
+        """
         return pulumi.get(self, "expected_data_spacing")
 
     @expected_data_spacing.setter
@@ -529,6 +736,9 @@ class DashboardSectionRowChartChartSettingArgs:
     @property
     @pulumi.getter(name="fixedLegendDisplayStats")
     def fixed_legend_display_stats(self) -> Optional[pulumi.Input[List[pulumi.Input[str]]]]:
+        """
+        For a chart with a fixed legend, a list of statistics to display in the legend
+        """
         return pulumi.get(self, "fixed_legend_display_stats")
 
     @fixed_legend_display_stats.setter
@@ -538,6 +748,9 @@ class DashboardSectionRowChartChartSettingArgs:
     @property
     @pulumi.getter(name="fixedLegendEnabled")
     def fixed_legend_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Whether to enable a fixed tabular legend adjacent to the chart
+        """
         return pulumi.get(self, "fixed_legend_enabled")
 
     @fixed_legend_enabled.setter
@@ -547,6 +760,10 @@ class DashboardSectionRowChartChartSettingArgs:
     @property
     @pulumi.getter(name="fixedLegendFilterField")
     def fixed_legend_filter_field(self) -> Optional[pulumi.Input[str]]:
+        """
+        Statistic to use for determining whether a series is displayed on the fixed legend.
+        Valid options are `CURRENT`, `MEAN`, `MEDIAN`, `SUM`, `MIN`, `MAX`, `COUNT`
+        """
         return pulumi.get(self, "fixed_legend_filter_field")
 
     @fixed_legend_filter_field.setter
@@ -556,6 +773,9 @@ class DashboardSectionRowChartChartSettingArgs:
     @property
     @pulumi.getter(name="fixedLegendFilterLimit")
     def fixed_legend_filter_limit(self) -> Optional[pulumi.Input[float]]:
+        """
+        Number of series to include in the fixed legend
+        """
         return pulumi.get(self, "fixed_legend_filter_limit")
 
     @fixed_legend_filter_limit.setter
@@ -565,6 +785,10 @@ class DashboardSectionRowChartChartSettingArgs:
     @property
     @pulumi.getter(name="fixedLegendFilterSort")
     def fixed_legend_filter_sort(self) -> Optional[pulumi.Input[str]]:
+        """
+        Whether to display `TOP` or `BOTTOM` ranked series in a fixed legend. Valid options
+        are `TOP`, and `BOTTOM`
+        """
         return pulumi.get(self, "fixed_legend_filter_sort")
 
     @fixed_legend_filter_sort.setter
@@ -574,6 +798,9 @@ class DashboardSectionRowChartChartSettingArgs:
     @property
     @pulumi.getter(name="fixedLegendHideLabel")
     def fixed_legend_hide_label(self) -> Optional[pulumi.Input[bool]]:
+        """
+        deprecated
+        """
         return pulumi.get(self, "fixed_legend_hide_label")
 
     @fixed_legend_hide_label.setter
@@ -583,6 +810,10 @@ class DashboardSectionRowChartChartSettingArgs:
     @property
     @pulumi.getter(name="fixedLegendPosition")
     def fixed_legend_position(self) -> Optional[pulumi.Input[str]]:
+        """
+        Where the fixed legend should be displayed with respect ot the chart.
+        Valid options are `RIGHt`, `TOP`, `LEFT`, `BOTTOM`
+        """
         return pulumi.get(self, "fixed_legend_position")
 
     @fixed_legend_position.setter
@@ -592,6 +823,9 @@ class DashboardSectionRowChartChartSettingArgs:
     @property
     @pulumi.getter(name="fixedLegendUseRawStats")
     def fixed_legend_use_raw_stats(self) -> Optional[pulumi.Input[bool]]:
+        """
+        If `true`, the legend uses non-summarized stats instead of summarized
+        """
         return pulumi.get(self, "fixed_legend_use_raw_stats")
 
     @fixed_legend_use_raw_stats.setter
@@ -601,6 +835,11 @@ class DashboardSectionRowChartChartSettingArgs:
     @property
     @pulumi.getter(name="groupBySource")
     def group_by_source(self) -> Optional[pulumi.Input[bool]]:
+        """
+        For the tabular view, whether to group multi metrics into a single row by a common source.
+        If `false`, each source is displayed in its own row.  if `true`, multiple metrics for the same host will be displayed as different
+        columns in the same row
+        """
         return pulumi.get(self, "group_by_source")
 
     @group_by_source.setter
@@ -610,6 +849,10 @@ class DashboardSectionRowChartChartSettingArgs:
     @property
     @pulumi.getter(name="invertDynamicLegendHoverControl")
     def invert_dynamic_legend_hover_control(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Whether to disable the display of the floating legend (but
+        reenable it when the ctrl-key is pressed)
+        """
         return pulumi.get(self, "invert_dynamic_legend_hover_control")
 
     @invert_dynamic_legend_hover_control.setter
@@ -619,6 +862,10 @@ class DashboardSectionRowChartChartSettingArgs:
     @property
     @pulumi.getter(name="lineType")
     def line_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        Plot interpolation type.  `linear` is default. Valid options are `linear`, `step-before`, 
+        `step-after`, `basis`, `cardinal`, `monotone`
+        """
         return pulumi.get(self, "line_type")
 
     @line_type.setter
@@ -628,6 +875,9 @@ class DashboardSectionRowChartChartSettingArgs:
     @property
     @pulumi.getter
     def max(self) -> Optional[pulumi.Input[float]]:
+        """
+        Max value of the Y-axis. Set to null or leave blank for auto
+        """
         return pulumi.get(self, "max")
 
     @max.setter
@@ -637,6 +887,9 @@ class DashboardSectionRowChartChartSettingArgs:
     @property
     @pulumi.getter
     def min(self) -> Optional[pulumi.Input[float]]:
+        """
+        Min value of the Y-axis. Set to null or leave blank for auto
+        """
         return pulumi.get(self, "min")
 
     @min.setter
@@ -646,6 +899,9 @@ class DashboardSectionRowChartChartSettingArgs:
     @property
     @pulumi.getter(name="numTags")
     def num_tags(self) -> Optional[pulumi.Input[float]]:
+        """
+        For the tabular view, how many point tags to display
+        """
         return pulumi.get(self, "num_tags")
 
     @num_tags.setter
@@ -655,6 +911,9 @@ class DashboardSectionRowChartChartSettingArgs:
     @property
     @pulumi.getter(name="plainMarkdownContent")
     def plain_markdown_content(self) -> Optional[pulumi.Input[str]]:
+        """
+        The markdown content for a Markdown display, in plain text.
+        """
         return pulumi.get(self, "plain_markdown_content")
 
     @plain_markdown_content.setter
@@ -664,6 +923,9 @@ class DashboardSectionRowChartChartSettingArgs:
     @property
     @pulumi.getter(name="showHosts")
     def show_hosts(self) -> Optional[pulumi.Input[bool]]:
+        """
+        For the tabular view, whether to display sources. Default is `true`
+        """
         return pulumi.get(self, "show_hosts")
 
     @show_hosts.setter
@@ -673,6 +935,9 @@ class DashboardSectionRowChartChartSettingArgs:
     @property
     @pulumi.getter(name="showLabels")
     def show_labels(self) -> Optional[pulumi.Input[bool]]:
+        """
+        For the tabular view, whether to display labels. Default is `true`
+        """
         return pulumi.get(self, "show_labels")
 
     @show_labels.setter
@@ -682,6 +947,9 @@ class DashboardSectionRowChartChartSettingArgs:
     @property
     @pulumi.getter(name="showRawValues")
     def show_raw_values(self) -> Optional[pulumi.Input[bool]]:
+        """
+        For the tabular view, whether to display raw values. Default is `false`
+        """
         return pulumi.get(self, "show_raw_values")
 
     @show_raw_values.setter
@@ -691,6 +959,9 @@ class DashboardSectionRowChartChartSettingArgs:
     @property
     @pulumi.getter(name="sortValuesDescending")
     def sort_values_descending(self) -> Optional[pulumi.Input[bool]]:
+        """
+        For the tabular view, whether to display display values in descending order. Default is `false`
+        """
         return pulumi.get(self, "sort_values_descending")
 
     @sort_values_descending.setter
@@ -700,6 +971,9 @@ class DashboardSectionRowChartChartSettingArgs:
     @property
     @pulumi.getter(name="sparklineDecimalPrecision")
     def sparkline_decimal_precision(self) -> Optional[pulumi.Input[float]]:
+        """
+        For the single stat view, the decimal precision of the displayed number
+        """
         return pulumi.get(self, "sparkline_decimal_precision")
 
     @sparkline_decimal_precision.setter
@@ -709,6 +983,10 @@ class DashboardSectionRowChartChartSettingArgs:
     @property
     @pulumi.getter(name="sparklineDisplayColor")
     def sparkline_display_color(self) -> Optional[pulumi.Input[str]]:
+        """
+        For the single stat view, the color of the displayed text (when not dynamically determined). 
+        Values should be in `rgba(,,,,)` format
+        """
         return pulumi.get(self, "sparkline_display_color")
 
     @sparkline_display_color.setter
@@ -718,6 +996,9 @@ class DashboardSectionRowChartChartSettingArgs:
     @property
     @pulumi.getter(name="sparklineDisplayFontSize")
     def sparkline_display_font_size(self) -> Optional[pulumi.Input[str]]:
+        """
+        For the single stat view, the font size of the displayed text, in percent
+        """
         return pulumi.get(self, "sparkline_display_font_size")
 
     @sparkline_display_font_size.setter
@@ -727,6 +1008,10 @@ class DashboardSectionRowChartChartSettingArgs:
     @property
     @pulumi.getter(name="sparklineDisplayHorizontalPosition")
     def sparkline_display_horizontal_position(self) -> Optional[pulumi.Input[str]]:
+        """
+        For the single stat view, the horizontal position of the displayed text.
+        Valid options are `MIDDLE`, `LEFT`, `RIGHT`
+        """
         return pulumi.get(self, "sparkline_display_horizontal_position")
 
     @sparkline_display_horizontal_position.setter
@@ -736,6 +1021,9 @@ class DashboardSectionRowChartChartSettingArgs:
     @property
     @pulumi.getter(name="sparklineDisplayPostfix")
     def sparkline_display_postfix(self) -> Optional[pulumi.Input[str]]:
+        """
+        For the single stat view, a string to append to the displayed text
+        """
         return pulumi.get(self, "sparkline_display_postfix")
 
     @sparkline_display_postfix.setter
@@ -745,6 +1033,9 @@ class DashboardSectionRowChartChartSettingArgs:
     @property
     @pulumi.getter(name="sparklineDisplayPrefix")
     def sparkline_display_prefix(self) -> Optional[pulumi.Input[str]]:
+        """
+        For the single stat view, a string to add before the displayed text
+        """
         return pulumi.get(self, "sparkline_display_prefix")
 
     @sparkline_display_prefix.setter
@@ -754,6 +1045,10 @@ class DashboardSectionRowChartChartSettingArgs:
     @property
     @pulumi.getter(name="sparklineDisplayValueType")
     def sparkline_display_value_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        For the single stat view, where to display the name of the query or the value of the query.
+        Valid options are `VALUE` or `LABEL`
+        """
         return pulumi.get(self, "sparkline_display_value_type")
 
     @sparkline_display_value_type.setter
@@ -763,6 +1058,9 @@ class DashboardSectionRowChartChartSettingArgs:
     @property
     @pulumi.getter(name="sparklineDisplayVerticalPosition")
     def sparkline_display_vertical_position(self) -> Optional[pulumi.Input[str]]:
+        """
+        deprecated
+        """
         return pulumi.get(self, "sparkline_display_vertical_position")
 
     @sparkline_display_vertical_position.setter
@@ -772,6 +1070,10 @@ class DashboardSectionRowChartChartSettingArgs:
     @property
     @pulumi.getter(name="sparklineFillColor")
     def sparkline_fill_color(self) -> Optional[pulumi.Input[str]]:
+        """
+        For the single stat view, the color of the background fill.  Values should be
+        in `rgba(,,,,)`
+        """
         return pulumi.get(self, "sparkline_fill_color")
 
     @sparkline_fill_color.setter
@@ -781,6 +1083,9 @@ class DashboardSectionRowChartChartSettingArgs:
     @property
     @pulumi.getter(name="sparklineLineColor")
     def sparkline_line_color(self) -> Optional[pulumi.Input[str]]:
+        """
+        For the single stat view, the color of the line.  Values should be in `rgba(,,,,)` format
+        """
         return pulumi.get(self, "sparkline_line_color")
 
     @sparkline_line_color.setter
@@ -790,6 +1095,10 @@ class DashboardSectionRowChartChartSettingArgs:
     @property
     @pulumi.getter(name="sparklineSize")
     def sparkline_size(self) -> Optional[pulumi.Input[str]]:
+        """
+        For the single stat view, This determines whether the sparkline of the statistic is displayed in the chart `BACKGROUND`, `BOTTOM`, or `NONE`.
+        Valid options are `BACKGROUND`, `BOTTOM`, `NONE`
+        """
         return pulumi.get(self, "sparkline_size")
 
     @sparkline_size.setter
@@ -799,6 +1108,10 @@ class DashboardSectionRowChartChartSettingArgs:
     @property
     @pulumi.getter(name="sparklineValueColorMapApplyTo")
     def sparkline_value_color_map_apply_to(self) -> Optional[pulumi.Input[str]]:
+        """
+        For the single stat view, whether to apply dyunamic color settings to 
+        the displayed `TEXT` or `BACKGROUND`. Valid options are `TEXT` or `BACKGROUND`
+        """
         return pulumi.get(self, "sparkline_value_color_map_apply_to")
 
     @sparkline_value_color_map_apply_to.setter
@@ -808,6 +1121,10 @@ class DashboardSectionRowChartChartSettingArgs:
     @property
     @pulumi.getter(name="sparklineValueColorMapColors")
     def sparkline_value_color_map_colors(self) -> Optional[pulumi.Input[List[pulumi.Input[str]]]]:
+        """
+        For the single stat view, A list of colors that differing query values map to. 
+        Must contain one more element than `sparkline_value_color_map_values_v2`. Values should be in `rgba(,,,,)`
+        """
         return pulumi.get(self, "sparkline_value_color_map_colors")
 
     @sparkline_value_color_map_colors.setter
@@ -817,6 +1134,9 @@ class DashboardSectionRowChartChartSettingArgs:
     @property
     @pulumi.getter(name="sparklineValueColorMapValues")
     def sparkline_value_color_map_values(self) -> Optional[pulumi.Input[List[pulumi.Input[float]]]]:
+        """
+        deprecated
+        """
         return pulumi.get(self, "sparkline_value_color_map_values")
 
     @sparkline_value_color_map_values.setter
@@ -826,6 +1146,10 @@ class DashboardSectionRowChartChartSettingArgs:
     @property
     @pulumi.getter(name="sparklineValueColorMapValuesV2s")
     def sparkline_value_color_map_values_v2s(self) -> Optional[pulumi.Input[List[pulumi.Input[float]]]]:
+        """
+        For the single stat view, a list of boundaries for mapping different
+        query values to colors.  Must contain one less element than `sparkline_value_color_map_colors`
+        """
         return pulumi.get(self, "sparkline_value_color_map_values_v2s")
 
     @sparkline_value_color_map_values_v2s.setter
@@ -835,6 +1159,10 @@ class DashboardSectionRowChartChartSettingArgs:
     @property
     @pulumi.getter(name="sparklineValueTextMapTexts")
     def sparkline_value_text_map_texts(self) -> Optional[pulumi.Input[List[pulumi.Input[str]]]]:
+        """
+        For the single stat view, a list of display text values that different query
+        values map to.  Must contain one more element than `sparkline_value_text_map_thresholds`
+        """
         return pulumi.get(self, "sparkline_value_text_map_texts")
 
     @sparkline_value_text_map_texts.setter
@@ -844,6 +1172,10 @@ class DashboardSectionRowChartChartSettingArgs:
     @property
     @pulumi.getter(name="sparklineValueTextMapThresholds")
     def sparkline_value_text_map_thresholds(self) -> Optional[pulumi.Input[List[pulumi.Input[float]]]]:
+        """
+        For the single stat view, a list of threshold boundaries for 
+        mapping different query values to display text.  Must contain one less element than `sparkline_value_text_map_text`
+        """
         return pulumi.get(self, "sparkline_value_text_map_thresholds")
 
     @sparkline_value_text_map_thresholds.setter
@@ -853,6 +1185,11 @@ class DashboardSectionRowChartChartSettingArgs:
     @property
     @pulumi.getter(name="stackType")
     def stack_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        Type of stacked chart (applicable only if chart type is `stacked`). `zero` (default) means
+        stacked from y=0. `expand` means normalized from 0 to 1.  `wiggle` means minimize weighted changes. `silhouette` means to
+        center the stream. Valid options are `zero`, `expand`, `wiggle`, `silhouette`, `bars`
+        """
         return pulumi.get(self, "stack_type")
 
     @stack_type.setter
@@ -862,6 +1199,10 @@ class DashboardSectionRowChartChartSettingArgs:
     @property
     @pulumi.getter(name="tagMode")
     def tag_mode(self) -> Optional[pulumi.Input[str]]:
+        """
+        For the tabular view, which mode to use to determine which point tags to display.
+        Valid options are `all`, `top`, or `custom`
+        """
         return pulumi.get(self, "tag_mode")
 
     @tag_mode.setter
@@ -871,6 +1212,9 @@ class DashboardSectionRowChartChartSettingArgs:
     @property
     @pulumi.getter(name="timeBasedColoring")
     def time_based_coloring(self) -> Optional[pulumi.Input[bool]]:
+        """
+        For x-y scatterplots, whether to color more recent points as darker than older points
+        """
         return pulumi.get(self, "time_based_coloring")
 
     @time_based_coloring.setter
@@ -880,6 +1224,9 @@ class DashboardSectionRowChartChartSettingArgs:
     @property
     @pulumi.getter(name="windowSize")
     def window_size(self) -> Optional[pulumi.Input[float]]:
+        """
+        Width, in minutes, of the time window to use for `last` windowing
+        """
         return pulumi.get(self, "window_size")
 
     @window_size.setter
@@ -889,6 +1236,10 @@ class DashboardSectionRowChartChartSettingArgs:
     @property
     @pulumi.getter
     def windowing(self) -> Optional[pulumi.Input[str]]:
+        """
+        For the tabular view, whether to use the full time window for the query or the last X minutes.
+        Valid options are `full` or `last`
+        """
         return pulumi.get(self, "windowing")
 
     @windowing.setter
@@ -898,6 +1249,9 @@ class DashboardSectionRowChartChartSettingArgs:
     @property
     @pulumi.getter
     def xmax(self) -> Optional[pulumi.Input[float]]:
+        """
+        For x-y scatterplots, max value for the X-axis. Set to null for auto
+        """
         return pulumi.get(self, "xmax")
 
     @xmax.setter
@@ -907,6 +1261,9 @@ class DashboardSectionRowChartChartSettingArgs:
     @property
     @pulumi.getter
     def xmin(self) -> Optional[pulumi.Input[float]]:
+        """
+        For x-y scatterplots, min value for the X-axis. Set to null for auto
+        """
         return pulumi.get(self, "xmin")
 
     @xmin.setter
@@ -916,6 +1273,9 @@ class DashboardSectionRowChartChartSettingArgs:
     @property
     @pulumi.getter(name="y0ScaleSiBy1024")
     def y0_scale_si_by1024(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Whether to scale numerical magnitude labels for left Y-axis by 1024 in the IEC/Binary manner (instead of by 1000 like SI)
+        """
         return pulumi.get(self, "y0_scale_si_by1024")
 
     @y0_scale_si_by1024.setter
@@ -925,6 +1285,9 @@ class DashboardSectionRowChartChartSettingArgs:
     @property
     @pulumi.getter(name="y0UnitAutoscaling")
     def y0_unit_autoscaling(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Whether to automatically adjust magnitude labels and units for the left Y-axis to favor smaller magnitudes and larger units
+        """
         return pulumi.get(self, "y0_unit_autoscaling")
 
     @y0_unit_autoscaling.setter
@@ -934,6 +1297,9 @@ class DashboardSectionRowChartChartSettingArgs:
     @property
     @pulumi.getter(name="y1ScaleSiBy1024")
     def y1_scale_si_by1024(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Whether to scale numerical magnitude labels for right Y-axis by 1024 in the IEC/Binary manner (instead of by 1000 like SI)
+        """
         return pulumi.get(self, "y1_scale_si_by1024")
 
     @y1_scale_si_by1024.setter
@@ -943,6 +1309,9 @@ class DashboardSectionRowChartChartSettingArgs:
     @property
     @pulumi.getter(name="y1UnitAutoscaling")
     def y1_unit_autoscaling(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Whether to automatically adjust magnitude labels and units for the right Y-axis to favor smaller magnitudes and larger units
+        """
         return pulumi.get(self, "y1_unit_autoscaling")
 
     @y1_unit_autoscaling.setter
@@ -952,6 +1321,9 @@ class DashboardSectionRowChartChartSettingArgs:
     @property
     @pulumi.getter(name="y1Units")
     def y1_units(self) -> Optional[pulumi.Input[str]]:
+        """
+        For plots with multiple Y-axes, units for right side Y-axis
+        """
         return pulumi.get(self, "y1_units")
 
     @y1_units.setter
@@ -961,6 +1333,9 @@ class DashboardSectionRowChartChartSettingArgs:
     @property
     @pulumi.getter
     def y1max(self) -> Optional[pulumi.Input[float]]:
+        """
+        For plots with multiple Y-axes, max value for the right side Y-axis. Set null for auto
+        """
         return pulumi.get(self, "y1max")
 
     @y1max.setter
@@ -970,6 +1345,9 @@ class DashboardSectionRowChartChartSettingArgs:
     @property
     @pulumi.getter
     def y1min(self) -> Optional[pulumi.Input[float]]:
+        """
+        For plots with multiple Y-axes, min value for the right side Y-axis. Set null for auto
+        """
         return pulumi.get(self, "y1min")
 
     @y1min.setter
@@ -979,6 +1357,9 @@ class DashboardSectionRowChartChartSettingArgs:
     @property
     @pulumi.getter
     def ymax(self) -> Optional[pulumi.Input[float]]:
+        """
+        For x-y scatterplots, max value for the Y-axis. Set to null for auto
+        """
         return pulumi.get(self, "ymax")
 
     @ymax.setter
@@ -988,6 +1369,9 @@ class DashboardSectionRowChartChartSettingArgs:
     @property
     @pulumi.getter
     def ymin(self) -> Optional[pulumi.Input[float]]:
+        """
+        For x-y scatterplots, min value for the Y-axis. Set to null for auto
+        """
         return pulumi.get(self, "ymin")
 
     @ymin.setter
@@ -1004,6 +1388,14 @@ class DashboardSectionRowChartSourceArgs:
                  query_builder_enabled: Optional[pulumi.Input[bool]] = None,
                  scatter_plot_source: Optional[pulumi.Input[str]] = None,
                  source_description: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] name: Name of the source
+        :param pulumi.Input[str] query: Query expression to plot on the chart
+        :param pulumi.Input[bool] disabled: Whether the source is disabled
+        :param pulumi.Input[bool] query_builder_enabled: Whether oir not this source line should have the query builder enabled
+        :param pulumi.Input[str] scatter_plot_source: For scatter plots, does this query source the X-axis or the Y-axis, `X`, or `Y`.
+        :param pulumi.Input[str] source_description: A description for the purpose of this source
+        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "query", query)
         if disabled is not None:
@@ -1018,6 +1410,9 @@ class DashboardSectionRowChartSourceArgs:
     @property
     @pulumi.getter
     def name(self) -> pulumi.Input[str]:
+        """
+        Name of the source
+        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -1027,6 +1422,9 @@ class DashboardSectionRowChartSourceArgs:
     @property
     @pulumi.getter
     def query(self) -> pulumi.Input[str]:
+        """
+        Query expression to plot on the chart
+        """
         return pulumi.get(self, "query")
 
     @query.setter
@@ -1036,6 +1434,9 @@ class DashboardSectionRowChartSourceArgs:
     @property
     @pulumi.getter
     def disabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Whether the source is disabled
+        """
         return pulumi.get(self, "disabled")
 
     @disabled.setter
@@ -1045,6 +1446,9 @@ class DashboardSectionRowChartSourceArgs:
     @property
     @pulumi.getter(name="queryBuilderEnabled")
     def query_builder_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Whether oir not this source line should have the query builder enabled
+        """
         return pulumi.get(self, "query_builder_enabled")
 
     @query_builder_enabled.setter
@@ -1054,6 +1458,9 @@ class DashboardSectionRowChartSourceArgs:
     @property
     @pulumi.getter(name="scatterPlotSource")
     def scatter_plot_source(self) -> Optional[pulumi.Input[str]]:
+        """
+        For scatter plots, does this query source the X-axis or the Y-axis, `X`, or `Y`.
+        """
         return pulumi.get(self, "scatter_plot_source")
 
     @scatter_plot_source.setter
@@ -1063,6 +1470,9 @@ class DashboardSectionRowChartSourceArgs:
     @property
     @pulumi.getter(name="sourceDescription")
     def source_description(self) -> Optional[pulumi.Input[str]]:
+        """
+        A description for the purpose of this source
+        """
         return pulumi.get(self, "source_description")
 
     @source_description.setter

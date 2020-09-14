@@ -10,18 +10,57 @@ import (
 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 )
 
+// Provides a Wavefront Cloud Integration for Azure Activity Logs. This allows azure activity log cloud integrations to be created,
+// updated, and deleted.
+//
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+// 	"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront"
+// 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
+// )
+//
+// func main() {
+// 	pulumi.Run(func(ctx *pulumi.Context) error {
+// 		_, err := wavefront.NewCloudIntegrationAzureActivityLog(ctx, "azureActivityLog", &wavefront.CloudIntegrationAzureActivityLogArgs{
+// 			CategoryFilters: pulumi.StringArray{
+// 				pulumi.String("ADMINISTRATIVE"),
+// 			},
+// 			ClientId:     pulumi.String("client-id2"),
+// 			ClientSecret: pulumi.String("client-secret2"),
+// 			Tenant:       pulumi.String("my-tenant2"),
+// 		})
+// 		if err != nil {
+// 			return err
+// 		}
+// 		return nil
+// 	})
+// }
+// ```
 type CloudIntegrationAzureActivityLog struct {
 	pulumi.CustomResourceState
 
-	AdditionalTags              pulumi.StringMapOutput   `pulumi:"additionalTags"`
-	CategoryFilters             pulumi.StringArrayOutput `pulumi:"categoryFilters"`
-	ClientId                    pulumi.StringOutput      `pulumi:"clientId"`
-	ClientSecret                pulumi.StringOutput      `pulumi:"clientSecret"`
-	ForceSave                   pulumi.BoolPtrOutput     `pulumi:"forceSave"`
-	Name                        pulumi.StringOutput      `pulumi:"name"`
-	Service                     pulumi.StringOutput      `pulumi:"service"`
-	ServiceRefreshRateInMinutes pulumi.IntPtrOutput      `pulumi:"serviceRefreshRateInMinutes"`
-	Tenant                      pulumi.StringOutput      `pulumi:"tenant"`
+	// A list of point tag key-values to add to every point ingested using this integration
+	AdditionalTags pulumi.StringMapOutput `pulumi:"additionalTags"`
+	// A list of Azure services (such as Microsoft.Compute/virtualMachines) from which to pull metrics
+	CategoryFilters pulumi.StringArrayOutput `pulumi:"categoryFilters"`
+	// Client id for an azure service account within your project
+	ClientId pulumi.StringOutput `pulumi:"clientId"`
+	// Client secret for an Azure service account within your project
+	ClientSecret pulumi.StringOutput `pulumi:"clientSecret"`
+	// Forces this resource to save, even if errors are present
+	ForceSave pulumi.BoolPtrOutput `pulumi:"forceSave"`
+	// The human-readable name of this integration
+	Name pulumi.StringOutput `pulumi:"name"`
+	// A value denoting which cloud service this service integrates with
+	Service pulumi.StringOutput `pulumi:"service"`
+	// How often, in minutes, to refresh the service
+	ServiceRefreshRateInMinutes pulumi.IntPtrOutput `pulumi:"serviceRefreshRateInMinutes"`
+	// Tenant Id for an Azure service account within your project
+	Tenant pulumi.StringOutput `pulumi:"tenant"`
 }
 
 // NewCloudIntegrationAzureActivityLog registers a new resource with the given unique name, arguments, and options.
@@ -64,27 +103,45 @@ func GetCloudIntegrationAzureActivityLog(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering CloudIntegrationAzureActivityLog resources.
 type cloudIntegrationAzureActivityLogState struct {
-	AdditionalTags              map[string]string `pulumi:"additionalTags"`
-	CategoryFilters             []string          `pulumi:"categoryFilters"`
-	ClientId                    *string           `pulumi:"clientId"`
-	ClientSecret                *string           `pulumi:"clientSecret"`
-	ForceSave                   *bool             `pulumi:"forceSave"`
-	Name                        *string           `pulumi:"name"`
-	Service                     *string           `pulumi:"service"`
-	ServiceRefreshRateInMinutes *int              `pulumi:"serviceRefreshRateInMinutes"`
-	Tenant                      *string           `pulumi:"tenant"`
+	// A list of point tag key-values to add to every point ingested using this integration
+	AdditionalTags map[string]string `pulumi:"additionalTags"`
+	// A list of Azure services (such as Microsoft.Compute/virtualMachines) from which to pull metrics
+	CategoryFilters []string `pulumi:"categoryFilters"`
+	// Client id for an azure service account within your project
+	ClientId *string `pulumi:"clientId"`
+	// Client secret for an Azure service account within your project
+	ClientSecret *string `pulumi:"clientSecret"`
+	// Forces this resource to save, even if errors are present
+	ForceSave *bool `pulumi:"forceSave"`
+	// The human-readable name of this integration
+	Name *string `pulumi:"name"`
+	// A value denoting which cloud service this service integrates with
+	Service *string `pulumi:"service"`
+	// How often, in minutes, to refresh the service
+	ServiceRefreshRateInMinutes *int `pulumi:"serviceRefreshRateInMinutes"`
+	// Tenant Id for an Azure service account within your project
+	Tenant *string `pulumi:"tenant"`
 }
 
 type CloudIntegrationAzureActivityLogState struct {
-	AdditionalTags              pulumi.StringMapInput
-	CategoryFilters             pulumi.StringArrayInput
-	ClientId                    pulumi.StringPtrInput
-	ClientSecret                pulumi.StringPtrInput
-	ForceSave                   pulumi.BoolPtrInput
-	Name                        pulumi.StringPtrInput
-	Service                     pulumi.StringPtrInput
+	// A list of point tag key-values to add to every point ingested using this integration
+	AdditionalTags pulumi.StringMapInput
+	// A list of Azure services (such as Microsoft.Compute/virtualMachines) from which to pull metrics
+	CategoryFilters pulumi.StringArrayInput
+	// Client id for an azure service account within your project
+	ClientId pulumi.StringPtrInput
+	// Client secret for an Azure service account within your project
+	ClientSecret pulumi.StringPtrInput
+	// Forces this resource to save, even if errors are present
+	ForceSave pulumi.BoolPtrInput
+	// The human-readable name of this integration
+	Name pulumi.StringPtrInput
+	// A value denoting which cloud service this service integrates with
+	Service pulumi.StringPtrInput
+	// How often, in minutes, to refresh the service
 	ServiceRefreshRateInMinutes pulumi.IntPtrInput
-	Tenant                      pulumi.StringPtrInput
+	// Tenant Id for an Azure service account within your project
+	Tenant pulumi.StringPtrInput
 }
 
 func (CloudIntegrationAzureActivityLogState) ElementType() reflect.Type {
@@ -92,28 +149,46 @@ func (CloudIntegrationAzureActivityLogState) ElementType() reflect.Type {
 }
 
 type cloudIntegrationAzureActivityLogArgs struct {
-	AdditionalTags              map[string]string `pulumi:"additionalTags"`
-	CategoryFilters             []string          `pulumi:"categoryFilters"`
-	ClientId                    string            `pulumi:"clientId"`
-	ClientSecret                string            `pulumi:"clientSecret"`
-	ForceSave                   *bool             `pulumi:"forceSave"`
-	Name                        *string           `pulumi:"name"`
-	Service                     string            `pulumi:"service"`
-	ServiceRefreshRateInMinutes *int              `pulumi:"serviceRefreshRateInMinutes"`
-	Tenant                      string            `pulumi:"tenant"`
+	// A list of point tag key-values to add to every point ingested using this integration
+	AdditionalTags map[string]string `pulumi:"additionalTags"`
+	// A list of Azure services (such as Microsoft.Compute/virtualMachines) from which to pull metrics
+	CategoryFilters []string `pulumi:"categoryFilters"`
+	// Client id for an azure service account within your project
+	ClientId string `pulumi:"clientId"`
+	// Client secret for an Azure service account within your project
+	ClientSecret string `pulumi:"clientSecret"`
+	// Forces this resource to save, even if errors are present
+	ForceSave *bool `pulumi:"forceSave"`
+	// The human-readable name of this integration
+	Name *string `pulumi:"name"`
+	// A value denoting which cloud service this service integrates with
+	Service string `pulumi:"service"`
+	// How often, in minutes, to refresh the service
+	ServiceRefreshRateInMinutes *int `pulumi:"serviceRefreshRateInMinutes"`
+	// Tenant Id for an Azure service account within your project
+	Tenant string `pulumi:"tenant"`
 }
 
 // The set of arguments for constructing a CloudIntegrationAzureActivityLog resource.
 type CloudIntegrationAzureActivityLogArgs struct {
-	AdditionalTags              pulumi.StringMapInput
-	CategoryFilters             pulumi.StringArrayInput
-	ClientId                    pulumi.StringInput
-	ClientSecret                pulumi.StringInput
-	ForceSave                   pulumi.BoolPtrInput
-	Name                        pulumi.StringPtrInput
-	Service                     pulumi.StringInput
+	// A list of point tag key-values to add to every point ingested using this integration
+	AdditionalTags pulumi.StringMapInput
+	// A list of Azure services (such as Microsoft.Compute/virtualMachines) from which to pull metrics
+	CategoryFilters pulumi.StringArrayInput
+	// Client id for an azure service account within your project
+	ClientId pulumi.StringInput
+	// Client secret for an Azure service account within your project
+	ClientSecret pulumi.StringInput
+	// Forces this resource to save, even if errors are present
+	ForceSave pulumi.BoolPtrInput
+	// The human-readable name of this integration
+	Name pulumi.StringPtrInput
+	// A value denoting which cloud service this service integrates with
+	Service pulumi.StringInput
+	// How often, in minutes, to refresh the service
 	ServiceRefreshRateInMinutes pulumi.IntPtrInput
-	Tenant                      pulumi.StringInput
+	// Tenant Id for an Azure service account within your project
+	Tenant pulumi.StringInput
 }
 
 func (CloudIntegrationAzureActivityLogArgs) ElementType() reflect.Type {

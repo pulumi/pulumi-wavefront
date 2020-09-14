@@ -20,6 +20,9 @@ namespace Pulumi.Wavefront.Inputs
             set => _filter = value;
         }
 
+        /// <summary>
+        /// The notification method used for notification target. One of `WEBHOOK`, `EMAIL`, `PAGERDUTY`.
+        /// </summary>
         [Input("method", required: true)]
         public Input<string> Method { get; set; } = null!;
 

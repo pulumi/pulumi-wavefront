@@ -4,6 +4,23 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
+/**
+ * Provides a Wavefront Cloud Integration for App Dynamics. This allows app dynamics cloud integrations to be created,
+ * updated, and deleted.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as wavefront from "@pulumi/wavefront";
+ *
+ * const appDynamics = new wavefront.CloudIntegrationAppDynamics("app_dynamics", {
+ *     controllerName: "exampleController",
+ *     encryptedPassword: "encryptedPassword",
+ *     userName: "example",
+ * });
+ * ```
+ */
 export class CloudIntegrationAppDynamics extends pulumi.CustomResource {
     /**
      * Get an existing CloudIntegrationAppDynamics resource's state with the given name, ID, and optional extra
@@ -32,22 +49,75 @@ export class CloudIntegrationAppDynamics extends pulumi.CustomResource {
         return obj['__pulumiType'] === CloudIntegrationAppDynamics.__pulumiType;
     }
 
+    /**
+     * A list of point tag key-values to add to every point ingested using this integration
+     */
     public readonly additionalTags!: pulumi.Output<{[key: string]: string} | undefined>;
+    /**
+     * List of regular expressions that a application name must match (case-insensitively) 
+     * in order to be ingested
+     */
     public readonly appFilterRegexes!: pulumi.Output<string[] | undefined>;
+    /**
+     * Name of the SaaS controller
+     */
     public readonly controllerName!: pulumi.Output<string>;
+    /**
+     * Boolean flag to control Application Infrastructure metric injection
+     */
     public readonly enableAppInfraMetrics!: pulumi.Output<boolean | undefined>;
+    /**
+     * Boolean flag to control Backend metric injection
+     */
     public readonly enableBackendMetrics!: pulumi.Output<boolean | undefined>;
+    /**
+     * Boolean flag to control Business Transaction metric injection
+     */
     public readonly enableBusinessTrxMetrics!: pulumi.Output<boolean | undefined>;
+    /**
+     * Boolean flag to control Error metric injection
+     */
     public readonly enableErrorMetrics!: pulumi.Output<boolean | undefined>;
+    /**
+     * Boolean flag to control Individual Node metric injection
+     */
     public readonly enableIndividualNodeMetrics!: pulumi.Output<boolean | undefined>;
+    /**
+     * Boolean flag to control Overall Performance metric injection
+     */
     public readonly enableOverallPerfMetrics!: pulumi.Output<boolean | undefined>;
+    /**
+     * Set this to `false` to get separate results for all values within the time range, 
+     * by default it is `true`
+     */
     public readonly enableRollup!: pulumi.Output<boolean | undefined>;
+    /**
+     * Boolean flag to control Service End point metric injection
+     */
     public readonly enableServiceEndpointMetrics!: pulumi.Output<boolean | undefined>;
+    /**
+     * Password for AppDynamics user
+     */
     public readonly encryptedPassword!: pulumi.Output<string>;
+    /**
+     * Forces this resource to save, even if errors are present
+     */
     public readonly forceSave!: pulumi.Output<boolean | undefined>;
+    /**
+     * The human-readable name of this integration
+     */
     public readonly name!: pulumi.Output<string>;
+    /**
+     * A value denoting which cloud service this service integrates with
+     */
     public readonly service!: pulumi.Output<string>;
+    /**
+     * How often, in minutes, to refresh the service
+     */
     public readonly serviceRefreshRateInMinutes!: pulumi.Output<number | undefined>;
+    /**
+     * Username is a combination of userName and the account name
+     */
     public readonly userName!: pulumi.Output<string>;
 
     /**
@@ -126,22 +196,75 @@ export class CloudIntegrationAppDynamics extends pulumi.CustomResource {
  * Input properties used for looking up and filtering CloudIntegrationAppDynamics resources.
  */
 export interface CloudIntegrationAppDynamicsState {
+    /**
+     * A list of point tag key-values to add to every point ingested using this integration
+     */
     readonly additionalTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * List of regular expressions that a application name must match (case-insensitively) 
+     * in order to be ingested
+     */
     readonly appFilterRegexes?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * Name of the SaaS controller
+     */
     readonly controllerName?: pulumi.Input<string>;
+    /**
+     * Boolean flag to control Application Infrastructure metric injection
+     */
     readonly enableAppInfraMetrics?: pulumi.Input<boolean>;
+    /**
+     * Boolean flag to control Backend metric injection
+     */
     readonly enableBackendMetrics?: pulumi.Input<boolean>;
+    /**
+     * Boolean flag to control Business Transaction metric injection
+     */
     readonly enableBusinessTrxMetrics?: pulumi.Input<boolean>;
+    /**
+     * Boolean flag to control Error metric injection
+     */
     readonly enableErrorMetrics?: pulumi.Input<boolean>;
+    /**
+     * Boolean flag to control Individual Node metric injection
+     */
     readonly enableIndividualNodeMetrics?: pulumi.Input<boolean>;
+    /**
+     * Boolean flag to control Overall Performance metric injection
+     */
     readonly enableOverallPerfMetrics?: pulumi.Input<boolean>;
+    /**
+     * Set this to `false` to get separate results for all values within the time range, 
+     * by default it is `true`
+     */
     readonly enableRollup?: pulumi.Input<boolean>;
+    /**
+     * Boolean flag to control Service End point metric injection
+     */
     readonly enableServiceEndpointMetrics?: pulumi.Input<boolean>;
+    /**
+     * Password for AppDynamics user
+     */
     readonly encryptedPassword?: pulumi.Input<string>;
+    /**
+     * Forces this resource to save, even if errors are present
+     */
     readonly forceSave?: pulumi.Input<boolean>;
+    /**
+     * The human-readable name of this integration
+     */
     readonly name?: pulumi.Input<string>;
+    /**
+     * A value denoting which cloud service this service integrates with
+     */
     readonly service?: pulumi.Input<string>;
+    /**
+     * How often, in minutes, to refresh the service
+     */
     readonly serviceRefreshRateInMinutes?: pulumi.Input<number>;
+    /**
+     * Username is a combination of userName and the account name
+     */
     readonly userName?: pulumi.Input<string>;
 }
 
@@ -149,21 +272,74 @@ export interface CloudIntegrationAppDynamicsState {
  * The set of arguments for constructing a CloudIntegrationAppDynamics resource.
  */
 export interface CloudIntegrationAppDynamicsArgs {
+    /**
+     * A list of point tag key-values to add to every point ingested using this integration
+     */
     readonly additionalTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * List of regular expressions that a application name must match (case-insensitively) 
+     * in order to be ingested
+     */
     readonly appFilterRegexes?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * Name of the SaaS controller
+     */
     readonly controllerName: pulumi.Input<string>;
+    /**
+     * Boolean flag to control Application Infrastructure metric injection
+     */
     readonly enableAppInfraMetrics?: pulumi.Input<boolean>;
+    /**
+     * Boolean flag to control Backend metric injection
+     */
     readonly enableBackendMetrics?: pulumi.Input<boolean>;
+    /**
+     * Boolean flag to control Business Transaction metric injection
+     */
     readonly enableBusinessTrxMetrics?: pulumi.Input<boolean>;
+    /**
+     * Boolean flag to control Error metric injection
+     */
     readonly enableErrorMetrics?: pulumi.Input<boolean>;
+    /**
+     * Boolean flag to control Individual Node metric injection
+     */
     readonly enableIndividualNodeMetrics?: pulumi.Input<boolean>;
+    /**
+     * Boolean flag to control Overall Performance metric injection
+     */
     readonly enableOverallPerfMetrics?: pulumi.Input<boolean>;
+    /**
+     * Set this to `false` to get separate results for all values within the time range, 
+     * by default it is `true`
+     */
     readonly enableRollup?: pulumi.Input<boolean>;
+    /**
+     * Boolean flag to control Service End point metric injection
+     */
     readonly enableServiceEndpointMetrics?: pulumi.Input<boolean>;
+    /**
+     * Password for AppDynamics user
+     */
     readonly encryptedPassword: pulumi.Input<string>;
+    /**
+     * Forces this resource to save, even if errors are present
+     */
     readonly forceSave?: pulumi.Input<boolean>;
+    /**
+     * The human-readable name of this integration
+     */
     readonly name?: pulumi.Input<string>;
+    /**
+     * A value denoting which cloud service this service integrates with
+     */
     readonly service: pulumi.Input<string>;
+    /**
+     * How often, in minutes, to refresh the service
+     */
     readonly serviceRefreshRateInMinutes?: pulumi.Input<number>;
+    /**
+     * Username is a combination of userName and the account name
+     */
     readonly userName: pulumi.Input<string>;
 }

@@ -9,12 +9,40 @@ import (
 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 )
 
+// Provides a Wavefront Role Resource. This allows user groups to be created, updated, and deleted.
+//
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+// 	"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront"
+// 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
+// )
+//
+// func main() {
+// 	pulumi.Run(func(ctx *pulumi.Context) error {
+// 		_, err := wavefront.NewRole(ctx, "role", nil)
+// 		if err != nil {
+// 			return err
+// 		}
+// 		return nil
+// 	})
+// }
+// ```
 type Role struct {
 	pulumi.CustomResourceState
 
-	Assignees   pulumi.StringArrayOutput `pulumi:"assignees"`
-	Description pulumi.StringPtrOutput   `pulumi:"description"`
-	Name        pulumi.StringOutput      `pulumi:"name"`
+	// A list of user groups or accounts to assign to this role.
+	Assignees pulumi.StringArrayOutput `pulumi:"assignees"`
+	// A short description of the user group
+	Description pulumi.StringPtrOutput `pulumi:"description"`
+	// The name of the user group
+	Name pulumi.StringOutput `pulumi:"name"`
+	// A list of permissions to assign to this role. Valid options are
+	// `agentManagement`, `alertsManagement`, `dashboardManagement`, `embeddedCharts`, `eventsManagement`, `externalLinksManagement`,
+	// `hostTagManagement`, `metricsManagement`, `userManagement`
 	Permissions pulumi.StringArrayOutput `pulumi:"permissions"`
 }
 
@@ -46,16 +74,28 @@ func GetRole(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering Role resources.
 type roleState struct {
-	Assignees   []string `pulumi:"assignees"`
-	Description *string  `pulumi:"description"`
-	Name        *string  `pulumi:"name"`
+	// A list of user groups or accounts to assign to this role.
+	Assignees []string `pulumi:"assignees"`
+	// A short description of the user group
+	Description *string `pulumi:"description"`
+	// The name of the user group
+	Name *string `pulumi:"name"`
+	// A list of permissions to assign to this role. Valid options are
+	// `agentManagement`, `alertsManagement`, `dashboardManagement`, `embeddedCharts`, `eventsManagement`, `externalLinksManagement`,
+	// `hostTagManagement`, `metricsManagement`, `userManagement`
 	Permissions []string `pulumi:"permissions"`
 }
 
 type RoleState struct {
-	Assignees   pulumi.StringArrayInput
+	// A list of user groups or accounts to assign to this role.
+	Assignees pulumi.StringArrayInput
+	// A short description of the user group
 	Description pulumi.StringPtrInput
-	Name        pulumi.StringPtrInput
+	// The name of the user group
+	Name pulumi.StringPtrInput
+	// A list of permissions to assign to this role. Valid options are
+	// `agentManagement`, `alertsManagement`, `dashboardManagement`, `embeddedCharts`, `eventsManagement`, `externalLinksManagement`,
+	// `hostTagManagement`, `metricsManagement`, `userManagement`
 	Permissions pulumi.StringArrayInput
 }
 
@@ -64,17 +104,29 @@ func (RoleState) ElementType() reflect.Type {
 }
 
 type roleArgs struct {
-	Assignees   []string `pulumi:"assignees"`
-	Description *string  `pulumi:"description"`
-	Name        *string  `pulumi:"name"`
+	// A list of user groups or accounts to assign to this role.
+	Assignees []string `pulumi:"assignees"`
+	// A short description of the user group
+	Description *string `pulumi:"description"`
+	// The name of the user group
+	Name *string `pulumi:"name"`
+	// A list of permissions to assign to this role. Valid options are
+	// `agentManagement`, `alertsManagement`, `dashboardManagement`, `embeddedCharts`, `eventsManagement`, `externalLinksManagement`,
+	// `hostTagManagement`, `metricsManagement`, `userManagement`
 	Permissions []string `pulumi:"permissions"`
 }
 
 // The set of arguments for constructing a Role resource.
 type RoleArgs struct {
-	Assignees   pulumi.StringArrayInput
+	// A list of user groups or accounts to assign to this role.
+	Assignees pulumi.StringArrayInput
+	// A short description of the user group
 	Description pulumi.StringPtrInput
-	Name        pulumi.StringPtrInput
+	// The name of the user group
+	Name pulumi.StringPtrInput
+	// A list of permissions to assign to this role. Valid options are
+	// `agentManagement`, `alertsManagement`, `dashboardManagement`, `embeddedCharts`, `eventsManagement`, `externalLinksManagement`,
+	// `hostTagManagement`, `metricsManagement`, `userManagement`
 	Permissions pulumi.StringArrayInput
 }
 

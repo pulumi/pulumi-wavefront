@@ -10,18 +10,52 @@ import (
 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 )
 
+// Provides a Wavefront Cloud Integration for NewRelic. This allows NewRelic cloud integrations to be created,
+// updated, and deleted.
+//
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+// 	"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront"
+// 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
+// )
+//
+// func main() {
+// 	pulumi.Run(func(ctx *pulumi.Context) error {
+// 		_, err := wavefront.NewCloudIntegrationNewRelic(ctx, "newrelic", &wavefront.CloudIntegrationNewRelicArgs{
+// 			ApiKey: pulumi.String("example-api-key"),
+// 		})
+// 		if err != nil {
+// 			return err
+// 		}
+// 		return nil
+// 	})
+// }
+// ```
 type CloudIntegrationNewRelic struct {
 	pulumi.CustomResourceState
 
-	AdditionalTags              pulumi.StringMapOutput                          `pulumi:"additionalTags"`
-	ApiKey                      pulumi.StringOutput                             `pulumi:"apiKey"`
-	AppFilterRegex              pulumi.StringPtrOutput                          `pulumi:"appFilterRegex"`
-	ForceSave                   pulumi.BoolPtrOutput                            `pulumi:"forceSave"`
-	HostFilterRegex             pulumi.StringPtrOutput                          `pulumi:"hostFilterRegex"`
-	MetricFilters               CloudIntegrationNewRelicMetricFilterArrayOutput `pulumi:"metricFilters"`
-	Name                        pulumi.StringOutput                             `pulumi:"name"`
-	Service                     pulumi.StringOutput                             `pulumi:"service"`
-	ServiceRefreshRateInMinutes pulumi.IntPtrOutput                             `pulumi:"serviceRefreshRateInMinutes"`
+	// A list of point tag key-values to add to every point ingested using this integration
+	AdditionalTags pulumi.StringMapOutput `pulumi:"additionalTags"`
+	// NewRelic REST api key
+	ApiKey pulumi.StringOutput `pulumi:"apiKey"`
+	// A regular expression that an application name must match (case-insensitively) iun order to collect metrics
+	AppFilterRegex pulumi.StringPtrOutput `pulumi:"appFilterRegex"`
+	// Forces this resource to save, even if errors are present
+	ForceSave pulumi.BoolPtrOutput `pulumi:"forceSave"`
+	// A regular expression that a host name must match (case-insensitively) in order to collect metrics
+	HostFilterRegex pulumi.StringPtrOutput `pulumi:"hostFilterRegex"`
+	// See Metric Filter
+	MetricFilters CloudIntegrationNewRelicMetricFilterArrayOutput `pulumi:"metricFilters"`
+	// The human-readable name of this integration
+	Name pulumi.StringOutput `pulumi:"name"`
+	// A value denoting which cloud service this service integrates with
+	Service pulumi.StringOutput `pulumi:"service"`
+	// How often, in minutes, to refresh the service
+	ServiceRefreshRateInMinutes pulumi.IntPtrOutput `pulumi:"serviceRefreshRateInMinutes"`
 }
 
 // NewCloudIntegrationNewRelic registers a new resource with the given unique name, arguments, and options.
@@ -58,26 +92,44 @@ func GetCloudIntegrationNewRelic(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering CloudIntegrationNewRelic resources.
 type cloudIntegrationNewRelicState struct {
-	AdditionalTags              map[string]string                      `pulumi:"additionalTags"`
-	ApiKey                      *string                                `pulumi:"apiKey"`
-	AppFilterRegex              *string                                `pulumi:"appFilterRegex"`
-	ForceSave                   *bool                                  `pulumi:"forceSave"`
-	HostFilterRegex             *string                                `pulumi:"hostFilterRegex"`
-	MetricFilters               []CloudIntegrationNewRelicMetricFilter `pulumi:"metricFilters"`
-	Name                        *string                                `pulumi:"name"`
-	Service                     *string                                `pulumi:"service"`
-	ServiceRefreshRateInMinutes *int                                   `pulumi:"serviceRefreshRateInMinutes"`
+	// A list of point tag key-values to add to every point ingested using this integration
+	AdditionalTags map[string]string `pulumi:"additionalTags"`
+	// NewRelic REST api key
+	ApiKey *string `pulumi:"apiKey"`
+	// A regular expression that an application name must match (case-insensitively) iun order to collect metrics
+	AppFilterRegex *string `pulumi:"appFilterRegex"`
+	// Forces this resource to save, even if errors are present
+	ForceSave *bool `pulumi:"forceSave"`
+	// A regular expression that a host name must match (case-insensitively) in order to collect metrics
+	HostFilterRegex *string `pulumi:"hostFilterRegex"`
+	// See Metric Filter
+	MetricFilters []CloudIntegrationNewRelicMetricFilter `pulumi:"metricFilters"`
+	// The human-readable name of this integration
+	Name *string `pulumi:"name"`
+	// A value denoting which cloud service this service integrates with
+	Service *string `pulumi:"service"`
+	// How often, in minutes, to refresh the service
+	ServiceRefreshRateInMinutes *int `pulumi:"serviceRefreshRateInMinutes"`
 }
 
 type CloudIntegrationNewRelicState struct {
-	AdditionalTags              pulumi.StringMapInput
-	ApiKey                      pulumi.StringPtrInput
-	AppFilterRegex              pulumi.StringPtrInput
-	ForceSave                   pulumi.BoolPtrInput
-	HostFilterRegex             pulumi.StringPtrInput
-	MetricFilters               CloudIntegrationNewRelicMetricFilterArrayInput
-	Name                        pulumi.StringPtrInput
-	Service                     pulumi.StringPtrInput
+	// A list of point tag key-values to add to every point ingested using this integration
+	AdditionalTags pulumi.StringMapInput
+	// NewRelic REST api key
+	ApiKey pulumi.StringPtrInput
+	// A regular expression that an application name must match (case-insensitively) iun order to collect metrics
+	AppFilterRegex pulumi.StringPtrInput
+	// Forces this resource to save, even if errors are present
+	ForceSave pulumi.BoolPtrInput
+	// A regular expression that a host name must match (case-insensitively) in order to collect metrics
+	HostFilterRegex pulumi.StringPtrInput
+	// See Metric Filter
+	MetricFilters CloudIntegrationNewRelicMetricFilterArrayInput
+	// The human-readable name of this integration
+	Name pulumi.StringPtrInput
+	// A value denoting which cloud service this service integrates with
+	Service pulumi.StringPtrInput
+	// How often, in minutes, to refresh the service
 	ServiceRefreshRateInMinutes pulumi.IntPtrInput
 }
 
@@ -86,27 +138,45 @@ func (CloudIntegrationNewRelicState) ElementType() reflect.Type {
 }
 
 type cloudIntegrationNewRelicArgs struct {
-	AdditionalTags              map[string]string                      `pulumi:"additionalTags"`
-	ApiKey                      string                                 `pulumi:"apiKey"`
-	AppFilterRegex              *string                                `pulumi:"appFilterRegex"`
-	ForceSave                   *bool                                  `pulumi:"forceSave"`
-	HostFilterRegex             *string                                `pulumi:"hostFilterRegex"`
-	MetricFilters               []CloudIntegrationNewRelicMetricFilter `pulumi:"metricFilters"`
-	Name                        *string                                `pulumi:"name"`
-	Service                     string                                 `pulumi:"service"`
-	ServiceRefreshRateInMinutes *int                                   `pulumi:"serviceRefreshRateInMinutes"`
+	// A list of point tag key-values to add to every point ingested using this integration
+	AdditionalTags map[string]string `pulumi:"additionalTags"`
+	// NewRelic REST api key
+	ApiKey string `pulumi:"apiKey"`
+	// A regular expression that an application name must match (case-insensitively) iun order to collect metrics
+	AppFilterRegex *string `pulumi:"appFilterRegex"`
+	// Forces this resource to save, even if errors are present
+	ForceSave *bool `pulumi:"forceSave"`
+	// A regular expression that a host name must match (case-insensitively) in order to collect metrics
+	HostFilterRegex *string `pulumi:"hostFilterRegex"`
+	// See Metric Filter
+	MetricFilters []CloudIntegrationNewRelicMetricFilter `pulumi:"metricFilters"`
+	// The human-readable name of this integration
+	Name *string `pulumi:"name"`
+	// A value denoting which cloud service this service integrates with
+	Service string `pulumi:"service"`
+	// How often, in minutes, to refresh the service
+	ServiceRefreshRateInMinutes *int `pulumi:"serviceRefreshRateInMinutes"`
 }
 
 // The set of arguments for constructing a CloudIntegrationNewRelic resource.
 type CloudIntegrationNewRelicArgs struct {
-	AdditionalTags              pulumi.StringMapInput
-	ApiKey                      pulumi.StringInput
-	AppFilterRegex              pulumi.StringPtrInput
-	ForceSave                   pulumi.BoolPtrInput
-	HostFilterRegex             pulumi.StringPtrInput
-	MetricFilters               CloudIntegrationNewRelicMetricFilterArrayInput
-	Name                        pulumi.StringPtrInput
-	Service                     pulumi.StringInput
+	// A list of point tag key-values to add to every point ingested using this integration
+	AdditionalTags pulumi.StringMapInput
+	// NewRelic REST api key
+	ApiKey pulumi.StringInput
+	// A regular expression that an application name must match (case-insensitively) iun order to collect metrics
+	AppFilterRegex pulumi.StringPtrInput
+	// Forces this resource to save, even if errors are present
+	ForceSave pulumi.BoolPtrInput
+	// A regular expression that a host name must match (case-insensitively) in order to collect metrics
+	HostFilterRegex pulumi.StringPtrInput
+	// See Metric Filter
+	MetricFilters CloudIntegrationNewRelicMetricFilterArrayInput
+	// The human-readable name of this integration
+	Name pulumi.StringPtrInput
+	// A value denoting which cloud service this service integrates with
+	Service pulumi.StringInput
+	// How often, in minutes, to refresh the service
 	ServiceRefreshRateInMinutes pulumi.IntPtrInput
 }
 

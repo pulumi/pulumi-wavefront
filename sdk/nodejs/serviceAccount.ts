@@ -4,6 +4,21 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
+/**
+ * Provides a Wavefront Service Account Resource. This allows service accounts to be created, updated, and deleted.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as wavefront from "@pulumi/wavefront";
+ *
+ * const basic = new wavefront.ServiceAccount("basic", {
+ *     active: true,
+ *     identifier: "sa::tftesting",
+ * });
+ * ```
+ */
 export class ServiceAccount extends pulumi.CustomResource {
     /**
      * Get an existing ServiceAccount resource's state with the given name, ID, and optional extra
@@ -32,10 +47,27 @@ export class ServiceAccount extends pulumi.CustomResource {
         return obj['__pulumiType'] === ServiceAccount.__pulumiType;
     }
 
+    /**
+     * Whether or not the service account is active
+     */
     public readonly active!: pulumi.Output<boolean | undefined>;
+    /**
+     * The description of the service account
+     */
     public readonly description!: pulumi.Output<string | undefined>;
+    /**
+     * The (unique) identifier of the service account to create. Must start with sa::
+     */
     public readonly identifier!: pulumi.Output<string>;
+    /**
+     * List of permission to grant to this service account.  Valid options are
+     * `agentManagement`, `alertsManagement`, `dashboardManagement`, `embeddedCharts`, `eventsManagement`, `externalLinksManagement`,
+     * `hostTagManagement`, `metricsManagement`, `userManagement`
+     */
     public readonly permissions!: pulumi.Output<string[]>;
+    /**
+     * List of user groups for this service account
+     */
     public readonly userGroups!: pulumi.Output<string[]>;
 
     /**
@@ -81,10 +113,27 @@ export class ServiceAccount extends pulumi.CustomResource {
  * Input properties used for looking up and filtering ServiceAccount resources.
  */
 export interface ServiceAccountState {
+    /**
+     * Whether or not the service account is active
+     */
     readonly active?: pulumi.Input<boolean>;
+    /**
+     * The description of the service account
+     */
     readonly description?: pulumi.Input<string>;
+    /**
+     * The (unique) identifier of the service account to create. Must start with sa::
+     */
     readonly identifier?: pulumi.Input<string>;
+    /**
+     * List of permission to grant to this service account.  Valid options are
+     * `agentManagement`, `alertsManagement`, `dashboardManagement`, `embeddedCharts`, `eventsManagement`, `externalLinksManagement`,
+     * `hostTagManagement`, `metricsManagement`, `userManagement`
+     */
     readonly permissions?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * List of user groups for this service account
+     */
     readonly userGroups?: pulumi.Input<pulumi.Input<string>[]>;
 }
 
@@ -92,9 +141,26 @@ export interface ServiceAccountState {
  * The set of arguments for constructing a ServiceAccount resource.
  */
 export interface ServiceAccountArgs {
+    /**
+     * Whether or not the service account is active
+     */
     readonly active?: pulumi.Input<boolean>;
+    /**
+     * The description of the service account
+     */
     readonly description?: pulumi.Input<string>;
+    /**
+     * The (unique) identifier of the service account to create. Must start with sa::
+     */
     readonly identifier: pulumi.Input<string>;
+    /**
+     * List of permission to grant to this service account.  Valid options are
+     * `agentManagement`, `alertsManagement`, `dashboardManagement`, `embeddedCharts`, `eventsManagement`, `externalLinksManagement`,
+     * `hostTagManagement`, `metricsManagement`, `userManagement`
+     */
     readonly permissions?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * List of user groups for this service account
+     */
     readonly userGroups?: pulumi.Input<pulumi.Input<string>[]>;
 }

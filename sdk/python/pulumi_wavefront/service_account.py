@@ -24,9 +24,28 @@ class ServiceAccount(pulumi.CustomResource):
                  __name__=None,
                  __opts__=None):
         """
-        Create a ServiceAccount resource with the given unique name, props, and options.
+        Provides a Wavefront Service Account Resource. This allows service accounts to be created, updated, and deleted.
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_wavefront as wavefront
+
+        basic = wavefront.ServiceAccount("basic",
+            active=True,
+            identifier="sa::tftesting")
+        ```
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[bool] active: Whether or not the service account is active
+        :param pulumi.Input[str] description: The description of the service account
+        :param pulumi.Input[str] identifier: The (unique) identifier of the service account to create. Must start with sa::
+        :param pulumi.Input[List[pulumi.Input[str]]] permissions: List of permission to grant to this service account.  Valid options are
+               `agent_management`, `alerts_management`, `dashboard_management`, `embedded_charts`, `events_management`, `external_links_management`,
+               `host_tag_management`, `metrics_management`, `user_management`
+        :param pulumi.Input[List[pulumi.Input[str]]] user_groups: List of user groups for this service account
         """
         if __name__ is not None:
             warnings.warn("explicit use of __name__ is deprecated", DeprecationWarning)
@@ -74,6 +93,13 @@ class ServiceAccount(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[bool] active: Whether or not the service account is active
+        :param pulumi.Input[str] description: The description of the service account
+        :param pulumi.Input[str] identifier: The (unique) identifier of the service account to create. Must start with sa::
+        :param pulumi.Input[List[pulumi.Input[str]]] permissions: List of permission to grant to this service account.  Valid options are
+               `agent_management`, `alerts_management`, `dashboard_management`, `embedded_charts`, `events_management`, `external_links_management`,
+               `host_tag_management`, `metrics_management`, `user_management`
+        :param pulumi.Input[List[pulumi.Input[str]]] user_groups: List of user groups for this service account
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -89,26 +115,43 @@ class ServiceAccount(pulumi.CustomResource):
     @property
     @pulumi.getter
     def active(self) -> pulumi.Output[Optional[bool]]:
+        """
+        Whether or not the service account is active
+        """
         return pulumi.get(self, "active")
 
     @property
     @pulumi.getter
     def description(self) -> pulumi.Output[Optional[str]]:
+        """
+        The description of the service account
+        """
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter
     def identifier(self) -> pulumi.Output[str]:
+        """
+        The (unique) identifier of the service account to create. Must start with sa::
+        """
         return pulumi.get(self, "identifier")
 
     @property
     @pulumi.getter
     def permissions(self) -> pulumi.Output[List[str]]:
+        """
+        List of permission to grant to this service account.  Valid options are
+        `agent_management`, `alerts_management`, `dashboard_management`, `embedded_charts`, `events_management`, `external_links_management`,
+        `host_tag_management`, `metrics_management`, `user_management`
+        """
         return pulumi.get(self, "permissions")
 
     @property
     @pulumi.getter(name="userGroups")
     def user_groups(self) -> pulumi.Output[List[str]]:
+        """
+        List of user groups for this service account
+        """
         return pulumi.get(self, "user_groups")
 
     def translate_output_property(self, prop):

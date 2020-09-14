@@ -3,6 +3,8 @@ CHANGELOG
 
 ## HEAD (Unreleased)
 * Upgrade to v2.5.0 of the Wavefront Terraform Provider
+* Upgrade to pulumi-terraform-bridge v2.8.0
+* Upgrade to Pulumi v2.10.0
 
 ---
 

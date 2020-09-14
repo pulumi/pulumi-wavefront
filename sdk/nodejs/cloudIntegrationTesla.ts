@@ -4,6 +4,22 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
+/**
+ * Provides a Wavefront Cloud Integration for Tesla. This allows NewRelic cloud integrations to be created,
+ * updated, and deleted.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as wavefront from "@pulumi/wavefront";
+ *
+ * const tesla = new wavefront.CloudIntegrationTesla("tesla", {
+ *     email: "email@example.com",
+ *     password: "password",
+ * });
+ * ```
+ */
 export class CloudIntegrationTesla extends pulumi.CustomResource {
     /**
      * Get an existing CloudIntegrationTesla resource's state with the given name, ID, and optional extra
@@ -32,12 +48,33 @@ export class CloudIntegrationTesla extends pulumi.CustomResource {
         return obj['__pulumiType'] === CloudIntegrationTesla.__pulumiType;
     }
 
+    /**
+     * A list of point tag key-values to add to every point ingested using this integration
+     */
     public readonly additionalTags!: pulumi.Output<{[key: string]: string} | undefined>;
+    /**
+     * Email address for the Tesla account login
+     */
     public readonly email!: pulumi.Output<string>;
+    /**
+     * Forces this resource to save, even if errors are present
+     */
     public readonly forceSave!: pulumi.Output<boolean | undefined>;
+    /**
+     * The human-readable name of this integration
+     */
     public readonly name!: pulumi.Output<string>;
+    /**
+     * Password for the Tesla account login
+     */
     public readonly password!: pulumi.Output<string>;
+    /**
+     * A value denoting which cloud service this service integrates with
+     */
     public readonly service!: pulumi.Output<string>;
+    /**
+     * How often, in minutes, to refresh the service
+     */
     public readonly serviceRefreshRateInMinutes!: pulumi.Output<number | undefined>;
 
     /**
@@ -93,12 +130,33 @@ export class CloudIntegrationTesla extends pulumi.CustomResource {
  * Input properties used for looking up and filtering CloudIntegrationTesla resources.
  */
 export interface CloudIntegrationTeslaState {
+    /**
+     * A list of point tag key-values to add to every point ingested using this integration
+     */
     readonly additionalTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * Email address for the Tesla account login
+     */
     readonly email?: pulumi.Input<string>;
+    /**
+     * Forces this resource to save, even if errors are present
+     */
     readonly forceSave?: pulumi.Input<boolean>;
+    /**
+     * The human-readable name of this integration
+     */
     readonly name?: pulumi.Input<string>;
+    /**
+     * Password for the Tesla account login
+     */
     readonly password?: pulumi.Input<string>;
+    /**
+     * A value denoting which cloud service this service integrates with
+     */
     readonly service?: pulumi.Input<string>;
+    /**
+     * How often, in minutes, to refresh the service
+     */
     readonly serviceRefreshRateInMinutes?: pulumi.Input<number>;
 }
 
@@ -106,11 +164,32 @@ export interface CloudIntegrationTeslaState {
  * The set of arguments for constructing a CloudIntegrationTesla resource.
  */
 export interface CloudIntegrationTeslaArgs {
+    /**
+     * A list of point tag key-values to add to every point ingested using this integration
+     */
     readonly additionalTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * Email address for the Tesla account login
+     */
     readonly email: pulumi.Input<string>;
+    /**
+     * Forces this resource to save, even if errors are present
+     */
     readonly forceSave?: pulumi.Input<boolean>;
+    /**
+     * The human-readable name of this integration
+     */
     readonly name?: pulumi.Input<string>;
+    /**
+     * Password for the Tesla account login
+     */
     readonly password: pulumi.Input<string>;
+    /**
+     * A value denoting which cloud service this service integrates with
+     */
     readonly service: pulumi.Input<string>;
+    /**
+     * How often, in minutes, to refresh the service
+     */
     readonly serviceRefreshRateInMinutes?: pulumi.Input<number>;
 }

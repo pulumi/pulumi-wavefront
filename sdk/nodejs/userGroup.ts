@@ -4,6 +4,20 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
+/**
+ * Provides a Wavefront User Group Resource. This allows user groups to be created, updated, and deleted.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as wavefront from "@pulumi/wavefront";
+ *
+ * const basic = new wavefront.UserGroup("basic", {
+ *     description: "Basic User Group for Unit Tests",
+ * });
+ * ```
+ */
 export class UserGroup extends pulumi.CustomResource {
     /**
      * Get an existing UserGroup resource's state with the given name, ID, and optional extra
@@ -32,7 +46,13 @@ export class UserGroup extends pulumi.CustomResource {
         return obj['__pulumiType'] === UserGroup.__pulumiType;
     }
 
+    /**
+     * A short description of the user group
+     */
     public readonly description!: pulumi.Output<string>;
+    /**
+     * The name of the user group
+     */
     public readonly name!: pulumi.Output<string>;
 
     /**
@@ -72,7 +92,13 @@ export class UserGroup extends pulumi.CustomResource {
  * Input properties used for looking up and filtering UserGroup resources.
  */
 export interface UserGroupState {
+    /**
+     * A short description of the user group
+     */
     readonly description?: pulumi.Input<string>;
+    /**
+     * The name of the user group
+     */
     readonly name?: pulumi.Input<string>;
 }
 
@@ -80,6 +106,12 @@ export interface UserGroupState {
  * The set of arguments for constructing a UserGroup resource.
  */
 export interface UserGroupArgs {
+    /**
+     * A short description of the user group
+     */
     readonly description: pulumi.Input<string>;
+    /**
+     * The name of the user group
+     */
     readonly name?: pulumi.Input<string>;
 }

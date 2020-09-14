@@ -9,20 +9,59 @@ using Pulumi.Serialization;
 
 namespace Pulumi.Wavefront
 {
+    /// <summary>
+    /// Provides a Wavefront Derived Metric Resource. This allows derived metrics to be created,
+    /// updated, and deleted.
+    /// 
+    /// ## Example Usage
+    /// 
+    /// ```csharp
+    /// using Pulumi;
+    /// using Wavefront = Pulumi.Wavefront;
+    /// 
+    /// class MyStack : Stack
+    /// {
+    ///     public MyStack()
+    ///     {
+    ///         var derived = new Wavefront.DerivedMetric("derived", new Wavefront.DerivedMetricArgs
+    ///         {
+    ///             Minutes = 5,
+    ///             Query = "aliasMetric(5, \"some.metric\")",
+    ///         });
+    ///     }
+    /// 
+    /// }
+    /// ```
+    /// </summary>
     public partial class DerivedMetric : Pulumi.CustomResource
     {
+        /// <summary>
+        /// User-supplied additional explanatory information for the derived metric
+        /// </summary>
         [Output("additionalInformation")]
         public Output<string?> AdditionalInformation { get; private set; } = null!;
 
+        /// <summary>
+        /// How frequently the query generating the derived metric is run
+        /// </summary>
         [Output("minutes")]
         public Output<int> Minutes { get; private set; } = null!;
 
+        /// <summary>
+        /// The name of the Derived Metric in Wavefront
+        /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
 
+        /// <summary>
+        /// A Wavefront query that is evaluated at regular intervals (default `1m`)
+        /// </summary>
         [Output("query")]
         public Output<string> Query { get; private set; } = null!;
 
+        /// <summary>
+        /// A set of tags to assign to this resource.
+        /// </summary>
         [Output("tags")]
         public Output<ImmutableArray<string>> Tags { get; private set; } = null!;
 
@@ -72,20 +111,36 @@ namespace Pulumi.Wavefront
 
     public sealed class DerivedMetricArgs : Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// User-supplied additional explanatory information for the derived metric
+        /// </summary>
         [Input("additionalInformation")]
         public Input<string>? AdditionalInformation { get; set; }
 
+        /// <summary>
+        /// How frequently the query generating the derived metric is run
+        /// </summary>
         [Input("minutes", required: true)]
         public Input<int> Minutes { get; set; } = null!;
 
+        /// <summary>
+        /// The name of the Derived Metric in Wavefront
+        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
+        /// <summary>
+        /// A Wavefront query that is evaluated at regular intervals (default `1m`)
+        /// </summary>
         [Input("query", required: true)]
         public Input<string> Query { get; set; } = null!;
 
         [Input("tags")]
         private InputList<string>? _tags;
+
+        /// <summary>
+        /// A set of tags to assign to this resource.
+        /// </summary>
         public InputList<string> Tags
         {
             get => _tags ?? (_tags = new InputList<string>());
@@ -99,20 +154,36 @@ namespace Pulumi.Wavefront
 
     public sealed class DerivedMetricState : Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// User-supplied additional explanatory information for the derived metric
+        /// </summary>
         [Input("additionalInformation")]
         public Input<string>? AdditionalInformation { get; set; }
 
+        /// <summary>
+        /// How frequently the query generating the derived metric is run
+        /// </summary>
         [Input("minutes")]
         public Input<int>? Minutes { get; set; }
 
+        /// <summary>
+        /// The name of the Derived Metric in Wavefront
+        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
+        /// <summary>
+        /// A Wavefront query that is evaluated at regular intervals (default `1m`)
+        /// </summary>
         [Input("query")]
         public Input<string>? Query { get; set; }
 
         [Input("tags")]
         private InputList<string>? _tags;
+
+        /// <summary>
+        /// A set of tags to assign to this resource.
+        /// </summary>
         public InputList<string> Tags
         {
             get => _tags ?? (_tags = new InputList<string>());
