@@ -20,6 +20,7 @@ from .dashboard import *
 from .dashboard_json import *
 from .derived_metric import *
 from .get_default_user_group import *
+from .maintenance_window import *
 from .provider import *
 from .role import *
 from .service_account import *
