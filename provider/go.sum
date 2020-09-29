@@ -96,6 +96,8 @@ github.com/WavefrontHQ/go-wavefront-management-api v1.9.1 h1:MQFUjv4/zjKR4RAahab
 github.com/WavefrontHQ/go-wavefront-management-api v1.9.1/go.mod h1:AD5nRZ9dD7gVxiJPbmG37YQE8FWg02s+onMtNmmSuS4=
 github.com/WavefrontHQ/go-wavefront-management-api v1.10.0 h1:h0X9IWpDdVF9d0B2fN23eIxCG0c5nFXfnKyTWEqDct0=
 github.com/WavefrontHQ/go-wavefront-management-api v1.10.0/go.mod h1:4qDg8JAt4Lc64LjXtncbukFt9W9WB1+S/FN5u01tQWQ=
+github.com/WavefrontHQ/go-wavefront-management-api v1.11.0 h1:MJ4i510zcW0U++sS5DhLKp0X30zGizgQnY58wBSSTnA=
+github.com/WavefrontHQ/go-wavefront-management-api v1.11.0/go.mod h1:4qDg8JAt4Lc64LjXtncbukFt9W9WB1+S/FN5u01tQWQ=
 github.com/agext/levenshtein v1.2.1/go.mod h1:JEDfjyjHDjOF/1e4FlBE/PkbqA9OfWu2ki2W0IB5558=
 github.com/agext/levenshtein v1.2.2 h1:0S/Yg6LYmFJ5stwQeRp6EeOcCbj7xiqQSdNelsXvaqE=
 github.com/agext/levenshtein v1.2.2/go.mod h1:JEDfjyjHDjOF/1e4FlBE/PkbqA9OfWu2ki2W0IB5558=
@@ -254,6 +256,8 @@ github.com/google/go-cmp v0.4.0 h1:xsAVV57WRhGj6kEIi8ReJzQlHHqcBYCElAvkovg3B/4=
 github.com/google/go-cmp v0.4.0/go.mod h1:v8dTdLbMG2kIc/vJvl+f65V22dbkXbowE6jgT/gNBxE=
 github.com/google/go-cmp v0.4.1 h1:/exdXoGamhu5ONeUJH0deniYLWYvQwW66yvlfiiKTu0=
 github.com/google/go-cmp v0.4.1/go.mod h1:v8dTdLbMG2kIc/vJvl+f65V22dbkXbowE6jgT/gNBxE=
+github.com/google/go-cmp v0.5.2 h1:X2ev0eStA3AbceY54o37/0PQ/UWqKEiiO2dKL5OPaFM=
+github.com/google/go-cmp v0.5.2/go.mod h1:v8dTdLbMG2kIc/vJvl+f65V22dbkXbowE6jgT/gNBxE=
 github.com/google/go-querystring v1.0.0/go.mod h1:odCYkC5MyYFN7vkCjXpyrEuKhc/BUO6wN/zVPAxq5ck=
 github.com/google/go-replayers/grpcreplay v0.1.0/go.mod h1:8Ig2Idjpr6gifRd6pNVggX6TC1Zw6Jx74AKp7QNH2QE=
 github.com/google/go-replayers/httpreplay v0.1.0/go.mod h1:YKZViNhiGgqdBlUbI2MwGpq4pXxNmhJLPHQ7cv2b5no=
@@ -605,6 +609,8 @@ github.com/vmware/terraform-provider-wavefront v0.0.0-20200910173429-c0460913e2e
 github.com/vmware/terraform-provider-wavefront v0.0.0-20200910173429-c0460913e2e0/go.mod h1:8Kbf1x4QVUA2YOH3GMpj0ewaCgzH+uOuj8HeHYI7Hqs=
 github.com/vmware/terraform-provider-wavefront v0.0.0-20200916174535-73a7d8460c3b h1:LcTBIxs7gwscnCyCgMURb2v5wK0RbP9yDk3maZItADk=
 github.com/vmware/terraform-provider-wavefront v0.0.0-20200916174535-73a7d8460c3b/go.mod h1:8Kbf1x4QVUA2YOH3GMpj0ewaCgzH+uOuj8HeHYI7Hqs=
+github.com/vmware/terraform-provider-wavefront v0.0.0-20200923161633-8b8c8a617064 h1:17xppra5R330VLz5j5IwtpTwIxLPktnpUnRTVQCaJXg=
+github.com/vmware/terraform-provider-wavefront v0.0.0-20200923161633-8b8c8a617064/go.mod h1:ifbHRl2Kqm/u71hTx80poPxMYYIa0ryx62zBTq8uC0c=
 github.com/xanzy/ssh-agent v0.2.1 h1:TCbipTQL2JiiCprBWx9frJ2eJlCYT00NmctrHxVAr70=
 github.com/xanzy/ssh-agent v0.2.1/go.mod h1:mLlQY/MoOhWBj+gOGMQkOeiEvkx+8pJSI+0Bx9h2kr4=
 github.com/xdg/scram v0.0.0-20180814205039-7eeb5667e42c/go.mod h1:lB8K/P019DLNhemzwFU4jHLhdvlE6uDZjXFejJXr49I=

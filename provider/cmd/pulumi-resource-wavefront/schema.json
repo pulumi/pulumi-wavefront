@@ -3378,6 +3378,166 @@
                 "type": "object"
             }
         },
+        "wavefront:index/maintenanceWindow:MaintenanceWindow": {
+            "description": "Provides a Wavefront Maintenance Window Resource. This allows maintenance windows to be created, updated, and deleted.\n\n{{% examples %}}\n## Example Usage\n{{% example %}}\n\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as wavefront from \"@pulumi/wavefront\";\n\nconst basic = new wavefront.MaintenanceWindow(\"basic\", {\n    endTimeInSeconds: 1601123456,\n    reason: \"Routine maintenance for 2020\",\n    relevantHostNames: [\n        \"my_hostname\",\n        \"my_other_hostname\",\n    ],\n    startTimeInSeconds: 1600123456,\n    title: \"Routine maintenance\",\n});\n```\n```python\nimport pulumi\nimport pulumi_wavefront as wavefront\n\nbasic = wavefront.MaintenanceWindow(\"basic\",\n    end_time_in_seconds=1601123456,\n    reason=\"Routine maintenance for 2020\",\n    relevant_host_names=[\n        \"my_hostname\",\n        \"my_other_hostname\",\n    ],\n    start_time_in_seconds=1600123456,\n    title=\"Routine maintenance\")\n```\n```csharp\nusing Pulumi;\nusing Wavefront = Pulumi.Wavefront;\n\nclass MyStack : Stack\n{\n    public MyStack()\n    {\n        var basic = new Wavefront.MaintenanceWindow(\"basic\", new Wavefront.MaintenanceWindowArgs\n        {\n            EndTimeInSeconds = 1601123456,\n            Reason = \"Routine maintenance for 2020\",\n            RelevantHostNames = \n            {\n                \"my_hostname\",\n                \"my_other_hostname\",\n            },\n            StartTimeInSeconds = 1600123456,\n            Title = \"Routine maintenance\",\n        });\n    }\n\n}\n```\n```go\npackage main\n\nimport (\n\t\"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront\"\n\t\"github.com/pulumi/pulumi/sdk/v2/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := wavefront.NewMaintenanceWindow(ctx, \"basic\", \u0026wavefront.MaintenanceWindowArgs{\n\t\t\tEndTimeInSeconds: pulumi.Int(1601123456),\n\t\t\tReason:           pulumi.String(\"Routine maintenance for 2020\"),\n\t\t\tRelevantHostNames: pulumi.StringArray{\n\t\t\t\tpulumi.String(\"my_hostname\"),\n\t\t\t\tpulumi.String(\"my_other_hostname\"),\n\t\t\t},\n\t\t\tStartTimeInSeconds: pulumi.Int(1600123456),\n\t\t\tTitle:              pulumi.String(\"Routine maintenance\"),\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n{{% /example %}}\n{{% /examples %}}",
+            "properties": {
+                "endTimeInSeconds": {
+                    "type": "integer",
+                    "description": "end time in seconds after 1 Jan 1970 GMT.\n"
+                },
+                "hostTagGroupHostNamesGroupAnded": {
+                    "type": "boolean",
+                    "description": "If true, a source/host must be in 'relevantHostNames' and have tags matching the specification formed by 'relevantHostTags' and 'relevantHostTagsAnded' in order for this maintenance window to apply. If false, a source/host must either be in 'relevantHostNames' or match 'relevantHostTags' and 'relevantHostTagsAnded'. Default: false\n"
+                },
+                "reason": {
+                    "type": "string",
+                    "description": "The reason for the maintenance window\n"
+                },
+                "relevantCustomerTags": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "List of alert tags whose matching alerts will be put into maintenance because of this maintenance window. At least one of relevant_customer_tags, relevant_host_tags, or relevant_host_names is required.\n"
+                },
+                "relevantHostNames": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "List of source/host names that will be put into maintenance because of this maintenance window. At least one of relevant_customer_tags, relevant_host_tags, or relevant_host_names is required.\n"
+                },
+                "relevantHostTags": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "List of source/host tags whose matching sources/hosts will be put into maintenance because of this maintenance window. At least one of relevant_customer_tags, relevant_host_tags, or relevant_host_names is required.\n"
+                },
+                "relevantHostTagsAnded": {
+                    "type": "boolean",
+                    "description": "Whether to AND source/host tags listed in relevantHostTags. If true, a source/host must contain all tags in order for the maintenance window to apply. If false, the tags are OR'ed, and a source/host must contain one of the tags. Default: false\n"
+                },
+                "startTimeInSeconds": {
+                    "type": "integer",
+                    "description": "start time in seconds after 1 Jan 1970 GMT.\n"
+                },
+                "title": {
+                    "type": "string",
+                    "description": "The title of the maintenance window\n"
+                }
+            },
+            "required": [
+                "endTimeInSeconds",
+                "reason",
+                "startTimeInSeconds",
+                "title"
+            ],
+            "inputProperties": {
+                "endTimeInSeconds": {
+                    "type": "integer",
+                    "description": "end time in seconds after 1 Jan 1970 GMT.\n"
+                },
+                "hostTagGroupHostNamesGroupAnded": {
+                    "type": "boolean",
+                    "description": "If true, a source/host must be in 'relevantHostNames' and have tags matching the specification formed by 'relevantHostTags' and 'relevantHostTagsAnded' in order for this maintenance window to apply. If false, a source/host must either be in 'relevantHostNames' or match 'relevantHostTags' and 'relevantHostTagsAnded'. Default: false\n"
+                },
+                "reason": {
+                    "type": "string",
+                    "description": "The reason for the maintenance window\n"
+                },
+                "relevantCustomerTags": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "List of alert tags whose matching alerts will be put into maintenance because of this maintenance window. At least one of relevant_customer_tags, relevant_host_tags, or relevant_host_names is required.\n"
+                },
+                "relevantHostNames": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "List of source/host names that will be put into maintenance because of this maintenance window. At least one of relevant_customer_tags, relevant_host_tags, or relevant_host_names is required.\n"
+                },
+                "relevantHostTags": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "List of source/host tags whose matching sources/hosts will be put into maintenance because of this maintenance window. At least one of relevant_customer_tags, relevant_host_tags, or relevant_host_names is required.\n"
+                },
+                "relevantHostTagsAnded": {
+                    "type": "boolean",
+                    "description": "Whether to AND source/host tags listed in relevantHostTags. If true, a source/host must contain all tags in order for the maintenance window to apply. If false, the tags are OR'ed, and a source/host must contain one of the tags. Default: false\n"
+                },
+                "startTimeInSeconds": {
+                    "type": "integer",
+                    "description": "start time in seconds after 1 Jan 1970 GMT.\n"
+                },
+                "title": {
+                    "type": "string",
+                    "description": "The title of the maintenance window\n"
+                }
+            },
+            "requiredInputs": [
+                "endTimeInSeconds",
+                "reason",
+                "startTimeInSeconds",
+                "title"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering MaintenanceWindow resources.\n",
+                "properties": {
+                    "endTimeInSeconds": {
+                        "type": "integer",
+                        "description": "end time in seconds after 1 Jan 1970 GMT.\n"
+                    },
+                    "hostTagGroupHostNamesGroupAnded": {
+                        "type": "boolean",
+                        "description": "If true, a source/host must be in 'relevantHostNames' and have tags matching the specification formed by 'relevantHostTags' and 'relevantHostTagsAnded' in order for this maintenance window to apply. If false, a source/host must either be in 'relevantHostNames' or match 'relevantHostTags' and 'relevantHostTagsAnded'. Default: false\n"
+                    },
+                    "reason": {
+                        "type": "string",
+                        "description": "The reason for the maintenance window\n"
+                    },
+                    "relevantCustomerTags": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "List of alert tags whose matching alerts will be put into maintenance because of this maintenance window. At least one of relevant_customer_tags, relevant_host_tags, or relevant_host_names is required.\n"
+                    },
+                    "relevantHostNames": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "List of source/host names that will be put into maintenance because of this maintenance window. At least one of relevant_customer_tags, relevant_host_tags, or relevant_host_names is required.\n"
+                    },
+                    "relevantHostTags": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "List of source/host tags whose matching sources/hosts will be put into maintenance because of this maintenance window. At least one of relevant_customer_tags, relevant_host_tags, or relevant_host_names is required.\n"
+                    },
+                    "relevantHostTagsAnded": {
+                        "type": "boolean",
+                        "description": "Whether to AND source/host tags listed in relevantHostTags. If true, a source/host must contain all tags in order for the maintenance window to apply. If false, the tags are OR'ed, and a source/host must contain one of the tags. Default: false\n"
+                    },
+                    "startTimeInSeconds": {
+                        "type": "integer",
+                        "description": "start time in seconds after 1 Jan 1970 GMT.\n"
+                    },
+                    "title": {
+                        "type": "string",
+                        "description": "The title of the maintenance window\n"
+                    }
+                },
+                "type": "object"
+            }
+        },
         "wavefront:index/role:Role": {
             "description": "Provides a Wavefront Role Resource. This allows user groups to be created, updated, and deleted.\n\n{{% examples %}}\n## Example Usage\n{{% example %}}\n\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as wavefront from \"@pulumi/wavefront\";\n\nconst role = new wavefront.Role(\"role\", {});\n```\n```python\nimport pulumi\nimport pulumi_wavefront as wavefront\n\nrole = wavefront.Role(\"role\")\n```\n```csharp\nusing Pulumi;\nusing Wavefront = Pulumi.Wavefront;\n\nclass MyStack : Stack\n{\n    public MyStack()\n    {\n        var role = new Wavefront.Role(\"role\", new Wavefront.RoleArgs\n        {\n        });\n    }\n\n}\n```\n```go\npackage main\n\nimport (\n\t\"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront\"\n\t\"github.com/pulumi/pulumi/sdk/v2/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := wavefront.NewRole(ctx, \"role\", nil)\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n{{% /example %}}\n{{% /examples %}}",
             "properties": {

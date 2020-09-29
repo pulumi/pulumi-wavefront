@@ -33,6 +33,7 @@
         "derivedMetric.ts",
         "getDefaultUserGroup.ts",
         "index.ts",
+        "maintenanceWindow.ts",
         "provider.ts",
         "role.ts",
         "serviceAccount.ts",

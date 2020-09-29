@@ -19,6 +19,7 @@ export * from "./dashboard";
 export * from "./dashboardJson";
 export * from "./derivedMetric";
 export * from "./getDefaultUserGroup";
+export * from "./maintenanceWindow";
 export * from "./provider";
 export * from "./role";
 export * from "./serviceAccount";
