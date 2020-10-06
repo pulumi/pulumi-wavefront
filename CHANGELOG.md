@@ -2,9 +2,12 @@ CHANGELOG
 =========
 
 ## HEAD (Unreleased)
-* Upgrade to v2.7.0 of the Wavefront Terraform Provider
+_(none)_
 
 ---
+
+## 0.4.0 (2020-10-06)
+* Upgrade to v2.7.0 of the Wavefront Terraform Provider
 
 ## 0.3.0 (2020-09-29)
 * Upgrade to v2.6.0 of the Wavefront Terraform Provider
