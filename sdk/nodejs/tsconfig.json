@@ -31,6 +31,7 @@
         "dashboard.ts",
         "dashboardJson.ts",
         "derivedMetric.ts",
+        "externalLink.ts",
         "getDefaultUserGroup.ts",
         "index.ts",
         "maintenanceWindow.ts",

@@ -19,6 +19,7 @@ from .cloud_integration_tesla import *
 from .dashboard import *
 from .dashboard_json import *
 from .derived_metric import *
+from .external_link import *
 from .get_default_user_group import *
 from .maintenance_window import *
 from .provider import *

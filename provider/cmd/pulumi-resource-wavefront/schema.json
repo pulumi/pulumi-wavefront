@@ -3378,6 +3378,121 @@
                 "type": "object"
             }
         },
+        "wavefront:index/externalLink:ExternalLink": {
+            "description": "Provides a Wavefront External Link Resource. This allows external links to be created, updated, and deleted.\n\n{{% examples %}}\n## Example Usage\n{{% example %}}\n\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as wavefront from \"@pulumi/wavefront\";\n\nconst basic = new wavefront.ExternalLink(\"basic\", {\n    description: \"An external link description\",\n    template: \"https://example.com/source={{{source}}}\u0026startTime={{startEpochMillis}}\",\n});\n```\n```python\nimport pulumi\nimport pulumi_wavefront as wavefront\n\nbasic = wavefront.ExternalLink(\"basic\",\n    description=\"An external link description\",\n    template=\"https://example.com/source={{{source}}}\u0026startTime={{startEpochMillis}}\")\n```\n```csharp\nusing Pulumi;\nusing Wavefront = Pulumi.Wavefront;\n\nclass MyStack : Stack\n{\n    public MyStack()\n    {\n        var basic = new Wavefront.ExternalLink(\"basic\", new Wavefront.ExternalLinkArgs\n        {\n            Description = \"An external link description\",\n            Template = \"https://example.com/source={{{source}}}\u0026startTime={{startEpochMillis}}\",\n        });\n    }\n\n}\n```\n```go\npackage main\n\nimport (\n\t\"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront\"\n\t\"github.com/pulumi/pulumi/sdk/v2/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := wavefront.NewExternalLink(ctx, \"basic\", \u0026wavefront.ExternalLinkArgs{\n\t\t\tDescription: pulumi.String(\"An external link description\"),\n\t\t\tTemplate:    pulumi.String(\"https://example.com/source={{{source}}}\u0026startTime={{startEpochMillis}}\"),\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n{{% /example %}}\n{{% /examples %}}",
+            "properties": {
+                "description": {
+                    "type": "string",
+                    "description": "Human-readable description for this link\n"
+                },
+                "isLogIntegration": {
+                    "type": "boolean",
+                    "description": "Whether this is a \"Log Integration\" subType of external link\n"
+                },
+                "metricFilterRegex": {
+                    "type": "string",
+                    "description": "Controls whether a link is displayed in the context menu of a highlighted series. If present, the metric name of the highlighted series must match this regular expression in order for the link to be displayed.\n"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "The name of the external link\n"
+                },
+                "pointTagFilterRegexes": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "description": "Controls whether a link is displayed in the context menu of a highlighted series. This is a map from string to regular expression. The highlighted series must contain point tags whose keys are present in the keys of this map and whose values match the regular expressions associated with those keys in order for the link to be displayed\n"
+                },
+                "sourceFilterRegex": {
+                    "type": "string",
+                    "description": "Controls whether a link is displayed in the context menu of a highlighted series. If present, the source name of the highlighted series must match this regular expression in order for the link to be displayed.\n"
+                },
+                "template": {
+                    "type": "string",
+                    "description": "The mustache template for this link. The template must expand to a full URL, including scheme, origin, etc.\n"
+                }
+            },
+            "required": [
+                "description",
+                "name",
+                "template"
+            ],
+            "inputProperties": {
+                "description": {
+                    "type": "string",
+                    "description": "Human-readable description for this link\n"
+                },
+                "isLogIntegration": {
+                    "type": "boolean",
+                    "description": "Whether this is a \"Log Integration\" subType of external link\n"
+                },
+                "metricFilterRegex": {
+                    "type": "string",
+                    "description": "Controls whether a link is displayed in the context menu of a highlighted series. If present, the metric name of the highlighted series must match this regular expression in order for the link to be displayed.\n"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "The name of the external link\n"
+                },
+                "pointTagFilterRegexes": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "description": "Controls whether a link is displayed in the context menu of a highlighted series. This is a map from string to regular expression. The highlighted series must contain point tags whose keys are present in the keys of this map and whose values match the regular expressions associated with those keys in order for the link to be displayed\n"
+                },
+                "sourceFilterRegex": {
+                    "type": "string",
+                    "description": "Controls whether a link is displayed in the context menu of a highlighted series. If present, the source name of the highlighted series must match this regular expression in order for the link to be displayed.\n"
+                },
+                "template": {
+                    "type": "string",
+                    "description": "The mustache template for this link. The template must expand to a full URL, including scheme, origin, etc.\n"
+                }
+            },
+            "requiredInputs": [
+                "description",
+                "template"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering ExternalLink resources.\n",
+                "properties": {
+                    "description": {
+                        "type": "string",
+                        "description": "Human-readable description for this link\n"
+                    },
+                    "isLogIntegration": {
+                        "type": "boolean",
+                        "description": "Whether this is a \"Log Integration\" subType of external link\n"
+                    },
+                    "metricFilterRegex": {
+                        "type": "string",
+                        "description": "Controls whether a link is displayed in the context menu of a highlighted series. If present, the metric name of the highlighted series must match this regular expression in order for the link to be displayed.\n"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "The name of the external link\n"
+                    },
+                    "pointTagFilterRegexes": {
+                        "type": "object",
+                        "additionalProperties": {
+                            "type": "string"
+                        },
+                        "description": "Controls whether a link is displayed in the context menu of a highlighted series. This is a map from string to regular expression. The highlighted series must contain point tags whose keys are present in the keys of this map and whose values match the regular expressions associated with those keys in order for the link to be displayed\n"
+                    },
+                    "sourceFilterRegex": {
+                        "type": "string",
+                        "description": "Controls whether a link is displayed in the context menu of a highlighted series. If present, the source name of the highlighted series must match this regular expression in order for the link to be displayed.\n"
+                    },
+                    "template": {
+                        "type": "string",
+                        "description": "The mustache template for this link. The template must expand to a full URL, including scheme, origin, etc.\n"
+                    }
+                },
+                "type": "object"
+            }
+        },
         "wavefront:index/maintenanceWindow:MaintenanceWindow": {
             "description": "Provides a Wavefront Maintenance Window Resource. This allows maintenance windows to be created, updated, and deleted.\n\n{{% examples %}}\n## Example Usage\n{{% example %}}\n\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as wavefront from \"@pulumi/wavefront\";\n\nconst basic = new wavefront.MaintenanceWindow(\"basic\", {\n    endTimeInSeconds: 1601123456,\n    reason: \"Routine maintenance for 2020\",\n    relevantHostNames: [\n        \"my_hostname\",\n        \"my_other_hostname\",\n    ],\n    startTimeInSeconds: 1600123456,\n    title: \"Routine maintenance\",\n});\n```\n```python\nimport pulumi\nimport pulumi_wavefront as wavefront\n\nbasic = wavefront.MaintenanceWindow(\"basic\",\n    end_time_in_seconds=1601123456,\n    reason=\"Routine maintenance for 2020\",\n    relevant_host_names=[\n        \"my_hostname\",\n        \"my_other_hostname\",\n    ],\n    start_time_in_seconds=1600123456,\n    title=\"Routine maintenance\")\n```\n```csharp\nusing Pulumi;\nusing Wavefront = Pulumi.Wavefront;\n\nclass MyStack : Stack\n{\n    public MyStack()\n    {\n        var basic = new Wavefront.MaintenanceWindow(\"basic\", new Wavefront.MaintenanceWindowArgs\n        {\n            EndTimeInSeconds = 1601123456,\n            Reason = \"Routine maintenance for 2020\",\n            RelevantHostNames = \n            {\n                \"my_hostname\",\n                \"my_other_hostname\",\n            },\n            StartTimeInSeconds = 1600123456,\n            Title = \"Routine maintenance\",\n        });\n    }\n\n}\n```\n```go\npackage main\n\nimport (\n\t\"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront\"\n\t\"github.com/pulumi/pulumi/sdk/v2/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := wavefront.NewMaintenanceWindow(ctx, \"basic\", \u0026wavefront.MaintenanceWindowArgs{\n\t\t\tEndTimeInSeconds: pulumi.Int(1601123456),\n\t\t\tReason:           pulumi.String(\"Routine maintenance for 2020\"),\n\t\t\tRelevantHostNames: pulumi.StringArray{\n\t\t\t\tpulumi.String(\"my_hostname\"),\n\t\t\t\tpulumi.String(\"my_other_hostname\"),\n\t\t\t},\n\t\t\tStartTimeInSeconds: pulumi.Int(1600123456),\n\t\t\tTitle:              pulumi.String(\"Routine maintenance\"),\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n{{% /example %}}\n{{% /examples %}}",
             "properties": {

@@ -18,6 +18,7 @@ export * from "./cloudIntegrationTesla";
 export * from "./dashboard";
 export * from "./dashboardJson";
 export * from "./derivedMetric";
+export * from "./externalLink";
 export * from "./getDefaultUserGroup";
 export * from "./maintenanceWindow";
 export * from "./provider";
