@@ -5,7 +5,7 @@
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Dict, List, Mapping, Optional, Tuple, Union
+from typing import Any, Mapping, Optional, Sequence, Union
 from . import _utilities, _tables
 
 __all__ = ['CloudIntegrationEc2']
@@ -18,11 +18,11 @@ class CloudIntegrationEc2(pulumi.CustomResource):
                  additional_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  external_id: Optional[pulumi.Input[str]] = None,
                  force_save: Optional[pulumi.Input[bool]] = None,
-                 hostname_tags: Optional[pulumi.Input[List[pulumi.Input[str]]]] = None,
+                 hostname_tags: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  role_arn: Optional[pulumi.Input[str]] = None,
                  service: Optional[pulumi.Input[str]] = None,
-                 service_refresh_rate_in_minutes: Optional[pulumi.Input[float]] = None,
+                 service_refresh_rate_in_minutes: Optional[pulumi.Input[int]] = None,
                  __props__=None,
                  __name__=None,
                  __opts__=None):
@@ -50,7 +50,7 @@ class CloudIntegrationEc2(pulumi.CustomResource):
         :param pulumi.Input[str] name: The human-readable name of this integration
         :param pulumi.Input[str] role_arn: The external id corresponding to the Role ARN
         :param pulumi.Input[str] service: A value denoting which cloud service this service integrates with
-        :param pulumi.Input[float] service_refresh_rate_in_minutes: How often, in minutes, to refresh the service
+        :param pulumi.Input[int] service_refresh_rate_in_minutes: How often, in minutes, to refresh the service
         """
         if __name__ is not None:
             warnings.warn("explicit use of __name__ is deprecated", DeprecationWarning)
@@ -96,11 +96,11 @@ class CloudIntegrationEc2(pulumi.CustomResource):
             additional_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             external_id: Optional[pulumi.Input[str]] = None,
             force_save: Optional[pulumi.Input[bool]] = None,
-            hostname_tags: Optional[pulumi.Input[List[pulumi.Input[str]]]] = None,
+            hostname_tags: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             name: Optional[pulumi.Input[str]] = None,
             role_arn: Optional[pulumi.Input[str]] = None,
             service: Optional[pulumi.Input[str]] = None,
-            service_refresh_rate_in_minutes: Optional[pulumi.Input[float]] = None) -> 'CloudIntegrationEc2':
+            service_refresh_rate_in_minutes: Optional[pulumi.Input[int]] = None) -> 'CloudIntegrationEc2':
         """
         Get an existing CloudIntegrationEc2 resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -114,7 +114,7 @@ class CloudIntegrationEc2(pulumi.CustomResource):
         :param pulumi.Input[str] name: The human-readable name of this integration
         :param pulumi.Input[str] role_arn: The external id corresponding to the Role ARN
         :param pulumi.Input[str] service: A value denoting which cloud service this service integrates with
-        :param pulumi.Input[float] service_refresh_rate_in_minutes: How often, in minutes, to refresh the service
+        :param pulumi.Input[int] service_refresh_rate_in_minutes: How often, in minutes, to refresh the service
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -156,7 +156,7 @@ class CloudIntegrationEc2(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="hostnameTags")
-    def hostname_tags(self) -> pulumi.Output[Optional[List[str]]]:
+    def hostname_tags(self) -> pulumi.Output[Optional[Sequence[str]]]:
         return pulumi.get(self, "hostname_tags")
 
     @property
@@ -185,7 +185,7 @@ class CloudIntegrationEc2(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="serviceRefreshRateInMinutes")
-    def service_refresh_rate_in_minutes(self) -> pulumi.Output[Optional[float]]:
+    def service_refresh_rate_in_minutes(self) -> pulumi.Output[Optional[int]]:
         """
         How often, in minutes, to refresh the service
         """

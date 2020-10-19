@@ -5,7 +5,7 @@
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Dict, List, Mapping, Optional, Tuple, Union
+from typing import Any, Mapping, Optional, Sequence, Union
 from . import _utilities, _tables
 
 __all__ = ['CloudIntegrationAppDynamics']
@@ -16,7 +16,7 @@ class CloudIntegrationAppDynamics(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  additional_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
-                 app_filter_regexes: Optional[pulumi.Input[List[pulumi.Input[str]]]] = None,
+                 app_filter_regexes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  controller_name: Optional[pulumi.Input[str]] = None,
                  enable_app_infra_metrics: Optional[pulumi.Input[bool]] = None,
                  enable_backend_metrics: Optional[pulumi.Input[bool]] = None,
@@ -30,7 +30,7 @@ class CloudIntegrationAppDynamics(pulumi.CustomResource):
                  force_save: Optional[pulumi.Input[bool]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  service: Optional[pulumi.Input[str]] = None,
-                 service_refresh_rate_in_minutes: Optional[pulumi.Input[float]] = None,
+                 service_refresh_rate_in_minutes: Optional[pulumi.Input[int]] = None,
                  user_name: Optional[pulumi.Input[str]] = None,
                  __props__=None,
                  __name__=None,
@@ -54,7 +54,7 @@ class CloudIntegrationAppDynamics(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] additional_tags: A list of point tag key-values to add to every point ingested using this integration
-        :param pulumi.Input[List[pulumi.Input[str]]] app_filter_regexes: List of regular expressions that a application name must match (case-insensitively) 
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] app_filter_regexes: List of regular expressions that a application name must match (case-insensitively) 
                in order to be ingested
         :param pulumi.Input[str] controller_name: Name of the SaaS controller
         :param pulumi.Input[bool] enable_app_infra_metrics: Boolean flag to control Application Infrastructure metric injection
@@ -70,7 +70,7 @@ class CloudIntegrationAppDynamics(pulumi.CustomResource):
         :param pulumi.Input[bool] force_save: Forces this resource to save, even if errors are present
         :param pulumi.Input[str] name: The human-readable name of this integration
         :param pulumi.Input[str] service: A value denoting which cloud service this service integrates with
-        :param pulumi.Input[float] service_refresh_rate_in_minutes: How often, in minutes, to refresh the service
+        :param pulumi.Input[int] service_refresh_rate_in_minutes: How often, in minutes, to refresh the service
         :param pulumi.Input[str] user_name: Username is a combination of userName and the account name
         """
         if __name__ is not None:
@@ -126,7 +126,7 @@ class CloudIntegrationAppDynamics(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             additional_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
-            app_filter_regexes: Optional[pulumi.Input[List[pulumi.Input[str]]]] = None,
+            app_filter_regexes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             controller_name: Optional[pulumi.Input[str]] = None,
             enable_app_infra_metrics: Optional[pulumi.Input[bool]] = None,
             enable_backend_metrics: Optional[pulumi.Input[bool]] = None,
@@ -140,7 +140,7 @@ class CloudIntegrationAppDynamics(pulumi.CustomResource):
             force_save: Optional[pulumi.Input[bool]] = None,
             name: Optional[pulumi.Input[str]] = None,
             service: Optional[pulumi.Input[str]] = None,
-            service_refresh_rate_in_minutes: Optional[pulumi.Input[float]] = None,
+            service_refresh_rate_in_minutes: Optional[pulumi.Input[int]] = None,
             user_name: Optional[pulumi.Input[str]] = None) -> 'CloudIntegrationAppDynamics':
         """
         Get an existing CloudIntegrationAppDynamics resource's state with the given name, id, and optional extra
@@ -150,7 +150,7 @@ class CloudIntegrationAppDynamics(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] additional_tags: A list of point tag key-values to add to every point ingested using this integration
-        :param pulumi.Input[List[pulumi.Input[str]]] app_filter_regexes: List of regular expressions that a application name must match (case-insensitively) 
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] app_filter_regexes: List of regular expressions that a application name must match (case-insensitively) 
                in order to be ingested
         :param pulumi.Input[str] controller_name: Name of the SaaS controller
         :param pulumi.Input[bool] enable_app_infra_metrics: Boolean flag to control Application Infrastructure metric injection
@@ -166,7 +166,7 @@ class CloudIntegrationAppDynamics(pulumi.CustomResource):
         :param pulumi.Input[bool] force_save: Forces this resource to save, even if errors are present
         :param pulumi.Input[str] name: The human-readable name of this integration
         :param pulumi.Input[str] service: A value denoting which cloud service this service integrates with
-        :param pulumi.Input[float] service_refresh_rate_in_minutes: How often, in minutes, to refresh the service
+        :param pulumi.Input[int] service_refresh_rate_in_minutes: How often, in minutes, to refresh the service
         :param pulumi.Input[str] user_name: Username is a combination of userName and the account name
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -202,7 +202,7 @@ class CloudIntegrationAppDynamics(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="appFilterRegexes")
-    def app_filter_regexes(self) -> pulumi.Output[Optional[List[str]]]:
+    def app_filter_regexes(self) -> pulumi.Output[Optional[Sequence[str]]]:
         """
         List of regular expressions that a application name must match (case-insensitively) 
         in order to be ingested
@@ -316,7 +316,7 @@ class CloudIntegrationAppDynamics(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="serviceRefreshRateInMinutes")
-    def service_refresh_rate_in_minutes(self) -> pulumi.Output[Optional[float]]:
+    def service_refresh_rate_in_minutes(self) -> pulumi.Output[Optional[int]]:
         """
         How often, in minutes, to refresh the service
         """

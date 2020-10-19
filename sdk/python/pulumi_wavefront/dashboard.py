@@ -5,7 +5,7 @@
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Dict, List, Mapping, Optional, Tuple, Union
+from typing import Any, Mapping, Optional, Sequence, Union
 from . import _utilities, _tables
 from . import outputs
 from ._inputs import *
@@ -17,16 +17,16 @@ class Dashboard(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 can_modifies: Optional[pulumi.Input[List[pulumi.Input[str]]]] = None,
-                 can_views: Optional[pulumi.Input[List[pulumi.Input[str]]]] = None,
+                 can_modifies: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 can_views: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  display_query_parameters: Optional[pulumi.Input[bool]] = None,
                  display_section_table_of_contents: Optional[pulumi.Input[bool]] = None,
                  event_filter_type: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
-                 parameter_details: Optional[pulumi.Input[List[pulumi.Input[pulumi.InputType['DashboardParameterDetailArgs']]]]] = None,
-                 sections: Optional[pulumi.Input[List[pulumi.Input[pulumi.InputType['DashboardSectionArgs']]]]] = None,
-                 tags: Optional[pulumi.Input[List[pulumi.Input[str]]]] = None,
+                 parameter_details: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DashboardParameterDetailArgs']]]]] = None,
+                 sections: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DashboardSectionArgs']]]]] = None,
+                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  url: Optional[pulumi.Input[str]] = None,
                  __props__=None,
                  __name__=None,
@@ -36,8 +36,8 @@ class Dashboard(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[List[pulumi.Input[str]]] can_modifies: A list of users that have modify ACL access to the dashboard
-        :param pulumi.Input[List[pulumi.Input[str]]] can_views: A list of users that have view ACL access to the dashboard
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] can_modifies: A list of users that have modify ACL access to the dashboard
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] can_views: A list of users that have view ACL access to the dashboard
         :param pulumi.Input[str] description: Human-readable description of the dashboard
         :param pulumi.Input[bool] display_query_parameters: Whether the dashboard parameters section is opened by default when the dashboard
                is shown
@@ -46,9 +46,9 @@ class Dashboard(pulumi.CustomResource):
         :param pulumi.Input[str] event_filter_type: How charts belonging to this dashboard should display events. BYCHART is default if 
                unspecified; Valid options are: `BYCHART`, `AUTOMATIC`, `ALL`, `NONE`, `BYDASHBOARD`, and `BYCHARTANDDASHBOARD`
         :param pulumi.Input[str] name: Name of the dashboard
-        :param pulumi.Input[List[pulumi.Input[pulumi.InputType['DashboardParameterDetailArgs']]]] parameter_details: The current JSON representation of dashboard parameters. See parameter details
-        :param pulumi.Input[List[pulumi.Input[pulumi.InputType['DashboardSectionArgs']]]] sections: Dashboard chart sections. See dashboard sections
-        :param pulumi.Input[List[pulumi.Input[str]]] tags: A set of tags to assign to this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DashboardParameterDetailArgs']]]] parameter_details: The current JSON representation of dashboard parameters. See parameter details
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DashboardSectionArgs']]]] sections: Dashboard chart sections. See dashboard sections
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] tags: A set of tags to assign to this resource.
         :param pulumi.Input[str] url: Unique identifier, also URL slug, of the dashboard
         """
         if __name__ is not None:
@@ -97,16 +97,16 @@ class Dashboard(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            can_modifies: Optional[pulumi.Input[List[pulumi.Input[str]]]] = None,
-            can_views: Optional[pulumi.Input[List[pulumi.Input[str]]]] = None,
+            can_modifies: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+            can_views: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             description: Optional[pulumi.Input[str]] = None,
             display_query_parameters: Optional[pulumi.Input[bool]] = None,
             display_section_table_of_contents: Optional[pulumi.Input[bool]] = None,
             event_filter_type: Optional[pulumi.Input[str]] = None,
             name: Optional[pulumi.Input[str]] = None,
-            parameter_details: Optional[pulumi.Input[List[pulumi.Input[pulumi.InputType['DashboardParameterDetailArgs']]]]] = None,
-            sections: Optional[pulumi.Input[List[pulumi.Input[pulumi.InputType['DashboardSectionArgs']]]]] = None,
-            tags: Optional[pulumi.Input[List[pulumi.Input[str]]]] = None,
+            parameter_details: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DashboardParameterDetailArgs']]]]] = None,
+            sections: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DashboardSectionArgs']]]]] = None,
+            tags: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             url: Optional[pulumi.Input[str]] = None) -> 'Dashboard':
         """
         Get an existing Dashboard resource's state with the given name, id, and optional extra
@@ -115,8 +115,8 @@ class Dashboard(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[List[pulumi.Input[str]]] can_modifies: A list of users that have modify ACL access to the dashboard
-        :param pulumi.Input[List[pulumi.Input[str]]] can_views: A list of users that have view ACL access to the dashboard
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] can_modifies: A list of users that have modify ACL access to the dashboard
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] can_views: A list of users that have view ACL access to the dashboard
         :param pulumi.Input[str] description: Human-readable description of the dashboard
         :param pulumi.Input[bool] display_query_parameters: Whether the dashboard parameters section is opened by default when the dashboard
                is shown
@@ -125,9 +125,9 @@ class Dashboard(pulumi.CustomResource):
         :param pulumi.Input[str] event_filter_type: How charts belonging to this dashboard should display events. BYCHART is default if 
                unspecified; Valid options are: `BYCHART`, `AUTOMATIC`, `ALL`, `NONE`, `BYDASHBOARD`, and `BYCHARTANDDASHBOARD`
         :param pulumi.Input[str] name: Name of the dashboard
-        :param pulumi.Input[List[pulumi.Input[pulumi.InputType['DashboardParameterDetailArgs']]]] parameter_details: The current JSON representation of dashboard parameters. See parameter details
-        :param pulumi.Input[List[pulumi.Input[pulumi.InputType['DashboardSectionArgs']]]] sections: Dashboard chart sections. See dashboard sections
-        :param pulumi.Input[List[pulumi.Input[str]]] tags: A set of tags to assign to this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DashboardParameterDetailArgs']]]] parameter_details: The current JSON representation of dashboard parameters. See parameter details
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DashboardSectionArgs']]]] sections: Dashboard chart sections. See dashboard sections
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] tags: A set of tags to assign to this resource.
         :param pulumi.Input[str] url: Unique identifier, also URL slug, of the dashboard
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -149,7 +149,7 @@ class Dashboard(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="canModifies")
-    def can_modifies(self) -> pulumi.Output[List[str]]:
+    def can_modifies(self) -> pulumi.Output[Sequence[str]]:
         """
         A list of users that have modify ACL access to the dashboard
         """
@@ -157,7 +157,7 @@ class Dashboard(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="canViews")
-    def can_views(self) -> pulumi.Output[Optional[List[str]]]:
+    def can_views(self) -> pulumi.Output[Optional[Sequence[str]]]:
         """
         A list of users that have view ACL access to the dashboard
         """
@@ -208,7 +208,7 @@ class Dashboard(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="parameterDetails")
-    def parameter_details(self) -> pulumi.Output[Optional[List['outputs.DashboardParameterDetail']]]:
+    def parameter_details(self) -> pulumi.Output[Optional[Sequence['outputs.DashboardParameterDetail']]]:
         """
         The current JSON representation of dashboard parameters. See parameter details
         """
@@ -216,7 +216,7 @@ class Dashboard(pulumi.CustomResource):
 
     @property
     @pulumi.getter
-    def sections(self) -> pulumi.Output[List['outputs.DashboardSection']]:
+    def sections(self) -> pulumi.Output[Sequence['outputs.DashboardSection']]:
         """
         Dashboard chart sections. See dashboard sections
         """
@@ -224,7 +224,7 @@ class Dashboard(pulumi.CustomResource):
 
     @property
     @pulumi.getter
-    def tags(self) -> pulumi.Output[List[str]]:
+    def tags(self) -> pulumi.Output[Sequence[str]]:
         """
         A set of tags to assign to this resource.
         """

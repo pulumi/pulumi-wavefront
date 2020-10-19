@@ -5,7 +5,7 @@
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Dict, List, Mapping, Optional, Tuple, Union
+from typing import Any, Mapping, Optional, Sequence, Union
 from . import _utilities, _tables
 
 __all__ = ['CloudIntegrationAzureActivityLog']
@@ -16,13 +16,13 @@ class CloudIntegrationAzureActivityLog(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  additional_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
-                 category_filters: Optional[pulumi.Input[List[pulumi.Input[str]]]] = None,
+                 category_filters: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  client_id: Optional[pulumi.Input[str]] = None,
                  client_secret: Optional[pulumi.Input[str]] = None,
                  force_save: Optional[pulumi.Input[bool]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  service: Optional[pulumi.Input[str]] = None,
-                 service_refresh_rate_in_minutes: Optional[pulumi.Input[float]] = None,
+                 service_refresh_rate_in_minutes: Optional[pulumi.Input[int]] = None,
                  tenant: Optional[pulumi.Input[str]] = None,
                  __props__=None,
                  __name__=None,
@@ -47,13 +47,13 @@ class CloudIntegrationAzureActivityLog(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] additional_tags: A list of point tag key-values to add to every point ingested using this integration
-        :param pulumi.Input[List[pulumi.Input[str]]] category_filters: A list of Azure services (such as Microsoft.Compute/virtualMachines) from which to pull metrics
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] category_filters: A list of Azure services (such as Microsoft.Compute/virtualMachines) from which to pull metrics
         :param pulumi.Input[str] client_id: Client id for an azure service account within your project
         :param pulumi.Input[str] client_secret: Client secret for an Azure service account within your project
         :param pulumi.Input[bool] force_save: Forces this resource to save, even if errors are present
         :param pulumi.Input[str] name: The human-readable name of this integration
         :param pulumi.Input[str] service: A value denoting which cloud service this service integrates with
-        :param pulumi.Input[float] service_refresh_rate_in_minutes: How often, in minutes, to refresh the service
+        :param pulumi.Input[int] service_refresh_rate_in_minutes: How often, in minutes, to refresh the service
         :param pulumi.Input[str] tenant: Tenant Id for an Azure service account within your project
         """
         if __name__ is not None:
@@ -101,13 +101,13 @@ class CloudIntegrationAzureActivityLog(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             additional_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
-            category_filters: Optional[pulumi.Input[List[pulumi.Input[str]]]] = None,
+            category_filters: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             client_id: Optional[pulumi.Input[str]] = None,
             client_secret: Optional[pulumi.Input[str]] = None,
             force_save: Optional[pulumi.Input[bool]] = None,
             name: Optional[pulumi.Input[str]] = None,
             service: Optional[pulumi.Input[str]] = None,
-            service_refresh_rate_in_minutes: Optional[pulumi.Input[float]] = None,
+            service_refresh_rate_in_minutes: Optional[pulumi.Input[int]] = None,
             tenant: Optional[pulumi.Input[str]] = None) -> 'CloudIntegrationAzureActivityLog':
         """
         Get an existing CloudIntegrationAzureActivityLog resource's state with the given name, id, and optional extra
@@ -117,13 +117,13 @@ class CloudIntegrationAzureActivityLog(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] additional_tags: A list of point tag key-values to add to every point ingested using this integration
-        :param pulumi.Input[List[pulumi.Input[str]]] category_filters: A list of Azure services (such as Microsoft.Compute/virtualMachines) from which to pull metrics
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] category_filters: A list of Azure services (such as Microsoft.Compute/virtualMachines) from which to pull metrics
         :param pulumi.Input[str] client_id: Client id for an azure service account within your project
         :param pulumi.Input[str] client_secret: Client secret for an Azure service account within your project
         :param pulumi.Input[bool] force_save: Forces this resource to save, even if errors are present
         :param pulumi.Input[str] name: The human-readable name of this integration
         :param pulumi.Input[str] service: A value denoting which cloud service this service integrates with
-        :param pulumi.Input[float] service_refresh_rate_in_minutes: How often, in minutes, to refresh the service
+        :param pulumi.Input[int] service_refresh_rate_in_minutes: How often, in minutes, to refresh the service
         :param pulumi.Input[str] tenant: Tenant Id for an Azure service account within your project
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -151,7 +151,7 @@ class CloudIntegrationAzureActivityLog(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="categoryFilters")
-    def category_filters(self) -> pulumi.Output[Optional[List[str]]]:
+    def category_filters(self) -> pulumi.Output[Optional[Sequence[str]]]:
         """
         A list of Azure services (such as Microsoft.Compute/virtualMachines) from which to pull metrics
         """
@@ -199,7 +199,7 @@ class CloudIntegrationAzureActivityLog(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="serviceRefreshRateInMinutes")
-    def service_refresh_rate_in_minutes(self) -> pulumi.Output[Optional[float]]:
+    def service_refresh_rate_in_minutes(self) -> pulumi.Output[Optional[int]]:
         """
         How often, in minutes, to refresh the service
         """

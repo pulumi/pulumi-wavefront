@@ -5,7 +5,7 @@
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Dict, List, Mapping, Optional, Tuple, Union
+from typing import Any, Mapping, Optional, Sequence, Union
 from . import _utilities, _tables
 
 __all__ = ['CloudIntegrationTesla']
@@ -21,7 +21,7 @@ class CloudIntegrationTesla(pulumi.CustomResource):
                  name: Optional[pulumi.Input[str]] = None,
                  password: Optional[pulumi.Input[str]] = None,
                  service: Optional[pulumi.Input[str]] = None,
-                 service_refresh_rate_in_minutes: Optional[pulumi.Input[float]] = None,
+                 service_refresh_rate_in_minutes: Optional[pulumi.Input[int]] = None,
                  __props__=None,
                  __name__=None,
                  __opts__=None):
@@ -48,7 +48,7 @@ class CloudIntegrationTesla(pulumi.CustomResource):
         :param pulumi.Input[str] name: The human-readable name of this integration
         :param pulumi.Input[str] password: Password for the Tesla account login
         :param pulumi.Input[str] service: A value denoting which cloud service this service integrates with
-        :param pulumi.Input[float] service_refresh_rate_in_minutes: How often, in minutes, to refresh the service
+        :param pulumi.Input[int] service_refresh_rate_in_minutes: How often, in minutes, to refresh the service
         """
         if __name__ is not None:
             warnings.warn("explicit use of __name__ is deprecated", DeprecationWarning)
@@ -96,7 +96,7 @@ class CloudIntegrationTesla(pulumi.CustomResource):
             name: Optional[pulumi.Input[str]] = None,
             password: Optional[pulumi.Input[str]] = None,
             service: Optional[pulumi.Input[str]] = None,
-            service_refresh_rate_in_minutes: Optional[pulumi.Input[float]] = None) -> 'CloudIntegrationTesla':
+            service_refresh_rate_in_minutes: Optional[pulumi.Input[int]] = None) -> 'CloudIntegrationTesla':
         """
         Get an existing CloudIntegrationTesla resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -110,7 +110,7 @@ class CloudIntegrationTesla(pulumi.CustomResource):
         :param pulumi.Input[str] name: The human-readable name of this integration
         :param pulumi.Input[str] password: Password for the Tesla account login
         :param pulumi.Input[str] service: A value denoting which cloud service this service integrates with
-        :param pulumi.Input[float] service_refresh_rate_in_minutes: How often, in minutes, to refresh the service
+        :param pulumi.Input[int] service_refresh_rate_in_minutes: How often, in minutes, to refresh the service
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -175,7 +175,7 @@ class CloudIntegrationTesla(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="serviceRefreshRateInMinutes")
-    def service_refresh_rate_in_minutes(self) -> pulumi.Output[Optional[float]]:
+    def service_refresh_rate_in_minutes(self) -> pulumi.Output[Optional[int]]:
         """
         How often, in minutes, to refresh the service
         """

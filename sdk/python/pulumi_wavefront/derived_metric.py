@@ -5,7 +5,7 @@
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Dict, List, Mapping, Optional, Tuple, Union
+from typing import Any, Mapping, Optional, Sequence, Union
 from . import _utilities, _tables
 
 __all__ = ['DerivedMetric']
@@ -16,10 +16,10 @@ class DerivedMetric(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  additional_information: Optional[pulumi.Input[str]] = None,
-                 minutes: Optional[pulumi.Input[float]] = None,
+                 minutes: Optional[pulumi.Input[int]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  query: Optional[pulumi.Input[str]] = None,
-                 tags: Optional[pulumi.Input[List[pulumi.Input[str]]]] = None,
+                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  __props__=None,
                  __name__=None,
                  __opts__=None):
@@ -41,10 +41,10 @@ class DerivedMetric(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] additional_information: User-supplied additional explanatory information for the derived metric
-        :param pulumi.Input[float] minutes: How frequently the query generating the derived metric is run
+        :param pulumi.Input[int] minutes: How frequently the query generating the derived metric is run
         :param pulumi.Input[str] name: The name of the Derived Metric in Wavefront
         :param pulumi.Input[str] query: A Wavefront query that is evaluated at regular intervals (default `1m`)
-        :param pulumi.Input[List[pulumi.Input[str]]] tags: A set of tags to assign to this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] tags: A set of tags to assign to this resource.
         """
         if __name__ is not None:
             warnings.warn("explicit use of __name__ is deprecated", DeprecationWarning)
@@ -83,10 +83,10 @@ class DerivedMetric(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             additional_information: Optional[pulumi.Input[str]] = None,
-            minutes: Optional[pulumi.Input[float]] = None,
+            minutes: Optional[pulumi.Input[int]] = None,
             name: Optional[pulumi.Input[str]] = None,
             query: Optional[pulumi.Input[str]] = None,
-            tags: Optional[pulumi.Input[List[pulumi.Input[str]]]] = None) -> 'DerivedMetric':
+            tags: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None) -> 'DerivedMetric':
         """
         Get an existing DerivedMetric resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -95,10 +95,10 @@ class DerivedMetric(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] additional_information: User-supplied additional explanatory information for the derived metric
-        :param pulumi.Input[float] minutes: How frequently the query generating the derived metric is run
+        :param pulumi.Input[int] minutes: How frequently the query generating the derived metric is run
         :param pulumi.Input[str] name: The name of the Derived Metric in Wavefront
         :param pulumi.Input[str] query: A Wavefront query that is evaluated at regular intervals (default `1m`)
-        :param pulumi.Input[List[pulumi.Input[str]]] tags: A set of tags to assign to this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] tags: A set of tags to assign to this resource.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -121,7 +121,7 @@ class DerivedMetric(pulumi.CustomResource):
 
     @property
     @pulumi.getter
-    def minutes(self) -> pulumi.Output[float]:
+    def minutes(self) -> pulumi.Output[int]:
         """
         How frequently the query generating the derived metric is run
         """
@@ -145,7 +145,7 @@ class DerivedMetric(pulumi.CustomResource):
 
     @property
     @pulumi.getter
-    def tags(self) -> pulumi.Output[Optional[List[str]]]:
+    def tags(self) -> pulumi.Output[Optional[Sequence[str]]]:
         """
         A set of tags to assign to this resource.
         """

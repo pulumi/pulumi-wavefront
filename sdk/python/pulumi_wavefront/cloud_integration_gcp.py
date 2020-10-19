@@ -5,7 +5,7 @@
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Dict, List, Mapping, Optional, Tuple, Union
+from typing import Any, Mapping, Optional, Sequence, Union
 from . import _utilities, _tables
 
 __all__ = ['CloudIntegrationGcp']
@@ -16,14 +16,14 @@ class CloudIntegrationGcp(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  additional_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
-                 categories: Optional[pulumi.Input[List[pulumi.Input[str]]]] = None,
+                 categories: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  force_save: Optional[pulumi.Input[bool]] = None,
                  json_key: Optional[pulumi.Input[str]] = None,
                  metric_filter_regex: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  project_id: Optional[pulumi.Input[str]] = None,
                  service: Optional[pulumi.Input[str]] = None,
-                 service_refresh_rate_in_minutes: Optional[pulumi.Input[float]] = None,
+                 service_refresh_rate_in_minutes: Optional[pulumi.Input[int]] = None,
                  __props__=None,
                  __name__=None,
                  __opts__=None):
@@ -47,7 +47,7 @@ class CloudIntegrationGcp(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] additional_tags: A list of point tag key-values to add to every point ingested using this integration
-        :param pulumi.Input[List[pulumi.Input[str]]] categories: A list of Google Cloud Platform (GCP) services.  Valid values are `APPENGINE`, 
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] categories: A list of Google Cloud Platform (GCP) services.  Valid values are `APPENGINE`, 
                `BIGQUERY`, `BIGTABLE`, `CLOUDFUNCTIONS`, `CLOUDIOT`, `CLOUDSQL`, `CLOUDTASKS`, `COMPUTE`, `CONTAINER`,
                `DATAFLOW`, `DATAPROC`, `DATASTORE`, `FIREBASEDATABASE`, `FIREBASEHOSTING`, `FIRESTORE`, `INTERCONNECT`,
                `LOADBALANCING`, `LOGGING`, `ML`, `MONITORING`, `PUBSUB`, `REDIS`, `ROUTER`, `SERVICERUNTIME`, `SPANNER`, `STORAGE`,
@@ -59,7 +59,7 @@ class CloudIntegrationGcp(pulumi.CustomResource):
         :param pulumi.Input[str] name: The human-readable name of this integration
         :param pulumi.Input[str] project_id: The Google Cloud Platform (GCP) Project Id
         :param pulumi.Input[str] service: A value denoting which cloud service this service integrates with
-        :param pulumi.Input[float] service_refresh_rate_in_minutes: How often, in minutes, to refresh the service
+        :param pulumi.Input[int] service_refresh_rate_in_minutes: How often, in minutes, to refresh the service
         """
         if __name__ is not None:
             warnings.warn("explicit use of __name__ is deprecated", DeprecationWarning)
@@ -104,14 +104,14 @@ class CloudIntegrationGcp(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             additional_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
-            categories: Optional[pulumi.Input[List[pulumi.Input[str]]]] = None,
+            categories: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             force_save: Optional[pulumi.Input[bool]] = None,
             json_key: Optional[pulumi.Input[str]] = None,
             metric_filter_regex: Optional[pulumi.Input[str]] = None,
             name: Optional[pulumi.Input[str]] = None,
             project_id: Optional[pulumi.Input[str]] = None,
             service: Optional[pulumi.Input[str]] = None,
-            service_refresh_rate_in_minutes: Optional[pulumi.Input[float]] = None) -> 'CloudIntegrationGcp':
+            service_refresh_rate_in_minutes: Optional[pulumi.Input[int]] = None) -> 'CloudIntegrationGcp':
         """
         Get an existing CloudIntegrationGcp resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -120,7 +120,7 @@ class CloudIntegrationGcp(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] additional_tags: A list of point tag key-values to add to every point ingested using this integration
-        :param pulumi.Input[List[pulumi.Input[str]]] categories: A list of Google Cloud Platform (GCP) services.  Valid values are `APPENGINE`, 
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] categories: A list of Google Cloud Platform (GCP) services.  Valid values are `APPENGINE`, 
                `BIGQUERY`, `BIGTABLE`, `CLOUDFUNCTIONS`, `CLOUDIOT`, `CLOUDSQL`, `CLOUDTASKS`, `COMPUTE`, `CONTAINER`,
                `DATAFLOW`, `DATAPROC`, `DATASTORE`, `FIREBASEDATABASE`, `FIREBASEHOSTING`, `FIRESTORE`, `INTERCONNECT`,
                `LOADBALANCING`, `LOGGING`, `ML`, `MONITORING`, `PUBSUB`, `REDIS`, `ROUTER`, `SERVICERUNTIME`, `SPANNER`, `STORAGE`,
@@ -132,7 +132,7 @@ class CloudIntegrationGcp(pulumi.CustomResource):
         :param pulumi.Input[str] name: The human-readable name of this integration
         :param pulumi.Input[str] project_id: The Google Cloud Platform (GCP) Project Id
         :param pulumi.Input[str] service: A value denoting which cloud service this service integrates with
-        :param pulumi.Input[float] service_refresh_rate_in_minutes: How often, in minutes, to refresh the service
+        :param pulumi.Input[int] service_refresh_rate_in_minutes: How often, in minutes, to refresh the service
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -159,7 +159,7 @@ class CloudIntegrationGcp(pulumi.CustomResource):
 
     @property
     @pulumi.getter
-    def categories(self) -> pulumi.Output[Optional[List[str]]]:
+    def categories(self) -> pulumi.Output[Optional[Sequence[str]]]:
         """
         A list of Google Cloud Platform (GCP) services.  Valid values are `APPENGINE`, 
         `BIGQUERY`, `BIGTABLE`, `CLOUDFUNCTIONS`, `CLOUDIOT`, `CLOUDSQL`, `CLOUDTASKS`, `COMPUTE`, `CONTAINER`,
@@ -220,7 +220,7 @@ class CloudIntegrationGcp(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="serviceRefreshRateInMinutes")
-    def service_refresh_rate_in_minutes(self) -> pulumi.Output[Optional[float]]:
+    def service_refresh_rate_in_minutes(self) -> pulumi.Output[Optional[int]]:
         """
         How often, in minutes, to refresh the service
         """

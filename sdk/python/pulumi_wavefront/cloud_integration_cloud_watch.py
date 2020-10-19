@@ -5,7 +5,7 @@
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Dict, List, Mapping, Optional, Tuple, Union
+from typing import Any, Mapping, Optional, Sequence, Union
 from . import _utilities, _tables
 
 __all__ = ['CloudIntegrationCloudWatch']
@@ -21,11 +21,11 @@ class CloudIntegrationCloudWatch(pulumi.CustomResource):
                  instance_selection_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  metric_filter_regex: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
-                 namespaces: Optional[pulumi.Input[List[pulumi.Input[str]]]] = None,
+                 namespaces: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  point_tag_filter_regex: Optional[pulumi.Input[str]] = None,
                  role_arn: Optional[pulumi.Input[str]] = None,
                  service: Optional[pulumi.Input[str]] = None,
-                 service_refresh_rate_in_minutes: Optional[pulumi.Input[float]] = None,
+                 service_refresh_rate_in_minutes: Optional[pulumi.Input[int]] = None,
                  volume_selection_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  __props__=None,
                  __name__=None,
@@ -57,12 +57,12 @@ class CloudIntegrationCloudWatch(pulumi.CustomResource):
                Multiple entries are OR'ed
         :param pulumi.Input[str] metric_filter_regex: A regular expression that a CloudWatch metric name must match (case-insensitively) in order to be ingested
         :param pulumi.Input[str] name: The human-readable name of this integration
-        :param pulumi.Input[List[pulumi.Input[str]]] namespaces: A list of namespaces that limit what we query from CloudWatch
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] namespaces: A list of namespaces that limit what we query from CloudWatch
         :param pulumi.Input[str] point_tag_filter_regex: A regular expression that AWS tag key name must match (case-insensitively)
                in order to be ingested
         :param pulumi.Input[str] role_arn: The external id corresponding to the Role ARN
         :param pulumi.Input[str] service: A value denoting which cloud service this service integrates with
-        :param pulumi.Input[float] service_refresh_rate_in_minutes: How often, in minutes, to refresh the service
+        :param pulumi.Input[int] service_refresh_rate_in_minutes: How often, in minutes, to refresh the service
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] volume_selection_tags: A string->string map of whitelist of volume tag-value pairs (in AWS).
                If the volume's AWS tags match this whitelist, CloudWatch data about this volume is ingested.
                Multiple entries are OR'ed
@@ -118,11 +118,11 @@ class CloudIntegrationCloudWatch(pulumi.CustomResource):
             instance_selection_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             metric_filter_regex: Optional[pulumi.Input[str]] = None,
             name: Optional[pulumi.Input[str]] = None,
-            namespaces: Optional[pulumi.Input[List[pulumi.Input[str]]]] = None,
+            namespaces: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             point_tag_filter_regex: Optional[pulumi.Input[str]] = None,
             role_arn: Optional[pulumi.Input[str]] = None,
             service: Optional[pulumi.Input[str]] = None,
-            service_refresh_rate_in_minutes: Optional[pulumi.Input[float]] = None,
+            service_refresh_rate_in_minutes: Optional[pulumi.Input[int]] = None,
             volume_selection_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None) -> 'CloudIntegrationCloudWatch':
         """
         Get an existing CloudIntegrationCloudWatch resource's state with the given name, id, and optional extra
@@ -139,12 +139,12 @@ class CloudIntegrationCloudWatch(pulumi.CustomResource):
                Multiple entries are OR'ed
         :param pulumi.Input[str] metric_filter_regex: A regular expression that a CloudWatch metric name must match (case-insensitively) in order to be ingested
         :param pulumi.Input[str] name: The human-readable name of this integration
-        :param pulumi.Input[List[pulumi.Input[str]]] namespaces: A list of namespaces that limit what we query from CloudWatch
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] namespaces: A list of namespaces that limit what we query from CloudWatch
         :param pulumi.Input[str] point_tag_filter_regex: A regular expression that AWS tag key name must match (case-insensitively)
                in order to be ingested
         :param pulumi.Input[str] role_arn: The external id corresponding to the Role ARN
         :param pulumi.Input[str] service: A value denoting which cloud service this service integrates with
-        :param pulumi.Input[float] service_refresh_rate_in_minutes: How often, in minutes, to refresh the service
+        :param pulumi.Input[int] service_refresh_rate_in_minutes: How often, in minutes, to refresh the service
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] volume_selection_tags: A string->string map of whitelist of volume tag-value pairs (in AWS).
                If the volume's AWS tags match this whitelist, CloudWatch data about this volume is ingested.
                Multiple entries are OR'ed
@@ -219,7 +219,7 @@ class CloudIntegrationCloudWatch(pulumi.CustomResource):
 
     @property
     @pulumi.getter
-    def namespaces(self) -> pulumi.Output[Optional[List[str]]]:
+    def namespaces(self) -> pulumi.Output[Optional[Sequence[str]]]:
         """
         A list of namespaces that limit what we query from CloudWatch
         """
@@ -252,7 +252,7 @@ class CloudIntegrationCloudWatch(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="serviceRefreshRateInMinutes")
-    def service_refresh_rate_in_minutes(self) -> pulumi.Output[Optional[float]]:
+    def service_refresh_rate_in_minutes(self) -> pulumi.Output[Optional[int]]:
         """
         How often, in minutes, to refresh the service
         """
