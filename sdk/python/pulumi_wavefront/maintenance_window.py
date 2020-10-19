@@ -5,7 +5,7 @@
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Dict, List, Mapping, Optional, Tuple, Union
+from typing import Any, Mapping, Optional, Sequence, Union
 from . import _utilities, _tables
 
 __all__ = ['MaintenanceWindow']
@@ -15,14 +15,14 @@ class MaintenanceWindow(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 end_time_in_seconds: Optional[pulumi.Input[float]] = None,
+                 end_time_in_seconds: Optional[pulumi.Input[int]] = None,
                  host_tag_group_host_names_group_anded: Optional[pulumi.Input[bool]] = None,
                  reason: Optional[pulumi.Input[str]] = None,
-                 relevant_customer_tags: Optional[pulumi.Input[List[pulumi.Input[str]]]] = None,
-                 relevant_host_names: Optional[pulumi.Input[List[pulumi.Input[str]]]] = None,
-                 relevant_host_tags: Optional[pulumi.Input[List[pulumi.Input[str]]]] = None,
+                 relevant_customer_tags: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 relevant_host_names: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 relevant_host_tags: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  relevant_host_tags_anded: Optional[pulumi.Input[bool]] = None,
-                 start_time_in_seconds: Optional[pulumi.Input[float]] = None,
+                 start_time_in_seconds: Optional[pulumi.Input[int]] = None,
                  title: Optional[pulumi.Input[str]] = None,
                  __props__=None,
                  __name__=None,
@@ -49,14 +49,14 @@ class MaintenanceWindow(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[float] end_time_in_seconds: end time in seconds after 1 Jan 1970 GMT.
+        :param pulumi.Input[int] end_time_in_seconds: end time in seconds after 1 Jan 1970 GMT.
         :param pulumi.Input[bool] host_tag_group_host_names_group_anded: If true, a source/host must be in 'relevantHostNames' and have tags matching the specification formed by 'relevantHostTags' and 'relevantHostTagsAnded' in order for this maintenance window to apply. If false, a source/host must either be in 'relevantHostNames' or match 'relevantHostTags' and 'relevantHostTagsAnded'. Default: false
         :param pulumi.Input[str] reason: The reason for the maintenance window
-        :param pulumi.Input[List[pulumi.Input[str]]] relevant_customer_tags: List of alert tags whose matching alerts will be put into maintenance because of this maintenance window. At least one of relevant_customer_tags, relevant_host_tags, or relevant_host_names is required.
-        :param pulumi.Input[List[pulumi.Input[str]]] relevant_host_names: List of source/host names that will be put into maintenance because of this maintenance window. At least one of relevant_customer_tags, relevant_host_tags, or relevant_host_names is required.
-        :param pulumi.Input[List[pulumi.Input[str]]] relevant_host_tags: List of source/host tags whose matching sources/hosts will be put into maintenance because of this maintenance window. At least one of relevant_customer_tags, relevant_host_tags, or relevant_host_names is required.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] relevant_customer_tags: List of alert tags whose matching alerts will be put into maintenance because of this maintenance window. At least one of relevant_customer_tags, relevant_host_tags, or relevant_host_names is required.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] relevant_host_names: List of source/host names that will be put into maintenance because of this maintenance window. At least one of relevant_customer_tags, relevant_host_tags, or relevant_host_names is required.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] relevant_host_tags: List of source/host tags whose matching sources/hosts will be put into maintenance because of this maintenance window. At least one of relevant_customer_tags, relevant_host_tags, or relevant_host_names is required.
         :param pulumi.Input[bool] relevant_host_tags_anded: Whether to AND source/host tags listed in relevantHostTags. If true, a source/host must contain all tags in order for the maintenance window to apply. If false, the tags are OR'ed, and a source/host must contain one of the tags. Default: false
-        :param pulumi.Input[float] start_time_in_seconds: start time in seconds after 1 Jan 1970 GMT.
+        :param pulumi.Input[int] start_time_in_seconds: start time in seconds after 1 Jan 1970 GMT.
         :param pulumi.Input[str] title: The title of the maintenance window
         """
         if __name__ is not None:
@@ -103,14 +103,14 @@ class MaintenanceWindow(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            end_time_in_seconds: Optional[pulumi.Input[float]] = None,
+            end_time_in_seconds: Optional[pulumi.Input[int]] = None,
             host_tag_group_host_names_group_anded: Optional[pulumi.Input[bool]] = None,
             reason: Optional[pulumi.Input[str]] = None,
-            relevant_customer_tags: Optional[pulumi.Input[List[pulumi.Input[str]]]] = None,
-            relevant_host_names: Optional[pulumi.Input[List[pulumi.Input[str]]]] = None,
-            relevant_host_tags: Optional[pulumi.Input[List[pulumi.Input[str]]]] = None,
+            relevant_customer_tags: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+            relevant_host_names: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+            relevant_host_tags: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             relevant_host_tags_anded: Optional[pulumi.Input[bool]] = None,
-            start_time_in_seconds: Optional[pulumi.Input[float]] = None,
+            start_time_in_seconds: Optional[pulumi.Input[int]] = None,
             title: Optional[pulumi.Input[str]] = None) -> 'MaintenanceWindow':
         """
         Get an existing MaintenanceWindow resource's state with the given name, id, and optional extra
@@ -119,14 +119,14 @@ class MaintenanceWindow(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[float] end_time_in_seconds: end time in seconds after 1 Jan 1970 GMT.
+        :param pulumi.Input[int] end_time_in_seconds: end time in seconds after 1 Jan 1970 GMT.
         :param pulumi.Input[bool] host_tag_group_host_names_group_anded: If true, a source/host must be in 'relevantHostNames' and have tags matching the specification formed by 'relevantHostTags' and 'relevantHostTagsAnded' in order for this maintenance window to apply. If false, a source/host must either be in 'relevantHostNames' or match 'relevantHostTags' and 'relevantHostTagsAnded'. Default: false
         :param pulumi.Input[str] reason: The reason for the maintenance window
-        :param pulumi.Input[List[pulumi.Input[str]]] relevant_customer_tags: List of alert tags whose matching alerts will be put into maintenance because of this maintenance window. At least one of relevant_customer_tags, relevant_host_tags, or relevant_host_names is required.
-        :param pulumi.Input[List[pulumi.Input[str]]] relevant_host_names: List of source/host names that will be put into maintenance because of this maintenance window. At least one of relevant_customer_tags, relevant_host_tags, or relevant_host_names is required.
-        :param pulumi.Input[List[pulumi.Input[str]]] relevant_host_tags: List of source/host tags whose matching sources/hosts will be put into maintenance because of this maintenance window. At least one of relevant_customer_tags, relevant_host_tags, or relevant_host_names is required.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] relevant_customer_tags: List of alert tags whose matching alerts will be put into maintenance because of this maintenance window. At least one of relevant_customer_tags, relevant_host_tags, or relevant_host_names is required.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] relevant_host_names: List of source/host names that will be put into maintenance because of this maintenance window. At least one of relevant_customer_tags, relevant_host_tags, or relevant_host_names is required.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] relevant_host_tags: List of source/host tags whose matching sources/hosts will be put into maintenance because of this maintenance window. At least one of relevant_customer_tags, relevant_host_tags, or relevant_host_names is required.
         :param pulumi.Input[bool] relevant_host_tags_anded: Whether to AND source/host tags listed in relevantHostTags. If true, a source/host must contain all tags in order for the maintenance window to apply. If false, the tags are OR'ed, and a source/host must contain one of the tags. Default: false
-        :param pulumi.Input[float] start_time_in_seconds: start time in seconds after 1 Jan 1970 GMT.
+        :param pulumi.Input[int] start_time_in_seconds: start time in seconds after 1 Jan 1970 GMT.
         :param pulumi.Input[str] title: The title of the maintenance window
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -146,7 +146,7 @@ class MaintenanceWindow(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="endTimeInSeconds")
-    def end_time_in_seconds(self) -> pulumi.Output[float]:
+    def end_time_in_seconds(self) -> pulumi.Output[int]:
         """
         end time in seconds after 1 Jan 1970 GMT.
         """
@@ -170,7 +170,7 @@ class MaintenanceWindow(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="relevantCustomerTags")
-    def relevant_customer_tags(self) -> pulumi.Output[Optional[List[str]]]:
+    def relevant_customer_tags(self) -> pulumi.Output[Optional[Sequence[str]]]:
         """
         List of alert tags whose matching alerts will be put into maintenance because of this maintenance window. At least one of relevant_customer_tags, relevant_host_tags, or relevant_host_names is required.
         """
@@ -178,7 +178,7 @@ class MaintenanceWindow(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="relevantHostNames")
-    def relevant_host_names(self) -> pulumi.Output[Optional[List[str]]]:
+    def relevant_host_names(self) -> pulumi.Output[Optional[Sequence[str]]]:
         """
         List of source/host names that will be put into maintenance because of this maintenance window. At least one of relevant_customer_tags, relevant_host_tags, or relevant_host_names is required.
         """
@@ -186,7 +186,7 @@ class MaintenanceWindow(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="relevantHostTags")
-    def relevant_host_tags(self) -> pulumi.Output[Optional[List[str]]]:
+    def relevant_host_tags(self) -> pulumi.Output[Optional[Sequence[str]]]:
         """
         List of source/host tags whose matching sources/hosts will be put into maintenance because of this maintenance window. At least one of relevant_customer_tags, relevant_host_tags, or relevant_host_names is required.
         """
@@ -202,7 +202,7 @@ class MaintenanceWindow(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="startTimeInSeconds")
-    def start_time_in_seconds(self) -> pulumi.Output[float]:
+    def start_time_in_seconds(self) -> pulumi.Output[int]:
         """
         start time in seconds after 1 Jan 1970 GMT.
         """

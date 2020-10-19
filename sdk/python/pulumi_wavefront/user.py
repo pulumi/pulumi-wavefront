@@ -5,7 +5,7 @@
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Dict, List, Mapping, Optional, Tuple, Union
+from typing import Any, Mapping, Optional, Sequence, Union
 from . import _utilities, _tables
 
 __all__ = ['User']
@@ -17,8 +17,8 @@ class User(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  customer: Optional[pulumi.Input[str]] = None,
                  email: Optional[pulumi.Input[str]] = None,
-                 permissions: Optional[pulumi.Input[List[pulumi.Input[str]]]] = None,
-                 user_groups: Optional[pulumi.Input[List[pulumi.Input[str]]]] = None,
+                 permissions: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 user_groups: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  __props__=None,
                  __name__=None,
                  __opts__=None):
@@ -37,10 +37,10 @@ class User(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] email: The (unique) identifier of the user to create. Must be a valid email address
-        :param pulumi.Input[List[pulumi.Input[str]]] permissions: List of permission to grant to this user.  Valid options are
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] permissions: List of permission to grant to this user.  Valid options are
                `agent_management`, `alerts_management`, `dashboard_management`, `embedded_charts`, `events_management`, `external_links_management`,
                `host_tag_management`, `metrics_management`, `user_management`
-        :param pulumi.Input[List[pulumi.Input[str]]] user_groups: List of user groups to this user
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] user_groups: List of user groups to this user
         """
         if __name__ is not None:
             warnings.warn("explicit use of __name__ is deprecated", DeprecationWarning)
@@ -77,8 +77,8 @@ class User(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             customer: Optional[pulumi.Input[str]] = None,
             email: Optional[pulumi.Input[str]] = None,
-            permissions: Optional[pulumi.Input[List[pulumi.Input[str]]]] = None,
-            user_groups: Optional[pulumi.Input[List[pulumi.Input[str]]]] = None) -> 'User':
+            permissions: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+            user_groups: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None) -> 'User':
         """
         Get an existing User resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -87,10 +87,10 @@ class User(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] email: The (unique) identifier of the user to create. Must be a valid email address
-        :param pulumi.Input[List[pulumi.Input[str]]] permissions: List of permission to grant to this user.  Valid options are
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] permissions: List of permission to grant to this user.  Valid options are
                `agent_management`, `alerts_management`, `dashboard_management`, `embedded_charts`, `events_management`, `external_links_management`,
                `host_tag_management`, `metrics_management`, `user_management`
-        :param pulumi.Input[List[pulumi.Input[str]]] user_groups: List of user groups to this user
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] user_groups: List of user groups to this user
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -117,7 +117,7 @@ class User(pulumi.CustomResource):
 
     @property
     @pulumi.getter
-    def permissions(self) -> pulumi.Output[List[str]]:
+    def permissions(self) -> pulumi.Output[Sequence[str]]:
         """
         List of permission to grant to this user.  Valid options are
         `agent_management`, `alerts_management`, `dashboard_management`, `embedded_charts`, `events_management`, `external_links_management`,
@@ -127,7 +127,7 @@ class User(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="userGroups")
-    def user_groups(self) -> pulumi.Output[List[str]]:
+    def user_groups(self) -> pulumi.Output[Sequence[str]]:
         """
         List of user groups to this user
         """

@@ -5,7 +5,7 @@
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Dict, List, Mapping, Optional, Tuple, Union
+from typing import Any, Mapping, Optional, Sequence, Union
 from . import _utilities, _tables
 from . import outputs
 
@@ -208,10 +208,10 @@ class DashboardParameterDetail(dict):
 class DashboardSection(dict):
     def __init__(__self__, *,
                  name: str,
-                 rows: List['outputs.DashboardSectionRow']):
+                 rows: Sequence['outputs.DashboardSectionRow']):
         """
         :param str name: Name of this section
-        :param List['DashboardSectionRowArgs'] rows: See dashboard section rows
+        :param Sequence['DashboardSectionRowArgs'] rows: See dashboard section rows
         """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "rows", rows)
@@ -226,7 +226,7 @@ class DashboardSection(dict):
 
     @property
     @pulumi.getter
-    def rows(self) -> List['outputs.DashboardSectionRow']:
+    def rows(self) -> Sequence['outputs.DashboardSectionRow']:
         """
         See dashboard section rows
         """
@@ -239,15 +239,15 @@ class DashboardSection(dict):
 @pulumi.output_type
 class DashboardSectionRow(dict):
     def __init__(__self__, *,
-                 charts: List['outputs.DashboardSectionRowChart']):
+                 charts: Sequence['outputs.DashboardSectionRowChart']):
         """
-        :param List['DashboardSectionRowChartArgs'] charts: Charts in this section. See dashboard chart
+        :param Sequence['DashboardSectionRowChartArgs'] charts: Charts in this section. See dashboard chart
         """
         pulumi.set(__self__, "charts", charts)
 
     @property
     @pulumi.getter
-    def charts(self) -> List['outputs.DashboardSectionRowChart']:
+    def charts(self) -> Sequence['outputs.DashboardSectionRowChart']:
         """
         Charts in this section. See dashboard chart
         """
@@ -262,14 +262,14 @@ class DashboardSectionRowChart(dict):
     def __init__(__self__, *,
                  chart_setting: 'outputs.DashboardSectionRowChartChartSetting',
                  name: str,
-                 sources: List['outputs.DashboardSectionRowChartSource'],
+                 sources: Sequence['outputs.DashboardSectionRowChartSource'],
                  summarization: str,
                  units: str,
                  description: Optional[str] = None):
         """
         :param 'DashboardSectionRowChartChartSettingArgs' chart_setting: Chart settings. See chart settings
         :param str name: Name of the source
-        :param List['DashboardSectionRowChartSourceArgs'] sources: Query expression to plot on the chart. See chart source queries
+        :param Sequence['DashboardSectionRowChartSourceArgs'] sources: Query expression to plot on the chart. See chart source queries
         :param str summarization: Summarization strategy for the chart. MEAN is default. Valid options are, `MEAN`, 
                `MEDIAN`, `MIN`, `MAX`, `SUM`, `COUNT`, `LAST`, `FIRST`
         :param str units: String to label the units of the chart on the Y-Axis
@@ -301,7 +301,7 @@ class DashboardSectionRowChart(dict):
 
     @property
     @pulumi.getter
-    def sources(self) -> List['outputs.DashboardSectionRowChartSource']:
+    def sources(self) -> Sequence['outputs.DashboardSectionRowChartSource']:
         """
         Query expression to plot on the chart. See chart source queries
         """
@@ -342,12 +342,12 @@ class DashboardSectionRowChartChartSetting(dict):
                  type: str,
                  auto_column_tags: Optional[bool] = None,
                  column_tags: Optional[str] = None,
-                 custom_tags: Optional[List[str]] = None,
-                 expected_data_spacing: Optional[float] = None,
-                 fixed_legend_display_stats: Optional[List[str]] = None,
+                 custom_tags: Optional[Sequence[str]] = None,
+                 expected_data_spacing: Optional[int] = None,
+                 fixed_legend_display_stats: Optional[Sequence[str]] = None,
                  fixed_legend_enabled: Optional[bool] = None,
                  fixed_legend_filter_field: Optional[str] = None,
-                 fixed_legend_filter_limit: Optional[float] = None,
+                 fixed_legend_filter_limit: Optional[int] = None,
                  fixed_legend_filter_sort: Optional[str] = None,
                  fixed_legend_hide_label: Optional[bool] = None,
                  fixed_legend_position: Optional[str] = None,
@@ -357,13 +357,13 @@ class DashboardSectionRowChartChartSetting(dict):
                  line_type: Optional[str] = None,
                  max: Optional[float] = None,
                  min: Optional[float] = None,
-                 num_tags: Optional[float] = None,
+                 num_tags: Optional[int] = None,
                  plain_markdown_content: Optional[str] = None,
                  show_hosts: Optional[bool] = None,
                  show_labels: Optional[bool] = None,
                  show_raw_values: Optional[bool] = None,
                  sort_values_descending: Optional[bool] = None,
-                 sparkline_decimal_precision: Optional[float] = None,
+                 sparkline_decimal_precision: Optional[int] = None,
                  sparkline_display_color: Optional[str] = None,
                  sparkline_display_font_size: Optional[str] = None,
                  sparkline_display_horizontal_position: Optional[str] = None,
@@ -375,15 +375,15 @@ class DashboardSectionRowChartChartSetting(dict):
                  sparkline_line_color: Optional[str] = None,
                  sparkline_size: Optional[str] = None,
                  sparkline_value_color_map_apply_to: Optional[str] = None,
-                 sparkline_value_color_map_colors: Optional[List[str]] = None,
-                 sparkline_value_color_map_values: Optional[List[float]] = None,
-                 sparkline_value_color_map_values_v2s: Optional[List[float]] = None,
-                 sparkline_value_text_map_texts: Optional[List[str]] = None,
-                 sparkline_value_text_map_thresholds: Optional[List[float]] = None,
+                 sparkline_value_color_map_colors: Optional[Sequence[str]] = None,
+                 sparkline_value_color_map_values: Optional[Sequence[int]] = None,
+                 sparkline_value_color_map_values_v2s: Optional[Sequence[float]] = None,
+                 sparkline_value_text_map_texts: Optional[Sequence[str]] = None,
+                 sparkline_value_text_map_thresholds: Optional[Sequence[float]] = None,
                  stack_type: Optional[str] = None,
                  tag_mode: Optional[str] = None,
                  time_based_coloring: Optional[bool] = None,
-                 window_size: Optional[float] = None,
+                 window_size: Optional[int] = None,
                  windowing: Optional[str] = None,
                  xmax: Optional[float] = None,
                  xmin: Optional[float] = None,
@@ -404,14 +404,14 @@ class DashboardSectionRowChartChartSetting(dict):
                `top-k`, `status-list`, `histogram`
         :param bool auto_column_tags: deprecated
         :param str column_tags: deprecated
-        :param List[str] custom_tags: For the tabular view, a list of point tags to display when using the `custom` tag display mode
-        :param float expected_data_spacing: Threshold (in seconds) for time delta between consecutive points in a series
+        :param Sequence[str] custom_tags: For the tabular view, a list of point tags to display when using the `custom` tag display mode
+        :param int expected_data_spacing: Threshold (in seconds) for time delta between consecutive points in a series
                above which a dotted line will replace a solid in in line plots. Default 60
-        :param List[str] fixed_legend_display_stats: For a chart with a fixed legend, a list of statistics to display in the legend
+        :param Sequence[str] fixed_legend_display_stats: For a chart with a fixed legend, a list of statistics to display in the legend
         :param bool fixed_legend_enabled: Whether to enable a fixed tabular legend adjacent to the chart
         :param str fixed_legend_filter_field: Statistic to use for determining whether a series is displayed on the fixed legend.
                Valid options are `CURRENT`, `MEAN`, `MEDIAN`, `SUM`, `MIN`, `MAX`, `COUNT`
-        :param float fixed_legend_filter_limit: Number of series to include in the fixed legend
+        :param int fixed_legend_filter_limit: Number of series to include in the fixed legend
         :param str fixed_legend_filter_sort: Whether to display `TOP` or `BOTTOM` ranked series in a fixed legend. Valid options
                are `TOP`, and `BOTTOM`
         :param bool fixed_legend_hide_label: deprecated
@@ -427,13 +427,13 @@ class DashboardSectionRowChartChartSetting(dict):
                `step-after`, `basis`, `cardinal`, `monotone`
         :param float max: Max value of the Y-axis. Set to null or leave blank for auto
         :param float min: Min value of the Y-axis. Set to null or leave blank for auto
-        :param float num_tags: For the tabular view, how many point tags to display
+        :param int num_tags: For the tabular view, how many point tags to display
         :param str plain_markdown_content: The markdown content for a Markdown display, in plain text.
         :param bool show_hosts: For the tabular view, whether to display sources. Default is `true`
         :param bool show_labels: For the tabular view, whether to display labels. Default is `true`
         :param bool show_raw_values: For the tabular view, whether to display raw values. Default is `false`
         :param bool sort_values_descending: For the tabular view, whether to display display values in descending order. Default is `false`
-        :param float sparkline_decimal_precision: For the single stat view, the decimal precision of the displayed number
+        :param int sparkline_decimal_precision: For the single stat view, the decimal precision of the displayed number
         :param str sparkline_display_color: For the single stat view, the color of the displayed text (when not dynamically determined). 
                Values should be in `rgba(,,,,)` format
         :param str sparkline_display_font_size: For the single stat view, the font size of the displayed text, in percent
@@ -451,14 +451,14 @@ class DashboardSectionRowChartChartSetting(dict):
                Valid options are `BACKGROUND`, `BOTTOM`, `NONE`
         :param str sparkline_value_color_map_apply_to: For the single stat view, whether to apply dyunamic color settings to 
                the displayed `TEXT` or `BACKGROUND`. Valid options are `TEXT` or `BACKGROUND`
-        :param List[str] sparkline_value_color_map_colors: For the single stat view, A list of colors that differing query values map to. 
+        :param Sequence[str] sparkline_value_color_map_colors: For the single stat view, A list of colors that differing query values map to. 
                Must contain one more element than `sparkline_value_color_map_values_v2`. Values should be in `rgba(,,,,)`
-        :param List[float] sparkline_value_color_map_values: deprecated
-        :param List[float] sparkline_value_color_map_values_v2s: For the single stat view, a list of boundaries for mapping different
+        :param Sequence[int] sparkline_value_color_map_values: deprecated
+        :param Sequence[float] sparkline_value_color_map_values_v2s: For the single stat view, a list of boundaries for mapping different
                query values to colors.  Must contain one less element than `sparkline_value_color_map_colors`
-        :param List[str] sparkline_value_text_map_texts: For the single stat view, a list of display text values that different query
+        :param Sequence[str] sparkline_value_text_map_texts: For the single stat view, a list of display text values that different query
                values map to.  Must contain one more element than `sparkline_value_text_map_thresholds`
-        :param List[float] sparkline_value_text_map_thresholds: For the single stat view, a list of threshold boundaries for 
+        :param Sequence[float] sparkline_value_text_map_thresholds: For the single stat view, a list of threshold boundaries for 
                mapping different query values to display text.  Must contain one less element than `sparkline_value_text_map_text`
         :param str stack_type: Type of stacked chart (applicable only if chart type is `stacked`). `zero` (default) means
                stacked from y=0. `expand` means normalized from 0 to 1.  `wiggle` means minimize weighted changes. `silhouette` means to
@@ -466,7 +466,7 @@ class DashboardSectionRowChartChartSetting(dict):
         :param str tag_mode: For the tabular view, which mode to use to determine which point tags to display.
                Valid options are `all`, `top`, or `custom`
         :param bool time_based_coloring: For x-y scatterplots, whether to color more recent points as darker than older points
-        :param float window_size: Width, in minutes, of the time window to use for `last` windowing
+        :param int window_size: Width, in minutes, of the time window to use for `last` windowing
         :param str windowing: For the tabular view, whether to use the full time window for the query or the last X minutes.
                Valid options are `full` or `last`
         :param float xmax: For x-y scatterplots, max value for the X-axis. Set to null for auto
@@ -625,7 +625,7 @@ class DashboardSectionRowChartChartSetting(dict):
 
     @property
     @pulumi.getter(name="customTags")
-    def custom_tags(self) -> Optional[List[str]]:
+    def custom_tags(self) -> Optional[Sequence[str]]:
         """
         For the tabular view, a list of point tags to display when using the `custom` tag display mode
         """
@@ -633,7 +633,7 @@ class DashboardSectionRowChartChartSetting(dict):
 
     @property
     @pulumi.getter(name="expectedDataSpacing")
-    def expected_data_spacing(self) -> Optional[float]:
+    def expected_data_spacing(self) -> Optional[int]:
         """
         Threshold (in seconds) for time delta between consecutive points in a series
         above which a dotted line will replace a solid in in line plots. Default 60
@@ -642,7 +642,7 @@ class DashboardSectionRowChartChartSetting(dict):
 
     @property
     @pulumi.getter(name="fixedLegendDisplayStats")
-    def fixed_legend_display_stats(self) -> Optional[List[str]]:
+    def fixed_legend_display_stats(self) -> Optional[Sequence[str]]:
         """
         For a chart with a fixed legend, a list of statistics to display in the legend
         """
@@ -667,7 +667,7 @@ class DashboardSectionRowChartChartSetting(dict):
 
     @property
     @pulumi.getter(name="fixedLegendFilterLimit")
-    def fixed_legend_filter_limit(self) -> Optional[float]:
+    def fixed_legend_filter_limit(self) -> Optional[int]:
         """
         Number of series to include in the fixed legend
         """
@@ -753,7 +753,7 @@ class DashboardSectionRowChartChartSetting(dict):
 
     @property
     @pulumi.getter(name="numTags")
-    def num_tags(self) -> Optional[float]:
+    def num_tags(self) -> Optional[int]:
         """
         For the tabular view, how many point tags to display
         """
@@ -801,7 +801,7 @@ class DashboardSectionRowChartChartSetting(dict):
 
     @property
     @pulumi.getter(name="sparklineDecimalPrecision")
-    def sparkline_decimal_precision(self) -> Optional[float]:
+    def sparkline_decimal_precision(self) -> Optional[int]:
         """
         For the single stat view, the decimal precision of the displayed number
         """
@@ -903,7 +903,7 @@ class DashboardSectionRowChartChartSetting(dict):
 
     @property
     @pulumi.getter(name="sparklineValueColorMapColors")
-    def sparkline_value_color_map_colors(self) -> Optional[List[str]]:
+    def sparkline_value_color_map_colors(self) -> Optional[Sequence[str]]:
         """
         For the single stat view, A list of colors that differing query values map to. 
         Must contain one more element than `sparkline_value_color_map_values_v2`. Values should be in `rgba(,,,,)`
@@ -912,7 +912,7 @@ class DashboardSectionRowChartChartSetting(dict):
 
     @property
     @pulumi.getter(name="sparklineValueColorMapValues")
-    def sparkline_value_color_map_values(self) -> Optional[List[float]]:
+    def sparkline_value_color_map_values(self) -> Optional[Sequence[int]]:
         """
         deprecated
         """
@@ -920,7 +920,7 @@ class DashboardSectionRowChartChartSetting(dict):
 
     @property
     @pulumi.getter(name="sparklineValueColorMapValuesV2s")
-    def sparkline_value_color_map_values_v2s(self) -> Optional[List[float]]:
+    def sparkline_value_color_map_values_v2s(self) -> Optional[Sequence[float]]:
         """
         For the single stat view, a list of boundaries for mapping different
         query values to colors.  Must contain one less element than `sparkline_value_color_map_colors`
@@ -929,7 +929,7 @@ class DashboardSectionRowChartChartSetting(dict):
 
     @property
     @pulumi.getter(name="sparklineValueTextMapTexts")
-    def sparkline_value_text_map_texts(self) -> Optional[List[str]]:
+    def sparkline_value_text_map_texts(self) -> Optional[Sequence[str]]:
         """
         For the single stat view, a list of display text values that different query
         values map to.  Must contain one more element than `sparkline_value_text_map_thresholds`
@@ -938,7 +938,7 @@ class DashboardSectionRowChartChartSetting(dict):
 
     @property
     @pulumi.getter(name="sparklineValueTextMapThresholds")
-    def sparkline_value_text_map_thresholds(self) -> Optional[List[float]]:
+    def sparkline_value_text_map_thresholds(self) -> Optional[Sequence[float]]:
         """
         For the single stat view, a list of threshold boundaries for 
         mapping different query values to display text.  Must contain one less element than `sparkline_value_text_map_text`
@@ -974,7 +974,7 @@ class DashboardSectionRowChartChartSetting(dict):
 
     @property
     @pulumi.getter(name="windowSize")
-    def window_size(self) -> Optional[float]:
+    def window_size(self) -> Optional[int]:
         """
         Width, in minutes, of the time window to use for `last` windowing
         """

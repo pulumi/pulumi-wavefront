@@ -5,7 +5,7 @@
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Dict, List, Mapping, Optional, Tuple, Union
+from typing import Any, Mapping, Optional, Sequence, Union
 from . import _utilities, _tables
 
 __all__ = ['CloudIntegrationAzure']
@@ -16,15 +16,15 @@ class CloudIntegrationAzure(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  additional_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
-                 category_filters: Optional[pulumi.Input[List[pulumi.Input[str]]]] = None,
+                 category_filters: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  client_id: Optional[pulumi.Input[str]] = None,
                  client_secret: Optional[pulumi.Input[str]] = None,
                  force_save: Optional[pulumi.Input[bool]] = None,
                  metric_filter_regex: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
-                 resource_group_filters: Optional[pulumi.Input[List[pulumi.Input[str]]]] = None,
+                 resource_group_filters: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  service: Optional[pulumi.Input[str]] = None,
-                 service_refresh_rate_in_minutes: Optional[pulumi.Input[float]] = None,
+                 service_refresh_rate_in_minutes: Optional[pulumi.Input[int]] = None,
                  tenant: Optional[pulumi.Input[str]] = None,
                  __props__=None,
                  __name__=None,
@@ -48,15 +48,15 @@ class CloudIntegrationAzure(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] additional_tags: A list of point tag key-values to add to every point ingested using this integration
-        :param pulumi.Input[List[pulumi.Input[str]]] category_filters: A list of Azure Activity Log categories.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] category_filters: A list of Azure Activity Log categories.
         :param pulumi.Input[str] client_id: Client id for an azure service account within your project
         :param pulumi.Input[str] client_secret: Client secret for an Azure service account within your project
         :param pulumi.Input[bool] force_save: Forces this resource to save, even if errors are present
         :param pulumi.Input[str] metric_filter_regex: A regular expression that a metric name must match (case-insensitively) in order to be ingested
         :param pulumi.Input[str] name: The human-readable name of this integration
-        :param pulumi.Input[List[pulumi.Input[str]]] resource_group_filters: A list of Azure resource groups from which to pull metrics
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] resource_group_filters: A list of Azure resource groups from which to pull metrics
         :param pulumi.Input[str] service: A value denoting which cloud service this service integrates with
-        :param pulumi.Input[float] service_refresh_rate_in_minutes: How often, in minutes, to refresh the service
+        :param pulumi.Input[int] service_refresh_rate_in_minutes: How often, in minutes, to refresh the service
         :param pulumi.Input[str] tenant: Tenant Id for an Azure service account within your project
         """
         if __name__ is not None:
@@ -106,15 +106,15 @@ class CloudIntegrationAzure(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             additional_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
-            category_filters: Optional[pulumi.Input[List[pulumi.Input[str]]]] = None,
+            category_filters: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             client_id: Optional[pulumi.Input[str]] = None,
             client_secret: Optional[pulumi.Input[str]] = None,
             force_save: Optional[pulumi.Input[bool]] = None,
             metric_filter_regex: Optional[pulumi.Input[str]] = None,
             name: Optional[pulumi.Input[str]] = None,
-            resource_group_filters: Optional[pulumi.Input[List[pulumi.Input[str]]]] = None,
+            resource_group_filters: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             service: Optional[pulumi.Input[str]] = None,
-            service_refresh_rate_in_minutes: Optional[pulumi.Input[float]] = None,
+            service_refresh_rate_in_minutes: Optional[pulumi.Input[int]] = None,
             tenant: Optional[pulumi.Input[str]] = None) -> 'CloudIntegrationAzure':
         """
         Get an existing CloudIntegrationAzure resource's state with the given name, id, and optional extra
@@ -124,15 +124,15 @@ class CloudIntegrationAzure(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] additional_tags: A list of point tag key-values to add to every point ingested using this integration
-        :param pulumi.Input[List[pulumi.Input[str]]] category_filters: A list of Azure Activity Log categories.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] category_filters: A list of Azure Activity Log categories.
         :param pulumi.Input[str] client_id: Client id for an azure service account within your project
         :param pulumi.Input[str] client_secret: Client secret for an Azure service account within your project
         :param pulumi.Input[bool] force_save: Forces this resource to save, even if errors are present
         :param pulumi.Input[str] metric_filter_regex: A regular expression that a metric name must match (case-insensitively) in order to be ingested
         :param pulumi.Input[str] name: The human-readable name of this integration
-        :param pulumi.Input[List[pulumi.Input[str]]] resource_group_filters: A list of Azure resource groups from which to pull metrics
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] resource_group_filters: A list of Azure resource groups from which to pull metrics
         :param pulumi.Input[str] service: A value denoting which cloud service this service integrates with
-        :param pulumi.Input[float] service_refresh_rate_in_minutes: How often, in minutes, to refresh the service
+        :param pulumi.Input[int] service_refresh_rate_in_minutes: How often, in minutes, to refresh the service
         :param pulumi.Input[str] tenant: Tenant Id for an Azure service account within your project
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -162,7 +162,7 @@ class CloudIntegrationAzure(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="categoryFilters")
-    def category_filters(self) -> pulumi.Output[Optional[List[str]]]:
+    def category_filters(self) -> pulumi.Output[Optional[Sequence[str]]]:
         """
         A list of Azure Activity Log categories.
         """
@@ -210,7 +210,7 @@ class CloudIntegrationAzure(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="resourceGroupFilters")
-    def resource_group_filters(self) -> pulumi.Output[Optional[List[str]]]:
+    def resource_group_filters(self) -> pulumi.Output[Optional[Sequence[str]]]:
         """
         A list of Azure resource groups from which to pull metrics
         """
@@ -226,7 +226,7 @@ class CloudIntegrationAzure(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="serviceRefreshRateInMinutes")
-    def service_refresh_rate_in_minutes(self) -> pulumi.Output[Optional[float]]:
+    def service_refresh_rate_in_minutes(self) -> pulumi.Output[Optional[int]]:
         """
         How often, in minutes, to refresh the service
         """
