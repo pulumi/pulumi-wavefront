@@ -80,7 +80,7 @@ type Alert struct {
 	// the same value as `minutes`.
 	ResolveAfterMinutes pulumi.IntPtrOutput `pulumi:"resolveAfterMinutes"`
 	// - Severity of the alert, valid values are `INFO`, `SMOKE`, `WARN`, `SEVERE`.
-	Severity pulumi.StringPtrOutput `pulumi:"severity"`
+	Severity pulumi.StringOutput `pulumi:"severity"`
 	// A set of tags to assign to this resource.
 	Tags pulumi.StringArrayOutput `pulumi:"tags"`
 	// A comma-separated list of the email address or integration endpoint
