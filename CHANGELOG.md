@@ -2,9 +2,12 @@ CHANGELOG
 =========
 
 ## HEAD (Unreleased)
-* Upgrade to v2.7.1 of the Wavefront Terraform Provider
+_(none)_
 
 ---
+
+## 0.5.1 (2020-10-28)
+* Upgrade to v2.7.1 of the Wavefront Terraform Provider
 
 ## 0.5.0 (2020-10-26)
 * Upgrade to Pulumi v2.12.0 and pulumi-terraform-bridge v2.11.0
