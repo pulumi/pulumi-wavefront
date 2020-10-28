@@ -113,7 +113,7 @@ export class Alert extends pulumi.CustomResource {
     /**
      * - Severity of the alert, valid values are `INFO`, `SMOKE`, `WARN`, `SEVERE`.
      */
-    public readonly severity!: pulumi.Output<string | undefined>;
+    public readonly severity!: pulumi.Output<string>;
     /**
      * A set of tags to assign to this resource.
      */

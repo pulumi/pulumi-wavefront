@@ -303,7 +303,7 @@ class Alert(pulumi.CustomResource):
 
     @property
     @pulumi.getter
-    def severity(self) -> pulumi.Output[Optional[str]]:
+    def severity(self) -> pulumi.Output[str]:
         """
         - Severity of the alert, valid values are `INFO`, `SMOKE`, `WARN`, `SEVERE`.
         """

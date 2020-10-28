@@ -1034,6 +1034,7 @@
                 "canModifies",
                 "minutes",
                 "name",
+                "severity",
                 "tags"
             ],
             "inputProperties": {

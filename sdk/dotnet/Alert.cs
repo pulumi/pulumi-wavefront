@@ -124,7 +124,7 @@ namespace Pulumi.Wavefront
         /// - Severity of the alert, valid values are `INFO`, `SMOKE`, `WARN`, `SEVERE`.
         /// </summary>
         [Output("severity")]
-        public Output<string?> Severity { get; private set; } = null!;
+        public Output<string> Severity { get; private set; } = null!;
 
         /// <summary>
         /// A set of tags to assign to this resource.
