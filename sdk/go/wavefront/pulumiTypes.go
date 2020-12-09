@@ -604,6 +604,7 @@ func (o DashboardSectionRowArrayOutput) Index(i pulumi.IntInput) DashboardSectio
 }
 
 type DashboardSectionRowChart struct {
+	ChartAttribute *string `pulumi:"chartAttribute"`
 	// Chart settings. See chart settings
 	ChartSetting DashboardSectionRowChartChartSetting `pulumi:"chartSetting"`
 	// Description of the chart
@@ -631,6 +632,7 @@ type DashboardSectionRowChartInput interface {
 }
 
 type DashboardSectionRowChartArgs struct {
+	ChartAttribute pulumi.StringPtrInput `pulumi:"chartAttribute"`
 	// Chart settings. See chart settings
 	ChartSetting DashboardSectionRowChartChartSettingInput `pulumi:"chartSetting"`
 	// Description of the chart
@@ -695,6 +697,10 @@ func (o DashboardSectionRowChartOutput) ToDashboardSectionRowChartOutput() Dashb
 
 func (o DashboardSectionRowChartOutput) ToDashboardSectionRowChartOutputWithContext(ctx context.Context) DashboardSectionRowChartOutput {
 	return o
+}
+
+func (o DashboardSectionRowChartOutput) ChartAttribute() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DashboardSectionRowChart) *string { return v.ChartAttribute }).(pulumi.StringPtrOutput)
 }
 
 // Chart settings. See chart settings

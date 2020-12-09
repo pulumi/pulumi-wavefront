@@ -265,6 +265,7 @@ class DashboardSectionRowChart(dict):
                  sources: Sequence['outputs.DashboardSectionRowChartSource'],
                  summarization: str,
                  units: str,
+                 chart_attribute: Optional[str] = None,
                  description: Optional[str] = None):
         """
         :param 'DashboardSectionRowChartChartSettingArgs' chart_setting: Chart settings. See chart settings
@@ -280,6 +281,8 @@ class DashboardSectionRowChart(dict):
         pulumi.set(__self__, "sources", sources)
         pulumi.set(__self__, "summarization", summarization)
         pulumi.set(__self__, "units", units)
+        if chart_attribute is not None:
+            pulumi.set(__self__, "chart_attribute", chart_attribute)
         if description is not None:
             pulumi.set(__self__, "description", description)
 
@@ -323,6 +326,11 @@ class DashboardSectionRowChart(dict):
         String to label the units of the chart on the Y-Axis
         """
         return pulumi.get(self, "units")
+
+    @property
+    @pulumi.getter(name="chartAttribute")
+    def chart_attribute(self) -> Optional[str]:
+        return pulumi.get(self, "chart_attribute")
 
     @property
     @pulumi.getter

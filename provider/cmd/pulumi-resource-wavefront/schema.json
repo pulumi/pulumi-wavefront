@@ -253,6 +253,14 @@
         },
         "wavefront:index/DashboardSectionRowChart:DashboardSectionRowChart": {
             "properties": {
+                "chartAttribute": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
                 "chartSetting": {
                     "$ref": "#/types/wavefront:index/DashboardSectionRowChartChartSetting:DashboardSectionRowChartChartSetting",
                     "description": "Chart settings. See chart settings\n",

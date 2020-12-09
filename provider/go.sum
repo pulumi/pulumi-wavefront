@@ -85,10 +85,8 @@ github.com/Microsoft/go-winio v0.4.14/go.mod h1:qXqCSQ3Xa7+6tgxaGTIe4Kpcdsi+P8jB
 github.com/Netflix/go-expect v0.0.0-20180615182759-c93bf25de8e8/go.mod h1:oX5x61PbNXchhh0oikYAH+4Pcfw5LKv21+Jnpr6r6Pc=
 github.com/OneOfOne/xxhash v1.2.2/go.mod h1:HSdplMjZKSmBqAxg5vPj2TmRDmfkzw+cTzAElWljhcU=
 github.com/Sirupsen/logrus v1.0.5/go.mod h1:rmk17hk6i8ZSAJkSDa7nOxamrG+SP4P0mm+DAvExv4U=
-github.com/WavefrontHQ/go-wavefront-management-api v1.12.0 h1:U6qxK9XmCocJVoyBSswKucS39YWBx3rveaBSCPBPJOU=
-github.com/WavefrontHQ/go-wavefront-management-api v1.12.0/go.mod h1:4qDg8JAt4Lc64LjXtncbukFt9W9WB1+S/FN5u01tQWQ=
-github.com/WavefrontHQ/go-wavefront-management-api v1.13.0 h1:tKyqDrPAHNHjrFKfMHZzoVUTvNjaK41IkQspg/4x7Ew=
-github.com/WavefrontHQ/go-wavefront-management-api v1.13.0/go.mod h1:4qDg8JAt4Lc64LjXtncbukFt9W9WB1+S/FN5u01tQWQ=
+github.com/WavefrontHQ/go-wavefront-management-api v1.13.1 h1:aKy3hns9rWXVfsMGXKgRBCge7mGq6gtT64OOVPB23rk=
+github.com/WavefrontHQ/go-wavefront-management-api v1.13.1/go.mod h1:4qDg8JAt4Lc64LjXtncbukFt9W9WB1+S/FN5u01tQWQ=
 github.com/agext/levenshtein v1.2.1/go.mod h1:JEDfjyjHDjOF/1e4FlBE/PkbqA9OfWu2ki2W0IB5558=
 github.com/agext/levenshtein v1.2.2 h1:0S/Yg6LYmFJ5stwQeRp6EeOcCbj7xiqQSdNelsXvaqE=
 github.com/agext/levenshtein v1.2.2/go.mod h1:JEDfjyjHDjOF/1e4FlBE/PkbqA9OfWu2ki2W0IB5558=
@@ -587,10 +585,8 @@ github.com/ulikunitz/xz v0.5.7/go.mod h1:nbz6k7qbPmH4IRqmfOplQw/tblSgqTqBwxkY0oW
 github.com/vmihailenco/msgpack v3.3.3+incompatible/go.mod h1:fy3FlTQTDXWkZ7Bh6AcGMlsjHatGryHQYUTf1ShIgkk=
 github.com/vmihailenco/msgpack v4.0.1+incompatible h1:RMF1enSPeKTlXrXdOcqjFUElywVZjjC6pqse21bKbEU=
 github.com/vmihailenco/msgpack v4.0.1+incompatible/go.mod h1:fy3FlTQTDXWkZ7Bh6AcGMlsjHatGryHQYUTf1ShIgkk=
-github.com/vmware/terraform-provider-wavefront v0.0.0-20201005183833-9364229392a2 h1:nhlqeznykA6l/tNNrsZgqdTR5JBXLDVXCPNkjGUF+J0=
-github.com/vmware/terraform-provider-wavefront v0.0.0-20201005183833-9364229392a2/go.mod h1:HZ0nHhV713fAMQPfHKCHXBq3/L8/mHA0VmKnqHb1D9Y=
-github.com/vmware/terraform-provider-wavefront v0.0.0-20201026214818-cbab6e5f73cd h1:PiGB3K8vi+nGgo/PXsFcgBW+Opo1z+NSSqIFhXadnoc=
-github.com/vmware/terraform-provider-wavefront v0.0.0-20201026214818-cbab6e5f73cd/go.mod h1:b5K04nV15dh2uD4EyMCwWXBrtn6TA4/r5FxtwxwRRtw=
+github.com/vmware/terraform-provider-wavefront v0.0.0-20201202221247-d859df279e28 h1:e2FyTba7AY7TeG1ej1RHZ+1LhIskeCqwuw7gaD5NKgk=
+github.com/vmware/terraform-provider-wavefront v0.0.0-20201202221247-d859df279e28/go.mod h1:PVYp9sIBItJ3yBys7TUBb+aQebPWBxk4g8BJNCJbqH8=
 github.com/xanzy/ssh-agent v0.2.1 h1:TCbipTQL2JiiCprBWx9frJ2eJlCYT00NmctrHxVAr70=
 github.com/xanzy/ssh-agent v0.2.1/go.mod h1:mLlQY/MoOhWBj+gOGMQkOeiEvkx+8pJSI+0Bx9h2kr4=
 github.com/xeipuuv/gojsonpointer v0.0.0-20180127040702-4e3ac2762d5f/go.mod h1:N2zxlSyiKSe5eX1tZViRH5QA0qijqEDrYZiPEAiq3wU=
