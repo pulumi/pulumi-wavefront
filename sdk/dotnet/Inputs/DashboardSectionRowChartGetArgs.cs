@@ -12,6 +12,9 @@ namespace Pulumi.Wavefront.Inputs
 
     public sealed class DashboardSectionRowChartGetArgs : Pulumi.ResourceArgs
     {
+        [Input("chartAttribute")]
+        public Input<string>? ChartAttribute { get; set; }
+
         /// <summary>
         /// Chart settings. See chart settings
         /// </summary>

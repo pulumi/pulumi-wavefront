@@ -317,6 +317,7 @@ class DashboardSectionRowChartArgs:
                  sources: pulumi.Input[Sequence[pulumi.Input['DashboardSectionRowChartSourceArgs']]],
                  summarization: pulumi.Input[str],
                  units: pulumi.Input[str],
+                 chart_attribute: Optional[pulumi.Input[str]] = None,
                  description: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input['DashboardSectionRowChartChartSettingArgs'] chart_setting: Chart settings. See chart settings
@@ -332,6 +333,8 @@ class DashboardSectionRowChartArgs:
         pulumi.set(__self__, "sources", sources)
         pulumi.set(__self__, "summarization", summarization)
         pulumi.set(__self__, "units", units)
+        if chart_attribute is not None:
+            pulumi.set(__self__, "chart_attribute", chart_attribute)
         if description is not None:
             pulumi.set(__self__, "description", description)
 
@@ -395,6 +398,15 @@ class DashboardSectionRowChartArgs:
     @units.setter
     def units(self, value: pulumi.Input[str]):
         pulumi.set(self, "units", value)
+
+    @property
+    @pulumi.getter(name="chartAttribute")
+    def chart_attribute(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "chart_attribute")
+
+    @chart_attribute.setter
+    def chart_attribute(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "chart_attribute", value)
 
     @property
     @pulumi.getter

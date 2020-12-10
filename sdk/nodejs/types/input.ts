@@ -85,6 +85,7 @@ export interface DashboardSectionRow {
 }
 
 export interface DashboardSectionRowChart {
+    chartAttribute?: pulumi.Input<string>;
     /**
      * Chart settings. See chart settings
      */

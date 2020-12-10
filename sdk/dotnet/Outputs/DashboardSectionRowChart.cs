@@ -13,6 +13,7 @@ namespace Pulumi.Wavefront.Outputs
     [OutputType]
     public sealed class DashboardSectionRowChart
     {
+        public readonly string? ChartAttribute;
         /// <summary>
         /// Chart settings. See chart settings
         /// </summary>
@@ -41,6 +42,8 @@ namespace Pulumi.Wavefront.Outputs
 
         [OutputConstructor]
         private DashboardSectionRowChart(
+            string? chartAttribute,
+
             Outputs.DashboardSectionRowChartChartSetting chartSetting,
 
             string? description,
@@ -53,6 +56,7 @@ namespace Pulumi.Wavefront.Outputs
 
             string units)
         {
+            ChartAttribute = chartAttribute;
             ChartSetting = chartSetting;
             Description = description;
             Name = name;
