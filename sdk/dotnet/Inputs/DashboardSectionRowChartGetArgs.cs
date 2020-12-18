@@ -12,6 +12,12 @@ namespace Pulumi.Wavefront.Inputs
 
     public sealed class DashboardSectionRowChartGetArgs : Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The base of logarithmic scale charts. Omit or set to 0 for the default linear scale. Usually set to 10 for the traditional logarithmic scale.
+        /// </summary>
+        [Input("base")]
+        public Input<int>? Base { get; set; }
+
         [Input("chartAttribute")]
         public Input<string>? ChartAttribute { get; set; }
 

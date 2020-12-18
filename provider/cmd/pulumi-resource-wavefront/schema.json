@@ -253,6 +253,15 @@
         },
         "wavefront:index/DashboardSectionRowChart:DashboardSectionRowChart": {
             "properties": {
+                "base": {
+                    "type": "integer",
+                    "description": "The base of logarithmic scale charts. Omit or set to 0 for the default linear scale. Usually set to 10 for the traditional logarithmic scale.\n",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
                 "chartAttribute": {
                     "type": "string",
                     "language": {

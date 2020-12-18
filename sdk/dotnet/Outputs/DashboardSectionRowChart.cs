@@ -13,6 +13,10 @@ namespace Pulumi.Wavefront.Outputs
     [OutputType]
     public sealed class DashboardSectionRowChart
     {
+        /// <summary>
+        /// The base of logarithmic scale charts. Omit or set to 0 for the default linear scale. Usually set to 10 for the traditional logarithmic scale.
+        /// </summary>
+        public readonly int? Base;
         public readonly string? ChartAttribute;
         /// <summary>
         /// Chart settings. See chart settings
@@ -42,6 +46,8 @@ namespace Pulumi.Wavefront.Outputs
 
         [OutputConstructor]
         private DashboardSectionRowChart(
+            int? @base,
+
             string? chartAttribute,
 
             Outputs.DashboardSectionRowChartChartSetting chartSetting,
@@ -56,6 +62,7 @@ namespace Pulumi.Wavefront.Outputs
 
             string units)
         {
+            Base = @base;
             ChartAttribute = chartAttribute;
             ChartSetting = chartSetting;
             Description = description;

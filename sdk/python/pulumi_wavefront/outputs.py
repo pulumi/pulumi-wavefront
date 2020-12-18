@@ -265,6 +265,7 @@ class DashboardSectionRowChart(dict):
                  sources: Sequence['outputs.DashboardSectionRowChartSource'],
                  summarization: str,
                  units: str,
+                 base: Optional[int] = None,
                  chart_attribute: Optional[str] = None,
                  description: Optional[str] = None):
         """
@@ -274,6 +275,7 @@ class DashboardSectionRowChart(dict):
         :param str summarization: Summarization strategy for the chart. MEAN is default. Valid options are, `MEAN`, 
                `MEDIAN`, `MIN`, `MAX`, `SUM`, `COUNT`, `LAST`, `FIRST`
         :param str units: String to label the units of the chart on the Y-Axis
+        :param int base: The base of logarithmic scale charts. Omit or set to 0 for the default linear scale. Usually set to 10 for the traditional logarithmic scale.
         :param str description: Description of the chart
         """
         pulumi.set(__self__, "chart_setting", chart_setting)
@@ -281,6 +283,8 @@ class DashboardSectionRowChart(dict):
         pulumi.set(__self__, "sources", sources)
         pulumi.set(__self__, "summarization", summarization)
         pulumi.set(__self__, "units", units)
+        if base is not None:
+            pulumi.set(__self__, "base", base)
         if chart_attribute is not None:
             pulumi.set(__self__, "chart_attribute", chart_attribute)
         if description is not None:
@@ -326,6 +330,14 @@ class DashboardSectionRowChart(dict):
         String to label the units of the chart on the Y-Axis
         """
         return pulumi.get(self, "units")
+
+    @property
+    @pulumi.getter
+    def base(self) -> Optional[int]:
+        """
+        The base of logarithmic scale charts. Omit or set to 0 for the default linear scale. Usually set to 10 for the traditional logarithmic scale.
+        """
+        return pulumi.get(self, "base")
 
     @property
     @pulumi.getter(name="chartAttribute")
