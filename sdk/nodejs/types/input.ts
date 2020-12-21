@@ -85,6 +85,10 @@ export interface DashboardSectionRow {
 }
 
 export interface DashboardSectionRowChart {
+    /**
+     * The base of logarithmic scale charts. Omit or set to 0 for the default linear scale. Usually set to 10 for the traditional logarithmic scale.
+     */
+    base?: pulumi.Input<number>;
     chartAttribute?: pulumi.Input<string>;
     /**
      * Chart settings. See chart settings
