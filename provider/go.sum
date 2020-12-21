@@ -585,8 +585,8 @@ github.com/ulikunitz/xz v0.5.7/go.mod h1:nbz6k7qbPmH4IRqmfOplQw/tblSgqTqBwxkY0oW
 github.com/vmihailenco/msgpack v3.3.3+incompatible/go.mod h1:fy3FlTQTDXWkZ7Bh6AcGMlsjHatGryHQYUTf1ShIgkk=
 github.com/vmihailenco/msgpack v4.0.1+incompatible h1:RMF1enSPeKTlXrXdOcqjFUElywVZjjC6pqse21bKbEU=
 github.com/vmihailenco/msgpack v4.0.1+incompatible/go.mod h1:fy3FlTQTDXWkZ7Bh6AcGMlsjHatGryHQYUTf1ShIgkk=
-github.com/vmware/terraform-provider-wavefront v0.0.0-20201202221247-d859df279e28 h1:e2FyTba7AY7TeG1ej1RHZ+1LhIskeCqwuw7gaD5NKgk=
-github.com/vmware/terraform-provider-wavefront v0.0.0-20201202221247-d859df279e28/go.mod h1:PVYp9sIBItJ3yBys7TUBb+aQebPWBxk4g8BJNCJbqH8=
+github.com/vmware/terraform-provider-wavefront v0.0.0-20201216195738-4256bcd92ec5 h1:TAHaYCjcr2ZmsDroyDnSxBokKKp8In2TEN0LI22pI7o=
+github.com/vmware/terraform-provider-wavefront v0.0.0-20201216195738-4256bcd92ec5/go.mod h1:PVYp9sIBItJ3yBys7TUBb+aQebPWBxk4g8BJNCJbqH8=
 github.com/xanzy/ssh-agent v0.2.1 h1:TCbipTQL2JiiCprBWx9frJ2eJlCYT00NmctrHxVAr70=
 github.com/xanzy/ssh-agent v0.2.1/go.mod h1:mLlQY/MoOhWBj+gOGMQkOeiEvkx+8pJSI+0Bx9h2kr4=
 github.com/xeipuuv/gojsonpointer v0.0.0-20180127040702-4e3ac2762d5f/go.mod h1:N2zxlSyiKSe5eX1tZViRH5QA0qijqEDrYZiPEAiq3wU=

@@ -317,6 +317,7 @@ class DashboardSectionRowChartArgs:
                  sources: pulumi.Input[Sequence[pulumi.Input['DashboardSectionRowChartSourceArgs']]],
                  summarization: pulumi.Input[str],
                  units: pulumi.Input[str],
+                 base: Optional[pulumi.Input[int]] = None,
                  chart_attribute: Optional[pulumi.Input[str]] = None,
                  description: Optional[pulumi.Input[str]] = None):
         """
@@ -326,6 +327,7 @@ class DashboardSectionRowChartArgs:
         :param pulumi.Input[str] summarization: Summarization strategy for the chart. MEAN is default. Valid options are, `MEAN`, 
                `MEDIAN`, `MIN`, `MAX`, `SUM`, `COUNT`, `LAST`, `FIRST`
         :param pulumi.Input[str] units: String to label the units of the chart on the Y-Axis
+        :param pulumi.Input[int] base: The base of logarithmic scale charts. Omit or set to 0 for the default linear scale. Usually set to 10 for the traditional logarithmic scale.
         :param pulumi.Input[str] description: Description of the chart
         """
         pulumi.set(__self__, "chart_setting", chart_setting)
@@ -333,6 +335,8 @@ class DashboardSectionRowChartArgs:
         pulumi.set(__self__, "sources", sources)
         pulumi.set(__self__, "summarization", summarization)
         pulumi.set(__self__, "units", units)
+        if base is not None:
+            pulumi.set(__self__, "base", base)
         if chart_attribute is not None:
             pulumi.set(__self__, "chart_attribute", chart_attribute)
         if description is not None:
@@ -398,6 +402,18 @@ class DashboardSectionRowChartArgs:
     @units.setter
     def units(self, value: pulumi.Input[str]):
         pulumi.set(self, "units", value)
+
+    @property
+    @pulumi.getter
+    def base(self) -> Optional[pulumi.Input[int]]:
+        """
+        The base of logarithmic scale charts. Omit or set to 0 for the default linear scale. Usually set to 10 for the traditional logarithmic scale.
+        """
+        return pulumi.get(self, "base")
+
+    @base.setter
+    def base(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "base", value)
 
     @property
     @pulumi.getter(name="chartAttribute")

@@ -604,6 +604,8 @@ func (o DashboardSectionRowArrayOutput) Index(i pulumi.IntInput) DashboardSectio
 }
 
 type DashboardSectionRowChart struct {
+	// The base of logarithmic scale charts. Omit or set to 0 for the default linear scale. Usually set to 10 for the traditional logarithmic scale.
+	Base           *int    `pulumi:"base"`
 	ChartAttribute *string `pulumi:"chartAttribute"`
 	// Chart settings. See chart settings
 	ChartSetting DashboardSectionRowChartChartSetting `pulumi:"chartSetting"`
@@ -632,6 +634,8 @@ type DashboardSectionRowChartInput interface {
 }
 
 type DashboardSectionRowChartArgs struct {
+	// The base of logarithmic scale charts. Omit or set to 0 for the default linear scale. Usually set to 10 for the traditional logarithmic scale.
+	Base           pulumi.IntPtrInput    `pulumi:"base"`
 	ChartAttribute pulumi.StringPtrInput `pulumi:"chartAttribute"`
 	// Chart settings. See chart settings
 	ChartSetting DashboardSectionRowChartChartSettingInput `pulumi:"chartSetting"`
@@ -697,6 +701,11 @@ func (o DashboardSectionRowChartOutput) ToDashboardSectionRowChartOutput() Dashb
 
 func (o DashboardSectionRowChartOutput) ToDashboardSectionRowChartOutputWithContext(ctx context.Context) DashboardSectionRowChartOutput {
 	return o
+}
+
+// The base of logarithmic scale charts. Omit or set to 0 for the default linear scale. Usually set to 10 for the traditional logarithmic scale.
+func (o DashboardSectionRowChartOutput) Base() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v DashboardSectionRowChart) *int { return v.Base }).(pulumi.IntPtrOutput)
 }
 
 func (o DashboardSectionRowChartOutput) ChartAttribute() pulumi.StringPtrOutput {
