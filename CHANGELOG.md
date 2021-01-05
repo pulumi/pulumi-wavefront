@@ -2,10 +2,13 @@ CHANGELOG
 =========
 
 ## HEAD (Unreleased)
-* Upgrade to pulumi-terraform-bridge v2.13.2
-  * This adds support for import specific examples in documentation
+_(none)_
 
 ---
+
+## 0.5.4 (2021-01-05)
+* Upgrade to pulumi-terraform-bridge v2.13.2
+  * This adds support for import specific examples in documentation
 
 ## 0.5.3 (2020-12-21)
 * Upgrade to v2.7.3 of the Wavefront Terraform Provider
