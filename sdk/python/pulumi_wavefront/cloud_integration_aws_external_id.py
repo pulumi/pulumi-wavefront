@@ -30,6 +30,14 @@ class CloudIntegrationAwsExternalId(pulumi.CustomResource):
         external_id = wavefront.CloudIntegrationAwsExternalId("externalId")
         ```
 
+        ## Import
+
+        External IDs can be imported using the `id`, e.g.
+
+        ```sh
+         $ pulumi import wavefront:index/cloudIntegrationAwsExternalId:CloudIntegrationAwsExternalId external_id uGJdkH3k
+        ```
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         """

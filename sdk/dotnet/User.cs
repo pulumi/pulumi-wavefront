@@ -30,6 +30,14 @@ namespace Pulumi.Wavefront
     /// 
     /// }
     /// ```
+    /// 
+    /// ## Import
+    /// 
+    /// Users can be imported using the `id`, e.g.
+    /// 
+    /// ```sh
+    ///  $ pulumi import wavefront:index/user:User some_user test@example.com
+    /// ```
     /// </summary>
     public partial class User : Pulumi.CustomResource
     {

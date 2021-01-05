@@ -2,8 +2,7 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import * as inputs from "./types/input";
-import * as outputs from "./types/output";
+import { input as inputs, output as outputs } from "./types";
 import * as utilities from "./utilities";
 
 /**
@@ -19,6 +18,14 @@ import * as utilities from "./utilities";
  * const newrelic = new wavefront.CloudIntegrationNewRelic("newrelic", {
  *     apiKey: "example-api-key",
  * });
+ * ```
+ *
+ * ## Import
+ *
+ * NewRelic Integrations can be imported using the `id`, e.g.
+ *
+ * ```sh
+ *  $ pulumi import wavefront:index/cloudIntegrationNewRelic:CloudIntegrationNewRelic newrelic a411c16b-3cf7-4f03-bf11-8ca05aab898d
  * ```
  */
 export class CloudIntegrationNewRelic extends pulumi.CustomResource {

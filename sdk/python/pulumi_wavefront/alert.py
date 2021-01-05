@@ -55,6 +55,14 @@ class Alert(pulumi.CustomResource):
             target="test@example.com")
         ```
 
+        ## Import
+
+        Alerts can be imported using the `id`, e.g.
+
+        ```sh
+         $ pulumi import wavefront:index/alert:Alert alert_target 1479868728473
+        ```
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] additional_information: User-supplied additional explanatory information for this alert.

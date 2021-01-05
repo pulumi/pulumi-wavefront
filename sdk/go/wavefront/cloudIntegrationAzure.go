@@ -4,6 +4,7 @@
 package wavefront
 
 import (
+	"context"
 	"reflect"
 
 	"github.com/pkg/errors"
@@ -36,6 +37,14 @@ import (
 // 		return nil
 // 	})
 // }
+// ```
+//
+// ## Import
+//
+// Azure Cloud Integrations can be imported using the `id`, e.g.
+//
+// ```sh
+//  $ pulumi import wavefront:index/cloudIntegrationAzure:CloudIntegrationAzure azure a411c16b-3cf7-4f03-bf11-8ca05aab898d
 // ```
 type CloudIntegrationAzure struct {
 	pulumi.CustomResourceState
@@ -210,4 +219,43 @@ type CloudIntegrationAzureArgs struct {
 
 func (CloudIntegrationAzureArgs) ElementType() reflect.Type {
 	return reflect.TypeOf((*cloudIntegrationAzureArgs)(nil)).Elem()
+}
+
+type CloudIntegrationAzureInput interface {
+	pulumi.Input
+
+	ToCloudIntegrationAzureOutput() CloudIntegrationAzureOutput
+	ToCloudIntegrationAzureOutputWithContext(ctx context.Context) CloudIntegrationAzureOutput
+}
+
+func (CloudIntegrationAzure) ElementType() reflect.Type {
+	return reflect.TypeOf((*CloudIntegrationAzure)(nil)).Elem()
+}
+
+func (i CloudIntegrationAzure) ToCloudIntegrationAzureOutput() CloudIntegrationAzureOutput {
+	return i.ToCloudIntegrationAzureOutputWithContext(context.Background())
+}
+
+func (i CloudIntegrationAzure) ToCloudIntegrationAzureOutputWithContext(ctx context.Context) CloudIntegrationAzureOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CloudIntegrationAzureOutput)
+}
+
+type CloudIntegrationAzureOutput struct {
+	*pulumi.OutputState
+}
+
+func (CloudIntegrationAzureOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*CloudIntegrationAzureOutput)(nil)).Elem()
+}
+
+func (o CloudIntegrationAzureOutput) ToCloudIntegrationAzureOutput() CloudIntegrationAzureOutput {
+	return o
+}
+
+func (o CloudIntegrationAzureOutput) ToCloudIntegrationAzureOutputWithContext(ctx context.Context) CloudIntegrationAzureOutput {
+	return o
+}
+
+func init() {
+	pulumi.RegisterOutputType(CloudIntegrationAzureOutput{})
 }

@@ -4,6 +4,7 @@
 package wavefront
 
 import (
+	"context"
 	"reflect"
 
 	"github.com/pkg/errors"
@@ -40,6 +41,14 @@ import (
 // 		return nil
 // 	})
 // }
+// ```
+//
+// ## Import
+//
+// CloudWatch Cloud Integrations can be imported using the `id`, e.g.
+//
+// ```sh
+//  $ pulumi import wavefront:index/cloudIntegrationCloudWatch:CloudIntegrationCloudWatch cloudwatch a411c16b-3cf7-4f03-bf11-8ca05aab898d
 // ```
 type CloudIntegrationCloudWatch struct {
 	pulumi.CustomResourceState
@@ -246,4 +255,43 @@ type CloudIntegrationCloudWatchArgs struct {
 
 func (CloudIntegrationCloudWatchArgs) ElementType() reflect.Type {
 	return reflect.TypeOf((*cloudIntegrationCloudWatchArgs)(nil)).Elem()
+}
+
+type CloudIntegrationCloudWatchInput interface {
+	pulumi.Input
+
+	ToCloudIntegrationCloudWatchOutput() CloudIntegrationCloudWatchOutput
+	ToCloudIntegrationCloudWatchOutputWithContext(ctx context.Context) CloudIntegrationCloudWatchOutput
+}
+
+func (CloudIntegrationCloudWatch) ElementType() reflect.Type {
+	return reflect.TypeOf((*CloudIntegrationCloudWatch)(nil)).Elem()
+}
+
+func (i CloudIntegrationCloudWatch) ToCloudIntegrationCloudWatchOutput() CloudIntegrationCloudWatchOutput {
+	return i.ToCloudIntegrationCloudWatchOutputWithContext(context.Background())
+}
+
+func (i CloudIntegrationCloudWatch) ToCloudIntegrationCloudWatchOutputWithContext(ctx context.Context) CloudIntegrationCloudWatchOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CloudIntegrationCloudWatchOutput)
+}
+
+type CloudIntegrationCloudWatchOutput struct {
+	*pulumi.OutputState
+}
+
+func (CloudIntegrationCloudWatchOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*CloudIntegrationCloudWatchOutput)(nil)).Elem()
+}
+
+func (o CloudIntegrationCloudWatchOutput) ToCloudIntegrationCloudWatchOutput() CloudIntegrationCloudWatchOutput {
+	return o
+}
+
+func (o CloudIntegrationCloudWatchOutput) ToCloudIntegrationCloudWatchOutputWithContext(ctx context.Context) CloudIntegrationCloudWatchOutput {
+	return o
+}
+
+func init() {
+	pulumi.RegisterOutputType(CloudIntegrationCloudWatchOutput{})
 }

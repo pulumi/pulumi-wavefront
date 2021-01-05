@@ -31,6 +31,14 @@ namespace Pulumi.Wavefront
     /// 
     /// }
     /// ```
+    /// 
+    /// ## Import
+    /// 
+    /// NewRelic Integrations can be imported using the `id`, e.g.
+    /// 
+    /// ```sh
+    ///  $ pulumi import wavefront:index/cloudIntegrationNewRelic:CloudIntegrationNewRelic newrelic a411c16b-3cf7-4f03-bf11-8ca05aab898d
+    /// ```
     /// </summary>
     public partial class CloudIntegrationNewRelic : Pulumi.CustomResource
     {

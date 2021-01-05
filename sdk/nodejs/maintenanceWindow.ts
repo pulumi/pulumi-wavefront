@@ -24,6 +24,14 @@ import * as utilities from "./utilities";
  *     title: "Routine maintenance",
  * });
  * ```
+ *
+ * ## Import
+ *
+ * Maintenance windows can be imported using the `id`, e.g.
+ *
+ * ```sh
+ *  $ pulumi import wavefront:index/maintenanceWindow:MaintenanceWindow basic 1600383357095
+ * ```
  */
 export class MaintenanceWindow extends pulumi.CustomResource {
     /**

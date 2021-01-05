@@ -32,6 +32,14 @@ class UserGroup(pulumi.CustomResource):
         basic = wavefront.UserGroup("basic", description="Basic User Group for Unit Tests")
         ```
 
+        ## Import
+
+        User Groups can be imported using the `id`, e.g.
+
+        ```sh
+         $ pulumi import wavefront:index/userGroup:UserGroup some_group a411c16b-3cf7-4f03-bf11-8ca05aab898d
+        ```
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] description: A short description of the user group

@@ -4,6 +4,7 @@
 package wavefront
 
 import (
+	"context"
 	"reflect"
 
 	"github.com/pkg/errors"
@@ -41,6 +42,14 @@ import (
 // 		return nil
 // 	})
 // }
+// ```
+//
+// ## Import
+//
+// CloudTrail Cloud Integrations can be imported using the `id`, e.g.
+//
+// ```sh
+//  $ pulumi import wavefront:index/cloudIntegrationCloudTrail:CloudIntegrationCloudTrail cloudtrail a411c16b-3cf7-4f03-bf11-8ca05aab898d
 // ```
 type CloudIntegrationCloudTrail struct {
 	pulumi.CustomResourceState
@@ -218,4 +227,43 @@ type CloudIntegrationCloudTrailArgs struct {
 
 func (CloudIntegrationCloudTrailArgs) ElementType() reflect.Type {
 	return reflect.TypeOf((*cloudIntegrationCloudTrailArgs)(nil)).Elem()
+}
+
+type CloudIntegrationCloudTrailInput interface {
+	pulumi.Input
+
+	ToCloudIntegrationCloudTrailOutput() CloudIntegrationCloudTrailOutput
+	ToCloudIntegrationCloudTrailOutputWithContext(ctx context.Context) CloudIntegrationCloudTrailOutput
+}
+
+func (CloudIntegrationCloudTrail) ElementType() reflect.Type {
+	return reflect.TypeOf((*CloudIntegrationCloudTrail)(nil)).Elem()
+}
+
+func (i CloudIntegrationCloudTrail) ToCloudIntegrationCloudTrailOutput() CloudIntegrationCloudTrailOutput {
+	return i.ToCloudIntegrationCloudTrailOutputWithContext(context.Background())
+}
+
+func (i CloudIntegrationCloudTrail) ToCloudIntegrationCloudTrailOutputWithContext(ctx context.Context) CloudIntegrationCloudTrailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CloudIntegrationCloudTrailOutput)
+}
+
+type CloudIntegrationCloudTrailOutput struct {
+	*pulumi.OutputState
+}
+
+func (CloudIntegrationCloudTrailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*CloudIntegrationCloudTrailOutput)(nil)).Elem()
+}
+
+func (o CloudIntegrationCloudTrailOutput) ToCloudIntegrationCloudTrailOutput() CloudIntegrationCloudTrailOutput {
+	return o
+}
+
+func (o CloudIntegrationCloudTrailOutput) ToCloudIntegrationCloudTrailOutputWithContext(ctx context.Context) CloudIntegrationCloudTrailOutput {
+	return o
+}
+
+func init() {
+	pulumi.RegisterOutputType(CloudIntegrationCloudTrailOutput{})
 }

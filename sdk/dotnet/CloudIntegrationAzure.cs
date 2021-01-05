@@ -33,6 +33,14 @@ namespace Pulumi.Wavefront
     /// 
     /// }
     /// ```
+    /// 
+    /// ## Import
+    /// 
+    /// Azure Cloud Integrations can be imported using the `id`, e.g.
+    /// 
+    /// ```sh
+    ///  $ pulumi import wavefront:index/cloudIntegrationAzure:CloudIntegrationAzure azure a411c16b-3cf7-4f03-bf11-8ca05aab898d
+    /// ```
     /// </summary>
     public partial class CloudIntegrationAzure : Pulumi.CustomResource
     {

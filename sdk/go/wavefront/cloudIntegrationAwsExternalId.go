@@ -4,6 +4,7 @@
 package wavefront
 
 import (
+	"context"
 	"reflect"
 
 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
@@ -30,6 +31,14 @@ import (
 // 		return nil
 // 	})
 // }
+// ```
+//
+// ## Import
+//
+// External IDs can be imported using the `id`, e.g.
+//
+// ```sh
+//  $ pulumi import wavefront:index/cloudIntegrationAwsExternalId:CloudIntegrationAwsExternalId external_id uGJdkH3k
 // ```
 type CloudIntegrationAwsExternalId struct {
 	pulumi.CustomResourceState
@@ -81,4 +90,43 @@ type CloudIntegrationAwsExternalIdArgs struct {
 
 func (CloudIntegrationAwsExternalIdArgs) ElementType() reflect.Type {
 	return reflect.TypeOf((*cloudIntegrationAwsExternalIdArgs)(nil)).Elem()
+}
+
+type CloudIntegrationAwsExternalIdInput interface {
+	pulumi.Input
+
+	ToCloudIntegrationAwsExternalIdOutput() CloudIntegrationAwsExternalIdOutput
+	ToCloudIntegrationAwsExternalIdOutputWithContext(ctx context.Context) CloudIntegrationAwsExternalIdOutput
+}
+
+func (CloudIntegrationAwsExternalId) ElementType() reflect.Type {
+	return reflect.TypeOf((*CloudIntegrationAwsExternalId)(nil)).Elem()
+}
+
+func (i CloudIntegrationAwsExternalId) ToCloudIntegrationAwsExternalIdOutput() CloudIntegrationAwsExternalIdOutput {
+	return i.ToCloudIntegrationAwsExternalIdOutputWithContext(context.Background())
+}
+
+func (i CloudIntegrationAwsExternalId) ToCloudIntegrationAwsExternalIdOutputWithContext(ctx context.Context) CloudIntegrationAwsExternalIdOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CloudIntegrationAwsExternalIdOutput)
+}
+
+type CloudIntegrationAwsExternalIdOutput struct {
+	*pulumi.OutputState
+}
+
+func (CloudIntegrationAwsExternalIdOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*CloudIntegrationAwsExternalIdOutput)(nil)).Elem()
+}
+
+func (o CloudIntegrationAwsExternalIdOutput) ToCloudIntegrationAwsExternalIdOutput() CloudIntegrationAwsExternalIdOutput {
+	return o
+}
+
+func (o CloudIntegrationAwsExternalIdOutput) ToCloudIntegrationAwsExternalIdOutputWithContext(ctx context.Context) CloudIntegrationAwsExternalIdOutput {
+	return o
+}
+
+func init() {
+	pulumi.RegisterOutputType(CloudIntegrationAwsExternalIdOutput{})
 }

@@ -38,6 +38,14 @@ class DerivedMetric(pulumi.CustomResource):
             query="aliasMetric(5, \"some.metric\")")
         ```
 
+        ## Import
+
+        Derived Metrics can be imported using the `id`, e.g.
+
+        ```sh
+         $ pulumi import wavefront:index/derivedMetric:DerivedMetric derived_metric 1577102900578
+        ```
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] additional_information: User-supplied additional explanatory information for the derived metric

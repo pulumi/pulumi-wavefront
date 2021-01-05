@@ -107,6 +107,14 @@ class AlertTarget(pulumi.CustomResource):
             ])
         ```
 
+        ## Import
+
+        Alert Targets can be imported using the `id`, e.g.
+
+        ```sh
+         $ pulumi import wavefront:index/alertTarget:AlertTarget alert_target abcdEFGhijKLMNO
+        ```
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] content_type: The value of the `Content-Type` header of the webhook.

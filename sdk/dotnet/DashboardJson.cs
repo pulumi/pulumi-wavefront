@@ -128,6 +128,14 @@ namespace Pulumi.Wavefront
     /// 
     /// }
     /// ```
+    /// 
+    /// ## Import
+    /// 
+    /// Dashboard JSON can be imported using the `id`, e.g.
+    /// 
+    /// ```sh
+    ///  $ pulumi import wavefront:index/dashboardJson:DashboardJson dashboard_json tftestimport
+    /// ```
     /// </summary>
     public partial class DashboardJson : Pulumi.CustomResource
     {

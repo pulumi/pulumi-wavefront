@@ -15,6 +15,14 @@ import * as utilities from "./utilities";
  *
  * const externalId = new wavefront.CloudIntegrationAwsExternalId("external_id", {});
  * ```
+ *
+ * ## Import
+ *
+ * External IDs can be imported using the `id`, e.g.
+ *
+ * ```sh
+ *  $ pulumi import wavefront:index/cloudIntegrationAwsExternalId:CloudIntegrationAwsExternalId external_id uGJdkH3k
+ * ```
  */
 export class CloudIntegrationAwsExternalId extends pulumi.CustomResource {
     /**
