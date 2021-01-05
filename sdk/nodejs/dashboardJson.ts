@@ -114,6 +114,14 @@ import * as utilities from "./utilities";
  * `,
  * });
  * ```
+ *
+ * ## Import
+ *
+ * Dashboard JSON can be imported using the `id`, e.g.
+ *
+ * ```sh
+ *  $ pulumi import wavefront:index/dashboardJson:DashboardJson dashboard_json tftestimport
+ * ```
  */
 export class DashboardJson extends pulumi.CustomResource {
     /**

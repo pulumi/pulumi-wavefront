@@ -4,6 +4,7 @@
 package wavefront
 
 import (
+	"context"
 	"reflect"
 
 	"github.com/pkg/errors"
@@ -109,6 +110,14 @@ import (
 // 		return nil
 // 	})
 // }
+// ```
+//
+// ## Import
+//
+// Alert Targets can be imported using the `id`, e.g.
+//
+// ```sh
+//  $ pulumi import wavefront:index/alertTarget:AlertTarget alert_target abcdEFGhijKLMNO
 // ```
 type AlertTarget struct {
 	pulumi.CustomResourceState
@@ -301,4 +310,43 @@ type AlertTargetArgs struct {
 
 func (AlertTargetArgs) ElementType() reflect.Type {
 	return reflect.TypeOf((*alertTargetArgs)(nil)).Elem()
+}
+
+type AlertTargetInput interface {
+	pulumi.Input
+
+	ToAlertTargetOutput() AlertTargetOutput
+	ToAlertTargetOutputWithContext(ctx context.Context) AlertTargetOutput
+}
+
+func (AlertTarget) ElementType() reflect.Type {
+	return reflect.TypeOf((*AlertTarget)(nil)).Elem()
+}
+
+func (i AlertTarget) ToAlertTargetOutput() AlertTargetOutput {
+	return i.ToAlertTargetOutputWithContext(context.Background())
+}
+
+func (i AlertTarget) ToAlertTargetOutputWithContext(ctx context.Context) AlertTargetOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AlertTargetOutput)
+}
+
+type AlertTargetOutput struct {
+	*pulumi.OutputState
+}
+
+func (AlertTargetOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AlertTargetOutput)(nil)).Elem()
+}
+
+func (o AlertTargetOutput) ToAlertTargetOutput() AlertTargetOutput {
+	return o
+}
+
+func (o AlertTargetOutput) ToAlertTargetOutputWithContext(ctx context.Context) AlertTargetOutput {
+	return o
+}
+
+func init() {
+	pulumi.RegisterOutputType(AlertTargetOutput{})
 }

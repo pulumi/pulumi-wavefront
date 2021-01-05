@@ -20,6 +20,14 @@ import * as utilities from "./utilities";
  *     userName: "example",
  * });
  * ```
+ *
+ * ## Import
+ *
+ * App Dynamic Cloud Integrations can be imported using the `id`, e.g.
+ *
+ * ```sh
+ *  $ pulumi import wavefront:index/cloudIntegrationAppDynamics:CloudIntegrationAppDynamics app_dynamics a411c16b-3cf7-4f03-bf11-8ca05aab898d
+ * ```
  */
 export class CloudIntegrationAppDynamics extends pulumi.CustomResource {
     /**

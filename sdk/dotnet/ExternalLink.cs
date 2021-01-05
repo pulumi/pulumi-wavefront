@@ -31,6 +31,14 @@ namespace Pulumi.Wavefront
     /// 
     /// }
     /// ```
+    /// 
+    /// ## Import
+    /// 
+    /// Maintenance windows can be imported using the `id`, e.g.
+    /// 
+    /// ```sh
+    ///  $ pulumi import wavefront:index/externalLink:ExternalLink basic fVj6fz6zYC4aBkID
+    /// ```
     /// </summary>
     public partial class ExternalLink : Pulumi.CustomResource
     {

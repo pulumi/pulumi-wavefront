@@ -4,6 +4,7 @@
 package wavefront
 
 import (
+	"context"
 	"reflect"
 
 	"github.com/pkg/errors"
@@ -40,6 +41,14 @@ import (
 // 		return nil
 // 	})
 // }
+// ```
+//
+// ## Import
+//
+// Maintenance windows can be imported using the `id`, e.g.
+//
+// ```sh
+//  $ pulumi import wavefront:index/maintenanceWindow:MaintenanceWindow basic 1600383357095
 // ```
 type MaintenanceWindow struct {
 	pulumi.CustomResourceState
@@ -194,4 +203,43 @@ type MaintenanceWindowArgs struct {
 
 func (MaintenanceWindowArgs) ElementType() reflect.Type {
 	return reflect.TypeOf((*maintenanceWindowArgs)(nil)).Elem()
+}
+
+type MaintenanceWindowInput interface {
+	pulumi.Input
+
+	ToMaintenanceWindowOutput() MaintenanceWindowOutput
+	ToMaintenanceWindowOutputWithContext(ctx context.Context) MaintenanceWindowOutput
+}
+
+func (MaintenanceWindow) ElementType() reflect.Type {
+	return reflect.TypeOf((*MaintenanceWindow)(nil)).Elem()
+}
+
+func (i MaintenanceWindow) ToMaintenanceWindowOutput() MaintenanceWindowOutput {
+	return i.ToMaintenanceWindowOutputWithContext(context.Background())
+}
+
+func (i MaintenanceWindow) ToMaintenanceWindowOutputWithContext(ctx context.Context) MaintenanceWindowOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MaintenanceWindowOutput)
+}
+
+type MaintenanceWindowOutput struct {
+	*pulumi.OutputState
+}
+
+func (MaintenanceWindowOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MaintenanceWindowOutput)(nil)).Elem()
+}
+
+func (o MaintenanceWindowOutput) ToMaintenanceWindowOutput() MaintenanceWindowOutput {
+	return o
+}
+
+func (o MaintenanceWindowOutput) ToMaintenanceWindowOutputWithContext(ctx context.Context) MaintenanceWindowOutput {
+	return o
+}
+
+func init() {
+	pulumi.RegisterOutputType(MaintenanceWindowOutput{})
 }

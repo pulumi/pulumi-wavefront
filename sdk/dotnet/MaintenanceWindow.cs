@@ -38,6 +38,14 @@ namespace Pulumi.Wavefront
     /// 
     /// }
     /// ```
+    /// 
+    /// ## Import
+    /// 
+    /// Maintenance windows can be imported using the `id`, e.g.
+    /// 
+    /// ```sh
+    ///  $ pulumi import wavefront:index/maintenanceWindow:MaintenanceWindow basic 1600383357095
+    /// ```
     /// </summary>
     public partial class MaintenanceWindow : Pulumi.CustomResource
     {

@@ -4,6 +4,7 @@
 package wavefront
 
 import (
+	"context"
 	"reflect"
 
 	"github.com/pkg/errors"
@@ -39,6 +40,14 @@ import (
 // 		return nil
 // 	})
 // }
+// ```
+//
+// ## Import
+//
+// Azure Activity Log Cloud Integrations can be imported using the `id`, e.g.
+//
+// ```sh
+//  $ pulumi import wavefront:index/cloudIntegrationAzureActivityLog:CloudIntegrationAzureActivityLog azure_al a411c16b-3cf7-4f03-bf11-8ca05aab898d
 // ```
 type CloudIntegrationAzureActivityLog struct {
 	pulumi.CustomResourceState
@@ -193,4 +202,43 @@ type CloudIntegrationAzureActivityLogArgs struct {
 
 func (CloudIntegrationAzureActivityLogArgs) ElementType() reflect.Type {
 	return reflect.TypeOf((*cloudIntegrationAzureActivityLogArgs)(nil)).Elem()
+}
+
+type CloudIntegrationAzureActivityLogInput interface {
+	pulumi.Input
+
+	ToCloudIntegrationAzureActivityLogOutput() CloudIntegrationAzureActivityLogOutput
+	ToCloudIntegrationAzureActivityLogOutputWithContext(ctx context.Context) CloudIntegrationAzureActivityLogOutput
+}
+
+func (CloudIntegrationAzureActivityLog) ElementType() reflect.Type {
+	return reflect.TypeOf((*CloudIntegrationAzureActivityLog)(nil)).Elem()
+}
+
+func (i CloudIntegrationAzureActivityLog) ToCloudIntegrationAzureActivityLogOutput() CloudIntegrationAzureActivityLogOutput {
+	return i.ToCloudIntegrationAzureActivityLogOutputWithContext(context.Background())
+}
+
+func (i CloudIntegrationAzureActivityLog) ToCloudIntegrationAzureActivityLogOutputWithContext(ctx context.Context) CloudIntegrationAzureActivityLogOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CloudIntegrationAzureActivityLogOutput)
+}
+
+type CloudIntegrationAzureActivityLogOutput struct {
+	*pulumi.OutputState
+}
+
+func (CloudIntegrationAzureActivityLogOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*CloudIntegrationAzureActivityLogOutput)(nil)).Elem()
+}
+
+func (o CloudIntegrationAzureActivityLogOutput) ToCloudIntegrationAzureActivityLogOutput() CloudIntegrationAzureActivityLogOutput {
+	return o
+}
+
+func (o CloudIntegrationAzureActivityLogOutput) ToCloudIntegrationAzureActivityLogOutputWithContext(ctx context.Context) CloudIntegrationAzureActivityLogOutput {
+	return o
+}
+
+func init() {
+	pulumi.RegisterOutputType(CloudIntegrationAzureActivityLogOutput{})
 }

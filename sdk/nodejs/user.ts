@@ -17,6 +17,14 @@ import * as utilities from "./utilities";
  *     email: "test+tftesting@example.com",
  * });
  * ```
+ *
+ * ## Import
+ *
+ * Users can be imported using the `id`, e.g.
+ *
+ * ```sh
+ *  $ pulumi import wavefront:index/user:User some_user test@example.com
+ * ```
  */
 export class User extends pulumi.CustomResource {
     /**

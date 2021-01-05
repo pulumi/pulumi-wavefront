@@ -4,6 +4,7 @@
 package wavefront
 
 import (
+	"context"
 	"reflect"
 
 	"github.com/pkg/errors"
@@ -36,6 +37,14 @@ import (
 // 		return nil
 // 	})
 // }
+// ```
+//
+// ## Import
+//
+// App Dynamic Cloud Integrations can be imported using the `id`, e.g.
+//
+// ```sh
+//  $ pulumi import wavefront:index/cloudIntegrationAppDynamics:CloudIntegrationAppDynamics app_dynamics a411c16b-3cf7-4f03-bf11-8ca05aab898d
 // ```
 type CloudIntegrationAppDynamics struct {
 	pulumi.CustomResourceState
@@ -280,4 +289,43 @@ type CloudIntegrationAppDynamicsArgs struct {
 
 func (CloudIntegrationAppDynamicsArgs) ElementType() reflect.Type {
 	return reflect.TypeOf((*cloudIntegrationAppDynamicsArgs)(nil)).Elem()
+}
+
+type CloudIntegrationAppDynamicsInput interface {
+	pulumi.Input
+
+	ToCloudIntegrationAppDynamicsOutput() CloudIntegrationAppDynamicsOutput
+	ToCloudIntegrationAppDynamicsOutputWithContext(ctx context.Context) CloudIntegrationAppDynamicsOutput
+}
+
+func (CloudIntegrationAppDynamics) ElementType() reflect.Type {
+	return reflect.TypeOf((*CloudIntegrationAppDynamics)(nil)).Elem()
+}
+
+func (i CloudIntegrationAppDynamics) ToCloudIntegrationAppDynamicsOutput() CloudIntegrationAppDynamicsOutput {
+	return i.ToCloudIntegrationAppDynamicsOutputWithContext(context.Background())
+}
+
+func (i CloudIntegrationAppDynamics) ToCloudIntegrationAppDynamicsOutputWithContext(ctx context.Context) CloudIntegrationAppDynamicsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CloudIntegrationAppDynamicsOutput)
+}
+
+type CloudIntegrationAppDynamicsOutput struct {
+	*pulumi.OutputState
+}
+
+func (CloudIntegrationAppDynamicsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*CloudIntegrationAppDynamicsOutput)(nil)).Elem()
+}
+
+func (o CloudIntegrationAppDynamicsOutput) ToCloudIntegrationAppDynamicsOutput() CloudIntegrationAppDynamicsOutput {
+	return o
+}
+
+func (o CloudIntegrationAppDynamicsOutput) ToCloudIntegrationAppDynamicsOutputWithContext(ctx context.Context) CloudIntegrationAppDynamicsOutput {
+	return o
+}
+
+func init() {
+	pulumi.RegisterOutputType(CloudIntegrationAppDynamicsOutput{})
 }

@@ -47,6 +47,14 @@ class MaintenanceWindow(pulumi.CustomResource):
             title="Routine maintenance")
         ```
 
+        ## Import
+
+        Maintenance windows can be imported using the `id`, e.g.
+
+        ```sh
+         $ pulumi import wavefront:index/maintenanceWindow:MaintenanceWindow basic 1600383357095
+        ```
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[int] end_time_in_seconds: end time in seconds after 1 Jan 1970 GMT.

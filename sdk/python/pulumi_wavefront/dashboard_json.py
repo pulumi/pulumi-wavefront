@@ -129,6 +129,14 @@ class DashboardJson(pulumi.CustomResource):
         \"\"\")
         ```
 
+        ## Import
+
+        Dashboard JSON can be imported using the `id`, e.g.
+
+        ```sh
+         $ pulumi import wavefront:index/dashboardJson:DashboardJson dashboard_json tftestimport
+        ```
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] dashboard_json: See [Wavefront API Documentation](https://docs.wavefront.com/wavefront_api.html#api-documentation-wavefront-instance) 

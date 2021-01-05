@@ -34,6 +34,14 @@ class Dashboard(pulumi.CustomResource):
         """
         Provides a Wavefront Dashboard resource.  This allows dashboards to be created, updated, and deleted.
 
+        ## Import
+
+        Dashboards can be imported using the `id`, e.g.
+
+        ```sh
+         $ pulumi import wavefront:index/dashboard:Dashboard dashboard tftestimport
+        ```
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] can_modifies: A list of users that have modify ACL access to the dashboard

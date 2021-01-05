@@ -34,6 +34,14 @@ class User(pulumi.CustomResource):
         basic = wavefront.User("basic", email="test+tftesting@example.com")
         ```
 
+        ## Import
+
+        Users can be imported using the `id`, e.g.
+
+        ```sh
+         $ pulumi import wavefront:index/user:User some_user test@example.com
+        ```
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] email: The (unique) identifier of the user to create. Must be a valid email address

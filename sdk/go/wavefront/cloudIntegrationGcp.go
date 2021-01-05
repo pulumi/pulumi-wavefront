@@ -4,6 +4,7 @@
 package wavefront
 
 import (
+	"context"
 	"reflect"
 
 	"github.com/pkg/errors"
@@ -37,6 +38,14 @@ import (
 // 		return nil
 // 	})
 // }
+// ```
+//
+// ## Import
+//
+// GCP Cloud Integrations can be imported using the `id`, e.g.
+//
+// ```sh
+//  $ pulumi import wavefront:index/cloudIntegrationGcp:CloudIntegrationGcp gcp a411c16b-3cf7-4f03-bf11-8ca05aab898d
 // ```
 type CloudIntegrationGcp struct {
 	pulumi.CustomResourceState
@@ -213,4 +222,43 @@ type CloudIntegrationGcpArgs struct {
 
 func (CloudIntegrationGcpArgs) ElementType() reflect.Type {
 	return reflect.TypeOf((*cloudIntegrationGcpArgs)(nil)).Elem()
+}
+
+type CloudIntegrationGcpInput interface {
+	pulumi.Input
+
+	ToCloudIntegrationGcpOutput() CloudIntegrationGcpOutput
+	ToCloudIntegrationGcpOutputWithContext(ctx context.Context) CloudIntegrationGcpOutput
+}
+
+func (CloudIntegrationGcp) ElementType() reflect.Type {
+	return reflect.TypeOf((*CloudIntegrationGcp)(nil)).Elem()
+}
+
+func (i CloudIntegrationGcp) ToCloudIntegrationGcpOutput() CloudIntegrationGcpOutput {
+	return i.ToCloudIntegrationGcpOutputWithContext(context.Background())
+}
+
+func (i CloudIntegrationGcp) ToCloudIntegrationGcpOutputWithContext(ctx context.Context) CloudIntegrationGcpOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CloudIntegrationGcpOutput)
+}
+
+type CloudIntegrationGcpOutput struct {
+	*pulumi.OutputState
+}
+
+func (CloudIntegrationGcpOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*CloudIntegrationGcpOutput)(nil)).Elem()
+}
+
+func (o CloudIntegrationGcpOutput) ToCloudIntegrationGcpOutput() CloudIntegrationGcpOutput {
+	return o
+}
+
+func (o CloudIntegrationGcpOutput) ToCloudIntegrationGcpOutputWithContext(ctx context.Context) CloudIntegrationGcpOutput {
+	return o
+}
+
+func init() {
+	pulumi.RegisterOutputType(CloudIntegrationGcpOutput{})
 }

@@ -4,6 +4,7 @@
 package wavefront
 
 import (
+	"context"
 	"reflect"
 
 	"github.com/pkg/errors"
@@ -35,6 +36,14 @@ import (
 // 		return nil
 // 	})
 // }
+// ```
+//
+// ## Import
+//
+// Derived Metrics can be imported using the `id`, e.g.
+//
+// ```sh
+//  $ pulumi import wavefront:index/derivedMetric:DerivedMetric derived_metric 1577102900578
 // ```
 type DerivedMetric struct {
 	pulumi.CustomResourceState
@@ -143,4 +152,43 @@ type DerivedMetricArgs struct {
 
 func (DerivedMetricArgs) ElementType() reflect.Type {
 	return reflect.TypeOf((*derivedMetricArgs)(nil)).Elem()
+}
+
+type DerivedMetricInput interface {
+	pulumi.Input
+
+	ToDerivedMetricOutput() DerivedMetricOutput
+	ToDerivedMetricOutputWithContext(ctx context.Context) DerivedMetricOutput
+}
+
+func (DerivedMetric) ElementType() reflect.Type {
+	return reflect.TypeOf((*DerivedMetric)(nil)).Elem()
+}
+
+func (i DerivedMetric) ToDerivedMetricOutput() DerivedMetricOutput {
+	return i.ToDerivedMetricOutputWithContext(context.Background())
+}
+
+func (i DerivedMetric) ToDerivedMetricOutputWithContext(ctx context.Context) DerivedMetricOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DerivedMetricOutput)
+}
+
+type DerivedMetricOutput struct {
+	*pulumi.OutputState
+}
+
+func (DerivedMetricOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DerivedMetricOutput)(nil)).Elem()
+}
+
+func (o DerivedMetricOutput) ToDerivedMetricOutput() DerivedMetricOutput {
+	return o
+}
+
+func (o DerivedMetricOutput) ToDerivedMetricOutputWithContext(ctx context.Context) DerivedMetricOutput {
+	return o
+}
+
+func init() {
+	pulumi.RegisterOutputType(DerivedMetricOutput{})
 }

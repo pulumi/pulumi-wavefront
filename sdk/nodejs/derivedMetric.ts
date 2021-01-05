@@ -19,6 +19,14 @@ import * as utilities from "./utilities";
  *     query: "aliasMetric(5, \"some.metric\")",
  * });
  * ```
+ *
+ * ## Import
+ *
+ * Derived Metrics can be imported using the `id`, e.g.
+ *
+ * ```sh
+ *  $ pulumi import wavefront:index/derivedMetric:DerivedMetric derived_metric 1577102900578
+ * ```
  */
 export class DerivedMetric extends pulumi.CustomResource {
     /**

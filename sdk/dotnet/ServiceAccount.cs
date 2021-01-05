@@ -31,6 +31,14 @@ namespace Pulumi.Wavefront
     /// 
     /// }
     /// ```
+    /// 
+    /// ## Import
+    /// 
+    /// Service accounts can be imported using `identifier`, e.g.
+    /// 
+    /// ```sh
+    ///  $ pulumi import wavefront:index/serviceAccount:ServiceAccount basic sa::tftesting
+    /// ```
     /// </summary>
     public partial class ServiceAccount : Pulumi.CustomResource
     {

@@ -4,6 +4,7 @@
 package wavefront
 
 import (
+	"context"
 	"reflect"
 
 	"github.com/pkg/errors"
@@ -35,6 +36,14 @@ import (
 // 		return nil
 // 	})
 // }
+// ```
+//
+// ## Import
+//
+// Dashboard JSON can be imported using the `id`, e.g.
+//
+// ```sh
+//  $ pulumi import wavefront:index/dashboardJson:DashboardJson dashboard_json tftestimport
 // ```
 type DashboardJson struct {
 	pulumi.CustomResourceState
@@ -105,4 +114,43 @@ type DashboardJsonArgs struct {
 
 func (DashboardJsonArgs) ElementType() reflect.Type {
 	return reflect.TypeOf((*dashboardJsonArgs)(nil)).Elem()
+}
+
+type DashboardJsonInput interface {
+	pulumi.Input
+
+	ToDashboardJsonOutput() DashboardJsonOutput
+	ToDashboardJsonOutputWithContext(ctx context.Context) DashboardJsonOutput
+}
+
+func (DashboardJson) ElementType() reflect.Type {
+	return reflect.TypeOf((*DashboardJson)(nil)).Elem()
+}
+
+func (i DashboardJson) ToDashboardJsonOutput() DashboardJsonOutput {
+	return i.ToDashboardJsonOutputWithContext(context.Background())
+}
+
+func (i DashboardJson) ToDashboardJsonOutputWithContext(ctx context.Context) DashboardJsonOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DashboardJsonOutput)
+}
+
+type DashboardJsonOutput struct {
+	*pulumi.OutputState
+}
+
+func (DashboardJsonOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DashboardJsonOutput)(nil)).Elem()
+}
+
+func (o DashboardJsonOutput) ToDashboardJsonOutput() DashboardJsonOutput {
+	return o
+}
+
+func (o DashboardJsonOutput) ToDashboardJsonOutputWithContext(ctx context.Context) DashboardJsonOutput {
+	return o
+}
+
+func init() {
+	pulumi.RegisterOutputType(DashboardJsonOutput{})
 }

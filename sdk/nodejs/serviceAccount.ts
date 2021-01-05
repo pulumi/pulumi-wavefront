@@ -18,6 +18,14 @@ import * as utilities from "./utilities";
  *     identifier: "sa::tftesting",
  * });
  * ```
+ *
+ * ## Import
+ *
+ * Service accounts can be imported using `identifier`, e.g.
+ *
+ * ```sh
+ *  $ pulumi import wavefront:index/serviceAccount:ServiceAccount basic sa::tftesting
+ * ```
  */
 export class ServiceAccount extends pulumi.CustomResource {
     /**

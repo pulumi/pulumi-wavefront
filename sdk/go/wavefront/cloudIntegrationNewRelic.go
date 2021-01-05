@@ -4,6 +4,7 @@
 package wavefront
 
 import (
+	"context"
 	"reflect"
 
 	"github.com/pkg/errors"
@@ -34,6 +35,14 @@ import (
 // 		return nil
 // 	})
 // }
+// ```
+//
+// ## Import
+//
+// NewRelic Integrations can be imported using the `id`, e.g.
+//
+// ```sh
+//  $ pulumi import wavefront:index/cloudIntegrationNewRelic:CloudIntegrationNewRelic newrelic a411c16b-3cf7-4f03-bf11-8ca05aab898d
 // ```
 type CloudIntegrationNewRelic struct {
 	pulumi.CustomResourceState
@@ -182,4 +191,43 @@ type CloudIntegrationNewRelicArgs struct {
 
 func (CloudIntegrationNewRelicArgs) ElementType() reflect.Type {
 	return reflect.TypeOf((*cloudIntegrationNewRelicArgs)(nil)).Elem()
+}
+
+type CloudIntegrationNewRelicInput interface {
+	pulumi.Input
+
+	ToCloudIntegrationNewRelicOutput() CloudIntegrationNewRelicOutput
+	ToCloudIntegrationNewRelicOutputWithContext(ctx context.Context) CloudIntegrationNewRelicOutput
+}
+
+func (CloudIntegrationNewRelic) ElementType() reflect.Type {
+	return reflect.TypeOf((*CloudIntegrationNewRelic)(nil)).Elem()
+}
+
+func (i CloudIntegrationNewRelic) ToCloudIntegrationNewRelicOutput() CloudIntegrationNewRelicOutput {
+	return i.ToCloudIntegrationNewRelicOutputWithContext(context.Background())
+}
+
+func (i CloudIntegrationNewRelic) ToCloudIntegrationNewRelicOutputWithContext(ctx context.Context) CloudIntegrationNewRelicOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CloudIntegrationNewRelicOutput)
+}
+
+type CloudIntegrationNewRelicOutput struct {
+	*pulumi.OutputState
+}
+
+func (CloudIntegrationNewRelicOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*CloudIntegrationNewRelicOutput)(nil)).Elem()
+}
+
+func (o CloudIntegrationNewRelicOutput) ToCloudIntegrationNewRelicOutput() CloudIntegrationNewRelicOutput {
+	return o
+}
+
+func (o CloudIntegrationNewRelicOutput) ToCloudIntegrationNewRelicOutputWithContext(ctx context.Context) CloudIntegrationNewRelicOutput {
+	return o
+}
+
+func init() {
+	pulumi.RegisterOutputType(CloudIntegrationNewRelicOutput{})
 }

@@ -11,6 +11,14 @@ namespace Pulumi.Wavefront
 {
     /// <summary>
     /// Provides a Wavefront Dashboard resource.  This allows dashboards to be created, updated, and deleted.
+    /// 
+    /// ## Import
+    /// 
+    /// Dashboards can be imported using the `id`, e.g.
+    /// 
+    /// ```sh
+    ///  $ pulumi import wavefront:index/dashboard:Dashboard dashboard tftestimport
+    /// ```
     /// </summary>
     public partial class Dashboard : Pulumi.CustomResource
     {

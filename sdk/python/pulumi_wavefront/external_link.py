@@ -39,6 +39,14 @@ class ExternalLink(pulumi.CustomResource):
             template="https://example.com/source={{{source}}}&startTime={{startEpochMillis}}")
         ```
 
+        ## Import
+
+        Maintenance windows can be imported using the `id`, e.g.
+
+        ```sh
+         $ pulumi import wavefront:index/externalLink:ExternalLink basic fVj6fz6zYC4aBkID
+        ```
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] description: Human-readable description for this link

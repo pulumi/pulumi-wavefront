@@ -18,6 +18,14 @@ import * as utilities from "./utilities";
  *     template: "https://example.com/source={{{source}}}&startTime={{startEpochMillis}}",
  * });
  * ```
+ *
+ * ## Import
+ *
+ * Maintenance windows can be imported using the `id`, e.g.
+ *
+ * ```sh
+ *  $ pulumi import wavefront:index/externalLink:ExternalLink basic fVj6fz6zYC4aBkID
+ * ```
  */
 export class ExternalLink extends pulumi.CustomResource {
     /**

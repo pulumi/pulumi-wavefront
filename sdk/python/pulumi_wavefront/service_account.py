@@ -37,6 +37,14 @@ class ServiceAccount(pulumi.CustomResource):
             identifier="sa::tftesting")
         ```
 
+        ## Import
+
+        Service accounts can be imported using `identifier`, e.g.
+
+        ```sh
+         $ pulumi import wavefront:index/serviceAccount:ServiceAccount basic sa::tftesting
+        ```
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[bool] active: Whether or not the service account is active

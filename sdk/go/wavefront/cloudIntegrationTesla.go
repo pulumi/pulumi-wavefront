@@ -4,6 +4,7 @@
 package wavefront
 
 import (
+	"context"
 	"reflect"
 
 	"github.com/pkg/errors"
@@ -35,6 +36,14 @@ import (
 // 		return nil
 // 	})
 // }
+// ```
+//
+// ## Import
+//
+// Tesla Integrations can be imported using the `id`, e.g.
+//
+// ```sh
+//  $ pulumi import wavefront:index/cloudIntegrationTesla:CloudIntegrationTesla tesla a411c16b-3cf7-4f03-bf11-8ca05aab898d
 // ```
 type CloudIntegrationTesla struct {
 	pulumi.CustomResourceState
@@ -166,4 +175,43 @@ type CloudIntegrationTeslaArgs struct {
 
 func (CloudIntegrationTeslaArgs) ElementType() reflect.Type {
 	return reflect.TypeOf((*cloudIntegrationTeslaArgs)(nil)).Elem()
+}
+
+type CloudIntegrationTeslaInput interface {
+	pulumi.Input
+
+	ToCloudIntegrationTeslaOutput() CloudIntegrationTeslaOutput
+	ToCloudIntegrationTeslaOutputWithContext(ctx context.Context) CloudIntegrationTeslaOutput
+}
+
+func (CloudIntegrationTesla) ElementType() reflect.Type {
+	return reflect.TypeOf((*CloudIntegrationTesla)(nil)).Elem()
+}
+
+func (i CloudIntegrationTesla) ToCloudIntegrationTeslaOutput() CloudIntegrationTeslaOutput {
+	return i.ToCloudIntegrationTeslaOutputWithContext(context.Background())
+}
+
+func (i CloudIntegrationTesla) ToCloudIntegrationTeslaOutputWithContext(ctx context.Context) CloudIntegrationTeslaOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CloudIntegrationTeslaOutput)
+}
+
+type CloudIntegrationTeslaOutput struct {
+	*pulumi.OutputState
+}
+
+func (CloudIntegrationTeslaOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*CloudIntegrationTeslaOutput)(nil)).Elem()
+}
+
+func (o CloudIntegrationTeslaOutput) ToCloudIntegrationTeslaOutput() CloudIntegrationTeslaOutput {
+	return o
+}
+
+func (o CloudIntegrationTeslaOutput) ToCloudIntegrationTeslaOutputWithContext(ctx context.Context) CloudIntegrationTeslaOutput {
+	return o
+}
+
+func init() {
+	pulumi.RegisterOutputType(CloudIntegrationTeslaOutput{})
 }

@@ -32,6 +32,14 @@ namespace Pulumi.Wavefront
     /// 
     /// }
     /// ```
+    /// 
+    /// ## Import
+    /// 
+    /// Derived Metrics can be imported using the `id`, e.g.
+    /// 
+    /// ```sh
+    ///  $ pulumi import wavefront:index/derivedMetric:DerivedMetric derived_metric 1577102900578
+    /// ```
     /// </summary>
     public partial class DerivedMetric : Pulumi.CustomResource
     {

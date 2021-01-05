@@ -4,6 +4,7 @@
 package wavefront
 
 import (
+	"context"
 	"reflect"
 
 	"github.com/pkg/errors"
@@ -38,6 +39,14 @@ import (
 // 		return nil
 // 	})
 // }
+// ```
+//
+// ## Import
+//
+// GCP Billing Cloud Integrations can be imported using the `id`, e.g.
+//
+// ```sh
+//  $ pulumi import wavefront:index/cloudIntegrationGcpBilling:CloudIntegrationGcpBilling gcp_billing a411c16b-3cf7-4f03-bf11-8ca05aab898d
 // ```
 type CloudIntegrationGcpBilling struct {
 	pulumi.CustomResourceState
@@ -187,4 +196,43 @@ type CloudIntegrationGcpBillingArgs struct {
 
 func (CloudIntegrationGcpBillingArgs) ElementType() reflect.Type {
 	return reflect.TypeOf((*cloudIntegrationGcpBillingArgs)(nil)).Elem()
+}
+
+type CloudIntegrationGcpBillingInput interface {
+	pulumi.Input
+
+	ToCloudIntegrationGcpBillingOutput() CloudIntegrationGcpBillingOutput
+	ToCloudIntegrationGcpBillingOutputWithContext(ctx context.Context) CloudIntegrationGcpBillingOutput
+}
+
+func (CloudIntegrationGcpBilling) ElementType() reflect.Type {
+	return reflect.TypeOf((*CloudIntegrationGcpBilling)(nil)).Elem()
+}
+
+func (i CloudIntegrationGcpBilling) ToCloudIntegrationGcpBillingOutput() CloudIntegrationGcpBillingOutput {
+	return i.ToCloudIntegrationGcpBillingOutputWithContext(context.Background())
+}
+
+func (i CloudIntegrationGcpBilling) ToCloudIntegrationGcpBillingOutputWithContext(ctx context.Context) CloudIntegrationGcpBillingOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CloudIntegrationGcpBillingOutput)
+}
+
+type CloudIntegrationGcpBillingOutput struct {
+	*pulumi.OutputState
+}
+
+func (CloudIntegrationGcpBillingOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*CloudIntegrationGcpBillingOutput)(nil)).Elem()
+}
+
+func (o CloudIntegrationGcpBillingOutput) ToCloudIntegrationGcpBillingOutput() CloudIntegrationGcpBillingOutput {
+	return o
+}
+
+func (o CloudIntegrationGcpBillingOutput) ToCloudIntegrationGcpBillingOutputWithContext(ctx context.Context) CloudIntegrationGcpBillingOutput {
+	return o
+}
+
+func init() {
+	pulumi.RegisterOutputType(CloudIntegrationGcpBillingOutput{})
 }

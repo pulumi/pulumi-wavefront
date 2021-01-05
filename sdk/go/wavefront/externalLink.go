@@ -4,6 +4,7 @@
 package wavefront
 
 import (
+	"context"
 	"reflect"
 
 	"github.com/pkg/errors"
@@ -34,6 +35,14 @@ import (
 // 		return nil
 // 	})
 // }
+// ```
+//
+// ## Import
+//
+// Maintenance windows can be imported using the `id`, e.g.
+//
+// ```sh
+//  $ pulumi import wavefront:index/externalLink:ExternalLink basic fVj6fz6zYC4aBkID
 // ```
 type ExternalLink struct {
 	pulumi.CustomResourceState
@@ -162,4 +171,43 @@ type ExternalLinkArgs struct {
 
 func (ExternalLinkArgs) ElementType() reflect.Type {
 	return reflect.TypeOf((*externalLinkArgs)(nil)).Elem()
+}
+
+type ExternalLinkInput interface {
+	pulumi.Input
+
+	ToExternalLinkOutput() ExternalLinkOutput
+	ToExternalLinkOutputWithContext(ctx context.Context) ExternalLinkOutput
+}
+
+func (ExternalLink) ElementType() reflect.Type {
+	return reflect.TypeOf((*ExternalLink)(nil)).Elem()
+}
+
+func (i ExternalLink) ToExternalLinkOutput() ExternalLinkOutput {
+	return i.ToExternalLinkOutputWithContext(context.Background())
+}
+
+func (i ExternalLink) ToExternalLinkOutputWithContext(ctx context.Context) ExternalLinkOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ExternalLinkOutput)
+}
+
+type ExternalLinkOutput struct {
+	*pulumi.OutputState
+}
+
+func (ExternalLinkOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ExternalLinkOutput)(nil)).Elem()
+}
+
+func (o ExternalLinkOutput) ToExternalLinkOutput() ExternalLinkOutput {
+	return o
+}
+
+func (o ExternalLinkOutput) ToExternalLinkOutputWithContext(ctx context.Context) ExternalLinkOutput {
+	return o
+}
+
+func init() {
+	pulumi.RegisterOutputType(ExternalLinkOutput{})
 }

@@ -4,6 +4,7 @@
 package wavefront
 
 import (
+	"context"
 	"reflect"
 
 	"github.com/pkg/errors"
@@ -39,6 +40,14 @@ import (
 // 		return nil
 // 	})
 // }
+// ```
+//
+// ## Import
+//
+// EC2 Cloud Integrations can be imported using the `id`, e.g.
+//
+// ```sh
+//  $ pulumi import wavefront:index/cloudIntegrationEc2:CloudIntegrationEc2 ec2 a411c16b-3cf7-4f03-bf11-8ca05aab898d
 // ```
 type CloudIntegrationEc2 struct {
 	pulumi.CustomResourceState
@@ -175,4 +184,43 @@ type CloudIntegrationEc2Args struct {
 
 func (CloudIntegrationEc2Args) ElementType() reflect.Type {
 	return reflect.TypeOf((*cloudIntegrationEc2Args)(nil)).Elem()
+}
+
+type CloudIntegrationEc2Input interface {
+	pulumi.Input
+
+	ToCloudIntegrationEc2Output() CloudIntegrationEc2Output
+	ToCloudIntegrationEc2OutputWithContext(ctx context.Context) CloudIntegrationEc2Output
+}
+
+func (CloudIntegrationEc2) ElementType() reflect.Type {
+	return reflect.TypeOf((*CloudIntegrationEc2)(nil)).Elem()
+}
+
+func (i CloudIntegrationEc2) ToCloudIntegrationEc2Output() CloudIntegrationEc2Output {
+	return i.ToCloudIntegrationEc2OutputWithContext(context.Background())
+}
+
+func (i CloudIntegrationEc2) ToCloudIntegrationEc2OutputWithContext(ctx context.Context) CloudIntegrationEc2Output {
+	return pulumi.ToOutputWithContext(ctx, i).(CloudIntegrationEc2Output)
+}
+
+type CloudIntegrationEc2Output struct {
+	*pulumi.OutputState
+}
+
+func (CloudIntegrationEc2Output) ElementType() reflect.Type {
+	return reflect.TypeOf((*CloudIntegrationEc2Output)(nil)).Elem()
+}
+
+func (o CloudIntegrationEc2Output) ToCloudIntegrationEc2Output() CloudIntegrationEc2Output {
+	return o
+}
+
+func (o CloudIntegrationEc2Output) ToCloudIntegrationEc2OutputWithContext(ctx context.Context) CloudIntegrationEc2Output {
+	return o
+}
+
+func init() {
+	pulumi.RegisterOutputType(CloudIntegrationEc2Output{})
 }
