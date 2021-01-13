@@ -96,10 +96,10 @@ export class DerivedMetric extends pulumi.CustomResource {
             inputs["tags"] = state ? state.tags : undefined;
         } else {
             const args = argsOrState as DerivedMetricArgs | undefined;
-            if (!args || args.minutes === undefined) {
+            if ((!args || args.minutes === undefined) && !(opts && opts.urn)) {
                 throw new Error("Missing required property 'minutes'");
             }
-            if (!args || args.query === undefined) {
+            if ((!args || args.query === undefined) && !(opts && opts.urn)) {
                 throw new Error("Missing required property 'query'");
             }
             inputs["additionalInformation"] = args ? args.additionalInformation : undefined;

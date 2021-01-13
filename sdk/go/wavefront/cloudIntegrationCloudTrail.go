@@ -81,23 +81,24 @@ type CloudIntegrationCloudTrail struct {
 // NewCloudIntegrationCloudTrail registers a new resource with the given unique name, arguments, and options.
 func NewCloudIntegrationCloudTrail(ctx *pulumi.Context,
 	name string, args *CloudIntegrationCloudTrailArgs, opts ...pulumi.ResourceOption) (*CloudIntegrationCloudTrail, error) {
-	if args == nil || args.BucketName == nil {
-		return nil, errors.New("missing required argument 'BucketName'")
-	}
-	if args == nil || args.ExternalId == nil {
-		return nil, errors.New("missing required argument 'ExternalId'")
-	}
-	if args == nil || args.Region == nil {
-		return nil, errors.New("missing required argument 'Region'")
-	}
-	if args == nil || args.RoleArn == nil {
-		return nil, errors.New("missing required argument 'RoleArn'")
-	}
-	if args == nil || args.Service == nil {
-		return nil, errors.New("missing required argument 'Service'")
-	}
 	if args == nil {
-		args = &CloudIntegrationCloudTrailArgs{}
+		return nil, errors.New("missing one or more required arguments")
+	}
+
+	if args.BucketName == nil {
+		return nil, errors.New("invalid value for required argument 'BucketName'")
+	}
+	if args.ExternalId == nil {
+		return nil, errors.New("invalid value for required argument 'ExternalId'")
+	}
+	if args.Region == nil {
+		return nil, errors.New("invalid value for required argument 'Region'")
+	}
+	if args.RoleArn == nil {
+		return nil, errors.New("invalid value for required argument 'RoleArn'")
+	}
+	if args.Service == nil {
+		return nil, errors.New("invalid value for required argument 'Service'")
 	}
 	var resource CloudIntegrationCloudTrail
 	err := ctx.RegisterResource("wavefront:index/cloudIntegrationCloudTrail:CloudIntegrationCloudTrail", name, args, &resource, opts...)

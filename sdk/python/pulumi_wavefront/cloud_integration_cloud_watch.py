@@ -93,7 +93,7 @@ class CloudIntegrationCloudWatch(pulumi.CustomResource):
             __props__ = dict()
 
             __props__['additional_tags'] = additional_tags
-            if external_id is None:
+            if external_id is None and not opts.urn:
                 raise TypeError("Missing required property 'external_id'")
             __props__['external_id'] = external_id
             __props__['force_save'] = force_save
@@ -102,10 +102,10 @@ class CloudIntegrationCloudWatch(pulumi.CustomResource):
             __props__['name'] = name
             __props__['namespaces'] = namespaces
             __props__['point_tag_filter_regex'] = point_tag_filter_regex
-            if role_arn is None:
+            if role_arn is None and not opts.urn:
                 raise TypeError("Missing required property 'role_arn'")
             __props__['role_arn'] = role_arn
-            if service is None:
+            if service is None and not opts.urn:
                 raise TypeError("Missing required property 'service'")
             __props__['service'] = service
             __props__['service_refresh_rate_in_minutes'] = service_refresh_rate_in_minutes

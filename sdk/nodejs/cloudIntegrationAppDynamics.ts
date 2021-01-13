@@ -159,16 +159,16 @@ export class CloudIntegrationAppDynamics extends pulumi.CustomResource {
             inputs["userName"] = state ? state.userName : undefined;
         } else {
             const args = argsOrState as CloudIntegrationAppDynamicsArgs | undefined;
-            if (!args || args.controllerName === undefined) {
+            if ((!args || args.controllerName === undefined) && !(opts && opts.urn)) {
                 throw new Error("Missing required property 'controllerName'");
             }
-            if (!args || args.encryptedPassword === undefined) {
+            if ((!args || args.encryptedPassword === undefined) && !(opts && opts.urn)) {
                 throw new Error("Missing required property 'encryptedPassword'");
             }
-            if (!args || args.service === undefined) {
+            if ((!args || args.service === undefined) && !(opts && opts.urn)) {
                 throw new Error("Missing required property 'service'");
             }
-            if (!args || args.userName === undefined) {
+            if ((!args || args.userName === undefined) && !(opts && opts.urn)) {
                 throw new Error("Missing required property 'userName'");
             }
             inputs["additionalTags"] = args ? args.additionalTags : undefined;

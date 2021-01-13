@@ -50,6 +50,7 @@ func NewCloudIntegrationAwsExternalId(ctx *pulumi.Context,
 	if args == nil {
 		args = &CloudIntegrationAwsExternalIdArgs{}
 	}
+
 	var resource CloudIntegrationAwsExternalId
 	err := ctx.RegisterResource("wavefront:index/cloudIntegrationAwsExternalId:CloudIntegrationAwsExternalId", name, args, &resource, opts...)
 	if err != nil {

@@ -72,17 +72,18 @@ type CloudIntegrationEc2 struct {
 // NewCloudIntegrationEc2 registers a new resource with the given unique name, arguments, and options.
 func NewCloudIntegrationEc2(ctx *pulumi.Context,
 	name string, args *CloudIntegrationEc2Args, opts ...pulumi.ResourceOption) (*CloudIntegrationEc2, error) {
-	if args == nil || args.ExternalId == nil {
-		return nil, errors.New("missing required argument 'ExternalId'")
-	}
-	if args == nil || args.RoleArn == nil {
-		return nil, errors.New("missing required argument 'RoleArn'")
-	}
-	if args == nil || args.Service == nil {
-		return nil, errors.New("missing required argument 'Service'")
-	}
 	if args == nil {
-		args = &CloudIntegrationEc2Args{}
+		return nil, errors.New("missing one or more required arguments")
+	}
+
+	if args.ExternalId == nil {
+		return nil, errors.New("invalid value for required argument 'ExternalId'")
+	}
+	if args.RoleArn == nil {
+		return nil, errors.New("invalid value for required argument 'RoleArn'")
+	}
+	if args.Service == nil {
+		return nil, errors.New("invalid value for required argument 'Service'")
 	}
 	var resource CloudIntegrationEc2
 	err := ctx.RegisterResource("wavefront:index/cloudIntegrationEc2:CloudIntegrationEc2", name, args, &resource, opts...)

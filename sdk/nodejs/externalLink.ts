@@ -105,10 +105,10 @@ export class ExternalLink extends pulumi.CustomResource {
             inputs["template"] = state ? state.template : undefined;
         } else {
             const args = argsOrState as ExternalLinkArgs | undefined;
-            if (!args || args.description === undefined) {
+            if ((!args || args.description === undefined) && !(opts && opts.urn)) {
                 throw new Error("Missing required property 'description'");
             }
-            if (!args || args.template === undefined) {
+            if ((!args || args.template === undefined) && !(opts && opts.urn)) {
                 throw new Error("Missing required property 'template'");
             }
             inputs["description"] = args ? args.description : undefined;

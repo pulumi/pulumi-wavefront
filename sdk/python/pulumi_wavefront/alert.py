@@ -117,14 +117,14 @@ class Alert(pulumi.CustomResource):
             __props__['condition'] = condition
             __props__['conditions'] = conditions
             __props__['display_expression'] = display_expression
-            if minutes is None:
+            if minutes is None and not opts.urn:
                 raise TypeError("Missing required property 'minutes'")
             __props__['minutes'] = minutes
             __props__['name'] = name
             __props__['notification_resend_frequency_minutes'] = notification_resend_frequency_minutes
             __props__['resolve_after_minutes'] = resolve_after_minutes
             __props__['severity'] = severity
-            if tags is None:
+            if tags is None and not opts.urn:
                 raise TypeError("Missing required property 'tags'")
             __props__['tags'] = tags
             __props__['target'] = target

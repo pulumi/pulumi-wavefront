@@ -87,17 +87,18 @@ type CloudIntegrationCloudWatch struct {
 // NewCloudIntegrationCloudWatch registers a new resource with the given unique name, arguments, and options.
 func NewCloudIntegrationCloudWatch(ctx *pulumi.Context,
 	name string, args *CloudIntegrationCloudWatchArgs, opts ...pulumi.ResourceOption) (*CloudIntegrationCloudWatch, error) {
-	if args == nil || args.ExternalId == nil {
-		return nil, errors.New("missing required argument 'ExternalId'")
-	}
-	if args == nil || args.RoleArn == nil {
-		return nil, errors.New("missing required argument 'RoleArn'")
-	}
-	if args == nil || args.Service == nil {
-		return nil, errors.New("missing required argument 'Service'")
-	}
 	if args == nil {
-		args = &CloudIntegrationCloudWatchArgs{}
+		return nil, errors.New("missing one or more required arguments")
+	}
+
+	if args.ExternalId == nil {
+		return nil, errors.New("invalid value for required argument 'ExternalId'")
+	}
+	if args.RoleArn == nil {
+		return nil, errors.New("invalid value for required argument 'RoleArn'")
+	}
+	if args.Service == nil {
+		return nil, errors.New("invalid value for required argument 'Service'")
 	}
 	var resource CloudIntegrationCloudWatch
 	err := ctx.RegisterResource("wavefront:index/cloudIntegrationCloudWatch:CloudIntegrationCloudWatch", name, args, &resource, opts...)

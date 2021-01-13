@@ -82,18 +82,18 @@ class CloudIntegrationGcpBilling(pulumi.CustomResource):
             __props__ = dict()
 
             __props__['additional_tags'] = additional_tags
-            if api_key is None:
+            if api_key is None and not opts.urn:
                 raise TypeError("Missing required property 'api_key'")
             __props__['api_key'] = api_key
             __props__['force_save'] = force_save
-            if json_key is None:
+            if json_key is None and not opts.urn:
                 raise TypeError("Missing required property 'json_key'")
             __props__['json_key'] = json_key
             __props__['name'] = name
-            if project_id is None:
+            if project_id is None and not opts.urn:
                 raise TypeError("Missing required property 'project_id'")
             __props__['project_id'] = project_id
-            if service is None:
+            if service is None and not opts.urn:
                 raise TypeError("Missing required property 'service'")
             __props__['service'] = service
             __props__['service_refresh_rate_in_minutes'] = service_refresh_rate_in_minutes

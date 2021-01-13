@@ -118,16 +118,16 @@ export class CloudIntegrationAzureActivityLog extends pulumi.CustomResource {
             inputs["tenant"] = state ? state.tenant : undefined;
         } else {
             const args = argsOrState as CloudIntegrationAzureActivityLogArgs | undefined;
-            if (!args || args.clientId === undefined) {
+            if ((!args || args.clientId === undefined) && !(opts && opts.urn)) {
                 throw new Error("Missing required property 'clientId'");
             }
-            if (!args || args.clientSecret === undefined) {
+            if ((!args || args.clientSecret === undefined) && !(opts && opts.urn)) {
                 throw new Error("Missing required property 'clientSecret'");
             }
-            if (!args || args.service === undefined) {
+            if ((!args || args.service === undefined) && !(opts && opts.urn)) {
                 throw new Error("Missing required property 'service'");
             }
-            if (!args || args.tenant === undefined) {
+            if ((!args || args.tenant === undefined) && !(opts && opts.urn)) {
                 throw new Error("Missing required property 'tenant'");
             }
             inputs["additionalTags"] = args ? args.additionalTags : undefined;

@@ -97,7 +97,7 @@ export class ServiceAccount extends pulumi.CustomResource {
             inputs["userGroups"] = state ? state.userGroups : undefined;
         } else {
             const args = argsOrState as ServiceAccountArgs | undefined;
-            if (!args || args.identifier === undefined) {
+            if ((!args || args.identifier === undefined) && !(opts && opts.urn)) {
                 throw new Error("Missing required property 'identifier'");
             }
             inputs["active"] = args ? args.active : undefined;

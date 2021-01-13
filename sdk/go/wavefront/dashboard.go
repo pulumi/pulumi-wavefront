@@ -53,20 +53,21 @@ type Dashboard struct {
 // NewDashboard registers a new resource with the given unique name, arguments, and options.
 func NewDashboard(ctx *pulumi.Context,
 	name string, args *DashboardArgs, opts ...pulumi.ResourceOption) (*Dashboard, error) {
-	if args == nil || args.Description == nil {
-		return nil, errors.New("missing required argument 'Description'")
-	}
-	if args == nil || args.Sections == nil {
-		return nil, errors.New("missing required argument 'Sections'")
-	}
-	if args == nil || args.Tags == nil {
-		return nil, errors.New("missing required argument 'Tags'")
-	}
-	if args == nil || args.Url == nil {
-		return nil, errors.New("missing required argument 'Url'")
-	}
 	if args == nil {
-		args = &DashboardArgs{}
+		return nil, errors.New("missing one or more required arguments")
+	}
+
+	if args.Description == nil {
+		return nil, errors.New("invalid value for required argument 'Description'")
+	}
+	if args.Sections == nil {
+		return nil, errors.New("invalid value for required argument 'Sections'")
+	}
+	if args.Tags == nil {
+		return nil, errors.New("invalid value for required argument 'Tags'")
+	}
+	if args.Url == nil {
+		return nil, errors.New("invalid value for required argument 'Url'")
 	}
 	var resource Dashboard
 	err := ctx.RegisterResource("wavefront:index/dashboard:Dashboard", name, args, &resource, opts...)

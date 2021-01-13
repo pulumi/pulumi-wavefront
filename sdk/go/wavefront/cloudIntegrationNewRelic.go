@@ -70,14 +70,15 @@ type CloudIntegrationNewRelic struct {
 // NewCloudIntegrationNewRelic registers a new resource with the given unique name, arguments, and options.
 func NewCloudIntegrationNewRelic(ctx *pulumi.Context,
 	name string, args *CloudIntegrationNewRelicArgs, opts ...pulumi.ResourceOption) (*CloudIntegrationNewRelic, error) {
-	if args == nil || args.ApiKey == nil {
-		return nil, errors.New("missing required argument 'ApiKey'")
-	}
-	if args == nil || args.Service == nil {
-		return nil, errors.New("missing required argument 'Service'")
-	}
 	if args == nil {
-		args = &CloudIntegrationNewRelicArgs{}
+		return nil, errors.New("missing one or more required arguments")
+	}
+
+	if args.ApiKey == nil {
+		return nil, errors.New("invalid value for required argument 'ApiKey'")
+	}
+	if args.Service == nil {
+		return nil, errors.New("invalid value for required argument 'Service'")
 	}
 	var resource CloudIntegrationNewRelic
 	err := ctx.RegisterResource("wavefront:index/cloudIntegrationNewRelic:CloudIntegrationNewRelic", name, args, &resource, opts...)

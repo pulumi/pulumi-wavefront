@@ -66,14 +66,15 @@ type ExternalLink struct {
 // NewExternalLink registers a new resource with the given unique name, arguments, and options.
 func NewExternalLink(ctx *pulumi.Context,
 	name string, args *ExternalLinkArgs, opts ...pulumi.ResourceOption) (*ExternalLink, error) {
-	if args == nil || args.Description == nil {
-		return nil, errors.New("missing required argument 'Description'")
-	}
-	if args == nil || args.Template == nil {
-		return nil, errors.New("missing required argument 'Template'")
-	}
 	if args == nil {
-		args = &ExternalLinkArgs{}
+		return nil, errors.New("missing one or more required arguments")
+	}
+
+	if args.Description == nil {
+		return nil, errors.New("invalid value for required argument 'Description'")
+	}
+	if args.Template == nil {
+		return nil, errors.New("invalid value for required argument 'Template'")
 	}
 	var resource ExternalLink
 	err := ctx.RegisterResource("wavefront:index/externalLink:ExternalLink", name, args, &resource, opts...)

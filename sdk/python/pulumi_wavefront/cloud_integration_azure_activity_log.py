@@ -83,19 +83,19 @@ class CloudIntegrationAzureActivityLog(pulumi.CustomResource):
 
             __props__['additional_tags'] = additional_tags
             __props__['category_filters'] = category_filters
-            if client_id is None:
+            if client_id is None and not opts.urn:
                 raise TypeError("Missing required property 'client_id'")
             __props__['client_id'] = client_id
-            if client_secret is None:
+            if client_secret is None and not opts.urn:
                 raise TypeError("Missing required property 'client_secret'")
             __props__['client_secret'] = client_secret
             __props__['force_save'] = force_save
             __props__['name'] = name
-            if service is None:
+            if service is None and not opts.urn:
                 raise TypeError("Missing required property 'service'")
             __props__['service'] = service
             __props__['service_refresh_rate_in_minutes'] = service_refresh_rate_in_minutes
-            if tenant is None:
+            if tenant is None and not opts.urn:
                 raise TypeError("Missing required property 'tenant'")
             __props__['tenant'] = tenant
         super(CloudIntegrationAzureActivityLog, __self__).__init__(

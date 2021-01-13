@@ -84,21 +84,21 @@ class MaintenanceWindow(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = dict()
 
-            if end_time_in_seconds is None:
+            if end_time_in_seconds is None and not opts.urn:
                 raise TypeError("Missing required property 'end_time_in_seconds'")
             __props__['end_time_in_seconds'] = end_time_in_seconds
             __props__['host_tag_group_host_names_group_anded'] = host_tag_group_host_names_group_anded
-            if reason is None:
+            if reason is None and not opts.urn:
                 raise TypeError("Missing required property 'reason'")
             __props__['reason'] = reason
             __props__['relevant_customer_tags'] = relevant_customer_tags
             __props__['relevant_host_names'] = relevant_host_names
             __props__['relevant_host_tags'] = relevant_host_tags
             __props__['relevant_host_tags_anded'] = relevant_host_tags_anded
-            if start_time_in_seconds is None:
+            if start_time_in_seconds is None and not opts.urn:
                 raise TypeError("Missing required property 'start_time_in_seconds'")
             __props__['start_time_in_seconds'] = start_time_in_seconds
-            if title is None:
+            if title is None and not opts.urn:
                 raise TypeError("Missing required property 'title'")
             __props__['title'] = title
         super(MaintenanceWindow, __self__).__init__(

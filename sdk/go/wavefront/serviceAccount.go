@@ -64,11 +64,12 @@ type ServiceAccount struct {
 // NewServiceAccount registers a new resource with the given unique name, arguments, and options.
 func NewServiceAccount(ctx *pulumi.Context,
 	name string, args *ServiceAccountArgs, opts ...pulumi.ResourceOption) (*ServiceAccount, error) {
-	if args == nil || args.Identifier == nil {
-		return nil, errors.New("missing required argument 'Identifier'")
-	}
 	if args == nil {
-		args = &ServiceAccountArgs{}
+		return nil, errors.New("missing one or more required arguments")
+	}
+
+	if args.Identifier == nil {
+		return nil, errors.New("invalid value for required argument 'Identifier'")
 	}
 	var resource ServiceAccount
 	err := ctx.RegisterResource("wavefront:index/serviceAccount:ServiceAccount", name, args, &resource, opts...)

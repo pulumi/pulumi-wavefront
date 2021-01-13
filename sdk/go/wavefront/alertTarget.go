@@ -153,20 +153,21 @@ type AlertTarget struct {
 // NewAlertTarget registers a new resource with the given unique name, arguments, and options.
 func NewAlertTarget(ctx *pulumi.Context,
 	name string, args *AlertTargetArgs, opts ...pulumi.ResourceOption) (*AlertTarget, error) {
-	if args == nil || args.Description == nil {
-		return nil, errors.New("missing required argument 'Description'")
-	}
-	if args == nil || args.Recipient == nil {
-		return nil, errors.New("missing required argument 'Recipient'")
-	}
-	if args == nil || args.Template == nil {
-		return nil, errors.New("missing required argument 'Template'")
-	}
-	if args == nil || args.Triggers == nil {
-		return nil, errors.New("missing required argument 'Triggers'")
-	}
 	if args == nil {
-		args = &AlertTargetArgs{}
+		return nil, errors.New("missing one or more required arguments")
+	}
+
+	if args.Description == nil {
+		return nil, errors.New("invalid value for required argument 'Description'")
+	}
+	if args.Recipient == nil {
+		return nil, errors.New("invalid value for required argument 'Recipient'")
+	}
+	if args.Template == nil {
+		return nil, errors.New("invalid value for required argument 'Template'")
+	}
+	if args.Triggers == nil {
+		return nil, errors.New("invalid value for required argument 'Triggers'")
 	}
 	var resource AlertTarget
 	err := ctx.RegisterResource("wavefront:index/alertTarget:AlertTarget", name, args, &resource, opts...)

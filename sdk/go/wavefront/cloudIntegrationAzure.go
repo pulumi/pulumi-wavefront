@@ -76,20 +76,21 @@ type CloudIntegrationAzure struct {
 // NewCloudIntegrationAzure registers a new resource with the given unique name, arguments, and options.
 func NewCloudIntegrationAzure(ctx *pulumi.Context,
 	name string, args *CloudIntegrationAzureArgs, opts ...pulumi.ResourceOption) (*CloudIntegrationAzure, error) {
-	if args == nil || args.ClientId == nil {
-		return nil, errors.New("missing required argument 'ClientId'")
-	}
-	if args == nil || args.ClientSecret == nil {
-		return nil, errors.New("missing required argument 'ClientSecret'")
-	}
-	if args == nil || args.Service == nil {
-		return nil, errors.New("missing required argument 'Service'")
-	}
-	if args == nil || args.Tenant == nil {
-		return nil, errors.New("missing required argument 'Tenant'")
-	}
 	if args == nil {
-		args = &CloudIntegrationAzureArgs{}
+		return nil, errors.New("missing one or more required arguments")
+	}
+
+	if args.ClientId == nil {
+		return nil, errors.New("invalid value for required argument 'ClientId'")
+	}
+	if args.ClientSecret == nil {
+		return nil, errors.New("invalid value for required argument 'ClientSecret'")
+	}
+	if args.Service == nil {
+		return nil, errors.New("invalid value for required argument 'Service'")
+	}
+	if args.Tenant == nil {
+		return nil, errors.New("invalid value for required argument 'Tenant'")
 	}
 	var resource CloudIntegrationAzure
 	err := ctx.RegisterResource("wavefront:index/cloudIntegrationAzure:CloudIntegrationAzure", name, args, &resource, opts...)

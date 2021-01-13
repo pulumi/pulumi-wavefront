@@ -72,11 +72,11 @@ class DerivedMetric(pulumi.CustomResource):
             __props__ = dict()
 
             __props__['additional_information'] = additional_information
-            if minutes is None:
+            if minutes is None and not opts.urn:
                 raise TypeError("Missing required property 'minutes'")
             __props__['minutes'] = minutes
             __props__['name'] = name
-            if query is None:
+            if query is None and not opts.urn:
                 raise TypeError("Missing required property 'query'")
             __props__['query'] = query
             __props__['tags'] = tags

@@ -138,13 +138,13 @@ export class CloudIntegrationCloudWatch extends pulumi.CustomResource {
             inputs["volumeSelectionTags"] = state ? state.volumeSelectionTags : undefined;
         } else {
             const args = argsOrState as CloudIntegrationCloudWatchArgs | undefined;
-            if (!args || args.externalId === undefined) {
+            if ((!args || args.externalId === undefined) && !(opts && opts.urn)) {
                 throw new Error("Missing required property 'externalId'");
             }
-            if (!args || args.roleArn === undefined) {
+            if ((!args || args.roleArn === undefined) && !(opts && opts.urn)) {
                 throw new Error("Missing required property 'roleArn'");
             }
-            if (!args || args.service === undefined) {
+            if ((!args || args.service === undefined) && !(opts && opts.urn)) {
                 throw new Error("Missing required property 'service'");
             }
             inputs["additionalTags"] = args ? args.additionalTags : undefined;

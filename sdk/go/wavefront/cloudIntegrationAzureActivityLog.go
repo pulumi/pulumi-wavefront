@@ -75,20 +75,21 @@ type CloudIntegrationAzureActivityLog struct {
 // NewCloudIntegrationAzureActivityLog registers a new resource with the given unique name, arguments, and options.
 func NewCloudIntegrationAzureActivityLog(ctx *pulumi.Context,
 	name string, args *CloudIntegrationAzureActivityLogArgs, opts ...pulumi.ResourceOption) (*CloudIntegrationAzureActivityLog, error) {
-	if args == nil || args.ClientId == nil {
-		return nil, errors.New("missing required argument 'ClientId'")
-	}
-	if args == nil || args.ClientSecret == nil {
-		return nil, errors.New("missing required argument 'ClientSecret'")
-	}
-	if args == nil || args.Service == nil {
-		return nil, errors.New("missing required argument 'Service'")
-	}
-	if args == nil || args.Tenant == nil {
-		return nil, errors.New("missing required argument 'Tenant'")
-	}
 	if args == nil {
-		args = &CloudIntegrationAzureActivityLogArgs{}
+		return nil, errors.New("missing one or more required arguments")
+	}
+
+	if args.ClientId == nil {
+		return nil, errors.New("invalid value for required argument 'ClientId'")
+	}
+	if args.ClientSecret == nil {
+		return nil, errors.New("invalid value for required argument 'ClientSecret'")
+	}
+	if args.Service == nil {
+		return nil, errors.New("invalid value for required argument 'Service'")
+	}
+	if args.Tenant == nil {
+		return nil, errors.New("invalid value for required argument 'Tenant'")
 	}
 	var resource CloudIntegrationAzureActivityLog
 	err := ctx.RegisterResource("wavefront:index/cloudIntegrationAzureActivityLog:CloudIntegrationAzureActivityLog", name, args, &resource, opts...)

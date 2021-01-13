@@ -194,16 +194,16 @@ export class AlertTarget extends pulumi.CustomResource {
             inputs["triggers"] = state ? state.triggers : undefined;
         } else {
             const args = argsOrState as AlertTargetArgs | undefined;
-            if (!args || args.description === undefined) {
+            if ((!args || args.description === undefined) && !(opts && opts.urn)) {
                 throw new Error("Missing required property 'description'");
             }
-            if (!args || args.recipient === undefined) {
+            if ((!args || args.recipient === undefined) && !(opts && opts.urn)) {
                 throw new Error("Missing required property 'recipient'");
             }
-            if (!args || args.template === undefined) {
+            if ((!args || args.template === undefined) && !(opts && opts.urn)) {
                 throw new Error("Missing required property 'template'");
             }
-            if (!args || args.triggers === undefined) {
+            if ((!args || args.triggers === undefined) && !(opts && opts.urn)) {
                 throw new Error("Missing required property 'triggers'");
             }
             inputs["contentType"] = args ? args.contentType : undefined;
