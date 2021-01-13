@@ -73,20 +73,21 @@ type CloudIntegrationGcpBilling struct {
 // NewCloudIntegrationGcpBilling registers a new resource with the given unique name, arguments, and options.
 func NewCloudIntegrationGcpBilling(ctx *pulumi.Context,
 	name string, args *CloudIntegrationGcpBillingArgs, opts ...pulumi.ResourceOption) (*CloudIntegrationGcpBilling, error) {
-	if args == nil || args.ApiKey == nil {
-		return nil, errors.New("missing required argument 'ApiKey'")
-	}
-	if args == nil || args.JsonKey == nil {
-		return nil, errors.New("missing required argument 'JsonKey'")
-	}
-	if args == nil || args.ProjectId == nil {
-		return nil, errors.New("missing required argument 'ProjectId'")
-	}
-	if args == nil || args.Service == nil {
-		return nil, errors.New("missing required argument 'Service'")
-	}
 	if args == nil {
-		args = &CloudIntegrationGcpBillingArgs{}
+		return nil, errors.New("missing one or more required arguments")
+	}
+
+	if args.ApiKey == nil {
+		return nil, errors.New("invalid value for required argument 'ApiKey'")
+	}
+	if args.JsonKey == nil {
+		return nil, errors.New("invalid value for required argument 'JsonKey'")
+	}
+	if args.ProjectId == nil {
+		return nil, errors.New("invalid value for required argument 'ProjectId'")
+	}
+	if args.Service == nil {
+		return nil, errors.New("invalid value for required argument 'Service'")
 	}
 	var resource CloudIntegrationGcpBilling
 	err := ctx.RegisterResource("wavefront:index/cloudIntegrationGcpBilling:CloudIntegrationGcpBilling", name, args, &resource, opts...)

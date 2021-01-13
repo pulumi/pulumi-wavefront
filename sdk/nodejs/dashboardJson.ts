@@ -172,7 +172,7 @@ export class DashboardJson extends pulumi.CustomResource {
             inputs["dashboardJson"] = state ? state.dashboardJson : undefined;
         } else {
             const args = argsOrState as DashboardJsonArgs | undefined;
-            if (!args || args.dashboardJson === undefined) {
+            if ((!args || args.dashboardJson === undefined) && !(opts && opts.urn)) {
                 throw new Error("Missing required property 'dashboardJson'");
             }
             inputs["dashboardJson"] = args ? args.dashboardJson : undefined;

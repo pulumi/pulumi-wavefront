@@ -113,16 +113,16 @@ export class CloudIntegrationGcpBilling extends pulumi.CustomResource {
             inputs["serviceRefreshRateInMinutes"] = state ? state.serviceRefreshRateInMinutes : undefined;
         } else {
             const args = argsOrState as CloudIntegrationGcpBillingArgs | undefined;
-            if (!args || args.apiKey === undefined) {
+            if ((!args || args.apiKey === undefined) && !(opts && opts.urn)) {
                 throw new Error("Missing required property 'apiKey'");
             }
-            if (!args || args.jsonKey === undefined) {
+            if ((!args || args.jsonKey === undefined) && !(opts && opts.urn)) {
                 throw new Error("Missing required property 'jsonKey'");
             }
-            if (!args || args.projectId === undefined) {
+            if ((!args || args.projectId === undefined) && !(opts && opts.urn)) {
                 throw new Error("Missing required property 'projectId'");
             }
-            if (!args || args.service === undefined) {
+            if ((!args || args.service === undefined) && !(opts && opts.urn)) {
                 throw new Error("Missing required property 'service'");
             }
             inputs["additionalTags"] = args ? args.additionalTags : undefined;

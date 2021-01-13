@@ -78,7 +78,7 @@ class Dashboard(pulumi.CustomResource):
 
             __props__['can_modifies'] = can_modifies
             __props__['can_views'] = can_views
-            if description is None:
+            if description is None and not opts.urn:
                 raise TypeError("Missing required property 'description'")
             __props__['description'] = description
             __props__['display_query_parameters'] = display_query_parameters
@@ -86,13 +86,13 @@ class Dashboard(pulumi.CustomResource):
             __props__['event_filter_type'] = event_filter_type
             __props__['name'] = name
             __props__['parameter_details'] = parameter_details
-            if sections is None:
+            if sections is None and not opts.urn:
                 raise TypeError("Missing required property 'sections'")
             __props__['sections'] = sections
-            if tags is None:
+            if tags is None and not opts.urn:
                 raise TypeError("Missing required property 'tags'")
             __props__['tags'] = tags
-            if url is None:
+            if url is None and not opts.urn:
                 raise TypeError("Missing required property 'url'")
             __props__['url'] = url
         super(Dashboard, __self__).__init__(

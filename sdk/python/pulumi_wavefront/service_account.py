@@ -74,7 +74,7 @@ class ServiceAccount(pulumi.CustomResource):
 
             __props__['active'] = active
             __props__['description'] = description
-            if identifier is None:
+            if identifier is None and not opts.urn:
                 raise TypeError("Missing required property 'identifier'")
             __props__['identifier'] = identifier
             __props__['permissions'] = permissions

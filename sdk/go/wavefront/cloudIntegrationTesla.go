@@ -67,17 +67,18 @@ type CloudIntegrationTesla struct {
 // NewCloudIntegrationTesla registers a new resource with the given unique name, arguments, and options.
 func NewCloudIntegrationTesla(ctx *pulumi.Context,
 	name string, args *CloudIntegrationTeslaArgs, opts ...pulumi.ResourceOption) (*CloudIntegrationTesla, error) {
-	if args == nil || args.Email == nil {
-		return nil, errors.New("missing required argument 'Email'")
-	}
-	if args == nil || args.Password == nil {
-		return nil, errors.New("missing required argument 'Password'")
-	}
-	if args == nil || args.Service == nil {
-		return nil, errors.New("missing required argument 'Service'")
-	}
 	if args == nil {
-		args = &CloudIntegrationTeslaArgs{}
+		return nil, errors.New("missing one or more required arguments")
+	}
+
+	if args.Email == nil {
+		return nil, errors.New("invalid value for required argument 'Email'")
+	}
+	if args.Password == nil {
+		return nil, errors.New("invalid value for required argument 'Password'")
+	}
+	if args.Service == nil {
+		return nil, errors.New("invalid value for required argument 'Service'")
 	}
 	var resource CloudIntegrationTesla
 	err := ctx.RegisterResource("wavefront:index/cloudIntegrationTesla:CloudIntegrationTesla", name, args, &resource, opts...)

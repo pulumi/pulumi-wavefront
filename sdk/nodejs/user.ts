@@ -88,7 +88,7 @@ export class User extends pulumi.CustomResource {
             inputs["userGroups"] = state ? state.userGroups : undefined;
         } else {
             const args = argsOrState as UserArgs | undefined;
-            if (!args || args.email === undefined) {
+            if ((!args || args.email === undefined) && !(opts && opts.urn)) {
                 throw new Error("Missing required property 'email'");
             }
             inputs["customer"] = args ? args.customer : undefined;

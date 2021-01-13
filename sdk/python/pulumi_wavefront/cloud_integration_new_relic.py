@@ -80,7 +80,7 @@ class CloudIntegrationNewRelic(pulumi.CustomResource):
             __props__ = dict()
 
             __props__['additional_tags'] = additional_tags
-            if api_key is None:
+            if api_key is None and not opts.urn:
                 raise TypeError("Missing required property 'api_key'")
             __props__['api_key'] = api_key
             __props__['app_filter_regex'] = app_filter_regex
@@ -88,7 +88,7 @@ class CloudIntegrationNewRelic(pulumi.CustomResource):
             __props__['host_filter_regex'] = host_filter_regex
             __props__['metric_filters'] = metric_filters
             __props__['name'] = name
-            if service is None:
+            if service is None and not opts.urn:
                 raise TypeError("Missing required property 'service'")
             __props__['service'] = service
             __props__['service_refresh_rate_in_minutes'] = service_refresh_rate_in_minutes

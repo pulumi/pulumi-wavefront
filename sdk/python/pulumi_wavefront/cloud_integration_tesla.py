@@ -76,15 +76,15 @@ class CloudIntegrationTesla(pulumi.CustomResource):
             __props__ = dict()
 
             __props__['additional_tags'] = additional_tags
-            if email is None:
+            if email is None and not opts.urn:
                 raise TypeError("Missing required property 'email'")
             __props__['email'] = email
             __props__['force_save'] = force_save
             __props__['name'] = name
-            if password is None:
+            if password is None and not opts.urn:
                 raise TypeError("Missing required property 'password'")
             __props__['password'] = password
-            if service is None:
+            if service is None and not opts.urn:
                 raise TypeError("Missing required property 'service'")
             __props__['service'] = service
             __props__['service_refresh_rate_in_minutes'] = service_refresh_rate_in_minutes

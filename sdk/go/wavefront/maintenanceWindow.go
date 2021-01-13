@@ -76,20 +76,21 @@ type MaintenanceWindow struct {
 // NewMaintenanceWindow registers a new resource with the given unique name, arguments, and options.
 func NewMaintenanceWindow(ctx *pulumi.Context,
 	name string, args *MaintenanceWindowArgs, opts ...pulumi.ResourceOption) (*MaintenanceWindow, error) {
-	if args == nil || args.EndTimeInSeconds == nil {
-		return nil, errors.New("missing required argument 'EndTimeInSeconds'")
-	}
-	if args == nil || args.Reason == nil {
-		return nil, errors.New("missing required argument 'Reason'")
-	}
-	if args == nil || args.StartTimeInSeconds == nil {
-		return nil, errors.New("missing required argument 'StartTimeInSeconds'")
-	}
-	if args == nil || args.Title == nil {
-		return nil, errors.New("missing required argument 'Title'")
-	}
 	if args == nil {
-		args = &MaintenanceWindowArgs{}
+		return nil, errors.New("missing one or more required arguments")
+	}
+
+	if args.EndTimeInSeconds == nil {
+		return nil, errors.New("invalid value for required argument 'EndTimeInSeconds'")
+	}
+	if args.Reason == nil {
+		return nil, errors.New("invalid value for required argument 'Reason'")
+	}
+	if args.StartTimeInSeconds == nil {
+		return nil, errors.New("invalid value for required argument 'StartTimeInSeconds'")
+	}
+	if args.Title == nil {
+		return nil, errors.New("invalid value for required argument 'Title'")
 	}
 	var resource MaintenanceWindow
 	err := ctx.RegisterResource("wavefront:index/maintenanceWindow:MaintenanceWindow", name, args, &resource, opts...)

@@ -100,7 +100,7 @@ class CloudIntegrationAppDynamics(pulumi.CustomResource):
 
             __props__['additional_tags'] = additional_tags
             __props__['app_filter_regexes'] = app_filter_regexes
-            if controller_name is None:
+            if controller_name is None and not opts.urn:
                 raise TypeError("Missing required property 'controller_name'")
             __props__['controller_name'] = controller_name
             __props__['enable_app_infra_metrics'] = enable_app_infra_metrics
@@ -111,16 +111,16 @@ class CloudIntegrationAppDynamics(pulumi.CustomResource):
             __props__['enable_overall_perf_metrics'] = enable_overall_perf_metrics
             __props__['enable_rollup'] = enable_rollup
             __props__['enable_service_endpoint_metrics'] = enable_service_endpoint_metrics
-            if encrypted_password is None:
+            if encrypted_password is None and not opts.urn:
                 raise TypeError("Missing required property 'encrypted_password'")
             __props__['encrypted_password'] = encrypted_password
             __props__['force_save'] = force_save
             __props__['name'] = name
-            if service is None:
+            if service is None and not opts.urn:
                 raise TypeError("Missing required property 'service'")
             __props__['service'] = service
             __props__['service_refresh_rate_in_minutes'] = service_refresh_rate_in_minutes
-            if user_name is None:
+            if user_name is None and not opts.urn:
                 raise TypeError("Missing required property 'user_name'")
             __props__['user_name'] = user_name
         super(CloudIntegrationAppDynamics, __self__).__init__(

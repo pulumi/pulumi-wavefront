@@ -116,10 +116,10 @@ export class CloudIntegrationNewRelic extends pulumi.CustomResource {
             inputs["serviceRefreshRateInMinutes"] = state ? state.serviceRefreshRateInMinutes : undefined;
         } else {
             const args = argsOrState as CloudIntegrationNewRelicArgs | undefined;
-            if (!args || args.apiKey === undefined) {
+            if ((!args || args.apiKey === undefined) && !(opts && opts.urn)) {
                 throw new Error("Missing required property 'apiKey'");
             }
-            if (!args || args.service === undefined) {
+            if ((!args || args.service === undefined) && !(opts && opts.urn)) {
                 throw new Error("Missing required property 'service'");
             }
             inputs["additionalTags"] = args ? args.additionalTags : undefined;

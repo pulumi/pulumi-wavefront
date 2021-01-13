@@ -165,10 +165,10 @@ export class Alert extends pulumi.CustomResource {
             inputs["thresholdTargets"] = state ? state.thresholdTargets : undefined;
         } else {
             const args = argsOrState as AlertArgs | undefined;
-            if (!args || args.minutes === undefined) {
+            if ((!args || args.minutes === undefined) && !(opts && opts.urn)) {
                 throw new Error("Missing required property 'minutes'");
             }
-            if (!args || args.tags === undefined) {
+            if ((!args || args.tags === undefined) && !(opts && opts.urn)) {
                 throw new Error("Missing required property 'tags'");
             }
             inputs["additionalInformation"] = args ? args.additionalInformation : undefined;

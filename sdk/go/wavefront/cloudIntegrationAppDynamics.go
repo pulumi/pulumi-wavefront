@@ -90,20 +90,21 @@ type CloudIntegrationAppDynamics struct {
 // NewCloudIntegrationAppDynamics registers a new resource with the given unique name, arguments, and options.
 func NewCloudIntegrationAppDynamics(ctx *pulumi.Context,
 	name string, args *CloudIntegrationAppDynamicsArgs, opts ...pulumi.ResourceOption) (*CloudIntegrationAppDynamics, error) {
-	if args == nil || args.ControllerName == nil {
-		return nil, errors.New("missing required argument 'ControllerName'")
-	}
-	if args == nil || args.EncryptedPassword == nil {
-		return nil, errors.New("missing required argument 'EncryptedPassword'")
-	}
-	if args == nil || args.Service == nil {
-		return nil, errors.New("missing required argument 'Service'")
-	}
-	if args == nil || args.UserName == nil {
-		return nil, errors.New("missing required argument 'UserName'")
-	}
 	if args == nil {
-		args = &CloudIntegrationAppDynamicsArgs{}
+		return nil, errors.New("missing one or more required arguments")
+	}
+
+	if args.ControllerName == nil {
+		return nil, errors.New("invalid value for required argument 'ControllerName'")
+	}
+	if args.EncryptedPassword == nil {
+		return nil, errors.New("invalid value for required argument 'EncryptedPassword'")
+	}
+	if args.Service == nil {
+		return nil, errors.New("invalid value for required argument 'Service'")
+	}
+	if args.UserName == nil {
+		return nil, errors.New("invalid value for required argument 'UserName'")
 	}
 	var resource CloudIntegrationAppDynamics
 	err := ctx.RegisterResource("wavefront:index/cloudIntegrationAppDynamics:CloudIntegrationAppDynamics", name, args, &resource, opts...)

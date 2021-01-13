@@ -56,11 +56,12 @@ type DashboardJson struct {
 // NewDashboardJson registers a new resource with the given unique name, arguments, and options.
 func NewDashboardJson(ctx *pulumi.Context,
 	name string, args *DashboardJsonArgs, opts ...pulumi.ResourceOption) (*DashboardJson, error) {
-	if args == nil || args.DashboardJson == nil {
-		return nil, errors.New("missing required argument 'DashboardJson'")
-	}
 	if args == nil {
-		args = &DashboardJsonArgs{}
+		return nil, errors.New("missing one or more required arguments")
+	}
+
+	if args.DashboardJson == nil {
+		return nil, errors.New("invalid value for required argument 'DashboardJson'")
 	}
 	var resource DashboardJson
 	err := ctx.RegisterResource("wavefront:index/dashboardJson:DashboardJson", name, args, &resource, opts...)

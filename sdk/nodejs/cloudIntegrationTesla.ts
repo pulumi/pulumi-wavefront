@@ -106,13 +106,13 @@ export class CloudIntegrationTesla extends pulumi.CustomResource {
             inputs["serviceRefreshRateInMinutes"] = state ? state.serviceRefreshRateInMinutes : undefined;
         } else {
             const args = argsOrState as CloudIntegrationTeslaArgs | undefined;
-            if (!args || args.email === undefined) {
+            if ((!args || args.email === undefined) && !(opts && opts.urn)) {
                 throw new Error("Missing required property 'email'");
             }
-            if (!args || args.password === undefined) {
+            if ((!args || args.password === undefined) && !(opts && opts.urn)) {
                 throw new Error("Missing required property 'password'");
             }
-            if (!args || args.service === undefined) {
+            if ((!args || args.service === undefined) && !(opts && opts.urn)) {
                 throw new Error("Missing required property 'service'");
             }
             inputs["additionalTags"] = args ? args.additionalTags : undefined;

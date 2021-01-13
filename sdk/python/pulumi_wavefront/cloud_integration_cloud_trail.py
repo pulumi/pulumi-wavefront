@@ -87,23 +87,23 @@ class CloudIntegrationCloudTrail(pulumi.CustomResource):
             __props__ = dict()
 
             __props__['additional_tags'] = additional_tags
-            if bucket_name is None:
+            if bucket_name is None and not opts.urn:
                 raise TypeError("Missing required property 'bucket_name'")
             __props__['bucket_name'] = bucket_name
-            if external_id is None:
+            if external_id is None and not opts.urn:
                 raise TypeError("Missing required property 'external_id'")
             __props__['external_id'] = external_id
             __props__['filter_rule'] = filter_rule
             __props__['force_save'] = force_save
             __props__['name'] = name
             __props__['prefix'] = prefix
-            if region is None:
+            if region is None and not opts.urn:
                 raise TypeError("Missing required property 'region'")
             __props__['region'] = region
-            if role_arn is None:
+            if role_arn is None and not opts.urn:
                 raise TypeError("Missing required property 'role_arn'")
             __props__['role_arn'] = role_arn
-            if service is None:
+            if service is None and not opts.urn:
                 raise TypeError("Missing required property 'service'")
             __props__['service'] = service
             __props__['service_refresh_rate_in_minutes'] = service_refresh_rate_in_minutes

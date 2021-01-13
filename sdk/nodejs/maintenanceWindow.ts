@@ -121,16 +121,16 @@ export class MaintenanceWindow extends pulumi.CustomResource {
             inputs["title"] = state ? state.title : undefined;
         } else {
             const args = argsOrState as MaintenanceWindowArgs | undefined;
-            if (!args || args.endTimeInSeconds === undefined) {
+            if ((!args || args.endTimeInSeconds === undefined) && !(opts && opts.urn)) {
                 throw new Error("Missing required property 'endTimeInSeconds'");
             }
-            if (!args || args.reason === undefined) {
+            if ((!args || args.reason === undefined) && !(opts && opts.urn)) {
                 throw new Error("Missing required property 'reason'");
             }
-            if (!args || args.startTimeInSeconds === undefined) {
+            if ((!args || args.startTimeInSeconds === undefined) && !(opts && opts.urn)) {
                 throw new Error("Missing required property 'startTimeInSeconds'");
             }
-            if (!args || args.title === undefined) {
+            if ((!args || args.title === undefined) && !(opts && opts.urn)) {
                 throw new Error("Missing required property 'title'");
             }
             inputs["endTimeInSeconds"] = args ? args.endTimeInSeconds : undefined;

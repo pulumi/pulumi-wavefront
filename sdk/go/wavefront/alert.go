@@ -102,14 +102,15 @@ type Alert struct {
 // NewAlert registers a new resource with the given unique name, arguments, and options.
 func NewAlert(ctx *pulumi.Context,
 	name string, args *AlertArgs, opts ...pulumi.ResourceOption) (*Alert, error) {
-	if args == nil || args.Minutes == nil {
-		return nil, errors.New("missing required argument 'Minutes'")
-	}
-	if args == nil || args.Tags == nil {
-		return nil, errors.New("missing required argument 'Tags'")
-	}
 	if args == nil {
-		args = &AlertArgs{}
+		return nil, errors.New("missing one or more required arguments")
+	}
+
+	if args.Minutes == nil {
+		return nil, errors.New("invalid value for required argument 'Minutes'")
+	}
+	if args.Tags == nil {
+		return nil, errors.New("invalid value for required argument 'Tags'")
 	}
 	var resource Alert
 	err := ctx.RegisterResource("wavefront:index/alert:Alert", name, args, &resource, opts...)

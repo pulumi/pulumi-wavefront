@@ -173,16 +173,16 @@ export class Dashboard extends pulumi.CustomResource {
             inputs["url"] = state ? state.url : undefined;
         } else {
             const args = argsOrState as DashboardArgs | undefined;
-            if (!args || args.description === undefined) {
+            if ((!args || args.description === undefined) && !(opts && opts.urn)) {
                 throw new Error("Missing required property 'description'");
             }
-            if (!args || args.sections === undefined) {
+            if ((!args || args.sections === undefined) && !(opts && opts.urn)) {
                 throw new Error("Missing required property 'sections'");
             }
-            if (!args || args.tags === undefined) {
+            if ((!args || args.tags === undefined) && !(opts && opts.urn)) {
                 throw new Error("Missing required property 'tags'");
             }
-            if (!args || args.url === undefined) {
+            if ((!args || args.url === undefined) && !(opts && opts.urn)) {
                 throw new Error("Missing required property 'url'");
             }
             inputs["canModifies"] = args ? args.canModifies : undefined;

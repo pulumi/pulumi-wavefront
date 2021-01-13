@@ -79,7 +79,7 @@ export class UserGroup extends pulumi.CustomResource {
             inputs["name"] = state ? state.name : undefined;
         } else {
             const args = argsOrState as UserGroupArgs | undefined;
-            if (!args || args.description === undefined) {
+            if ((!args || args.description === undefined) && !(opts && opts.urn)) {
                 throw new Error("Missing required property 'description'");
             }
             inputs["description"] = args ? args.description : undefined;

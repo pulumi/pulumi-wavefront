@@ -63,14 +63,15 @@ type DerivedMetric struct {
 // NewDerivedMetric registers a new resource with the given unique name, arguments, and options.
 func NewDerivedMetric(ctx *pulumi.Context,
 	name string, args *DerivedMetricArgs, opts ...pulumi.ResourceOption) (*DerivedMetric, error) {
-	if args == nil || args.Minutes == nil {
-		return nil, errors.New("missing required argument 'Minutes'")
-	}
-	if args == nil || args.Query == nil {
-		return nil, errors.New("missing required argument 'Query'")
-	}
 	if args == nil {
-		args = &DerivedMetricArgs{}
+		return nil, errors.New("missing one or more required arguments")
+	}
+
+	if args.Minutes == nil {
+		return nil, errors.New("invalid value for required argument 'Minutes'")
+	}
+	if args.Query == nil {
+		return nil, errors.New("invalid value for required argument 'Query'")
 	}
 	var resource DerivedMetric
 	err := ctx.RegisterResource("wavefront:index/derivedMetric:DerivedMetric", name, args, &resource, opts...)

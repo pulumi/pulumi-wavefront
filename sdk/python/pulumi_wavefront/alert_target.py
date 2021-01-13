@@ -151,21 +151,21 @@ class AlertTarget(pulumi.CustomResource):
 
             __props__['content_type'] = content_type
             __props__['custom_headers'] = custom_headers
-            if description is None:
+            if description is None and not opts.urn:
                 raise TypeError("Missing required property 'description'")
             __props__['description'] = description
             __props__['email_subject'] = email_subject
             __props__['is_html_content'] = is_html_content
             __props__['method'] = method
             __props__['name'] = name
-            if recipient is None:
+            if recipient is None and not opts.urn:
                 raise TypeError("Missing required property 'recipient'")
             __props__['recipient'] = recipient
             __props__['routes'] = routes
-            if template is None:
+            if template is None and not opts.urn:
                 raise TypeError("Missing required property 'template'")
             __props__['template'] = template
-            if triggers is None:
+            if triggers is None and not opts.urn:
                 raise TypeError("Missing required property 'triggers'")
             __props__['triggers'] = triggers
             __props__['target_id'] = None
