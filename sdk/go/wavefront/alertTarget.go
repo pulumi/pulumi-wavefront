@@ -19,7 +19,7 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront"
+// 	"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront/"
 // 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 // )
 //
@@ -67,6 +67,7 @@ import (
 //
 // import (
 // 	"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront"
+// 	"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront/"
 // 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 // )
 //
@@ -320,15 +321,15 @@ type AlertTargetInput interface {
 	ToAlertTargetOutputWithContext(ctx context.Context) AlertTargetOutput
 }
 
-func (AlertTarget) ElementType() reflect.Type {
-	return reflect.TypeOf((*AlertTarget)(nil)).Elem()
+func (*AlertTarget) ElementType() reflect.Type {
+	return reflect.TypeOf((*AlertTarget)(nil))
 }
 
-func (i AlertTarget) ToAlertTargetOutput() AlertTargetOutput {
+func (i *AlertTarget) ToAlertTargetOutput() AlertTargetOutput {
 	return i.ToAlertTargetOutputWithContext(context.Background())
 }
 
-func (i AlertTarget) ToAlertTargetOutputWithContext(ctx context.Context) AlertTargetOutput {
+func (i *AlertTarget) ToAlertTargetOutputWithContext(ctx context.Context) AlertTargetOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AlertTargetOutput)
 }
 
@@ -337,7 +338,7 @@ type AlertTargetOutput struct {
 }
 
 func (AlertTargetOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*AlertTargetOutput)(nil)).Elem()
+	return reflect.TypeOf((*AlertTarget)(nil))
 }
 
 func (o AlertTargetOutput) ToAlertTargetOutput() AlertTargetOutput {

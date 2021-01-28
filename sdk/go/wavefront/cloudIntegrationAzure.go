@@ -20,7 +20,7 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront"
+// 	"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront/"
 // 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 // )
 //
@@ -229,15 +229,15 @@ type CloudIntegrationAzureInput interface {
 	ToCloudIntegrationAzureOutputWithContext(ctx context.Context) CloudIntegrationAzureOutput
 }
 
-func (CloudIntegrationAzure) ElementType() reflect.Type {
-	return reflect.TypeOf((*CloudIntegrationAzure)(nil)).Elem()
+func (*CloudIntegrationAzure) ElementType() reflect.Type {
+	return reflect.TypeOf((*CloudIntegrationAzure)(nil))
 }
 
-func (i CloudIntegrationAzure) ToCloudIntegrationAzureOutput() CloudIntegrationAzureOutput {
+func (i *CloudIntegrationAzure) ToCloudIntegrationAzureOutput() CloudIntegrationAzureOutput {
 	return i.ToCloudIntegrationAzureOutputWithContext(context.Background())
 }
 
-func (i CloudIntegrationAzure) ToCloudIntegrationAzureOutputWithContext(ctx context.Context) CloudIntegrationAzureOutput {
+func (i *CloudIntegrationAzure) ToCloudIntegrationAzureOutputWithContext(ctx context.Context) CloudIntegrationAzureOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(CloudIntegrationAzureOutput)
 }
 
@@ -246,7 +246,7 @@ type CloudIntegrationAzureOutput struct {
 }
 
 func (CloudIntegrationAzureOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*CloudIntegrationAzureOutput)(nil)).Elem()
+	return reflect.TypeOf((*CloudIntegrationAzure)(nil))
 }
 
 func (o CloudIntegrationAzureOutput) ToCloudIntegrationAzureOutput() CloudIntegrationAzureOutput {

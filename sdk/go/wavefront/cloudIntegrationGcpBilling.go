@@ -22,7 +22,7 @@ import (
 // import (
 // 	"fmt"
 //
-// 	"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront"
+// 	"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront/"
 // 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 // )
 //
@@ -206,15 +206,15 @@ type CloudIntegrationGcpBillingInput interface {
 	ToCloudIntegrationGcpBillingOutputWithContext(ctx context.Context) CloudIntegrationGcpBillingOutput
 }
 
-func (CloudIntegrationGcpBilling) ElementType() reflect.Type {
-	return reflect.TypeOf((*CloudIntegrationGcpBilling)(nil)).Elem()
+func (*CloudIntegrationGcpBilling) ElementType() reflect.Type {
+	return reflect.TypeOf((*CloudIntegrationGcpBilling)(nil))
 }
 
-func (i CloudIntegrationGcpBilling) ToCloudIntegrationGcpBillingOutput() CloudIntegrationGcpBillingOutput {
+func (i *CloudIntegrationGcpBilling) ToCloudIntegrationGcpBillingOutput() CloudIntegrationGcpBillingOutput {
 	return i.ToCloudIntegrationGcpBillingOutputWithContext(context.Background())
 }
 
-func (i CloudIntegrationGcpBilling) ToCloudIntegrationGcpBillingOutputWithContext(ctx context.Context) CloudIntegrationGcpBillingOutput {
+func (i *CloudIntegrationGcpBilling) ToCloudIntegrationGcpBillingOutputWithContext(ctx context.Context) CloudIntegrationGcpBillingOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(CloudIntegrationGcpBillingOutput)
 }
 
@@ -223,7 +223,7 @@ type CloudIntegrationGcpBillingOutput struct {
 }
 
 func (CloudIntegrationGcpBillingOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*CloudIntegrationGcpBillingOutput)(nil)).Elem()
+	return reflect.TypeOf((*CloudIntegrationGcpBilling)(nil))
 }
 
 func (o CloudIntegrationGcpBillingOutput) ToCloudIntegrationGcpBillingOutput() CloudIntegrationGcpBillingOutput {

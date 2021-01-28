@@ -20,7 +20,7 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront"
+// 	"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront/"
 // 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 // )
 //
@@ -237,15 +237,15 @@ type CloudIntegrationCloudTrailInput interface {
 	ToCloudIntegrationCloudTrailOutputWithContext(ctx context.Context) CloudIntegrationCloudTrailOutput
 }
 
-func (CloudIntegrationCloudTrail) ElementType() reflect.Type {
-	return reflect.TypeOf((*CloudIntegrationCloudTrail)(nil)).Elem()
+func (*CloudIntegrationCloudTrail) ElementType() reflect.Type {
+	return reflect.TypeOf((*CloudIntegrationCloudTrail)(nil))
 }
 
-func (i CloudIntegrationCloudTrail) ToCloudIntegrationCloudTrailOutput() CloudIntegrationCloudTrailOutput {
+func (i *CloudIntegrationCloudTrail) ToCloudIntegrationCloudTrailOutput() CloudIntegrationCloudTrailOutput {
 	return i.ToCloudIntegrationCloudTrailOutputWithContext(context.Background())
 }
 
-func (i CloudIntegrationCloudTrail) ToCloudIntegrationCloudTrailOutputWithContext(ctx context.Context) CloudIntegrationCloudTrailOutput {
+func (i *CloudIntegrationCloudTrail) ToCloudIntegrationCloudTrailOutputWithContext(ctx context.Context) CloudIntegrationCloudTrailOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(CloudIntegrationCloudTrailOutput)
 }
 
@@ -254,7 +254,7 @@ type CloudIntegrationCloudTrailOutput struct {
 }
 
 func (CloudIntegrationCloudTrailOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*CloudIntegrationCloudTrailOutput)(nil)).Elem()
+	return reflect.TypeOf((*CloudIntegrationCloudTrail)(nil))
 }
 
 func (o CloudIntegrationCloudTrailOutput) ToCloudIntegrationCloudTrailOutput() CloudIntegrationCloudTrailOutput {

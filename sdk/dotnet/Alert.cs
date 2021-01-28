@@ -49,6 +49,7 @@ namespace Pulumi.Wavefront
     ///  $ pulumi import wavefront:index/alert:Alert alert_target 1479868728473
     /// ```
     /// </summary>
+    [WavefrontResourceType("wavefront:index/alert:Alert")]
     public partial class Alert : Pulumi.CustomResource
     {
         /// <summary>

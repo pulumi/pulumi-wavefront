@@ -20,7 +20,7 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront"
+// 	"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront/"
 // 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 // )
 //
@@ -162,15 +162,15 @@ type DerivedMetricInput interface {
 	ToDerivedMetricOutputWithContext(ctx context.Context) DerivedMetricOutput
 }
 
-func (DerivedMetric) ElementType() reflect.Type {
-	return reflect.TypeOf((*DerivedMetric)(nil)).Elem()
+func (*DerivedMetric) ElementType() reflect.Type {
+	return reflect.TypeOf((*DerivedMetric)(nil))
 }
 
-func (i DerivedMetric) ToDerivedMetricOutput() DerivedMetricOutput {
+func (i *DerivedMetric) ToDerivedMetricOutput() DerivedMetricOutput {
 	return i.ToDerivedMetricOutputWithContext(context.Background())
 }
 
-func (i DerivedMetric) ToDerivedMetricOutputWithContext(ctx context.Context) DerivedMetricOutput {
+func (i *DerivedMetric) ToDerivedMetricOutputWithContext(ctx context.Context) DerivedMetricOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DerivedMetricOutput)
 }
 
@@ -179,7 +179,7 @@ type DerivedMetricOutput struct {
 }
 
 func (DerivedMetricOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*DerivedMetricOutput)(nil)).Elem()
+	return reflect.TypeOf((*DerivedMetric)(nil))
 }
 
 func (o DerivedMetricOutput) ToDerivedMetricOutput() DerivedMetricOutput {

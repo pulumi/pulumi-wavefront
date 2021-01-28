@@ -41,6 +41,7 @@ namespace Pulumi.Wavefront
     ///  $ pulumi import wavefront:index/cloudIntegrationTesla:CloudIntegrationTesla tesla a411c16b-3cf7-4f03-bf11-8ca05aab898d
     /// ```
     /// </summary>
+    [WavefrontResourceType("wavefront:index/cloudIntegrationTesla:CloudIntegrationTesla")]
     public partial class CloudIntegrationTesla : Pulumi.CustomResource
     {
         /// <summary>

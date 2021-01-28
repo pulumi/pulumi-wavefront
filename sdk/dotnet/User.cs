@@ -39,6 +39,7 @@ namespace Pulumi.Wavefront
     ///  $ pulumi import wavefront:index/user:User some_user test@example.com
     /// ```
     /// </summary>
+    [WavefrontResourceType("wavefront:index/user:User")]
     public partial class User : Pulumi.CustomResource
     {
         [Output("customer")]

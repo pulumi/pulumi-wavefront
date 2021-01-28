@@ -39,6 +39,7 @@ namespace Pulumi.Wavefront
     ///  $ pulumi import wavefront:index/userGroup:UserGroup some_group a411c16b-3cf7-4f03-bf11-8ca05aab898d
     /// ```
     /// </summary>
+    [WavefrontResourceType("wavefront:index/userGroup:UserGroup")]
     public partial class UserGroup : Pulumi.CustomResource
     {
         /// <summary>

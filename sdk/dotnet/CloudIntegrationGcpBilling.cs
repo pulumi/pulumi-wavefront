@@ -44,6 +44,7 @@ namespace Pulumi.Wavefront
     ///  $ pulumi import wavefront:index/cloudIntegrationGcpBilling:CloudIntegrationGcpBilling gcp_billing a411c16b-3cf7-4f03-bf11-8ca05aab898d
     /// ```
     /// </summary>
+    [WavefrontResourceType("wavefront:index/cloudIntegrationGcpBilling:CloudIntegrationGcpBilling")]
     public partial class CloudIntegrationGcpBilling : Pulumi.CustomResource
     {
         /// <summary>

@@ -120,6 +120,7 @@ namespace Pulumi.Wavefront
     ///  $ pulumi import wavefront:index/alertTarget:AlertTarget alert_target abcdEFGhijKLMNO
     /// ```
     /// </summary>
+    [WavefrontResourceType("wavefront:index/alertTarget:AlertTarget")]
     public partial class AlertTarget : Pulumi.CustomResource
     {
         /// <summary>

@@ -20,7 +20,7 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront"
+// 	"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront/"
 // 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 // )
 //
@@ -299,15 +299,15 @@ type CloudIntegrationAppDynamicsInput interface {
 	ToCloudIntegrationAppDynamicsOutputWithContext(ctx context.Context) CloudIntegrationAppDynamicsOutput
 }
 
-func (CloudIntegrationAppDynamics) ElementType() reflect.Type {
-	return reflect.TypeOf((*CloudIntegrationAppDynamics)(nil)).Elem()
+func (*CloudIntegrationAppDynamics) ElementType() reflect.Type {
+	return reflect.TypeOf((*CloudIntegrationAppDynamics)(nil))
 }
 
-func (i CloudIntegrationAppDynamics) ToCloudIntegrationAppDynamicsOutput() CloudIntegrationAppDynamicsOutput {
+func (i *CloudIntegrationAppDynamics) ToCloudIntegrationAppDynamicsOutput() CloudIntegrationAppDynamicsOutput {
 	return i.ToCloudIntegrationAppDynamicsOutputWithContext(context.Background())
 }
 
-func (i CloudIntegrationAppDynamics) ToCloudIntegrationAppDynamicsOutputWithContext(ctx context.Context) CloudIntegrationAppDynamicsOutput {
+func (i *CloudIntegrationAppDynamics) ToCloudIntegrationAppDynamicsOutputWithContext(ctx context.Context) CloudIntegrationAppDynamicsOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(CloudIntegrationAppDynamicsOutput)
 }
 
@@ -316,7 +316,7 @@ type CloudIntegrationAppDynamicsOutput struct {
 }
 
 func (CloudIntegrationAppDynamicsOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*CloudIntegrationAppDynamicsOutput)(nil)).Elem()
+	return reflect.TypeOf((*CloudIntegrationAppDynamics)(nil))
 }
 
 func (o CloudIntegrationAppDynamicsOutput) ToCloudIntegrationAppDynamicsOutput() CloudIntegrationAppDynamicsOutput {

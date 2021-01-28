@@ -40,6 +40,7 @@ namespace Pulumi.Wavefront
     ///  $ pulumi import wavefront:index/cloudIntegrationNewRelic:CloudIntegrationNewRelic newrelic a411c16b-3cf7-4f03-bf11-8ca05aab898d
     /// ```
     /// </summary>
+    [WavefrontResourceType("wavefront:index/cloudIntegrationNewRelic:CloudIntegrationNewRelic")]
     public partial class CloudIntegrationNewRelic : Pulumi.CustomResource
     {
         /// <summary>
