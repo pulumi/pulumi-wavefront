@@ -47,6 +47,7 @@ namespace Pulumi.Wavefront
     ///  $ pulumi import wavefront:index/maintenanceWindow:MaintenanceWindow basic 1600383357095
     /// ```
     /// </summary>
+    [WavefrontResourceType("wavefront:index/maintenanceWindow:MaintenanceWindow")]
     public partial class MaintenanceWindow : Pulumi.CustomResource
     {
         /// <summary>

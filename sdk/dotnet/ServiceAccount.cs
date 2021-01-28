@@ -40,6 +40,7 @@ namespace Pulumi.Wavefront
     ///  $ pulumi import wavefront:index/serviceAccount:ServiceAccount basic sa::tftesting
     /// ```
     /// </summary>
+    [WavefrontResourceType("wavefront:index/serviceAccount:ServiceAccount")]
     public partial class ServiceAccount : Pulumi.CustomResource
     {
         /// <summary>

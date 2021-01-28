@@ -18,7 +18,7 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront"
+// 	"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront/"
 // 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 // )
 //
@@ -100,15 +100,15 @@ type CloudIntegrationAwsExternalIdInput interface {
 	ToCloudIntegrationAwsExternalIdOutputWithContext(ctx context.Context) CloudIntegrationAwsExternalIdOutput
 }
 
-func (CloudIntegrationAwsExternalId) ElementType() reflect.Type {
-	return reflect.TypeOf((*CloudIntegrationAwsExternalId)(nil)).Elem()
+func (*CloudIntegrationAwsExternalId) ElementType() reflect.Type {
+	return reflect.TypeOf((*CloudIntegrationAwsExternalId)(nil))
 }
 
-func (i CloudIntegrationAwsExternalId) ToCloudIntegrationAwsExternalIdOutput() CloudIntegrationAwsExternalIdOutput {
+func (i *CloudIntegrationAwsExternalId) ToCloudIntegrationAwsExternalIdOutput() CloudIntegrationAwsExternalIdOutput {
 	return i.ToCloudIntegrationAwsExternalIdOutputWithContext(context.Background())
 }
 
-func (i CloudIntegrationAwsExternalId) ToCloudIntegrationAwsExternalIdOutputWithContext(ctx context.Context) CloudIntegrationAwsExternalIdOutput {
+func (i *CloudIntegrationAwsExternalId) ToCloudIntegrationAwsExternalIdOutputWithContext(ctx context.Context) CloudIntegrationAwsExternalIdOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(CloudIntegrationAwsExternalIdOutput)
 }
 
@@ -117,7 +117,7 @@ type CloudIntegrationAwsExternalIdOutput struct {
 }
 
 func (CloudIntegrationAwsExternalIdOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*CloudIntegrationAwsExternalIdOutput)(nil)).Elem()
+	return reflect.TypeOf((*CloudIntegrationAwsExternalId)(nil))
 }
 
 func (o CloudIntegrationAwsExternalIdOutput) ToCloudIntegrationAwsExternalIdOutput() CloudIntegrationAwsExternalIdOutput {

@@ -40,6 +40,7 @@ namespace Pulumi.Wavefront
     ///  $ pulumi import wavefront:index/externalLink:ExternalLink basic fVj6fz6zYC4aBkID
     /// ```
     /// </summary>
+    [WavefrontResourceType("wavefront:index/externalLink:ExternalLink")]
     public partial class ExternalLink : Pulumi.CustomResource
     {
         /// <summary>

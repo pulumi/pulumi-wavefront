@@ -48,7 +48,7 @@ setup(name='pulumi_wavefront',
       packages=find_packages(),
       package_data={
           'pulumi_wavefront': [
-              'py.typed'
+              'py.typed',
           ]
       },
       install_requires=[

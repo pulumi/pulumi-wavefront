@@ -77,4 +77,11 @@ namespace Pulumi.Wavefront
             }
         }
     }
+
+    internal sealed class WavefrontResourceTypeAttribute : Pulumi.ResourceTypeAttribute
+    {
+        public WavefrontResourceTypeAttribute(string type) : base(type, Utilities.Version)
+        {
+        }
+    }
 }

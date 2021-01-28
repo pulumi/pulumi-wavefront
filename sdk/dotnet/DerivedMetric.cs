@@ -41,6 +41,7 @@ namespace Pulumi.Wavefront
     ///  $ pulumi import wavefront:index/derivedMetric:DerivedMetric derived_metric 1577102900578
     /// ```
     /// </summary>
+    [WavefrontResourceType("wavefront:index/derivedMetric:DerivedMetric")]
     public partial class DerivedMetric : Pulumi.CustomResource
     {
         /// <summary>

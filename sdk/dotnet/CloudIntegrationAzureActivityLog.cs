@@ -46,6 +46,7 @@ namespace Pulumi.Wavefront
     ///  $ pulumi import wavefront:index/cloudIntegrationAzureActivityLog:CloudIntegrationAzureActivityLog azure_al a411c16b-3cf7-4f03-bf11-8ca05aab898d
     /// ```
     /// </summary>
+    [WavefrontResourceType("wavefront:index/cloudIntegrationAzureActivityLog:CloudIntegrationAzureActivityLog")]
     public partial class CloudIntegrationAzureActivityLog : Pulumi.CustomResource
     {
         /// <summary>

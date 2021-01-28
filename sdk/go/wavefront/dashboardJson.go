@@ -21,7 +21,7 @@ import (
 // import (
 // 	"fmt"
 //
-// 	"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront"
+// 	"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront/"
 // 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 // )
 //
@@ -124,15 +124,15 @@ type DashboardJsonInput interface {
 	ToDashboardJsonOutputWithContext(ctx context.Context) DashboardJsonOutput
 }
 
-func (DashboardJson) ElementType() reflect.Type {
-	return reflect.TypeOf((*DashboardJson)(nil)).Elem()
+func (*DashboardJson) ElementType() reflect.Type {
+	return reflect.TypeOf((*DashboardJson)(nil))
 }
 
-func (i DashboardJson) ToDashboardJsonOutput() DashboardJsonOutput {
+func (i *DashboardJson) ToDashboardJsonOutput() DashboardJsonOutput {
 	return i.ToDashboardJsonOutputWithContext(context.Background())
 }
 
-func (i DashboardJson) ToDashboardJsonOutputWithContext(ctx context.Context) DashboardJsonOutput {
+func (i *DashboardJson) ToDashboardJsonOutputWithContext(ctx context.Context) DashboardJsonOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DashboardJsonOutput)
 }
 
@@ -141,7 +141,7 @@ type DashboardJsonOutput struct {
 }
 
 func (DashboardJsonOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*DashboardJsonOutput)(nil)).Elem()
+	return reflect.TypeOf((*DashboardJson)(nil))
 }
 
 func (o DashboardJsonOutput) ToDashboardJsonOutput() DashboardJsonOutput {

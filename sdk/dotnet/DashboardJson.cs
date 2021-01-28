@@ -137,6 +137,7 @@ namespace Pulumi.Wavefront
     ///  $ pulumi import wavefront:index/dashboardJson:DashboardJson dashboard_json tftestimport
     /// ```
     /// </summary>
+    [WavefrontResourceType("wavefront:index/dashboardJson:DashboardJson")]
     public partial class DashboardJson : Pulumi.CustomResource
     {
         /// <summary>

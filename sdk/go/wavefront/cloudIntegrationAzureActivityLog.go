@@ -20,7 +20,7 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront"
+// 	"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront/"
 // 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 // )
 //
@@ -212,15 +212,15 @@ type CloudIntegrationAzureActivityLogInput interface {
 	ToCloudIntegrationAzureActivityLogOutputWithContext(ctx context.Context) CloudIntegrationAzureActivityLogOutput
 }
 
-func (CloudIntegrationAzureActivityLog) ElementType() reflect.Type {
-	return reflect.TypeOf((*CloudIntegrationAzureActivityLog)(nil)).Elem()
+func (*CloudIntegrationAzureActivityLog) ElementType() reflect.Type {
+	return reflect.TypeOf((*CloudIntegrationAzureActivityLog)(nil))
 }
 
-func (i CloudIntegrationAzureActivityLog) ToCloudIntegrationAzureActivityLogOutput() CloudIntegrationAzureActivityLogOutput {
+func (i *CloudIntegrationAzureActivityLog) ToCloudIntegrationAzureActivityLogOutput() CloudIntegrationAzureActivityLogOutput {
 	return i.ToCloudIntegrationAzureActivityLogOutputWithContext(context.Background())
 }
 
-func (i CloudIntegrationAzureActivityLog) ToCloudIntegrationAzureActivityLogOutputWithContext(ctx context.Context) CloudIntegrationAzureActivityLogOutput {
+func (i *CloudIntegrationAzureActivityLog) ToCloudIntegrationAzureActivityLogOutputWithContext(ctx context.Context) CloudIntegrationAzureActivityLogOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(CloudIntegrationAzureActivityLogOutput)
 }
 
@@ -229,7 +229,7 @@ type CloudIntegrationAzureActivityLogOutput struct {
 }
 
 func (CloudIntegrationAzureActivityLogOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*CloudIntegrationAzureActivityLogOutput)(nil)).Elem()
+	return reflect.TypeOf((*CloudIntegrationAzureActivityLog)(nil))
 }
 
 func (o CloudIntegrationAzureActivityLogOutput) ToCloudIntegrationAzureActivityLogOutput() CloudIntegrationAzureActivityLogOutput {

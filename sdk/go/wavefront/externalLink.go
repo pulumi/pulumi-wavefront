@@ -19,7 +19,7 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront"
+// 	"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront/"
 // 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 // )
 //
@@ -181,15 +181,15 @@ type ExternalLinkInput interface {
 	ToExternalLinkOutputWithContext(ctx context.Context) ExternalLinkOutput
 }
 
-func (ExternalLink) ElementType() reflect.Type {
-	return reflect.TypeOf((*ExternalLink)(nil)).Elem()
+func (*ExternalLink) ElementType() reflect.Type {
+	return reflect.TypeOf((*ExternalLink)(nil))
 }
 
-func (i ExternalLink) ToExternalLinkOutput() ExternalLinkOutput {
+func (i *ExternalLink) ToExternalLinkOutput() ExternalLinkOutput {
 	return i.ToExternalLinkOutputWithContext(context.Background())
 }
 
-func (i ExternalLink) ToExternalLinkOutputWithContext(ctx context.Context) ExternalLinkOutput {
+func (i *ExternalLink) ToExternalLinkOutputWithContext(ctx context.Context) ExternalLinkOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ExternalLinkOutput)
 }
 
@@ -198,7 +198,7 @@ type ExternalLinkOutput struct {
 }
 
 func (ExternalLinkOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*ExternalLinkOutput)(nil)).Elem()
+	return reflect.TypeOf((*ExternalLink)(nil))
 }
 
 func (o ExternalLinkOutput) ToExternalLinkOutput() ExternalLinkOutput {

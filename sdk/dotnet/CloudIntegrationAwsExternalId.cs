@@ -38,6 +38,7 @@ namespace Pulumi.Wavefront
     ///  $ pulumi import wavefront:index/cloudIntegrationAwsExternalId:CloudIntegrationAwsExternalId external_id uGJdkH3k
     /// ```
     /// </summary>
+    [WavefrontResourceType("wavefront:index/cloudIntegrationAwsExternalId:CloudIntegrationAwsExternalId")]
     public partial class CloudIntegrationAwsExternalId : Pulumi.CustomResource
     {
         /// <summary>

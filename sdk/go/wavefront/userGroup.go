@@ -19,7 +19,7 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront"
+// 	"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront/"
 // 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 // )
 //
@@ -127,15 +127,15 @@ type UserGroupInput interface {
 	ToUserGroupOutputWithContext(ctx context.Context) UserGroupOutput
 }
 
-func (UserGroup) ElementType() reflect.Type {
-	return reflect.TypeOf((*UserGroup)(nil)).Elem()
+func (*UserGroup) ElementType() reflect.Type {
+	return reflect.TypeOf((*UserGroup)(nil))
 }
 
-func (i UserGroup) ToUserGroupOutput() UserGroupOutput {
+func (i *UserGroup) ToUserGroupOutput() UserGroupOutput {
 	return i.ToUserGroupOutputWithContext(context.Background())
 }
 
-func (i UserGroup) ToUserGroupOutputWithContext(ctx context.Context) UserGroupOutput {
+func (i *UserGroup) ToUserGroupOutputWithContext(ctx context.Context) UserGroupOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(UserGroupOutput)
 }
 
@@ -144,7 +144,7 @@ type UserGroupOutput struct {
 }
 
 func (UserGroupOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*UserGroupOutput)(nil)).Elem()
+	return reflect.TypeOf((*UserGroup)(nil))
 }
 
 func (o UserGroupOutput) ToUserGroupOutput() UserGroupOutput {

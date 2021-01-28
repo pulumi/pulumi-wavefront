@@ -20,7 +20,7 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront"
+// 	"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront/"
 // 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 // )
 //
@@ -194,15 +194,15 @@ type CloudIntegrationEc2Input interface {
 	ToCloudIntegrationEc2OutputWithContext(ctx context.Context) CloudIntegrationEc2Output
 }
 
-func (CloudIntegrationEc2) ElementType() reflect.Type {
-	return reflect.TypeOf((*CloudIntegrationEc2)(nil)).Elem()
+func (*CloudIntegrationEc2) ElementType() reflect.Type {
+	return reflect.TypeOf((*CloudIntegrationEc2)(nil))
 }
 
-func (i CloudIntegrationEc2) ToCloudIntegrationEc2Output() CloudIntegrationEc2Output {
+func (i *CloudIntegrationEc2) ToCloudIntegrationEc2Output() CloudIntegrationEc2Output {
 	return i.ToCloudIntegrationEc2OutputWithContext(context.Background())
 }
 
-func (i CloudIntegrationEc2) ToCloudIntegrationEc2OutputWithContext(ctx context.Context) CloudIntegrationEc2Output {
+func (i *CloudIntegrationEc2) ToCloudIntegrationEc2OutputWithContext(ctx context.Context) CloudIntegrationEc2Output {
 	return pulumi.ToOutputWithContext(ctx, i).(CloudIntegrationEc2Output)
 }
 
@@ -211,7 +211,7 @@ type CloudIntegrationEc2Output struct {
 }
 
 func (CloudIntegrationEc2Output) ElementType() reflect.Type {
-	return reflect.TypeOf((*CloudIntegrationEc2Output)(nil)).Elem()
+	return reflect.TypeOf((*CloudIntegrationEc2)(nil))
 }
 
 func (o CloudIntegrationEc2Output) ToCloudIntegrationEc2Output() CloudIntegrationEc2Output {

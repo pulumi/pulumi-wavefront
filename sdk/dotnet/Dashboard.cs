@@ -20,6 +20,7 @@ namespace Pulumi.Wavefront
     ///  $ pulumi import wavefront:index/dashboard:Dashboard dashboard tftestimport
     /// ```
     /// </summary>
+    [WavefrontResourceType("wavefront:index/dashboard:Dashboard")]
     public partial class Dashboard : Pulumi.CustomResource
     {
         /// <summary>
