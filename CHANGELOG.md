@@ -2,9 +2,12 @@ CHANGELOG
 =========
 
 ## HEAD (Unreleased)
-* Upgrading pulumi-terraform-bridge to v2.18.0
+_(none)_
 
 ---
+
+## 0.6.0 (2021-01-29)
+* Upgrading pulumi-terraform-bridge to v2.18.0
 
 ## 0.5.5 (2021-01-13)
 * Upgrade to pulumi-terraform-bridge v2.17.0
