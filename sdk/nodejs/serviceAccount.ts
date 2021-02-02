@@ -68,6 +68,10 @@ export class ServiceAccount extends pulumi.CustomResource {
      */
     public readonly identifier!: pulumi.Output<string>;
     /**
+     * ID of ingestion policy
+     */
+    public readonly ingestionPolicy!: pulumi.Output<string | undefined>;
+    /**
      * List of permission to grant to this service account.  Valid options are
      * `agentManagement`, `alertsManagement`, `dashboardManagement`, `embeddedCharts`, `eventsManagement`, `externalLinksManagement`,
      * `hostTagManagement`, `metricsManagement`, `userManagement`
@@ -93,6 +97,7 @@ export class ServiceAccount extends pulumi.CustomResource {
             inputs["active"] = state ? state.active : undefined;
             inputs["description"] = state ? state.description : undefined;
             inputs["identifier"] = state ? state.identifier : undefined;
+            inputs["ingestionPolicy"] = state ? state.ingestionPolicy : undefined;
             inputs["permissions"] = state ? state.permissions : undefined;
             inputs["userGroups"] = state ? state.userGroups : undefined;
         } else {
@@ -103,6 +108,7 @@ export class ServiceAccount extends pulumi.CustomResource {
             inputs["active"] = args ? args.active : undefined;
             inputs["description"] = args ? args.description : undefined;
             inputs["identifier"] = args ? args.identifier : undefined;
+            inputs["ingestionPolicy"] = args ? args.ingestionPolicy : undefined;
             inputs["permissions"] = args ? args.permissions : undefined;
             inputs["userGroups"] = args ? args.userGroups : undefined;
         }
@@ -134,6 +140,10 @@ export interface ServiceAccountState {
      */
     readonly identifier?: pulumi.Input<string>;
     /**
+     * ID of ingestion policy
+     */
+    readonly ingestionPolicy?: pulumi.Input<string>;
+    /**
      * List of permission to grant to this service account.  Valid options are
      * `agentManagement`, `alertsManagement`, `dashboardManagement`, `embeddedCharts`, `eventsManagement`, `externalLinksManagement`,
      * `hostTagManagement`, `metricsManagement`, `userManagement`
@@ -161,6 +171,10 @@ export interface ServiceAccountArgs {
      * The (unique) identifier of the service account to create. Must start with sa::
      */
     readonly identifier: pulumi.Input<string>;
+    /**
+     * ID of ingestion policy
+     */
+    readonly ingestionPolicy?: pulumi.Input<string>;
     /**
      * List of permission to grant to this service account.  Valid options are
      * `agentManagement`, `alertsManagement`, `dashboardManagement`, `embeddedCharts`, `eventsManagement`, `externalLinksManagement`,

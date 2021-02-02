@@ -128,6 +128,7 @@ func Provider() tfbridge.ProviderInfo {
 			"wavefront_service_account":    {Tok: makeResource(mainMod, "ServiceAccount")},
 			"wavefront_maintenance_window": {Tok: makeResource(mainMod, "MaintenanceWindow")},
 			"wavefront_external_link":      {Tok: makeResource(mainMod, "ExternalLink")},
+			"wavefront_ingestion_policy":   {Tok: makeResource(mainMod, "IngestionPolicy")},
 		},
 		DataSources: map[string]*tfbridge.DataSourceInfo{
 			"wavefront_default_user_group": {Tok: makeDataSource(mainMod, "getDefaultUserGroup")},

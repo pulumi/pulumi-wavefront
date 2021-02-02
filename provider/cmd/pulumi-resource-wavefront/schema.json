@@ -3511,6 +3511,50 @@
                 "type": "object"
             }
         },
+        "wavefront:index/ingestionPolicy:IngestionPolicy": {
+            "description": "Provides a Wavefront Ingestion Policy Resource. This allows ingestion policies to be created, updated, and deleted.\n\n{{% examples %}}\n## Example Usage\n{{% example %}}\n\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as wavefront from \"@pulumi/wavefront\";\n\nconst basic = new wavefront.IngestionPolicy(\"basic\", {\n    description: \"An ingestion policy for testing\",\n});\n```\n```python\nimport pulumi\nimport pulumi_wavefront as wavefront\n\nbasic = wavefront.IngestionPolicy(\"basic\", description=\"An ingestion policy for testing\")\n```\n```csharp\nusing Pulumi;\nusing Wavefront = Pulumi.Wavefront;\n\nclass MyStack : Stack\n{\n    public MyStack()\n    {\n        var basic = new Wavefront.IngestionPolicy(\"basic\", new Wavefront.IngestionPolicyArgs\n        {\n            Description = \"An ingestion policy for testing\",\n        });\n    }\n\n}\n```\n```go\npackage main\n\nimport (\n\t\"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront/\"\n\t\"github.com/pulumi/pulumi/sdk/v2/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := wavefront.NewIngestionPolicy(ctx, \"basic\", \u0026wavefront.IngestionPolicyArgs{\n\t\t\tDescription: pulumi.String(\"An ingestion policy for testing\"),\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n{{% /example %}}\n{{% /examples %}}\n\n## Import\n\ningestion policies can be imported using the `id`, e.g.\n\n```sh\n $ pulumi import wavefront:index/ingestionPolicy:IngestionPolicy basic test_ingestion-1611946841064\n```\n\n ",
+            "properties": {
+                "description": {
+                    "type": "string",
+                    "description": "The description of the ingestion policy\n"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "The name of the ingestion policy\n"
+                }
+            },
+            "required": [
+                "description",
+                "name"
+            ],
+            "inputProperties": {
+                "description": {
+                    "type": "string",
+                    "description": "The description of the ingestion policy\n"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "The name of the ingestion policy\n"
+                }
+            },
+            "requiredInputs": [
+                "description"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering IngestionPolicy resources.\n",
+                "properties": {
+                    "description": {
+                        "type": "string",
+                        "description": "The description of the ingestion policy\n"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "The name of the ingestion policy\n"
+                    }
+                },
+                "type": "object"
+            }
+        },
         "wavefront:index/maintenanceWindow:MaintenanceWindow": {
             "description": "Provides a Wavefront Maintenance Window Resource. This allows maintenance windows to be created, updated, and deleted.\n\n{{% examples %}}\n## Example Usage\n{{% example %}}\n\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as wavefront from \"@pulumi/wavefront\";\n\nconst basic = new wavefront.MaintenanceWindow(\"basic\", {\n    endTimeInSeconds: 1601123456,\n    reason: \"Routine maintenance for 2020\",\n    relevantHostNames: [\n        \"my_hostname\",\n        \"my_other_hostname\",\n    ],\n    startTimeInSeconds: 1600123456,\n    title: \"Routine maintenance\",\n});\n```\n```python\nimport pulumi\nimport pulumi_wavefront as wavefront\n\nbasic = wavefront.MaintenanceWindow(\"basic\",\n    end_time_in_seconds=1601123456,\n    reason=\"Routine maintenance for 2020\",\n    relevant_host_names=[\n        \"my_hostname\",\n        \"my_other_hostname\",\n    ],\n    start_time_in_seconds=1600123456,\n    title=\"Routine maintenance\")\n```\n```csharp\nusing Pulumi;\nusing Wavefront = Pulumi.Wavefront;\n\nclass MyStack : Stack\n{\n    public MyStack()\n    {\n        var basic = new Wavefront.MaintenanceWindow(\"basic\", new Wavefront.MaintenanceWindowArgs\n        {\n            EndTimeInSeconds = 1601123456,\n            Reason = \"Routine maintenance for 2020\",\n            RelevantHostNames = \n            {\n                \"my_hostname\",\n                \"my_other_hostname\",\n            },\n            StartTimeInSeconds = 1600123456,\n            Title = \"Routine maintenance\",\n        });\n    }\n\n}\n```\n```go\npackage main\n\nimport (\n\t\"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront/\"\n\t\"github.com/pulumi/pulumi/sdk/v2/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := wavefront.NewMaintenanceWindow(ctx, \"basic\", \u0026wavefront.MaintenanceWindowArgs{\n\t\t\tEndTimeInSeconds: pulumi.Int(1601123456),\n\t\t\tReason:           pulumi.String(\"Routine maintenance for 2020\"),\n\t\t\tRelevantHostNames: pulumi.StringArray{\n\t\t\t\tpulumi.String(\"my_hostname\"),\n\t\t\t\tpulumi.String(\"my_other_hostname\"),\n\t\t\t},\n\t\t\tStartTimeInSeconds: pulumi.Int(1600123456),\n\t\t\tTitle:              pulumi.String(\"Routine maintenance\"),\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n{{% /example %}}\n{{% /examples %}}\n\n## Import\n\nMaintenance windows can be imported using the `id`, e.g.\n\n```sh\n $ pulumi import wavefront:index/maintenanceWindow:MaintenanceWindow basic 1600383357095\n```\n\n ",
             "properties": {
@@ -3768,6 +3812,10 @@
                     "type": "string",
                     "description": "The (unique) identifier of the service account to create. Must start with sa::\n"
                 },
+                "ingestionPolicy": {
+                    "type": "string",
+                    "description": "ID of ingestion policy\n"
+                },
                 "permissions": {
                     "type": "array",
                     "items": {
@@ -3801,6 +3849,10 @@
                     "type": "string",
                     "description": "The (unique) identifier of the service account to create. Must start with sa::\n"
                 },
+                "ingestionPolicy": {
+                    "type": "string",
+                    "description": "ID of ingestion policy\n"
+                },
                 "permissions": {
                     "type": "array",
                     "items": {
@@ -3833,6 +3885,10 @@
                     "identifier": {
                         "type": "string",
                         "description": "The (unique) identifier of the service account to create. Must start with sa::\n"
+                    },
+                    "ingestionPolicy": {
+                        "type": "string",
+                        "description": "ID of ingestion policy\n"
                     },
                     "permissions": {
                         "type": "array",

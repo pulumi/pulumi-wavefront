@@ -34,6 +34,7 @@
         "externalLink.ts",
         "getDefaultUserGroup.ts",
         "index.ts",
+        "ingestionPolicy.ts",
         "maintenanceWindow.ts",
         "provider.ts",
         "role.ts",
