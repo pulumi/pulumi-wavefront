@@ -53,6 +53,8 @@ type ServiceAccount struct {
 	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// The (unique) identifier of the service account to create. Must start with sa::
 	Identifier pulumi.StringOutput `pulumi:"identifier"`
+	// ID of ingestion policy
+	IngestionPolicy pulumi.StringPtrOutput `pulumi:"ingestionPolicy"`
 	// List of permission to grant to this service account.  Valid options are
 	// `agentManagement`, `alertsManagement`, `dashboardManagement`, `embeddedCharts`, `eventsManagement`, `externalLinksManagement`,
 	// `hostTagManagement`, `metricsManagement`, `userManagement`
@@ -99,6 +101,8 @@ type serviceAccountState struct {
 	Description *string `pulumi:"description"`
 	// The (unique) identifier of the service account to create. Must start with sa::
 	Identifier *string `pulumi:"identifier"`
+	// ID of ingestion policy
+	IngestionPolicy *string `pulumi:"ingestionPolicy"`
 	// List of permission to grant to this service account.  Valid options are
 	// `agentManagement`, `alertsManagement`, `dashboardManagement`, `embeddedCharts`, `eventsManagement`, `externalLinksManagement`,
 	// `hostTagManagement`, `metricsManagement`, `userManagement`
@@ -114,6 +118,8 @@ type ServiceAccountState struct {
 	Description pulumi.StringPtrInput
 	// The (unique) identifier of the service account to create. Must start with sa::
 	Identifier pulumi.StringPtrInput
+	// ID of ingestion policy
+	IngestionPolicy pulumi.StringPtrInput
 	// List of permission to grant to this service account.  Valid options are
 	// `agentManagement`, `alertsManagement`, `dashboardManagement`, `embeddedCharts`, `eventsManagement`, `externalLinksManagement`,
 	// `hostTagManagement`, `metricsManagement`, `userManagement`
@@ -133,6 +139,8 @@ type serviceAccountArgs struct {
 	Description *string `pulumi:"description"`
 	// The (unique) identifier of the service account to create. Must start with sa::
 	Identifier string `pulumi:"identifier"`
+	// ID of ingestion policy
+	IngestionPolicy *string `pulumi:"ingestionPolicy"`
 	// List of permission to grant to this service account.  Valid options are
 	// `agentManagement`, `alertsManagement`, `dashboardManagement`, `embeddedCharts`, `eventsManagement`, `externalLinksManagement`,
 	// `hostTagManagement`, `metricsManagement`, `userManagement`
@@ -149,6 +157,8 @@ type ServiceAccountArgs struct {
 	Description pulumi.StringPtrInput
 	// The (unique) identifier of the service account to create. Must start with sa::
 	Identifier pulumi.StringInput
+	// ID of ingestion policy
+	IngestionPolicy pulumi.StringPtrInput
 	// List of permission to grant to this service account.  Valid options are
 	// `agentManagement`, `alertsManagement`, `dashboardManagement`, `embeddedCharts`, `eventsManagement`, `externalLinksManagement`,
 	// `hostTagManagement`, `metricsManagement`, `userManagement`

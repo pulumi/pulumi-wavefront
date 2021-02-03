@@ -54,6 +54,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r, err = NewDerivedMetric(ctx, name, nil, pulumi.URN_(urn))
 	case "wavefront:index/externalLink:ExternalLink":
 		r, err = NewExternalLink(ctx, name, nil, pulumi.URN_(urn))
+	case "wavefront:index/ingestionPolicy:IngestionPolicy":
+		r, err = NewIngestionPolicy(ctx, name, nil, pulumi.URN_(urn))
 	case "wavefront:index/maintenanceWindow:MaintenanceWindow":
 		r, err = NewMaintenanceWindow(ctx, name, nil, pulumi.URN_(urn))
 	case "wavefront:index/role:Role":
@@ -175,6 +177,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"wavefront",
 		"index/externalLink",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"wavefront",
+		"index/ingestionPolicy",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

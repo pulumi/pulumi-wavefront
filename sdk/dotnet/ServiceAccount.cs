@@ -62,6 +62,12 @@ namespace Pulumi.Wavefront
         public Output<string> Identifier { get; private set; } = null!;
 
         /// <summary>
+        /// ID of ingestion policy
+        /// </summary>
+        [Output("ingestionPolicy")]
+        public Output<string?> IngestionPolicy { get; private set; } = null!;
+
+        /// <summary>
         /// List of permission to grant to this service account.  Valid options are
         /// `agent_management`, `alerts_management`, `dashboard_management`, `embedded_charts`, `events_management`, `external_links_management`,
         /// `host_tag_management`, `metrics_management`, `user_management`
@@ -139,6 +145,12 @@ namespace Pulumi.Wavefront
         [Input("identifier", required: true)]
         public Input<string> Identifier { get; set; } = null!;
 
+        /// <summary>
+        /// ID of ingestion policy
+        /// </summary>
+        [Input("ingestionPolicy")]
+        public Input<string>? IngestionPolicy { get; set; }
+
         [Input("permissions")]
         private InputList<string>? _permissions;
 
@@ -189,6 +201,12 @@ namespace Pulumi.Wavefront
         /// </summary>
         [Input("identifier")]
         public Input<string>? Identifier { get; set; }
+
+        /// <summary>
+        /// ID of ingestion policy
+        /// </summary>
+        [Input("ingestionPolicy")]
+        public Input<string>? IngestionPolicy { get; set; }
 
         [Input("permissions")]
         private InputList<string>? _permissions;

@@ -21,6 +21,7 @@ from .dashboard_json import *
 from .derived_metric import *
 from .external_link import *
 from .get_default_user_group import *
+from .ingestion_policy import *
 from .maintenance_window import *
 from .provider import *
 from .role import *
@@ -81,6 +82,8 @@ def _register_module():
                 return DerivedMetric(name, pulumi.ResourceOptions(urn=urn))
             elif typ == "wavefront:index/externalLink:ExternalLink":
                 return ExternalLink(name, pulumi.ResourceOptions(urn=urn))
+            elif typ == "wavefront:index/ingestionPolicy:IngestionPolicy":
+                return IngestionPolicy(name, pulumi.ResourceOptions(urn=urn))
             elif typ == "wavefront:index/maintenanceWindow:MaintenanceWindow":
                 return MaintenanceWindow(name, pulumi.ResourceOptions(urn=urn))
             elif typ == "wavefront:index/role:Role":
@@ -113,6 +116,7 @@ def _register_module():
     pulumi.runtime.register_resource_module("wavefront", "index/dashboardJson", _module_instance)
     pulumi.runtime.register_resource_module("wavefront", "index/derivedMetric", _module_instance)
     pulumi.runtime.register_resource_module("wavefront", "index/externalLink", _module_instance)
+    pulumi.runtime.register_resource_module("wavefront", "index/ingestionPolicy", _module_instance)
     pulumi.runtime.register_resource_module("wavefront", "index/maintenanceWindow", _module_instance)
     pulumi.runtime.register_resource_module("wavefront", "index/role", _module_instance)
     pulumi.runtime.register_resource_module("wavefront", "index/serviceAccount", _module_instance)

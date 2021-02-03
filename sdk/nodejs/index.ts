@@ -23,6 +23,7 @@ export * from "./dashboardJson";
 export * from "./derivedMetric";
 export * from "./externalLink";
 export * from "./getDefaultUserGroup";
+export * from "./ingestionPolicy";
 export * from "./maintenanceWindow";
 export * from "./provider";
 export * from "./role";
@@ -57,6 +58,7 @@ import { Dashboard } from "./dashboard";
 import { DashboardJson } from "./dashboardJson";
 import { DerivedMetric } from "./derivedMetric";
 import { ExternalLink } from "./externalLink";
+import { IngestionPolicy } from "./ingestionPolicy";
 import { MaintenanceWindow } from "./maintenanceWindow";
 import { Role } from "./role";
 import { ServiceAccount } from "./serviceAccount";
@@ -101,6 +103,8 @@ const _module = {
                 return new DerivedMetric(name, <any>undefined, { urn })
             case "wavefront:index/externalLink:ExternalLink":
                 return new ExternalLink(name, <any>undefined, { urn })
+            case "wavefront:index/ingestionPolicy:IngestionPolicy":
+                return new IngestionPolicy(name, <any>undefined, { urn })
             case "wavefront:index/maintenanceWindow:MaintenanceWindow":
                 return new MaintenanceWindow(name, <any>undefined, { urn })
             case "wavefront:index/role:Role":
@@ -133,6 +137,7 @@ pulumi.runtime.registerResourceModule("wavefront", "index/dashboard", _module)
 pulumi.runtime.registerResourceModule("wavefront", "index/dashboardJson", _module)
 pulumi.runtime.registerResourceModule("wavefront", "index/derivedMetric", _module)
 pulumi.runtime.registerResourceModule("wavefront", "index/externalLink", _module)
+pulumi.runtime.registerResourceModule("wavefront", "index/ingestionPolicy", _module)
 pulumi.runtime.registerResourceModule("wavefront", "index/maintenanceWindow", _module)
 pulumi.runtime.registerResourceModule("wavefront", "index/role", _module)
 pulumi.runtime.registerResourceModule("wavefront", "index/serviceAccount", _module)
