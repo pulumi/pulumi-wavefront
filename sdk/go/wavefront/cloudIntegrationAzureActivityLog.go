@@ -20,7 +20,7 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront/"
+// 	"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront"
 // 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 // )
 //
@@ -224,6 +224,85 @@ func (i *CloudIntegrationAzureActivityLog) ToCloudIntegrationAzureActivityLogOut
 	return pulumi.ToOutputWithContext(ctx, i).(CloudIntegrationAzureActivityLogOutput)
 }
 
+func (i *CloudIntegrationAzureActivityLog) ToCloudIntegrationAzureActivityLogPtrOutput() CloudIntegrationAzureActivityLogPtrOutput {
+	return i.ToCloudIntegrationAzureActivityLogPtrOutputWithContext(context.Background())
+}
+
+func (i *CloudIntegrationAzureActivityLog) ToCloudIntegrationAzureActivityLogPtrOutputWithContext(ctx context.Context) CloudIntegrationAzureActivityLogPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CloudIntegrationAzureActivityLogPtrOutput)
+}
+
+type CloudIntegrationAzureActivityLogPtrInput interface {
+	pulumi.Input
+
+	ToCloudIntegrationAzureActivityLogPtrOutput() CloudIntegrationAzureActivityLogPtrOutput
+	ToCloudIntegrationAzureActivityLogPtrOutputWithContext(ctx context.Context) CloudIntegrationAzureActivityLogPtrOutput
+}
+
+type cloudIntegrationAzureActivityLogPtrType CloudIntegrationAzureActivityLogArgs
+
+func (*cloudIntegrationAzureActivityLogPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**CloudIntegrationAzureActivityLog)(nil))
+}
+
+func (i *cloudIntegrationAzureActivityLogPtrType) ToCloudIntegrationAzureActivityLogPtrOutput() CloudIntegrationAzureActivityLogPtrOutput {
+	return i.ToCloudIntegrationAzureActivityLogPtrOutputWithContext(context.Background())
+}
+
+func (i *cloudIntegrationAzureActivityLogPtrType) ToCloudIntegrationAzureActivityLogPtrOutputWithContext(ctx context.Context) CloudIntegrationAzureActivityLogPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CloudIntegrationAzureActivityLogPtrOutput)
+}
+
+// CloudIntegrationAzureActivityLogArrayInput is an input type that accepts CloudIntegrationAzureActivityLogArray and CloudIntegrationAzureActivityLogArrayOutput values.
+// You can construct a concrete instance of `CloudIntegrationAzureActivityLogArrayInput` via:
+//
+//          CloudIntegrationAzureActivityLogArray{ CloudIntegrationAzureActivityLogArgs{...} }
+type CloudIntegrationAzureActivityLogArrayInput interface {
+	pulumi.Input
+
+	ToCloudIntegrationAzureActivityLogArrayOutput() CloudIntegrationAzureActivityLogArrayOutput
+	ToCloudIntegrationAzureActivityLogArrayOutputWithContext(context.Context) CloudIntegrationAzureActivityLogArrayOutput
+}
+
+type CloudIntegrationAzureActivityLogArray []CloudIntegrationAzureActivityLogInput
+
+func (CloudIntegrationAzureActivityLogArray) ElementType() reflect.Type {
+	return reflect.TypeOf(([]*CloudIntegrationAzureActivityLog)(nil))
+}
+
+func (i CloudIntegrationAzureActivityLogArray) ToCloudIntegrationAzureActivityLogArrayOutput() CloudIntegrationAzureActivityLogArrayOutput {
+	return i.ToCloudIntegrationAzureActivityLogArrayOutputWithContext(context.Background())
+}
+
+func (i CloudIntegrationAzureActivityLogArray) ToCloudIntegrationAzureActivityLogArrayOutputWithContext(ctx context.Context) CloudIntegrationAzureActivityLogArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CloudIntegrationAzureActivityLogArrayOutput)
+}
+
+// CloudIntegrationAzureActivityLogMapInput is an input type that accepts CloudIntegrationAzureActivityLogMap and CloudIntegrationAzureActivityLogMapOutput values.
+// You can construct a concrete instance of `CloudIntegrationAzureActivityLogMapInput` via:
+//
+//          CloudIntegrationAzureActivityLogMap{ "key": CloudIntegrationAzureActivityLogArgs{...} }
+type CloudIntegrationAzureActivityLogMapInput interface {
+	pulumi.Input
+
+	ToCloudIntegrationAzureActivityLogMapOutput() CloudIntegrationAzureActivityLogMapOutput
+	ToCloudIntegrationAzureActivityLogMapOutputWithContext(context.Context) CloudIntegrationAzureActivityLogMapOutput
+}
+
+type CloudIntegrationAzureActivityLogMap map[string]CloudIntegrationAzureActivityLogInput
+
+func (CloudIntegrationAzureActivityLogMap) ElementType() reflect.Type {
+	return reflect.TypeOf((map[string]*CloudIntegrationAzureActivityLog)(nil))
+}
+
+func (i CloudIntegrationAzureActivityLogMap) ToCloudIntegrationAzureActivityLogMapOutput() CloudIntegrationAzureActivityLogMapOutput {
+	return i.ToCloudIntegrationAzureActivityLogMapOutputWithContext(context.Background())
+}
+
+func (i CloudIntegrationAzureActivityLogMap) ToCloudIntegrationAzureActivityLogMapOutputWithContext(ctx context.Context) CloudIntegrationAzureActivityLogMapOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CloudIntegrationAzureActivityLogMapOutput)
+}
+
 type CloudIntegrationAzureActivityLogOutput struct {
 	*pulumi.OutputState
 }
@@ -240,6 +319,75 @@ func (o CloudIntegrationAzureActivityLogOutput) ToCloudIntegrationAzureActivityL
 	return o
 }
 
+func (o CloudIntegrationAzureActivityLogOutput) ToCloudIntegrationAzureActivityLogPtrOutput() CloudIntegrationAzureActivityLogPtrOutput {
+	return o.ToCloudIntegrationAzureActivityLogPtrOutputWithContext(context.Background())
+}
+
+func (o CloudIntegrationAzureActivityLogOutput) ToCloudIntegrationAzureActivityLogPtrOutputWithContext(ctx context.Context) CloudIntegrationAzureActivityLogPtrOutput {
+	return o.ApplyT(func(v CloudIntegrationAzureActivityLog) *CloudIntegrationAzureActivityLog {
+		return &v
+	}).(CloudIntegrationAzureActivityLogPtrOutput)
+}
+
+type CloudIntegrationAzureActivityLogPtrOutput struct {
+	*pulumi.OutputState
+}
+
+func (CloudIntegrationAzureActivityLogPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**CloudIntegrationAzureActivityLog)(nil))
+}
+
+func (o CloudIntegrationAzureActivityLogPtrOutput) ToCloudIntegrationAzureActivityLogPtrOutput() CloudIntegrationAzureActivityLogPtrOutput {
+	return o
+}
+
+func (o CloudIntegrationAzureActivityLogPtrOutput) ToCloudIntegrationAzureActivityLogPtrOutputWithContext(ctx context.Context) CloudIntegrationAzureActivityLogPtrOutput {
+	return o
+}
+
+type CloudIntegrationAzureActivityLogArrayOutput struct{ *pulumi.OutputState }
+
+func (CloudIntegrationAzureActivityLogArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]CloudIntegrationAzureActivityLog)(nil))
+}
+
+func (o CloudIntegrationAzureActivityLogArrayOutput) ToCloudIntegrationAzureActivityLogArrayOutput() CloudIntegrationAzureActivityLogArrayOutput {
+	return o
+}
+
+func (o CloudIntegrationAzureActivityLogArrayOutput) ToCloudIntegrationAzureActivityLogArrayOutputWithContext(ctx context.Context) CloudIntegrationAzureActivityLogArrayOutput {
+	return o
+}
+
+func (o CloudIntegrationAzureActivityLogArrayOutput) Index(i pulumi.IntInput) CloudIntegrationAzureActivityLogOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) CloudIntegrationAzureActivityLog {
+		return vs[0].([]CloudIntegrationAzureActivityLog)[vs[1].(int)]
+	}).(CloudIntegrationAzureActivityLogOutput)
+}
+
+type CloudIntegrationAzureActivityLogMapOutput struct{ *pulumi.OutputState }
+
+func (CloudIntegrationAzureActivityLogMapOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*map[string]CloudIntegrationAzureActivityLog)(nil))
+}
+
+func (o CloudIntegrationAzureActivityLogMapOutput) ToCloudIntegrationAzureActivityLogMapOutput() CloudIntegrationAzureActivityLogMapOutput {
+	return o
+}
+
+func (o CloudIntegrationAzureActivityLogMapOutput) ToCloudIntegrationAzureActivityLogMapOutputWithContext(ctx context.Context) CloudIntegrationAzureActivityLogMapOutput {
+	return o
+}
+
+func (o CloudIntegrationAzureActivityLogMapOutput) MapIndex(k pulumi.StringInput) CloudIntegrationAzureActivityLogOutput {
+	return pulumi.All(o, k).ApplyT(func(vs []interface{}) CloudIntegrationAzureActivityLog {
+		return vs[0].(map[string]CloudIntegrationAzureActivityLog)[vs[1].(string)]
+	}).(CloudIntegrationAzureActivityLogOutput)
+}
+
 func init() {
 	pulumi.RegisterOutputType(CloudIntegrationAzureActivityLogOutput{})
+	pulumi.RegisterOutputType(CloudIntegrationAzureActivityLogPtrOutput{})
+	pulumi.RegisterOutputType(CloudIntegrationAzureActivityLogArrayOutput{})
+	pulumi.RegisterOutputType(CloudIntegrationAzureActivityLogMapOutput{})
 }

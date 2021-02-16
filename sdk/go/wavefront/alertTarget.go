@@ -19,7 +19,7 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront/"
+// 	"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront"
 // 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 // )
 //
@@ -67,7 +67,6 @@ import (
 //
 // import (
 // 	"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront"
-// 	"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront/"
 // 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 // )
 //
@@ -333,6 +332,85 @@ func (i *AlertTarget) ToAlertTargetOutputWithContext(ctx context.Context) AlertT
 	return pulumi.ToOutputWithContext(ctx, i).(AlertTargetOutput)
 }
 
+func (i *AlertTarget) ToAlertTargetPtrOutput() AlertTargetPtrOutput {
+	return i.ToAlertTargetPtrOutputWithContext(context.Background())
+}
+
+func (i *AlertTarget) ToAlertTargetPtrOutputWithContext(ctx context.Context) AlertTargetPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AlertTargetPtrOutput)
+}
+
+type AlertTargetPtrInput interface {
+	pulumi.Input
+
+	ToAlertTargetPtrOutput() AlertTargetPtrOutput
+	ToAlertTargetPtrOutputWithContext(ctx context.Context) AlertTargetPtrOutput
+}
+
+type alertTargetPtrType AlertTargetArgs
+
+func (*alertTargetPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**AlertTarget)(nil))
+}
+
+func (i *alertTargetPtrType) ToAlertTargetPtrOutput() AlertTargetPtrOutput {
+	return i.ToAlertTargetPtrOutputWithContext(context.Background())
+}
+
+func (i *alertTargetPtrType) ToAlertTargetPtrOutputWithContext(ctx context.Context) AlertTargetPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AlertTargetPtrOutput)
+}
+
+// AlertTargetArrayInput is an input type that accepts AlertTargetArray and AlertTargetArrayOutput values.
+// You can construct a concrete instance of `AlertTargetArrayInput` via:
+//
+//          AlertTargetArray{ AlertTargetArgs{...} }
+type AlertTargetArrayInput interface {
+	pulumi.Input
+
+	ToAlertTargetArrayOutput() AlertTargetArrayOutput
+	ToAlertTargetArrayOutputWithContext(context.Context) AlertTargetArrayOutput
+}
+
+type AlertTargetArray []AlertTargetInput
+
+func (AlertTargetArray) ElementType() reflect.Type {
+	return reflect.TypeOf(([]*AlertTarget)(nil))
+}
+
+func (i AlertTargetArray) ToAlertTargetArrayOutput() AlertTargetArrayOutput {
+	return i.ToAlertTargetArrayOutputWithContext(context.Background())
+}
+
+func (i AlertTargetArray) ToAlertTargetArrayOutputWithContext(ctx context.Context) AlertTargetArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AlertTargetArrayOutput)
+}
+
+// AlertTargetMapInput is an input type that accepts AlertTargetMap and AlertTargetMapOutput values.
+// You can construct a concrete instance of `AlertTargetMapInput` via:
+//
+//          AlertTargetMap{ "key": AlertTargetArgs{...} }
+type AlertTargetMapInput interface {
+	pulumi.Input
+
+	ToAlertTargetMapOutput() AlertTargetMapOutput
+	ToAlertTargetMapOutputWithContext(context.Context) AlertTargetMapOutput
+}
+
+type AlertTargetMap map[string]AlertTargetInput
+
+func (AlertTargetMap) ElementType() reflect.Type {
+	return reflect.TypeOf((map[string]*AlertTarget)(nil))
+}
+
+func (i AlertTargetMap) ToAlertTargetMapOutput() AlertTargetMapOutput {
+	return i.ToAlertTargetMapOutputWithContext(context.Background())
+}
+
+func (i AlertTargetMap) ToAlertTargetMapOutputWithContext(ctx context.Context) AlertTargetMapOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AlertTargetMapOutput)
+}
+
 type AlertTargetOutput struct {
 	*pulumi.OutputState
 }
@@ -349,6 +427,75 @@ func (o AlertTargetOutput) ToAlertTargetOutputWithContext(ctx context.Context) A
 	return o
 }
 
+func (o AlertTargetOutput) ToAlertTargetPtrOutput() AlertTargetPtrOutput {
+	return o.ToAlertTargetPtrOutputWithContext(context.Background())
+}
+
+func (o AlertTargetOutput) ToAlertTargetPtrOutputWithContext(ctx context.Context) AlertTargetPtrOutput {
+	return o.ApplyT(func(v AlertTarget) *AlertTarget {
+		return &v
+	}).(AlertTargetPtrOutput)
+}
+
+type AlertTargetPtrOutput struct {
+	*pulumi.OutputState
+}
+
+func (AlertTargetPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**AlertTarget)(nil))
+}
+
+func (o AlertTargetPtrOutput) ToAlertTargetPtrOutput() AlertTargetPtrOutput {
+	return o
+}
+
+func (o AlertTargetPtrOutput) ToAlertTargetPtrOutputWithContext(ctx context.Context) AlertTargetPtrOutput {
+	return o
+}
+
+type AlertTargetArrayOutput struct{ *pulumi.OutputState }
+
+func (AlertTargetArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AlertTarget)(nil))
+}
+
+func (o AlertTargetArrayOutput) ToAlertTargetArrayOutput() AlertTargetArrayOutput {
+	return o
+}
+
+func (o AlertTargetArrayOutput) ToAlertTargetArrayOutputWithContext(ctx context.Context) AlertTargetArrayOutput {
+	return o
+}
+
+func (o AlertTargetArrayOutput) Index(i pulumi.IntInput) AlertTargetOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) AlertTarget {
+		return vs[0].([]AlertTarget)[vs[1].(int)]
+	}).(AlertTargetOutput)
+}
+
+type AlertTargetMapOutput struct{ *pulumi.OutputState }
+
+func (AlertTargetMapOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*map[string]AlertTarget)(nil))
+}
+
+func (o AlertTargetMapOutput) ToAlertTargetMapOutput() AlertTargetMapOutput {
+	return o
+}
+
+func (o AlertTargetMapOutput) ToAlertTargetMapOutputWithContext(ctx context.Context) AlertTargetMapOutput {
+	return o
+}
+
+func (o AlertTargetMapOutput) MapIndex(k pulumi.StringInput) AlertTargetOutput {
+	return pulumi.All(o, k).ApplyT(func(vs []interface{}) AlertTarget {
+		return vs[0].(map[string]AlertTarget)[vs[1].(string)]
+	}).(AlertTargetOutput)
+}
+
 func init() {
 	pulumi.RegisterOutputType(AlertTargetOutput{})
+	pulumi.RegisterOutputType(AlertTargetPtrOutput{})
+	pulumi.RegisterOutputType(AlertTargetArrayOutput{})
+	pulumi.RegisterOutputType(AlertTargetMapOutput{})
 }

@@ -33,19 +33,22 @@ export class Provider extends pulumi.ProviderResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param opts A bag of options that control this resource's behavior.
      */
-    constructor(name: string, args?: ProviderArgs, opts?: pulumi.ResourceOptions) {
+    constructor(name: string, args: ProviderArgs, opts?: pulumi.ResourceOptions) {
         let inputs: pulumi.Inputs = {};
+        opts = opts || {};
         {
-            inputs["address"] = (args ? args.address : undefined) || utilities.getEnv("WAVEFRONT_ADDRESS");
+            if ((!args || args.address === undefined) && !opts.urn) {
+                throw new Error("Missing required property 'address'");
+            }
+            if ((!args || args.token === undefined) && !opts.urn) {
+                throw new Error("Missing required property 'token'");
+            }
+            inputs["address"] = args ? args.address : undefined;
             inputs["httpProxy"] = args ? args.httpProxy : undefined;
-            inputs["token"] = (args ? args.token : undefined) || utilities.getEnv("WAVEFRONT_TOKEN");
+            inputs["token"] = args ? args.token : undefined;
         }
-        if (!opts) {
-            opts = {}
-        }
-
         if (!opts.version) {
-            opts.version = utilities.getVersion();
+            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
         }
         super(Provider.__pulumiType, name, inputs, opts);
     }
@@ -55,7 +58,7 @@ export class Provider extends pulumi.ProviderResource {
  * The set of arguments for constructing a Provider resource.
  */
 export interface ProviderArgs {
-    readonly address?: pulumi.Input<string>;
+    readonly address: pulumi.Input<string>;
     readonly httpProxy?: pulumi.Input<string>;
-    readonly token?: pulumi.Input<string>;
+    readonly token: pulumi.Input<string>;
 }

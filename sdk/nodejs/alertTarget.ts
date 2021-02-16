@@ -178,7 +178,8 @@ export class AlertTarget extends pulumi.CustomResource {
     constructor(name: string, args: AlertTargetArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: AlertTargetArgs | AlertTargetState, opts?: pulumi.CustomResourceOptions) {
         let inputs: pulumi.Inputs = {};
-        if (opts && opts.id) {
+        opts = opts || {};
+        if (opts.id) {
             const state = argsOrState as AlertTargetState | undefined;
             inputs["contentType"] = state ? state.contentType : undefined;
             inputs["customHeaders"] = state ? state.customHeaders : undefined;
@@ -194,16 +195,16 @@ export class AlertTarget extends pulumi.CustomResource {
             inputs["triggers"] = state ? state.triggers : undefined;
         } else {
             const args = argsOrState as AlertTargetArgs | undefined;
-            if ((!args || args.description === undefined) && !(opts && opts.urn)) {
+            if ((!args || args.description === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'description'");
             }
-            if ((!args || args.recipient === undefined) && !(opts && opts.urn)) {
+            if ((!args || args.recipient === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'recipient'");
             }
-            if ((!args || args.template === undefined) && !(opts && opts.urn)) {
+            if ((!args || args.template === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'template'");
             }
-            if ((!args || args.triggers === undefined) && !(opts && opts.urn)) {
+            if ((!args || args.triggers === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'triggers'");
             }
             inputs["contentType"] = args ? args.contentType : undefined;
@@ -219,12 +220,8 @@ export class AlertTarget extends pulumi.CustomResource {
             inputs["triggers"] = args ? args.triggers : undefined;
             inputs["targetId"] = undefined /*out*/;
         }
-        if (!opts) {
-            opts = {}
-        }
-
         if (!opts.version) {
-            opts.version = utilities.getVersion();
+            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
         }
         super(AlertTarget.__pulumiType, name, inputs, opts);
     }

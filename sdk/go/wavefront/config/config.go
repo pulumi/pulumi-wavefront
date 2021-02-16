@@ -9,19 +9,11 @@ import (
 )
 
 func GetAddress(ctx *pulumi.Context) string {
-	v, err := config.Try(ctx, "wavefront:address")
-	if err == nil {
-		return v
-	}
-	return getEnvOrDefault("", nil, "WAVEFRONT_ADDRESS").(string)
+	return config.Get(ctx, "wavefront:address")
 }
 func GetHttpProxy(ctx *pulumi.Context) string {
 	return config.Get(ctx, "wavefront:httpProxy")
 }
 func GetToken(ctx *pulumi.Context) string {
-	v, err := config.Try(ctx, "wavefront:token")
-	if err == nil {
-		return v
-	}
-	return getEnvOrDefault("", nil, "WAVEFRONT_TOKEN").(string)
+	return config.Get(ctx, "wavefront:token")
 }

@@ -146,7 +146,8 @@ export class Alert extends pulumi.CustomResource {
     constructor(name: string, args: AlertArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: AlertArgs | AlertState, opts?: pulumi.CustomResourceOptions) {
         let inputs: pulumi.Inputs = {};
-        if (opts && opts.id) {
+        opts = opts || {};
+        if (opts.id) {
             const state = argsOrState as AlertState | undefined;
             inputs["additionalInformation"] = state ? state.additionalInformation : undefined;
             inputs["alertType"] = state ? state.alertType : undefined;
@@ -165,10 +166,10 @@ export class Alert extends pulumi.CustomResource {
             inputs["thresholdTargets"] = state ? state.thresholdTargets : undefined;
         } else {
             const args = argsOrState as AlertArgs | undefined;
-            if ((!args || args.minutes === undefined) && !(opts && opts.urn)) {
+            if ((!args || args.minutes === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'minutes'");
             }
-            if ((!args || args.tags === undefined) && !(opts && opts.urn)) {
+            if ((!args || args.tags === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'tags'");
             }
             inputs["additionalInformation"] = args ? args.additionalInformation : undefined;
@@ -187,12 +188,8 @@ export class Alert extends pulumi.CustomResource {
             inputs["target"] = args ? args.target : undefined;
             inputs["thresholdTargets"] = args ? args.thresholdTargets : undefined;
         }
-        if (!opts) {
-            opts = {}
-        }
-
         if (!opts.version) {
-            opts.version = utilities.getVersion();
+            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
         }
         super(Alert.__pulumiType, name, inputs, opts);
     }

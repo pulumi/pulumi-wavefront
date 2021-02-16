@@ -158,7 +158,8 @@ export class Dashboard extends pulumi.CustomResource {
     constructor(name: string, args: DashboardArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: DashboardArgs | DashboardState, opts?: pulumi.CustomResourceOptions) {
         let inputs: pulumi.Inputs = {};
-        if (opts && opts.id) {
+        opts = opts || {};
+        if (opts.id) {
             const state = argsOrState as DashboardState | undefined;
             inputs["canModifies"] = state ? state.canModifies : undefined;
             inputs["canViews"] = state ? state.canViews : undefined;
@@ -173,16 +174,16 @@ export class Dashboard extends pulumi.CustomResource {
             inputs["url"] = state ? state.url : undefined;
         } else {
             const args = argsOrState as DashboardArgs | undefined;
-            if ((!args || args.description === undefined) && !(opts && opts.urn)) {
+            if ((!args || args.description === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'description'");
             }
-            if ((!args || args.sections === undefined) && !(opts && opts.urn)) {
+            if ((!args || args.sections === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'sections'");
             }
-            if ((!args || args.tags === undefined) && !(opts && opts.urn)) {
+            if ((!args || args.tags === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'tags'");
             }
-            if ((!args || args.url === undefined) && !(opts && opts.urn)) {
+            if ((!args || args.url === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'url'");
             }
             inputs["canModifies"] = args ? args.canModifies : undefined;
@@ -197,12 +198,8 @@ export class Dashboard extends pulumi.CustomResource {
             inputs["tags"] = args ? args.tags : undefined;
             inputs["url"] = args ? args.url : undefined;
         }
-        if (!opts) {
-            opts = {}
-        }
-
         if (!opts.version) {
-            opts.version = utilities.getVersion();
+            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
         }
         super(Dashboard.__pulumiType, name, inputs, opts);
     }

@@ -20,7 +20,7 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront/"
+// 	"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront"
 // 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 // )
 //
@@ -277,6 +277,85 @@ func (i *CloudIntegrationCloudWatch) ToCloudIntegrationCloudWatchOutputWithConte
 	return pulumi.ToOutputWithContext(ctx, i).(CloudIntegrationCloudWatchOutput)
 }
 
+func (i *CloudIntegrationCloudWatch) ToCloudIntegrationCloudWatchPtrOutput() CloudIntegrationCloudWatchPtrOutput {
+	return i.ToCloudIntegrationCloudWatchPtrOutputWithContext(context.Background())
+}
+
+func (i *CloudIntegrationCloudWatch) ToCloudIntegrationCloudWatchPtrOutputWithContext(ctx context.Context) CloudIntegrationCloudWatchPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CloudIntegrationCloudWatchPtrOutput)
+}
+
+type CloudIntegrationCloudWatchPtrInput interface {
+	pulumi.Input
+
+	ToCloudIntegrationCloudWatchPtrOutput() CloudIntegrationCloudWatchPtrOutput
+	ToCloudIntegrationCloudWatchPtrOutputWithContext(ctx context.Context) CloudIntegrationCloudWatchPtrOutput
+}
+
+type cloudIntegrationCloudWatchPtrType CloudIntegrationCloudWatchArgs
+
+func (*cloudIntegrationCloudWatchPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**CloudIntegrationCloudWatch)(nil))
+}
+
+func (i *cloudIntegrationCloudWatchPtrType) ToCloudIntegrationCloudWatchPtrOutput() CloudIntegrationCloudWatchPtrOutput {
+	return i.ToCloudIntegrationCloudWatchPtrOutputWithContext(context.Background())
+}
+
+func (i *cloudIntegrationCloudWatchPtrType) ToCloudIntegrationCloudWatchPtrOutputWithContext(ctx context.Context) CloudIntegrationCloudWatchPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CloudIntegrationCloudWatchPtrOutput)
+}
+
+// CloudIntegrationCloudWatchArrayInput is an input type that accepts CloudIntegrationCloudWatchArray and CloudIntegrationCloudWatchArrayOutput values.
+// You can construct a concrete instance of `CloudIntegrationCloudWatchArrayInput` via:
+//
+//          CloudIntegrationCloudWatchArray{ CloudIntegrationCloudWatchArgs{...} }
+type CloudIntegrationCloudWatchArrayInput interface {
+	pulumi.Input
+
+	ToCloudIntegrationCloudWatchArrayOutput() CloudIntegrationCloudWatchArrayOutput
+	ToCloudIntegrationCloudWatchArrayOutputWithContext(context.Context) CloudIntegrationCloudWatchArrayOutput
+}
+
+type CloudIntegrationCloudWatchArray []CloudIntegrationCloudWatchInput
+
+func (CloudIntegrationCloudWatchArray) ElementType() reflect.Type {
+	return reflect.TypeOf(([]*CloudIntegrationCloudWatch)(nil))
+}
+
+func (i CloudIntegrationCloudWatchArray) ToCloudIntegrationCloudWatchArrayOutput() CloudIntegrationCloudWatchArrayOutput {
+	return i.ToCloudIntegrationCloudWatchArrayOutputWithContext(context.Background())
+}
+
+func (i CloudIntegrationCloudWatchArray) ToCloudIntegrationCloudWatchArrayOutputWithContext(ctx context.Context) CloudIntegrationCloudWatchArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CloudIntegrationCloudWatchArrayOutput)
+}
+
+// CloudIntegrationCloudWatchMapInput is an input type that accepts CloudIntegrationCloudWatchMap and CloudIntegrationCloudWatchMapOutput values.
+// You can construct a concrete instance of `CloudIntegrationCloudWatchMapInput` via:
+//
+//          CloudIntegrationCloudWatchMap{ "key": CloudIntegrationCloudWatchArgs{...} }
+type CloudIntegrationCloudWatchMapInput interface {
+	pulumi.Input
+
+	ToCloudIntegrationCloudWatchMapOutput() CloudIntegrationCloudWatchMapOutput
+	ToCloudIntegrationCloudWatchMapOutputWithContext(context.Context) CloudIntegrationCloudWatchMapOutput
+}
+
+type CloudIntegrationCloudWatchMap map[string]CloudIntegrationCloudWatchInput
+
+func (CloudIntegrationCloudWatchMap) ElementType() reflect.Type {
+	return reflect.TypeOf((map[string]*CloudIntegrationCloudWatch)(nil))
+}
+
+func (i CloudIntegrationCloudWatchMap) ToCloudIntegrationCloudWatchMapOutput() CloudIntegrationCloudWatchMapOutput {
+	return i.ToCloudIntegrationCloudWatchMapOutputWithContext(context.Background())
+}
+
+func (i CloudIntegrationCloudWatchMap) ToCloudIntegrationCloudWatchMapOutputWithContext(ctx context.Context) CloudIntegrationCloudWatchMapOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CloudIntegrationCloudWatchMapOutput)
+}
+
 type CloudIntegrationCloudWatchOutput struct {
 	*pulumi.OutputState
 }
@@ -293,6 +372,75 @@ func (o CloudIntegrationCloudWatchOutput) ToCloudIntegrationCloudWatchOutputWith
 	return o
 }
 
+func (o CloudIntegrationCloudWatchOutput) ToCloudIntegrationCloudWatchPtrOutput() CloudIntegrationCloudWatchPtrOutput {
+	return o.ToCloudIntegrationCloudWatchPtrOutputWithContext(context.Background())
+}
+
+func (o CloudIntegrationCloudWatchOutput) ToCloudIntegrationCloudWatchPtrOutputWithContext(ctx context.Context) CloudIntegrationCloudWatchPtrOutput {
+	return o.ApplyT(func(v CloudIntegrationCloudWatch) *CloudIntegrationCloudWatch {
+		return &v
+	}).(CloudIntegrationCloudWatchPtrOutput)
+}
+
+type CloudIntegrationCloudWatchPtrOutput struct {
+	*pulumi.OutputState
+}
+
+func (CloudIntegrationCloudWatchPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**CloudIntegrationCloudWatch)(nil))
+}
+
+func (o CloudIntegrationCloudWatchPtrOutput) ToCloudIntegrationCloudWatchPtrOutput() CloudIntegrationCloudWatchPtrOutput {
+	return o
+}
+
+func (o CloudIntegrationCloudWatchPtrOutput) ToCloudIntegrationCloudWatchPtrOutputWithContext(ctx context.Context) CloudIntegrationCloudWatchPtrOutput {
+	return o
+}
+
+type CloudIntegrationCloudWatchArrayOutput struct{ *pulumi.OutputState }
+
+func (CloudIntegrationCloudWatchArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]CloudIntegrationCloudWatch)(nil))
+}
+
+func (o CloudIntegrationCloudWatchArrayOutput) ToCloudIntegrationCloudWatchArrayOutput() CloudIntegrationCloudWatchArrayOutput {
+	return o
+}
+
+func (o CloudIntegrationCloudWatchArrayOutput) ToCloudIntegrationCloudWatchArrayOutputWithContext(ctx context.Context) CloudIntegrationCloudWatchArrayOutput {
+	return o
+}
+
+func (o CloudIntegrationCloudWatchArrayOutput) Index(i pulumi.IntInput) CloudIntegrationCloudWatchOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) CloudIntegrationCloudWatch {
+		return vs[0].([]CloudIntegrationCloudWatch)[vs[1].(int)]
+	}).(CloudIntegrationCloudWatchOutput)
+}
+
+type CloudIntegrationCloudWatchMapOutput struct{ *pulumi.OutputState }
+
+func (CloudIntegrationCloudWatchMapOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*map[string]CloudIntegrationCloudWatch)(nil))
+}
+
+func (o CloudIntegrationCloudWatchMapOutput) ToCloudIntegrationCloudWatchMapOutput() CloudIntegrationCloudWatchMapOutput {
+	return o
+}
+
+func (o CloudIntegrationCloudWatchMapOutput) ToCloudIntegrationCloudWatchMapOutputWithContext(ctx context.Context) CloudIntegrationCloudWatchMapOutput {
+	return o
+}
+
+func (o CloudIntegrationCloudWatchMapOutput) MapIndex(k pulumi.StringInput) CloudIntegrationCloudWatchOutput {
+	return pulumi.All(o, k).ApplyT(func(vs []interface{}) CloudIntegrationCloudWatch {
+		return vs[0].(map[string]CloudIntegrationCloudWatch)[vs[1].(string)]
+	}).(CloudIntegrationCloudWatchOutput)
+}
+
 func init() {
 	pulumi.RegisterOutputType(CloudIntegrationCloudWatchOutput{})
+	pulumi.RegisterOutputType(CloudIntegrationCloudWatchPtrOutput{})
+	pulumi.RegisterOutputType(CloudIntegrationCloudWatchArrayOutput{})
+	pulumi.RegisterOutputType(CloudIntegrationCloudWatchMapOutput{})
 }

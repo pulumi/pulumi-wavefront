@@ -138,7 +138,8 @@ export class CloudIntegrationAppDynamics extends pulumi.CustomResource {
     constructor(name: string, args: CloudIntegrationAppDynamicsArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: CloudIntegrationAppDynamicsArgs | CloudIntegrationAppDynamicsState, opts?: pulumi.CustomResourceOptions) {
         let inputs: pulumi.Inputs = {};
-        if (opts && opts.id) {
+        opts = opts || {};
+        if (opts.id) {
             const state = argsOrState as CloudIntegrationAppDynamicsState | undefined;
             inputs["additionalTags"] = state ? state.additionalTags : undefined;
             inputs["appFilterRegexes"] = state ? state.appFilterRegexes : undefined;
@@ -159,16 +160,16 @@ export class CloudIntegrationAppDynamics extends pulumi.CustomResource {
             inputs["userName"] = state ? state.userName : undefined;
         } else {
             const args = argsOrState as CloudIntegrationAppDynamicsArgs | undefined;
-            if ((!args || args.controllerName === undefined) && !(opts && opts.urn)) {
+            if ((!args || args.controllerName === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'controllerName'");
             }
-            if ((!args || args.encryptedPassword === undefined) && !(opts && opts.urn)) {
+            if ((!args || args.encryptedPassword === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'encryptedPassword'");
             }
-            if ((!args || args.service === undefined) && !(opts && opts.urn)) {
+            if ((!args || args.service === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'service'");
             }
-            if ((!args || args.userName === undefined) && !(opts && opts.urn)) {
+            if ((!args || args.userName === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'userName'");
             }
             inputs["additionalTags"] = args ? args.additionalTags : undefined;
@@ -189,12 +190,8 @@ export class CloudIntegrationAppDynamics extends pulumi.CustomResource {
             inputs["serviceRefreshRateInMinutes"] = args ? args.serviceRefreshRateInMinutes : undefined;
             inputs["userName"] = args ? args.userName : undefined;
         }
-        if (!opts) {
-            opts = {}
-        }
-
         if (!opts.version) {
-            opts.version = utilities.getVersion();
+            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
         }
         super(CloudIntegrationAppDynamics.__pulumiType, name, inputs, opts);
     }

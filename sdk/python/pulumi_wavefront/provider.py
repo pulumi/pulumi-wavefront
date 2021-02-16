@@ -47,12 +47,12 @@ class Provider(pulumi.ProviderResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = dict()
 
-            if address is None:
-                address = _utilities.get_env('WAVEFRONT_ADDRESS')
+            if address is None and not opts.urn:
+                raise TypeError("Missing required property 'address'")
             __props__['address'] = address
             __props__['http_proxy'] = http_proxy
-            if token is None:
-                token = _utilities.get_env('WAVEFRONT_TOKEN')
+            if token is None and not opts.urn:
+                raise TypeError("Missing required property 'token'")
             __props__['token'] = token
         super(Provider, __self__).__init__(
             'wavefront',

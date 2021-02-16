@@ -94,7 +94,8 @@ export class ExternalLink extends pulumi.CustomResource {
     constructor(name: string, args: ExternalLinkArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: ExternalLinkArgs | ExternalLinkState, opts?: pulumi.CustomResourceOptions) {
         let inputs: pulumi.Inputs = {};
-        if (opts && opts.id) {
+        opts = opts || {};
+        if (opts.id) {
             const state = argsOrState as ExternalLinkState | undefined;
             inputs["description"] = state ? state.description : undefined;
             inputs["isLogIntegration"] = state ? state.isLogIntegration : undefined;
@@ -105,10 +106,10 @@ export class ExternalLink extends pulumi.CustomResource {
             inputs["template"] = state ? state.template : undefined;
         } else {
             const args = argsOrState as ExternalLinkArgs | undefined;
-            if ((!args || args.description === undefined) && !(opts && opts.urn)) {
+            if ((!args || args.description === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'description'");
             }
-            if ((!args || args.template === undefined) && !(opts && opts.urn)) {
+            if ((!args || args.template === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'template'");
             }
             inputs["description"] = args ? args.description : undefined;
@@ -119,12 +120,8 @@ export class ExternalLink extends pulumi.CustomResource {
             inputs["sourceFilterRegex"] = args ? args.sourceFilterRegex : undefined;
             inputs["template"] = args ? args.template : undefined;
         }
-        if (!opts) {
-            opts = {}
-        }
-
         if (!opts.version) {
-            opts.version = utilities.getVersion();
+            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
         }
         super(ExternalLink.__pulumiType, name, inputs, opts);
     }

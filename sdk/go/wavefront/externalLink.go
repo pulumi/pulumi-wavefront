@@ -19,7 +19,7 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront/"
+// 	"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront"
 // 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 // )
 //
@@ -193,6 +193,85 @@ func (i *ExternalLink) ToExternalLinkOutputWithContext(ctx context.Context) Exte
 	return pulumi.ToOutputWithContext(ctx, i).(ExternalLinkOutput)
 }
 
+func (i *ExternalLink) ToExternalLinkPtrOutput() ExternalLinkPtrOutput {
+	return i.ToExternalLinkPtrOutputWithContext(context.Background())
+}
+
+func (i *ExternalLink) ToExternalLinkPtrOutputWithContext(ctx context.Context) ExternalLinkPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ExternalLinkPtrOutput)
+}
+
+type ExternalLinkPtrInput interface {
+	pulumi.Input
+
+	ToExternalLinkPtrOutput() ExternalLinkPtrOutput
+	ToExternalLinkPtrOutputWithContext(ctx context.Context) ExternalLinkPtrOutput
+}
+
+type externalLinkPtrType ExternalLinkArgs
+
+func (*externalLinkPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ExternalLink)(nil))
+}
+
+func (i *externalLinkPtrType) ToExternalLinkPtrOutput() ExternalLinkPtrOutput {
+	return i.ToExternalLinkPtrOutputWithContext(context.Background())
+}
+
+func (i *externalLinkPtrType) ToExternalLinkPtrOutputWithContext(ctx context.Context) ExternalLinkPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ExternalLinkPtrOutput)
+}
+
+// ExternalLinkArrayInput is an input type that accepts ExternalLinkArray and ExternalLinkArrayOutput values.
+// You can construct a concrete instance of `ExternalLinkArrayInput` via:
+//
+//          ExternalLinkArray{ ExternalLinkArgs{...} }
+type ExternalLinkArrayInput interface {
+	pulumi.Input
+
+	ToExternalLinkArrayOutput() ExternalLinkArrayOutput
+	ToExternalLinkArrayOutputWithContext(context.Context) ExternalLinkArrayOutput
+}
+
+type ExternalLinkArray []ExternalLinkInput
+
+func (ExternalLinkArray) ElementType() reflect.Type {
+	return reflect.TypeOf(([]*ExternalLink)(nil))
+}
+
+func (i ExternalLinkArray) ToExternalLinkArrayOutput() ExternalLinkArrayOutput {
+	return i.ToExternalLinkArrayOutputWithContext(context.Background())
+}
+
+func (i ExternalLinkArray) ToExternalLinkArrayOutputWithContext(ctx context.Context) ExternalLinkArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ExternalLinkArrayOutput)
+}
+
+// ExternalLinkMapInput is an input type that accepts ExternalLinkMap and ExternalLinkMapOutput values.
+// You can construct a concrete instance of `ExternalLinkMapInput` via:
+//
+//          ExternalLinkMap{ "key": ExternalLinkArgs{...} }
+type ExternalLinkMapInput interface {
+	pulumi.Input
+
+	ToExternalLinkMapOutput() ExternalLinkMapOutput
+	ToExternalLinkMapOutputWithContext(context.Context) ExternalLinkMapOutput
+}
+
+type ExternalLinkMap map[string]ExternalLinkInput
+
+func (ExternalLinkMap) ElementType() reflect.Type {
+	return reflect.TypeOf((map[string]*ExternalLink)(nil))
+}
+
+func (i ExternalLinkMap) ToExternalLinkMapOutput() ExternalLinkMapOutput {
+	return i.ToExternalLinkMapOutputWithContext(context.Background())
+}
+
+func (i ExternalLinkMap) ToExternalLinkMapOutputWithContext(ctx context.Context) ExternalLinkMapOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ExternalLinkMapOutput)
+}
+
 type ExternalLinkOutput struct {
 	*pulumi.OutputState
 }
@@ -209,6 +288,75 @@ func (o ExternalLinkOutput) ToExternalLinkOutputWithContext(ctx context.Context)
 	return o
 }
 
+func (o ExternalLinkOutput) ToExternalLinkPtrOutput() ExternalLinkPtrOutput {
+	return o.ToExternalLinkPtrOutputWithContext(context.Background())
+}
+
+func (o ExternalLinkOutput) ToExternalLinkPtrOutputWithContext(ctx context.Context) ExternalLinkPtrOutput {
+	return o.ApplyT(func(v ExternalLink) *ExternalLink {
+		return &v
+	}).(ExternalLinkPtrOutput)
+}
+
+type ExternalLinkPtrOutput struct {
+	*pulumi.OutputState
+}
+
+func (ExternalLinkPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ExternalLink)(nil))
+}
+
+func (o ExternalLinkPtrOutput) ToExternalLinkPtrOutput() ExternalLinkPtrOutput {
+	return o
+}
+
+func (o ExternalLinkPtrOutput) ToExternalLinkPtrOutputWithContext(ctx context.Context) ExternalLinkPtrOutput {
+	return o
+}
+
+type ExternalLinkArrayOutput struct{ *pulumi.OutputState }
+
+func (ExternalLinkArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ExternalLink)(nil))
+}
+
+func (o ExternalLinkArrayOutput) ToExternalLinkArrayOutput() ExternalLinkArrayOutput {
+	return o
+}
+
+func (o ExternalLinkArrayOutput) ToExternalLinkArrayOutputWithContext(ctx context.Context) ExternalLinkArrayOutput {
+	return o
+}
+
+func (o ExternalLinkArrayOutput) Index(i pulumi.IntInput) ExternalLinkOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ExternalLink {
+		return vs[0].([]ExternalLink)[vs[1].(int)]
+	}).(ExternalLinkOutput)
+}
+
+type ExternalLinkMapOutput struct{ *pulumi.OutputState }
+
+func (ExternalLinkMapOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*map[string]ExternalLink)(nil))
+}
+
+func (o ExternalLinkMapOutput) ToExternalLinkMapOutput() ExternalLinkMapOutput {
+	return o
+}
+
+func (o ExternalLinkMapOutput) ToExternalLinkMapOutputWithContext(ctx context.Context) ExternalLinkMapOutput {
+	return o
+}
+
+func (o ExternalLinkMapOutput) MapIndex(k pulumi.StringInput) ExternalLinkOutput {
+	return pulumi.All(o, k).ApplyT(func(vs []interface{}) ExternalLink {
+		return vs[0].(map[string]ExternalLink)[vs[1].(string)]
+	}).(ExternalLinkOutput)
+}
+
 func init() {
 	pulumi.RegisterOutputType(ExternalLinkOutput{})
+	pulumi.RegisterOutputType(ExternalLinkPtrOutput{})
+	pulumi.RegisterOutputType(ExternalLinkArrayOutput{})
+	pulumi.RegisterOutputType(ExternalLinkMapOutput{})
 }

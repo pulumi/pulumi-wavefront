@@ -25,7 +25,7 @@ namespace Pulumi.Wavefront
         /// <param name="name">The unique name of the resource</param>
         /// <param name="args">The arguments used to populate this resource's properties</param>
         /// <param name="options">A bag of options that control this resource's behavior</param>
-        public Provider(string name, ProviderArgs? args = null, CustomResourceOptions? options = null)
+        public Provider(string name, ProviderArgs args, CustomResourceOptions? options = null)
             : base("wavefront", name, args ?? new ProviderArgs(), MakeResourceOptions(options, ""))
         {
         }
@@ -45,19 +45,17 @@ namespace Pulumi.Wavefront
 
     public sealed class ProviderArgs : Pulumi.ResourceArgs
     {
-        [Input("address")]
-        public Input<string>? Address { get; set; }
+        [Input("address", required: true)]
+        public Input<string> Address { get; set; } = null!;
 
         [Input("httpProxy")]
         public Input<string>? HttpProxy { get; set; }
 
-        [Input("token")]
-        public Input<string>? Token { get; set; }
+        [Input("token", required: true)]
+        public Input<string> Token { get; set; } = null!;
 
         public ProviderArgs()
         {
-            Address = Utilities.GetEnv("WAVEFRONT_ADDRESS");
-            Token = Utilities.GetEnv("WAVEFRONT_TOKEN");
         }
     }
 }

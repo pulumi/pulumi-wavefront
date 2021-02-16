@@ -87,7 +87,8 @@ export class DerivedMetric extends pulumi.CustomResource {
     constructor(name: string, args: DerivedMetricArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: DerivedMetricArgs | DerivedMetricState, opts?: pulumi.CustomResourceOptions) {
         let inputs: pulumi.Inputs = {};
-        if (opts && opts.id) {
+        opts = opts || {};
+        if (opts.id) {
             const state = argsOrState as DerivedMetricState | undefined;
             inputs["additionalInformation"] = state ? state.additionalInformation : undefined;
             inputs["minutes"] = state ? state.minutes : undefined;
@@ -96,10 +97,10 @@ export class DerivedMetric extends pulumi.CustomResource {
             inputs["tags"] = state ? state.tags : undefined;
         } else {
             const args = argsOrState as DerivedMetricArgs | undefined;
-            if ((!args || args.minutes === undefined) && !(opts && opts.urn)) {
+            if ((!args || args.minutes === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'minutes'");
             }
-            if ((!args || args.query === undefined) && !(opts && opts.urn)) {
+            if ((!args || args.query === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'query'");
             }
             inputs["additionalInformation"] = args ? args.additionalInformation : undefined;
@@ -108,12 +109,8 @@ export class DerivedMetric extends pulumi.CustomResource {
             inputs["query"] = args ? args.query : undefined;
             inputs["tags"] = args ? args.tags : undefined;
         }
-        if (!opts) {
-            opts = {}
-        }
-
         if (!opts.version) {
-            opts.version = utilities.getVersion();
+            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
         }
         super(DerivedMetric.__pulumiType, name, inputs, opts);
     }

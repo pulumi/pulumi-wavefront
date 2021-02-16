@@ -20,7 +20,7 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront/"
+// 	"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront"
 // 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 // )
 //
@@ -213,6 +213,85 @@ func (i *CloudIntegrationNewRelic) ToCloudIntegrationNewRelicOutputWithContext(c
 	return pulumi.ToOutputWithContext(ctx, i).(CloudIntegrationNewRelicOutput)
 }
 
+func (i *CloudIntegrationNewRelic) ToCloudIntegrationNewRelicPtrOutput() CloudIntegrationNewRelicPtrOutput {
+	return i.ToCloudIntegrationNewRelicPtrOutputWithContext(context.Background())
+}
+
+func (i *CloudIntegrationNewRelic) ToCloudIntegrationNewRelicPtrOutputWithContext(ctx context.Context) CloudIntegrationNewRelicPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CloudIntegrationNewRelicPtrOutput)
+}
+
+type CloudIntegrationNewRelicPtrInput interface {
+	pulumi.Input
+
+	ToCloudIntegrationNewRelicPtrOutput() CloudIntegrationNewRelicPtrOutput
+	ToCloudIntegrationNewRelicPtrOutputWithContext(ctx context.Context) CloudIntegrationNewRelicPtrOutput
+}
+
+type cloudIntegrationNewRelicPtrType CloudIntegrationNewRelicArgs
+
+func (*cloudIntegrationNewRelicPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**CloudIntegrationNewRelic)(nil))
+}
+
+func (i *cloudIntegrationNewRelicPtrType) ToCloudIntegrationNewRelicPtrOutput() CloudIntegrationNewRelicPtrOutput {
+	return i.ToCloudIntegrationNewRelicPtrOutputWithContext(context.Background())
+}
+
+func (i *cloudIntegrationNewRelicPtrType) ToCloudIntegrationNewRelicPtrOutputWithContext(ctx context.Context) CloudIntegrationNewRelicPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CloudIntegrationNewRelicPtrOutput)
+}
+
+// CloudIntegrationNewRelicArrayInput is an input type that accepts CloudIntegrationNewRelicArray and CloudIntegrationNewRelicArrayOutput values.
+// You can construct a concrete instance of `CloudIntegrationNewRelicArrayInput` via:
+//
+//          CloudIntegrationNewRelicArray{ CloudIntegrationNewRelicArgs{...} }
+type CloudIntegrationNewRelicArrayInput interface {
+	pulumi.Input
+
+	ToCloudIntegrationNewRelicArrayOutput() CloudIntegrationNewRelicArrayOutput
+	ToCloudIntegrationNewRelicArrayOutputWithContext(context.Context) CloudIntegrationNewRelicArrayOutput
+}
+
+type CloudIntegrationNewRelicArray []CloudIntegrationNewRelicInput
+
+func (CloudIntegrationNewRelicArray) ElementType() reflect.Type {
+	return reflect.TypeOf(([]*CloudIntegrationNewRelic)(nil))
+}
+
+func (i CloudIntegrationNewRelicArray) ToCloudIntegrationNewRelicArrayOutput() CloudIntegrationNewRelicArrayOutput {
+	return i.ToCloudIntegrationNewRelicArrayOutputWithContext(context.Background())
+}
+
+func (i CloudIntegrationNewRelicArray) ToCloudIntegrationNewRelicArrayOutputWithContext(ctx context.Context) CloudIntegrationNewRelicArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CloudIntegrationNewRelicArrayOutput)
+}
+
+// CloudIntegrationNewRelicMapInput is an input type that accepts CloudIntegrationNewRelicMap and CloudIntegrationNewRelicMapOutput values.
+// You can construct a concrete instance of `CloudIntegrationNewRelicMapInput` via:
+//
+//          CloudIntegrationNewRelicMap{ "key": CloudIntegrationNewRelicArgs{...} }
+type CloudIntegrationNewRelicMapInput interface {
+	pulumi.Input
+
+	ToCloudIntegrationNewRelicMapOutput() CloudIntegrationNewRelicMapOutput
+	ToCloudIntegrationNewRelicMapOutputWithContext(context.Context) CloudIntegrationNewRelicMapOutput
+}
+
+type CloudIntegrationNewRelicMap map[string]CloudIntegrationNewRelicInput
+
+func (CloudIntegrationNewRelicMap) ElementType() reflect.Type {
+	return reflect.TypeOf((map[string]*CloudIntegrationNewRelic)(nil))
+}
+
+func (i CloudIntegrationNewRelicMap) ToCloudIntegrationNewRelicMapOutput() CloudIntegrationNewRelicMapOutput {
+	return i.ToCloudIntegrationNewRelicMapOutputWithContext(context.Background())
+}
+
+func (i CloudIntegrationNewRelicMap) ToCloudIntegrationNewRelicMapOutputWithContext(ctx context.Context) CloudIntegrationNewRelicMapOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CloudIntegrationNewRelicMapOutput)
+}
+
 type CloudIntegrationNewRelicOutput struct {
 	*pulumi.OutputState
 }
@@ -229,6 +308,75 @@ func (o CloudIntegrationNewRelicOutput) ToCloudIntegrationNewRelicOutputWithCont
 	return o
 }
 
+func (o CloudIntegrationNewRelicOutput) ToCloudIntegrationNewRelicPtrOutput() CloudIntegrationNewRelicPtrOutput {
+	return o.ToCloudIntegrationNewRelicPtrOutputWithContext(context.Background())
+}
+
+func (o CloudIntegrationNewRelicOutput) ToCloudIntegrationNewRelicPtrOutputWithContext(ctx context.Context) CloudIntegrationNewRelicPtrOutput {
+	return o.ApplyT(func(v CloudIntegrationNewRelic) *CloudIntegrationNewRelic {
+		return &v
+	}).(CloudIntegrationNewRelicPtrOutput)
+}
+
+type CloudIntegrationNewRelicPtrOutput struct {
+	*pulumi.OutputState
+}
+
+func (CloudIntegrationNewRelicPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**CloudIntegrationNewRelic)(nil))
+}
+
+func (o CloudIntegrationNewRelicPtrOutput) ToCloudIntegrationNewRelicPtrOutput() CloudIntegrationNewRelicPtrOutput {
+	return o
+}
+
+func (o CloudIntegrationNewRelicPtrOutput) ToCloudIntegrationNewRelicPtrOutputWithContext(ctx context.Context) CloudIntegrationNewRelicPtrOutput {
+	return o
+}
+
+type CloudIntegrationNewRelicArrayOutput struct{ *pulumi.OutputState }
+
+func (CloudIntegrationNewRelicArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]CloudIntegrationNewRelic)(nil))
+}
+
+func (o CloudIntegrationNewRelicArrayOutput) ToCloudIntegrationNewRelicArrayOutput() CloudIntegrationNewRelicArrayOutput {
+	return o
+}
+
+func (o CloudIntegrationNewRelicArrayOutput) ToCloudIntegrationNewRelicArrayOutputWithContext(ctx context.Context) CloudIntegrationNewRelicArrayOutput {
+	return o
+}
+
+func (o CloudIntegrationNewRelicArrayOutput) Index(i pulumi.IntInput) CloudIntegrationNewRelicOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) CloudIntegrationNewRelic {
+		return vs[0].([]CloudIntegrationNewRelic)[vs[1].(int)]
+	}).(CloudIntegrationNewRelicOutput)
+}
+
+type CloudIntegrationNewRelicMapOutput struct{ *pulumi.OutputState }
+
+func (CloudIntegrationNewRelicMapOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*map[string]CloudIntegrationNewRelic)(nil))
+}
+
+func (o CloudIntegrationNewRelicMapOutput) ToCloudIntegrationNewRelicMapOutput() CloudIntegrationNewRelicMapOutput {
+	return o
+}
+
+func (o CloudIntegrationNewRelicMapOutput) ToCloudIntegrationNewRelicMapOutputWithContext(ctx context.Context) CloudIntegrationNewRelicMapOutput {
+	return o
+}
+
+func (o CloudIntegrationNewRelicMapOutput) MapIndex(k pulumi.StringInput) CloudIntegrationNewRelicOutput {
+	return pulumi.All(o, k).ApplyT(func(vs []interface{}) CloudIntegrationNewRelic {
+		return vs[0].(map[string]CloudIntegrationNewRelic)[vs[1].(string)]
+	}).(CloudIntegrationNewRelicOutput)
+}
+
 func init() {
 	pulumi.RegisterOutputType(CloudIntegrationNewRelicOutput{})
+	pulumi.RegisterOutputType(CloudIntegrationNewRelicPtrOutput{})
+	pulumi.RegisterOutputType(CloudIntegrationNewRelicArrayOutput{})
+	pulumi.RegisterOutputType(CloudIntegrationNewRelicMapOutput{})
 }

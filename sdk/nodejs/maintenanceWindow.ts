@@ -108,7 +108,8 @@ export class MaintenanceWindow extends pulumi.CustomResource {
     constructor(name: string, args: MaintenanceWindowArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: MaintenanceWindowArgs | MaintenanceWindowState, opts?: pulumi.CustomResourceOptions) {
         let inputs: pulumi.Inputs = {};
-        if (opts && opts.id) {
+        opts = opts || {};
+        if (opts.id) {
             const state = argsOrState as MaintenanceWindowState | undefined;
             inputs["endTimeInSeconds"] = state ? state.endTimeInSeconds : undefined;
             inputs["hostTagGroupHostNamesGroupAnded"] = state ? state.hostTagGroupHostNamesGroupAnded : undefined;
@@ -121,16 +122,16 @@ export class MaintenanceWindow extends pulumi.CustomResource {
             inputs["title"] = state ? state.title : undefined;
         } else {
             const args = argsOrState as MaintenanceWindowArgs | undefined;
-            if ((!args || args.endTimeInSeconds === undefined) && !(opts && opts.urn)) {
+            if ((!args || args.endTimeInSeconds === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'endTimeInSeconds'");
             }
-            if ((!args || args.reason === undefined) && !(opts && opts.urn)) {
+            if ((!args || args.reason === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'reason'");
             }
-            if ((!args || args.startTimeInSeconds === undefined) && !(opts && opts.urn)) {
+            if ((!args || args.startTimeInSeconds === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'startTimeInSeconds'");
             }
-            if ((!args || args.title === undefined) && !(opts && opts.urn)) {
+            if ((!args || args.title === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'title'");
             }
             inputs["endTimeInSeconds"] = args ? args.endTimeInSeconds : undefined;
@@ -143,12 +144,8 @@ export class MaintenanceWindow extends pulumi.CustomResource {
             inputs["startTimeInSeconds"] = args ? args.startTimeInSeconds : undefined;
             inputs["title"] = args ? args.title : undefined;
         }
-        if (!opts) {
-            opts = {}
-        }
-
         if (!opts.version) {
-            opts.version = utilities.getVersion();
+            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
         }
         super(MaintenanceWindow.__pulumiType, name, inputs, opts);
     }

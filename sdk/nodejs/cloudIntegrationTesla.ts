@@ -95,7 +95,8 @@ export class CloudIntegrationTesla extends pulumi.CustomResource {
     constructor(name: string, args: CloudIntegrationTeslaArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: CloudIntegrationTeslaArgs | CloudIntegrationTeslaState, opts?: pulumi.CustomResourceOptions) {
         let inputs: pulumi.Inputs = {};
-        if (opts && opts.id) {
+        opts = opts || {};
+        if (opts.id) {
             const state = argsOrState as CloudIntegrationTeslaState | undefined;
             inputs["additionalTags"] = state ? state.additionalTags : undefined;
             inputs["email"] = state ? state.email : undefined;
@@ -106,13 +107,13 @@ export class CloudIntegrationTesla extends pulumi.CustomResource {
             inputs["serviceRefreshRateInMinutes"] = state ? state.serviceRefreshRateInMinutes : undefined;
         } else {
             const args = argsOrState as CloudIntegrationTeslaArgs | undefined;
-            if ((!args || args.email === undefined) && !(opts && opts.urn)) {
+            if ((!args || args.email === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'email'");
             }
-            if ((!args || args.password === undefined) && !(opts && opts.urn)) {
+            if ((!args || args.password === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'password'");
             }
-            if ((!args || args.service === undefined) && !(opts && opts.urn)) {
+            if ((!args || args.service === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'service'");
             }
             inputs["additionalTags"] = args ? args.additionalTags : undefined;
@@ -123,12 +124,8 @@ export class CloudIntegrationTesla extends pulumi.CustomResource {
             inputs["service"] = args ? args.service : undefined;
             inputs["serviceRefreshRateInMinutes"] = args ? args.serviceRefreshRateInMinutes : undefined;
         }
-        if (!opts) {
-            opts = {}
-        }
-
         if (!opts.version) {
-            opts.version = utilities.getVersion();
+            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
         }
         super(CloudIntegrationTesla.__pulumiType, name, inputs, opts);
     }

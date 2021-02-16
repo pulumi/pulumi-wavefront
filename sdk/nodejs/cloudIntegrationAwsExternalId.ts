@@ -63,17 +63,14 @@ export class CloudIntegrationAwsExternalId extends pulumi.CustomResource {
     constructor(name: string, args?: CloudIntegrationAwsExternalIdArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: CloudIntegrationAwsExternalIdArgs | CloudIntegrationAwsExternalIdState, opts?: pulumi.CustomResourceOptions) {
         let inputs: pulumi.Inputs = {};
-        if (opts && opts.id) {
+        opts = opts || {};
+        if (opts.id) {
             const state = argsOrState as CloudIntegrationAwsExternalIdState | undefined;
         } else {
             const args = argsOrState as CloudIntegrationAwsExternalIdArgs | undefined;
         }
-        if (!opts) {
-            opts = {}
-        }
-
         if (!opts.version) {
-            opts.version = utilities.getVersion();
+            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
         }
         super(CloudIntegrationAwsExternalId.__pulumiType, name, inputs, opts);
     }

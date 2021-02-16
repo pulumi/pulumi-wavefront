@@ -20,7 +20,7 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront/"
+// 	"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront"
 // 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 // )
 //
@@ -174,6 +174,85 @@ func (i *DerivedMetric) ToDerivedMetricOutputWithContext(ctx context.Context) De
 	return pulumi.ToOutputWithContext(ctx, i).(DerivedMetricOutput)
 }
 
+func (i *DerivedMetric) ToDerivedMetricPtrOutput() DerivedMetricPtrOutput {
+	return i.ToDerivedMetricPtrOutputWithContext(context.Background())
+}
+
+func (i *DerivedMetric) ToDerivedMetricPtrOutputWithContext(ctx context.Context) DerivedMetricPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DerivedMetricPtrOutput)
+}
+
+type DerivedMetricPtrInput interface {
+	pulumi.Input
+
+	ToDerivedMetricPtrOutput() DerivedMetricPtrOutput
+	ToDerivedMetricPtrOutputWithContext(ctx context.Context) DerivedMetricPtrOutput
+}
+
+type derivedMetricPtrType DerivedMetricArgs
+
+func (*derivedMetricPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**DerivedMetric)(nil))
+}
+
+func (i *derivedMetricPtrType) ToDerivedMetricPtrOutput() DerivedMetricPtrOutput {
+	return i.ToDerivedMetricPtrOutputWithContext(context.Background())
+}
+
+func (i *derivedMetricPtrType) ToDerivedMetricPtrOutputWithContext(ctx context.Context) DerivedMetricPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DerivedMetricPtrOutput)
+}
+
+// DerivedMetricArrayInput is an input type that accepts DerivedMetricArray and DerivedMetricArrayOutput values.
+// You can construct a concrete instance of `DerivedMetricArrayInput` via:
+//
+//          DerivedMetricArray{ DerivedMetricArgs{...} }
+type DerivedMetricArrayInput interface {
+	pulumi.Input
+
+	ToDerivedMetricArrayOutput() DerivedMetricArrayOutput
+	ToDerivedMetricArrayOutputWithContext(context.Context) DerivedMetricArrayOutput
+}
+
+type DerivedMetricArray []DerivedMetricInput
+
+func (DerivedMetricArray) ElementType() reflect.Type {
+	return reflect.TypeOf(([]*DerivedMetric)(nil))
+}
+
+func (i DerivedMetricArray) ToDerivedMetricArrayOutput() DerivedMetricArrayOutput {
+	return i.ToDerivedMetricArrayOutputWithContext(context.Background())
+}
+
+func (i DerivedMetricArray) ToDerivedMetricArrayOutputWithContext(ctx context.Context) DerivedMetricArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DerivedMetricArrayOutput)
+}
+
+// DerivedMetricMapInput is an input type that accepts DerivedMetricMap and DerivedMetricMapOutput values.
+// You can construct a concrete instance of `DerivedMetricMapInput` via:
+//
+//          DerivedMetricMap{ "key": DerivedMetricArgs{...} }
+type DerivedMetricMapInput interface {
+	pulumi.Input
+
+	ToDerivedMetricMapOutput() DerivedMetricMapOutput
+	ToDerivedMetricMapOutputWithContext(context.Context) DerivedMetricMapOutput
+}
+
+type DerivedMetricMap map[string]DerivedMetricInput
+
+func (DerivedMetricMap) ElementType() reflect.Type {
+	return reflect.TypeOf((map[string]*DerivedMetric)(nil))
+}
+
+func (i DerivedMetricMap) ToDerivedMetricMapOutput() DerivedMetricMapOutput {
+	return i.ToDerivedMetricMapOutputWithContext(context.Background())
+}
+
+func (i DerivedMetricMap) ToDerivedMetricMapOutputWithContext(ctx context.Context) DerivedMetricMapOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DerivedMetricMapOutput)
+}
+
 type DerivedMetricOutput struct {
 	*pulumi.OutputState
 }
@@ -190,6 +269,75 @@ func (o DerivedMetricOutput) ToDerivedMetricOutputWithContext(ctx context.Contex
 	return o
 }
 
+func (o DerivedMetricOutput) ToDerivedMetricPtrOutput() DerivedMetricPtrOutput {
+	return o.ToDerivedMetricPtrOutputWithContext(context.Background())
+}
+
+func (o DerivedMetricOutput) ToDerivedMetricPtrOutputWithContext(ctx context.Context) DerivedMetricPtrOutput {
+	return o.ApplyT(func(v DerivedMetric) *DerivedMetric {
+		return &v
+	}).(DerivedMetricPtrOutput)
+}
+
+type DerivedMetricPtrOutput struct {
+	*pulumi.OutputState
+}
+
+func (DerivedMetricPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**DerivedMetric)(nil))
+}
+
+func (o DerivedMetricPtrOutput) ToDerivedMetricPtrOutput() DerivedMetricPtrOutput {
+	return o
+}
+
+func (o DerivedMetricPtrOutput) ToDerivedMetricPtrOutputWithContext(ctx context.Context) DerivedMetricPtrOutput {
+	return o
+}
+
+type DerivedMetricArrayOutput struct{ *pulumi.OutputState }
+
+func (DerivedMetricArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DerivedMetric)(nil))
+}
+
+func (o DerivedMetricArrayOutput) ToDerivedMetricArrayOutput() DerivedMetricArrayOutput {
+	return o
+}
+
+func (o DerivedMetricArrayOutput) ToDerivedMetricArrayOutputWithContext(ctx context.Context) DerivedMetricArrayOutput {
+	return o
+}
+
+func (o DerivedMetricArrayOutput) Index(i pulumi.IntInput) DerivedMetricOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DerivedMetric {
+		return vs[0].([]DerivedMetric)[vs[1].(int)]
+	}).(DerivedMetricOutput)
+}
+
+type DerivedMetricMapOutput struct{ *pulumi.OutputState }
+
+func (DerivedMetricMapOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*map[string]DerivedMetric)(nil))
+}
+
+func (o DerivedMetricMapOutput) ToDerivedMetricMapOutput() DerivedMetricMapOutput {
+	return o
+}
+
+func (o DerivedMetricMapOutput) ToDerivedMetricMapOutputWithContext(ctx context.Context) DerivedMetricMapOutput {
+	return o
+}
+
+func (o DerivedMetricMapOutput) MapIndex(k pulumi.StringInput) DerivedMetricOutput {
+	return pulumi.All(o, k).ApplyT(func(vs []interface{}) DerivedMetric {
+		return vs[0].(map[string]DerivedMetric)[vs[1].(string)]
+	}).(DerivedMetricOutput)
+}
+
 func init() {
 	pulumi.RegisterOutputType(DerivedMetricOutput{})
+	pulumi.RegisterOutputType(DerivedMetricPtrOutput{})
+	pulumi.RegisterOutputType(DerivedMetricArrayOutput{})
+	pulumi.RegisterOutputType(DerivedMetricMapOutput{})
 }

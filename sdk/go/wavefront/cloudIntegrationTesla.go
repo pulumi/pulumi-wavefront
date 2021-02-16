@@ -20,7 +20,7 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront/"
+// 	"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront"
 // 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 // )
 //
@@ -197,6 +197,85 @@ func (i *CloudIntegrationTesla) ToCloudIntegrationTeslaOutputWithContext(ctx con
 	return pulumi.ToOutputWithContext(ctx, i).(CloudIntegrationTeslaOutput)
 }
 
+func (i *CloudIntegrationTesla) ToCloudIntegrationTeslaPtrOutput() CloudIntegrationTeslaPtrOutput {
+	return i.ToCloudIntegrationTeslaPtrOutputWithContext(context.Background())
+}
+
+func (i *CloudIntegrationTesla) ToCloudIntegrationTeslaPtrOutputWithContext(ctx context.Context) CloudIntegrationTeslaPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CloudIntegrationTeslaPtrOutput)
+}
+
+type CloudIntegrationTeslaPtrInput interface {
+	pulumi.Input
+
+	ToCloudIntegrationTeslaPtrOutput() CloudIntegrationTeslaPtrOutput
+	ToCloudIntegrationTeslaPtrOutputWithContext(ctx context.Context) CloudIntegrationTeslaPtrOutput
+}
+
+type cloudIntegrationTeslaPtrType CloudIntegrationTeslaArgs
+
+func (*cloudIntegrationTeslaPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**CloudIntegrationTesla)(nil))
+}
+
+func (i *cloudIntegrationTeslaPtrType) ToCloudIntegrationTeslaPtrOutput() CloudIntegrationTeslaPtrOutput {
+	return i.ToCloudIntegrationTeslaPtrOutputWithContext(context.Background())
+}
+
+func (i *cloudIntegrationTeslaPtrType) ToCloudIntegrationTeslaPtrOutputWithContext(ctx context.Context) CloudIntegrationTeslaPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CloudIntegrationTeslaPtrOutput)
+}
+
+// CloudIntegrationTeslaArrayInput is an input type that accepts CloudIntegrationTeslaArray and CloudIntegrationTeslaArrayOutput values.
+// You can construct a concrete instance of `CloudIntegrationTeslaArrayInput` via:
+//
+//          CloudIntegrationTeslaArray{ CloudIntegrationTeslaArgs{...} }
+type CloudIntegrationTeslaArrayInput interface {
+	pulumi.Input
+
+	ToCloudIntegrationTeslaArrayOutput() CloudIntegrationTeslaArrayOutput
+	ToCloudIntegrationTeslaArrayOutputWithContext(context.Context) CloudIntegrationTeslaArrayOutput
+}
+
+type CloudIntegrationTeslaArray []CloudIntegrationTeslaInput
+
+func (CloudIntegrationTeslaArray) ElementType() reflect.Type {
+	return reflect.TypeOf(([]*CloudIntegrationTesla)(nil))
+}
+
+func (i CloudIntegrationTeslaArray) ToCloudIntegrationTeslaArrayOutput() CloudIntegrationTeslaArrayOutput {
+	return i.ToCloudIntegrationTeslaArrayOutputWithContext(context.Background())
+}
+
+func (i CloudIntegrationTeslaArray) ToCloudIntegrationTeslaArrayOutputWithContext(ctx context.Context) CloudIntegrationTeslaArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CloudIntegrationTeslaArrayOutput)
+}
+
+// CloudIntegrationTeslaMapInput is an input type that accepts CloudIntegrationTeslaMap and CloudIntegrationTeslaMapOutput values.
+// You can construct a concrete instance of `CloudIntegrationTeslaMapInput` via:
+//
+//          CloudIntegrationTeslaMap{ "key": CloudIntegrationTeslaArgs{...} }
+type CloudIntegrationTeslaMapInput interface {
+	pulumi.Input
+
+	ToCloudIntegrationTeslaMapOutput() CloudIntegrationTeslaMapOutput
+	ToCloudIntegrationTeslaMapOutputWithContext(context.Context) CloudIntegrationTeslaMapOutput
+}
+
+type CloudIntegrationTeslaMap map[string]CloudIntegrationTeslaInput
+
+func (CloudIntegrationTeslaMap) ElementType() reflect.Type {
+	return reflect.TypeOf((map[string]*CloudIntegrationTesla)(nil))
+}
+
+func (i CloudIntegrationTeslaMap) ToCloudIntegrationTeslaMapOutput() CloudIntegrationTeslaMapOutput {
+	return i.ToCloudIntegrationTeslaMapOutputWithContext(context.Background())
+}
+
+func (i CloudIntegrationTeslaMap) ToCloudIntegrationTeslaMapOutputWithContext(ctx context.Context) CloudIntegrationTeslaMapOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CloudIntegrationTeslaMapOutput)
+}
+
 type CloudIntegrationTeslaOutput struct {
 	*pulumi.OutputState
 }
@@ -213,6 +292,75 @@ func (o CloudIntegrationTeslaOutput) ToCloudIntegrationTeslaOutputWithContext(ct
 	return o
 }
 
+func (o CloudIntegrationTeslaOutput) ToCloudIntegrationTeslaPtrOutput() CloudIntegrationTeslaPtrOutput {
+	return o.ToCloudIntegrationTeslaPtrOutputWithContext(context.Background())
+}
+
+func (o CloudIntegrationTeslaOutput) ToCloudIntegrationTeslaPtrOutputWithContext(ctx context.Context) CloudIntegrationTeslaPtrOutput {
+	return o.ApplyT(func(v CloudIntegrationTesla) *CloudIntegrationTesla {
+		return &v
+	}).(CloudIntegrationTeslaPtrOutput)
+}
+
+type CloudIntegrationTeslaPtrOutput struct {
+	*pulumi.OutputState
+}
+
+func (CloudIntegrationTeslaPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**CloudIntegrationTesla)(nil))
+}
+
+func (o CloudIntegrationTeslaPtrOutput) ToCloudIntegrationTeslaPtrOutput() CloudIntegrationTeslaPtrOutput {
+	return o
+}
+
+func (o CloudIntegrationTeslaPtrOutput) ToCloudIntegrationTeslaPtrOutputWithContext(ctx context.Context) CloudIntegrationTeslaPtrOutput {
+	return o
+}
+
+type CloudIntegrationTeslaArrayOutput struct{ *pulumi.OutputState }
+
+func (CloudIntegrationTeslaArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]CloudIntegrationTesla)(nil))
+}
+
+func (o CloudIntegrationTeslaArrayOutput) ToCloudIntegrationTeslaArrayOutput() CloudIntegrationTeslaArrayOutput {
+	return o
+}
+
+func (o CloudIntegrationTeslaArrayOutput) ToCloudIntegrationTeslaArrayOutputWithContext(ctx context.Context) CloudIntegrationTeslaArrayOutput {
+	return o
+}
+
+func (o CloudIntegrationTeslaArrayOutput) Index(i pulumi.IntInput) CloudIntegrationTeslaOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) CloudIntegrationTesla {
+		return vs[0].([]CloudIntegrationTesla)[vs[1].(int)]
+	}).(CloudIntegrationTeslaOutput)
+}
+
+type CloudIntegrationTeslaMapOutput struct{ *pulumi.OutputState }
+
+func (CloudIntegrationTeslaMapOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*map[string]CloudIntegrationTesla)(nil))
+}
+
+func (o CloudIntegrationTeslaMapOutput) ToCloudIntegrationTeslaMapOutput() CloudIntegrationTeslaMapOutput {
+	return o
+}
+
+func (o CloudIntegrationTeslaMapOutput) ToCloudIntegrationTeslaMapOutputWithContext(ctx context.Context) CloudIntegrationTeslaMapOutput {
+	return o
+}
+
+func (o CloudIntegrationTeslaMapOutput) MapIndex(k pulumi.StringInput) CloudIntegrationTeslaOutput {
+	return pulumi.All(o, k).ApplyT(func(vs []interface{}) CloudIntegrationTesla {
+		return vs[0].(map[string]CloudIntegrationTesla)[vs[1].(string)]
+	}).(CloudIntegrationTeslaOutput)
+}
+
 func init() {
 	pulumi.RegisterOutputType(CloudIntegrationTeslaOutput{})
+	pulumi.RegisterOutputType(CloudIntegrationTeslaPtrOutput{})
+	pulumi.RegisterOutputType(CloudIntegrationTeslaArrayOutput{})
+	pulumi.RegisterOutputType(CloudIntegrationTeslaMapOutput{})
 }
