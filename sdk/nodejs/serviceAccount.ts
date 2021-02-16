@@ -92,7 +92,8 @@ export class ServiceAccount extends pulumi.CustomResource {
     constructor(name: string, args: ServiceAccountArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: ServiceAccountArgs | ServiceAccountState, opts?: pulumi.CustomResourceOptions) {
         let inputs: pulumi.Inputs = {};
-        if (opts && opts.id) {
+        opts = opts || {};
+        if (opts.id) {
             const state = argsOrState as ServiceAccountState | undefined;
             inputs["active"] = state ? state.active : undefined;
             inputs["description"] = state ? state.description : undefined;
@@ -102,7 +103,7 @@ export class ServiceAccount extends pulumi.CustomResource {
             inputs["userGroups"] = state ? state.userGroups : undefined;
         } else {
             const args = argsOrState as ServiceAccountArgs | undefined;
-            if ((!args || args.identifier === undefined) && !(opts && opts.urn)) {
+            if ((!args || args.identifier === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'identifier'");
             }
             inputs["active"] = args ? args.active : undefined;
@@ -112,12 +113,8 @@ export class ServiceAccount extends pulumi.CustomResource {
             inputs["permissions"] = args ? args.permissions : undefined;
             inputs["userGroups"] = args ? args.userGroups : undefined;
         }
-        if (!opts) {
-            opts = {}
-        }
-
         if (!opts.version) {
-            opts.version = utilities.getVersion();
+            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
         }
         super(ServiceAccount.__pulumiType, name, inputs, opts);
     }

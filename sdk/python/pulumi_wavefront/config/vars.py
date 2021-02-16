@@ -16,9 +16,9 @@ __all__ = [
 
 __config__ = pulumi.Config('wavefront')
 
-address = __config__.get('address') or _utilities.get_env('WAVEFRONT_ADDRESS')
+address = __config__.get('address')
 
 http_proxy = __config__.get('httpProxy')
 
-token = __config__.get('token') or _utilities.get_env('WAVEFRONT_TOKEN')
+token = __config__.get('token')
 

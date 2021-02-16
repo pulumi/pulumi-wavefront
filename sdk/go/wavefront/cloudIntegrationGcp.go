@@ -22,7 +22,7 @@ import (
 // import (
 // 	"fmt"
 //
-// 	"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront/"
+// 	"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront"
 // 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 // )
 //
@@ -244,6 +244,85 @@ func (i *CloudIntegrationGcp) ToCloudIntegrationGcpOutputWithContext(ctx context
 	return pulumi.ToOutputWithContext(ctx, i).(CloudIntegrationGcpOutput)
 }
 
+func (i *CloudIntegrationGcp) ToCloudIntegrationGcpPtrOutput() CloudIntegrationGcpPtrOutput {
+	return i.ToCloudIntegrationGcpPtrOutputWithContext(context.Background())
+}
+
+func (i *CloudIntegrationGcp) ToCloudIntegrationGcpPtrOutputWithContext(ctx context.Context) CloudIntegrationGcpPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CloudIntegrationGcpPtrOutput)
+}
+
+type CloudIntegrationGcpPtrInput interface {
+	pulumi.Input
+
+	ToCloudIntegrationGcpPtrOutput() CloudIntegrationGcpPtrOutput
+	ToCloudIntegrationGcpPtrOutputWithContext(ctx context.Context) CloudIntegrationGcpPtrOutput
+}
+
+type cloudIntegrationGcpPtrType CloudIntegrationGcpArgs
+
+func (*cloudIntegrationGcpPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**CloudIntegrationGcp)(nil))
+}
+
+func (i *cloudIntegrationGcpPtrType) ToCloudIntegrationGcpPtrOutput() CloudIntegrationGcpPtrOutput {
+	return i.ToCloudIntegrationGcpPtrOutputWithContext(context.Background())
+}
+
+func (i *cloudIntegrationGcpPtrType) ToCloudIntegrationGcpPtrOutputWithContext(ctx context.Context) CloudIntegrationGcpPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CloudIntegrationGcpPtrOutput)
+}
+
+// CloudIntegrationGcpArrayInput is an input type that accepts CloudIntegrationGcpArray and CloudIntegrationGcpArrayOutput values.
+// You can construct a concrete instance of `CloudIntegrationGcpArrayInput` via:
+//
+//          CloudIntegrationGcpArray{ CloudIntegrationGcpArgs{...} }
+type CloudIntegrationGcpArrayInput interface {
+	pulumi.Input
+
+	ToCloudIntegrationGcpArrayOutput() CloudIntegrationGcpArrayOutput
+	ToCloudIntegrationGcpArrayOutputWithContext(context.Context) CloudIntegrationGcpArrayOutput
+}
+
+type CloudIntegrationGcpArray []CloudIntegrationGcpInput
+
+func (CloudIntegrationGcpArray) ElementType() reflect.Type {
+	return reflect.TypeOf(([]*CloudIntegrationGcp)(nil))
+}
+
+func (i CloudIntegrationGcpArray) ToCloudIntegrationGcpArrayOutput() CloudIntegrationGcpArrayOutput {
+	return i.ToCloudIntegrationGcpArrayOutputWithContext(context.Background())
+}
+
+func (i CloudIntegrationGcpArray) ToCloudIntegrationGcpArrayOutputWithContext(ctx context.Context) CloudIntegrationGcpArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CloudIntegrationGcpArrayOutput)
+}
+
+// CloudIntegrationGcpMapInput is an input type that accepts CloudIntegrationGcpMap and CloudIntegrationGcpMapOutput values.
+// You can construct a concrete instance of `CloudIntegrationGcpMapInput` via:
+//
+//          CloudIntegrationGcpMap{ "key": CloudIntegrationGcpArgs{...} }
+type CloudIntegrationGcpMapInput interface {
+	pulumi.Input
+
+	ToCloudIntegrationGcpMapOutput() CloudIntegrationGcpMapOutput
+	ToCloudIntegrationGcpMapOutputWithContext(context.Context) CloudIntegrationGcpMapOutput
+}
+
+type CloudIntegrationGcpMap map[string]CloudIntegrationGcpInput
+
+func (CloudIntegrationGcpMap) ElementType() reflect.Type {
+	return reflect.TypeOf((map[string]*CloudIntegrationGcp)(nil))
+}
+
+func (i CloudIntegrationGcpMap) ToCloudIntegrationGcpMapOutput() CloudIntegrationGcpMapOutput {
+	return i.ToCloudIntegrationGcpMapOutputWithContext(context.Background())
+}
+
+func (i CloudIntegrationGcpMap) ToCloudIntegrationGcpMapOutputWithContext(ctx context.Context) CloudIntegrationGcpMapOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CloudIntegrationGcpMapOutput)
+}
+
 type CloudIntegrationGcpOutput struct {
 	*pulumi.OutputState
 }
@@ -260,6 +339,75 @@ func (o CloudIntegrationGcpOutput) ToCloudIntegrationGcpOutputWithContext(ctx co
 	return o
 }
 
+func (o CloudIntegrationGcpOutput) ToCloudIntegrationGcpPtrOutput() CloudIntegrationGcpPtrOutput {
+	return o.ToCloudIntegrationGcpPtrOutputWithContext(context.Background())
+}
+
+func (o CloudIntegrationGcpOutput) ToCloudIntegrationGcpPtrOutputWithContext(ctx context.Context) CloudIntegrationGcpPtrOutput {
+	return o.ApplyT(func(v CloudIntegrationGcp) *CloudIntegrationGcp {
+		return &v
+	}).(CloudIntegrationGcpPtrOutput)
+}
+
+type CloudIntegrationGcpPtrOutput struct {
+	*pulumi.OutputState
+}
+
+func (CloudIntegrationGcpPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**CloudIntegrationGcp)(nil))
+}
+
+func (o CloudIntegrationGcpPtrOutput) ToCloudIntegrationGcpPtrOutput() CloudIntegrationGcpPtrOutput {
+	return o
+}
+
+func (o CloudIntegrationGcpPtrOutput) ToCloudIntegrationGcpPtrOutputWithContext(ctx context.Context) CloudIntegrationGcpPtrOutput {
+	return o
+}
+
+type CloudIntegrationGcpArrayOutput struct{ *pulumi.OutputState }
+
+func (CloudIntegrationGcpArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]CloudIntegrationGcp)(nil))
+}
+
+func (o CloudIntegrationGcpArrayOutput) ToCloudIntegrationGcpArrayOutput() CloudIntegrationGcpArrayOutput {
+	return o
+}
+
+func (o CloudIntegrationGcpArrayOutput) ToCloudIntegrationGcpArrayOutputWithContext(ctx context.Context) CloudIntegrationGcpArrayOutput {
+	return o
+}
+
+func (o CloudIntegrationGcpArrayOutput) Index(i pulumi.IntInput) CloudIntegrationGcpOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) CloudIntegrationGcp {
+		return vs[0].([]CloudIntegrationGcp)[vs[1].(int)]
+	}).(CloudIntegrationGcpOutput)
+}
+
+type CloudIntegrationGcpMapOutput struct{ *pulumi.OutputState }
+
+func (CloudIntegrationGcpMapOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*map[string]CloudIntegrationGcp)(nil))
+}
+
+func (o CloudIntegrationGcpMapOutput) ToCloudIntegrationGcpMapOutput() CloudIntegrationGcpMapOutput {
+	return o
+}
+
+func (o CloudIntegrationGcpMapOutput) ToCloudIntegrationGcpMapOutputWithContext(ctx context.Context) CloudIntegrationGcpMapOutput {
+	return o
+}
+
+func (o CloudIntegrationGcpMapOutput) MapIndex(k pulumi.StringInput) CloudIntegrationGcpOutput {
+	return pulumi.All(o, k).ApplyT(func(vs []interface{}) CloudIntegrationGcp {
+		return vs[0].(map[string]CloudIntegrationGcp)[vs[1].(string)]
+	}).(CloudIntegrationGcpOutput)
+}
+
 func init() {
 	pulumi.RegisterOutputType(CloudIntegrationGcpOutput{})
+	pulumi.RegisterOutputType(CloudIntegrationGcpPtrOutput{})
+	pulumi.RegisterOutputType(CloudIntegrationGcpArrayOutput{})
+	pulumi.RegisterOutputType(CloudIntegrationGcpMapOutput{})
 }

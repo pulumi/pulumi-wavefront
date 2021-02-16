@@ -6,6 +6,6 @@ import * as utilities from "../utilities";
 
 let __config = new pulumi.Config("wavefront");
 
-export let address: string | undefined = __config.get("address") || utilities.getEnv("WAVEFRONT_ADDRESS");
+export let address: string | undefined = __config.get("address");
 export let httpProxy: string | undefined = __config.get("httpProxy");
-export let token: string | undefined = __config.get("token") || utilities.getEnv("WAVEFRONT_TOKEN");
+export let token: string | undefined = __config.get("token");

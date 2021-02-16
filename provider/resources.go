@@ -77,26 +77,15 @@ func Provider() tfbridge.ProviderInfo {
 
 	// Create a Pulumi provider mapping
 	prov := tfbridge.ProviderInfo{
-		P:           p,
-		Name:        "wavefront",
-		Description: "A Pulumi package for creating and managing wavefront cloud resources.",
-		Keywords:    []string{"pulumi", "wavefront"},
-		License:     "Apache-2.0",
-		Homepage:    "https://pulumi.io",
-		Repository:  "https://github.com/pulumi/pulumi-wavefront",
-		GitHubOrg:   "vmware",
-		Config: map[string]*tfbridge.SchemaInfo{
-			"address": {
-				Default: &tfbridge.DefaultInfo{
-					EnvVars: []string{"WAVEFRONT_ADDRESS"},
-				},
-			},
-			"token": {
-				Default: &tfbridge.DefaultInfo{
-					EnvVars: []string{"WAVEFRONT_TOKEN"},
-				},
-			},
-		},
+		P:                    p,
+		Name:                 "wavefront",
+		Description:          "A Pulumi package for creating and managing wavefront cloud resources.",
+		Keywords:             []string{"pulumi", "wavefront"},
+		License:              "Apache-2.0",
+		Homepage:             "https://pulumi.io",
+		Repository:           "https://github.com/pulumi/pulumi-wavefront",
+		GitHubOrg:            "vmware",
+		Config:               map[string]*tfbridge.SchemaInfo{},
 		PreConfigureCallback: preConfigureCallback,
 		Resources: map[string]*tfbridge.ResourceInfo{
 			"wavefront_alert":                                {Tok: makeResource(mainMod, "Alert")},

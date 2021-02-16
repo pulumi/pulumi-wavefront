@@ -114,7 +114,8 @@ export class CloudIntegrationCloudTrail extends pulumi.CustomResource {
     constructor(name: string, args: CloudIntegrationCloudTrailArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: CloudIntegrationCloudTrailArgs | CloudIntegrationCloudTrailState, opts?: pulumi.CustomResourceOptions) {
         let inputs: pulumi.Inputs = {};
-        if (opts && opts.id) {
+        opts = opts || {};
+        if (opts.id) {
             const state = argsOrState as CloudIntegrationCloudTrailState | undefined;
             inputs["additionalTags"] = state ? state.additionalTags : undefined;
             inputs["bucketName"] = state ? state.bucketName : undefined;
@@ -129,19 +130,19 @@ export class CloudIntegrationCloudTrail extends pulumi.CustomResource {
             inputs["serviceRefreshRateInMinutes"] = state ? state.serviceRefreshRateInMinutes : undefined;
         } else {
             const args = argsOrState as CloudIntegrationCloudTrailArgs | undefined;
-            if ((!args || args.bucketName === undefined) && !(opts && opts.urn)) {
+            if ((!args || args.bucketName === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'bucketName'");
             }
-            if ((!args || args.externalId === undefined) && !(opts && opts.urn)) {
+            if ((!args || args.externalId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'externalId'");
             }
-            if ((!args || args.region === undefined) && !(opts && opts.urn)) {
+            if ((!args || args.region === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'region'");
             }
-            if ((!args || args.roleArn === undefined) && !(opts && opts.urn)) {
+            if ((!args || args.roleArn === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'roleArn'");
             }
-            if ((!args || args.service === undefined) && !(opts && opts.urn)) {
+            if ((!args || args.service === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'service'");
             }
             inputs["additionalTags"] = args ? args.additionalTags : undefined;
@@ -156,12 +157,8 @@ export class CloudIntegrationCloudTrail extends pulumi.CustomResource {
             inputs["service"] = args ? args.service : undefined;
             inputs["serviceRefreshRateInMinutes"] = args ? args.serviceRefreshRateInMinutes : undefined;
         }
-        if (!opts) {
-            opts = {}
-        }
-
         if (!opts.version) {
-            opts.version = utilities.getVersion();
+            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
         }
         super(CloudIntegrationCloudTrail.__pulumiType, name, inputs, opts);
     }

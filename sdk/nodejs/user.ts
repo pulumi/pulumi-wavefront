@@ -80,7 +80,8 @@ export class User extends pulumi.CustomResource {
     constructor(name: string, args: UserArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: UserArgs | UserState, opts?: pulumi.CustomResourceOptions) {
         let inputs: pulumi.Inputs = {};
-        if (opts && opts.id) {
+        opts = opts || {};
+        if (opts.id) {
             const state = argsOrState as UserState | undefined;
             inputs["customer"] = state ? state.customer : undefined;
             inputs["email"] = state ? state.email : undefined;
@@ -88,7 +89,7 @@ export class User extends pulumi.CustomResource {
             inputs["userGroups"] = state ? state.userGroups : undefined;
         } else {
             const args = argsOrState as UserArgs | undefined;
-            if ((!args || args.email === undefined) && !(opts && opts.urn)) {
+            if ((!args || args.email === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'email'");
             }
             inputs["customer"] = args ? args.customer : undefined;
@@ -96,12 +97,8 @@ export class User extends pulumi.CustomResource {
             inputs["permissions"] = args ? args.permissions : undefined;
             inputs["userGroups"] = args ? args.userGroups : undefined;
         }
-        if (!opts) {
-            opts = {}
-        }
-
         if (!opts.version) {
-            opts.version = utilities.getVersion();
+            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
         }
         super(User.__pulumiType, name, inputs, opts);
     }

@@ -105,7 +105,8 @@ export class CloudIntegrationAzureActivityLog extends pulumi.CustomResource {
     constructor(name: string, args: CloudIntegrationAzureActivityLogArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: CloudIntegrationAzureActivityLogArgs | CloudIntegrationAzureActivityLogState, opts?: pulumi.CustomResourceOptions) {
         let inputs: pulumi.Inputs = {};
-        if (opts && opts.id) {
+        opts = opts || {};
+        if (opts.id) {
             const state = argsOrState as CloudIntegrationAzureActivityLogState | undefined;
             inputs["additionalTags"] = state ? state.additionalTags : undefined;
             inputs["categoryFilters"] = state ? state.categoryFilters : undefined;
@@ -118,16 +119,16 @@ export class CloudIntegrationAzureActivityLog extends pulumi.CustomResource {
             inputs["tenant"] = state ? state.tenant : undefined;
         } else {
             const args = argsOrState as CloudIntegrationAzureActivityLogArgs | undefined;
-            if ((!args || args.clientId === undefined) && !(opts && opts.urn)) {
+            if ((!args || args.clientId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'clientId'");
             }
-            if ((!args || args.clientSecret === undefined) && !(opts && opts.urn)) {
+            if ((!args || args.clientSecret === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'clientSecret'");
             }
-            if ((!args || args.service === undefined) && !(opts && opts.urn)) {
+            if ((!args || args.service === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'service'");
             }
-            if ((!args || args.tenant === undefined) && !(opts && opts.urn)) {
+            if ((!args || args.tenant === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'tenant'");
             }
             inputs["additionalTags"] = args ? args.additionalTags : undefined;
@@ -140,12 +141,8 @@ export class CloudIntegrationAzureActivityLog extends pulumi.CustomResource {
             inputs["serviceRefreshRateInMinutes"] = args ? args.serviceRefreshRateInMinutes : undefined;
             inputs["tenant"] = args ? args.tenant : undefined;
         }
-        if (!opts) {
-            opts = {}
-        }
-
         if (!opts.version) {
-            opts.version = utilities.getVersion();
+            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
         }
         super(CloudIntegrationAzureActivityLog.__pulumiType, name, inputs, opts);
     }

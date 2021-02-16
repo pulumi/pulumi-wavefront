@@ -8,11 +8,11 @@ namespace Pulumi.Wavefront
     public static class Config
     {
         private static readonly Pulumi.Config __config = new Pulumi.Config("wavefront");
-        public static string? Address { get; set; } = __config.Get("address") ?? Utilities.GetEnv("WAVEFRONT_ADDRESS");
+        public static string? Address { get; set; } = __config.Get("address");
 
         public static string? HttpProxy { get; set; } = __config.Get("httpProxy");
 
-        public static string? Token { get; set; } = __config.Get("token") ?? Utilities.GetEnv("WAVEFRONT_TOKEN");
+        public static string? Token { get; set; } = __config.Get("token");
 
     }
 }

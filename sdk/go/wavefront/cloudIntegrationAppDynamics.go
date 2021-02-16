@@ -20,7 +20,7 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront/"
+// 	"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront"
 // 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 // )
 //
@@ -311,6 +311,85 @@ func (i *CloudIntegrationAppDynamics) ToCloudIntegrationAppDynamicsOutputWithCon
 	return pulumi.ToOutputWithContext(ctx, i).(CloudIntegrationAppDynamicsOutput)
 }
 
+func (i *CloudIntegrationAppDynamics) ToCloudIntegrationAppDynamicsPtrOutput() CloudIntegrationAppDynamicsPtrOutput {
+	return i.ToCloudIntegrationAppDynamicsPtrOutputWithContext(context.Background())
+}
+
+func (i *CloudIntegrationAppDynamics) ToCloudIntegrationAppDynamicsPtrOutputWithContext(ctx context.Context) CloudIntegrationAppDynamicsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CloudIntegrationAppDynamicsPtrOutput)
+}
+
+type CloudIntegrationAppDynamicsPtrInput interface {
+	pulumi.Input
+
+	ToCloudIntegrationAppDynamicsPtrOutput() CloudIntegrationAppDynamicsPtrOutput
+	ToCloudIntegrationAppDynamicsPtrOutputWithContext(ctx context.Context) CloudIntegrationAppDynamicsPtrOutput
+}
+
+type cloudIntegrationAppDynamicsPtrType CloudIntegrationAppDynamicsArgs
+
+func (*cloudIntegrationAppDynamicsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**CloudIntegrationAppDynamics)(nil))
+}
+
+func (i *cloudIntegrationAppDynamicsPtrType) ToCloudIntegrationAppDynamicsPtrOutput() CloudIntegrationAppDynamicsPtrOutput {
+	return i.ToCloudIntegrationAppDynamicsPtrOutputWithContext(context.Background())
+}
+
+func (i *cloudIntegrationAppDynamicsPtrType) ToCloudIntegrationAppDynamicsPtrOutputWithContext(ctx context.Context) CloudIntegrationAppDynamicsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CloudIntegrationAppDynamicsPtrOutput)
+}
+
+// CloudIntegrationAppDynamicsArrayInput is an input type that accepts CloudIntegrationAppDynamicsArray and CloudIntegrationAppDynamicsArrayOutput values.
+// You can construct a concrete instance of `CloudIntegrationAppDynamicsArrayInput` via:
+//
+//          CloudIntegrationAppDynamicsArray{ CloudIntegrationAppDynamicsArgs{...} }
+type CloudIntegrationAppDynamicsArrayInput interface {
+	pulumi.Input
+
+	ToCloudIntegrationAppDynamicsArrayOutput() CloudIntegrationAppDynamicsArrayOutput
+	ToCloudIntegrationAppDynamicsArrayOutputWithContext(context.Context) CloudIntegrationAppDynamicsArrayOutput
+}
+
+type CloudIntegrationAppDynamicsArray []CloudIntegrationAppDynamicsInput
+
+func (CloudIntegrationAppDynamicsArray) ElementType() reflect.Type {
+	return reflect.TypeOf(([]*CloudIntegrationAppDynamics)(nil))
+}
+
+func (i CloudIntegrationAppDynamicsArray) ToCloudIntegrationAppDynamicsArrayOutput() CloudIntegrationAppDynamicsArrayOutput {
+	return i.ToCloudIntegrationAppDynamicsArrayOutputWithContext(context.Background())
+}
+
+func (i CloudIntegrationAppDynamicsArray) ToCloudIntegrationAppDynamicsArrayOutputWithContext(ctx context.Context) CloudIntegrationAppDynamicsArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CloudIntegrationAppDynamicsArrayOutput)
+}
+
+// CloudIntegrationAppDynamicsMapInput is an input type that accepts CloudIntegrationAppDynamicsMap and CloudIntegrationAppDynamicsMapOutput values.
+// You can construct a concrete instance of `CloudIntegrationAppDynamicsMapInput` via:
+//
+//          CloudIntegrationAppDynamicsMap{ "key": CloudIntegrationAppDynamicsArgs{...} }
+type CloudIntegrationAppDynamicsMapInput interface {
+	pulumi.Input
+
+	ToCloudIntegrationAppDynamicsMapOutput() CloudIntegrationAppDynamicsMapOutput
+	ToCloudIntegrationAppDynamicsMapOutputWithContext(context.Context) CloudIntegrationAppDynamicsMapOutput
+}
+
+type CloudIntegrationAppDynamicsMap map[string]CloudIntegrationAppDynamicsInput
+
+func (CloudIntegrationAppDynamicsMap) ElementType() reflect.Type {
+	return reflect.TypeOf((map[string]*CloudIntegrationAppDynamics)(nil))
+}
+
+func (i CloudIntegrationAppDynamicsMap) ToCloudIntegrationAppDynamicsMapOutput() CloudIntegrationAppDynamicsMapOutput {
+	return i.ToCloudIntegrationAppDynamicsMapOutputWithContext(context.Background())
+}
+
+func (i CloudIntegrationAppDynamicsMap) ToCloudIntegrationAppDynamicsMapOutputWithContext(ctx context.Context) CloudIntegrationAppDynamicsMapOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CloudIntegrationAppDynamicsMapOutput)
+}
+
 type CloudIntegrationAppDynamicsOutput struct {
 	*pulumi.OutputState
 }
@@ -327,6 +406,75 @@ func (o CloudIntegrationAppDynamicsOutput) ToCloudIntegrationAppDynamicsOutputWi
 	return o
 }
 
+func (o CloudIntegrationAppDynamicsOutput) ToCloudIntegrationAppDynamicsPtrOutput() CloudIntegrationAppDynamicsPtrOutput {
+	return o.ToCloudIntegrationAppDynamicsPtrOutputWithContext(context.Background())
+}
+
+func (o CloudIntegrationAppDynamicsOutput) ToCloudIntegrationAppDynamicsPtrOutputWithContext(ctx context.Context) CloudIntegrationAppDynamicsPtrOutput {
+	return o.ApplyT(func(v CloudIntegrationAppDynamics) *CloudIntegrationAppDynamics {
+		return &v
+	}).(CloudIntegrationAppDynamicsPtrOutput)
+}
+
+type CloudIntegrationAppDynamicsPtrOutput struct {
+	*pulumi.OutputState
+}
+
+func (CloudIntegrationAppDynamicsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**CloudIntegrationAppDynamics)(nil))
+}
+
+func (o CloudIntegrationAppDynamicsPtrOutput) ToCloudIntegrationAppDynamicsPtrOutput() CloudIntegrationAppDynamicsPtrOutput {
+	return o
+}
+
+func (o CloudIntegrationAppDynamicsPtrOutput) ToCloudIntegrationAppDynamicsPtrOutputWithContext(ctx context.Context) CloudIntegrationAppDynamicsPtrOutput {
+	return o
+}
+
+type CloudIntegrationAppDynamicsArrayOutput struct{ *pulumi.OutputState }
+
+func (CloudIntegrationAppDynamicsArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]CloudIntegrationAppDynamics)(nil))
+}
+
+func (o CloudIntegrationAppDynamicsArrayOutput) ToCloudIntegrationAppDynamicsArrayOutput() CloudIntegrationAppDynamicsArrayOutput {
+	return o
+}
+
+func (o CloudIntegrationAppDynamicsArrayOutput) ToCloudIntegrationAppDynamicsArrayOutputWithContext(ctx context.Context) CloudIntegrationAppDynamicsArrayOutput {
+	return o
+}
+
+func (o CloudIntegrationAppDynamicsArrayOutput) Index(i pulumi.IntInput) CloudIntegrationAppDynamicsOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) CloudIntegrationAppDynamics {
+		return vs[0].([]CloudIntegrationAppDynamics)[vs[1].(int)]
+	}).(CloudIntegrationAppDynamicsOutput)
+}
+
+type CloudIntegrationAppDynamicsMapOutput struct{ *pulumi.OutputState }
+
+func (CloudIntegrationAppDynamicsMapOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*map[string]CloudIntegrationAppDynamics)(nil))
+}
+
+func (o CloudIntegrationAppDynamicsMapOutput) ToCloudIntegrationAppDynamicsMapOutput() CloudIntegrationAppDynamicsMapOutput {
+	return o
+}
+
+func (o CloudIntegrationAppDynamicsMapOutput) ToCloudIntegrationAppDynamicsMapOutputWithContext(ctx context.Context) CloudIntegrationAppDynamicsMapOutput {
+	return o
+}
+
+func (o CloudIntegrationAppDynamicsMapOutput) MapIndex(k pulumi.StringInput) CloudIntegrationAppDynamicsOutput {
+	return pulumi.All(o, k).ApplyT(func(vs []interface{}) CloudIntegrationAppDynamics {
+		return vs[0].(map[string]CloudIntegrationAppDynamics)[vs[1].(string)]
+	}).(CloudIntegrationAppDynamicsOutput)
+}
+
 func init() {
 	pulumi.RegisterOutputType(CloudIntegrationAppDynamicsOutput{})
+	pulumi.RegisterOutputType(CloudIntegrationAppDynamicsPtrOutput{})
+	pulumi.RegisterOutputType(CloudIntegrationAppDynamicsArrayOutput{})
+	pulumi.RegisterOutputType(CloudIntegrationAppDynamicsMapOutput{})
 }

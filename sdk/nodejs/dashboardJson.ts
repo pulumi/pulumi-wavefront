@@ -167,22 +167,19 @@ export class DashboardJson extends pulumi.CustomResource {
     constructor(name: string, args: DashboardJsonArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: DashboardJsonArgs | DashboardJsonState, opts?: pulumi.CustomResourceOptions) {
         let inputs: pulumi.Inputs = {};
-        if (opts && opts.id) {
+        opts = opts || {};
+        if (opts.id) {
             const state = argsOrState as DashboardJsonState | undefined;
             inputs["dashboardJson"] = state ? state.dashboardJson : undefined;
         } else {
             const args = argsOrState as DashboardJsonArgs | undefined;
-            if ((!args || args.dashboardJson === undefined) && !(opts && opts.urn)) {
+            if ((!args || args.dashboardJson === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'dashboardJson'");
             }
             inputs["dashboardJson"] = args ? args.dashboardJson : undefined;
         }
-        if (!opts) {
-            opts = {}
-        }
-
         if (!opts.version) {
-            opts.version = utilities.getVersion();
+            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
         }
         super(DashboardJson.__pulumiType, name, inputs, opts);
     }

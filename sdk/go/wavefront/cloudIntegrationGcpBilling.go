@@ -22,7 +22,7 @@ import (
 // import (
 // 	"fmt"
 //
-// 	"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront/"
+// 	"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront"
 // 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 // )
 //
@@ -218,6 +218,85 @@ func (i *CloudIntegrationGcpBilling) ToCloudIntegrationGcpBillingOutputWithConte
 	return pulumi.ToOutputWithContext(ctx, i).(CloudIntegrationGcpBillingOutput)
 }
 
+func (i *CloudIntegrationGcpBilling) ToCloudIntegrationGcpBillingPtrOutput() CloudIntegrationGcpBillingPtrOutput {
+	return i.ToCloudIntegrationGcpBillingPtrOutputWithContext(context.Background())
+}
+
+func (i *CloudIntegrationGcpBilling) ToCloudIntegrationGcpBillingPtrOutputWithContext(ctx context.Context) CloudIntegrationGcpBillingPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CloudIntegrationGcpBillingPtrOutput)
+}
+
+type CloudIntegrationGcpBillingPtrInput interface {
+	pulumi.Input
+
+	ToCloudIntegrationGcpBillingPtrOutput() CloudIntegrationGcpBillingPtrOutput
+	ToCloudIntegrationGcpBillingPtrOutputWithContext(ctx context.Context) CloudIntegrationGcpBillingPtrOutput
+}
+
+type cloudIntegrationGcpBillingPtrType CloudIntegrationGcpBillingArgs
+
+func (*cloudIntegrationGcpBillingPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**CloudIntegrationGcpBilling)(nil))
+}
+
+func (i *cloudIntegrationGcpBillingPtrType) ToCloudIntegrationGcpBillingPtrOutput() CloudIntegrationGcpBillingPtrOutput {
+	return i.ToCloudIntegrationGcpBillingPtrOutputWithContext(context.Background())
+}
+
+func (i *cloudIntegrationGcpBillingPtrType) ToCloudIntegrationGcpBillingPtrOutputWithContext(ctx context.Context) CloudIntegrationGcpBillingPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CloudIntegrationGcpBillingPtrOutput)
+}
+
+// CloudIntegrationGcpBillingArrayInput is an input type that accepts CloudIntegrationGcpBillingArray and CloudIntegrationGcpBillingArrayOutput values.
+// You can construct a concrete instance of `CloudIntegrationGcpBillingArrayInput` via:
+//
+//          CloudIntegrationGcpBillingArray{ CloudIntegrationGcpBillingArgs{...} }
+type CloudIntegrationGcpBillingArrayInput interface {
+	pulumi.Input
+
+	ToCloudIntegrationGcpBillingArrayOutput() CloudIntegrationGcpBillingArrayOutput
+	ToCloudIntegrationGcpBillingArrayOutputWithContext(context.Context) CloudIntegrationGcpBillingArrayOutput
+}
+
+type CloudIntegrationGcpBillingArray []CloudIntegrationGcpBillingInput
+
+func (CloudIntegrationGcpBillingArray) ElementType() reflect.Type {
+	return reflect.TypeOf(([]*CloudIntegrationGcpBilling)(nil))
+}
+
+func (i CloudIntegrationGcpBillingArray) ToCloudIntegrationGcpBillingArrayOutput() CloudIntegrationGcpBillingArrayOutput {
+	return i.ToCloudIntegrationGcpBillingArrayOutputWithContext(context.Background())
+}
+
+func (i CloudIntegrationGcpBillingArray) ToCloudIntegrationGcpBillingArrayOutputWithContext(ctx context.Context) CloudIntegrationGcpBillingArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CloudIntegrationGcpBillingArrayOutput)
+}
+
+// CloudIntegrationGcpBillingMapInput is an input type that accepts CloudIntegrationGcpBillingMap and CloudIntegrationGcpBillingMapOutput values.
+// You can construct a concrete instance of `CloudIntegrationGcpBillingMapInput` via:
+//
+//          CloudIntegrationGcpBillingMap{ "key": CloudIntegrationGcpBillingArgs{...} }
+type CloudIntegrationGcpBillingMapInput interface {
+	pulumi.Input
+
+	ToCloudIntegrationGcpBillingMapOutput() CloudIntegrationGcpBillingMapOutput
+	ToCloudIntegrationGcpBillingMapOutputWithContext(context.Context) CloudIntegrationGcpBillingMapOutput
+}
+
+type CloudIntegrationGcpBillingMap map[string]CloudIntegrationGcpBillingInput
+
+func (CloudIntegrationGcpBillingMap) ElementType() reflect.Type {
+	return reflect.TypeOf((map[string]*CloudIntegrationGcpBilling)(nil))
+}
+
+func (i CloudIntegrationGcpBillingMap) ToCloudIntegrationGcpBillingMapOutput() CloudIntegrationGcpBillingMapOutput {
+	return i.ToCloudIntegrationGcpBillingMapOutputWithContext(context.Background())
+}
+
+func (i CloudIntegrationGcpBillingMap) ToCloudIntegrationGcpBillingMapOutputWithContext(ctx context.Context) CloudIntegrationGcpBillingMapOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CloudIntegrationGcpBillingMapOutput)
+}
+
 type CloudIntegrationGcpBillingOutput struct {
 	*pulumi.OutputState
 }
@@ -234,6 +313,75 @@ func (o CloudIntegrationGcpBillingOutput) ToCloudIntegrationGcpBillingOutputWith
 	return o
 }
 
+func (o CloudIntegrationGcpBillingOutput) ToCloudIntegrationGcpBillingPtrOutput() CloudIntegrationGcpBillingPtrOutput {
+	return o.ToCloudIntegrationGcpBillingPtrOutputWithContext(context.Background())
+}
+
+func (o CloudIntegrationGcpBillingOutput) ToCloudIntegrationGcpBillingPtrOutputWithContext(ctx context.Context) CloudIntegrationGcpBillingPtrOutput {
+	return o.ApplyT(func(v CloudIntegrationGcpBilling) *CloudIntegrationGcpBilling {
+		return &v
+	}).(CloudIntegrationGcpBillingPtrOutput)
+}
+
+type CloudIntegrationGcpBillingPtrOutput struct {
+	*pulumi.OutputState
+}
+
+func (CloudIntegrationGcpBillingPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**CloudIntegrationGcpBilling)(nil))
+}
+
+func (o CloudIntegrationGcpBillingPtrOutput) ToCloudIntegrationGcpBillingPtrOutput() CloudIntegrationGcpBillingPtrOutput {
+	return o
+}
+
+func (o CloudIntegrationGcpBillingPtrOutput) ToCloudIntegrationGcpBillingPtrOutputWithContext(ctx context.Context) CloudIntegrationGcpBillingPtrOutput {
+	return o
+}
+
+type CloudIntegrationGcpBillingArrayOutput struct{ *pulumi.OutputState }
+
+func (CloudIntegrationGcpBillingArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]CloudIntegrationGcpBilling)(nil))
+}
+
+func (o CloudIntegrationGcpBillingArrayOutput) ToCloudIntegrationGcpBillingArrayOutput() CloudIntegrationGcpBillingArrayOutput {
+	return o
+}
+
+func (o CloudIntegrationGcpBillingArrayOutput) ToCloudIntegrationGcpBillingArrayOutputWithContext(ctx context.Context) CloudIntegrationGcpBillingArrayOutput {
+	return o
+}
+
+func (o CloudIntegrationGcpBillingArrayOutput) Index(i pulumi.IntInput) CloudIntegrationGcpBillingOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) CloudIntegrationGcpBilling {
+		return vs[0].([]CloudIntegrationGcpBilling)[vs[1].(int)]
+	}).(CloudIntegrationGcpBillingOutput)
+}
+
+type CloudIntegrationGcpBillingMapOutput struct{ *pulumi.OutputState }
+
+func (CloudIntegrationGcpBillingMapOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*map[string]CloudIntegrationGcpBilling)(nil))
+}
+
+func (o CloudIntegrationGcpBillingMapOutput) ToCloudIntegrationGcpBillingMapOutput() CloudIntegrationGcpBillingMapOutput {
+	return o
+}
+
+func (o CloudIntegrationGcpBillingMapOutput) ToCloudIntegrationGcpBillingMapOutputWithContext(ctx context.Context) CloudIntegrationGcpBillingMapOutput {
+	return o
+}
+
+func (o CloudIntegrationGcpBillingMapOutput) MapIndex(k pulumi.StringInput) CloudIntegrationGcpBillingOutput {
+	return pulumi.All(o, k).ApplyT(func(vs []interface{}) CloudIntegrationGcpBilling {
+		return vs[0].(map[string]CloudIntegrationGcpBilling)[vs[1].(string)]
+	}).(CloudIntegrationGcpBillingOutput)
+}
+
 func init() {
 	pulumi.RegisterOutputType(CloudIntegrationGcpBillingOutput{})
+	pulumi.RegisterOutputType(CloudIntegrationGcpBillingPtrOutput{})
+	pulumi.RegisterOutputType(CloudIntegrationGcpBillingArrayOutput{})
+	pulumi.RegisterOutputType(CloudIntegrationGcpBillingMapOutput{})
 }

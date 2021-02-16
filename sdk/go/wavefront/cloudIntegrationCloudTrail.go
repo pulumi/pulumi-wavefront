@@ -20,7 +20,7 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront/"
+// 	"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront"
 // 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 // )
 //
@@ -249,6 +249,85 @@ func (i *CloudIntegrationCloudTrail) ToCloudIntegrationCloudTrailOutputWithConte
 	return pulumi.ToOutputWithContext(ctx, i).(CloudIntegrationCloudTrailOutput)
 }
 
+func (i *CloudIntegrationCloudTrail) ToCloudIntegrationCloudTrailPtrOutput() CloudIntegrationCloudTrailPtrOutput {
+	return i.ToCloudIntegrationCloudTrailPtrOutputWithContext(context.Background())
+}
+
+func (i *CloudIntegrationCloudTrail) ToCloudIntegrationCloudTrailPtrOutputWithContext(ctx context.Context) CloudIntegrationCloudTrailPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CloudIntegrationCloudTrailPtrOutput)
+}
+
+type CloudIntegrationCloudTrailPtrInput interface {
+	pulumi.Input
+
+	ToCloudIntegrationCloudTrailPtrOutput() CloudIntegrationCloudTrailPtrOutput
+	ToCloudIntegrationCloudTrailPtrOutputWithContext(ctx context.Context) CloudIntegrationCloudTrailPtrOutput
+}
+
+type cloudIntegrationCloudTrailPtrType CloudIntegrationCloudTrailArgs
+
+func (*cloudIntegrationCloudTrailPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**CloudIntegrationCloudTrail)(nil))
+}
+
+func (i *cloudIntegrationCloudTrailPtrType) ToCloudIntegrationCloudTrailPtrOutput() CloudIntegrationCloudTrailPtrOutput {
+	return i.ToCloudIntegrationCloudTrailPtrOutputWithContext(context.Background())
+}
+
+func (i *cloudIntegrationCloudTrailPtrType) ToCloudIntegrationCloudTrailPtrOutputWithContext(ctx context.Context) CloudIntegrationCloudTrailPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CloudIntegrationCloudTrailPtrOutput)
+}
+
+// CloudIntegrationCloudTrailArrayInput is an input type that accepts CloudIntegrationCloudTrailArray and CloudIntegrationCloudTrailArrayOutput values.
+// You can construct a concrete instance of `CloudIntegrationCloudTrailArrayInput` via:
+//
+//          CloudIntegrationCloudTrailArray{ CloudIntegrationCloudTrailArgs{...} }
+type CloudIntegrationCloudTrailArrayInput interface {
+	pulumi.Input
+
+	ToCloudIntegrationCloudTrailArrayOutput() CloudIntegrationCloudTrailArrayOutput
+	ToCloudIntegrationCloudTrailArrayOutputWithContext(context.Context) CloudIntegrationCloudTrailArrayOutput
+}
+
+type CloudIntegrationCloudTrailArray []CloudIntegrationCloudTrailInput
+
+func (CloudIntegrationCloudTrailArray) ElementType() reflect.Type {
+	return reflect.TypeOf(([]*CloudIntegrationCloudTrail)(nil))
+}
+
+func (i CloudIntegrationCloudTrailArray) ToCloudIntegrationCloudTrailArrayOutput() CloudIntegrationCloudTrailArrayOutput {
+	return i.ToCloudIntegrationCloudTrailArrayOutputWithContext(context.Background())
+}
+
+func (i CloudIntegrationCloudTrailArray) ToCloudIntegrationCloudTrailArrayOutputWithContext(ctx context.Context) CloudIntegrationCloudTrailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CloudIntegrationCloudTrailArrayOutput)
+}
+
+// CloudIntegrationCloudTrailMapInput is an input type that accepts CloudIntegrationCloudTrailMap and CloudIntegrationCloudTrailMapOutput values.
+// You can construct a concrete instance of `CloudIntegrationCloudTrailMapInput` via:
+//
+//          CloudIntegrationCloudTrailMap{ "key": CloudIntegrationCloudTrailArgs{...} }
+type CloudIntegrationCloudTrailMapInput interface {
+	pulumi.Input
+
+	ToCloudIntegrationCloudTrailMapOutput() CloudIntegrationCloudTrailMapOutput
+	ToCloudIntegrationCloudTrailMapOutputWithContext(context.Context) CloudIntegrationCloudTrailMapOutput
+}
+
+type CloudIntegrationCloudTrailMap map[string]CloudIntegrationCloudTrailInput
+
+func (CloudIntegrationCloudTrailMap) ElementType() reflect.Type {
+	return reflect.TypeOf((map[string]*CloudIntegrationCloudTrail)(nil))
+}
+
+func (i CloudIntegrationCloudTrailMap) ToCloudIntegrationCloudTrailMapOutput() CloudIntegrationCloudTrailMapOutput {
+	return i.ToCloudIntegrationCloudTrailMapOutputWithContext(context.Background())
+}
+
+func (i CloudIntegrationCloudTrailMap) ToCloudIntegrationCloudTrailMapOutputWithContext(ctx context.Context) CloudIntegrationCloudTrailMapOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CloudIntegrationCloudTrailMapOutput)
+}
+
 type CloudIntegrationCloudTrailOutput struct {
 	*pulumi.OutputState
 }
@@ -265,6 +344,75 @@ func (o CloudIntegrationCloudTrailOutput) ToCloudIntegrationCloudTrailOutputWith
 	return o
 }
 
+func (o CloudIntegrationCloudTrailOutput) ToCloudIntegrationCloudTrailPtrOutput() CloudIntegrationCloudTrailPtrOutput {
+	return o.ToCloudIntegrationCloudTrailPtrOutputWithContext(context.Background())
+}
+
+func (o CloudIntegrationCloudTrailOutput) ToCloudIntegrationCloudTrailPtrOutputWithContext(ctx context.Context) CloudIntegrationCloudTrailPtrOutput {
+	return o.ApplyT(func(v CloudIntegrationCloudTrail) *CloudIntegrationCloudTrail {
+		return &v
+	}).(CloudIntegrationCloudTrailPtrOutput)
+}
+
+type CloudIntegrationCloudTrailPtrOutput struct {
+	*pulumi.OutputState
+}
+
+func (CloudIntegrationCloudTrailPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**CloudIntegrationCloudTrail)(nil))
+}
+
+func (o CloudIntegrationCloudTrailPtrOutput) ToCloudIntegrationCloudTrailPtrOutput() CloudIntegrationCloudTrailPtrOutput {
+	return o
+}
+
+func (o CloudIntegrationCloudTrailPtrOutput) ToCloudIntegrationCloudTrailPtrOutputWithContext(ctx context.Context) CloudIntegrationCloudTrailPtrOutput {
+	return o
+}
+
+type CloudIntegrationCloudTrailArrayOutput struct{ *pulumi.OutputState }
+
+func (CloudIntegrationCloudTrailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]CloudIntegrationCloudTrail)(nil))
+}
+
+func (o CloudIntegrationCloudTrailArrayOutput) ToCloudIntegrationCloudTrailArrayOutput() CloudIntegrationCloudTrailArrayOutput {
+	return o
+}
+
+func (o CloudIntegrationCloudTrailArrayOutput) ToCloudIntegrationCloudTrailArrayOutputWithContext(ctx context.Context) CloudIntegrationCloudTrailArrayOutput {
+	return o
+}
+
+func (o CloudIntegrationCloudTrailArrayOutput) Index(i pulumi.IntInput) CloudIntegrationCloudTrailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) CloudIntegrationCloudTrail {
+		return vs[0].([]CloudIntegrationCloudTrail)[vs[1].(int)]
+	}).(CloudIntegrationCloudTrailOutput)
+}
+
+type CloudIntegrationCloudTrailMapOutput struct{ *pulumi.OutputState }
+
+func (CloudIntegrationCloudTrailMapOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*map[string]CloudIntegrationCloudTrail)(nil))
+}
+
+func (o CloudIntegrationCloudTrailMapOutput) ToCloudIntegrationCloudTrailMapOutput() CloudIntegrationCloudTrailMapOutput {
+	return o
+}
+
+func (o CloudIntegrationCloudTrailMapOutput) ToCloudIntegrationCloudTrailMapOutputWithContext(ctx context.Context) CloudIntegrationCloudTrailMapOutput {
+	return o
+}
+
+func (o CloudIntegrationCloudTrailMapOutput) MapIndex(k pulumi.StringInput) CloudIntegrationCloudTrailOutput {
+	return pulumi.All(o, k).ApplyT(func(vs []interface{}) CloudIntegrationCloudTrail {
+		return vs[0].(map[string]CloudIntegrationCloudTrail)[vs[1].(string)]
+	}).(CloudIntegrationCloudTrailOutput)
+}
+
 func init() {
 	pulumi.RegisterOutputType(CloudIntegrationCloudTrailOutput{})
+	pulumi.RegisterOutputType(CloudIntegrationCloudTrailPtrOutput{})
+	pulumi.RegisterOutputType(CloudIntegrationCloudTrailArrayOutput{})
+	pulumi.RegisterOutputType(CloudIntegrationCloudTrailMapOutput{})
 }

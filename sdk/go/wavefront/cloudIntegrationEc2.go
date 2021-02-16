@@ -20,7 +20,7 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront/"
+// 	"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront"
 // 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 // )
 //
@@ -206,6 +206,85 @@ func (i *CloudIntegrationEc2) ToCloudIntegrationEc2OutputWithContext(ctx context
 	return pulumi.ToOutputWithContext(ctx, i).(CloudIntegrationEc2Output)
 }
 
+func (i *CloudIntegrationEc2) ToCloudIntegrationEc2PtrOutput() CloudIntegrationEc2PtrOutput {
+	return i.ToCloudIntegrationEc2PtrOutputWithContext(context.Background())
+}
+
+func (i *CloudIntegrationEc2) ToCloudIntegrationEc2PtrOutputWithContext(ctx context.Context) CloudIntegrationEc2PtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CloudIntegrationEc2PtrOutput)
+}
+
+type CloudIntegrationEc2PtrInput interface {
+	pulumi.Input
+
+	ToCloudIntegrationEc2PtrOutput() CloudIntegrationEc2PtrOutput
+	ToCloudIntegrationEc2PtrOutputWithContext(ctx context.Context) CloudIntegrationEc2PtrOutput
+}
+
+type cloudIntegrationEc2PtrType CloudIntegrationEc2Args
+
+func (*cloudIntegrationEc2PtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**CloudIntegrationEc2)(nil))
+}
+
+func (i *cloudIntegrationEc2PtrType) ToCloudIntegrationEc2PtrOutput() CloudIntegrationEc2PtrOutput {
+	return i.ToCloudIntegrationEc2PtrOutputWithContext(context.Background())
+}
+
+func (i *cloudIntegrationEc2PtrType) ToCloudIntegrationEc2PtrOutputWithContext(ctx context.Context) CloudIntegrationEc2PtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CloudIntegrationEc2PtrOutput)
+}
+
+// CloudIntegrationEc2ArrayInput is an input type that accepts CloudIntegrationEc2Array and CloudIntegrationEc2ArrayOutput values.
+// You can construct a concrete instance of `CloudIntegrationEc2ArrayInput` via:
+//
+//          CloudIntegrationEc2Array{ CloudIntegrationEc2Args{...} }
+type CloudIntegrationEc2ArrayInput interface {
+	pulumi.Input
+
+	ToCloudIntegrationEc2ArrayOutput() CloudIntegrationEc2ArrayOutput
+	ToCloudIntegrationEc2ArrayOutputWithContext(context.Context) CloudIntegrationEc2ArrayOutput
+}
+
+type CloudIntegrationEc2Array []CloudIntegrationEc2Input
+
+func (CloudIntegrationEc2Array) ElementType() reflect.Type {
+	return reflect.TypeOf(([]*CloudIntegrationEc2)(nil))
+}
+
+func (i CloudIntegrationEc2Array) ToCloudIntegrationEc2ArrayOutput() CloudIntegrationEc2ArrayOutput {
+	return i.ToCloudIntegrationEc2ArrayOutputWithContext(context.Background())
+}
+
+func (i CloudIntegrationEc2Array) ToCloudIntegrationEc2ArrayOutputWithContext(ctx context.Context) CloudIntegrationEc2ArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CloudIntegrationEc2ArrayOutput)
+}
+
+// CloudIntegrationEc2MapInput is an input type that accepts CloudIntegrationEc2Map and CloudIntegrationEc2MapOutput values.
+// You can construct a concrete instance of `CloudIntegrationEc2MapInput` via:
+//
+//          CloudIntegrationEc2Map{ "key": CloudIntegrationEc2Args{...} }
+type CloudIntegrationEc2MapInput interface {
+	pulumi.Input
+
+	ToCloudIntegrationEc2MapOutput() CloudIntegrationEc2MapOutput
+	ToCloudIntegrationEc2MapOutputWithContext(context.Context) CloudIntegrationEc2MapOutput
+}
+
+type CloudIntegrationEc2Map map[string]CloudIntegrationEc2Input
+
+func (CloudIntegrationEc2Map) ElementType() reflect.Type {
+	return reflect.TypeOf((map[string]*CloudIntegrationEc2)(nil))
+}
+
+func (i CloudIntegrationEc2Map) ToCloudIntegrationEc2MapOutput() CloudIntegrationEc2MapOutput {
+	return i.ToCloudIntegrationEc2MapOutputWithContext(context.Background())
+}
+
+func (i CloudIntegrationEc2Map) ToCloudIntegrationEc2MapOutputWithContext(ctx context.Context) CloudIntegrationEc2MapOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CloudIntegrationEc2MapOutput)
+}
+
 type CloudIntegrationEc2Output struct {
 	*pulumi.OutputState
 }
@@ -222,6 +301,75 @@ func (o CloudIntegrationEc2Output) ToCloudIntegrationEc2OutputWithContext(ctx co
 	return o
 }
 
+func (o CloudIntegrationEc2Output) ToCloudIntegrationEc2PtrOutput() CloudIntegrationEc2PtrOutput {
+	return o.ToCloudIntegrationEc2PtrOutputWithContext(context.Background())
+}
+
+func (o CloudIntegrationEc2Output) ToCloudIntegrationEc2PtrOutputWithContext(ctx context.Context) CloudIntegrationEc2PtrOutput {
+	return o.ApplyT(func(v CloudIntegrationEc2) *CloudIntegrationEc2 {
+		return &v
+	}).(CloudIntegrationEc2PtrOutput)
+}
+
+type CloudIntegrationEc2PtrOutput struct {
+	*pulumi.OutputState
+}
+
+func (CloudIntegrationEc2PtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**CloudIntegrationEc2)(nil))
+}
+
+func (o CloudIntegrationEc2PtrOutput) ToCloudIntegrationEc2PtrOutput() CloudIntegrationEc2PtrOutput {
+	return o
+}
+
+func (o CloudIntegrationEc2PtrOutput) ToCloudIntegrationEc2PtrOutputWithContext(ctx context.Context) CloudIntegrationEc2PtrOutput {
+	return o
+}
+
+type CloudIntegrationEc2ArrayOutput struct{ *pulumi.OutputState }
+
+func (CloudIntegrationEc2ArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]CloudIntegrationEc2)(nil))
+}
+
+func (o CloudIntegrationEc2ArrayOutput) ToCloudIntegrationEc2ArrayOutput() CloudIntegrationEc2ArrayOutput {
+	return o
+}
+
+func (o CloudIntegrationEc2ArrayOutput) ToCloudIntegrationEc2ArrayOutputWithContext(ctx context.Context) CloudIntegrationEc2ArrayOutput {
+	return o
+}
+
+func (o CloudIntegrationEc2ArrayOutput) Index(i pulumi.IntInput) CloudIntegrationEc2Output {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) CloudIntegrationEc2 {
+		return vs[0].([]CloudIntegrationEc2)[vs[1].(int)]
+	}).(CloudIntegrationEc2Output)
+}
+
+type CloudIntegrationEc2MapOutput struct{ *pulumi.OutputState }
+
+func (CloudIntegrationEc2MapOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*map[string]CloudIntegrationEc2)(nil))
+}
+
+func (o CloudIntegrationEc2MapOutput) ToCloudIntegrationEc2MapOutput() CloudIntegrationEc2MapOutput {
+	return o
+}
+
+func (o CloudIntegrationEc2MapOutput) ToCloudIntegrationEc2MapOutputWithContext(ctx context.Context) CloudIntegrationEc2MapOutput {
+	return o
+}
+
+func (o CloudIntegrationEc2MapOutput) MapIndex(k pulumi.StringInput) CloudIntegrationEc2Output {
+	return pulumi.All(o, k).ApplyT(func(vs []interface{}) CloudIntegrationEc2 {
+		return vs[0].(map[string]CloudIntegrationEc2)[vs[1].(string)]
+	}).(CloudIntegrationEc2Output)
+}
+
 func init() {
 	pulumi.RegisterOutputType(CloudIntegrationEc2Output{})
+	pulumi.RegisterOutputType(CloudIntegrationEc2PtrOutput{})
+	pulumi.RegisterOutputType(CloudIntegrationEc2ArrayOutput{})
+	pulumi.RegisterOutputType(CloudIntegrationEc2MapOutput{})
 }
