@@ -2,9 +2,13 @@ CHANGELOG
 =========
 
 ## HEAD (Unreleased)
-* Upgrade to pulumi-terraform-bridge v2.21.0
+_(none)_
 
 ---
+
+## 0.8.0 (2021-03-15)
+* Upgrade to pulumi-terraform-bridge v2.21.0
+* Release macOS arm64 binary
 
 ## 0.7.2 (2021-03-09)
 * Upgrade to v2.8.3 of the Wavefront Terraform Provider
