@@ -21,55 +21,56 @@ func (m *module) Version() semver.Version {
 func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi.Resource, err error) {
 	switch typ {
 	case "wavefront:index/alert:Alert":
-		r, err = NewAlert(ctx, name, nil, pulumi.URN_(urn))
+		r = &Alert{}
 	case "wavefront:index/alertTarget:AlertTarget":
-		r, err = NewAlertTarget(ctx, name, nil, pulumi.URN_(urn))
+		r = &AlertTarget{}
 	case "wavefront:index/cloudIntegrationAppDynamics:CloudIntegrationAppDynamics":
-		r, err = NewCloudIntegrationAppDynamics(ctx, name, nil, pulumi.URN_(urn))
+		r = &CloudIntegrationAppDynamics{}
 	case "wavefront:index/cloudIntegrationAwsExternalId:CloudIntegrationAwsExternalId":
-		r, err = NewCloudIntegrationAwsExternalId(ctx, name, nil, pulumi.URN_(urn))
+		r = &CloudIntegrationAwsExternalId{}
 	case "wavefront:index/cloudIntegrationAzure:CloudIntegrationAzure":
-		r, err = NewCloudIntegrationAzure(ctx, name, nil, pulumi.URN_(urn))
+		r = &CloudIntegrationAzure{}
 	case "wavefront:index/cloudIntegrationAzureActivityLog:CloudIntegrationAzureActivityLog":
-		r, err = NewCloudIntegrationAzureActivityLog(ctx, name, nil, pulumi.URN_(urn))
+		r = &CloudIntegrationAzureActivityLog{}
 	case "wavefront:index/cloudIntegrationCloudTrail:CloudIntegrationCloudTrail":
-		r, err = NewCloudIntegrationCloudTrail(ctx, name, nil, pulumi.URN_(urn))
+		r = &CloudIntegrationCloudTrail{}
 	case "wavefront:index/cloudIntegrationCloudWatch:CloudIntegrationCloudWatch":
-		r, err = NewCloudIntegrationCloudWatch(ctx, name, nil, pulumi.URN_(urn))
+		r = &CloudIntegrationCloudWatch{}
 	case "wavefront:index/cloudIntegrationEc2:CloudIntegrationEc2":
-		r, err = NewCloudIntegrationEc2(ctx, name, nil, pulumi.URN_(urn))
+		r = &CloudIntegrationEc2{}
 	case "wavefront:index/cloudIntegrationGcp:CloudIntegrationGcp":
-		r, err = NewCloudIntegrationGcp(ctx, name, nil, pulumi.URN_(urn))
+		r = &CloudIntegrationGcp{}
 	case "wavefront:index/cloudIntegrationGcpBilling:CloudIntegrationGcpBilling":
-		r, err = NewCloudIntegrationGcpBilling(ctx, name, nil, pulumi.URN_(urn))
+		r = &CloudIntegrationGcpBilling{}
 	case "wavefront:index/cloudIntegrationNewRelic:CloudIntegrationNewRelic":
-		r, err = NewCloudIntegrationNewRelic(ctx, name, nil, pulumi.URN_(urn))
+		r = &CloudIntegrationNewRelic{}
 	case "wavefront:index/cloudIntegrationTesla:CloudIntegrationTesla":
-		r, err = NewCloudIntegrationTesla(ctx, name, nil, pulumi.URN_(urn))
+		r = &CloudIntegrationTesla{}
 	case "wavefront:index/dashboard:Dashboard":
-		r, err = NewDashboard(ctx, name, nil, pulumi.URN_(urn))
+		r = &Dashboard{}
 	case "wavefront:index/dashboardJson:DashboardJson":
-		r, err = NewDashboardJson(ctx, name, nil, pulumi.URN_(urn))
+		r = &DashboardJson{}
 	case "wavefront:index/derivedMetric:DerivedMetric":
-		r, err = NewDerivedMetric(ctx, name, nil, pulumi.URN_(urn))
+		r = &DerivedMetric{}
 	case "wavefront:index/externalLink:ExternalLink":
-		r, err = NewExternalLink(ctx, name, nil, pulumi.URN_(urn))
+		r = &ExternalLink{}
 	case "wavefront:index/ingestionPolicy:IngestionPolicy":
-		r, err = NewIngestionPolicy(ctx, name, nil, pulumi.URN_(urn))
+		r = &IngestionPolicy{}
 	case "wavefront:index/maintenanceWindow:MaintenanceWindow":
-		r, err = NewMaintenanceWindow(ctx, name, nil, pulumi.URN_(urn))
+		r = &MaintenanceWindow{}
 	case "wavefront:index/role:Role":
-		r, err = NewRole(ctx, name, nil, pulumi.URN_(urn))
+		r = &Role{}
 	case "wavefront:index/serviceAccount:ServiceAccount":
-		r, err = NewServiceAccount(ctx, name, nil, pulumi.URN_(urn))
+		r = &ServiceAccount{}
 	case "wavefront:index/user:User":
-		r, err = NewUser(ctx, name, nil, pulumi.URN_(urn))
+		r = &User{}
 	case "wavefront:index/userGroup:UserGroup":
-		r, err = NewUserGroup(ctx, name, nil, pulumi.URN_(urn))
+		r = &UserGroup{}
 	default:
 		return nil, fmt.Errorf("unknown resource type: %s", typ)
 	}
 
+	err = ctx.RegisterResource(typ, name, nil, r, pulumi.URN_(urn))
 	return
 }
 
@@ -86,7 +87,9 @@ func (p *pkg) ConstructProvider(ctx *pulumi.Context, name, typ, urn string) (pul
 		return nil, fmt.Errorf("unknown provider type: %s", typ)
 	}
 
-	return NewProvider(ctx, name, nil, pulumi.URN_(urn))
+	r := &Provider{}
+	err := ctx.RegisterResource(typ, name, nil, r, pulumi.URN_(urn))
+	return r, err
 }
 
 func init() {

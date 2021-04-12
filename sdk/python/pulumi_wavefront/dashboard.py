@@ -5,15 +5,201 @@
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from . import _utilities, _tables
 from . import outputs
 from ._inputs import *
 
-__all__ = ['Dashboard']
+__all__ = ['DashboardArgs', 'Dashboard']
+
+@pulumi.input_type
+class DashboardArgs:
+    def __init__(__self__, *,
+                 description: pulumi.Input[str],
+                 sections: pulumi.Input[Sequence[pulumi.Input['DashboardSectionArgs']]],
+                 tags: pulumi.Input[Sequence[pulumi.Input[str]]],
+                 url: pulumi.Input[str],
+                 can_modifies: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 can_views: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 display_query_parameters: Optional[pulumi.Input[bool]] = None,
+                 display_section_table_of_contents: Optional[pulumi.Input[bool]] = None,
+                 event_filter_type: Optional[pulumi.Input[str]] = None,
+                 name: Optional[pulumi.Input[str]] = None,
+                 parameter_details: Optional[pulumi.Input[Sequence[pulumi.Input['DashboardParameterDetailArgs']]]] = None):
+        """
+        The set of arguments for constructing a Dashboard resource.
+        :param pulumi.Input[str] description: Human-readable description of the dashboard
+        :param pulumi.Input[Sequence[pulumi.Input['DashboardSectionArgs']]] sections: Dashboard chart sections. See dashboard sections
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] tags: A set of tags to assign to this resource.
+        :param pulumi.Input[str] url: Unique identifier, also URL slug, of the dashboard
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] can_modifies: A list of users that have modify ACL access to the dashboard
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] can_views: A list of users that have view ACL access to the dashboard
+        :param pulumi.Input[bool] display_query_parameters: Whether the dashboard parameters section is opened by default when the dashboard
+               is shown
+        :param pulumi.Input[bool] display_section_table_of_contents: Whether the "pills" quick-linked the sections of the dashboard are 
+               displayed by default when the dashboard is shown
+        :param pulumi.Input[str] event_filter_type: How charts belonging to this dashboard should display events. BYCHART is default if 
+               unspecified; Valid options are: `BYCHART`, `AUTOMATIC`, `ALL`, `NONE`, `BYDASHBOARD`, and `BYCHARTANDDASHBOARD`
+        :param pulumi.Input[str] name: Name of the dashboard
+        :param pulumi.Input[Sequence[pulumi.Input['DashboardParameterDetailArgs']]] parameter_details: The current JSON representation of dashboard parameters. See parameter details
+        """
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "sections", sections)
+        pulumi.set(__self__, "tags", tags)
+        pulumi.set(__self__, "url", url)
+        if can_modifies is not None:
+            pulumi.set(__self__, "can_modifies", can_modifies)
+        if can_views is not None:
+            pulumi.set(__self__, "can_views", can_views)
+        if display_query_parameters is not None:
+            pulumi.set(__self__, "display_query_parameters", display_query_parameters)
+        if display_section_table_of_contents is not None:
+            pulumi.set(__self__, "display_section_table_of_contents", display_section_table_of_contents)
+        if event_filter_type is not None:
+            pulumi.set(__self__, "event_filter_type", event_filter_type)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if parameter_details is not None:
+            pulumi.set(__self__, "parameter_details", parameter_details)
+
+    @property
+    @pulumi.getter
+    def description(self) -> pulumi.Input[str]:
+        """
+        Human-readable description of the dashboard
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: pulumi.Input[str]):
+        pulumi.set(self, "description", value)
+
+    @property
+    @pulumi.getter
+    def sections(self) -> pulumi.Input[Sequence[pulumi.Input['DashboardSectionArgs']]]:
+        """
+        Dashboard chart sections. See dashboard sections
+        """
+        return pulumi.get(self, "sections")
+
+    @sections.setter
+    def sections(self, value: pulumi.Input[Sequence[pulumi.Input['DashboardSectionArgs']]]):
+        pulumi.set(self, "sections", value)
+
+    @property
+    @pulumi.getter
+    def tags(self) -> pulumi.Input[Sequence[pulumi.Input[str]]]:
+        """
+        A set of tags to assign to this resource.
+        """
+        return pulumi.get(self, "tags")
+
+    @tags.setter
+    def tags(self, value: pulumi.Input[Sequence[pulumi.Input[str]]]):
+        pulumi.set(self, "tags", value)
+
+    @property
+    @pulumi.getter
+    def url(self) -> pulumi.Input[str]:
+        """
+        Unique identifier, also URL slug, of the dashboard
+        """
+        return pulumi.get(self, "url")
+
+    @url.setter
+    def url(self, value: pulumi.Input[str]):
+        pulumi.set(self, "url", value)
+
+    @property
+    @pulumi.getter(name="canModifies")
+    def can_modifies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        A list of users that have modify ACL access to the dashboard
+        """
+        return pulumi.get(self, "can_modifies")
+
+    @can_modifies.setter
+    def can_modifies(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "can_modifies", value)
+
+    @property
+    @pulumi.getter(name="canViews")
+    def can_views(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        A list of users that have view ACL access to the dashboard
+        """
+        return pulumi.get(self, "can_views")
+
+    @can_views.setter
+    def can_views(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "can_views", value)
+
+    @property
+    @pulumi.getter(name="displayQueryParameters")
+    def display_query_parameters(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Whether the dashboard parameters section is opened by default when the dashboard
+        is shown
+        """
+        return pulumi.get(self, "display_query_parameters")
+
+    @display_query_parameters.setter
+    def display_query_parameters(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "display_query_parameters", value)
+
+    @property
+    @pulumi.getter(name="displaySectionTableOfContents")
+    def display_section_table_of_contents(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Whether the "pills" quick-linked the sections of the dashboard are 
+        displayed by default when the dashboard is shown
+        """
+        return pulumi.get(self, "display_section_table_of_contents")
+
+    @display_section_table_of_contents.setter
+    def display_section_table_of_contents(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "display_section_table_of_contents", value)
+
+    @property
+    @pulumi.getter(name="eventFilterType")
+    def event_filter_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        How charts belonging to this dashboard should display events. BYCHART is default if 
+        unspecified; Valid options are: `BYCHART`, `AUTOMATIC`, `ALL`, `NONE`, `BYDASHBOARD`, and `BYCHARTANDDASHBOARD`
+        """
+        return pulumi.get(self, "event_filter_type")
+
+    @event_filter_type.setter
+    def event_filter_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "event_filter_type", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        Name of the dashboard
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter(name="parameterDetails")
+    def parameter_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DashboardParameterDetailArgs']]]]:
+        """
+        The current JSON representation of dashboard parameters. See parameter details
+        """
+        return pulumi.get(self, "parameter_details")
+
+    @parameter_details.setter
+    def parameter_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DashboardParameterDetailArgs']]]]):
+        pulumi.set(self, "parameter_details", value)
 
 
 class Dashboard(pulumi.CustomResource):
+    @overload
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
@@ -59,6 +245,52 @@ class Dashboard(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[str]]] tags: A set of tags to assign to this resource.
         :param pulumi.Input[str] url: Unique identifier, also URL slug, of the dashboard
         """
+        ...
+    @overload
+    def __init__(__self__,
+                 resource_name: str,
+                 args: DashboardArgs,
+                 opts: Optional[pulumi.ResourceOptions] = None):
+        """
+        Provides a Wavefront Dashboard resource.  This allows dashboards to be created, updated, and deleted.
+
+        ## Import
+
+        Dashboards can be imported using the `id`, e.g.
+
+        ```sh
+         $ pulumi import wavefront:index/dashboard:Dashboard dashboard tftestimport
+        ```
+
+        :param str resource_name: The name of the resource.
+        :param DashboardArgs args: The arguments to use to populate this resource's properties.
+        :param pulumi.ResourceOptions opts: Options for the resource.
+        """
+        ...
+    def __init__(__self__, resource_name: str, *args, **kwargs):
+        resource_args, opts = _utilities.get_resource_args_opts(DashboardArgs, pulumi.ResourceOptions, *args, **kwargs)
+        if resource_args is not None:
+            __self__._internal_init(resource_name, opts, **resource_args.__dict__)
+        else:
+            __self__._internal_init(resource_name, *args, **kwargs)
+
+    def _internal_init(__self__,
+                 resource_name: str,
+                 opts: Optional[pulumi.ResourceOptions] = None,
+                 can_modifies: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 can_views: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 description: Optional[pulumi.Input[str]] = None,
+                 display_query_parameters: Optional[pulumi.Input[bool]] = None,
+                 display_section_table_of_contents: Optional[pulumi.Input[bool]] = None,
+                 event_filter_type: Optional[pulumi.Input[str]] = None,
+                 name: Optional[pulumi.Input[str]] = None,
+                 parameter_details: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DashboardParameterDetailArgs']]]]] = None,
+                 sections: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DashboardSectionArgs']]]]] = None,
+                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 url: Optional[pulumi.Input[str]] = None,
+                 __props__=None,
+                 __name__=None,
+                 __opts__=None):
         if __name__ is not None:
             warnings.warn("explicit use of __name__ is deprecated", DeprecationWarning)
             resource_name = __name__

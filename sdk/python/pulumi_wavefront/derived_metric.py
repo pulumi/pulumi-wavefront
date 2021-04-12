@@ -5,13 +5,99 @@
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from . import _utilities, _tables
 
-__all__ = ['DerivedMetric']
+__all__ = ['DerivedMetricArgs', 'DerivedMetric']
+
+@pulumi.input_type
+class DerivedMetricArgs:
+    def __init__(__self__, *,
+                 minutes: pulumi.Input[int],
+                 query: pulumi.Input[str],
+                 additional_information: Optional[pulumi.Input[str]] = None,
+                 name: Optional[pulumi.Input[str]] = None,
+                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
+        """
+        The set of arguments for constructing a DerivedMetric resource.
+        :param pulumi.Input[int] minutes: How frequently the query generating the derived metric is run
+        :param pulumi.Input[str] query: A Wavefront query that is evaluated at regular intervals (default `1m`)
+        :param pulumi.Input[str] additional_information: User-supplied additional explanatory information for the derived metric
+        :param pulumi.Input[str] name: The name of the Derived Metric in Wavefront
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] tags: A set of tags to assign to this resource.
+        """
+        pulumi.set(__self__, "minutes", minutes)
+        pulumi.set(__self__, "query", query)
+        if additional_information is not None:
+            pulumi.set(__self__, "additional_information", additional_information)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if tags is not None:
+            pulumi.set(__self__, "tags", tags)
+
+    @property
+    @pulumi.getter
+    def minutes(self) -> pulumi.Input[int]:
+        """
+        How frequently the query generating the derived metric is run
+        """
+        return pulumi.get(self, "minutes")
+
+    @minutes.setter
+    def minutes(self, value: pulumi.Input[int]):
+        pulumi.set(self, "minutes", value)
+
+    @property
+    @pulumi.getter
+    def query(self) -> pulumi.Input[str]:
+        """
+        A Wavefront query that is evaluated at regular intervals (default `1m`)
+        """
+        return pulumi.get(self, "query")
+
+    @query.setter
+    def query(self, value: pulumi.Input[str]):
+        pulumi.set(self, "query", value)
+
+    @property
+    @pulumi.getter(name="additionalInformation")
+    def additional_information(self) -> Optional[pulumi.Input[str]]:
+        """
+        User-supplied additional explanatory information for the derived metric
+        """
+        return pulumi.get(self, "additional_information")
+
+    @additional_information.setter
+    def additional_information(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "additional_information", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        The name of the Derived Metric in Wavefront
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        A set of tags to assign to this resource.
+        """
+        return pulumi.get(self, "tags")
+
+    @tags.setter
+    def tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "tags", value)
 
 
 class DerivedMetric(pulumi.CustomResource):
+    @overload
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
@@ -54,6 +140,58 @@ class DerivedMetric(pulumi.CustomResource):
         :param pulumi.Input[str] query: A Wavefront query that is evaluated at regular intervals (default `1m`)
         :param pulumi.Input[Sequence[pulumi.Input[str]]] tags: A set of tags to assign to this resource.
         """
+        ...
+    @overload
+    def __init__(__self__,
+                 resource_name: str,
+                 args: DerivedMetricArgs,
+                 opts: Optional[pulumi.ResourceOptions] = None):
+        """
+        Provides a Wavefront Derived Metric Resource. This allows derived metrics to be created,
+        updated, and deleted.
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_wavefront as wavefront
+
+        derived = wavefront.DerivedMetric("derived",
+            minutes=5,
+            query="aliasMetric(5, \"some.metric\")")
+        ```
+
+        ## Import
+
+        Derived Metrics can be imported using the `id`, e.g.
+
+        ```sh
+         $ pulumi import wavefront:index/derivedMetric:DerivedMetric derived_metric 1577102900578
+        ```
+
+        :param str resource_name: The name of the resource.
+        :param DerivedMetricArgs args: The arguments to use to populate this resource's properties.
+        :param pulumi.ResourceOptions opts: Options for the resource.
+        """
+        ...
+    def __init__(__self__, resource_name: str, *args, **kwargs):
+        resource_args, opts = _utilities.get_resource_args_opts(DerivedMetricArgs, pulumi.ResourceOptions, *args, **kwargs)
+        if resource_args is not None:
+            __self__._internal_init(resource_name, opts, **resource_args.__dict__)
+        else:
+            __self__._internal_init(resource_name, *args, **kwargs)
+
+    def _internal_init(__self__,
+                 resource_name: str,
+                 opts: Optional[pulumi.ResourceOptions] = None,
+                 additional_information: Optional[pulumi.Input[str]] = None,
+                 minutes: Optional[pulumi.Input[int]] = None,
+                 name: Optional[pulumi.Input[str]] = None,
+                 query: Optional[pulumi.Input[str]] = None,
+                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 __props__=None,
+                 __name__=None,
+                 __opts__=None):
         if __name__ is not None:
             warnings.warn("explicit use of __name__ is deprecated", DeprecationWarning)
             resource_name = __name__
