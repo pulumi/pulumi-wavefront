@@ -5,13 +5,293 @@
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from . import _utilities, _tables
 
-__all__ = ['CloudIntegrationAppDynamics']
+__all__ = ['CloudIntegrationAppDynamicsArgs', 'CloudIntegrationAppDynamics']
+
+@pulumi.input_type
+class CloudIntegrationAppDynamicsArgs:
+    def __init__(__self__, *,
+                 controller_name: pulumi.Input[str],
+                 encrypted_password: pulumi.Input[str],
+                 service: pulumi.Input[str],
+                 user_name: pulumi.Input[str],
+                 additional_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 app_filter_regexes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 enable_app_infra_metrics: Optional[pulumi.Input[bool]] = None,
+                 enable_backend_metrics: Optional[pulumi.Input[bool]] = None,
+                 enable_business_trx_metrics: Optional[pulumi.Input[bool]] = None,
+                 enable_error_metrics: Optional[pulumi.Input[bool]] = None,
+                 enable_individual_node_metrics: Optional[pulumi.Input[bool]] = None,
+                 enable_overall_perf_metrics: Optional[pulumi.Input[bool]] = None,
+                 enable_rollup: Optional[pulumi.Input[bool]] = None,
+                 enable_service_endpoint_metrics: Optional[pulumi.Input[bool]] = None,
+                 force_save: Optional[pulumi.Input[bool]] = None,
+                 name: Optional[pulumi.Input[str]] = None,
+                 service_refresh_rate_in_minutes: Optional[pulumi.Input[int]] = None):
+        """
+        The set of arguments for constructing a CloudIntegrationAppDynamics resource.
+        :param pulumi.Input[str] controller_name: Name of the SaaS controller
+        :param pulumi.Input[str] encrypted_password: Password for AppDynamics user
+        :param pulumi.Input[str] service: A value denoting which cloud service this service integrates with
+        :param pulumi.Input[str] user_name: Username is a combination of userName and the account name
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] additional_tags: A list of point tag key-values to add to every point ingested using this integration
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] app_filter_regexes: List of regular expressions that a application name must match (case-insensitively) 
+               in order to be ingested
+        :param pulumi.Input[bool] enable_app_infra_metrics: Boolean flag to control Application Infrastructure metric injection
+        :param pulumi.Input[bool] enable_backend_metrics: Boolean flag to control Backend metric injection
+        :param pulumi.Input[bool] enable_business_trx_metrics: Boolean flag to control Business Transaction metric injection
+        :param pulumi.Input[bool] enable_error_metrics: Boolean flag to control Error metric injection
+        :param pulumi.Input[bool] enable_individual_node_metrics: Boolean flag to control Individual Node metric injection
+        :param pulumi.Input[bool] enable_overall_perf_metrics: Boolean flag to control Overall Performance metric injection
+        :param pulumi.Input[bool] enable_rollup: Set this to `false` to get separate results for all values within the time range, 
+               by default it is `true`
+        :param pulumi.Input[bool] enable_service_endpoint_metrics: Boolean flag to control Service End point metric injection
+        :param pulumi.Input[bool] force_save: Forces this resource to save, even if errors are present
+        :param pulumi.Input[str] name: The human-readable name of this integration
+        :param pulumi.Input[int] service_refresh_rate_in_minutes: How often, in minutes, to refresh the service
+        """
+        pulumi.set(__self__, "controller_name", controller_name)
+        pulumi.set(__self__, "encrypted_password", encrypted_password)
+        pulumi.set(__self__, "service", service)
+        pulumi.set(__self__, "user_name", user_name)
+        if additional_tags is not None:
+            pulumi.set(__self__, "additional_tags", additional_tags)
+        if app_filter_regexes is not None:
+            pulumi.set(__self__, "app_filter_regexes", app_filter_regexes)
+        if enable_app_infra_metrics is not None:
+            pulumi.set(__self__, "enable_app_infra_metrics", enable_app_infra_metrics)
+        if enable_backend_metrics is not None:
+            pulumi.set(__self__, "enable_backend_metrics", enable_backend_metrics)
+        if enable_business_trx_metrics is not None:
+            pulumi.set(__self__, "enable_business_trx_metrics", enable_business_trx_metrics)
+        if enable_error_metrics is not None:
+            pulumi.set(__self__, "enable_error_metrics", enable_error_metrics)
+        if enable_individual_node_metrics is not None:
+            pulumi.set(__self__, "enable_individual_node_metrics", enable_individual_node_metrics)
+        if enable_overall_perf_metrics is not None:
+            pulumi.set(__self__, "enable_overall_perf_metrics", enable_overall_perf_metrics)
+        if enable_rollup is not None:
+            pulumi.set(__self__, "enable_rollup", enable_rollup)
+        if enable_service_endpoint_metrics is not None:
+            pulumi.set(__self__, "enable_service_endpoint_metrics", enable_service_endpoint_metrics)
+        if force_save is not None:
+            pulumi.set(__self__, "force_save", force_save)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if service_refresh_rate_in_minutes is not None:
+            pulumi.set(__self__, "service_refresh_rate_in_minutes", service_refresh_rate_in_minutes)
+
+    @property
+    @pulumi.getter(name="controllerName")
+    def controller_name(self) -> pulumi.Input[str]:
+        """
+        Name of the SaaS controller
+        """
+        return pulumi.get(self, "controller_name")
+
+    @controller_name.setter
+    def controller_name(self, value: pulumi.Input[str]):
+        pulumi.set(self, "controller_name", value)
+
+    @property
+    @pulumi.getter(name="encryptedPassword")
+    def encrypted_password(self) -> pulumi.Input[str]:
+        """
+        Password for AppDynamics user
+        """
+        return pulumi.get(self, "encrypted_password")
+
+    @encrypted_password.setter
+    def encrypted_password(self, value: pulumi.Input[str]):
+        pulumi.set(self, "encrypted_password", value)
+
+    @property
+    @pulumi.getter
+    def service(self) -> pulumi.Input[str]:
+        """
+        A value denoting which cloud service this service integrates with
+        """
+        return pulumi.get(self, "service")
+
+    @service.setter
+    def service(self, value: pulumi.Input[str]):
+        pulumi.set(self, "service", value)
+
+    @property
+    @pulumi.getter(name="userName")
+    def user_name(self) -> pulumi.Input[str]:
+        """
+        Username is a combination of userName and the account name
+        """
+        return pulumi.get(self, "user_name")
+
+    @user_name.setter
+    def user_name(self, value: pulumi.Input[str]):
+        pulumi.set(self, "user_name", value)
+
+    @property
+    @pulumi.getter(name="additionalTags")
+    def additional_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
+        """
+        A list of point tag key-values to add to every point ingested using this integration
+        """
+        return pulumi.get(self, "additional_tags")
+
+    @additional_tags.setter
+    def additional_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
+        pulumi.set(self, "additional_tags", value)
+
+    @property
+    @pulumi.getter(name="appFilterRegexes")
+    def app_filter_regexes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        List of regular expressions that a application name must match (case-insensitively) 
+        in order to be ingested
+        """
+        return pulumi.get(self, "app_filter_regexes")
+
+    @app_filter_regexes.setter
+    def app_filter_regexes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "app_filter_regexes", value)
+
+    @property
+    @pulumi.getter(name="enableAppInfraMetrics")
+    def enable_app_infra_metrics(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Boolean flag to control Application Infrastructure metric injection
+        """
+        return pulumi.get(self, "enable_app_infra_metrics")
+
+    @enable_app_infra_metrics.setter
+    def enable_app_infra_metrics(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "enable_app_infra_metrics", value)
+
+    @property
+    @pulumi.getter(name="enableBackendMetrics")
+    def enable_backend_metrics(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Boolean flag to control Backend metric injection
+        """
+        return pulumi.get(self, "enable_backend_metrics")
+
+    @enable_backend_metrics.setter
+    def enable_backend_metrics(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "enable_backend_metrics", value)
+
+    @property
+    @pulumi.getter(name="enableBusinessTrxMetrics")
+    def enable_business_trx_metrics(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Boolean flag to control Business Transaction metric injection
+        """
+        return pulumi.get(self, "enable_business_trx_metrics")
+
+    @enable_business_trx_metrics.setter
+    def enable_business_trx_metrics(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "enable_business_trx_metrics", value)
+
+    @property
+    @pulumi.getter(name="enableErrorMetrics")
+    def enable_error_metrics(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Boolean flag to control Error metric injection
+        """
+        return pulumi.get(self, "enable_error_metrics")
+
+    @enable_error_metrics.setter
+    def enable_error_metrics(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "enable_error_metrics", value)
+
+    @property
+    @pulumi.getter(name="enableIndividualNodeMetrics")
+    def enable_individual_node_metrics(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Boolean flag to control Individual Node metric injection
+        """
+        return pulumi.get(self, "enable_individual_node_metrics")
+
+    @enable_individual_node_metrics.setter
+    def enable_individual_node_metrics(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "enable_individual_node_metrics", value)
+
+    @property
+    @pulumi.getter(name="enableOverallPerfMetrics")
+    def enable_overall_perf_metrics(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Boolean flag to control Overall Performance metric injection
+        """
+        return pulumi.get(self, "enable_overall_perf_metrics")
+
+    @enable_overall_perf_metrics.setter
+    def enable_overall_perf_metrics(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "enable_overall_perf_metrics", value)
+
+    @property
+    @pulumi.getter(name="enableRollup")
+    def enable_rollup(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Set this to `false` to get separate results for all values within the time range, 
+        by default it is `true`
+        """
+        return pulumi.get(self, "enable_rollup")
+
+    @enable_rollup.setter
+    def enable_rollup(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "enable_rollup", value)
+
+    @property
+    @pulumi.getter(name="enableServiceEndpointMetrics")
+    def enable_service_endpoint_metrics(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Boolean flag to control Service End point metric injection
+        """
+        return pulumi.get(self, "enable_service_endpoint_metrics")
+
+    @enable_service_endpoint_metrics.setter
+    def enable_service_endpoint_metrics(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "enable_service_endpoint_metrics", value)
+
+    @property
+    @pulumi.getter(name="forceSave")
+    def force_save(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Forces this resource to save, even if errors are present
+        """
+        return pulumi.get(self, "force_save")
+
+    @force_save.setter
+    def force_save(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "force_save", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        The human-readable name of this integration
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter(name="serviceRefreshRateInMinutes")
+    def service_refresh_rate_in_minutes(self) -> Optional[pulumi.Input[int]]:
+        """
+        How often, in minutes, to refresh the service
+        """
+        return pulumi.get(self, "service_refresh_rate_in_minutes")
+
+    @service_refresh_rate_in_minutes.setter
+    def service_refresh_rate_in_minutes(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "service_refresh_rate_in_minutes", value)
 
 
 class CloudIntegrationAppDynamics(pulumi.CustomResource):
+    @overload
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
@@ -81,6 +361,71 @@ class CloudIntegrationAppDynamics(pulumi.CustomResource):
         :param pulumi.Input[int] service_refresh_rate_in_minutes: How often, in minutes, to refresh the service
         :param pulumi.Input[str] user_name: Username is a combination of userName and the account name
         """
+        ...
+    @overload
+    def __init__(__self__,
+                 resource_name: str,
+                 args: CloudIntegrationAppDynamicsArgs,
+                 opts: Optional[pulumi.ResourceOptions] = None):
+        """
+        Provides a Wavefront Cloud Integration for App Dynamics. This allows app dynamics cloud integrations to be created,
+        updated, and deleted.
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_wavefront as wavefront
+
+        app_dynamics = wavefront.CloudIntegrationAppDynamics("appDynamics",
+            controller_name="exampleController",
+            encrypted_password="encryptedPassword",
+            user_name="example")
+        ```
+
+        ## Import
+
+        App Dynamic Cloud Integrations can be imported using the `id`, e.g.
+
+        ```sh
+         $ pulumi import wavefront:index/cloudIntegrationAppDynamics:CloudIntegrationAppDynamics app_dynamics a411c16b-3cf7-4f03-bf11-8ca05aab898d
+        ```
+
+        :param str resource_name: The name of the resource.
+        :param CloudIntegrationAppDynamicsArgs args: The arguments to use to populate this resource's properties.
+        :param pulumi.ResourceOptions opts: Options for the resource.
+        """
+        ...
+    def __init__(__self__, resource_name: str, *args, **kwargs):
+        resource_args, opts = _utilities.get_resource_args_opts(CloudIntegrationAppDynamicsArgs, pulumi.ResourceOptions, *args, **kwargs)
+        if resource_args is not None:
+            __self__._internal_init(resource_name, opts, **resource_args.__dict__)
+        else:
+            __self__._internal_init(resource_name, *args, **kwargs)
+
+    def _internal_init(__self__,
+                 resource_name: str,
+                 opts: Optional[pulumi.ResourceOptions] = None,
+                 additional_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 app_filter_regexes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 controller_name: Optional[pulumi.Input[str]] = None,
+                 enable_app_infra_metrics: Optional[pulumi.Input[bool]] = None,
+                 enable_backend_metrics: Optional[pulumi.Input[bool]] = None,
+                 enable_business_trx_metrics: Optional[pulumi.Input[bool]] = None,
+                 enable_error_metrics: Optional[pulumi.Input[bool]] = None,
+                 enable_individual_node_metrics: Optional[pulumi.Input[bool]] = None,
+                 enable_overall_perf_metrics: Optional[pulumi.Input[bool]] = None,
+                 enable_rollup: Optional[pulumi.Input[bool]] = None,
+                 enable_service_endpoint_metrics: Optional[pulumi.Input[bool]] = None,
+                 encrypted_password: Optional[pulumi.Input[str]] = None,
+                 force_save: Optional[pulumi.Input[bool]] = None,
+                 name: Optional[pulumi.Input[str]] = None,
+                 service: Optional[pulumi.Input[str]] = None,
+                 service_refresh_rate_in_minutes: Optional[pulumi.Input[int]] = None,
+                 user_name: Optional[pulumi.Input[str]] = None,
+                 __props__=None,
+                 __name__=None,
+                 __opts__=None):
         if __name__ is not None:
             warnings.warn("explicit use of __name__ is deprecated", DeprecationWarning)
             resource_name = __name__

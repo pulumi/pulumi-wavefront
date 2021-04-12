@@ -5,13 +5,22 @@
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from . import _utilities, _tables
 
-__all__ = ['CloudIntegrationAwsExternalId']
+__all__ = ['CloudIntegrationAwsExternalIdArgs', 'CloudIntegrationAwsExternalId']
+
+@pulumi.input_type
+class CloudIntegrationAwsExternalIdArgs:
+    def __init__(__self__):
+        """
+        The set of arguments for constructing a CloudIntegrationAwsExternalId resource.
+        """
+        pass
 
 
 class CloudIntegrationAwsExternalId(pulumi.CustomResource):
+    @overload
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
@@ -41,6 +50,50 @@ class CloudIntegrationAwsExternalId(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         """
+        ...
+    @overload
+    def __init__(__self__,
+                 resource_name: str,
+                 args: Optional[CloudIntegrationAwsExternalIdArgs] = None,
+                 opts: Optional[pulumi.ResourceOptions] = None):
+        """
+        Provides an External ID for use in AWS IAM Roles.  This allows External IDs to be created and deleted.
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_wavefront as wavefront
+
+        external_id = wavefront.CloudIntegrationAwsExternalId("externalId")
+        ```
+
+        ## Import
+
+        External IDs can be imported using the `id`, e.g.
+
+        ```sh
+         $ pulumi import wavefront:index/cloudIntegrationAwsExternalId:CloudIntegrationAwsExternalId external_id uGJdkH3k
+        ```
+
+        :param str resource_name: The name of the resource.
+        :param CloudIntegrationAwsExternalIdArgs args: The arguments to use to populate this resource's properties.
+        :param pulumi.ResourceOptions opts: Options for the resource.
+        """
+        ...
+    def __init__(__self__, resource_name: str, *args, **kwargs):
+        resource_args, opts = _utilities.get_resource_args_opts(CloudIntegrationAwsExternalIdArgs, pulumi.ResourceOptions, *args, **kwargs)
+        if resource_args is not None:
+            __self__._internal_init(resource_name, opts, **resource_args.__dict__)
+        else:
+            __self__._internal_init(resource_name, *args, **kwargs)
+
+    def _internal_init(__self__,
+                 resource_name: str,
+                 opts: Optional[pulumi.ResourceOptions] = None,
+                 __props__=None,
+                 __name__=None,
+                 __opts__=None):
         if __name__ is not None:
             warnings.warn("explicit use of __name__ is deprecated", DeprecationWarning)
             resource_name = __name__
