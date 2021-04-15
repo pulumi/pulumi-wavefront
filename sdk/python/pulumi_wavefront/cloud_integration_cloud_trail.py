@@ -6,7 +6,7 @@ import warnings
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
-from . import _utilities, _tables
+from . import _utilities
 
 __all__ = ['CloudIntegrationCloudTrailArgs', 'CloudIntegrationCloudTrail']
 
@@ -189,6 +189,190 @@ class CloudIntegrationCloudTrailArgs:
         pulumi.set(self, "service_refresh_rate_in_minutes", value)
 
 
+@pulumi.input_type
+class _CloudIntegrationCloudTrailState:
+    def __init__(__self__, *,
+                 additional_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 bucket_name: Optional[pulumi.Input[str]] = None,
+                 external_id: Optional[pulumi.Input[str]] = None,
+                 filter_rule: Optional[pulumi.Input[str]] = None,
+                 force_save: Optional[pulumi.Input[bool]] = None,
+                 name: Optional[pulumi.Input[str]] = None,
+                 prefix: Optional[pulumi.Input[str]] = None,
+                 region: Optional[pulumi.Input[str]] = None,
+                 role_arn: Optional[pulumi.Input[str]] = None,
+                 service: Optional[pulumi.Input[str]] = None,
+                 service_refresh_rate_in_minutes: Optional[pulumi.Input[int]] = None):
+        """
+        Input properties used for looking up and filtering CloudIntegrationCloudTrail resources.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] additional_tags: A list of point tag key-values to add to every point ingested using this integration
+        :param pulumi.Input[str] bucket_name: Name of the S3 bucket where CloudTrail logs are stored
+        :param pulumi.Input[str] external_id: The Role ARN that the customer has created in AWS IAM to allow access to Wavefront
+        :param pulumi.Input[str] filter_rule: Rule to filter CloudTrail log event
+        :param pulumi.Input[bool] force_save: Forces this resource to save, even if errors are present
+        :param pulumi.Input[str] name: The human-readable name of this integration
+        :param pulumi.Input[str] prefix: The common prefix, if any, appended to all CloudTrail log files.
+        :param pulumi.Input[str] region: The AWS region of the S3 bucket where CloudTrail logs are stored
+        :param pulumi.Input[str] role_arn: The external id corresponding to the Role ARN
+        :param pulumi.Input[str] service: A value denoting which cloud service this service integrates with
+        :param pulumi.Input[int] service_refresh_rate_in_minutes: How often, in minutes, to refresh the service
+        """
+        if additional_tags is not None:
+            pulumi.set(__self__, "additional_tags", additional_tags)
+        if bucket_name is not None:
+            pulumi.set(__self__, "bucket_name", bucket_name)
+        if external_id is not None:
+            pulumi.set(__self__, "external_id", external_id)
+        if filter_rule is not None:
+            pulumi.set(__self__, "filter_rule", filter_rule)
+        if force_save is not None:
+            pulumi.set(__self__, "force_save", force_save)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if prefix is not None:
+            pulumi.set(__self__, "prefix", prefix)
+        if region is not None:
+            pulumi.set(__self__, "region", region)
+        if role_arn is not None:
+            pulumi.set(__self__, "role_arn", role_arn)
+        if service is not None:
+            pulumi.set(__self__, "service", service)
+        if service_refresh_rate_in_minutes is not None:
+            pulumi.set(__self__, "service_refresh_rate_in_minutes", service_refresh_rate_in_minutes)
+
+    @property
+    @pulumi.getter(name="additionalTags")
+    def additional_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
+        """
+        A list of point tag key-values to add to every point ingested using this integration
+        """
+        return pulumi.get(self, "additional_tags")
+
+    @additional_tags.setter
+    def additional_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
+        pulumi.set(self, "additional_tags", value)
+
+    @property
+    @pulumi.getter(name="bucketName")
+    def bucket_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        Name of the S3 bucket where CloudTrail logs are stored
+        """
+        return pulumi.get(self, "bucket_name")
+
+    @bucket_name.setter
+    def bucket_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "bucket_name", value)
+
+    @property
+    @pulumi.getter(name="externalId")
+    def external_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The Role ARN that the customer has created in AWS IAM to allow access to Wavefront
+        """
+        return pulumi.get(self, "external_id")
+
+    @external_id.setter
+    def external_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "external_id", value)
+
+    @property
+    @pulumi.getter(name="filterRule")
+    def filter_rule(self) -> Optional[pulumi.Input[str]]:
+        """
+        Rule to filter CloudTrail log event
+        """
+        return pulumi.get(self, "filter_rule")
+
+    @filter_rule.setter
+    def filter_rule(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "filter_rule", value)
+
+    @property
+    @pulumi.getter(name="forceSave")
+    def force_save(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Forces this resource to save, even if errors are present
+        """
+        return pulumi.get(self, "force_save")
+
+    @force_save.setter
+    def force_save(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "force_save", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        The human-readable name of this integration
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def prefix(self) -> Optional[pulumi.Input[str]]:
+        """
+        The common prefix, if any, appended to all CloudTrail log files.
+        """
+        return pulumi.get(self, "prefix")
+
+    @prefix.setter
+    def prefix(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "prefix", value)
+
+    @property
+    @pulumi.getter
+    def region(self) -> Optional[pulumi.Input[str]]:
+        """
+        The AWS region of the S3 bucket where CloudTrail logs are stored
+        """
+        return pulumi.get(self, "region")
+
+    @region.setter
+    def region(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "region", value)
+
+    @property
+    @pulumi.getter(name="roleArn")
+    def role_arn(self) -> Optional[pulumi.Input[str]]:
+        """
+        The external id corresponding to the Role ARN
+        """
+        return pulumi.get(self, "role_arn")
+
+    @role_arn.setter
+    def role_arn(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "role_arn", value)
+
+    @property
+    @pulumi.getter
+    def service(self) -> Optional[pulumi.Input[str]]:
+        """
+        A value denoting which cloud service this service integrates with
+        """
+        return pulumi.get(self, "service")
+
+    @service.setter
+    def service(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "service", value)
+
+    @property
+    @pulumi.getter(name="serviceRefreshRateInMinutes")
+    def service_refresh_rate_in_minutes(self) -> Optional[pulumi.Input[int]]:
+        """
+        How often, in minutes, to refresh the service
+        """
+        return pulumi.get(self, "service_refresh_rate_in_minutes")
+
+    @service_refresh_rate_in_minutes.setter
+    def service_refresh_rate_in_minutes(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "service_refresh_rate_in_minutes", value)
+
+
 class CloudIntegrationCloudTrail(pulumi.CustomResource):
     @overload
     def __init__(__self__,
@@ -324,29 +508,29 @@ class CloudIntegrationCloudTrail(pulumi.CustomResource):
         if opts.id is None:
             if __props__ is not None:
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
-            __props__ = dict()
+            __props__ = CloudIntegrationCloudTrailArgs.__new__(CloudIntegrationCloudTrailArgs)
 
-            __props__['additional_tags'] = additional_tags
+            __props__.__dict__["additional_tags"] = additional_tags
             if bucket_name is None and not opts.urn:
                 raise TypeError("Missing required property 'bucket_name'")
-            __props__['bucket_name'] = bucket_name
+            __props__.__dict__["bucket_name"] = bucket_name
             if external_id is None and not opts.urn:
                 raise TypeError("Missing required property 'external_id'")
-            __props__['external_id'] = external_id
-            __props__['filter_rule'] = filter_rule
-            __props__['force_save'] = force_save
-            __props__['name'] = name
-            __props__['prefix'] = prefix
+            __props__.__dict__["external_id"] = external_id
+            __props__.__dict__["filter_rule"] = filter_rule
+            __props__.__dict__["force_save"] = force_save
+            __props__.__dict__["name"] = name
+            __props__.__dict__["prefix"] = prefix
             if region is None and not opts.urn:
                 raise TypeError("Missing required property 'region'")
-            __props__['region'] = region
+            __props__.__dict__["region"] = region
             if role_arn is None and not opts.urn:
                 raise TypeError("Missing required property 'role_arn'")
-            __props__['role_arn'] = role_arn
+            __props__.__dict__["role_arn"] = role_arn
             if service is None and not opts.urn:
                 raise TypeError("Missing required property 'service'")
-            __props__['service'] = service
-            __props__['service_refresh_rate_in_minutes'] = service_refresh_rate_in_minutes
+            __props__.__dict__["service"] = service
+            __props__.__dict__["service_refresh_rate_in_minutes"] = service_refresh_rate_in_minutes
         super(CloudIntegrationCloudTrail, __self__).__init__(
             'wavefront:index/cloudIntegrationCloudTrail:CloudIntegrationCloudTrail',
             resource_name,
@@ -389,19 +573,19 @@ class CloudIntegrationCloudTrail(pulumi.CustomResource):
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
-        __props__ = dict()
+        __props__ = _CloudIntegrationCloudTrailState.__new__(_CloudIntegrationCloudTrailState)
 
-        __props__["additional_tags"] = additional_tags
-        __props__["bucket_name"] = bucket_name
-        __props__["external_id"] = external_id
-        __props__["filter_rule"] = filter_rule
-        __props__["force_save"] = force_save
-        __props__["name"] = name
-        __props__["prefix"] = prefix
-        __props__["region"] = region
-        __props__["role_arn"] = role_arn
-        __props__["service"] = service
-        __props__["service_refresh_rate_in_minutes"] = service_refresh_rate_in_minutes
+        __props__.__dict__["additional_tags"] = additional_tags
+        __props__.__dict__["bucket_name"] = bucket_name
+        __props__.__dict__["external_id"] = external_id
+        __props__.__dict__["filter_rule"] = filter_rule
+        __props__.__dict__["force_save"] = force_save
+        __props__.__dict__["name"] = name
+        __props__.__dict__["prefix"] = prefix
+        __props__.__dict__["region"] = region
+        __props__.__dict__["role_arn"] = role_arn
+        __props__.__dict__["service"] = service
+        __props__.__dict__["service_refresh_rate_in_minutes"] = service_refresh_rate_in_minutes
         return CloudIntegrationCloudTrail(resource_name, opts=opts, __props__=__props__)
 
     @property
@@ -491,10 +675,4 @@ class CloudIntegrationCloudTrail(pulumi.CustomResource):
         How often, in minutes, to refresh the service
         """
         return pulumi.get(self, "service_refresh_rate_in_minutes")
-
-    def translate_output_property(self, prop):
-        return _tables.CAMEL_TO_SNAKE_CASE_TABLE.get(prop) or prop
-
-    def translate_input_property(self, prop):
-        return _tables.SNAKE_TO_CAMEL_CASE_TABLE.get(prop) or prop
 

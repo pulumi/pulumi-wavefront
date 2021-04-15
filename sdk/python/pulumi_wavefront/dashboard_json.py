@@ -6,7 +6,7 @@ import warnings
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
-from . import _utilities, _tables
+from . import _utilities
 
 __all__ = ['DashboardJsonArgs', 'DashboardJson']
 
@@ -32,6 +32,32 @@ class DashboardJsonArgs:
 
     @dashboard_json.setter
     def dashboard_json(self, value: pulumi.Input[str]):
+        pulumi.set(self, "dashboard_json", value)
+
+
+@pulumi.input_type
+class _DashboardJsonState:
+    def __init__(__self__, *,
+                 dashboard_json: Optional[pulumi.Input[str]] = None):
+        """
+        Input properties used for looking up and filtering DashboardJson resources.
+        :param pulumi.Input[str] dashboard_json: See [Wavefront API Documentation](https://docs.wavefront.com/wavefront_api.html#api-documentation-wavefront-instance) 
+               for instructions on how to get to your API documentation for more details.
+        """
+        if dashboard_json is not None:
+            pulumi.set(__self__, "dashboard_json", dashboard_json)
+
+    @property
+    @pulumi.getter(name="dashboardJson")
+    def dashboard_json(self) -> Optional[pulumi.Input[str]]:
+        """
+        See [Wavefront API Documentation](https://docs.wavefront.com/wavefront_api.html#api-documentation-wavefront-instance) 
+        for instructions on how to get to your API documentation for more details.
+        """
+        return pulumi.get(self, "dashboard_json")
+
+    @dashboard_json.setter
+    def dashboard_json(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "dashboard_json", value)
 
 
@@ -325,11 +351,11 @@ class DashboardJson(pulumi.CustomResource):
         if opts.id is None:
             if __props__ is not None:
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
-            __props__ = dict()
+            __props__ = DashboardJsonArgs.__new__(DashboardJsonArgs)
 
             if dashboard_json is None and not opts.urn:
                 raise TypeError("Missing required property 'dashboard_json'")
-            __props__['dashboard_json'] = dashboard_json
+            __props__.__dict__["dashboard_json"] = dashboard_json
         super(DashboardJson, __self__).__init__(
             'wavefront:index/dashboardJson:DashboardJson',
             resource_name,
@@ -353,9 +379,9 @@ class DashboardJson(pulumi.CustomResource):
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
-        __props__ = dict()
+        __props__ = _DashboardJsonState.__new__(_DashboardJsonState)
 
-        __props__["dashboard_json"] = dashboard_json
+        __props__.__dict__["dashboard_json"] = dashboard_json
         return DashboardJson(resource_name, opts=opts, __props__=__props__)
 
     @property
@@ -366,10 +392,4 @@ class DashboardJson(pulumi.CustomResource):
         for instructions on how to get to your API documentation for more details.
         """
         return pulumi.get(self, "dashboard_json")
-
-    def translate_output_property(self, prop):
-        return _tables.CAMEL_TO_SNAKE_CASE_TABLE.get(prop) or prop
-
-    def translate_input_property(self, prop):
-        return _tables.SNAKE_TO_CAMEL_CASE_TABLE.get(prop) or prop
 

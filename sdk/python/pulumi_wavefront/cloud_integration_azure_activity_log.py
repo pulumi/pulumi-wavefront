@@ -6,7 +6,7 @@ import warnings
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
-from . import _utilities, _tables
+from . import _utilities
 
 __all__ = ['CloudIntegrationAzureActivityLogArgs', 'CloudIntegrationAzureActivityLog']
 
@@ -158,6 +158,158 @@ class CloudIntegrationAzureActivityLogArgs:
         pulumi.set(self, "service_refresh_rate_in_minutes", value)
 
 
+@pulumi.input_type
+class _CloudIntegrationAzureActivityLogState:
+    def __init__(__self__, *,
+                 additional_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 category_filters: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 client_id: Optional[pulumi.Input[str]] = None,
+                 client_secret: Optional[pulumi.Input[str]] = None,
+                 force_save: Optional[pulumi.Input[bool]] = None,
+                 name: Optional[pulumi.Input[str]] = None,
+                 service: Optional[pulumi.Input[str]] = None,
+                 service_refresh_rate_in_minutes: Optional[pulumi.Input[int]] = None,
+                 tenant: Optional[pulumi.Input[str]] = None):
+        """
+        Input properties used for looking up and filtering CloudIntegrationAzureActivityLog resources.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] additional_tags: A list of point tag key-values to add to every point ingested using this integration
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] category_filters: A list of Azure services (such as Microsoft.Compute/virtualMachines) from which to pull metrics
+        :param pulumi.Input[str] client_id: Client id for an azure service account within your project
+        :param pulumi.Input[str] client_secret: Client secret for an Azure service account within your project
+        :param pulumi.Input[bool] force_save: Forces this resource to save, even if errors are present
+        :param pulumi.Input[str] name: The human-readable name of this integration
+        :param pulumi.Input[str] service: A value denoting which cloud service this service integrates with
+        :param pulumi.Input[int] service_refresh_rate_in_minutes: How often, in minutes, to refresh the service
+        :param pulumi.Input[str] tenant: Tenant Id for an Azure service account within your project
+        """
+        if additional_tags is not None:
+            pulumi.set(__self__, "additional_tags", additional_tags)
+        if category_filters is not None:
+            pulumi.set(__self__, "category_filters", category_filters)
+        if client_id is not None:
+            pulumi.set(__self__, "client_id", client_id)
+        if client_secret is not None:
+            pulumi.set(__self__, "client_secret", client_secret)
+        if force_save is not None:
+            pulumi.set(__self__, "force_save", force_save)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if service is not None:
+            pulumi.set(__self__, "service", service)
+        if service_refresh_rate_in_minutes is not None:
+            pulumi.set(__self__, "service_refresh_rate_in_minutes", service_refresh_rate_in_minutes)
+        if tenant is not None:
+            pulumi.set(__self__, "tenant", tenant)
+
+    @property
+    @pulumi.getter(name="additionalTags")
+    def additional_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
+        """
+        A list of point tag key-values to add to every point ingested using this integration
+        """
+        return pulumi.get(self, "additional_tags")
+
+    @additional_tags.setter
+    def additional_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
+        pulumi.set(self, "additional_tags", value)
+
+    @property
+    @pulumi.getter(name="categoryFilters")
+    def category_filters(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        A list of Azure services (such as Microsoft.Compute/virtualMachines) from which to pull metrics
+        """
+        return pulumi.get(self, "category_filters")
+
+    @category_filters.setter
+    def category_filters(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "category_filters", value)
+
+    @property
+    @pulumi.getter(name="clientId")
+    def client_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        Client id for an azure service account within your project
+        """
+        return pulumi.get(self, "client_id")
+
+    @client_id.setter
+    def client_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "client_id", value)
+
+    @property
+    @pulumi.getter(name="clientSecret")
+    def client_secret(self) -> Optional[pulumi.Input[str]]:
+        """
+        Client secret for an Azure service account within your project
+        """
+        return pulumi.get(self, "client_secret")
+
+    @client_secret.setter
+    def client_secret(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "client_secret", value)
+
+    @property
+    @pulumi.getter(name="forceSave")
+    def force_save(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Forces this resource to save, even if errors are present
+        """
+        return pulumi.get(self, "force_save")
+
+    @force_save.setter
+    def force_save(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "force_save", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        The human-readable name of this integration
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def service(self) -> Optional[pulumi.Input[str]]:
+        """
+        A value denoting which cloud service this service integrates with
+        """
+        return pulumi.get(self, "service")
+
+    @service.setter
+    def service(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "service", value)
+
+    @property
+    @pulumi.getter(name="serviceRefreshRateInMinutes")
+    def service_refresh_rate_in_minutes(self) -> Optional[pulumi.Input[int]]:
+        """
+        How often, in minutes, to refresh the service
+        """
+        return pulumi.get(self, "service_refresh_rate_in_minutes")
+
+    @service_refresh_rate_in_minutes.setter
+    def service_refresh_rate_in_minutes(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "service_refresh_rate_in_minutes", value)
+
+    @property
+    @pulumi.getter
+    def tenant(self) -> Optional[pulumi.Input[str]]:
+        """
+        Tenant Id for an Azure service account within your project
+        """
+        return pulumi.get(self, "tenant")
+
+    @tenant.setter
+    def tenant(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "tenant", value)
+
+
 class CloudIntegrationAzureActivityLog(pulumi.CustomResource):
     @overload
     def __init__(__self__,
@@ -285,25 +437,25 @@ class CloudIntegrationAzureActivityLog(pulumi.CustomResource):
         if opts.id is None:
             if __props__ is not None:
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
-            __props__ = dict()
+            __props__ = CloudIntegrationAzureActivityLogArgs.__new__(CloudIntegrationAzureActivityLogArgs)
 
-            __props__['additional_tags'] = additional_tags
-            __props__['category_filters'] = category_filters
+            __props__.__dict__["additional_tags"] = additional_tags
+            __props__.__dict__["category_filters"] = category_filters
             if client_id is None and not opts.urn:
                 raise TypeError("Missing required property 'client_id'")
-            __props__['client_id'] = client_id
+            __props__.__dict__["client_id"] = client_id
             if client_secret is None and not opts.urn:
                 raise TypeError("Missing required property 'client_secret'")
-            __props__['client_secret'] = client_secret
-            __props__['force_save'] = force_save
-            __props__['name'] = name
+            __props__.__dict__["client_secret"] = client_secret
+            __props__.__dict__["force_save"] = force_save
+            __props__.__dict__["name"] = name
             if service is None and not opts.urn:
                 raise TypeError("Missing required property 'service'")
-            __props__['service'] = service
-            __props__['service_refresh_rate_in_minutes'] = service_refresh_rate_in_minutes
+            __props__.__dict__["service"] = service
+            __props__.__dict__["service_refresh_rate_in_minutes"] = service_refresh_rate_in_minutes
             if tenant is None and not opts.urn:
                 raise TypeError("Missing required property 'tenant'")
-            __props__['tenant'] = tenant
+            __props__.__dict__["tenant"] = tenant
         super(CloudIntegrationAzureActivityLog, __self__).__init__(
             'wavefront:index/cloudIntegrationAzureActivityLog:CloudIntegrationAzureActivityLog',
             resource_name,
@@ -342,17 +494,17 @@ class CloudIntegrationAzureActivityLog(pulumi.CustomResource):
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
-        __props__ = dict()
+        __props__ = _CloudIntegrationAzureActivityLogState.__new__(_CloudIntegrationAzureActivityLogState)
 
-        __props__["additional_tags"] = additional_tags
-        __props__["category_filters"] = category_filters
-        __props__["client_id"] = client_id
-        __props__["client_secret"] = client_secret
-        __props__["force_save"] = force_save
-        __props__["name"] = name
-        __props__["service"] = service
-        __props__["service_refresh_rate_in_minutes"] = service_refresh_rate_in_minutes
-        __props__["tenant"] = tenant
+        __props__.__dict__["additional_tags"] = additional_tags
+        __props__.__dict__["category_filters"] = category_filters
+        __props__.__dict__["client_id"] = client_id
+        __props__.__dict__["client_secret"] = client_secret
+        __props__.__dict__["force_save"] = force_save
+        __props__.__dict__["name"] = name
+        __props__.__dict__["service"] = service
+        __props__.__dict__["service_refresh_rate_in_minutes"] = service_refresh_rate_in_minutes
+        __props__.__dict__["tenant"] = tenant
         return CloudIntegrationAzureActivityLog(resource_name, opts=opts, __props__=__props__)
 
     @property
@@ -426,10 +578,4 @@ class CloudIntegrationAzureActivityLog(pulumi.CustomResource):
         Tenant Id for an Azure service account within your project
         """
         return pulumi.get(self, "tenant")
-
-    def translate_output_property(self, prop):
-        return _tables.CAMEL_TO_SNAKE_CASE_TABLE.get(prop) or prop
-
-    def translate_input_property(self, prop):
-        return _tables.SNAKE_TO_CAMEL_CASE_TABLE.get(prop) or prop
 

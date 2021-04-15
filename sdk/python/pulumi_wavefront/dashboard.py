@@ -6,7 +6,7 @@ import warnings
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
-from . import _utilities, _tables
+from . import _utilities
 from . import outputs
 from ._inputs import *
 
@@ -198,6 +198,196 @@ class DashboardArgs:
         pulumi.set(self, "parameter_details", value)
 
 
+@pulumi.input_type
+class _DashboardState:
+    def __init__(__self__, *,
+                 can_modifies: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 can_views: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 description: Optional[pulumi.Input[str]] = None,
+                 display_query_parameters: Optional[pulumi.Input[bool]] = None,
+                 display_section_table_of_contents: Optional[pulumi.Input[bool]] = None,
+                 event_filter_type: Optional[pulumi.Input[str]] = None,
+                 name: Optional[pulumi.Input[str]] = None,
+                 parameter_details: Optional[pulumi.Input[Sequence[pulumi.Input['DashboardParameterDetailArgs']]]] = None,
+                 sections: Optional[pulumi.Input[Sequence[pulumi.Input['DashboardSectionArgs']]]] = None,
+                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 url: Optional[pulumi.Input[str]] = None):
+        """
+        Input properties used for looking up and filtering Dashboard resources.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] can_modifies: A list of users that have modify ACL access to the dashboard
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] can_views: A list of users that have view ACL access to the dashboard
+        :param pulumi.Input[str] description: Human-readable description of the dashboard
+        :param pulumi.Input[bool] display_query_parameters: Whether the dashboard parameters section is opened by default when the dashboard
+               is shown
+        :param pulumi.Input[bool] display_section_table_of_contents: Whether the "pills" quick-linked the sections of the dashboard are 
+               displayed by default when the dashboard is shown
+        :param pulumi.Input[str] event_filter_type: How charts belonging to this dashboard should display events. BYCHART is default if 
+               unspecified; Valid options are: `BYCHART`, `AUTOMATIC`, `ALL`, `NONE`, `BYDASHBOARD`, and `BYCHARTANDDASHBOARD`
+        :param pulumi.Input[str] name: Name of the dashboard
+        :param pulumi.Input[Sequence[pulumi.Input['DashboardParameterDetailArgs']]] parameter_details: The current JSON representation of dashboard parameters. See parameter details
+        :param pulumi.Input[Sequence[pulumi.Input['DashboardSectionArgs']]] sections: Dashboard chart sections. See dashboard sections
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] tags: A set of tags to assign to this resource.
+        :param pulumi.Input[str] url: Unique identifier, also URL slug, of the dashboard
+        """
+        if can_modifies is not None:
+            pulumi.set(__self__, "can_modifies", can_modifies)
+        if can_views is not None:
+            pulumi.set(__self__, "can_views", can_views)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_query_parameters is not None:
+            pulumi.set(__self__, "display_query_parameters", display_query_parameters)
+        if display_section_table_of_contents is not None:
+            pulumi.set(__self__, "display_section_table_of_contents", display_section_table_of_contents)
+        if event_filter_type is not None:
+            pulumi.set(__self__, "event_filter_type", event_filter_type)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if parameter_details is not None:
+            pulumi.set(__self__, "parameter_details", parameter_details)
+        if sections is not None:
+            pulumi.set(__self__, "sections", sections)
+        if tags is not None:
+            pulumi.set(__self__, "tags", tags)
+        if url is not None:
+            pulumi.set(__self__, "url", url)
+
+    @property
+    @pulumi.getter(name="canModifies")
+    def can_modifies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        A list of users that have modify ACL access to the dashboard
+        """
+        return pulumi.get(self, "can_modifies")
+
+    @can_modifies.setter
+    def can_modifies(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "can_modifies", value)
+
+    @property
+    @pulumi.getter(name="canViews")
+    def can_views(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        A list of users that have view ACL access to the dashboard
+        """
+        return pulumi.get(self, "can_views")
+
+    @can_views.setter
+    def can_views(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "can_views", value)
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[pulumi.Input[str]]:
+        """
+        Human-readable description of the dashboard
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "description", value)
+
+    @property
+    @pulumi.getter(name="displayQueryParameters")
+    def display_query_parameters(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Whether the dashboard parameters section is opened by default when the dashboard
+        is shown
+        """
+        return pulumi.get(self, "display_query_parameters")
+
+    @display_query_parameters.setter
+    def display_query_parameters(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "display_query_parameters", value)
+
+    @property
+    @pulumi.getter(name="displaySectionTableOfContents")
+    def display_section_table_of_contents(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Whether the "pills" quick-linked the sections of the dashboard are 
+        displayed by default when the dashboard is shown
+        """
+        return pulumi.get(self, "display_section_table_of_contents")
+
+    @display_section_table_of_contents.setter
+    def display_section_table_of_contents(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "display_section_table_of_contents", value)
+
+    @property
+    @pulumi.getter(name="eventFilterType")
+    def event_filter_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        How charts belonging to this dashboard should display events. BYCHART is default if 
+        unspecified; Valid options are: `BYCHART`, `AUTOMATIC`, `ALL`, `NONE`, `BYDASHBOARD`, and `BYCHARTANDDASHBOARD`
+        """
+        return pulumi.get(self, "event_filter_type")
+
+    @event_filter_type.setter
+    def event_filter_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "event_filter_type", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        Name of the dashboard
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter(name="parameterDetails")
+    def parameter_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DashboardParameterDetailArgs']]]]:
+        """
+        The current JSON representation of dashboard parameters. See parameter details
+        """
+        return pulumi.get(self, "parameter_details")
+
+    @parameter_details.setter
+    def parameter_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DashboardParameterDetailArgs']]]]):
+        pulumi.set(self, "parameter_details", value)
+
+    @property
+    @pulumi.getter
+    def sections(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DashboardSectionArgs']]]]:
+        """
+        Dashboard chart sections. See dashboard sections
+        """
+        return pulumi.get(self, "sections")
+
+    @sections.setter
+    def sections(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DashboardSectionArgs']]]]):
+        pulumi.set(self, "sections", value)
+
+    @property
+    @pulumi.getter
+    def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        A set of tags to assign to this resource.
+        """
+        return pulumi.get(self, "tags")
+
+    @tags.setter
+    def tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "tags", value)
+
+    @property
+    @pulumi.getter
+    def url(self) -> Optional[pulumi.Input[str]]:
+        """
+        Unique identifier, also URL slug, of the dashboard
+        """
+        return pulumi.get(self, "url")
+
+    @url.setter
+    def url(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "url", value)
+
+
 class Dashboard(pulumi.CustomResource):
     @overload
     def __init__(__self__,
@@ -306,27 +496,27 @@ class Dashboard(pulumi.CustomResource):
         if opts.id is None:
             if __props__ is not None:
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
-            __props__ = dict()
+            __props__ = DashboardArgs.__new__(DashboardArgs)
 
-            __props__['can_modifies'] = can_modifies
-            __props__['can_views'] = can_views
+            __props__.__dict__["can_modifies"] = can_modifies
+            __props__.__dict__["can_views"] = can_views
             if description is None and not opts.urn:
                 raise TypeError("Missing required property 'description'")
-            __props__['description'] = description
-            __props__['display_query_parameters'] = display_query_parameters
-            __props__['display_section_table_of_contents'] = display_section_table_of_contents
-            __props__['event_filter_type'] = event_filter_type
-            __props__['name'] = name
-            __props__['parameter_details'] = parameter_details
+            __props__.__dict__["description"] = description
+            __props__.__dict__["display_query_parameters"] = display_query_parameters
+            __props__.__dict__["display_section_table_of_contents"] = display_section_table_of_contents
+            __props__.__dict__["event_filter_type"] = event_filter_type
+            __props__.__dict__["name"] = name
+            __props__.__dict__["parameter_details"] = parameter_details
             if sections is None and not opts.urn:
                 raise TypeError("Missing required property 'sections'")
-            __props__['sections'] = sections
+            __props__.__dict__["sections"] = sections
             if tags is None and not opts.urn:
                 raise TypeError("Missing required property 'tags'")
-            __props__['tags'] = tags
+            __props__.__dict__["tags"] = tags
             if url is None and not opts.urn:
                 raise TypeError("Missing required property 'url'")
-            __props__['url'] = url
+            __props__.__dict__["url"] = url
         super(Dashboard, __self__).__init__(
             'wavefront:index/dashboard:Dashboard',
             resource_name,
@@ -372,19 +562,19 @@ class Dashboard(pulumi.CustomResource):
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
-        __props__ = dict()
+        __props__ = _DashboardState.__new__(_DashboardState)
 
-        __props__["can_modifies"] = can_modifies
-        __props__["can_views"] = can_views
-        __props__["description"] = description
-        __props__["display_query_parameters"] = display_query_parameters
-        __props__["display_section_table_of_contents"] = display_section_table_of_contents
-        __props__["event_filter_type"] = event_filter_type
-        __props__["name"] = name
-        __props__["parameter_details"] = parameter_details
-        __props__["sections"] = sections
-        __props__["tags"] = tags
-        __props__["url"] = url
+        __props__.__dict__["can_modifies"] = can_modifies
+        __props__.__dict__["can_views"] = can_views
+        __props__.__dict__["description"] = description
+        __props__.__dict__["display_query_parameters"] = display_query_parameters
+        __props__.__dict__["display_section_table_of_contents"] = display_section_table_of_contents
+        __props__.__dict__["event_filter_type"] = event_filter_type
+        __props__.__dict__["name"] = name
+        __props__.__dict__["parameter_details"] = parameter_details
+        __props__.__dict__["sections"] = sections
+        __props__.__dict__["tags"] = tags
+        __props__.__dict__["url"] = url
         return Dashboard(resource_name, opts=opts, __props__=__props__)
 
     @property
@@ -477,10 +667,4 @@ class Dashboard(pulumi.CustomResource):
         Unique identifier, also URL slug, of the dashboard
         """
         return pulumi.get(self, "url")
-
-    def translate_output_property(self, prop):
-        return _tables.CAMEL_TO_SNAKE_CASE_TABLE.get(prop) or prop
-
-    def translate_input_property(self, prop):
-        return _tables.SNAKE_TO_CAMEL_CASE_TABLE.get(prop) or prop
 

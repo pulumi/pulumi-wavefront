@@ -6,7 +6,7 @@ import warnings
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
-from . import _utilities, _tables
+from . import _utilities
 
 __all__ = ['CloudIntegrationAppDynamicsArgs', 'CloudIntegrationAppDynamics']
 
@@ -290,6 +290,290 @@ class CloudIntegrationAppDynamicsArgs:
         pulumi.set(self, "service_refresh_rate_in_minutes", value)
 
 
+@pulumi.input_type
+class _CloudIntegrationAppDynamicsState:
+    def __init__(__self__, *,
+                 additional_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 app_filter_regexes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 controller_name: Optional[pulumi.Input[str]] = None,
+                 enable_app_infra_metrics: Optional[pulumi.Input[bool]] = None,
+                 enable_backend_metrics: Optional[pulumi.Input[bool]] = None,
+                 enable_business_trx_metrics: Optional[pulumi.Input[bool]] = None,
+                 enable_error_metrics: Optional[pulumi.Input[bool]] = None,
+                 enable_individual_node_metrics: Optional[pulumi.Input[bool]] = None,
+                 enable_overall_perf_metrics: Optional[pulumi.Input[bool]] = None,
+                 enable_rollup: Optional[pulumi.Input[bool]] = None,
+                 enable_service_endpoint_metrics: Optional[pulumi.Input[bool]] = None,
+                 encrypted_password: Optional[pulumi.Input[str]] = None,
+                 force_save: Optional[pulumi.Input[bool]] = None,
+                 name: Optional[pulumi.Input[str]] = None,
+                 service: Optional[pulumi.Input[str]] = None,
+                 service_refresh_rate_in_minutes: Optional[pulumi.Input[int]] = None,
+                 user_name: Optional[pulumi.Input[str]] = None):
+        """
+        Input properties used for looking up and filtering CloudIntegrationAppDynamics resources.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] additional_tags: A list of point tag key-values to add to every point ingested using this integration
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] app_filter_regexes: List of regular expressions that a application name must match (case-insensitively) 
+               in order to be ingested
+        :param pulumi.Input[str] controller_name: Name of the SaaS controller
+        :param pulumi.Input[bool] enable_app_infra_metrics: Boolean flag to control Application Infrastructure metric injection
+        :param pulumi.Input[bool] enable_backend_metrics: Boolean flag to control Backend metric injection
+        :param pulumi.Input[bool] enable_business_trx_metrics: Boolean flag to control Business Transaction metric injection
+        :param pulumi.Input[bool] enable_error_metrics: Boolean flag to control Error metric injection
+        :param pulumi.Input[bool] enable_individual_node_metrics: Boolean flag to control Individual Node metric injection
+        :param pulumi.Input[bool] enable_overall_perf_metrics: Boolean flag to control Overall Performance metric injection
+        :param pulumi.Input[bool] enable_rollup: Set this to `false` to get separate results for all values within the time range, 
+               by default it is `true`
+        :param pulumi.Input[bool] enable_service_endpoint_metrics: Boolean flag to control Service End point metric injection
+        :param pulumi.Input[str] encrypted_password: Password for AppDynamics user
+        :param pulumi.Input[bool] force_save: Forces this resource to save, even if errors are present
+        :param pulumi.Input[str] name: The human-readable name of this integration
+        :param pulumi.Input[str] service: A value denoting which cloud service this service integrates with
+        :param pulumi.Input[int] service_refresh_rate_in_minutes: How often, in minutes, to refresh the service
+        :param pulumi.Input[str] user_name: Username is a combination of userName and the account name
+        """
+        if additional_tags is not None:
+            pulumi.set(__self__, "additional_tags", additional_tags)
+        if app_filter_regexes is not None:
+            pulumi.set(__self__, "app_filter_regexes", app_filter_regexes)
+        if controller_name is not None:
+            pulumi.set(__self__, "controller_name", controller_name)
+        if enable_app_infra_metrics is not None:
+            pulumi.set(__self__, "enable_app_infra_metrics", enable_app_infra_metrics)
+        if enable_backend_metrics is not None:
+            pulumi.set(__self__, "enable_backend_metrics", enable_backend_metrics)
+        if enable_business_trx_metrics is not None:
+            pulumi.set(__self__, "enable_business_trx_metrics", enable_business_trx_metrics)
+        if enable_error_metrics is not None:
+            pulumi.set(__self__, "enable_error_metrics", enable_error_metrics)
+        if enable_individual_node_metrics is not None:
+            pulumi.set(__self__, "enable_individual_node_metrics", enable_individual_node_metrics)
+        if enable_overall_perf_metrics is not None:
+            pulumi.set(__self__, "enable_overall_perf_metrics", enable_overall_perf_metrics)
+        if enable_rollup is not None:
+            pulumi.set(__self__, "enable_rollup", enable_rollup)
+        if enable_service_endpoint_metrics is not None:
+            pulumi.set(__self__, "enable_service_endpoint_metrics", enable_service_endpoint_metrics)
+        if encrypted_password is not None:
+            pulumi.set(__self__, "encrypted_password", encrypted_password)
+        if force_save is not None:
+            pulumi.set(__self__, "force_save", force_save)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if service is not None:
+            pulumi.set(__self__, "service", service)
+        if service_refresh_rate_in_minutes is not None:
+            pulumi.set(__self__, "service_refresh_rate_in_minutes", service_refresh_rate_in_minutes)
+        if user_name is not None:
+            pulumi.set(__self__, "user_name", user_name)
+
+    @property
+    @pulumi.getter(name="additionalTags")
+    def additional_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
+        """
+        A list of point tag key-values to add to every point ingested using this integration
+        """
+        return pulumi.get(self, "additional_tags")
+
+    @additional_tags.setter
+    def additional_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
+        pulumi.set(self, "additional_tags", value)
+
+    @property
+    @pulumi.getter(name="appFilterRegexes")
+    def app_filter_regexes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        List of regular expressions that a application name must match (case-insensitively) 
+        in order to be ingested
+        """
+        return pulumi.get(self, "app_filter_regexes")
+
+    @app_filter_regexes.setter
+    def app_filter_regexes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "app_filter_regexes", value)
+
+    @property
+    @pulumi.getter(name="controllerName")
+    def controller_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        Name of the SaaS controller
+        """
+        return pulumi.get(self, "controller_name")
+
+    @controller_name.setter
+    def controller_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "controller_name", value)
+
+    @property
+    @pulumi.getter(name="enableAppInfraMetrics")
+    def enable_app_infra_metrics(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Boolean flag to control Application Infrastructure metric injection
+        """
+        return pulumi.get(self, "enable_app_infra_metrics")
+
+    @enable_app_infra_metrics.setter
+    def enable_app_infra_metrics(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "enable_app_infra_metrics", value)
+
+    @property
+    @pulumi.getter(name="enableBackendMetrics")
+    def enable_backend_metrics(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Boolean flag to control Backend metric injection
+        """
+        return pulumi.get(self, "enable_backend_metrics")
+
+    @enable_backend_metrics.setter
+    def enable_backend_metrics(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "enable_backend_metrics", value)
+
+    @property
+    @pulumi.getter(name="enableBusinessTrxMetrics")
+    def enable_business_trx_metrics(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Boolean flag to control Business Transaction metric injection
+        """
+        return pulumi.get(self, "enable_business_trx_metrics")
+
+    @enable_business_trx_metrics.setter
+    def enable_business_trx_metrics(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "enable_business_trx_metrics", value)
+
+    @property
+    @pulumi.getter(name="enableErrorMetrics")
+    def enable_error_metrics(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Boolean flag to control Error metric injection
+        """
+        return pulumi.get(self, "enable_error_metrics")
+
+    @enable_error_metrics.setter
+    def enable_error_metrics(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "enable_error_metrics", value)
+
+    @property
+    @pulumi.getter(name="enableIndividualNodeMetrics")
+    def enable_individual_node_metrics(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Boolean flag to control Individual Node metric injection
+        """
+        return pulumi.get(self, "enable_individual_node_metrics")
+
+    @enable_individual_node_metrics.setter
+    def enable_individual_node_metrics(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "enable_individual_node_metrics", value)
+
+    @property
+    @pulumi.getter(name="enableOverallPerfMetrics")
+    def enable_overall_perf_metrics(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Boolean flag to control Overall Performance metric injection
+        """
+        return pulumi.get(self, "enable_overall_perf_metrics")
+
+    @enable_overall_perf_metrics.setter
+    def enable_overall_perf_metrics(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "enable_overall_perf_metrics", value)
+
+    @property
+    @pulumi.getter(name="enableRollup")
+    def enable_rollup(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Set this to `false` to get separate results for all values within the time range, 
+        by default it is `true`
+        """
+        return pulumi.get(self, "enable_rollup")
+
+    @enable_rollup.setter
+    def enable_rollup(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "enable_rollup", value)
+
+    @property
+    @pulumi.getter(name="enableServiceEndpointMetrics")
+    def enable_service_endpoint_metrics(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Boolean flag to control Service End point metric injection
+        """
+        return pulumi.get(self, "enable_service_endpoint_metrics")
+
+    @enable_service_endpoint_metrics.setter
+    def enable_service_endpoint_metrics(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "enable_service_endpoint_metrics", value)
+
+    @property
+    @pulumi.getter(name="encryptedPassword")
+    def encrypted_password(self) -> Optional[pulumi.Input[str]]:
+        """
+        Password for AppDynamics user
+        """
+        return pulumi.get(self, "encrypted_password")
+
+    @encrypted_password.setter
+    def encrypted_password(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "encrypted_password", value)
+
+    @property
+    @pulumi.getter(name="forceSave")
+    def force_save(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Forces this resource to save, even if errors are present
+        """
+        return pulumi.get(self, "force_save")
+
+    @force_save.setter
+    def force_save(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "force_save", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        The human-readable name of this integration
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def service(self) -> Optional[pulumi.Input[str]]:
+        """
+        A value denoting which cloud service this service integrates with
+        """
+        return pulumi.get(self, "service")
+
+    @service.setter
+    def service(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "service", value)
+
+    @property
+    @pulumi.getter(name="serviceRefreshRateInMinutes")
+    def service_refresh_rate_in_minutes(self) -> Optional[pulumi.Input[int]]:
+        """
+        How often, in minutes, to refresh the service
+        """
+        return pulumi.get(self, "service_refresh_rate_in_minutes")
+
+    @service_refresh_rate_in_minutes.setter
+    def service_refresh_rate_in_minutes(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "service_refresh_rate_in_minutes", value)
+
+    @property
+    @pulumi.getter(name="userName")
+    def user_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        Username is a combination of userName and the account name
+        """
+        return pulumi.get(self, "user_name")
+
+    @user_name.setter
+    def user_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "user_name", value)
+
+
 class CloudIntegrationAppDynamics(pulumi.CustomResource):
     @overload
     def __init__(__self__,
@@ -441,33 +725,33 @@ class CloudIntegrationAppDynamics(pulumi.CustomResource):
         if opts.id is None:
             if __props__ is not None:
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
-            __props__ = dict()
+            __props__ = CloudIntegrationAppDynamicsArgs.__new__(CloudIntegrationAppDynamicsArgs)
 
-            __props__['additional_tags'] = additional_tags
-            __props__['app_filter_regexes'] = app_filter_regexes
+            __props__.__dict__["additional_tags"] = additional_tags
+            __props__.__dict__["app_filter_regexes"] = app_filter_regexes
             if controller_name is None and not opts.urn:
                 raise TypeError("Missing required property 'controller_name'")
-            __props__['controller_name'] = controller_name
-            __props__['enable_app_infra_metrics'] = enable_app_infra_metrics
-            __props__['enable_backend_metrics'] = enable_backend_metrics
-            __props__['enable_business_trx_metrics'] = enable_business_trx_metrics
-            __props__['enable_error_metrics'] = enable_error_metrics
-            __props__['enable_individual_node_metrics'] = enable_individual_node_metrics
-            __props__['enable_overall_perf_metrics'] = enable_overall_perf_metrics
-            __props__['enable_rollup'] = enable_rollup
-            __props__['enable_service_endpoint_metrics'] = enable_service_endpoint_metrics
+            __props__.__dict__["controller_name"] = controller_name
+            __props__.__dict__["enable_app_infra_metrics"] = enable_app_infra_metrics
+            __props__.__dict__["enable_backend_metrics"] = enable_backend_metrics
+            __props__.__dict__["enable_business_trx_metrics"] = enable_business_trx_metrics
+            __props__.__dict__["enable_error_metrics"] = enable_error_metrics
+            __props__.__dict__["enable_individual_node_metrics"] = enable_individual_node_metrics
+            __props__.__dict__["enable_overall_perf_metrics"] = enable_overall_perf_metrics
+            __props__.__dict__["enable_rollup"] = enable_rollup
+            __props__.__dict__["enable_service_endpoint_metrics"] = enable_service_endpoint_metrics
             if encrypted_password is None and not opts.urn:
                 raise TypeError("Missing required property 'encrypted_password'")
-            __props__['encrypted_password'] = encrypted_password
-            __props__['force_save'] = force_save
-            __props__['name'] = name
+            __props__.__dict__["encrypted_password"] = encrypted_password
+            __props__.__dict__["force_save"] = force_save
+            __props__.__dict__["name"] = name
             if service is None and not opts.urn:
                 raise TypeError("Missing required property 'service'")
-            __props__['service'] = service
-            __props__['service_refresh_rate_in_minutes'] = service_refresh_rate_in_minutes
+            __props__.__dict__["service"] = service
+            __props__.__dict__["service_refresh_rate_in_minutes"] = service_refresh_rate_in_minutes
             if user_name is None and not opts.urn:
                 raise TypeError("Missing required property 'user_name'")
-            __props__['user_name'] = user_name
+            __props__.__dict__["user_name"] = user_name
         super(CloudIntegrationAppDynamics, __self__).__init__(
             'wavefront:index/cloudIntegrationAppDynamics:CloudIntegrationAppDynamics',
             resource_name,
@@ -524,25 +808,25 @@ class CloudIntegrationAppDynamics(pulumi.CustomResource):
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
-        __props__ = dict()
+        __props__ = _CloudIntegrationAppDynamicsState.__new__(_CloudIntegrationAppDynamicsState)
 
-        __props__["additional_tags"] = additional_tags
-        __props__["app_filter_regexes"] = app_filter_regexes
-        __props__["controller_name"] = controller_name
-        __props__["enable_app_infra_metrics"] = enable_app_infra_metrics
-        __props__["enable_backend_metrics"] = enable_backend_metrics
-        __props__["enable_business_trx_metrics"] = enable_business_trx_metrics
-        __props__["enable_error_metrics"] = enable_error_metrics
-        __props__["enable_individual_node_metrics"] = enable_individual_node_metrics
-        __props__["enable_overall_perf_metrics"] = enable_overall_perf_metrics
-        __props__["enable_rollup"] = enable_rollup
-        __props__["enable_service_endpoint_metrics"] = enable_service_endpoint_metrics
-        __props__["encrypted_password"] = encrypted_password
-        __props__["force_save"] = force_save
-        __props__["name"] = name
-        __props__["service"] = service
-        __props__["service_refresh_rate_in_minutes"] = service_refresh_rate_in_minutes
-        __props__["user_name"] = user_name
+        __props__.__dict__["additional_tags"] = additional_tags
+        __props__.__dict__["app_filter_regexes"] = app_filter_regexes
+        __props__.__dict__["controller_name"] = controller_name
+        __props__.__dict__["enable_app_infra_metrics"] = enable_app_infra_metrics
+        __props__.__dict__["enable_backend_metrics"] = enable_backend_metrics
+        __props__.__dict__["enable_business_trx_metrics"] = enable_business_trx_metrics
+        __props__.__dict__["enable_error_metrics"] = enable_error_metrics
+        __props__.__dict__["enable_individual_node_metrics"] = enable_individual_node_metrics
+        __props__.__dict__["enable_overall_perf_metrics"] = enable_overall_perf_metrics
+        __props__.__dict__["enable_rollup"] = enable_rollup
+        __props__.__dict__["enable_service_endpoint_metrics"] = enable_service_endpoint_metrics
+        __props__.__dict__["encrypted_password"] = encrypted_password
+        __props__.__dict__["force_save"] = force_save
+        __props__.__dict__["name"] = name
+        __props__.__dict__["service"] = service
+        __props__.__dict__["service_refresh_rate_in_minutes"] = service_refresh_rate_in_minutes
+        __props__.__dict__["user_name"] = user_name
         return CloudIntegrationAppDynamics(resource_name, opts=opts, __props__=__props__)
 
     @property
@@ -682,10 +966,4 @@ class CloudIntegrationAppDynamics(pulumi.CustomResource):
         Username is a combination of userName and the account name
         """
         return pulumi.get(self, "user_name")
-
-    def translate_output_property(self, prop):
-        return _tables.CAMEL_TO_SNAKE_CASE_TABLE.get(prop) or prop
-
-    def translate_input_property(self, prop):
-        return _tables.SNAKE_TO_CAMEL_CASE_TABLE.get(prop) or prop
 

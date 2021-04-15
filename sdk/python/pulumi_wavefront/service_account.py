@@ -6,7 +6,7 @@ import warnings
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
-from . import _utilities, _tables
+from . import _utilities
 
 __all__ = ['ServiceAccountArgs', 'ServiceAccount']
 
@@ -77,6 +77,114 @@ class ServiceAccountArgs:
     @description.setter
     def description(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "description", value)
+
+    @property
+    @pulumi.getter(name="ingestionPolicy")
+    def ingestion_policy(self) -> Optional[pulumi.Input[str]]:
+        """
+        ID of ingestion policy
+        """
+        return pulumi.get(self, "ingestion_policy")
+
+    @ingestion_policy.setter
+    def ingestion_policy(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ingestion_policy", value)
+
+    @property
+    @pulumi.getter
+    def permissions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        List of permission to grant to this service account.  Valid options are
+        `agent_management`, `alerts_management`, `dashboard_management`, `embedded_charts`, `events_management`, `external_links_management`,
+        `host_tag_management`, `metrics_management`, `user_management`
+        """
+        return pulumi.get(self, "permissions")
+
+    @permissions.setter
+    def permissions(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "permissions", value)
+
+    @property
+    @pulumi.getter(name="userGroups")
+    def user_groups(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        List of user groups for this service account
+        """
+        return pulumi.get(self, "user_groups")
+
+    @user_groups.setter
+    def user_groups(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "user_groups", value)
+
+
+@pulumi.input_type
+class _ServiceAccountState:
+    def __init__(__self__, *,
+                 active: Optional[pulumi.Input[bool]] = None,
+                 description: Optional[pulumi.Input[str]] = None,
+                 identifier: Optional[pulumi.Input[str]] = None,
+                 ingestion_policy: Optional[pulumi.Input[str]] = None,
+                 permissions: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 user_groups: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
+        """
+        Input properties used for looking up and filtering ServiceAccount resources.
+        :param pulumi.Input[bool] active: Whether or not the service account is active
+        :param pulumi.Input[str] description: The description of the service account
+        :param pulumi.Input[str] identifier: The (unique) identifier of the service account to create. Must start with sa::
+        :param pulumi.Input[str] ingestion_policy: ID of ingestion policy
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] permissions: List of permission to grant to this service account.  Valid options are
+               `agent_management`, `alerts_management`, `dashboard_management`, `embedded_charts`, `events_management`, `external_links_management`,
+               `host_tag_management`, `metrics_management`, `user_management`
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] user_groups: List of user groups for this service account
+        """
+        if active is not None:
+            pulumi.set(__self__, "active", active)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if identifier is not None:
+            pulumi.set(__self__, "identifier", identifier)
+        if ingestion_policy is not None:
+            pulumi.set(__self__, "ingestion_policy", ingestion_policy)
+        if permissions is not None:
+            pulumi.set(__self__, "permissions", permissions)
+        if user_groups is not None:
+            pulumi.set(__self__, "user_groups", user_groups)
+
+    @property
+    @pulumi.getter
+    def active(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Whether or not the service account is active
+        """
+        return pulumi.get(self, "active")
+
+    @active.setter
+    def active(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "active", value)
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[pulumi.Input[str]]:
+        """
+        The description of the service account
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "description", value)
+
+    @property
+    @pulumi.getter
+    def identifier(self) -> Optional[pulumi.Input[str]]:
+        """
+        The (unique) identifier of the service account to create. Must start with sa::
+        """
+        return pulumi.get(self, "identifier")
+
+    @identifier.setter
+    def identifier(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "identifier", value)
 
     @property
     @pulumi.getter(name="ingestionPolicy")
@@ -231,16 +339,16 @@ class ServiceAccount(pulumi.CustomResource):
         if opts.id is None:
             if __props__ is not None:
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
-            __props__ = dict()
+            __props__ = ServiceAccountArgs.__new__(ServiceAccountArgs)
 
-            __props__['active'] = active
-            __props__['description'] = description
+            __props__.__dict__["active"] = active
+            __props__.__dict__["description"] = description
             if identifier is None and not opts.urn:
                 raise TypeError("Missing required property 'identifier'")
-            __props__['identifier'] = identifier
-            __props__['ingestion_policy'] = ingestion_policy
-            __props__['permissions'] = permissions
-            __props__['user_groups'] = user_groups
+            __props__.__dict__["identifier"] = identifier
+            __props__.__dict__["ingestion_policy"] = ingestion_policy
+            __props__.__dict__["permissions"] = permissions
+            __props__.__dict__["user_groups"] = user_groups
         super(ServiceAccount, __self__).__init__(
             'wavefront:index/serviceAccount:ServiceAccount',
             resource_name,
@@ -275,14 +383,14 @@ class ServiceAccount(pulumi.CustomResource):
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
-        __props__ = dict()
+        __props__ = _ServiceAccountState.__new__(_ServiceAccountState)
 
-        __props__["active"] = active
-        __props__["description"] = description
-        __props__["identifier"] = identifier
-        __props__["ingestion_policy"] = ingestion_policy
-        __props__["permissions"] = permissions
-        __props__["user_groups"] = user_groups
+        __props__.__dict__["active"] = active
+        __props__.__dict__["description"] = description
+        __props__.__dict__["identifier"] = identifier
+        __props__.__dict__["ingestion_policy"] = ingestion_policy
+        __props__.__dict__["permissions"] = permissions
+        __props__.__dict__["user_groups"] = user_groups
         return ServiceAccount(resource_name, opts=opts, __props__=__props__)
 
     @property
@@ -334,10 +442,4 @@ class ServiceAccount(pulumi.CustomResource):
         List of user groups for this service account
         """
         return pulumi.get(self, "user_groups")
-
-    def translate_output_property(self, prop):
-        return _tables.CAMEL_TO_SNAKE_CASE_TABLE.get(prop) or prop
-
-    def translate_input_property(self, prop):
-        return _tables.SNAKE_TO_CAMEL_CASE_TABLE.get(prop) or prop
 

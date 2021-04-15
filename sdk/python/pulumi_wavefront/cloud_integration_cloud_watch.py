@@ -6,7 +6,7 @@ import warnings
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
-from . import _utilities, _tables
+from . import _utilities
 
 __all__ = ['CloudIntegrationCloudWatchArgs', 'CloudIntegrationCloudWatch']
 
@@ -217,6 +217,216 @@ class CloudIntegrationCloudWatchArgs:
         pulumi.set(self, "volume_selection_tags", value)
 
 
+@pulumi.input_type
+class _CloudIntegrationCloudWatchState:
+    def __init__(__self__, *,
+                 additional_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 external_id: Optional[pulumi.Input[str]] = None,
+                 force_save: Optional[pulumi.Input[bool]] = None,
+                 instance_selection_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 metric_filter_regex: Optional[pulumi.Input[str]] = None,
+                 name: Optional[pulumi.Input[str]] = None,
+                 namespaces: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 point_tag_filter_regex: Optional[pulumi.Input[str]] = None,
+                 role_arn: Optional[pulumi.Input[str]] = None,
+                 service: Optional[pulumi.Input[str]] = None,
+                 service_refresh_rate_in_minutes: Optional[pulumi.Input[int]] = None,
+                 volume_selection_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None):
+        """
+        Input properties used for looking up and filtering CloudIntegrationCloudWatch resources.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] additional_tags: A list of point tag key-values to add to every point ingested using this integration
+        :param pulumi.Input[str] external_id: The Role ARN that the customer has created in AWS IAM to allow access to Wavefront
+        :param pulumi.Input[bool] force_save: Forces this resource to save, even if errors are present
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] instance_selection_tags: A string->string map whitelist of instance tag-value pairs (in AWS).
+               If the instance's AWS tags match this whitelist, CloudWatch data about this instance is ingested.
+               Multiple entries are OR'ed
+        :param pulumi.Input[str] metric_filter_regex: A regular expression that a CloudWatch metric name must match (case-insensitively) in order to be ingested
+        :param pulumi.Input[str] name: The human-readable name of this integration
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] namespaces: A list of namespaces that limit what we query from CloudWatch
+        :param pulumi.Input[str] point_tag_filter_regex: A regular expression that AWS tag key name must match (case-insensitively)
+               in order to be ingested
+        :param pulumi.Input[str] role_arn: The external id corresponding to the Role ARN
+        :param pulumi.Input[str] service: A value denoting which cloud service this service integrates with
+        :param pulumi.Input[int] service_refresh_rate_in_minutes: How often, in minutes, to refresh the service
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] volume_selection_tags: A string->string map of whitelist of volume tag-value pairs (in AWS).
+               If the volume's AWS tags match this whitelist, CloudWatch data about this volume is ingested.
+               Multiple entries are OR'ed
+        """
+        if additional_tags is not None:
+            pulumi.set(__self__, "additional_tags", additional_tags)
+        if external_id is not None:
+            pulumi.set(__self__, "external_id", external_id)
+        if force_save is not None:
+            pulumi.set(__self__, "force_save", force_save)
+        if instance_selection_tags is not None:
+            pulumi.set(__self__, "instance_selection_tags", instance_selection_tags)
+        if metric_filter_regex is not None:
+            pulumi.set(__self__, "metric_filter_regex", metric_filter_regex)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if namespaces is not None:
+            pulumi.set(__self__, "namespaces", namespaces)
+        if point_tag_filter_regex is not None:
+            pulumi.set(__self__, "point_tag_filter_regex", point_tag_filter_regex)
+        if role_arn is not None:
+            pulumi.set(__self__, "role_arn", role_arn)
+        if service is not None:
+            pulumi.set(__self__, "service", service)
+        if service_refresh_rate_in_minutes is not None:
+            pulumi.set(__self__, "service_refresh_rate_in_minutes", service_refresh_rate_in_minutes)
+        if volume_selection_tags is not None:
+            pulumi.set(__self__, "volume_selection_tags", volume_selection_tags)
+
+    @property
+    @pulumi.getter(name="additionalTags")
+    def additional_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
+        """
+        A list of point tag key-values to add to every point ingested using this integration
+        """
+        return pulumi.get(self, "additional_tags")
+
+    @additional_tags.setter
+    def additional_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
+        pulumi.set(self, "additional_tags", value)
+
+    @property
+    @pulumi.getter(name="externalId")
+    def external_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The Role ARN that the customer has created in AWS IAM to allow access to Wavefront
+        """
+        return pulumi.get(self, "external_id")
+
+    @external_id.setter
+    def external_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "external_id", value)
+
+    @property
+    @pulumi.getter(name="forceSave")
+    def force_save(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Forces this resource to save, even if errors are present
+        """
+        return pulumi.get(self, "force_save")
+
+    @force_save.setter
+    def force_save(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "force_save", value)
+
+    @property
+    @pulumi.getter(name="instanceSelectionTags")
+    def instance_selection_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
+        """
+        A string->string map whitelist of instance tag-value pairs (in AWS).
+        If the instance's AWS tags match this whitelist, CloudWatch data about this instance is ingested.
+        Multiple entries are OR'ed
+        """
+        return pulumi.get(self, "instance_selection_tags")
+
+    @instance_selection_tags.setter
+    def instance_selection_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
+        pulumi.set(self, "instance_selection_tags", value)
+
+    @property
+    @pulumi.getter(name="metricFilterRegex")
+    def metric_filter_regex(self) -> Optional[pulumi.Input[str]]:
+        """
+        A regular expression that a CloudWatch metric name must match (case-insensitively) in order to be ingested
+        """
+        return pulumi.get(self, "metric_filter_regex")
+
+    @metric_filter_regex.setter
+    def metric_filter_regex(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "metric_filter_regex", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        The human-readable name of this integration
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def namespaces(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        A list of namespaces that limit what we query from CloudWatch
+        """
+        return pulumi.get(self, "namespaces")
+
+    @namespaces.setter
+    def namespaces(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "namespaces", value)
+
+    @property
+    @pulumi.getter(name="pointTagFilterRegex")
+    def point_tag_filter_regex(self) -> Optional[pulumi.Input[str]]:
+        """
+        A regular expression that AWS tag key name must match (case-insensitively)
+        in order to be ingested
+        """
+        return pulumi.get(self, "point_tag_filter_regex")
+
+    @point_tag_filter_regex.setter
+    def point_tag_filter_regex(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "point_tag_filter_regex", value)
+
+    @property
+    @pulumi.getter(name="roleArn")
+    def role_arn(self) -> Optional[pulumi.Input[str]]:
+        """
+        The external id corresponding to the Role ARN
+        """
+        return pulumi.get(self, "role_arn")
+
+    @role_arn.setter
+    def role_arn(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "role_arn", value)
+
+    @property
+    @pulumi.getter
+    def service(self) -> Optional[pulumi.Input[str]]:
+        """
+        A value denoting which cloud service this service integrates with
+        """
+        return pulumi.get(self, "service")
+
+    @service.setter
+    def service(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "service", value)
+
+    @property
+    @pulumi.getter(name="serviceRefreshRateInMinutes")
+    def service_refresh_rate_in_minutes(self) -> Optional[pulumi.Input[int]]:
+        """
+        How often, in minutes, to refresh the service
+        """
+        return pulumi.get(self, "service_refresh_rate_in_minutes")
+
+    @service_refresh_rate_in_minutes.setter
+    def service_refresh_rate_in_minutes(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "service_refresh_rate_in_minutes", value)
+
+    @property
+    @pulumi.getter(name="volumeSelectionTags")
+    def volume_selection_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
+        """
+        A string->string map of whitelist of volume tag-value pairs (in AWS).
+        If the volume's AWS tags match this whitelist, CloudWatch data about this volume is ingested.
+        Multiple entries are OR'ed
+        """
+        return pulumi.get(self, "volume_selection_tags")
+
+    @volume_selection_tags.setter
+    def volume_selection_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
+        pulumi.set(self, "volume_selection_tags", value)
+
+
 class CloudIntegrationCloudWatch(pulumi.CustomResource):
     @overload
     def __init__(__self__,
@@ -358,26 +568,26 @@ class CloudIntegrationCloudWatch(pulumi.CustomResource):
         if opts.id is None:
             if __props__ is not None:
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
-            __props__ = dict()
+            __props__ = CloudIntegrationCloudWatchArgs.__new__(CloudIntegrationCloudWatchArgs)
 
-            __props__['additional_tags'] = additional_tags
+            __props__.__dict__["additional_tags"] = additional_tags
             if external_id is None and not opts.urn:
                 raise TypeError("Missing required property 'external_id'")
-            __props__['external_id'] = external_id
-            __props__['force_save'] = force_save
-            __props__['instance_selection_tags'] = instance_selection_tags
-            __props__['metric_filter_regex'] = metric_filter_regex
-            __props__['name'] = name
-            __props__['namespaces'] = namespaces
-            __props__['point_tag_filter_regex'] = point_tag_filter_regex
+            __props__.__dict__["external_id"] = external_id
+            __props__.__dict__["force_save"] = force_save
+            __props__.__dict__["instance_selection_tags"] = instance_selection_tags
+            __props__.__dict__["metric_filter_regex"] = metric_filter_regex
+            __props__.__dict__["name"] = name
+            __props__.__dict__["namespaces"] = namespaces
+            __props__.__dict__["point_tag_filter_regex"] = point_tag_filter_regex
             if role_arn is None and not opts.urn:
                 raise TypeError("Missing required property 'role_arn'")
-            __props__['role_arn'] = role_arn
+            __props__.__dict__["role_arn"] = role_arn
             if service is None and not opts.urn:
                 raise TypeError("Missing required property 'service'")
-            __props__['service'] = service
-            __props__['service_refresh_rate_in_minutes'] = service_refresh_rate_in_minutes
-            __props__['volume_selection_tags'] = volume_selection_tags
+            __props__.__dict__["service"] = service
+            __props__.__dict__["service_refresh_rate_in_minutes"] = service_refresh_rate_in_minutes
+            __props__.__dict__["volume_selection_tags"] = volume_selection_tags
         super(CloudIntegrationCloudWatch, __self__).__init__(
             'wavefront:index/cloudIntegrationCloudWatch:CloudIntegrationCloudWatch',
             resource_name,
@@ -427,20 +637,20 @@ class CloudIntegrationCloudWatch(pulumi.CustomResource):
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
-        __props__ = dict()
+        __props__ = _CloudIntegrationCloudWatchState.__new__(_CloudIntegrationCloudWatchState)
 
-        __props__["additional_tags"] = additional_tags
-        __props__["external_id"] = external_id
-        __props__["force_save"] = force_save
-        __props__["instance_selection_tags"] = instance_selection_tags
-        __props__["metric_filter_regex"] = metric_filter_regex
-        __props__["name"] = name
-        __props__["namespaces"] = namespaces
-        __props__["point_tag_filter_regex"] = point_tag_filter_regex
-        __props__["role_arn"] = role_arn
-        __props__["service"] = service
-        __props__["service_refresh_rate_in_minutes"] = service_refresh_rate_in_minutes
-        __props__["volume_selection_tags"] = volume_selection_tags
+        __props__.__dict__["additional_tags"] = additional_tags
+        __props__.__dict__["external_id"] = external_id
+        __props__.__dict__["force_save"] = force_save
+        __props__.__dict__["instance_selection_tags"] = instance_selection_tags
+        __props__.__dict__["metric_filter_regex"] = metric_filter_regex
+        __props__.__dict__["name"] = name
+        __props__.__dict__["namespaces"] = namespaces
+        __props__.__dict__["point_tag_filter_regex"] = point_tag_filter_regex
+        __props__.__dict__["role_arn"] = role_arn
+        __props__.__dict__["service"] = service
+        __props__.__dict__["service_refresh_rate_in_minutes"] = service_refresh_rate_in_minutes
+        __props__.__dict__["volume_selection_tags"] = volume_selection_tags
         return CloudIntegrationCloudWatch(resource_name, opts=opts, __props__=__props__)
 
     @property
@@ -543,10 +753,4 @@ class CloudIntegrationCloudWatch(pulumi.CustomResource):
         Multiple entries are OR'ed
         """
         return pulumi.get(self, "volume_selection_tags")
-
-    def translate_output_property(self, prop):
-        return _tables.CAMEL_TO_SNAKE_CASE_TABLE.get(prop) or prop
-
-    def translate_input_property(self, prop):
-        return _tables.SNAKE_TO_CAMEL_CASE_TABLE.get(prop) or prop
 
