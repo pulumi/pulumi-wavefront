@@ -6,7 +6,7 @@ import warnings
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
-from . import _utilities, _tables
+from . import _utilities
 
 __all__ = ['UserArgs', 'User']
 
@@ -53,6 +53,78 @@ class UserArgs:
     @customer.setter
     def customer(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "customer", value)
+
+    @property
+    @pulumi.getter
+    def permissions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        List of permission to grant to this user.  Valid options are
+        `agent_management`, `alerts_management`, `dashboard_management`, `embedded_charts`, `events_management`, `external_links_management`,
+        `host_tag_management`, `metrics_management`, `user_management`
+        """
+        return pulumi.get(self, "permissions")
+
+    @permissions.setter
+    def permissions(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "permissions", value)
+
+    @property
+    @pulumi.getter(name="userGroups")
+    def user_groups(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        List of user groups to this user
+        """
+        return pulumi.get(self, "user_groups")
+
+    @user_groups.setter
+    def user_groups(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "user_groups", value)
+
+
+@pulumi.input_type
+class _UserState:
+    def __init__(__self__, *,
+                 customer: Optional[pulumi.Input[str]] = None,
+                 email: Optional[pulumi.Input[str]] = None,
+                 permissions: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 user_groups: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
+        """
+        Input properties used for looking up and filtering User resources.
+        :param pulumi.Input[str] email: The (unique) identifier of the user to create. Must be a valid email address
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] permissions: List of permission to grant to this user.  Valid options are
+               `agent_management`, `alerts_management`, `dashboard_management`, `embedded_charts`, `events_management`, `external_links_management`,
+               `host_tag_management`, `metrics_management`, `user_management`
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] user_groups: List of user groups to this user
+        """
+        if customer is not None:
+            pulumi.set(__self__, "customer", customer)
+        if email is not None:
+            pulumi.set(__self__, "email", email)
+        if permissions is not None:
+            pulumi.set(__self__, "permissions", permissions)
+        if user_groups is not None:
+            pulumi.set(__self__, "user_groups", user_groups)
+
+    @property
+    @pulumi.getter
+    def customer(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "customer")
+
+    @customer.setter
+    def customer(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "customer", value)
+
+    @property
+    @pulumi.getter
+    def email(self) -> Optional[pulumi.Input[str]]:
+        """
+        The (unique) identifier of the user to create. Must be a valid email address
+        """
+        return pulumi.get(self, "email")
+
+    @email.setter
+    def email(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "email", value)
 
     @property
     @pulumi.getter
@@ -184,14 +256,14 @@ class User(pulumi.CustomResource):
         if opts.id is None:
             if __props__ is not None:
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
-            __props__ = dict()
+            __props__ = UserArgs.__new__(UserArgs)
 
-            __props__['customer'] = customer
+            __props__.__dict__["customer"] = customer
             if email is None and not opts.urn:
                 raise TypeError("Missing required property 'email'")
-            __props__['email'] = email
-            __props__['permissions'] = permissions
-            __props__['user_groups'] = user_groups
+            __props__.__dict__["email"] = email
+            __props__.__dict__["permissions"] = permissions
+            __props__.__dict__["user_groups"] = user_groups
         super(User, __self__).__init__(
             'wavefront:index/user:User',
             resource_name,
@@ -221,12 +293,12 @@ class User(pulumi.CustomResource):
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
-        __props__ = dict()
+        __props__ = _UserState.__new__(_UserState)
 
-        __props__["customer"] = customer
-        __props__["email"] = email
-        __props__["permissions"] = permissions
-        __props__["user_groups"] = user_groups
+        __props__.__dict__["customer"] = customer
+        __props__.__dict__["email"] = email
+        __props__.__dict__["permissions"] = permissions
+        __props__.__dict__["user_groups"] = user_groups
         return User(resource_name, opts=opts, __props__=__props__)
 
     @property
@@ -259,10 +331,4 @@ class User(pulumi.CustomResource):
         List of user groups to this user
         """
         return pulumi.get(self, "user_groups")
-
-    def translate_output_property(self, prop):
-        return _tables.CAMEL_TO_SNAKE_CASE_TABLE.get(prop) or prop
-
-    def translate_input_property(self, prop):
-        return _tables.SNAKE_TO_CAMEL_CASE_TABLE.get(prop) or prop
 

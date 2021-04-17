@@ -6,7 +6,7 @@ import warnings
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
-from . import _utilities, _tables
+from . import _utilities
 
 __all__ = ['CloudIntegrationAwsExternalIdArgs', 'CloudIntegrationAwsExternalId']
 
@@ -109,7 +109,7 @@ class CloudIntegrationAwsExternalId(pulumi.CustomResource):
         if opts.id is None:
             if __props__ is not None:
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
-            __props__ = dict()
+            __props__ = CloudIntegrationAwsExternalIdArgs.__new__(CloudIntegrationAwsExternalIdArgs)
 
         super(CloudIntegrationAwsExternalId, __self__).__init__(
             'wavefront:index/cloudIntegrationAwsExternalId:CloudIntegrationAwsExternalId',
@@ -131,13 +131,7 @@ class CloudIntegrationAwsExternalId(pulumi.CustomResource):
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
-        __props__ = dict()
+        __props__ = CloudIntegrationAwsExternalIdArgs.__new__(CloudIntegrationAwsExternalIdArgs)
 
         return CloudIntegrationAwsExternalId(resource_name, opts=opts, __props__=__props__)
-
-    def translate_output_property(self, prop):
-        return _tables.CAMEL_TO_SNAKE_CASE_TABLE.get(prop) or prop
-
-    def translate_input_property(self, prop):
-        return _tables.SNAKE_TO_CAMEL_CASE_TABLE.get(prop) or prop
 

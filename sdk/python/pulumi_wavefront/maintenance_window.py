@@ -6,7 +6,7 @@ import warnings
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
-from . import _utilities, _tables
+from . import _utilities
 
 __all__ = ['MaintenanceWindowArgs', 'MaintenanceWindow']
 
@@ -158,6 +158,158 @@ class MaintenanceWindowArgs:
         pulumi.set(self, "relevant_host_tags_anded", value)
 
 
+@pulumi.input_type
+class _MaintenanceWindowState:
+    def __init__(__self__, *,
+                 end_time_in_seconds: Optional[pulumi.Input[int]] = None,
+                 host_tag_group_host_names_group_anded: Optional[pulumi.Input[bool]] = None,
+                 reason: Optional[pulumi.Input[str]] = None,
+                 relevant_customer_tags: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 relevant_host_names: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 relevant_host_tags: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 relevant_host_tags_anded: Optional[pulumi.Input[bool]] = None,
+                 start_time_in_seconds: Optional[pulumi.Input[int]] = None,
+                 title: Optional[pulumi.Input[str]] = None):
+        """
+        Input properties used for looking up and filtering MaintenanceWindow resources.
+        :param pulumi.Input[int] end_time_in_seconds: end time in seconds after 1 Jan 1970 GMT.
+        :param pulumi.Input[bool] host_tag_group_host_names_group_anded: If true, a source/host must be in 'relevantHostNames' and have tags matching the specification formed by 'relevantHostTags' and 'relevantHostTagsAnded' in order for this maintenance window to apply. If false, a source/host must either be in 'relevantHostNames' or match 'relevantHostTags' and 'relevantHostTagsAnded'. Default: false
+        :param pulumi.Input[str] reason: The reason for the maintenance window
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] relevant_customer_tags: List of alert tags whose matching alerts will be put into maintenance because of this maintenance window. At least one of relevant_customer_tags, relevant_host_tags, or relevant_host_names is required.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] relevant_host_names: List of source/host names that will be put into maintenance because of this maintenance window. At least one of relevant_customer_tags, relevant_host_tags, or relevant_host_names is required.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] relevant_host_tags: List of source/host tags whose matching sources/hosts will be put into maintenance because of this maintenance window. At least one of relevant_customer_tags, relevant_host_tags, or relevant_host_names is required.
+        :param pulumi.Input[bool] relevant_host_tags_anded: Whether to AND source/host tags listed in relevantHostTags. If true, a source/host must contain all tags in order for the maintenance window to apply. If false, the tags are OR'ed, and a source/host must contain one of the tags. Default: false
+        :param pulumi.Input[int] start_time_in_seconds: start time in seconds after 1 Jan 1970 GMT.
+        :param pulumi.Input[str] title: The title of the maintenance window
+        """
+        if end_time_in_seconds is not None:
+            pulumi.set(__self__, "end_time_in_seconds", end_time_in_seconds)
+        if host_tag_group_host_names_group_anded is not None:
+            pulumi.set(__self__, "host_tag_group_host_names_group_anded", host_tag_group_host_names_group_anded)
+        if reason is not None:
+            pulumi.set(__self__, "reason", reason)
+        if relevant_customer_tags is not None:
+            pulumi.set(__self__, "relevant_customer_tags", relevant_customer_tags)
+        if relevant_host_names is not None:
+            pulumi.set(__self__, "relevant_host_names", relevant_host_names)
+        if relevant_host_tags is not None:
+            pulumi.set(__self__, "relevant_host_tags", relevant_host_tags)
+        if relevant_host_tags_anded is not None:
+            pulumi.set(__self__, "relevant_host_tags_anded", relevant_host_tags_anded)
+        if start_time_in_seconds is not None:
+            pulumi.set(__self__, "start_time_in_seconds", start_time_in_seconds)
+        if title is not None:
+            pulumi.set(__self__, "title", title)
+
+    @property
+    @pulumi.getter(name="endTimeInSeconds")
+    def end_time_in_seconds(self) -> Optional[pulumi.Input[int]]:
+        """
+        end time in seconds after 1 Jan 1970 GMT.
+        """
+        return pulumi.get(self, "end_time_in_seconds")
+
+    @end_time_in_seconds.setter
+    def end_time_in_seconds(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "end_time_in_seconds", value)
+
+    @property
+    @pulumi.getter(name="hostTagGroupHostNamesGroupAnded")
+    def host_tag_group_host_names_group_anded(self) -> Optional[pulumi.Input[bool]]:
+        """
+        If true, a source/host must be in 'relevantHostNames' and have tags matching the specification formed by 'relevantHostTags' and 'relevantHostTagsAnded' in order for this maintenance window to apply. If false, a source/host must either be in 'relevantHostNames' or match 'relevantHostTags' and 'relevantHostTagsAnded'. Default: false
+        """
+        return pulumi.get(self, "host_tag_group_host_names_group_anded")
+
+    @host_tag_group_host_names_group_anded.setter
+    def host_tag_group_host_names_group_anded(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "host_tag_group_host_names_group_anded", value)
+
+    @property
+    @pulumi.getter
+    def reason(self) -> Optional[pulumi.Input[str]]:
+        """
+        The reason for the maintenance window
+        """
+        return pulumi.get(self, "reason")
+
+    @reason.setter
+    def reason(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "reason", value)
+
+    @property
+    @pulumi.getter(name="relevantCustomerTags")
+    def relevant_customer_tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        List of alert tags whose matching alerts will be put into maintenance because of this maintenance window. At least one of relevant_customer_tags, relevant_host_tags, or relevant_host_names is required.
+        """
+        return pulumi.get(self, "relevant_customer_tags")
+
+    @relevant_customer_tags.setter
+    def relevant_customer_tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "relevant_customer_tags", value)
+
+    @property
+    @pulumi.getter(name="relevantHostNames")
+    def relevant_host_names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        List of source/host names that will be put into maintenance because of this maintenance window. At least one of relevant_customer_tags, relevant_host_tags, or relevant_host_names is required.
+        """
+        return pulumi.get(self, "relevant_host_names")
+
+    @relevant_host_names.setter
+    def relevant_host_names(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "relevant_host_names", value)
+
+    @property
+    @pulumi.getter(name="relevantHostTags")
+    def relevant_host_tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        List of source/host tags whose matching sources/hosts will be put into maintenance because of this maintenance window. At least one of relevant_customer_tags, relevant_host_tags, or relevant_host_names is required.
+        """
+        return pulumi.get(self, "relevant_host_tags")
+
+    @relevant_host_tags.setter
+    def relevant_host_tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "relevant_host_tags", value)
+
+    @property
+    @pulumi.getter(name="relevantHostTagsAnded")
+    def relevant_host_tags_anded(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Whether to AND source/host tags listed in relevantHostTags. If true, a source/host must contain all tags in order for the maintenance window to apply. If false, the tags are OR'ed, and a source/host must contain one of the tags. Default: false
+        """
+        return pulumi.get(self, "relevant_host_tags_anded")
+
+    @relevant_host_tags_anded.setter
+    def relevant_host_tags_anded(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "relevant_host_tags_anded", value)
+
+    @property
+    @pulumi.getter(name="startTimeInSeconds")
+    def start_time_in_seconds(self) -> Optional[pulumi.Input[int]]:
+        """
+        start time in seconds after 1 Jan 1970 GMT.
+        """
+        return pulumi.get(self, "start_time_in_seconds")
+
+    @start_time_in_seconds.setter
+    def start_time_in_seconds(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "start_time_in_seconds", value)
+
+    @property
+    @pulumi.getter
+    def title(self) -> Optional[pulumi.Input[str]]:
+        """
+        The title of the maintenance window
+        """
+        return pulumi.get(self, "title")
+
+    @title.setter
+    def title(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "title", value)
+
+
 class MaintenanceWindow(pulumi.CustomResource):
     @overload
     def __init__(__self__,
@@ -291,25 +443,25 @@ class MaintenanceWindow(pulumi.CustomResource):
         if opts.id is None:
             if __props__ is not None:
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
-            __props__ = dict()
+            __props__ = MaintenanceWindowArgs.__new__(MaintenanceWindowArgs)
 
             if end_time_in_seconds is None and not opts.urn:
                 raise TypeError("Missing required property 'end_time_in_seconds'")
-            __props__['end_time_in_seconds'] = end_time_in_seconds
-            __props__['host_tag_group_host_names_group_anded'] = host_tag_group_host_names_group_anded
+            __props__.__dict__["end_time_in_seconds"] = end_time_in_seconds
+            __props__.__dict__["host_tag_group_host_names_group_anded"] = host_tag_group_host_names_group_anded
             if reason is None and not opts.urn:
                 raise TypeError("Missing required property 'reason'")
-            __props__['reason'] = reason
-            __props__['relevant_customer_tags'] = relevant_customer_tags
-            __props__['relevant_host_names'] = relevant_host_names
-            __props__['relevant_host_tags'] = relevant_host_tags
-            __props__['relevant_host_tags_anded'] = relevant_host_tags_anded
+            __props__.__dict__["reason"] = reason
+            __props__.__dict__["relevant_customer_tags"] = relevant_customer_tags
+            __props__.__dict__["relevant_host_names"] = relevant_host_names
+            __props__.__dict__["relevant_host_tags"] = relevant_host_tags
+            __props__.__dict__["relevant_host_tags_anded"] = relevant_host_tags_anded
             if start_time_in_seconds is None and not opts.urn:
                 raise TypeError("Missing required property 'start_time_in_seconds'")
-            __props__['start_time_in_seconds'] = start_time_in_seconds
+            __props__.__dict__["start_time_in_seconds"] = start_time_in_seconds
             if title is None and not opts.urn:
                 raise TypeError("Missing required property 'title'")
-            __props__['title'] = title
+            __props__.__dict__["title"] = title
         super(MaintenanceWindow, __self__).__init__(
             'wavefront:index/maintenanceWindow:MaintenanceWindow',
             resource_name,
@@ -348,17 +500,17 @@ class MaintenanceWindow(pulumi.CustomResource):
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
-        __props__ = dict()
+        __props__ = _MaintenanceWindowState.__new__(_MaintenanceWindowState)
 
-        __props__["end_time_in_seconds"] = end_time_in_seconds
-        __props__["host_tag_group_host_names_group_anded"] = host_tag_group_host_names_group_anded
-        __props__["reason"] = reason
-        __props__["relevant_customer_tags"] = relevant_customer_tags
-        __props__["relevant_host_names"] = relevant_host_names
-        __props__["relevant_host_tags"] = relevant_host_tags
-        __props__["relevant_host_tags_anded"] = relevant_host_tags_anded
-        __props__["start_time_in_seconds"] = start_time_in_seconds
-        __props__["title"] = title
+        __props__.__dict__["end_time_in_seconds"] = end_time_in_seconds
+        __props__.__dict__["host_tag_group_host_names_group_anded"] = host_tag_group_host_names_group_anded
+        __props__.__dict__["reason"] = reason
+        __props__.__dict__["relevant_customer_tags"] = relevant_customer_tags
+        __props__.__dict__["relevant_host_names"] = relevant_host_names
+        __props__.__dict__["relevant_host_tags"] = relevant_host_tags
+        __props__.__dict__["relevant_host_tags_anded"] = relevant_host_tags_anded
+        __props__.__dict__["start_time_in_seconds"] = start_time_in_seconds
+        __props__.__dict__["title"] = title
         return MaintenanceWindow(resource_name, opts=opts, __props__=__props__)
 
     @property
@@ -432,10 +584,4 @@ class MaintenanceWindow(pulumi.CustomResource):
         The title of the maintenance window
         """
         return pulumi.get(self, "title")
-
-    def translate_output_property(self, prop):
-        return _tables.CAMEL_TO_SNAKE_CASE_TABLE.get(prop) or prop
-
-    def translate_input_property(self, prop):
-        return _tables.SNAKE_TO_CAMEL_CASE_TABLE.get(prop) or prop
 

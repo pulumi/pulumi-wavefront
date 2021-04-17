@@ -6,7 +6,7 @@ import warnings
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
-from . import _utilities, _tables
+from . import _utilities
 from . import outputs
 from ._inputs import *
 
@@ -196,6 +196,208 @@ class AlertTargetArgs:
     @routes.setter
     def routes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AlertTargetRouteArgs']]]]):
         pulumi.set(self, "routes", value)
+
+
+@pulumi.input_type
+class _AlertTargetState:
+    def __init__(__self__, *,
+                 content_type: Optional[pulumi.Input[str]] = None,
+                 custom_headers: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 description: Optional[pulumi.Input[str]] = None,
+                 email_subject: Optional[pulumi.Input[str]] = None,
+                 is_html_content: Optional[pulumi.Input[bool]] = None,
+                 method: Optional[pulumi.Input[str]] = None,
+                 name: Optional[pulumi.Input[str]] = None,
+                 recipient: Optional[pulumi.Input[str]] = None,
+                 routes: Optional[pulumi.Input[Sequence[pulumi.Input['AlertTargetRouteArgs']]]] = None,
+                 target_id: Optional[pulumi.Input[str]] = None,
+                 template: Optional[pulumi.Input[str]] = None,
+                 triggers: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
+        """
+        Input properties used for looking up and filtering AlertTarget resources.
+        :param pulumi.Input[str] content_type: The value of the `Content-Type` header of the webhook.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] custom_headers: A `string->string` map specifying the custome HTTP header key/value pairs that will be 
+               sent in the requests with a method of `WEBHOOK`.
+        :param pulumi.Input[str] description: Description describing this alert target.
+        :param pulumi.Input[str] email_subject: The subject title of an email notification target.
+        :param pulumi.Input[bool] is_html_content: Determine whether the email alert content is sent as HTML or text.
+        :param pulumi.Input[str] method: The notification method used for notification target. One of `WEBHOOK`, `EMAIL`, `PAGERDUTY`.
+        :param pulumi.Input[str] name: The name of the alert target as it is displayed in wavefront
+        :param pulumi.Input[str] recipient: The end point for the notification Target.  `EMAIL`: email address. `PAGERDUTY`: PagerDuty 
+               routing key. `WEBHOOK`: URL endpoint.
+        :param pulumi.Input[Sequence[pulumi.Input['AlertTargetRouteArgs']]] routes: List of routing targets that this alert target will notify. See Route
+        :param pulumi.Input[str] template: A mustache template that will form the body of the POST request, email and summary of the PagerDuty.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] triggers: A list of occurrences on which this webhook will be fired. Valid values are `ALERT_OPENED`,
+               `ALERT_UPDATED`, `ALERT_RESOLVED`, `ALERT_MAINTENANCE`, `ALERT_SNOOZED`, `ALERT_NO_DATA`, `ALERT_NO_DATA_RESOLVED`, `ALERT_NO_DATA_MAINTENANCE`.
+        """
+        if content_type is not None:
+            pulumi.set(__self__, "content_type", content_type)
+        if custom_headers is not None:
+            pulumi.set(__self__, "custom_headers", custom_headers)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if email_subject is not None:
+            pulumi.set(__self__, "email_subject", email_subject)
+        if is_html_content is not None:
+            pulumi.set(__self__, "is_html_content", is_html_content)
+        if method is not None:
+            pulumi.set(__self__, "method", method)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if recipient is not None:
+            pulumi.set(__self__, "recipient", recipient)
+        if routes is not None:
+            pulumi.set(__self__, "routes", routes)
+        if target_id is not None:
+            pulumi.set(__self__, "target_id", target_id)
+        if template is not None:
+            pulumi.set(__self__, "template", template)
+        if triggers is not None:
+            pulumi.set(__self__, "triggers", triggers)
+
+    @property
+    @pulumi.getter(name="contentType")
+    def content_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        The value of the `Content-Type` header of the webhook.
+        """
+        return pulumi.get(self, "content_type")
+
+    @content_type.setter
+    def content_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "content_type", value)
+
+    @property
+    @pulumi.getter(name="customHeaders")
+    def custom_headers(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
+        """
+        A `string->string` map specifying the custome HTTP header key/value pairs that will be 
+        sent in the requests with a method of `WEBHOOK`.
+        """
+        return pulumi.get(self, "custom_headers")
+
+    @custom_headers.setter
+    def custom_headers(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
+        pulumi.set(self, "custom_headers", value)
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[pulumi.Input[str]]:
+        """
+        Description describing this alert target.
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "description", value)
+
+    @property
+    @pulumi.getter(name="emailSubject")
+    def email_subject(self) -> Optional[pulumi.Input[str]]:
+        """
+        The subject title of an email notification target.
+        """
+        return pulumi.get(self, "email_subject")
+
+    @email_subject.setter
+    def email_subject(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "email_subject", value)
+
+    @property
+    @pulumi.getter(name="isHtmlContent")
+    def is_html_content(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Determine whether the email alert content is sent as HTML or text.
+        """
+        return pulumi.get(self, "is_html_content")
+
+    @is_html_content.setter
+    def is_html_content(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_html_content", value)
+
+    @property
+    @pulumi.getter
+    def method(self) -> Optional[pulumi.Input[str]]:
+        """
+        The notification method used for notification target. One of `WEBHOOK`, `EMAIL`, `PAGERDUTY`.
+        """
+        return pulumi.get(self, "method")
+
+    @method.setter
+    def method(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "method", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        The name of the alert target as it is displayed in wavefront
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def recipient(self) -> Optional[pulumi.Input[str]]:
+        """
+        The end point for the notification Target.  `EMAIL`: email address. `PAGERDUTY`: PagerDuty 
+        routing key. `WEBHOOK`: URL endpoint.
+        """
+        return pulumi.get(self, "recipient")
+
+    @recipient.setter
+    def recipient(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "recipient", value)
+
+    @property
+    @pulumi.getter
+    def routes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AlertTargetRouteArgs']]]]:
+        """
+        List of routing targets that this alert target will notify. See Route
+        """
+        return pulumi.get(self, "routes")
+
+    @routes.setter
+    def routes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AlertTargetRouteArgs']]]]):
+        pulumi.set(self, "routes", value)
+
+    @property
+    @pulumi.getter(name="targetId")
+    def target_id(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "target_id")
+
+    @target_id.setter
+    def target_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "target_id", value)
+
+    @property
+    @pulumi.getter
+    def template(self) -> Optional[pulumi.Input[str]]:
+        """
+        A mustache template that will form the body of the POST request, email and summary of the PagerDuty.
+        """
+        return pulumi.get(self, "template")
+
+    @template.setter
+    def template(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "template", value)
+
+    @property
+    @pulumi.getter
+    def triggers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        A list of occurrences on which this webhook will be fired. Valid values are `ALERT_OPENED`,
+        `ALERT_UPDATED`, `ALERT_RESOLVED`, `ALERT_MAINTENANCE`, `ALERT_SNOOZED`, `ALERT_NO_DATA`, `ALERT_NO_DATA_RESOLVED`, `ALERT_NO_DATA_MAINTENANCE`.
+        """
+        return pulumi.get(self, "triggers")
+
+    @triggers.setter
+    def triggers(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "triggers", value)
 
 
 class AlertTarget(pulumi.CustomResource):
@@ -452,28 +654,28 @@ class AlertTarget(pulumi.CustomResource):
         if opts.id is None:
             if __props__ is not None:
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
-            __props__ = dict()
+            __props__ = AlertTargetArgs.__new__(AlertTargetArgs)
 
-            __props__['content_type'] = content_type
-            __props__['custom_headers'] = custom_headers
+            __props__.__dict__["content_type"] = content_type
+            __props__.__dict__["custom_headers"] = custom_headers
             if description is None and not opts.urn:
                 raise TypeError("Missing required property 'description'")
-            __props__['description'] = description
-            __props__['email_subject'] = email_subject
-            __props__['is_html_content'] = is_html_content
-            __props__['method'] = method
-            __props__['name'] = name
+            __props__.__dict__["description"] = description
+            __props__.__dict__["email_subject"] = email_subject
+            __props__.__dict__["is_html_content"] = is_html_content
+            __props__.__dict__["method"] = method
+            __props__.__dict__["name"] = name
             if recipient is None and not opts.urn:
                 raise TypeError("Missing required property 'recipient'")
-            __props__['recipient'] = recipient
-            __props__['routes'] = routes
+            __props__.__dict__["recipient"] = recipient
+            __props__.__dict__["routes"] = routes
             if template is None and not opts.urn:
                 raise TypeError("Missing required property 'template'")
-            __props__['template'] = template
+            __props__.__dict__["template"] = template
             if triggers is None and not opts.urn:
                 raise TypeError("Missing required property 'triggers'")
-            __props__['triggers'] = triggers
-            __props__['target_id'] = None
+            __props__.__dict__["triggers"] = triggers
+            __props__.__dict__["target_id"] = None
         super(AlertTarget, __self__).__init__(
             'wavefront:index/alertTarget:AlertTarget',
             resource_name,
@@ -520,20 +722,20 @@ class AlertTarget(pulumi.CustomResource):
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
-        __props__ = dict()
+        __props__ = _AlertTargetState.__new__(_AlertTargetState)
 
-        __props__["content_type"] = content_type
-        __props__["custom_headers"] = custom_headers
-        __props__["description"] = description
-        __props__["email_subject"] = email_subject
-        __props__["is_html_content"] = is_html_content
-        __props__["method"] = method
-        __props__["name"] = name
-        __props__["recipient"] = recipient
-        __props__["routes"] = routes
-        __props__["target_id"] = target_id
-        __props__["template"] = template
-        __props__["triggers"] = triggers
+        __props__.__dict__["content_type"] = content_type
+        __props__.__dict__["custom_headers"] = custom_headers
+        __props__.__dict__["description"] = description
+        __props__.__dict__["email_subject"] = email_subject
+        __props__.__dict__["is_html_content"] = is_html_content
+        __props__.__dict__["method"] = method
+        __props__.__dict__["name"] = name
+        __props__.__dict__["recipient"] = recipient
+        __props__.__dict__["routes"] = routes
+        __props__.__dict__["target_id"] = target_id
+        __props__.__dict__["template"] = template
+        __props__.__dict__["triggers"] = triggers
         return AlertTarget(resource_name, opts=opts, __props__=__props__)
 
     @property
@@ -631,10 +833,4 @@ class AlertTarget(pulumi.CustomResource):
         `ALERT_UPDATED`, `ALERT_RESOLVED`, `ALERT_MAINTENANCE`, `ALERT_SNOOZED`, `ALERT_NO_DATA`, `ALERT_NO_DATA_RESOLVED`, `ALERT_NO_DATA_MAINTENANCE`.
         """
         return pulumi.get(self, "triggers")
-
-    def translate_output_property(self, prop):
-        return _tables.CAMEL_TO_SNAKE_CASE_TABLE.get(prop) or prop
-
-    def translate_input_property(self, prop):
-        return _tables.SNAKE_TO_CAMEL_CASE_TABLE.get(prop) or prop
 

@@ -6,7 +6,7 @@ import warnings
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
-from . import _utilities, _tables
+from . import _utilities
 from . import outputs
 
 __all__ = [
@@ -52,12 +52,28 @@ class AlertTargetRoute(dict):
     def filter(self) -> Optional[Mapping[str, str]]:
         return pulumi.get(self, "filter")
 
-    def _translate_property(self, prop):
-        return _tables.CAMEL_TO_SNAKE_CASE_TABLE.get(prop) or prop
-
 
 @pulumi.output_type
 class CloudIntegrationNewRelicMetricFilter(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "appName":
+            suggest = "app_name"
+        elif key == "metricFilterRegex":
+            suggest = "metric_filter_regex"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CloudIntegrationNewRelicMetricFilter. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CloudIntegrationNewRelicMetricFilter.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CloudIntegrationNewRelicMetricFilter.__key_warning(key)
+        return super().get(key, default)
+
     def __init__(__self__, *,
                  app_name: str,
                  metric_filter_regex: str):
@@ -84,12 +100,38 @@ class CloudIntegrationNewRelicMetricFilter(dict):
         """
         return pulumi.get(self, "metric_filter_regex")
 
-    def _translate_property(self, prop):
-        return _tables.CAMEL_TO_SNAKE_CASE_TABLE.get(prop) or prop
-
 
 @pulumi.output_type
 class DashboardParameterDetail(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "defaultValue":
+            suggest = "default_value"
+        elif key == "hideFromView":
+            suggest = "hide_from_view"
+        elif key == "parameterType":
+            suggest = "parameter_type"
+        elif key == "valuesToReadableStrings":
+            suggest = "values_to_readable_strings"
+        elif key == "dynamicFieldType":
+            suggest = "dynamic_field_type"
+        elif key == "queryValue":
+            suggest = "query_value"
+        elif key == "tagKey":
+            suggest = "tag_key"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DashboardParameterDetail. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DashboardParameterDetail.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DashboardParameterDetail.__key_warning(key)
+        return super().get(key, default)
+
     def __init__(__self__, *,
                  default_value: str,
                  hide_from_view: bool,
@@ -200,9 +242,6 @@ class DashboardParameterDetail(dict):
         """
         return pulumi.get(self, "tag_key")
 
-    def _translate_property(self, prop):
-        return _tables.CAMEL_TO_SNAKE_CASE_TABLE.get(prop) or prop
-
 
 @pulumi.output_type
 class DashboardSection(dict):
@@ -232,9 +271,6 @@ class DashboardSection(dict):
         """
         return pulumi.get(self, "rows")
 
-    def _translate_property(self, prop):
-        return _tables.CAMEL_TO_SNAKE_CASE_TABLE.get(prop) or prop
-
 
 @pulumi.output_type
 class DashboardSectionRow(dict):
@@ -253,12 +289,28 @@ class DashboardSectionRow(dict):
         """
         return pulumi.get(self, "charts")
 
-    def _translate_property(self, prop):
-        return _tables.CAMEL_TO_SNAKE_CASE_TABLE.get(prop) or prop
-
 
 @pulumi.output_type
 class DashboardSectionRowChart(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "chartSetting":
+            suggest = "chart_setting"
+        elif key == "chartAttribute":
+            suggest = "chart_attribute"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DashboardSectionRowChart. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DashboardSectionRowChart.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DashboardSectionRowChart.__key_warning(key)
+        return super().get(key, default)
+
     def __init__(__self__, *,
                  chart_setting: 'outputs.DashboardSectionRowChartChartSetting',
                  name: str,
@@ -352,12 +404,118 @@ class DashboardSectionRowChart(dict):
         """
         return pulumi.get(self, "description")
 
-    def _translate_property(self, prop):
-        return _tables.CAMEL_TO_SNAKE_CASE_TABLE.get(prop) or prop
-
 
 @pulumi.output_type
 class DashboardSectionRowChartChartSetting(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "autoColumnTags":
+            suggest = "auto_column_tags"
+        elif key == "columnTags":
+            suggest = "column_tags"
+        elif key == "customTags":
+            suggest = "custom_tags"
+        elif key == "expectedDataSpacing":
+            suggest = "expected_data_spacing"
+        elif key == "fixedLegendDisplayStats":
+            suggest = "fixed_legend_display_stats"
+        elif key == "fixedLegendEnabled":
+            suggest = "fixed_legend_enabled"
+        elif key == "fixedLegendFilterField":
+            suggest = "fixed_legend_filter_field"
+        elif key == "fixedLegendFilterLimit":
+            suggest = "fixed_legend_filter_limit"
+        elif key == "fixedLegendFilterSort":
+            suggest = "fixed_legend_filter_sort"
+        elif key == "fixedLegendHideLabel":
+            suggest = "fixed_legend_hide_label"
+        elif key == "fixedLegendPosition":
+            suggest = "fixed_legend_position"
+        elif key == "fixedLegendUseRawStats":
+            suggest = "fixed_legend_use_raw_stats"
+        elif key == "groupBySource":
+            suggest = "group_by_source"
+        elif key == "invertDynamicLegendHoverControl":
+            suggest = "invert_dynamic_legend_hover_control"
+        elif key == "lineType":
+            suggest = "line_type"
+        elif key == "numTags":
+            suggest = "num_tags"
+        elif key == "plainMarkdownContent":
+            suggest = "plain_markdown_content"
+        elif key == "showHosts":
+            suggest = "show_hosts"
+        elif key == "showLabels":
+            suggest = "show_labels"
+        elif key == "showRawValues":
+            suggest = "show_raw_values"
+        elif key == "sortValuesDescending":
+            suggest = "sort_values_descending"
+        elif key == "sparklineDecimalPrecision":
+            suggest = "sparkline_decimal_precision"
+        elif key == "sparklineDisplayColor":
+            suggest = "sparkline_display_color"
+        elif key == "sparklineDisplayFontSize":
+            suggest = "sparkline_display_font_size"
+        elif key == "sparklineDisplayHorizontalPosition":
+            suggest = "sparkline_display_horizontal_position"
+        elif key == "sparklineDisplayPostfix":
+            suggest = "sparkline_display_postfix"
+        elif key == "sparklineDisplayPrefix":
+            suggest = "sparkline_display_prefix"
+        elif key == "sparklineDisplayValueType":
+            suggest = "sparkline_display_value_type"
+        elif key == "sparklineDisplayVerticalPosition":
+            suggest = "sparkline_display_vertical_position"
+        elif key == "sparklineFillColor":
+            suggest = "sparkline_fill_color"
+        elif key == "sparklineLineColor":
+            suggest = "sparkline_line_color"
+        elif key == "sparklineSize":
+            suggest = "sparkline_size"
+        elif key == "sparklineValueColorMapApplyTo":
+            suggest = "sparkline_value_color_map_apply_to"
+        elif key == "sparklineValueColorMapColors":
+            suggest = "sparkline_value_color_map_colors"
+        elif key == "sparklineValueColorMapValues":
+            suggest = "sparkline_value_color_map_values"
+        elif key == "sparklineValueColorMapValuesV2s":
+            suggest = "sparkline_value_color_map_values_v2s"
+        elif key == "sparklineValueTextMapTexts":
+            suggest = "sparkline_value_text_map_texts"
+        elif key == "sparklineValueTextMapThresholds":
+            suggest = "sparkline_value_text_map_thresholds"
+        elif key == "stackType":
+            suggest = "stack_type"
+        elif key == "tagMode":
+            suggest = "tag_mode"
+        elif key == "timeBasedColoring":
+            suggest = "time_based_coloring"
+        elif key == "windowSize":
+            suggest = "window_size"
+        elif key == "y0ScaleSiBy1024":
+            suggest = "y0_scale_si_by1024"
+        elif key == "y0UnitAutoscaling":
+            suggest = "y0_unit_autoscaling"
+        elif key == "y1ScaleSiBy1024":
+            suggest = "y1_scale_si_by1024"
+        elif key == "y1UnitAutoscaling":
+            suggest = "y1_unit_autoscaling"
+        elif key == "y1Units":
+            suggest = "y1_units"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DashboardSectionRowChartChartSetting. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DashboardSectionRowChartChartSetting.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DashboardSectionRowChartChartSetting.__key_warning(key)
+        return super().get(key, default)
+
     def __init__(__self__, *,
                  type: str,
                  auto_column_tags: Optional[bool] = None,
@@ -1097,12 +1255,30 @@ class DashboardSectionRowChartChartSetting(dict):
         """
         return pulumi.get(self, "ymin")
 
-    def _translate_property(self, prop):
-        return _tables.CAMEL_TO_SNAKE_CASE_TABLE.get(prop) or prop
-
 
 @pulumi.output_type
 class DashboardSectionRowChartSource(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "queryBuilderEnabled":
+            suggest = "query_builder_enabled"
+        elif key == "scatterPlotSource":
+            suggest = "scatter_plot_source"
+        elif key == "sourceDescription":
+            suggest = "source_description"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DashboardSectionRowChartSource. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DashboardSectionRowChartSource.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DashboardSectionRowChartSource.__key_warning(key)
+        return super().get(key, default)
+
     def __init__(__self__, *,
                  name: str,
                  query: str,
@@ -1176,8 +1352,5 @@ class DashboardSectionRowChartSource(dict):
         A description for the purpose of this source
         """
         return pulumi.get(self, "source_description")
-
-    def _translate_property(self, prop):
-        return _tables.CAMEL_TO_SNAKE_CASE_TABLE.get(prop) or prop
 
 

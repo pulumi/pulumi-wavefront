@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 // Provides an External ID for use in AWS IAM Roles.  This allows External IDs to be created and deleted.
@@ -19,7 +19,7 @@ import (
 //
 // import (
 // 	"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront"
-// 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
+// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 // )
 //
 // func main() {

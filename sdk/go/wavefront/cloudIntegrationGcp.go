@@ -8,7 +8,7 @@ import (
 	"reflect"
 
 	"github.com/pkg/errors"
-	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 // Provides a Wavefront Cloud Integration for GCP. This allows GCP cloud integrations to be created,
@@ -23,7 +23,7 @@ import (
 // 	"fmt"
 //
 // 	"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront"
-// 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
+// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 // )
 //
 // func main() {

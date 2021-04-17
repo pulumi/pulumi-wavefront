@@ -8,7 +8,7 @@ import (
 	"reflect"
 
 	"github.com/pkg/errors"
-	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 // Provides a wavefront Alert Target resource. This allows alert targets to created, updated, and deleted.
@@ -20,7 +20,7 @@ import (
 //
 // import (
 // 	"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront"
-// 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
+// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 // )
 //
 // func main() {
@@ -67,7 +67,7 @@ import (
 //
 // import (
 // 	"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront"
-// 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
+// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 // )
 //
 // func main() {

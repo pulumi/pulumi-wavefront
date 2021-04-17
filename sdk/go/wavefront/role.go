@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 // Provides a Wavefront Role Resource. This allows user groups to be created, updated, and deleted.
@@ -19,7 +19,7 @@ import (
 //
 // import (
 // 	"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront"
-// 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
+// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 // )
 //
 // func main() {

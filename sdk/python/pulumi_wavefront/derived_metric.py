@@ -6,7 +6,7 @@ import warnings
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
-from . import _utilities, _tables
+from . import _utilities
 
 __all__ = ['DerivedMetricArgs', 'DerivedMetric']
 
@@ -82,6 +82,94 @@ class DerivedMetricArgs:
     @name.setter
     def name(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        A set of tags to assign to this resource.
+        """
+        return pulumi.get(self, "tags")
+
+    @tags.setter
+    def tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "tags", value)
+
+
+@pulumi.input_type
+class _DerivedMetricState:
+    def __init__(__self__, *,
+                 additional_information: Optional[pulumi.Input[str]] = None,
+                 minutes: Optional[pulumi.Input[int]] = None,
+                 name: Optional[pulumi.Input[str]] = None,
+                 query: Optional[pulumi.Input[str]] = None,
+                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
+        """
+        Input properties used for looking up and filtering DerivedMetric resources.
+        :param pulumi.Input[str] additional_information: User-supplied additional explanatory information for the derived metric
+        :param pulumi.Input[int] minutes: How frequently the query generating the derived metric is run
+        :param pulumi.Input[str] name: The name of the Derived Metric in Wavefront
+        :param pulumi.Input[str] query: A Wavefront query that is evaluated at regular intervals (default `1m`)
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] tags: A set of tags to assign to this resource.
+        """
+        if additional_information is not None:
+            pulumi.set(__self__, "additional_information", additional_information)
+        if minutes is not None:
+            pulumi.set(__self__, "minutes", minutes)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if query is not None:
+            pulumi.set(__self__, "query", query)
+        if tags is not None:
+            pulumi.set(__self__, "tags", tags)
+
+    @property
+    @pulumi.getter(name="additionalInformation")
+    def additional_information(self) -> Optional[pulumi.Input[str]]:
+        """
+        User-supplied additional explanatory information for the derived metric
+        """
+        return pulumi.get(self, "additional_information")
+
+    @additional_information.setter
+    def additional_information(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "additional_information", value)
+
+    @property
+    @pulumi.getter
+    def minutes(self) -> Optional[pulumi.Input[int]]:
+        """
+        How frequently the query generating the derived metric is run
+        """
+        return pulumi.get(self, "minutes")
+
+    @minutes.setter
+    def minutes(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "minutes", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        The name of the Derived Metric in Wavefront
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def query(self) -> Optional[pulumi.Input[str]]:
+        """
+        A Wavefront query that is evaluated at regular intervals (default `1m`)
+        """
+        return pulumi.get(self, "query")
+
+    @query.setter
+    def query(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "query", value)
 
     @property
     @pulumi.getter
@@ -207,17 +295,17 @@ class DerivedMetric(pulumi.CustomResource):
         if opts.id is None:
             if __props__ is not None:
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
-            __props__ = dict()
+            __props__ = DerivedMetricArgs.__new__(DerivedMetricArgs)
 
-            __props__['additional_information'] = additional_information
+            __props__.__dict__["additional_information"] = additional_information
             if minutes is None and not opts.urn:
                 raise TypeError("Missing required property 'minutes'")
-            __props__['minutes'] = minutes
-            __props__['name'] = name
+            __props__.__dict__["minutes"] = minutes
+            __props__.__dict__["name"] = name
             if query is None and not opts.urn:
                 raise TypeError("Missing required property 'query'")
-            __props__['query'] = query
-            __props__['tags'] = tags
+            __props__.__dict__["query"] = query
+            __props__.__dict__["tags"] = tags
         super(DerivedMetric, __self__).__init__(
             'wavefront:index/derivedMetric:DerivedMetric',
             resource_name,
@@ -248,13 +336,13 @@ class DerivedMetric(pulumi.CustomResource):
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
-        __props__ = dict()
+        __props__ = _DerivedMetricState.__new__(_DerivedMetricState)
 
-        __props__["additional_information"] = additional_information
-        __props__["minutes"] = minutes
-        __props__["name"] = name
-        __props__["query"] = query
-        __props__["tags"] = tags
+        __props__.__dict__["additional_information"] = additional_information
+        __props__.__dict__["minutes"] = minutes
+        __props__.__dict__["name"] = name
+        __props__.__dict__["query"] = query
+        __props__.__dict__["tags"] = tags
         return DerivedMetric(resource_name, opts=opts, __props__=__props__)
 
     @property
@@ -296,10 +384,4 @@ class DerivedMetric(pulumi.CustomResource):
         A set of tags to assign to this resource.
         """
         return pulumi.get(self, "tags")
-
-    def translate_output_property(self, prop):
-        return _tables.CAMEL_TO_SNAKE_CASE_TABLE.get(prop) or prop
-
-    def translate_input_property(self, prop):
-        return _tables.SNAKE_TO_CAMEL_CASE_TABLE.get(prop) or prop
 
