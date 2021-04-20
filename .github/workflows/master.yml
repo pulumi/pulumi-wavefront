@@ -13,7 +13,6 @@ env:
   TRAVIS_OS_NAME: linux
   WAVEFRONT_ADDRESS: ${{ secrets.WAVEFRONT_ADDRESS }}
   WAVEFRONT_TOKEN: ${{ secrets.WAVEFRONT_TOKEN }}
-  VERSION_PREFIX: 1.0.0
 jobs:
   build_sdk:
     name: build_sdk
