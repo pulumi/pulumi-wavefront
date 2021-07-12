@@ -23,7 +23,7 @@ import * as utilities from "./utilities";
  *         "terraform",
  *         "test",
  *     ],
- *     target: "test@example.com",
+ *     target: "test@example.com,target:alert-target-id",
  * });
  * ```
  *
@@ -128,7 +128,8 @@ export class Alert extends pulumi.CustomResource {
     public readonly tags!: pulumi.Output<string[]>;
     /**
      * A comma-separated list of the email address or integration endpoint 
-     * (such as PagerDuty or web hook) to notify when the alert status changes.
+     * (such as PagerDuty or web hook) to notify when the alert status changes. Multiple target types can be in the list.
+     * Alert target format: ({email}|pd:{pd_key}|target:{alert-target-id}).
      */
     public readonly target!: pulumi.Output<string | undefined>;
     /**
@@ -262,7 +263,8 @@ export interface AlertState {
     tags?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * A comma-separated list of the email address or integration endpoint 
-     * (such as PagerDuty or web hook) to notify when the alert status changes.
+     * (such as PagerDuty or web hook) to notify when the alert status changes. Multiple target types can be in the list.
+     * Alert target format: ({email}|pd:{pd_key}|target:{alert-target-id}).
      */
     target?: pulumi.Input<string>;
     /**
@@ -340,7 +342,8 @@ export interface AlertArgs {
     tags: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * A comma-separated list of the email address or integration endpoint 
-     * (such as PagerDuty or web hook) to notify when the alert status changes.
+     * (such as PagerDuty or web hook) to notify when the alert status changes. Multiple target types can be in the list.
+     * Alert target format: ({email}|pd:{pd_key}|target:{alert-target-id}).
      */
     target?: pulumi.Input<string>;
     /**

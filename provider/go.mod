@@ -5,5 +5,7 @@ go 1.16
 require (
 	github.com/pulumi/pulumi-terraform-bridge/v3 v3.18.0
 	github.com/pulumi/pulumi/sdk/v3 v3.23.2
-	github.com/vmware/terraform-provider-wavefront v0.0.0-20210301224956-247110356692
+	github.com/vmware/terraform-provider-wavefront v0.0.0-20210610195536-769fabacff12
 )
+
+replace github.com/hashicorp/terraform-plugin-sdk/v2 => github.com/pulumi/terraform-plugin-sdk/v2 v2.0.0-20211019194827-62530c6537a4

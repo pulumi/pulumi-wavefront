@@ -35,7 +35,7 @@ import (
 // 				pulumi.String("terraform"),
 // 				pulumi.String("test"),
 // 			},
-// 			Target: pulumi.String("test@example.com"),
+// 			Target: pulumi.String("test@example.com,target:alert-target-id"),
 // 		})
 // 		if err != nil {
 // 			return err
@@ -93,7 +93,8 @@ type Alert struct {
 	// A set of tags to assign to this resource.
 	Tags pulumi.StringArrayOutput `pulumi:"tags"`
 	// A comma-separated list of the email address or integration endpoint
-	// (such as PagerDuty or web hook) to notify when the alert status changes.
+	// (such as PagerDuty or web hook) to notify when the alert status changes. Multiple target types can be in the list.
+	// Alert target format: ({email}|pd:{pd_key}|target:{alert-target-id}).
 	Target pulumi.StringPtrOutput `pulumi:"target"`
 	// Targets for severity
 	ThresholdTargets pulumi.StringMapOutput `pulumi:"thresholdTargets"`
@@ -172,7 +173,8 @@ type alertState struct {
 	// A set of tags to assign to this resource.
 	Tags []string `pulumi:"tags"`
 	// A comma-separated list of the email address or integration endpoint
-	// (such as PagerDuty or web hook) to notify when the alert status changes.
+	// (such as PagerDuty or web hook) to notify when the alert status changes. Multiple target types can be in the list.
+	// Alert target format: ({email}|pd:{pd_key}|target:{alert-target-id}).
 	Target *string `pulumi:"target"`
 	// Targets for severity
 	ThresholdTargets map[string]string `pulumi:"thresholdTargets"`
@@ -217,7 +219,8 @@ type AlertState struct {
 	// A set of tags to assign to this resource.
 	Tags pulumi.StringArrayInput
 	// A comma-separated list of the email address or integration endpoint
-	// (such as PagerDuty or web hook) to notify when the alert status changes.
+	// (such as PagerDuty or web hook) to notify when the alert status changes. Multiple target types can be in the list.
+	// Alert target format: ({email}|pd:{pd_key}|target:{alert-target-id}).
 	Target pulumi.StringPtrInput
 	// Targets for severity
 	ThresholdTargets pulumi.StringMapInput
@@ -266,7 +269,8 @@ type alertArgs struct {
 	// A set of tags to assign to this resource.
 	Tags []string `pulumi:"tags"`
 	// A comma-separated list of the email address or integration endpoint
-	// (such as PagerDuty or web hook) to notify when the alert status changes.
+	// (such as PagerDuty or web hook) to notify when the alert status changes. Multiple target types can be in the list.
+	// Alert target format: ({email}|pd:{pd_key}|target:{alert-target-id}).
 	Target *string `pulumi:"target"`
 	// Targets for severity
 	ThresholdTargets map[string]string `pulumi:"thresholdTargets"`
@@ -312,7 +316,8 @@ type AlertArgs struct {
 	// A set of tags to assign to this resource.
 	Tags pulumi.StringArrayInput
 	// A comma-separated list of the email address or integration endpoint
-	// (such as PagerDuty or web hook) to notify when the alert status changes.
+	// (such as PagerDuty or web hook) to notify when the alert status changes. Multiple target types can be in the list.
+	// Alert target format: ({email}|pd:{pd_key}|target:{alert-target-id}).
 	Target pulumi.StringPtrInput
 	// Targets for severity
 	ThresholdTargets pulumi.StringMapInput
