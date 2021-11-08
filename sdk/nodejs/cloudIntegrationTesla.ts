@@ -138,31 +138,31 @@ export interface CloudIntegrationTeslaState {
     /**
      * A list of point tag key-values to add to every point ingested using this integration
      */
-    readonly additionalTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    additionalTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * Email address for the Tesla account login
      */
-    readonly email?: pulumi.Input<string>;
+    email?: pulumi.Input<string>;
     /**
      * Forces this resource to save, even if errors are present
      */
-    readonly forceSave?: pulumi.Input<boolean>;
+    forceSave?: pulumi.Input<boolean>;
     /**
      * The human-readable name of this integration
      */
-    readonly name?: pulumi.Input<string>;
+    name?: pulumi.Input<string>;
     /**
      * Password for the Tesla account login
      */
-    readonly password?: pulumi.Input<string>;
+    password?: pulumi.Input<string>;
     /**
      * A value denoting which cloud service this service integrates with
      */
-    readonly service?: pulumi.Input<string>;
+    service?: pulumi.Input<string>;
     /**
      * How often, in minutes, to refresh the service
      */
-    readonly serviceRefreshRateInMinutes?: pulumi.Input<number>;
+    serviceRefreshRateInMinutes?: pulumi.Input<number>;
 }
 
 /**
@@ -172,29 +172,29 @@ export interface CloudIntegrationTeslaArgs {
     /**
      * A list of point tag key-values to add to every point ingested using this integration
      */
-    readonly additionalTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    additionalTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * Email address for the Tesla account login
      */
-    readonly email: pulumi.Input<string>;
+    email: pulumi.Input<string>;
     /**
      * Forces this resource to save, even if errors are present
      */
-    readonly forceSave?: pulumi.Input<boolean>;
+    forceSave?: pulumi.Input<boolean>;
     /**
      * The human-readable name of this integration
      */
-    readonly name?: pulumi.Input<string>;
+    name?: pulumi.Input<string>;
     /**
      * Password for the Tesla account login
      */
-    readonly password: pulumi.Input<string>;
+    password: pulumi.Input<string>;
     /**
      * A value denoting which cloud service this service integrates with
      */
-    readonly service: pulumi.Input<string>;
+    service: pulumi.Input<string>;
     /**
      * How often, in minutes, to refresh the service
      */
-    readonly serviceRefreshRateInMinutes?: pulumi.Input<number>;
+    serviceRefreshRateInMinutes?: pulumi.Input<number>;
 }

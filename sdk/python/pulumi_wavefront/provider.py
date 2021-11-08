@@ -125,3 +125,18 @@ class Provider(pulumi.ProviderResource):
             __props__,
             opts)
 
+    @property
+    @pulumi.getter
+    def address(self) -> pulumi.Output[str]:
+        return pulumi.get(self, "address")
+
+    @property
+    @pulumi.getter(name="httpProxy")
+    def http_proxy(self) -> pulumi.Output[Optional[str]]:
+        return pulumi.get(self, "http_proxy")
+
+    @property
+    @pulumi.getter
+    def token(self) -> pulumi.Output[str]:
+        return pulumi.get(self, "token")
+

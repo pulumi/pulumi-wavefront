@@ -320,7 +320,7 @@ type CloudIntegrationCloudWatchArrayInput interface {
 type CloudIntegrationCloudWatchArray []CloudIntegrationCloudWatchInput
 
 func (CloudIntegrationCloudWatchArray) ElementType() reflect.Type {
-	return reflect.TypeOf(([]*CloudIntegrationCloudWatch)(nil))
+	return reflect.TypeOf((*[]*CloudIntegrationCloudWatch)(nil)).Elem()
 }
 
 func (i CloudIntegrationCloudWatchArray) ToCloudIntegrationCloudWatchArrayOutput() CloudIntegrationCloudWatchArrayOutput {
@@ -345,7 +345,7 @@ type CloudIntegrationCloudWatchMapInput interface {
 type CloudIntegrationCloudWatchMap map[string]CloudIntegrationCloudWatchInput
 
 func (CloudIntegrationCloudWatchMap) ElementType() reflect.Type {
-	return reflect.TypeOf((map[string]*CloudIntegrationCloudWatch)(nil))
+	return reflect.TypeOf((*map[string]*CloudIntegrationCloudWatch)(nil)).Elem()
 }
 
 func (i CloudIntegrationCloudWatchMap) ToCloudIntegrationCloudWatchMapOutput() CloudIntegrationCloudWatchMapOutput {
@@ -356,9 +356,7 @@ func (i CloudIntegrationCloudWatchMap) ToCloudIntegrationCloudWatchMapOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(CloudIntegrationCloudWatchMapOutput)
 }
 
-type CloudIntegrationCloudWatchOutput struct {
-	*pulumi.OutputState
-}
+type CloudIntegrationCloudWatchOutput struct{ *pulumi.OutputState }
 
 func (CloudIntegrationCloudWatchOutput) ElementType() reflect.Type {
 	return reflect.TypeOf((*CloudIntegrationCloudWatch)(nil))
@@ -377,14 +375,12 @@ func (o CloudIntegrationCloudWatchOutput) ToCloudIntegrationCloudWatchPtrOutput(
 }
 
 func (o CloudIntegrationCloudWatchOutput) ToCloudIntegrationCloudWatchPtrOutputWithContext(ctx context.Context) CloudIntegrationCloudWatchPtrOutput {
-	return o.ApplyT(func(v CloudIntegrationCloudWatch) *CloudIntegrationCloudWatch {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v CloudIntegrationCloudWatch) *CloudIntegrationCloudWatch {
 		return &v
 	}).(CloudIntegrationCloudWatchPtrOutput)
 }
 
-type CloudIntegrationCloudWatchPtrOutput struct {
-	*pulumi.OutputState
-}
+type CloudIntegrationCloudWatchPtrOutput struct{ *pulumi.OutputState }
 
 func (CloudIntegrationCloudWatchPtrOutput) ElementType() reflect.Type {
 	return reflect.TypeOf((**CloudIntegrationCloudWatch)(nil))
@@ -396,6 +392,16 @@ func (o CloudIntegrationCloudWatchPtrOutput) ToCloudIntegrationCloudWatchPtrOutp
 
 func (o CloudIntegrationCloudWatchPtrOutput) ToCloudIntegrationCloudWatchPtrOutputWithContext(ctx context.Context) CloudIntegrationCloudWatchPtrOutput {
 	return o
+}
+
+func (o CloudIntegrationCloudWatchPtrOutput) Elem() CloudIntegrationCloudWatchOutput {
+	return o.ApplyT(func(v *CloudIntegrationCloudWatch) CloudIntegrationCloudWatch {
+		if v != nil {
+			return *v
+		}
+		var ret CloudIntegrationCloudWatch
+		return ret
+	}).(CloudIntegrationCloudWatchOutput)
 }
 
 type CloudIntegrationCloudWatchArrayOutput struct{ *pulumi.OutputState }
@@ -439,6 +445,10 @@ func (o CloudIntegrationCloudWatchMapOutput) MapIndex(k pulumi.StringInput) Clou
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*CloudIntegrationCloudWatchInput)(nil)).Elem(), &CloudIntegrationCloudWatch{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CloudIntegrationCloudWatchPtrInput)(nil)).Elem(), &CloudIntegrationCloudWatch{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CloudIntegrationCloudWatchArrayInput)(nil)).Elem(), CloudIntegrationCloudWatchArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CloudIntegrationCloudWatchMapInput)(nil)).Elem(), CloudIntegrationCloudWatchMap{})
 	pulumi.RegisterOutputType(CloudIntegrationCloudWatchOutput{})
 	pulumi.RegisterOutputType(CloudIntegrationCloudWatchPtrOutput{})
 	pulumi.RegisterOutputType(CloudIntegrationCloudWatchArrayOutput{})

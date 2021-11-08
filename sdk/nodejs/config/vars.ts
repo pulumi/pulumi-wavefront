@@ -4,8 +4,30 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
-let __config = new pulumi.Config("wavefront");
+declare var exports: any;
+const __config = new pulumi.Config("wavefront");
 
-export let address: string | undefined = __config.get("address");
-export let httpProxy: string | undefined = __config.get("httpProxy");
-export let token: string | undefined = __config.get("token");
+export declare const address: string | undefined;
+Object.defineProperty(exports, "address", {
+    get() {
+        return __config.get("address");
+    },
+    enumerable: true,
+});
+
+export declare const httpProxy: string | undefined;
+Object.defineProperty(exports, "httpProxy", {
+    get() {
+        return __config.get("httpProxy");
+    },
+    enumerable: true,
+});
+
+export declare const token: string | undefined;
+Object.defineProperty(exports, "token", {
+    get() {
+        return __config.get("token");
+    },
+    enumerable: true,
+});
+

@@ -171,47 +171,47 @@ export interface CloudIntegrationCloudTrailState {
     /**
      * A list of point tag key-values to add to every point ingested using this integration
      */
-    readonly additionalTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    additionalTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * Name of the S3 bucket where CloudTrail logs are stored
      */
-    readonly bucketName?: pulumi.Input<string>;
+    bucketName?: pulumi.Input<string>;
     /**
      * The Role ARN that the customer has created in AWS IAM to allow access to Wavefront
      */
-    readonly externalId?: pulumi.Input<string>;
+    externalId?: pulumi.Input<string>;
     /**
      * Rule to filter CloudTrail log event
      */
-    readonly filterRule?: pulumi.Input<string>;
+    filterRule?: pulumi.Input<string>;
     /**
      * Forces this resource to save, even if errors are present
      */
-    readonly forceSave?: pulumi.Input<boolean>;
+    forceSave?: pulumi.Input<boolean>;
     /**
      * The human-readable name of this integration
      */
-    readonly name?: pulumi.Input<string>;
+    name?: pulumi.Input<string>;
     /**
      * The common prefix, if any, appended to all CloudTrail log files.
      */
-    readonly prefix?: pulumi.Input<string>;
+    prefix?: pulumi.Input<string>;
     /**
      * The AWS region of the S3 bucket where CloudTrail logs are stored
      */
-    readonly region?: pulumi.Input<string>;
+    region?: pulumi.Input<string>;
     /**
      * The external id corresponding to the Role ARN
      */
-    readonly roleArn?: pulumi.Input<string>;
+    roleArn?: pulumi.Input<string>;
     /**
      * A value denoting which cloud service this service integrates with
      */
-    readonly service?: pulumi.Input<string>;
+    service?: pulumi.Input<string>;
     /**
      * How often, in minutes, to refresh the service
      */
-    readonly serviceRefreshRateInMinutes?: pulumi.Input<number>;
+    serviceRefreshRateInMinutes?: pulumi.Input<number>;
 }
 
 /**
@@ -221,45 +221,45 @@ export interface CloudIntegrationCloudTrailArgs {
     /**
      * A list of point tag key-values to add to every point ingested using this integration
      */
-    readonly additionalTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    additionalTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * Name of the S3 bucket where CloudTrail logs are stored
      */
-    readonly bucketName: pulumi.Input<string>;
+    bucketName: pulumi.Input<string>;
     /**
      * The Role ARN that the customer has created in AWS IAM to allow access to Wavefront
      */
-    readonly externalId: pulumi.Input<string>;
+    externalId: pulumi.Input<string>;
     /**
      * Rule to filter CloudTrail log event
      */
-    readonly filterRule?: pulumi.Input<string>;
+    filterRule?: pulumi.Input<string>;
     /**
      * Forces this resource to save, even if errors are present
      */
-    readonly forceSave?: pulumi.Input<boolean>;
+    forceSave?: pulumi.Input<boolean>;
     /**
      * The human-readable name of this integration
      */
-    readonly name?: pulumi.Input<string>;
+    name?: pulumi.Input<string>;
     /**
      * The common prefix, if any, appended to all CloudTrail log files.
      */
-    readonly prefix?: pulumi.Input<string>;
+    prefix?: pulumi.Input<string>;
     /**
      * The AWS region of the S3 bucket where CloudTrail logs are stored
      */
-    readonly region: pulumi.Input<string>;
+    region: pulumi.Input<string>;
     /**
      * The external id corresponding to the Role ARN
      */
-    readonly roleArn: pulumi.Input<string>;
+    roleArn: pulumi.Input<string>;
     /**
      * A value denoting which cloud service this service integrates with
      */
-    readonly service: pulumi.Input<string>;
+    service: pulumi.Input<string>;
     /**
      * How often, in minutes, to refresh the service
      */
-    readonly serviceRefreshRateInMinutes?: pulumi.Input<number>;
+    serviceRefreshRateInMinutes?: pulumi.Input<number>;
 }

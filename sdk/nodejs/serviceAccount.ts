@@ -127,29 +127,29 @@ export interface ServiceAccountState {
     /**
      * Whether or not the service account is active
      */
-    readonly active?: pulumi.Input<boolean>;
+    active?: pulumi.Input<boolean>;
     /**
      * The description of the service account
      */
-    readonly description?: pulumi.Input<string>;
+    description?: pulumi.Input<string>;
     /**
      * The (unique) identifier of the service account to create. Must start with sa::
      */
-    readonly identifier?: pulumi.Input<string>;
+    identifier?: pulumi.Input<string>;
     /**
      * ID of ingestion policy
      */
-    readonly ingestionPolicy?: pulumi.Input<string>;
+    ingestionPolicy?: pulumi.Input<string>;
     /**
      * List of permission to grant to this service account.  Valid options are
      * `agentManagement`, `alertsManagement`, `dashboardManagement`, `embeddedCharts`, `eventsManagement`, `externalLinksManagement`,
      * `hostTagManagement`, `metricsManagement`, `userManagement`
      */
-    readonly permissions?: pulumi.Input<pulumi.Input<string>[]>;
+    permissions?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * List of user groups for this service account
      */
-    readonly userGroups?: pulumi.Input<pulumi.Input<string>[]>;
+    userGroups?: pulumi.Input<pulumi.Input<string>[]>;
 }
 
 /**
@@ -159,27 +159,27 @@ export interface ServiceAccountArgs {
     /**
      * Whether or not the service account is active
      */
-    readonly active?: pulumi.Input<boolean>;
+    active?: pulumi.Input<boolean>;
     /**
      * The description of the service account
      */
-    readonly description?: pulumi.Input<string>;
+    description?: pulumi.Input<string>;
     /**
      * The (unique) identifier of the service account to create. Must start with sa::
      */
-    readonly identifier: pulumi.Input<string>;
+    identifier: pulumi.Input<string>;
     /**
      * ID of ingestion policy
      */
-    readonly ingestionPolicy?: pulumi.Input<string>;
+    ingestionPolicy?: pulumi.Input<string>;
     /**
      * List of permission to grant to this service account.  Valid options are
      * `agentManagement`, `alertsManagement`, `dashboardManagement`, `embeddedCharts`, `eventsManagement`, `externalLinksManagement`,
      * `hostTagManagement`, `metricsManagement`, `userManagement`
      */
-    readonly permissions?: pulumi.Input<pulumi.Input<string>[]>;
+    permissions?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * List of user groups for this service account
      */
-    readonly userGroups?: pulumi.Input<pulumi.Input<string>[]>;
+    userGroups?: pulumi.Input<pulumi.Input<string>[]>;
 }

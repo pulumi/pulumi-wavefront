@@ -175,56 +175,56 @@ export interface CloudIntegrationCloudWatchState {
     /**
      * A list of point tag key-values to add to every point ingested using this integration
      */
-    readonly additionalTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    additionalTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * The Role ARN that the customer has created in AWS IAM to allow access to Wavefront
      */
-    readonly externalId?: pulumi.Input<string>;
+    externalId?: pulumi.Input<string>;
     /**
      * Forces this resource to save, even if errors are present
      */
-    readonly forceSave?: pulumi.Input<boolean>;
+    forceSave?: pulumi.Input<boolean>;
     /**
      * A string->string map whitelist of instance tag-value pairs (in AWS).
      * If the instance's AWS tags match this whitelist, CloudWatch data about this instance is ingested.
      * Multiple entries are OR'ed
      */
-    readonly instanceSelectionTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    instanceSelectionTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * A regular expression that a CloudWatch metric name must match (case-insensitively) in order to be ingested
      */
-    readonly metricFilterRegex?: pulumi.Input<string>;
+    metricFilterRegex?: pulumi.Input<string>;
     /**
      * The human-readable name of this integration
      */
-    readonly name?: pulumi.Input<string>;
+    name?: pulumi.Input<string>;
     /**
      * A list of namespaces that limit what we query from CloudWatch
      */
-    readonly namespaces?: pulumi.Input<pulumi.Input<string>[]>;
+    namespaces?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * A regular expression that AWS tag key name must match (case-insensitively)
      * in order to be ingested
      */
-    readonly pointTagFilterRegex?: pulumi.Input<string>;
+    pointTagFilterRegex?: pulumi.Input<string>;
     /**
      * The external id corresponding to the Role ARN
      */
-    readonly roleArn?: pulumi.Input<string>;
+    roleArn?: pulumi.Input<string>;
     /**
      * A value denoting which cloud service this service integrates with
      */
-    readonly service?: pulumi.Input<string>;
+    service?: pulumi.Input<string>;
     /**
      * How often, in minutes, to refresh the service
      */
-    readonly serviceRefreshRateInMinutes?: pulumi.Input<number>;
+    serviceRefreshRateInMinutes?: pulumi.Input<number>;
     /**
      * A string->string map of whitelist of volume tag-value pairs (in AWS).
      * If the volume's AWS tags match this whitelist, CloudWatch data about this volume is ingested.
      * Multiple entries are OR'ed
      */
-    readonly volumeSelectionTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    volumeSelectionTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
 }
 
 /**
@@ -234,54 +234,54 @@ export interface CloudIntegrationCloudWatchArgs {
     /**
      * A list of point tag key-values to add to every point ingested using this integration
      */
-    readonly additionalTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    additionalTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * The Role ARN that the customer has created in AWS IAM to allow access to Wavefront
      */
-    readonly externalId: pulumi.Input<string>;
+    externalId: pulumi.Input<string>;
     /**
      * Forces this resource to save, even if errors are present
      */
-    readonly forceSave?: pulumi.Input<boolean>;
+    forceSave?: pulumi.Input<boolean>;
     /**
      * A string->string map whitelist of instance tag-value pairs (in AWS).
      * If the instance's AWS tags match this whitelist, CloudWatch data about this instance is ingested.
      * Multiple entries are OR'ed
      */
-    readonly instanceSelectionTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    instanceSelectionTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * A regular expression that a CloudWatch metric name must match (case-insensitively) in order to be ingested
      */
-    readonly metricFilterRegex?: pulumi.Input<string>;
+    metricFilterRegex?: pulumi.Input<string>;
     /**
      * The human-readable name of this integration
      */
-    readonly name?: pulumi.Input<string>;
+    name?: pulumi.Input<string>;
     /**
      * A list of namespaces that limit what we query from CloudWatch
      */
-    readonly namespaces?: pulumi.Input<pulumi.Input<string>[]>;
+    namespaces?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * A regular expression that AWS tag key name must match (case-insensitively)
      * in order to be ingested
      */
-    readonly pointTagFilterRegex?: pulumi.Input<string>;
+    pointTagFilterRegex?: pulumi.Input<string>;
     /**
      * The external id corresponding to the Role ARN
      */
-    readonly roleArn: pulumi.Input<string>;
+    roleArn: pulumi.Input<string>;
     /**
      * A value denoting which cloud service this service integrates with
      */
-    readonly service: pulumi.Input<string>;
+    service: pulumi.Input<string>;
     /**
      * How often, in minutes, to refresh the service
      */
-    readonly serviceRefreshRateInMinutes?: pulumi.Input<number>;
+    serviceRefreshRateInMinutes?: pulumi.Input<number>;
     /**
      * A string->string map of whitelist of volume tag-value pairs (in AWS).
      * If the volume's AWS tags match this whitelist, CloudWatch data about this volume is ingested.
      * Multiple entries are OR'ed
      */
-    readonly volumeSelectionTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    volumeSelectionTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
 }

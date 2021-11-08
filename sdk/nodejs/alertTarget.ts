@@ -234,51 +234,51 @@ export interface AlertTargetState {
     /**
      * The value of the `Content-Type` header of the webhook.
      */
-    readonly contentType?: pulumi.Input<string>;
+    contentType?: pulumi.Input<string>;
     /**
      * A `string->string` map specifying the custome HTTP header key/value pairs that will be 
      * sent in the requests with a method of `WEBHOOK`.
      */
-    readonly customHeaders?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    customHeaders?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * Description describing this alert target.
      */
-    readonly description?: pulumi.Input<string>;
+    description?: pulumi.Input<string>;
     /**
      * The subject title of an email notification target.
      */
-    readonly emailSubject?: pulumi.Input<string>;
+    emailSubject?: pulumi.Input<string>;
     /**
      * Determine whether the email alert content is sent as HTML or text.
      */
-    readonly isHtmlContent?: pulumi.Input<boolean>;
+    isHtmlContent?: pulumi.Input<boolean>;
     /**
      * The notification method used for notification target. One of `WEBHOOK`, `EMAIL`, `PAGERDUTY`.
      */
-    readonly method?: pulumi.Input<string>;
+    method?: pulumi.Input<string>;
     /**
      * The name of the alert target as it is displayed in wavefront
      */
-    readonly name?: pulumi.Input<string>;
+    name?: pulumi.Input<string>;
     /**
      * The end point for the notification Target.  `EMAIL`: email address. `PAGERDUTY`: PagerDuty 
      * routing key. `WEBHOOK`: URL endpoint.
      */
-    readonly recipient?: pulumi.Input<string>;
+    recipient?: pulumi.Input<string>;
     /**
      * List of routing targets that this alert target will notify. See Route
      */
-    readonly routes?: pulumi.Input<pulumi.Input<inputs.AlertTargetRoute>[]>;
-    readonly targetId?: pulumi.Input<string>;
+    routes?: pulumi.Input<pulumi.Input<inputs.AlertTargetRoute>[]>;
+    targetId?: pulumi.Input<string>;
     /**
      * A mustache template that will form the body of the POST request, email and summary of the PagerDuty.
      */
-    readonly template?: pulumi.Input<string>;
+    template?: pulumi.Input<string>;
     /**
      * A list of occurrences on which this webhook will be fired. Valid values are `ALERT_OPENED`,
      * `ALERT_UPDATED`, `ALERT_RESOLVED`, `ALERT_MAINTENANCE`, `ALERT_SNOOZED`, `ALERT_NO_DATA`, `ALERT_NO_DATA_RESOLVED`, `ALERT_NO_DATA_MAINTENANCE`.
      */
-    readonly triggers?: pulumi.Input<pulumi.Input<string>[]>;
+    triggers?: pulumi.Input<pulumi.Input<string>[]>;
 }
 
 /**
@@ -288,48 +288,48 @@ export interface AlertTargetArgs {
     /**
      * The value of the `Content-Type` header of the webhook.
      */
-    readonly contentType?: pulumi.Input<string>;
+    contentType?: pulumi.Input<string>;
     /**
      * A `string->string` map specifying the custome HTTP header key/value pairs that will be 
      * sent in the requests with a method of `WEBHOOK`.
      */
-    readonly customHeaders?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    customHeaders?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * Description describing this alert target.
      */
-    readonly description: pulumi.Input<string>;
+    description: pulumi.Input<string>;
     /**
      * The subject title of an email notification target.
      */
-    readonly emailSubject?: pulumi.Input<string>;
+    emailSubject?: pulumi.Input<string>;
     /**
      * Determine whether the email alert content is sent as HTML or text.
      */
-    readonly isHtmlContent?: pulumi.Input<boolean>;
+    isHtmlContent?: pulumi.Input<boolean>;
     /**
      * The notification method used for notification target. One of `WEBHOOK`, `EMAIL`, `PAGERDUTY`.
      */
-    readonly method?: pulumi.Input<string>;
+    method?: pulumi.Input<string>;
     /**
      * The name of the alert target as it is displayed in wavefront
      */
-    readonly name?: pulumi.Input<string>;
+    name?: pulumi.Input<string>;
     /**
      * The end point for the notification Target.  `EMAIL`: email address. `PAGERDUTY`: PagerDuty 
      * routing key. `WEBHOOK`: URL endpoint.
      */
-    readonly recipient: pulumi.Input<string>;
+    recipient: pulumi.Input<string>;
     /**
      * List of routing targets that this alert target will notify. See Route
      */
-    readonly routes?: pulumi.Input<pulumi.Input<inputs.AlertTargetRoute>[]>;
+    routes?: pulumi.Input<pulumi.Input<inputs.AlertTargetRoute>[]>;
     /**
      * A mustache template that will form the body of the POST request, email and summary of the PagerDuty.
      */
-    readonly template: pulumi.Input<string>;
+    template: pulumi.Input<string>;
     /**
      * A list of occurrences on which this webhook will be fired. Valid values are `ALERT_OPENED`,
      * `ALERT_UPDATED`, `ALERT_RESOLVED`, `ALERT_MAINTENANCE`, `ALERT_SNOOZED`, `ALERT_NO_DATA`, `ALERT_NO_DATA_RESOLVED`, `ALERT_NO_DATA_MAINTENANCE`.
      */
-    readonly triggers: pulumi.Input<pulumi.Input<string>[]>;
+    triggers: pulumi.Input<pulumi.Input<string>[]>;
 }

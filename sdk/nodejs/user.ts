@@ -108,40 +108,40 @@ export class User extends pulumi.CustomResource {
  * Input properties used for looking up and filtering User resources.
  */
 export interface UserState {
-    readonly customer?: pulumi.Input<string>;
+    customer?: pulumi.Input<string>;
     /**
      * The (unique) identifier of the user to create. Must be a valid email address
      */
-    readonly email?: pulumi.Input<string>;
+    email?: pulumi.Input<string>;
     /**
      * List of permission to grant to this user.  Valid options are
      * `agentManagement`, `alertsManagement`, `dashboardManagement`, `embeddedCharts`, `eventsManagement`, `externalLinksManagement`,
      * `hostTagManagement`, `metricsManagement`, `userManagement`
      */
-    readonly permissions?: pulumi.Input<pulumi.Input<string>[]>;
+    permissions?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * List of user groups to this user
      */
-    readonly userGroups?: pulumi.Input<pulumi.Input<string>[]>;
+    userGroups?: pulumi.Input<pulumi.Input<string>[]>;
 }
 
 /**
  * The set of arguments for constructing a User resource.
  */
 export interface UserArgs {
-    readonly customer?: pulumi.Input<string>;
+    customer?: pulumi.Input<string>;
     /**
      * The (unique) identifier of the user to create. Must be a valid email address
      */
-    readonly email: pulumi.Input<string>;
+    email: pulumi.Input<string>;
     /**
      * List of permission to grant to this user.  Valid options are
      * `agentManagement`, `alertsManagement`, `dashboardManagement`, `embeddedCharts`, `eventsManagement`, `externalLinksManagement`,
      * `hostTagManagement`, `metricsManagement`, `userManagement`
      */
-    readonly permissions?: pulumi.Input<pulumi.Input<string>[]>;
+    permissions?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * List of user groups to this user
      */
-    readonly userGroups?: pulumi.Input<pulumi.Input<string>[]>;
+    userGroups?: pulumi.Input<pulumi.Input<string>[]>;
 }

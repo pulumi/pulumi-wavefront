@@ -147,39 +147,39 @@ export interface CloudIntegrationNewRelicState {
     /**
      * A list of point tag key-values to add to every point ingested using this integration
      */
-    readonly additionalTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    additionalTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * NewRelic REST api key
      */
-    readonly apiKey?: pulumi.Input<string>;
+    apiKey?: pulumi.Input<string>;
     /**
      * A regular expression that an application name must match (case-insensitively) iun order to collect metrics
      */
-    readonly appFilterRegex?: pulumi.Input<string>;
+    appFilterRegex?: pulumi.Input<string>;
     /**
      * Forces this resource to save, even if errors are present
      */
-    readonly forceSave?: pulumi.Input<boolean>;
+    forceSave?: pulumi.Input<boolean>;
     /**
      * A regular expression that a host name must match (case-insensitively) in order to collect metrics
      */
-    readonly hostFilterRegex?: pulumi.Input<string>;
+    hostFilterRegex?: pulumi.Input<string>;
     /**
      * See Metric Filter
      */
-    readonly metricFilters?: pulumi.Input<pulumi.Input<inputs.CloudIntegrationNewRelicMetricFilter>[]>;
+    metricFilters?: pulumi.Input<pulumi.Input<inputs.CloudIntegrationNewRelicMetricFilter>[]>;
     /**
      * The human-readable name of this integration
      */
-    readonly name?: pulumi.Input<string>;
+    name?: pulumi.Input<string>;
     /**
      * A value denoting which cloud service this service integrates with
      */
-    readonly service?: pulumi.Input<string>;
+    service?: pulumi.Input<string>;
     /**
      * How often, in minutes, to refresh the service
      */
-    readonly serviceRefreshRateInMinutes?: pulumi.Input<number>;
+    serviceRefreshRateInMinutes?: pulumi.Input<number>;
 }
 
 /**
@@ -189,37 +189,37 @@ export interface CloudIntegrationNewRelicArgs {
     /**
      * A list of point tag key-values to add to every point ingested using this integration
      */
-    readonly additionalTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    additionalTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * NewRelic REST api key
      */
-    readonly apiKey: pulumi.Input<string>;
+    apiKey: pulumi.Input<string>;
     /**
      * A regular expression that an application name must match (case-insensitively) iun order to collect metrics
      */
-    readonly appFilterRegex?: pulumi.Input<string>;
+    appFilterRegex?: pulumi.Input<string>;
     /**
      * Forces this resource to save, even if errors are present
      */
-    readonly forceSave?: pulumi.Input<boolean>;
+    forceSave?: pulumi.Input<boolean>;
     /**
      * A regular expression that a host name must match (case-insensitively) in order to collect metrics
      */
-    readonly hostFilterRegex?: pulumi.Input<string>;
+    hostFilterRegex?: pulumi.Input<string>;
     /**
      * See Metric Filter
      */
-    readonly metricFilters?: pulumi.Input<pulumi.Input<inputs.CloudIntegrationNewRelicMetricFilter>[]>;
+    metricFilters?: pulumi.Input<pulumi.Input<inputs.CloudIntegrationNewRelicMetricFilter>[]>;
     /**
      * The human-readable name of this integration
      */
-    readonly name?: pulumi.Input<string>;
+    name?: pulumi.Input<string>;
     /**
      * A value denoting which cloud service this service integrates with
      */
-    readonly service: pulumi.Input<string>;
+    service: pulumi.Input<string>;
     /**
      * How often, in minutes, to refresh the service
      */
-    readonly serviceRefreshRateInMinutes?: pulumi.Input<number>;
+    serviceRefreshRateInMinutes?: pulumi.Input<number>;
 }

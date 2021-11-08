@@ -203,74 +203,74 @@ export interface AlertState {
      * User-supplied additional explanatory information for this alert.
      * Useful for linking runbooks, migrations...etc
      */
-    readonly additionalInformation?: pulumi.Input<string>;
+    additionalInformation?: pulumi.Input<string>;
     /**
      * The type of alert in Wavefront.  Either `CLASSIC` (default) 
      * or `THRESHOLD`
      */
-    readonly alertType?: pulumi.Input<string>;
+    alertType?: pulumi.Input<string>;
     /**
      * A list of users or groups that can modify this resource.
      */
-    readonly canModifies?: pulumi.Input<pulumi.Input<string>[]>;
+    canModifies?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * A list of users or groups that can view this resource.
      */
-    readonly canViews?: pulumi.Input<pulumi.Input<string>[]>;
+    canViews?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * A Wavefront query that is evaluated at regular intervals (default 1m).
      * The alert fires and notifications are triggered when data series matching this query evaluates
      * to a non-zero value for a set number of consecutive minutes.
      */
-    readonly condition?: pulumi.Input<string>;
+    condition?: pulumi.Input<string>;
     /**
      * a string->string map of `severity` to `condition` 
      * for which this alert will trigger.
      */
-    readonly conditions?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    conditions?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * A second query whose results are displayed in the alert user
      * interface instead of the condition query.  This field is often used to display a version
      * of the condition query with Boolean operators removed so that numerical values are plotted.
      */
-    readonly displayExpression?: pulumi.Input<string>;
+    displayExpression?: pulumi.Input<string>;
     /**
      * The number of consecutive minutes that a series matching the condition query must 
      * evaluate to "true" (non-zero value) before the alert fires.
      */
-    readonly minutes?: pulumi.Input<number>;
+    minutes?: pulumi.Input<number>;
     /**
      * The name of the alert as it is displayed in Wavefront.
      */
-    readonly name?: pulumi.Input<string>;
+    name?: pulumi.Input<string>;
     /**
      * How often to re-trigger a continually failing alert. 
      * If absent or <= 0, no re-triggering occur.
      */
-    readonly notificationResendFrequencyMinutes?: pulumi.Input<number>;
+    notificationResendFrequencyMinutes?: pulumi.Input<number>;
     /**
      * The number of consecutive minutes that a firing series matching the condition
      * query must evaluate to "false" (zero value) before the alert resolves.  When unset, this default sto
      * the same value as `minutes`.
      */
-    readonly resolveAfterMinutes?: pulumi.Input<number>;
+    resolveAfterMinutes?: pulumi.Input<number>;
     /**
      * - Severity of the alert, valid values are `INFO`, `SMOKE`, `WARN`, `SEVERE`.
      */
-    readonly severity?: pulumi.Input<string>;
+    severity?: pulumi.Input<string>;
     /**
      * A set of tags to assign to this resource.
      */
-    readonly tags?: pulumi.Input<pulumi.Input<string>[]>;
+    tags?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * A comma-separated list of the email address or integration endpoint 
      * (such as PagerDuty or web hook) to notify when the alert status changes.
      */
-    readonly target?: pulumi.Input<string>;
+    target?: pulumi.Input<string>;
     /**
      * Targets for severity
      */
-    readonly thresholdTargets?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    thresholdTargets?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
 }
 
 /**
@@ -281,72 +281,72 @@ export interface AlertArgs {
      * User-supplied additional explanatory information for this alert.
      * Useful for linking runbooks, migrations...etc
      */
-    readonly additionalInformation?: pulumi.Input<string>;
+    additionalInformation?: pulumi.Input<string>;
     /**
      * The type of alert in Wavefront.  Either `CLASSIC` (default) 
      * or `THRESHOLD`
      */
-    readonly alertType?: pulumi.Input<string>;
+    alertType?: pulumi.Input<string>;
     /**
      * A list of users or groups that can modify this resource.
      */
-    readonly canModifies?: pulumi.Input<pulumi.Input<string>[]>;
+    canModifies?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * A list of users or groups that can view this resource.
      */
-    readonly canViews?: pulumi.Input<pulumi.Input<string>[]>;
+    canViews?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * A Wavefront query that is evaluated at regular intervals (default 1m).
      * The alert fires and notifications are triggered when data series matching this query evaluates
      * to a non-zero value for a set number of consecutive minutes.
      */
-    readonly condition?: pulumi.Input<string>;
+    condition?: pulumi.Input<string>;
     /**
      * a string->string map of `severity` to `condition` 
      * for which this alert will trigger.
      */
-    readonly conditions?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    conditions?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * A second query whose results are displayed in the alert user
      * interface instead of the condition query.  This field is often used to display a version
      * of the condition query with Boolean operators removed so that numerical values are plotted.
      */
-    readonly displayExpression?: pulumi.Input<string>;
+    displayExpression?: pulumi.Input<string>;
     /**
      * The number of consecutive minutes that a series matching the condition query must 
      * evaluate to "true" (non-zero value) before the alert fires.
      */
-    readonly minutes: pulumi.Input<number>;
+    minutes: pulumi.Input<number>;
     /**
      * The name of the alert as it is displayed in Wavefront.
      */
-    readonly name?: pulumi.Input<string>;
+    name?: pulumi.Input<string>;
     /**
      * How often to re-trigger a continually failing alert. 
      * If absent or <= 0, no re-triggering occur.
      */
-    readonly notificationResendFrequencyMinutes?: pulumi.Input<number>;
+    notificationResendFrequencyMinutes?: pulumi.Input<number>;
     /**
      * The number of consecutive minutes that a firing series matching the condition
      * query must evaluate to "false" (zero value) before the alert resolves.  When unset, this default sto
      * the same value as `minutes`.
      */
-    readonly resolveAfterMinutes?: pulumi.Input<number>;
+    resolveAfterMinutes?: pulumi.Input<number>;
     /**
      * - Severity of the alert, valid values are `INFO`, `SMOKE`, `WARN`, `SEVERE`.
      */
-    readonly severity?: pulumi.Input<string>;
+    severity?: pulumi.Input<string>;
     /**
      * A set of tags to assign to this resource.
      */
-    readonly tags: pulumi.Input<pulumi.Input<string>[]>;
+    tags: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * A comma-separated list of the email address or integration endpoint 
      * (such as PagerDuty or web hook) to notify when the alert status changes.
      */
-    readonly target?: pulumi.Input<string>;
+    target?: pulumi.Input<string>;
     /**
      * Targets for severity
      */
-    readonly thresholdTargets?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    thresholdTargets?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
 }

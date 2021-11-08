@@ -8,17 +8,21 @@ import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
-__all__ = [
-    'address',
-    'http_proxy',
-    'token',
-]
+import types
 
 __config__ = pulumi.Config('wavefront')
 
-address = __config__.get('address')
 
-http_proxy = __config__.get('httpProxy')
+class _ExportableConfig(types.ModuleType):
+    @property
+    def address(self) -> Optional[str]:
+        return __config__.get('address')
 
-token = __config__.get('token')
+    @property
+    def http_proxy(self) -> Optional[str]:
+        return __config__.get('httpProxy')
+
+    @property
+    def token(self) -> Optional[str]:
+        return __config__.get('token')
 
