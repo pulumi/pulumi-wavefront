@@ -100,11 +100,11 @@ export interface IngestionPolicyState {
     /**
      * The description of the ingestion policy
      */
-    readonly description?: pulumi.Input<string>;
+    description?: pulumi.Input<string>;
     /**
      * The name of the ingestion policy
      */
-    readonly name?: pulumi.Input<string>;
+    name?: pulumi.Input<string>;
 }
 
 /**
@@ -114,9 +114,9 @@ export interface IngestionPolicyArgs {
     /**
      * The description of the ingestion policy
      */
-    readonly description: pulumi.Input<string>;
+    description: pulumi.Input<string>;
     /**
      * The name of the ingestion policy
      */
-    readonly name?: pulumi.Input<string>;
+    name?: pulumi.Input<string>;
 }

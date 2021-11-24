@@ -25,6 +25,9 @@ export class Provider extends pulumi.ProviderResource {
         return obj['__pulumiType'] === Provider.__pulumiType;
     }
 
+    public readonly address!: pulumi.Output<string>;
+    public readonly httpProxy!: pulumi.Output<string | undefined>;
+    public readonly token!: pulumi.Output<string>;
 
     /**
      * Create a Provider resource with the given unique name, arguments, and options.
@@ -58,7 +61,7 @@ export class Provider extends pulumi.ProviderResource {
  * The set of arguments for constructing a Provider resource.
  */
 export interface ProviderArgs {
-    readonly address: pulumi.Input<string>;
-    readonly httpProxy?: pulumi.Input<string>;
-    readonly token: pulumi.Input<string>;
+    address: pulumi.Input<string>;
+    httpProxy?: pulumi.Input<string>;
+    token: pulumi.Input<string>;
 }

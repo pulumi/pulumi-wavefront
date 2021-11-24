@@ -109,21 +109,21 @@ export interface RoleState {
     /**
      * A list of user groups or accounts to assign to this role.
      */
-    readonly assignees?: pulumi.Input<pulumi.Input<string>[]>;
+    assignees?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * A short description of the user group
      */
-    readonly description?: pulumi.Input<string>;
+    description?: pulumi.Input<string>;
     /**
      * The name of the user group
      */
-    readonly name?: pulumi.Input<string>;
+    name?: pulumi.Input<string>;
     /**
      * A list of permissions to assign to this role. Valid options are 
      * `agentManagement`, `alertsManagement`, `dashboardManagement`, `embeddedCharts`, `eventsManagement`, `externalLinksManagement`,
      * `hostTagManagement`, `metricsManagement`, `userManagement`
      */
-    readonly permissions?: pulumi.Input<pulumi.Input<string>[]>;
+    permissions?: pulumi.Input<pulumi.Input<string>[]>;
 }
 
 /**
@@ -133,19 +133,19 @@ export interface RoleArgs {
     /**
      * A list of user groups or accounts to assign to this role.
      */
-    readonly assignees?: pulumi.Input<pulumi.Input<string>[]>;
+    assignees?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * A short description of the user group
      */
-    readonly description?: pulumi.Input<string>;
+    description?: pulumi.Input<string>;
     /**
      * The name of the user group
      */
-    readonly name?: pulumi.Input<string>;
+    name?: pulumi.Input<string>;
     /**
      * A list of permissions to assign to this role. Valid options are 
      * `agentManagement`, `alertsManagement`, `dashboardManagement`, `embeddedCharts`, `eventsManagement`, `externalLinksManagement`,
      * `hostTagManagement`, `metricsManagement`, `userManagement`
      */
-    readonly permissions?: pulumi.Input<pulumi.Input<string>[]>;
+    permissions?: pulumi.Input<pulumi.Input<string>[]>;
 }

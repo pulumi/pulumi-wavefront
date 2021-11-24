@@ -2,7 +2,6 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "./types";
 import * as utilities from "./utilities";
 
 /**
@@ -15,7 +14,7 @@ import * as utilities from "./utilities";
  * import * as wavefront from "@pulumi/wavefront";
  *
  * // Get the default user group "Everyone"
- * const everyoneGroup = pulumi.output(wavefront.getDefaultUserGroup({ async: true }));
+ * const everyoneGroup = pulumi.output(wavefront.getDefaultUserGroup());
  * ```
  */
 export function getDefaultUserGroup(opts?: pulumi.InvokeOptions): Promise<GetDefaultUserGroupResult> {

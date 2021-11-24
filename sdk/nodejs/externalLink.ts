@@ -134,31 +134,31 @@ export interface ExternalLinkState {
     /**
      * Human-readable description for this link
      */
-    readonly description?: pulumi.Input<string>;
+    description?: pulumi.Input<string>;
     /**
      * Whether this is a "Log Integration" subType of external link
      */
-    readonly isLogIntegration?: pulumi.Input<boolean>;
+    isLogIntegration?: pulumi.Input<boolean>;
     /**
      * Controls whether a link is displayed in the context menu of a highlighted series. If present, the metric name of the highlighted series must match this regular expression in order for the link to be displayed.
      */
-    readonly metricFilterRegex?: pulumi.Input<string>;
+    metricFilterRegex?: pulumi.Input<string>;
     /**
      * The name of the external link
      */
-    readonly name?: pulumi.Input<string>;
+    name?: pulumi.Input<string>;
     /**
      * Controls whether a link is displayed in the context menu of a highlighted series. This is a map from string to regular expression. The highlighted series must contain point tags whose keys are present in the keys of this map and whose values match the regular expressions associated with those keys in order for the link to be displayed
      */
-    readonly pointTagFilterRegexes?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    pointTagFilterRegexes?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * Controls whether a link is displayed in the context menu of a highlighted series. If present, the source name of the highlighted series must match this regular expression in order for the link to be displayed.
      */
-    readonly sourceFilterRegex?: pulumi.Input<string>;
+    sourceFilterRegex?: pulumi.Input<string>;
     /**
      * The mustache template for this link. The template must expand to a full URL, including scheme, origin, etc.
      */
-    readonly template?: pulumi.Input<string>;
+    template?: pulumi.Input<string>;
 }
 
 /**
@@ -168,29 +168,29 @@ export interface ExternalLinkArgs {
     /**
      * Human-readable description for this link
      */
-    readonly description: pulumi.Input<string>;
+    description: pulumi.Input<string>;
     /**
      * Whether this is a "Log Integration" subType of external link
      */
-    readonly isLogIntegration?: pulumi.Input<boolean>;
+    isLogIntegration?: pulumi.Input<boolean>;
     /**
      * Controls whether a link is displayed in the context menu of a highlighted series. If present, the metric name of the highlighted series must match this regular expression in order for the link to be displayed.
      */
-    readonly metricFilterRegex?: pulumi.Input<string>;
+    metricFilterRegex?: pulumi.Input<string>;
     /**
      * The name of the external link
      */
-    readonly name?: pulumi.Input<string>;
+    name?: pulumi.Input<string>;
     /**
      * Controls whether a link is displayed in the context menu of a highlighted series. This is a map from string to regular expression. The highlighted series must contain point tags whose keys are present in the keys of this map and whose values match the regular expressions associated with those keys in order for the link to be displayed
      */
-    readonly pointTagFilterRegexes?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    pointTagFilterRegexes?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * Controls whether a link is displayed in the context menu of a highlighted series. If present, the source name of the highlighted series must match this regular expression in order for the link to be displayed.
      */
-    readonly sourceFilterRegex?: pulumi.Input<string>;
+    sourceFilterRegex?: pulumi.Input<string>;
     /**
      * The mustache template for this link. The template must expand to a full URL, including scheme, origin, etc.
      */
-    readonly template: pulumi.Input<string>;
+    template: pulumi.Input<string>;
 }

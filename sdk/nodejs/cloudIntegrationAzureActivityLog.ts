@@ -155,39 +155,39 @@ export interface CloudIntegrationAzureActivityLogState {
     /**
      * A list of point tag key-values to add to every point ingested using this integration
      */
-    readonly additionalTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    additionalTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * A list of Azure services (such as Microsoft.Compute/virtualMachines) from which to pull metrics
      */
-    readonly categoryFilters?: pulumi.Input<pulumi.Input<string>[]>;
+    categoryFilters?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * Client id for an azure service account within your project
      */
-    readonly clientId?: pulumi.Input<string>;
+    clientId?: pulumi.Input<string>;
     /**
      * Client secret for an Azure service account within your project
      */
-    readonly clientSecret?: pulumi.Input<string>;
+    clientSecret?: pulumi.Input<string>;
     /**
      * Forces this resource to save, even if errors are present
      */
-    readonly forceSave?: pulumi.Input<boolean>;
+    forceSave?: pulumi.Input<boolean>;
     /**
      * The human-readable name of this integration
      */
-    readonly name?: pulumi.Input<string>;
+    name?: pulumi.Input<string>;
     /**
      * A value denoting which cloud service this service integrates with
      */
-    readonly service?: pulumi.Input<string>;
+    service?: pulumi.Input<string>;
     /**
      * How often, in minutes, to refresh the service
      */
-    readonly serviceRefreshRateInMinutes?: pulumi.Input<number>;
+    serviceRefreshRateInMinutes?: pulumi.Input<number>;
     /**
      * Tenant Id for an Azure service account within your project
      */
-    readonly tenant?: pulumi.Input<string>;
+    tenant?: pulumi.Input<string>;
 }
 
 /**
@@ -197,37 +197,37 @@ export interface CloudIntegrationAzureActivityLogArgs {
     /**
      * A list of point tag key-values to add to every point ingested using this integration
      */
-    readonly additionalTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    additionalTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * A list of Azure services (such as Microsoft.Compute/virtualMachines) from which to pull metrics
      */
-    readonly categoryFilters?: pulumi.Input<pulumi.Input<string>[]>;
+    categoryFilters?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * Client id for an azure service account within your project
      */
-    readonly clientId: pulumi.Input<string>;
+    clientId: pulumi.Input<string>;
     /**
      * Client secret for an Azure service account within your project
      */
-    readonly clientSecret: pulumi.Input<string>;
+    clientSecret: pulumi.Input<string>;
     /**
      * Forces this resource to save, even if errors are present
      */
-    readonly forceSave?: pulumi.Input<boolean>;
+    forceSave?: pulumi.Input<boolean>;
     /**
      * The human-readable name of this integration
      */
-    readonly name?: pulumi.Input<string>;
+    name?: pulumi.Input<string>;
     /**
      * A value denoting which cloud service this service integrates with
      */
-    readonly service: pulumi.Input<string>;
+    service: pulumi.Input<string>;
     /**
      * How often, in minutes, to refresh the service
      */
-    readonly serviceRefreshRateInMinutes?: pulumi.Input<number>;
+    serviceRefreshRateInMinutes?: pulumi.Input<number>;
     /**
      * Tenant Id for an Azure service account within your project
      */
-    readonly tenant: pulumi.Input<string>;
+    tenant: pulumi.Input<string>;
 }

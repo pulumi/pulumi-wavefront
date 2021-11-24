@@ -80,8 +80,8 @@ import (
 // 			Description: pulumi.String("Test target"),
 // 			Method:      pulumi.String("WEBHOOK"),
 // 			Recipient:   pulumi.String("https://hooks.slack.com/services/test/me"),
-// 			Routes: wavefront.AlertTargetRouteArray{
-// 				&wavefront.AlertTargetRouteArgs{
+// 			Routes: AlertTargetRouteArray{
+// 				&AlertTargetRouteArgs{
 // 					Filter: pulumi.StringMap{
 // 						"key":   pulumi.String("env"),
 // 						"value": pulumi.String("prod"),
@@ -89,7 +89,7 @@ import (
 // 					Method: pulumi.String("WEBHOOK"),
 // 					Target: pulumi.String("https://hooks.slack.com/services/test/me/prod"),
 // 				},
-// 				&wavefront.AlertTargetRouteArgs{
+// 				&AlertTargetRouteArgs{
 // 					Filter: pulumi.StringMap{
 // 						"key":   pulumi.String("env"),
 // 						"value": pulumi.String("dev"),
@@ -375,7 +375,7 @@ type AlertTargetArrayInput interface {
 type AlertTargetArray []AlertTargetInput
 
 func (AlertTargetArray) ElementType() reflect.Type {
-	return reflect.TypeOf(([]*AlertTarget)(nil))
+	return reflect.TypeOf((*[]*AlertTarget)(nil)).Elem()
 }
 
 func (i AlertTargetArray) ToAlertTargetArrayOutput() AlertTargetArrayOutput {
@@ -400,7 +400,7 @@ type AlertTargetMapInput interface {
 type AlertTargetMap map[string]AlertTargetInput
 
 func (AlertTargetMap) ElementType() reflect.Type {
-	return reflect.TypeOf((map[string]*AlertTarget)(nil))
+	return reflect.TypeOf((*map[string]*AlertTarget)(nil)).Elem()
 }
 
 func (i AlertTargetMap) ToAlertTargetMapOutput() AlertTargetMapOutput {
@@ -411,9 +411,7 @@ func (i AlertTargetMap) ToAlertTargetMapOutputWithContext(ctx context.Context) A
 	return pulumi.ToOutputWithContext(ctx, i).(AlertTargetMapOutput)
 }
 
-type AlertTargetOutput struct {
-	*pulumi.OutputState
-}
+type AlertTargetOutput struct{ *pulumi.OutputState }
 
 func (AlertTargetOutput) ElementType() reflect.Type {
 	return reflect.TypeOf((*AlertTarget)(nil))
@@ -432,14 +430,12 @@ func (o AlertTargetOutput) ToAlertTargetPtrOutput() AlertTargetPtrOutput {
 }
 
 func (o AlertTargetOutput) ToAlertTargetPtrOutputWithContext(ctx context.Context) AlertTargetPtrOutput {
-	return o.ApplyT(func(v AlertTarget) *AlertTarget {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v AlertTarget) *AlertTarget {
 		return &v
 	}).(AlertTargetPtrOutput)
 }
 
-type AlertTargetPtrOutput struct {
-	*pulumi.OutputState
-}
+type AlertTargetPtrOutput struct{ *pulumi.OutputState }
 
 func (AlertTargetPtrOutput) ElementType() reflect.Type {
 	return reflect.TypeOf((**AlertTarget)(nil))
@@ -451,6 +447,16 @@ func (o AlertTargetPtrOutput) ToAlertTargetPtrOutput() AlertTargetPtrOutput {
 
 func (o AlertTargetPtrOutput) ToAlertTargetPtrOutputWithContext(ctx context.Context) AlertTargetPtrOutput {
 	return o
+}
+
+func (o AlertTargetPtrOutput) Elem() AlertTargetOutput {
+	return o.ApplyT(func(v *AlertTarget) AlertTarget {
+		if v != nil {
+			return *v
+		}
+		var ret AlertTarget
+		return ret
+	}).(AlertTargetOutput)
 }
 
 type AlertTargetArrayOutput struct{ *pulumi.OutputState }
@@ -494,6 +500,10 @@ func (o AlertTargetMapOutput) MapIndex(k pulumi.StringInput) AlertTargetOutput {
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*AlertTargetInput)(nil)).Elem(), &AlertTarget{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AlertTargetPtrInput)(nil)).Elem(), &AlertTarget{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AlertTargetArrayInput)(nil)).Elem(), AlertTargetArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AlertTargetMapInput)(nil)).Elem(), AlertTargetMap{})
 	pulumi.RegisterOutputType(AlertTargetOutput{})
 	pulumi.RegisterOutputType(AlertTargetPtrOutput{})
 	pulumi.RegisterOutputType(AlertTargetArrayOutput{})

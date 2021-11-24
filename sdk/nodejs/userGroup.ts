@@ -100,11 +100,11 @@ export interface UserGroupState {
     /**
      * A short description of the user group
      */
-    readonly description?: pulumi.Input<string>;
+    description?: pulumi.Input<string>;
     /**
      * The name of the user group
      */
-    readonly name?: pulumi.Input<string>;
+    name?: pulumi.Input<string>;
 }
 
 /**
@@ -114,9 +114,9 @@ export interface UserGroupArgs {
     /**
      * A short description of the user group
      */
-    readonly description: pulumi.Input<string>;
+    description: pulumi.Input<string>;
     /**
      * The name of the user group
      */
-    readonly name?: pulumi.Input<string>;
+    name?: pulumi.Input<string>;
 }

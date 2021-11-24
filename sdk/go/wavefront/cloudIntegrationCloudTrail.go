@@ -292,7 +292,7 @@ type CloudIntegrationCloudTrailArrayInput interface {
 type CloudIntegrationCloudTrailArray []CloudIntegrationCloudTrailInput
 
 func (CloudIntegrationCloudTrailArray) ElementType() reflect.Type {
-	return reflect.TypeOf(([]*CloudIntegrationCloudTrail)(nil))
+	return reflect.TypeOf((*[]*CloudIntegrationCloudTrail)(nil)).Elem()
 }
 
 func (i CloudIntegrationCloudTrailArray) ToCloudIntegrationCloudTrailArrayOutput() CloudIntegrationCloudTrailArrayOutput {
@@ -317,7 +317,7 @@ type CloudIntegrationCloudTrailMapInput interface {
 type CloudIntegrationCloudTrailMap map[string]CloudIntegrationCloudTrailInput
 
 func (CloudIntegrationCloudTrailMap) ElementType() reflect.Type {
-	return reflect.TypeOf((map[string]*CloudIntegrationCloudTrail)(nil))
+	return reflect.TypeOf((*map[string]*CloudIntegrationCloudTrail)(nil)).Elem()
 }
 
 func (i CloudIntegrationCloudTrailMap) ToCloudIntegrationCloudTrailMapOutput() CloudIntegrationCloudTrailMapOutput {
@@ -328,9 +328,7 @@ func (i CloudIntegrationCloudTrailMap) ToCloudIntegrationCloudTrailMapOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(CloudIntegrationCloudTrailMapOutput)
 }
 
-type CloudIntegrationCloudTrailOutput struct {
-	*pulumi.OutputState
-}
+type CloudIntegrationCloudTrailOutput struct{ *pulumi.OutputState }
 
 func (CloudIntegrationCloudTrailOutput) ElementType() reflect.Type {
 	return reflect.TypeOf((*CloudIntegrationCloudTrail)(nil))
@@ -349,14 +347,12 @@ func (o CloudIntegrationCloudTrailOutput) ToCloudIntegrationCloudTrailPtrOutput(
 }
 
 func (o CloudIntegrationCloudTrailOutput) ToCloudIntegrationCloudTrailPtrOutputWithContext(ctx context.Context) CloudIntegrationCloudTrailPtrOutput {
-	return o.ApplyT(func(v CloudIntegrationCloudTrail) *CloudIntegrationCloudTrail {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v CloudIntegrationCloudTrail) *CloudIntegrationCloudTrail {
 		return &v
 	}).(CloudIntegrationCloudTrailPtrOutput)
 }
 
-type CloudIntegrationCloudTrailPtrOutput struct {
-	*pulumi.OutputState
-}
+type CloudIntegrationCloudTrailPtrOutput struct{ *pulumi.OutputState }
 
 func (CloudIntegrationCloudTrailPtrOutput) ElementType() reflect.Type {
 	return reflect.TypeOf((**CloudIntegrationCloudTrail)(nil))
@@ -368,6 +364,16 @@ func (o CloudIntegrationCloudTrailPtrOutput) ToCloudIntegrationCloudTrailPtrOutp
 
 func (o CloudIntegrationCloudTrailPtrOutput) ToCloudIntegrationCloudTrailPtrOutputWithContext(ctx context.Context) CloudIntegrationCloudTrailPtrOutput {
 	return o
+}
+
+func (o CloudIntegrationCloudTrailPtrOutput) Elem() CloudIntegrationCloudTrailOutput {
+	return o.ApplyT(func(v *CloudIntegrationCloudTrail) CloudIntegrationCloudTrail {
+		if v != nil {
+			return *v
+		}
+		var ret CloudIntegrationCloudTrail
+		return ret
+	}).(CloudIntegrationCloudTrailOutput)
 }
 
 type CloudIntegrationCloudTrailArrayOutput struct{ *pulumi.OutputState }
@@ -411,6 +417,10 @@ func (o CloudIntegrationCloudTrailMapOutput) MapIndex(k pulumi.StringInput) Clou
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*CloudIntegrationCloudTrailInput)(nil)).Elem(), &CloudIntegrationCloudTrail{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CloudIntegrationCloudTrailPtrInput)(nil)).Elem(), &CloudIntegrationCloudTrail{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CloudIntegrationCloudTrailArrayInput)(nil)).Elem(), CloudIntegrationCloudTrailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CloudIntegrationCloudTrailMapInput)(nil)).Elem(), CloudIntegrationCloudTrailMap{})
 	pulumi.RegisterOutputType(CloudIntegrationCloudTrailOutput{})
 	pulumi.RegisterOutputType(CloudIntegrationCloudTrailPtrOutput{})
 	pulumi.RegisterOutputType(CloudIntegrationCloudTrailArrayOutput{})

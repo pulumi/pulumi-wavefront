@@ -1540,6 +1540,21 @@ func (o DashboardSectionRowChartSourceArrayOutput) Index(i pulumi.IntInput) Dash
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*AlertTargetRouteInput)(nil)).Elem(), AlertTargetRouteArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AlertTargetRouteArrayInput)(nil)).Elem(), AlertTargetRouteArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CloudIntegrationNewRelicMetricFilterInput)(nil)).Elem(), CloudIntegrationNewRelicMetricFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CloudIntegrationNewRelicMetricFilterArrayInput)(nil)).Elem(), CloudIntegrationNewRelicMetricFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DashboardParameterDetailInput)(nil)).Elem(), DashboardParameterDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DashboardParameterDetailArrayInput)(nil)).Elem(), DashboardParameterDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DashboardSectionInput)(nil)).Elem(), DashboardSectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DashboardSectionArrayInput)(nil)).Elem(), DashboardSectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DashboardSectionRowInput)(nil)).Elem(), DashboardSectionRowArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DashboardSectionRowArrayInput)(nil)).Elem(), DashboardSectionRowArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DashboardSectionRowChartInput)(nil)).Elem(), DashboardSectionRowChartArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DashboardSectionRowChartArrayInput)(nil)).Elem(), DashboardSectionRowChartArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DashboardSectionRowChartChartSettingInput)(nil)).Elem(), DashboardSectionRowChartChartSettingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DashboardSectionRowChartSourceInput)(nil)).Elem(), DashboardSectionRowChartSourceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DashboardSectionRowChartSourceArrayInput)(nil)).Elem(), DashboardSectionRowChartSourceArray{})
 	pulumi.RegisterOutputType(AlertTargetRouteOutput{})
 	pulumi.RegisterOutputType(AlertTargetRouteArrayOutput{})
 	pulumi.RegisterOutputType(CloudIntegrationNewRelicMetricFilterOutput{})

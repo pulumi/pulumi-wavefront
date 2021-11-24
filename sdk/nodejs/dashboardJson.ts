@@ -193,7 +193,7 @@ export interface DashboardJsonState {
      * See [Wavefront API Documentation](https://docs.wavefront.com/wavefront_api.html#api-documentation-wavefront-instance) 
      * for instructions on how to get to your API documentation for more details.
      */
-    readonly dashboardJson?: pulumi.Input<string>;
+    dashboardJson?: pulumi.Input<string>;
 }
 
 /**
@@ -204,5 +204,5 @@ export interface DashboardJsonArgs {
      * See [Wavefront API Documentation](https://docs.wavefront.com/wavefront_api.html#api-documentation-wavefront-instance) 
      * for instructions on how to get to your API documentation for more details.
      */
-    readonly dashboardJson: pulumi.Input<string>;
+    dashboardJson: pulumi.Input<string>;
 }

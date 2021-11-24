@@ -249,7 +249,7 @@ type CloudIntegrationEc2ArrayInput interface {
 type CloudIntegrationEc2Array []CloudIntegrationEc2Input
 
 func (CloudIntegrationEc2Array) ElementType() reflect.Type {
-	return reflect.TypeOf(([]*CloudIntegrationEc2)(nil))
+	return reflect.TypeOf((*[]*CloudIntegrationEc2)(nil)).Elem()
 }
 
 func (i CloudIntegrationEc2Array) ToCloudIntegrationEc2ArrayOutput() CloudIntegrationEc2ArrayOutput {
@@ -274,7 +274,7 @@ type CloudIntegrationEc2MapInput interface {
 type CloudIntegrationEc2Map map[string]CloudIntegrationEc2Input
 
 func (CloudIntegrationEc2Map) ElementType() reflect.Type {
-	return reflect.TypeOf((map[string]*CloudIntegrationEc2)(nil))
+	return reflect.TypeOf((*map[string]*CloudIntegrationEc2)(nil)).Elem()
 }
 
 func (i CloudIntegrationEc2Map) ToCloudIntegrationEc2MapOutput() CloudIntegrationEc2MapOutput {
@@ -285,9 +285,7 @@ func (i CloudIntegrationEc2Map) ToCloudIntegrationEc2MapOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(CloudIntegrationEc2MapOutput)
 }
 
-type CloudIntegrationEc2Output struct {
-	*pulumi.OutputState
-}
+type CloudIntegrationEc2Output struct{ *pulumi.OutputState }
 
 func (CloudIntegrationEc2Output) ElementType() reflect.Type {
 	return reflect.TypeOf((*CloudIntegrationEc2)(nil))
@@ -306,14 +304,12 @@ func (o CloudIntegrationEc2Output) ToCloudIntegrationEc2PtrOutput() CloudIntegra
 }
 
 func (o CloudIntegrationEc2Output) ToCloudIntegrationEc2PtrOutputWithContext(ctx context.Context) CloudIntegrationEc2PtrOutput {
-	return o.ApplyT(func(v CloudIntegrationEc2) *CloudIntegrationEc2 {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v CloudIntegrationEc2) *CloudIntegrationEc2 {
 		return &v
 	}).(CloudIntegrationEc2PtrOutput)
 }
 
-type CloudIntegrationEc2PtrOutput struct {
-	*pulumi.OutputState
-}
+type CloudIntegrationEc2PtrOutput struct{ *pulumi.OutputState }
 
 func (CloudIntegrationEc2PtrOutput) ElementType() reflect.Type {
 	return reflect.TypeOf((**CloudIntegrationEc2)(nil))
@@ -325,6 +321,16 @@ func (o CloudIntegrationEc2PtrOutput) ToCloudIntegrationEc2PtrOutput() CloudInte
 
 func (o CloudIntegrationEc2PtrOutput) ToCloudIntegrationEc2PtrOutputWithContext(ctx context.Context) CloudIntegrationEc2PtrOutput {
 	return o
+}
+
+func (o CloudIntegrationEc2PtrOutput) Elem() CloudIntegrationEc2Output {
+	return o.ApplyT(func(v *CloudIntegrationEc2) CloudIntegrationEc2 {
+		if v != nil {
+			return *v
+		}
+		var ret CloudIntegrationEc2
+		return ret
+	}).(CloudIntegrationEc2Output)
 }
 
 type CloudIntegrationEc2ArrayOutput struct{ *pulumi.OutputState }
@@ -368,6 +374,10 @@ func (o CloudIntegrationEc2MapOutput) MapIndex(k pulumi.StringInput) CloudIntegr
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*CloudIntegrationEc2Input)(nil)).Elem(), &CloudIntegrationEc2{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CloudIntegrationEc2PtrInput)(nil)).Elem(), &CloudIntegrationEc2{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CloudIntegrationEc2ArrayInput)(nil)).Elem(), CloudIntegrationEc2Array{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CloudIntegrationEc2MapInput)(nil)).Elem(), CloudIntegrationEc2Map{})
 	pulumi.RegisterOutputType(CloudIntegrationEc2Output{})
 	pulumi.RegisterOutputType(CloudIntegrationEc2PtrOutput{})
 	pulumi.RegisterOutputType(CloudIntegrationEc2ArrayOutput{})

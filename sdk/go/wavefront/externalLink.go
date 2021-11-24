@@ -236,7 +236,7 @@ type ExternalLinkArrayInput interface {
 type ExternalLinkArray []ExternalLinkInput
 
 func (ExternalLinkArray) ElementType() reflect.Type {
-	return reflect.TypeOf(([]*ExternalLink)(nil))
+	return reflect.TypeOf((*[]*ExternalLink)(nil)).Elem()
 }
 
 func (i ExternalLinkArray) ToExternalLinkArrayOutput() ExternalLinkArrayOutput {
@@ -261,7 +261,7 @@ type ExternalLinkMapInput interface {
 type ExternalLinkMap map[string]ExternalLinkInput
 
 func (ExternalLinkMap) ElementType() reflect.Type {
-	return reflect.TypeOf((map[string]*ExternalLink)(nil))
+	return reflect.TypeOf((*map[string]*ExternalLink)(nil)).Elem()
 }
 
 func (i ExternalLinkMap) ToExternalLinkMapOutput() ExternalLinkMapOutput {
@@ -272,9 +272,7 @@ func (i ExternalLinkMap) ToExternalLinkMapOutputWithContext(ctx context.Context)
 	return pulumi.ToOutputWithContext(ctx, i).(ExternalLinkMapOutput)
 }
 
-type ExternalLinkOutput struct {
-	*pulumi.OutputState
-}
+type ExternalLinkOutput struct{ *pulumi.OutputState }
 
 func (ExternalLinkOutput) ElementType() reflect.Type {
 	return reflect.TypeOf((*ExternalLink)(nil))
@@ -293,14 +291,12 @@ func (o ExternalLinkOutput) ToExternalLinkPtrOutput() ExternalLinkPtrOutput {
 }
 
 func (o ExternalLinkOutput) ToExternalLinkPtrOutputWithContext(ctx context.Context) ExternalLinkPtrOutput {
-	return o.ApplyT(func(v ExternalLink) *ExternalLink {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ExternalLink) *ExternalLink {
 		return &v
 	}).(ExternalLinkPtrOutput)
 }
 
-type ExternalLinkPtrOutput struct {
-	*pulumi.OutputState
-}
+type ExternalLinkPtrOutput struct{ *pulumi.OutputState }
 
 func (ExternalLinkPtrOutput) ElementType() reflect.Type {
 	return reflect.TypeOf((**ExternalLink)(nil))
@@ -312,6 +308,16 @@ func (o ExternalLinkPtrOutput) ToExternalLinkPtrOutput() ExternalLinkPtrOutput {
 
 func (o ExternalLinkPtrOutput) ToExternalLinkPtrOutputWithContext(ctx context.Context) ExternalLinkPtrOutput {
 	return o
+}
+
+func (o ExternalLinkPtrOutput) Elem() ExternalLinkOutput {
+	return o.ApplyT(func(v *ExternalLink) ExternalLink {
+		if v != nil {
+			return *v
+		}
+		var ret ExternalLink
+		return ret
+	}).(ExternalLinkOutput)
 }
 
 type ExternalLinkArrayOutput struct{ *pulumi.OutputState }
@@ -355,6 +361,10 @@ func (o ExternalLinkMapOutput) MapIndex(k pulumi.StringInput) ExternalLinkOutput
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*ExternalLinkInput)(nil)).Elem(), &ExternalLink{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ExternalLinkPtrInput)(nil)).Elem(), &ExternalLink{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ExternalLinkArrayInput)(nil)).Elem(), ExternalLinkArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ExternalLinkMapInput)(nil)).Elem(), ExternalLinkMap{})
 	pulumi.RegisterOutputType(ExternalLinkOutput{})
 	pulumi.RegisterOutputType(ExternalLinkPtrOutput{})
 	pulumi.RegisterOutputType(ExternalLinkArrayOutput{})

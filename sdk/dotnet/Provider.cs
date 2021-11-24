@@ -18,6 +18,16 @@ namespace Pulumi.Wavefront
     [WavefrontResourceType("pulumi:providers:wavefront")]
     public partial class Provider : Pulumi.ProviderResource
     {
+        [Output("address")]
+        public Output<string> Address { get; private set; } = null!;
+
+        [Output("httpProxy")]
+        public Output<string?> HttpProxy { get; private set; } = null!;
+
+        [Output("token")]
+        public Output<string> Token { get; private set; } = null!;
+
+
         /// <summary>
         /// Create a Provider resource with the given unique name, arguments, and options.
         /// </summary>

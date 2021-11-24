@@ -123,23 +123,23 @@ export interface DerivedMetricState {
     /**
      * User-supplied additional explanatory information for the derived metric
      */
-    readonly additionalInformation?: pulumi.Input<string>;
+    additionalInformation?: pulumi.Input<string>;
     /**
      * How frequently the query generating the derived metric is run
      */
-    readonly minutes?: pulumi.Input<number>;
+    minutes?: pulumi.Input<number>;
     /**
      * The name of the Derived Metric in Wavefront
      */
-    readonly name?: pulumi.Input<string>;
+    name?: pulumi.Input<string>;
     /**
      * A Wavefront query that is evaluated at regular intervals (default `1m`)
      */
-    readonly query?: pulumi.Input<string>;
+    query?: pulumi.Input<string>;
     /**
      * A set of tags to assign to this resource.
      */
-    readonly tags?: pulumi.Input<pulumi.Input<string>[]>;
+    tags?: pulumi.Input<pulumi.Input<string>[]>;
 }
 
 /**
@@ -149,21 +149,21 @@ export interface DerivedMetricArgs {
     /**
      * User-supplied additional explanatory information for the derived metric
      */
-    readonly additionalInformation?: pulumi.Input<string>;
+    additionalInformation?: pulumi.Input<string>;
     /**
      * How frequently the query generating the derived metric is run
      */
-    readonly minutes: pulumi.Input<number>;
+    minutes: pulumi.Input<number>;
     /**
      * The name of the Derived Metric in Wavefront
      */
-    readonly name?: pulumi.Input<string>;
+    name?: pulumi.Input<string>;
     /**
      * A Wavefront query that is evaluated at regular intervals (default `1m`)
      */
-    readonly query: pulumi.Input<string>;
+    query: pulumi.Input<string>;
     /**
      * A set of tags to assign to this resource.
      */
-    readonly tags?: pulumi.Input<pulumi.Input<string>[]>;
+    tags?: pulumi.Input<pulumi.Input<string>[]>;
 }

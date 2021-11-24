@@ -261,7 +261,7 @@ type CloudIntegrationGcpBillingArrayInput interface {
 type CloudIntegrationGcpBillingArray []CloudIntegrationGcpBillingInput
 
 func (CloudIntegrationGcpBillingArray) ElementType() reflect.Type {
-	return reflect.TypeOf(([]*CloudIntegrationGcpBilling)(nil))
+	return reflect.TypeOf((*[]*CloudIntegrationGcpBilling)(nil)).Elem()
 }
 
 func (i CloudIntegrationGcpBillingArray) ToCloudIntegrationGcpBillingArrayOutput() CloudIntegrationGcpBillingArrayOutput {
@@ -286,7 +286,7 @@ type CloudIntegrationGcpBillingMapInput interface {
 type CloudIntegrationGcpBillingMap map[string]CloudIntegrationGcpBillingInput
 
 func (CloudIntegrationGcpBillingMap) ElementType() reflect.Type {
-	return reflect.TypeOf((map[string]*CloudIntegrationGcpBilling)(nil))
+	return reflect.TypeOf((*map[string]*CloudIntegrationGcpBilling)(nil)).Elem()
 }
 
 func (i CloudIntegrationGcpBillingMap) ToCloudIntegrationGcpBillingMapOutput() CloudIntegrationGcpBillingMapOutput {
@@ -297,9 +297,7 @@ func (i CloudIntegrationGcpBillingMap) ToCloudIntegrationGcpBillingMapOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(CloudIntegrationGcpBillingMapOutput)
 }
 
-type CloudIntegrationGcpBillingOutput struct {
-	*pulumi.OutputState
-}
+type CloudIntegrationGcpBillingOutput struct{ *pulumi.OutputState }
 
 func (CloudIntegrationGcpBillingOutput) ElementType() reflect.Type {
 	return reflect.TypeOf((*CloudIntegrationGcpBilling)(nil))
@@ -318,14 +316,12 @@ func (o CloudIntegrationGcpBillingOutput) ToCloudIntegrationGcpBillingPtrOutput(
 }
 
 func (o CloudIntegrationGcpBillingOutput) ToCloudIntegrationGcpBillingPtrOutputWithContext(ctx context.Context) CloudIntegrationGcpBillingPtrOutput {
-	return o.ApplyT(func(v CloudIntegrationGcpBilling) *CloudIntegrationGcpBilling {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v CloudIntegrationGcpBilling) *CloudIntegrationGcpBilling {
 		return &v
 	}).(CloudIntegrationGcpBillingPtrOutput)
 }
 
-type CloudIntegrationGcpBillingPtrOutput struct {
-	*pulumi.OutputState
-}
+type CloudIntegrationGcpBillingPtrOutput struct{ *pulumi.OutputState }
 
 func (CloudIntegrationGcpBillingPtrOutput) ElementType() reflect.Type {
 	return reflect.TypeOf((**CloudIntegrationGcpBilling)(nil))
@@ -337,6 +333,16 @@ func (o CloudIntegrationGcpBillingPtrOutput) ToCloudIntegrationGcpBillingPtrOutp
 
 func (o CloudIntegrationGcpBillingPtrOutput) ToCloudIntegrationGcpBillingPtrOutputWithContext(ctx context.Context) CloudIntegrationGcpBillingPtrOutput {
 	return o
+}
+
+func (o CloudIntegrationGcpBillingPtrOutput) Elem() CloudIntegrationGcpBillingOutput {
+	return o.ApplyT(func(v *CloudIntegrationGcpBilling) CloudIntegrationGcpBilling {
+		if v != nil {
+			return *v
+		}
+		var ret CloudIntegrationGcpBilling
+		return ret
+	}).(CloudIntegrationGcpBillingOutput)
 }
 
 type CloudIntegrationGcpBillingArrayOutput struct{ *pulumi.OutputState }
@@ -380,6 +386,10 @@ func (o CloudIntegrationGcpBillingMapOutput) MapIndex(k pulumi.StringInput) Clou
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*CloudIntegrationGcpBillingInput)(nil)).Elem(), &CloudIntegrationGcpBilling{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CloudIntegrationGcpBillingPtrInput)(nil)).Elem(), &CloudIntegrationGcpBilling{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CloudIntegrationGcpBillingArrayInput)(nil)).Elem(), CloudIntegrationGcpBillingArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CloudIntegrationGcpBillingMapInput)(nil)).Elem(), CloudIntegrationGcpBillingMap{})
 	pulumi.RegisterOutputType(CloudIntegrationGcpBillingOutput{})
 	pulumi.RegisterOutputType(CloudIntegrationGcpBillingPtrOutput{})
 	pulumi.RegisterOutputType(CloudIntegrationGcpBillingArrayOutput{})
