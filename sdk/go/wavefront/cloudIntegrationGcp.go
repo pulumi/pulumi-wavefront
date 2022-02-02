@@ -233,7 +233,7 @@ type CloudIntegrationGcpInput interface {
 }
 
 func (*CloudIntegrationGcp) ElementType() reflect.Type {
-	return reflect.TypeOf((*CloudIntegrationGcp)(nil))
+	return reflect.TypeOf((**CloudIntegrationGcp)(nil)).Elem()
 }
 
 func (i *CloudIntegrationGcp) ToCloudIntegrationGcpOutput() CloudIntegrationGcpOutput {
@@ -242,35 +242,6 @@ func (i *CloudIntegrationGcp) ToCloudIntegrationGcpOutput() CloudIntegrationGcpO
 
 func (i *CloudIntegrationGcp) ToCloudIntegrationGcpOutputWithContext(ctx context.Context) CloudIntegrationGcpOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(CloudIntegrationGcpOutput)
-}
-
-func (i *CloudIntegrationGcp) ToCloudIntegrationGcpPtrOutput() CloudIntegrationGcpPtrOutput {
-	return i.ToCloudIntegrationGcpPtrOutputWithContext(context.Background())
-}
-
-func (i *CloudIntegrationGcp) ToCloudIntegrationGcpPtrOutputWithContext(ctx context.Context) CloudIntegrationGcpPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(CloudIntegrationGcpPtrOutput)
-}
-
-type CloudIntegrationGcpPtrInput interface {
-	pulumi.Input
-
-	ToCloudIntegrationGcpPtrOutput() CloudIntegrationGcpPtrOutput
-	ToCloudIntegrationGcpPtrOutputWithContext(ctx context.Context) CloudIntegrationGcpPtrOutput
-}
-
-type cloudIntegrationGcpPtrType CloudIntegrationGcpArgs
-
-func (*cloudIntegrationGcpPtrType) ElementType() reflect.Type {
-	return reflect.TypeOf((**CloudIntegrationGcp)(nil))
-}
-
-func (i *cloudIntegrationGcpPtrType) ToCloudIntegrationGcpPtrOutput() CloudIntegrationGcpPtrOutput {
-	return i.ToCloudIntegrationGcpPtrOutputWithContext(context.Background())
-}
-
-func (i *cloudIntegrationGcpPtrType) ToCloudIntegrationGcpPtrOutputWithContext(ctx context.Context) CloudIntegrationGcpPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(CloudIntegrationGcpPtrOutput)
 }
 
 // CloudIntegrationGcpArrayInput is an input type that accepts CloudIntegrationGcpArray and CloudIntegrationGcpArrayOutput values.
@@ -326,7 +297,7 @@ func (i CloudIntegrationGcpMap) ToCloudIntegrationGcpMapOutputWithContext(ctx co
 type CloudIntegrationGcpOutput struct{ *pulumi.OutputState }
 
 func (CloudIntegrationGcpOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*CloudIntegrationGcp)(nil))
+	return reflect.TypeOf((**CloudIntegrationGcp)(nil)).Elem()
 }
 
 func (o CloudIntegrationGcpOutput) ToCloudIntegrationGcpOutput() CloudIntegrationGcpOutput {
@@ -337,44 +308,10 @@ func (o CloudIntegrationGcpOutput) ToCloudIntegrationGcpOutputWithContext(ctx co
 	return o
 }
 
-func (o CloudIntegrationGcpOutput) ToCloudIntegrationGcpPtrOutput() CloudIntegrationGcpPtrOutput {
-	return o.ToCloudIntegrationGcpPtrOutputWithContext(context.Background())
-}
-
-func (o CloudIntegrationGcpOutput) ToCloudIntegrationGcpPtrOutputWithContext(ctx context.Context) CloudIntegrationGcpPtrOutput {
-	return o.ApplyTWithContext(ctx, func(_ context.Context, v CloudIntegrationGcp) *CloudIntegrationGcp {
-		return &v
-	}).(CloudIntegrationGcpPtrOutput)
-}
-
-type CloudIntegrationGcpPtrOutput struct{ *pulumi.OutputState }
-
-func (CloudIntegrationGcpPtrOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((**CloudIntegrationGcp)(nil))
-}
-
-func (o CloudIntegrationGcpPtrOutput) ToCloudIntegrationGcpPtrOutput() CloudIntegrationGcpPtrOutput {
-	return o
-}
-
-func (o CloudIntegrationGcpPtrOutput) ToCloudIntegrationGcpPtrOutputWithContext(ctx context.Context) CloudIntegrationGcpPtrOutput {
-	return o
-}
-
-func (o CloudIntegrationGcpPtrOutput) Elem() CloudIntegrationGcpOutput {
-	return o.ApplyT(func(v *CloudIntegrationGcp) CloudIntegrationGcp {
-		if v != nil {
-			return *v
-		}
-		var ret CloudIntegrationGcp
-		return ret
-	}).(CloudIntegrationGcpOutput)
-}
-
 type CloudIntegrationGcpArrayOutput struct{ *pulumi.OutputState }
 
 func (CloudIntegrationGcpArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]CloudIntegrationGcp)(nil))
+	return reflect.TypeOf((*[]*CloudIntegrationGcp)(nil)).Elem()
 }
 
 func (o CloudIntegrationGcpArrayOutput) ToCloudIntegrationGcpArrayOutput() CloudIntegrationGcpArrayOutput {
@@ -386,15 +323,15 @@ func (o CloudIntegrationGcpArrayOutput) ToCloudIntegrationGcpArrayOutputWithCont
 }
 
 func (o CloudIntegrationGcpArrayOutput) Index(i pulumi.IntInput) CloudIntegrationGcpOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) CloudIntegrationGcp {
-		return vs[0].([]CloudIntegrationGcp)[vs[1].(int)]
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *CloudIntegrationGcp {
+		return vs[0].([]*CloudIntegrationGcp)[vs[1].(int)]
 	}).(CloudIntegrationGcpOutput)
 }
 
 type CloudIntegrationGcpMapOutput struct{ *pulumi.OutputState }
 
 func (CloudIntegrationGcpMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]CloudIntegrationGcp)(nil))
+	return reflect.TypeOf((*map[string]*CloudIntegrationGcp)(nil)).Elem()
 }
 
 func (o CloudIntegrationGcpMapOutput) ToCloudIntegrationGcpMapOutput() CloudIntegrationGcpMapOutput {
@@ -406,18 +343,16 @@ func (o CloudIntegrationGcpMapOutput) ToCloudIntegrationGcpMapOutputWithContext(
 }
 
 func (o CloudIntegrationGcpMapOutput) MapIndex(k pulumi.StringInput) CloudIntegrationGcpOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) CloudIntegrationGcp {
-		return vs[0].(map[string]CloudIntegrationGcp)[vs[1].(string)]
+	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *CloudIntegrationGcp {
+		return vs[0].(map[string]*CloudIntegrationGcp)[vs[1].(string)]
 	}).(CloudIntegrationGcpOutput)
 }
 
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*CloudIntegrationGcpInput)(nil)).Elem(), &CloudIntegrationGcp{})
-	pulumi.RegisterInputType(reflect.TypeOf((*CloudIntegrationGcpPtrInput)(nil)).Elem(), &CloudIntegrationGcp{})
 	pulumi.RegisterInputType(reflect.TypeOf((*CloudIntegrationGcpArrayInput)(nil)).Elem(), CloudIntegrationGcpArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*CloudIntegrationGcpMapInput)(nil)).Elem(), CloudIntegrationGcpMap{})
 	pulumi.RegisterOutputType(CloudIntegrationGcpOutput{})
-	pulumi.RegisterOutputType(CloudIntegrationGcpPtrOutput{})
 	pulumi.RegisterOutputType(CloudIntegrationGcpArrayOutput{})
 	pulumi.RegisterOutputType(CloudIntegrationGcpMapOutput{})
 }

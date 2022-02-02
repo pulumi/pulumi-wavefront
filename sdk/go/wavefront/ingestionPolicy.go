@@ -128,7 +128,7 @@ type IngestionPolicyInput interface {
 }
 
 func (*IngestionPolicy) ElementType() reflect.Type {
-	return reflect.TypeOf((*IngestionPolicy)(nil))
+	return reflect.TypeOf((**IngestionPolicy)(nil)).Elem()
 }
 
 func (i *IngestionPolicy) ToIngestionPolicyOutput() IngestionPolicyOutput {
@@ -137,35 +137,6 @@ func (i *IngestionPolicy) ToIngestionPolicyOutput() IngestionPolicyOutput {
 
 func (i *IngestionPolicy) ToIngestionPolicyOutputWithContext(ctx context.Context) IngestionPolicyOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(IngestionPolicyOutput)
-}
-
-func (i *IngestionPolicy) ToIngestionPolicyPtrOutput() IngestionPolicyPtrOutput {
-	return i.ToIngestionPolicyPtrOutputWithContext(context.Background())
-}
-
-func (i *IngestionPolicy) ToIngestionPolicyPtrOutputWithContext(ctx context.Context) IngestionPolicyPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IngestionPolicyPtrOutput)
-}
-
-type IngestionPolicyPtrInput interface {
-	pulumi.Input
-
-	ToIngestionPolicyPtrOutput() IngestionPolicyPtrOutput
-	ToIngestionPolicyPtrOutputWithContext(ctx context.Context) IngestionPolicyPtrOutput
-}
-
-type ingestionPolicyPtrType IngestionPolicyArgs
-
-func (*ingestionPolicyPtrType) ElementType() reflect.Type {
-	return reflect.TypeOf((**IngestionPolicy)(nil))
-}
-
-func (i *ingestionPolicyPtrType) ToIngestionPolicyPtrOutput() IngestionPolicyPtrOutput {
-	return i.ToIngestionPolicyPtrOutputWithContext(context.Background())
-}
-
-func (i *ingestionPolicyPtrType) ToIngestionPolicyPtrOutputWithContext(ctx context.Context) IngestionPolicyPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(IngestionPolicyPtrOutput)
 }
 
 // IngestionPolicyArrayInput is an input type that accepts IngestionPolicyArray and IngestionPolicyArrayOutput values.
@@ -221,7 +192,7 @@ func (i IngestionPolicyMap) ToIngestionPolicyMapOutputWithContext(ctx context.Co
 type IngestionPolicyOutput struct{ *pulumi.OutputState }
 
 func (IngestionPolicyOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*IngestionPolicy)(nil))
+	return reflect.TypeOf((**IngestionPolicy)(nil)).Elem()
 }
 
 func (o IngestionPolicyOutput) ToIngestionPolicyOutput() IngestionPolicyOutput {
@@ -232,44 +203,10 @@ func (o IngestionPolicyOutput) ToIngestionPolicyOutputWithContext(ctx context.Co
 	return o
 }
 
-func (o IngestionPolicyOutput) ToIngestionPolicyPtrOutput() IngestionPolicyPtrOutput {
-	return o.ToIngestionPolicyPtrOutputWithContext(context.Background())
-}
-
-func (o IngestionPolicyOutput) ToIngestionPolicyPtrOutputWithContext(ctx context.Context) IngestionPolicyPtrOutput {
-	return o.ApplyTWithContext(ctx, func(_ context.Context, v IngestionPolicy) *IngestionPolicy {
-		return &v
-	}).(IngestionPolicyPtrOutput)
-}
-
-type IngestionPolicyPtrOutput struct{ *pulumi.OutputState }
-
-func (IngestionPolicyPtrOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((**IngestionPolicy)(nil))
-}
-
-func (o IngestionPolicyPtrOutput) ToIngestionPolicyPtrOutput() IngestionPolicyPtrOutput {
-	return o
-}
-
-func (o IngestionPolicyPtrOutput) ToIngestionPolicyPtrOutputWithContext(ctx context.Context) IngestionPolicyPtrOutput {
-	return o
-}
-
-func (o IngestionPolicyPtrOutput) Elem() IngestionPolicyOutput {
-	return o.ApplyT(func(v *IngestionPolicy) IngestionPolicy {
-		if v != nil {
-			return *v
-		}
-		var ret IngestionPolicy
-		return ret
-	}).(IngestionPolicyOutput)
-}
-
 type IngestionPolicyArrayOutput struct{ *pulumi.OutputState }
 
 func (IngestionPolicyArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]IngestionPolicy)(nil))
+	return reflect.TypeOf((*[]*IngestionPolicy)(nil)).Elem()
 }
 
 func (o IngestionPolicyArrayOutput) ToIngestionPolicyArrayOutput() IngestionPolicyArrayOutput {
@@ -281,15 +218,15 @@ func (o IngestionPolicyArrayOutput) ToIngestionPolicyArrayOutputWithContext(ctx 
 }
 
 func (o IngestionPolicyArrayOutput) Index(i pulumi.IntInput) IngestionPolicyOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) IngestionPolicy {
-		return vs[0].([]IngestionPolicy)[vs[1].(int)]
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *IngestionPolicy {
+		return vs[0].([]*IngestionPolicy)[vs[1].(int)]
 	}).(IngestionPolicyOutput)
 }
 
 type IngestionPolicyMapOutput struct{ *pulumi.OutputState }
 
 func (IngestionPolicyMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]IngestionPolicy)(nil))
+	return reflect.TypeOf((*map[string]*IngestionPolicy)(nil)).Elem()
 }
 
 func (o IngestionPolicyMapOutput) ToIngestionPolicyMapOutput() IngestionPolicyMapOutput {
@@ -301,18 +238,16 @@ func (o IngestionPolicyMapOutput) ToIngestionPolicyMapOutputWithContext(ctx cont
 }
 
 func (o IngestionPolicyMapOutput) MapIndex(k pulumi.StringInput) IngestionPolicyOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) IngestionPolicy {
-		return vs[0].(map[string]IngestionPolicy)[vs[1].(string)]
+	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *IngestionPolicy {
+		return vs[0].(map[string]*IngestionPolicy)[vs[1].(string)]
 	}).(IngestionPolicyOutput)
 }
 
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*IngestionPolicyInput)(nil)).Elem(), &IngestionPolicy{})
-	pulumi.RegisterInputType(reflect.TypeOf((*IngestionPolicyPtrInput)(nil)).Elem(), &IngestionPolicy{})
 	pulumi.RegisterInputType(reflect.TypeOf((*IngestionPolicyArrayInput)(nil)).Elem(), IngestionPolicyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*IngestionPolicyMapInput)(nil)).Elem(), IngestionPolicyMap{})
 	pulumi.RegisterOutputType(IngestionPolicyOutput{})
-	pulumi.RegisterOutputType(IngestionPolicyPtrOutput{})
 	pulumi.RegisterOutputType(IngestionPolicyArrayOutput{})
 	pulumi.RegisterOutputType(IngestionPolicyMapOutput{})
 }

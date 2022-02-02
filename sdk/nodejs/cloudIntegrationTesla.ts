@@ -94,17 +94,17 @@ export class CloudIntegrationTesla extends pulumi.CustomResource {
      */
     constructor(name: string, args: CloudIntegrationTeslaArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: CloudIntegrationTeslaArgs | CloudIntegrationTeslaState, opts?: pulumi.CustomResourceOptions) {
-        let inputs: pulumi.Inputs = {};
+        let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as CloudIntegrationTeslaState | undefined;
-            inputs["additionalTags"] = state ? state.additionalTags : undefined;
-            inputs["email"] = state ? state.email : undefined;
-            inputs["forceSave"] = state ? state.forceSave : undefined;
-            inputs["name"] = state ? state.name : undefined;
-            inputs["password"] = state ? state.password : undefined;
-            inputs["service"] = state ? state.service : undefined;
-            inputs["serviceRefreshRateInMinutes"] = state ? state.serviceRefreshRateInMinutes : undefined;
+            resourceInputs["additionalTags"] = state ? state.additionalTags : undefined;
+            resourceInputs["email"] = state ? state.email : undefined;
+            resourceInputs["forceSave"] = state ? state.forceSave : undefined;
+            resourceInputs["name"] = state ? state.name : undefined;
+            resourceInputs["password"] = state ? state.password : undefined;
+            resourceInputs["service"] = state ? state.service : undefined;
+            resourceInputs["serviceRefreshRateInMinutes"] = state ? state.serviceRefreshRateInMinutes : undefined;
         } else {
             const args = argsOrState as CloudIntegrationTeslaArgs | undefined;
             if ((!args || args.email === undefined) && !opts.urn) {
@@ -116,18 +116,16 @@ export class CloudIntegrationTesla extends pulumi.CustomResource {
             if ((!args || args.service === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'service'");
             }
-            inputs["additionalTags"] = args ? args.additionalTags : undefined;
-            inputs["email"] = args ? args.email : undefined;
-            inputs["forceSave"] = args ? args.forceSave : undefined;
-            inputs["name"] = args ? args.name : undefined;
-            inputs["password"] = args ? args.password : undefined;
-            inputs["service"] = args ? args.service : undefined;
-            inputs["serviceRefreshRateInMinutes"] = args ? args.serviceRefreshRateInMinutes : undefined;
+            resourceInputs["additionalTags"] = args ? args.additionalTags : undefined;
+            resourceInputs["email"] = args ? args.email : undefined;
+            resourceInputs["forceSave"] = args ? args.forceSave : undefined;
+            resourceInputs["name"] = args ? args.name : undefined;
+            resourceInputs["password"] = args ? args.password : undefined;
+            resourceInputs["service"] = args ? args.service : undefined;
+            resourceInputs["serviceRefreshRateInMinutes"] = args ? args.serviceRefreshRateInMinutes : undefined;
         }
-        if (!opts.version) {
-            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
-        }
-        super(CloudIntegrationTesla.__pulumiType, name, inputs, opts);
+        opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+        super(CloudIntegrationTesla.__pulumiType, name, resourceInputs, opts);
     }
 }
 

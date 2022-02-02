@@ -230,7 +230,7 @@ type CloudIntegrationAzureInput interface {
 }
 
 func (*CloudIntegrationAzure) ElementType() reflect.Type {
-	return reflect.TypeOf((*CloudIntegrationAzure)(nil))
+	return reflect.TypeOf((**CloudIntegrationAzure)(nil)).Elem()
 }
 
 func (i *CloudIntegrationAzure) ToCloudIntegrationAzureOutput() CloudIntegrationAzureOutput {
@@ -239,35 +239,6 @@ func (i *CloudIntegrationAzure) ToCloudIntegrationAzureOutput() CloudIntegration
 
 func (i *CloudIntegrationAzure) ToCloudIntegrationAzureOutputWithContext(ctx context.Context) CloudIntegrationAzureOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(CloudIntegrationAzureOutput)
-}
-
-func (i *CloudIntegrationAzure) ToCloudIntegrationAzurePtrOutput() CloudIntegrationAzurePtrOutput {
-	return i.ToCloudIntegrationAzurePtrOutputWithContext(context.Background())
-}
-
-func (i *CloudIntegrationAzure) ToCloudIntegrationAzurePtrOutputWithContext(ctx context.Context) CloudIntegrationAzurePtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(CloudIntegrationAzurePtrOutput)
-}
-
-type CloudIntegrationAzurePtrInput interface {
-	pulumi.Input
-
-	ToCloudIntegrationAzurePtrOutput() CloudIntegrationAzurePtrOutput
-	ToCloudIntegrationAzurePtrOutputWithContext(ctx context.Context) CloudIntegrationAzurePtrOutput
-}
-
-type cloudIntegrationAzurePtrType CloudIntegrationAzureArgs
-
-func (*cloudIntegrationAzurePtrType) ElementType() reflect.Type {
-	return reflect.TypeOf((**CloudIntegrationAzure)(nil))
-}
-
-func (i *cloudIntegrationAzurePtrType) ToCloudIntegrationAzurePtrOutput() CloudIntegrationAzurePtrOutput {
-	return i.ToCloudIntegrationAzurePtrOutputWithContext(context.Background())
-}
-
-func (i *cloudIntegrationAzurePtrType) ToCloudIntegrationAzurePtrOutputWithContext(ctx context.Context) CloudIntegrationAzurePtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(CloudIntegrationAzurePtrOutput)
 }
 
 // CloudIntegrationAzureArrayInput is an input type that accepts CloudIntegrationAzureArray and CloudIntegrationAzureArrayOutput values.
@@ -323,7 +294,7 @@ func (i CloudIntegrationAzureMap) ToCloudIntegrationAzureMapOutputWithContext(ct
 type CloudIntegrationAzureOutput struct{ *pulumi.OutputState }
 
 func (CloudIntegrationAzureOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*CloudIntegrationAzure)(nil))
+	return reflect.TypeOf((**CloudIntegrationAzure)(nil)).Elem()
 }
 
 func (o CloudIntegrationAzureOutput) ToCloudIntegrationAzureOutput() CloudIntegrationAzureOutput {
@@ -334,44 +305,10 @@ func (o CloudIntegrationAzureOutput) ToCloudIntegrationAzureOutputWithContext(ct
 	return o
 }
 
-func (o CloudIntegrationAzureOutput) ToCloudIntegrationAzurePtrOutput() CloudIntegrationAzurePtrOutput {
-	return o.ToCloudIntegrationAzurePtrOutputWithContext(context.Background())
-}
-
-func (o CloudIntegrationAzureOutput) ToCloudIntegrationAzurePtrOutputWithContext(ctx context.Context) CloudIntegrationAzurePtrOutput {
-	return o.ApplyTWithContext(ctx, func(_ context.Context, v CloudIntegrationAzure) *CloudIntegrationAzure {
-		return &v
-	}).(CloudIntegrationAzurePtrOutput)
-}
-
-type CloudIntegrationAzurePtrOutput struct{ *pulumi.OutputState }
-
-func (CloudIntegrationAzurePtrOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((**CloudIntegrationAzure)(nil))
-}
-
-func (o CloudIntegrationAzurePtrOutput) ToCloudIntegrationAzurePtrOutput() CloudIntegrationAzurePtrOutput {
-	return o
-}
-
-func (o CloudIntegrationAzurePtrOutput) ToCloudIntegrationAzurePtrOutputWithContext(ctx context.Context) CloudIntegrationAzurePtrOutput {
-	return o
-}
-
-func (o CloudIntegrationAzurePtrOutput) Elem() CloudIntegrationAzureOutput {
-	return o.ApplyT(func(v *CloudIntegrationAzure) CloudIntegrationAzure {
-		if v != nil {
-			return *v
-		}
-		var ret CloudIntegrationAzure
-		return ret
-	}).(CloudIntegrationAzureOutput)
-}
-
 type CloudIntegrationAzureArrayOutput struct{ *pulumi.OutputState }
 
 func (CloudIntegrationAzureArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]CloudIntegrationAzure)(nil))
+	return reflect.TypeOf((*[]*CloudIntegrationAzure)(nil)).Elem()
 }
 
 func (o CloudIntegrationAzureArrayOutput) ToCloudIntegrationAzureArrayOutput() CloudIntegrationAzureArrayOutput {
@@ -383,15 +320,15 @@ func (o CloudIntegrationAzureArrayOutput) ToCloudIntegrationAzureArrayOutputWith
 }
 
 func (o CloudIntegrationAzureArrayOutput) Index(i pulumi.IntInput) CloudIntegrationAzureOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) CloudIntegrationAzure {
-		return vs[0].([]CloudIntegrationAzure)[vs[1].(int)]
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *CloudIntegrationAzure {
+		return vs[0].([]*CloudIntegrationAzure)[vs[1].(int)]
 	}).(CloudIntegrationAzureOutput)
 }
 
 type CloudIntegrationAzureMapOutput struct{ *pulumi.OutputState }
 
 func (CloudIntegrationAzureMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]CloudIntegrationAzure)(nil))
+	return reflect.TypeOf((*map[string]*CloudIntegrationAzure)(nil)).Elem()
 }
 
 func (o CloudIntegrationAzureMapOutput) ToCloudIntegrationAzureMapOutput() CloudIntegrationAzureMapOutput {
@@ -403,18 +340,16 @@ func (o CloudIntegrationAzureMapOutput) ToCloudIntegrationAzureMapOutputWithCont
 }
 
 func (o CloudIntegrationAzureMapOutput) MapIndex(k pulumi.StringInput) CloudIntegrationAzureOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) CloudIntegrationAzure {
-		return vs[0].(map[string]CloudIntegrationAzure)[vs[1].(string)]
+	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *CloudIntegrationAzure {
+		return vs[0].(map[string]*CloudIntegrationAzure)[vs[1].(string)]
 	}).(CloudIntegrationAzureOutput)
 }
 
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*CloudIntegrationAzureInput)(nil)).Elem(), &CloudIntegrationAzure{})
-	pulumi.RegisterInputType(reflect.TypeOf((*CloudIntegrationAzurePtrInput)(nil)).Elem(), &CloudIntegrationAzure{})
 	pulumi.RegisterInputType(reflect.TypeOf((*CloudIntegrationAzureArrayInput)(nil)).Elem(), CloudIntegrationAzureArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*CloudIntegrationAzureMapInput)(nil)).Elem(), CloudIntegrationAzureMap{})
 	pulumi.RegisterOutputType(CloudIntegrationAzureOutput{})
-	pulumi.RegisterOutputType(CloudIntegrationAzurePtrOutput{})
 	pulumi.RegisterOutputType(CloudIntegrationAzureArrayOutput{})
 	pulumi.RegisterOutputType(CloudIntegrationAzureMapOutput{})
 }

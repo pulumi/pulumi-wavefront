@@ -145,25 +145,25 @@ export class Alert extends pulumi.CustomResource {
      */
     constructor(name: string, args: AlertArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: AlertArgs | AlertState, opts?: pulumi.CustomResourceOptions) {
-        let inputs: pulumi.Inputs = {};
+        let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AlertState | undefined;
-            inputs["additionalInformation"] = state ? state.additionalInformation : undefined;
-            inputs["alertType"] = state ? state.alertType : undefined;
-            inputs["canModifies"] = state ? state.canModifies : undefined;
-            inputs["canViews"] = state ? state.canViews : undefined;
-            inputs["condition"] = state ? state.condition : undefined;
-            inputs["conditions"] = state ? state.conditions : undefined;
-            inputs["displayExpression"] = state ? state.displayExpression : undefined;
-            inputs["minutes"] = state ? state.minutes : undefined;
-            inputs["name"] = state ? state.name : undefined;
-            inputs["notificationResendFrequencyMinutes"] = state ? state.notificationResendFrequencyMinutes : undefined;
-            inputs["resolveAfterMinutes"] = state ? state.resolveAfterMinutes : undefined;
-            inputs["severity"] = state ? state.severity : undefined;
-            inputs["tags"] = state ? state.tags : undefined;
-            inputs["target"] = state ? state.target : undefined;
-            inputs["thresholdTargets"] = state ? state.thresholdTargets : undefined;
+            resourceInputs["additionalInformation"] = state ? state.additionalInformation : undefined;
+            resourceInputs["alertType"] = state ? state.alertType : undefined;
+            resourceInputs["canModifies"] = state ? state.canModifies : undefined;
+            resourceInputs["canViews"] = state ? state.canViews : undefined;
+            resourceInputs["condition"] = state ? state.condition : undefined;
+            resourceInputs["conditions"] = state ? state.conditions : undefined;
+            resourceInputs["displayExpression"] = state ? state.displayExpression : undefined;
+            resourceInputs["minutes"] = state ? state.minutes : undefined;
+            resourceInputs["name"] = state ? state.name : undefined;
+            resourceInputs["notificationResendFrequencyMinutes"] = state ? state.notificationResendFrequencyMinutes : undefined;
+            resourceInputs["resolveAfterMinutes"] = state ? state.resolveAfterMinutes : undefined;
+            resourceInputs["severity"] = state ? state.severity : undefined;
+            resourceInputs["tags"] = state ? state.tags : undefined;
+            resourceInputs["target"] = state ? state.target : undefined;
+            resourceInputs["thresholdTargets"] = state ? state.thresholdTargets : undefined;
         } else {
             const args = argsOrState as AlertArgs | undefined;
             if ((!args || args.minutes === undefined) && !opts.urn) {
@@ -172,26 +172,24 @@ export class Alert extends pulumi.CustomResource {
             if ((!args || args.tags === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'tags'");
             }
-            inputs["additionalInformation"] = args ? args.additionalInformation : undefined;
-            inputs["alertType"] = args ? args.alertType : undefined;
-            inputs["canModifies"] = args ? args.canModifies : undefined;
-            inputs["canViews"] = args ? args.canViews : undefined;
-            inputs["condition"] = args ? args.condition : undefined;
-            inputs["conditions"] = args ? args.conditions : undefined;
-            inputs["displayExpression"] = args ? args.displayExpression : undefined;
-            inputs["minutes"] = args ? args.minutes : undefined;
-            inputs["name"] = args ? args.name : undefined;
-            inputs["notificationResendFrequencyMinutes"] = args ? args.notificationResendFrequencyMinutes : undefined;
-            inputs["resolveAfterMinutes"] = args ? args.resolveAfterMinutes : undefined;
-            inputs["severity"] = args ? args.severity : undefined;
-            inputs["tags"] = args ? args.tags : undefined;
-            inputs["target"] = args ? args.target : undefined;
-            inputs["thresholdTargets"] = args ? args.thresholdTargets : undefined;
+            resourceInputs["additionalInformation"] = args ? args.additionalInformation : undefined;
+            resourceInputs["alertType"] = args ? args.alertType : undefined;
+            resourceInputs["canModifies"] = args ? args.canModifies : undefined;
+            resourceInputs["canViews"] = args ? args.canViews : undefined;
+            resourceInputs["condition"] = args ? args.condition : undefined;
+            resourceInputs["conditions"] = args ? args.conditions : undefined;
+            resourceInputs["displayExpression"] = args ? args.displayExpression : undefined;
+            resourceInputs["minutes"] = args ? args.minutes : undefined;
+            resourceInputs["name"] = args ? args.name : undefined;
+            resourceInputs["notificationResendFrequencyMinutes"] = args ? args.notificationResendFrequencyMinutes : undefined;
+            resourceInputs["resolveAfterMinutes"] = args ? args.resolveAfterMinutes : undefined;
+            resourceInputs["severity"] = args ? args.severity : undefined;
+            resourceInputs["tags"] = args ? args.tags : undefined;
+            resourceInputs["target"] = args ? args.target : undefined;
+            resourceInputs["thresholdTargets"] = args ? args.thresholdTargets : undefined;
         }
-        if (!opts.version) {
-            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
-        }
-        super(Alert.__pulumiType, name, inputs, opts);
+        opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+        super(Alert.__pulumiType, name, resourceInputs, opts);
     }
 }
 

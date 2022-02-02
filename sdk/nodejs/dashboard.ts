@@ -157,21 +157,21 @@ export class Dashboard extends pulumi.CustomResource {
      */
     constructor(name: string, args: DashboardArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: DashboardArgs | DashboardState, opts?: pulumi.CustomResourceOptions) {
-        let inputs: pulumi.Inputs = {};
+        let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as DashboardState | undefined;
-            inputs["canModifies"] = state ? state.canModifies : undefined;
-            inputs["canViews"] = state ? state.canViews : undefined;
-            inputs["description"] = state ? state.description : undefined;
-            inputs["displayQueryParameters"] = state ? state.displayQueryParameters : undefined;
-            inputs["displaySectionTableOfContents"] = state ? state.displaySectionTableOfContents : undefined;
-            inputs["eventFilterType"] = state ? state.eventFilterType : undefined;
-            inputs["name"] = state ? state.name : undefined;
-            inputs["parameterDetails"] = state ? state.parameterDetails : undefined;
-            inputs["sections"] = state ? state.sections : undefined;
-            inputs["tags"] = state ? state.tags : undefined;
-            inputs["url"] = state ? state.url : undefined;
+            resourceInputs["canModifies"] = state ? state.canModifies : undefined;
+            resourceInputs["canViews"] = state ? state.canViews : undefined;
+            resourceInputs["description"] = state ? state.description : undefined;
+            resourceInputs["displayQueryParameters"] = state ? state.displayQueryParameters : undefined;
+            resourceInputs["displaySectionTableOfContents"] = state ? state.displaySectionTableOfContents : undefined;
+            resourceInputs["eventFilterType"] = state ? state.eventFilterType : undefined;
+            resourceInputs["name"] = state ? state.name : undefined;
+            resourceInputs["parameterDetails"] = state ? state.parameterDetails : undefined;
+            resourceInputs["sections"] = state ? state.sections : undefined;
+            resourceInputs["tags"] = state ? state.tags : undefined;
+            resourceInputs["url"] = state ? state.url : undefined;
         } else {
             const args = argsOrState as DashboardArgs | undefined;
             if ((!args || args.description === undefined) && !opts.urn) {
@@ -186,22 +186,20 @@ export class Dashboard extends pulumi.CustomResource {
             if ((!args || args.url === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'url'");
             }
-            inputs["canModifies"] = args ? args.canModifies : undefined;
-            inputs["canViews"] = args ? args.canViews : undefined;
-            inputs["description"] = args ? args.description : undefined;
-            inputs["displayQueryParameters"] = args ? args.displayQueryParameters : undefined;
-            inputs["displaySectionTableOfContents"] = args ? args.displaySectionTableOfContents : undefined;
-            inputs["eventFilterType"] = args ? args.eventFilterType : undefined;
-            inputs["name"] = args ? args.name : undefined;
-            inputs["parameterDetails"] = args ? args.parameterDetails : undefined;
-            inputs["sections"] = args ? args.sections : undefined;
-            inputs["tags"] = args ? args.tags : undefined;
-            inputs["url"] = args ? args.url : undefined;
+            resourceInputs["canModifies"] = args ? args.canModifies : undefined;
+            resourceInputs["canViews"] = args ? args.canViews : undefined;
+            resourceInputs["description"] = args ? args.description : undefined;
+            resourceInputs["displayQueryParameters"] = args ? args.displayQueryParameters : undefined;
+            resourceInputs["displaySectionTableOfContents"] = args ? args.displaySectionTableOfContents : undefined;
+            resourceInputs["eventFilterType"] = args ? args.eventFilterType : undefined;
+            resourceInputs["name"] = args ? args.name : undefined;
+            resourceInputs["parameterDetails"] = args ? args.parameterDetails : undefined;
+            resourceInputs["sections"] = args ? args.sections : undefined;
+            resourceInputs["tags"] = args ? args.tags : undefined;
+            resourceInputs["url"] = args ? args.url : undefined;
         }
-        if (!opts.version) {
-            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
-        }
-        super(Dashboard.__pulumiType, name, inputs, opts);
+        opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+        super(Dashboard.__pulumiType, name, resourceInputs, opts);
     }
 }
 

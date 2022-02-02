@@ -107,19 +107,19 @@ export class MaintenanceWindow extends pulumi.CustomResource {
      */
     constructor(name: string, args: MaintenanceWindowArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: MaintenanceWindowArgs | MaintenanceWindowState, opts?: pulumi.CustomResourceOptions) {
-        let inputs: pulumi.Inputs = {};
+        let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as MaintenanceWindowState | undefined;
-            inputs["endTimeInSeconds"] = state ? state.endTimeInSeconds : undefined;
-            inputs["hostTagGroupHostNamesGroupAnded"] = state ? state.hostTagGroupHostNamesGroupAnded : undefined;
-            inputs["reason"] = state ? state.reason : undefined;
-            inputs["relevantCustomerTags"] = state ? state.relevantCustomerTags : undefined;
-            inputs["relevantHostNames"] = state ? state.relevantHostNames : undefined;
-            inputs["relevantHostTags"] = state ? state.relevantHostTags : undefined;
-            inputs["relevantHostTagsAnded"] = state ? state.relevantHostTagsAnded : undefined;
-            inputs["startTimeInSeconds"] = state ? state.startTimeInSeconds : undefined;
-            inputs["title"] = state ? state.title : undefined;
+            resourceInputs["endTimeInSeconds"] = state ? state.endTimeInSeconds : undefined;
+            resourceInputs["hostTagGroupHostNamesGroupAnded"] = state ? state.hostTagGroupHostNamesGroupAnded : undefined;
+            resourceInputs["reason"] = state ? state.reason : undefined;
+            resourceInputs["relevantCustomerTags"] = state ? state.relevantCustomerTags : undefined;
+            resourceInputs["relevantHostNames"] = state ? state.relevantHostNames : undefined;
+            resourceInputs["relevantHostTags"] = state ? state.relevantHostTags : undefined;
+            resourceInputs["relevantHostTagsAnded"] = state ? state.relevantHostTagsAnded : undefined;
+            resourceInputs["startTimeInSeconds"] = state ? state.startTimeInSeconds : undefined;
+            resourceInputs["title"] = state ? state.title : undefined;
         } else {
             const args = argsOrState as MaintenanceWindowArgs | undefined;
             if ((!args || args.endTimeInSeconds === undefined) && !opts.urn) {
@@ -134,20 +134,18 @@ export class MaintenanceWindow extends pulumi.CustomResource {
             if ((!args || args.title === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'title'");
             }
-            inputs["endTimeInSeconds"] = args ? args.endTimeInSeconds : undefined;
-            inputs["hostTagGroupHostNamesGroupAnded"] = args ? args.hostTagGroupHostNamesGroupAnded : undefined;
-            inputs["reason"] = args ? args.reason : undefined;
-            inputs["relevantCustomerTags"] = args ? args.relevantCustomerTags : undefined;
-            inputs["relevantHostNames"] = args ? args.relevantHostNames : undefined;
-            inputs["relevantHostTags"] = args ? args.relevantHostTags : undefined;
-            inputs["relevantHostTagsAnded"] = args ? args.relevantHostTagsAnded : undefined;
-            inputs["startTimeInSeconds"] = args ? args.startTimeInSeconds : undefined;
-            inputs["title"] = args ? args.title : undefined;
+            resourceInputs["endTimeInSeconds"] = args ? args.endTimeInSeconds : undefined;
+            resourceInputs["hostTagGroupHostNamesGroupAnded"] = args ? args.hostTagGroupHostNamesGroupAnded : undefined;
+            resourceInputs["reason"] = args ? args.reason : undefined;
+            resourceInputs["relevantCustomerTags"] = args ? args.relevantCustomerTags : undefined;
+            resourceInputs["relevantHostNames"] = args ? args.relevantHostNames : undefined;
+            resourceInputs["relevantHostTags"] = args ? args.relevantHostTags : undefined;
+            resourceInputs["relevantHostTagsAnded"] = args ? args.relevantHostTagsAnded : undefined;
+            resourceInputs["startTimeInSeconds"] = args ? args.startTimeInSeconds : undefined;
+            resourceInputs["title"] = args ? args.title : undefined;
         }
-        if (!opts.version) {
-            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
-        }
-        super(MaintenanceWindow.__pulumiType, name, inputs, opts);
+        opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+        super(MaintenanceWindow.__pulumiType, name, resourceInputs, opts);
     }
 }
 

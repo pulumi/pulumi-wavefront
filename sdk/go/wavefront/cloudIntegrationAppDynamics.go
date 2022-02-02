@@ -300,7 +300,7 @@ type CloudIntegrationAppDynamicsInput interface {
 }
 
 func (*CloudIntegrationAppDynamics) ElementType() reflect.Type {
-	return reflect.TypeOf((*CloudIntegrationAppDynamics)(nil))
+	return reflect.TypeOf((**CloudIntegrationAppDynamics)(nil)).Elem()
 }
 
 func (i *CloudIntegrationAppDynamics) ToCloudIntegrationAppDynamicsOutput() CloudIntegrationAppDynamicsOutput {
@@ -309,35 +309,6 @@ func (i *CloudIntegrationAppDynamics) ToCloudIntegrationAppDynamicsOutput() Clou
 
 func (i *CloudIntegrationAppDynamics) ToCloudIntegrationAppDynamicsOutputWithContext(ctx context.Context) CloudIntegrationAppDynamicsOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(CloudIntegrationAppDynamicsOutput)
-}
-
-func (i *CloudIntegrationAppDynamics) ToCloudIntegrationAppDynamicsPtrOutput() CloudIntegrationAppDynamicsPtrOutput {
-	return i.ToCloudIntegrationAppDynamicsPtrOutputWithContext(context.Background())
-}
-
-func (i *CloudIntegrationAppDynamics) ToCloudIntegrationAppDynamicsPtrOutputWithContext(ctx context.Context) CloudIntegrationAppDynamicsPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(CloudIntegrationAppDynamicsPtrOutput)
-}
-
-type CloudIntegrationAppDynamicsPtrInput interface {
-	pulumi.Input
-
-	ToCloudIntegrationAppDynamicsPtrOutput() CloudIntegrationAppDynamicsPtrOutput
-	ToCloudIntegrationAppDynamicsPtrOutputWithContext(ctx context.Context) CloudIntegrationAppDynamicsPtrOutput
-}
-
-type cloudIntegrationAppDynamicsPtrType CloudIntegrationAppDynamicsArgs
-
-func (*cloudIntegrationAppDynamicsPtrType) ElementType() reflect.Type {
-	return reflect.TypeOf((**CloudIntegrationAppDynamics)(nil))
-}
-
-func (i *cloudIntegrationAppDynamicsPtrType) ToCloudIntegrationAppDynamicsPtrOutput() CloudIntegrationAppDynamicsPtrOutput {
-	return i.ToCloudIntegrationAppDynamicsPtrOutputWithContext(context.Background())
-}
-
-func (i *cloudIntegrationAppDynamicsPtrType) ToCloudIntegrationAppDynamicsPtrOutputWithContext(ctx context.Context) CloudIntegrationAppDynamicsPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(CloudIntegrationAppDynamicsPtrOutput)
 }
 
 // CloudIntegrationAppDynamicsArrayInput is an input type that accepts CloudIntegrationAppDynamicsArray and CloudIntegrationAppDynamicsArrayOutput values.
@@ -393,7 +364,7 @@ func (i CloudIntegrationAppDynamicsMap) ToCloudIntegrationAppDynamicsMapOutputWi
 type CloudIntegrationAppDynamicsOutput struct{ *pulumi.OutputState }
 
 func (CloudIntegrationAppDynamicsOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*CloudIntegrationAppDynamics)(nil))
+	return reflect.TypeOf((**CloudIntegrationAppDynamics)(nil)).Elem()
 }
 
 func (o CloudIntegrationAppDynamicsOutput) ToCloudIntegrationAppDynamicsOutput() CloudIntegrationAppDynamicsOutput {
@@ -404,44 +375,10 @@ func (o CloudIntegrationAppDynamicsOutput) ToCloudIntegrationAppDynamicsOutputWi
 	return o
 }
 
-func (o CloudIntegrationAppDynamicsOutput) ToCloudIntegrationAppDynamicsPtrOutput() CloudIntegrationAppDynamicsPtrOutput {
-	return o.ToCloudIntegrationAppDynamicsPtrOutputWithContext(context.Background())
-}
-
-func (o CloudIntegrationAppDynamicsOutput) ToCloudIntegrationAppDynamicsPtrOutputWithContext(ctx context.Context) CloudIntegrationAppDynamicsPtrOutput {
-	return o.ApplyTWithContext(ctx, func(_ context.Context, v CloudIntegrationAppDynamics) *CloudIntegrationAppDynamics {
-		return &v
-	}).(CloudIntegrationAppDynamicsPtrOutput)
-}
-
-type CloudIntegrationAppDynamicsPtrOutput struct{ *pulumi.OutputState }
-
-func (CloudIntegrationAppDynamicsPtrOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((**CloudIntegrationAppDynamics)(nil))
-}
-
-func (o CloudIntegrationAppDynamicsPtrOutput) ToCloudIntegrationAppDynamicsPtrOutput() CloudIntegrationAppDynamicsPtrOutput {
-	return o
-}
-
-func (o CloudIntegrationAppDynamicsPtrOutput) ToCloudIntegrationAppDynamicsPtrOutputWithContext(ctx context.Context) CloudIntegrationAppDynamicsPtrOutput {
-	return o
-}
-
-func (o CloudIntegrationAppDynamicsPtrOutput) Elem() CloudIntegrationAppDynamicsOutput {
-	return o.ApplyT(func(v *CloudIntegrationAppDynamics) CloudIntegrationAppDynamics {
-		if v != nil {
-			return *v
-		}
-		var ret CloudIntegrationAppDynamics
-		return ret
-	}).(CloudIntegrationAppDynamicsOutput)
-}
-
 type CloudIntegrationAppDynamicsArrayOutput struct{ *pulumi.OutputState }
 
 func (CloudIntegrationAppDynamicsArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]CloudIntegrationAppDynamics)(nil))
+	return reflect.TypeOf((*[]*CloudIntegrationAppDynamics)(nil)).Elem()
 }
 
 func (o CloudIntegrationAppDynamicsArrayOutput) ToCloudIntegrationAppDynamicsArrayOutput() CloudIntegrationAppDynamicsArrayOutput {
@@ -453,15 +390,15 @@ func (o CloudIntegrationAppDynamicsArrayOutput) ToCloudIntegrationAppDynamicsArr
 }
 
 func (o CloudIntegrationAppDynamicsArrayOutput) Index(i pulumi.IntInput) CloudIntegrationAppDynamicsOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) CloudIntegrationAppDynamics {
-		return vs[0].([]CloudIntegrationAppDynamics)[vs[1].(int)]
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *CloudIntegrationAppDynamics {
+		return vs[0].([]*CloudIntegrationAppDynamics)[vs[1].(int)]
 	}).(CloudIntegrationAppDynamicsOutput)
 }
 
 type CloudIntegrationAppDynamicsMapOutput struct{ *pulumi.OutputState }
 
 func (CloudIntegrationAppDynamicsMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]CloudIntegrationAppDynamics)(nil))
+	return reflect.TypeOf((*map[string]*CloudIntegrationAppDynamics)(nil)).Elem()
 }
 
 func (o CloudIntegrationAppDynamicsMapOutput) ToCloudIntegrationAppDynamicsMapOutput() CloudIntegrationAppDynamicsMapOutput {
@@ -473,18 +410,16 @@ func (o CloudIntegrationAppDynamicsMapOutput) ToCloudIntegrationAppDynamicsMapOu
 }
 
 func (o CloudIntegrationAppDynamicsMapOutput) MapIndex(k pulumi.StringInput) CloudIntegrationAppDynamicsOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) CloudIntegrationAppDynamics {
-		return vs[0].(map[string]CloudIntegrationAppDynamics)[vs[1].(string)]
+	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *CloudIntegrationAppDynamics {
+		return vs[0].(map[string]*CloudIntegrationAppDynamics)[vs[1].(string)]
 	}).(CloudIntegrationAppDynamicsOutput)
 }
 
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*CloudIntegrationAppDynamicsInput)(nil)).Elem(), &CloudIntegrationAppDynamics{})
-	pulumi.RegisterInputType(reflect.TypeOf((*CloudIntegrationAppDynamicsPtrInput)(nil)).Elem(), &CloudIntegrationAppDynamics{})
 	pulumi.RegisterInputType(reflect.TypeOf((*CloudIntegrationAppDynamicsArrayInput)(nil)).Elem(), CloudIntegrationAppDynamicsArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*CloudIntegrationAppDynamicsMapInput)(nil)).Elem(), CloudIntegrationAppDynamicsMap{})
 	pulumi.RegisterOutputType(CloudIntegrationAppDynamicsOutput{})
-	pulumi.RegisterOutputType(CloudIntegrationAppDynamicsPtrOutput{})
 	pulumi.RegisterOutputType(CloudIntegrationAppDynamicsArrayOutput{})
 	pulumi.RegisterOutputType(CloudIntegrationAppDynamicsMapOutput{})
 }

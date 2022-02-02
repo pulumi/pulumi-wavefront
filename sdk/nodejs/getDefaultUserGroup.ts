@@ -22,9 +22,7 @@ export function getDefaultUserGroup(opts?: pulumi.InvokeOptions): Promise<GetDef
         opts = {}
     }
 
-    if (!opts.version) {
-        opts.version = utilities.getVersion();
-    }
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
     return pulumi.runtime.invoke("wavefront:index/getDefaultUserGroup:getDefaultUserGroup", {
     }, opts);
 }

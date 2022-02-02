@@ -101,7 +101,7 @@ type CloudIntegrationAwsExternalIdInput interface {
 }
 
 func (*CloudIntegrationAwsExternalId) ElementType() reflect.Type {
-	return reflect.TypeOf((*CloudIntegrationAwsExternalId)(nil))
+	return reflect.TypeOf((**CloudIntegrationAwsExternalId)(nil)).Elem()
 }
 
 func (i *CloudIntegrationAwsExternalId) ToCloudIntegrationAwsExternalIdOutput() CloudIntegrationAwsExternalIdOutput {
@@ -110,35 +110,6 @@ func (i *CloudIntegrationAwsExternalId) ToCloudIntegrationAwsExternalIdOutput() 
 
 func (i *CloudIntegrationAwsExternalId) ToCloudIntegrationAwsExternalIdOutputWithContext(ctx context.Context) CloudIntegrationAwsExternalIdOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(CloudIntegrationAwsExternalIdOutput)
-}
-
-func (i *CloudIntegrationAwsExternalId) ToCloudIntegrationAwsExternalIdPtrOutput() CloudIntegrationAwsExternalIdPtrOutput {
-	return i.ToCloudIntegrationAwsExternalIdPtrOutputWithContext(context.Background())
-}
-
-func (i *CloudIntegrationAwsExternalId) ToCloudIntegrationAwsExternalIdPtrOutputWithContext(ctx context.Context) CloudIntegrationAwsExternalIdPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(CloudIntegrationAwsExternalIdPtrOutput)
-}
-
-type CloudIntegrationAwsExternalIdPtrInput interface {
-	pulumi.Input
-
-	ToCloudIntegrationAwsExternalIdPtrOutput() CloudIntegrationAwsExternalIdPtrOutput
-	ToCloudIntegrationAwsExternalIdPtrOutputWithContext(ctx context.Context) CloudIntegrationAwsExternalIdPtrOutput
-}
-
-type cloudIntegrationAwsExternalIdPtrType CloudIntegrationAwsExternalIdArgs
-
-func (*cloudIntegrationAwsExternalIdPtrType) ElementType() reflect.Type {
-	return reflect.TypeOf((**CloudIntegrationAwsExternalId)(nil))
-}
-
-func (i *cloudIntegrationAwsExternalIdPtrType) ToCloudIntegrationAwsExternalIdPtrOutput() CloudIntegrationAwsExternalIdPtrOutput {
-	return i.ToCloudIntegrationAwsExternalIdPtrOutputWithContext(context.Background())
-}
-
-func (i *cloudIntegrationAwsExternalIdPtrType) ToCloudIntegrationAwsExternalIdPtrOutputWithContext(ctx context.Context) CloudIntegrationAwsExternalIdPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(CloudIntegrationAwsExternalIdPtrOutput)
 }
 
 // CloudIntegrationAwsExternalIdArrayInput is an input type that accepts CloudIntegrationAwsExternalIdArray and CloudIntegrationAwsExternalIdArrayOutput values.
@@ -194,7 +165,7 @@ func (i CloudIntegrationAwsExternalIdMap) ToCloudIntegrationAwsExternalIdMapOutp
 type CloudIntegrationAwsExternalIdOutput struct{ *pulumi.OutputState }
 
 func (CloudIntegrationAwsExternalIdOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*CloudIntegrationAwsExternalId)(nil))
+	return reflect.TypeOf((**CloudIntegrationAwsExternalId)(nil)).Elem()
 }
 
 func (o CloudIntegrationAwsExternalIdOutput) ToCloudIntegrationAwsExternalIdOutput() CloudIntegrationAwsExternalIdOutput {
@@ -205,44 +176,10 @@ func (o CloudIntegrationAwsExternalIdOutput) ToCloudIntegrationAwsExternalIdOutp
 	return o
 }
 
-func (o CloudIntegrationAwsExternalIdOutput) ToCloudIntegrationAwsExternalIdPtrOutput() CloudIntegrationAwsExternalIdPtrOutput {
-	return o.ToCloudIntegrationAwsExternalIdPtrOutputWithContext(context.Background())
-}
-
-func (o CloudIntegrationAwsExternalIdOutput) ToCloudIntegrationAwsExternalIdPtrOutputWithContext(ctx context.Context) CloudIntegrationAwsExternalIdPtrOutput {
-	return o.ApplyTWithContext(ctx, func(_ context.Context, v CloudIntegrationAwsExternalId) *CloudIntegrationAwsExternalId {
-		return &v
-	}).(CloudIntegrationAwsExternalIdPtrOutput)
-}
-
-type CloudIntegrationAwsExternalIdPtrOutput struct{ *pulumi.OutputState }
-
-func (CloudIntegrationAwsExternalIdPtrOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((**CloudIntegrationAwsExternalId)(nil))
-}
-
-func (o CloudIntegrationAwsExternalIdPtrOutput) ToCloudIntegrationAwsExternalIdPtrOutput() CloudIntegrationAwsExternalIdPtrOutput {
-	return o
-}
-
-func (o CloudIntegrationAwsExternalIdPtrOutput) ToCloudIntegrationAwsExternalIdPtrOutputWithContext(ctx context.Context) CloudIntegrationAwsExternalIdPtrOutput {
-	return o
-}
-
-func (o CloudIntegrationAwsExternalIdPtrOutput) Elem() CloudIntegrationAwsExternalIdOutput {
-	return o.ApplyT(func(v *CloudIntegrationAwsExternalId) CloudIntegrationAwsExternalId {
-		if v != nil {
-			return *v
-		}
-		var ret CloudIntegrationAwsExternalId
-		return ret
-	}).(CloudIntegrationAwsExternalIdOutput)
-}
-
 type CloudIntegrationAwsExternalIdArrayOutput struct{ *pulumi.OutputState }
 
 func (CloudIntegrationAwsExternalIdArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]CloudIntegrationAwsExternalId)(nil))
+	return reflect.TypeOf((*[]*CloudIntegrationAwsExternalId)(nil)).Elem()
 }
 
 func (o CloudIntegrationAwsExternalIdArrayOutput) ToCloudIntegrationAwsExternalIdArrayOutput() CloudIntegrationAwsExternalIdArrayOutput {
@@ -254,15 +191,15 @@ func (o CloudIntegrationAwsExternalIdArrayOutput) ToCloudIntegrationAwsExternalI
 }
 
 func (o CloudIntegrationAwsExternalIdArrayOutput) Index(i pulumi.IntInput) CloudIntegrationAwsExternalIdOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) CloudIntegrationAwsExternalId {
-		return vs[0].([]CloudIntegrationAwsExternalId)[vs[1].(int)]
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *CloudIntegrationAwsExternalId {
+		return vs[0].([]*CloudIntegrationAwsExternalId)[vs[1].(int)]
 	}).(CloudIntegrationAwsExternalIdOutput)
 }
 
 type CloudIntegrationAwsExternalIdMapOutput struct{ *pulumi.OutputState }
 
 func (CloudIntegrationAwsExternalIdMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]CloudIntegrationAwsExternalId)(nil))
+	return reflect.TypeOf((*map[string]*CloudIntegrationAwsExternalId)(nil)).Elem()
 }
 
 func (o CloudIntegrationAwsExternalIdMapOutput) ToCloudIntegrationAwsExternalIdMapOutput() CloudIntegrationAwsExternalIdMapOutput {
@@ -274,18 +211,16 @@ func (o CloudIntegrationAwsExternalIdMapOutput) ToCloudIntegrationAwsExternalIdM
 }
 
 func (o CloudIntegrationAwsExternalIdMapOutput) MapIndex(k pulumi.StringInput) CloudIntegrationAwsExternalIdOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) CloudIntegrationAwsExternalId {
-		return vs[0].(map[string]CloudIntegrationAwsExternalId)[vs[1].(string)]
+	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *CloudIntegrationAwsExternalId {
+		return vs[0].(map[string]*CloudIntegrationAwsExternalId)[vs[1].(string)]
 	}).(CloudIntegrationAwsExternalIdOutput)
 }
 
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*CloudIntegrationAwsExternalIdInput)(nil)).Elem(), &CloudIntegrationAwsExternalId{})
-	pulumi.RegisterInputType(reflect.TypeOf((*CloudIntegrationAwsExternalIdPtrInput)(nil)).Elem(), &CloudIntegrationAwsExternalId{})
 	pulumi.RegisterInputType(reflect.TypeOf((*CloudIntegrationAwsExternalIdArrayInput)(nil)).Elem(), CloudIntegrationAwsExternalIdArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*CloudIntegrationAwsExternalIdMapInput)(nil)).Elem(), CloudIntegrationAwsExternalIdMap{})
 	pulumi.RegisterOutputType(CloudIntegrationAwsExternalIdOutput{})
-	pulumi.RegisterOutputType(CloudIntegrationAwsExternalIdPtrOutput{})
 	pulumi.RegisterOutputType(CloudIntegrationAwsExternalIdArrayOutput{})
 	pulumi.RegisterOutputType(CloudIntegrationAwsExternalIdMapOutput{})
 }

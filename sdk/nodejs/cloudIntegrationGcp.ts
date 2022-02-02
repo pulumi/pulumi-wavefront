@@ -107,19 +107,19 @@ export class CloudIntegrationGcp extends pulumi.CustomResource {
      */
     constructor(name: string, args: CloudIntegrationGcpArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: CloudIntegrationGcpArgs | CloudIntegrationGcpState, opts?: pulumi.CustomResourceOptions) {
-        let inputs: pulumi.Inputs = {};
+        let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as CloudIntegrationGcpState | undefined;
-            inputs["additionalTags"] = state ? state.additionalTags : undefined;
-            inputs["categories"] = state ? state.categories : undefined;
-            inputs["forceSave"] = state ? state.forceSave : undefined;
-            inputs["jsonKey"] = state ? state.jsonKey : undefined;
-            inputs["metricFilterRegex"] = state ? state.metricFilterRegex : undefined;
-            inputs["name"] = state ? state.name : undefined;
-            inputs["projectId"] = state ? state.projectId : undefined;
-            inputs["service"] = state ? state.service : undefined;
-            inputs["serviceRefreshRateInMinutes"] = state ? state.serviceRefreshRateInMinutes : undefined;
+            resourceInputs["additionalTags"] = state ? state.additionalTags : undefined;
+            resourceInputs["categories"] = state ? state.categories : undefined;
+            resourceInputs["forceSave"] = state ? state.forceSave : undefined;
+            resourceInputs["jsonKey"] = state ? state.jsonKey : undefined;
+            resourceInputs["metricFilterRegex"] = state ? state.metricFilterRegex : undefined;
+            resourceInputs["name"] = state ? state.name : undefined;
+            resourceInputs["projectId"] = state ? state.projectId : undefined;
+            resourceInputs["service"] = state ? state.service : undefined;
+            resourceInputs["serviceRefreshRateInMinutes"] = state ? state.serviceRefreshRateInMinutes : undefined;
         } else {
             const args = argsOrState as CloudIntegrationGcpArgs | undefined;
             if ((!args || args.jsonKey === undefined) && !opts.urn) {
@@ -131,20 +131,18 @@ export class CloudIntegrationGcp extends pulumi.CustomResource {
             if ((!args || args.service === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'service'");
             }
-            inputs["additionalTags"] = args ? args.additionalTags : undefined;
-            inputs["categories"] = args ? args.categories : undefined;
-            inputs["forceSave"] = args ? args.forceSave : undefined;
-            inputs["jsonKey"] = args ? args.jsonKey : undefined;
-            inputs["metricFilterRegex"] = args ? args.metricFilterRegex : undefined;
-            inputs["name"] = args ? args.name : undefined;
-            inputs["projectId"] = args ? args.projectId : undefined;
-            inputs["service"] = args ? args.service : undefined;
-            inputs["serviceRefreshRateInMinutes"] = args ? args.serviceRefreshRateInMinutes : undefined;
+            resourceInputs["additionalTags"] = args ? args.additionalTags : undefined;
+            resourceInputs["categories"] = args ? args.categories : undefined;
+            resourceInputs["forceSave"] = args ? args.forceSave : undefined;
+            resourceInputs["jsonKey"] = args ? args.jsonKey : undefined;
+            resourceInputs["metricFilterRegex"] = args ? args.metricFilterRegex : undefined;
+            resourceInputs["name"] = args ? args.name : undefined;
+            resourceInputs["projectId"] = args ? args.projectId : undefined;
+            resourceInputs["service"] = args ? args.service : undefined;
+            resourceInputs["serviceRefreshRateInMinutes"] = args ? args.serviceRefreshRateInMinutes : undefined;
         }
-        if (!opts.version) {
-            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
-        }
-        super(CloudIntegrationGcp.__pulumiType, name, inputs, opts);
+        opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+        super(CloudIntegrationGcp.__pulumiType, name, resourceInputs, opts);
     }
 }
 

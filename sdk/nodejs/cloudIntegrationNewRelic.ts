@@ -102,19 +102,19 @@ export class CloudIntegrationNewRelic extends pulumi.CustomResource {
      */
     constructor(name: string, args: CloudIntegrationNewRelicArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: CloudIntegrationNewRelicArgs | CloudIntegrationNewRelicState, opts?: pulumi.CustomResourceOptions) {
-        let inputs: pulumi.Inputs = {};
+        let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as CloudIntegrationNewRelicState | undefined;
-            inputs["additionalTags"] = state ? state.additionalTags : undefined;
-            inputs["apiKey"] = state ? state.apiKey : undefined;
-            inputs["appFilterRegex"] = state ? state.appFilterRegex : undefined;
-            inputs["forceSave"] = state ? state.forceSave : undefined;
-            inputs["hostFilterRegex"] = state ? state.hostFilterRegex : undefined;
-            inputs["metricFilters"] = state ? state.metricFilters : undefined;
-            inputs["name"] = state ? state.name : undefined;
-            inputs["service"] = state ? state.service : undefined;
-            inputs["serviceRefreshRateInMinutes"] = state ? state.serviceRefreshRateInMinutes : undefined;
+            resourceInputs["additionalTags"] = state ? state.additionalTags : undefined;
+            resourceInputs["apiKey"] = state ? state.apiKey : undefined;
+            resourceInputs["appFilterRegex"] = state ? state.appFilterRegex : undefined;
+            resourceInputs["forceSave"] = state ? state.forceSave : undefined;
+            resourceInputs["hostFilterRegex"] = state ? state.hostFilterRegex : undefined;
+            resourceInputs["metricFilters"] = state ? state.metricFilters : undefined;
+            resourceInputs["name"] = state ? state.name : undefined;
+            resourceInputs["service"] = state ? state.service : undefined;
+            resourceInputs["serviceRefreshRateInMinutes"] = state ? state.serviceRefreshRateInMinutes : undefined;
         } else {
             const args = argsOrState as CloudIntegrationNewRelicArgs | undefined;
             if ((!args || args.apiKey === undefined) && !opts.urn) {
@@ -123,20 +123,18 @@ export class CloudIntegrationNewRelic extends pulumi.CustomResource {
             if ((!args || args.service === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'service'");
             }
-            inputs["additionalTags"] = args ? args.additionalTags : undefined;
-            inputs["apiKey"] = args ? args.apiKey : undefined;
-            inputs["appFilterRegex"] = args ? args.appFilterRegex : undefined;
-            inputs["forceSave"] = args ? args.forceSave : undefined;
-            inputs["hostFilterRegex"] = args ? args.hostFilterRegex : undefined;
-            inputs["metricFilters"] = args ? args.metricFilters : undefined;
-            inputs["name"] = args ? args.name : undefined;
-            inputs["service"] = args ? args.service : undefined;
-            inputs["serviceRefreshRateInMinutes"] = args ? args.serviceRefreshRateInMinutes : undefined;
+            resourceInputs["additionalTags"] = args ? args.additionalTags : undefined;
+            resourceInputs["apiKey"] = args ? args.apiKey : undefined;
+            resourceInputs["appFilterRegex"] = args ? args.appFilterRegex : undefined;
+            resourceInputs["forceSave"] = args ? args.forceSave : undefined;
+            resourceInputs["hostFilterRegex"] = args ? args.hostFilterRegex : undefined;
+            resourceInputs["metricFilters"] = args ? args.metricFilters : undefined;
+            resourceInputs["name"] = args ? args.name : undefined;
+            resourceInputs["service"] = args ? args.service : undefined;
+            resourceInputs["serviceRefreshRateInMinutes"] = args ? args.serviceRefreshRateInMinutes : undefined;
         }
-        if (!opts.version) {
-            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
-        }
-        super(CloudIntegrationNewRelic.__pulumiType, name, inputs, opts);
+        opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+        super(CloudIntegrationNewRelic.__pulumiType, name, resourceInputs, opts);
     }
 }
 
