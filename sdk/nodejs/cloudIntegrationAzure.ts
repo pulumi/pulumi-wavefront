@@ -111,21 +111,21 @@ export class CloudIntegrationAzure extends pulumi.CustomResource {
      */
     constructor(name: string, args: CloudIntegrationAzureArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: CloudIntegrationAzureArgs | CloudIntegrationAzureState, opts?: pulumi.CustomResourceOptions) {
-        let inputs: pulumi.Inputs = {};
+        let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as CloudIntegrationAzureState | undefined;
-            inputs["additionalTags"] = state ? state.additionalTags : undefined;
-            inputs["categoryFilters"] = state ? state.categoryFilters : undefined;
-            inputs["clientId"] = state ? state.clientId : undefined;
-            inputs["clientSecret"] = state ? state.clientSecret : undefined;
-            inputs["forceSave"] = state ? state.forceSave : undefined;
-            inputs["metricFilterRegex"] = state ? state.metricFilterRegex : undefined;
-            inputs["name"] = state ? state.name : undefined;
-            inputs["resourceGroupFilters"] = state ? state.resourceGroupFilters : undefined;
-            inputs["service"] = state ? state.service : undefined;
-            inputs["serviceRefreshRateInMinutes"] = state ? state.serviceRefreshRateInMinutes : undefined;
-            inputs["tenant"] = state ? state.tenant : undefined;
+            resourceInputs["additionalTags"] = state ? state.additionalTags : undefined;
+            resourceInputs["categoryFilters"] = state ? state.categoryFilters : undefined;
+            resourceInputs["clientId"] = state ? state.clientId : undefined;
+            resourceInputs["clientSecret"] = state ? state.clientSecret : undefined;
+            resourceInputs["forceSave"] = state ? state.forceSave : undefined;
+            resourceInputs["metricFilterRegex"] = state ? state.metricFilterRegex : undefined;
+            resourceInputs["name"] = state ? state.name : undefined;
+            resourceInputs["resourceGroupFilters"] = state ? state.resourceGroupFilters : undefined;
+            resourceInputs["service"] = state ? state.service : undefined;
+            resourceInputs["serviceRefreshRateInMinutes"] = state ? state.serviceRefreshRateInMinutes : undefined;
+            resourceInputs["tenant"] = state ? state.tenant : undefined;
         } else {
             const args = argsOrState as CloudIntegrationAzureArgs | undefined;
             if ((!args || args.clientId === undefined) && !opts.urn) {
@@ -140,22 +140,20 @@ export class CloudIntegrationAzure extends pulumi.CustomResource {
             if ((!args || args.tenant === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'tenant'");
             }
-            inputs["additionalTags"] = args ? args.additionalTags : undefined;
-            inputs["categoryFilters"] = args ? args.categoryFilters : undefined;
-            inputs["clientId"] = args ? args.clientId : undefined;
-            inputs["clientSecret"] = args ? args.clientSecret : undefined;
-            inputs["forceSave"] = args ? args.forceSave : undefined;
-            inputs["metricFilterRegex"] = args ? args.metricFilterRegex : undefined;
-            inputs["name"] = args ? args.name : undefined;
-            inputs["resourceGroupFilters"] = args ? args.resourceGroupFilters : undefined;
-            inputs["service"] = args ? args.service : undefined;
-            inputs["serviceRefreshRateInMinutes"] = args ? args.serviceRefreshRateInMinutes : undefined;
-            inputs["tenant"] = args ? args.tenant : undefined;
+            resourceInputs["additionalTags"] = args ? args.additionalTags : undefined;
+            resourceInputs["categoryFilters"] = args ? args.categoryFilters : undefined;
+            resourceInputs["clientId"] = args ? args.clientId : undefined;
+            resourceInputs["clientSecret"] = args ? args.clientSecret : undefined;
+            resourceInputs["forceSave"] = args ? args.forceSave : undefined;
+            resourceInputs["metricFilterRegex"] = args ? args.metricFilterRegex : undefined;
+            resourceInputs["name"] = args ? args.name : undefined;
+            resourceInputs["resourceGroupFilters"] = args ? args.resourceGroupFilters : undefined;
+            resourceInputs["service"] = args ? args.service : undefined;
+            resourceInputs["serviceRefreshRateInMinutes"] = args ? args.serviceRefreshRateInMinutes : undefined;
+            resourceInputs["tenant"] = args ? args.tenant : undefined;
         }
-        if (!opts.version) {
-            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
-        }
-        super(CloudIntegrationAzure.__pulumiType, name, inputs, opts);
+        opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+        super(CloudIntegrationAzure.__pulumiType, name, resourceInputs, opts);
     }
 }
 

@@ -113,21 +113,21 @@ export class CloudIntegrationCloudTrail extends pulumi.CustomResource {
      */
     constructor(name: string, args: CloudIntegrationCloudTrailArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: CloudIntegrationCloudTrailArgs | CloudIntegrationCloudTrailState, opts?: pulumi.CustomResourceOptions) {
-        let inputs: pulumi.Inputs = {};
+        let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as CloudIntegrationCloudTrailState | undefined;
-            inputs["additionalTags"] = state ? state.additionalTags : undefined;
-            inputs["bucketName"] = state ? state.bucketName : undefined;
-            inputs["externalId"] = state ? state.externalId : undefined;
-            inputs["filterRule"] = state ? state.filterRule : undefined;
-            inputs["forceSave"] = state ? state.forceSave : undefined;
-            inputs["name"] = state ? state.name : undefined;
-            inputs["prefix"] = state ? state.prefix : undefined;
-            inputs["region"] = state ? state.region : undefined;
-            inputs["roleArn"] = state ? state.roleArn : undefined;
-            inputs["service"] = state ? state.service : undefined;
-            inputs["serviceRefreshRateInMinutes"] = state ? state.serviceRefreshRateInMinutes : undefined;
+            resourceInputs["additionalTags"] = state ? state.additionalTags : undefined;
+            resourceInputs["bucketName"] = state ? state.bucketName : undefined;
+            resourceInputs["externalId"] = state ? state.externalId : undefined;
+            resourceInputs["filterRule"] = state ? state.filterRule : undefined;
+            resourceInputs["forceSave"] = state ? state.forceSave : undefined;
+            resourceInputs["name"] = state ? state.name : undefined;
+            resourceInputs["prefix"] = state ? state.prefix : undefined;
+            resourceInputs["region"] = state ? state.region : undefined;
+            resourceInputs["roleArn"] = state ? state.roleArn : undefined;
+            resourceInputs["service"] = state ? state.service : undefined;
+            resourceInputs["serviceRefreshRateInMinutes"] = state ? state.serviceRefreshRateInMinutes : undefined;
         } else {
             const args = argsOrState as CloudIntegrationCloudTrailArgs | undefined;
             if ((!args || args.bucketName === undefined) && !opts.urn) {
@@ -145,22 +145,20 @@ export class CloudIntegrationCloudTrail extends pulumi.CustomResource {
             if ((!args || args.service === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'service'");
             }
-            inputs["additionalTags"] = args ? args.additionalTags : undefined;
-            inputs["bucketName"] = args ? args.bucketName : undefined;
-            inputs["externalId"] = args ? args.externalId : undefined;
-            inputs["filterRule"] = args ? args.filterRule : undefined;
-            inputs["forceSave"] = args ? args.forceSave : undefined;
-            inputs["name"] = args ? args.name : undefined;
-            inputs["prefix"] = args ? args.prefix : undefined;
-            inputs["region"] = args ? args.region : undefined;
-            inputs["roleArn"] = args ? args.roleArn : undefined;
-            inputs["service"] = args ? args.service : undefined;
-            inputs["serviceRefreshRateInMinutes"] = args ? args.serviceRefreshRateInMinutes : undefined;
+            resourceInputs["additionalTags"] = args ? args.additionalTags : undefined;
+            resourceInputs["bucketName"] = args ? args.bucketName : undefined;
+            resourceInputs["externalId"] = args ? args.externalId : undefined;
+            resourceInputs["filterRule"] = args ? args.filterRule : undefined;
+            resourceInputs["forceSave"] = args ? args.forceSave : undefined;
+            resourceInputs["name"] = args ? args.name : undefined;
+            resourceInputs["prefix"] = args ? args.prefix : undefined;
+            resourceInputs["region"] = args ? args.region : undefined;
+            resourceInputs["roleArn"] = args ? args.roleArn : undefined;
+            resourceInputs["service"] = args ? args.service : undefined;
+            resourceInputs["serviceRefreshRateInMinutes"] = args ? args.serviceRefreshRateInMinutes : undefined;
         }
-        if (!opts.version) {
-            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
-        }
-        super(CloudIntegrationCloudTrail.__pulumiType, name, inputs, opts);
+        opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+        super(CloudIntegrationCloudTrail.__pulumiType, name, resourceInputs, opts);
     }
 }
 

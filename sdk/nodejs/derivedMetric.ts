@@ -86,15 +86,15 @@ export class DerivedMetric extends pulumi.CustomResource {
      */
     constructor(name: string, args: DerivedMetricArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: DerivedMetricArgs | DerivedMetricState, opts?: pulumi.CustomResourceOptions) {
-        let inputs: pulumi.Inputs = {};
+        let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as DerivedMetricState | undefined;
-            inputs["additionalInformation"] = state ? state.additionalInformation : undefined;
-            inputs["minutes"] = state ? state.minutes : undefined;
-            inputs["name"] = state ? state.name : undefined;
-            inputs["query"] = state ? state.query : undefined;
-            inputs["tags"] = state ? state.tags : undefined;
+            resourceInputs["additionalInformation"] = state ? state.additionalInformation : undefined;
+            resourceInputs["minutes"] = state ? state.minutes : undefined;
+            resourceInputs["name"] = state ? state.name : undefined;
+            resourceInputs["query"] = state ? state.query : undefined;
+            resourceInputs["tags"] = state ? state.tags : undefined;
         } else {
             const args = argsOrState as DerivedMetricArgs | undefined;
             if ((!args || args.minutes === undefined) && !opts.urn) {
@@ -103,16 +103,14 @@ export class DerivedMetric extends pulumi.CustomResource {
             if ((!args || args.query === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'query'");
             }
-            inputs["additionalInformation"] = args ? args.additionalInformation : undefined;
-            inputs["minutes"] = args ? args.minutes : undefined;
-            inputs["name"] = args ? args.name : undefined;
-            inputs["query"] = args ? args.query : undefined;
-            inputs["tags"] = args ? args.tags : undefined;
+            resourceInputs["additionalInformation"] = args ? args.additionalInformation : undefined;
+            resourceInputs["minutes"] = args ? args.minutes : undefined;
+            resourceInputs["name"] = args ? args.name : undefined;
+            resourceInputs["query"] = args ? args.query : undefined;
+            resourceInputs["tags"] = args ? args.tags : undefined;
         }
-        if (!opts.version) {
-            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
-        }
-        super(DerivedMetric.__pulumiType, name, inputs, opts);
+        opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+        super(DerivedMetric.__pulumiType, name, resourceInputs, opts);
     }
 }
 

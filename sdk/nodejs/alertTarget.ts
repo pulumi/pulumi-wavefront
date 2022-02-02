@@ -177,22 +177,22 @@ export class AlertTarget extends pulumi.CustomResource {
      */
     constructor(name: string, args: AlertTargetArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: AlertTargetArgs | AlertTargetState, opts?: pulumi.CustomResourceOptions) {
-        let inputs: pulumi.Inputs = {};
+        let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AlertTargetState | undefined;
-            inputs["contentType"] = state ? state.contentType : undefined;
-            inputs["customHeaders"] = state ? state.customHeaders : undefined;
-            inputs["description"] = state ? state.description : undefined;
-            inputs["emailSubject"] = state ? state.emailSubject : undefined;
-            inputs["isHtmlContent"] = state ? state.isHtmlContent : undefined;
-            inputs["method"] = state ? state.method : undefined;
-            inputs["name"] = state ? state.name : undefined;
-            inputs["recipient"] = state ? state.recipient : undefined;
-            inputs["routes"] = state ? state.routes : undefined;
-            inputs["targetId"] = state ? state.targetId : undefined;
-            inputs["template"] = state ? state.template : undefined;
-            inputs["triggers"] = state ? state.triggers : undefined;
+            resourceInputs["contentType"] = state ? state.contentType : undefined;
+            resourceInputs["customHeaders"] = state ? state.customHeaders : undefined;
+            resourceInputs["description"] = state ? state.description : undefined;
+            resourceInputs["emailSubject"] = state ? state.emailSubject : undefined;
+            resourceInputs["isHtmlContent"] = state ? state.isHtmlContent : undefined;
+            resourceInputs["method"] = state ? state.method : undefined;
+            resourceInputs["name"] = state ? state.name : undefined;
+            resourceInputs["recipient"] = state ? state.recipient : undefined;
+            resourceInputs["routes"] = state ? state.routes : undefined;
+            resourceInputs["targetId"] = state ? state.targetId : undefined;
+            resourceInputs["template"] = state ? state.template : undefined;
+            resourceInputs["triggers"] = state ? state.triggers : undefined;
         } else {
             const args = argsOrState as AlertTargetArgs | undefined;
             if ((!args || args.description === undefined) && !opts.urn) {
@@ -207,23 +207,21 @@ export class AlertTarget extends pulumi.CustomResource {
             if ((!args || args.triggers === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'triggers'");
             }
-            inputs["contentType"] = args ? args.contentType : undefined;
-            inputs["customHeaders"] = args ? args.customHeaders : undefined;
-            inputs["description"] = args ? args.description : undefined;
-            inputs["emailSubject"] = args ? args.emailSubject : undefined;
-            inputs["isHtmlContent"] = args ? args.isHtmlContent : undefined;
-            inputs["method"] = args ? args.method : undefined;
-            inputs["name"] = args ? args.name : undefined;
-            inputs["recipient"] = args ? args.recipient : undefined;
-            inputs["routes"] = args ? args.routes : undefined;
-            inputs["template"] = args ? args.template : undefined;
-            inputs["triggers"] = args ? args.triggers : undefined;
-            inputs["targetId"] = undefined /*out*/;
+            resourceInputs["contentType"] = args ? args.contentType : undefined;
+            resourceInputs["customHeaders"] = args ? args.customHeaders : undefined;
+            resourceInputs["description"] = args ? args.description : undefined;
+            resourceInputs["emailSubject"] = args ? args.emailSubject : undefined;
+            resourceInputs["isHtmlContent"] = args ? args.isHtmlContent : undefined;
+            resourceInputs["method"] = args ? args.method : undefined;
+            resourceInputs["name"] = args ? args.name : undefined;
+            resourceInputs["recipient"] = args ? args.recipient : undefined;
+            resourceInputs["routes"] = args ? args.routes : undefined;
+            resourceInputs["template"] = args ? args.template : undefined;
+            resourceInputs["triggers"] = args ? args.triggers : undefined;
+            resourceInputs["targetId"] = undefined /*out*/;
         }
-        if (!opts.version) {
-            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
-        }
-        super(AlertTarget.__pulumiType, name, inputs, opts);
+        opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+        super(AlertTarget.__pulumiType, name, resourceInputs, opts);
     }
 }
 

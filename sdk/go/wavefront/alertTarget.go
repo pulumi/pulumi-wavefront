@@ -321,7 +321,7 @@ type AlertTargetInput interface {
 }
 
 func (*AlertTarget) ElementType() reflect.Type {
-	return reflect.TypeOf((*AlertTarget)(nil))
+	return reflect.TypeOf((**AlertTarget)(nil)).Elem()
 }
 
 func (i *AlertTarget) ToAlertTargetOutput() AlertTargetOutput {
@@ -330,35 +330,6 @@ func (i *AlertTarget) ToAlertTargetOutput() AlertTargetOutput {
 
 func (i *AlertTarget) ToAlertTargetOutputWithContext(ctx context.Context) AlertTargetOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AlertTargetOutput)
-}
-
-func (i *AlertTarget) ToAlertTargetPtrOutput() AlertTargetPtrOutput {
-	return i.ToAlertTargetPtrOutputWithContext(context.Background())
-}
-
-func (i *AlertTarget) ToAlertTargetPtrOutputWithContext(ctx context.Context) AlertTargetPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(AlertTargetPtrOutput)
-}
-
-type AlertTargetPtrInput interface {
-	pulumi.Input
-
-	ToAlertTargetPtrOutput() AlertTargetPtrOutput
-	ToAlertTargetPtrOutputWithContext(ctx context.Context) AlertTargetPtrOutput
-}
-
-type alertTargetPtrType AlertTargetArgs
-
-func (*alertTargetPtrType) ElementType() reflect.Type {
-	return reflect.TypeOf((**AlertTarget)(nil))
-}
-
-func (i *alertTargetPtrType) ToAlertTargetPtrOutput() AlertTargetPtrOutput {
-	return i.ToAlertTargetPtrOutputWithContext(context.Background())
-}
-
-func (i *alertTargetPtrType) ToAlertTargetPtrOutputWithContext(ctx context.Context) AlertTargetPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(AlertTargetPtrOutput)
 }
 
 // AlertTargetArrayInput is an input type that accepts AlertTargetArray and AlertTargetArrayOutput values.
@@ -414,7 +385,7 @@ func (i AlertTargetMap) ToAlertTargetMapOutputWithContext(ctx context.Context) A
 type AlertTargetOutput struct{ *pulumi.OutputState }
 
 func (AlertTargetOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*AlertTarget)(nil))
+	return reflect.TypeOf((**AlertTarget)(nil)).Elem()
 }
 
 func (o AlertTargetOutput) ToAlertTargetOutput() AlertTargetOutput {
@@ -425,44 +396,10 @@ func (o AlertTargetOutput) ToAlertTargetOutputWithContext(ctx context.Context) A
 	return o
 }
 
-func (o AlertTargetOutput) ToAlertTargetPtrOutput() AlertTargetPtrOutput {
-	return o.ToAlertTargetPtrOutputWithContext(context.Background())
-}
-
-func (o AlertTargetOutput) ToAlertTargetPtrOutputWithContext(ctx context.Context) AlertTargetPtrOutput {
-	return o.ApplyTWithContext(ctx, func(_ context.Context, v AlertTarget) *AlertTarget {
-		return &v
-	}).(AlertTargetPtrOutput)
-}
-
-type AlertTargetPtrOutput struct{ *pulumi.OutputState }
-
-func (AlertTargetPtrOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((**AlertTarget)(nil))
-}
-
-func (o AlertTargetPtrOutput) ToAlertTargetPtrOutput() AlertTargetPtrOutput {
-	return o
-}
-
-func (o AlertTargetPtrOutput) ToAlertTargetPtrOutputWithContext(ctx context.Context) AlertTargetPtrOutput {
-	return o
-}
-
-func (o AlertTargetPtrOutput) Elem() AlertTargetOutput {
-	return o.ApplyT(func(v *AlertTarget) AlertTarget {
-		if v != nil {
-			return *v
-		}
-		var ret AlertTarget
-		return ret
-	}).(AlertTargetOutput)
-}
-
 type AlertTargetArrayOutput struct{ *pulumi.OutputState }
 
 func (AlertTargetArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]AlertTarget)(nil))
+	return reflect.TypeOf((*[]*AlertTarget)(nil)).Elem()
 }
 
 func (o AlertTargetArrayOutput) ToAlertTargetArrayOutput() AlertTargetArrayOutput {
@@ -474,15 +411,15 @@ func (o AlertTargetArrayOutput) ToAlertTargetArrayOutputWithContext(ctx context.
 }
 
 func (o AlertTargetArrayOutput) Index(i pulumi.IntInput) AlertTargetOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) AlertTarget {
-		return vs[0].([]AlertTarget)[vs[1].(int)]
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *AlertTarget {
+		return vs[0].([]*AlertTarget)[vs[1].(int)]
 	}).(AlertTargetOutput)
 }
 
 type AlertTargetMapOutput struct{ *pulumi.OutputState }
 
 func (AlertTargetMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]AlertTarget)(nil))
+	return reflect.TypeOf((*map[string]*AlertTarget)(nil)).Elem()
 }
 
 func (o AlertTargetMapOutput) ToAlertTargetMapOutput() AlertTargetMapOutput {
@@ -494,18 +431,16 @@ func (o AlertTargetMapOutput) ToAlertTargetMapOutputWithContext(ctx context.Cont
 }
 
 func (o AlertTargetMapOutput) MapIndex(k pulumi.StringInput) AlertTargetOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) AlertTarget {
-		return vs[0].(map[string]AlertTarget)[vs[1].(string)]
+	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *AlertTarget {
+		return vs[0].(map[string]*AlertTarget)[vs[1].(string)]
 	}).(AlertTargetOutput)
 }
 
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*AlertTargetInput)(nil)).Elem(), &AlertTarget{})
-	pulumi.RegisterInputType(reflect.TypeOf((*AlertTargetPtrInput)(nil)).Elem(), &AlertTarget{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AlertTargetArrayInput)(nil)).Elem(), AlertTargetArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AlertTargetMapInput)(nil)).Elem(), AlertTargetMap{})
 	pulumi.RegisterOutputType(AlertTargetOutput{})
-	pulumi.RegisterOutputType(AlertTargetPtrOutput{})
 	pulumi.RegisterOutputType(AlertTargetArrayOutput{})
 	pulumi.RegisterOutputType(AlertTargetMapOutput{})
 }

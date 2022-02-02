@@ -55,6 +55,7 @@ setup(name='pulumi_wavefront',
       package_data={
           'pulumi_wavefront': [
               'py.typed',
+              'pulumi-plugin.json',
           ]
       },
       install_requires=[

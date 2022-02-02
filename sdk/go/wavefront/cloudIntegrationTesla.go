@@ -186,7 +186,7 @@ type CloudIntegrationTeslaInput interface {
 }
 
 func (*CloudIntegrationTesla) ElementType() reflect.Type {
-	return reflect.TypeOf((*CloudIntegrationTesla)(nil))
+	return reflect.TypeOf((**CloudIntegrationTesla)(nil)).Elem()
 }
 
 func (i *CloudIntegrationTesla) ToCloudIntegrationTeslaOutput() CloudIntegrationTeslaOutput {
@@ -195,35 +195,6 @@ func (i *CloudIntegrationTesla) ToCloudIntegrationTeslaOutput() CloudIntegration
 
 func (i *CloudIntegrationTesla) ToCloudIntegrationTeslaOutputWithContext(ctx context.Context) CloudIntegrationTeslaOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(CloudIntegrationTeslaOutput)
-}
-
-func (i *CloudIntegrationTesla) ToCloudIntegrationTeslaPtrOutput() CloudIntegrationTeslaPtrOutput {
-	return i.ToCloudIntegrationTeslaPtrOutputWithContext(context.Background())
-}
-
-func (i *CloudIntegrationTesla) ToCloudIntegrationTeslaPtrOutputWithContext(ctx context.Context) CloudIntegrationTeslaPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(CloudIntegrationTeslaPtrOutput)
-}
-
-type CloudIntegrationTeslaPtrInput interface {
-	pulumi.Input
-
-	ToCloudIntegrationTeslaPtrOutput() CloudIntegrationTeslaPtrOutput
-	ToCloudIntegrationTeslaPtrOutputWithContext(ctx context.Context) CloudIntegrationTeslaPtrOutput
-}
-
-type cloudIntegrationTeslaPtrType CloudIntegrationTeslaArgs
-
-func (*cloudIntegrationTeslaPtrType) ElementType() reflect.Type {
-	return reflect.TypeOf((**CloudIntegrationTesla)(nil))
-}
-
-func (i *cloudIntegrationTeslaPtrType) ToCloudIntegrationTeslaPtrOutput() CloudIntegrationTeslaPtrOutput {
-	return i.ToCloudIntegrationTeslaPtrOutputWithContext(context.Background())
-}
-
-func (i *cloudIntegrationTeslaPtrType) ToCloudIntegrationTeslaPtrOutputWithContext(ctx context.Context) CloudIntegrationTeslaPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(CloudIntegrationTeslaPtrOutput)
 }
 
 // CloudIntegrationTeslaArrayInput is an input type that accepts CloudIntegrationTeslaArray and CloudIntegrationTeslaArrayOutput values.
@@ -279,7 +250,7 @@ func (i CloudIntegrationTeslaMap) ToCloudIntegrationTeslaMapOutputWithContext(ct
 type CloudIntegrationTeslaOutput struct{ *pulumi.OutputState }
 
 func (CloudIntegrationTeslaOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*CloudIntegrationTesla)(nil))
+	return reflect.TypeOf((**CloudIntegrationTesla)(nil)).Elem()
 }
 
 func (o CloudIntegrationTeslaOutput) ToCloudIntegrationTeslaOutput() CloudIntegrationTeslaOutput {
@@ -290,44 +261,10 @@ func (o CloudIntegrationTeslaOutput) ToCloudIntegrationTeslaOutputWithContext(ct
 	return o
 }
 
-func (o CloudIntegrationTeslaOutput) ToCloudIntegrationTeslaPtrOutput() CloudIntegrationTeslaPtrOutput {
-	return o.ToCloudIntegrationTeslaPtrOutputWithContext(context.Background())
-}
-
-func (o CloudIntegrationTeslaOutput) ToCloudIntegrationTeslaPtrOutputWithContext(ctx context.Context) CloudIntegrationTeslaPtrOutput {
-	return o.ApplyTWithContext(ctx, func(_ context.Context, v CloudIntegrationTesla) *CloudIntegrationTesla {
-		return &v
-	}).(CloudIntegrationTeslaPtrOutput)
-}
-
-type CloudIntegrationTeslaPtrOutput struct{ *pulumi.OutputState }
-
-func (CloudIntegrationTeslaPtrOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((**CloudIntegrationTesla)(nil))
-}
-
-func (o CloudIntegrationTeslaPtrOutput) ToCloudIntegrationTeslaPtrOutput() CloudIntegrationTeslaPtrOutput {
-	return o
-}
-
-func (o CloudIntegrationTeslaPtrOutput) ToCloudIntegrationTeslaPtrOutputWithContext(ctx context.Context) CloudIntegrationTeslaPtrOutput {
-	return o
-}
-
-func (o CloudIntegrationTeslaPtrOutput) Elem() CloudIntegrationTeslaOutput {
-	return o.ApplyT(func(v *CloudIntegrationTesla) CloudIntegrationTesla {
-		if v != nil {
-			return *v
-		}
-		var ret CloudIntegrationTesla
-		return ret
-	}).(CloudIntegrationTeslaOutput)
-}
-
 type CloudIntegrationTeslaArrayOutput struct{ *pulumi.OutputState }
 
 func (CloudIntegrationTeslaArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]CloudIntegrationTesla)(nil))
+	return reflect.TypeOf((*[]*CloudIntegrationTesla)(nil)).Elem()
 }
 
 func (o CloudIntegrationTeslaArrayOutput) ToCloudIntegrationTeslaArrayOutput() CloudIntegrationTeslaArrayOutput {
@@ -339,15 +276,15 @@ func (o CloudIntegrationTeslaArrayOutput) ToCloudIntegrationTeslaArrayOutputWith
 }
 
 func (o CloudIntegrationTeslaArrayOutput) Index(i pulumi.IntInput) CloudIntegrationTeslaOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) CloudIntegrationTesla {
-		return vs[0].([]CloudIntegrationTesla)[vs[1].(int)]
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *CloudIntegrationTesla {
+		return vs[0].([]*CloudIntegrationTesla)[vs[1].(int)]
 	}).(CloudIntegrationTeslaOutput)
 }
 
 type CloudIntegrationTeslaMapOutput struct{ *pulumi.OutputState }
 
 func (CloudIntegrationTeslaMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]CloudIntegrationTesla)(nil))
+	return reflect.TypeOf((*map[string]*CloudIntegrationTesla)(nil)).Elem()
 }
 
 func (o CloudIntegrationTeslaMapOutput) ToCloudIntegrationTeslaMapOutput() CloudIntegrationTeslaMapOutput {
@@ -359,18 +296,16 @@ func (o CloudIntegrationTeslaMapOutput) ToCloudIntegrationTeslaMapOutputWithCont
 }
 
 func (o CloudIntegrationTeslaMapOutput) MapIndex(k pulumi.StringInput) CloudIntegrationTeslaOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) CloudIntegrationTesla {
-		return vs[0].(map[string]CloudIntegrationTesla)[vs[1].(string)]
+	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *CloudIntegrationTesla {
+		return vs[0].(map[string]*CloudIntegrationTesla)[vs[1].(string)]
 	}).(CloudIntegrationTeslaOutput)
 }
 
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*CloudIntegrationTeslaInput)(nil)).Elem(), &CloudIntegrationTesla{})
-	pulumi.RegisterInputType(reflect.TypeOf((*CloudIntegrationTeslaPtrInput)(nil)).Elem(), &CloudIntegrationTesla{})
 	pulumi.RegisterInputType(reflect.TypeOf((*CloudIntegrationTeslaArrayInput)(nil)).Elem(), CloudIntegrationTeslaArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*CloudIntegrationTeslaMapInput)(nil)).Elem(), CloudIntegrationTeslaMap{})
 	pulumi.RegisterOutputType(CloudIntegrationTeslaOutput{})
-	pulumi.RegisterOutputType(CloudIntegrationTeslaPtrOutput{})
 	pulumi.RegisterOutputType(CloudIntegrationTeslaArrayOutput{})
 	pulumi.RegisterOutputType(CloudIntegrationTeslaMapOutput{})
 }

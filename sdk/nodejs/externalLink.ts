@@ -93,17 +93,17 @@ export class ExternalLink extends pulumi.CustomResource {
      */
     constructor(name: string, args: ExternalLinkArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: ExternalLinkArgs | ExternalLinkState, opts?: pulumi.CustomResourceOptions) {
-        let inputs: pulumi.Inputs = {};
+        let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ExternalLinkState | undefined;
-            inputs["description"] = state ? state.description : undefined;
-            inputs["isLogIntegration"] = state ? state.isLogIntegration : undefined;
-            inputs["metricFilterRegex"] = state ? state.metricFilterRegex : undefined;
-            inputs["name"] = state ? state.name : undefined;
-            inputs["pointTagFilterRegexes"] = state ? state.pointTagFilterRegexes : undefined;
-            inputs["sourceFilterRegex"] = state ? state.sourceFilterRegex : undefined;
-            inputs["template"] = state ? state.template : undefined;
+            resourceInputs["description"] = state ? state.description : undefined;
+            resourceInputs["isLogIntegration"] = state ? state.isLogIntegration : undefined;
+            resourceInputs["metricFilterRegex"] = state ? state.metricFilterRegex : undefined;
+            resourceInputs["name"] = state ? state.name : undefined;
+            resourceInputs["pointTagFilterRegexes"] = state ? state.pointTagFilterRegexes : undefined;
+            resourceInputs["sourceFilterRegex"] = state ? state.sourceFilterRegex : undefined;
+            resourceInputs["template"] = state ? state.template : undefined;
         } else {
             const args = argsOrState as ExternalLinkArgs | undefined;
             if ((!args || args.description === undefined) && !opts.urn) {
@@ -112,18 +112,16 @@ export class ExternalLink extends pulumi.CustomResource {
             if ((!args || args.template === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'template'");
             }
-            inputs["description"] = args ? args.description : undefined;
-            inputs["isLogIntegration"] = args ? args.isLogIntegration : undefined;
-            inputs["metricFilterRegex"] = args ? args.metricFilterRegex : undefined;
-            inputs["name"] = args ? args.name : undefined;
-            inputs["pointTagFilterRegexes"] = args ? args.pointTagFilterRegexes : undefined;
-            inputs["sourceFilterRegex"] = args ? args.sourceFilterRegex : undefined;
-            inputs["template"] = args ? args.template : undefined;
+            resourceInputs["description"] = args ? args.description : undefined;
+            resourceInputs["isLogIntegration"] = args ? args.isLogIntegration : undefined;
+            resourceInputs["metricFilterRegex"] = args ? args.metricFilterRegex : undefined;
+            resourceInputs["name"] = args ? args.name : undefined;
+            resourceInputs["pointTagFilterRegexes"] = args ? args.pointTagFilterRegexes : undefined;
+            resourceInputs["sourceFilterRegex"] = args ? args.sourceFilterRegex : undefined;
+            resourceInputs["template"] = args ? args.template : undefined;
         }
-        if (!opts.version) {
-            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
-        }
-        super(ExternalLink.__pulumiType, name, inputs, opts);
+        opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+        super(ExternalLink.__pulumiType, name, resourceInputs, opts);
     }
 }
 

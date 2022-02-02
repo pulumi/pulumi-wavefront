@@ -100,18 +100,18 @@ export class CloudIntegrationGcpBilling extends pulumi.CustomResource {
      */
     constructor(name: string, args: CloudIntegrationGcpBillingArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: CloudIntegrationGcpBillingArgs | CloudIntegrationGcpBillingState, opts?: pulumi.CustomResourceOptions) {
-        let inputs: pulumi.Inputs = {};
+        let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as CloudIntegrationGcpBillingState | undefined;
-            inputs["additionalTags"] = state ? state.additionalTags : undefined;
-            inputs["apiKey"] = state ? state.apiKey : undefined;
-            inputs["forceSave"] = state ? state.forceSave : undefined;
-            inputs["jsonKey"] = state ? state.jsonKey : undefined;
-            inputs["name"] = state ? state.name : undefined;
-            inputs["projectId"] = state ? state.projectId : undefined;
-            inputs["service"] = state ? state.service : undefined;
-            inputs["serviceRefreshRateInMinutes"] = state ? state.serviceRefreshRateInMinutes : undefined;
+            resourceInputs["additionalTags"] = state ? state.additionalTags : undefined;
+            resourceInputs["apiKey"] = state ? state.apiKey : undefined;
+            resourceInputs["forceSave"] = state ? state.forceSave : undefined;
+            resourceInputs["jsonKey"] = state ? state.jsonKey : undefined;
+            resourceInputs["name"] = state ? state.name : undefined;
+            resourceInputs["projectId"] = state ? state.projectId : undefined;
+            resourceInputs["service"] = state ? state.service : undefined;
+            resourceInputs["serviceRefreshRateInMinutes"] = state ? state.serviceRefreshRateInMinutes : undefined;
         } else {
             const args = argsOrState as CloudIntegrationGcpBillingArgs | undefined;
             if ((!args || args.apiKey === undefined) && !opts.urn) {
@@ -126,19 +126,17 @@ export class CloudIntegrationGcpBilling extends pulumi.CustomResource {
             if ((!args || args.service === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'service'");
             }
-            inputs["additionalTags"] = args ? args.additionalTags : undefined;
-            inputs["apiKey"] = args ? args.apiKey : undefined;
-            inputs["forceSave"] = args ? args.forceSave : undefined;
-            inputs["jsonKey"] = args ? args.jsonKey : undefined;
-            inputs["name"] = args ? args.name : undefined;
-            inputs["projectId"] = args ? args.projectId : undefined;
-            inputs["service"] = args ? args.service : undefined;
-            inputs["serviceRefreshRateInMinutes"] = args ? args.serviceRefreshRateInMinutes : undefined;
+            resourceInputs["additionalTags"] = args ? args.additionalTags : undefined;
+            resourceInputs["apiKey"] = args ? args.apiKey : undefined;
+            resourceInputs["forceSave"] = args ? args.forceSave : undefined;
+            resourceInputs["jsonKey"] = args ? args.jsonKey : undefined;
+            resourceInputs["name"] = args ? args.name : undefined;
+            resourceInputs["projectId"] = args ? args.projectId : undefined;
+            resourceInputs["service"] = args ? args.service : undefined;
+            resourceInputs["serviceRefreshRateInMinutes"] = args ? args.serviceRefreshRateInMinutes : undefined;
         }
-        if (!opts.version) {
-            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
-        }
-        super(CloudIntegrationGcpBilling.__pulumiType, name, inputs, opts);
+        opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+        super(CloudIntegrationGcpBilling.__pulumiType, name, resourceInputs, opts);
     }
 }
 

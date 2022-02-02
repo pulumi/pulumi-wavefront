@@ -121,22 +121,22 @@ export class CloudIntegrationCloudWatch extends pulumi.CustomResource {
      */
     constructor(name: string, args: CloudIntegrationCloudWatchArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: CloudIntegrationCloudWatchArgs | CloudIntegrationCloudWatchState, opts?: pulumi.CustomResourceOptions) {
-        let inputs: pulumi.Inputs = {};
+        let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as CloudIntegrationCloudWatchState | undefined;
-            inputs["additionalTags"] = state ? state.additionalTags : undefined;
-            inputs["externalId"] = state ? state.externalId : undefined;
-            inputs["forceSave"] = state ? state.forceSave : undefined;
-            inputs["instanceSelectionTags"] = state ? state.instanceSelectionTags : undefined;
-            inputs["metricFilterRegex"] = state ? state.metricFilterRegex : undefined;
-            inputs["name"] = state ? state.name : undefined;
-            inputs["namespaces"] = state ? state.namespaces : undefined;
-            inputs["pointTagFilterRegex"] = state ? state.pointTagFilterRegex : undefined;
-            inputs["roleArn"] = state ? state.roleArn : undefined;
-            inputs["service"] = state ? state.service : undefined;
-            inputs["serviceRefreshRateInMinutes"] = state ? state.serviceRefreshRateInMinutes : undefined;
-            inputs["volumeSelectionTags"] = state ? state.volumeSelectionTags : undefined;
+            resourceInputs["additionalTags"] = state ? state.additionalTags : undefined;
+            resourceInputs["externalId"] = state ? state.externalId : undefined;
+            resourceInputs["forceSave"] = state ? state.forceSave : undefined;
+            resourceInputs["instanceSelectionTags"] = state ? state.instanceSelectionTags : undefined;
+            resourceInputs["metricFilterRegex"] = state ? state.metricFilterRegex : undefined;
+            resourceInputs["name"] = state ? state.name : undefined;
+            resourceInputs["namespaces"] = state ? state.namespaces : undefined;
+            resourceInputs["pointTagFilterRegex"] = state ? state.pointTagFilterRegex : undefined;
+            resourceInputs["roleArn"] = state ? state.roleArn : undefined;
+            resourceInputs["service"] = state ? state.service : undefined;
+            resourceInputs["serviceRefreshRateInMinutes"] = state ? state.serviceRefreshRateInMinutes : undefined;
+            resourceInputs["volumeSelectionTags"] = state ? state.volumeSelectionTags : undefined;
         } else {
             const args = argsOrState as CloudIntegrationCloudWatchArgs | undefined;
             if ((!args || args.externalId === undefined) && !opts.urn) {
@@ -148,23 +148,21 @@ export class CloudIntegrationCloudWatch extends pulumi.CustomResource {
             if ((!args || args.service === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'service'");
             }
-            inputs["additionalTags"] = args ? args.additionalTags : undefined;
-            inputs["externalId"] = args ? args.externalId : undefined;
-            inputs["forceSave"] = args ? args.forceSave : undefined;
-            inputs["instanceSelectionTags"] = args ? args.instanceSelectionTags : undefined;
-            inputs["metricFilterRegex"] = args ? args.metricFilterRegex : undefined;
-            inputs["name"] = args ? args.name : undefined;
-            inputs["namespaces"] = args ? args.namespaces : undefined;
-            inputs["pointTagFilterRegex"] = args ? args.pointTagFilterRegex : undefined;
-            inputs["roleArn"] = args ? args.roleArn : undefined;
-            inputs["service"] = args ? args.service : undefined;
-            inputs["serviceRefreshRateInMinutes"] = args ? args.serviceRefreshRateInMinutes : undefined;
-            inputs["volumeSelectionTags"] = args ? args.volumeSelectionTags : undefined;
+            resourceInputs["additionalTags"] = args ? args.additionalTags : undefined;
+            resourceInputs["externalId"] = args ? args.externalId : undefined;
+            resourceInputs["forceSave"] = args ? args.forceSave : undefined;
+            resourceInputs["instanceSelectionTags"] = args ? args.instanceSelectionTags : undefined;
+            resourceInputs["metricFilterRegex"] = args ? args.metricFilterRegex : undefined;
+            resourceInputs["name"] = args ? args.name : undefined;
+            resourceInputs["namespaces"] = args ? args.namespaces : undefined;
+            resourceInputs["pointTagFilterRegex"] = args ? args.pointTagFilterRegex : undefined;
+            resourceInputs["roleArn"] = args ? args.roleArn : undefined;
+            resourceInputs["service"] = args ? args.service : undefined;
+            resourceInputs["serviceRefreshRateInMinutes"] = args ? args.serviceRefreshRateInMinutes : undefined;
+            resourceInputs["volumeSelectionTags"] = args ? args.volumeSelectionTags : undefined;
         }
-        if (!opts.version) {
-            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
-        }
-        super(CloudIntegrationCloudWatch.__pulumiType, name, inputs, opts);
+        opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+        super(CloudIntegrationCloudWatch.__pulumiType, name, resourceInputs, opts);
     }
 }
 

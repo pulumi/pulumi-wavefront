@@ -37,7 +37,7 @@ export class Provider extends pulumi.ProviderResource {
      * @param opts A bag of options that control this resource's behavior.
      */
     constructor(name: string, args: ProviderArgs, opts?: pulumi.ResourceOptions) {
-        let inputs: pulumi.Inputs = {};
+        let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         {
             if ((!args || args.address === undefined) && !opts.urn) {
@@ -46,14 +46,12 @@ export class Provider extends pulumi.ProviderResource {
             if ((!args || args.token === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'token'");
             }
-            inputs["address"] = args ? args.address : undefined;
-            inputs["httpProxy"] = args ? args.httpProxy : undefined;
-            inputs["token"] = args ? args.token : undefined;
+            resourceInputs["address"] = args ? args.address : undefined;
+            resourceInputs["httpProxy"] = args ? args.httpProxy : undefined;
+            resourceInputs["token"] = args ? args.token : undefined;
         }
-        if (!opts.version) {
-            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
-        }
-        super(Provider.__pulumiType, name, inputs, opts);
+        opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+        super(Provider.__pulumiType, name, resourceInputs, opts);
     }
 }
 
