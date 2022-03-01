@@ -34,7 +34,7 @@ namespace Pulumi.Wavefront
     ///                 "terraform",
     ///                 "test",
     ///             },
-    ///             Target = "test@example.com",
+    ///             Target = "test@example.com,target:alert-target-id",
     ///         });
     ///     }
     /// 
@@ -143,7 +143,8 @@ namespace Pulumi.Wavefront
 
         /// <summary>
         /// A comma-separated list of the email address or integration endpoint 
-        /// (such as PagerDuty or web hook) to notify when the alert status changes.
+        /// (such as PagerDuty or web hook) to notify when the alert status changes. Multiple target types can be in the list.
+        /// Alert target format: ({email}|pd:{pd_key}|target:{alert-target-id}).
         /// </summary>
         [Output("target")]
         public Output<string?> Target { get; private set; } = null!;
@@ -315,7 +316,8 @@ namespace Pulumi.Wavefront
 
         /// <summary>
         /// A comma-separated list of the email address or integration endpoint 
-        /// (such as PagerDuty or web hook) to notify when the alert status changes.
+        /// (such as PagerDuty or web hook) to notify when the alert status changes. Multiple target types can be in the list.
+        /// Alert target format: ({email}|pd:{pd_key}|target:{alert-target-id}).
         /// </summary>
         [Input("target")]
         public Input<string>? Target { get; set; }
@@ -454,7 +456,8 @@ namespace Pulumi.Wavefront
 
         /// <summary>
         /// A comma-separated list of the email address or integration endpoint 
-        /// (such as PagerDuty or web hook) to notify when the alert status changes.
+        /// (such as PagerDuty or web hook) to notify when the alert status changes. Multiple target types can be in the list.
+        /// Alert target format: ({email}|pd:{pd_key}|target:{alert-target-id}).
         /// </summary>
         [Input("target")]
         public Input<string>? Target { get; set; }

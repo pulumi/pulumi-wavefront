@@ -55,7 +55,8 @@ class AlertArgs:
                the same value as `minutes`.
         :param pulumi.Input[str] severity: - Severity of the alert, valid values are `INFO`, `SMOKE`, `WARN`, `SEVERE`.
         :param pulumi.Input[str] target: A comma-separated list of the email address or integration endpoint 
-               (such as PagerDuty or web hook) to notify when the alert status changes.
+               (such as PagerDuty or web hook) to notify when the alert status changes. Multiple target types can be in the list.
+               Alert target format: ({email}|pd:{pd_key}|target:{alert-target-id}).
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] threshold_targets: Targets for severity
         """
         pulumi.set(__self__, "minutes", minutes)
@@ -259,7 +260,8 @@ class AlertArgs:
     def target(self) -> Optional[pulumi.Input[str]]:
         """
         A comma-separated list of the email address or integration endpoint 
-        (such as PagerDuty or web hook) to notify when the alert status changes.
+        (such as PagerDuty or web hook) to notify when the alert status changes. Multiple target types can be in the list.
+        Alert target format: ({email}|pd:{pd_key}|target:{alert-target-id}).
         """
         return pulumi.get(self, "target")
 
@@ -325,7 +327,8 @@ class _AlertState:
         :param pulumi.Input[str] severity: - Severity of the alert, valid values are `INFO`, `SMOKE`, `WARN`, `SEVERE`.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] tags: A set of tags to assign to this resource.
         :param pulumi.Input[str] target: A comma-separated list of the email address or integration endpoint 
-               (such as PagerDuty or web hook) to notify when the alert status changes.
+               (such as PagerDuty or web hook) to notify when the alert status changes. Multiple target types can be in the list.
+               Alert target format: ({email}|pd:{pd_key}|target:{alert-target-id}).
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] threshold_targets: Targets for severity
         """
         if additional_information is not None:
@@ -531,7 +534,8 @@ class _AlertState:
     def target(self) -> Optional[pulumi.Input[str]]:
         """
         A comma-separated list of the email address or integration endpoint 
-        (such as PagerDuty or web hook) to notify when the alert status changes.
+        (such as PagerDuty or web hook) to notify when the alert status changes. Multiple target types can be in the list.
+        Alert target format: ({email}|pd:{pd_key}|target:{alert-target-id}).
         """
         return pulumi.get(self, "target")
 
@@ -592,7 +596,7 @@ class Alert(pulumi.CustomResource):
                 "terraform",
                 "test",
             ],
-            target="test@example.com")
+            target="test@example.com,target:alert-target-id")
         ```
 
         ## Import
@@ -630,7 +634,8 @@ class Alert(pulumi.CustomResource):
         :param pulumi.Input[str] severity: - Severity of the alert, valid values are `INFO`, `SMOKE`, `WARN`, `SEVERE`.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] tags: A set of tags to assign to this resource.
         :param pulumi.Input[str] target: A comma-separated list of the email address or integration endpoint 
-               (such as PagerDuty or web hook) to notify when the alert status changes.
+               (such as PagerDuty or web hook) to notify when the alert status changes. Multiple target types can be in the list.
+               Alert target format: ({email}|pd:{pd_key}|target:{alert-target-id}).
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] threshold_targets: Targets for severity
         """
         ...
@@ -658,7 +663,7 @@ class Alert(pulumi.CustomResource):
                 "terraform",
                 "test",
             ],
-            target="test@example.com")
+            target="test@example.com,target:alert-target-id")
         ```
 
         ## Import
@@ -787,7 +792,8 @@ class Alert(pulumi.CustomResource):
         :param pulumi.Input[str] severity: - Severity of the alert, valid values are `INFO`, `SMOKE`, `WARN`, `SEVERE`.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] tags: A set of tags to assign to this resource.
         :param pulumi.Input[str] target: A comma-separated list of the email address or integration endpoint 
-               (such as PagerDuty or web hook) to notify when the alert status changes.
+               (such as PagerDuty or web hook) to notify when the alert status changes. Multiple target types can be in the list.
+               Alert target format: ({email}|pd:{pd_key}|target:{alert-target-id}).
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] threshold_targets: Targets for severity
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -931,7 +937,8 @@ class Alert(pulumi.CustomResource):
     def target(self) -> pulumi.Output[Optional[str]]:
         """
         A comma-separated list of the email address or integration endpoint 
-        (such as PagerDuty or web hook) to notify when the alert status changes.
+        (such as PagerDuty or web hook) to notify when the alert status changes. Multiple target types can be in the list.
+        Alert target format: ({email}|pd:{pd_key}|target:{alert-target-id}).
         """
         return pulumi.get(self, "target")
 

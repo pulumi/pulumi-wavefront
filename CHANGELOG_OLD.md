@@ -6,7 +6,7 @@ CHANGELOG
 *As of this notice, using CHANGELOG.md is DEPRECATED. We will be using [GitHub Releases](https://github.com/pulumi/pulumi-wavefront/releases) for this repository*
 
 ## HEAD (Unreleased)
-_(none)_
+* Upgrade to v3.0.0 of the Wavefront Terraform Provider
 
 ---
 
