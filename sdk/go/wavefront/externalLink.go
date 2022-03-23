@@ -39,7 +39,7 @@ import (
 //
 // ## Import
 //
-// Maintenance windows can be imported using the `id`, e.g.
+// Maintenance windows can be imported by using the `id`, e.g.
 //
 // ```sh
 //  $ pulumi import wavefront:index/externalLink:ExternalLink basic fVj6fz6zYC4aBkID
@@ -47,15 +47,18 @@ import (
 type ExternalLink struct {
 	pulumi.CustomResourceState
 
-	// Human-readable description for this link
+	// Human-readable description for this link.
 	Description pulumi.StringOutput `pulumi:"description"`
-	// Whether this is a "Log Integration" subType of external link
+	// Whether this is a "Log Integration" subType of external link.
 	IsLogIntegration pulumi.BoolPtrOutput `pulumi:"isLogIntegration"`
 	// Controls whether a link is displayed in the context menu of a highlighted series. If present, the metric name of the highlighted series must match this regular expression in order for the link to be displayed.
 	MetricFilterRegex pulumi.StringPtrOutput `pulumi:"metricFilterRegex"`
-	// The name of the external link
+	// The name of the external link.
 	Name pulumi.StringOutput `pulumi:"name"`
-	// Controls whether a link is displayed in the context menu of a highlighted series. This is a map from string to regular expression. The highlighted series must contain point tags whose keys are present in the keys of this map and whose values match the regular expressions associated with those keys in order for the link to be displayed
+	// Controls whether a link is displayed in the context menu of a highlighted
+	// series. This is a map from string to regular expression. The highlighted series must contain point tags whose
+	// keys are present in the keys of this map and whose values match the regular expressions associated with those
+	// keys in order for the link to be displayed.
 	PointTagFilterRegexes pulumi.StringMapOutput `pulumi:"pointTagFilterRegexes"`
 	// Controls whether a link is displayed in the context menu of a highlighted series. If present, the source name of the highlighted series must match this regular expression in order for the link to be displayed.
 	SourceFilterRegex pulumi.StringPtrOutput `pulumi:"sourceFilterRegex"`
@@ -98,15 +101,18 @@ func GetExternalLink(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering ExternalLink resources.
 type externalLinkState struct {
-	// Human-readable description for this link
+	// Human-readable description for this link.
 	Description *string `pulumi:"description"`
-	// Whether this is a "Log Integration" subType of external link
+	// Whether this is a "Log Integration" subType of external link.
 	IsLogIntegration *bool `pulumi:"isLogIntegration"`
 	// Controls whether a link is displayed in the context menu of a highlighted series. If present, the metric name of the highlighted series must match this regular expression in order for the link to be displayed.
 	MetricFilterRegex *string `pulumi:"metricFilterRegex"`
-	// The name of the external link
+	// The name of the external link.
 	Name *string `pulumi:"name"`
-	// Controls whether a link is displayed in the context menu of a highlighted series. This is a map from string to regular expression. The highlighted series must contain point tags whose keys are present in the keys of this map and whose values match the regular expressions associated with those keys in order for the link to be displayed
+	// Controls whether a link is displayed in the context menu of a highlighted
+	// series. This is a map from string to regular expression. The highlighted series must contain point tags whose
+	// keys are present in the keys of this map and whose values match the regular expressions associated with those
+	// keys in order for the link to be displayed.
 	PointTagFilterRegexes map[string]string `pulumi:"pointTagFilterRegexes"`
 	// Controls whether a link is displayed in the context menu of a highlighted series. If present, the source name of the highlighted series must match this regular expression in order for the link to be displayed.
 	SourceFilterRegex *string `pulumi:"sourceFilterRegex"`
@@ -115,15 +121,18 @@ type externalLinkState struct {
 }
 
 type ExternalLinkState struct {
-	// Human-readable description for this link
+	// Human-readable description for this link.
 	Description pulumi.StringPtrInput
-	// Whether this is a "Log Integration" subType of external link
+	// Whether this is a "Log Integration" subType of external link.
 	IsLogIntegration pulumi.BoolPtrInput
 	// Controls whether a link is displayed in the context menu of a highlighted series. If present, the metric name of the highlighted series must match this regular expression in order for the link to be displayed.
 	MetricFilterRegex pulumi.StringPtrInput
-	// The name of the external link
+	// The name of the external link.
 	Name pulumi.StringPtrInput
-	// Controls whether a link is displayed in the context menu of a highlighted series. This is a map from string to regular expression. The highlighted series must contain point tags whose keys are present in the keys of this map and whose values match the regular expressions associated with those keys in order for the link to be displayed
+	// Controls whether a link is displayed in the context menu of a highlighted
+	// series. This is a map from string to regular expression. The highlighted series must contain point tags whose
+	// keys are present in the keys of this map and whose values match the regular expressions associated with those
+	// keys in order for the link to be displayed.
 	PointTagFilterRegexes pulumi.StringMapInput
 	// Controls whether a link is displayed in the context menu of a highlighted series. If present, the source name of the highlighted series must match this regular expression in order for the link to be displayed.
 	SourceFilterRegex pulumi.StringPtrInput
@@ -136,15 +145,18 @@ func (ExternalLinkState) ElementType() reflect.Type {
 }
 
 type externalLinkArgs struct {
-	// Human-readable description for this link
+	// Human-readable description for this link.
 	Description string `pulumi:"description"`
-	// Whether this is a "Log Integration" subType of external link
+	// Whether this is a "Log Integration" subType of external link.
 	IsLogIntegration *bool `pulumi:"isLogIntegration"`
 	// Controls whether a link is displayed in the context menu of a highlighted series. If present, the metric name of the highlighted series must match this regular expression in order for the link to be displayed.
 	MetricFilterRegex *string `pulumi:"metricFilterRegex"`
-	// The name of the external link
+	// The name of the external link.
 	Name *string `pulumi:"name"`
-	// Controls whether a link is displayed in the context menu of a highlighted series. This is a map from string to regular expression. The highlighted series must contain point tags whose keys are present in the keys of this map and whose values match the regular expressions associated with those keys in order for the link to be displayed
+	// Controls whether a link is displayed in the context menu of a highlighted
+	// series. This is a map from string to regular expression. The highlighted series must contain point tags whose
+	// keys are present in the keys of this map and whose values match the regular expressions associated with those
+	// keys in order for the link to be displayed.
 	PointTagFilterRegexes map[string]string `pulumi:"pointTagFilterRegexes"`
 	// Controls whether a link is displayed in the context menu of a highlighted series. If present, the source name of the highlighted series must match this regular expression in order for the link to be displayed.
 	SourceFilterRegex *string `pulumi:"sourceFilterRegex"`
@@ -154,15 +166,18 @@ type externalLinkArgs struct {
 
 // The set of arguments for constructing a ExternalLink resource.
 type ExternalLinkArgs struct {
-	// Human-readable description for this link
+	// Human-readable description for this link.
 	Description pulumi.StringInput
-	// Whether this is a "Log Integration" subType of external link
+	// Whether this is a "Log Integration" subType of external link.
 	IsLogIntegration pulumi.BoolPtrInput
 	// Controls whether a link is displayed in the context menu of a highlighted series. If present, the metric name of the highlighted series must match this regular expression in order for the link to be displayed.
 	MetricFilterRegex pulumi.StringPtrInput
-	// The name of the external link
+	// The name of the external link.
 	Name pulumi.StringPtrInput
-	// Controls whether a link is displayed in the context menu of a highlighted series. This is a map from string to regular expression. The highlighted series must contain point tags whose keys are present in the keys of this map and whose values match the regular expressions associated with those keys in order for the link to be displayed
+	// Controls whether a link is displayed in the context menu of a highlighted
+	// series. This is a map from string to regular expression. The highlighted series must contain point tags whose
+	// keys are present in the keys of this map and whose values match the regular expressions associated with those
+	// keys in order for the link to be displayed.
 	PointTagFilterRegexes pulumi.StringMapInput
 	// Controls whether a link is displayed in the context menu of a highlighted series. If present, the source name of the highlighted series must match this regular expression in order for the link to be displayed.
 	SourceFilterRegex pulumi.StringPtrInput

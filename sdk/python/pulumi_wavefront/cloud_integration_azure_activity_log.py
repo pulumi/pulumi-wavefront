@@ -24,15 +24,15 @@ class CloudIntegrationAzureActivityLogArgs:
                  service_refresh_rate_in_minutes: Optional[pulumi.Input[int]] = None):
         """
         The set of arguments for constructing a CloudIntegrationAzureActivityLog resource.
-        :param pulumi.Input[str] client_id: Client id for an azure service account within your project
-        :param pulumi.Input[str] client_secret: Client secret for an Azure service account within your project
-        :param pulumi.Input[str] service: A value denoting which cloud service this service integrates with
-        :param pulumi.Input[str] tenant: Tenant Id for an Azure service account within your project
-        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] additional_tags: A list of point tag key-values to add to every point ingested using this integration
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] category_filters: A list of Azure services (such as Microsoft.Compute/virtualMachines) from which to pull metrics
-        :param pulumi.Input[bool] force_save: Forces this resource to save, even if errors are present
-        :param pulumi.Input[str] name: The human-readable name of this integration
-        :param pulumi.Input[int] service_refresh_rate_in_minutes: How often, in minutes, to refresh the service
+        :param pulumi.Input[str] client_id: Client ID for an Azure service account within your project.
+        :param pulumi.Input[str] client_secret: Client secret for an Azure service account within your project.
+        :param pulumi.Input[str] service: A value denoting which cloud service this service integrates with.
+        :param pulumi.Input[str] tenant: Tenant ID for an Azure service account within your project.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] additional_tags: A list of point tag key-values to add to every point ingested using this integration.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] category_filters: A list of Azure services (such as Microsoft.Compute/virtualMachines) from which to pull metrics.
+        :param pulumi.Input[bool] force_save: Forces this resource to save, even if errors are present.
+        :param pulumi.Input[str] name: The human-readable name of this integration.
+        :param pulumi.Input[int] service_refresh_rate_in_minutes: How often, in minutes, to refresh the service.
         """
         pulumi.set(__self__, "client_id", client_id)
         pulumi.set(__self__, "client_secret", client_secret)
@@ -53,7 +53,7 @@ class CloudIntegrationAzureActivityLogArgs:
     @pulumi.getter(name="clientId")
     def client_id(self) -> pulumi.Input[str]:
         """
-        Client id for an azure service account within your project
+        Client ID for an Azure service account within your project.
         """
         return pulumi.get(self, "client_id")
 
@@ -65,7 +65,7 @@ class CloudIntegrationAzureActivityLogArgs:
     @pulumi.getter(name="clientSecret")
     def client_secret(self) -> pulumi.Input[str]:
         """
-        Client secret for an Azure service account within your project
+        Client secret for an Azure service account within your project.
         """
         return pulumi.get(self, "client_secret")
 
@@ -77,7 +77,7 @@ class CloudIntegrationAzureActivityLogArgs:
     @pulumi.getter
     def service(self) -> pulumi.Input[str]:
         """
-        A value denoting which cloud service this service integrates with
+        A value denoting which cloud service this service integrates with.
         """
         return pulumi.get(self, "service")
 
@@ -89,7 +89,7 @@ class CloudIntegrationAzureActivityLogArgs:
     @pulumi.getter
     def tenant(self) -> pulumi.Input[str]:
         """
-        Tenant Id for an Azure service account within your project
+        Tenant ID for an Azure service account within your project.
         """
         return pulumi.get(self, "tenant")
 
@@ -101,7 +101,7 @@ class CloudIntegrationAzureActivityLogArgs:
     @pulumi.getter(name="additionalTags")
     def additional_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
-        A list of point tag key-values to add to every point ingested using this integration
+        A list of point tag key-values to add to every point ingested using this integration.
         """
         return pulumi.get(self, "additional_tags")
 
@@ -113,7 +113,7 @@ class CloudIntegrationAzureActivityLogArgs:
     @pulumi.getter(name="categoryFilters")
     def category_filters(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        A list of Azure services (such as Microsoft.Compute/virtualMachines) from which to pull metrics
+        A list of Azure services (such as Microsoft.Compute/virtualMachines) from which to pull metrics.
         """
         return pulumi.get(self, "category_filters")
 
@@ -125,7 +125,7 @@ class CloudIntegrationAzureActivityLogArgs:
     @pulumi.getter(name="forceSave")
     def force_save(self) -> Optional[pulumi.Input[bool]]:
         """
-        Forces this resource to save, even if errors are present
+        Forces this resource to save, even if errors are present.
         """
         return pulumi.get(self, "force_save")
 
@@ -137,7 +137,7 @@ class CloudIntegrationAzureActivityLogArgs:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
-        The human-readable name of this integration
+        The human-readable name of this integration.
         """
         return pulumi.get(self, "name")
 
@@ -149,7 +149,7 @@ class CloudIntegrationAzureActivityLogArgs:
     @pulumi.getter(name="serviceRefreshRateInMinutes")
     def service_refresh_rate_in_minutes(self) -> Optional[pulumi.Input[int]]:
         """
-        How often, in minutes, to refresh the service
+        How often, in minutes, to refresh the service.
         """
         return pulumi.get(self, "service_refresh_rate_in_minutes")
 
@@ -172,15 +172,15 @@ class _CloudIntegrationAzureActivityLogState:
                  tenant: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering CloudIntegrationAzureActivityLog resources.
-        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] additional_tags: A list of point tag key-values to add to every point ingested using this integration
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] category_filters: A list of Azure services (such as Microsoft.Compute/virtualMachines) from which to pull metrics
-        :param pulumi.Input[str] client_id: Client id for an azure service account within your project
-        :param pulumi.Input[str] client_secret: Client secret for an Azure service account within your project
-        :param pulumi.Input[bool] force_save: Forces this resource to save, even if errors are present
-        :param pulumi.Input[str] name: The human-readable name of this integration
-        :param pulumi.Input[str] service: A value denoting which cloud service this service integrates with
-        :param pulumi.Input[int] service_refresh_rate_in_minutes: How often, in minutes, to refresh the service
-        :param pulumi.Input[str] tenant: Tenant Id for an Azure service account within your project
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] additional_tags: A list of point tag key-values to add to every point ingested using this integration.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] category_filters: A list of Azure services (such as Microsoft.Compute/virtualMachines) from which to pull metrics.
+        :param pulumi.Input[str] client_id: Client ID for an Azure service account within your project.
+        :param pulumi.Input[str] client_secret: Client secret for an Azure service account within your project.
+        :param pulumi.Input[bool] force_save: Forces this resource to save, even if errors are present.
+        :param pulumi.Input[str] name: The human-readable name of this integration.
+        :param pulumi.Input[str] service: A value denoting which cloud service this service integrates with.
+        :param pulumi.Input[int] service_refresh_rate_in_minutes: How often, in minutes, to refresh the service.
+        :param pulumi.Input[str] tenant: Tenant ID for an Azure service account within your project.
         """
         if additional_tags is not None:
             pulumi.set(__self__, "additional_tags", additional_tags)
@@ -205,7 +205,7 @@ class _CloudIntegrationAzureActivityLogState:
     @pulumi.getter(name="additionalTags")
     def additional_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
-        A list of point tag key-values to add to every point ingested using this integration
+        A list of point tag key-values to add to every point ingested using this integration.
         """
         return pulumi.get(self, "additional_tags")
 
@@ -217,7 +217,7 @@ class _CloudIntegrationAzureActivityLogState:
     @pulumi.getter(name="categoryFilters")
     def category_filters(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        A list of Azure services (such as Microsoft.Compute/virtualMachines) from which to pull metrics
+        A list of Azure services (such as Microsoft.Compute/virtualMachines) from which to pull metrics.
         """
         return pulumi.get(self, "category_filters")
 
@@ -229,7 +229,7 @@ class _CloudIntegrationAzureActivityLogState:
     @pulumi.getter(name="clientId")
     def client_id(self) -> Optional[pulumi.Input[str]]:
         """
-        Client id for an azure service account within your project
+        Client ID for an Azure service account within your project.
         """
         return pulumi.get(self, "client_id")
 
@@ -241,7 +241,7 @@ class _CloudIntegrationAzureActivityLogState:
     @pulumi.getter(name="clientSecret")
     def client_secret(self) -> Optional[pulumi.Input[str]]:
         """
-        Client secret for an Azure service account within your project
+        Client secret for an Azure service account within your project.
         """
         return pulumi.get(self, "client_secret")
 
@@ -253,7 +253,7 @@ class _CloudIntegrationAzureActivityLogState:
     @pulumi.getter(name="forceSave")
     def force_save(self) -> Optional[pulumi.Input[bool]]:
         """
-        Forces this resource to save, even if errors are present
+        Forces this resource to save, even if errors are present.
         """
         return pulumi.get(self, "force_save")
 
@@ -265,7 +265,7 @@ class _CloudIntegrationAzureActivityLogState:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
-        The human-readable name of this integration
+        The human-readable name of this integration.
         """
         return pulumi.get(self, "name")
 
@@ -277,7 +277,7 @@ class _CloudIntegrationAzureActivityLogState:
     @pulumi.getter
     def service(self) -> Optional[pulumi.Input[str]]:
         """
-        A value denoting which cloud service this service integrates with
+        A value denoting which cloud service this service integrates with.
         """
         return pulumi.get(self, "service")
 
@@ -289,7 +289,7 @@ class _CloudIntegrationAzureActivityLogState:
     @pulumi.getter(name="serviceRefreshRateInMinutes")
     def service_refresh_rate_in_minutes(self) -> Optional[pulumi.Input[int]]:
         """
-        How often, in minutes, to refresh the service
+        How often, in minutes, to refresh the service.
         """
         return pulumi.get(self, "service_refresh_rate_in_minutes")
 
@@ -301,7 +301,7 @@ class _CloudIntegrationAzureActivityLogState:
     @pulumi.getter
     def tenant(self) -> Optional[pulumi.Input[str]]:
         """
-        Tenant Id for an Azure service account within your project
+        Tenant ID for an Azure service account within your project.
         """
         return pulumi.get(self, "tenant")
 
@@ -326,7 +326,7 @@ class CloudIntegrationAzureActivityLog(pulumi.CustomResource):
                  tenant: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        Provides a Wavefront Cloud Integration for Azure Activity Logs. This allows azure activity log cloud integrations to be created,
+        Provides a Wavefront Cloud Integration for Azure Activity Logs. This allows Azure activity log cloud integrations to be created,
         updated, and deleted.
 
         ## Example Usage
@@ -344,7 +344,7 @@ class CloudIntegrationAzureActivityLog(pulumi.CustomResource):
 
         ## Import
 
-        Azure Activity Log Cloud Integrations can be imported using the `id`, e.g.
+        Azure Activity Log Cloud Integrations can be imported by using the `id`, e.g.
 
         ```sh
          $ pulumi import wavefront:index/cloudIntegrationAzureActivityLog:CloudIntegrationAzureActivityLog azure_al a411c16b-3cf7-4f03-bf11-8ca05aab898d
@@ -352,15 +352,15 @@ class CloudIntegrationAzureActivityLog(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] additional_tags: A list of point tag key-values to add to every point ingested using this integration
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] category_filters: A list of Azure services (such as Microsoft.Compute/virtualMachines) from which to pull metrics
-        :param pulumi.Input[str] client_id: Client id for an azure service account within your project
-        :param pulumi.Input[str] client_secret: Client secret for an Azure service account within your project
-        :param pulumi.Input[bool] force_save: Forces this resource to save, even if errors are present
-        :param pulumi.Input[str] name: The human-readable name of this integration
-        :param pulumi.Input[str] service: A value denoting which cloud service this service integrates with
-        :param pulumi.Input[int] service_refresh_rate_in_minutes: How often, in minutes, to refresh the service
-        :param pulumi.Input[str] tenant: Tenant Id for an Azure service account within your project
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] additional_tags: A list of point tag key-values to add to every point ingested using this integration.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] category_filters: A list of Azure services (such as Microsoft.Compute/virtualMachines) from which to pull metrics.
+        :param pulumi.Input[str] client_id: Client ID for an Azure service account within your project.
+        :param pulumi.Input[str] client_secret: Client secret for an Azure service account within your project.
+        :param pulumi.Input[bool] force_save: Forces this resource to save, even if errors are present.
+        :param pulumi.Input[str] name: The human-readable name of this integration.
+        :param pulumi.Input[str] service: A value denoting which cloud service this service integrates with.
+        :param pulumi.Input[int] service_refresh_rate_in_minutes: How often, in minutes, to refresh the service.
+        :param pulumi.Input[str] tenant: Tenant ID for an Azure service account within your project.
         """
         ...
     @overload
@@ -369,7 +369,7 @@ class CloudIntegrationAzureActivityLog(pulumi.CustomResource):
                  args: CloudIntegrationAzureActivityLogArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Provides a Wavefront Cloud Integration for Azure Activity Logs. This allows azure activity log cloud integrations to be created,
+        Provides a Wavefront Cloud Integration for Azure Activity Logs. This allows Azure activity log cloud integrations to be created,
         updated, and deleted.
 
         ## Example Usage
@@ -387,7 +387,7 @@ class CloudIntegrationAzureActivityLog(pulumi.CustomResource):
 
         ## Import
 
-        Azure Activity Log Cloud Integrations can be imported using the `id`, e.g.
+        Azure Activity Log Cloud Integrations can be imported by using the `id`, e.g.
 
         ```sh
          $ pulumi import wavefront:index/cloudIntegrationAzureActivityLog:CloudIntegrationAzureActivityLog azure_al a411c16b-3cf7-4f03-bf11-8ca05aab898d
@@ -472,15 +472,15 @@ class CloudIntegrationAzureActivityLog(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] additional_tags: A list of point tag key-values to add to every point ingested using this integration
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] category_filters: A list of Azure services (such as Microsoft.Compute/virtualMachines) from which to pull metrics
-        :param pulumi.Input[str] client_id: Client id for an azure service account within your project
-        :param pulumi.Input[str] client_secret: Client secret for an Azure service account within your project
-        :param pulumi.Input[bool] force_save: Forces this resource to save, even if errors are present
-        :param pulumi.Input[str] name: The human-readable name of this integration
-        :param pulumi.Input[str] service: A value denoting which cloud service this service integrates with
-        :param pulumi.Input[int] service_refresh_rate_in_minutes: How often, in minutes, to refresh the service
-        :param pulumi.Input[str] tenant: Tenant Id for an Azure service account within your project
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] additional_tags: A list of point tag key-values to add to every point ingested using this integration.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] category_filters: A list of Azure services (such as Microsoft.Compute/virtualMachines) from which to pull metrics.
+        :param pulumi.Input[str] client_id: Client ID for an Azure service account within your project.
+        :param pulumi.Input[str] client_secret: Client secret for an Azure service account within your project.
+        :param pulumi.Input[bool] force_save: Forces this resource to save, even if errors are present.
+        :param pulumi.Input[str] name: The human-readable name of this integration.
+        :param pulumi.Input[str] service: A value denoting which cloud service this service integrates with.
+        :param pulumi.Input[int] service_refresh_rate_in_minutes: How often, in minutes, to refresh the service.
+        :param pulumi.Input[str] tenant: Tenant ID for an Azure service account within your project.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -501,7 +501,7 @@ class CloudIntegrationAzureActivityLog(pulumi.CustomResource):
     @pulumi.getter(name="additionalTags")
     def additional_tags(self) -> pulumi.Output[Optional[Mapping[str, str]]]:
         """
-        A list of point tag key-values to add to every point ingested using this integration
+        A list of point tag key-values to add to every point ingested using this integration.
         """
         return pulumi.get(self, "additional_tags")
 
@@ -509,7 +509,7 @@ class CloudIntegrationAzureActivityLog(pulumi.CustomResource):
     @pulumi.getter(name="categoryFilters")
     def category_filters(self) -> pulumi.Output[Optional[Sequence[str]]]:
         """
-        A list of Azure services (such as Microsoft.Compute/virtualMachines) from which to pull metrics
+        A list of Azure services (such as Microsoft.Compute/virtualMachines) from which to pull metrics.
         """
         return pulumi.get(self, "category_filters")
 
@@ -517,7 +517,7 @@ class CloudIntegrationAzureActivityLog(pulumi.CustomResource):
     @pulumi.getter(name="clientId")
     def client_id(self) -> pulumi.Output[str]:
         """
-        Client id for an azure service account within your project
+        Client ID for an Azure service account within your project.
         """
         return pulumi.get(self, "client_id")
 
@@ -525,7 +525,7 @@ class CloudIntegrationAzureActivityLog(pulumi.CustomResource):
     @pulumi.getter(name="clientSecret")
     def client_secret(self) -> pulumi.Output[str]:
         """
-        Client secret for an Azure service account within your project
+        Client secret for an Azure service account within your project.
         """
         return pulumi.get(self, "client_secret")
 
@@ -533,7 +533,7 @@ class CloudIntegrationAzureActivityLog(pulumi.CustomResource):
     @pulumi.getter(name="forceSave")
     def force_save(self) -> pulumi.Output[Optional[bool]]:
         """
-        Forces this resource to save, even if errors are present
+        Forces this resource to save, even if errors are present.
         """
         return pulumi.get(self, "force_save")
 
@@ -541,7 +541,7 @@ class CloudIntegrationAzureActivityLog(pulumi.CustomResource):
     @pulumi.getter
     def name(self) -> pulumi.Output[str]:
         """
-        The human-readable name of this integration
+        The human-readable name of this integration.
         """
         return pulumi.get(self, "name")
 
@@ -549,7 +549,7 @@ class CloudIntegrationAzureActivityLog(pulumi.CustomResource):
     @pulumi.getter
     def service(self) -> pulumi.Output[str]:
         """
-        A value denoting which cloud service this service integrates with
+        A value denoting which cloud service this service integrates with.
         """
         return pulumi.get(self, "service")
 
@@ -557,7 +557,7 @@ class CloudIntegrationAzureActivityLog(pulumi.CustomResource):
     @pulumi.getter(name="serviceRefreshRateInMinutes")
     def service_refresh_rate_in_minutes(self) -> pulumi.Output[Optional[int]]:
         """
-        How often, in minutes, to refresh the service
+        How often, in minutes, to refresh the service.
         """
         return pulumi.get(self, "service_refresh_rate_in_minutes")
 
@@ -565,7 +565,7 @@ class CloudIntegrationAzureActivityLog(pulumi.CustomResource):
     @pulumi.getter
     def tenant(self) -> pulumi.Output[str]:
         """
-        Tenant Id for an Azure service account within your project
+        Tenant ID for an Azure service account within your project.
         """
         return pulumi.get(self, "tenant")
 

@@ -14,83 +14,83 @@ namespace Pulumi.Wavefront.Outputs
     public sealed class DashboardSectionRowChartChartSetting
     {
         /// <summary>
-        /// deprecated
+        /// This setting is deprecated.
         /// </summary>
         public readonly bool? AutoColumnTags;
         /// <summary>
-        /// deprecated
+        /// This setting is deprecated.
         /// </summary>
         public readonly string? ColumnTags;
         /// <summary>
-        /// For the tabular view, a list of point tags to display when using the `custom` tag display mode
+        /// For the tabular view, a list of point tags to display when using the `custom` tag display mode.
         /// </summary>
         public readonly ImmutableArray<string> CustomTags;
         /// <summary>
         /// Threshold (in seconds) for time delta between consecutive points in a series
-        /// above which a dotted line will replace a solid in in line plots. Default 60
+        /// above which a dotted line will replace a solid in in line plots. Default is 60.
         /// </summary>
         public readonly int? ExpectedDataSpacing;
         /// <summary>
-        /// For a chart with a fixed legend, a list of statistics to display in the legend
+        /// For a chart with a fixed legend, a list of statistics to display in the legend.
         /// </summary>
         public readonly ImmutableArray<string> FixedLegendDisplayStats;
         /// <summary>
-        /// Whether to enable a fixed tabular legend adjacent to the chart
+        /// Whether to enable a fixed tabular legend adjacent to the chart.
         /// </summary>
         public readonly bool? FixedLegendEnabled;
         /// <summary>
         /// Statistic to use for determining whether a series is displayed on the fixed legend.
-        /// Valid options are `CURRENT`, `MEAN`, `MEDIAN`, `SUM`, `MIN`, `MAX`, `COUNT`
+        /// Valid options are `CURRENT`, `MEAN`, `MEDIAN`, `SUM`, `MIN`, `MAX`, and `COUNT`.
         /// </summary>
         public readonly string? FixedLegendFilterField;
         /// <summary>
-        /// Number of series to include in the fixed legend
+        /// Number of series to include in the fixed legend.
         /// </summary>
         public readonly int? FixedLegendFilterLimit;
         /// <summary>
         /// Whether to display `TOP` or `BOTTOM` ranked series in a fixed legend. Valid options
-        /// are `TOP`, and `BOTTOM`
+        /// are `TOP`, and `BOTTOM`.
         /// </summary>
         public readonly string? FixedLegendFilterSort;
         /// <summary>
-        /// deprecated
+        /// This setting is deprecated.
         /// </summary>
         public readonly bool? FixedLegendHideLabel;
         /// <summary>
-        /// Where the fixed legend should be displayed with respect ot the chart.
-        /// Valid options are `RIGHt`, `TOP`, `LEFT`, `BOTTOM`
+        /// Where the fixed legend should be displayed with respect to the chart.
+        /// Valid options are `RIGHT`, `TOP`, `LEFT`, `BOTTOM`.
         /// </summary>
         public readonly string? FixedLegendPosition;
         /// <summary>
-        /// If `true`, the legend uses non-summarized stats instead of summarized
+        /// If `true`, the legend uses non-summarized stats instead of summarized.
         /// </summary>
         public readonly bool? FixedLegendUseRawStats;
         /// <summary>
         /// For the tabular view, whether to group multi metrics into a single row by a common source.
-        /// If `false`, each source is displayed in its own row.  if `true`, multiple metrics for the same host will be displayed as different
-        /// columns in the same row
+        /// If `false`, each source is displayed in its own row.  if `true`, multiple metrics for the same host are displayed as different
+        /// columns in the same row.
         /// </summary>
         public readonly bool? GroupBySource;
         /// <summary>
         /// Whether to disable the display of the floating legend (but
-        /// reenable it when the ctrl-key is pressed)
+        /// reenable it when the ctrl-key is pressed).
         /// </summary>
         public readonly bool? InvertDynamicLegendHoverControl;
         /// <summary>
         /// Plot interpolation type.  `linear` is default. Valid options are `linear`, `step-before`, 
-        /// `step-after`, `basis`, `cardinal`, `monotone`
+        /// `step-after`, `basis`, `cardinal`, and `monotone`.
         /// </summary>
         public readonly string? LineType;
         /// <summary>
-        /// Max value of the Y-axis. Set to null or leave blank for auto
+        /// Max value of the Y-axis. Set to null or leave blank for auto.
         /// </summary>
         public readonly double? Max;
         /// <summary>
-        /// Min value of the Y-axis. Set to null or leave blank for auto
+        /// Min value of the Y-axis. Set to null or leave blank for auto.
         /// </summary>
         public readonly double? Min;
         /// <summary>
-        /// For the tabular view, how many point tags to display
+        /// For the tabular view defines how many point tags to display.
         /// </summary>
         public readonly int? NumTags;
         /// <summary>
@@ -98,173 +98,173 @@ namespace Pulumi.Wavefront.Outputs
         /// </summary>
         public readonly string? PlainMarkdownContent;
         /// <summary>
-        /// For the tabular view, whether to display sources. Default is `true`
+        /// For the tabular view, whether to display sources. Default is `true`.
         /// </summary>
         public readonly bool? ShowHosts;
         /// <summary>
-        /// For the tabular view, whether to display labels. Default is `true`
+        /// For the tabular view, whether to display labels. Default is `true`.
         /// </summary>
         public readonly bool? ShowLabels;
         /// <summary>
-        /// For the tabular view, whether to display raw values. Default is `false`
+        /// For the tabular view, whether to display raw values. Default is `false`.
         /// </summary>
         public readonly bool? ShowRawValues;
         /// <summary>
-        /// For the tabular view, whether to display display values in descending order. Default is `false`
+        /// For the tabular view, whether to display values in descending order. Default is `false`.
         /// </summary>
         public readonly bool? SortValuesDescending;
         /// <summary>
-        /// For the single stat view, the decimal precision of the displayed number
+        /// For the single stat view, the decimal precision of the displayed number.
         /// </summary>
         public readonly int? SparklineDecimalPrecision;
         /// <summary>
         /// For the single stat view, the color of the displayed text (when not dynamically determined). 
-        /// Values should be in `rgba(,,,,)` format
+        /// Values should be in `rgba(,,,,)` format.
         /// </summary>
         public readonly string? SparklineDisplayColor;
         /// <summary>
-        /// For the single stat view, the font size of the displayed text, in percent
+        /// For the single stat view, the font size of the displayed text, in percent.
         /// </summary>
         public readonly string? SparklineDisplayFontSize;
         /// <summary>
         /// For the single stat view, the horizontal position of the displayed text.
-        /// Valid options are `MIDDLE`, `LEFT`, `RIGHT`
+        /// Valid options are `MIDDLE`, `LEFT`, `RIGHT`.
         /// </summary>
         public readonly string? SparklineDisplayHorizontalPosition;
         /// <summary>
-        /// For the single stat view, a string to append to the displayed text
+        /// For the single stat view, a string to append to the displayed text.
         /// </summary>
         public readonly string? SparklineDisplayPostfix;
         /// <summary>
-        /// For the single stat view, a string to add before the displayed text
+        /// For the single stat view, a string to add before the displayed text.
         /// </summary>
         public readonly string? SparklineDisplayPrefix;
         /// <summary>
         /// For the single stat view, where to display the name of the query or the value of the query.
-        /// Valid options are `VALUE` or `LABEL`
+        /// Valid options are `VALUE` or `LABEL`.
         /// </summary>
         public readonly string? SparklineDisplayValueType;
         /// <summary>
-        /// deprecated
+        /// This setting is deprecated.
         /// </summary>
         public readonly string? SparklineDisplayVerticalPosition;
         /// <summary>
         /// For the single stat view, the color of the background fill.  Values should be
-        /// in `rgba(,,,,)`
+        /// in `rgba(,,,,)`.
         /// </summary>
         public readonly string? SparklineFillColor;
         /// <summary>
-        /// For the single stat view, the color of the line.  Values should be in `rgba(,,,,)` format
+        /// For the single stat view, the color of the line.  Values should be in `rgba(,,,,)` format.
         /// </summary>
         public readonly string? SparklineLineColor;
         /// <summary>
-        /// For the single stat view, This determines whether the sparkline of the statistic is displayed in the chart `BACKGROUND`, `BOTTOM`, or `NONE`.
-        /// Valid options are `BACKGROUND`, `BOTTOM`, `NONE`
+        /// For the single stat view, this determines whether the sparkline of the statistic is displayed in the chart.
+        /// Valid options are `BACKGROUND`, `BOTTOM`, `NONE`.
         /// </summary>
         public readonly string? SparklineSize;
         /// <summary>
-        /// For the single stat view, whether to apply dyunamic color settings to 
-        /// the displayed `TEXT` or `BACKGROUND`. Valid options are `TEXT` or `BACKGROUND`
+        /// For the single stat view, whether to apply dynamic color settings to 
+        /// the displayed `TEXT` or `BACKGROUND`. Valid options are `TEXT` or `BACKGROUND`.
         /// </summary>
         public readonly string? SparklineValueColorMapApplyTo;
         /// <summary>
         /// For the single stat view, A list of colors that differing query values map to. 
-        /// Must contain one more element than `sparkline_value_color_map_values_v2`. Values should be in `rgba(,,,,)`
+        /// Must contain one more element than `sparkline_value_color_map_values_v2`. Values should be in `rgba(,,,,)`.
         /// </summary>
         public readonly ImmutableArray<string> SparklineValueColorMapColors;
         /// <summary>
-        /// deprecated
+        /// This setting is deprecated.
         /// </summary>
         public readonly ImmutableArray<int> SparklineValueColorMapValues;
         /// <summary>
         /// For the single stat view, a list of boundaries for mapping different
-        /// query values to colors.  Must contain one less element than `sparkline_value_color_map_colors`
+        /// query values to colors.  Must contain one element less than `sparkline_value_color_map_colors`.
         /// </summary>
         public readonly ImmutableArray<double> SparklineValueColorMapValuesV2s;
         /// <summary>
         /// For the single stat view, a list of display text values that different query
-        /// values map to.  Must contain one more element than `sparkline_value_text_map_thresholds`
+        /// values map to.  Must contain one more element than `sparkline_value_text_map_thresholds`.
         /// </summary>
         public readonly ImmutableArray<string> SparklineValueTextMapTexts;
         /// <summary>
         /// For the single stat view, a list of threshold boundaries for 
-        /// mapping different query values to display text.  Must contain one less element than `sparkline_value_text_map_text`
+        /// mapping different query values to display text.  Must contain one element less than `sparkline_value_text_map_text`.
         /// </summary>
         public readonly ImmutableArray<double> SparklineValueTextMapThresholds;
         /// <summary>
         /// Type of stacked chart (applicable only if chart type is `stacked`). `zero` (default) means
         /// stacked from y=0. `expand` means normalized from 0 to 1.  `wiggle` means minimize weighted changes. `silhouette` means to
-        /// center the stream. Valid options are `zero`, `expand`, `wiggle`, `silhouette`, `bars`
+        /// center the stream. Valid options are `zero`, `expand`, `wiggle`, `silhouette`, and `bars`.
         /// </summary>
         public readonly string? StackType;
         /// <summary>
         /// For the tabular view, which mode to use to determine which point tags to display.
-        /// Valid options are `all`, `top`, or `custom`
+        /// Valid options are `all`, `top`, or `custom`.
         /// </summary>
         public readonly string? TagMode;
         /// <summary>
-        /// For x-y scatterplots, whether to color more recent points as darker than older points
+        /// For x-y scatterplots, whether to color more recent points as darker than older points.
         /// </summary>
         public readonly bool? TimeBasedColoring;
         /// <summary>
         /// Chart Type. `line` refers to the Line Plot, `scatter` to the Point Plot, `stacked-area` to 
-        /// the Stacked Area plot, `table` to the Tabular View, `scatterploy-xy` to Scatter Plot, `markdown-widget` to the
+        /// the Stacked Area plot, `table` to the Tabular View, `scatterplot-xy` to Scatter Plot, `markdown-widget` to the
         /// Markdown display, and `sparkline` to the Single Stat view. Valid options are `line`, `scatterplot`,
         /// `stacked-area`, `stacked-column`, `table`, `scatterplot-xy`, `markdown-widget`, `sparkline`, `globe`, `nodemap`,
-        /// `top-k`, `status-list`, `histogram`
+        /// `top-k`, `status-list`, and `histogram`.
         /// </summary>
         public readonly string Type;
         /// <summary>
-        /// Width, in minutes, of the time window to use for `last` windowing
+        /// Width, in minutes, of the time window to use for `last` windowing.
         /// </summary>
         public readonly int? WindowSize;
         /// <summary>
         /// For the tabular view, whether to use the full time window for the query or the last X minutes.
-        /// Valid options are `full` or `last`
+        /// Valid options are `full` or `last`.
         /// </summary>
         public readonly string? Windowing;
         /// <summary>
-        /// For x-y scatterplots, max value for the X-axis. Set to null for auto
+        /// For x-y scatterplots, max value for the X-axis. Set to null for auto.
         /// </summary>
         public readonly double? Xmax;
         /// <summary>
-        /// For x-y scatterplots, min value for the X-axis. Set to null for auto
+        /// For x-y scatterplots, min value for the X-axis. Set to null for auto.
         /// </summary>
         public readonly double? Xmin;
         /// <summary>
-        /// Whether to scale numerical magnitude labels for left Y-axis by 1024 in the IEC/Binary manner (instead of by 1000 like SI)
+        /// Whether to scale numerical magnitude labels for left Y-axis by 1024 in the IEC/Binary manner (instead of by 1000 like SI).
         /// </summary>
         public readonly bool? Y0ScaleSiBy1024;
         /// <summary>
-        /// Whether to automatically adjust magnitude labels and units for the left Y-axis to favor smaller magnitudes and larger units
+        /// Whether to automatically adjust magnitude labels and units for the left Y-axis to favor smaller magnitudes and larger units.
         /// </summary>
         public readonly bool? Y0UnitAutoscaling;
         /// <summary>
-        /// Whether to scale numerical magnitude labels for right Y-axis by 1024 in the IEC/Binary manner (instead of by 1000 like SI)
+        /// Whether to scale numerical magnitude labels for right Y-axis by 1024 in the IEC/Binary manner (instead of by 1000 like SI).
         /// </summary>
         public readonly bool? Y1ScaleSiBy1024;
         /// <summary>
-        /// Whether to automatically adjust magnitude labels and units for the right Y-axis to favor smaller magnitudes and larger units
+        /// Whether to automatically adjust magnitude labels and units for the right Y-axis to favor smaller magnitudes and larger units.
         /// </summary>
         public readonly bool? Y1UnitAutoscaling;
         /// <summary>
-        /// For plots with multiple Y-axes, units for right side Y-axis
+        /// For plots with multiple Y-axes, units for right side Y-axis.
         /// </summary>
         public readonly string? Y1Units;
         /// <summary>
-        /// For plots with multiple Y-axes, max value for the right side Y-axis. Set null for auto
+        /// For plots with multiple Y-axes, max value for the right side Y-axis. Set null for auto.
         /// </summary>
         public readonly double? Y1max;
         /// <summary>
-        /// For plots with multiple Y-axes, min value for the right side Y-axis. Set null for auto
+        /// For plots with multiple Y-axes, min value for the right side Y-axis. Set null for auto.
         /// </summary>
         public readonly double? Y1min;
         /// <summary>
-        /// For x-y scatterplots, max value for the Y-axis. Set to null for auto
+        /// For x-y scatterplots, max value for the Y-axis. Set to null for auto.
         /// </summary>
         public readonly double? Ymax;
         /// <summary>
-        /// For x-y scatterplots, min value for the Y-axis. Set to null for auto
+        /// For x-y scatterplots, min value for the Y-axis. Set to null for auto.
         /// </summary>
         public readonly double? Ymin;
 

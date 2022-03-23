@@ -20,10 +20,10 @@ class DerivedMetricArgs:
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
         """
         The set of arguments for constructing a DerivedMetric resource.
-        :param pulumi.Input[int] minutes: How frequently the query generating the derived metric is run
-        :param pulumi.Input[str] query: A Wavefront query that is evaluated at regular intervals (default `1m`)
-        :param pulumi.Input[str] additional_information: User-supplied additional explanatory information for the derived metric
-        :param pulumi.Input[str] name: The name of the Derived Metric in Wavefront
+        :param pulumi.Input[int] minutes: How frequently the query generating the derived metric is run.
+        :param pulumi.Input[str] query: A Wavefront query that is evaluated at regular intervals (default is 1 minute).
+        :param pulumi.Input[str] additional_information: User-supplied additional explanatory information for the derived metric.
+        :param pulumi.Input[str] name: The name of the Derived Metric in Wavefront.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] tags: A set of tags to assign to this resource.
         """
         pulumi.set(__self__, "minutes", minutes)
@@ -39,7 +39,7 @@ class DerivedMetricArgs:
     @pulumi.getter
     def minutes(self) -> pulumi.Input[int]:
         """
-        How frequently the query generating the derived metric is run
+        How frequently the query generating the derived metric is run.
         """
         return pulumi.get(self, "minutes")
 
@@ -51,7 +51,7 @@ class DerivedMetricArgs:
     @pulumi.getter
     def query(self) -> pulumi.Input[str]:
         """
-        A Wavefront query that is evaluated at regular intervals (default `1m`)
+        A Wavefront query that is evaluated at regular intervals (default is 1 minute).
         """
         return pulumi.get(self, "query")
 
@@ -63,7 +63,7 @@ class DerivedMetricArgs:
     @pulumi.getter(name="additionalInformation")
     def additional_information(self) -> Optional[pulumi.Input[str]]:
         """
-        User-supplied additional explanatory information for the derived metric
+        User-supplied additional explanatory information for the derived metric.
         """
         return pulumi.get(self, "additional_information")
 
@@ -75,7 +75,7 @@ class DerivedMetricArgs:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
-        The name of the Derived Metric in Wavefront
+        The name of the Derived Metric in Wavefront.
         """
         return pulumi.get(self, "name")
 
@@ -106,10 +106,10 @@ class _DerivedMetricState:
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
         """
         Input properties used for looking up and filtering DerivedMetric resources.
-        :param pulumi.Input[str] additional_information: User-supplied additional explanatory information for the derived metric
-        :param pulumi.Input[int] minutes: How frequently the query generating the derived metric is run
-        :param pulumi.Input[str] name: The name of the Derived Metric in Wavefront
-        :param pulumi.Input[str] query: A Wavefront query that is evaluated at regular intervals (default `1m`)
+        :param pulumi.Input[str] additional_information: User-supplied additional explanatory information for the derived metric.
+        :param pulumi.Input[int] minutes: How frequently the query generating the derived metric is run.
+        :param pulumi.Input[str] name: The name of the Derived Metric in Wavefront.
+        :param pulumi.Input[str] query: A Wavefront query that is evaluated at regular intervals (default is 1 minute).
         :param pulumi.Input[Sequence[pulumi.Input[str]]] tags: A set of tags to assign to this resource.
         """
         if additional_information is not None:
@@ -127,7 +127,7 @@ class _DerivedMetricState:
     @pulumi.getter(name="additionalInformation")
     def additional_information(self) -> Optional[pulumi.Input[str]]:
         """
-        User-supplied additional explanatory information for the derived metric
+        User-supplied additional explanatory information for the derived metric.
         """
         return pulumi.get(self, "additional_information")
 
@@ -139,7 +139,7 @@ class _DerivedMetricState:
     @pulumi.getter
     def minutes(self) -> Optional[pulumi.Input[int]]:
         """
-        How frequently the query generating the derived metric is run
+        How frequently the query generating the derived metric is run.
         """
         return pulumi.get(self, "minutes")
 
@@ -151,7 +151,7 @@ class _DerivedMetricState:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
-        The name of the Derived Metric in Wavefront
+        The name of the Derived Metric in Wavefront.
         """
         return pulumi.get(self, "name")
 
@@ -163,7 +163,7 @@ class _DerivedMetricState:
     @pulumi.getter
     def query(self) -> Optional[pulumi.Input[str]]:
         """
-        A Wavefront query that is evaluated at regular intervals (default `1m`)
+        A Wavefront query that is evaluated at regular intervals (default is 1 minute).
         """
         return pulumi.get(self, "query")
 
@@ -212,7 +212,7 @@ class DerivedMetric(pulumi.CustomResource):
 
         ## Import
 
-        Derived Metrics can be imported using the `id`, e.g.
+        Derived Metrics can be imported by using the `id`, e.g.
 
         ```sh
          $ pulumi import wavefront:index/derivedMetric:DerivedMetric derived_metric 1577102900578
@@ -220,10 +220,10 @@ class DerivedMetric(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] additional_information: User-supplied additional explanatory information for the derived metric
-        :param pulumi.Input[int] minutes: How frequently the query generating the derived metric is run
-        :param pulumi.Input[str] name: The name of the Derived Metric in Wavefront
-        :param pulumi.Input[str] query: A Wavefront query that is evaluated at regular intervals (default `1m`)
+        :param pulumi.Input[str] additional_information: User-supplied additional explanatory information for the derived metric.
+        :param pulumi.Input[int] minutes: How frequently the query generating the derived metric is run.
+        :param pulumi.Input[str] name: The name of the Derived Metric in Wavefront.
+        :param pulumi.Input[str] query: A Wavefront query that is evaluated at regular intervals (default is 1 minute).
         :param pulumi.Input[Sequence[pulumi.Input[str]]] tags: A set of tags to assign to this resource.
         """
         ...
@@ -249,7 +249,7 @@ class DerivedMetric(pulumi.CustomResource):
 
         ## Import
 
-        Derived Metrics can be imported using the `id`, e.g.
+        Derived Metrics can be imported by using the `id`, e.g.
 
         ```sh
          $ pulumi import wavefront:index/derivedMetric:DerivedMetric derived_metric 1577102900578
@@ -318,10 +318,10 @@ class DerivedMetric(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] additional_information: User-supplied additional explanatory information for the derived metric
-        :param pulumi.Input[int] minutes: How frequently the query generating the derived metric is run
-        :param pulumi.Input[str] name: The name of the Derived Metric in Wavefront
-        :param pulumi.Input[str] query: A Wavefront query that is evaluated at regular intervals (default `1m`)
+        :param pulumi.Input[str] additional_information: User-supplied additional explanatory information for the derived metric.
+        :param pulumi.Input[int] minutes: How frequently the query generating the derived metric is run.
+        :param pulumi.Input[str] name: The name of the Derived Metric in Wavefront.
+        :param pulumi.Input[str] query: A Wavefront query that is evaluated at regular intervals (default is 1 minute).
         :param pulumi.Input[Sequence[pulumi.Input[str]]] tags: A set of tags to assign to this resource.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -339,7 +339,7 @@ class DerivedMetric(pulumi.CustomResource):
     @pulumi.getter(name="additionalInformation")
     def additional_information(self) -> pulumi.Output[Optional[str]]:
         """
-        User-supplied additional explanatory information for the derived metric
+        User-supplied additional explanatory information for the derived metric.
         """
         return pulumi.get(self, "additional_information")
 
@@ -347,7 +347,7 @@ class DerivedMetric(pulumi.CustomResource):
     @pulumi.getter
     def minutes(self) -> pulumi.Output[int]:
         """
-        How frequently the query generating the derived metric is run
+        How frequently the query generating the derived metric is run.
         """
         return pulumi.get(self, "minutes")
 
@@ -355,7 +355,7 @@ class DerivedMetric(pulumi.CustomResource):
     @pulumi.getter
     def name(self) -> pulumi.Output[str]:
         """
-        The name of the Derived Metric in Wavefront
+        The name of the Derived Metric in Wavefront.
         """
         return pulumi.get(self, "name")
 
@@ -363,7 +363,7 @@ class DerivedMetric(pulumi.CustomResource):
     @pulumi.getter
     def query(self) -> pulumi.Output[str]:
         """
-        A Wavefront query that is evaluated at regular intervals (default `1m`)
+        A Wavefront query that is evaluated at regular intervals (default is 1 minute).
         """
         return pulumi.get(self, "query")
 

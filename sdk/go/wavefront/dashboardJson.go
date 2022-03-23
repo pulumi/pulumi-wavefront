@@ -40,7 +40,7 @@ import (
 //
 // ## Import
 //
-// Dashboard JSON can be imported using the `id`, e.g.
+// Dashboard JSON can be imported by using the `id`, e.g.
 //
 // ```sh
 //  $ pulumi import wavefront:index/dashboardJson:DashboardJson dashboard_json tftestimport
@@ -48,7 +48,7 @@ import (
 type DashboardJson struct {
 	pulumi.CustomResourceState
 
-	// See [Wavefront API Documentation](https://docs.wavefront.com/wavefront_api.html#api-documentation-wavefront-instance)
+	// See the [Wavefront API Documentation](https://docs.wavefront.com/wavefront_api.html#api-documentation-wavefront-instance)
 	// for instructions on how to get to your API documentation for more details.
 	DashboardJson pulumi.StringOutput `pulumi:"dashboardJson"`
 }
@@ -85,13 +85,13 @@ func GetDashboardJson(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering DashboardJson resources.
 type dashboardJsonState struct {
-	// See [Wavefront API Documentation](https://docs.wavefront.com/wavefront_api.html#api-documentation-wavefront-instance)
+	// See the [Wavefront API Documentation](https://docs.wavefront.com/wavefront_api.html#api-documentation-wavefront-instance)
 	// for instructions on how to get to your API documentation for more details.
 	DashboardJson *string `pulumi:"dashboardJson"`
 }
 
 type DashboardJsonState struct {
-	// See [Wavefront API Documentation](https://docs.wavefront.com/wavefront_api.html#api-documentation-wavefront-instance)
+	// See the [Wavefront API Documentation](https://docs.wavefront.com/wavefront_api.html#api-documentation-wavefront-instance)
 	// for instructions on how to get to your API documentation for more details.
 	DashboardJson pulumi.StringPtrInput
 }
@@ -101,14 +101,14 @@ func (DashboardJsonState) ElementType() reflect.Type {
 }
 
 type dashboardJsonArgs struct {
-	// See [Wavefront API Documentation](https://docs.wavefront.com/wavefront_api.html#api-documentation-wavefront-instance)
+	// See the [Wavefront API Documentation](https://docs.wavefront.com/wavefront_api.html#api-documentation-wavefront-instance)
 	// for instructions on how to get to your API documentation for more details.
 	DashboardJson string `pulumi:"dashboardJson"`
 }
 
 // The set of arguments for constructing a DashboardJson resource.
 type DashboardJsonArgs struct {
-	// See [Wavefront API Documentation](https://docs.wavefront.com/wavefront_api.html#api-documentation-wavefront-instance)
+	// See the [Wavefront API Documentation](https://docs.wavefront.com/wavefront_api.html#api-documentation-wavefront-instance)
 	// for instructions on how to get to your API documentation for more details.
 	DashboardJson pulumi.StringInput
 }

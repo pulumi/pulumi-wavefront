@@ -11,7 +11,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Provides a Wavefront User Resource. This allows users to be created, updated, and deleted.
+// Provides a Wavefront User Resource. This allows user accounts to be created, updated, and deleted.
 //
 // ## Example Usage
 //
@@ -38,7 +38,7 @@ import (
 //
 // ## Import
 //
-// Users can be imported using the `id`, e.g.
+// Users can be imported by using the `id`, e.g.
 //
 // ```sh
 //  $ pulumi import wavefront:index/user:User some_user test@example.com
@@ -47,13 +47,13 @@ type User struct {
 	pulumi.CustomResourceState
 
 	Customer pulumi.StringOutput `pulumi:"customer"`
-	// The (unique) identifier of the user to create. Must be a valid email address
+	// The unique identifier of the user account to create. Must be a valid email address.
 	Email pulumi.StringOutput `pulumi:"email"`
 	// List of permission to grant to this user.  Valid options are
 	// `agentManagement`, `alertsManagement`, `dashboardManagement`, `embeddedCharts`, `eventsManagement`, `externalLinksManagement`,
-	// `hostTagManagement`, `metricsManagement`, `userManagement`
+	// `hostTagManagement`, `metricsManagement`, and `userManagement`.
 	Permissions pulumi.StringArrayOutput `pulumi:"permissions"`
-	// List of user groups to this user
+	// List of user groups to this user.
 	UserGroups pulumi.StringArrayOutput `pulumi:"userGroups"`
 }
 
@@ -90,25 +90,25 @@ func GetUser(ctx *pulumi.Context,
 // Input properties used for looking up and filtering User resources.
 type userState struct {
 	Customer *string `pulumi:"customer"`
-	// The (unique) identifier of the user to create. Must be a valid email address
+	// The unique identifier of the user account to create. Must be a valid email address.
 	Email *string `pulumi:"email"`
 	// List of permission to grant to this user.  Valid options are
 	// `agentManagement`, `alertsManagement`, `dashboardManagement`, `embeddedCharts`, `eventsManagement`, `externalLinksManagement`,
-	// `hostTagManagement`, `metricsManagement`, `userManagement`
+	// `hostTagManagement`, `metricsManagement`, and `userManagement`.
 	Permissions []string `pulumi:"permissions"`
-	// List of user groups to this user
+	// List of user groups to this user.
 	UserGroups []string `pulumi:"userGroups"`
 }
 
 type UserState struct {
 	Customer pulumi.StringPtrInput
-	// The (unique) identifier of the user to create. Must be a valid email address
+	// The unique identifier of the user account to create. Must be a valid email address.
 	Email pulumi.StringPtrInput
 	// List of permission to grant to this user.  Valid options are
 	// `agentManagement`, `alertsManagement`, `dashboardManagement`, `embeddedCharts`, `eventsManagement`, `externalLinksManagement`,
-	// `hostTagManagement`, `metricsManagement`, `userManagement`
+	// `hostTagManagement`, `metricsManagement`, and `userManagement`.
 	Permissions pulumi.StringArrayInput
-	// List of user groups to this user
+	// List of user groups to this user.
 	UserGroups pulumi.StringArrayInput
 }
 
@@ -118,26 +118,26 @@ func (UserState) ElementType() reflect.Type {
 
 type userArgs struct {
 	Customer *string `pulumi:"customer"`
-	// The (unique) identifier of the user to create. Must be a valid email address
+	// The unique identifier of the user account to create. Must be a valid email address.
 	Email string `pulumi:"email"`
 	// List of permission to grant to this user.  Valid options are
 	// `agentManagement`, `alertsManagement`, `dashboardManagement`, `embeddedCharts`, `eventsManagement`, `externalLinksManagement`,
-	// `hostTagManagement`, `metricsManagement`, `userManagement`
+	// `hostTagManagement`, `metricsManagement`, and `userManagement`.
 	Permissions []string `pulumi:"permissions"`
-	// List of user groups to this user
+	// List of user groups to this user.
 	UserGroups []string `pulumi:"userGroups"`
 }
 
 // The set of arguments for constructing a User resource.
 type UserArgs struct {
 	Customer pulumi.StringPtrInput
-	// The (unique) identifier of the user to create. Must be a valid email address
+	// The unique identifier of the user account to create. Must be a valid email address.
 	Email pulumi.StringInput
 	// List of permission to grant to this user.  Valid options are
 	// `agentManagement`, `alertsManagement`, `dashboardManagement`, `embeddedCharts`, `eventsManagement`, `externalLinksManagement`,
-	// `hostTagManagement`, `metricsManagement`, `userManagement`
+	// `hostTagManagement`, `metricsManagement`, and `userManagement`.
 	Permissions pulumi.StringArrayInput
-	// List of user groups to this user
+	// List of user groups to this user.
 	UserGroups pulumi.StringArrayInput
 }
 

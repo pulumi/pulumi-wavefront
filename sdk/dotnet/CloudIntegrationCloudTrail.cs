@@ -40,7 +40,7 @@ namespace Pulumi.Wavefront
     /// 
     /// ## Import
     /// 
-    /// CloudTrail Cloud Integrations can be imported using the `id`, e.g.
+    /// CloudTrail Cloud Integrations can be imported by using the `id`, e.g.
     /// 
     /// ```sh
     ///  $ pulumi import wavefront:index/cloudIntegrationCloudTrail:CloudIntegrationCloudTrail cloudtrail a411c16b-3cf7-4f03-bf11-8ca05aab898d
@@ -50,37 +50,37 @@ namespace Pulumi.Wavefront
     public partial class CloudIntegrationCloudTrail : Pulumi.CustomResource
     {
         /// <summary>
-        /// A list of point tag key-values to add to every point ingested using this integration
+        /// A list of point tag key-values to add to every point ingested using this integration.
         /// </summary>
         [Output("additionalTags")]
         public Output<ImmutableDictionary<string, string>?> AdditionalTags { get; private set; } = null!;
 
         /// <summary>
-        /// Name of the S3 bucket where CloudTrail logs are stored
+        /// Name of the S3 bucket where CloudTrail logs are stored.
         /// </summary>
         [Output("bucketName")]
         public Output<string> BucketName { get; private set; } = null!;
 
         /// <summary>
-        /// The Role ARN that the customer has created in AWS IAM to allow access to Wavefront
+        /// The Role ARN that the customer has created in AWS IAM to allow access to Wavefront.
         /// </summary>
         [Output("externalId")]
         public Output<string> ExternalId { get; private set; } = null!;
 
         /// <summary>
-        /// Rule to filter CloudTrail log event
+        /// Rule to filter CloudTrail log event.
         /// </summary>
         [Output("filterRule")]
         public Output<string?> FilterRule { get; private set; } = null!;
 
         /// <summary>
-        /// Forces this resource to save, even if errors are present
+        /// Forces this resource to save, even if errors are present.
         /// </summary>
         [Output("forceSave")]
         public Output<bool?> ForceSave { get; private set; } = null!;
 
         /// <summary>
-        /// The human-readable name of this integration
+        /// The human-readable name of this integration.
         /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
@@ -92,25 +92,25 @@ namespace Pulumi.Wavefront
         public Output<string?> Prefix { get; private set; } = null!;
 
         /// <summary>
-        /// The AWS region of the S3 bucket where CloudTrail logs are stored
+        /// The AWS region of the S3 bucket where CloudTrail logs are stored.
         /// </summary>
         [Output("region")]
         public Output<string> Region { get; private set; } = null!;
 
         /// <summary>
-        /// The external id corresponding to the Role ARN
+        /// The external ID corresponding to the Role ARN.
         /// </summary>
         [Output("roleArn")]
         public Output<string> RoleArn { get; private set; } = null!;
 
         /// <summary>
-        /// A value denoting which cloud service this service integrates with
+        /// A value denoting which cloud service this service integrates with.
         /// </summary>
         [Output("service")]
         public Output<string> Service { get; private set; } = null!;
 
         /// <summary>
-        /// How often, in minutes, to refresh the service
+        /// How often, in minutes, to refresh the service.
         /// </summary>
         [Output("serviceRefreshRateInMinutes")]
         public Output<int?> ServiceRefreshRateInMinutes { get; private set; } = null!;
@@ -165,7 +165,7 @@ namespace Pulumi.Wavefront
         private InputMap<string>? _additionalTags;
 
         /// <summary>
-        /// A list of point tag key-values to add to every point ingested using this integration
+        /// A list of point tag key-values to add to every point ingested using this integration.
         /// </summary>
         public InputMap<string> AdditionalTags
         {
@@ -174,31 +174,31 @@ namespace Pulumi.Wavefront
         }
 
         /// <summary>
-        /// Name of the S3 bucket where CloudTrail logs are stored
+        /// Name of the S3 bucket where CloudTrail logs are stored.
         /// </summary>
         [Input("bucketName", required: true)]
         public Input<string> BucketName { get; set; } = null!;
 
         /// <summary>
-        /// The Role ARN that the customer has created in AWS IAM to allow access to Wavefront
+        /// The Role ARN that the customer has created in AWS IAM to allow access to Wavefront.
         /// </summary>
         [Input("externalId", required: true)]
         public Input<string> ExternalId { get; set; } = null!;
 
         /// <summary>
-        /// Rule to filter CloudTrail log event
+        /// Rule to filter CloudTrail log event.
         /// </summary>
         [Input("filterRule")]
         public Input<string>? FilterRule { get; set; }
 
         /// <summary>
-        /// Forces this resource to save, even if errors are present
+        /// Forces this resource to save, even if errors are present.
         /// </summary>
         [Input("forceSave")]
         public Input<bool>? ForceSave { get; set; }
 
         /// <summary>
-        /// The human-readable name of this integration
+        /// The human-readable name of this integration.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
@@ -210,25 +210,25 @@ namespace Pulumi.Wavefront
         public Input<string>? Prefix { get; set; }
 
         /// <summary>
-        /// The AWS region of the S3 bucket where CloudTrail logs are stored
+        /// The AWS region of the S3 bucket where CloudTrail logs are stored.
         /// </summary>
         [Input("region", required: true)]
         public Input<string> Region { get; set; } = null!;
 
         /// <summary>
-        /// The external id corresponding to the Role ARN
+        /// The external ID corresponding to the Role ARN.
         /// </summary>
         [Input("roleArn", required: true)]
         public Input<string> RoleArn { get; set; } = null!;
 
         /// <summary>
-        /// A value denoting which cloud service this service integrates with
+        /// A value denoting which cloud service this service integrates with.
         /// </summary>
         [Input("service", required: true)]
         public Input<string> Service { get; set; } = null!;
 
         /// <summary>
-        /// How often, in minutes, to refresh the service
+        /// How often, in minutes, to refresh the service.
         /// </summary>
         [Input("serviceRefreshRateInMinutes")]
         public Input<int>? ServiceRefreshRateInMinutes { get; set; }
@@ -244,7 +244,7 @@ namespace Pulumi.Wavefront
         private InputMap<string>? _additionalTags;
 
         /// <summary>
-        /// A list of point tag key-values to add to every point ingested using this integration
+        /// A list of point tag key-values to add to every point ingested using this integration.
         /// </summary>
         public InputMap<string> AdditionalTags
         {
@@ -253,31 +253,31 @@ namespace Pulumi.Wavefront
         }
 
         /// <summary>
-        /// Name of the S3 bucket where CloudTrail logs are stored
+        /// Name of the S3 bucket where CloudTrail logs are stored.
         /// </summary>
         [Input("bucketName")]
         public Input<string>? BucketName { get; set; }
 
         /// <summary>
-        /// The Role ARN that the customer has created in AWS IAM to allow access to Wavefront
+        /// The Role ARN that the customer has created in AWS IAM to allow access to Wavefront.
         /// </summary>
         [Input("externalId")]
         public Input<string>? ExternalId { get; set; }
 
         /// <summary>
-        /// Rule to filter CloudTrail log event
+        /// Rule to filter CloudTrail log event.
         /// </summary>
         [Input("filterRule")]
         public Input<string>? FilterRule { get; set; }
 
         /// <summary>
-        /// Forces this resource to save, even if errors are present
+        /// Forces this resource to save, even if errors are present.
         /// </summary>
         [Input("forceSave")]
         public Input<bool>? ForceSave { get; set; }
 
         /// <summary>
-        /// The human-readable name of this integration
+        /// The human-readable name of this integration.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
@@ -289,25 +289,25 @@ namespace Pulumi.Wavefront
         public Input<string>? Prefix { get; set; }
 
         /// <summary>
-        /// The AWS region of the S3 bucket where CloudTrail logs are stored
+        /// The AWS region of the S3 bucket where CloudTrail logs are stored.
         /// </summary>
         [Input("region")]
         public Input<string>? Region { get; set; }
 
         /// <summary>
-        /// The external id corresponding to the Role ARN
+        /// The external ID corresponding to the Role ARN.
         /// </summary>
         [Input("roleArn")]
         public Input<string>? RoleArn { get; set; }
 
         /// <summary>
-        /// A value denoting which cloud service this service integrates with
+        /// A value denoting which cloud service this service integrates with.
         /// </summary>
         [Input("service")]
         public Input<string>? Service { get; set; }
 
         /// <summary>
-        /// How often, in minutes, to refresh the service
+        /// How often, in minutes, to refresh the service.
         /// </summary>
         [Input("serviceRefreshRateInMinutes")]
         public Input<int>? ServiceRefreshRateInMinutes { get; set; }

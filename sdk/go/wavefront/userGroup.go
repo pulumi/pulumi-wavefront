@@ -38,7 +38,7 @@ import (
 //
 // ## Import
 //
-// User Groups can be imported using the `id`, e.g.
+// User Groups can be imported by using the `id`, e.g.
 //
 // ```sh
 //  $ pulumi import wavefront:index/userGroup:UserGroup some_group a411c16b-3cf7-4f03-bf11-8ca05aab898d
@@ -46,9 +46,9 @@ import (
 type UserGroup struct {
 	pulumi.CustomResourceState
 
-	// A short description of the user group
+	// A short description of the user group.
 	Description pulumi.StringOutput `pulumi:"description"`
-	// The name of the user group
+	// The name of the user group.
 	Name pulumi.StringOutput `pulumi:"name"`
 }
 
@@ -84,16 +84,16 @@ func GetUserGroup(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering UserGroup resources.
 type userGroupState struct {
-	// A short description of the user group
+	// A short description of the user group.
 	Description *string `pulumi:"description"`
-	// The name of the user group
+	// The name of the user group.
 	Name *string `pulumi:"name"`
 }
 
 type UserGroupState struct {
-	// A short description of the user group
+	// A short description of the user group.
 	Description pulumi.StringPtrInput
-	// The name of the user group
+	// The name of the user group.
 	Name pulumi.StringPtrInput
 }
 
@@ -102,17 +102,17 @@ func (UserGroupState) ElementType() reflect.Type {
 }
 
 type userGroupArgs struct {
-	// A short description of the user group
+	// A short description of the user group.
 	Description string `pulumi:"description"`
-	// The name of the user group
+	// The name of the user group.
 	Name *string `pulumi:"name"`
 }
 
 // The set of arguments for constructing a UserGroup resource.
 type UserGroupArgs struct {
-	// A short description of the user group
+	// A short description of the user group.
 	Description pulumi.StringInput
-	// The name of the user group
+	// The name of the user group.
 	Name pulumi.StringPtrInput
 }
 

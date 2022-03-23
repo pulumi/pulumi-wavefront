@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Wavefront
 {
     /// <summary>
-    /// Provides a Wavefront Cloud Integration for App Dynamics. This allows app dynamics cloud integrations to be created,
+    /// Provides a Wavefront Cloud Integration for AppDynamics. This allows AppDynamics cloud integrations to be created,
     /// updated, and deleted.
     /// 
     /// ## Example Usage
@@ -36,7 +36,7 @@ namespace Pulumi.Wavefront
     /// 
     /// ## Import
     /// 
-    /// App Dynamic Cloud Integrations can be imported using the `id`, e.g.
+    /// AppDynamic Cloud Integrations can be imported by using the `id`, e.g.
     /// 
     /// ```sh
     ///  $ pulumi import wavefront:index/cloudIntegrationAppDynamics:CloudIntegrationAppDynamics app_dynamics a411c16b-3cf7-4f03-bf11-8ca05aab898d
@@ -46,105 +46,105 @@ namespace Pulumi.Wavefront
     public partial class CloudIntegrationAppDynamics : Pulumi.CustomResource
     {
         /// <summary>
-        /// A list of point tag key-values to add to every point ingested using this integration
+        /// A list of point tag key-values to add to every point ingested using this integration.
         /// </summary>
         [Output("additionalTags")]
         public Output<ImmutableDictionary<string, string>?> AdditionalTags { get; private set; } = null!;
 
         /// <summary>
-        /// List of regular expressions that a application name must match (case-insensitively) 
-        /// in order to be ingested
+        /// List of regular expressions that an application name must match (case-insensitively) 
+        /// in order to be ingested.
         /// </summary>
         [Output("appFilterRegexes")]
         public Output<ImmutableArray<string>> AppFilterRegexes { get; private set; } = null!;
 
         /// <summary>
-        /// Name of the SaaS controller
+        /// Name of the SaaS controller.
         /// </summary>
         [Output("controllerName")]
         public Output<string> ControllerName { get; private set; } = null!;
 
         /// <summary>
-        /// Boolean flag to control Application Infrastructure metric injection
+        /// Boolean flag to control Application Infrastructure metric ingestion.
         /// </summary>
         [Output("enableAppInfraMetrics")]
         public Output<bool?> EnableAppInfraMetrics { get; private set; } = null!;
 
         /// <summary>
-        /// Boolean flag to control Backend metric injection
+        /// Boolean flag to control Backend metric ingestion.
         /// </summary>
         [Output("enableBackendMetrics")]
         public Output<bool?> EnableBackendMetrics { get; private set; } = null!;
 
         /// <summary>
-        /// Boolean flag to control Business Transaction metric injection
+        /// Boolean flag to control Business Transaction metric ingestion.
         /// </summary>
         [Output("enableBusinessTrxMetrics")]
         public Output<bool?> EnableBusinessTrxMetrics { get; private set; } = null!;
 
         /// <summary>
-        /// Boolean flag to control Error metric injection
+        /// Boolean flag to control Error metric ingestion.
         /// </summary>
         [Output("enableErrorMetrics")]
         public Output<bool?> EnableErrorMetrics { get; private set; } = null!;
 
         /// <summary>
-        /// Boolean flag to control Individual Node metric injection
+        /// Boolean flag to control Individual Node metric ingestion.
         /// </summary>
         [Output("enableIndividualNodeMetrics")]
         public Output<bool?> EnableIndividualNodeMetrics { get; private set; } = null!;
 
         /// <summary>
-        /// Boolean flag to control Overall Performance metric injection
+        /// Boolean flag to control Overall Performance metric ingestion.
         /// </summary>
         [Output("enableOverallPerfMetrics")]
         public Output<bool?> EnableOverallPerfMetrics { get; private set; } = null!;
 
         /// <summary>
         /// Set this to `false` to get separate results for all values within the time range, 
-        /// by default it is `true`
+        /// by default it is `true`.
         /// </summary>
         [Output("enableRollup")]
         public Output<bool?> EnableRollup { get; private set; } = null!;
 
         /// <summary>
-        /// Boolean flag to control Service End point metric injection
+        /// Boolean flag to control Service End point metric ingestion.
         /// </summary>
         [Output("enableServiceEndpointMetrics")]
         public Output<bool?> EnableServiceEndpointMetrics { get; private set; } = null!;
 
         /// <summary>
-        /// Password for AppDynamics user
+        /// Password for AppDynamics user.
         /// </summary>
         [Output("encryptedPassword")]
         public Output<string> EncryptedPassword { get; private set; } = null!;
 
         /// <summary>
-        /// Forces this resource to save, even if errors are present
+        /// Forces this resource to save, even if errors are present.
         /// </summary>
         [Output("forceSave")]
         public Output<bool?> ForceSave { get; private set; } = null!;
 
         /// <summary>
-        /// The human-readable name of this integration
+        /// The human-readable name of this integration.
         /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
 
         /// <summary>
-        /// A value denoting which cloud service this service integrates with
+        /// A value denoting which cloud service this service integrates with.
         /// </summary>
         [Output("service")]
         public Output<string> Service { get; private set; } = null!;
 
         /// <summary>
-        /// How often, in minutes, to refresh the service
+        /// How often, in minutes, to refresh the service.
         /// </summary>
         [Output("serviceRefreshRateInMinutes")]
         public Output<int?> ServiceRefreshRateInMinutes { get; private set; } = null!;
 
         /// <summary>
-        /// Username is a combination of userName and the account name
+        /// Username is a combination of userName and the account name.
         /// </summary>
         [Output("userName")]
         public Output<string> UserName { get; private set; } = null!;
@@ -199,7 +199,7 @@ namespace Pulumi.Wavefront
         private InputMap<string>? _additionalTags;
 
         /// <summary>
-        /// A list of point tag key-values to add to every point ingested using this integration
+        /// A list of point tag key-values to add to every point ingested using this integration.
         /// </summary>
         public InputMap<string> AdditionalTags
         {
@@ -211,8 +211,8 @@ namespace Pulumi.Wavefront
         private InputList<string>? _appFilterRegexes;
 
         /// <summary>
-        /// List of regular expressions that a application name must match (case-insensitively) 
-        /// in order to be ingested
+        /// List of regular expressions that an application name must match (case-insensitively) 
+        /// in order to be ingested.
         /// </summary>
         public InputList<string> AppFilterRegexes
         {
@@ -221,92 +221,92 @@ namespace Pulumi.Wavefront
         }
 
         /// <summary>
-        /// Name of the SaaS controller
+        /// Name of the SaaS controller.
         /// </summary>
         [Input("controllerName", required: true)]
         public Input<string> ControllerName { get; set; } = null!;
 
         /// <summary>
-        /// Boolean flag to control Application Infrastructure metric injection
+        /// Boolean flag to control Application Infrastructure metric ingestion.
         /// </summary>
         [Input("enableAppInfraMetrics")]
         public Input<bool>? EnableAppInfraMetrics { get; set; }
 
         /// <summary>
-        /// Boolean flag to control Backend metric injection
+        /// Boolean flag to control Backend metric ingestion.
         /// </summary>
         [Input("enableBackendMetrics")]
         public Input<bool>? EnableBackendMetrics { get; set; }
 
         /// <summary>
-        /// Boolean flag to control Business Transaction metric injection
+        /// Boolean flag to control Business Transaction metric ingestion.
         /// </summary>
         [Input("enableBusinessTrxMetrics")]
         public Input<bool>? EnableBusinessTrxMetrics { get; set; }
 
         /// <summary>
-        /// Boolean flag to control Error metric injection
+        /// Boolean flag to control Error metric ingestion.
         /// </summary>
         [Input("enableErrorMetrics")]
         public Input<bool>? EnableErrorMetrics { get; set; }
 
         /// <summary>
-        /// Boolean flag to control Individual Node metric injection
+        /// Boolean flag to control Individual Node metric ingestion.
         /// </summary>
         [Input("enableIndividualNodeMetrics")]
         public Input<bool>? EnableIndividualNodeMetrics { get; set; }
 
         /// <summary>
-        /// Boolean flag to control Overall Performance metric injection
+        /// Boolean flag to control Overall Performance metric ingestion.
         /// </summary>
         [Input("enableOverallPerfMetrics")]
         public Input<bool>? EnableOverallPerfMetrics { get; set; }
 
         /// <summary>
         /// Set this to `false` to get separate results for all values within the time range, 
-        /// by default it is `true`
+        /// by default it is `true`.
         /// </summary>
         [Input("enableRollup")]
         public Input<bool>? EnableRollup { get; set; }
 
         /// <summary>
-        /// Boolean flag to control Service End point metric injection
+        /// Boolean flag to control Service End point metric ingestion.
         /// </summary>
         [Input("enableServiceEndpointMetrics")]
         public Input<bool>? EnableServiceEndpointMetrics { get; set; }
 
         /// <summary>
-        /// Password for AppDynamics user
+        /// Password for AppDynamics user.
         /// </summary>
         [Input("encryptedPassword", required: true)]
         public Input<string> EncryptedPassword { get; set; } = null!;
 
         /// <summary>
-        /// Forces this resource to save, even if errors are present
+        /// Forces this resource to save, even if errors are present.
         /// </summary>
         [Input("forceSave")]
         public Input<bool>? ForceSave { get; set; }
 
         /// <summary>
-        /// The human-readable name of this integration
+        /// The human-readable name of this integration.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// A value denoting which cloud service this service integrates with
+        /// A value denoting which cloud service this service integrates with.
         /// </summary>
         [Input("service", required: true)]
         public Input<string> Service { get; set; } = null!;
 
         /// <summary>
-        /// How often, in minutes, to refresh the service
+        /// How often, in minutes, to refresh the service.
         /// </summary>
         [Input("serviceRefreshRateInMinutes")]
         public Input<int>? ServiceRefreshRateInMinutes { get; set; }
 
         /// <summary>
-        /// Username is a combination of userName and the account name
+        /// Username is a combination of userName and the account name.
         /// </summary>
         [Input("userName", required: true)]
         public Input<string> UserName { get; set; } = null!;
@@ -322,7 +322,7 @@ namespace Pulumi.Wavefront
         private InputMap<string>? _additionalTags;
 
         /// <summary>
-        /// A list of point tag key-values to add to every point ingested using this integration
+        /// A list of point tag key-values to add to every point ingested using this integration.
         /// </summary>
         public InputMap<string> AdditionalTags
         {
@@ -334,8 +334,8 @@ namespace Pulumi.Wavefront
         private InputList<string>? _appFilterRegexes;
 
         /// <summary>
-        /// List of regular expressions that a application name must match (case-insensitively) 
-        /// in order to be ingested
+        /// List of regular expressions that an application name must match (case-insensitively) 
+        /// in order to be ingested.
         /// </summary>
         public InputList<string> AppFilterRegexes
         {
@@ -344,92 +344,92 @@ namespace Pulumi.Wavefront
         }
 
         /// <summary>
-        /// Name of the SaaS controller
+        /// Name of the SaaS controller.
         /// </summary>
         [Input("controllerName")]
         public Input<string>? ControllerName { get; set; }
 
         /// <summary>
-        /// Boolean flag to control Application Infrastructure metric injection
+        /// Boolean flag to control Application Infrastructure metric ingestion.
         /// </summary>
         [Input("enableAppInfraMetrics")]
         public Input<bool>? EnableAppInfraMetrics { get; set; }
 
         /// <summary>
-        /// Boolean flag to control Backend metric injection
+        /// Boolean flag to control Backend metric ingestion.
         /// </summary>
         [Input("enableBackendMetrics")]
         public Input<bool>? EnableBackendMetrics { get; set; }
 
         /// <summary>
-        /// Boolean flag to control Business Transaction metric injection
+        /// Boolean flag to control Business Transaction metric ingestion.
         /// </summary>
         [Input("enableBusinessTrxMetrics")]
         public Input<bool>? EnableBusinessTrxMetrics { get; set; }
 
         /// <summary>
-        /// Boolean flag to control Error metric injection
+        /// Boolean flag to control Error metric ingestion.
         /// </summary>
         [Input("enableErrorMetrics")]
         public Input<bool>? EnableErrorMetrics { get; set; }
 
         /// <summary>
-        /// Boolean flag to control Individual Node metric injection
+        /// Boolean flag to control Individual Node metric ingestion.
         /// </summary>
         [Input("enableIndividualNodeMetrics")]
         public Input<bool>? EnableIndividualNodeMetrics { get; set; }
 
         /// <summary>
-        /// Boolean flag to control Overall Performance metric injection
+        /// Boolean flag to control Overall Performance metric ingestion.
         /// </summary>
         [Input("enableOverallPerfMetrics")]
         public Input<bool>? EnableOverallPerfMetrics { get; set; }
 
         /// <summary>
         /// Set this to `false` to get separate results for all values within the time range, 
-        /// by default it is `true`
+        /// by default it is `true`.
         /// </summary>
         [Input("enableRollup")]
         public Input<bool>? EnableRollup { get; set; }
 
         /// <summary>
-        /// Boolean flag to control Service End point metric injection
+        /// Boolean flag to control Service End point metric ingestion.
         /// </summary>
         [Input("enableServiceEndpointMetrics")]
         public Input<bool>? EnableServiceEndpointMetrics { get; set; }
 
         /// <summary>
-        /// Password for AppDynamics user
+        /// Password for AppDynamics user.
         /// </summary>
         [Input("encryptedPassword")]
         public Input<string>? EncryptedPassword { get; set; }
 
         /// <summary>
-        /// Forces this resource to save, even if errors are present
+        /// Forces this resource to save, even if errors are present.
         /// </summary>
         [Input("forceSave")]
         public Input<bool>? ForceSave { get; set; }
 
         /// <summary>
-        /// The human-readable name of this integration
+        /// The human-readable name of this integration.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// A value denoting which cloud service this service integrates with
+        /// A value denoting which cloud service this service integrates with.
         /// </summary>
         [Input("service")]
         public Input<string>? Service { get; set; }
 
         /// <summary>
-        /// How often, in minutes, to refresh the service
+        /// How often, in minutes, to refresh the service.
         /// </summary>
         [Input("serviceRefreshRateInMinutes")]
         public Input<int>? ServiceRefreshRateInMinutes { get; set; }
 
         /// <summary>
-        /// Username is a combination of userName and the account name
+        /// Username is a combination of userName and the account name.
         /// </summary>
         [Input("userName")]
         public Input<string>? UserName { get; set; }

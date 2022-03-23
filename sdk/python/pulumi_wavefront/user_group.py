@@ -17,8 +17,8 @@ class UserGroupArgs:
                  name: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a UserGroup resource.
-        :param pulumi.Input[str] description: A short description of the user group
-        :param pulumi.Input[str] name: The name of the user group
+        :param pulumi.Input[str] description: A short description of the user group.
+        :param pulumi.Input[str] name: The name of the user group.
         """
         pulumi.set(__self__, "description", description)
         if name is not None:
@@ -28,7 +28,7 @@ class UserGroupArgs:
     @pulumi.getter
     def description(self) -> pulumi.Input[str]:
         """
-        A short description of the user group
+        A short description of the user group.
         """
         return pulumi.get(self, "description")
 
@@ -40,7 +40,7 @@ class UserGroupArgs:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
-        The name of the user group
+        The name of the user group.
         """
         return pulumi.get(self, "name")
 
@@ -56,8 +56,8 @@ class _UserGroupState:
                  name: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering UserGroup resources.
-        :param pulumi.Input[str] description: A short description of the user group
-        :param pulumi.Input[str] name: The name of the user group
+        :param pulumi.Input[str] description: A short description of the user group.
+        :param pulumi.Input[str] name: The name of the user group.
         """
         if description is not None:
             pulumi.set(__self__, "description", description)
@@ -68,7 +68,7 @@ class _UserGroupState:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
         """
-        A short description of the user group
+        A short description of the user group.
         """
         return pulumi.get(self, "description")
 
@@ -80,7 +80,7 @@ class _UserGroupState:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
-        The name of the user group
+        The name of the user group.
         """
         return pulumi.get(self, "name")
 
@@ -111,7 +111,7 @@ class UserGroup(pulumi.CustomResource):
 
         ## Import
 
-        User Groups can be imported using the `id`, e.g.
+        User Groups can be imported by using the `id`, e.g.
 
         ```sh
          $ pulumi import wavefront:index/userGroup:UserGroup some_group a411c16b-3cf7-4f03-bf11-8ca05aab898d
@@ -119,8 +119,8 @@ class UserGroup(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] description: A short description of the user group
-        :param pulumi.Input[str] name: The name of the user group
+        :param pulumi.Input[str] description: A short description of the user group.
+        :param pulumi.Input[str] name: The name of the user group.
         """
         ...
     @overload
@@ -142,7 +142,7 @@ class UserGroup(pulumi.CustomResource):
 
         ## Import
 
-        User Groups can be imported using the `id`, e.g.
+        User Groups can be imported by using the `id`, e.g.
 
         ```sh
          $ pulumi import wavefront:index/userGroup:UserGroup some_group a411c16b-3cf7-4f03-bf11-8ca05aab898d
@@ -200,8 +200,8 @@ class UserGroup(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] description: A short description of the user group
-        :param pulumi.Input[str] name: The name of the user group
+        :param pulumi.Input[str] description: A short description of the user group.
+        :param pulumi.Input[str] name: The name of the user group.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -215,7 +215,7 @@ class UserGroup(pulumi.CustomResource):
     @pulumi.getter
     def description(self) -> pulumi.Output[str]:
         """
-        A short description of the user group
+        A short description of the user group.
         """
         return pulumi.get(self, "description")
 
@@ -223,7 +223,7 @@ class UserGroup(pulumi.CustomResource):
     @pulumi.getter
     def name(self) -> pulumi.Output[str]:
         """
-        The name of the user group
+        The name of the user group.
         """
         return pulumi.get(self, "name")
 

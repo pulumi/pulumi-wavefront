@@ -27,23 +27,23 @@ class CloudIntegrationCloudWatchArgs:
                  volume_selection_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None):
         """
         The set of arguments for constructing a CloudIntegrationCloudWatch resource.
-        :param pulumi.Input[str] external_id: The Role ARN that the customer has created in AWS IAM to allow access to Wavefront
-        :param pulumi.Input[str] role_arn: The external id corresponding to the Role ARN
-        :param pulumi.Input[str] service: A value denoting which cloud service this service integrates with
-        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] additional_tags: A list of point tag key-values to add to every point ingested using this integration
-        :param pulumi.Input[bool] force_save: Forces this resource to save, even if errors are present
-        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] instance_selection_tags: A string->string map whitelist of instance tag-value pairs (in AWS).
-               If the instance's AWS tags match this whitelist, CloudWatch data about this instance is ingested.
-               Multiple entries are OR'ed
-        :param pulumi.Input[str] metric_filter_regex: A regular expression that a CloudWatch metric name must match (case-insensitively) in order to be ingested
-        :param pulumi.Input[str] name: The human-readable name of this integration
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] namespaces: A list of namespaces that limit what we query from CloudWatch
+        :param pulumi.Input[str] external_id: The Role ARN that the customer has created in AWS IAM to allow access to Wavefront.
+        :param pulumi.Input[str] role_arn: The external ID corresponding to the Role ARN.
+        :param pulumi.Input[str] service: A value denoting which cloud service this service integrates with.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] additional_tags: A list of point tag key-values to add to every point ingested using this integration.
+        :param pulumi.Input[bool] force_save: Forces this resource to save, even if errors are present.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] instance_selection_tags: A string->string map allow list of instance tag-value pairs (in AWS).
+               If the instance's AWS tags match this allow list, CloudWatch data about this instance is ingested.
+               Multiple entries are OR'ed.
+        :param pulumi.Input[str] metric_filter_regex: A regular expression that a CloudWatch metric name must match (case-insensitively) in order to be ingested.
+        :param pulumi.Input[str] name: The human-readable name of this integration.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] namespaces: A list of namespaces that limit what we query from CloudWatch.
         :param pulumi.Input[str] point_tag_filter_regex: A regular expression that AWS tag key name must match (case-insensitively)
-               in order to be ingested
-        :param pulumi.Input[int] service_refresh_rate_in_minutes: How often, in minutes, to refresh the service
-        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] volume_selection_tags: A string->string map of whitelist of volume tag-value pairs (in AWS).
-               If the volume's AWS tags match this whitelist, CloudWatch data about this volume is ingested.
-               Multiple entries are OR'ed
+               in order to be ingested.
+        :param pulumi.Input[int] service_refresh_rate_in_minutes: How often, in minutes, to refresh the service.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] volume_selection_tags: A string->string map of allow list of volume tag-value pairs (in AWS).
+               If the volume's AWS tags match this allow list, CloudWatch data about this volume is ingested.
+               Multiple entries are OR'ed.
         """
         pulumi.set(__self__, "external_id", external_id)
         pulumi.set(__self__, "role_arn", role_arn)
@@ -71,7 +71,7 @@ class CloudIntegrationCloudWatchArgs:
     @pulumi.getter(name="externalId")
     def external_id(self) -> pulumi.Input[str]:
         """
-        The Role ARN that the customer has created in AWS IAM to allow access to Wavefront
+        The Role ARN that the customer has created in AWS IAM to allow access to Wavefront.
         """
         return pulumi.get(self, "external_id")
 
@@ -83,7 +83,7 @@ class CloudIntegrationCloudWatchArgs:
     @pulumi.getter(name="roleArn")
     def role_arn(self) -> pulumi.Input[str]:
         """
-        The external id corresponding to the Role ARN
+        The external ID corresponding to the Role ARN.
         """
         return pulumi.get(self, "role_arn")
 
@@ -95,7 +95,7 @@ class CloudIntegrationCloudWatchArgs:
     @pulumi.getter
     def service(self) -> pulumi.Input[str]:
         """
-        A value denoting which cloud service this service integrates with
+        A value denoting which cloud service this service integrates with.
         """
         return pulumi.get(self, "service")
 
@@ -107,7 +107,7 @@ class CloudIntegrationCloudWatchArgs:
     @pulumi.getter(name="additionalTags")
     def additional_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
-        A list of point tag key-values to add to every point ingested using this integration
+        A list of point tag key-values to add to every point ingested using this integration.
         """
         return pulumi.get(self, "additional_tags")
 
@@ -119,7 +119,7 @@ class CloudIntegrationCloudWatchArgs:
     @pulumi.getter(name="forceSave")
     def force_save(self) -> Optional[pulumi.Input[bool]]:
         """
-        Forces this resource to save, even if errors are present
+        Forces this resource to save, even if errors are present.
         """
         return pulumi.get(self, "force_save")
 
@@ -131,9 +131,9 @@ class CloudIntegrationCloudWatchArgs:
     @pulumi.getter(name="instanceSelectionTags")
     def instance_selection_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
-        A string->string map whitelist of instance tag-value pairs (in AWS).
-        If the instance's AWS tags match this whitelist, CloudWatch data about this instance is ingested.
-        Multiple entries are OR'ed
+        A string->string map allow list of instance tag-value pairs (in AWS).
+        If the instance's AWS tags match this allow list, CloudWatch data about this instance is ingested.
+        Multiple entries are OR'ed.
         """
         return pulumi.get(self, "instance_selection_tags")
 
@@ -145,7 +145,7 @@ class CloudIntegrationCloudWatchArgs:
     @pulumi.getter(name="metricFilterRegex")
     def metric_filter_regex(self) -> Optional[pulumi.Input[str]]:
         """
-        A regular expression that a CloudWatch metric name must match (case-insensitively) in order to be ingested
+        A regular expression that a CloudWatch metric name must match (case-insensitively) in order to be ingested.
         """
         return pulumi.get(self, "metric_filter_regex")
 
@@ -157,7 +157,7 @@ class CloudIntegrationCloudWatchArgs:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
-        The human-readable name of this integration
+        The human-readable name of this integration.
         """
         return pulumi.get(self, "name")
 
@@ -169,7 +169,7 @@ class CloudIntegrationCloudWatchArgs:
     @pulumi.getter
     def namespaces(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        A list of namespaces that limit what we query from CloudWatch
+        A list of namespaces that limit what we query from CloudWatch.
         """
         return pulumi.get(self, "namespaces")
 
@@ -182,7 +182,7 @@ class CloudIntegrationCloudWatchArgs:
     def point_tag_filter_regex(self) -> Optional[pulumi.Input[str]]:
         """
         A regular expression that AWS tag key name must match (case-insensitively)
-        in order to be ingested
+        in order to be ingested.
         """
         return pulumi.get(self, "point_tag_filter_regex")
 
@@ -194,7 +194,7 @@ class CloudIntegrationCloudWatchArgs:
     @pulumi.getter(name="serviceRefreshRateInMinutes")
     def service_refresh_rate_in_minutes(self) -> Optional[pulumi.Input[int]]:
         """
-        How often, in minutes, to refresh the service
+        How often, in minutes, to refresh the service.
         """
         return pulumi.get(self, "service_refresh_rate_in_minutes")
 
@@ -206,9 +206,9 @@ class CloudIntegrationCloudWatchArgs:
     @pulumi.getter(name="volumeSelectionTags")
     def volume_selection_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
-        A string->string map of whitelist of volume tag-value pairs (in AWS).
-        If the volume's AWS tags match this whitelist, CloudWatch data about this volume is ingested.
-        Multiple entries are OR'ed
+        A string->string map of allow list of volume tag-value pairs (in AWS).
+        If the volume's AWS tags match this allow list, CloudWatch data about this volume is ingested.
+        Multiple entries are OR'ed.
         """
         return pulumi.get(self, "volume_selection_tags")
 
@@ -234,23 +234,23 @@ class _CloudIntegrationCloudWatchState:
                  volume_selection_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None):
         """
         Input properties used for looking up and filtering CloudIntegrationCloudWatch resources.
-        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] additional_tags: A list of point tag key-values to add to every point ingested using this integration
-        :param pulumi.Input[str] external_id: The Role ARN that the customer has created in AWS IAM to allow access to Wavefront
-        :param pulumi.Input[bool] force_save: Forces this resource to save, even if errors are present
-        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] instance_selection_tags: A string->string map whitelist of instance tag-value pairs (in AWS).
-               If the instance's AWS tags match this whitelist, CloudWatch data about this instance is ingested.
-               Multiple entries are OR'ed
-        :param pulumi.Input[str] metric_filter_regex: A regular expression that a CloudWatch metric name must match (case-insensitively) in order to be ingested
-        :param pulumi.Input[str] name: The human-readable name of this integration
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] namespaces: A list of namespaces that limit what we query from CloudWatch
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] additional_tags: A list of point tag key-values to add to every point ingested using this integration.
+        :param pulumi.Input[str] external_id: The Role ARN that the customer has created in AWS IAM to allow access to Wavefront.
+        :param pulumi.Input[bool] force_save: Forces this resource to save, even if errors are present.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] instance_selection_tags: A string->string map allow list of instance tag-value pairs (in AWS).
+               If the instance's AWS tags match this allow list, CloudWatch data about this instance is ingested.
+               Multiple entries are OR'ed.
+        :param pulumi.Input[str] metric_filter_regex: A regular expression that a CloudWatch metric name must match (case-insensitively) in order to be ingested.
+        :param pulumi.Input[str] name: The human-readable name of this integration.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] namespaces: A list of namespaces that limit what we query from CloudWatch.
         :param pulumi.Input[str] point_tag_filter_regex: A regular expression that AWS tag key name must match (case-insensitively)
-               in order to be ingested
-        :param pulumi.Input[str] role_arn: The external id corresponding to the Role ARN
-        :param pulumi.Input[str] service: A value denoting which cloud service this service integrates with
-        :param pulumi.Input[int] service_refresh_rate_in_minutes: How often, in minutes, to refresh the service
-        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] volume_selection_tags: A string->string map of whitelist of volume tag-value pairs (in AWS).
-               If the volume's AWS tags match this whitelist, CloudWatch data about this volume is ingested.
-               Multiple entries are OR'ed
+               in order to be ingested.
+        :param pulumi.Input[str] role_arn: The external ID corresponding to the Role ARN.
+        :param pulumi.Input[str] service: A value denoting which cloud service this service integrates with.
+        :param pulumi.Input[int] service_refresh_rate_in_minutes: How often, in minutes, to refresh the service.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] volume_selection_tags: A string->string map of allow list of volume tag-value pairs (in AWS).
+               If the volume's AWS tags match this allow list, CloudWatch data about this volume is ingested.
+               Multiple entries are OR'ed.
         """
         if additional_tags is not None:
             pulumi.set(__self__, "additional_tags", additional_tags)
@@ -281,7 +281,7 @@ class _CloudIntegrationCloudWatchState:
     @pulumi.getter(name="additionalTags")
     def additional_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
-        A list of point tag key-values to add to every point ingested using this integration
+        A list of point tag key-values to add to every point ingested using this integration.
         """
         return pulumi.get(self, "additional_tags")
 
@@ -293,7 +293,7 @@ class _CloudIntegrationCloudWatchState:
     @pulumi.getter(name="externalId")
     def external_id(self) -> Optional[pulumi.Input[str]]:
         """
-        The Role ARN that the customer has created in AWS IAM to allow access to Wavefront
+        The Role ARN that the customer has created in AWS IAM to allow access to Wavefront.
         """
         return pulumi.get(self, "external_id")
 
@@ -305,7 +305,7 @@ class _CloudIntegrationCloudWatchState:
     @pulumi.getter(name="forceSave")
     def force_save(self) -> Optional[pulumi.Input[bool]]:
         """
-        Forces this resource to save, even if errors are present
+        Forces this resource to save, even if errors are present.
         """
         return pulumi.get(self, "force_save")
 
@@ -317,9 +317,9 @@ class _CloudIntegrationCloudWatchState:
     @pulumi.getter(name="instanceSelectionTags")
     def instance_selection_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
-        A string->string map whitelist of instance tag-value pairs (in AWS).
-        If the instance's AWS tags match this whitelist, CloudWatch data about this instance is ingested.
-        Multiple entries are OR'ed
+        A string->string map allow list of instance tag-value pairs (in AWS).
+        If the instance's AWS tags match this allow list, CloudWatch data about this instance is ingested.
+        Multiple entries are OR'ed.
         """
         return pulumi.get(self, "instance_selection_tags")
 
@@ -331,7 +331,7 @@ class _CloudIntegrationCloudWatchState:
     @pulumi.getter(name="metricFilterRegex")
     def metric_filter_regex(self) -> Optional[pulumi.Input[str]]:
         """
-        A regular expression that a CloudWatch metric name must match (case-insensitively) in order to be ingested
+        A regular expression that a CloudWatch metric name must match (case-insensitively) in order to be ingested.
         """
         return pulumi.get(self, "metric_filter_regex")
 
@@ -343,7 +343,7 @@ class _CloudIntegrationCloudWatchState:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
-        The human-readable name of this integration
+        The human-readable name of this integration.
         """
         return pulumi.get(self, "name")
 
@@ -355,7 +355,7 @@ class _CloudIntegrationCloudWatchState:
     @pulumi.getter
     def namespaces(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        A list of namespaces that limit what we query from CloudWatch
+        A list of namespaces that limit what we query from CloudWatch.
         """
         return pulumi.get(self, "namespaces")
 
@@ -368,7 +368,7 @@ class _CloudIntegrationCloudWatchState:
     def point_tag_filter_regex(self) -> Optional[pulumi.Input[str]]:
         """
         A regular expression that AWS tag key name must match (case-insensitively)
-        in order to be ingested
+        in order to be ingested.
         """
         return pulumi.get(self, "point_tag_filter_regex")
 
@@ -380,7 +380,7 @@ class _CloudIntegrationCloudWatchState:
     @pulumi.getter(name="roleArn")
     def role_arn(self) -> Optional[pulumi.Input[str]]:
         """
-        The external id corresponding to the Role ARN
+        The external ID corresponding to the Role ARN.
         """
         return pulumi.get(self, "role_arn")
 
@@ -392,7 +392,7 @@ class _CloudIntegrationCloudWatchState:
     @pulumi.getter
     def service(self) -> Optional[pulumi.Input[str]]:
         """
-        A value denoting which cloud service this service integrates with
+        A value denoting which cloud service this service integrates with.
         """
         return pulumi.get(self, "service")
 
@@ -404,7 +404,7 @@ class _CloudIntegrationCloudWatchState:
     @pulumi.getter(name="serviceRefreshRateInMinutes")
     def service_refresh_rate_in_minutes(self) -> Optional[pulumi.Input[int]]:
         """
-        How often, in minutes, to refresh the service
+        How often, in minutes, to refresh the service.
         """
         return pulumi.get(self, "service_refresh_rate_in_minutes")
 
@@ -416,9 +416,9 @@ class _CloudIntegrationCloudWatchState:
     @pulumi.getter(name="volumeSelectionTags")
     def volume_selection_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
-        A string->string map of whitelist of volume tag-value pairs (in AWS).
-        If the volume's AWS tags match this whitelist, CloudWatch data about this volume is ingested.
-        Multiple entries are OR'ed
+        A string->string map of allow list of volume tag-value pairs (in AWS).
+        If the volume's AWS tags match this allow list, CloudWatch data about this volume is ingested.
+        Multiple entries are OR'ed.
         """
         return pulumi.get(self, "volume_selection_tags")
 
@@ -446,8 +446,8 @@ class CloudIntegrationCloudWatch(pulumi.CustomResource):
                  volume_selection_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  __props__=None):
         """
-        Provides a Wavefront Cloud Integration for CloudTrail. This allows CloudTrail cloud integrations to be created,
-        updated, and delete
+        Provides a Wavefront Cloud Integration for CloudWatch. This allows CloudWatch cloud integrations to be created,
+        updated, and deleted.
 
         ## Example Usage
 
@@ -464,7 +464,7 @@ class CloudIntegrationCloudWatch(pulumi.CustomResource):
 
         ## Import
 
-        CloudWatch Cloud Integrations can be imported using the `id`, e.g.
+        CloudWatch Cloud Integrations can be imported by using the `id`, e.g.
 
         ```sh
          $ pulumi import wavefront:index/cloudIntegrationCloudWatch:CloudIntegrationCloudWatch cloudwatch a411c16b-3cf7-4f03-bf11-8ca05aab898d
@@ -472,23 +472,23 @@ class CloudIntegrationCloudWatch(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] additional_tags: A list of point tag key-values to add to every point ingested using this integration
-        :param pulumi.Input[str] external_id: The Role ARN that the customer has created in AWS IAM to allow access to Wavefront
-        :param pulumi.Input[bool] force_save: Forces this resource to save, even if errors are present
-        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] instance_selection_tags: A string->string map whitelist of instance tag-value pairs (in AWS).
-               If the instance's AWS tags match this whitelist, CloudWatch data about this instance is ingested.
-               Multiple entries are OR'ed
-        :param pulumi.Input[str] metric_filter_regex: A regular expression that a CloudWatch metric name must match (case-insensitively) in order to be ingested
-        :param pulumi.Input[str] name: The human-readable name of this integration
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] namespaces: A list of namespaces that limit what we query from CloudWatch
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] additional_tags: A list of point tag key-values to add to every point ingested using this integration.
+        :param pulumi.Input[str] external_id: The Role ARN that the customer has created in AWS IAM to allow access to Wavefront.
+        :param pulumi.Input[bool] force_save: Forces this resource to save, even if errors are present.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] instance_selection_tags: A string->string map allow list of instance tag-value pairs (in AWS).
+               If the instance's AWS tags match this allow list, CloudWatch data about this instance is ingested.
+               Multiple entries are OR'ed.
+        :param pulumi.Input[str] metric_filter_regex: A regular expression that a CloudWatch metric name must match (case-insensitively) in order to be ingested.
+        :param pulumi.Input[str] name: The human-readable name of this integration.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] namespaces: A list of namespaces that limit what we query from CloudWatch.
         :param pulumi.Input[str] point_tag_filter_regex: A regular expression that AWS tag key name must match (case-insensitively)
-               in order to be ingested
-        :param pulumi.Input[str] role_arn: The external id corresponding to the Role ARN
-        :param pulumi.Input[str] service: A value denoting which cloud service this service integrates with
-        :param pulumi.Input[int] service_refresh_rate_in_minutes: How often, in minutes, to refresh the service
-        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] volume_selection_tags: A string->string map of whitelist of volume tag-value pairs (in AWS).
-               If the volume's AWS tags match this whitelist, CloudWatch data about this volume is ingested.
-               Multiple entries are OR'ed
+               in order to be ingested.
+        :param pulumi.Input[str] role_arn: The external ID corresponding to the Role ARN.
+        :param pulumi.Input[str] service: A value denoting which cloud service this service integrates with.
+        :param pulumi.Input[int] service_refresh_rate_in_minutes: How often, in minutes, to refresh the service.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] volume_selection_tags: A string->string map of allow list of volume tag-value pairs (in AWS).
+               If the volume's AWS tags match this allow list, CloudWatch data about this volume is ingested.
+               Multiple entries are OR'ed.
         """
         ...
     @overload
@@ -497,8 +497,8 @@ class CloudIntegrationCloudWatch(pulumi.CustomResource):
                  args: CloudIntegrationCloudWatchArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Provides a Wavefront Cloud Integration for CloudTrail. This allows CloudTrail cloud integrations to be created,
-        updated, and delete
+        Provides a Wavefront Cloud Integration for CloudWatch. This allows CloudWatch cloud integrations to be created,
+        updated, and deleted.
 
         ## Example Usage
 
@@ -515,7 +515,7 @@ class CloudIntegrationCloudWatch(pulumi.CustomResource):
 
         ## Import
 
-        CloudWatch Cloud Integrations can be imported using the `id`, e.g.
+        CloudWatch Cloud Integrations can be imported by using the `id`, e.g.
 
         ```sh
          $ pulumi import wavefront:index/cloudIntegrationCloudWatch:CloudIntegrationCloudWatch cloudwatch a411c16b-3cf7-4f03-bf11-8ca05aab898d
@@ -607,23 +607,23 @@ class CloudIntegrationCloudWatch(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] additional_tags: A list of point tag key-values to add to every point ingested using this integration
-        :param pulumi.Input[str] external_id: The Role ARN that the customer has created in AWS IAM to allow access to Wavefront
-        :param pulumi.Input[bool] force_save: Forces this resource to save, even if errors are present
-        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] instance_selection_tags: A string->string map whitelist of instance tag-value pairs (in AWS).
-               If the instance's AWS tags match this whitelist, CloudWatch data about this instance is ingested.
-               Multiple entries are OR'ed
-        :param pulumi.Input[str] metric_filter_regex: A regular expression that a CloudWatch metric name must match (case-insensitively) in order to be ingested
-        :param pulumi.Input[str] name: The human-readable name of this integration
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] namespaces: A list of namespaces that limit what we query from CloudWatch
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] additional_tags: A list of point tag key-values to add to every point ingested using this integration.
+        :param pulumi.Input[str] external_id: The Role ARN that the customer has created in AWS IAM to allow access to Wavefront.
+        :param pulumi.Input[bool] force_save: Forces this resource to save, even if errors are present.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] instance_selection_tags: A string->string map allow list of instance tag-value pairs (in AWS).
+               If the instance's AWS tags match this allow list, CloudWatch data about this instance is ingested.
+               Multiple entries are OR'ed.
+        :param pulumi.Input[str] metric_filter_regex: A regular expression that a CloudWatch metric name must match (case-insensitively) in order to be ingested.
+        :param pulumi.Input[str] name: The human-readable name of this integration.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] namespaces: A list of namespaces that limit what we query from CloudWatch.
         :param pulumi.Input[str] point_tag_filter_regex: A regular expression that AWS tag key name must match (case-insensitively)
-               in order to be ingested
-        :param pulumi.Input[str] role_arn: The external id corresponding to the Role ARN
-        :param pulumi.Input[str] service: A value denoting which cloud service this service integrates with
-        :param pulumi.Input[int] service_refresh_rate_in_minutes: How often, in minutes, to refresh the service
-        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] volume_selection_tags: A string->string map of whitelist of volume tag-value pairs (in AWS).
-               If the volume's AWS tags match this whitelist, CloudWatch data about this volume is ingested.
-               Multiple entries are OR'ed
+               in order to be ingested.
+        :param pulumi.Input[str] role_arn: The external ID corresponding to the Role ARN.
+        :param pulumi.Input[str] service: A value denoting which cloud service this service integrates with.
+        :param pulumi.Input[int] service_refresh_rate_in_minutes: How often, in minutes, to refresh the service.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] volume_selection_tags: A string->string map of allow list of volume tag-value pairs (in AWS).
+               If the volume's AWS tags match this allow list, CloudWatch data about this volume is ingested.
+               Multiple entries are OR'ed.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -647,7 +647,7 @@ class CloudIntegrationCloudWatch(pulumi.CustomResource):
     @pulumi.getter(name="additionalTags")
     def additional_tags(self) -> pulumi.Output[Optional[Mapping[str, str]]]:
         """
-        A list of point tag key-values to add to every point ingested using this integration
+        A list of point tag key-values to add to every point ingested using this integration.
         """
         return pulumi.get(self, "additional_tags")
 
@@ -655,7 +655,7 @@ class CloudIntegrationCloudWatch(pulumi.CustomResource):
     @pulumi.getter(name="externalId")
     def external_id(self) -> pulumi.Output[str]:
         """
-        The Role ARN that the customer has created in AWS IAM to allow access to Wavefront
+        The Role ARN that the customer has created in AWS IAM to allow access to Wavefront.
         """
         return pulumi.get(self, "external_id")
 
@@ -663,7 +663,7 @@ class CloudIntegrationCloudWatch(pulumi.CustomResource):
     @pulumi.getter(name="forceSave")
     def force_save(self) -> pulumi.Output[Optional[bool]]:
         """
-        Forces this resource to save, even if errors are present
+        Forces this resource to save, even if errors are present.
         """
         return pulumi.get(self, "force_save")
 
@@ -671,9 +671,9 @@ class CloudIntegrationCloudWatch(pulumi.CustomResource):
     @pulumi.getter(name="instanceSelectionTags")
     def instance_selection_tags(self) -> pulumi.Output[Optional[Mapping[str, str]]]:
         """
-        A string->string map whitelist of instance tag-value pairs (in AWS).
-        If the instance's AWS tags match this whitelist, CloudWatch data about this instance is ingested.
-        Multiple entries are OR'ed
+        A string->string map allow list of instance tag-value pairs (in AWS).
+        If the instance's AWS tags match this allow list, CloudWatch data about this instance is ingested.
+        Multiple entries are OR'ed.
         """
         return pulumi.get(self, "instance_selection_tags")
 
@@ -681,7 +681,7 @@ class CloudIntegrationCloudWatch(pulumi.CustomResource):
     @pulumi.getter(name="metricFilterRegex")
     def metric_filter_regex(self) -> pulumi.Output[Optional[str]]:
         """
-        A regular expression that a CloudWatch metric name must match (case-insensitively) in order to be ingested
+        A regular expression that a CloudWatch metric name must match (case-insensitively) in order to be ingested.
         """
         return pulumi.get(self, "metric_filter_regex")
 
@@ -689,7 +689,7 @@ class CloudIntegrationCloudWatch(pulumi.CustomResource):
     @pulumi.getter
     def name(self) -> pulumi.Output[str]:
         """
-        The human-readable name of this integration
+        The human-readable name of this integration.
         """
         return pulumi.get(self, "name")
 
@@ -697,7 +697,7 @@ class CloudIntegrationCloudWatch(pulumi.CustomResource):
     @pulumi.getter
     def namespaces(self) -> pulumi.Output[Optional[Sequence[str]]]:
         """
-        A list of namespaces that limit what we query from CloudWatch
+        A list of namespaces that limit what we query from CloudWatch.
         """
         return pulumi.get(self, "namespaces")
 
@@ -706,7 +706,7 @@ class CloudIntegrationCloudWatch(pulumi.CustomResource):
     def point_tag_filter_regex(self) -> pulumi.Output[Optional[str]]:
         """
         A regular expression that AWS tag key name must match (case-insensitively)
-        in order to be ingested
+        in order to be ingested.
         """
         return pulumi.get(self, "point_tag_filter_regex")
 
@@ -714,7 +714,7 @@ class CloudIntegrationCloudWatch(pulumi.CustomResource):
     @pulumi.getter(name="roleArn")
     def role_arn(self) -> pulumi.Output[str]:
         """
-        The external id corresponding to the Role ARN
+        The external ID corresponding to the Role ARN.
         """
         return pulumi.get(self, "role_arn")
 
@@ -722,7 +722,7 @@ class CloudIntegrationCloudWatch(pulumi.CustomResource):
     @pulumi.getter
     def service(self) -> pulumi.Output[str]:
         """
-        A value denoting which cloud service this service integrates with
+        A value denoting which cloud service this service integrates with.
         """
         return pulumi.get(self, "service")
 
@@ -730,7 +730,7 @@ class CloudIntegrationCloudWatch(pulumi.CustomResource):
     @pulumi.getter(name="serviceRefreshRateInMinutes")
     def service_refresh_rate_in_minutes(self) -> pulumi.Output[Optional[int]]:
         """
-        How often, in minutes, to refresh the service
+        How often, in minutes, to refresh the service.
         """
         return pulumi.get(self, "service_refresh_rate_in_minutes")
 
@@ -738,9 +738,9 @@ class CloudIntegrationCloudWatch(pulumi.CustomResource):
     @pulumi.getter(name="volumeSelectionTags")
     def volume_selection_tags(self) -> pulumi.Output[Optional[Mapping[str, str]]]:
         """
-        A string->string map of whitelist of volume tag-value pairs (in AWS).
-        If the volume's AWS tags match this whitelist, CloudWatch data about this volume is ingested.
-        Multiple entries are OR'ed
+        A string->string map of allow list of volume tag-value pairs (in AWS).
+        If the volume's AWS tags match this allow list, CloudWatch data about this volume is ingested.
+        Multiple entries are OR'ed.
         """
         return pulumi.get(self, "volume_selection_tags")
 

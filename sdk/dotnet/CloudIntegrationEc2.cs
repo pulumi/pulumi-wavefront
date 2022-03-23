@@ -11,7 +11,7 @@ namespace Pulumi.Wavefront
 {
     /// <summary>
     /// Provides a Wavefront Cloud Integration for EC2. This allows EC2 cloud integrations to be created,
-    /// updated, and delete
+    /// updated, and deleted.
     /// 
     /// ## Example Usage
     /// 
@@ -38,7 +38,7 @@ namespace Pulumi.Wavefront
     /// 
     /// ## Import
     /// 
-    /// EC2 Cloud Integrations can be imported using the `id`, e.g.
+    /// EC2 Cloud Integrations can be imported by using the `id`, e.g.
     /// 
     /// ```sh
     ///  $ pulumi import wavefront:index/cloudIntegrationEc2:CloudIntegrationEc2 ec2 a411c16b-3cf7-4f03-bf11-8ca05aab898d
@@ -48,46 +48,51 @@ namespace Pulumi.Wavefront
     public partial class CloudIntegrationEc2 : Pulumi.CustomResource
     {
         /// <summary>
-        /// A list of point tag key-values to add to every point ingested using this integration
+        /// A list of point tag key-values to add to every point ingested using this integration.
         /// </summary>
         [Output("additionalTags")]
         public Output<ImmutableDictionary<string, string>?> AdditionalTags { get; private set; } = null!;
 
         /// <summary>
-        /// The Role ARN that the customer has created in AWS IAM to allow access to Wavefront
+        /// The Role ARN that the customer has created in AWS IAM to allow access to Wavefront.
         /// </summary>
         [Output("externalId")]
         public Output<string> ExternalId { get; private set; } = null!;
 
         /// <summary>
-        /// Forces this resource to save, even if errors are present
+        /// Forces this resource to save, even if errors are present.
         /// </summary>
         [Output("forceSave")]
         public Output<bool?> ForceSave { get; private set; } = null!;
 
+        /// <summary>
+        /// A list of AWS instance tags to use as the `source` name
+        /// in a series. Default is `["hostname", "host", "name"]`. If no tag in the list is found, the series source
+        /// is set to the instance id.
+        /// </summary>
         [Output("hostnameTags")]
         public Output<ImmutableArray<string>> HostnameTags { get; private set; } = null!;
 
         /// <summary>
-        /// The human-readable name of this integration
+        /// The human-readable name of this integration.
         /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
 
         /// <summary>
-        /// The external id corresponding to the Role ARN
+        /// The external ID corresponding to the Role ARN.
         /// </summary>
         [Output("roleArn")]
         public Output<string> RoleArn { get; private set; } = null!;
 
         /// <summary>
-        /// A value denoting which cloud service this service integrates with
+        /// A value denoting which cloud service this service integrates with.
         /// </summary>
         [Output("service")]
         public Output<string> Service { get; private set; } = null!;
 
         /// <summary>
-        /// How often, in minutes, to refresh the service
+        /// How often, in minutes, to refresh the service.
         /// </summary>
         [Output("serviceRefreshRateInMinutes")]
         public Output<int?> ServiceRefreshRateInMinutes { get; private set; } = null!;
@@ -142,7 +147,7 @@ namespace Pulumi.Wavefront
         private InputMap<string>? _additionalTags;
 
         /// <summary>
-        /// A list of point tag key-values to add to every point ingested using this integration
+        /// A list of point tag key-values to add to every point ingested using this integration.
         /// </summary>
         public InputMap<string> AdditionalTags
         {
@@ -151,19 +156,25 @@ namespace Pulumi.Wavefront
         }
 
         /// <summary>
-        /// The Role ARN that the customer has created in AWS IAM to allow access to Wavefront
+        /// The Role ARN that the customer has created in AWS IAM to allow access to Wavefront.
         /// </summary>
         [Input("externalId", required: true)]
         public Input<string> ExternalId { get; set; } = null!;
 
         /// <summary>
-        /// Forces this resource to save, even if errors are present
+        /// Forces this resource to save, even if errors are present.
         /// </summary>
         [Input("forceSave")]
         public Input<bool>? ForceSave { get; set; }
 
         [Input("hostnameTags")]
         private InputList<string>? _hostnameTags;
+
+        /// <summary>
+        /// A list of AWS instance tags to use as the `source` name
+        /// in a series. Default is `["hostname", "host", "name"]`. If no tag in the list is found, the series source
+        /// is set to the instance id.
+        /// </summary>
         public InputList<string> HostnameTags
         {
             get => _hostnameTags ?? (_hostnameTags = new InputList<string>());
@@ -171,25 +182,25 @@ namespace Pulumi.Wavefront
         }
 
         /// <summary>
-        /// The human-readable name of this integration
+        /// The human-readable name of this integration.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// The external id corresponding to the Role ARN
+        /// The external ID corresponding to the Role ARN.
         /// </summary>
         [Input("roleArn", required: true)]
         public Input<string> RoleArn { get; set; } = null!;
 
         /// <summary>
-        /// A value denoting which cloud service this service integrates with
+        /// A value denoting which cloud service this service integrates with.
         /// </summary>
         [Input("service", required: true)]
         public Input<string> Service { get; set; } = null!;
 
         /// <summary>
-        /// How often, in minutes, to refresh the service
+        /// How often, in minutes, to refresh the service.
         /// </summary>
         [Input("serviceRefreshRateInMinutes")]
         public Input<int>? ServiceRefreshRateInMinutes { get; set; }
@@ -205,7 +216,7 @@ namespace Pulumi.Wavefront
         private InputMap<string>? _additionalTags;
 
         /// <summary>
-        /// A list of point tag key-values to add to every point ingested using this integration
+        /// A list of point tag key-values to add to every point ingested using this integration.
         /// </summary>
         public InputMap<string> AdditionalTags
         {
@@ -214,19 +225,25 @@ namespace Pulumi.Wavefront
         }
 
         /// <summary>
-        /// The Role ARN that the customer has created in AWS IAM to allow access to Wavefront
+        /// The Role ARN that the customer has created in AWS IAM to allow access to Wavefront.
         /// </summary>
         [Input("externalId")]
         public Input<string>? ExternalId { get; set; }
 
         /// <summary>
-        /// Forces this resource to save, even if errors are present
+        /// Forces this resource to save, even if errors are present.
         /// </summary>
         [Input("forceSave")]
         public Input<bool>? ForceSave { get; set; }
 
         [Input("hostnameTags")]
         private InputList<string>? _hostnameTags;
+
+        /// <summary>
+        /// A list of AWS instance tags to use as the `source` name
+        /// in a series. Default is `["hostname", "host", "name"]`. If no tag in the list is found, the series source
+        /// is set to the instance id.
+        /// </summary>
         public InputList<string> HostnameTags
         {
             get => _hostnameTags ?? (_hostnameTags = new InputList<string>());
@@ -234,25 +251,25 @@ namespace Pulumi.Wavefront
         }
 
         /// <summary>
-        /// The human-readable name of this integration
+        /// The human-readable name of this integration.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// The external id corresponding to the Role ARN
+        /// The external ID corresponding to the Role ARN.
         /// </summary>
         [Input("roleArn")]
         public Input<string>? RoleArn { get; set; }
 
         /// <summary>
-        /// A value denoting which cloud service this service integrates with
+        /// A value denoting which cloud service this service integrates with.
         /// </summary>
         [Input("service")]
         public Input<string>? Service { get; set; }
 
         /// <summary>
-        /// How often, in minutes, to refresh the service
+        /// How often, in minutes, to refresh the service.
         /// </summary>
         [Input("serviceRefreshRateInMinutes")]
         public Input<int>? ServiceRefreshRateInMinutes { get; set; }

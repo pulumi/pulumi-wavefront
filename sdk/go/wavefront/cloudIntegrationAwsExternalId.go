@@ -10,7 +10,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Provides an External ID for use in AWS IAM Roles.  This allows External IDs to be created and deleted.
+// Provides an External ID for use in Amazon Web Services IAM Roles. This allows External IDs to be created and deleted.
 //
 // ## Example Usage
 //
@@ -35,7 +35,7 @@ import (
 //
 // ## Import
 //
-// External IDs can be imported using the `id`, e.g.
+// External IDs can be imported by using the `id`, e.g.
 //
 // ```sh
 //  $ pulumi import wavefront:index/cloudIntegrationAwsExternalId:CloudIntegrationAwsExternalId external_id uGJdkH3k

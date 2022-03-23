@@ -10,8 +10,8 @@ using Pulumi.Serialization;
 namespace Pulumi.Wavefront
 {
     /// <summary>
-    /// Provides a Wavefront Cloud Integration for CloudTrail. This allows CloudTrail cloud integrations to be created,
-    /// updated, and delete
+    /// Provides a Wavefront Cloud Integration for CloudWatch. This allows CloudWatch cloud integrations to be created,
+    /// updated, and deleted.
     /// 
     /// ## Example Usage
     /// 
@@ -39,7 +39,7 @@ namespace Pulumi.Wavefront
     /// 
     /// ## Import
     /// 
-    /// CloudWatch Cloud Integrations can be imported using the `id`, e.g.
+    /// CloudWatch Cloud Integrations can be imported by using the `id`, e.g.
     /// 
     /// ```sh
     ///  $ pulumi import wavefront:index/cloudIntegrationCloudWatch:CloudIntegrationCloudWatch cloudwatch a411c16b-3cf7-4f03-bf11-8ca05aab898d
@@ -49,78 +49,78 @@ namespace Pulumi.Wavefront
     public partial class CloudIntegrationCloudWatch : Pulumi.CustomResource
     {
         /// <summary>
-        /// A list of point tag key-values to add to every point ingested using this integration
+        /// A list of point tag key-values to add to every point ingested using this integration.
         /// </summary>
         [Output("additionalTags")]
         public Output<ImmutableDictionary<string, string>?> AdditionalTags { get; private set; } = null!;
 
         /// <summary>
-        /// The Role ARN that the customer has created in AWS IAM to allow access to Wavefront
+        /// The Role ARN that the customer has created in AWS IAM to allow access to Wavefront.
         /// </summary>
         [Output("externalId")]
         public Output<string> ExternalId { get; private set; } = null!;
 
         /// <summary>
-        /// Forces this resource to save, even if errors are present
+        /// Forces this resource to save, even if errors are present.
         /// </summary>
         [Output("forceSave")]
         public Output<bool?> ForceSave { get; private set; } = null!;
 
         /// <summary>
-        /// A string-&gt;string map whitelist of instance tag-value pairs (in AWS).
-        /// If the instance's AWS tags match this whitelist, CloudWatch data about this instance is ingested.
-        /// Multiple entries are OR'ed
+        /// A string-&gt;string map allow list of instance tag-value pairs (in AWS).
+        /// If the instance's AWS tags match this allow list, CloudWatch data about this instance is ingested.
+        /// Multiple entries are OR'ed.
         /// </summary>
         [Output("instanceSelectionTags")]
         public Output<ImmutableDictionary<string, string>?> InstanceSelectionTags { get; private set; } = null!;
 
         /// <summary>
-        /// A regular expression that a CloudWatch metric name must match (case-insensitively) in order to be ingested
+        /// A regular expression that a CloudWatch metric name must match (case-insensitively) in order to be ingested.
         /// </summary>
         [Output("metricFilterRegex")]
         public Output<string?> MetricFilterRegex { get; private set; } = null!;
 
         /// <summary>
-        /// The human-readable name of this integration
+        /// The human-readable name of this integration.
         /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
 
         /// <summary>
-        /// A list of namespaces that limit what we query from CloudWatch
+        /// A list of namespaces that limit what we query from CloudWatch.
         /// </summary>
         [Output("namespaces")]
         public Output<ImmutableArray<string>> Namespaces { get; private set; } = null!;
 
         /// <summary>
         /// A regular expression that AWS tag key name must match (case-insensitively)
-        /// in order to be ingested
+        /// in order to be ingested.
         /// </summary>
         [Output("pointTagFilterRegex")]
         public Output<string?> PointTagFilterRegex { get; private set; } = null!;
 
         /// <summary>
-        /// The external id corresponding to the Role ARN
+        /// The external ID corresponding to the Role ARN.
         /// </summary>
         [Output("roleArn")]
         public Output<string> RoleArn { get; private set; } = null!;
 
         /// <summary>
-        /// A value denoting which cloud service this service integrates with
+        /// A value denoting which cloud service this service integrates with.
         /// </summary>
         [Output("service")]
         public Output<string> Service { get; private set; } = null!;
 
         /// <summary>
-        /// How often, in minutes, to refresh the service
+        /// How often, in minutes, to refresh the service.
         /// </summary>
         [Output("serviceRefreshRateInMinutes")]
         public Output<int?> ServiceRefreshRateInMinutes { get; private set; } = null!;
 
         /// <summary>
-        /// A string-&gt;string map of whitelist of volume tag-value pairs (in AWS).
-        /// If the volume's AWS tags match this whitelist, CloudWatch data about this volume is ingested.
-        /// Multiple entries are OR'ed
+        /// A string-&gt;string map of allow list of volume tag-value pairs (in AWS).
+        /// If the volume's AWS tags match this allow list, CloudWatch data about this volume is ingested.
+        /// Multiple entries are OR'ed.
         /// </summary>
         [Output("volumeSelectionTags")]
         public Output<ImmutableDictionary<string, string>?> VolumeSelectionTags { get; private set; } = null!;
@@ -175,7 +175,7 @@ namespace Pulumi.Wavefront
         private InputMap<string>? _additionalTags;
 
         /// <summary>
-        /// A list of point tag key-values to add to every point ingested using this integration
+        /// A list of point tag key-values to add to every point ingested using this integration.
         /// </summary>
         public InputMap<string> AdditionalTags
         {
@@ -184,13 +184,13 @@ namespace Pulumi.Wavefront
         }
 
         /// <summary>
-        /// The Role ARN that the customer has created in AWS IAM to allow access to Wavefront
+        /// The Role ARN that the customer has created in AWS IAM to allow access to Wavefront.
         /// </summary>
         [Input("externalId", required: true)]
         public Input<string> ExternalId { get; set; } = null!;
 
         /// <summary>
-        /// Forces this resource to save, even if errors are present
+        /// Forces this resource to save, even if errors are present.
         /// </summary>
         [Input("forceSave")]
         public Input<bool>? ForceSave { get; set; }
@@ -199,9 +199,9 @@ namespace Pulumi.Wavefront
         private InputMap<string>? _instanceSelectionTags;
 
         /// <summary>
-        /// A string-&gt;string map whitelist of instance tag-value pairs (in AWS).
-        /// If the instance's AWS tags match this whitelist, CloudWatch data about this instance is ingested.
-        /// Multiple entries are OR'ed
+        /// A string-&gt;string map allow list of instance tag-value pairs (in AWS).
+        /// If the instance's AWS tags match this allow list, CloudWatch data about this instance is ingested.
+        /// Multiple entries are OR'ed.
         /// </summary>
         public InputMap<string> InstanceSelectionTags
         {
@@ -210,13 +210,13 @@ namespace Pulumi.Wavefront
         }
 
         /// <summary>
-        /// A regular expression that a CloudWatch metric name must match (case-insensitively) in order to be ingested
+        /// A regular expression that a CloudWatch metric name must match (case-insensitively) in order to be ingested.
         /// </summary>
         [Input("metricFilterRegex")]
         public Input<string>? MetricFilterRegex { get; set; }
 
         /// <summary>
-        /// The human-readable name of this integration
+        /// The human-readable name of this integration.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
@@ -225,7 +225,7 @@ namespace Pulumi.Wavefront
         private InputList<string>? _namespaces;
 
         /// <summary>
-        /// A list of namespaces that limit what we query from CloudWatch
+        /// A list of namespaces that limit what we query from CloudWatch.
         /// </summary>
         public InputList<string> Namespaces
         {
@@ -235,25 +235,25 @@ namespace Pulumi.Wavefront
 
         /// <summary>
         /// A regular expression that AWS tag key name must match (case-insensitively)
-        /// in order to be ingested
+        /// in order to be ingested.
         /// </summary>
         [Input("pointTagFilterRegex")]
         public Input<string>? PointTagFilterRegex { get; set; }
 
         /// <summary>
-        /// The external id corresponding to the Role ARN
+        /// The external ID corresponding to the Role ARN.
         /// </summary>
         [Input("roleArn", required: true)]
         public Input<string> RoleArn { get; set; } = null!;
 
         /// <summary>
-        /// A value denoting which cloud service this service integrates with
+        /// A value denoting which cloud service this service integrates with.
         /// </summary>
         [Input("service", required: true)]
         public Input<string> Service { get; set; } = null!;
 
         /// <summary>
-        /// How often, in minutes, to refresh the service
+        /// How often, in minutes, to refresh the service.
         /// </summary>
         [Input("serviceRefreshRateInMinutes")]
         public Input<int>? ServiceRefreshRateInMinutes { get; set; }
@@ -262,9 +262,9 @@ namespace Pulumi.Wavefront
         private InputMap<string>? _volumeSelectionTags;
 
         /// <summary>
-        /// A string-&gt;string map of whitelist of volume tag-value pairs (in AWS).
-        /// If the volume's AWS tags match this whitelist, CloudWatch data about this volume is ingested.
-        /// Multiple entries are OR'ed
+        /// A string-&gt;string map of allow list of volume tag-value pairs (in AWS).
+        /// If the volume's AWS tags match this allow list, CloudWatch data about this volume is ingested.
+        /// Multiple entries are OR'ed.
         /// </summary>
         public InputMap<string> VolumeSelectionTags
         {
@@ -283,7 +283,7 @@ namespace Pulumi.Wavefront
         private InputMap<string>? _additionalTags;
 
         /// <summary>
-        /// A list of point tag key-values to add to every point ingested using this integration
+        /// A list of point tag key-values to add to every point ingested using this integration.
         /// </summary>
         public InputMap<string> AdditionalTags
         {
@@ -292,13 +292,13 @@ namespace Pulumi.Wavefront
         }
 
         /// <summary>
-        /// The Role ARN that the customer has created in AWS IAM to allow access to Wavefront
+        /// The Role ARN that the customer has created in AWS IAM to allow access to Wavefront.
         /// </summary>
         [Input("externalId")]
         public Input<string>? ExternalId { get; set; }
 
         /// <summary>
-        /// Forces this resource to save, even if errors are present
+        /// Forces this resource to save, even if errors are present.
         /// </summary>
         [Input("forceSave")]
         public Input<bool>? ForceSave { get; set; }
@@ -307,9 +307,9 @@ namespace Pulumi.Wavefront
         private InputMap<string>? _instanceSelectionTags;
 
         /// <summary>
-        /// A string-&gt;string map whitelist of instance tag-value pairs (in AWS).
-        /// If the instance's AWS tags match this whitelist, CloudWatch data about this instance is ingested.
-        /// Multiple entries are OR'ed
+        /// A string-&gt;string map allow list of instance tag-value pairs (in AWS).
+        /// If the instance's AWS tags match this allow list, CloudWatch data about this instance is ingested.
+        /// Multiple entries are OR'ed.
         /// </summary>
         public InputMap<string> InstanceSelectionTags
         {
@@ -318,13 +318,13 @@ namespace Pulumi.Wavefront
         }
 
         /// <summary>
-        /// A regular expression that a CloudWatch metric name must match (case-insensitively) in order to be ingested
+        /// A regular expression that a CloudWatch metric name must match (case-insensitively) in order to be ingested.
         /// </summary>
         [Input("metricFilterRegex")]
         public Input<string>? MetricFilterRegex { get; set; }
 
         /// <summary>
-        /// The human-readable name of this integration
+        /// The human-readable name of this integration.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
@@ -333,7 +333,7 @@ namespace Pulumi.Wavefront
         private InputList<string>? _namespaces;
 
         /// <summary>
-        /// A list of namespaces that limit what we query from CloudWatch
+        /// A list of namespaces that limit what we query from CloudWatch.
         /// </summary>
         public InputList<string> Namespaces
         {
@@ -343,25 +343,25 @@ namespace Pulumi.Wavefront
 
         /// <summary>
         /// A regular expression that AWS tag key name must match (case-insensitively)
-        /// in order to be ingested
+        /// in order to be ingested.
         /// </summary>
         [Input("pointTagFilterRegex")]
         public Input<string>? PointTagFilterRegex { get; set; }
 
         /// <summary>
-        /// The external id corresponding to the Role ARN
+        /// The external ID corresponding to the Role ARN.
         /// </summary>
         [Input("roleArn")]
         public Input<string>? RoleArn { get; set; }
 
         /// <summary>
-        /// A value denoting which cloud service this service integrates with
+        /// A value denoting which cloud service this service integrates with.
         /// </summary>
         [Input("service")]
         public Input<string>? Service { get; set; }
 
         /// <summary>
-        /// How often, in minutes, to refresh the service
+        /// How often, in minutes, to refresh the service.
         /// </summary>
         [Input("serviceRefreshRateInMinutes")]
         public Input<int>? ServiceRefreshRateInMinutes { get; set; }
@@ -370,9 +370,9 @@ namespace Pulumi.Wavefront
         private InputMap<string>? _volumeSelectionTags;
 
         /// <summary>
-        /// A string-&gt;string map of whitelist of volume tag-value pairs (in AWS).
-        /// If the volume's AWS tags match this whitelist, CloudWatch data about this volume is ingested.
-        /// Multiple entries are OR'ed
+        /// A string-&gt;string map of allow list of volume tag-value pairs (in AWS).
+        /// If the volume's AWS tags match this allow list, CloudWatch data about this volume is ingested.
+        /// Multiple entries are OR'ed.
         /// </summary>
         public InputMap<string> VolumeSelectionTags
         {

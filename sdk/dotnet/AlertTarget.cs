@@ -130,7 +130,7 @@ namespace Pulumi.Wavefront
         public Output<string?> ContentType { get; private set; } = null!;
 
         /// <summary>
-        /// A `string-&gt;string` map specifying the custome HTTP header key/value pairs that will be 
+        /// A `string-&gt;string` map specifying the custom HTTP header key/value pairs that will be 
         /// sent in the requests with a method of `WEBHOOK`.
         /// </summary>
         [Output("customHeaders")]
@@ -161,7 +161,7 @@ namespace Pulumi.Wavefront
         public Output<string?> Method { get; private set; } = null!;
 
         /// <summary>
-        /// The name of the alert target as it is displayed in wavefront
+        /// The name of the alert target as it is displayed in Wavefront.
         /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
@@ -183,7 +183,7 @@ namespace Pulumi.Wavefront
         public Output<string> TargetId { get; private set; } = null!;
 
         /// <summary>
-        /// A mustache template that will form the body of the POST request, email and summary of the PagerDuty.
+        /// A mustache template that will form the body of the POST request, email, and summary of the PagerDuty.
         /// </summary>
         [Output("template")]
         public Output<string> Template { get; private set; } = null!;
@@ -251,7 +251,7 @@ namespace Pulumi.Wavefront
         private InputMap<string>? _customHeaders;
 
         /// <summary>
-        /// A `string-&gt;string` map specifying the custome HTTP header key/value pairs that will be 
+        /// A `string-&gt;string` map specifying the custom HTTP header key/value pairs that will be 
         /// sent in the requests with a method of `WEBHOOK`.
         /// </summary>
         public InputMap<string> CustomHeaders
@@ -285,7 +285,7 @@ namespace Pulumi.Wavefront
         public Input<string>? Method { get; set; }
 
         /// <summary>
-        /// The name of the alert target as it is displayed in wavefront
+        /// The name of the alert target as it is displayed in Wavefront.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
@@ -310,7 +310,7 @@ namespace Pulumi.Wavefront
         }
 
         /// <summary>
-        /// A mustache template that will form the body of the POST request, email and summary of the PagerDuty.
+        /// A mustache template that will form the body of the POST request, email, and summary of the PagerDuty.
         /// </summary>
         [Input("template", required: true)]
         public Input<string> Template { get; set; } = null!;
@@ -345,7 +345,7 @@ namespace Pulumi.Wavefront
         private InputMap<string>? _customHeaders;
 
         /// <summary>
-        /// A `string-&gt;string` map specifying the custome HTTP header key/value pairs that will be 
+        /// A `string-&gt;string` map specifying the custom HTTP header key/value pairs that will be 
         /// sent in the requests with a method of `WEBHOOK`.
         /// </summary>
         public InputMap<string> CustomHeaders
@@ -379,7 +379,7 @@ namespace Pulumi.Wavefront
         public Input<string>? Method { get; set; }
 
         /// <summary>
-        /// The name of the alert target as it is displayed in wavefront
+        /// The name of the alert target as it is displayed in Wavefront.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
@@ -407,7 +407,7 @@ namespace Pulumi.Wavefront
         public Input<string>? TargetId { get; set; }
 
         /// <summary>
-        /// A mustache template that will form the body of the POST request, email and summary of the PagerDuty.
+        /// A mustache template that will form the body of the POST request, email, and summary of the PagerDuty.
         /// </summary>
         [Input("template")]
         public Input<string>? Template { get; set; }

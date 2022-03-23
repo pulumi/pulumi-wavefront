@@ -5,7 +5,7 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 /**
- * Provides a Wavefront Cloud Integration for Tesla. This allows NewRelic cloud integrations to be created,
+ * Provides a Wavefront Cloud Integration for Tesla. This allows Tesla cloud integrations to be created,
  * updated, and deleted.
  *
  * ## Example Usage
@@ -22,7 +22,7 @@ import * as utilities from "./utilities";
  *
  * ## Import
  *
- * Tesla Integrations can be imported using the `id`, e.g.
+ * Tesla Integrations can be imported by using the `id`, e.g.
  *
  * ```sh
  *  $ pulumi import wavefront:index/cloudIntegrationTesla:CloudIntegrationTesla tesla a411c16b-3cf7-4f03-bf11-8ca05aab898d
@@ -57,31 +57,31 @@ export class CloudIntegrationTesla extends pulumi.CustomResource {
     }
 
     /**
-     * A list of point tag key-values to add to every point ingested using this integration
+     * A list of point tag key-values to add to every point ingested using this integration.
      */
     public readonly additionalTags!: pulumi.Output<{[key: string]: string} | undefined>;
     /**
-     * Email address for the Tesla account login
+     * A Tesla account login email address.
      */
     public readonly email!: pulumi.Output<string>;
     /**
-     * Forces this resource to save, even if errors are present
+     * Forces this resource to save, even if errors are present.
      */
     public readonly forceSave!: pulumi.Output<boolean | undefined>;
     /**
-     * The human-readable name of this integration
+     * The human-readable name of this integration.
      */
     public readonly name!: pulumi.Output<string>;
     /**
-     * Password for the Tesla account login
+     * The Tesla account login password.
      */
     public readonly password!: pulumi.Output<string>;
     /**
-     * A value denoting which cloud service this service integrates with
+     * A value denoting which cloud service this service integrates with.
      */
     public readonly service!: pulumi.Output<string>;
     /**
-     * How often, in minutes, to refresh the service
+     * How often, in minutes, to refresh the service.
      */
     public readonly serviceRefreshRateInMinutes!: pulumi.Output<number | undefined>;
 
@@ -134,31 +134,31 @@ export class CloudIntegrationTesla extends pulumi.CustomResource {
  */
 export interface CloudIntegrationTeslaState {
     /**
-     * A list of point tag key-values to add to every point ingested using this integration
+     * A list of point tag key-values to add to every point ingested using this integration.
      */
     additionalTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
-     * Email address for the Tesla account login
+     * A Tesla account login email address.
      */
     email?: pulumi.Input<string>;
     /**
-     * Forces this resource to save, even if errors are present
+     * Forces this resource to save, even if errors are present.
      */
     forceSave?: pulumi.Input<boolean>;
     /**
-     * The human-readable name of this integration
+     * The human-readable name of this integration.
      */
     name?: pulumi.Input<string>;
     /**
-     * Password for the Tesla account login
+     * The Tesla account login password.
      */
     password?: pulumi.Input<string>;
     /**
-     * A value denoting which cloud service this service integrates with
+     * A value denoting which cloud service this service integrates with.
      */
     service?: pulumi.Input<string>;
     /**
-     * How often, in minutes, to refresh the service
+     * How often, in minutes, to refresh the service.
      */
     serviceRefreshRateInMinutes?: pulumi.Input<number>;
 }
@@ -168,31 +168,31 @@ export interface CloudIntegrationTeslaState {
  */
 export interface CloudIntegrationTeslaArgs {
     /**
-     * A list of point tag key-values to add to every point ingested using this integration
+     * A list of point tag key-values to add to every point ingested using this integration.
      */
     additionalTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
-     * Email address for the Tesla account login
+     * A Tesla account login email address.
      */
     email: pulumi.Input<string>;
     /**
-     * Forces this resource to save, even if errors are present
+     * Forces this resource to save, even if errors are present.
      */
     forceSave?: pulumi.Input<boolean>;
     /**
-     * The human-readable name of this integration
+     * The human-readable name of this integration.
      */
     name?: pulumi.Input<string>;
     /**
-     * Password for the Tesla account login
+     * The Tesla account login password.
      */
     password: pulumi.Input<string>;
     /**
-     * A value denoting which cloud service this service integrates with
+     * A value denoting which cloud service this service integrates with.
      */
     service: pulumi.Input<string>;
     /**
-     * How often, in minutes, to refresh the service
+     * How often, in minutes, to refresh the service.
      */
     serviceRefreshRateInMinutes?: pulumi.Input<number>;
 }

@@ -13,7 +13,7 @@ namespace Pulumi.Wavefront.Inputs
     public sealed class DashboardSectionArgs : Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Name of this section
+        /// Name of this section.
         /// </summary>
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
@@ -22,7 +22,7 @@ namespace Pulumi.Wavefront.Inputs
         private InputList<Inputs.DashboardSectionRowArgs>? _rows;
 
         /// <summary>
-        /// See dashboard section rows
+        /// See dashboard section rows.
         /// </summary>
         public InputList<Inputs.DashboardSectionRowArgs> Rows
         {

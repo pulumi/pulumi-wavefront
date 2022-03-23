@@ -16,7 +16,7 @@ class DashboardJsonArgs:
                  dashboard_json: pulumi.Input[str]):
         """
         The set of arguments for constructing a DashboardJson resource.
-        :param pulumi.Input[str] dashboard_json: See [Wavefront API Documentation](https://docs.wavefront.com/wavefront_api.html#api-documentation-wavefront-instance) 
+        :param pulumi.Input[str] dashboard_json: See the [Wavefront API Documentation](https://docs.wavefront.com/wavefront_api.html#api-documentation-wavefront-instance) 
                for instructions on how to get to your API documentation for more details.
         """
         pulumi.set(__self__, "dashboard_json", dashboard_json)
@@ -25,7 +25,7 @@ class DashboardJsonArgs:
     @pulumi.getter(name="dashboardJson")
     def dashboard_json(self) -> pulumi.Input[str]:
         """
-        See [Wavefront API Documentation](https://docs.wavefront.com/wavefront_api.html#api-documentation-wavefront-instance) 
+        See the [Wavefront API Documentation](https://docs.wavefront.com/wavefront_api.html#api-documentation-wavefront-instance) 
         for instructions on how to get to your API documentation for more details.
         """
         return pulumi.get(self, "dashboard_json")
@@ -41,7 +41,7 @@ class _DashboardJsonState:
                  dashboard_json: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering DashboardJson resources.
-        :param pulumi.Input[str] dashboard_json: See [Wavefront API Documentation](https://docs.wavefront.com/wavefront_api.html#api-documentation-wavefront-instance) 
+        :param pulumi.Input[str] dashboard_json: See the [Wavefront API Documentation](https://docs.wavefront.com/wavefront_api.html#api-documentation-wavefront-instance) 
                for instructions on how to get to your API documentation for more details.
         """
         if dashboard_json is not None:
@@ -51,7 +51,7 @@ class _DashboardJsonState:
     @pulumi.getter(name="dashboardJson")
     def dashboard_json(self) -> Optional[pulumi.Input[str]]:
         """
-        See [Wavefront API Documentation](https://docs.wavefront.com/wavefront_api.html#api-documentation-wavefront-instance) 
+        See the [Wavefront API Documentation](https://docs.wavefront.com/wavefront_api.html#api-documentation-wavefront-instance) 
         for instructions on how to get to your API documentation for more details.
         """
         return pulumi.get(self, "dashboard_json")
@@ -180,7 +180,7 @@ class DashboardJson(pulumi.CustomResource):
 
         ## Import
 
-        Dashboard JSON can be imported using the `id`, e.g.
+        Dashboard JSON can be imported by using the `id`, e.g.
 
         ```sh
          $ pulumi import wavefront:index/dashboardJson:DashboardJson dashboard_json tftestimport
@@ -188,7 +188,7 @@ class DashboardJson(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] dashboard_json: See [Wavefront API Documentation](https://docs.wavefront.com/wavefront_api.html#api-documentation-wavefront-instance) 
+        :param pulumi.Input[str] dashboard_json: See the [Wavefront API Documentation](https://docs.wavefront.com/wavefront_api.html#api-documentation-wavefront-instance) 
                for instructions on how to get to your API documentation for more details.
         """
         ...
@@ -309,7 +309,7 @@ class DashboardJson(pulumi.CustomResource):
 
         ## Import
 
-        Dashboard JSON can be imported using the `id`, e.g.
+        Dashboard JSON can be imported by using the `id`, e.g.
 
         ```sh
          $ pulumi import wavefront:index/dashboardJson:DashboardJson dashboard_json tftestimport
@@ -364,7 +364,7 @@ class DashboardJson(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] dashboard_json: See [Wavefront API Documentation](https://docs.wavefront.com/wavefront_api.html#api-documentation-wavefront-instance) 
+        :param pulumi.Input[str] dashboard_json: See the [Wavefront API Documentation](https://docs.wavefront.com/wavefront_api.html#api-documentation-wavefront-instance) 
                for instructions on how to get to your API documentation for more details.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -378,7 +378,7 @@ class DashboardJson(pulumi.CustomResource):
     @pulumi.getter(name="dashboardJson")
     def dashboard_json(self) -> pulumi.Output[str]:
         """
-        See [Wavefront API Documentation](https://docs.wavefront.com/wavefront_api.html#api-documentation-wavefront-instance) 
+        See the [Wavefront API Documentation](https://docs.wavefront.com/wavefront_api.html#api-documentation-wavefront-instance) 
         for instructions on how to get to your API documentation for more details.
         """
         return pulumi.get(self, "dashboard_json")

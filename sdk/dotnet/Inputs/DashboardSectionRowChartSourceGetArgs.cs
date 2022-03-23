@@ -13,25 +13,25 @@ namespace Pulumi.Wavefront.Inputs
     public sealed class DashboardSectionRowChartSourceGetArgs : Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Whether the source is disabled
+        /// Whether the source is disabled.
         /// </summary>
         [Input("disabled")]
         public Input<bool>? Disabled { get; set; }
 
         /// <summary>
-        /// Name of the source
+        /// Name of the source.
         /// </summary>
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
 
         /// <summary>
-        /// Query expression to plot on the chart
+        /// Query expression to plot on the chart.
         /// </summary>
         [Input("query", required: true)]
         public Input<string> Query { get; set; } = null!;
 
         /// <summary>
-        /// Whether oir not this source line should have the query builder enabled
+        /// Whether or not this source line should have the query builder enabled.
         /// </summary>
         [Input("queryBuilderEnabled")]
         public Input<bool>? QueryBuilderEnabled { get; set; }
@@ -43,7 +43,7 @@ namespace Pulumi.Wavefront.Inputs
         public Input<string>? ScatterPlotSource { get; set; }
 
         /// <summary>
-        /// A description for the purpose of this source
+        /// A description for the purpose of this source.
         /// </summary>
         [Input("sourceDescription")]
         public Input<string>? SourceDescription { get; set; }

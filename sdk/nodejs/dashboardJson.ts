@@ -117,7 +117,7 @@ import * as utilities from "./utilities";
  *
  * ## Import
  *
- * Dashboard JSON can be imported using the `id`, e.g.
+ * Dashboard JSON can be imported by using the `id`, e.g.
  *
  * ```sh
  *  $ pulumi import wavefront:index/dashboardJson:DashboardJson dashboard_json tftestimport
@@ -152,7 +152,7 @@ export class DashboardJson extends pulumi.CustomResource {
     }
 
     /**
-     * See [Wavefront API Documentation](https://docs.wavefront.com/wavefront_api.html#api-documentation-wavefront-instance) 
+     * See the [Wavefront API Documentation](https://docs.wavefront.com/wavefront_api.html#api-documentation-wavefront-instance) 
      * for instructions on how to get to your API documentation for more details.
      */
     public readonly dashboardJson!: pulumi.Output<string>;
@@ -188,7 +188,7 @@ export class DashboardJson extends pulumi.CustomResource {
  */
 export interface DashboardJsonState {
     /**
-     * See [Wavefront API Documentation](https://docs.wavefront.com/wavefront_api.html#api-documentation-wavefront-instance) 
+     * See the [Wavefront API Documentation](https://docs.wavefront.com/wavefront_api.html#api-documentation-wavefront-instance) 
      * for instructions on how to get to your API documentation for more details.
      */
     dashboardJson?: pulumi.Input<string>;
@@ -199,7 +199,7 @@ export interface DashboardJsonState {
  */
 export interface DashboardJsonArgs {
     /**
-     * See [Wavefront API Documentation](https://docs.wavefront.com/wavefront_api.html#api-documentation-wavefront-instance) 
+     * See the [Wavefront API Documentation](https://docs.wavefront.com/wavefront_api.html#api-documentation-wavefront-instance) 
      * for instructions on how to get to your API documentation for more details.
      */
     dashboardJson: pulumi.Input<string>;

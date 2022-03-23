@@ -21,7 +21,7 @@ import * as utilities from "./utilities";
  *
  * ## Import
  *
- * Maintenance windows can be imported using the `id`, e.g.
+ * Maintenance windows can be imported by using the `id`, e.g.
  *
  * ```sh
  *  $ pulumi import wavefront:index/externalLink:ExternalLink basic fVj6fz6zYC4aBkID
@@ -56,11 +56,11 @@ export class ExternalLink extends pulumi.CustomResource {
     }
 
     /**
-     * Human-readable description for this link
+     * Human-readable description for this link.
      */
     public readonly description!: pulumi.Output<string>;
     /**
-     * Whether this is a "Log Integration" subType of external link
+     * Whether this is a "Log Integration" subType of external link.
      */
     public readonly isLogIntegration!: pulumi.Output<boolean | undefined>;
     /**
@@ -68,11 +68,14 @@ export class ExternalLink extends pulumi.CustomResource {
      */
     public readonly metricFilterRegex!: pulumi.Output<string | undefined>;
     /**
-     * The name of the external link
+     * The name of the external link.
      */
     public readonly name!: pulumi.Output<string>;
     /**
-     * Controls whether a link is displayed in the context menu of a highlighted series. This is a map from string to regular expression. The highlighted series must contain point tags whose keys are present in the keys of this map and whose values match the regular expressions associated with those keys in order for the link to be displayed
+     * Controls whether a link is displayed in the context menu of a highlighted
+     * series. This is a map from string to regular expression. The highlighted series must contain point tags whose
+     * keys are present in the keys of this map and whose values match the regular expressions associated with those
+     * keys in order for the link to be displayed.
      */
     public readonly pointTagFilterRegexes!: pulumi.Output<{[key: string]: string} | undefined>;
     /**
@@ -130,11 +133,11 @@ export class ExternalLink extends pulumi.CustomResource {
  */
 export interface ExternalLinkState {
     /**
-     * Human-readable description for this link
+     * Human-readable description for this link.
      */
     description?: pulumi.Input<string>;
     /**
-     * Whether this is a "Log Integration" subType of external link
+     * Whether this is a "Log Integration" subType of external link.
      */
     isLogIntegration?: pulumi.Input<boolean>;
     /**
@@ -142,11 +145,14 @@ export interface ExternalLinkState {
      */
     metricFilterRegex?: pulumi.Input<string>;
     /**
-     * The name of the external link
+     * The name of the external link.
      */
     name?: pulumi.Input<string>;
     /**
-     * Controls whether a link is displayed in the context menu of a highlighted series. This is a map from string to regular expression. The highlighted series must contain point tags whose keys are present in the keys of this map and whose values match the regular expressions associated with those keys in order for the link to be displayed
+     * Controls whether a link is displayed in the context menu of a highlighted
+     * series. This is a map from string to regular expression. The highlighted series must contain point tags whose
+     * keys are present in the keys of this map and whose values match the regular expressions associated with those
+     * keys in order for the link to be displayed.
      */
     pointTagFilterRegexes?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
@@ -164,11 +170,11 @@ export interface ExternalLinkState {
  */
 export interface ExternalLinkArgs {
     /**
-     * Human-readable description for this link
+     * Human-readable description for this link.
      */
     description: pulumi.Input<string>;
     /**
-     * Whether this is a "Log Integration" subType of external link
+     * Whether this is a "Log Integration" subType of external link.
      */
     isLogIntegration?: pulumi.Input<boolean>;
     /**
@@ -176,11 +182,14 @@ export interface ExternalLinkArgs {
      */
     metricFilterRegex?: pulumi.Input<string>;
     /**
-     * The name of the external link
+     * The name of the external link.
      */
     name?: pulumi.Input<string>;
     /**
-     * Controls whether a link is displayed in the context menu of a highlighted series. This is a map from string to regular expression. The highlighted series must contain point tags whose keys are present in the keys of this map and whose values match the regular expressions associated with those keys in order for the link to be displayed
+     * Controls whether a link is displayed in the context menu of a highlighted
+     * series. This is a map from string to regular expression. The highlighted series must contain point tags whose
+     * keys are present in the keys of this map and whose values match the regular expressions associated with those
+     * keys in order for the link to be displayed.
      */
     pointTagFilterRegexes?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**

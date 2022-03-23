@@ -39,7 +39,7 @@ import (
 //
 // ## Import
 //
-// Service accounts can be imported using `identifier`, e.g.
+// Service accounts can be imported by using `identifier`, e.g.
 //
 // ```sh
 //  $ pulumi import wavefront:index/serviceAccount:ServiceAccount basic sa::tftesting
@@ -47,19 +47,19 @@ import (
 type ServiceAccount struct {
 	pulumi.CustomResourceState
 
-	// Whether or not the service account is active
+	// Whether or not the service account is active.
 	Active pulumi.BoolPtrOutput `pulumi:"active"`
-	// The description of the service account
+	// The description of the service account.
 	Description pulumi.StringPtrOutput `pulumi:"description"`
-	// The (unique) identifier of the service account to create. Must start with sa::
+	// The unique identifier of the service account to create. Must have the prefix `sa::`.
 	Identifier pulumi.StringOutput `pulumi:"identifier"`
-	// ID of ingestion policy
+	// ID of ingestion policy.
 	IngestionPolicy pulumi.StringPtrOutput `pulumi:"ingestionPolicy"`
 	// List of permission to grant to this service account.  Valid options are
 	// `agentManagement`, `alertsManagement`, `dashboardManagement`, `embeddedCharts`, `eventsManagement`, `externalLinksManagement`,
-	// `hostTagManagement`, `metricsManagement`, `userManagement`
+	// `hostTagManagement`, `metricsManagement`, and `userManagement`.
 	Permissions pulumi.StringArrayOutput `pulumi:"permissions"`
-	// List of user groups for this service account
+	// List of user groups for this service account.
 	UserGroups pulumi.StringArrayOutput `pulumi:"userGroups"`
 }
 
@@ -95,36 +95,36 @@ func GetServiceAccount(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering ServiceAccount resources.
 type serviceAccountState struct {
-	// Whether or not the service account is active
+	// Whether or not the service account is active.
 	Active *bool `pulumi:"active"`
-	// The description of the service account
+	// The description of the service account.
 	Description *string `pulumi:"description"`
-	// The (unique) identifier of the service account to create. Must start with sa::
+	// The unique identifier of the service account to create. Must have the prefix `sa::`.
 	Identifier *string `pulumi:"identifier"`
-	// ID of ingestion policy
+	// ID of ingestion policy.
 	IngestionPolicy *string `pulumi:"ingestionPolicy"`
 	// List of permission to grant to this service account.  Valid options are
 	// `agentManagement`, `alertsManagement`, `dashboardManagement`, `embeddedCharts`, `eventsManagement`, `externalLinksManagement`,
-	// `hostTagManagement`, `metricsManagement`, `userManagement`
+	// `hostTagManagement`, `metricsManagement`, and `userManagement`.
 	Permissions []string `pulumi:"permissions"`
-	// List of user groups for this service account
+	// List of user groups for this service account.
 	UserGroups []string `pulumi:"userGroups"`
 }
 
 type ServiceAccountState struct {
-	// Whether or not the service account is active
+	// Whether or not the service account is active.
 	Active pulumi.BoolPtrInput
-	// The description of the service account
+	// The description of the service account.
 	Description pulumi.StringPtrInput
-	// The (unique) identifier of the service account to create. Must start with sa::
+	// The unique identifier of the service account to create. Must have the prefix `sa::`.
 	Identifier pulumi.StringPtrInput
-	// ID of ingestion policy
+	// ID of ingestion policy.
 	IngestionPolicy pulumi.StringPtrInput
 	// List of permission to grant to this service account.  Valid options are
 	// `agentManagement`, `alertsManagement`, `dashboardManagement`, `embeddedCharts`, `eventsManagement`, `externalLinksManagement`,
-	// `hostTagManagement`, `metricsManagement`, `userManagement`
+	// `hostTagManagement`, `metricsManagement`, and `userManagement`.
 	Permissions pulumi.StringArrayInput
-	// List of user groups for this service account
+	// List of user groups for this service account.
 	UserGroups pulumi.StringArrayInput
 }
 
@@ -133,37 +133,37 @@ func (ServiceAccountState) ElementType() reflect.Type {
 }
 
 type serviceAccountArgs struct {
-	// Whether or not the service account is active
+	// Whether or not the service account is active.
 	Active *bool `pulumi:"active"`
-	// The description of the service account
+	// The description of the service account.
 	Description *string `pulumi:"description"`
-	// The (unique) identifier of the service account to create. Must start with sa::
+	// The unique identifier of the service account to create. Must have the prefix `sa::`.
 	Identifier string `pulumi:"identifier"`
-	// ID of ingestion policy
+	// ID of ingestion policy.
 	IngestionPolicy *string `pulumi:"ingestionPolicy"`
 	// List of permission to grant to this service account.  Valid options are
 	// `agentManagement`, `alertsManagement`, `dashboardManagement`, `embeddedCharts`, `eventsManagement`, `externalLinksManagement`,
-	// `hostTagManagement`, `metricsManagement`, `userManagement`
+	// `hostTagManagement`, `metricsManagement`, and `userManagement`.
 	Permissions []string `pulumi:"permissions"`
-	// List of user groups for this service account
+	// List of user groups for this service account.
 	UserGroups []string `pulumi:"userGroups"`
 }
 
 // The set of arguments for constructing a ServiceAccount resource.
 type ServiceAccountArgs struct {
-	// Whether or not the service account is active
+	// Whether or not the service account is active.
 	Active pulumi.BoolPtrInput
-	// The description of the service account
+	// The description of the service account.
 	Description pulumi.StringPtrInput
-	// The (unique) identifier of the service account to create. Must start with sa::
+	// The unique identifier of the service account to create. Must have the prefix `sa::`.
 	Identifier pulumi.StringInput
-	// ID of ingestion policy
+	// ID of ingestion policy.
 	IngestionPolicy pulumi.StringPtrInput
 	// List of permission to grant to this service account.  Valid options are
 	// `agentManagement`, `alertsManagement`, `dashboardManagement`, `embeddedCharts`, `eventsManagement`, `externalLinksManagement`,
-	// `hostTagManagement`, `metricsManagement`, `userManagement`
+	// `hostTagManagement`, `metricsManagement`, and `userManagement`.
 	Permissions pulumi.StringArrayInput
-	// List of user groups for this service account
+	// List of user groups for this service account.
 	UserGroups pulumi.StringArrayInput
 }
 
