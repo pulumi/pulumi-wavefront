@@ -14,7 +14,7 @@ namespace Pulumi.Wavefront
     /// 
     /// ## Import
     /// 
-    /// Dashboards can be imported using the `id`, e.g.
+    /// Dashboards can be imported by using the `id`, e.g.
     /// 
     /// ```sh
     ///  $ pulumi import wavefront:index/dashboard:Dashboard dashboard tftestimport
@@ -24,58 +24,58 @@ namespace Pulumi.Wavefront
     public partial class Dashboard : Pulumi.CustomResource
     {
         /// <summary>
-        /// A list of users that have modify ACL access to the dashboard
+        /// A list of users that have modify ACL access to the dashboard.
         /// </summary>
         [Output("canModifies")]
         public Output<ImmutableArray<string>> CanModifies { get; private set; } = null!;
 
         /// <summary>
-        /// A list of users that have view ACL access to the dashboard
+        /// A list of users that have view ACL access to the dashboard.
         /// </summary>
         [Output("canViews")]
         public Output<ImmutableArray<string>> CanViews { get; private set; } = null!;
 
         /// <summary>
-        /// Human-readable description of the dashboard
+        /// Human-readable description of the dashboard.
         /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
         /// Whether the dashboard parameters section is opened by default when the dashboard
-        /// is shown
+        /// is shown.
         /// </summary>
         [Output("displayQueryParameters")]
         public Output<bool?> DisplayQueryParameters { get; private set; } = null!;
 
         /// <summary>
         /// Whether the "pills" quick-linked the sections of the dashboard are 
-        /// displayed by default when the dashboard is shown
+        /// displayed by default when the dashboard is shown.
         /// </summary>
         [Output("displaySectionTableOfContents")]
         public Output<bool?> DisplaySectionTableOfContents { get; private set; } = null!;
 
         /// <summary>
-        /// How charts belonging to this dashboard should display events. BYCHART is default if 
-        /// unspecified; Valid options are: `BYCHART`, `AUTOMATIC`, `ALL`, `NONE`, `BYDASHBOARD`, and `BYCHARTANDDASHBOARD`
+        /// How charts belonging to this dashboard should display events. `BYCHART` is default if 
+        /// unspecified. Valid options are: `BYCHART`, `AUTOMATIC`, `ALL`, `NONE`, `BYDASHBOARD`, and `BYCHARTANDDASHBOARD`.
         /// </summary>
         [Output("eventFilterType")]
         public Output<string?> EventFilterType { get; private set; } = null!;
 
         /// <summary>
-        /// Name of the dashboard
+        /// Name of the dashboard.
         /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
 
         /// <summary>
-        /// The current JSON representation of dashboard parameters. See parameter details
+        /// The current JSON representation of dashboard parameters. See parameter details.
         /// </summary>
         [Output("parameterDetails")]
         public Output<ImmutableArray<Outputs.DashboardParameterDetail>> ParameterDetails { get; private set; } = null!;
 
         /// <summary>
-        /// Dashboard chart sections. See dashboard sections
+        /// Dashboard chart sections. See dashboard sections.
         /// </summary>
         [Output("sections")]
         public Output<ImmutableArray<Outputs.DashboardSection>> Sections { get; private set; } = null!;
@@ -87,7 +87,7 @@ namespace Pulumi.Wavefront
         public Output<ImmutableArray<string>> Tags { get; private set; } = null!;
 
         /// <summary>
-        /// Unique identifier, also URL slug, of the dashboard
+        /// Unique identifier, also a URL slug of the dashboard.
         /// </summary>
         [Output("url")]
         public Output<string> Url { get; private set; } = null!;
@@ -142,7 +142,7 @@ namespace Pulumi.Wavefront
         private InputList<string>? _canModifies;
 
         /// <summary>
-        /// A list of users that have modify ACL access to the dashboard
+        /// A list of users that have modify ACL access to the dashboard.
         /// </summary>
         public InputList<string> CanModifies
         {
@@ -154,7 +154,7 @@ namespace Pulumi.Wavefront
         private InputList<string>? _canViews;
 
         /// <summary>
-        /// A list of users that have view ACL access to the dashboard
+        /// A list of users that have view ACL access to the dashboard.
         /// </summary>
         public InputList<string> CanViews
         {
@@ -163,34 +163,34 @@ namespace Pulumi.Wavefront
         }
 
         /// <summary>
-        /// Human-readable description of the dashboard
+        /// Human-readable description of the dashboard.
         /// </summary>
         [Input("description", required: true)]
         public Input<string> Description { get; set; } = null!;
 
         /// <summary>
         /// Whether the dashboard parameters section is opened by default when the dashboard
-        /// is shown
+        /// is shown.
         /// </summary>
         [Input("displayQueryParameters")]
         public Input<bool>? DisplayQueryParameters { get; set; }
 
         /// <summary>
         /// Whether the "pills" quick-linked the sections of the dashboard are 
-        /// displayed by default when the dashboard is shown
+        /// displayed by default when the dashboard is shown.
         /// </summary>
         [Input("displaySectionTableOfContents")]
         public Input<bool>? DisplaySectionTableOfContents { get; set; }
 
         /// <summary>
-        /// How charts belonging to this dashboard should display events. BYCHART is default if 
-        /// unspecified; Valid options are: `BYCHART`, `AUTOMATIC`, `ALL`, `NONE`, `BYDASHBOARD`, and `BYCHARTANDDASHBOARD`
+        /// How charts belonging to this dashboard should display events. `BYCHART` is default if 
+        /// unspecified. Valid options are: `BYCHART`, `AUTOMATIC`, `ALL`, `NONE`, `BYDASHBOARD`, and `BYCHARTANDDASHBOARD`.
         /// </summary>
         [Input("eventFilterType")]
         public Input<string>? EventFilterType { get; set; }
 
         /// <summary>
-        /// Name of the dashboard
+        /// Name of the dashboard.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
@@ -199,7 +199,7 @@ namespace Pulumi.Wavefront
         private InputList<Inputs.DashboardParameterDetailArgs>? _parameterDetails;
 
         /// <summary>
-        /// The current JSON representation of dashboard parameters. See parameter details
+        /// The current JSON representation of dashboard parameters. See parameter details.
         /// </summary>
         public InputList<Inputs.DashboardParameterDetailArgs> ParameterDetails
         {
@@ -211,7 +211,7 @@ namespace Pulumi.Wavefront
         private InputList<Inputs.DashboardSectionArgs>? _sections;
 
         /// <summary>
-        /// Dashboard chart sections. See dashboard sections
+        /// Dashboard chart sections. See dashboard sections.
         /// </summary>
         public InputList<Inputs.DashboardSectionArgs> Sections
         {
@@ -232,7 +232,7 @@ namespace Pulumi.Wavefront
         }
 
         /// <summary>
-        /// Unique identifier, also URL slug, of the dashboard
+        /// Unique identifier, also a URL slug of the dashboard.
         /// </summary>
         [Input("url", required: true)]
         public Input<string> Url { get; set; } = null!;
@@ -248,7 +248,7 @@ namespace Pulumi.Wavefront
         private InputList<string>? _canModifies;
 
         /// <summary>
-        /// A list of users that have modify ACL access to the dashboard
+        /// A list of users that have modify ACL access to the dashboard.
         /// </summary>
         public InputList<string> CanModifies
         {
@@ -260,7 +260,7 @@ namespace Pulumi.Wavefront
         private InputList<string>? _canViews;
 
         /// <summary>
-        /// A list of users that have view ACL access to the dashboard
+        /// A list of users that have view ACL access to the dashboard.
         /// </summary>
         public InputList<string> CanViews
         {
@@ -269,34 +269,34 @@ namespace Pulumi.Wavefront
         }
 
         /// <summary>
-        /// Human-readable description of the dashboard
+        /// Human-readable description of the dashboard.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
         /// Whether the dashboard parameters section is opened by default when the dashboard
-        /// is shown
+        /// is shown.
         /// </summary>
         [Input("displayQueryParameters")]
         public Input<bool>? DisplayQueryParameters { get; set; }
 
         /// <summary>
         /// Whether the "pills" quick-linked the sections of the dashboard are 
-        /// displayed by default when the dashboard is shown
+        /// displayed by default when the dashboard is shown.
         /// </summary>
         [Input("displaySectionTableOfContents")]
         public Input<bool>? DisplaySectionTableOfContents { get; set; }
 
         /// <summary>
-        /// How charts belonging to this dashboard should display events. BYCHART is default if 
-        /// unspecified; Valid options are: `BYCHART`, `AUTOMATIC`, `ALL`, `NONE`, `BYDASHBOARD`, and `BYCHARTANDDASHBOARD`
+        /// How charts belonging to this dashboard should display events. `BYCHART` is default if 
+        /// unspecified. Valid options are: `BYCHART`, `AUTOMATIC`, `ALL`, `NONE`, `BYDASHBOARD`, and `BYCHARTANDDASHBOARD`.
         /// </summary>
         [Input("eventFilterType")]
         public Input<string>? EventFilterType { get; set; }
 
         /// <summary>
-        /// Name of the dashboard
+        /// Name of the dashboard.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
@@ -305,7 +305,7 @@ namespace Pulumi.Wavefront
         private InputList<Inputs.DashboardParameterDetailGetArgs>? _parameterDetails;
 
         /// <summary>
-        /// The current JSON representation of dashboard parameters. See parameter details
+        /// The current JSON representation of dashboard parameters. See parameter details.
         /// </summary>
         public InputList<Inputs.DashboardParameterDetailGetArgs> ParameterDetails
         {
@@ -317,7 +317,7 @@ namespace Pulumi.Wavefront
         private InputList<Inputs.DashboardSectionGetArgs>? _sections;
 
         /// <summary>
-        /// Dashboard chart sections. See dashboard sections
+        /// Dashboard chart sections. See dashboard sections.
         /// </summary>
         public InputList<Inputs.DashboardSectionGetArgs> Sections
         {
@@ -338,7 +338,7 @@ namespace Pulumi.Wavefront
         }
 
         /// <summary>
-        /// Unique identifier, also URL slug, of the dashboard
+        /// Unique identifier, also a URL slug of the dashboard.
         /// </summary>
         [Input("url")]
         public Input<string>? Url { get; set; }

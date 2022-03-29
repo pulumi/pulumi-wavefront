@@ -22,13 +22,13 @@ class CloudIntegrationTeslaArgs:
                  service_refresh_rate_in_minutes: Optional[pulumi.Input[int]] = None):
         """
         The set of arguments for constructing a CloudIntegrationTesla resource.
-        :param pulumi.Input[str] email: Email address for the Tesla account login
-        :param pulumi.Input[str] password: Password for the Tesla account login
-        :param pulumi.Input[str] service: A value denoting which cloud service this service integrates with
-        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] additional_tags: A list of point tag key-values to add to every point ingested using this integration
-        :param pulumi.Input[bool] force_save: Forces this resource to save, even if errors are present
-        :param pulumi.Input[str] name: The human-readable name of this integration
-        :param pulumi.Input[int] service_refresh_rate_in_minutes: How often, in minutes, to refresh the service
+        :param pulumi.Input[str] email: A Tesla account login email address.
+        :param pulumi.Input[str] password: The Tesla account login password.
+        :param pulumi.Input[str] service: A value denoting which cloud service this service integrates with.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] additional_tags: A list of point tag key-values to add to every point ingested using this integration.
+        :param pulumi.Input[bool] force_save: Forces this resource to save, even if errors are present.
+        :param pulumi.Input[str] name: The human-readable name of this integration.
+        :param pulumi.Input[int] service_refresh_rate_in_minutes: How often, in minutes, to refresh the service.
         """
         pulumi.set(__self__, "email", email)
         pulumi.set(__self__, "password", password)
@@ -46,7 +46,7 @@ class CloudIntegrationTeslaArgs:
     @pulumi.getter
     def email(self) -> pulumi.Input[str]:
         """
-        Email address for the Tesla account login
+        A Tesla account login email address.
         """
         return pulumi.get(self, "email")
 
@@ -58,7 +58,7 @@ class CloudIntegrationTeslaArgs:
     @pulumi.getter
     def password(self) -> pulumi.Input[str]:
         """
-        Password for the Tesla account login
+        The Tesla account login password.
         """
         return pulumi.get(self, "password")
 
@@ -70,7 +70,7 @@ class CloudIntegrationTeslaArgs:
     @pulumi.getter
     def service(self) -> pulumi.Input[str]:
         """
-        A value denoting which cloud service this service integrates with
+        A value denoting which cloud service this service integrates with.
         """
         return pulumi.get(self, "service")
 
@@ -82,7 +82,7 @@ class CloudIntegrationTeslaArgs:
     @pulumi.getter(name="additionalTags")
     def additional_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
-        A list of point tag key-values to add to every point ingested using this integration
+        A list of point tag key-values to add to every point ingested using this integration.
         """
         return pulumi.get(self, "additional_tags")
 
@@ -94,7 +94,7 @@ class CloudIntegrationTeslaArgs:
     @pulumi.getter(name="forceSave")
     def force_save(self) -> Optional[pulumi.Input[bool]]:
         """
-        Forces this resource to save, even if errors are present
+        Forces this resource to save, even if errors are present.
         """
         return pulumi.get(self, "force_save")
 
@@ -106,7 +106,7 @@ class CloudIntegrationTeslaArgs:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
-        The human-readable name of this integration
+        The human-readable name of this integration.
         """
         return pulumi.get(self, "name")
 
@@ -118,7 +118,7 @@ class CloudIntegrationTeslaArgs:
     @pulumi.getter(name="serviceRefreshRateInMinutes")
     def service_refresh_rate_in_minutes(self) -> Optional[pulumi.Input[int]]:
         """
-        How often, in minutes, to refresh the service
+        How often, in minutes, to refresh the service.
         """
         return pulumi.get(self, "service_refresh_rate_in_minutes")
 
@@ -139,13 +139,13 @@ class _CloudIntegrationTeslaState:
                  service_refresh_rate_in_minutes: Optional[pulumi.Input[int]] = None):
         """
         Input properties used for looking up and filtering CloudIntegrationTesla resources.
-        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] additional_tags: A list of point tag key-values to add to every point ingested using this integration
-        :param pulumi.Input[str] email: Email address for the Tesla account login
-        :param pulumi.Input[bool] force_save: Forces this resource to save, even if errors are present
-        :param pulumi.Input[str] name: The human-readable name of this integration
-        :param pulumi.Input[str] password: Password for the Tesla account login
-        :param pulumi.Input[str] service: A value denoting which cloud service this service integrates with
-        :param pulumi.Input[int] service_refresh_rate_in_minutes: How often, in minutes, to refresh the service
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] additional_tags: A list of point tag key-values to add to every point ingested using this integration.
+        :param pulumi.Input[str] email: A Tesla account login email address.
+        :param pulumi.Input[bool] force_save: Forces this resource to save, even if errors are present.
+        :param pulumi.Input[str] name: The human-readable name of this integration.
+        :param pulumi.Input[str] password: The Tesla account login password.
+        :param pulumi.Input[str] service: A value denoting which cloud service this service integrates with.
+        :param pulumi.Input[int] service_refresh_rate_in_minutes: How often, in minutes, to refresh the service.
         """
         if additional_tags is not None:
             pulumi.set(__self__, "additional_tags", additional_tags)
@@ -166,7 +166,7 @@ class _CloudIntegrationTeslaState:
     @pulumi.getter(name="additionalTags")
     def additional_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
-        A list of point tag key-values to add to every point ingested using this integration
+        A list of point tag key-values to add to every point ingested using this integration.
         """
         return pulumi.get(self, "additional_tags")
 
@@ -178,7 +178,7 @@ class _CloudIntegrationTeslaState:
     @pulumi.getter
     def email(self) -> Optional[pulumi.Input[str]]:
         """
-        Email address for the Tesla account login
+        A Tesla account login email address.
         """
         return pulumi.get(self, "email")
 
@@ -190,7 +190,7 @@ class _CloudIntegrationTeslaState:
     @pulumi.getter(name="forceSave")
     def force_save(self) -> Optional[pulumi.Input[bool]]:
         """
-        Forces this resource to save, even if errors are present
+        Forces this resource to save, even if errors are present.
         """
         return pulumi.get(self, "force_save")
 
@@ -202,7 +202,7 @@ class _CloudIntegrationTeslaState:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
-        The human-readable name of this integration
+        The human-readable name of this integration.
         """
         return pulumi.get(self, "name")
 
@@ -214,7 +214,7 @@ class _CloudIntegrationTeslaState:
     @pulumi.getter
     def password(self) -> Optional[pulumi.Input[str]]:
         """
-        Password for the Tesla account login
+        The Tesla account login password.
         """
         return pulumi.get(self, "password")
 
@@ -226,7 +226,7 @@ class _CloudIntegrationTeslaState:
     @pulumi.getter
     def service(self) -> Optional[pulumi.Input[str]]:
         """
-        A value denoting which cloud service this service integrates with
+        A value denoting which cloud service this service integrates with.
         """
         return pulumi.get(self, "service")
 
@@ -238,7 +238,7 @@ class _CloudIntegrationTeslaState:
     @pulumi.getter(name="serviceRefreshRateInMinutes")
     def service_refresh_rate_in_minutes(self) -> Optional[pulumi.Input[int]]:
         """
-        How often, in minutes, to refresh the service
+        How often, in minutes, to refresh the service.
         """
         return pulumi.get(self, "service_refresh_rate_in_minutes")
 
@@ -261,7 +261,7 @@ class CloudIntegrationTesla(pulumi.CustomResource):
                  service_refresh_rate_in_minutes: Optional[pulumi.Input[int]] = None,
                  __props__=None):
         """
-        Provides a Wavefront Cloud Integration for Tesla. This allows NewRelic cloud integrations to be created,
+        Provides a Wavefront Cloud Integration for Tesla. This allows Tesla cloud integrations to be created,
         updated, and deleted.
 
         ## Example Usage
@@ -277,7 +277,7 @@ class CloudIntegrationTesla(pulumi.CustomResource):
 
         ## Import
 
-        Tesla Integrations can be imported using the `id`, e.g.
+        Tesla Integrations can be imported by using the `id`, e.g.
 
         ```sh
          $ pulumi import wavefront:index/cloudIntegrationTesla:CloudIntegrationTesla tesla a411c16b-3cf7-4f03-bf11-8ca05aab898d
@@ -285,13 +285,13 @@ class CloudIntegrationTesla(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] additional_tags: A list of point tag key-values to add to every point ingested using this integration
-        :param pulumi.Input[str] email: Email address for the Tesla account login
-        :param pulumi.Input[bool] force_save: Forces this resource to save, even if errors are present
-        :param pulumi.Input[str] name: The human-readable name of this integration
-        :param pulumi.Input[str] password: Password for the Tesla account login
-        :param pulumi.Input[str] service: A value denoting which cloud service this service integrates with
-        :param pulumi.Input[int] service_refresh_rate_in_minutes: How often, in minutes, to refresh the service
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] additional_tags: A list of point tag key-values to add to every point ingested using this integration.
+        :param pulumi.Input[str] email: A Tesla account login email address.
+        :param pulumi.Input[bool] force_save: Forces this resource to save, even if errors are present.
+        :param pulumi.Input[str] name: The human-readable name of this integration.
+        :param pulumi.Input[str] password: The Tesla account login password.
+        :param pulumi.Input[str] service: A value denoting which cloud service this service integrates with.
+        :param pulumi.Input[int] service_refresh_rate_in_minutes: How often, in minutes, to refresh the service.
         """
         ...
     @overload
@@ -300,7 +300,7 @@ class CloudIntegrationTesla(pulumi.CustomResource):
                  args: CloudIntegrationTeslaArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Provides a Wavefront Cloud Integration for Tesla. This allows NewRelic cloud integrations to be created,
+        Provides a Wavefront Cloud Integration for Tesla. This allows Tesla cloud integrations to be created,
         updated, and deleted.
 
         ## Example Usage
@@ -316,7 +316,7 @@ class CloudIntegrationTesla(pulumi.CustomResource):
 
         ## Import
 
-        Tesla Integrations can be imported using the `id`, e.g.
+        Tesla Integrations can be imported by using the `id`, e.g.
 
         ```sh
          $ pulumi import wavefront:index/cloudIntegrationTesla:CloudIntegrationTesla tesla a411c16b-3cf7-4f03-bf11-8ca05aab898d
@@ -393,13 +393,13 @@ class CloudIntegrationTesla(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] additional_tags: A list of point tag key-values to add to every point ingested using this integration
-        :param pulumi.Input[str] email: Email address for the Tesla account login
-        :param pulumi.Input[bool] force_save: Forces this resource to save, even if errors are present
-        :param pulumi.Input[str] name: The human-readable name of this integration
-        :param pulumi.Input[str] password: Password for the Tesla account login
-        :param pulumi.Input[str] service: A value denoting which cloud service this service integrates with
-        :param pulumi.Input[int] service_refresh_rate_in_minutes: How often, in minutes, to refresh the service
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] additional_tags: A list of point tag key-values to add to every point ingested using this integration.
+        :param pulumi.Input[str] email: A Tesla account login email address.
+        :param pulumi.Input[bool] force_save: Forces this resource to save, even if errors are present.
+        :param pulumi.Input[str] name: The human-readable name of this integration.
+        :param pulumi.Input[str] password: The Tesla account login password.
+        :param pulumi.Input[str] service: A value denoting which cloud service this service integrates with.
+        :param pulumi.Input[int] service_refresh_rate_in_minutes: How often, in minutes, to refresh the service.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -418,7 +418,7 @@ class CloudIntegrationTesla(pulumi.CustomResource):
     @pulumi.getter(name="additionalTags")
     def additional_tags(self) -> pulumi.Output[Optional[Mapping[str, str]]]:
         """
-        A list of point tag key-values to add to every point ingested using this integration
+        A list of point tag key-values to add to every point ingested using this integration.
         """
         return pulumi.get(self, "additional_tags")
 
@@ -426,7 +426,7 @@ class CloudIntegrationTesla(pulumi.CustomResource):
     @pulumi.getter
     def email(self) -> pulumi.Output[str]:
         """
-        Email address for the Tesla account login
+        A Tesla account login email address.
         """
         return pulumi.get(self, "email")
 
@@ -434,7 +434,7 @@ class CloudIntegrationTesla(pulumi.CustomResource):
     @pulumi.getter(name="forceSave")
     def force_save(self) -> pulumi.Output[Optional[bool]]:
         """
-        Forces this resource to save, even if errors are present
+        Forces this resource to save, even if errors are present.
         """
         return pulumi.get(self, "force_save")
 
@@ -442,7 +442,7 @@ class CloudIntegrationTesla(pulumi.CustomResource):
     @pulumi.getter
     def name(self) -> pulumi.Output[str]:
         """
-        The human-readable name of this integration
+        The human-readable name of this integration.
         """
         return pulumi.get(self, "name")
 
@@ -450,7 +450,7 @@ class CloudIntegrationTesla(pulumi.CustomResource):
     @pulumi.getter
     def password(self) -> pulumi.Output[str]:
         """
-        Password for the Tesla account login
+        The Tesla account login password.
         """
         return pulumi.get(self, "password")
 
@@ -458,7 +458,7 @@ class CloudIntegrationTesla(pulumi.CustomResource):
     @pulumi.getter
     def service(self) -> pulumi.Output[str]:
         """
-        A value denoting which cloud service this service integrates with
+        A value denoting which cloud service this service integrates with.
         """
         return pulumi.get(self, "service")
 
@@ -466,7 +466,7 @@ class CloudIntegrationTesla(pulumi.CustomResource):
     @pulumi.getter(name="serviceRefreshRateInMinutes")
     def service_refresh_rate_in_minutes(self) -> pulumi.Output[Optional[int]]:
         """
-        How often, in minutes, to refresh the service
+        How often, in minutes, to refresh the service.
         """
         return pulumi.get(self, "service_refresh_rate_in_minutes")
 

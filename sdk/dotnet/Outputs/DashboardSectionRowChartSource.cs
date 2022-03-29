@@ -14,19 +14,19 @@ namespace Pulumi.Wavefront.Outputs
     public sealed class DashboardSectionRowChartSource
     {
         /// <summary>
-        /// Whether the source is disabled
+        /// Whether the source is disabled.
         /// </summary>
         public readonly bool? Disabled;
         /// <summary>
-        /// Name of the source
+        /// Name of the source.
         /// </summary>
         public readonly string Name;
         /// <summary>
-        /// Query expression to plot on the chart
+        /// Query expression to plot on the chart.
         /// </summary>
         public readonly string Query;
         /// <summary>
-        /// Whether oir not this source line should have the query builder enabled
+        /// Whether or not this source line should have the query builder enabled.
         /// </summary>
         public readonly bool? QueryBuilderEnabled;
         /// <summary>
@@ -34,7 +34,7 @@ namespace Pulumi.Wavefront.Outputs
         /// </summary>
         public readonly string? ScatterPlotSource;
         /// <summary>
-        /// A description for the purpose of this source
+        /// A description for the purpose of this source.
         /// </summary>
         public readonly string? SourceDescription;
 

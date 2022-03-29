@@ -22,7 +22,7 @@ import * as utilities from "./utilities";
  *
  * ## Import
  *
- * Derived Metrics can be imported using the `id`, e.g.
+ * Derived Metrics can be imported by using the `id`, e.g.
  *
  * ```sh
  *  $ pulumi import wavefront:index/derivedMetric:DerivedMetric derived_metric 1577102900578
@@ -57,19 +57,19 @@ export class DerivedMetric extends pulumi.CustomResource {
     }
 
     /**
-     * User-supplied additional explanatory information for the derived metric
+     * User-supplied additional explanatory information for the derived metric.
      */
     public readonly additionalInformation!: pulumi.Output<string | undefined>;
     /**
-     * How frequently the query generating the derived metric is run
+     * How frequently the query generating the derived metric is run.
      */
     public readonly minutes!: pulumi.Output<number>;
     /**
-     * The name of the Derived Metric in Wavefront
+     * The name of the Derived Metric in Wavefront.
      */
     public readonly name!: pulumi.Output<string>;
     /**
-     * A Wavefront query that is evaluated at regular intervals (default `1m`)
+     * A Wavefront query that is evaluated at regular intervals (default is 1 minute).
      */
     public readonly query!: pulumi.Output<string>;
     /**
@@ -119,19 +119,19 @@ export class DerivedMetric extends pulumi.CustomResource {
  */
 export interface DerivedMetricState {
     /**
-     * User-supplied additional explanatory information for the derived metric
+     * User-supplied additional explanatory information for the derived metric.
      */
     additionalInformation?: pulumi.Input<string>;
     /**
-     * How frequently the query generating the derived metric is run
+     * How frequently the query generating the derived metric is run.
      */
     minutes?: pulumi.Input<number>;
     /**
-     * The name of the Derived Metric in Wavefront
+     * The name of the Derived Metric in Wavefront.
      */
     name?: pulumi.Input<string>;
     /**
-     * A Wavefront query that is evaluated at regular intervals (default `1m`)
+     * A Wavefront query that is evaluated at regular intervals (default is 1 minute).
      */
     query?: pulumi.Input<string>;
     /**
@@ -145,19 +145,19 @@ export interface DerivedMetricState {
  */
 export interface DerivedMetricArgs {
     /**
-     * User-supplied additional explanatory information for the derived metric
+     * User-supplied additional explanatory information for the derived metric.
      */
     additionalInformation?: pulumi.Input<string>;
     /**
-     * How frequently the query generating the derived metric is run
+     * How frequently the query generating the derived metric is run.
      */
     minutes: pulumi.Input<number>;
     /**
-     * The name of the Derived Metric in Wavefront
+     * The name of the Derived Metric in Wavefront.
      */
     name?: pulumi.Input<string>;
     /**
-     * A Wavefront query that is evaluated at regular intervals (default `1m`)
+     * A Wavefront query that is evaluated at regular intervals (default is 1 minute).
      */
     query: pulumi.Input<string>;
     /**

@@ -124,7 +124,7 @@ export class AlertTarget extends pulumi.CustomResource {
      */
     public readonly contentType!: pulumi.Output<string | undefined>;
     /**
-     * A `string->string` map specifying the custome HTTP header key/value pairs that will be 
+     * A `string->string` map specifying the custom HTTP header key/value pairs that will be 
      * sent in the requests with a method of `WEBHOOK`.
      */
     public readonly customHeaders!: pulumi.Output<{[key: string]: string} | undefined>;
@@ -145,7 +145,7 @@ export class AlertTarget extends pulumi.CustomResource {
      */
     public readonly method!: pulumi.Output<string | undefined>;
     /**
-     * The name of the alert target as it is displayed in wavefront
+     * The name of the alert target as it is displayed in Wavefront.
      */
     public readonly name!: pulumi.Output<string>;
     /**
@@ -159,7 +159,7 @@ export class AlertTarget extends pulumi.CustomResource {
     public readonly routes!: pulumi.Output<outputs.AlertTargetRoute[] | undefined>;
     public /*out*/ readonly targetId!: pulumi.Output<string>;
     /**
-     * A mustache template that will form the body of the POST request, email and summary of the PagerDuty.
+     * A mustache template that will form the body of the POST request, email, and summary of the PagerDuty.
      */
     public readonly template!: pulumi.Output<string>;
     /**
@@ -234,7 +234,7 @@ export interface AlertTargetState {
      */
     contentType?: pulumi.Input<string>;
     /**
-     * A `string->string` map specifying the custome HTTP header key/value pairs that will be 
+     * A `string->string` map specifying the custom HTTP header key/value pairs that will be 
      * sent in the requests with a method of `WEBHOOK`.
      */
     customHeaders?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
@@ -255,7 +255,7 @@ export interface AlertTargetState {
      */
     method?: pulumi.Input<string>;
     /**
-     * The name of the alert target as it is displayed in wavefront
+     * The name of the alert target as it is displayed in Wavefront.
      */
     name?: pulumi.Input<string>;
     /**
@@ -269,7 +269,7 @@ export interface AlertTargetState {
     routes?: pulumi.Input<pulumi.Input<inputs.AlertTargetRoute>[]>;
     targetId?: pulumi.Input<string>;
     /**
-     * A mustache template that will form the body of the POST request, email and summary of the PagerDuty.
+     * A mustache template that will form the body of the POST request, email, and summary of the PagerDuty.
      */
     template?: pulumi.Input<string>;
     /**
@@ -288,7 +288,7 @@ export interface AlertTargetArgs {
      */
     contentType?: pulumi.Input<string>;
     /**
-     * A `string->string` map specifying the custome HTTP header key/value pairs that will be 
+     * A `string->string` map specifying the custom HTTP header key/value pairs that will be 
      * sent in the requests with a method of `WEBHOOK`.
      */
     customHeaders?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
@@ -309,7 +309,7 @@ export interface AlertTargetArgs {
      */
     method?: pulumi.Input<string>;
     /**
-     * The name of the alert target as it is displayed in wavefront
+     * The name of the alert target as it is displayed in Wavefront.
      */
     name?: pulumi.Input<string>;
     /**
@@ -322,7 +322,7 @@ export interface AlertTargetArgs {
      */
     routes?: pulumi.Input<pulumi.Input<inputs.AlertTargetRoute>[]>;
     /**
-     * A mustache template that will form the body of the POST request, email and summary of the PagerDuty.
+     * A mustache template that will form the body of the POST request, email, and summary of the PagerDuty.
      */
     template: pulumi.Input<string>;
     /**

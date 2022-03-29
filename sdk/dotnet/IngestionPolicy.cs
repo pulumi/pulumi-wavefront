@@ -33,7 +33,7 @@ namespace Pulumi.Wavefront
     /// 
     /// ## Import
     /// 
-    /// ingestion policies can be imported using the `id`, e.g.
+    /// ingestion policies can be imported by using the `id`, e.g.
     /// 
     /// ```sh
     ///  $ pulumi import wavefront:index/ingestionPolicy:IngestionPolicy basic test_ingestion-1611946841064
@@ -43,13 +43,13 @@ namespace Pulumi.Wavefront
     public partial class IngestionPolicy : Pulumi.CustomResource
     {
         /// <summary>
-        /// The description of the ingestion policy
+        /// The description of the ingestion policy.
         /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
-        /// The name of the ingestion policy
+        /// The name of the ingestion policy.
         /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
@@ -101,13 +101,13 @@ namespace Pulumi.Wavefront
     public sealed class IngestionPolicyArgs : Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The description of the ingestion policy
+        /// The description of the ingestion policy.
         /// </summary>
         [Input("description", required: true)]
         public Input<string> Description { get; set; } = null!;
 
         /// <summary>
-        /// The name of the ingestion policy
+        /// The name of the ingestion policy.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
@@ -120,13 +120,13 @@ namespace Pulumi.Wavefront
     public sealed class IngestionPolicyState : Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The description of the ingestion policy
+        /// The description of the ingestion policy.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// The name of the ingestion policy
+        /// The name of the ingestion policy.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }

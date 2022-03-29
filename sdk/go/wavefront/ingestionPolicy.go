@@ -38,7 +38,7 @@ import (
 //
 // ## Import
 //
-// ingestion policies can be imported using the `id`, e.g.
+// ingestion policies can be imported by using the `id`, e.g.
 //
 // ```sh
 //  $ pulumi import wavefront:index/ingestionPolicy:IngestionPolicy basic test_ingestion-1611946841064
@@ -46,9 +46,9 @@ import (
 type IngestionPolicy struct {
 	pulumi.CustomResourceState
 
-	// The description of the ingestion policy
+	// The description of the ingestion policy.
 	Description pulumi.StringOutput `pulumi:"description"`
-	// The name of the ingestion policy
+	// The name of the ingestion policy.
 	Name pulumi.StringOutput `pulumi:"name"`
 }
 
@@ -84,16 +84,16 @@ func GetIngestionPolicy(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering IngestionPolicy resources.
 type ingestionPolicyState struct {
-	// The description of the ingestion policy
+	// The description of the ingestion policy.
 	Description *string `pulumi:"description"`
-	// The name of the ingestion policy
+	// The name of the ingestion policy.
 	Name *string `pulumi:"name"`
 }
 
 type IngestionPolicyState struct {
-	// The description of the ingestion policy
+	// The description of the ingestion policy.
 	Description pulumi.StringPtrInput
-	// The name of the ingestion policy
+	// The name of the ingestion policy.
 	Name pulumi.StringPtrInput
 }
 
@@ -102,17 +102,17 @@ func (IngestionPolicyState) ElementType() reflect.Type {
 }
 
 type ingestionPolicyArgs struct {
-	// The description of the ingestion policy
+	// The description of the ingestion policy.
 	Description string `pulumi:"description"`
-	// The name of the ingestion policy
+	// The name of the ingestion policy.
 	Name *string `pulumi:"name"`
 }
 
 // The set of arguments for constructing a IngestionPolicy resource.
 type IngestionPolicyArgs struct {
-	// The description of the ingestion policy
+	// The description of the ingestion policy.
 	Description pulumi.StringInput
-	// The name of the ingestion policy
+	// The name of the ingestion policy.
 	Name pulumi.StringPtrInput
 }
 

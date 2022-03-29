@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Wavefront
 {
     /// <summary>
-    /// Provides a Wavefront User Resource. This allows users to be created, updated, and deleted.
+    /// Provides a Wavefront User Resource. This allows user accounts to be created, updated, and deleted.
     /// 
     /// ## Example Usage
     /// 
@@ -33,7 +33,7 @@ namespace Pulumi.Wavefront
     /// 
     /// ## Import
     /// 
-    /// Users can be imported using the `id`, e.g.
+    /// Users can be imported by using the `id`, e.g.
     /// 
     /// ```sh
     ///  $ pulumi import wavefront:index/user:User some_user test@example.com
@@ -46,7 +46,7 @@ namespace Pulumi.Wavefront
         public Output<string> Customer { get; private set; } = null!;
 
         /// <summary>
-        /// The (unique) identifier of the user to create. Must be a valid email address
+        /// The unique identifier of the user account to create. Must be a valid email address.
         /// </summary>
         [Output("email")]
         public Output<string> Email { get; private set; } = null!;
@@ -54,13 +54,13 @@ namespace Pulumi.Wavefront
         /// <summary>
         /// List of permission to grant to this user.  Valid options are
         /// `agent_management`, `alerts_management`, `dashboard_management`, `embedded_charts`, `events_management`, `external_links_management`,
-        /// `host_tag_management`, `metrics_management`, `user_management`
+        /// `host_tag_management`, `metrics_management`, and `user_management`.
         /// </summary>
         [Output("permissions")]
         public Output<ImmutableArray<string>> Permissions { get; private set; } = null!;
 
         /// <summary>
-        /// List of user groups to this user
+        /// List of user groups to this user.
         /// </summary>
         [Output("userGroups")]
         public Output<ImmutableArray<string>> UserGroups { get; private set; } = null!;
@@ -115,7 +115,7 @@ namespace Pulumi.Wavefront
         public Input<string>? Customer { get; set; }
 
         /// <summary>
-        /// The (unique) identifier of the user to create. Must be a valid email address
+        /// The unique identifier of the user account to create. Must be a valid email address.
         /// </summary>
         [Input("email", required: true)]
         public Input<string> Email { get; set; } = null!;
@@ -126,7 +126,7 @@ namespace Pulumi.Wavefront
         /// <summary>
         /// List of permission to grant to this user.  Valid options are
         /// `agent_management`, `alerts_management`, `dashboard_management`, `embedded_charts`, `events_management`, `external_links_management`,
-        /// `host_tag_management`, `metrics_management`, `user_management`
+        /// `host_tag_management`, `metrics_management`, and `user_management`.
         /// </summary>
         public InputList<string> Permissions
         {
@@ -138,7 +138,7 @@ namespace Pulumi.Wavefront
         private InputList<string>? _userGroups;
 
         /// <summary>
-        /// List of user groups to this user
+        /// List of user groups to this user.
         /// </summary>
         public InputList<string> UserGroups
         {
@@ -157,7 +157,7 @@ namespace Pulumi.Wavefront
         public Input<string>? Customer { get; set; }
 
         /// <summary>
-        /// The (unique) identifier of the user to create. Must be a valid email address
+        /// The unique identifier of the user account to create. Must be a valid email address.
         /// </summary>
         [Input("email")]
         public Input<string>? Email { get; set; }
@@ -168,7 +168,7 @@ namespace Pulumi.Wavefront
         /// <summary>
         /// List of permission to grant to this user.  Valid options are
         /// `agent_management`, `alerts_management`, `dashboard_management`, `embedded_charts`, `events_management`, `external_links_management`,
-        /// `host_tag_management`, `metrics_management`, `user_management`
+        /// `host_tag_management`, `metrics_management`, and `user_management`.
         /// </summary>
         public InputList<string> Permissions
         {
@@ -180,7 +180,7 @@ namespace Pulumi.Wavefront
         private InputList<string>? _userGroups;
 
         /// <summary>
-        /// List of user groups to this user
+        /// List of user groups to this user.
         /// </summary>
         public InputList<string> UserGroups
         {

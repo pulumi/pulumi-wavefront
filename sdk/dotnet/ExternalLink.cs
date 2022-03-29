@@ -34,7 +34,7 @@ namespace Pulumi.Wavefront
     /// 
     /// ## Import
     /// 
-    /// Maintenance windows can be imported using the `id`, e.g.
+    /// Maintenance windows can be imported by using the `id`, e.g.
     /// 
     /// ```sh
     ///  $ pulumi import wavefront:index/externalLink:ExternalLink basic fVj6fz6zYC4aBkID
@@ -44,13 +44,13 @@ namespace Pulumi.Wavefront
     public partial class ExternalLink : Pulumi.CustomResource
     {
         /// <summary>
-        /// Human-readable description for this link
+        /// Human-readable description for this link.
         /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
-        /// Whether this is a "Log Integration" subType of external link
+        /// Whether this is a "Log Integration" subType of external link.
         /// </summary>
         [Output("isLogIntegration")]
         public Output<bool?> IsLogIntegration { get; private set; } = null!;
@@ -62,13 +62,16 @@ namespace Pulumi.Wavefront
         public Output<string?> MetricFilterRegex { get; private set; } = null!;
 
         /// <summary>
-        /// The name of the external link
+        /// The name of the external link.
         /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
 
         /// <summary>
-        /// Controls whether a link is displayed in the context menu of a highlighted series. This is a map from string to regular expression. The highlighted series must contain point tags whose keys are present in the keys of this map and whose values match the regular expressions associated with those keys in order for the link to be displayed
+        /// Controls whether a link is displayed in the context menu of a highlighted
+        /// series. This is a map from string to regular expression. The highlighted series must contain point tags whose
+        /// keys are present in the keys of this map and whose values match the regular expressions associated with those
+        /// keys in order for the link to be displayed.
         /// </summary>
         [Output("pointTagFilterRegexes")]
         public Output<ImmutableDictionary<string, string>?> PointTagFilterRegexes { get; private set; } = null!;
@@ -132,13 +135,13 @@ namespace Pulumi.Wavefront
     public sealed class ExternalLinkArgs : Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Human-readable description for this link
+        /// Human-readable description for this link.
         /// </summary>
         [Input("description", required: true)]
         public Input<string> Description { get; set; } = null!;
 
         /// <summary>
-        /// Whether this is a "Log Integration" subType of external link
+        /// Whether this is a "Log Integration" subType of external link.
         /// </summary>
         [Input("isLogIntegration")]
         public Input<bool>? IsLogIntegration { get; set; }
@@ -150,7 +153,7 @@ namespace Pulumi.Wavefront
         public Input<string>? MetricFilterRegex { get; set; }
 
         /// <summary>
-        /// The name of the external link
+        /// The name of the external link.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
@@ -159,7 +162,10 @@ namespace Pulumi.Wavefront
         private InputMap<string>? _pointTagFilterRegexes;
 
         /// <summary>
-        /// Controls whether a link is displayed in the context menu of a highlighted series. This is a map from string to regular expression. The highlighted series must contain point tags whose keys are present in the keys of this map and whose values match the regular expressions associated with those keys in order for the link to be displayed
+        /// Controls whether a link is displayed in the context menu of a highlighted
+        /// series. This is a map from string to regular expression. The highlighted series must contain point tags whose
+        /// keys are present in the keys of this map and whose values match the regular expressions associated with those
+        /// keys in order for the link to be displayed.
         /// </summary>
         public InputMap<string> PointTagFilterRegexes
         {
@@ -187,13 +193,13 @@ namespace Pulumi.Wavefront
     public sealed class ExternalLinkState : Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Human-readable description for this link
+        /// Human-readable description for this link.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// Whether this is a "Log Integration" subType of external link
+        /// Whether this is a "Log Integration" subType of external link.
         /// </summary>
         [Input("isLogIntegration")]
         public Input<bool>? IsLogIntegration { get; set; }
@@ -205,7 +211,7 @@ namespace Pulumi.Wavefront
         public Input<string>? MetricFilterRegex { get; set; }
 
         /// <summary>
-        /// The name of the external link
+        /// The name of the external link.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
@@ -214,7 +220,10 @@ namespace Pulumi.Wavefront
         private InputMap<string>? _pointTagFilterRegexes;
 
         /// <summary>
-        /// Controls whether a link is displayed in the context menu of a highlighted series. This is a map from string to regular expression. The highlighted series must contain point tags whose keys are present in the keys of this map and whose values match the regular expressions associated with those keys in order for the link to be displayed
+        /// Controls whether a link is displayed in the context menu of a highlighted
+        /// series. This is a map from string to regular expression. The highlighted series must contain point tags whose
+        /// keys are present in the keys of this map and whose values match the regular expressions associated with those
+        /// keys in order for the link to be displayed.
         /// </summary>
         public InputMap<string> PointTagFilterRegexes
         {

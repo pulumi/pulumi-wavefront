@@ -6,7 +6,7 @@ import * as utilities from "./utilities";
 
 /**
  * Provides a Wavefront Cloud Integration for EC2. This allows EC2 cloud integrations to be created,
- * updated, and delete
+ * updated, and deleted.
  *
  * ## Example Usage
  *
@@ -23,7 +23,7 @@ import * as utilities from "./utilities";
  *
  * ## Import
  *
- * EC2 Cloud Integrations can be imported using the `id`, e.g.
+ * EC2 Cloud Integrations can be imported by using the `id`, e.g.
  *
  * ```sh
  *  $ pulumi import wavefront:index/cloudIntegrationEc2:CloudIntegrationEc2 ec2 a411c16b-3cf7-4f03-bf11-8ca05aab898d
@@ -58,32 +58,37 @@ export class CloudIntegrationEc2 extends pulumi.CustomResource {
     }
 
     /**
-     * A list of point tag key-values to add to every point ingested using this integration
+     * A list of point tag key-values to add to every point ingested using this integration.
      */
     public readonly additionalTags!: pulumi.Output<{[key: string]: string} | undefined>;
     /**
-     * The Role ARN that the customer has created in AWS IAM to allow access to Wavefront
+     * The Role ARN that the customer has created in AWS IAM to allow access to Wavefront.
      */
     public readonly externalId!: pulumi.Output<string>;
     /**
-     * Forces this resource to save, even if errors are present
+     * Forces this resource to save, even if errors are present.
      */
     public readonly forceSave!: pulumi.Output<boolean | undefined>;
+    /**
+     * A list of AWS instance tags to use as the `source` name
+     * in a series. Default is `["hostname", "host", "name"]`. If no tag in the list is found, the series source
+     * is set to the instance id.
+     */
     public readonly hostnameTags!: pulumi.Output<string[] | undefined>;
     /**
-     * The human-readable name of this integration
+     * The human-readable name of this integration.
      */
     public readonly name!: pulumi.Output<string>;
     /**
-     * The external id corresponding to the Role ARN
+     * The external ID corresponding to the Role ARN.
      */
     public readonly roleArn!: pulumi.Output<string>;
     /**
-     * A value denoting which cloud service this service integrates with
+     * A value denoting which cloud service this service integrates with.
      */
     public readonly service!: pulumi.Output<string>;
     /**
-     * How often, in minutes, to refresh the service
+     * How often, in minutes, to refresh the service.
      */
     public readonly serviceRefreshRateInMinutes!: pulumi.Output<number | undefined>;
 
@@ -138,32 +143,37 @@ export class CloudIntegrationEc2 extends pulumi.CustomResource {
  */
 export interface CloudIntegrationEc2State {
     /**
-     * A list of point tag key-values to add to every point ingested using this integration
+     * A list of point tag key-values to add to every point ingested using this integration.
      */
     additionalTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
-     * The Role ARN that the customer has created in AWS IAM to allow access to Wavefront
+     * The Role ARN that the customer has created in AWS IAM to allow access to Wavefront.
      */
     externalId?: pulumi.Input<string>;
     /**
-     * Forces this resource to save, even if errors are present
+     * Forces this resource to save, even if errors are present.
      */
     forceSave?: pulumi.Input<boolean>;
+    /**
+     * A list of AWS instance tags to use as the `source` name
+     * in a series. Default is `["hostname", "host", "name"]`. If no tag in the list is found, the series source
+     * is set to the instance id.
+     */
     hostnameTags?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The human-readable name of this integration
+     * The human-readable name of this integration.
      */
     name?: pulumi.Input<string>;
     /**
-     * The external id corresponding to the Role ARN
+     * The external ID corresponding to the Role ARN.
      */
     roleArn?: pulumi.Input<string>;
     /**
-     * A value denoting which cloud service this service integrates with
+     * A value denoting which cloud service this service integrates with.
      */
     service?: pulumi.Input<string>;
     /**
-     * How often, in minutes, to refresh the service
+     * How often, in minutes, to refresh the service.
      */
     serviceRefreshRateInMinutes?: pulumi.Input<number>;
 }
@@ -173,32 +183,37 @@ export interface CloudIntegrationEc2State {
  */
 export interface CloudIntegrationEc2Args {
     /**
-     * A list of point tag key-values to add to every point ingested using this integration
+     * A list of point tag key-values to add to every point ingested using this integration.
      */
     additionalTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
-     * The Role ARN that the customer has created in AWS IAM to allow access to Wavefront
+     * The Role ARN that the customer has created in AWS IAM to allow access to Wavefront.
      */
     externalId: pulumi.Input<string>;
     /**
-     * Forces this resource to save, even if errors are present
+     * Forces this resource to save, even if errors are present.
      */
     forceSave?: pulumi.Input<boolean>;
+    /**
+     * A list of AWS instance tags to use as the `source` name
+     * in a series. Default is `["hostname", "host", "name"]`. If no tag in the list is found, the series source
+     * is set to the instance id.
+     */
     hostnameTags?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The human-readable name of this integration
+     * The human-readable name of this integration.
      */
     name?: pulumi.Input<string>;
     /**
-     * The external id corresponding to the Role ARN
+     * The external ID corresponding to the Role ARN.
      */
     roleArn: pulumi.Input<string>;
     /**
-     * A value denoting which cloud service this service integrates with
+     * A value denoting which cloud service this service integrates with.
      */
     service: pulumi.Input<string>;
     /**
-     * How often, in minutes, to refresh the service
+     * How often, in minutes, to refresh the service.
      */
     serviceRefreshRateInMinutes?: pulumi.Input<number>;
 }

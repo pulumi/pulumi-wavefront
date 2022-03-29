@@ -40,7 +40,7 @@ import (
 //
 // ## Import
 //
-// Derived Metrics can be imported using the `id`, e.g.
+// Derived Metrics can be imported by using the `id`, e.g.
 //
 // ```sh
 //  $ pulumi import wavefront:index/derivedMetric:DerivedMetric derived_metric 1577102900578
@@ -48,13 +48,13 @@ import (
 type DerivedMetric struct {
 	pulumi.CustomResourceState
 
-	// User-supplied additional explanatory information for the derived metric
+	// User-supplied additional explanatory information for the derived metric.
 	AdditionalInformation pulumi.StringPtrOutput `pulumi:"additionalInformation"`
-	// How frequently the query generating the derived metric is run
+	// How frequently the query generating the derived metric is run.
 	Minutes pulumi.IntOutput `pulumi:"minutes"`
-	// The name of the Derived Metric in Wavefront
+	// The name of the Derived Metric in Wavefront.
 	Name pulumi.StringOutput `pulumi:"name"`
-	// A Wavefront query that is evaluated at regular intervals (default `1m`)
+	// A Wavefront query that is evaluated at regular intervals (default is 1 minute).
 	Query pulumi.StringOutput `pulumi:"query"`
 	// A set of tags to assign to this resource.
 	Tags pulumi.StringArrayOutput `pulumi:"tags"`
@@ -95,26 +95,26 @@ func GetDerivedMetric(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering DerivedMetric resources.
 type derivedMetricState struct {
-	// User-supplied additional explanatory information for the derived metric
+	// User-supplied additional explanatory information for the derived metric.
 	AdditionalInformation *string `pulumi:"additionalInformation"`
-	// How frequently the query generating the derived metric is run
+	// How frequently the query generating the derived metric is run.
 	Minutes *int `pulumi:"minutes"`
-	// The name of the Derived Metric in Wavefront
+	// The name of the Derived Metric in Wavefront.
 	Name *string `pulumi:"name"`
-	// A Wavefront query that is evaluated at regular intervals (default `1m`)
+	// A Wavefront query that is evaluated at regular intervals (default is 1 minute).
 	Query *string `pulumi:"query"`
 	// A set of tags to assign to this resource.
 	Tags []string `pulumi:"tags"`
 }
 
 type DerivedMetricState struct {
-	// User-supplied additional explanatory information for the derived metric
+	// User-supplied additional explanatory information for the derived metric.
 	AdditionalInformation pulumi.StringPtrInput
-	// How frequently the query generating the derived metric is run
+	// How frequently the query generating the derived metric is run.
 	Minutes pulumi.IntPtrInput
-	// The name of the Derived Metric in Wavefront
+	// The name of the Derived Metric in Wavefront.
 	Name pulumi.StringPtrInput
-	// A Wavefront query that is evaluated at regular intervals (default `1m`)
+	// A Wavefront query that is evaluated at regular intervals (default is 1 minute).
 	Query pulumi.StringPtrInput
 	// A set of tags to assign to this resource.
 	Tags pulumi.StringArrayInput
@@ -125,13 +125,13 @@ func (DerivedMetricState) ElementType() reflect.Type {
 }
 
 type derivedMetricArgs struct {
-	// User-supplied additional explanatory information for the derived metric
+	// User-supplied additional explanatory information for the derived metric.
 	AdditionalInformation *string `pulumi:"additionalInformation"`
-	// How frequently the query generating the derived metric is run
+	// How frequently the query generating the derived metric is run.
 	Minutes int `pulumi:"minutes"`
-	// The name of the Derived Metric in Wavefront
+	// The name of the Derived Metric in Wavefront.
 	Name *string `pulumi:"name"`
-	// A Wavefront query that is evaluated at regular intervals (default `1m`)
+	// A Wavefront query that is evaluated at regular intervals (default is 1 minute).
 	Query string `pulumi:"query"`
 	// A set of tags to assign to this resource.
 	Tags []string `pulumi:"tags"`
@@ -139,13 +139,13 @@ type derivedMetricArgs struct {
 
 // The set of arguments for constructing a DerivedMetric resource.
 type DerivedMetricArgs struct {
-	// User-supplied additional explanatory information for the derived metric
+	// User-supplied additional explanatory information for the derived metric.
 	AdditionalInformation pulumi.StringPtrInput
-	// How frequently the query generating the derived metric is run
+	// How frequently the query generating the derived metric is run.
 	Minutes pulumi.IntInput
-	// The name of the Derived Metric in Wavefront
+	// The name of the Derived Metric in Wavefront.
 	Name pulumi.StringPtrInput
-	// A Wavefront query that is evaluated at regular intervals (default `1m`)
+	// A Wavefront query that is evaluated at regular intervals (default is 1 minute).
 	Query pulumi.StringInput
 	// A set of tags to assign to this resource.
 	Tags pulumi.StringArrayInput

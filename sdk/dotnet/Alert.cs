@@ -54,14 +54,14 @@ namespace Pulumi.Wavefront
     {
         /// <summary>
         /// User-supplied additional explanatory information for this alert.
-        /// Useful for linking runbooks, migrations...etc
+        /// Useful for linking runbooks, migrations, etc.
         /// </summary>
         [Output("additionalInformation")]
         public Output<string?> AdditionalInformation { get; private set; } = null!;
 
         /// <summary>
         /// The type of alert in Wavefront.  Either `CLASSIC` (default) 
-        /// or `THRESHOLD`
+        /// or `THRESHOLD`.
         /// </summary>
         [Output("alertType")]
         public Output<string?> AlertType { get; private set; } = null!;
@@ -79,8 +79,8 @@ namespace Pulumi.Wavefront
         public Output<ImmutableArray<string>> CanViews { get; private set; } = null!;
 
         /// <summary>
-        /// A Wavefront query that is evaluated at regular intervals (default 1m).
-        /// The alert fires and notifications are triggered when data series matching this query evaluates
+        /// A Wavefront query that is evaluated at regular intervals (default is 1 minute).
+        /// The alert fires and notifications are triggered when a data series matching this query evaluates
         /// to a non-zero value for a set number of consecutive minutes.
         /// </summary>
         [Output("condition")]
@@ -116,14 +116,14 @@ namespace Pulumi.Wavefront
 
         /// <summary>
         /// How often to re-trigger a continually failing alert. 
-        /// If absent or &lt;= 0, no re-triggering occur.
+        /// If absent or &lt;= 0, no re-triggering occurs.
         /// </summary>
         [Output("notificationResendFrequencyMinutes")]
         public Output<int?> NotificationResendFrequencyMinutes { get; private set; } = null!;
 
         /// <summary>
         /// The number of consecutive minutes that a firing series matching the condition
-        /// query must evaluate to "false" (zero value) before the alert resolves.  When unset, this default sto
+        /// query must evaluate to "false" (zero value) before the alert resolves.  When unset, this defaults to
         /// the same value as `minutes`.
         /// </summary>
         [Output("resolveAfterMinutes")]
@@ -143,7 +143,7 @@ namespace Pulumi.Wavefront
 
         /// <summary>
         /// A comma-separated list of the email address or integration endpoint 
-        /// (such as PagerDuty or web hook) to notify when the alert status changes. Multiple target types can be in the list.
+        /// (such as PagerDuty or webhook) to notify when the alert status changes. Multiple target types can be in the list.
         /// Alert target format: ({email}|pd:{pd_key}|target:{alert-target-id}).
         /// </summary>
         [Output("target")]
@@ -203,14 +203,14 @@ namespace Pulumi.Wavefront
     {
         /// <summary>
         /// User-supplied additional explanatory information for this alert.
-        /// Useful for linking runbooks, migrations...etc
+        /// Useful for linking runbooks, migrations, etc.
         /// </summary>
         [Input("additionalInformation")]
         public Input<string>? AdditionalInformation { get; set; }
 
         /// <summary>
         /// The type of alert in Wavefront.  Either `CLASSIC` (default) 
-        /// or `THRESHOLD`
+        /// or `THRESHOLD`.
         /// </summary>
         [Input("alertType")]
         public Input<string>? AlertType { get; set; }
@@ -240,8 +240,8 @@ namespace Pulumi.Wavefront
         }
 
         /// <summary>
-        /// A Wavefront query that is evaluated at regular intervals (default 1m).
-        /// The alert fires and notifications are triggered when data series matching this query evaluates
+        /// A Wavefront query that is evaluated at regular intervals (default is 1 minute).
+        /// The alert fires and notifications are triggered when a data series matching this query evaluates
         /// to a non-zero value for a set number of consecutive minutes.
         /// </summary>
         [Input("condition")]
@@ -283,14 +283,14 @@ namespace Pulumi.Wavefront
 
         /// <summary>
         /// How often to re-trigger a continually failing alert. 
-        /// If absent or &lt;= 0, no re-triggering occur.
+        /// If absent or &lt;= 0, no re-triggering occurs.
         /// </summary>
         [Input("notificationResendFrequencyMinutes")]
         public Input<int>? NotificationResendFrequencyMinutes { get; set; }
 
         /// <summary>
         /// The number of consecutive minutes that a firing series matching the condition
-        /// query must evaluate to "false" (zero value) before the alert resolves.  When unset, this default sto
+        /// query must evaluate to "false" (zero value) before the alert resolves.  When unset, this defaults to
         /// the same value as `minutes`.
         /// </summary>
         [Input("resolveAfterMinutes")]
@@ -316,7 +316,7 @@ namespace Pulumi.Wavefront
 
         /// <summary>
         /// A comma-separated list of the email address or integration endpoint 
-        /// (such as PagerDuty or web hook) to notify when the alert status changes. Multiple target types can be in the list.
+        /// (such as PagerDuty or webhook) to notify when the alert status changes. Multiple target types can be in the list.
         /// Alert target format: ({email}|pd:{pd_key}|target:{alert-target-id}).
         /// </summary>
         [Input("target")]
@@ -343,14 +343,14 @@ namespace Pulumi.Wavefront
     {
         /// <summary>
         /// User-supplied additional explanatory information for this alert.
-        /// Useful for linking runbooks, migrations...etc
+        /// Useful for linking runbooks, migrations, etc.
         /// </summary>
         [Input("additionalInformation")]
         public Input<string>? AdditionalInformation { get; set; }
 
         /// <summary>
         /// The type of alert in Wavefront.  Either `CLASSIC` (default) 
-        /// or `THRESHOLD`
+        /// or `THRESHOLD`.
         /// </summary>
         [Input("alertType")]
         public Input<string>? AlertType { get; set; }
@@ -380,8 +380,8 @@ namespace Pulumi.Wavefront
         }
 
         /// <summary>
-        /// A Wavefront query that is evaluated at regular intervals (default 1m).
-        /// The alert fires and notifications are triggered when data series matching this query evaluates
+        /// A Wavefront query that is evaluated at regular intervals (default is 1 minute).
+        /// The alert fires and notifications are triggered when a data series matching this query evaluates
         /// to a non-zero value for a set number of consecutive minutes.
         /// </summary>
         [Input("condition")]
@@ -423,14 +423,14 @@ namespace Pulumi.Wavefront
 
         /// <summary>
         /// How often to re-trigger a continually failing alert. 
-        /// If absent or &lt;= 0, no re-triggering occur.
+        /// If absent or &lt;= 0, no re-triggering occurs.
         /// </summary>
         [Input("notificationResendFrequencyMinutes")]
         public Input<int>? NotificationResendFrequencyMinutes { get; set; }
 
         /// <summary>
         /// The number of consecutive minutes that a firing series matching the condition
-        /// query must evaluate to "false" (zero value) before the alert resolves.  When unset, this default sto
+        /// query must evaluate to "false" (zero value) before the alert resolves.  When unset, this defaults to
         /// the same value as `minutes`.
         /// </summary>
         [Input("resolveAfterMinutes")]
@@ -456,7 +456,7 @@ namespace Pulumi.Wavefront
 
         /// <summary>
         /// A comma-separated list of the email address or integration endpoint 
-        /// (such as PagerDuty or web hook) to notify when the alert status changes. Multiple target types can be in the list.
+        /// (such as PagerDuty or webhook) to notify when the alert status changes. Multiple target types can be in the list.
         /// Alert target format: ({email}|pd:{pd_key}|target:{alert-target-id}).
         /// </summary>
         [Input("target")]

@@ -34,7 +34,7 @@ namespace Pulumi.Wavefront
     /// 
     /// ## Import
     /// 
-    /// Service accounts can be imported using `identifier`, e.g.
+    /// Service accounts can be imported by using `identifier`, e.g.
     /// 
     /// ```sh
     ///  $ pulumi import wavefront:index/serviceAccount:ServiceAccount basic sa::tftesting
@@ -44,25 +44,25 @@ namespace Pulumi.Wavefront
     public partial class ServiceAccount : Pulumi.CustomResource
     {
         /// <summary>
-        /// Whether or not the service account is active
+        /// Whether or not the service account is active.
         /// </summary>
         [Output("active")]
         public Output<bool?> Active { get; private set; } = null!;
 
         /// <summary>
-        /// The description of the service account
+        /// The description of the service account.
         /// </summary>
         [Output("description")]
         public Output<string?> Description { get; private set; } = null!;
 
         /// <summary>
-        /// The (unique) identifier of the service account to create. Must start with sa::
+        /// The unique identifier of the service account to create. Must have the prefix `sa::`.
         /// </summary>
         [Output("identifier")]
         public Output<string> Identifier { get; private set; } = null!;
 
         /// <summary>
-        /// ID of ingestion policy
+        /// ID of ingestion policy.
         /// </summary>
         [Output("ingestionPolicy")]
         public Output<string?> IngestionPolicy { get; private set; } = null!;
@@ -70,13 +70,13 @@ namespace Pulumi.Wavefront
         /// <summary>
         /// List of permission to grant to this service account.  Valid options are
         /// `agent_management`, `alerts_management`, `dashboard_management`, `embedded_charts`, `events_management`, `external_links_management`,
-        /// `host_tag_management`, `metrics_management`, `user_management`
+        /// `host_tag_management`, `metrics_management`, and `user_management`.
         /// </summary>
         [Output("permissions")]
         public Output<ImmutableArray<string>> Permissions { get; private set; } = null!;
 
         /// <summary>
-        /// List of user groups for this service account
+        /// List of user groups for this service account.
         /// </summary>
         [Output("userGroups")]
         public Output<ImmutableArray<string>> UserGroups { get; private set; } = null!;
@@ -128,25 +128,25 @@ namespace Pulumi.Wavefront
     public sealed class ServiceAccountArgs : Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Whether or not the service account is active
+        /// Whether or not the service account is active.
         /// </summary>
         [Input("active")]
         public Input<bool>? Active { get; set; }
 
         /// <summary>
-        /// The description of the service account
+        /// The description of the service account.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// The (unique) identifier of the service account to create. Must start with sa::
+        /// The unique identifier of the service account to create. Must have the prefix `sa::`.
         /// </summary>
         [Input("identifier", required: true)]
         public Input<string> Identifier { get; set; } = null!;
 
         /// <summary>
-        /// ID of ingestion policy
+        /// ID of ingestion policy.
         /// </summary>
         [Input("ingestionPolicy")]
         public Input<string>? IngestionPolicy { get; set; }
@@ -157,7 +157,7 @@ namespace Pulumi.Wavefront
         /// <summary>
         /// List of permission to grant to this service account.  Valid options are
         /// `agent_management`, `alerts_management`, `dashboard_management`, `embedded_charts`, `events_management`, `external_links_management`,
-        /// `host_tag_management`, `metrics_management`, `user_management`
+        /// `host_tag_management`, `metrics_management`, and `user_management`.
         /// </summary>
         public InputList<string> Permissions
         {
@@ -169,7 +169,7 @@ namespace Pulumi.Wavefront
         private InputList<string>? _userGroups;
 
         /// <summary>
-        /// List of user groups for this service account
+        /// List of user groups for this service account.
         /// </summary>
         public InputList<string> UserGroups
         {
@@ -185,25 +185,25 @@ namespace Pulumi.Wavefront
     public sealed class ServiceAccountState : Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Whether or not the service account is active
+        /// Whether or not the service account is active.
         /// </summary>
         [Input("active")]
         public Input<bool>? Active { get; set; }
 
         /// <summary>
-        /// The description of the service account
+        /// The description of the service account.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// The (unique) identifier of the service account to create. Must start with sa::
+        /// The unique identifier of the service account to create. Must have the prefix `sa::`.
         /// </summary>
         [Input("identifier")]
         public Input<string>? Identifier { get; set; }
 
         /// <summary>
-        /// ID of ingestion policy
+        /// ID of ingestion policy.
         /// </summary>
         [Input("ingestionPolicy")]
         public Input<string>? IngestionPolicy { get; set; }
@@ -214,7 +214,7 @@ namespace Pulumi.Wavefront
         /// <summary>
         /// List of permission to grant to this service account.  Valid options are
         /// `agent_management`, `alerts_management`, `dashboard_management`, `embedded_charts`, `events_management`, `external_links_management`,
-        /// `host_tag_management`, `metrics_management`, `user_management`
+        /// `host_tag_management`, `metrics_management`, and `user_management`.
         /// </summary>
         public InputList<string> Permissions
         {
@@ -226,7 +226,7 @@ namespace Pulumi.Wavefront
         private InputList<string>? _userGroups;
 
         /// <summary>
-        /// List of user groups for this service account
+        /// List of user groups for this service account.
         /// </summary>
         public InputList<string> UserGroups
         {

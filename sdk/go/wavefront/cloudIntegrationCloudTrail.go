@@ -46,7 +46,7 @@ import (
 //
 // ## Import
 //
-// CloudTrail Cloud Integrations can be imported using the `id`, e.g.
+// CloudTrail Cloud Integrations can be imported by using the `id`, e.g.
 //
 // ```sh
 //  $ pulumi import wavefront:index/cloudIntegrationCloudTrail:CloudIntegrationCloudTrail cloudtrail a411c16b-3cf7-4f03-bf11-8ca05aab898d
@@ -54,27 +54,27 @@ import (
 type CloudIntegrationCloudTrail struct {
 	pulumi.CustomResourceState
 
-	// A list of point tag key-values to add to every point ingested using this integration
+	// A list of point tag key-values to add to every point ingested using this integration.
 	AdditionalTags pulumi.StringMapOutput `pulumi:"additionalTags"`
-	// Name of the S3 bucket where CloudTrail logs are stored
+	// Name of the S3 bucket where CloudTrail logs are stored.
 	BucketName pulumi.StringOutput `pulumi:"bucketName"`
-	// The Role ARN that the customer has created in AWS IAM to allow access to Wavefront
+	// The Role ARN that the customer has created in AWS IAM to allow access to Wavefront.
 	ExternalId pulumi.StringOutput `pulumi:"externalId"`
-	// Rule to filter CloudTrail log event
+	// Rule to filter CloudTrail log event.
 	FilterRule pulumi.StringPtrOutput `pulumi:"filterRule"`
-	// Forces this resource to save, even if errors are present
+	// Forces this resource to save, even if errors are present.
 	ForceSave pulumi.BoolPtrOutput `pulumi:"forceSave"`
-	// The human-readable name of this integration
+	// The human-readable name of this integration.
 	Name pulumi.StringOutput `pulumi:"name"`
 	// The common prefix, if any, appended to all CloudTrail log files.
 	Prefix pulumi.StringPtrOutput `pulumi:"prefix"`
-	// The AWS region of the S3 bucket where CloudTrail logs are stored
+	// The AWS region of the S3 bucket where CloudTrail logs are stored.
 	Region pulumi.StringOutput `pulumi:"region"`
-	// The external id corresponding to the Role ARN
+	// The external ID corresponding to the Role ARN.
 	RoleArn pulumi.StringOutput `pulumi:"roleArn"`
-	// A value denoting which cloud service this service integrates with
+	// A value denoting which cloud service this service integrates with.
 	Service pulumi.StringOutput `pulumi:"service"`
-	// How often, in minutes, to refresh the service
+	// How often, in minutes, to refresh the service.
 	ServiceRefreshRateInMinutes pulumi.IntPtrOutput `pulumi:"serviceRefreshRateInMinutes"`
 }
 
@@ -122,52 +122,52 @@ func GetCloudIntegrationCloudTrail(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering CloudIntegrationCloudTrail resources.
 type cloudIntegrationCloudTrailState struct {
-	// A list of point tag key-values to add to every point ingested using this integration
+	// A list of point tag key-values to add to every point ingested using this integration.
 	AdditionalTags map[string]string `pulumi:"additionalTags"`
-	// Name of the S3 bucket where CloudTrail logs are stored
+	// Name of the S3 bucket where CloudTrail logs are stored.
 	BucketName *string `pulumi:"bucketName"`
-	// The Role ARN that the customer has created in AWS IAM to allow access to Wavefront
+	// The Role ARN that the customer has created in AWS IAM to allow access to Wavefront.
 	ExternalId *string `pulumi:"externalId"`
-	// Rule to filter CloudTrail log event
+	// Rule to filter CloudTrail log event.
 	FilterRule *string `pulumi:"filterRule"`
-	// Forces this resource to save, even if errors are present
+	// Forces this resource to save, even if errors are present.
 	ForceSave *bool `pulumi:"forceSave"`
-	// The human-readable name of this integration
+	// The human-readable name of this integration.
 	Name *string `pulumi:"name"`
 	// The common prefix, if any, appended to all CloudTrail log files.
 	Prefix *string `pulumi:"prefix"`
-	// The AWS region of the S3 bucket where CloudTrail logs are stored
+	// The AWS region of the S3 bucket where CloudTrail logs are stored.
 	Region *string `pulumi:"region"`
-	// The external id corresponding to the Role ARN
+	// The external ID corresponding to the Role ARN.
 	RoleArn *string `pulumi:"roleArn"`
-	// A value denoting which cloud service this service integrates with
+	// A value denoting which cloud service this service integrates with.
 	Service *string `pulumi:"service"`
-	// How often, in minutes, to refresh the service
+	// How often, in minutes, to refresh the service.
 	ServiceRefreshRateInMinutes *int `pulumi:"serviceRefreshRateInMinutes"`
 }
 
 type CloudIntegrationCloudTrailState struct {
-	// A list of point tag key-values to add to every point ingested using this integration
+	// A list of point tag key-values to add to every point ingested using this integration.
 	AdditionalTags pulumi.StringMapInput
-	// Name of the S3 bucket where CloudTrail logs are stored
+	// Name of the S3 bucket where CloudTrail logs are stored.
 	BucketName pulumi.StringPtrInput
-	// The Role ARN that the customer has created in AWS IAM to allow access to Wavefront
+	// The Role ARN that the customer has created in AWS IAM to allow access to Wavefront.
 	ExternalId pulumi.StringPtrInput
-	// Rule to filter CloudTrail log event
+	// Rule to filter CloudTrail log event.
 	FilterRule pulumi.StringPtrInput
-	// Forces this resource to save, even if errors are present
+	// Forces this resource to save, even if errors are present.
 	ForceSave pulumi.BoolPtrInput
-	// The human-readable name of this integration
+	// The human-readable name of this integration.
 	Name pulumi.StringPtrInput
 	// The common prefix, if any, appended to all CloudTrail log files.
 	Prefix pulumi.StringPtrInput
-	// The AWS region of the S3 bucket where CloudTrail logs are stored
+	// The AWS region of the S3 bucket where CloudTrail logs are stored.
 	Region pulumi.StringPtrInput
-	// The external id corresponding to the Role ARN
+	// The external ID corresponding to the Role ARN.
 	RoleArn pulumi.StringPtrInput
-	// A value denoting which cloud service this service integrates with
+	// A value denoting which cloud service this service integrates with.
 	Service pulumi.StringPtrInput
-	// How often, in minutes, to refresh the service
+	// How often, in minutes, to refresh the service.
 	ServiceRefreshRateInMinutes pulumi.IntPtrInput
 }
 
@@ -176,53 +176,53 @@ func (CloudIntegrationCloudTrailState) ElementType() reflect.Type {
 }
 
 type cloudIntegrationCloudTrailArgs struct {
-	// A list of point tag key-values to add to every point ingested using this integration
+	// A list of point tag key-values to add to every point ingested using this integration.
 	AdditionalTags map[string]string `pulumi:"additionalTags"`
-	// Name of the S3 bucket where CloudTrail logs are stored
+	// Name of the S3 bucket where CloudTrail logs are stored.
 	BucketName string `pulumi:"bucketName"`
-	// The Role ARN that the customer has created in AWS IAM to allow access to Wavefront
+	// The Role ARN that the customer has created in AWS IAM to allow access to Wavefront.
 	ExternalId string `pulumi:"externalId"`
-	// Rule to filter CloudTrail log event
+	// Rule to filter CloudTrail log event.
 	FilterRule *string `pulumi:"filterRule"`
-	// Forces this resource to save, even if errors are present
+	// Forces this resource to save, even if errors are present.
 	ForceSave *bool `pulumi:"forceSave"`
-	// The human-readable name of this integration
+	// The human-readable name of this integration.
 	Name *string `pulumi:"name"`
 	// The common prefix, if any, appended to all CloudTrail log files.
 	Prefix *string `pulumi:"prefix"`
-	// The AWS region of the S3 bucket where CloudTrail logs are stored
+	// The AWS region of the S3 bucket where CloudTrail logs are stored.
 	Region string `pulumi:"region"`
-	// The external id corresponding to the Role ARN
+	// The external ID corresponding to the Role ARN.
 	RoleArn string `pulumi:"roleArn"`
-	// A value denoting which cloud service this service integrates with
+	// A value denoting which cloud service this service integrates with.
 	Service string `pulumi:"service"`
-	// How often, in minutes, to refresh the service
+	// How often, in minutes, to refresh the service.
 	ServiceRefreshRateInMinutes *int `pulumi:"serviceRefreshRateInMinutes"`
 }
 
 // The set of arguments for constructing a CloudIntegrationCloudTrail resource.
 type CloudIntegrationCloudTrailArgs struct {
-	// A list of point tag key-values to add to every point ingested using this integration
+	// A list of point tag key-values to add to every point ingested using this integration.
 	AdditionalTags pulumi.StringMapInput
-	// Name of the S3 bucket where CloudTrail logs are stored
+	// Name of the S3 bucket where CloudTrail logs are stored.
 	BucketName pulumi.StringInput
-	// The Role ARN that the customer has created in AWS IAM to allow access to Wavefront
+	// The Role ARN that the customer has created in AWS IAM to allow access to Wavefront.
 	ExternalId pulumi.StringInput
-	// Rule to filter CloudTrail log event
+	// Rule to filter CloudTrail log event.
 	FilterRule pulumi.StringPtrInput
-	// Forces this resource to save, even if errors are present
+	// Forces this resource to save, even if errors are present.
 	ForceSave pulumi.BoolPtrInput
-	// The human-readable name of this integration
+	// The human-readable name of this integration.
 	Name pulumi.StringPtrInput
 	// The common prefix, if any, appended to all CloudTrail log files.
 	Prefix pulumi.StringPtrInput
-	// The AWS region of the S3 bucket where CloudTrail logs are stored
+	// The AWS region of the S3 bucket where CloudTrail logs are stored.
 	Region pulumi.StringInput
-	// The external id corresponding to the Role ARN
+	// The external ID corresponding to the Role ARN.
 	RoleArn pulumi.StringInput
-	// A value denoting which cloud service this service integrates with
+	// A value denoting which cloud service this service integrates with.
 	Service pulumi.StringInput
-	// How often, in minutes, to refresh the service
+	// How often, in minutes, to refresh the service.
 	ServiceRefreshRateInMinutes pulumi.IntPtrInput
 }
 

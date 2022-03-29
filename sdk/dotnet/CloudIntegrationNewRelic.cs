@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Wavefront
 {
     /// <summary>
-    /// Provides a Wavefront Cloud Integration for NewRelic. This allows NewRelic cloud integrations to be created,
+    /// Provides a Wavefront Cloud Integration for New Relic. This allows New Relic cloud integrations to be created,
     /// updated, and deleted.
     /// 
     /// ## Example Usage
@@ -34,7 +34,7 @@ namespace Pulumi.Wavefront
     /// 
     /// ## Import
     /// 
-    /// NewRelic Integrations can be imported using the `id`, e.g.
+    /// NewRelic Integrations can be imported by using the `id`, e.g.
     /// 
     /// ```sh
     ///  $ pulumi import wavefront:index/cloudIntegrationNewRelic:CloudIntegrationNewRelic newrelic a411c16b-3cf7-4f03-bf11-8ca05aab898d
@@ -44,55 +44,55 @@ namespace Pulumi.Wavefront
     public partial class CloudIntegrationNewRelic : Pulumi.CustomResource
     {
         /// <summary>
-        /// A list of point tag key-values to add to every point ingested using this integration
+        /// A list of point tag key-values to add to every point ingested using this integration.
         /// </summary>
         [Output("additionalTags")]
         public Output<ImmutableDictionary<string, string>?> AdditionalTags { get; private set; } = null!;
 
         /// <summary>
-        /// NewRelic REST api key
+        /// New Relic REST API key.
         /// </summary>
         [Output("apiKey")]
         public Output<string> ApiKey { get; private set; } = null!;
 
         /// <summary>
-        /// A regular expression that an application name must match (case-insensitively) iun order to collect metrics
+        /// A regular expression that an application name must match (case-insensitively) in order to collect metrics.
         /// </summary>
         [Output("appFilterRegex")]
         public Output<string?> AppFilterRegex { get; private set; } = null!;
 
         /// <summary>
-        /// Forces this resource to save, even if errors are present
+        /// Forces this resource to save, even if errors are present.
         /// </summary>
         [Output("forceSave")]
         public Output<bool?> ForceSave { get; private set; } = null!;
 
         /// <summary>
-        /// A regular expression that a host name must match (case-insensitively) in order to collect metrics
+        /// A regular expression that a host name must match (case-insensitively) in order to collect metrics.
         /// </summary>
         [Output("hostFilterRegex")]
         public Output<string?> HostFilterRegex { get; private set; } = null!;
 
         /// <summary>
-        /// See Metric Filter
+        /// See Metric Filter.
         /// </summary>
         [Output("metricFilters")]
         public Output<ImmutableArray<Outputs.CloudIntegrationNewRelicMetricFilter>> MetricFilters { get; private set; } = null!;
 
         /// <summary>
-        /// The human-readable name of this integration
+        /// The human-readable name of this integration.
         /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
 
         /// <summary>
-        /// A value denoting which cloud service this service integrates with
+        /// A value denoting which cloud service this service integrates with.
         /// </summary>
         [Output("service")]
         public Output<string> Service { get; private set; } = null!;
 
         /// <summary>
-        /// How often, in minutes, to refresh the service
+        /// How often, in minutes, to refresh the service.
         /// </summary>
         [Output("serviceRefreshRateInMinutes")]
         public Output<int?> ServiceRefreshRateInMinutes { get; private set; } = null!;
@@ -147,7 +147,7 @@ namespace Pulumi.Wavefront
         private InputMap<string>? _additionalTags;
 
         /// <summary>
-        /// A list of point tag key-values to add to every point ingested using this integration
+        /// A list of point tag key-values to add to every point ingested using this integration.
         /// </summary>
         public InputMap<string> AdditionalTags
         {
@@ -156,25 +156,25 @@ namespace Pulumi.Wavefront
         }
 
         /// <summary>
-        /// NewRelic REST api key
+        /// New Relic REST API key.
         /// </summary>
         [Input("apiKey", required: true)]
         public Input<string> ApiKey { get; set; } = null!;
 
         /// <summary>
-        /// A regular expression that an application name must match (case-insensitively) iun order to collect metrics
+        /// A regular expression that an application name must match (case-insensitively) in order to collect metrics.
         /// </summary>
         [Input("appFilterRegex")]
         public Input<string>? AppFilterRegex { get; set; }
 
         /// <summary>
-        /// Forces this resource to save, even if errors are present
+        /// Forces this resource to save, even if errors are present.
         /// </summary>
         [Input("forceSave")]
         public Input<bool>? ForceSave { get; set; }
 
         /// <summary>
-        /// A regular expression that a host name must match (case-insensitively) in order to collect metrics
+        /// A regular expression that a host name must match (case-insensitively) in order to collect metrics.
         /// </summary>
         [Input("hostFilterRegex")]
         public Input<string>? HostFilterRegex { get; set; }
@@ -183,7 +183,7 @@ namespace Pulumi.Wavefront
         private InputList<Inputs.CloudIntegrationNewRelicMetricFilterArgs>? _metricFilters;
 
         /// <summary>
-        /// See Metric Filter
+        /// See Metric Filter.
         /// </summary>
         public InputList<Inputs.CloudIntegrationNewRelicMetricFilterArgs> MetricFilters
         {
@@ -192,19 +192,19 @@ namespace Pulumi.Wavefront
         }
 
         /// <summary>
-        /// The human-readable name of this integration
+        /// The human-readable name of this integration.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// A value denoting which cloud service this service integrates with
+        /// A value denoting which cloud service this service integrates with.
         /// </summary>
         [Input("service", required: true)]
         public Input<string> Service { get; set; } = null!;
 
         /// <summary>
-        /// How often, in minutes, to refresh the service
+        /// How often, in minutes, to refresh the service.
         /// </summary>
         [Input("serviceRefreshRateInMinutes")]
         public Input<int>? ServiceRefreshRateInMinutes { get; set; }
@@ -220,7 +220,7 @@ namespace Pulumi.Wavefront
         private InputMap<string>? _additionalTags;
 
         /// <summary>
-        /// A list of point tag key-values to add to every point ingested using this integration
+        /// A list of point tag key-values to add to every point ingested using this integration.
         /// </summary>
         public InputMap<string> AdditionalTags
         {
@@ -229,25 +229,25 @@ namespace Pulumi.Wavefront
         }
 
         /// <summary>
-        /// NewRelic REST api key
+        /// New Relic REST API key.
         /// </summary>
         [Input("apiKey")]
         public Input<string>? ApiKey { get; set; }
 
         /// <summary>
-        /// A regular expression that an application name must match (case-insensitively) iun order to collect metrics
+        /// A regular expression that an application name must match (case-insensitively) in order to collect metrics.
         /// </summary>
         [Input("appFilterRegex")]
         public Input<string>? AppFilterRegex { get; set; }
 
         /// <summary>
-        /// Forces this resource to save, even if errors are present
+        /// Forces this resource to save, even if errors are present.
         /// </summary>
         [Input("forceSave")]
         public Input<bool>? ForceSave { get; set; }
 
         /// <summary>
-        /// A regular expression that a host name must match (case-insensitively) in order to collect metrics
+        /// A regular expression that a host name must match (case-insensitively) in order to collect metrics.
         /// </summary>
         [Input("hostFilterRegex")]
         public Input<string>? HostFilterRegex { get; set; }
@@ -256,7 +256,7 @@ namespace Pulumi.Wavefront
         private InputList<Inputs.CloudIntegrationNewRelicMetricFilterGetArgs>? _metricFilters;
 
         /// <summary>
-        /// See Metric Filter
+        /// See Metric Filter.
         /// </summary>
         public InputList<Inputs.CloudIntegrationNewRelicMetricFilterGetArgs> MetricFilters
         {
@@ -265,19 +265,19 @@ namespace Pulumi.Wavefront
         }
 
         /// <summary>
-        /// The human-readable name of this integration
+        /// The human-readable name of this integration.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// A value denoting which cloud service this service integrates with
+        /// A value denoting which cloud service this service integrates with.
         /// </summary>
         [Input("service")]
         public Input<string>? Service { get; set; }
 
         /// <summary>
-        /// How often, in minutes, to refresh the service
+        /// How often, in minutes, to refresh the service.
         /// </summary>
         [Input("serviceRefreshRateInMinutes")]
         public Input<int>? ServiceRefreshRateInMinutes { get; set; }

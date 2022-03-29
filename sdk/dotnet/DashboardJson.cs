@@ -131,7 +131,7 @@ namespace Pulumi.Wavefront
     /// 
     /// ## Import
     /// 
-    /// Dashboard JSON can be imported using the `id`, e.g.
+    /// Dashboard JSON can be imported by using the `id`, e.g.
     /// 
     /// ```sh
     ///  $ pulumi import wavefront:index/dashboardJson:DashboardJson dashboard_json tftestimport
@@ -141,7 +141,7 @@ namespace Pulumi.Wavefront
     public partial class DashboardJson : Pulumi.CustomResource
     {
         /// <summary>
-        /// See [Wavefront API Documentation](https://docs.wavefront.com/wavefront_api.html#api-documentation-wavefront-instance) 
+        /// See the [Wavefront API Documentation](https://docs.wavefront.com/wavefront_api.html#api-documentation-wavefront-instance) 
         /// for instructions on how to get to your API documentation for more details.
         /// </summary>
         [Output("dashboardJson")]
@@ -194,7 +194,7 @@ namespace Pulumi.Wavefront
     public sealed class DashboardJsonArgs : Pulumi.ResourceArgs
     {
         /// <summary>
-        /// See [Wavefront API Documentation](https://docs.wavefront.com/wavefront_api.html#api-documentation-wavefront-instance) 
+        /// See the [Wavefront API Documentation](https://docs.wavefront.com/wavefront_api.html#api-documentation-wavefront-instance) 
         /// for instructions on how to get to your API documentation for more details.
         /// </summary>
         [Input("dashboardJson", required: true)]
@@ -208,7 +208,7 @@ namespace Pulumi.Wavefront
     public sealed class DashboardJsonState : Pulumi.ResourceArgs
     {
         /// <summary>
-        /// See [Wavefront API Documentation](https://docs.wavefront.com/wavefront_api.html#api-documentation-wavefront-instance) 
+        /// See the [Wavefront API Documentation](https://docs.wavefront.com/wavefront_api.html#api-documentation-wavefront-instance) 
         /// for instructions on how to get to your API documentation for more details.
         /// </summary>
         [Input("dashboardJson")]

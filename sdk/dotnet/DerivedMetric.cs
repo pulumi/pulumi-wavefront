@@ -35,7 +35,7 @@ namespace Pulumi.Wavefront
     /// 
     /// ## Import
     /// 
-    /// Derived Metrics can be imported using the `id`, e.g.
+    /// Derived Metrics can be imported by using the `id`, e.g.
     /// 
     /// ```sh
     ///  $ pulumi import wavefront:index/derivedMetric:DerivedMetric derived_metric 1577102900578
@@ -45,25 +45,25 @@ namespace Pulumi.Wavefront
     public partial class DerivedMetric : Pulumi.CustomResource
     {
         /// <summary>
-        /// User-supplied additional explanatory information for the derived metric
+        /// User-supplied additional explanatory information for the derived metric.
         /// </summary>
         [Output("additionalInformation")]
         public Output<string?> AdditionalInformation { get; private set; } = null!;
 
         /// <summary>
-        /// How frequently the query generating the derived metric is run
+        /// How frequently the query generating the derived metric is run.
         /// </summary>
         [Output("minutes")]
         public Output<int> Minutes { get; private set; } = null!;
 
         /// <summary>
-        /// The name of the Derived Metric in Wavefront
+        /// The name of the Derived Metric in Wavefront.
         /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
 
         /// <summary>
-        /// A Wavefront query that is evaluated at regular intervals (default `1m`)
+        /// A Wavefront query that is evaluated at regular intervals (default is 1 minute).
         /// </summary>
         [Output("query")]
         public Output<string> Query { get; private set; } = null!;
@@ -121,25 +121,25 @@ namespace Pulumi.Wavefront
     public sealed class DerivedMetricArgs : Pulumi.ResourceArgs
     {
         /// <summary>
-        /// User-supplied additional explanatory information for the derived metric
+        /// User-supplied additional explanatory information for the derived metric.
         /// </summary>
         [Input("additionalInformation")]
         public Input<string>? AdditionalInformation { get; set; }
 
         /// <summary>
-        /// How frequently the query generating the derived metric is run
+        /// How frequently the query generating the derived metric is run.
         /// </summary>
         [Input("minutes", required: true)]
         public Input<int> Minutes { get; set; } = null!;
 
         /// <summary>
-        /// The name of the Derived Metric in Wavefront
+        /// The name of the Derived Metric in Wavefront.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// A Wavefront query that is evaluated at regular intervals (default `1m`)
+        /// A Wavefront query that is evaluated at regular intervals (default is 1 minute).
         /// </summary>
         [Input("query", required: true)]
         public Input<string> Query { get; set; } = null!;
@@ -164,25 +164,25 @@ namespace Pulumi.Wavefront
     public sealed class DerivedMetricState : Pulumi.ResourceArgs
     {
         /// <summary>
-        /// User-supplied additional explanatory information for the derived metric
+        /// User-supplied additional explanatory information for the derived metric.
         /// </summary>
         [Input("additionalInformation")]
         public Input<string>? AdditionalInformation { get; set; }
 
         /// <summary>
-        /// How frequently the query generating the derived metric is run
+        /// How frequently the query generating the derived metric is run.
         /// </summary>
         [Input("minutes")]
         public Input<int>? Minutes { get; set; }
 
         /// <summary>
-        /// The name of the Derived Metric in Wavefront
+        /// The name of the Derived Metric in Wavefront.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// A Wavefront query that is evaluated at regular intervals (default `1m`)
+        /// A Wavefront query that is evaluated at regular intervals (default is 1 minute).
         /// </summary>
         [Input("query")]
         public Input<string>? Query { get; set; }

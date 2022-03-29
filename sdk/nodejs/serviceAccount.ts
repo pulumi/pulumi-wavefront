@@ -21,7 +21,7 @@ import * as utilities from "./utilities";
  *
  * ## Import
  *
- * Service accounts can be imported using `identifier`, e.g.
+ * Service accounts can be imported by using `identifier`, e.g.
  *
  * ```sh
  *  $ pulumi import wavefront:index/serviceAccount:ServiceAccount basic sa::tftesting
@@ -56,29 +56,29 @@ export class ServiceAccount extends pulumi.CustomResource {
     }
 
     /**
-     * Whether or not the service account is active
+     * Whether or not the service account is active.
      */
     public readonly active!: pulumi.Output<boolean | undefined>;
     /**
-     * The description of the service account
+     * The description of the service account.
      */
     public readonly description!: pulumi.Output<string | undefined>;
     /**
-     * The (unique) identifier of the service account to create. Must start with sa::
+     * The unique identifier of the service account to create. Must have the prefix `sa::`.
      */
     public readonly identifier!: pulumi.Output<string>;
     /**
-     * ID of ingestion policy
+     * ID of ingestion policy.
      */
     public readonly ingestionPolicy!: pulumi.Output<string | undefined>;
     /**
      * List of permission to grant to this service account.  Valid options are
      * `agentManagement`, `alertsManagement`, `dashboardManagement`, `embeddedCharts`, `eventsManagement`, `externalLinksManagement`,
-     * `hostTagManagement`, `metricsManagement`, `userManagement`
+     * `hostTagManagement`, `metricsManagement`, and `userManagement`.
      */
     public readonly permissions!: pulumi.Output<string[]>;
     /**
-     * List of user groups for this service account
+     * List of user groups for this service account.
      */
     public readonly userGroups!: pulumi.Output<string[]>;
 
@@ -123,29 +123,29 @@ export class ServiceAccount extends pulumi.CustomResource {
  */
 export interface ServiceAccountState {
     /**
-     * Whether or not the service account is active
+     * Whether or not the service account is active.
      */
     active?: pulumi.Input<boolean>;
     /**
-     * The description of the service account
+     * The description of the service account.
      */
     description?: pulumi.Input<string>;
     /**
-     * The (unique) identifier of the service account to create. Must start with sa::
+     * The unique identifier of the service account to create. Must have the prefix `sa::`.
      */
     identifier?: pulumi.Input<string>;
     /**
-     * ID of ingestion policy
+     * ID of ingestion policy.
      */
     ingestionPolicy?: pulumi.Input<string>;
     /**
      * List of permission to grant to this service account.  Valid options are
      * `agentManagement`, `alertsManagement`, `dashboardManagement`, `embeddedCharts`, `eventsManagement`, `externalLinksManagement`,
-     * `hostTagManagement`, `metricsManagement`, `userManagement`
+     * `hostTagManagement`, `metricsManagement`, and `userManagement`.
      */
     permissions?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * List of user groups for this service account
+     * List of user groups for this service account.
      */
     userGroups?: pulumi.Input<pulumi.Input<string>[]>;
 }
@@ -155,29 +155,29 @@ export interface ServiceAccountState {
  */
 export interface ServiceAccountArgs {
     /**
-     * Whether or not the service account is active
+     * Whether or not the service account is active.
      */
     active?: pulumi.Input<boolean>;
     /**
-     * The description of the service account
+     * The description of the service account.
      */
     description?: pulumi.Input<string>;
     /**
-     * The (unique) identifier of the service account to create. Must start with sa::
+     * The unique identifier of the service account to create. Must have the prefix `sa::`.
      */
     identifier: pulumi.Input<string>;
     /**
-     * ID of ingestion policy
+     * ID of ingestion policy.
      */
     ingestionPolicy?: pulumi.Input<string>;
     /**
      * List of permission to grant to this service account.  Valid options are
      * `agentManagement`, `alertsManagement`, `dashboardManagement`, `embeddedCharts`, `eventsManagement`, `externalLinksManagement`,
-     * `hostTagManagement`, `metricsManagement`, `userManagement`
+     * `hostTagManagement`, `metricsManagement`, and `userManagement`.
      */
     permissions?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * List of user groups for this service account
+     * List of user groups for this service account.
      */
     userGroups?: pulumi.Input<pulumi.Input<string>[]>;
 }

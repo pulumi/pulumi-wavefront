@@ -21,14 +21,14 @@ class ServiceAccountArgs:
                  user_groups: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
         """
         The set of arguments for constructing a ServiceAccount resource.
-        :param pulumi.Input[str] identifier: The (unique) identifier of the service account to create. Must start with sa::
-        :param pulumi.Input[bool] active: Whether or not the service account is active
-        :param pulumi.Input[str] description: The description of the service account
-        :param pulumi.Input[str] ingestion_policy: ID of ingestion policy
+        :param pulumi.Input[str] identifier: The unique identifier of the service account to create. Must have the prefix `sa::`.
+        :param pulumi.Input[bool] active: Whether or not the service account is active.
+        :param pulumi.Input[str] description: The description of the service account.
+        :param pulumi.Input[str] ingestion_policy: ID of ingestion policy.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] permissions: List of permission to grant to this service account.  Valid options are
                `agent_management`, `alerts_management`, `dashboard_management`, `embedded_charts`, `events_management`, `external_links_management`,
-               `host_tag_management`, `metrics_management`, `user_management`
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] user_groups: List of user groups for this service account
+               `host_tag_management`, `metrics_management`, and `user_management`.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] user_groups: List of user groups for this service account.
         """
         pulumi.set(__self__, "identifier", identifier)
         if active is not None:
@@ -46,7 +46,7 @@ class ServiceAccountArgs:
     @pulumi.getter
     def identifier(self) -> pulumi.Input[str]:
         """
-        The (unique) identifier of the service account to create. Must start with sa::
+        The unique identifier of the service account to create. Must have the prefix `sa::`.
         """
         return pulumi.get(self, "identifier")
 
@@ -58,7 +58,7 @@ class ServiceAccountArgs:
     @pulumi.getter
     def active(self) -> Optional[pulumi.Input[bool]]:
         """
-        Whether or not the service account is active
+        Whether or not the service account is active.
         """
         return pulumi.get(self, "active")
 
@@ -70,7 +70,7 @@ class ServiceAccountArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
         """
-        The description of the service account
+        The description of the service account.
         """
         return pulumi.get(self, "description")
 
@@ -82,7 +82,7 @@ class ServiceAccountArgs:
     @pulumi.getter(name="ingestionPolicy")
     def ingestion_policy(self) -> Optional[pulumi.Input[str]]:
         """
-        ID of ingestion policy
+        ID of ingestion policy.
         """
         return pulumi.get(self, "ingestion_policy")
 
@@ -96,7 +96,7 @@ class ServiceAccountArgs:
         """
         List of permission to grant to this service account.  Valid options are
         `agent_management`, `alerts_management`, `dashboard_management`, `embedded_charts`, `events_management`, `external_links_management`,
-        `host_tag_management`, `metrics_management`, `user_management`
+        `host_tag_management`, `metrics_management`, and `user_management`.
         """
         return pulumi.get(self, "permissions")
 
@@ -108,7 +108,7 @@ class ServiceAccountArgs:
     @pulumi.getter(name="userGroups")
     def user_groups(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        List of user groups for this service account
+        List of user groups for this service account.
         """
         return pulumi.get(self, "user_groups")
 
@@ -128,14 +128,14 @@ class _ServiceAccountState:
                  user_groups: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
         """
         Input properties used for looking up and filtering ServiceAccount resources.
-        :param pulumi.Input[bool] active: Whether or not the service account is active
-        :param pulumi.Input[str] description: The description of the service account
-        :param pulumi.Input[str] identifier: The (unique) identifier of the service account to create. Must start with sa::
-        :param pulumi.Input[str] ingestion_policy: ID of ingestion policy
+        :param pulumi.Input[bool] active: Whether or not the service account is active.
+        :param pulumi.Input[str] description: The description of the service account.
+        :param pulumi.Input[str] identifier: The unique identifier of the service account to create. Must have the prefix `sa::`.
+        :param pulumi.Input[str] ingestion_policy: ID of ingestion policy.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] permissions: List of permission to grant to this service account.  Valid options are
                `agent_management`, `alerts_management`, `dashboard_management`, `embedded_charts`, `events_management`, `external_links_management`,
-               `host_tag_management`, `metrics_management`, `user_management`
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] user_groups: List of user groups for this service account
+               `host_tag_management`, `metrics_management`, and `user_management`.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] user_groups: List of user groups for this service account.
         """
         if active is not None:
             pulumi.set(__self__, "active", active)
@@ -154,7 +154,7 @@ class _ServiceAccountState:
     @pulumi.getter
     def active(self) -> Optional[pulumi.Input[bool]]:
         """
-        Whether or not the service account is active
+        Whether or not the service account is active.
         """
         return pulumi.get(self, "active")
 
@@ -166,7 +166,7 @@ class _ServiceAccountState:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
         """
-        The description of the service account
+        The description of the service account.
         """
         return pulumi.get(self, "description")
 
@@ -178,7 +178,7 @@ class _ServiceAccountState:
     @pulumi.getter
     def identifier(self) -> Optional[pulumi.Input[str]]:
         """
-        The (unique) identifier of the service account to create. Must start with sa::
+        The unique identifier of the service account to create. Must have the prefix `sa::`.
         """
         return pulumi.get(self, "identifier")
 
@@ -190,7 +190,7 @@ class _ServiceAccountState:
     @pulumi.getter(name="ingestionPolicy")
     def ingestion_policy(self) -> Optional[pulumi.Input[str]]:
         """
-        ID of ingestion policy
+        ID of ingestion policy.
         """
         return pulumi.get(self, "ingestion_policy")
 
@@ -204,7 +204,7 @@ class _ServiceAccountState:
         """
         List of permission to grant to this service account.  Valid options are
         `agent_management`, `alerts_management`, `dashboard_management`, `embedded_charts`, `events_management`, `external_links_management`,
-        `host_tag_management`, `metrics_management`, `user_management`
+        `host_tag_management`, `metrics_management`, and `user_management`.
         """
         return pulumi.get(self, "permissions")
 
@@ -216,7 +216,7 @@ class _ServiceAccountState:
     @pulumi.getter(name="userGroups")
     def user_groups(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        List of user groups for this service account
+        List of user groups for this service account.
         """
         return pulumi.get(self, "user_groups")
 
@@ -253,7 +253,7 @@ class ServiceAccount(pulumi.CustomResource):
 
         ## Import
 
-        Service accounts can be imported using `identifier`, e.g.
+        Service accounts can be imported by using `identifier`, e.g.
 
         ```sh
          $ pulumi import wavefront:index/serviceAccount:ServiceAccount basic sa::tftesting
@@ -261,14 +261,14 @@ class ServiceAccount(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[bool] active: Whether or not the service account is active
-        :param pulumi.Input[str] description: The description of the service account
-        :param pulumi.Input[str] identifier: The (unique) identifier of the service account to create. Must start with sa::
-        :param pulumi.Input[str] ingestion_policy: ID of ingestion policy
+        :param pulumi.Input[bool] active: Whether or not the service account is active.
+        :param pulumi.Input[str] description: The description of the service account.
+        :param pulumi.Input[str] identifier: The unique identifier of the service account to create. Must have the prefix `sa::`.
+        :param pulumi.Input[str] ingestion_policy: ID of ingestion policy.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] permissions: List of permission to grant to this service account.  Valid options are
                `agent_management`, `alerts_management`, `dashboard_management`, `embedded_charts`, `events_management`, `external_links_management`,
-               `host_tag_management`, `metrics_management`, `user_management`
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] user_groups: List of user groups for this service account
+               `host_tag_management`, `metrics_management`, and `user_management`.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] user_groups: List of user groups for this service account.
         """
         ...
     @overload
@@ -292,7 +292,7 @@ class ServiceAccount(pulumi.CustomResource):
 
         ## Import
 
-        Service accounts can be imported using `identifier`, e.g.
+        Service accounts can be imported by using `identifier`, e.g.
 
         ```sh
          $ pulumi import wavefront:index/serviceAccount:ServiceAccount basic sa::tftesting
@@ -362,14 +362,14 @@ class ServiceAccount(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[bool] active: Whether or not the service account is active
-        :param pulumi.Input[str] description: The description of the service account
-        :param pulumi.Input[str] identifier: The (unique) identifier of the service account to create. Must start with sa::
-        :param pulumi.Input[str] ingestion_policy: ID of ingestion policy
+        :param pulumi.Input[bool] active: Whether or not the service account is active.
+        :param pulumi.Input[str] description: The description of the service account.
+        :param pulumi.Input[str] identifier: The unique identifier of the service account to create. Must have the prefix `sa::`.
+        :param pulumi.Input[str] ingestion_policy: ID of ingestion policy.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] permissions: List of permission to grant to this service account.  Valid options are
                `agent_management`, `alerts_management`, `dashboard_management`, `embedded_charts`, `events_management`, `external_links_management`,
-               `host_tag_management`, `metrics_management`, `user_management`
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] user_groups: List of user groups for this service account
+               `host_tag_management`, `metrics_management`, and `user_management`.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] user_groups: List of user groups for this service account.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -387,7 +387,7 @@ class ServiceAccount(pulumi.CustomResource):
     @pulumi.getter
     def active(self) -> pulumi.Output[Optional[bool]]:
         """
-        Whether or not the service account is active
+        Whether or not the service account is active.
         """
         return pulumi.get(self, "active")
 
@@ -395,7 +395,7 @@ class ServiceAccount(pulumi.CustomResource):
     @pulumi.getter
     def description(self) -> pulumi.Output[Optional[str]]:
         """
-        The description of the service account
+        The description of the service account.
         """
         return pulumi.get(self, "description")
 
@@ -403,7 +403,7 @@ class ServiceAccount(pulumi.CustomResource):
     @pulumi.getter
     def identifier(self) -> pulumi.Output[str]:
         """
-        The (unique) identifier of the service account to create. Must start with sa::
+        The unique identifier of the service account to create. Must have the prefix `sa::`.
         """
         return pulumi.get(self, "identifier")
 
@@ -411,7 +411,7 @@ class ServiceAccount(pulumi.CustomResource):
     @pulumi.getter(name="ingestionPolicy")
     def ingestion_policy(self) -> pulumi.Output[Optional[str]]:
         """
-        ID of ingestion policy
+        ID of ingestion policy.
         """
         return pulumi.get(self, "ingestion_policy")
 
@@ -421,7 +421,7 @@ class ServiceAccount(pulumi.CustomResource):
         """
         List of permission to grant to this service account.  Valid options are
         `agent_management`, `alerts_management`, `dashboard_management`, `embedded_charts`, `events_management`, `external_links_management`,
-        `host_tag_management`, `metrics_management`, `user_management`
+        `host_tag_management`, `metrics_management`, and `user_management`.
         """
         return pulumi.get(self, "permissions")
 
@@ -429,7 +429,7 @@ class ServiceAccount(pulumi.CustomResource):
     @pulumi.getter(name="userGroups")
     def user_groups(self) -> pulumi.Output[Sequence[str]]:
         """
-        List of user groups for this service account
+        List of user groups for this service account.
         """
         return pulumi.get(self, "user_groups")
 

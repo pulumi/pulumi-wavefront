@@ -11,7 +11,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Provides a Wavefront Cloud Integration for App Dynamics. This allows app dynamics cloud integrations to be created,
+// Provides a Wavefront Cloud Integration for AppDynamics. This allows AppDynamics cloud integrations to be created,
 // updated, and deleted.
 //
 // ## Example Usage
@@ -41,7 +41,7 @@ import (
 //
 // ## Import
 //
-// App Dynamic Cloud Integrations can be imported using the `id`, e.g.
+// AppDynamic Cloud Integrations can be imported by using the `id`, e.g.
 //
 // ```sh
 //  $ pulumi import wavefront:index/cloudIntegrationAppDynamics:CloudIntegrationAppDynamics app_dynamics a411c16b-3cf7-4f03-bf11-8ca05aab898d
@@ -49,41 +49,41 @@ import (
 type CloudIntegrationAppDynamics struct {
 	pulumi.CustomResourceState
 
-	// A list of point tag key-values to add to every point ingested using this integration
+	// A list of point tag key-values to add to every point ingested using this integration.
 	AdditionalTags pulumi.StringMapOutput `pulumi:"additionalTags"`
-	// List of regular expressions that a application name must match (case-insensitively)
-	// in order to be ingested
+	// List of regular expressions that an application name must match (case-insensitively)
+	// in order to be ingested.
 	AppFilterRegexes pulumi.StringArrayOutput `pulumi:"appFilterRegexes"`
-	// Name of the SaaS controller
+	// Name of the SaaS controller.
 	ControllerName pulumi.StringOutput `pulumi:"controllerName"`
-	// Boolean flag to control Application Infrastructure metric injection
+	// Boolean flag to control Application Infrastructure metric ingestion.
 	EnableAppInfraMetrics pulumi.BoolPtrOutput `pulumi:"enableAppInfraMetrics"`
-	// Boolean flag to control Backend metric injection
+	// Boolean flag to control Backend metric ingestion.
 	EnableBackendMetrics pulumi.BoolPtrOutput `pulumi:"enableBackendMetrics"`
-	// Boolean flag to control Business Transaction metric injection
+	// Boolean flag to control Business Transaction metric ingestion.
 	EnableBusinessTrxMetrics pulumi.BoolPtrOutput `pulumi:"enableBusinessTrxMetrics"`
-	// Boolean flag to control Error metric injection
+	// Boolean flag to control Error metric ingestion.
 	EnableErrorMetrics pulumi.BoolPtrOutput `pulumi:"enableErrorMetrics"`
-	// Boolean flag to control Individual Node metric injection
+	// Boolean flag to control Individual Node metric ingestion.
 	EnableIndividualNodeMetrics pulumi.BoolPtrOutput `pulumi:"enableIndividualNodeMetrics"`
-	// Boolean flag to control Overall Performance metric injection
+	// Boolean flag to control Overall Performance metric ingestion.
 	EnableOverallPerfMetrics pulumi.BoolPtrOutput `pulumi:"enableOverallPerfMetrics"`
 	// Set this to `false` to get separate results for all values within the time range,
-	// by default it is `true`
+	// by default it is `true`.
 	EnableRollup pulumi.BoolPtrOutput `pulumi:"enableRollup"`
-	// Boolean flag to control Service End point metric injection
+	// Boolean flag to control Service End point metric ingestion.
 	EnableServiceEndpointMetrics pulumi.BoolPtrOutput `pulumi:"enableServiceEndpointMetrics"`
-	// Password for AppDynamics user
+	// Password for AppDynamics user.
 	EncryptedPassword pulumi.StringOutput `pulumi:"encryptedPassword"`
-	// Forces this resource to save, even if errors are present
+	// Forces this resource to save, even if errors are present.
 	ForceSave pulumi.BoolPtrOutput `pulumi:"forceSave"`
-	// The human-readable name of this integration
+	// The human-readable name of this integration.
 	Name pulumi.StringOutput `pulumi:"name"`
-	// A value denoting which cloud service this service integrates with
+	// A value denoting which cloud service this service integrates with.
 	Service pulumi.StringOutput `pulumi:"service"`
-	// How often, in minutes, to refresh the service
+	// How often, in minutes, to refresh the service.
 	ServiceRefreshRateInMinutes pulumi.IntPtrOutput `pulumi:"serviceRefreshRateInMinutes"`
-	// Username is a combination of userName and the account name
+	// Username is a combination of userName and the account name.
 	UserName pulumi.StringOutput `pulumi:"userName"`
 }
 
@@ -128,80 +128,80 @@ func GetCloudIntegrationAppDynamics(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering CloudIntegrationAppDynamics resources.
 type cloudIntegrationAppDynamicsState struct {
-	// A list of point tag key-values to add to every point ingested using this integration
+	// A list of point tag key-values to add to every point ingested using this integration.
 	AdditionalTags map[string]string `pulumi:"additionalTags"`
-	// List of regular expressions that a application name must match (case-insensitively)
-	// in order to be ingested
+	// List of regular expressions that an application name must match (case-insensitively)
+	// in order to be ingested.
 	AppFilterRegexes []string `pulumi:"appFilterRegexes"`
-	// Name of the SaaS controller
+	// Name of the SaaS controller.
 	ControllerName *string `pulumi:"controllerName"`
-	// Boolean flag to control Application Infrastructure metric injection
+	// Boolean flag to control Application Infrastructure metric ingestion.
 	EnableAppInfraMetrics *bool `pulumi:"enableAppInfraMetrics"`
-	// Boolean flag to control Backend metric injection
+	// Boolean flag to control Backend metric ingestion.
 	EnableBackendMetrics *bool `pulumi:"enableBackendMetrics"`
-	// Boolean flag to control Business Transaction metric injection
+	// Boolean flag to control Business Transaction metric ingestion.
 	EnableBusinessTrxMetrics *bool `pulumi:"enableBusinessTrxMetrics"`
-	// Boolean flag to control Error metric injection
+	// Boolean flag to control Error metric ingestion.
 	EnableErrorMetrics *bool `pulumi:"enableErrorMetrics"`
-	// Boolean flag to control Individual Node metric injection
+	// Boolean flag to control Individual Node metric ingestion.
 	EnableIndividualNodeMetrics *bool `pulumi:"enableIndividualNodeMetrics"`
-	// Boolean flag to control Overall Performance metric injection
+	// Boolean flag to control Overall Performance metric ingestion.
 	EnableOverallPerfMetrics *bool `pulumi:"enableOverallPerfMetrics"`
 	// Set this to `false` to get separate results for all values within the time range,
-	// by default it is `true`
+	// by default it is `true`.
 	EnableRollup *bool `pulumi:"enableRollup"`
-	// Boolean flag to control Service End point metric injection
+	// Boolean flag to control Service End point metric ingestion.
 	EnableServiceEndpointMetrics *bool `pulumi:"enableServiceEndpointMetrics"`
-	// Password for AppDynamics user
+	// Password for AppDynamics user.
 	EncryptedPassword *string `pulumi:"encryptedPassword"`
-	// Forces this resource to save, even if errors are present
+	// Forces this resource to save, even if errors are present.
 	ForceSave *bool `pulumi:"forceSave"`
-	// The human-readable name of this integration
+	// The human-readable name of this integration.
 	Name *string `pulumi:"name"`
-	// A value denoting which cloud service this service integrates with
+	// A value denoting which cloud service this service integrates with.
 	Service *string `pulumi:"service"`
-	// How often, in minutes, to refresh the service
+	// How often, in minutes, to refresh the service.
 	ServiceRefreshRateInMinutes *int `pulumi:"serviceRefreshRateInMinutes"`
-	// Username is a combination of userName and the account name
+	// Username is a combination of userName and the account name.
 	UserName *string `pulumi:"userName"`
 }
 
 type CloudIntegrationAppDynamicsState struct {
-	// A list of point tag key-values to add to every point ingested using this integration
+	// A list of point tag key-values to add to every point ingested using this integration.
 	AdditionalTags pulumi.StringMapInput
-	// List of regular expressions that a application name must match (case-insensitively)
-	// in order to be ingested
+	// List of regular expressions that an application name must match (case-insensitively)
+	// in order to be ingested.
 	AppFilterRegexes pulumi.StringArrayInput
-	// Name of the SaaS controller
+	// Name of the SaaS controller.
 	ControllerName pulumi.StringPtrInput
-	// Boolean flag to control Application Infrastructure metric injection
+	// Boolean flag to control Application Infrastructure metric ingestion.
 	EnableAppInfraMetrics pulumi.BoolPtrInput
-	// Boolean flag to control Backend metric injection
+	// Boolean flag to control Backend metric ingestion.
 	EnableBackendMetrics pulumi.BoolPtrInput
-	// Boolean flag to control Business Transaction metric injection
+	// Boolean flag to control Business Transaction metric ingestion.
 	EnableBusinessTrxMetrics pulumi.BoolPtrInput
-	// Boolean flag to control Error metric injection
+	// Boolean flag to control Error metric ingestion.
 	EnableErrorMetrics pulumi.BoolPtrInput
-	// Boolean flag to control Individual Node metric injection
+	// Boolean flag to control Individual Node metric ingestion.
 	EnableIndividualNodeMetrics pulumi.BoolPtrInput
-	// Boolean flag to control Overall Performance metric injection
+	// Boolean flag to control Overall Performance metric ingestion.
 	EnableOverallPerfMetrics pulumi.BoolPtrInput
 	// Set this to `false` to get separate results for all values within the time range,
-	// by default it is `true`
+	// by default it is `true`.
 	EnableRollup pulumi.BoolPtrInput
-	// Boolean flag to control Service End point metric injection
+	// Boolean flag to control Service End point metric ingestion.
 	EnableServiceEndpointMetrics pulumi.BoolPtrInput
-	// Password for AppDynamics user
+	// Password for AppDynamics user.
 	EncryptedPassword pulumi.StringPtrInput
-	// Forces this resource to save, even if errors are present
+	// Forces this resource to save, even if errors are present.
 	ForceSave pulumi.BoolPtrInput
-	// The human-readable name of this integration
+	// The human-readable name of this integration.
 	Name pulumi.StringPtrInput
-	// A value denoting which cloud service this service integrates with
+	// A value denoting which cloud service this service integrates with.
 	Service pulumi.StringPtrInput
-	// How often, in minutes, to refresh the service
+	// How often, in minutes, to refresh the service.
 	ServiceRefreshRateInMinutes pulumi.IntPtrInput
-	// Username is a combination of userName and the account name
+	// Username is a combination of userName and the account name.
 	UserName pulumi.StringPtrInput
 }
 
@@ -210,81 +210,81 @@ func (CloudIntegrationAppDynamicsState) ElementType() reflect.Type {
 }
 
 type cloudIntegrationAppDynamicsArgs struct {
-	// A list of point tag key-values to add to every point ingested using this integration
+	// A list of point tag key-values to add to every point ingested using this integration.
 	AdditionalTags map[string]string `pulumi:"additionalTags"`
-	// List of regular expressions that a application name must match (case-insensitively)
-	// in order to be ingested
+	// List of regular expressions that an application name must match (case-insensitively)
+	// in order to be ingested.
 	AppFilterRegexes []string `pulumi:"appFilterRegexes"`
-	// Name of the SaaS controller
+	// Name of the SaaS controller.
 	ControllerName string `pulumi:"controllerName"`
-	// Boolean flag to control Application Infrastructure metric injection
+	// Boolean flag to control Application Infrastructure metric ingestion.
 	EnableAppInfraMetrics *bool `pulumi:"enableAppInfraMetrics"`
-	// Boolean flag to control Backend metric injection
+	// Boolean flag to control Backend metric ingestion.
 	EnableBackendMetrics *bool `pulumi:"enableBackendMetrics"`
-	// Boolean flag to control Business Transaction metric injection
+	// Boolean flag to control Business Transaction metric ingestion.
 	EnableBusinessTrxMetrics *bool `pulumi:"enableBusinessTrxMetrics"`
-	// Boolean flag to control Error metric injection
+	// Boolean flag to control Error metric ingestion.
 	EnableErrorMetrics *bool `pulumi:"enableErrorMetrics"`
-	// Boolean flag to control Individual Node metric injection
+	// Boolean flag to control Individual Node metric ingestion.
 	EnableIndividualNodeMetrics *bool `pulumi:"enableIndividualNodeMetrics"`
-	// Boolean flag to control Overall Performance metric injection
+	// Boolean flag to control Overall Performance metric ingestion.
 	EnableOverallPerfMetrics *bool `pulumi:"enableOverallPerfMetrics"`
 	// Set this to `false` to get separate results for all values within the time range,
-	// by default it is `true`
+	// by default it is `true`.
 	EnableRollup *bool `pulumi:"enableRollup"`
-	// Boolean flag to control Service End point metric injection
+	// Boolean flag to control Service End point metric ingestion.
 	EnableServiceEndpointMetrics *bool `pulumi:"enableServiceEndpointMetrics"`
-	// Password for AppDynamics user
+	// Password for AppDynamics user.
 	EncryptedPassword string `pulumi:"encryptedPassword"`
-	// Forces this resource to save, even if errors are present
+	// Forces this resource to save, even if errors are present.
 	ForceSave *bool `pulumi:"forceSave"`
-	// The human-readable name of this integration
+	// The human-readable name of this integration.
 	Name *string `pulumi:"name"`
-	// A value denoting which cloud service this service integrates with
+	// A value denoting which cloud service this service integrates with.
 	Service string `pulumi:"service"`
-	// How often, in minutes, to refresh the service
+	// How often, in minutes, to refresh the service.
 	ServiceRefreshRateInMinutes *int `pulumi:"serviceRefreshRateInMinutes"`
-	// Username is a combination of userName and the account name
+	// Username is a combination of userName and the account name.
 	UserName string `pulumi:"userName"`
 }
 
 // The set of arguments for constructing a CloudIntegrationAppDynamics resource.
 type CloudIntegrationAppDynamicsArgs struct {
-	// A list of point tag key-values to add to every point ingested using this integration
+	// A list of point tag key-values to add to every point ingested using this integration.
 	AdditionalTags pulumi.StringMapInput
-	// List of regular expressions that a application name must match (case-insensitively)
-	// in order to be ingested
+	// List of regular expressions that an application name must match (case-insensitively)
+	// in order to be ingested.
 	AppFilterRegexes pulumi.StringArrayInput
-	// Name of the SaaS controller
+	// Name of the SaaS controller.
 	ControllerName pulumi.StringInput
-	// Boolean flag to control Application Infrastructure metric injection
+	// Boolean flag to control Application Infrastructure metric ingestion.
 	EnableAppInfraMetrics pulumi.BoolPtrInput
-	// Boolean flag to control Backend metric injection
+	// Boolean flag to control Backend metric ingestion.
 	EnableBackendMetrics pulumi.BoolPtrInput
-	// Boolean flag to control Business Transaction metric injection
+	// Boolean flag to control Business Transaction metric ingestion.
 	EnableBusinessTrxMetrics pulumi.BoolPtrInput
-	// Boolean flag to control Error metric injection
+	// Boolean flag to control Error metric ingestion.
 	EnableErrorMetrics pulumi.BoolPtrInput
-	// Boolean flag to control Individual Node metric injection
+	// Boolean flag to control Individual Node metric ingestion.
 	EnableIndividualNodeMetrics pulumi.BoolPtrInput
-	// Boolean flag to control Overall Performance metric injection
+	// Boolean flag to control Overall Performance metric ingestion.
 	EnableOverallPerfMetrics pulumi.BoolPtrInput
 	// Set this to `false` to get separate results for all values within the time range,
-	// by default it is `true`
+	// by default it is `true`.
 	EnableRollup pulumi.BoolPtrInput
-	// Boolean flag to control Service End point metric injection
+	// Boolean flag to control Service End point metric ingestion.
 	EnableServiceEndpointMetrics pulumi.BoolPtrInput
-	// Password for AppDynamics user
+	// Password for AppDynamics user.
 	EncryptedPassword pulumi.StringInput
-	// Forces this resource to save, even if errors are present
+	// Forces this resource to save, even if errors are present.
 	ForceSave pulumi.BoolPtrInput
-	// The human-readable name of this integration
+	// The human-readable name of this integration.
 	Name pulumi.StringPtrInput
-	// A value denoting which cloud service this service integrates with
+	// A value denoting which cloud service this service integrates with.
 	Service pulumi.StringInput
-	// How often, in minutes, to refresh the service
+	// How often, in minutes, to refresh the service.
 	ServiceRefreshRateInMinutes pulumi.IntPtrInput
-	// Username is a combination of userName and the account name
+	// Username is a combination of userName and the account name.
 	UserName pulumi.StringInput
 }
 

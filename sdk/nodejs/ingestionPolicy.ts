@@ -20,7 +20,7 @@ import * as utilities from "./utilities";
  *
  * ## Import
  *
- * ingestion policies can be imported using the `id`, e.g.
+ * ingestion policies can be imported by using the `id`, e.g.
  *
  * ```sh
  *  $ pulumi import wavefront:index/ingestionPolicy:IngestionPolicy basic test_ingestion-1611946841064
@@ -55,11 +55,11 @@ export class IngestionPolicy extends pulumi.CustomResource {
     }
 
     /**
-     * The description of the ingestion policy
+     * The description of the ingestion policy.
      */
     public readonly description!: pulumi.Output<string>;
     /**
-     * The name of the ingestion policy
+     * The name of the ingestion policy.
      */
     public readonly name!: pulumi.Output<string>;
 
@@ -96,11 +96,11 @@ export class IngestionPolicy extends pulumi.CustomResource {
  */
 export interface IngestionPolicyState {
     /**
-     * The description of the ingestion policy
+     * The description of the ingestion policy.
      */
     description?: pulumi.Input<string>;
     /**
-     * The name of the ingestion policy
+     * The name of the ingestion policy.
      */
     name?: pulumi.Input<string>;
 }
@@ -110,11 +110,11 @@ export interface IngestionPolicyState {
  */
 export interface IngestionPolicyArgs {
     /**
-     * The description of the ingestion policy
+     * The description of the ingestion policy.
      */
     description: pulumi.Input<string>;
     /**
-     * The name of the ingestion policy
+     * The name of the ingestion policy.
      */
     name?: pulumi.Input<string>;
 }
