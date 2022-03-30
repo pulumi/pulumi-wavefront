@@ -5,7 +5,7 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 /**
- * Provides a Wavefront User Resource. This allows users to be created, updated, and deleted.
+ * Provides a Wavefront User Resource. This allows user accounts to be created, updated, and deleted.
  *
  * ## Example Usage
  *
@@ -20,7 +20,7 @@ import * as utilities from "./utilities";
  *
  * ## Import
  *
- * Users can be imported using the `id`, e.g.
+ * Users can be imported by using the `id`, e.g.
  *
  * ```sh
  *  $ pulumi import wavefront:index/user:User some_user test@example.com
@@ -56,17 +56,17 @@ export class User extends pulumi.CustomResource {
 
     public readonly customer!: pulumi.Output<string>;
     /**
-     * The (unique) identifier of the user to create. Must be a valid email address
+     * The unique identifier of the user account to create. Must be a valid email address.
      */
     public readonly email!: pulumi.Output<string>;
     /**
      * List of permission to grant to this user.  Valid options are
      * `agentManagement`, `alertsManagement`, `dashboardManagement`, `embeddedCharts`, `eventsManagement`, `externalLinksManagement`,
-     * `hostTagManagement`, `metricsManagement`, `userManagement`
+     * `hostTagManagement`, `metricsManagement`, and `userManagement`.
      */
     public readonly permissions!: pulumi.Output<string[]>;
     /**
-     * List of user groups to this user
+     * List of user groups to this user.
      */
     public readonly userGroups!: pulumi.Output<string[]>;
 
@@ -108,17 +108,17 @@ export class User extends pulumi.CustomResource {
 export interface UserState {
     customer?: pulumi.Input<string>;
     /**
-     * The (unique) identifier of the user to create. Must be a valid email address
+     * The unique identifier of the user account to create. Must be a valid email address.
      */
     email?: pulumi.Input<string>;
     /**
      * List of permission to grant to this user.  Valid options are
      * `agentManagement`, `alertsManagement`, `dashboardManagement`, `embeddedCharts`, `eventsManagement`, `externalLinksManagement`,
-     * `hostTagManagement`, `metricsManagement`, `userManagement`
+     * `hostTagManagement`, `metricsManagement`, and `userManagement`.
      */
     permissions?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * List of user groups to this user
+     * List of user groups to this user.
      */
     userGroups?: pulumi.Input<pulumi.Input<string>[]>;
 }
@@ -129,17 +129,17 @@ export interface UserState {
 export interface UserArgs {
     customer?: pulumi.Input<string>;
     /**
-     * The (unique) identifier of the user to create. Must be a valid email address
+     * The unique identifier of the user account to create. Must be a valid email address.
      */
     email: pulumi.Input<string>;
     /**
      * List of permission to grant to this user.  Valid options are
      * `agentManagement`, `alertsManagement`, `dashboardManagement`, `embeddedCharts`, `eventsManagement`, `externalLinksManagement`,
-     * `hostTagManagement`, `metricsManagement`, `userManagement`
+     * `hostTagManagement`, `metricsManagement`, and `userManagement`.
      */
     permissions?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * List of user groups to this user
+     * List of user groups to this user.
      */
     userGroups?: pulumi.Input<pulumi.Input<string>[]>;
 }

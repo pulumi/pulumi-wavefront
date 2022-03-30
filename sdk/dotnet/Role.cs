@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Wavefront
 {
     /// <summary>
-    /// Provides a Wavefront Role Resource. This allows user groups to be created, updated, and deleted.
+    /// Provides a Wavefront Role Resource. This allows roles to be created, updated, and deleted.
     /// 
     /// ## Example Usage
     /// 
@@ -32,10 +32,10 @@ namespace Pulumi.Wavefront
     /// 
     /// ## Import
     /// 
-    /// User Groups can be imported using the `id`, e.g.
+    /// Roles can be imported by using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import wavefront:index/role:Role some_group a411c16b-3cf7-4f03-bf11-8ca05aab898d
+    ///  $ pulumi import wavefront:index/role:Role some_role a411c16b-3cf7-4f03-bf11-8ca05aab898d
     /// ```
     /// </summary>
     [WavefrontResourceType("wavefront:index/role:Role")]
@@ -48,13 +48,13 @@ namespace Pulumi.Wavefront
         public Output<ImmutableArray<string>> Assignees { get; private set; } = null!;
 
         /// <summary>
-        /// A short description of the user group
+        /// A short description of the role.
         /// </summary>
         [Output("description")]
         public Output<string?> Description { get; private set; } = null!;
 
         /// <summary>
-        /// The name of the user group
+        /// The name of the role.
         /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
@@ -62,7 +62,7 @@ namespace Pulumi.Wavefront
         /// <summary>
         /// A list of permissions to assign to this role. Valid options are 
         /// `agent_management`, `alerts_management`, `dashboard_management`, `embedded_charts`, `events_management`, `external_links_management`,
-        /// `host_tag_management`, `metrics_management`, `user_management`
+        /// `host_tag_management`, `metrics_management`, and `user_management`.
         /// </summary>
         [Output("permissions")]
         public Output<ImmutableArray<string>> Permissions { get; private set; } = null!;
@@ -126,13 +126,13 @@ namespace Pulumi.Wavefront
         }
 
         /// <summary>
-        /// A short description of the user group
+        /// A short description of the role.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// The name of the user group
+        /// The name of the role.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
@@ -143,7 +143,7 @@ namespace Pulumi.Wavefront
         /// <summary>
         /// A list of permissions to assign to this role. Valid options are 
         /// `agent_management`, `alerts_management`, `dashboard_management`, `embedded_charts`, `events_management`, `external_links_management`,
-        /// `host_tag_management`, `metrics_management`, `user_management`
+        /// `host_tag_management`, `metrics_management`, and `user_management`.
         /// </summary>
         public InputList<string> Permissions
         {
@@ -171,13 +171,13 @@ namespace Pulumi.Wavefront
         }
 
         /// <summary>
-        /// A short description of the user group
+        /// A short description of the role.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// The name of the user group
+        /// The name of the role.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
@@ -188,7 +188,7 @@ namespace Pulumi.Wavefront
         /// <summary>
         /// A list of permissions to assign to this role. Valid options are 
         /// `agent_management`, `alerts_management`, `dashboard_management`, `embedded_charts`, `events_management`, `external_links_management`,
-        /// `host_tag_management`, `metrics_management`, `user_management`
+        /// `host_tag_management`, `metrics_management`, and `user_management`.
         /// </summary>
         public InputList<string> Permissions
         {

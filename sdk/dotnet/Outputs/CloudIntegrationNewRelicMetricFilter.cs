@@ -14,11 +14,11 @@ namespace Pulumi.Wavefront.Outputs
     public sealed class CloudIntegrationNewRelicMetricFilter
     {
         /// <summary>
-        /// The name of a NewRelic App
+        /// The name of a NewRelic App.
         /// </summary>
         public readonly string AppName;
         /// <summary>
-        /// A regular expression that a metric name must match (case-insensitively) in order to be ingested
+        /// A regular expression that a metric name must match (case-insensitively) in order to be ingested.
         /// </summary>
         public readonly string MetricFilterRegex;
 

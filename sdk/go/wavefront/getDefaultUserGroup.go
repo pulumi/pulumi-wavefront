@@ -41,7 +41,7 @@ func GetDefaultUserGroup(ctx *pulumi.Context, opts ...pulumi.InvokeOption) (*Get
 // A collection of values returned by getDefaultUserGroup.
 type GetDefaultUserGroupResult struct {
 	// Set to the Group ID of the `Everyone` group, suitable for referencing
-	// in other resources that support group memberships. s
+	// in other resources that support group memberships.
 	GroupId string `pulumi:"groupId"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`

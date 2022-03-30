@@ -22,19 +22,19 @@ namespace Pulumi.Wavefront.Inputs
         public Input<string>? ChartAttribute { get; set; }
 
         /// <summary>
-        /// Chart settings. See chart settings
+        /// Chart settings. See chart settings.
         /// </summary>
         [Input("chartSetting", required: true)]
         public Input<Inputs.DashboardSectionRowChartChartSettingGetArgs> ChartSetting { get; set; } = null!;
 
         /// <summary>
-        /// Description of the chart
+        /// Description of the chart.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// Name of the source
+        /// Name of the source.
         /// </summary>
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
@@ -43,7 +43,7 @@ namespace Pulumi.Wavefront.Inputs
         private InputList<Inputs.DashboardSectionRowChartSourceGetArgs>? _sources;
 
         /// <summary>
-        /// Query expression to plot on the chart. See chart source queries
+        /// Query expression to plot on the chart. See chart source queries.
         /// </summary>
         public InputList<Inputs.DashboardSectionRowChartSourceGetArgs> Sources
         {
@@ -53,13 +53,13 @@ namespace Pulumi.Wavefront.Inputs
 
         /// <summary>
         /// Summarization strategy for the chart. MEAN is default. Valid options are, `MEAN`, 
-        /// `MEDIAN`, `MIN`, `MAX`, `SUM`, `COUNT`, `LAST`, `FIRST`
+        /// `MEDIAN`, `MIN`, `MAX`, `SUM`, `COUNT`, `LAST`, `FIRST`.
         /// </summary>
         [Input("summarization", required: true)]
         public Input<string> Summarization { get; set; } = null!;
 
         /// <summary>
-        /// String to label the units of the chart on the Y-Axis
+        /// String to label the units of the chart on the Y-Axis.
         /// </summary>
         [Input("units", required: true)]
         public Input<string> Units { get; set; } = null!;

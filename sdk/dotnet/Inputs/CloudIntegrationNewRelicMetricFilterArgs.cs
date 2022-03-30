@@ -13,13 +13,13 @@ namespace Pulumi.Wavefront.Inputs
     public sealed class CloudIntegrationNewRelicMetricFilterArgs : Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The name of a NewRelic App
+        /// The name of a NewRelic App.
         /// </summary>
         [Input("appName", required: true)]
         public Input<string> AppName { get; set; } = null!;
 
         /// <summary>
-        /// A regular expression that a metric name must match (case-insensitively) in order to be ingested
+        /// A regular expression that a metric name must match (case-insensitively) in order to be ingested.
         /// </summary>
         [Input("metricFilterRegex", required: true)]
         public Input<string> MetricFilterRegex { get; set; } = null!;

@@ -22,12 +22,15 @@ class ExternalLinkArgs:
                  source_filter_regex: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a ExternalLink resource.
-        :param pulumi.Input[str] description: Human-readable description for this link
+        :param pulumi.Input[str] description: Human-readable description for this link.
         :param pulumi.Input[str] template: The mustache template for this link. The template must expand to a full URL, including scheme, origin, etc.
-        :param pulumi.Input[bool] is_log_integration: Whether this is a "Log Integration" subType of external link
+        :param pulumi.Input[bool] is_log_integration: Whether this is a "Log Integration" subType of external link.
         :param pulumi.Input[str] metric_filter_regex: Controls whether a link is displayed in the context menu of a highlighted series. If present, the metric name of the highlighted series must match this regular expression in order for the link to be displayed.
-        :param pulumi.Input[str] name: The name of the external link
-        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] point_tag_filter_regexes: Controls whether a link is displayed in the context menu of a highlighted series. This is a map from string to regular expression. The highlighted series must contain point tags whose keys are present in the keys of this map and whose values match the regular expressions associated with those keys in order for the link to be displayed
+        :param pulumi.Input[str] name: The name of the external link.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] point_tag_filter_regexes: Controls whether a link is displayed in the context menu of a highlighted
+               series. This is a map from string to regular expression. The highlighted series must contain point tags whose
+               keys are present in the keys of this map and whose values match the regular expressions associated with those
+               keys in order for the link to be displayed.
         :param pulumi.Input[str] source_filter_regex: Controls whether a link is displayed in the context menu of a highlighted series. If present, the source name of the highlighted series must match this regular expression in order for the link to be displayed.
         """
         pulumi.set(__self__, "description", description)
@@ -47,7 +50,7 @@ class ExternalLinkArgs:
     @pulumi.getter
     def description(self) -> pulumi.Input[str]:
         """
-        Human-readable description for this link
+        Human-readable description for this link.
         """
         return pulumi.get(self, "description")
 
@@ -71,7 +74,7 @@ class ExternalLinkArgs:
     @pulumi.getter(name="isLogIntegration")
     def is_log_integration(self) -> Optional[pulumi.Input[bool]]:
         """
-        Whether this is a "Log Integration" subType of external link
+        Whether this is a "Log Integration" subType of external link.
         """
         return pulumi.get(self, "is_log_integration")
 
@@ -95,7 +98,7 @@ class ExternalLinkArgs:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
-        The name of the external link
+        The name of the external link.
         """
         return pulumi.get(self, "name")
 
@@ -107,7 +110,10 @@ class ExternalLinkArgs:
     @pulumi.getter(name="pointTagFilterRegexes")
     def point_tag_filter_regexes(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
-        Controls whether a link is displayed in the context menu of a highlighted series. This is a map from string to regular expression. The highlighted series must contain point tags whose keys are present in the keys of this map and whose values match the regular expressions associated with those keys in order for the link to be displayed
+        Controls whether a link is displayed in the context menu of a highlighted
+        series. This is a map from string to regular expression. The highlighted series must contain point tags whose
+        keys are present in the keys of this map and whose values match the regular expressions associated with those
+        keys in order for the link to be displayed.
         """
         return pulumi.get(self, "point_tag_filter_regexes")
 
@@ -140,11 +146,14 @@ class _ExternalLinkState:
                  template: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering ExternalLink resources.
-        :param pulumi.Input[str] description: Human-readable description for this link
-        :param pulumi.Input[bool] is_log_integration: Whether this is a "Log Integration" subType of external link
+        :param pulumi.Input[str] description: Human-readable description for this link.
+        :param pulumi.Input[bool] is_log_integration: Whether this is a "Log Integration" subType of external link.
         :param pulumi.Input[str] metric_filter_regex: Controls whether a link is displayed in the context menu of a highlighted series. If present, the metric name of the highlighted series must match this regular expression in order for the link to be displayed.
-        :param pulumi.Input[str] name: The name of the external link
-        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] point_tag_filter_regexes: Controls whether a link is displayed in the context menu of a highlighted series. This is a map from string to regular expression. The highlighted series must contain point tags whose keys are present in the keys of this map and whose values match the regular expressions associated with those keys in order for the link to be displayed
+        :param pulumi.Input[str] name: The name of the external link.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] point_tag_filter_regexes: Controls whether a link is displayed in the context menu of a highlighted
+               series. This is a map from string to regular expression. The highlighted series must contain point tags whose
+               keys are present in the keys of this map and whose values match the regular expressions associated with those
+               keys in order for the link to be displayed.
         :param pulumi.Input[str] source_filter_regex: Controls whether a link is displayed in the context menu of a highlighted series. If present, the source name of the highlighted series must match this regular expression in order for the link to be displayed.
         :param pulumi.Input[str] template: The mustache template for this link. The template must expand to a full URL, including scheme, origin, etc.
         """
@@ -167,7 +176,7 @@ class _ExternalLinkState:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
         """
-        Human-readable description for this link
+        Human-readable description for this link.
         """
         return pulumi.get(self, "description")
 
@@ -179,7 +188,7 @@ class _ExternalLinkState:
     @pulumi.getter(name="isLogIntegration")
     def is_log_integration(self) -> Optional[pulumi.Input[bool]]:
         """
-        Whether this is a "Log Integration" subType of external link
+        Whether this is a "Log Integration" subType of external link.
         """
         return pulumi.get(self, "is_log_integration")
 
@@ -203,7 +212,7 @@ class _ExternalLinkState:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
-        The name of the external link
+        The name of the external link.
         """
         return pulumi.get(self, "name")
 
@@ -215,7 +224,10 @@ class _ExternalLinkState:
     @pulumi.getter(name="pointTagFilterRegexes")
     def point_tag_filter_regexes(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
-        Controls whether a link is displayed in the context menu of a highlighted series. This is a map from string to regular expression. The highlighted series must contain point tags whose keys are present in the keys of this map and whose values match the regular expressions associated with those keys in order for the link to be displayed
+        Controls whether a link is displayed in the context menu of a highlighted
+        series. This is a map from string to regular expression. The highlighted series must contain point tags whose
+        keys are present in the keys of this map and whose values match the regular expressions associated with those
+        keys in order for the link to be displayed.
         """
         return pulumi.get(self, "point_tag_filter_regexes")
 
@@ -277,7 +289,7 @@ class ExternalLink(pulumi.CustomResource):
 
         ## Import
 
-        Maintenance windows can be imported using the `id`, e.g.
+        Maintenance windows can be imported by using the `id`, e.g.
 
         ```sh
          $ pulumi import wavefront:index/externalLink:ExternalLink basic fVj6fz6zYC4aBkID
@@ -285,11 +297,14 @@ class ExternalLink(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] description: Human-readable description for this link
-        :param pulumi.Input[bool] is_log_integration: Whether this is a "Log Integration" subType of external link
+        :param pulumi.Input[str] description: Human-readable description for this link.
+        :param pulumi.Input[bool] is_log_integration: Whether this is a "Log Integration" subType of external link.
         :param pulumi.Input[str] metric_filter_regex: Controls whether a link is displayed in the context menu of a highlighted series. If present, the metric name of the highlighted series must match this regular expression in order for the link to be displayed.
-        :param pulumi.Input[str] name: The name of the external link
-        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] point_tag_filter_regexes: Controls whether a link is displayed in the context menu of a highlighted series. This is a map from string to regular expression. The highlighted series must contain point tags whose keys are present in the keys of this map and whose values match the regular expressions associated with those keys in order for the link to be displayed
+        :param pulumi.Input[str] name: The name of the external link.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] point_tag_filter_regexes: Controls whether a link is displayed in the context menu of a highlighted
+               series. This is a map from string to regular expression. The highlighted series must contain point tags whose
+               keys are present in the keys of this map and whose values match the regular expressions associated with those
+               keys in order for the link to be displayed.
         :param pulumi.Input[str] source_filter_regex: Controls whether a link is displayed in the context menu of a highlighted series. If present, the source name of the highlighted series must match this regular expression in order for the link to be displayed.
         :param pulumi.Input[str] template: The mustache template for this link. The template must expand to a full URL, including scheme, origin, etc.
         """
@@ -315,7 +330,7 @@ class ExternalLink(pulumi.CustomResource):
 
         ## Import
 
-        Maintenance windows can be imported using the `id`, e.g.
+        Maintenance windows can be imported by using the `id`, e.g.
 
         ```sh
          $ pulumi import wavefront:index/externalLink:ExternalLink basic fVj6fz6zYC4aBkID
@@ -390,11 +405,14 @@ class ExternalLink(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] description: Human-readable description for this link
-        :param pulumi.Input[bool] is_log_integration: Whether this is a "Log Integration" subType of external link
+        :param pulumi.Input[str] description: Human-readable description for this link.
+        :param pulumi.Input[bool] is_log_integration: Whether this is a "Log Integration" subType of external link.
         :param pulumi.Input[str] metric_filter_regex: Controls whether a link is displayed in the context menu of a highlighted series. If present, the metric name of the highlighted series must match this regular expression in order for the link to be displayed.
-        :param pulumi.Input[str] name: The name of the external link
-        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] point_tag_filter_regexes: Controls whether a link is displayed in the context menu of a highlighted series. This is a map from string to regular expression. The highlighted series must contain point tags whose keys are present in the keys of this map and whose values match the regular expressions associated with those keys in order for the link to be displayed
+        :param pulumi.Input[str] name: The name of the external link.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] point_tag_filter_regexes: Controls whether a link is displayed in the context menu of a highlighted
+               series. This is a map from string to regular expression. The highlighted series must contain point tags whose
+               keys are present in the keys of this map and whose values match the regular expressions associated with those
+               keys in order for the link to be displayed.
         :param pulumi.Input[str] source_filter_regex: Controls whether a link is displayed in the context menu of a highlighted series. If present, the source name of the highlighted series must match this regular expression in order for the link to be displayed.
         :param pulumi.Input[str] template: The mustache template for this link. The template must expand to a full URL, including scheme, origin, etc.
         """
@@ -415,7 +433,7 @@ class ExternalLink(pulumi.CustomResource):
     @pulumi.getter
     def description(self) -> pulumi.Output[str]:
         """
-        Human-readable description for this link
+        Human-readable description for this link.
         """
         return pulumi.get(self, "description")
 
@@ -423,7 +441,7 @@ class ExternalLink(pulumi.CustomResource):
     @pulumi.getter(name="isLogIntegration")
     def is_log_integration(self) -> pulumi.Output[Optional[bool]]:
         """
-        Whether this is a "Log Integration" subType of external link
+        Whether this is a "Log Integration" subType of external link.
         """
         return pulumi.get(self, "is_log_integration")
 
@@ -439,7 +457,7 @@ class ExternalLink(pulumi.CustomResource):
     @pulumi.getter
     def name(self) -> pulumi.Output[str]:
         """
-        The name of the external link
+        The name of the external link.
         """
         return pulumi.get(self, "name")
 
@@ -447,7 +465,10 @@ class ExternalLink(pulumi.CustomResource):
     @pulumi.getter(name="pointTagFilterRegexes")
     def point_tag_filter_regexes(self) -> pulumi.Output[Optional[Mapping[str, str]]]:
         """
-        Controls whether a link is displayed in the context menu of a highlighted series. This is a map from string to regular expression. The highlighted series must contain point tags whose keys are present in the keys of this map and whose values match the regular expressions associated with those keys in order for the link to be displayed
+        Controls whether a link is displayed in the context menu of a highlighted
+        series. This is a map from string to regular expression. The highlighted series must contain point tags whose
+        keys are present in the keys of this map and whose values match the regular expressions associated with those
+        keys in order for the link to be displayed.
         """
         return pulumi.get(self, "point_tag_filter_regexes")
 

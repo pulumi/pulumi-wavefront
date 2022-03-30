@@ -33,7 +33,7 @@ namespace Pulumi.Wavefront
     /// 
     /// ## Import
     /// 
-    /// User Groups can be imported using the `id`, e.g.
+    /// User Groups can be imported by using the `id`, e.g.
     /// 
     /// ```sh
     ///  $ pulumi import wavefront:index/userGroup:UserGroup some_group a411c16b-3cf7-4f03-bf11-8ca05aab898d
@@ -43,13 +43,13 @@ namespace Pulumi.Wavefront
     public partial class UserGroup : Pulumi.CustomResource
     {
         /// <summary>
-        /// A short description of the user group
+        /// A short description of the user group.
         /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
-        /// The name of the user group
+        /// The name of the user group.
         /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
@@ -101,13 +101,13 @@ namespace Pulumi.Wavefront
     public sealed class UserGroupArgs : Pulumi.ResourceArgs
     {
         /// <summary>
-        /// A short description of the user group
+        /// A short description of the user group.
         /// </summary>
         [Input("description", required: true)]
         public Input<string> Description { get; set; } = null!;
 
         /// <summary>
-        /// The name of the user group
+        /// The name of the user group.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
@@ -120,13 +120,13 @@ namespace Pulumi.Wavefront
     public sealed class UserGroupState : Pulumi.ResourceArgs
     {
         /// <summary>
-        /// A short description of the user group
+        /// A short description of the user group.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// The name of the user group
+        /// The name of the user group.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }

@@ -25,7 +25,7 @@ import * as utilities from "./utilities";
  *
  * ## Import
  *
- * CloudTrail Cloud Integrations can be imported using the `id`, e.g.
+ * CloudTrail Cloud Integrations can be imported by using the `id`, e.g.
  *
  * ```sh
  *  $ pulumi import wavefront:index/cloudIntegrationCloudTrail:CloudIntegrationCloudTrail cloudtrail a411c16b-3cf7-4f03-bf11-8ca05aab898d
@@ -60,27 +60,27 @@ export class CloudIntegrationCloudTrail extends pulumi.CustomResource {
     }
 
     /**
-     * A list of point tag key-values to add to every point ingested using this integration
+     * A list of point tag key-values to add to every point ingested using this integration.
      */
     public readonly additionalTags!: pulumi.Output<{[key: string]: string} | undefined>;
     /**
-     * Name of the S3 bucket where CloudTrail logs are stored
+     * Name of the S3 bucket where CloudTrail logs are stored.
      */
     public readonly bucketName!: pulumi.Output<string>;
     /**
-     * The Role ARN that the customer has created in AWS IAM to allow access to Wavefront
+     * The Role ARN that the customer has created in AWS IAM to allow access to Wavefront.
      */
     public readonly externalId!: pulumi.Output<string>;
     /**
-     * Rule to filter CloudTrail log event
+     * Rule to filter CloudTrail log event.
      */
     public readonly filterRule!: pulumi.Output<string | undefined>;
     /**
-     * Forces this resource to save, even if errors are present
+     * Forces this resource to save, even if errors are present.
      */
     public readonly forceSave!: pulumi.Output<boolean | undefined>;
     /**
-     * The human-readable name of this integration
+     * The human-readable name of this integration.
      */
     public readonly name!: pulumi.Output<string>;
     /**
@@ -88,19 +88,19 @@ export class CloudIntegrationCloudTrail extends pulumi.CustomResource {
      */
     public readonly prefix!: pulumi.Output<string | undefined>;
     /**
-     * The AWS region of the S3 bucket where CloudTrail logs are stored
+     * The AWS region of the S3 bucket where CloudTrail logs are stored.
      */
     public readonly region!: pulumi.Output<string>;
     /**
-     * The external id corresponding to the Role ARN
+     * The external ID corresponding to the Role ARN.
      */
     public readonly roleArn!: pulumi.Output<string>;
     /**
-     * A value denoting which cloud service this service integrates with
+     * A value denoting which cloud service this service integrates with.
      */
     public readonly service!: pulumi.Output<string>;
     /**
-     * How often, in minutes, to refresh the service
+     * How often, in minutes, to refresh the service.
      */
     public readonly serviceRefreshRateInMinutes!: pulumi.Output<number | undefined>;
 
@@ -167,27 +167,27 @@ export class CloudIntegrationCloudTrail extends pulumi.CustomResource {
  */
 export interface CloudIntegrationCloudTrailState {
     /**
-     * A list of point tag key-values to add to every point ingested using this integration
+     * A list of point tag key-values to add to every point ingested using this integration.
      */
     additionalTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
-     * Name of the S3 bucket where CloudTrail logs are stored
+     * Name of the S3 bucket where CloudTrail logs are stored.
      */
     bucketName?: pulumi.Input<string>;
     /**
-     * The Role ARN that the customer has created in AWS IAM to allow access to Wavefront
+     * The Role ARN that the customer has created in AWS IAM to allow access to Wavefront.
      */
     externalId?: pulumi.Input<string>;
     /**
-     * Rule to filter CloudTrail log event
+     * Rule to filter CloudTrail log event.
      */
     filterRule?: pulumi.Input<string>;
     /**
-     * Forces this resource to save, even if errors are present
+     * Forces this resource to save, even if errors are present.
      */
     forceSave?: pulumi.Input<boolean>;
     /**
-     * The human-readable name of this integration
+     * The human-readable name of this integration.
      */
     name?: pulumi.Input<string>;
     /**
@@ -195,19 +195,19 @@ export interface CloudIntegrationCloudTrailState {
      */
     prefix?: pulumi.Input<string>;
     /**
-     * The AWS region of the S3 bucket where CloudTrail logs are stored
+     * The AWS region of the S3 bucket where CloudTrail logs are stored.
      */
     region?: pulumi.Input<string>;
     /**
-     * The external id corresponding to the Role ARN
+     * The external ID corresponding to the Role ARN.
      */
     roleArn?: pulumi.Input<string>;
     /**
-     * A value denoting which cloud service this service integrates with
+     * A value denoting which cloud service this service integrates with.
      */
     service?: pulumi.Input<string>;
     /**
-     * How often, in minutes, to refresh the service
+     * How often, in minutes, to refresh the service.
      */
     serviceRefreshRateInMinutes?: pulumi.Input<number>;
 }
@@ -217,27 +217,27 @@ export interface CloudIntegrationCloudTrailState {
  */
 export interface CloudIntegrationCloudTrailArgs {
     /**
-     * A list of point tag key-values to add to every point ingested using this integration
+     * A list of point tag key-values to add to every point ingested using this integration.
      */
     additionalTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
-     * Name of the S3 bucket where CloudTrail logs are stored
+     * Name of the S3 bucket where CloudTrail logs are stored.
      */
     bucketName: pulumi.Input<string>;
     /**
-     * The Role ARN that the customer has created in AWS IAM to allow access to Wavefront
+     * The Role ARN that the customer has created in AWS IAM to allow access to Wavefront.
      */
     externalId: pulumi.Input<string>;
     /**
-     * Rule to filter CloudTrail log event
+     * Rule to filter CloudTrail log event.
      */
     filterRule?: pulumi.Input<string>;
     /**
-     * Forces this resource to save, even if errors are present
+     * Forces this resource to save, even if errors are present.
      */
     forceSave?: pulumi.Input<boolean>;
     /**
-     * The human-readable name of this integration
+     * The human-readable name of this integration.
      */
     name?: pulumi.Input<string>;
     /**
@@ -245,19 +245,19 @@ export interface CloudIntegrationCloudTrailArgs {
      */
     prefix?: pulumi.Input<string>;
     /**
-     * The AWS region of the S3 bucket where CloudTrail logs are stored
+     * The AWS region of the S3 bucket where CloudTrail logs are stored.
      */
     region: pulumi.Input<string>;
     /**
-     * The external id corresponding to the Role ARN
+     * The external ID corresponding to the Role ARN.
      */
     roleArn: pulumi.Input<string>;
     /**
-     * A value denoting which cloud service this service integrates with
+     * A value denoting which cloud service this service integrates with.
      */
     service: pulumi.Input<string>;
     /**
-     * How often, in minutes, to refresh the service
+     * How often, in minutes, to refresh the service.
      */
     serviceRefreshRateInMinutes?: pulumi.Input<number>;
 }

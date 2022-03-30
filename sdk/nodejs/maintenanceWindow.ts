@@ -66,27 +66,38 @@ export class MaintenanceWindow extends pulumi.CustomResource {
      */
     public readonly endTimeInSeconds!: pulumi.Output<number>;
     /**
-     * If true, a source/host must be in 'relevantHostNames' and have tags matching the specification formed by 'relevantHostTags' and 'relevantHostTagsAnded' in order for this maintenance window to apply. If false, a source/host must either be in 'relevantHostNames' or match 'relevantHostTags' and 'relevantHostTagsAnded'. Default: false
+     * If `true`, a source/host must be in `relevantHostNames`
+     * and have tags matching the specification formed by `relevantHostTags` and `relevantHostTagsAnded` in
+     * order for this maintenance window to apply. If `false`, a source/host must either be in `relevantHostNames`
+     * or match `relevantHostTags` and `relevantHostTagsAnded`. Default: `false`.
      */
     public readonly hostTagGroupHostNamesGroupAnded!: pulumi.Output<boolean | undefined>;
     /**
-     * The reason for the maintenance window
+     * The reason for the maintenance window.
      */
     public readonly reason!: pulumi.Output<string>;
     /**
-     * List of alert tags whose matching alerts will be put into maintenance because of this maintenance window. At least one of relevant_customer_tags, relevant_host_tags, or relevantHostNames is required.
+     * List of alert tags whose matching alerts will be put into maintenance because
+     * of this maintenance window. At least one of `relevantCustomerTags`, `relevantHostTags`, or `relevantHostNames`
+     * is required.
      */
     public readonly relevantCustomerTags!: pulumi.Output<string[] | undefined>;
     /**
-     * List of source/host names that will be put into maintenance because of this maintenance window. At least one of relevant_customer_tags, relevant_host_tags, or relevantHostNames is required.
+     * List of source/host names that will be put into maintenance because of this
+     * maintenance window. At least one of `relevantCustomerTags`, `relevantHostTags`, or `relevantHostNames`
+     * is required.
      */
     public readonly relevantHostNames!: pulumi.Output<string[] | undefined>;
     /**
-     * List of source/host tags whose matching sources/hosts will be put into maintenance because of this maintenance window. At least one of relevant_customer_tags, relevant_host_tags, or relevantHostNames is required.
+     * List of source/host tags whose matching sources/hosts will be put into maintenance
+     * because of this maintenance window. At least one of `relevantCustomerTags`, `relevantHostTags`, or
+     * `relevantHostNames` is required.
      */
     public readonly relevantHostTags!: pulumi.Output<string[] | undefined>;
     /**
-     * Whether to AND source/host tags listed in relevantHostTags. If true, a source/host must contain all tags in order for the maintenance window to apply. If false, the tags are OR'ed, and a source/host must contain one of the tags. Default: false
+     * Whether to AND source/host tags listed in `relevantHostTags`.
+     * If `true`, a source/host must contain all tags in order for the maintenance window to apply. If `false`,
+     * the tags are OR'ed, and a source/host must contain one of the tags. Default: `false`.
      */
     public readonly relevantHostTagsAnded!: pulumi.Output<boolean | undefined>;
     /**
@@ -94,7 +105,7 @@ export class MaintenanceWindow extends pulumi.CustomResource {
      */
     public readonly startTimeInSeconds!: pulumi.Output<number>;
     /**
-     * The title of the maintenance window
+     * The title of the maintenance window.
      */
     public readonly title!: pulumi.Output<string>;
 
@@ -158,27 +169,38 @@ export interface MaintenanceWindowState {
      */
     endTimeInSeconds?: pulumi.Input<number>;
     /**
-     * If true, a source/host must be in 'relevantHostNames' and have tags matching the specification formed by 'relevantHostTags' and 'relevantHostTagsAnded' in order for this maintenance window to apply. If false, a source/host must either be in 'relevantHostNames' or match 'relevantHostTags' and 'relevantHostTagsAnded'. Default: false
+     * If `true`, a source/host must be in `relevantHostNames`
+     * and have tags matching the specification formed by `relevantHostTags` and `relevantHostTagsAnded` in
+     * order for this maintenance window to apply. If `false`, a source/host must either be in `relevantHostNames`
+     * or match `relevantHostTags` and `relevantHostTagsAnded`. Default: `false`.
      */
     hostTagGroupHostNamesGroupAnded?: pulumi.Input<boolean>;
     /**
-     * The reason for the maintenance window
+     * The reason for the maintenance window.
      */
     reason?: pulumi.Input<string>;
     /**
-     * List of alert tags whose matching alerts will be put into maintenance because of this maintenance window. At least one of relevant_customer_tags, relevant_host_tags, or relevantHostNames is required.
+     * List of alert tags whose matching alerts will be put into maintenance because
+     * of this maintenance window. At least one of `relevantCustomerTags`, `relevantHostTags`, or `relevantHostNames`
+     * is required.
      */
     relevantCustomerTags?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * List of source/host names that will be put into maintenance because of this maintenance window. At least one of relevant_customer_tags, relevant_host_tags, or relevantHostNames is required.
+     * List of source/host names that will be put into maintenance because of this
+     * maintenance window. At least one of `relevantCustomerTags`, `relevantHostTags`, or `relevantHostNames`
+     * is required.
      */
     relevantHostNames?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * List of source/host tags whose matching sources/hosts will be put into maintenance because of this maintenance window. At least one of relevant_customer_tags, relevant_host_tags, or relevantHostNames is required.
+     * List of source/host tags whose matching sources/hosts will be put into maintenance
+     * because of this maintenance window. At least one of `relevantCustomerTags`, `relevantHostTags`, or
+     * `relevantHostNames` is required.
      */
     relevantHostTags?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * Whether to AND source/host tags listed in relevantHostTags. If true, a source/host must contain all tags in order for the maintenance window to apply. If false, the tags are OR'ed, and a source/host must contain one of the tags. Default: false
+     * Whether to AND source/host tags listed in `relevantHostTags`.
+     * If `true`, a source/host must contain all tags in order for the maintenance window to apply. If `false`,
+     * the tags are OR'ed, and a source/host must contain one of the tags. Default: `false`.
      */
     relevantHostTagsAnded?: pulumi.Input<boolean>;
     /**
@@ -186,7 +208,7 @@ export interface MaintenanceWindowState {
      */
     startTimeInSeconds?: pulumi.Input<number>;
     /**
-     * The title of the maintenance window
+     * The title of the maintenance window.
      */
     title?: pulumi.Input<string>;
 }
@@ -200,27 +222,38 @@ export interface MaintenanceWindowArgs {
      */
     endTimeInSeconds: pulumi.Input<number>;
     /**
-     * If true, a source/host must be in 'relevantHostNames' and have tags matching the specification formed by 'relevantHostTags' and 'relevantHostTagsAnded' in order for this maintenance window to apply. If false, a source/host must either be in 'relevantHostNames' or match 'relevantHostTags' and 'relevantHostTagsAnded'. Default: false
+     * If `true`, a source/host must be in `relevantHostNames`
+     * and have tags matching the specification formed by `relevantHostTags` and `relevantHostTagsAnded` in
+     * order for this maintenance window to apply. If `false`, a source/host must either be in `relevantHostNames`
+     * or match `relevantHostTags` and `relevantHostTagsAnded`. Default: `false`.
      */
     hostTagGroupHostNamesGroupAnded?: pulumi.Input<boolean>;
     /**
-     * The reason for the maintenance window
+     * The reason for the maintenance window.
      */
     reason: pulumi.Input<string>;
     /**
-     * List of alert tags whose matching alerts will be put into maintenance because of this maintenance window. At least one of relevant_customer_tags, relevant_host_tags, or relevantHostNames is required.
+     * List of alert tags whose matching alerts will be put into maintenance because
+     * of this maintenance window. At least one of `relevantCustomerTags`, `relevantHostTags`, or `relevantHostNames`
+     * is required.
      */
     relevantCustomerTags?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * List of source/host names that will be put into maintenance because of this maintenance window. At least one of relevant_customer_tags, relevant_host_tags, or relevantHostNames is required.
+     * List of source/host names that will be put into maintenance because of this
+     * maintenance window. At least one of `relevantCustomerTags`, `relevantHostTags`, or `relevantHostNames`
+     * is required.
      */
     relevantHostNames?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * List of source/host tags whose matching sources/hosts will be put into maintenance because of this maintenance window. At least one of relevant_customer_tags, relevant_host_tags, or relevantHostNames is required.
+     * List of source/host tags whose matching sources/hosts will be put into maintenance
+     * because of this maintenance window. At least one of `relevantCustomerTags`, `relevantHostTags`, or
+     * `relevantHostNames` is required.
      */
     relevantHostTags?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * Whether to AND source/host tags listed in relevantHostTags. If true, a source/host must contain all tags in order for the maintenance window to apply. If false, the tags are OR'ed, and a source/host must contain one of the tags. Default: false
+     * Whether to AND source/host tags listed in `relevantHostTags`.
+     * If `true`, a source/host must contain all tags in order for the maintenance window to apply. If `false`,
+     * the tags are OR'ed, and a source/host must contain one of the tags. Default: `false`.
      */
     relevantHostTagsAnded?: pulumi.Input<boolean>;
     /**
@@ -228,7 +261,7 @@ export interface MaintenanceWindowArgs {
      */
     startTimeInSeconds: pulumi.Input<number>;
     /**
-     * The title of the maintenance window
+     * The title of the maintenance window.
      */
     title: pulumi.Input<string>;
 }

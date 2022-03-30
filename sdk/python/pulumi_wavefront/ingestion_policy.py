@@ -17,8 +17,8 @@ class IngestionPolicyArgs:
                  name: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a IngestionPolicy resource.
-        :param pulumi.Input[str] description: The description of the ingestion policy
-        :param pulumi.Input[str] name: The name of the ingestion policy
+        :param pulumi.Input[str] description: The description of the ingestion policy.
+        :param pulumi.Input[str] name: The name of the ingestion policy.
         """
         pulumi.set(__self__, "description", description)
         if name is not None:
@@ -28,7 +28,7 @@ class IngestionPolicyArgs:
     @pulumi.getter
     def description(self) -> pulumi.Input[str]:
         """
-        The description of the ingestion policy
+        The description of the ingestion policy.
         """
         return pulumi.get(self, "description")
 
@@ -40,7 +40,7 @@ class IngestionPolicyArgs:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
-        The name of the ingestion policy
+        The name of the ingestion policy.
         """
         return pulumi.get(self, "name")
 
@@ -56,8 +56,8 @@ class _IngestionPolicyState:
                  name: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering IngestionPolicy resources.
-        :param pulumi.Input[str] description: The description of the ingestion policy
-        :param pulumi.Input[str] name: The name of the ingestion policy
+        :param pulumi.Input[str] description: The description of the ingestion policy.
+        :param pulumi.Input[str] name: The name of the ingestion policy.
         """
         if description is not None:
             pulumi.set(__self__, "description", description)
@@ -68,7 +68,7 @@ class _IngestionPolicyState:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
         """
-        The description of the ingestion policy
+        The description of the ingestion policy.
         """
         return pulumi.get(self, "description")
 
@@ -80,7 +80,7 @@ class _IngestionPolicyState:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
-        The name of the ingestion policy
+        The name of the ingestion policy.
         """
         return pulumi.get(self, "name")
 
@@ -111,7 +111,7 @@ class IngestionPolicy(pulumi.CustomResource):
 
         ## Import
 
-        ingestion policies can be imported using the `id`, e.g.
+        ingestion policies can be imported by using the `id`, e.g.
 
         ```sh
          $ pulumi import wavefront:index/ingestionPolicy:IngestionPolicy basic test_ingestion-1611946841064
@@ -119,8 +119,8 @@ class IngestionPolicy(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] description: The description of the ingestion policy
-        :param pulumi.Input[str] name: The name of the ingestion policy
+        :param pulumi.Input[str] description: The description of the ingestion policy.
+        :param pulumi.Input[str] name: The name of the ingestion policy.
         """
         ...
     @overload
@@ -142,7 +142,7 @@ class IngestionPolicy(pulumi.CustomResource):
 
         ## Import
 
-        ingestion policies can be imported using the `id`, e.g.
+        ingestion policies can be imported by using the `id`, e.g.
 
         ```sh
          $ pulumi import wavefront:index/ingestionPolicy:IngestionPolicy basic test_ingestion-1611946841064
@@ -200,8 +200,8 @@ class IngestionPolicy(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] description: The description of the ingestion policy
-        :param pulumi.Input[str] name: The name of the ingestion policy
+        :param pulumi.Input[str] description: The description of the ingestion policy.
+        :param pulumi.Input[str] name: The name of the ingestion policy.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -215,7 +215,7 @@ class IngestionPolicy(pulumi.CustomResource):
     @pulumi.getter
     def description(self) -> pulumi.Output[str]:
         """
-        The description of the ingestion policy
+        The description of the ingestion policy.
         """
         return pulumi.get(self, "description")
 
@@ -223,7 +223,7 @@ class IngestionPolicy(pulumi.CustomResource):
     @pulumi.getter
     def name(self) -> pulumi.Output[str]:
         """
-        The name of the ingestion policy
+        The name of the ingestion policy.
         """
         return pulumi.get(self, "name")
 

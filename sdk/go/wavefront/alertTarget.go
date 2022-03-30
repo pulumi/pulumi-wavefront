@@ -124,7 +124,7 @@ type AlertTarget struct {
 
 	// The value of the `Content-Type` header of the webhook.
 	ContentType pulumi.StringPtrOutput `pulumi:"contentType"`
-	// A `string->string` map specifying the custome HTTP header key/value pairs that will be
+	// A `string->string` map specifying the custom HTTP header key/value pairs that will be
 	// sent in the requests with a method of `WEBHOOK`.
 	CustomHeaders pulumi.StringMapOutput `pulumi:"customHeaders"`
 	// Description describing this alert target.
@@ -135,7 +135,7 @@ type AlertTarget struct {
 	IsHtmlContent pulumi.BoolPtrOutput `pulumi:"isHtmlContent"`
 	// The notification method used for notification target. One of `WEBHOOK`, `EMAIL`, `PAGERDUTY`.
 	Method pulumi.StringPtrOutput `pulumi:"method"`
-	// The name of the alert target as it is displayed in wavefront
+	// The name of the alert target as it is displayed in Wavefront.
 	Name pulumi.StringOutput `pulumi:"name"`
 	// The end point for the notification Target.  `EMAIL`: email address. `PAGERDUTY`: PagerDuty
 	// routing key. `WEBHOOK`: URL endpoint.
@@ -143,7 +143,7 @@ type AlertTarget struct {
 	// List of routing targets that this alert target will notify. See Route
 	Routes   AlertTargetRouteArrayOutput `pulumi:"routes"`
 	TargetId pulumi.StringOutput         `pulumi:"targetId"`
-	// A mustache template that will form the body of the POST request, email and summary of the PagerDuty.
+	// A mustache template that will form the body of the POST request, email, and summary of the PagerDuty.
 	Template pulumi.StringOutput `pulumi:"template"`
 	// A list of occurrences on which this webhook will be fired. Valid values are `ALERT_OPENED`,
 	// `ALERT_UPDATED`, `ALERT_RESOLVED`, `ALERT_MAINTENANCE`, `ALERT_SNOOZED`, `ALERT_NO_DATA`, `ALERT_NO_DATA_RESOLVED`, `ALERT_NO_DATA_MAINTENANCE`.
@@ -193,7 +193,7 @@ func GetAlertTarget(ctx *pulumi.Context,
 type alertTargetState struct {
 	// The value of the `Content-Type` header of the webhook.
 	ContentType *string `pulumi:"contentType"`
-	// A `string->string` map specifying the custome HTTP header key/value pairs that will be
+	// A `string->string` map specifying the custom HTTP header key/value pairs that will be
 	// sent in the requests with a method of `WEBHOOK`.
 	CustomHeaders map[string]string `pulumi:"customHeaders"`
 	// Description describing this alert target.
@@ -204,7 +204,7 @@ type alertTargetState struct {
 	IsHtmlContent *bool `pulumi:"isHtmlContent"`
 	// The notification method used for notification target. One of `WEBHOOK`, `EMAIL`, `PAGERDUTY`.
 	Method *string `pulumi:"method"`
-	// The name of the alert target as it is displayed in wavefront
+	// The name of the alert target as it is displayed in Wavefront.
 	Name *string `pulumi:"name"`
 	// The end point for the notification Target.  `EMAIL`: email address. `PAGERDUTY`: PagerDuty
 	// routing key. `WEBHOOK`: URL endpoint.
@@ -212,7 +212,7 @@ type alertTargetState struct {
 	// List of routing targets that this alert target will notify. See Route
 	Routes   []AlertTargetRoute `pulumi:"routes"`
 	TargetId *string            `pulumi:"targetId"`
-	// A mustache template that will form the body of the POST request, email and summary of the PagerDuty.
+	// A mustache template that will form the body of the POST request, email, and summary of the PagerDuty.
 	Template *string `pulumi:"template"`
 	// A list of occurrences on which this webhook will be fired. Valid values are `ALERT_OPENED`,
 	// `ALERT_UPDATED`, `ALERT_RESOLVED`, `ALERT_MAINTENANCE`, `ALERT_SNOOZED`, `ALERT_NO_DATA`, `ALERT_NO_DATA_RESOLVED`, `ALERT_NO_DATA_MAINTENANCE`.
@@ -222,7 +222,7 @@ type alertTargetState struct {
 type AlertTargetState struct {
 	// The value of the `Content-Type` header of the webhook.
 	ContentType pulumi.StringPtrInput
-	// A `string->string` map specifying the custome HTTP header key/value pairs that will be
+	// A `string->string` map specifying the custom HTTP header key/value pairs that will be
 	// sent in the requests with a method of `WEBHOOK`.
 	CustomHeaders pulumi.StringMapInput
 	// Description describing this alert target.
@@ -233,7 +233,7 @@ type AlertTargetState struct {
 	IsHtmlContent pulumi.BoolPtrInput
 	// The notification method used for notification target. One of `WEBHOOK`, `EMAIL`, `PAGERDUTY`.
 	Method pulumi.StringPtrInput
-	// The name of the alert target as it is displayed in wavefront
+	// The name of the alert target as it is displayed in Wavefront.
 	Name pulumi.StringPtrInput
 	// The end point for the notification Target.  `EMAIL`: email address. `PAGERDUTY`: PagerDuty
 	// routing key. `WEBHOOK`: URL endpoint.
@@ -241,7 +241,7 @@ type AlertTargetState struct {
 	// List of routing targets that this alert target will notify. See Route
 	Routes   AlertTargetRouteArrayInput
 	TargetId pulumi.StringPtrInput
-	// A mustache template that will form the body of the POST request, email and summary of the PagerDuty.
+	// A mustache template that will form the body of the POST request, email, and summary of the PagerDuty.
 	Template pulumi.StringPtrInput
 	// A list of occurrences on which this webhook will be fired. Valid values are `ALERT_OPENED`,
 	// `ALERT_UPDATED`, `ALERT_RESOLVED`, `ALERT_MAINTENANCE`, `ALERT_SNOOZED`, `ALERT_NO_DATA`, `ALERT_NO_DATA_RESOLVED`, `ALERT_NO_DATA_MAINTENANCE`.
@@ -255,7 +255,7 @@ func (AlertTargetState) ElementType() reflect.Type {
 type alertTargetArgs struct {
 	// The value of the `Content-Type` header of the webhook.
 	ContentType *string `pulumi:"contentType"`
-	// A `string->string` map specifying the custome HTTP header key/value pairs that will be
+	// A `string->string` map specifying the custom HTTP header key/value pairs that will be
 	// sent in the requests with a method of `WEBHOOK`.
 	CustomHeaders map[string]string `pulumi:"customHeaders"`
 	// Description describing this alert target.
@@ -266,14 +266,14 @@ type alertTargetArgs struct {
 	IsHtmlContent *bool `pulumi:"isHtmlContent"`
 	// The notification method used for notification target. One of `WEBHOOK`, `EMAIL`, `PAGERDUTY`.
 	Method *string `pulumi:"method"`
-	// The name of the alert target as it is displayed in wavefront
+	// The name of the alert target as it is displayed in Wavefront.
 	Name *string `pulumi:"name"`
 	// The end point for the notification Target.  `EMAIL`: email address. `PAGERDUTY`: PagerDuty
 	// routing key. `WEBHOOK`: URL endpoint.
 	Recipient string `pulumi:"recipient"`
 	// List of routing targets that this alert target will notify. See Route
 	Routes []AlertTargetRoute `pulumi:"routes"`
-	// A mustache template that will form the body of the POST request, email and summary of the PagerDuty.
+	// A mustache template that will form the body of the POST request, email, and summary of the PagerDuty.
 	Template string `pulumi:"template"`
 	// A list of occurrences on which this webhook will be fired. Valid values are `ALERT_OPENED`,
 	// `ALERT_UPDATED`, `ALERT_RESOLVED`, `ALERT_MAINTENANCE`, `ALERT_SNOOZED`, `ALERT_NO_DATA`, `ALERT_NO_DATA_RESOLVED`, `ALERT_NO_DATA_MAINTENANCE`.
@@ -284,7 +284,7 @@ type alertTargetArgs struct {
 type AlertTargetArgs struct {
 	// The value of the `Content-Type` header of the webhook.
 	ContentType pulumi.StringPtrInput
-	// A `string->string` map specifying the custome HTTP header key/value pairs that will be
+	// A `string->string` map specifying the custom HTTP header key/value pairs that will be
 	// sent in the requests with a method of `WEBHOOK`.
 	CustomHeaders pulumi.StringMapInput
 	// Description describing this alert target.
@@ -295,14 +295,14 @@ type AlertTargetArgs struct {
 	IsHtmlContent pulumi.BoolPtrInput
 	// The notification method used for notification target. One of `WEBHOOK`, `EMAIL`, `PAGERDUTY`.
 	Method pulumi.StringPtrInput
-	// The name of the alert target as it is displayed in wavefront
+	// The name of the alert target as it is displayed in Wavefront.
 	Name pulumi.StringPtrInput
 	// The end point for the notification Target.  `EMAIL`: email address. `PAGERDUTY`: PagerDuty
 	// routing key. `WEBHOOK`: URL endpoint.
 	Recipient pulumi.StringInput
 	// List of routing targets that this alert target will notify. See Route
 	Routes AlertTargetRouteArrayInput
-	// A mustache template that will form the body of the POST request, email and summary of the PagerDuty.
+	// A mustache template that will form the body of the POST request, email, and summary of the PagerDuty.
 	Template pulumi.StringInput
 	// A list of occurrences on which this webhook will be fired. Valid values are `ALERT_OPENED`,
 	// `ALERT_UPDATED`, `ALERT_RESOLVED`, `ALERT_MAINTENANCE`, `ALERT_SNOOZED`, `ALERT_NO_DATA`, `ALERT_NO_DATA_RESOLVED`, `ALERT_NO_DATA_MAINTENANCE`.

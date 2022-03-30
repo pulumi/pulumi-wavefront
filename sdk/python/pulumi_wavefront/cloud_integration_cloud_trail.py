@@ -26,17 +26,17 @@ class CloudIntegrationCloudTrailArgs:
                  service_refresh_rate_in_minutes: Optional[pulumi.Input[int]] = None):
         """
         The set of arguments for constructing a CloudIntegrationCloudTrail resource.
-        :param pulumi.Input[str] bucket_name: Name of the S3 bucket where CloudTrail logs are stored
-        :param pulumi.Input[str] external_id: The Role ARN that the customer has created in AWS IAM to allow access to Wavefront
-        :param pulumi.Input[str] region: The AWS region of the S3 bucket where CloudTrail logs are stored
-        :param pulumi.Input[str] role_arn: The external id corresponding to the Role ARN
-        :param pulumi.Input[str] service: A value denoting which cloud service this service integrates with
-        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] additional_tags: A list of point tag key-values to add to every point ingested using this integration
-        :param pulumi.Input[str] filter_rule: Rule to filter CloudTrail log event
-        :param pulumi.Input[bool] force_save: Forces this resource to save, even if errors are present
-        :param pulumi.Input[str] name: The human-readable name of this integration
+        :param pulumi.Input[str] bucket_name: Name of the S3 bucket where CloudTrail logs are stored.
+        :param pulumi.Input[str] external_id: The Role ARN that the customer has created in AWS IAM to allow access to Wavefront.
+        :param pulumi.Input[str] region: The AWS region of the S3 bucket where CloudTrail logs are stored.
+        :param pulumi.Input[str] role_arn: The external ID corresponding to the Role ARN.
+        :param pulumi.Input[str] service: A value denoting which cloud service this service integrates with.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] additional_tags: A list of point tag key-values to add to every point ingested using this integration.
+        :param pulumi.Input[str] filter_rule: Rule to filter CloudTrail log event.
+        :param pulumi.Input[bool] force_save: Forces this resource to save, even if errors are present.
+        :param pulumi.Input[str] name: The human-readable name of this integration.
         :param pulumi.Input[str] prefix: The common prefix, if any, appended to all CloudTrail log files.
-        :param pulumi.Input[int] service_refresh_rate_in_minutes: How often, in minutes, to refresh the service
+        :param pulumi.Input[int] service_refresh_rate_in_minutes: How often, in minutes, to refresh the service.
         """
         pulumi.set(__self__, "bucket_name", bucket_name)
         pulumi.set(__self__, "external_id", external_id)
@@ -60,7 +60,7 @@ class CloudIntegrationCloudTrailArgs:
     @pulumi.getter(name="bucketName")
     def bucket_name(self) -> pulumi.Input[str]:
         """
-        Name of the S3 bucket where CloudTrail logs are stored
+        Name of the S3 bucket where CloudTrail logs are stored.
         """
         return pulumi.get(self, "bucket_name")
 
@@ -72,7 +72,7 @@ class CloudIntegrationCloudTrailArgs:
     @pulumi.getter(name="externalId")
     def external_id(self) -> pulumi.Input[str]:
         """
-        The Role ARN that the customer has created in AWS IAM to allow access to Wavefront
+        The Role ARN that the customer has created in AWS IAM to allow access to Wavefront.
         """
         return pulumi.get(self, "external_id")
 
@@ -84,7 +84,7 @@ class CloudIntegrationCloudTrailArgs:
     @pulumi.getter
     def region(self) -> pulumi.Input[str]:
         """
-        The AWS region of the S3 bucket where CloudTrail logs are stored
+        The AWS region of the S3 bucket where CloudTrail logs are stored.
         """
         return pulumi.get(self, "region")
 
@@ -96,7 +96,7 @@ class CloudIntegrationCloudTrailArgs:
     @pulumi.getter(name="roleArn")
     def role_arn(self) -> pulumi.Input[str]:
         """
-        The external id corresponding to the Role ARN
+        The external ID corresponding to the Role ARN.
         """
         return pulumi.get(self, "role_arn")
 
@@ -108,7 +108,7 @@ class CloudIntegrationCloudTrailArgs:
     @pulumi.getter
     def service(self) -> pulumi.Input[str]:
         """
-        A value denoting which cloud service this service integrates with
+        A value denoting which cloud service this service integrates with.
         """
         return pulumi.get(self, "service")
 
@@ -120,7 +120,7 @@ class CloudIntegrationCloudTrailArgs:
     @pulumi.getter(name="additionalTags")
     def additional_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
-        A list of point tag key-values to add to every point ingested using this integration
+        A list of point tag key-values to add to every point ingested using this integration.
         """
         return pulumi.get(self, "additional_tags")
 
@@ -132,7 +132,7 @@ class CloudIntegrationCloudTrailArgs:
     @pulumi.getter(name="filterRule")
     def filter_rule(self) -> Optional[pulumi.Input[str]]:
         """
-        Rule to filter CloudTrail log event
+        Rule to filter CloudTrail log event.
         """
         return pulumi.get(self, "filter_rule")
 
@@ -144,7 +144,7 @@ class CloudIntegrationCloudTrailArgs:
     @pulumi.getter(name="forceSave")
     def force_save(self) -> Optional[pulumi.Input[bool]]:
         """
-        Forces this resource to save, even if errors are present
+        Forces this resource to save, even if errors are present.
         """
         return pulumi.get(self, "force_save")
 
@@ -156,7 +156,7 @@ class CloudIntegrationCloudTrailArgs:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
-        The human-readable name of this integration
+        The human-readable name of this integration.
         """
         return pulumi.get(self, "name")
 
@@ -180,7 +180,7 @@ class CloudIntegrationCloudTrailArgs:
     @pulumi.getter(name="serviceRefreshRateInMinutes")
     def service_refresh_rate_in_minutes(self) -> Optional[pulumi.Input[int]]:
         """
-        How often, in minutes, to refresh the service
+        How often, in minutes, to refresh the service.
         """
         return pulumi.get(self, "service_refresh_rate_in_minutes")
 
@@ -205,17 +205,17 @@ class _CloudIntegrationCloudTrailState:
                  service_refresh_rate_in_minutes: Optional[pulumi.Input[int]] = None):
         """
         Input properties used for looking up and filtering CloudIntegrationCloudTrail resources.
-        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] additional_tags: A list of point tag key-values to add to every point ingested using this integration
-        :param pulumi.Input[str] bucket_name: Name of the S3 bucket where CloudTrail logs are stored
-        :param pulumi.Input[str] external_id: The Role ARN that the customer has created in AWS IAM to allow access to Wavefront
-        :param pulumi.Input[str] filter_rule: Rule to filter CloudTrail log event
-        :param pulumi.Input[bool] force_save: Forces this resource to save, even if errors are present
-        :param pulumi.Input[str] name: The human-readable name of this integration
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] additional_tags: A list of point tag key-values to add to every point ingested using this integration.
+        :param pulumi.Input[str] bucket_name: Name of the S3 bucket where CloudTrail logs are stored.
+        :param pulumi.Input[str] external_id: The Role ARN that the customer has created in AWS IAM to allow access to Wavefront.
+        :param pulumi.Input[str] filter_rule: Rule to filter CloudTrail log event.
+        :param pulumi.Input[bool] force_save: Forces this resource to save, even if errors are present.
+        :param pulumi.Input[str] name: The human-readable name of this integration.
         :param pulumi.Input[str] prefix: The common prefix, if any, appended to all CloudTrail log files.
-        :param pulumi.Input[str] region: The AWS region of the S3 bucket where CloudTrail logs are stored
-        :param pulumi.Input[str] role_arn: The external id corresponding to the Role ARN
-        :param pulumi.Input[str] service: A value denoting which cloud service this service integrates with
-        :param pulumi.Input[int] service_refresh_rate_in_minutes: How often, in minutes, to refresh the service
+        :param pulumi.Input[str] region: The AWS region of the S3 bucket where CloudTrail logs are stored.
+        :param pulumi.Input[str] role_arn: The external ID corresponding to the Role ARN.
+        :param pulumi.Input[str] service: A value denoting which cloud service this service integrates with.
+        :param pulumi.Input[int] service_refresh_rate_in_minutes: How often, in minutes, to refresh the service.
         """
         if additional_tags is not None:
             pulumi.set(__self__, "additional_tags", additional_tags)
@@ -244,7 +244,7 @@ class _CloudIntegrationCloudTrailState:
     @pulumi.getter(name="additionalTags")
     def additional_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
-        A list of point tag key-values to add to every point ingested using this integration
+        A list of point tag key-values to add to every point ingested using this integration.
         """
         return pulumi.get(self, "additional_tags")
 
@@ -256,7 +256,7 @@ class _CloudIntegrationCloudTrailState:
     @pulumi.getter(name="bucketName")
     def bucket_name(self) -> Optional[pulumi.Input[str]]:
         """
-        Name of the S3 bucket where CloudTrail logs are stored
+        Name of the S3 bucket where CloudTrail logs are stored.
         """
         return pulumi.get(self, "bucket_name")
 
@@ -268,7 +268,7 @@ class _CloudIntegrationCloudTrailState:
     @pulumi.getter(name="externalId")
     def external_id(self) -> Optional[pulumi.Input[str]]:
         """
-        The Role ARN that the customer has created in AWS IAM to allow access to Wavefront
+        The Role ARN that the customer has created in AWS IAM to allow access to Wavefront.
         """
         return pulumi.get(self, "external_id")
 
@@ -280,7 +280,7 @@ class _CloudIntegrationCloudTrailState:
     @pulumi.getter(name="filterRule")
     def filter_rule(self) -> Optional[pulumi.Input[str]]:
         """
-        Rule to filter CloudTrail log event
+        Rule to filter CloudTrail log event.
         """
         return pulumi.get(self, "filter_rule")
 
@@ -292,7 +292,7 @@ class _CloudIntegrationCloudTrailState:
     @pulumi.getter(name="forceSave")
     def force_save(self) -> Optional[pulumi.Input[bool]]:
         """
-        Forces this resource to save, even if errors are present
+        Forces this resource to save, even if errors are present.
         """
         return pulumi.get(self, "force_save")
 
@@ -304,7 +304,7 @@ class _CloudIntegrationCloudTrailState:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
-        The human-readable name of this integration
+        The human-readable name of this integration.
         """
         return pulumi.get(self, "name")
 
@@ -328,7 +328,7 @@ class _CloudIntegrationCloudTrailState:
     @pulumi.getter
     def region(self) -> Optional[pulumi.Input[str]]:
         """
-        The AWS region of the S3 bucket where CloudTrail logs are stored
+        The AWS region of the S3 bucket where CloudTrail logs are stored.
         """
         return pulumi.get(self, "region")
 
@@ -340,7 +340,7 @@ class _CloudIntegrationCloudTrailState:
     @pulumi.getter(name="roleArn")
     def role_arn(self) -> Optional[pulumi.Input[str]]:
         """
-        The external id corresponding to the Role ARN
+        The external ID corresponding to the Role ARN.
         """
         return pulumi.get(self, "role_arn")
 
@@ -352,7 +352,7 @@ class _CloudIntegrationCloudTrailState:
     @pulumi.getter
     def service(self) -> Optional[pulumi.Input[str]]:
         """
-        A value denoting which cloud service this service integrates with
+        A value denoting which cloud service this service integrates with.
         """
         return pulumi.get(self, "service")
 
@@ -364,7 +364,7 @@ class _CloudIntegrationCloudTrailState:
     @pulumi.getter(name="serviceRefreshRateInMinutes")
     def service_refresh_rate_in_minutes(self) -> Optional[pulumi.Input[int]]:
         """
-        How often, in minutes, to refresh the service
+        How often, in minutes, to refresh the service.
         """
         return pulumi.get(self, "service_refresh_rate_in_minutes")
 
@@ -410,7 +410,7 @@ class CloudIntegrationCloudTrail(pulumi.CustomResource):
 
         ## Import
 
-        CloudTrail Cloud Integrations can be imported using the `id`, e.g.
+        CloudTrail Cloud Integrations can be imported by using the `id`, e.g.
 
         ```sh
          $ pulumi import wavefront:index/cloudIntegrationCloudTrail:CloudIntegrationCloudTrail cloudtrail a411c16b-3cf7-4f03-bf11-8ca05aab898d
@@ -418,17 +418,17 @@ class CloudIntegrationCloudTrail(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] additional_tags: A list of point tag key-values to add to every point ingested using this integration
-        :param pulumi.Input[str] bucket_name: Name of the S3 bucket where CloudTrail logs are stored
-        :param pulumi.Input[str] external_id: The Role ARN that the customer has created in AWS IAM to allow access to Wavefront
-        :param pulumi.Input[str] filter_rule: Rule to filter CloudTrail log event
-        :param pulumi.Input[bool] force_save: Forces this resource to save, even if errors are present
-        :param pulumi.Input[str] name: The human-readable name of this integration
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] additional_tags: A list of point tag key-values to add to every point ingested using this integration.
+        :param pulumi.Input[str] bucket_name: Name of the S3 bucket where CloudTrail logs are stored.
+        :param pulumi.Input[str] external_id: The Role ARN that the customer has created in AWS IAM to allow access to Wavefront.
+        :param pulumi.Input[str] filter_rule: Rule to filter CloudTrail log event.
+        :param pulumi.Input[bool] force_save: Forces this resource to save, even if errors are present.
+        :param pulumi.Input[str] name: The human-readable name of this integration.
         :param pulumi.Input[str] prefix: The common prefix, if any, appended to all CloudTrail log files.
-        :param pulumi.Input[str] region: The AWS region of the S3 bucket where CloudTrail logs are stored
-        :param pulumi.Input[str] role_arn: The external id corresponding to the Role ARN
-        :param pulumi.Input[str] service: A value denoting which cloud service this service integrates with
-        :param pulumi.Input[int] service_refresh_rate_in_minutes: How often, in minutes, to refresh the service
+        :param pulumi.Input[str] region: The AWS region of the S3 bucket where CloudTrail logs are stored.
+        :param pulumi.Input[str] role_arn: The external ID corresponding to the Role ARN.
+        :param pulumi.Input[str] service: A value denoting which cloud service this service integrates with.
+        :param pulumi.Input[int] service_refresh_rate_in_minutes: How often, in minutes, to refresh the service.
         """
         ...
     @overload
@@ -456,7 +456,7 @@ class CloudIntegrationCloudTrail(pulumi.CustomResource):
 
         ## Import
 
-        CloudTrail Cloud Integrations can be imported using the `id`, e.g.
+        CloudTrail Cloud Integrations can be imported by using the `id`, e.g.
 
         ```sh
          $ pulumi import wavefront:index/cloudIntegrationCloudTrail:CloudIntegrationCloudTrail cloudtrail a411c16b-3cf7-4f03-bf11-8ca05aab898d
@@ -549,17 +549,17 @@ class CloudIntegrationCloudTrail(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] additional_tags: A list of point tag key-values to add to every point ingested using this integration
-        :param pulumi.Input[str] bucket_name: Name of the S3 bucket where CloudTrail logs are stored
-        :param pulumi.Input[str] external_id: The Role ARN that the customer has created in AWS IAM to allow access to Wavefront
-        :param pulumi.Input[str] filter_rule: Rule to filter CloudTrail log event
-        :param pulumi.Input[bool] force_save: Forces this resource to save, even if errors are present
-        :param pulumi.Input[str] name: The human-readable name of this integration
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] additional_tags: A list of point tag key-values to add to every point ingested using this integration.
+        :param pulumi.Input[str] bucket_name: Name of the S3 bucket where CloudTrail logs are stored.
+        :param pulumi.Input[str] external_id: The Role ARN that the customer has created in AWS IAM to allow access to Wavefront.
+        :param pulumi.Input[str] filter_rule: Rule to filter CloudTrail log event.
+        :param pulumi.Input[bool] force_save: Forces this resource to save, even if errors are present.
+        :param pulumi.Input[str] name: The human-readable name of this integration.
         :param pulumi.Input[str] prefix: The common prefix, if any, appended to all CloudTrail log files.
-        :param pulumi.Input[str] region: The AWS region of the S3 bucket where CloudTrail logs are stored
-        :param pulumi.Input[str] role_arn: The external id corresponding to the Role ARN
-        :param pulumi.Input[str] service: A value denoting which cloud service this service integrates with
-        :param pulumi.Input[int] service_refresh_rate_in_minutes: How often, in minutes, to refresh the service
+        :param pulumi.Input[str] region: The AWS region of the S3 bucket where CloudTrail logs are stored.
+        :param pulumi.Input[str] role_arn: The external ID corresponding to the Role ARN.
+        :param pulumi.Input[str] service: A value denoting which cloud service this service integrates with.
+        :param pulumi.Input[int] service_refresh_rate_in_minutes: How often, in minutes, to refresh the service.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -582,7 +582,7 @@ class CloudIntegrationCloudTrail(pulumi.CustomResource):
     @pulumi.getter(name="additionalTags")
     def additional_tags(self) -> pulumi.Output[Optional[Mapping[str, str]]]:
         """
-        A list of point tag key-values to add to every point ingested using this integration
+        A list of point tag key-values to add to every point ingested using this integration.
         """
         return pulumi.get(self, "additional_tags")
 
@@ -590,7 +590,7 @@ class CloudIntegrationCloudTrail(pulumi.CustomResource):
     @pulumi.getter(name="bucketName")
     def bucket_name(self) -> pulumi.Output[str]:
         """
-        Name of the S3 bucket where CloudTrail logs are stored
+        Name of the S3 bucket where CloudTrail logs are stored.
         """
         return pulumi.get(self, "bucket_name")
 
@@ -598,7 +598,7 @@ class CloudIntegrationCloudTrail(pulumi.CustomResource):
     @pulumi.getter(name="externalId")
     def external_id(self) -> pulumi.Output[str]:
         """
-        The Role ARN that the customer has created in AWS IAM to allow access to Wavefront
+        The Role ARN that the customer has created in AWS IAM to allow access to Wavefront.
         """
         return pulumi.get(self, "external_id")
 
@@ -606,7 +606,7 @@ class CloudIntegrationCloudTrail(pulumi.CustomResource):
     @pulumi.getter(name="filterRule")
     def filter_rule(self) -> pulumi.Output[Optional[str]]:
         """
-        Rule to filter CloudTrail log event
+        Rule to filter CloudTrail log event.
         """
         return pulumi.get(self, "filter_rule")
 
@@ -614,7 +614,7 @@ class CloudIntegrationCloudTrail(pulumi.CustomResource):
     @pulumi.getter(name="forceSave")
     def force_save(self) -> pulumi.Output[Optional[bool]]:
         """
-        Forces this resource to save, even if errors are present
+        Forces this resource to save, even if errors are present.
         """
         return pulumi.get(self, "force_save")
 
@@ -622,7 +622,7 @@ class CloudIntegrationCloudTrail(pulumi.CustomResource):
     @pulumi.getter
     def name(self) -> pulumi.Output[str]:
         """
-        The human-readable name of this integration
+        The human-readable name of this integration.
         """
         return pulumi.get(self, "name")
 
@@ -638,7 +638,7 @@ class CloudIntegrationCloudTrail(pulumi.CustomResource):
     @pulumi.getter
     def region(self) -> pulumi.Output[str]:
         """
-        The AWS region of the S3 bucket where CloudTrail logs are stored
+        The AWS region of the S3 bucket where CloudTrail logs are stored.
         """
         return pulumi.get(self, "region")
 
@@ -646,7 +646,7 @@ class CloudIntegrationCloudTrail(pulumi.CustomResource):
     @pulumi.getter(name="roleArn")
     def role_arn(self) -> pulumi.Output[str]:
         """
-        The external id corresponding to the Role ARN
+        The external ID corresponding to the Role ARN.
         """
         return pulumi.get(self, "role_arn")
 
@@ -654,7 +654,7 @@ class CloudIntegrationCloudTrail(pulumi.CustomResource):
     @pulumi.getter
     def service(self) -> pulumi.Output[str]:
         """
-        A value denoting which cloud service this service integrates with
+        A value denoting which cloud service this service integrates with.
         """
         return pulumi.get(self, "service")
 
@@ -662,7 +662,7 @@ class CloudIntegrationCloudTrail(pulumi.CustomResource):
     @pulumi.getter(name="serviceRefreshRateInMinutes")
     def service_refresh_rate_in_minutes(self) -> pulumi.Output[Optional[int]]:
         """
-        How often, in minutes, to refresh the service
+        How often, in minutes, to refresh the service.
         """
         return pulumi.get(self, "service_refresh_rate_in_minutes")
 

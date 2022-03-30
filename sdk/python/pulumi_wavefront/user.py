@@ -19,11 +19,11 @@ class UserArgs:
                  user_groups: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
         """
         The set of arguments for constructing a User resource.
-        :param pulumi.Input[str] email: The (unique) identifier of the user to create. Must be a valid email address
+        :param pulumi.Input[str] email: The unique identifier of the user account to create. Must be a valid email address.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] permissions: List of permission to grant to this user.  Valid options are
                `agent_management`, `alerts_management`, `dashboard_management`, `embedded_charts`, `events_management`, `external_links_management`,
-               `host_tag_management`, `metrics_management`, `user_management`
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] user_groups: List of user groups to this user
+               `host_tag_management`, `metrics_management`, and `user_management`.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] user_groups: List of user groups to this user.
         """
         pulumi.set(__self__, "email", email)
         if customer is not None:
@@ -37,7 +37,7 @@ class UserArgs:
     @pulumi.getter
     def email(self) -> pulumi.Input[str]:
         """
-        The (unique) identifier of the user to create. Must be a valid email address
+        The unique identifier of the user account to create. Must be a valid email address.
         """
         return pulumi.get(self, "email")
 
@@ -60,7 +60,7 @@ class UserArgs:
         """
         List of permission to grant to this user.  Valid options are
         `agent_management`, `alerts_management`, `dashboard_management`, `embedded_charts`, `events_management`, `external_links_management`,
-        `host_tag_management`, `metrics_management`, `user_management`
+        `host_tag_management`, `metrics_management`, and `user_management`.
         """
         return pulumi.get(self, "permissions")
 
@@ -72,7 +72,7 @@ class UserArgs:
     @pulumi.getter(name="userGroups")
     def user_groups(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        List of user groups to this user
+        List of user groups to this user.
         """
         return pulumi.get(self, "user_groups")
 
@@ -90,11 +90,11 @@ class _UserState:
                  user_groups: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
         """
         Input properties used for looking up and filtering User resources.
-        :param pulumi.Input[str] email: The (unique) identifier of the user to create. Must be a valid email address
+        :param pulumi.Input[str] email: The unique identifier of the user account to create. Must be a valid email address.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] permissions: List of permission to grant to this user.  Valid options are
                `agent_management`, `alerts_management`, `dashboard_management`, `embedded_charts`, `events_management`, `external_links_management`,
-               `host_tag_management`, `metrics_management`, `user_management`
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] user_groups: List of user groups to this user
+               `host_tag_management`, `metrics_management`, and `user_management`.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] user_groups: List of user groups to this user.
         """
         if customer is not None:
             pulumi.set(__self__, "customer", customer)
@@ -118,7 +118,7 @@ class _UserState:
     @pulumi.getter
     def email(self) -> Optional[pulumi.Input[str]]:
         """
-        The (unique) identifier of the user to create. Must be a valid email address
+        The unique identifier of the user account to create. Must be a valid email address.
         """
         return pulumi.get(self, "email")
 
@@ -132,7 +132,7 @@ class _UserState:
         """
         List of permission to grant to this user.  Valid options are
         `agent_management`, `alerts_management`, `dashboard_management`, `embedded_charts`, `events_management`, `external_links_management`,
-        `host_tag_management`, `metrics_management`, `user_management`
+        `host_tag_management`, `metrics_management`, and `user_management`.
         """
         return pulumi.get(self, "permissions")
 
@@ -144,7 +144,7 @@ class _UserState:
     @pulumi.getter(name="userGroups")
     def user_groups(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        List of user groups to this user
+        List of user groups to this user.
         """
         return pulumi.get(self, "user_groups")
 
@@ -164,7 +164,7 @@ class User(pulumi.CustomResource):
                  user_groups: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  __props__=None):
         """
-        Provides a Wavefront User Resource. This allows users to be created, updated, and deleted.
+        Provides a Wavefront User Resource. This allows user accounts to be created, updated, and deleted.
 
         ## Example Usage
 
@@ -177,7 +177,7 @@ class User(pulumi.CustomResource):
 
         ## Import
 
-        Users can be imported using the `id`, e.g.
+        Users can be imported by using the `id`, e.g.
 
         ```sh
          $ pulumi import wavefront:index/user:User some_user test@example.com
@@ -185,11 +185,11 @@ class User(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] email: The (unique) identifier of the user to create. Must be a valid email address
+        :param pulumi.Input[str] email: The unique identifier of the user account to create. Must be a valid email address.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] permissions: List of permission to grant to this user.  Valid options are
                `agent_management`, `alerts_management`, `dashboard_management`, `embedded_charts`, `events_management`, `external_links_management`,
-               `host_tag_management`, `metrics_management`, `user_management`
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] user_groups: List of user groups to this user
+               `host_tag_management`, `metrics_management`, and `user_management`.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] user_groups: List of user groups to this user.
         """
         ...
     @overload
@@ -198,7 +198,7 @@ class User(pulumi.CustomResource):
                  args: UserArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Provides a Wavefront User Resource. This allows users to be created, updated, and deleted.
+        Provides a Wavefront User Resource. This allows user accounts to be created, updated, and deleted.
 
         ## Example Usage
 
@@ -211,7 +211,7 @@ class User(pulumi.CustomResource):
 
         ## Import
 
-        Users can be imported using the `id`, e.g.
+        Users can be imported by using the `id`, e.g.
 
         ```sh
          $ pulumi import wavefront:index/user:User some_user test@example.com
@@ -275,11 +275,11 @@ class User(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] email: The (unique) identifier of the user to create. Must be a valid email address
+        :param pulumi.Input[str] email: The unique identifier of the user account to create. Must be a valid email address.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] permissions: List of permission to grant to this user.  Valid options are
                `agent_management`, `alerts_management`, `dashboard_management`, `embedded_charts`, `events_management`, `external_links_management`,
-               `host_tag_management`, `metrics_management`, `user_management`
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] user_groups: List of user groups to this user
+               `host_tag_management`, `metrics_management`, and `user_management`.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] user_groups: List of user groups to this user.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -300,7 +300,7 @@ class User(pulumi.CustomResource):
     @pulumi.getter
     def email(self) -> pulumi.Output[str]:
         """
-        The (unique) identifier of the user to create. Must be a valid email address
+        The unique identifier of the user account to create. Must be a valid email address.
         """
         return pulumi.get(self, "email")
 
@@ -310,7 +310,7 @@ class User(pulumi.CustomResource):
         """
         List of permission to grant to this user.  Valid options are
         `agent_management`, `alerts_management`, `dashboard_management`, `embedded_charts`, `events_management`, `external_links_management`,
-        `host_tag_management`, `metrics_management`, `user_management`
+        `host_tag_management`, `metrics_management`, and `user_management`.
         """
         return pulumi.get(self, "permissions")
 
@@ -318,7 +318,7 @@ class User(pulumi.CustomResource):
     @pulumi.getter(name="userGroups")
     def user_groups(self) -> pulumi.Output[Sequence[str]]:
         """
-        List of user groups to this user
+        List of user groups to this user.
         """
         return pulumi.get(self, "user_groups")
 

@@ -44,7 +44,7 @@ namespace Pulumi.Wavefront
     {
         /// <summary>
         /// Set to the Group ID of the `Everyone` group, suitable for referencing
-        /// in other resources that support group memberships. s
+        /// in other resources that support group memberships.
         /// </summary>
         public readonly string GroupId;
         /// <summary>

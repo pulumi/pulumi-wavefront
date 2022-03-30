@@ -16,7 +16,7 @@ namespace Pulumi.Wavefront.Inputs
         private InputList<Inputs.DashboardSectionRowChartGetArgs>? _charts;
 
         /// <summary>
-        /// Charts in this section. See dashboard chart
+        /// Charts in this section. See dashboard chart.
         /// </summary>
         public InputList<Inputs.DashboardSectionRowChartGetArgs> Charts
         {

@@ -20,11 +20,11 @@ class RoleArgs:
         """
         The set of arguments for constructing a Role resource.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] assignees: A list of user groups or accounts to assign to this role.
-        :param pulumi.Input[str] description: A short description of the user group
-        :param pulumi.Input[str] name: The name of the user group
+        :param pulumi.Input[str] description: A short description of the role.
+        :param pulumi.Input[str] name: The name of the role.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] permissions: A list of permissions to assign to this role. Valid options are 
                `agent_management`, `alerts_management`, `dashboard_management`, `embedded_charts`, `events_management`, `external_links_management`,
-               `host_tag_management`, `metrics_management`, `user_management`
+               `host_tag_management`, `metrics_management`, and `user_management`.
         """
         if assignees is not None:
             pulumi.set(__self__, "assignees", assignees)
@@ -51,7 +51,7 @@ class RoleArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
         """
-        A short description of the user group
+        A short description of the role.
         """
         return pulumi.get(self, "description")
 
@@ -63,7 +63,7 @@ class RoleArgs:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
-        The name of the user group
+        The name of the role.
         """
         return pulumi.get(self, "name")
 
@@ -77,7 +77,7 @@ class RoleArgs:
         """
         A list of permissions to assign to this role. Valid options are 
         `agent_management`, `alerts_management`, `dashboard_management`, `embedded_charts`, `events_management`, `external_links_management`,
-        `host_tag_management`, `metrics_management`, `user_management`
+        `host_tag_management`, `metrics_management`, and `user_management`.
         """
         return pulumi.get(self, "permissions")
 
@@ -96,11 +96,11 @@ class _RoleState:
         """
         Input properties used for looking up and filtering Role resources.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] assignees: A list of user groups or accounts to assign to this role.
-        :param pulumi.Input[str] description: A short description of the user group
-        :param pulumi.Input[str] name: The name of the user group
+        :param pulumi.Input[str] description: A short description of the role.
+        :param pulumi.Input[str] name: The name of the role.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] permissions: A list of permissions to assign to this role. Valid options are 
                `agent_management`, `alerts_management`, `dashboard_management`, `embedded_charts`, `events_management`, `external_links_management`,
-               `host_tag_management`, `metrics_management`, `user_management`
+               `host_tag_management`, `metrics_management`, and `user_management`.
         """
         if assignees is not None:
             pulumi.set(__self__, "assignees", assignees)
@@ -127,7 +127,7 @@ class _RoleState:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
         """
-        A short description of the user group
+        A short description of the role.
         """
         return pulumi.get(self, "description")
 
@@ -139,7 +139,7 @@ class _RoleState:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
-        The name of the user group
+        The name of the role.
         """
         return pulumi.get(self, "name")
 
@@ -153,7 +153,7 @@ class _RoleState:
         """
         A list of permissions to assign to this role. Valid options are 
         `agent_management`, `alerts_management`, `dashboard_management`, `embedded_charts`, `events_management`, `external_links_management`,
-        `host_tag_management`, `metrics_management`, `user_management`
+        `host_tag_management`, `metrics_management`, and `user_management`.
         """
         return pulumi.get(self, "permissions")
 
@@ -173,7 +173,7 @@ class Role(pulumi.CustomResource):
                  permissions: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  __props__=None):
         """
-        Provides a Wavefront Role Resource. This allows user groups to be created, updated, and deleted.
+        Provides a Wavefront Role Resource. This allows roles to be created, updated, and deleted.
 
         ## Example Usage
 
@@ -186,20 +186,20 @@ class Role(pulumi.CustomResource):
 
         ## Import
 
-        User Groups can be imported using the `id`, e.g.
+        Roles can be imported by using the `id`, e.g.
 
         ```sh
-         $ pulumi import wavefront:index/role:Role some_group a411c16b-3cf7-4f03-bf11-8ca05aab898d
+         $ pulumi import wavefront:index/role:Role some_role a411c16b-3cf7-4f03-bf11-8ca05aab898d
         ```
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] assignees: A list of user groups or accounts to assign to this role.
-        :param pulumi.Input[str] description: A short description of the user group
-        :param pulumi.Input[str] name: The name of the user group
+        :param pulumi.Input[str] description: A short description of the role.
+        :param pulumi.Input[str] name: The name of the role.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] permissions: A list of permissions to assign to this role. Valid options are 
                `agent_management`, `alerts_management`, `dashboard_management`, `embedded_charts`, `events_management`, `external_links_management`,
-               `host_tag_management`, `metrics_management`, `user_management`
+               `host_tag_management`, `metrics_management`, and `user_management`.
         """
         ...
     @overload
@@ -208,7 +208,7 @@ class Role(pulumi.CustomResource):
                  args: Optional[RoleArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Provides a Wavefront Role Resource. This allows user groups to be created, updated, and deleted.
+        Provides a Wavefront Role Resource. This allows roles to be created, updated, and deleted.
 
         ## Example Usage
 
@@ -221,10 +221,10 @@ class Role(pulumi.CustomResource):
 
         ## Import
 
-        User Groups can be imported using the `id`, e.g.
+        Roles can be imported by using the `id`, e.g.
 
         ```sh
-         $ pulumi import wavefront:index/role:Role some_group a411c16b-3cf7-4f03-bf11-8ca05aab898d
+         $ pulumi import wavefront:index/role:Role some_role a411c16b-3cf7-4f03-bf11-8ca05aab898d
         ```
 
         :param str resource_name: The name of the resource.
@@ -284,11 +284,11 @@ class Role(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] assignees: A list of user groups or accounts to assign to this role.
-        :param pulumi.Input[str] description: A short description of the user group
-        :param pulumi.Input[str] name: The name of the user group
+        :param pulumi.Input[str] description: A short description of the role.
+        :param pulumi.Input[str] name: The name of the role.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] permissions: A list of permissions to assign to this role. Valid options are 
                `agent_management`, `alerts_management`, `dashboard_management`, `embedded_charts`, `events_management`, `external_links_management`,
-               `host_tag_management`, `metrics_management`, `user_management`
+               `host_tag_management`, `metrics_management`, and `user_management`.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -312,7 +312,7 @@ class Role(pulumi.CustomResource):
     @pulumi.getter
     def description(self) -> pulumi.Output[Optional[str]]:
         """
-        A short description of the user group
+        A short description of the role.
         """
         return pulumi.get(self, "description")
 
@@ -320,7 +320,7 @@ class Role(pulumi.CustomResource):
     @pulumi.getter
     def name(self) -> pulumi.Output[str]:
         """
-        The name of the user group
+        The name of the role.
         """
         return pulumi.get(self, "name")
 
@@ -330,7 +330,7 @@ class Role(pulumi.CustomResource):
         """
         A list of permissions to assign to this role. Valid options are 
         `agent_management`, `alerts_management`, `dashboard_management`, `embedded_charts`, `events_management`, `external_links_management`,
-        `host_tag_management`, `metrics_management`, `user_management`
+        `host_tag_management`, `metrics_management`, and `user_management`.
         """
         return pulumi.get(self, "permissions")
 

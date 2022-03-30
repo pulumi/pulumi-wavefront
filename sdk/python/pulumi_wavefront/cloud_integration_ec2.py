@@ -23,13 +23,16 @@ class CloudIntegrationEc2Args:
                  service_refresh_rate_in_minutes: Optional[pulumi.Input[int]] = None):
         """
         The set of arguments for constructing a CloudIntegrationEc2 resource.
-        :param pulumi.Input[str] external_id: The Role ARN that the customer has created in AWS IAM to allow access to Wavefront
-        :param pulumi.Input[str] role_arn: The external id corresponding to the Role ARN
-        :param pulumi.Input[str] service: A value denoting which cloud service this service integrates with
-        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] additional_tags: A list of point tag key-values to add to every point ingested using this integration
-        :param pulumi.Input[bool] force_save: Forces this resource to save, even if errors are present
-        :param pulumi.Input[str] name: The human-readable name of this integration
-        :param pulumi.Input[int] service_refresh_rate_in_minutes: How often, in minutes, to refresh the service
+        :param pulumi.Input[str] external_id: The Role ARN that the customer has created in AWS IAM to allow access to Wavefront.
+        :param pulumi.Input[str] role_arn: The external ID corresponding to the Role ARN.
+        :param pulumi.Input[str] service: A value denoting which cloud service this service integrates with.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] additional_tags: A list of point tag key-values to add to every point ingested using this integration.
+        :param pulumi.Input[bool] force_save: Forces this resource to save, even if errors are present.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] hostname_tags: A list of AWS instance tags to use as the `source` name
+               in a series. Default is `["hostname", "host", "name"]`. If no tag in the list is found, the series source
+               is set to the instance id.
+        :param pulumi.Input[str] name: The human-readable name of this integration.
+        :param pulumi.Input[int] service_refresh_rate_in_minutes: How often, in minutes, to refresh the service.
         """
         pulumi.set(__self__, "external_id", external_id)
         pulumi.set(__self__, "role_arn", role_arn)
@@ -49,7 +52,7 @@ class CloudIntegrationEc2Args:
     @pulumi.getter(name="externalId")
     def external_id(self) -> pulumi.Input[str]:
         """
-        The Role ARN that the customer has created in AWS IAM to allow access to Wavefront
+        The Role ARN that the customer has created in AWS IAM to allow access to Wavefront.
         """
         return pulumi.get(self, "external_id")
 
@@ -61,7 +64,7 @@ class CloudIntegrationEc2Args:
     @pulumi.getter(name="roleArn")
     def role_arn(self) -> pulumi.Input[str]:
         """
-        The external id corresponding to the Role ARN
+        The external ID corresponding to the Role ARN.
         """
         return pulumi.get(self, "role_arn")
 
@@ -73,7 +76,7 @@ class CloudIntegrationEc2Args:
     @pulumi.getter
     def service(self) -> pulumi.Input[str]:
         """
-        A value denoting which cloud service this service integrates with
+        A value denoting which cloud service this service integrates with.
         """
         return pulumi.get(self, "service")
 
@@ -85,7 +88,7 @@ class CloudIntegrationEc2Args:
     @pulumi.getter(name="additionalTags")
     def additional_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
-        A list of point tag key-values to add to every point ingested using this integration
+        A list of point tag key-values to add to every point ingested using this integration.
         """
         return pulumi.get(self, "additional_tags")
 
@@ -97,7 +100,7 @@ class CloudIntegrationEc2Args:
     @pulumi.getter(name="forceSave")
     def force_save(self) -> Optional[pulumi.Input[bool]]:
         """
-        Forces this resource to save, even if errors are present
+        Forces this resource to save, even if errors are present.
         """
         return pulumi.get(self, "force_save")
 
@@ -108,6 +111,11 @@ class CloudIntegrationEc2Args:
     @property
     @pulumi.getter(name="hostnameTags")
     def hostname_tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        A list of AWS instance tags to use as the `source` name
+        in a series. Default is `["hostname", "host", "name"]`. If no tag in the list is found, the series source
+        is set to the instance id.
+        """
         return pulumi.get(self, "hostname_tags")
 
     @hostname_tags.setter
@@ -118,7 +126,7 @@ class CloudIntegrationEc2Args:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
-        The human-readable name of this integration
+        The human-readable name of this integration.
         """
         return pulumi.get(self, "name")
 
@@ -130,7 +138,7 @@ class CloudIntegrationEc2Args:
     @pulumi.getter(name="serviceRefreshRateInMinutes")
     def service_refresh_rate_in_minutes(self) -> Optional[pulumi.Input[int]]:
         """
-        How often, in minutes, to refresh the service
+        How often, in minutes, to refresh the service.
         """
         return pulumi.get(self, "service_refresh_rate_in_minutes")
 
@@ -152,13 +160,16 @@ class _CloudIntegrationEc2State:
                  service_refresh_rate_in_minutes: Optional[pulumi.Input[int]] = None):
         """
         Input properties used for looking up and filtering CloudIntegrationEc2 resources.
-        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] additional_tags: A list of point tag key-values to add to every point ingested using this integration
-        :param pulumi.Input[str] external_id: The Role ARN that the customer has created in AWS IAM to allow access to Wavefront
-        :param pulumi.Input[bool] force_save: Forces this resource to save, even if errors are present
-        :param pulumi.Input[str] name: The human-readable name of this integration
-        :param pulumi.Input[str] role_arn: The external id corresponding to the Role ARN
-        :param pulumi.Input[str] service: A value denoting which cloud service this service integrates with
-        :param pulumi.Input[int] service_refresh_rate_in_minutes: How often, in minutes, to refresh the service
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] additional_tags: A list of point tag key-values to add to every point ingested using this integration.
+        :param pulumi.Input[str] external_id: The Role ARN that the customer has created in AWS IAM to allow access to Wavefront.
+        :param pulumi.Input[bool] force_save: Forces this resource to save, even if errors are present.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] hostname_tags: A list of AWS instance tags to use as the `source` name
+               in a series. Default is `["hostname", "host", "name"]`. If no tag in the list is found, the series source
+               is set to the instance id.
+        :param pulumi.Input[str] name: The human-readable name of this integration.
+        :param pulumi.Input[str] role_arn: The external ID corresponding to the Role ARN.
+        :param pulumi.Input[str] service: A value denoting which cloud service this service integrates with.
+        :param pulumi.Input[int] service_refresh_rate_in_minutes: How often, in minutes, to refresh the service.
         """
         if additional_tags is not None:
             pulumi.set(__self__, "additional_tags", additional_tags)
@@ -181,7 +192,7 @@ class _CloudIntegrationEc2State:
     @pulumi.getter(name="additionalTags")
     def additional_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
-        A list of point tag key-values to add to every point ingested using this integration
+        A list of point tag key-values to add to every point ingested using this integration.
         """
         return pulumi.get(self, "additional_tags")
 
@@ -193,7 +204,7 @@ class _CloudIntegrationEc2State:
     @pulumi.getter(name="externalId")
     def external_id(self) -> Optional[pulumi.Input[str]]:
         """
-        The Role ARN that the customer has created in AWS IAM to allow access to Wavefront
+        The Role ARN that the customer has created in AWS IAM to allow access to Wavefront.
         """
         return pulumi.get(self, "external_id")
 
@@ -205,7 +216,7 @@ class _CloudIntegrationEc2State:
     @pulumi.getter(name="forceSave")
     def force_save(self) -> Optional[pulumi.Input[bool]]:
         """
-        Forces this resource to save, even if errors are present
+        Forces this resource to save, even if errors are present.
         """
         return pulumi.get(self, "force_save")
 
@@ -216,6 +227,11 @@ class _CloudIntegrationEc2State:
     @property
     @pulumi.getter(name="hostnameTags")
     def hostname_tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        A list of AWS instance tags to use as the `source` name
+        in a series. Default is `["hostname", "host", "name"]`. If no tag in the list is found, the series source
+        is set to the instance id.
+        """
         return pulumi.get(self, "hostname_tags")
 
     @hostname_tags.setter
@@ -226,7 +242,7 @@ class _CloudIntegrationEc2State:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
-        The human-readable name of this integration
+        The human-readable name of this integration.
         """
         return pulumi.get(self, "name")
 
@@ -238,7 +254,7 @@ class _CloudIntegrationEc2State:
     @pulumi.getter(name="roleArn")
     def role_arn(self) -> Optional[pulumi.Input[str]]:
         """
-        The external id corresponding to the Role ARN
+        The external ID corresponding to the Role ARN.
         """
         return pulumi.get(self, "role_arn")
 
@@ -250,7 +266,7 @@ class _CloudIntegrationEc2State:
     @pulumi.getter
     def service(self) -> Optional[pulumi.Input[str]]:
         """
-        A value denoting which cloud service this service integrates with
+        A value denoting which cloud service this service integrates with.
         """
         return pulumi.get(self, "service")
 
@@ -262,7 +278,7 @@ class _CloudIntegrationEc2State:
     @pulumi.getter(name="serviceRefreshRateInMinutes")
     def service_refresh_rate_in_minutes(self) -> Optional[pulumi.Input[int]]:
         """
-        How often, in minutes, to refresh the service
+        How often, in minutes, to refresh the service.
         """
         return pulumi.get(self, "service_refresh_rate_in_minutes")
 
@@ -287,7 +303,7 @@ class CloudIntegrationEc2(pulumi.CustomResource):
                  __props__=None):
         """
         Provides a Wavefront Cloud Integration for EC2. This allows EC2 cloud integrations to be created,
-        updated, and delete
+        updated, and deleted.
 
         ## Example Usage
 
@@ -303,7 +319,7 @@ class CloudIntegrationEc2(pulumi.CustomResource):
 
         ## Import
 
-        EC2 Cloud Integrations can be imported using the `id`, e.g.
+        EC2 Cloud Integrations can be imported by using the `id`, e.g.
 
         ```sh
          $ pulumi import wavefront:index/cloudIntegrationEc2:CloudIntegrationEc2 ec2 a411c16b-3cf7-4f03-bf11-8ca05aab898d
@@ -311,13 +327,16 @@ class CloudIntegrationEc2(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] additional_tags: A list of point tag key-values to add to every point ingested using this integration
-        :param pulumi.Input[str] external_id: The Role ARN that the customer has created in AWS IAM to allow access to Wavefront
-        :param pulumi.Input[bool] force_save: Forces this resource to save, even if errors are present
-        :param pulumi.Input[str] name: The human-readable name of this integration
-        :param pulumi.Input[str] role_arn: The external id corresponding to the Role ARN
-        :param pulumi.Input[str] service: A value denoting which cloud service this service integrates with
-        :param pulumi.Input[int] service_refresh_rate_in_minutes: How often, in minutes, to refresh the service
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] additional_tags: A list of point tag key-values to add to every point ingested using this integration.
+        :param pulumi.Input[str] external_id: The Role ARN that the customer has created in AWS IAM to allow access to Wavefront.
+        :param pulumi.Input[bool] force_save: Forces this resource to save, even if errors are present.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] hostname_tags: A list of AWS instance tags to use as the `source` name
+               in a series. Default is `["hostname", "host", "name"]`. If no tag in the list is found, the series source
+               is set to the instance id.
+        :param pulumi.Input[str] name: The human-readable name of this integration.
+        :param pulumi.Input[str] role_arn: The external ID corresponding to the Role ARN.
+        :param pulumi.Input[str] service: A value denoting which cloud service this service integrates with.
+        :param pulumi.Input[int] service_refresh_rate_in_minutes: How often, in minutes, to refresh the service.
         """
         ...
     @overload
@@ -327,7 +346,7 @@ class CloudIntegrationEc2(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Provides a Wavefront Cloud Integration for EC2. This allows EC2 cloud integrations to be created,
-        updated, and delete
+        updated, and deleted.
 
         ## Example Usage
 
@@ -343,7 +362,7 @@ class CloudIntegrationEc2(pulumi.CustomResource):
 
         ## Import
 
-        EC2 Cloud Integrations can be imported using the `id`, e.g.
+        EC2 Cloud Integrations can be imported by using the `id`, e.g.
 
         ```sh
          $ pulumi import wavefront:index/cloudIntegrationEc2:CloudIntegrationEc2 ec2 a411c16b-3cf7-4f03-bf11-8ca05aab898d
@@ -423,13 +442,16 @@ class CloudIntegrationEc2(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] additional_tags: A list of point tag key-values to add to every point ingested using this integration
-        :param pulumi.Input[str] external_id: The Role ARN that the customer has created in AWS IAM to allow access to Wavefront
-        :param pulumi.Input[bool] force_save: Forces this resource to save, even if errors are present
-        :param pulumi.Input[str] name: The human-readable name of this integration
-        :param pulumi.Input[str] role_arn: The external id corresponding to the Role ARN
-        :param pulumi.Input[str] service: A value denoting which cloud service this service integrates with
-        :param pulumi.Input[int] service_refresh_rate_in_minutes: How often, in minutes, to refresh the service
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] additional_tags: A list of point tag key-values to add to every point ingested using this integration.
+        :param pulumi.Input[str] external_id: The Role ARN that the customer has created in AWS IAM to allow access to Wavefront.
+        :param pulumi.Input[bool] force_save: Forces this resource to save, even if errors are present.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] hostname_tags: A list of AWS instance tags to use as the `source` name
+               in a series. Default is `["hostname", "host", "name"]`. If no tag in the list is found, the series source
+               is set to the instance id.
+        :param pulumi.Input[str] name: The human-readable name of this integration.
+        :param pulumi.Input[str] role_arn: The external ID corresponding to the Role ARN.
+        :param pulumi.Input[str] service: A value denoting which cloud service this service integrates with.
+        :param pulumi.Input[int] service_refresh_rate_in_minutes: How often, in minutes, to refresh the service.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -449,7 +471,7 @@ class CloudIntegrationEc2(pulumi.CustomResource):
     @pulumi.getter(name="additionalTags")
     def additional_tags(self) -> pulumi.Output[Optional[Mapping[str, str]]]:
         """
-        A list of point tag key-values to add to every point ingested using this integration
+        A list of point tag key-values to add to every point ingested using this integration.
         """
         return pulumi.get(self, "additional_tags")
 
@@ -457,7 +479,7 @@ class CloudIntegrationEc2(pulumi.CustomResource):
     @pulumi.getter(name="externalId")
     def external_id(self) -> pulumi.Output[str]:
         """
-        The Role ARN that the customer has created in AWS IAM to allow access to Wavefront
+        The Role ARN that the customer has created in AWS IAM to allow access to Wavefront.
         """
         return pulumi.get(self, "external_id")
 
@@ -465,20 +487,25 @@ class CloudIntegrationEc2(pulumi.CustomResource):
     @pulumi.getter(name="forceSave")
     def force_save(self) -> pulumi.Output[Optional[bool]]:
         """
-        Forces this resource to save, even if errors are present
+        Forces this resource to save, even if errors are present.
         """
         return pulumi.get(self, "force_save")
 
     @property
     @pulumi.getter(name="hostnameTags")
     def hostname_tags(self) -> pulumi.Output[Optional[Sequence[str]]]:
+        """
+        A list of AWS instance tags to use as the `source` name
+        in a series. Default is `["hostname", "host", "name"]`. If no tag in the list is found, the series source
+        is set to the instance id.
+        """
         return pulumi.get(self, "hostname_tags")
 
     @property
     @pulumi.getter
     def name(self) -> pulumi.Output[str]:
         """
-        The human-readable name of this integration
+        The human-readable name of this integration.
         """
         return pulumi.get(self, "name")
 
@@ -486,7 +513,7 @@ class CloudIntegrationEc2(pulumi.CustomResource):
     @pulumi.getter(name="roleArn")
     def role_arn(self) -> pulumi.Output[str]:
         """
-        The external id corresponding to the Role ARN
+        The external ID corresponding to the Role ARN.
         """
         return pulumi.get(self, "role_arn")
 
@@ -494,7 +521,7 @@ class CloudIntegrationEc2(pulumi.CustomResource):
     @pulumi.getter
     def service(self) -> pulumi.Output[str]:
         """
-        A value denoting which cloud service this service integrates with
+        A value denoting which cloud service this service integrates with.
         """
         return pulumi.get(self, "service")
 
@@ -502,7 +529,7 @@ class CloudIntegrationEc2(pulumi.CustomResource):
     @pulumi.getter(name="serviceRefreshRateInMinutes")
     def service_refresh_rate_in_minutes(self) -> pulumi.Output[Optional[int]]:
         """
-        How often, in minutes, to refresh the service
+        How often, in minutes, to refresh the service.
         """
         return pulumi.get(self, "service_refresh_rate_in_minutes")
 

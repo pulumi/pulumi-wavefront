@@ -20,7 +20,7 @@ import * as utilities from "./utilities";
  *
  * ## Import
  *
- * User Groups can be imported using the `id`, e.g.
+ * User Groups can be imported by using the `id`, e.g.
  *
  * ```sh
  *  $ pulumi import wavefront:index/userGroup:UserGroup some_group a411c16b-3cf7-4f03-bf11-8ca05aab898d
@@ -55,11 +55,11 @@ export class UserGroup extends pulumi.CustomResource {
     }
 
     /**
-     * A short description of the user group
+     * A short description of the user group.
      */
     public readonly description!: pulumi.Output<string>;
     /**
-     * The name of the user group
+     * The name of the user group.
      */
     public readonly name!: pulumi.Output<string>;
 
@@ -96,11 +96,11 @@ export class UserGroup extends pulumi.CustomResource {
  */
 export interface UserGroupState {
     /**
-     * A short description of the user group
+     * A short description of the user group.
      */
     description?: pulumi.Input<string>;
     /**
-     * The name of the user group
+     * The name of the user group.
      */
     name?: pulumi.Input<string>;
 }
@@ -110,11 +110,11 @@ export interface UserGroupState {
  */
 export interface UserGroupArgs {
     /**
-     * A short description of the user group
+     * A short description of the user group.
      */
     description: pulumi.Input<string>;
     /**
-     * The name of the user group
+     * The name of the user group.
      */
     name?: pulumi.Input<string>;
 }

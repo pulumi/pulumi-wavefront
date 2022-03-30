@@ -11,7 +11,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Provides a Wavefront Cloud Integration for Tesla. This allows NewRelic cloud integrations to be created,
+// Provides a Wavefront Cloud Integration for Tesla. This allows Tesla cloud integrations to be created,
 // updated, and deleted.
 //
 // ## Example Usage
@@ -40,7 +40,7 @@ import (
 //
 // ## Import
 //
-// Tesla Integrations can be imported using the `id`, e.g.
+// Tesla Integrations can be imported by using the `id`, e.g.
 //
 // ```sh
 //  $ pulumi import wavefront:index/cloudIntegrationTesla:CloudIntegrationTesla tesla a411c16b-3cf7-4f03-bf11-8ca05aab898d
@@ -48,19 +48,19 @@ import (
 type CloudIntegrationTesla struct {
 	pulumi.CustomResourceState
 
-	// A list of point tag key-values to add to every point ingested using this integration
+	// A list of point tag key-values to add to every point ingested using this integration.
 	AdditionalTags pulumi.StringMapOutput `pulumi:"additionalTags"`
-	// Email address for the Tesla account login
+	// A Tesla account login email address.
 	Email pulumi.StringOutput `pulumi:"email"`
-	// Forces this resource to save, even if errors are present
+	// Forces this resource to save, even if errors are present.
 	ForceSave pulumi.BoolPtrOutput `pulumi:"forceSave"`
-	// The human-readable name of this integration
+	// The human-readable name of this integration.
 	Name pulumi.StringOutput `pulumi:"name"`
-	// Password for the Tesla account login
+	// The Tesla account login password.
 	Password pulumi.StringOutput `pulumi:"password"`
-	// A value denoting which cloud service this service integrates with
+	// A value denoting which cloud service this service integrates with.
 	Service pulumi.StringOutput `pulumi:"service"`
-	// How often, in minutes, to refresh the service
+	// How often, in minutes, to refresh the service.
 	ServiceRefreshRateInMinutes pulumi.IntPtrOutput `pulumi:"serviceRefreshRateInMinutes"`
 }
 
@@ -102,36 +102,36 @@ func GetCloudIntegrationTesla(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering CloudIntegrationTesla resources.
 type cloudIntegrationTeslaState struct {
-	// A list of point tag key-values to add to every point ingested using this integration
+	// A list of point tag key-values to add to every point ingested using this integration.
 	AdditionalTags map[string]string `pulumi:"additionalTags"`
-	// Email address for the Tesla account login
+	// A Tesla account login email address.
 	Email *string `pulumi:"email"`
-	// Forces this resource to save, even if errors are present
+	// Forces this resource to save, even if errors are present.
 	ForceSave *bool `pulumi:"forceSave"`
-	// The human-readable name of this integration
+	// The human-readable name of this integration.
 	Name *string `pulumi:"name"`
-	// Password for the Tesla account login
+	// The Tesla account login password.
 	Password *string `pulumi:"password"`
-	// A value denoting which cloud service this service integrates with
+	// A value denoting which cloud service this service integrates with.
 	Service *string `pulumi:"service"`
-	// How often, in minutes, to refresh the service
+	// How often, in minutes, to refresh the service.
 	ServiceRefreshRateInMinutes *int `pulumi:"serviceRefreshRateInMinutes"`
 }
 
 type CloudIntegrationTeslaState struct {
-	// A list of point tag key-values to add to every point ingested using this integration
+	// A list of point tag key-values to add to every point ingested using this integration.
 	AdditionalTags pulumi.StringMapInput
-	// Email address for the Tesla account login
+	// A Tesla account login email address.
 	Email pulumi.StringPtrInput
-	// Forces this resource to save, even if errors are present
+	// Forces this resource to save, even if errors are present.
 	ForceSave pulumi.BoolPtrInput
-	// The human-readable name of this integration
+	// The human-readable name of this integration.
 	Name pulumi.StringPtrInput
-	// Password for the Tesla account login
+	// The Tesla account login password.
 	Password pulumi.StringPtrInput
-	// A value denoting which cloud service this service integrates with
+	// A value denoting which cloud service this service integrates with.
 	Service pulumi.StringPtrInput
-	// How often, in minutes, to refresh the service
+	// How often, in minutes, to refresh the service.
 	ServiceRefreshRateInMinutes pulumi.IntPtrInput
 }
 
@@ -140,37 +140,37 @@ func (CloudIntegrationTeslaState) ElementType() reflect.Type {
 }
 
 type cloudIntegrationTeslaArgs struct {
-	// A list of point tag key-values to add to every point ingested using this integration
+	// A list of point tag key-values to add to every point ingested using this integration.
 	AdditionalTags map[string]string `pulumi:"additionalTags"`
-	// Email address for the Tesla account login
+	// A Tesla account login email address.
 	Email string `pulumi:"email"`
-	// Forces this resource to save, even if errors are present
+	// Forces this resource to save, even if errors are present.
 	ForceSave *bool `pulumi:"forceSave"`
-	// The human-readable name of this integration
+	// The human-readable name of this integration.
 	Name *string `pulumi:"name"`
-	// Password for the Tesla account login
+	// The Tesla account login password.
 	Password string `pulumi:"password"`
-	// A value denoting which cloud service this service integrates with
+	// A value denoting which cloud service this service integrates with.
 	Service string `pulumi:"service"`
-	// How often, in minutes, to refresh the service
+	// How often, in minutes, to refresh the service.
 	ServiceRefreshRateInMinutes *int `pulumi:"serviceRefreshRateInMinutes"`
 }
 
 // The set of arguments for constructing a CloudIntegrationTesla resource.
 type CloudIntegrationTeslaArgs struct {
-	// A list of point tag key-values to add to every point ingested using this integration
+	// A list of point tag key-values to add to every point ingested using this integration.
 	AdditionalTags pulumi.StringMapInput
-	// Email address for the Tesla account login
+	// A Tesla account login email address.
 	Email pulumi.StringInput
-	// Forces this resource to save, even if errors are present
+	// Forces this resource to save, even if errors are present.
 	ForceSave pulumi.BoolPtrInput
-	// The human-readable name of this integration
+	// The human-readable name of this integration.
 	Name pulumi.StringPtrInput
-	// Password for the Tesla account login
+	// The Tesla account login password.
 	Password pulumi.StringInput
-	// A value denoting which cloud service this service integrates with
+	// A value denoting which cloud service this service integrates with.
 	Service pulumi.StringInput
-	// How often, in minutes, to refresh the service
+	// How often, in minutes, to refresh the service.
 	ServiceRefreshRateInMinutes pulumi.IntPtrInput
 }
 
