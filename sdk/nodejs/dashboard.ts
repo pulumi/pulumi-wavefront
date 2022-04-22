@@ -8,62 +8,6 @@ import * as utilities from "./utilities";
 /**
  * Provides a Wavefront Dashboard resource.  This allows dashboards to be created, updated, and deleted.
  *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as wavefront from "@pulumi/wavefront";
- *
- * const basic = new wavefront.User("basic", {
- *     email: "test+tftesting@example.com",
- *     groups: [
- *         "agent_management",
- *         "alerts_management",
- *     ],
- * });
- * const testDashboard = new wavefront.Dashboard("testDashboard", {
- *     description: "testing, testing",
- *     url: "tftestcreate",
- *     displaySectionTableOfContents: true,
- *     displayQueryParameters: true,
- *     canViews: [basic.id],
- *     sections: [{
- *         name: "section 1",
- *         rows: [{
- *             charts: [{
- *                 name: "chart 1",
- *                 description: "chart number 1",
- *                 units: "something per unit",
- *                 sources: [{
- *                     name: "source name",
- *                     query: "ts()",
- *                 }],
- *                 chartSetting: {
- *                     type: "linear",
- *                 },
- *                 summarization: "MEAN",
- *             }],
- *         }],
- *     }],
- *     parameterDetails: [{
- *         name: "param1",
- *         label: "param1",
- *         defaultValue: "Label",
- *         hideFromView: false,
- *         parameterType: "SIMPLE",
- *         valuesToReadableStrings: {
- *             Label: "test",
- *         },
- *     }],
- *     tags: [
- *         "b",
- *         "terraform",
- *         "a",
- *         "test",
- *     ],
- * });
- * ```
- *
  * ## Import
  *
  * Dashboards can be imported by using the `id`, e.g.
