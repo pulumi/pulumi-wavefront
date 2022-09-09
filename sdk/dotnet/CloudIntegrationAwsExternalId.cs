@@ -15,19 +15,15 @@ namespace Pulumi.Wavefront
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Wavefront = Pulumi.Wavefront;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
-    ///     {
-    ///         var externalId = new Wavefront.CloudIntegrationAwsExternalId("externalId", new Wavefront.CloudIntegrationAwsExternalIdArgs
-    ///         {
-    ///         });
-    ///     }
+    ///     var externalId = new Wavefront.CloudIntegrationAwsExternalId("externalId");
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -39,7 +35,7 @@ namespace Pulumi.Wavefront
     /// ```
     /// </summary>
     [WavefrontResourceType("wavefront:index/cloudIntegrationAwsExternalId:CloudIntegrationAwsExternalId")]
-    public partial class CloudIntegrationAwsExternalId : Pulumi.CustomResource
+    public partial class CloudIntegrationAwsExternalId : global::Pulumi.CustomResource
     {
         /// <summary>
         /// Create a CloudIntegrationAwsExternalId resource with the given unique name, arguments, and options.
@@ -84,17 +80,19 @@ namespace Pulumi.Wavefront
         }
     }
 
-    public sealed class CloudIntegrationAwsExternalIdArgs : Pulumi.ResourceArgs
+    public sealed class CloudIntegrationAwsExternalIdArgs : global::Pulumi.ResourceArgs
     {
         public CloudIntegrationAwsExternalIdArgs()
         {
         }
+        public static new CloudIntegrationAwsExternalIdArgs Empty => new CloudIntegrationAwsExternalIdArgs();
     }
 
-    public sealed class CloudIntegrationAwsExternalIdState : Pulumi.ResourceArgs
+    public sealed class CloudIntegrationAwsExternalIdState : global::Pulumi.ResourceArgs
     {
         public CloudIntegrationAwsExternalIdState()
         {
         }
+        public static new CloudIntegrationAwsExternalIdState Empty => new CloudIntegrationAwsExternalIdState();
     }
 }

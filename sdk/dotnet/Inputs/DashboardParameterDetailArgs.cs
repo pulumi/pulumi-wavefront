@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Wavefront.Inputs
 {
 
-    public sealed class DashboardParameterDetailArgs : Pulumi.ResourceArgs
+    public sealed class DashboardParameterDetailArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The default value of the parameter.
@@ -77,5 +77,6 @@ namespace Pulumi.Wavefront.Inputs
         public DashboardParameterDetailArgs()
         {
         }
+        public static new DashboardParameterDetailArgs Empty => new DashboardParameterDetailArgs();
     }
 }

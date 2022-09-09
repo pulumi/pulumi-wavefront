@@ -16,23 +16,21 @@ namespace Pulumi.Wavefront
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Wavefront = Pulumi.Wavefront;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var gcp = new Wavefront.CloudIntegrationGcp("gcp", new()
     ///     {
-    ///         var gcp = new Wavefront.CloudIntegrationGcp("gcp", new Wavefront.CloudIntegrationGcpArgs
-    ///         {
-    ///             JsonKey = @"{...your gcp key ...}
+    ///         JsonKey = @"{...your gcp key ...}
     /// 
     /// ",
-    ///             ProjectId = "example-gcp-project",
-    ///         });
-    ///     }
+    ///         ProjectId = "example-gcp-project",
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -44,7 +42,7 @@ namespace Pulumi.Wavefront
     /// ```
     /// </summary>
     [WavefrontResourceType("wavefront:index/cloudIntegrationGcp:CloudIntegrationGcp")]
-    public partial class CloudIntegrationGcp : Pulumi.CustomResource
+    public partial class CloudIntegrationGcp : global::Pulumi.CustomResource
     {
         /// <summary>
         /// A list of point tag key-values to add to every point ingested using this integration.
@@ -149,7 +147,7 @@ namespace Pulumi.Wavefront
         }
     }
 
-    public sealed class CloudIntegrationGcpArgs : Pulumi.ResourceArgs
+    public sealed class CloudIntegrationGcpArgs : global::Pulumi.ResourceArgs
     {
         [Input("additionalTags")]
         private InputMap<string>? _additionalTags;
@@ -225,9 +223,10 @@ namespace Pulumi.Wavefront
         public CloudIntegrationGcpArgs()
         {
         }
+        public static new CloudIntegrationGcpArgs Empty => new CloudIntegrationGcpArgs();
     }
 
-    public sealed class CloudIntegrationGcpState : Pulumi.ResourceArgs
+    public sealed class CloudIntegrationGcpState : global::Pulumi.ResourceArgs
     {
         [Input("additionalTags")]
         private InputMap<string>? _additionalTags;
@@ -303,5 +302,6 @@ namespace Pulumi.Wavefront
         public CloudIntegrationGcpState()
         {
         }
+        public static new CloudIntegrationGcpState Empty => new CloudIntegrationGcpState();
     }
 }

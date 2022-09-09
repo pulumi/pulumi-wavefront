@@ -16,20 +16,18 @@ namespace Pulumi.Wavefront
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Wavefront = Pulumi.Wavefront;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var newrelic = new Wavefront.CloudIntegrationNewRelic("newrelic", new()
     ///     {
-    ///         var newrelic = new Wavefront.CloudIntegrationNewRelic("newrelic", new Wavefront.CloudIntegrationNewRelicArgs
-    ///         {
-    ///             ApiKey = "example-api-key",
-    ///         });
-    ///     }
+    ///         ApiKey = "example-api-key",
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -41,7 +39,7 @@ namespace Pulumi.Wavefront
     /// ```
     /// </summary>
     [WavefrontResourceType("wavefront:index/cloudIntegrationNewRelic:CloudIntegrationNewRelic")]
-    public partial class CloudIntegrationNewRelic : Pulumi.CustomResource
+    public partial class CloudIntegrationNewRelic : global::Pulumi.CustomResource
     {
         /// <summary>
         /// A list of point tag key-values to add to every point ingested using this integration.
@@ -141,7 +139,7 @@ namespace Pulumi.Wavefront
         }
     }
 
-    public sealed class CloudIntegrationNewRelicArgs : Pulumi.ResourceArgs
+    public sealed class CloudIntegrationNewRelicArgs : global::Pulumi.ResourceArgs
     {
         [Input("additionalTags")]
         private InputMap<string>? _additionalTags;
@@ -212,9 +210,10 @@ namespace Pulumi.Wavefront
         public CloudIntegrationNewRelicArgs()
         {
         }
+        public static new CloudIntegrationNewRelicArgs Empty => new CloudIntegrationNewRelicArgs();
     }
 
-    public sealed class CloudIntegrationNewRelicState : Pulumi.ResourceArgs
+    public sealed class CloudIntegrationNewRelicState : global::Pulumi.ResourceArgs
     {
         [Input("additionalTags")]
         private InputMap<string>? _additionalTags;
@@ -285,5 +284,6 @@ namespace Pulumi.Wavefront
         public CloudIntegrationNewRelicState()
         {
         }
+        public static new CloudIntegrationNewRelicState Empty => new CloudIntegrationNewRelicState();
     }
 }

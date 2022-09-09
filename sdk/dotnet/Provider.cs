@@ -16,7 +16,7 @@ namespace Pulumi.Wavefront
     /// [documentation](https://www.pulumi.com/docs/reference/programming-model/#providers) for more information.
     /// </summary>
     [WavefrontResourceType("pulumi:providers:wavefront")]
-    public partial class Provider : Pulumi.ProviderResource
+    public partial class Provider : global::Pulumi.ProviderResource
     {
         [Output("address")]
         public Output<string> Address { get; private set; } = null!;
@@ -53,7 +53,7 @@ namespace Pulumi.Wavefront
         }
     }
 
-    public sealed class ProviderArgs : Pulumi.ResourceArgs
+    public sealed class ProviderArgs : global::Pulumi.ResourceArgs
     {
         [Input("address", required: true)]
         public Input<string> Address { get; set; } = null!;
@@ -67,5 +67,6 @@ namespace Pulumi.Wavefront
         public ProviderArgs()
         {
         }
+        public static new ProviderArgs Empty => new ProviderArgs();
     }
 }

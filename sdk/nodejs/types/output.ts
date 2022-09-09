@@ -400,3 +400,80 @@ export interface DashboardSectionRowChartSource {
     sourceDescription?: string;
 }
 
+export interface GetMetricsPolicyPolicyRule {
+    accessType: string;
+    accountIds: string[];
+    description: string;
+    name: string;
+    prefixes: string[];
+    roleIds: string[];
+    tags: outputs.GetMetricsPolicyPolicyRuleTag[];
+    tagsAnded: boolean;
+    userGroupIds: string[];
+}
+
+export interface GetMetricsPolicyPolicyRuleTag {
+    key: string;
+    value: string;
+}
+
+export interface GetRolesRole {
+    /**
+     * The Role's description.
+     */
+    description: string;
+    /**
+     * The Role ID.
+     */
+    id: string;
+    /**
+     * The Role Name.
+     */
+    name: string;
+    /**
+     * List of Permissions (Strings) associated with Role.
+     */
+    permissions: string[];
+}
+
+export interface GetUserGroupsUserGroup {
+    /**
+     * The group description.
+     */
+    description: string;
+    /**
+     * The group ID.
+     */
+    id: string;
+    /**
+     * The group name.
+     */
+    name: string;
+    /**
+     * List of roles associated with the group.
+     */
+    roles: string[];
+    /**
+     * List of users assigned to the group.
+     */
+    users: string[];
+}
+
+export interface GetUsersUser {
+    customer: string;
+    email: string;
+    /**
+     * When the user last logged in to Wavefront.
+     */
+    lastSuccessfulLogin: number;
+    /**
+     * List of permissions granted to a user.
+     */
+    permissions: string[];
+    /**
+     * List of User Group Ids the user is a member of.
+     * * `customer`- The customer the user is associated with.
+     */
+    userGroupIds: string[];
+}
+

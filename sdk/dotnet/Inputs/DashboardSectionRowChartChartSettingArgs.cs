@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Wavefront.Inputs
 {
 
-    public sealed class DashboardSectionRowChartChartSettingArgs : Pulumi.ResourceArgs
+    public sealed class DashboardSectionRowChartChartSettingArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// This setting is deprecated.
@@ -425,5 +425,6 @@ namespace Pulumi.Wavefront.Inputs
         public DashboardSectionRowChartChartSettingArgs()
         {
         }
+        public static new DashboardSectionRowChartChartSettingArgs Empty => new DashboardSectionRowChartChartSettingArgs();
     }
 }

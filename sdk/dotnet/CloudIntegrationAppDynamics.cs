@@ -16,22 +16,20 @@ namespace Pulumi.Wavefront
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Wavefront = Pulumi.Wavefront;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var appDynamics = new Wavefront.CloudIntegrationAppDynamics("appDynamics", new()
     ///     {
-    ///         var appDynamics = new Wavefront.CloudIntegrationAppDynamics("appDynamics", new Wavefront.CloudIntegrationAppDynamicsArgs
-    ///         {
-    ///             ControllerName = "exampleController",
-    ///             EncryptedPassword = "encryptedPassword",
-    ///             UserName = "example",
-    ///         });
-    ///     }
+    ///         ControllerName = "exampleController",
+    ///         EncryptedPassword = "encryptedPassword",
+    ///         UserName = "example",
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -43,7 +41,7 @@ namespace Pulumi.Wavefront
     /// ```
     /// </summary>
     [WavefrontResourceType("wavefront:index/cloudIntegrationAppDynamics:CloudIntegrationAppDynamics")]
-    public partial class CloudIntegrationAppDynamics : Pulumi.CustomResource
+    public partial class CloudIntegrationAppDynamics : global::Pulumi.CustomResource
     {
         /// <summary>
         /// A list of point tag key-values to add to every point ingested using this integration.
@@ -193,7 +191,7 @@ namespace Pulumi.Wavefront
         }
     }
 
-    public sealed class CloudIntegrationAppDynamicsArgs : Pulumi.ResourceArgs
+    public sealed class CloudIntegrationAppDynamicsArgs : global::Pulumi.ResourceArgs
     {
         [Input("additionalTags")]
         private InputMap<string>? _additionalTags;
@@ -314,9 +312,10 @@ namespace Pulumi.Wavefront
         public CloudIntegrationAppDynamicsArgs()
         {
         }
+        public static new CloudIntegrationAppDynamicsArgs Empty => new CloudIntegrationAppDynamicsArgs();
     }
 
-    public sealed class CloudIntegrationAppDynamicsState : Pulumi.ResourceArgs
+    public sealed class CloudIntegrationAppDynamicsState : global::Pulumi.ResourceArgs
     {
         [Input("additionalTags")]
         private InputMap<string>? _additionalTags;
@@ -437,5 +436,6 @@ namespace Pulumi.Wavefront
         public CloudIntegrationAppDynamicsState()
         {
         }
+        public static new CloudIntegrationAppDynamicsState Empty => new CloudIntegrationAppDynamicsState();
     }
 }

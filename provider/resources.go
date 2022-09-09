@@ -110,6 +110,11 @@ func Provider() tfbridge.ProviderInfo {
 		},
 		DataSources: map[string]*tfbridge.DataSourceInfo{
 			"wavefront_default_user_group": {Tok: makeDataSource(mainMod, "getDefaultUserGroup")},
+			"wavefront_metrics_policy":     {Tok: makeDataSource(mainMod, "getMetricsPolicy")},
+			"wavefront_roles":              {Tok: makeDataSource(mainMod, "getRoles")},
+			"wavefront_user":               {Tok: makeDataSource(mainMod, "getUser")},
+			"wavefront_user_groups":        {Tok: makeDataSource(mainMod, "getUserGroups")},
+			"wavefront_users":              {Tok: makeDataSource(mainMod, "getUsers")},
 		},
 		JavaScript: &tfbridge.JavaScriptInfo{
 			Dependencies: map[string]string{

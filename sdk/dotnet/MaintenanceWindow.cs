@@ -15,28 +15,26 @@ namespace Pulumi.Wavefront
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Wavefront = Pulumi.Wavefront;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var basic = new Wavefront.MaintenanceWindow("basic", new()
     ///     {
-    ///         var basic = new Wavefront.MaintenanceWindow("basic", new Wavefront.MaintenanceWindowArgs
+    ///         EndTimeInSeconds = 1601123456,
+    ///         Reason = "Routine maintenance for 2020",
+    ///         RelevantHostNames = new[]
     ///         {
-    ///             EndTimeInSeconds = 1601123456,
-    ///             Reason = "Routine maintenance for 2020",
-    ///             RelevantHostNames = 
-    ///             {
-    ///                 "my_hostname",
-    ///                 "my_other_hostname",
-    ///             },
-    ///             StartTimeInSeconds = 1600123456,
-    ///             Title = "Routine maintenance",
-    ///         });
-    ///     }
+    ///             "my_hostname",
+    ///             "my_other_hostname",
+    ///         },
+    ///         StartTimeInSeconds = 1600123456,
+    ///         Title = "Routine maintenance",
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -48,7 +46,7 @@ namespace Pulumi.Wavefront
     /// ```
     /// </summary>
     [WavefrontResourceType("wavefront:index/maintenanceWindow:MaintenanceWindow")]
-    public partial class MaintenanceWindow : Pulumi.CustomResource
+    public partial class MaintenanceWindow : global::Pulumi.CustomResource
     {
         /// <summary>
         /// end time in seconds after 1 Jan 1970 GMT.
@@ -159,7 +157,7 @@ namespace Pulumi.Wavefront
         }
     }
 
-    public sealed class MaintenanceWindowArgs : Pulumi.ResourceArgs
+    public sealed class MaintenanceWindowArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// end time in seconds after 1 Jan 1970 GMT.
@@ -247,9 +245,10 @@ namespace Pulumi.Wavefront
         public MaintenanceWindowArgs()
         {
         }
+        public static new MaintenanceWindowArgs Empty => new MaintenanceWindowArgs();
     }
 
-    public sealed class MaintenanceWindowState : Pulumi.ResourceArgs
+    public sealed class MaintenanceWindowState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// end time in seconds after 1 Jan 1970 GMT.
@@ -337,5 +336,6 @@ namespace Pulumi.Wavefront
         public MaintenanceWindowState()
         {
         }
+        public static new MaintenanceWindowState Empty => new MaintenanceWindowState();
     }
 }

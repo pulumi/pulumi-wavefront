@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Wavefront.Inputs
 {
 
-    public sealed class DashboardSectionRowChartArgs : Pulumi.ResourceArgs
+    public sealed class DashboardSectionRowChartArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The base of logarithmic scale charts. Omit or set to 0 for the default linear scale. Usually set to 10 for the traditional logarithmic scale.
@@ -67,5 +67,6 @@ namespace Pulumi.Wavefront.Inputs
         public DashboardSectionRowChartArgs()
         {
         }
+        public static new DashboardSectionRowChartArgs Empty => new DashboardSectionRowChartArgs();
     }
 }

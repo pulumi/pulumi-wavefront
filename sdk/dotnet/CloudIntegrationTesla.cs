@@ -16,21 +16,19 @@ namespace Pulumi.Wavefront
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Wavefront = Pulumi.Wavefront;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var tesla = new Wavefront.CloudIntegrationTesla("tesla", new()
     ///     {
-    ///         var tesla = new Wavefront.CloudIntegrationTesla("tesla", new Wavefront.CloudIntegrationTeslaArgs
-    ///         {
-    ///             Email = "email@example.com",
-    ///             Password = "password",
-    ///         });
-    ///     }
+    ///         Email = "email@example.com",
+    ///         Password = "password",
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -42,7 +40,7 @@ namespace Pulumi.Wavefront
     /// ```
     /// </summary>
     [WavefrontResourceType("wavefront:index/cloudIntegrationTesla:CloudIntegrationTesla")]
-    public partial class CloudIntegrationTesla : Pulumi.CustomResource
+    public partial class CloudIntegrationTesla : global::Pulumi.CustomResource
     {
         /// <summary>
         /// A list of point tag key-values to add to every point ingested using this integration.
@@ -130,7 +128,7 @@ namespace Pulumi.Wavefront
         }
     }
 
-    public sealed class CloudIntegrationTeslaArgs : Pulumi.ResourceArgs
+    public sealed class CloudIntegrationTeslaArgs : global::Pulumi.ResourceArgs
     {
         [Input("additionalTags")]
         private InputMap<string>? _additionalTags;
@@ -183,9 +181,10 @@ namespace Pulumi.Wavefront
         public CloudIntegrationTeslaArgs()
         {
         }
+        public static new CloudIntegrationTeslaArgs Empty => new CloudIntegrationTeslaArgs();
     }
 
-    public sealed class CloudIntegrationTeslaState : Pulumi.ResourceArgs
+    public sealed class CloudIntegrationTeslaState : global::Pulumi.ResourceArgs
     {
         [Input("additionalTags")]
         private InputMap<string>? _additionalTags;
@@ -238,5 +237,6 @@ namespace Pulumi.Wavefront
         public CloudIntegrationTeslaState()
         {
         }
+        public static new CloudIntegrationTeslaState Empty => new CloudIntegrationTeslaState();
     }
 }

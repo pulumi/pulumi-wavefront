@@ -16,24 +16,22 @@ namespace Pulumi.Wavefront
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Wavefront = Pulumi.Wavefront;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var gcpBilling = new Wavefront.CloudIntegrationGcpBilling("gcpBilling", new()
     ///     {
-    ///         var gcpBilling = new Wavefront.CloudIntegrationGcpBilling("gcpBilling", new Wavefront.CloudIntegrationGcpBillingArgs
-    ///         {
-    ///             ApiKey = "example-api-key",
-    ///             JsonKey = @"{...your gcp key ...}
+    ///         ApiKey = "example-api-key",
+    ///         JsonKey = @"{...your gcp key ...}
     /// 
     /// ",
-    ///             ProjectId = "example-gcp-project",
-    ///         });
-    ///     }
+    ///         ProjectId = "example-gcp-project",
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -45,7 +43,7 @@ namespace Pulumi.Wavefront
     /// ```
     /// </summary>
     [WavefrontResourceType("wavefront:index/cloudIntegrationGcpBilling:CloudIntegrationGcpBilling")]
-    public partial class CloudIntegrationGcpBilling : Pulumi.CustomResource
+    public partial class CloudIntegrationGcpBilling : global::Pulumi.CustomResource
     {
         /// <summary>
         /// A list of point tag key-values to add to every point ingested using this integration.
@@ -140,7 +138,7 @@ namespace Pulumi.Wavefront
         }
     }
 
-    public sealed class CloudIntegrationGcpBillingArgs : Pulumi.ResourceArgs
+    public sealed class CloudIntegrationGcpBillingArgs : global::Pulumi.ResourceArgs
     {
         [Input("additionalTags")]
         private InputMap<string>? _additionalTags;
@@ -200,9 +198,10 @@ namespace Pulumi.Wavefront
         public CloudIntegrationGcpBillingArgs()
         {
         }
+        public static new CloudIntegrationGcpBillingArgs Empty => new CloudIntegrationGcpBillingArgs();
     }
 
-    public sealed class CloudIntegrationGcpBillingState : Pulumi.ResourceArgs
+    public sealed class CloudIntegrationGcpBillingState : global::Pulumi.ResourceArgs
     {
         [Input("additionalTags")]
         private InputMap<string>? _additionalTags;
@@ -262,5 +261,6 @@ namespace Pulumi.Wavefront
         public CloudIntegrationGcpBillingState()
         {
         }
+        public static new CloudIntegrationGcpBillingState Empty => new CloudIntegrationGcpBillingState();
     }
 }

@@ -15,21 +15,19 @@ namespace Pulumi.Wavefront
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Wavefront = Pulumi.Wavefront;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var basic = new Wavefront.ServiceAccount("basic", new()
     ///     {
-    ///         var basic = new Wavefront.ServiceAccount("basic", new Wavefront.ServiceAccountArgs
-    ///         {
-    ///             Active = true,
-    ///             Identifier = "sa::tftesting",
-    ///         });
-    ///     }
+    ///         Active = true,
+    ///         Identifier = "sa::tftesting",
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -41,7 +39,7 @@ namespace Pulumi.Wavefront
     /// ```
     /// </summary>
     [WavefrontResourceType("wavefront:index/serviceAccount:ServiceAccount")]
-    public partial class ServiceAccount : Pulumi.CustomResource
+    public partial class ServiceAccount : global::Pulumi.CustomResource
     {
         /// <summary>
         /// Whether or not the service account is active.
@@ -125,7 +123,7 @@ namespace Pulumi.Wavefront
         }
     }
 
-    public sealed class ServiceAccountArgs : Pulumi.ResourceArgs
+    public sealed class ServiceAccountArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Whether or not the service account is active.
@@ -180,9 +178,10 @@ namespace Pulumi.Wavefront
         public ServiceAccountArgs()
         {
         }
+        public static new ServiceAccountArgs Empty => new ServiceAccountArgs();
     }
 
-    public sealed class ServiceAccountState : Pulumi.ResourceArgs
+    public sealed class ServiceAccountState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Whether or not the service account is active.
@@ -237,5 +236,6 @@ namespace Pulumi.Wavefront
         public ServiceAccountState()
         {
         }
+        public static new ServiceAccountState Empty => new ServiceAccountState();
     }
 }

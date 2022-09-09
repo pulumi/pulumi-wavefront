@@ -15,19 +15,15 @@ namespace Pulumi.Wavefront
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Wavefront = Pulumi.Wavefront;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
-    ///     {
-    ///         var role = new Wavefront.Role("role", new Wavefront.RoleArgs
-    ///         {
-    ///         });
-    ///     }
+    ///     var role = new Wavefront.Role("role");
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -39,7 +35,7 @@ namespace Pulumi.Wavefront
     /// ```
     /// </summary>
     [WavefrontResourceType("wavefront:index/role:Role")]
-    public partial class Role : Pulumi.CustomResource
+    public partial class Role : global::Pulumi.CustomResource
     {
         /// <summary>
         /// A list of user groups or accounts to assign to this role.
@@ -111,7 +107,7 @@ namespace Pulumi.Wavefront
         }
     }
 
-    public sealed class RoleArgs : Pulumi.ResourceArgs
+    public sealed class RoleArgs : global::Pulumi.ResourceArgs
     {
         [Input("assignees")]
         private InputList<string>? _assignees;
@@ -154,9 +150,10 @@ namespace Pulumi.Wavefront
         public RoleArgs()
         {
         }
+        public static new RoleArgs Empty => new RoleArgs();
     }
 
-    public sealed class RoleState : Pulumi.ResourceArgs
+    public sealed class RoleState : global::Pulumi.ResourceArgs
     {
         [Input("assignees")]
         private InputList<string>? _assignees;
@@ -199,5 +196,6 @@ namespace Pulumi.Wavefront
         public RoleState()
         {
         }
+        public static new RoleState Empty => new RoleState();
     }
 }

@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Wavefront.Inputs
 {
 
-    public sealed class CloudIntegrationNewRelicMetricFilterArgs : Pulumi.ResourceArgs
+    public sealed class CloudIntegrationNewRelicMetricFilterArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The name of a NewRelic App.
@@ -27,5 +27,6 @@ namespace Pulumi.Wavefront.Inputs
         public CloudIntegrationNewRelicMetricFilterArgs()
         {
         }
+        public static new CloudIntegrationNewRelicMetricFilterArgs Empty => new CloudIntegrationNewRelicMetricFilterArgs();
     }
 }

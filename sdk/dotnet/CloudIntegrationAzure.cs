@@ -16,22 +16,20 @@ namespace Pulumi.Wavefront
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Wavefront = Pulumi.Wavefront;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var azureActivityLog = new Wavefront.CloudIntegrationAzureActivityLog("azureActivityLog", new()
     ///     {
-    ///         var azureActivityLog = new Wavefront.CloudIntegrationAzureActivityLog("azureActivityLog", new Wavefront.CloudIntegrationAzureActivityLogArgs
-    ///         {
-    ///             ClientId = "client-id2",
-    ///             ClientSecret = "client-secret2",
-    ///             Tenant = "my-tenant2",
-    ///         });
-    ///     }
+    ///         ClientId = "client-id2",
+    ///         ClientSecret = "client-secret2",
+    ///         Tenant = "my-tenant2",
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -43,7 +41,7 @@ namespace Pulumi.Wavefront
     /// ```
     /// </summary>
     [WavefrontResourceType("wavefront:index/cloudIntegrationAzure:CloudIntegrationAzure")]
-    public partial class CloudIntegrationAzure : Pulumi.CustomResource
+    public partial class CloudIntegrationAzure : global::Pulumi.CustomResource
     {
         /// <summary>
         /// A list of point tag key-values to add to every point ingested using this integration.
@@ -155,7 +153,7 @@ namespace Pulumi.Wavefront
         }
     }
 
-    public sealed class CloudIntegrationAzureArgs : Pulumi.ResourceArgs
+    public sealed class CloudIntegrationAzureArgs : global::Pulumi.ResourceArgs
     {
         [Input("additionalTags")]
         private InputMap<string>? _additionalTags;
@@ -244,9 +242,10 @@ namespace Pulumi.Wavefront
         public CloudIntegrationAzureArgs()
         {
         }
+        public static new CloudIntegrationAzureArgs Empty => new CloudIntegrationAzureArgs();
     }
 
-    public sealed class CloudIntegrationAzureState : Pulumi.ResourceArgs
+    public sealed class CloudIntegrationAzureState : global::Pulumi.ResourceArgs
     {
         [Input("additionalTags")]
         private InputMap<string>? _additionalTags;
@@ -335,5 +334,6 @@ namespace Pulumi.Wavefront
         public CloudIntegrationAzureState()
         {
         }
+        public static new CloudIntegrationAzureState Empty => new CloudIntegrationAzureState();
     }
 }

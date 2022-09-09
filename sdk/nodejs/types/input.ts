@@ -399,3 +399,4 @@ export interface DashboardSectionRowChartSource {
      */
     sourceDescription?: pulumi.Input<string>;
 }
+

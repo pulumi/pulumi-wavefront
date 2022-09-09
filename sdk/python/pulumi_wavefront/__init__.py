@@ -23,6 +23,11 @@ from .dashboard_json import *
 from .derived_metric import *
 from .external_link import *
 from .get_default_user_group import *
+from .get_metrics_policy import *
+from .get_roles import *
+from .get_user import *
+from .get_user_groups import *
+from .get_users import *
 from .ingestion_policy import *
 from .maintenance_window import *
 from .provider import *

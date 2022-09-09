@@ -15,20 +15,18 @@ namespace Pulumi.Wavefront
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Wavefront = Pulumi.Wavefront;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var basic = new Wavefront.IngestionPolicy("basic", new()
     ///     {
-    ///         var basic = new Wavefront.IngestionPolicy("basic", new Wavefront.IngestionPolicyArgs
-    ///         {
-    ///             Description = "An ingestion policy for testing",
-    ///         });
-    ///     }
+    ///         Description = "An ingestion policy for testing",
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -40,7 +38,7 @@ namespace Pulumi.Wavefront
     /// ```
     /// </summary>
     [WavefrontResourceType("wavefront:index/ingestionPolicy:IngestionPolicy")]
-    public partial class IngestionPolicy : Pulumi.CustomResource
+    public partial class IngestionPolicy : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The description of the ingestion policy.
@@ -98,7 +96,7 @@ namespace Pulumi.Wavefront
         }
     }
 
-    public sealed class IngestionPolicyArgs : Pulumi.ResourceArgs
+    public sealed class IngestionPolicyArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The description of the ingestion policy.
@@ -115,9 +113,10 @@ namespace Pulumi.Wavefront
         public IngestionPolicyArgs()
         {
         }
+        public static new IngestionPolicyArgs Empty => new IngestionPolicyArgs();
     }
 
-    public sealed class IngestionPolicyState : Pulumi.ResourceArgs
+    public sealed class IngestionPolicyState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The description of the ingestion policy.
@@ -134,5 +133,6 @@ namespace Pulumi.Wavefront
         public IngestionPolicyState()
         {
         }
+        public static new IngestionPolicyState Empty => new IngestionPolicyState();
     }
 }

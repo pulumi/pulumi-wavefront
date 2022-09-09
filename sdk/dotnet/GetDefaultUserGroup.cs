@@ -19,17 +19,15 @@ namespace Pulumi.Wavefront
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Wavefront = Pulumi.Wavefront;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
-        ///     {
-        ///         var everyoneGroup = Output.Create(Wavefront.GetDefaultUserGroup.InvokeAsync());
-        ///     }
+        ///     var everyoneGroup = Wavefront.GetDefaultUserGroup.Invoke();
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}

@@ -15,30 +15,28 @@ namespace Pulumi.Wavefront
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Wavefront = Pulumi.Wavefront;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var foobar = new Wavefront.Alert("foobar", new()
     ///     {
-    ///         var foobar = new Wavefront.Alert("foobar", new Wavefront.AlertArgs
+    ///         Condition = "100-ts(\"cpu.usage_idle\", environment=preprod and cpu=cpu-total ) &gt; 80",
+    ///         DisplayExpression = "100-ts(\"cpu.usage_idle\", environment=preprod and cpu=cpu-total )",
+    ///         Minutes = 5,
+    ///         ResolveAfterMinutes = 5,
+    ///         Severity = "WARN",
+    ///         Tags = new[]
     ///         {
-    ///             Condition = "100-ts(\"cpu.usage_idle\", environment=preprod and cpu=cpu-total ) &gt; 80",
-    ///             DisplayExpression = "100-ts(\"cpu.usage_idle\", environment=preprod and cpu=cpu-total )",
-    ///             Minutes = 5,
-    ///             ResolveAfterMinutes = 5,
-    ///             Severity = "WARN",
-    ///             Tags = 
-    ///             {
-    ///                 "terraform",
-    ///                 "test",
-    ///             },
-    ///             Target = "test@example.com,target:alert-target-id",
-    ///         });
-    ///     }
+    ///             "terraform",
+    ///             "test",
+    ///         },
+    ///         Target = "test@example.com,target:alert-target-id",
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -50,7 +48,7 @@ namespace Pulumi.Wavefront
     /// ```
     /// </summary>
     [WavefrontResourceType("wavefront:index/alert:Alert")]
-    public partial class Alert : Pulumi.CustomResource
+    public partial class Alert : global::Pulumi.CustomResource
     {
         /// <summary>
         /// User-supplied additional explanatory information for this alert.
@@ -199,7 +197,7 @@ namespace Pulumi.Wavefront
         }
     }
 
-    public sealed class AlertArgs : Pulumi.ResourceArgs
+    public sealed class AlertArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// User-supplied additional explanatory information for this alert.
@@ -337,9 +335,10 @@ namespace Pulumi.Wavefront
         public AlertArgs()
         {
         }
+        public static new AlertArgs Empty => new AlertArgs();
     }
 
-    public sealed class AlertState : Pulumi.ResourceArgs
+    public sealed class AlertState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// User-supplied additional explanatory information for this alert.
@@ -477,5 +476,6 @@ namespace Pulumi.Wavefront
         public AlertState()
         {
         }
+        public static new AlertState Empty => new AlertState();
     }
 }

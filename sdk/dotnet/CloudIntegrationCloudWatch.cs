@@ -16,25 +16,22 @@ namespace Pulumi.Wavefront
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Wavefront = Pulumi.Wavefront;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
-    ///     {
-    ///         var extId = new Wavefront.CloudIntegrationAwsExternalId("extId", new Wavefront.CloudIntegrationAwsExternalIdArgs
-    ///         {
-    ///         });
-    ///         var cloudwatch = new Wavefront.CloudIntegrationCloudWatch("cloudwatch", new Wavefront.CloudIntegrationCloudWatchArgs
-    ///         {
-    ///             ForceSave = true,
-    ///             RoleArn = "arn:aws::1234567:role/example-arn",
-    ///             ExternalId = extId.Id,
-    ///         });
-    ///     }
+    ///     var extId = new Wavefront.CloudIntegrationAwsExternalId("extId");
     /// 
-    /// }
+    ///     var cloudwatch = new Wavefront.CloudIntegrationCloudWatch("cloudwatch", new()
+    ///     {
+    ///         ForceSave = true,
+    ///         RoleArn = "arn:aws::1234567:role/example-arn",
+    ///         ExternalId = extId.Id,
+    ///     });
+    /// 
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -46,7 +43,7 @@ namespace Pulumi.Wavefront
     /// ```
     /// </summary>
     [WavefrontResourceType("wavefront:index/cloudIntegrationCloudWatch:CloudIntegrationCloudWatch")]
-    public partial class CloudIntegrationCloudWatch : Pulumi.CustomResource
+    public partial class CloudIntegrationCloudWatch : global::Pulumi.CustomResource
     {
         /// <summary>
         /// A list of point tag key-values to add to every point ingested using this integration.
@@ -169,7 +166,7 @@ namespace Pulumi.Wavefront
         }
     }
 
-    public sealed class CloudIntegrationCloudWatchArgs : Pulumi.ResourceArgs
+    public sealed class CloudIntegrationCloudWatchArgs : global::Pulumi.ResourceArgs
     {
         [Input("additionalTags")]
         private InputMap<string>? _additionalTags;
@@ -275,9 +272,10 @@ namespace Pulumi.Wavefront
         public CloudIntegrationCloudWatchArgs()
         {
         }
+        public static new CloudIntegrationCloudWatchArgs Empty => new CloudIntegrationCloudWatchArgs();
     }
 
-    public sealed class CloudIntegrationCloudWatchState : Pulumi.ResourceArgs
+    public sealed class CloudIntegrationCloudWatchState : global::Pulumi.ResourceArgs
     {
         [Input("additionalTags")]
         private InputMap<string>? _additionalTags;
@@ -383,5 +381,6 @@ namespace Pulumi.Wavefront
         public CloudIntegrationCloudWatchState()
         {
         }
+        public static new CloudIntegrationCloudWatchState Empty => new CloudIntegrationCloudWatchState();
     }
 }
