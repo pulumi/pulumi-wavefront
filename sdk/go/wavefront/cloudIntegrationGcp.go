@@ -20,24 +20,27 @@ import (
 // package main
 //
 // import (
-// 	"fmt"
 //
-// 	"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//	"fmt"
+//
+//	"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := wavefront.NewCloudIntegrationGcp(ctx, "gcp", &wavefront.CloudIntegrationGcpArgs{
-// 			JsonKey:   pulumi.String(fmt.Sprintf("%v%v", "{...your gcp key ...}\n", "\n")),
-// 			ProjectId: pulumi.String("example-gcp-project"),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := wavefront.NewCloudIntegrationGcp(ctx, "gcp", &wavefront.CloudIntegrationGcpArgs{
+//				JsonKey:   pulumi.String(fmt.Sprintf("%v%v", "{...your gcp key ...}\n", "\n")),
+//				ProjectId: pulumi.String("example-gcp-project"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -45,7 +48,9 @@ import (
 // GCP Cloud Integrations can be imported by using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import wavefront:index/cloudIntegrationGcp:CloudIntegrationGcp gcp a411c16b-3cf7-4f03-bf11-8ca05aab898d
+//
+//	$ pulumi import wavefront:index/cloudIntegrationGcp:CloudIntegrationGcp gcp a411c16b-3cf7-4f03-bf11-8ca05aab898d
+//
 // ```
 type CloudIntegrationGcp struct {
 	pulumi.CustomResourceState
@@ -247,7 +252,7 @@ func (i *CloudIntegrationGcp) ToCloudIntegrationGcpOutputWithContext(ctx context
 // CloudIntegrationGcpArrayInput is an input type that accepts CloudIntegrationGcpArray and CloudIntegrationGcpArrayOutput values.
 // You can construct a concrete instance of `CloudIntegrationGcpArrayInput` via:
 //
-//          CloudIntegrationGcpArray{ CloudIntegrationGcpArgs{...} }
+//	CloudIntegrationGcpArray{ CloudIntegrationGcpArgs{...} }
 type CloudIntegrationGcpArrayInput interface {
 	pulumi.Input
 
@@ -272,7 +277,7 @@ func (i CloudIntegrationGcpArray) ToCloudIntegrationGcpArrayOutputWithContext(ct
 // CloudIntegrationGcpMapInput is an input type that accepts CloudIntegrationGcpMap and CloudIntegrationGcpMapOutput values.
 // You can construct a concrete instance of `CloudIntegrationGcpMapInput` via:
 //
-//          CloudIntegrationGcpMap{ "key": CloudIntegrationGcpArgs{...} }
+//	CloudIntegrationGcpMap{ "key": CloudIntegrationGcpArgs{...} }
 type CloudIntegrationGcpMapInput interface {
 	pulumi.Input
 

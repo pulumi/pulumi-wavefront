@@ -20,27 +20,30 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		extId, err := wavefront.NewCloudIntegrationAwsExternalId(ctx, "extId", nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		_, err = wavefront.NewCloudIntegrationCloudWatch(ctx, "cloudwatch", &wavefront.CloudIntegrationCloudWatchArgs{
-// 			ForceSave:  pulumi.Bool(true),
-// 			RoleArn:    pulumi.String("arn:aws::1234567:role/example-arn"),
-// 			ExternalId: extId.ID(),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			extId, err := wavefront.NewCloudIntegrationAwsExternalId(ctx, "extId", nil)
+//			if err != nil {
+//				return err
+//			}
+//			_, err = wavefront.NewCloudIntegrationCloudWatch(ctx, "cloudwatch", &wavefront.CloudIntegrationCloudWatchArgs{
+//				ForceSave:  pulumi.Bool(true),
+//				RoleArn:    pulumi.String("arn:aws::1234567:role/example-arn"),
+//				ExternalId: extId.ID(),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -48,7 +51,9 @@ import (
 // CloudWatch Cloud Integrations can be imported by using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import wavefront:index/cloudIntegrationCloudWatch:CloudIntegrationCloudWatch cloudwatch a411c16b-3cf7-4f03-bf11-8ca05aab898d
+//
+//	$ pulumi import wavefront:index/cloudIntegrationCloudWatch:CloudIntegrationCloudWatch cloudwatch a411c16b-3cf7-4f03-bf11-8ca05aab898d
+//
 // ```
 type CloudIntegrationCloudWatch struct {
 	pulumi.CustomResourceState
@@ -280,7 +285,7 @@ func (i *CloudIntegrationCloudWatch) ToCloudIntegrationCloudWatchOutputWithConte
 // CloudIntegrationCloudWatchArrayInput is an input type that accepts CloudIntegrationCloudWatchArray and CloudIntegrationCloudWatchArrayOutput values.
 // You can construct a concrete instance of `CloudIntegrationCloudWatchArrayInput` via:
 //
-//          CloudIntegrationCloudWatchArray{ CloudIntegrationCloudWatchArgs{...} }
+//	CloudIntegrationCloudWatchArray{ CloudIntegrationCloudWatchArgs{...} }
 type CloudIntegrationCloudWatchArrayInput interface {
 	pulumi.Input
 
@@ -305,7 +310,7 @@ func (i CloudIntegrationCloudWatchArray) ToCloudIntegrationCloudWatchArrayOutput
 // CloudIntegrationCloudWatchMapInput is an input type that accepts CloudIntegrationCloudWatchMap and CloudIntegrationCloudWatchMapOutput values.
 // You can construct a concrete instance of `CloudIntegrationCloudWatchMapInput` via:
 //
-//          CloudIntegrationCloudWatchMap{ "key": CloudIntegrationCloudWatchArgs{...} }
+//	CloudIntegrationCloudWatchMap{ "key": CloudIntegrationCloudWatchArgs{...} }
 type CloudIntegrationCloudWatchMapInput interface {
 	pulumi.Input
 

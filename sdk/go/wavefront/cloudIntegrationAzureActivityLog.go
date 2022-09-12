@@ -20,26 +20,29 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := wavefront.NewCloudIntegrationAzureActivityLog(ctx, "azureActivityLog", &wavefront.CloudIntegrationAzureActivityLogArgs{
-// 			CategoryFilters: pulumi.StringArray{
-// 				pulumi.String("ADMINISTRATIVE"),
-// 			},
-// 			ClientId:     pulumi.String("client-id2"),
-// 			ClientSecret: pulumi.String("client-secret2"),
-// 			Tenant:       pulumi.String("my-tenant2"),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := wavefront.NewCloudIntegrationAzureActivityLog(ctx, "azureActivityLog", &wavefront.CloudIntegrationAzureActivityLogArgs{
+//				CategoryFilters: pulumi.StringArray{
+//					pulumi.String("ADMINISTRATIVE"),
+//				},
+//				ClientId:     pulumi.String("client-id2"),
+//				ClientSecret: pulumi.String("client-secret2"),
+//				Tenant:       pulumi.String("my-tenant2"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -47,7 +50,9 @@ import (
 // Azure Activity Log Cloud Integrations can be imported by using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import wavefront:index/cloudIntegrationAzureActivityLog:CloudIntegrationAzureActivityLog azure_al a411c16b-3cf7-4f03-bf11-8ca05aab898d
+//
+//	$ pulumi import wavefront:index/cloudIntegrationAzureActivityLog:CloudIntegrationAzureActivityLog azure_al a411c16b-3cf7-4f03-bf11-8ca05aab898d
+//
 // ```
 type CloudIntegrationAzureActivityLog struct {
 	pulumi.CustomResourceState
@@ -227,7 +232,7 @@ func (i *CloudIntegrationAzureActivityLog) ToCloudIntegrationAzureActivityLogOut
 // CloudIntegrationAzureActivityLogArrayInput is an input type that accepts CloudIntegrationAzureActivityLogArray and CloudIntegrationAzureActivityLogArrayOutput values.
 // You can construct a concrete instance of `CloudIntegrationAzureActivityLogArrayInput` via:
 //
-//          CloudIntegrationAzureActivityLogArray{ CloudIntegrationAzureActivityLogArgs{...} }
+//	CloudIntegrationAzureActivityLogArray{ CloudIntegrationAzureActivityLogArgs{...} }
 type CloudIntegrationAzureActivityLogArrayInput interface {
 	pulumi.Input
 
@@ -252,7 +257,7 @@ func (i CloudIntegrationAzureActivityLogArray) ToCloudIntegrationAzureActivityLo
 // CloudIntegrationAzureActivityLogMapInput is an input type that accepts CloudIntegrationAzureActivityLogMap and CloudIntegrationAzureActivityLogMapOutput values.
 // You can construct a concrete instance of `CloudIntegrationAzureActivityLogMapInput` via:
 //
-//          CloudIntegrationAzureActivityLogMap{ "key": CloudIntegrationAzureActivityLogArgs{...} }
+//	CloudIntegrationAzureActivityLogMap{ "key": CloudIntegrationAzureActivityLogArgs{...} }
 type CloudIntegrationAzureActivityLogMapInput interface {
 	pulumi.Input
 

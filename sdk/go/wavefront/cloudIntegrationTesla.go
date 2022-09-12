@@ -20,22 +20,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := wavefront.NewCloudIntegrationTesla(ctx, "tesla", &wavefront.CloudIntegrationTeslaArgs{
-// 			Email:    pulumi.String("email@example.com"),
-// 			Password: pulumi.String("password"),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := wavefront.NewCloudIntegrationTesla(ctx, "tesla", &wavefront.CloudIntegrationTeslaArgs{
+//				Email:    pulumi.String("email@example.com"),
+//				Password: pulumi.String("password"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -43,7 +46,9 @@ import (
 // Tesla Integrations can be imported by using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import wavefront:index/cloudIntegrationTesla:CloudIntegrationTesla tesla a411c16b-3cf7-4f03-bf11-8ca05aab898d
+//
+//	$ pulumi import wavefront:index/cloudIntegrationTesla:CloudIntegrationTesla tesla a411c16b-3cf7-4f03-bf11-8ca05aab898d
+//
 // ```
 type CloudIntegrationTesla struct {
 	pulumi.CustomResourceState
@@ -200,7 +205,7 @@ func (i *CloudIntegrationTesla) ToCloudIntegrationTeslaOutputWithContext(ctx con
 // CloudIntegrationTeslaArrayInput is an input type that accepts CloudIntegrationTeslaArray and CloudIntegrationTeslaArrayOutput values.
 // You can construct a concrete instance of `CloudIntegrationTeslaArrayInput` via:
 //
-//          CloudIntegrationTeslaArray{ CloudIntegrationTeslaArgs{...} }
+//	CloudIntegrationTeslaArray{ CloudIntegrationTeslaArgs{...} }
 type CloudIntegrationTeslaArrayInput interface {
 	pulumi.Input
 
@@ -225,7 +230,7 @@ func (i CloudIntegrationTeslaArray) ToCloudIntegrationTeslaArrayOutputWithContex
 // CloudIntegrationTeslaMapInput is an input type that accepts CloudIntegrationTeslaMap and CloudIntegrationTeslaMapOutput values.
 // You can construct a concrete instance of `CloudIntegrationTeslaMapInput` via:
 //
-//          CloudIntegrationTeslaMap{ "key": CloudIntegrationTeslaArgs{...} }
+//	CloudIntegrationTeslaMap{ "key": CloudIntegrationTeslaArgs{...} }
 type CloudIntegrationTeslaMapInput interface {
 	pulumi.Input
 

@@ -20,23 +20,26 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := wavefront.NewCloudIntegrationAzureActivityLog(ctx, "azureActivityLog", &wavefront.CloudIntegrationAzureActivityLogArgs{
-// 			ClientId:     pulumi.String("client-id2"),
-// 			ClientSecret: pulumi.String("client-secret2"),
-// 			Tenant:       pulumi.String("my-tenant2"),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := wavefront.NewCloudIntegrationAzureActivityLog(ctx, "azureActivityLog", &wavefront.CloudIntegrationAzureActivityLogArgs{
+//				ClientId:     pulumi.String("client-id2"),
+//				ClientSecret: pulumi.String("client-secret2"),
+//				Tenant:       pulumi.String("my-tenant2"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -44,7 +47,9 @@ import (
 // Azure Cloud Integrations can be imported by using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import wavefront:index/cloudIntegrationAzure:CloudIntegrationAzure azure a411c16b-3cf7-4f03-bf11-8ca05aab898d
+//
+//	$ pulumi import wavefront:index/cloudIntegrationAzure:CloudIntegrationAzure azure a411c16b-3cf7-4f03-bf11-8ca05aab898d
+//
 // ```
 type CloudIntegrationAzure struct {
 	pulumi.CustomResourceState
@@ -244,7 +249,7 @@ func (i *CloudIntegrationAzure) ToCloudIntegrationAzureOutputWithContext(ctx con
 // CloudIntegrationAzureArrayInput is an input type that accepts CloudIntegrationAzureArray and CloudIntegrationAzureArrayOutput values.
 // You can construct a concrete instance of `CloudIntegrationAzureArrayInput` via:
 //
-//          CloudIntegrationAzureArray{ CloudIntegrationAzureArgs{...} }
+//	CloudIntegrationAzureArray{ CloudIntegrationAzureArgs{...} }
 type CloudIntegrationAzureArrayInput interface {
 	pulumi.Input
 
@@ -269,7 +274,7 @@ func (i CloudIntegrationAzureArray) ToCloudIntegrationAzureArrayOutputWithContex
 // CloudIntegrationAzureMapInput is an input type that accepts CloudIntegrationAzureMap and CloudIntegrationAzureMapOutput values.
 // You can construct a concrete instance of `CloudIntegrationAzureMapInput` via:
 //
-//          CloudIntegrationAzureMap{ "key": CloudIntegrationAzureArgs{...} }
+//	CloudIntegrationAzureMap{ "key": CloudIntegrationAzureArgs{...} }
 type CloudIntegrationAzureMapInput interface {
 	pulumi.Input
 

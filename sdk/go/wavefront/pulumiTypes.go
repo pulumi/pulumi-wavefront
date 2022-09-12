@@ -20,7 +20,7 @@ type AlertTargetRoute struct {
 // AlertTargetRouteInput is an input type that accepts AlertTargetRouteArgs and AlertTargetRouteOutput values.
 // You can construct a concrete instance of `AlertTargetRouteInput` via:
 //
-//          AlertTargetRouteArgs{...}
+//	AlertTargetRouteArgs{...}
 type AlertTargetRouteInput interface {
 	pulumi.Input
 
@@ -50,7 +50,7 @@ func (i AlertTargetRouteArgs) ToAlertTargetRouteOutputWithContext(ctx context.Co
 // AlertTargetRouteArrayInput is an input type that accepts AlertTargetRouteArray and AlertTargetRouteArrayOutput values.
 // You can construct a concrete instance of `AlertTargetRouteArrayInput` via:
 //
-//          AlertTargetRouteArray{ AlertTargetRouteArgs{...} }
+//	AlertTargetRouteArray{ AlertTargetRouteArgs{...} }
 type AlertTargetRouteArrayInput interface {
 	pulumi.Input
 
@@ -129,7 +129,7 @@ type CloudIntegrationNewRelicMetricFilter struct {
 // CloudIntegrationNewRelicMetricFilterInput is an input type that accepts CloudIntegrationNewRelicMetricFilterArgs and CloudIntegrationNewRelicMetricFilterOutput values.
 // You can construct a concrete instance of `CloudIntegrationNewRelicMetricFilterInput` via:
 //
-//          CloudIntegrationNewRelicMetricFilterArgs{...}
+//	CloudIntegrationNewRelicMetricFilterArgs{...}
 type CloudIntegrationNewRelicMetricFilterInput interface {
 	pulumi.Input
 
@@ -159,7 +159,7 @@ func (i CloudIntegrationNewRelicMetricFilterArgs) ToCloudIntegrationNewRelicMetr
 // CloudIntegrationNewRelicMetricFilterArrayInput is an input type that accepts CloudIntegrationNewRelicMetricFilterArray and CloudIntegrationNewRelicMetricFilterArrayOutput values.
 // You can construct a concrete instance of `CloudIntegrationNewRelicMetricFilterArrayInput` via:
 //
-//          CloudIntegrationNewRelicMetricFilterArray{ CloudIntegrationNewRelicMetricFilterArgs{...} }
+//	CloudIntegrationNewRelicMetricFilterArray{ CloudIntegrationNewRelicMetricFilterArgs{...} }
 type CloudIntegrationNewRelicMetricFilterArrayInput interface {
 	pulumi.Input
 
@@ -251,7 +251,7 @@ type DashboardParameterDetail struct {
 // DashboardParameterDetailInput is an input type that accepts DashboardParameterDetailArgs and DashboardParameterDetailOutput values.
 // You can construct a concrete instance of `DashboardParameterDetailInput` via:
 //
-//          DashboardParameterDetailArgs{...}
+//	DashboardParameterDetailArgs{...}
 type DashboardParameterDetailInput interface {
 	pulumi.Input
 
@@ -297,7 +297,7 @@ func (i DashboardParameterDetailArgs) ToDashboardParameterDetailOutputWithContex
 // DashboardParameterDetailArrayInput is an input type that accepts DashboardParameterDetailArray and DashboardParameterDetailArrayOutput values.
 // You can construct a concrete instance of `DashboardParameterDetailArrayInput` via:
 //
-//          DashboardParameterDetailArray{ DashboardParameterDetailArgs{...} }
+//	DashboardParameterDetailArray{ DashboardParameterDetailArgs{...} }
 type DashboardParameterDetailArrayInput interface {
 	pulumi.Input
 
@@ -410,7 +410,7 @@ type DashboardSection struct {
 // DashboardSectionInput is an input type that accepts DashboardSectionArgs and DashboardSectionOutput values.
 // You can construct a concrete instance of `DashboardSectionInput` via:
 //
-//          DashboardSectionArgs{...}
+//	DashboardSectionArgs{...}
 type DashboardSectionInput interface {
 	pulumi.Input
 
@@ -440,7 +440,7 @@ func (i DashboardSectionArgs) ToDashboardSectionOutputWithContext(ctx context.Co
 // DashboardSectionArrayInput is an input type that accepts DashboardSectionArray and DashboardSectionArrayOutput values.
 // You can construct a concrete instance of `DashboardSectionArrayInput` via:
 //
-//          DashboardSectionArray{ DashboardSectionArgs{...} }
+//	DashboardSectionArray{ DashboardSectionArgs{...} }
 type DashboardSectionArrayInput interface {
 	pulumi.Input
 
@@ -514,7 +514,7 @@ type DashboardSectionRow struct {
 // DashboardSectionRowInput is an input type that accepts DashboardSectionRowArgs and DashboardSectionRowOutput values.
 // You can construct a concrete instance of `DashboardSectionRowInput` via:
 //
-//          DashboardSectionRowArgs{...}
+//	DashboardSectionRowArgs{...}
 type DashboardSectionRowInput interface {
 	pulumi.Input
 
@@ -542,7 +542,7 @@ func (i DashboardSectionRowArgs) ToDashboardSectionRowOutputWithContext(ctx cont
 // DashboardSectionRowArrayInput is an input type that accepts DashboardSectionRowArray and DashboardSectionRowArrayOutput values.
 // You can construct a concrete instance of `DashboardSectionRowArrayInput` via:
 //
-//          DashboardSectionRowArray{ DashboardSectionRowArgs{...} }
+//	DashboardSectionRowArray{ DashboardSectionRowArgs{...} }
 type DashboardSectionRowArrayInput interface {
 	pulumi.Input
 
@@ -625,7 +625,7 @@ type DashboardSectionRowChart struct {
 // DashboardSectionRowChartInput is an input type that accepts DashboardSectionRowChartArgs and DashboardSectionRowChartOutput values.
 // You can construct a concrete instance of `DashboardSectionRowChartInput` via:
 //
-//          DashboardSectionRowChartArgs{...}
+//	DashboardSectionRowChartArgs{...}
 type DashboardSectionRowChartInput interface {
 	pulumi.Input
 
@@ -667,7 +667,7 @@ func (i DashboardSectionRowChartArgs) ToDashboardSectionRowChartOutputWithContex
 // DashboardSectionRowChartArrayInput is an input type that accepts DashboardSectionRowChartArray and DashboardSectionRowChartArrayOutput values.
 // You can construct a concrete instance of `DashboardSectionRowChartArrayInput` via:
 //
-//          DashboardSectionRowChartArray{ DashboardSectionRowChartArgs{...} }
+//	DashboardSectionRowChartArray{ DashboardSectionRowChartArgs{...} }
 type DashboardSectionRowChartArrayInput interface {
 	pulumi.Input
 
@@ -909,7 +909,7 @@ type DashboardSectionRowChartChartSetting struct {
 // DashboardSectionRowChartChartSettingInput is an input type that accepts DashboardSectionRowChartChartSettingArgs and DashboardSectionRowChartChartSettingOutput values.
 // You can construct a concrete instance of `DashboardSectionRowChartChartSettingInput` via:
 //
-//          DashboardSectionRowChartChartSettingArgs{...}
+//	DashboardSectionRowChartChartSettingArgs{...}
 type DashboardSectionRowChartChartSettingInput interface {
 	pulumi.Input
 
@@ -1415,7 +1415,7 @@ type DashboardSectionRowChartSource struct {
 // DashboardSectionRowChartSourceInput is an input type that accepts DashboardSectionRowChartSourceArgs and DashboardSectionRowChartSourceOutput values.
 // You can construct a concrete instance of `DashboardSectionRowChartSourceInput` via:
 //
-//          DashboardSectionRowChartSourceArgs{...}
+//	DashboardSectionRowChartSourceArgs{...}
 type DashboardSectionRowChartSourceInput interface {
 	pulumi.Input
 
@@ -1453,7 +1453,7 @@ func (i DashboardSectionRowChartSourceArgs) ToDashboardSectionRowChartSourceOutp
 // DashboardSectionRowChartSourceArrayInput is an input type that accepts DashboardSectionRowChartSourceArray and DashboardSectionRowChartSourceArrayOutput values.
 // You can construct a concrete instance of `DashboardSectionRowChartSourceArrayInput` via:
 //
-//          DashboardSectionRowChartSourceArray{ DashboardSectionRowChartSourceArgs{...} }
+//	DashboardSectionRowChartSourceArray{ DashboardSectionRowChartSourceArgs{...} }
 type DashboardSectionRowChartSourceArrayInput interface {
 	pulumi.Input
 

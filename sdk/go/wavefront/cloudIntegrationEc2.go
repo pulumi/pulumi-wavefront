@@ -20,26 +20,29 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		extId, err := wavefront.NewCloudIntegrationAwsExternalId(ctx, "extId", nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		_, err = wavefront.NewCloudIntegrationEc2(ctx, "ec2", &wavefront.CloudIntegrationEc2Args{
-// 			RoleArn:    pulumi.String("arn:aws::1234567:role/example-arn"),
-// 			ExternalId: extId.ID(),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			extId, err := wavefront.NewCloudIntegrationAwsExternalId(ctx, "extId", nil)
+//			if err != nil {
+//				return err
+//			}
+//			_, err = wavefront.NewCloudIntegrationEc2(ctx, "ec2", &wavefront.CloudIntegrationEc2Args{
+//				RoleArn:    pulumi.String("arn:aws::1234567:role/example-arn"),
+//				ExternalId: extId.ID(),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -47,7 +50,9 @@ import (
 // EC2 Cloud Integrations can be imported by using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import wavefront:index/cloudIntegrationEc2:CloudIntegrationEc2 ec2 a411c16b-3cf7-4f03-bf11-8ca05aab898d
+//
+//	$ pulumi import wavefront:index/cloudIntegrationEc2:CloudIntegrationEc2 ec2 a411c16b-3cf7-4f03-bf11-8ca05aab898d
+//
 // ```
 type CloudIntegrationEc2 struct {
 	pulumi.CustomResourceState
@@ -224,7 +229,7 @@ func (i *CloudIntegrationEc2) ToCloudIntegrationEc2OutputWithContext(ctx context
 // CloudIntegrationEc2ArrayInput is an input type that accepts CloudIntegrationEc2Array and CloudIntegrationEc2ArrayOutput values.
 // You can construct a concrete instance of `CloudIntegrationEc2ArrayInput` via:
 //
-//          CloudIntegrationEc2Array{ CloudIntegrationEc2Args{...} }
+//	CloudIntegrationEc2Array{ CloudIntegrationEc2Args{...} }
 type CloudIntegrationEc2ArrayInput interface {
 	pulumi.Input
 
@@ -249,7 +254,7 @@ func (i CloudIntegrationEc2Array) ToCloudIntegrationEc2ArrayOutputWithContext(ct
 // CloudIntegrationEc2MapInput is an input type that accepts CloudIntegrationEc2Map and CloudIntegrationEc2MapOutput values.
 // You can construct a concrete instance of `CloudIntegrationEc2MapInput` via:
 //
-//          CloudIntegrationEc2Map{ "key": CloudIntegrationEc2Args{...} }
+//	CloudIntegrationEc2Map{ "key": CloudIntegrationEc2Args{...} }
 type CloudIntegrationEc2MapInput interface {
 	pulumi.Input
 

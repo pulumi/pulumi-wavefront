@@ -19,30 +19,33 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := wavefront.NewAlert(ctx, "foobar", &wavefront.AlertArgs{
-// 			Condition:           pulumi.String("100-ts(\"cpu.usage_idle\", environment=preprod and cpu=cpu-total ) > 80"),
-// 			DisplayExpression:   pulumi.String("100-ts(\"cpu.usage_idle\", environment=preprod and cpu=cpu-total )"),
-// 			Minutes:             pulumi.Int(5),
-// 			ResolveAfterMinutes: pulumi.Int(5),
-// 			Severity:            pulumi.String("WARN"),
-// 			Tags: pulumi.StringArray{
-// 				pulumi.String("terraform"),
-// 				pulumi.String("test"),
-// 			},
-// 			Target: pulumi.String("test@example.com,target:alert-target-id"),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := wavefront.NewAlert(ctx, "foobar", &wavefront.AlertArgs{
+//				Condition:           pulumi.String("100-ts(\"cpu.usage_idle\", environment=preprod and cpu=cpu-total ) > 80"),
+//				DisplayExpression:   pulumi.String("100-ts(\"cpu.usage_idle\", environment=preprod and cpu=cpu-total )"),
+//				Minutes:             pulumi.Int(5),
+//				ResolveAfterMinutes: pulumi.Int(5),
+//				Severity:            pulumi.String("WARN"),
+//				Tags: pulumi.StringArray{
+//					pulumi.String("terraform"),
+//					pulumi.String("test"),
+//				},
+//				Target: pulumi.String("test@example.com,target:alert-target-id"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -50,7 +53,9 @@ import (
 // Alerts can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import wavefront:index/alert:Alert alert_target 1479868728473
+//
+//	$ pulumi import wavefront:index/alert:Alert alert_target 1479868728473
+//
 // ```
 type Alert struct {
 	pulumi.CustomResourceState
@@ -349,7 +354,7 @@ func (i *Alert) ToAlertOutputWithContext(ctx context.Context) AlertOutput {
 // AlertArrayInput is an input type that accepts AlertArray and AlertArrayOutput values.
 // You can construct a concrete instance of `AlertArrayInput` via:
 //
-//          AlertArray{ AlertArgs{...} }
+//	AlertArray{ AlertArgs{...} }
 type AlertArrayInput interface {
 	pulumi.Input
 
@@ -374,7 +379,7 @@ func (i AlertArray) ToAlertArrayOutputWithContext(ctx context.Context) AlertArra
 // AlertMapInput is an input type that accepts AlertMap and AlertMapOutput values.
 // You can construct a concrete instance of `AlertMapInput` via:
 //
-//          AlertMap{ "key": AlertArgs{...} }
+//	AlertMap{ "key": AlertArgs{...} }
 type AlertMapInput interface {
 	pulumi.Input
 

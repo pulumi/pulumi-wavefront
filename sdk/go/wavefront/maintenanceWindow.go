@@ -19,28 +19,31 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := wavefront.NewMaintenanceWindow(ctx, "basic", &wavefront.MaintenanceWindowArgs{
-// 			EndTimeInSeconds: pulumi.Int(1601123456),
-// 			Reason:           pulumi.String("Routine maintenance for 2020"),
-// 			RelevantHostNames: pulumi.StringArray{
-// 				pulumi.String("my_hostname"),
-// 				pulumi.String("my_other_hostname"),
-// 			},
-// 			StartTimeInSeconds: pulumi.Int(1600123456),
-// 			Title:              pulumi.String("Routine maintenance"),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := wavefront.NewMaintenanceWindow(ctx, "basic", &wavefront.MaintenanceWindowArgs{
+//				EndTimeInSeconds: pulumi.Int(1601123456),
+//				Reason:           pulumi.String("Routine maintenance for 2020"),
+//				RelevantHostNames: pulumi.StringArray{
+//					pulumi.String("my_hostname"),
+//					pulumi.String("my_other_hostname"),
+//				},
+//				StartTimeInSeconds: pulumi.Int(1600123456),
+//				Title:              pulumi.String("Routine maintenance"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -48,7 +51,9 @@ import (
 // Maintenance windows can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import wavefront:index/maintenanceWindow:MaintenanceWindow basic 1600383357095
+//
+//	$ pulumi import wavefront:index/maintenanceWindow:MaintenanceWindow basic 1600383357095
+//
 // ```
 type MaintenanceWindow struct {
 	pulumi.CustomResourceState
@@ -283,7 +288,7 @@ func (i *MaintenanceWindow) ToMaintenanceWindowOutputWithContext(ctx context.Con
 // MaintenanceWindowArrayInput is an input type that accepts MaintenanceWindowArray and MaintenanceWindowArrayOutput values.
 // You can construct a concrete instance of `MaintenanceWindowArrayInput` via:
 //
-//          MaintenanceWindowArray{ MaintenanceWindowArgs{...} }
+//	MaintenanceWindowArray{ MaintenanceWindowArgs{...} }
 type MaintenanceWindowArrayInput interface {
 	pulumi.Input
 
@@ -308,7 +313,7 @@ func (i MaintenanceWindowArray) ToMaintenanceWindowArrayOutputWithContext(ctx co
 // MaintenanceWindowMapInput is an input type that accepts MaintenanceWindowMap and MaintenanceWindowMapOutput values.
 // You can construct a concrete instance of `MaintenanceWindowMapInput` via:
 //
-//          MaintenanceWindowMap{ "key": MaintenanceWindowArgs{...} }
+//	MaintenanceWindowMap{ "key": MaintenanceWindowArgs{...} }
 type MaintenanceWindowMapInput interface {
 	pulumi.Input
 
