@@ -1539,6 +1539,635 @@ func (o DashboardSectionRowChartSourceArrayOutput) Index(i pulumi.IntInput) Dash
 	}).(DashboardSectionRowChartSourceOutput)
 }
 
+type GetMetricsPolicyPolicyRule struct {
+	AccessType   string                          `pulumi:"accessType"`
+	AccountIds   []string                        `pulumi:"accountIds"`
+	Description  string                          `pulumi:"description"`
+	Name         string                          `pulumi:"name"`
+	Prefixes     []string                        `pulumi:"prefixes"`
+	RoleIds      []string                        `pulumi:"roleIds"`
+	Tags         []GetMetricsPolicyPolicyRuleTag `pulumi:"tags"`
+	TagsAnded    bool                            `pulumi:"tagsAnded"`
+	UserGroupIds []string                        `pulumi:"userGroupIds"`
+}
+
+// GetMetricsPolicyPolicyRuleInput is an input type that accepts GetMetricsPolicyPolicyRuleArgs and GetMetricsPolicyPolicyRuleOutput values.
+// You can construct a concrete instance of `GetMetricsPolicyPolicyRuleInput` via:
+//
+//	GetMetricsPolicyPolicyRuleArgs{...}
+type GetMetricsPolicyPolicyRuleInput interface {
+	pulumi.Input
+
+	ToGetMetricsPolicyPolicyRuleOutput() GetMetricsPolicyPolicyRuleOutput
+	ToGetMetricsPolicyPolicyRuleOutputWithContext(context.Context) GetMetricsPolicyPolicyRuleOutput
+}
+
+type GetMetricsPolicyPolicyRuleArgs struct {
+	AccessType   pulumi.StringInput                      `pulumi:"accessType"`
+	AccountIds   pulumi.StringArrayInput                 `pulumi:"accountIds"`
+	Description  pulumi.StringInput                      `pulumi:"description"`
+	Name         pulumi.StringInput                      `pulumi:"name"`
+	Prefixes     pulumi.StringArrayInput                 `pulumi:"prefixes"`
+	RoleIds      pulumi.StringArrayInput                 `pulumi:"roleIds"`
+	Tags         GetMetricsPolicyPolicyRuleTagArrayInput `pulumi:"tags"`
+	TagsAnded    pulumi.BoolInput                        `pulumi:"tagsAnded"`
+	UserGroupIds pulumi.StringArrayInput                 `pulumi:"userGroupIds"`
+}
+
+func (GetMetricsPolicyPolicyRuleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMetricsPolicyPolicyRule)(nil)).Elem()
+}
+
+func (i GetMetricsPolicyPolicyRuleArgs) ToGetMetricsPolicyPolicyRuleOutput() GetMetricsPolicyPolicyRuleOutput {
+	return i.ToGetMetricsPolicyPolicyRuleOutputWithContext(context.Background())
+}
+
+func (i GetMetricsPolicyPolicyRuleArgs) ToGetMetricsPolicyPolicyRuleOutputWithContext(ctx context.Context) GetMetricsPolicyPolicyRuleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMetricsPolicyPolicyRuleOutput)
+}
+
+// GetMetricsPolicyPolicyRuleArrayInput is an input type that accepts GetMetricsPolicyPolicyRuleArray and GetMetricsPolicyPolicyRuleArrayOutput values.
+// You can construct a concrete instance of `GetMetricsPolicyPolicyRuleArrayInput` via:
+//
+//	GetMetricsPolicyPolicyRuleArray{ GetMetricsPolicyPolicyRuleArgs{...} }
+type GetMetricsPolicyPolicyRuleArrayInput interface {
+	pulumi.Input
+
+	ToGetMetricsPolicyPolicyRuleArrayOutput() GetMetricsPolicyPolicyRuleArrayOutput
+	ToGetMetricsPolicyPolicyRuleArrayOutputWithContext(context.Context) GetMetricsPolicyPolicyRuleArrayOutput
+}
+
+type GetMetricsPolicyPolicyRuleArray []GetMetricsPolicyPolicyRuleInput
+
+func (GetMetricsPolicyPolicyRuleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMetricsPolicyPolicyRule)(nil)).Elem()
+}
+
+func (i GetMetricsPolicyPolicyRuleArray) ToGetMetricsPolicyPolicyRuleArrayOutput() GetMetricsPolicyPolicyRuleArrayOutput {
+	return i.ToGetMetricsPolicyPolicyRuleArrayOutputWithContext(context.Background())
+}
+
+func (i GetMetricsPolicyPolicyRuleArray) ToGetMetricsPolicyPolicyRuleArrayOutputWithContext(ctx context.Context) GetMetricsPolicyPolicyRuleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMetricsPolicyPolicyRuleArrayOutput)
+}
+
+type GetMetricsPolicyPolicyRuleOutput struct{ *pulumi.OutputState }
+
+func (GetMetricsPolicyPolicyRuleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMetricsPolicyPolicyRule)(nil)).Elem()
+}
+
+func (o GetMetricsPolicyPolicyRuleOutput) ToGetMetricsPolicyPolicyRuleOutput() GetMetricsPolicyPolicyRuleOutput {
+	return o
+}
+
+func (o GetMetricsPolicyPolicyRuleOutput) ToGetMetricsPolicyPolicyRuleOutputWithContext(ctx context.Context) GetMetricsPolicyPolicyRuleOutput {
+	return o
+}
+
+func (o GetMetricsPolicyPolicyRuleOutput) AccessType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMetricsPolicyPolicyRule) string { return v.AccessType }).(pulumi.StringOutput)
+}
+
+func (o GetMetricsPolicyPolicyRuleOutput) AccountIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMetricsPolicyPolicyRule) []string { return v.AccountIds }).(pulumi.StringArrayOutput)
+}
+
+func (o GetMetricsPolicyPolicyRuleOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMetricsPolicyPolicyRule) string { return v.Description }).(pulumi.StringOutput)
+}
+
+func (o GetMetricsPolicyPolicyRuleOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMetricsPolicyPolicyRule) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetMetricsPolicyPolicyRuleOutput) Prefixes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMetricsPolicyPolicyRule) []string { return v.Prefixes }).(pulumi.StringArrayOutput)
+}
+
+func (o GetMetricsPolicyPolicyRuleOutput) RoleIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMetricsPolicyPolicyRule) []string { return v.RoleIds }).(pulumi.StringArrayOutput)
+}
+
+func (o GetMetricsPolicyPolicyRuleOutput) Tags() GetMetricsPolicyPolicyRuleTagArrayOutput {
+	return o.ApplyT(func(v GetMetricsPolicyPolicyRule) []GetMetricsPolicyPolicyRuleTag { return v.Tags }).(GetMetricsPolicyPolicyRuleTagArrayOutput)
+}
+
+func (o GetMetricsPolicyPolicyRuleOutput) TagsAnded() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMetricsPolicyPolicyRule) bool { return v.TagsAnded }).(pulumi.BoolOutput)
+}
+
+func (o GetMetricsPolicyPolicyRuleOutput) UserGroupIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMetricsPolicyPolicyRule) []string { return v.UserGroupIds }).(pulumi.StringArrayOutput)
+}
+
+type GetMetricsPolicyPolicyRuleArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMetricsPolicyPolicyRuleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMetricsPolicyPolicyRule)(nil)).Elem()
+}
+
+func (o GetMetricsPolicyPolicyRuleArrayOutput) ToGetMetricsPolicyPolicyRuleArrayOutput() GetMetricsPolicyPolicyRuleArrayOutput {
+	return o
+}
+
+func (o GetMetricsPolicyPolicyRuleArrayOutput) ToGetMetricsPolicyPolicyRuleArrayOutputWithContext(ctx context.Context) GetMetricsPolicyPolicyRuleArrayOutput {
+	return o
+}
+
+func (o GetMetricsPolicyPolicyRuleArrayOutput) Index(i pulumi.IntInput) GetMetricsPolicyPolicyRuleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMetricsPolicyPolicyRule {
+		return vs[0].([]GetMetricsPolicyPolicyRule)[vs[1].(int)]
+	}).(GetMetricsPolicyPolicyRuleOutput)
+}
+
+type GetMetricsPolicyPolicyRuleTag struct {
+	Key   string `pulumi:"key"`
+	Value string `pulumi:"value"`
+}
+
+// GetMetricsPolicyPolicyRuleTagInput is an input type that accepts GetMetricsPolicyPolicyRuleTagArgs and GetMetricsPolicyPolicyRuleTagOutput values.
+// You can construct a concrete instance of `GetMetricsPolicyPolicyRuleTagInput` via:
+//
+//	GetMetricsPolicyPolicyRuleTagArgs{...}
+type GetMetricsPolicyPolicyRuleTagInput interface {
+	pulumi.Input
+
+	ToGetMetricsPolicyPolicyRuleTagOutput() GetMetricsPolicyPolicyRuleTagOutput
+	ToGetMetricsPolicyPolicyRuleTagOutputWithContext(context.Context) GetMetricsPolicyPolicyRuleTagOutput
+}
+
+type GetMetricsPolicyPolicyRuleTagArgs struct {
+	Key   pulumi.StringInput `pulumi:"key"`
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetMetricsPolicyPolicyRuleTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMetricsPolicyPolicyRuleTag)(nil)).Elem()
+}
+
+func (i GetMetricsPolicyPolicyRuleTagArgs) ToGetMetricsPolicyPolicyRuleTagOutput() GetMetricsPolicyPolicyRuleTagOutput {
+	return i.ToGetMetricsPolicyPolicyRuleTagOutputWithContext(context.Background())
+}
+
+func (i GetMetricsPolicyPolicyRuleTagArgs) ToGetMetricsPolicyPolicyRuleTagOutputWithContext(ctx context.Context) GetMetricsPolicyPolicyRuleTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMetricsPolicyPolicyRuleTagOutput)
+}
+
+// GetMetricsPolicyPolicyRuleTagArrayInput is an input type that accepts GetMetricsPolicyPolicyRuleTagArray and GetMetricsPolicyPolicyRuleTagArrayOutput values.
+// You can construct a concrete instance of `GetMetricsPolicyPolicyRuleTagArrayInput` via:
+//
+//	GetMetricsPolicyPolicyRuleTagArray{ GetMetricsPolicyPolicyRuleTagArgs{...} }
+type GetMetricsPolicyPolicyRuleTagArrayInput interface {
+	pulumi.Input
+
+	ToGetMetricsPolicyPolicyRuleTagArrayOutput() GetMetricsPolicyPolicyRuleTagArrayOutput
+	ToGetMetricsPolicyPolicyRuleTagArrayOutputWithContext(context.Context) GetMetricsPolicyPolicyRuleTagArrayOutput
+}
+
+type GetMetricsPolicyPolicyRuleTagArray []GetMetricsPolicyPolicyRuleTagInput
+
+func (GetMetricsPolicyPolicyRuleTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMetricsPolicyPolicyRuleTag)(nil)).Elem()
+}
+
+func (i GetMetricsPolicyPolicyRuleTagArray) ToGetMetricsPolicyPolicyRuleTagArrayOutput() GetMetricsPolicyPolicyRuleTagArrayOutput {
+	return i.ToGetMetricsPolicyPolicyRuleTagArrayOutputWithContext(context.Background())
+}
+
+func (i GetMetricsPolicyPolicyRuleTagArray) ToGetMetricsPolicyPolicyRuleTagArrayOutputWithContext(ctx context.Context) GetMetricsPolicyPolicyRuleTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMetricsPolicyPolicyRuleTagArrayOutput)
+}
+
+type GetMetricsPolicyPolicyRuleTagOutput struct{ *pulumi.OutputState }
+
+func (GetMetricsPolicyPolicyRuleTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMetricsPolicyPolicyRuleTag)(nil)).Elem()
+}
+
+func (o GetMetricsPolicyPolicyRuleTagOutput) ToGetMetricsPolicyPolicyRuleTagOutput() GetMetricsPolicyPolicyRuleTagOutput {
+	return o
+}
+
+func (o GetMetricsPolicyPolicyRuleTagOutput) ToGetMetricsPolicyPolicyRuleTagOutputWithContext(ctx context.Context) GetMetricsPolicyPolicyRuleTagOutput {
+	return o
+}
+
+func (o GetMetricsPolicyPolicyRuleTagOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMetricsPolicyPolicyRuleTag) string { return v.Key }).(pulumi.StringOutput)
+}
+
+func (o GetMetricsPolicyPolicyRuleTagOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMetricsPolicyPolicyRuleTag) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetMetricsPolicyPolicyRuleTagArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMetricsPolicyPolicyRuleTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMetricsPolicyPolicyRuleTag)(nil)).Elem()
+}
+
+func (o GetMetricsPolicyPolicyRuleTagArrayOutput) ToGetMetricsPolicyPolicyRuleTagArrayOutput() GetMetricsPolicyPolicyRuleTagArrayOutput {
+	return o
+}
+
+func (o GetMetricsPolicyPolicyRuleTagArrayOutput) ToGetMetricsPolicyPolicyRuleTagArrayOutputWithContext(ctx context.Context) GetMetricsPolicyPolicyRuleTagArrayOutput {
+	return o
+}
+
+func (o GetMetricsPolicyPolicyRuleTagArrayOutput) Index(i pulumi.IntInput) GetMetricsPolicyPolicyRuleTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMetricsPolicyPolicyRuleTag {
+		return vs[0].([]GetMetricsPolicyPolicyRuleTag)[vs[1].(int)]
+	}).(GetMetricsPolicyPolicyRuleTagOutput)
+}
+
+type GetRolesRole struct {
+	// The Role's description.
+	Description string `pulumi:"description"`
+	// The Role ID.
+	Id string `pulumi:"id"`
+	// The Role Name.
+	Name string `pulumi:"name"`
+	// List of Permissions (Strings) associated with Role.
+	Permissions []string `pulumi:"permissions"`
+}
+
+// GetRolesRoleInput is an input type that accepts GetRolesRoleArgs and GetRolesRoleOutput values.
+// You can construct a concrete instance of `GetRolesRoleInput` via:
+//
+//	GetRolesRoleArgs{...}
+type GetRolesRoleInput interface {
+	pulumi.Input
+
+	ToGetRolesRoleOutput() GetRolesRoleOutput
+	ToGetRolesRoleOutputWithContext(context.Context) GetRolesRoleOutput
+}
+
+type GetRolesRoleArgs struct {
+	// The Role's description.
+	Description pulumi.StringInput `pulumi:"description"`
+	// The Role ID.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The Role Name.
+	Name pulumi.StringInput `pulumi:"name"`
+	// List of Permissions (Strings) associated with Role.
+	Permissions pulumi.StringArrayInput `pulumi:"permissions"`
+}
+
+func (GetRolesRoleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRolesRole)(nil)).Elem()
+}
+
+func (i GetRolesRoleArgs) ToGetRolesRoleOutput() GetRolesRoleOutput {
+	return i.ToGetRolesRoleOutputWithContext(context.Background())
+}
+
+func (i GetRolesRoleArgs) ToGetRolesRoleOutputWithContext(ctx context.Context) GetRolesRoleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRolesRoleOutput)
+}
+
+// GetRolesRoleArrayInput is an input type that accepts GetRolesRoleArray and GetRolesRoleArrayOutput values.
+// You can construct a concrete instance of `GetRolesRoleArrayInput` via:
+//
+//	GetRolesRoleArray{ GetRolesRoleArgs{...} }
+type GetRolesRoleArrayInput interface {
+	pulumi.Input
+
+	ToGetRolesRoleArrayOutput() GetRolesRoleArrayOutput
+	ToGetRolesRoleArrayOutputWithContext(context.Context) GetRolesRoleArrayOutput
+}
+
+type GetRolesRoleArray []GetRolesRoleInput
+
+func (GetRolesRoleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRolesRole)(nil)).Elem()
+}
+
+func (i GetRolesRoleArray) ToGetRolesRoleArrayOutput() GetRolesRoleArrayOutput {
+	return i.ToGetRolesRoleArrayOutputWithContext(context.Background())
+}
+
+func (i GetRolesRoleArray) ToGetRolesRoleArrayOutputWithContext(ctx context.Context) GetRolesRoleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRolesRoleArrayOutput)
+}
+
+type GetRolesRoleOutput struct{ *pulumi.OutputState }
+
+func (GetRolesRoleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRolesRole)(nil)).Elem()
+}
+
+func (o GetRolesRoleOutput) ToGetRolesRoleOutput() GetRolesRoleOutput {
+	return o
+}
+
+func (o GetRolesRoleOutput) ToGetRolesRoleOutputWithContext(ctx context.Context) GetRolesRoleOutput {
+	return o
+}
+
+// The Role's description.
+func (o GetRolesRoleOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRolesRole) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// The Role ID.
+func (o GetRolesRoleOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRolesRole) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The Role Name.
+func (o GetRolesRoleOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRolesRole) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// List of Permissions (Strings) associated with Role.
+func (o GetRolesRoleOutput) Permissions() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetRolesRole) []string { return v.Permissions }).(pulumi.StringArrayOutput)
+}
+
+type GetRolesRoleArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRolesRoleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRolesRole)(nil)).Elem()
+}
+
+func (o GetRolesRoleArrayOutput) ToGetRolesRoleArrayOutput() GetRolesRoleArrayOutput {
+	return o
+}
+
+func (o GetRolesRoleArrayOutput) ToGetRolesRoleArrayOutputWithContext(ctx context.Context) GetRolesRoleArrayOutput {
+	return o
+}
+
+func (o GetRolesRoleArrayOutput) Index(i pulumi.IntInput) GetRolesRoleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRolesRole {
+		return vs[0].([]GetRolesRole)[vs[1].(int)]
+	}).(GetRolesRoleOutput)
+}
+
+type GetUserGroupsUserGroup struct {
+	// The group description.
+	Description string `pulumi:"description"`
+	// The group ID.
+	Id string `pulumi:"id"`
+	// The group name.
+	Name string `pulumi:"name"`
+	// List of roles associated with the group.
+	Roles []string `pulumi:"roles"`
+	// List of users assigned to the group.
+	Users []string `pulumi:"users"`
+}
+
+// GetUserGroupsUserGroupInput is an input type that accepts GetUserGroupsUserGroupArgs and GetUserGroupsUserGroupOutput values.
+// You can construct a concrete instance of `GetUserGroupsUserGroupInput` via:
+//
+//	GetUserGroupsUserGroupArgs{...}
+type GetUserGroupsUserGroupInput interface {
+	pulumi.Input
+
+	ToGetUserGroupsUserGroupOutput() GetUserGroupsUserGroupOutput
+	ToGetUserGroupsUserGroupOutputWithContext(context.Context) GetUserGroupsUserGroupOutput
+}
+
+type GetUserGroupsUserGroupArgs struct {
+	// The group description.
+	Description pulumi.StringInput `pulumi:"description"`
+	// The group ID.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The group name.
+	Name pulumi.StringInput `pulumi:"name"`
+	// List of roles associated with the group.
+	Roles pulumi.StringArrayInput `pulumi:"roles"`
+	// List of users assigned to the group.
+	Users pulumi.StringArrayInput `pulumi:"users"`
+}
+
+func (GetUserGroupsUserGroupArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUserGroupsUserGroup)(nil)).Elem()
+}
+
+func (i GetUserGroupsUserGroupArgs) ToGetUserGroupsUserGroupOutput() GetUserGroupsUserGroupOutput {
+	return i.ToGetUserGroupsUserGroupOutputWithContext(context.Background())
+}
+
+func (i GetUserGroupsUserGroupArgs) ToGetUserGroupsUserGroupOutputWithContext(ctx context.Context) GetUserGroupsUserGroupOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUserGroupsUserGroupOutput)
+}
+
+// GetUserGroupsUserGroupArrayInput is an input type that accepts GetUserGroupsUserGroupArray and GetUserGroupsUserGroupArrayOutput values.
+// You can construct a concrete instance of `GetUserGroupsUserGroupArrayInput` via:
+//
+//	GetUserGroupsUserGroupArray{ GetUserGroupsUserGroupArgs{...} }
+type GetUserGroupsUserGroupArrayInput interface {
+	pulumi.Input
+
+	ToGetUserGroupsUserGroupArrayOutput() GetUserGroupsUserGroupArrayOutput
+	ToGetUserGroupsUserGroupArrayOutputWithContext(context.Context) GetUserGroupsUserGroupArrayOutput
+}
+
+type GetUserGroupsUserGroupArray []GetUserGroupsUserGroupInput
+
+func (GetUserGroupsUserGroupArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUserGroupsUserGroup)(nil)).Elem()
+}
+
+func (i GetUserGroupsUserGroupArray) ToGetUserGroupsUserGroupArrayOutput() GetUserGroupsUserGroupArrayOutput {
+	return i.ToGetUserGroupsUserGroupArrayOutputWithContext(context.Background())
+}
+
+func (i GetUserGroupsUserGroupArray) ToGetUserGroupsUserGroupArrayOutputWithContext(ctx context.Context) GetUserGroupsUserGroupArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUserGroupsUserGroupArrayOutput)
+}
+
+type GetUserGroupsUserGroupOutput struct{ *pulumi.OutputState }
+
+func (GetUserGroupsUserGroupOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUserGroupsUserGroup)(nil)).Elem()
+}
+
+func (o GetUserGroupsUserGroupOutput) ToGetUserGroupsUserGroupOutput() GetUserGroupsUserGroupOutput {
+	return o
+}
+
+func (o GetUserGroupsUserGroupOutput) ToGetUserGroupsUserGroupOutputWithContext(ctx context.Context) GetUserGroupsUserGroupOutput {
+	return o
+}
+
+// The group description.
+func (o GetUserGroupsUserGroupOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUserGroupsUserGroup) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// The group ID.
+func (o GetUserGroupsUserGroupOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUserGroupsUserGroup) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The group name.
+func (o GetUserGroupsUserGroupOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUserGroupsUserGroup) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// List of roles associated with the group.
+func (o GetUserGroupsUserGroupOutput) Roles() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetUserGroupsUserGroup) []string { return v.Roles }).(pulumi.StringArrayOutput)
+}
+
+// List of users assigned to the group.
+func (o GetUserGroupsUserGroupOutput) Users() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetUserGroupsUserGroup) []string { return v.Users }).(pulumi.StringArrayOutput)
+}
+
+type GetUserGroupsUserGroupArrayOutput struct{ *pulumi.OutputState }
+
+func (GetUserGroupsUserGroupArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUserGroupsUserGroup)(nil)).Elem()
+}
+
+func (o GetUserGroupsUserGroupArrayOutput) ToGetUserGroupsUserGroupArrayOutput() GetUserGroupsUserGroupArrayOutput {
+	return o
+}
+
+func (o GetUserGroupsUserGroupArrayOutput) ToGetUserGroupsUserGroupArrayOutputWithContext(ctx context.Context) GetUserGroupsUserGroupArrayOutput {
+	return o
+}
+
+func (o GetUserGroupsUserGroupArrayOutput) Index(i pulumi.IntInput) GetUserGroupsUserGroupOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetUserGroupsUserGroup {
+		return vs[0].([]GetUserGroupsUserGroup)[vs[1].(int)]
+	}).(GetUserGroupsUserGroupOutput)
+}
+
+type GetUsersUser struct {
+	Customer string `pulumi:"customer"`
+	Email    string `pulumi:"email"`
+	// When the user last logged in to Wavefront.
+	LastSuccessfulLogin int `pulumi:"lastSuccessfulLogin"`
+	// List of permissions granted to a user.
+	Permissions []string `pulumi:"permissions"`
+	// List of User Group Ids the user is a member of.
+	// * `customer`- The customer the user is associated with.
+	UserGroupIds []string `pulumi:"userGroupIds"`
+}
+
+// GetUsersUserInput is an input type that accepts GetUsersUserArgs and GetUsersUserOutput values.
+// You can construct a concrete instance of `GetUsersUserInput` via:
+//
+//	GetUsersUserArgs{...}
+type GetUsersUserInput interface {
+	pulumi.Input
+
+	ToGetUsersUserOutput() GetUsersUserOutput
+	ToGetUsersUserOutputWithContext(context.Context) GetUsersUserOutput
+}
+
+type GetUsersUserArgs struct {
+	Customer pulumi.StringInput `pulumi:"customer"`
+	Email    pulumi.StringInput `pulumi:"email"`
+	// When the user last logged in to Wavefront.
+	LastSuccessfulLogin pulumi.IntInput `pulumi:"lastSuccessfulLogin"`
+	// List of permissions granted to a user.
+	Permissions pulumi.StringArrayInput `pulumi:"permissions"`
+	// List of User Group Ids the user is a member of.
+	// * `customer`- The customer the user is associated with.
+	UserGroupIds pulumi.StringArrayInput `pulumi:"userGroupIds"`
+}
+
+func (GetUsersUserArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUsersUser)(nil)).Elem()
+}
+
+func (i GetUsersUserArgs) ToGetUsersUserOutput() GetUsersUserOutput {
+	return i.ToGetUsersUserOutputWithContext(context.Background())
+}
+
+func (i GetUsersUserArgs) ToGetUsersUserOutputWithContext(ctx context.Context) GetUsersUserOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUsersUserOutput)
+}
+
+// GetUsersUserArrayInput is an input type that accepts GetUsersUserArray and GetUsersUserArrayOutput values.
+// You can construct a concrete instance of `GetUsersUserArrayInput` via:
+//
+//	GetUsersUserArray{ GetUsersUserArgs{...} }
+type GetUsersUserArrayInput interface {
+	pulumi.Input
+
+	ToGetUsersUserArrayOutput() GetUsersUserArrayOutput
+	ToGetUsersUserArrayOutputWithContext(context.Context) GetUsersUserArrayOutput
+}
+
+type GetUsersUserArray []GetUsersUserInput
+
+func (GetUsersUserArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUsersUser)(nil)).Elem()
+}
+
+func (i GetUsersUserArray) ToGetUsersUserArrayOutput() GetUsersUserArrayOutput {
+	return i.ToGetUsersUserArrayOutputWithContext(context.Background())
+}
+
+func (i GetUsersUserArray) ToGetUsersUserArrayOutputWithContext(ctx context.Context) GetUsersUserArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUsersUserArrayOutput)
+}
+
+type GetUsersUserOutput struct{ *pulumi.OutputState }
+
+func (GetUsersUserOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUsersUser)(nil)).Elem()
+}
+
+func (o GetUsersUserOutput) ToGetUsersUserOutput() GetUsersUserOutput {
+	return o
+}
+
+func (o GetUsersUserOutput) ToGetUsersUserOutputWithContext(ctx context.Context) GetUsersUserOutput {
+	return o
+}
+
+func (o GetUsersUserOutput) Customer() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUsersUser) string { return v.Customer }).(pulumi.StringOutput)
+}
+
+func (o GetUsersUserOutput) Email() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUsersUser) string { return v.Email }).(pulumi.StringOutput)
+}
+
+// When the user last logged in to Wavefront.
+func (o GetUsersUserOutput) LastSuccessfulLogin() pulumi.IntOutput {
+	return o.ApplyT(func(v GetUsersUser) int { return v.LastSuccessfulLogin }).(pulumi.IntOutput)
+}
+
+// List of permissions granted to a user.
+func (o GetUsersUserOutput) Permissions() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetUsersUser) []string { return v.Permissions }).(pulumi.StringArrayOutput)
+}
+
+// List of User Group Ids the user is a member of.
+// * `customer`- The customer the user is associated with.
+func (o GetUsersUserOutput) UserGroupIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetUsersUser) []string { return v.UserGroupIds }).(pulumi.StringArrayOutput)
+}
+
+type GetUsersUserArrayOutput struct{ *pulumi.OutputState }
+
+func (GetUsersUserArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUsersUser)(nil)).Elem()
+}
+
+func (o GetUsersUserArrayOutput) ToGetUsersUserArrayOutput() GetUsersUserArrayOutput {
+	return o
+}
+
+func (o GetUsersUserArrayOutput) ToGetUsersUserArrayOutputWithContext(ctx context.Context) GetUsersUserArrayOutput {
+	return o
+}
+
+func (o GetUsersUserArrayOutput) Index(i pulumi.IntInput) GetUsersUserOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetUsersUser {
+		return vs[0].([]GetUsersUser)[vs[1].(int)]
+	}).(GetUsersUserOutput)
+}
+
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*AlertTargetRouteInput)(nil)).Elem(), AlertTargetRouteArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AlertTargetRouteArrayInput)(nil)).Elem(), AlertTargetRouteArray{})
@@ -1555,6 +2184,16 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*DashboardSectionRowChartChartSettingInput)(nil)).Elem(), DashboardSectionRowChartChartSettingArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DashboardSectionRowChartSourceInput)(nil)).Elem(), DashboardSectionRowChartSourceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DashboardSectionRowChartSourceArrayInput)(nil)).Elem(), DashboardSectionRowChartSourceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMetricsPolicyPolicyRuleInput)(nil)).Elem(), GetMetricsPolicyPolicyRuleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMetricsPolicyPolicyRuleArrayInput)(nil)).Elem(), GetMetricsPolicyPolicyRuleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMetricsPolicyPolicyRuleTagInput)(nil)).Elem(), GetMetricsPolicyPolicyRuleTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMetricsPolicyPolicyRuleTagArrayInput)(nil)).Elem(), GetMetricsPolicyPolicyRuleTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRolesRoleInput)(nil)).Elem(), GetRolesRoleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRolesRoleArrayInput)(nil)).Elem(), GetRolesRoleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUserGroupsUserGroupInput)(nil)).Elem(), GetUserGroupsUserGroupArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUserGroupsUserGroupArrayInput)(nil)).Elem(), GetUserGroupsUserGroupArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUsersUserInput)(nil)).Elem(), GetUsersUserArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUsersUserArrayInput)(nil)).Elem(), GetUsersUserArray{})
 	pulumi.RegisterOutputType(AlertTargetRouteOutput{})
 	pulumi.RegisterOutputType(AlertTargetRouteArrayOutput{})
 	pulumi.RegisterOutputType(CloudIntegrationNewRelicMetricFilterOutput{})
@@ -1570,4 +2209,14 @@ func init() {
 	pulumi.RegisterOutputType(DashboardSectionRowChartChartSettingOutput{})
 	pulumi.RegisterOutputType(DashboardSectionRowChartSourceOutput{})
 	pulumi.RegisterOutputType(DashboardSectionRowChartSourceArrayOutput{})
+	pulumi.RegisterOutputType(GetMetricsPolicyPolicyRuleOutput{})
+	pulumi.RegisterOutputType(GetMetricsPolicyPolicyRuleArrayOutput{})
+	pulumi.RegisterOutputType(GetMetricsPolicyPolicyRuleTagOutput{})
+	pulumi.RegisterOutputType(GetMetricsPolicyPolicyRuleTagArrayOutput{})
+	pulumi.RegisterOutputType(GetRolesRoleOutput{})
+	pulumi.RegisterOutputType(GetRolesRoleArrayOutput{})
+	pulumi.RegisterOutputType(GetUserGroupsUserGroupOutput{})
+	pulumi.RegisterOutputType(GetUserGroupsUserGroupArrayOutput{})
+	pulumi.RegisterOutputType(GetUsersUserOutput{})
+	pulumi.RegisterOutputType(GetUsersUserArrayOutput{})
 }

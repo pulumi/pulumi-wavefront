@@ -404,6 +404,68 @@ func (o AlertTargetOutput) ToAlertTargetOutputWithContext(ctx context.Context) A
 	return o
 }
 
+// The value of the `Content-Type` header of the webhook.
+func (o AlertTargetOutput) ContentType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AlertTarget) pulumi.StringPtrOutput { return v.ContentType }).(pulumi.StringPtrOutput)
+}
+
+// A `string->string` map specifying the custom HTTP header key/value pairs that will be
+// sent in the requests with a method of `WEBHOOK`.
+func (o AlertTargetOutput) CustomHeaders() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *AlertTarget) pulumi.StringMapOutput { return v.CustomHeaders }).(pulumi.StringMapOutput)
+}
+
+// Description describing this alert target.
+func (o AlertTargetOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v *AlertTarget) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+}
+
+// The subject title of an email notification target.
+func (o AlertTargetOutput) EmailSubject() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AlertTarget) pulumi.StringPtrOutput { return v.EmailSubject }).(pulumi.StringPtrOutput)
+}
+
+// Determine whether the email alert content is sent as HTML or text.
+func (o AlertTargetOutput) IsHtmlContent() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *AlertTarget) pulumi.BoolPtrOutput { return v.IsHtmlContent }).(pulumi.BoolPtrOutput)
+}
+
+// The notification method used for notification target. One of `WEBHOOK`, `EMAIL`, `PAGERDUTY`.
+func (o AlertTargetOutput) Method() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AlertTarget) pulumi.StringPtrOutput { return v.Method }).(pulumi.StringPtrOutput)
+}
+
+// The name of the alert target as it is displayed in Wavefront.
+func (o AlertTargetOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v *AlertTarget) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
+}
+
+// The end point for the notification Target.  `EMAIL`: email address. `PAGERDUTY`: PagerDuty
+// routing key. `WEBHOOK`: URL endpoint.
+func (o AlertTargetOutput) Recipient() pulumi.StringOutput {
+	return o.ApplyT(func(v *AlertTarget) pulumi.StringOutput { return v.Recipient }).(pulumi.StringOutput)
+}
+
+// List of routing targets that this alert target will notify. See Route
+func (o AlertTargetOutput) Routes() AlertTargetRouteArrayOutput {
+	return o.ApplyT(func(v *AlertTarget) AlertTargetRouteArrayOutput { return v.Routes }).(AlertTargetRouteArrayOutput)
+}
+
+func (o AlertTargetOutput) TargetId() pulumi.StringOutput {
+	return o.ApplyT(func(v *AlertTarget) pulumi.StringOutput { return v.TargetId }).(pulumi.StringOutput)
+}
+
+// A mustache template that will form the body of the POST request, email, and summary of the PagerDuty.
+func (o AlertTargetOutput) Template() pulumi.StringOutput {
+	return o.ApplyT(func(v *AlertTarget) pulumi.StringOutput { return v.Template }).(pulumi.StringOutput)
+}
+
+// A list of occurrences on which this webhook will be fired. Valid values are `ALERT_OPENED`,
+// `ALERT_UPDATED`, `ALERT_RESOLVED`, `ALERT_MAINTENANCE`, `ALERT_SNOOZED`, `ALERT_NO_DATA`, `ALERT_NO_DATA_RESOLVED`, `ALERT_NO_DATA_MAINTENANCE`.
+func (o AlertTargetOutput) Triggers() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *AlertTarget) pulumi.StringArrayOutput { return v.Triggers }).(pulumi.StringArrayOutput)
+}
+
 type AlertTargetArrayOutput struct{ *pulumi.OutputState }
 
 func (AlertTargetArrayOutput) ElementType() reflect.Type {

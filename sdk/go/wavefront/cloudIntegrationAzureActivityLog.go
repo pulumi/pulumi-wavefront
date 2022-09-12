@@ -293,6 +293,51 @@ func (o CloudIntegrationAzureActivityLogOutput) ToCloudIntegrationAzureActivityL
 	return o
 }
 
+// A list of point tag key-values to add to every point ingested using this integration.
+func (o CloudIntegrationAzureActivityLogOutput) AdditionalTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *CloudIntegrationAzureActivityLog) pulumi.StringMapOutput { return v.AdditionalTags }).(pulumi.StringMapOutput)
+}
+
+// A list of Azure services (such as Microsoft.Compute/virtualMachines) from which to pull metrics.
+func (o CloudIntegrationAzureActivityLogOutput) CategoryFilters() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *CloudIntegrationAzureActivityLog) pulumi.StringArrayOutput { return v.CategoryFilters }).(pulumi.StringArrayOutput)
+}
+
+// Client ID for an Azure service account within your project.
+func (o CloudIntegrationAzureActivityLogOutput) ClientId() pulumi.StringOutput {
+	return o.ApplyT(func(v *CloudIntegrationAzureActivityLog) pulumi.StringOutput { return v.ClientId }).(pulumi.StringOutput)
+}
+
+// Client secret for an Azure service account within your project.
+func (o CloudIntegrationAzureActivityLogOutput) ClientSecret() pulumi.StringOutput {
+	return o.ApplyT(func(v *CloudIntegrationAzureActivityLog) pulumi.StringOutput { return v.ClientSecret }).(pulumi.StringOutput)
+}
+
+// Forces this resource to save, even if errors are present.
+func (o CloudIntegrationAzureActivityLogOutput) ForceSave() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *CloudIntegrationAzureActivityLog) pulumi.BoolPtrOutput { return v.ForceSave }).(pulumi.BoolPtrOutput)
+}
+
+// The human-readable name of this integration.
+func (o CloudIntegrationAzureActivityLogOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v *CloudIntegrationAzureActivityLog) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
+}
+
+// A value denoting which cloud service this service integrates with.
+func (o CloudIntegrationAzureActivityLogOutput) Service() pulumi.StringOutput {
+	return o.ApplyT(func(v *CloudIntegrationAzureActivityLog) pulumi.StringOutput { return v.Service }).(pulumi.StringOutput)
+}
+
+// How often, in minutes, to refresh the service.
+func (o CloudIntegrationAzureActivityLogOutput) ServiceRefreshRateInMinutes() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *CloudIntegrationAzureActivityLog) pulumi.IntPtrOutput { return v.ServiceRefreshRateInMinutes }).(pulumi.IntPtrOutput)
+}
+
+// Tenant ID for an Azure service account within your project.
+func (o CloudIntegrationAzureActivityLogOutput) Tenant() pulumi.StringOutput {
+	return o.ApplyT(func(v *CloudIntegrationAzureActivityLog) pulumi.StringOutput { return v.Tenant }).(pulumi.StringOutput)
+}
+
 type CloudIntegrationAzureActivityLogArrayOutput struct{ *pulumi.OutputState }
 
 func (CloudIntegrationAzureActivityLogArrayOutput) ElementType() reflect.Type {

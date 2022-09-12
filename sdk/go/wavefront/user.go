@@ -233,6 +233,27 @@ func (o UserOutput) ToUserOutputWithContext(ctx context.Context) UserOutput {
 	return o
 }
 
+func (o UserOutput) Customer() pulumi.StringOutput {
+	return o.ApplyT(func(v *User) pulumi.StringOutput { return v.Customer }).(pulumi.StringOutput)
+}
+
+// The unique identifier of the user account to create. Must be a valid email address.
+func (o UserOutput) Email() pulumi.StringOutput {
+	return o.ApplyT(func(v *User) pulumi.StringOutput { return v.Email }).(pulumi.StringOutput)
+}
+
+// List of permission to grant to this user.  Valid options are
+// `agentManagement`, `alertsManagement`, `dashboardManagement`, `embeddedCharts`, `eventsManagement`, `externalLinksManagement`,
+// `hostTagManagement`, `metricsManagement`, and `userManagement`.
+func (o UserOutput) Permissions() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *User) pulumi.StringArrayOutput { return v.Permissions }).(pulumi.StringArrayOutput)
+}
+
+// List of user groups to this user.
+func (o UserOutput) UserGroups() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *User) pulumi.StringArrayOutput { return v.UserGroups }).(pulumi.StringArrayOutput)
+}
+
 type UserArrayOutput struct{ *pulumi.OutputState }
 
 func (UserArrayOutput) ElementType() reflect.Type {

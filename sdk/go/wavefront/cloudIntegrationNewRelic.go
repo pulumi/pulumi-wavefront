@@ -282,6 +282,53 @@ func (o CloudIntegrationNewRelicOutput) ToCloudIntegrationNewRelicOutputWithCont
 	return o
 }
 
+// A list of point tag key-values to add to every point ingested using this integration.
+func (o CloudIntegrationNewRelicOutput) AdditionalTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *CloudIntegrationNewRelic) pulumi.StringMapOutput { return v.AdditionalTags }).(pulumi.StringMapOutput)
+}
+
+// New Relic REST API key.
+func (o CloudIntegrationNewRelicOutput) ApiKey() pulumi.StringOutput {
+	return o.ApplyT(func(v *CloudIntegrationNewRelic) pulumi.StringOutput { return v.ApiKey }).(pulumi.StringOutput)
+}
+
+// A regular expression that an application name must match (case-insensitively) in order to collect metrics.
+func (o CloudIntegrationNewRelicOutput) AppFilterRegex() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CloudIntegrationNewRelic) pulumi.StringPtrOutput { return v.AppFilterRegex }).(pulumi.StringPtrOutput)
+}
+
+// Forces this resource to save, even if errors are present.
+func (o CloudIntegrationNewRelicOutput) ForceSave() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *CloudIntegrationNewRelic) pulumi.BoolPtrOutput { return v.ForceSave }).(pulumi.BoolPtrOutput)
+}
+
+// A regular expression that a host name must match (case-insensitively) in order to collect metrics.
+func (o CloudIntegrationNewRelicOutput) HostFilterRegex() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CloudIntegrationNewRelic) pulumi.StringPtrOutput { return v.HostFilterRegex }).(pulumi.StringPtrOutput)
+}
+
+// See Metric Filter.
+func (o CloudIntegrationNewRelicOutput) MetricFilters() CloudIntegrationNewRelicMetricFilterArrayOutput {
+	return o.ApplyT(func(v *CloudIntegrationNewRelic) CloudIntegrationNewRelicMetricFilterArrayOutput {
+		return v.MetricFilters
+	}).(CloudIntegrationNewRelicMetricFilterArrayOutput)
+}
+
+// The human-readable name of this integration.
+func (o CloudIntegrationNewRelicOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v *CloudIntegrationNewRelic) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
+}
+
+// A value denoting which cloud service this service integrates with.
+func (o CloudIntegrationNewRelicOutput) Service() pulumi.StringOutput {
+	return o.ApplyT(func(v *CloudIntegrationNewRelic) pulumi.StringOutput { return v.Service }).(pulumi.StringOutput)
+}
+
+// How often, in minutes, to refresh the service.
+func (o CloudIntegrationNewRelicOutput) ServiceRefreshRateInMinutes() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *CloudIntegrationNewRelic) pulumi.IntPtrOutput { return v.ServiceRefreshRateInMinutes }).(pulumi.IntPtrOutput)
+}
+
 type CloudIntegrationNewRelicArrayOutput struct{ *pulumi.OutputState }
 
 func (CloudIntegrationNewRelicArrayOutput) ElementType() reflect.Type {

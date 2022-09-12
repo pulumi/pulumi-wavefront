@@ -243,6 +243,31 @@ func (o DerivedMetricOutput) ToDerivedMetricOutputWithContext(ctx context.Contex
 	return o
 }
 
+// User-supplied additional explanatory information for the derived metric.
+func (o DerivedMetricOutput) AdditionalInformation() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DerivedMetric) pulumi.StringPtrOutput { return v.AdditionalInformation }).(pulumi.StringPtrOutput)
+}
+
+// How frequently the query generating the derived metric is run.
+func (o DerivedMetricOutput) Minutes() pulumi.IntOutput {
+	return o.ApplyT(func(v *DerivedMetric) pulumi.IntOutput { return v.Minutes }).(pulumi.IntOutput)
+}
+
+// The name of the Derived Metric in Wavefront.
+func (o DerivedMetricOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v *DerivedMetric) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
+}
+
+// A Wavefront query that is evaluated at regular intervals (default is 1 minute).
+func (o DerivedMetricOutput) Query() pulumi.StringOutput {
+	return o.ApplyT(func(v *DerivedMetric) pulumi.StringOutput { return v.Query }).(pulumi.StringOutput)
+}
+
+// A set of tags to assign to this resource.
+func (o DerivedMetricOutput) Tags() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *DerivedMetric) pulumi.StringArrayOutput { return v.Tags }).(pulumi.StringArrayOutput)
+}
+
 type DerivedMetricArrayOutput struct{ *pulumi.OutputState }
 
 func (DerivedMetricArrayOutput) ElementType() reflect.Type {

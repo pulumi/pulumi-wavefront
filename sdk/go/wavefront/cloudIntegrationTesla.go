@@ -266,6 +266,41 @@ func (o CloudIntegrationTeslaOutput) ToCloudIntegrationTeslaOutputWithContext(ct
 	return o
 }
 
+// A list of point tag key-values to add to every point ingested using this integration.
+func (o CloudIntegrationTeslaOutput) AdditionalTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *CloudIntegrationTesla) pulumi.StringMapOutput { return v.AdditionalTags }).(pulumi.StringMapOutput)
+}
+
+// A Tesla account login email address.
+func (o CloudIntegrationTeslaOutput) Email() pulumi.StringOutput {
+	return o.ApplyT(func(v *CloudIntegrationTesla) pulumi.StringOutput { return v.Email }).(pulumi.StringOutput)
+}
+
+// Forces this resource to save, even if errors are present.
+func (o CloudIntegrationTeslaOutput) ForceSave() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *CloudIntegrationTesla) pulumi.BoolPtrOutput { return v.ForceSave }).(pulumi.BoolPtrOutput)
+}
+
+// The human-readable name of this integration.
+func (o CloudIntegrationTeslaOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v *CloudIntegrationTesla) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
+}
+
+// The Tesla account login password.
+func (o CloudIntegrationTeslaOutput) Password() pulumi.StringOutput {
+	return o.ApplyT(func(v *CloudIntegrationTesla) pulumi.StringOutput { return v.Password }).(pulumi.StringOutput)
+}
+
+// A value denoting which cloud service this service integrates with.
+func (o CloudIntegrationTeslaOutput) Service() pulumi.StringOutput {
+	return o.ApplyT(func(v *CloudIntegrationTesla) pulumi.StringOutput { return v.Service }).(pulumi.StringOutput)
+}
+
+// How often, in minutes, to refresh the service.
+func (o CloudIntegrationTeslaOutput) ServiceRefreshRateInMinutes() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *CloudIntegrationTesla) pulumi.IntPtrOutput { return v.ServiceRefreshRateInMinutes }).(pulumi.IntPtrOutput)
+}
+
 type CloudIntegrationTeslaArrayOutput struct{ *pulumi.OutputState }
 
 func (CloudIntegrationTeslaArrayOutput) ElementType() reflect.Type {

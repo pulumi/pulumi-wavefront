@@ -208,6 +208,16 @@ func (o IngestionPolicyOutput) ToIngestionPolicyOutputWithContext(ctx context.Co
 	return o
 }
 
+// The description of the ingestion policy.
+func (o IngestionPolicyOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v *IngestionPolicy) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+}
+
+// The name of the ingestion policy.
+func (o IngestionPolicyOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v *IngestionPolicy) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
+}
+
 type IngestionPolicyArrayOutput struct{ *pulumi.OutputState }
 
 func (IngestionPolicyArrayOutput) ElementType() reflect.Type {

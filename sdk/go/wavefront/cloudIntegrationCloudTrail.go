@@ -318,6 +318,61 @@ func (o CloudIntegrationCloudTrailOutput) ToCloudIntegrationCloudTrailOutputWith
 	return o
 }
 
+// A list of point tag key-values to add to every point ingested using this integration.
+func (o CloudIntegrationCloudTrailOutput) AdditionalTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *CloudIntegrationCloudTrail) pulumi.StringMapOutput { return v.AdditionalTags }).(pulumi.StringMapOutput)
+}
+
+// Name of the S3 bucket where CloudTrail logs are stored.
+func (o CloudIntegrationCloudTrailOutput) BucketName() pulumi.StringOutput {
+	return o.ApplyT(func(v *CloudIntegrationCloudTrail) pulumi.StringOutput { return v.BucketName }).(pulumi.StringOutput)
+}
+
+// The Role ARN that the customer has created in AWS IAM to allow access to Wavefront.
+func (o CloudIntegrationCloudTrailOutput) ExternalId() pulumi.StringOutput {
+	return o.ApplyT(func(v *CloudIntegrationCloudTrail) pulumi.StringOutput { return v.ExternalId }).(pulumi.StringOutput)
+}
+
+// Rule to filter CloudTrail log event.
+func (o CloudIntegrationCloudTrailOutput) FilterRule() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CloudIntegrationCloudTrail) pulumi.StringPtrOutput { return v.FilterRule }).(pulumi.StringPtrOutput)
+}
+
+// Forces this resource to save, even if errors are present.
+func (o CloudIntegrationCloudTrailOutput) ForceSave() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *CloudIntegrationCloudTrail) pulumi.BoolPtrOutput { return v.ForceSave }).(pulumi.BoolPtrOutput)
+}
+
+// The human-readable name of this integration.
+func (o CloudIntegrationCloudTrailOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v *CloudIntegrationCloudTrail) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
+}
+
+// The common prefix, if any, appended to all CloudTrail log files.
+func (o CloudIntegrationCloudTrailOutput) Prefix() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CloudIntegrationCloudTrail) pulumi.StringPtrOutput { return v.Prefix }).(pulumi.StringPtrOutput)
+}
+
+// The AWS region of the S3 bucket where CloudTrail logs are stored.
+func (o CloudIntegrationCloudTrailOutput) Region() pulumi.StringOutput {
+	return o.ApplyT(func(v *CloudIntegrationCloudTrail) pulumi.StringOutput { return v.Region }).(pulumi.StringOutput)
+}
+
+// The external ID corresponding to the Role ARN.
+func (o CloudIntegrationCloudTrailOutput) RoleArn() pulumi.StringOutput {
+	return o.ApplyT(func(v *CloudIntegrationCloudTrail) pulumi.StringOutput { return v.RoleArn }).(pulumi.StringOutput)
+}
+
+// A value denoting which cloud service this service integrates with.
+func (o CloudIntegrationCloudTrailOutput) Service() pulumi.StringOutput {
+	return o.ApplyT(func(v *CloudIntegrationCloudTrail) pulumi.StringOutput { return v.Service }).(pulumi.StringOutput)
+}
+
+// How often, in minutes, to refresh the service.
+func (o CloudIntegrationCloudTrailOutput) ServiceRefreshRateInMinutes() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *CloudIntegrationCloudTrail) pulumi.IntPtrOutput { return v.ServiceRefreshRateInMinutes }).(pulumi.IntPtrOutput)
+}
+
 type CloudIntegrationCloudTrailArrayOutput struct{ *pulumi.OutputState }
 
 func (CloudIntegrationCloudTrailArrayOutput) ElementType() reflect.Type {

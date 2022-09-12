@@ -349,6 +349,62 @@ func (o MaintenanceWindowOutput) ToMaintenanceWindowOutputWithContext(ctx contex
 	return o
 }
 
+// end time in seconds after 1 Jan 1970 GMT.
+func (o MaintenanceWindowOutput) EndTimeInSeconds() pulumi.IntOutput {
+	return o.ApplyT(func(v *MaintenanceWindow) pulumi.IntOutput { return v.EndTimeInSeconds }).(pulumi.IntOutput)
+}
+
+// If `true`, a source/host must be in `relevantHostNames`
+// and have tags matching the specification formed by `relevantHostTags` and `relevantHostTagsAnded` in
+// order for this maintenance window to apply. If `false`, a source/host must either be in `relevantHostNames`
+// or match `relevantHostTags` and `relevantHostTagsAnded`. Default: `false`.
+func (o MaintenanceWindowOutput) HostTagGroupHostNamesGroupAnded() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *MaintenanceWindow) pulumi.BoolPtrOutput { return v.HostTagGroupHostNamesGroupAnded }).(pulumi.BoolPtrOutput)
+}
+
+// The reason for the maintenance window.
+func (o MaintenanceWindowOutput) Reason() pulumi.StringOutput {
+	return o.ApplyT(func(v *MaintenanceWindow) pulumi.StringOutput { return v.Reason }).(pulumi.StringOutput)
+}
+
+// List of alert tags whose matching alerts will be put into maintenance because
+// of this maintenance window. At least one of `relevantCustomerTags`, `relevantHostTags`, or `relevantHostNames`
+// is required.
+func (o MaintenanceWindowOutput) RelevantCustomerTags() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *MaintenanceWindow) pulumi.StringArrayOutput { return v.RelevantCustomerTags }).(pulumi.StringArrayOutput)
+}
+
+// List of source/host names that will be put into maintenance because of this
+// maintenance window. At least one of `relevantCustomerTags`, `relevantHostTags`, or `relevantHostNames`
+// is required.
+func (o MaintenanceWindowOutput) RelevantHostNames() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *MaintenanceWindow) pulumi.StringArrayOutput { return v.RelevantHostNames }).(pulumi.StringArrayOutput)
+}
+
+// List of source/host tags whose matching sources/hosts will be put into maintenance
+// because of this maintenance window. At least one of `relevantCustomerTags`, `relevantHostTags`, or
+// `relevantHostNames` is required.
+func (o MaintenanceWindowOutput) RelevantHostTags() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *MaintenanceWindow) pulumi.StringArrayOutput { return v.RelevantHostTags }).(pulumi.StringArrayOutput)
+}
+
+// Whether to AND source/host tags listed in `relevantHostTags`.
+// If `true`, a source/host must contain all tags in order for the maintenance window to apply. If `false`,
+// the tags are OR'ed, and a source/host must contain one of the tags. Default: `false`.
+func (o MaintenanceWindowOutput) RelevantHostTagsAnded() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *MaintenanceWindow) pulumi.BoolPtrOutput { return v.RelevantHostTagsAnded }).(pulumi.BoolPtrOutput)
+}
+
+// start time in seconds after 1 Jan 1970 GMT.
+func (o MaintenanceWindowOutput) StartTimeInSeconds() pulumi.IntOutput {
+	return o.ApplyT(func(v *MaintenanceWindow) pulumi.IntOutput { return v.StartTimeInSeconds }).(pulumi.IntOutput)
+}
+
+// The title of the maintenance window.
+func (o MaintenanceWindowOutput) Title() pulumi.StringOutput {
+	return o.ApplyT(func(v *MaintenanceWindow) pulumi.StringOutput { return v.Title }).(pulumi.StringOutput)
+}
+
 type MaintenanceWindowArrayOutput struct{ *pulumi.OutputState }
 
 func (MaintenanceWindowArrayOutput) ElementType() reflect.Type {

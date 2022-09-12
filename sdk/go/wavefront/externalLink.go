@@ -277,6 +277,44 @@ func (o ExternalLinkOutput) ToExternalLinkOutputWithContext(ctx context.Context)
 	return o
 }
 
+// Human-readable description for this link.
+func (o ExternalLinkOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v *ExternalLink) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+}
+
+// Whether this is a "Log Integration" subType of external link.
+func (o ExternalLinkOutput) IsLogIntegration() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *ExternalLink) pulumi.BoolPtrOutput { return v.IsLogIntegration }).(pulumi.BoolPtrOutput)
+}
+
+// Controls whether a link is displayed in the context menu of a highlighted series. If present, the metric name of the highlighted series must match this regular expression in order for the link to be displayed.
+func (o ExternalLinkOutput) MetricFilterRegex() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExternalLink) pulumi.StringPtrOutput { return v.MetricFilterRegex }).(pulumi.StringPtrOutput)
+}
+
+// The name of the external link.
+func (o ExternalLinkOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v *ExternalLink) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
+}
+
+// Controls whether a link is displayed in the context menu of a highlighted
+// series. This is a map from string to regular expression. The highlighted series must contain point tags whose
+// keys are present in the keys of this map and whose values match the regular expressions associated with those
+// keys in order for the link to be displayed.
+func (o ExternalLinkOutput) PointTagFilterRegexes() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *ExternalLink) pulumi.StringMapOutput { return v.PointTagFilterRegexes }).(pulumi.StringMapOutput)
+}
+
+// Controls whether a link is displayed in the context menu of a highlighted series. If present, the source name of the highlighted series must match this regular expression in order for the link to be displayed.
+func (o ExternalLinkOutput) SourceFilterRegex() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExternalLink) pulumi.StringPtrOutput { return v.SourceFilterRegex }).(pulumi.StringPtrOutput)
+}
+
+// The mustache template for this link. The template must expand to a full URL, including scheme, origin, etc.
+func (o ExternalLinkOutput) Template() pulumi.StringOutput {
+	return o.ApplyT(func(v *ExternalLink) pulumi.StringOutput { return v.Template }).(pulumi.StringOutput)
+}
+
 type ExternalLinkArrayOutput struct{ *pulumi.OutputState }
 
 func (ExternalLinkArrayOutput) ElementType() reflect.Type {
