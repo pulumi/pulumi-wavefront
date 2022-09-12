@@ -18,7 +18,9 @@ import (
 // Dashboards can be imported by using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import wavefront:index/dashboard:Dashboard dashboard tftestimport
+//
+//	$ pulumi import wavefront:index/dashboard:Dashboard dashboard tftestimport
+//
 // ```
 type Dashboard struct {
 	pulumi.CustomResourceState
@@ -233,7 +235,7 @@ func (i *Dashboard) ToDashboardOutputWithContext(ctx context.Context) DashboardO
 // DashboardArrayInput is an input type that accepts DashboardArray and DashboardArrayOutput values.
 // You can construct a concrete instance of `DashboardArrayInput` via:
 //
-//          DashboardArray{ DashboardArgs{...} }
+//	DashboardArray{ DashboardArgs{...} }
 type DashboardArrayInput interface {
 	pulumi.Input
 
@@ -258,7 +260,7 @@ func (i DashboardArray) ToDashboardArrayOutputWithContext(ctx context.Context) D
 // DashboardMapInput is an input type that accepts DashboardMap and DashboardMapOutput values.
 // You can construct a concrete instance of `DashboardMapInput` via:
 //
-//          DashboardMap{ "key": DashboardArgs{...} }
+//	DashboardMap{ "key": DashboardArgs{...} }
 type DashboardMapInput interface {
 	pulumi.Input
 

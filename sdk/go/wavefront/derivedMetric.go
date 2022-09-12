@@ -20,22 +20,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := wavefront.NewDerivedMetric(ctx, "derived", &wavefront.DerivedMetricArgs{
-// 			Minutes: pulumi.Int(5),
-// 			Query:   pulumi.String("aliasMetric(5, \"some.metric\")"),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := wavefront.NewDerivedMetric(ctx, "derived", &wavefront.DerivedMetricArgs{
+//				Minutes: pulumi.Int(5),
+//				Query:   pulumi.String("aliasMetric(5, \"some.metric\")"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -43,7 +46,9 @@ import (
 // Derived Metrics can be imported by using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import wavefront:index/derivedMetric:DerivedMetric derived_metric 1577102900578
+//
+//	$ pulumi import wavefront:index/derivedMetric:DerivedMetric derived_metric 1577102900578
+//
 // ```
 type DerivedMetric struct {
 	pulumi.CustomResourceState
@@ -177,7 +182,7 @@ func (i *DerivedMetric) ToDerivedMetricOutputWithContext(ctx context.Context) De
 // DerivedMetricArrayInput is an input type that accepts DerivedMetricArray and DerivedMetricArrayOutput values.
 // You can construct a concrete instance of `DerivedMetricArrayInput` via:
 //
-//          DerivedMetricArray{ DerivedMetricArgs{...} }
+//	DerivedMetricArray{ DerivedMetricArgs{...} }
 type DerivedMetricArrayInput interface {
 	pulumi.Input
 
@@ -202,7 +207,7 @@ func (i DerivedMetricArray) ToDerivedMetricArrayOutputWithContext(ctx context.Co
 // DerivedMetricMapInput is an input type that accepts DerivedMetricMap and DerivedMetricMapOutput values.
 // You can construct a concrete instance of `DerivedMetricMapInput` via:
 //
-//          DerivedMetricMap{ "key": DerivedMetricArgs{...} }
+//	DerivedMetricMap{ "key": DerivedMetricArgs{...} }
 type DerivedMetricMapInput interface {
 	pulumi.Input
 

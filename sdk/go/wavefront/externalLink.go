@@ -19,22 +19,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := wavefront.NewExternalLink(ctx, "basic", &wavefront.ExternalLinkArgs{
-// 			Description: pulumi.String("An external link description"),
-// 			Template:    pulumi.String("https://example.com/source={{{source}}}&startTime={{startEpochMillis}}"),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := wavefront.NewExternalLink(ctx, "basic", &wavefront.ExternalLinkArgs{
+//				Description: pulumi.String("An external link description"),
+//				Template:    pulumi.String("https://example.com/source={{{source}}}&startTime={{startEpochMillis}}"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -42,7 +45,9 @@ import (
 // Maintenance windows can be imported by using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import wavefront:index/externalLink:ExternalLink basic fVj6fz6zYC4aBkID
+//
+//	$ pulumi import wavefront:index/externalLink:ExternalLink basic fVj6fz6zYC4aBkID
+//
 // ```
 type ExternalLink struct {
 	pulumi.CustomResourceState
@@ -211,7 +216,7 @@ func (i *ExternalLink) ToExternalLinkOutputWithContext(ctx context.Context) Exte
 // ExternalLinkArrayInput is an input type that accepts ExternalLinkArray and ExternalLinkArrayOutput values.
 // You can construct a concrete instance of `ExternalLinkArrayInput` via:
 //
-//          ExternalLinkArray{ ExternalLinkArgs{...} }
+//	ExternalLinkArray{ ExternalLinkArgs{...} }
 type ExternalLinkArrayInput interface {
 	pulumi.Input
 
@@ -236,7 +241,7 @@ func (i ExternalLinkArray) ToExternalLinkArrayOutputWithContext(ctx context.Cont
 // ExternalLinkMapInput is an input type that accepts ExternalLinkMap and ExternalLinkMapOutput values.
 // You can construct a concrete instance of `ExternalLinkMapInput` via:
 //
-//          ExternalLinkMap{ "key": ExternalLinkArgs{...} }
+//	ExternalLinkMap{ "key": ExternalLinkArgs{...} }
 type ExternalLinkMapInput interface {
 	pulumi.Input
 

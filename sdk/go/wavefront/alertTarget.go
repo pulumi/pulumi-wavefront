@@ -19,32 +19,35 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := wavefront.NewAlertTarget(ctx, "testTarget", &wavefront.AlertTargetArgs{
-// 			ContentType: pulumi.String("application/json"),
-// 			CustomHeaders: pulumi.StringMap{
-// 				"Testing": pulumi.String("true"),
-// 			},
-// 			Description: pulumi.String("Test target"),
-// 			Method:      pulumi.String("WEBHOOK"),
-// 			Recipient:   pulumi.String("https://hooks.slack.com/services/test/me"),
-// 			Template:    pulumi.String("{}"),
-// 			Triggers: pulumi.StringArray{
-// 				pulumi.String("ALERT_OPENED"),
-// 				pulumi.String("ALERT_RESOLVED"),
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := wavefront.NewAlertTarget(ctx, "testTarget", &wavefront.AlertTargetArgs{
+//				ContentType: pulumi.String("application/json"),
+//				CustomHeaders: pulumi.StringMap{
+//					"Testing": pulumi.String("true"),
+//				},
+//				Description: pulumi.String("Test target"),
+//				Method:      pulumi.String("WEBHOOK"),
+//				Recipient:   pulumi.String("https://hooks.slack.com/services/test/me"),
+//				Template:    pulumi.String("{}"),
+//				Triggers: pulumi.StringArray{
+//					pulumi.String("ALERT_OPENED"),
+//					pulumi.String("ALERT_RESOLVED"),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 // ## Attributes Reference
 //
@@ -54,11 +57,11 @@ import (
 //
 // The `route` mapping supports the following:
 //
-// * `method` - (Required)  The notification method used for notification target. One of `WEBHOOK`, `EMAIL`, `PAGERDUTY`.
-// * `target` - (Required) The endpoint for the alert route. `EMAIL`: email address. `PAGERDUTY`: PagerDuty routing
-//   key. `WEBHOOK`: URL endpoint.
-// * `filter` - (Required) String that filters the route. Space delimited.  Currently only allows a single key value pair.
-//   (e.g. `env prod`)
+//   - `method` - (Required)  The notification method used for notification target. One of `WEBHOOK`, `EMAIL`, `PAGERDUTY`.
+//   - `target` - (Required) The endpoint for the alert route. `EMAIL`: email address. `PAGERDUTY`: PagerDuty routing
+//     key. `WEBHOOK`: URL endpoint.
+//   - `filter` - (Required) String that filters the route. Space delimited.  Currently only allows a single key value pair.
+//     (e.g. `env prod`)
 //
 // ### Example
 //
@@ -66,50 +69,53 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := wavefront.NewAlertTarget(ctx, "testTarget", &wavefront.AlertTargetArgs{
-// 			ContentType: pulumi.String("application/json"),
-// 			CustomHeaders: pulumi.StringMap{
-// 				"Testing": pulumi.String("true"),
-// 			},
-// 			Description: pulumi.String("Test target"),
-// 			Method:      pulumi.String("WEBHOOK"),
-// 			Recipient:   pulumi.String("https://hooks.slack.com/services/test/me"),
-// 			Routes: AlertTargetRouteArray{
-// 				&AlertTargetRouteArgs{
-// 					Filter: pulumi.StringMap{
-// 						"key":   pulumi.String("env"),
-// 						"value": pulumi.String("prod"),
-// 					},
-// 					Method: pulumi.String("WEBHOOK"),
-// 					Target: pulumi.String("https://hooks.slack.com/services/test/me/prod"),
-// 				},
-// 				&AlertTargetRouteArgs{
-// 					Filter: pulumi.StringMap{
-// 						"key":   pulumi.String("env"),
-// 						"value": pulumi.String("dev"),
-// 					},
-// 					Method: pulumi.String("WEBHOOK"),
-// 					Target: pulumi.String("https://hooks.slack.com/services/test/me/dev"),
-// 				},
-// 			},
-// 			Template: pulumi.String("{}"),
-// 			Triggers: pulumi.StringArray{
-// 				pulumi.String("ALERT_OPENED"),
-// 				pulumi.String("ALERT_RESOLVED"),
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := wavefront.NewAlertTarget(ctx, "testTarget", &wavefront.AlertTargetArgs{
+//				ContentType: pulumi.String("application/json"),
+//				CustomHeaders: pulumi.StringMap{
+//					"Testing": pulumi.String("true"),
+//				},
+//				Description: pulumi.String("Test target"),
+//				Method:      pulumi.String("WEBHOOK"),
+//				Recipient:   pulumi.String("https://hooks.slack.com/services/test/me"),
+//				Routes: AlertTargetRouteArray{
+//					&AlertTargetRouteArgs{
+//						Filter: pulumi.StringMap{
+//							"key":   pulumi.String("env"),
+//							"value": pulumi.String("prod"),
+//						},
+//						Method: pulumi.String("WEBHOOK"),
+//						Target: pulumi.String("https://hooks.slack.com/services/test/me/prod"),
+//					},
+//					&AlertTargetRouteArgs{
+//						Filter: pulumi.StringMap{
+//							"key":   pulumi.String("env"),
+//							"value": pulumi.String("dev"),
+//						},
+//						Method: pulumi.String("WEBHOOK"),
+//						Target: pulumi.String("https://hooks.slack.com/services/test/me/dev"),
+//					},
+//				},
+//				Template: pulumi.String("{}"),
+//				Triggers: pulumi.StringArray{
+//					pulumi.String("ALERT_OPENED"),
+//					pulumi.String("ALERT_RESOLVED"),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -117,7 +123,9 @@ import (
 // Alert Targets can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import wavefront:index/alertTarget:AlertTarget alert_target abcdEFGhijKLMNO
+//
+//	$ pulumi import wavefront:index/alertTarget:AlertTarget alert_target abcdEFGhijKLMNO
+//
 // ```
 type AlertTarget struct {
 	pulumi.CustomResourceState
@@ -335,7 +343,7 @@ func (i *AlertTarget) ToAlertTargetOutputWithContext(ctx context.Context) AlertT
 // AlertTargetArrayInput is an input type that accepts AlertTargetArray and AlertTargetArrayOutput values.
 // You can construct a concrete instance of `AlertTargetArrayInput` via:
 //
-//          AlertTargetArray{ AlertTargetArgs{...} }
+//	AlertTargetArray{ AlertTargetArgs{...} }
 type AlertTargetArrayInput interface {
 	pulumi.Input
 
@@ -360,7 +368,7 @@ func (i AlertTargetArray) ToAlertTargetArrayOutputWithContext(ctx context.Contex
 // AlertTargetMapInput is an input type that accepts AlertTargetMap and AlertTargetMapOutput values.
 // You can construct a concrete instance of `AlertTargetMapInput` via:
 //
-//          AlertTargetMap{ "key": AlertTargetArgs{...} }
+//	AlertTargetMap{ "key": AlertTargetArgs{...} }
 type AlertTargetMapInput interface {
 	pulumi.Input
 

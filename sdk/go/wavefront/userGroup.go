@@ -19,21 +19,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := wavefront.NewUserGroup(ctx, "basic", &wavefront.UserGroupArgs{
-// 			Description: pulumi.String("Basic User Group for Unit Tests"),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := wavefront.NewUserGroup(ctx, "basic", &wavefront.UserGroupArgs{
+//				Description: pulumi.String("Basic User Group for Unit Tests"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -41,7 +44,9 @@ import (
 // User Groups can be imported by using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import wavefront:index/userGroup:UserGroup some_group a411c16b-3cf7-4f03-bf11-8ca05aab898d
+//
+//	$ pulumi import wavefront:index/userGroup:UserGroup some_group a411c16b-3cf7-4f03-bf11-8ca05aab898d
+//
 // ```
 type UserGroup struct {
 	pulumi.CustomResourceState
@@ -142,7 +147,7 @@ func (i *UserGroup) ToUserGroupOutputWithContext(ctx context.Context) UserGroupO
 // UserGroupArrayInput is an input type that accepts UserGroupArray and UserGroupArrayOutput values.
 // You can construct a concrete instance of `UserGroupArrayInput` via:
 //
-//          UserGroupArray{ UserGroupArgs{...} }
+//	UserGroupArray{ UserGroupArgs{...} }
 type UserGroupArrayInput interface {
 	pulumi.Input
 
@@ -167,7 +172,7 @@ func (i UserGroupArray) ToUserGroupArrayOutputWithContext(ctx context.Context) U
 // UserGroupMapInput is an input type that accepts UserGroupMap and UserGroupMapOutput values.
 // You can construct a concrete instance of `UserGroupMapInput` via:
 //
-//          UserGroupMap{ "key": UserGroupArgs{...} }
+//	UserGroupMap{ "key": UserGroupArgs{...} }
 type UserGroupMapInput interface {
 	pulumi.Input
 

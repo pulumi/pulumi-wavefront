@@ -19,23 +19,26 @@ import (
 // package main
 //
 // import (
-// 	"fmt"
 //
-// 	"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//	"fmt"
+//
+//	"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := wavefront.NewDashboardJson(ctx, "testDashboardJson", &wavefront.DashboardJsonArgs{
-// 			DashboardJson: pulumi.String(fmt.Sprintf("%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v", "{\n", "  \"name\": \"Terraform Test Dashboard Json\",\n", "  \"description\": \"a\",\n", "  \"eventFilterType\": \"BYCHART\",\n", "  \"eventQuery\": \"\",\n", "  \"defaultTimeWindow\": \"\",\n", "  \"url\": \"tftestimport\",\n", "  \"displayDescription\": false,\n", "  \"displaySectionTableOfContents\": true,\n", "  \"displayQueryParameters\": false,\n", "  \"sections\": [\n", "    {\n", "      \"name\": \"section 1\",\n", "      \"rows\": [\n", "        {\n", "          \"charts\": [\n", "            {\n", "              \"name\": \"chart 1\",\n", "              \"sources\": [\n", "                {\n", "                  \"name\": \"source 1\",\n", "                  \"query\": \"ts()\",\n", "                  \"scatterPlotSource\": \"Y\",\n", "                  \"querybuilderEnabled\": false,\n", "                  \"sourceDescription\": \"\"\n", "                }\n", "              ],\n", "              \"units\": \"someunit\",\n", "              \"base\": 0,\n", "              \"noDefaultEvents\": false,\n", "              \"interpolatePoints\": false,\n", "              \"includeObsoleteMetrics\": false,\n", "              \"description\": \"This is chart 1, showing something\",\n", "              \"chartSettings\": {\n", "                \"type\": \"markdown-widget\",\n", "                \"max\": 100,\n", "                \"expectedDataSpacing\": 120,\n", "                \"windowing\": \"full\",\n", "                \"windowSize\": 10,\n", "                \"autoColumnTags\": false,\n", "                \"columnTags\": \"deprecated\",\n", "                \"tagMode\": \"all\",\n", "                \"numTags\": 2,\n", "                \"customTags\": [\n", "                  \"tag1\",\n", "                  \"tag2\"\n", "                ],\n", "                \"groupBySource\": true,\n", "                \"y1Max\": 100,\n", "                \"y1Units\": \"units\",\n", "                \"y0ScaleSIBy1024\": true,\n", "                \"y1ScaleSIBy1024\": true,\n", "                \"y0UnitAutoscaling\": true,\n", "                \"y1UnitAutoscaling\": true,\n", "                \"fixedLegendEnabled\": true,\n", "                \"fixedLegendUseRawStats\": true,\n", "                \"fixedLegendPosition\": \"RIGHT\",\n", "                \"fixedLegendDisplayStats\": [\n", "                  \"stat1\",\n", "                  \"stat2\"\n", "                ],\n", "                \"fixedLegendFilterSort\": \"TOP\",\n", "                \"fixedLegendFilterLimit\": 1,\n", "                \"fixedLegendFilterField\": \"CURRENT\",\n", "                \"plainMarkdownContent\": \"markdown content\"\n", "              },\n", "              \"summarization\": \"MEAN\"\n", "            }\n", "          ],\n", "          \"heightFactor\": 50\n", "        }\n", "      ]\n", "    }\n", "  ],\n", "  \"parameterDetails\": {\n", "    \"param\": {\n", "      \"hideFromView\": false,\n", "      \"description\": null,\n", "      \"allowAll\": null,\n", "      \"tagKey\": null,\n", "      \"queryValue\": null,\n", "      \"dynamicFieldType\": null,\n", "      \"reverseDynSort\": null,\n", "      \"parameterType\": \"SIMPLE\",\n", "      \"label\": \"test\",\n", "      \"defaultValue\": \"Label\",\n", "      \"valuesToReadableStrings\": {\n", "        \"Label\": \"test\"\n", "      },\n", "      \"selectedLabel\": \"Label\",\n", "      \"value\": \"test\"\n", "    }\n", "  },\n", "  \"tags\" :{\n", "    \"customerTags\":  [\"terraform\"]\n", "  }\n", "}\n", "\n")),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := wavefront.NewDashboardJson(ctx, "testDashboardJson", &wavefront.DashboardJsonArgs{
+//				DashboardJson: pulumi.String(fmt.Sprintf("%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v%v", "{\n", "  \"name\": \"Terraform Test Dashboard Json\",\n", "  \"description\": \"a\",\n", "  \"eventFilterType\": \"BYCHART\",\n", "  \"eventQuery\": \"\",\n", "  \"defaultTimeWindow\": \"\",\n", "  \"url\": \"tftestimport\",\n", "  \"displayDescription\": false,\n", "  \"displaySectionTableOfContents\": true,\n", "  \"displayQueryParameters\": false,\n", "  \"sections\": [\n", "    {\n", "      \"name\": \"section 1\",\n", "      \"rows\": [\n", "        {\n", "          \"charts\": [\n", "            {\n", "              \"name\": \"chart 1\",\n", "              \"sources\": [\n", "                {\n", "                  \"name\": \"source 1\",\n", "                  \"query\": \"ts()\",\n", "                  \"scatterPlotSource\": \"Y\",\n", "                  \"querybuilderEnabled\": false,\n", "                  \"sourceDescription\": \"\"\n", "                }\n", "              ],\n", "              \"units\": \"someunit\",\n", "              \"base\": 0,\n", "              \"noDefaultEvents\": false,\n", "              \"interpolatePoints\": false,\n", "              \"includeObsoleteMetrics\": false,\n", "              \"description\": \"This is chart 1, showing something\",\n", "              \"chartSettings\": {\n", "                \"type\": \"markdown-widget\",\n", "                \"max\": 100,\n", "                \"expectedDataSpacing\": 120,\n", "                \"windowing\": \"full\",\n", "                \"windowSize\": 10,\n", "                \"autoColumnTags\": false,\n", "                \"columnTags\": \"deprecated\",\n", "                \"tagMode\": \"all\",\n", "                \"numTags\": 2,\n", "                \"customTags\": [\n", "                  \"tag1\",\n", "                  \"tag2\"\n", "                ],\n", "                \"groupBySource\": true,\n", "                \"y1Max\": 100,\n", "                \"y1Units\": \"units\",\n", "                \"y0ScaleSIBy1024\": true,\n", "                \"y1ScaleSIBy1024\": true,\n", "                \"y0UnitAutoscaling\": true,\n", "                \"y1UnitAutoscaling\": true,\n", "                \"fixedLegendEnabled\": true,\n", "                \"fixedLegendUseRawStats\": true,\n", "                \"fixedLegendPosition\": \"RIGHT\",\n", "                \"fixedLegendDisplayStats\": [\n", "                  \"stat1\",\n", "                  \"stat2\"\n", "                ],\n", "                \"fixedLegendFilterSort\": \"TOP\",\n", "                \"fixedLegendFilterLimit\": 1,\n", "                \"fixedLegendFilterField\": \"CURRENT\",\n", "                \"plainMarkdownContent\": \"markdown content\"\n", "              },\n", "              \"summarization\": \"MEAN\"\n", "            }\n", "          ],\n", "          \"heightFactor\": 50\n", "        }\n", "      ]\n", "    }\n", "  ],\n", "  \"parameterDetails\": {\n", "    \"param\": {\n", "      \"hideFromView\": false,\n", "      \"description\": null,\n", "      \"allowAll\": null,\n", "      \"tagKey\": null,\n", "      \"queryValue\": null,\n", "      \"dynamicFieldType\": null,\n", "      \"reverseDynSort\": null,\n", "      \"parameterType\": \"SIMPLE\",\n", "      \"label\": \"test\",\n", "      \"defaultValue\": \"Label\",\n", "      \"valuesToReadableStrings\": {\n", "        \"Label\": \"test\"\n", "      },\n", "      \"selectedLabel\": \"Label\",\n", "      \"value\": \"test\"\n", "    }\n", "  },\n", "  \"tags\" :{\n", "    \"customerTags\":  [\"terraform\"]\n", "  }\n", "}\n", "\n")),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -43,7 +46,9 @@ import (
 // Dashboard JSON can be imported by using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import wavefront:index/dashboardJson:DashboardJson dashboard_json tftestimport
+//
+//	$ pulumi import wavefront:index/dashboardJson:DashboardJson dashboard_json tftestimport
+//
 // ```
 type DashboardJson struct {
 	pulumi.CustomResourceState
@@ -139,7 +144,7 @@ func (i *DashboardJson) ToDashboardJsonOutputWithContext(ctx context.Context) Da
 // DashboardJsonArrayInput is an input type that accepts DashboardJsonArray and DashboardJsonArrayOutput values.
 // You can construct a concrete instance of `DashboardJsonArrayInput` via:
 //
-//          DashboardJsonArray{ DashboardJsonArgs{...} }
+//	DashboardJsonArray{ DashboardJsonArgs{...} }
 type DashboardJsonArrayInput interface {
 	pulumi.Input
 
@@ -164,7 +169,7 @@ func (i DashboardJsonArray) ToDashboardJsonArrayOutputWithContext(ctx context.Co
 // DashboardJsonMapInput is an input type that accepts DashboardJsonMap and DashboardJsonMapOutput values.
 // You can construct a concrete instance of `DashboardJsonMapInput` via:
 //
-//          DashboardJsonMap{ "key": DashboardJsonArgs{...} }
+//	DashboardJsonMap{ "key": DashboardJsonArgs{...} }
 type DashboardJsonMapInput interface {
 	pulumi.Input
 

@@ -20,23 +20,26 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := wavefront.NewCloudIntegrationAppDynamics(ctx, "appDynamics", &wavefront.CloudIntegrationAppDynamicsArgs{
-// 			ControllerName:    pulumi.String("exampleController"),
-// 			EncryptedPassword: pulumi.String("encryptedPassword"),
-// 			UserName:          pulumi.String("example"),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := wavefront.NewCloudIntegrationAppDynamics(ctx, "appDynamics", &wavefront.CloudIntegrationAppDynamicsArgs{
+//				ControllerName:    pulumi.String("exampleController"),
+//				EncryptedPassword: pulumi.String("encryptedPassword"),
+//				UserName:          pulumi.String("example"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -44,7 +47,9 @@ import (
 // AppDynamic Cloud Integrations can be imported by using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import wavefront:index/cloudIntegrationAppDynamics:CloudIntegrationAppDynamics app_dynamics a411c16b-3cf7-4f03-bf11-8ca05aab898d
+//
+//	$ pulumi import wavefront:index/cloudIntegrationAppDynamics:CloudIntegrationAppDynamics app_dynamics a411c16b-3cf7-4f03-bf11-8ca05aab898d
+//
 // ```
 type CloudIntegrationAppDynamics struct {
 	pulumi.CustomResourceState
@@ -314,7 +319,7 @@ func (i *CloudIntegrationAppDynamics) ToCloudIntegrationAppDynamicsOutputWithCon
 // CloudIntegrationAppDynamicsArrayInput is an input type that accepts CloudIntegrationAppDynamicsArray and CloudIntegrationAppDynamicsArrayOutput values.
 // You can construct a concrete instance of `CloudIntegrationAppDynamicsArrayInput` via:
 //
-//          CloudIntegrationAppDynamicsArray{ CloudIntegrationAppDynamicsArgs{...} }
+//	CloudIntegrationAppDynamicsArray{ CloudIntegrationAppDynamicsArgs{...} }
 type CloudIntegrationAppDynamicsArrayInput interface {
 	pulumi.Input
 
@@ -339,7 +344,7 @@ func (i CloudIntegrationAppDynamicsArray) ToCloudIntegrationAppDynamicsArrayOutp
 // CloudIntegrationAppDynamicsMapInput is an input type that accepts CloudIntegrationAppDynamicsMap and CloudIntegrationAppDynamicsMapOutput values.
 // You can construct a concrete instance of `CloudIntegrationAppDynamicsMapInput` via:
 //
-//          CloudIntegrationAppDynamicsMap{ "key": CloudIntegrationAppDynamicsArgs{...} }
+//	CloudIntegrationAppDynamicsMap{ "key": CloudIntegrationAppDynamicsArgs{...} }
 type CloudIntegrationAppDynamicsMapInput interface {
 	pulumi.Input
 

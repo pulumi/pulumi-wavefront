@@ -19,22 +19,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := wavefront.NewServiceAccount(ctx, "basic", &wavefront.ServiceAccountArgs{
-// 			Active:     pulumi.Bool(true),
-// 			Identifier: pulumi.String("sa::tftesting"),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := wavefront.NewServiceAccount(ctx, "basic", &wavefront.ServiceAccountArgs{
+//				Active:     pulumi.Bool(true),
+//				Identifier: pulumi.String("sa::tftesting"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -42,7 +45,9 @@ import (
 // Service accounts can be imported by using `identifier`, e.g.
 //
 // ```sh
-//  $ pulumi import wavefront:index/serviceAccount:ServiceAccount basic sa::tftesting
+//
+//	$ pulumi import wavefront:index/serviceAccount:ServiceAccount basic sa::tftesting
+//
 // ```
 type ServiceAccount struct {
 	pulumi.CustomResourceState
@@ -193,7 +198,7 @@ func (i *ServiceAccount) ToServiceAccountOutputWithContext(ctx context.Context) 
 // ServiceAccountArrayInput is an input type that accepts ServiceAccountArray and ServiceAccountArrayOutput values.
 // You can construct a concrete instance of `ServiceAccountArrayInput` via:
 //
-//          ServiceAccountArray{ ServiceAccountArgs{...} }
+//	ServiceAccountArray{ ServiceAccountArgs{...} }
 type ServiceAccountArrayInput interface {
 	pulumi.Input
 
@@ -218,7 +223,7 @@ func (i ServiceAccountArray) ToServiceAccountArrayOutputWithContext(ctx context.
 // ServiceAccountMapInput is an input type that accepts ServiceAccountMap and ServiceAccountMapOutput values.
 // You can construct a concrete instance of `ServiceAccountMapInput` via:
 //
-//          ServiceAccountMap{ "key": ServiceAccountArgs{...} }
+//	ServiceAccountMap{ "key": ServiceAccountArgs{...} }
 type ServiceAccountMapInput interface {
 	pulumi.Input
 

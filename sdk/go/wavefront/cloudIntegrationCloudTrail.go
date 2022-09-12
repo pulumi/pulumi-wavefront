@@ -20,28 +20,31 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		extId, err := wavefront.NewCloudIntegrationAwsExternalId(ctx, "extId", nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		_, err = wavefront.NewCloudIntegrationCloudTrail(ctx, "cloudtrail", &wavefront.CloudIntegrationCloudTrailArgs{
-// 			RoleArn:    pulumi.String("arn:aws::1234567:role/example-arn"),
-// 			ExternalId: extId.ID(),
-// 			Region:     pulumi.String("us-west-2"),
-// 			BucketName: pulumi.String("example-s3-bucket"),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			extId, err := wavefront.NewCloudIntegrationAwsExternalId(ctx, "extId", nil)
+//			if err != nil {
+//				return err
+//			}
+//			_, err = wavefront.NewCloudIntegrationCloudTrail(ctx, "cloudtrail", &wavefront.CloudIntegrationCloudTrailArgs{
+//				RoleArn:    pulumi.String("arn:aws::1234567:role/example-arn"),
+//				ExternalId: extId.ID(),
+//				Region:     pulumi.String("us-west-2"),
+//				BucketName: pulumi.String("example-s3-bucket"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -49,7 +52,9 @@ import (
 // CloudTrail Cloud Integrations can be imported by using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import wavefront:index/cloudIntegrationCloudTrail:CloudIntegrationCloudTrail cloudtrail a411c16b-3cf7-4f03-bf11-8ca05aab898d
+//
+//	$ pulumi import wavefront:index/cloudIntegrationCloudTrail:CloudIntegrationCloudTrail cloudtrail a411c16b-3cf7-4f03-bf11-8ca05aab898d
+//
 // ```
 type CloudIntegrationCloudTrail struct {
 	pulumi.CustomResourceState
@@ -252,7 +257,7 @@ func (i *CloudIntegrationCloudTrail) ToCloudIntegrationCloudTrailOutputWithConte
 // CloudIntegrationCloudTrailArrayInput is an input type that accepts CloudIntegrationCloudTrailArray and CloudIntegrationCloudTrailArrayOutput values.
 // You can construct a concrete instance of `CloudIntegrationCloudTrailArrayInput` via:
 //
-//          CloudIntegrationCloudTrailArray{ CloudIntegrationCloudTrailArgs{...} }
+//	CloudIntegrationCloudTrailArray{ CloudIntegrationCloudTrailArgs{...} }
 type CloudIntegrationCloudTrailArrayInput interface {
 	pulumi.Input
 
@@ -277,7 +282,7 @@ func (i CloudIntegrationCloudTrailArray) ToCloudIntegrationCloudTrailArrayOutput
 // CloudIntegrationCloudTrailMapInput is an input type that accepts CloudIntegrationCloudTrailMap and CloudIntegrationCloudTrailMapOutput values.
 // You can construct a concrete instance of `CloudIntegrationCloudTrailMapInput` via:
 //
-//          CloudIntegrationCloudTrailMap{ "key": CloudIntegrationCloudTrailArgs{...} }
+//	CloudIntegrationCloudTrailMap{ "key": CloudIntegrationCloudTrailArgs{...} }
 type CloudIntegrationCloudTrailMapInput interface {
 	pulumi.Input
 

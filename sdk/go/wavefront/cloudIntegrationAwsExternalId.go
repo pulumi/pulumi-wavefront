@@ -18,19 +18,22 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := wavefront.NewCloudIntegrationAwsExternalId(ctx, "externalId", nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := wavefront.NewCloudIntegrationAwsExternalId(ctx, "externalId", nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -38,7 +41,9 @@ import (
 // External IDs can be imported by using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import wavefront:index/cloudIntegrationAwsExternalId:CloudIntegrationAwsExternalId external_id uGJdkH3k
+//
+//	$ pulumi import wavefront:index/cloudIntegrationAwsExternalId:CloudIntegrationAwsExternalId external_id uGJdkH3k
+//
 // ```
 type CloudIntegrationAwsExternalId struct {
 	pulumi.CustomResourceState
@@ -115,7 +120,7 @@ func (i *CloudIntegrationAwsExternalId) ToCloudIntegrationAwsExternalIdOutputWit
 // CloudIntegrationAwsExternalIdArrayInput is an input type that accepts CloudIntegrationAwsExternalIdArray and CloudIntegrationAwsExternalIdArrayOutput values.
 // You can construct a concrete instance of `CloudIntegrationAwsExternalIdArrayInput` via:
 //
-//          CloudIntegrationAwsExternalIdArray{ CloudIntegrationAwsExternalIdArgs{...} }
+//	CloudIntegrationAwsExternalIdArray{ CloudIntegrationAwsExternalIdArgs{...} }
 type CloudIntegrationAwsExternalIdArrayInput interface {
 	pulumi.Input
 
@@ -140,7 +145,7 @@ func (i CloudIntegrationAwsExternalIdArray) ToCloudIntegrationAwsExternalIdArray
 // CloudIntegrationAwsExternalIdMapInput is an input type that accepts CloudIntegrationAwsExternalIdMap and CloudIntegrationAwsExternalIdMapOutput values.
 // You can construct a concrete instance of `CloudIntegrationAwsExternalIdMapInput` via:
 //
-//          CloudIntegrationAwsExternalIdMap{ "key": CloudIntegrationAwsExternalIdArgs{...} }
+//	CloudIntegrationAwsExternalIdMap{ "key": CloudIntegrationAwsExternalIdArgs{...} }
 type CloudIntegrationAwsExternalIdMapInput interface {
 	pulumi.Input
 

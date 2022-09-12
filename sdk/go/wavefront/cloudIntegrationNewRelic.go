@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := wavefront.NewCloudIntegrationNewRelic(ctx, "newrelic", &wavefront.CloudIntegrationNewRelicArgs{
-// 			ApiKey: pulumi.String("example-api-key"),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := wavefront.NewCloudIntegrationNewRelic(ctx, "newrelic", &wavefront.CloudIntegrationNewRelicArgs{
+//				ApiKey: pulumi.String("example-api-key"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -42,7 +45,9 @@ import (
 // NewRelic Integrations can be imported by using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import wavefront:index/cloudIntegrationNewRelic:CloudIntegrationNewRelic newrelic a411c16b-3cf7-4f03-bf11-8ca05aab898d
+//
+//	$ pulumi import wavefront:index/cloudIntegrationNewRelic:CloudIntegrationNewRelic newrelic a411c16b-3cf7-4f03-bf11-8ca05aab898d
+//
 // ```
 type CloudIntegrationNewRelic struct {
 	pulumi.CustomResourceState
@@ -216,7 +221,7 @@ func (i *CloudIntegrationNewRelic) ToCloudIntegrationNewRelicOutputWithContext(c
 // CloudIntegrationNewRelicArrayInput is an input type that accepts CloudIntegrationNewRelicArray and CloudIntegrationNewRelicArrayOutput values.
 // You can construct a concrete instance of `CloudIntegrationNewRelicArrayInput` via:
 //
-//          CloudIntegrationNewRelicArray{ CloudIntegrationNewRelicArgs{...} }
+//	CloudIntegrationNewRelicArray{ CloudIntegrationNewRelicArgs{...} }
 type CloudIntegrationNewRelicArrayInput interface {
 	pulumi.Input
 
@@ -241,7 +246,7 @@ func (i CloudIntegrationNewRelicArray) ToCloudIntegrationNewRelicArrayOutputWith
 // CloudIntegrationNewRelicMapInput is an input type that accepts CloudIntegrationNewRelicMap and CloudIntegrationNewRelicMapOutput values.
 // You can construct a concrete instance of `CloudIntegrationNewRelicMapInput` via:
 //
-//          CloudIntegrationNewRelicMap{ "key": CloudIntegrationNewRelicArgs{...} }
+//	CloudIntegrationNewRelicMap{ "key": CloudIntegrationNewRelicArgs{...} }
 type CloudIntegrationNewRelicMapInput interface {
 	pulumi.Input
 

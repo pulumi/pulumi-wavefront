@@ -19,21 +19,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := wavefront.NewIngestionPolicy(ctx, "basic", &wavefront.IngestionPolicyArgs{
-// 			Description: pulumi.String("An ingestion policy for testing"),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := wavefront.NewIngestionPolicy(ctx, "basic", &wavefront.IngestionPolicyArgs{
+//				Description: pulumi.String("An ingestion policy for testing"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -41,7 +44,9 @@ import (
 // ingestion policies can be imported by using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import wavefront:index/ingestionPolicy:IngestionPolicy basic test_ingestion-1611946841064
+//
+//	$ pulumi import wavefront:index/ingestionPolicy:IngestionPolicy basic test_ingestion-1611946841064
+//
 // ```
 type IngestionPolicy struct {
 	pulumi.CustomResourceState
@@ -142,7 +147,7 @@ func (i *IngestionPolicy) ToIngestionPolicyOutputWithContext(ctx context.Context
 // IngestionPolicyArrayInput is an input type that accepts IngestionPolicyArray and IngestionPolicyArrayOutput values.
 // You can construct a concrete instance of `IngestionPolicyArrayInput` via:
 //
-//          IngestionPolicyArray{ IngestionPolicyArgs{...} }
+//	IngestionPolicyArray{ IngestionPolicyArgs{...} }
 type IngestionPolicyArrayInput interface {
 	pulumi.Input
 
@@ -167,7 +172,7 @@ func (i IngestionPolicyArray) ToIngestionPolicyArrayOutputWithContext(ctx contex
 // IngestionPolicyMapInput is an input type that accepts IngestionPolicyMap and IngestionPolicyMapOutput values.
 // You can construct a concrete instance of `IngestionPolicyMapInput` via:
 //
-//          IngestionPolicyMap{ "key": IngestionPolicyArgs{...} }
+//	IngestionPolicyMap{ "key": IngestionPolicyArgs{...} }
 type IngestionPolicyMapInput interface {
 	pulumi.Input
 
