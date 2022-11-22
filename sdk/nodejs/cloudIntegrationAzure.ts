@@ -143,7 +143,7 @@ export class CloudIntegrationAzure extends pulumi.CustomResource {
             resourceInputs["additionalTags"] = args ? args.additionalTags : undefined;
             resourceInputs["categoryFilters"] = args ? args.categoryFilters : undefined;
             resourceInputs["clientId"] = args ? args.clientId : undefined;
-            resourceInputs["clientSecret"] = args ? args.clientSecret : undefined;
+            resourceInputs["clientSecret"] = args?.clientSecret ? pulumi.secret(args.clientSecret) : undefined;
             resourceInputs["forceSave"] = args ? args.forceSave : undefined;
             resourceInputs["metricFilterRegex"] = args ? args.metricFilterRegex : undefined;
             resourceInputs["name"] = args ? args.name : undefined;
@@ -153,6 +153,8 @@ export class CloudIntegrationAzure extends pulumi.CustomResource {
             resourceInputs["tenant"] = args ? args.tenant : undefined;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+        const secretOpts = { additionalSecretOutputs: ["clientSecret"] };
+        opts = pulumi.mergeOptions(opts, secretOpts);
         super(CloudIntegrationAzure.__pulumiType, name, resourceInputs, opts);
     }
 }

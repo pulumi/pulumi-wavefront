@@ -17,6 +17,34 @@ import javax.annotation.Nullable;
  * Provides a Wavefront Ingestion Policy Resource. This allows ingestion policies to be created, updated, and deleted.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.wavefront.IngestionPolicy;
+ * import com.pulumi.wavefront.IngestionPolicyArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var basic = new IngestionPolicy(&#34;basic&#34;, IngestionPolicyArgs.builder()        
+ *             .description(&#34;An ingestion policy for testing&#34;)
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 
@@ -56,6 +84,12 @@ public class IngestionPolicy extends com.pulumi.resources.CustomResource {
      */
     public Output<String> name() {
         return this.name;
+    }
+    @Export(name="scope", type=String.class, parameters={})
+    private Output<String> scope;
+
+    public Output<String> scope() {
+        return this.scope;
     }
 
     /**

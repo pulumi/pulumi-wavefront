@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Wavefront.Inputs
 {
 
-    public sealed class AlertTargetRouteArgs : Pulumi.ResourceArgs
+    public sealed class AlertTargetRouteArgs : global::Pulumi.ResourceArgs
     {
         [Input("filter")]
         private InputMap<string>? _filter;
@@ -32,5 +32,6 @@ namespace Pulumi.Wavefront.Inputs
         public AlertTargetRouteArgs()
         {
         }
+        public static new AlertTargetRouteArgs Empty => new AlertTargetRouteArgs();
     }
 }

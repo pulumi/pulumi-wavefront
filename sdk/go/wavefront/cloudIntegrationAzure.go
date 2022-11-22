@@ -97,6 +97,13 @@ func NewCloudIntegrationAzure(ctx *pulumi.Context,
 	if args.Tenant == nil {
 		return nil, errors.New("invalid value for required argument 'Tenant'")
 	}
+	if args.ClientSecret != nil {
+		args.ClientSecret = pulumi.ToSecret(args.ClientSecret).(pulumi.StringOutput)
+	}
+	secrets := pulumi.AdditionalSecretOutputs([]string{
+		"clientSecret",
+	})
+	opts = append(opts, secrets)
 	var resource CloudIntegrationAzure
 	err := ctx.RegisterResource("wavefront:index/cloudIntegrationAzure:CloudIntegrationAzure", name, args, &resource, opts...)
 	if err != nil {
@@ -308,6 +315,61 @@ func (o CloudIntegrationAzureOutput) ToCloudIntegrationAzureOutput() CloudIntegr
 
 func (o CloudIntegrationAzureOutput) ToCloudIntegrationAzureOutputWithContext(ctx context.Context) CloudIntegrationAzureOutput {
 	return o
+}
+
+// A list of point tag key-values to add to every point ingested using this integration.
+func (o CloudIntegrationAzureOutput) AdditionalTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *CloudIntegrationAzure) pulumi.StringMapOutput { return v.AdditionalTags }).(pulumi.StringMapOutput)
+}
+
+// A list of Azure Activity Log categories.
+func (o CloudIntegrationAzureOutput) CategoryFilters() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *CloudIntegrationAzure) pulumi.StringArrayOutput { return v.CategoryFilters }).(pulumi.StringArrayOutput)
+}
+
+// Client ID for an Azure service account within your project.
+func (o CloudIntegrationAzureOutput) ClientId() pulumi.StringOutput {
+	return o.ApplyT(func(v *CloudIntegrationAzure) pulumi.StringOutput { return v.ClientId }).(pulumi.StringOutput)
+}
+
+// Client secret for an Azure service account within your project.
+func (o CloudIntegrationAzureOutput) ClientSecret() pulumi.StringOutput {
+	return o.ApplyT(func(v *CloudIntegrationAzure) pulumi.StringOutput { return v.ClientSecret }).(pulumi.StringOutput)
+}
+
+// Forces this resource to save, even if errors are present.
+func (o CloudIntegrationAzureOutput) ForceSave() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *CloudIntegrationAzure) pulumi.BoolPtrOutput { return v.ForceSave }).(pulumi.BoolPtrOutput)
+}
+
+// A regular expression that a metric name must match (case-insensitively) in order to be ingested.
+func (o CloudIntegrationAzureOutput) MetricFilterRegex() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CloudIntegrationAzure) pulumi.StringPtrOutput { return v.MetricFilterRegex }).(pulumi.StringPtrOutput)
+}
+
+// The human-readable name of this integration.
+func (o CloudIntegrationAzureOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v *CloudIntegrationAzure) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
+}
+
+// A list of Azure resource groups from which to pull metrics.
+func (o CloudIntegrationAzureOutput) ResourceGroupFilters() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *CloudIntegrationAzure) pulumi.StringArrayOutput { return v.ResourceGroupFilters }).(pulumi.StringArrayOutput)
+}
+
+// A value denoting which cloud service this service integrates with.
+func (o CloudIntegrationAzureOutput) Service() pulumi.StringOutput {
+	return o.ApplyT(func(v *CloudIntegrationAzure) pulumi.StringOutput { return v.Service }).(pulumi.StringOutput)
+}
+
+// How often, in minutes, to refresh the service.
+func (o CloudIntegrationAzureOutput) ServiceRefreshRateInMinutes() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *CloudIntegrationAzure) pulumi.IntPtrOutput { return v.ServiceRefreshRateInMinutes }).(pulumi.IntPtrOutput)
+}
+
+// Tenant ID for an Azure service account within your project.
+func (o CloudIntegrationAzureOutput) Tenant() pulumi.StringOutput {
+	return o.ApplyT(func(v *CloudIntegrationAzure) pulumi.StringOutput { return v.Tenant }).(pulumi.StringOutput)
 }
 
 type CloudIntegrationAzureArrayOutput struct{ *pulumi.OutputState }

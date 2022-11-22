@@ -111,6 +111,13 @@ func NewCloudIntegrationAppDynamics(ctx *pulumi.Context,
 	if args.UserName == nil {
 		return nil, errors.New("invalid value for required argument 'UserName'")
 	}
+	if args.EncryptedPassword != nil {
+		args.EncryptedPassword = pulumi.ToSecret(args.EncryptedPassword).(pulumi.StringOutput)
+	}
+	secrets := pulumi.AdditionalSecretOutputs([]string{
+		"encryptedPassword",
+	})
+	opts = append(opts, secrets)
 	var resource CloudIntegrationAppDynamics
 	err := ctx.RegisterResource("wavefront:index/cloudIntegrationAppDynamics:CloudIntegrationAppDynamics", name, args, &resource, opts...)
 	if err != nil {
@@ -378,6 +385,93 @@ func (o CloudIntegrationAppDynamicsOutput) ToCloudIntegrationAppDynamicsOutput()
 
 func (o CloudIntegrationAppDynamicsOutput) ToCloudIntegrationAppDynamicsOutputWithContext(ctx context.Context) CloudIntegrationAppDynamicsOutput {
 	return o
+}
+
+// A list of point tag key-values to add to every point ingested using this integration.
+func (o CloudIntegrationAppDynamicsOutput) AdditionalTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *CloudIntegrationAppDynamics) pulumi.StringMapOutput { return v.AdditionalTags }).(pulumi.StringMapOutput)
+}
+
+// List of regular expressions that an application name must match (case-insensitively)
+// in order to be ingested.
+func (o CloudIntegrationAppDynamicsOutput) AppFilterRegexes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *CloudIntegrationAppDynamics) pulumi.StringArrayOutput { return v.AppFilterRegexes }).(pulumi.StringArrayOutput)
+}
+
+// Name of the SaaS controller.
+func (o CloudIntegrationAppDynamicsOutput) ControllerName() pulumi.StringOutput {
+	return o.ApplyT(func(v *CloudIntegrationAppDynamics) pulumi.StringOutput { return v.ControllerName }).(pulumi.StringOutput)
+}
+
+// Boolean flag to control Application Infrastructure metric ingestion.
+func (o CloudIntegrationAppDynamicsOutput) EnableAppInfraMetrics() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *CloudIntegrationAppDynamics) pulumi.BoolPtrOutput { return v.EnableAppInfraMetrics }).(pulumi.BoolPtrOutput)
+}
+
+// Boolean flag to control Backend metric ingestion.
+func (o CloudIntegrationAppDynamicsOutput) EnableBackendMetrics() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *CloudIntegrationAppDynamics) pulumi.BoolPtrOutput { return v.EnableBackendMetrics }).(pulumi.BoolPtrOutput)
+}
+
+// Boolean flag to control Business Transaction metric ingestion.
+func (o CloudIntegrationAppDynamicsOutput) EnableBusinessTrxMetrics() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *CloudIntegrationAppDynamics) pulumi.BoolPtrOutput { return v.EnableBusinessTrxMetrics }).(pulumi.BoolPtrOutput)
+}
+
+// Boolean flag to control Error metric ingestion.
+func (o CloudIntegrationAppDynamicsOutput) EnableErrorMetrics() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *CloudIntegrationAppDynamics) pulumi.BoolPtrOutput { return v.EnableErrorMetrics }).(pulumi.BoolPtrOutput)
+}
+
+// Boolean flag to control Individual Node metric ingestion.
+func (o CloudIntegrationAppDynamicsOutput) EnableIndividualNodeMetrics() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *CloudIntegrationAppDynamics) pulumi.BoolPtrOutput { return v.EnableIndividualNodeMetrics }).(pulumi.BoolPtrOutput)
+}
+
+// Boolean flag to control Overall Performance metric ingestion.
+func (o CloudIntegrationAppDynamicsOutput) EnableOverallPerfMetrics() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *CloudIntegrationAppDynamics) pulumi.BoolPtrOutput { return v.EnableOverallPerfMetrics }).(pulumi.BoolPtrOutput)
+}
+
+// Set this to `false` to get separate results for all values within the time range,
+// by default it is `true`.
+func (o CloudIntegrationAppDynamicsOutput) EnableRollup() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *CloudIntegrationAppDynamics) pulumi.BoolPtrOutput { return v.EnableRollup }).(pulumi.BoolPtrOutput)
+}
+
+// Boolean flag to control Service End point metric ingestion.
+func (o CloudIntegrationAppDynamicsOutput) EnableServiceEndpointMetrics() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *CloudIntegrationAppDynamics) pulumi.BoolPtrOutput { return v.EnableServiceEndpointMetrics }).(pulumi.BoolPtrOutput)
+}
+
+// Password for AppDynamics user.
+func (o CloudIntegrationAppDynamicsOutput) EncryptedPassword() pulumi.StringOutput {
+	return o.ApplyT(func(v *CloudIntegrationAppDynamics) pulumi.StringOutput { return v.EncryptedPassword }).(pulumi.StringOutput)
+}
+
+// Forces this resource to save, even if errors are present.
+func (o CloudIntegrationAppDynamicsOutput) ForceSave() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *CloudIntegrationAppDynamics) pulumi.BoolPtrOutput { return v.ForceSave }).(pulumi.BoolPtrOutput)
+}
+
+// The human-readable name of this integration.
+func (o CloudIntegrationAppDynamicsOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v *CloudIntegrationAppDynamics) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
+}
+
+// A value denoting which cloud service this service integrates with.
+func (o CloudIntegrationAppDynamicsOutput) Service() pulumi.StringOutput {
+	return o.ApplyT(func(v *CloudIntegrationAppDynamics) pulumi.StringOutput { return v.Service }).(pulumi.StringOutput)
+}
+
+// How often, in minutes, to refresh the service.
+func (o CloudIntegrationAppDynamicsOutput) ServiceRefreshRateInMinutes() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *CloudIntegrationAppDynamics) pulumi.IntPtrOutput { return v.ServiceRefreshRateInMinutes }).(pulumi.IntPtrOutput)
+}
+
+// Username is a combination of userName and the account name.
+func (o CloudIntegrationAppDynamicsOutput) UserName() pulumi.StringOutput {
+	return o.ApplyT(func(v *CloudIntegrationAppDynamics) pulumi.StringOutput { return v.UserName }).(pulumi.StringOutput)
 }
 
 type CloudIntegrationAppDynamicsArrayOutput struct{ *pulumi.OutputState }

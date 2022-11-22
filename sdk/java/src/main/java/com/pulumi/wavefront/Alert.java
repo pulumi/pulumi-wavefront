@@ -21,6 +21,42 @@ import javax.annotation.Nullable;
  * Provides a Wavefront Alert resource.  This allows alerts to be created, updated, and deleted.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.wavefront.Alert;
+ * import com.pulumi.wavefront.AlertArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var foobar = new Alert(&#34;foobar&#34;, AlertArgs.builder()        
+ *             .condition(&#34;100-ts(\&#34;cpu.usage_idle\&#34;, environment=preprod and cpu=cpu-total ) &gt; 80&#34;)
+ *             .displayExpression(&#34;100-ts(\&#34;cpu.usage_idle\&#34;, environment=preprod and cpu=cpu-total )&#34;)
+ *             .minutes(5)
+ *             .resolveAfterMinutes(5)
+ *             .severity(&#34;WARN&#34;)
+ *             .tags(            
+ *                 &#34;terraform&#34;,
+ *                 &#34;test&#34;)
+ *             .target(&#34;test@example.com,target:alert-target-id&#34;)
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 
@@ -190,6 +226,20 @@ public class Alert extends com.pulumi.resources.CustomResource {
      */
     public Output<Optional<Integer>> notificationResendFrequencyMinutes() {
         return Codegen.optional(this.notificationResendFrequencyMinutes);
+    }
+    /**
+     * The specified query is executed every `process_rate_minutes` minutes.
+     * 
+     */
+    @Export(name="processRateMinutes", type=Integer.class, parameters={})
+    private Output</* @Nullable */ Integer> processRateMinutes;
+
+    /**
+     * @return The specified query is executed every `process_rate_minutes` minutes.
+     * 
+     */
+    public Output<Optional<Integer>> processRateMinutes() {
+        return Codegen.optional(this.processRateMinutes);
     }
     /**
      * The number of consecutive minutes that a firing series matching the condition

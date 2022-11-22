@@ -21,6 +21,35 @@ import javax.annotation.Nullable;
  * updated, and deleted.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.wavefront.DerivedMetric;
+ * import com.pulumi.wavefront.DerivedMetricArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var derived = new DerivedMetric(&#34;derived&#34;, DerivedMetricArgs.builder()        
+ *             .minutes(5)
+ *             .query(&#34;aliasMetric(5, \&#34;some.metric\&#34;)&#34;)
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

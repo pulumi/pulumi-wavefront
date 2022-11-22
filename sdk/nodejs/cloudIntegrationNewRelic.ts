@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "./types";
+import * as inputs from "./types/input";
+import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 /**
@@ -124,7 +125,7 @@ export class CloudIntegrationNewRelic extends pulumi.CustomResource {
                 throw new Error("Missing required property 'service'");
             }
             resourceInputs["additionalTags"] = args ? args.additionalTags : undefined;
-            resourceInputs["apiKey"] = args ? args.apiKey : undefined;
+            resourceInputs["apiKey"] = args?.apiKey ? pulumi.secret(args.apiKey) : undefined;
             resourceInputs["appFilterRegex"] = args ? args.appFilterRegex : undefined;
             resourceInputs["forceSave"] = args ? args.forceSave : undefined;
             resourceInputs["hostFilterRegex"] = args ? args.hostFilterRegex : undefined;
@@ -134,6 +135,8 @@ export class CloudIntegrationNewRelic extends pulumi.CustomResource {
             resourceInputs["serviceRefreshRateInMinutes"] = args ? args.serviceRefreshRateInMinutes : undefined;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+        const secretOpts = { additionalSecretOutputs: ["apiKey"] };
+        opts = pulumi.mergeOptions(opts, secretOpts);
         super(CloudIntegrationNewRelic.__pulumiType, name, resourceInputs, opts);
     }
 }

@@ -62,6 +62,7 @@ export class IngestionPolicy extends pulumi.CustomResource {
      * The name of the ingestion policy.
      */
     public readonly name!: pulumi.Output<string>;
+    public readonly scope!: pulumi.Output<string>;
 
     /**
      * Create a IngestionPolicy resource with the given unique name, arguments, and options.
@@ -78,13 +79,18 @@ export class IngestionPolicy extends pulumi.CustomResource {
             const state = argsOrState as IngestionPolicyState | undefined;
             resourceInputs["description"] = state ? state.description : undefined;
             resourceInputs["name"] = state ? state.name : undefined;
+            resourceInputs["scope"] = state ? state.scope : undefined;
         } else {
             const args = argsOrState as IngestionPolicyArgs | undefined;
             if ((!args || args.description === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'description'");
             }
+            if ((!args || args.scope === undefined) && !opts.urn) {
+                throw new Error("Missing required property 'scope'");
+            }
             resourceInputs["description"] = args ? args.description : undefined;
             resourceInputs["name"] = args ? args.name : undefined;
+            resourceInputs["scope"] = args ? args.scope : undefined;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(IngestionPolicy.__pulumiType, name, resourceInputs, opts);
@@ -103,6 +109,7 @@ export interface IngestionPolicyState {
      * The name of the ingestion policy.
      */
     name?: pulumi.Input<string>;
+    scope?: pulumi.Input<string>;
 }
 
 /**
@@ -117,4 +124,5 @@ export interface IngestionPolicyArgs {
      * The name of the ingestion policy.
      */
     name?: pulumi.Input<string>;
+    scope: pulumi.Input<string>;
 }

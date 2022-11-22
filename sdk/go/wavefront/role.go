@@ -232,6 +232,28 @@ func (o RoleOutput) ToRoleOutputWithContext(ctx context.Context) RoleOutput {
 	return o
 }
 
+// A list of user groups or accounts to assign to this role.
+func (o RoleOutput) Assignees() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *Role) pulumi.StringArrayOutput { return v.Assignees }).(pulumi.StringArrayOutput)
+}
+
+// A short description of the role.
+func (o RoleOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Role) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
+}
+
+// The name of the role.
+func (o RoleOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v *Role) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
+}
+
+// A list of permissions to assign to this role. Valid options are
+// `agentManagement`, `alertsManagement`, `dashboardManagement`, `embeddedCharts`, `eventsManagement`, `externalLinksManagement`,
+// `hostTagManagement`, `metricsManagement`, and `userManagement`.
+func (o RoleOutput) Permissions() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *Role) pulumi.StringArrayOutput { return v.Permissions }).(pulumi.StringArrayOutput)
+}
+
 type RoleArrayOutput struct{ *pulumi.OutputState }
 
 func (RoleArrayOutput) ElementType() reflect.Type {

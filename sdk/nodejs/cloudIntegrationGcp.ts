@@ -134,7 +134,7 @@ export class CloudIntegrationGcp extends pulumi.CustomResource {
             resourceInputs["additionalTags"] = args ? args.additionalTags : undefined;
             resourceInputs["categories"] = args ? args.categories : undefined;
             resourceInputs["forceSave"] = args ? args.forceSave : undefined;
-            resourceInputs["jsonKey"] = args ? args.jsonKey : undefined;
+            resourceInputs["jsonKey"] = args?.jsonKey ? pulumi.secret(args.jsonKey) : undefined;
             resourceInputs["metricFilterRegex"] = args ? args.metricFilterRegex : undefined;
             resourceInputs["name"] = args ? args.name : undefined;
             resourceInputs["projectId"] = args ? args.projectId : undefined;
@@ -142,6 +142,8 @@ export class CloudIntegrationGcp extends pulumi.CustomResource {
             resourceInputs["serviceRefreshRateInMinutes"] = args ? args.serviceRefreshRateInMinutes : undefined;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+        const secretOpts = { additionalSecretOutputs: ["jsonKey"] };
+        opts = pulumi.mergeOptions(opts, secretOpts);
         super(CloudIntegrationGcp.__pulumiType, name, resourceInputs, opts);
     }
 }

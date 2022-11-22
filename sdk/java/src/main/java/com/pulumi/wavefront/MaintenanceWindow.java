@@ -21,6 +21,40 @@ import javax.annotation.Nullable;
  * Provides a Wavefront Maintenance Window Resource. This allows maintenance windows to be created, updated, and deleted.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.wavefront.MaintenanceWindow;
+ * import com.pulumi.wavefront.MaintenanceWindowArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var basic = new MaintenanceWindow(&#34;basic&#34;, MaintenanceWindowArgs.builder()        
+ *             .endTimeInSeconds(1601123456)
+ *             .reason(&#34;Routine maintenance for 2020&#34;)
+ *             .relevantHostNames(            
+ *                 &#34;my_hostname&#34;,
+ *                 &#34;my_other_hostname&#34;)
+ *             .startTimeInSeconds(1600123456)
+ *             .title(&#34;Routine maintenance&#34;)
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

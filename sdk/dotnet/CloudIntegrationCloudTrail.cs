@@ -16,26 +16,23 @@ namespace Pulumi.Wavefront
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Wavefront = Pulumi.Wavefront;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
-    ///     {
-    ///         var extId = new Wavefront.CloudIntegrationAwsExternalId("extId", new Wavefront.CloudIntegrationAwsExternalIdArgs
-    ///         {
-    ///         });
-    ///         var cloudtrail = new Wavefront.CloudIntegrationCloudTrail("cloudtrail", new Wavefront.CloudIntegrationCloudTrailArgs
-    ///         {
-    ///             RoleArn = "arn:aws::1234567:role/example-arn",
-    ///             ExternalId = extId.Id,
-    ///             Region = "us-west-2",
-    ///             BucketName = "example-s3-bucket",
-    ///         });
-    ///     }
+    ///     var extId = new Wavefront.CloudIntegrationAwsExternalId("extId");
     /// 
-    /// }
+    ///     var cloudtrail = new Wavefront.CloudIntegrationCloudTrail("cloudtrail", new()
+    ///     {
+    ///         RoleArn = "arn:aws::1234567:role/example-arn",
+    ///         ExternalId = extId.Id,
+    ///         Region = "us-west-2",
+    ///         BucketName = "example-s3-bucket",
+    ///     });
+    /// 
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -47,7 +44,7 @@ namespace Pulumi.Wavefront
     /// ```
     /// </summary>
     [WavefrontResourceType("wavefront:index/cloudIntegrationCloudTrail:CloudIntegrationCloudTrail")]
-    public partial class CloudIntegrationCloudTrail : Pulumi.CustomResource
+    public partial class CloudIntegrationCloudTrail : global::Pulumi.CustomResource
     {
         /// <summary>
         /// A list of point tag key-values to add to every point ingested using this integration.
@@ -159,7 +156,7 @@ namespace Pulumi.Wavefront
         }
     }
 
-    public sealed class CloudIntegrationCloudTrailArgs : Pulumi.ResourceArgs
+    public sealed class CloudIntegrationCloudTrailArgs : global::Pulumi.ResourceArgs
     {
         [Input("additionalTags")]
         private InputMap<string>? _additionalTags;
@@ -236,9 +233,10 @@ namespace Pulumi.Wavefront
         public CloudIntegrationCloudTrailArgs()
         {
         }
+        public static new CloudIntegrationCloudTrailArgs Empty => new CloudIntegrationCloudTrailArgs();
     }
 
-    public sealed class CloudIntegrationCloudTrailState : Pulumi.ResourceArgs
+    public sealed class CloudIntegrationCloudTrailState : global::Pulumi.ResourceArgs
     {
         [Input("additionalTags")]
         private InputMap<string>? _additionalTags;
@@ -315,5 +313,6 @@ namespace Pulumi.Wavefront
         public CloudIntegrationCloudTrailState()
         {
         }
+        public static new CloudIntegrationCloudTrailState Empty => new CloudIntegrationCloudTrailState();
     }
 }

@@ -89,6 +89,8 @@ type Alert struct {
 	// How often to re-trigger a continually failing alert.
 	// If absent or <= 0, no re-triggering occurs.
 	NotificationResendFrequencyMinutes pulumi.IntPtrOutput `pulumi:"notificationResendFrequencyMinutes"`
+	// The specified query is executed every `processRateMinutes` minutes.
+	ProcessRateMinutes pulumi.IntPtrOutput `pulumi:"processRateMinutes"`
 	// The number of consecutive minutes that a firing series matching the condition
 	// query must evaluate to "false" (zero value) before the alert resolves.  When unset, this defaults to
 	// the same value as `minutes`.
@@ -169,6 +171,8 @@ type alertState struct {
 	// How often to re-trigger a continually failing alert.
 	// If absent or <= 0, no re-triggering occurs.
 	NotificationResendFrequencyMinutes *int `pulumi:"notificationResendFrequencyMinutes"`
+	// The specified query is executed every `processRateMinutes` minutes.
+	ProcessRateMinutes *int `pulumi:"processRateMinutes"`
 	// The number of consecutive minutes that a firing series matching the condition
 	// query must evaluate to "false" (zero value) before the alert resolves.  When unset, this defaults to
 	// the same value as `minutes`.
@@ -215,6 +219,8 @@ type AlertState struct {
 	// How often to re-trigger a continually failing alert.
 	// If absent or <= 0, no re-triggering occurs.
 	NotificationResendFrequencyMinutes pulumi.IntPtrInput
+	// The specified query is executed every `processRateMinutes` minutes.
+	ProcessRateMinutes pulumi.IntPtrInput
 	// The number of consecutive minutes that a firing series matching the condition
 	// query must evaluate to "false" (zero value) before the alert resolves.  When unset, this defaults to
 	// the same value as `minutes`.
@@ -265,6 +271,8 @@ type alertArgs struct {
 	// How often to re-trigger a continually failing alert.
 	// If absent or <= 0, no re-triggering occurs.
 	NotificationResendFrequencyMinutes *int `pulumi:"notificationResendFrequencyMinutes"`
+	// The specified query is executed every `processRateMinutes` minutes.
+	ProcessRateMinutes *int `pulumi:"processRateMinutes"`
 	// The number of consecutive minutes that a firing series matching the condition
 	// query must evaluate to "false" (zero value) before the alert resolves.  When unset, this defaults to
 	// the same value as `minutes`.
@@ -312,6 +320,8 @@ type AlertArgs struct {
 	// How often to re-trigger a continually failing alert.
 	// If absent or <= 0, no re-triggering occurs.
 	NotificationResendFrequencyMinutes pulumi.IntPtrInput
+	// The specified query is executed every `processRateMinutes` minutes.
+	ProcessRateMinutes pulumi.IntPtrInput
 	// The number of consecutive minutes that a firing series matching the condition
 	// query must evaluate to "false" (zero value) before the alert resolves.  When unset, this defaults to
 	// the same value as `minutes`.
@@ -413,6 +423,99 @@ func (o AlertOutput) ToAlertOutput() AlertOutput {
 
 func (o AlertOutput) ToAlertOutputWithContext(ctx context.Context) AlertOutput {
 	return o
+}
+
+// User-supplied additional explanatory information for this alert.
+// Useful for linking runbooks, migrations, etc.
+func (o AlertOutput) AdditionalInformation() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Alert) pulumi.StringPtrOutput { return v.AdditionalInformation }).(pulumi.StringPtrOutput)
+}
+
+// The type of alert in Wavefront.  Either `CLASSIC` (default)
+// or `THRESHOLD`.
+func (o AlertOutput) AlertType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Alert) pulumi.StringPtrOutput { return v.AlertType }).(pulumi.StringPtrOutput)
+}
+
+// A list of users or groups that can modify this resource.
+func (o AlertOutput) CanModifies() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *Alert) pulumi.StringArrayOutput { return v.CanModifies }).(pulumi.StringArrayOutput)
+}
+
+// A list of users or groups that can view this resource.
+func (o AlertOutput) CanViews() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *Alert) pulumi.StringArrayOutput { return v.CanViews }).(pulumi.StringArrayOutput)
+}
+
+// A Wavefront query that is evaluated at regular intervals (default is 1 minute).
+// The alert fires and notifications are triggered when a data series matching this query evaluates
+// to a non-zero value for a set number of consecutive minutes.
+func (o AlertOutput) Condition() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Alert) pulumi.StringPtrOutput { return v.Condition }).(pulumi.StringPtrOutput)
+}
+
+// a string->string map of `severity` to `condition`
+// for which this alert will trigger.
+func (o AlertOutput) Conditions() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Alert) pulumi.StringMapOutput { return v.Conditions }).(pulumi.StringMapOutput)
+}
+
+// A second query whose results are displayed in the alert user
+// interface instead of the condition query.  This field is often used to display a version
+// of the condition query with Boolean operators removed so that numerical values are plotted.
+func (o AlertOutput) DisplayExpression() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Alert) pulumi.StringPtrOutput { return v.DisplayExpression }).(pulumi.StringPtrOutput)
+}
+
+// The number of consecutive minutes that a series matching the condition query must
+// evaluate to "true" (non-zero value) before the alert fires.
+func (o AlertOutput) Minutes() pulumi.IntOutput {
+	return o.ApplyT(func(v *Alert) pulumi.IntOutput { return v.Minutes }).(pulumi.IntOutput)
+}
+
+// The name of the alert as it is displayed in Wavefront.
+func (o AlertOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v *Alert) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
+}
+
+// How often to re-trigger a continually failing alert.
+// If absent or <= 0, no re-triggering occurs.
+func (o AlertOutput) NotificationResendFrequencyMinutes() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *Alert) pulumi.IntPtrOutput { return v.NotificationResendFrequencyMinutes }).(pulumi.IntPtrOutput)
+}
+
+// The specified query is executed every `processRateMinutes` minutes.
+func (o AlertOutput) ProcessRateMinutes() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *Alert) pulumi.IntPtrOutput { return v.ProcessRateMinutes }).(pulumi.IntPtrOutput)
+}
+
+// The number of consecutive minutes that a firing series matching the condition
+// query must evaluate to "false" (zero value) before the alert resolves.  When unset, this defaults to
+// the same value as `minutes`.
+func (o AlertOutput) ResolveAfterMinutes() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *Alert) pulumi.IntPtrOutput { return v.ResolveAfterMinutes }).(pulumi.IntPtrOutput)
+}
+
+// - Severity of the alert, valid values are `INFO`, `SMOKE`, `WARN`, `SEVERE`.
+func (o AlertOutput) Severity() pulumi.StringOutput {
+	return o.ApplyT(func(v *Alert) pulumi.StringOutput { return v.Severity }).(pulumi.StringOutput)
+}
+
+// A set of tags to assign to this resource.
+func (o AlertOutput) Tags() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *Alert) pulumi.StringArrayOutput { return v.Tags }).(pulumi.StringArrayOutput)
+}
+
+// A comma-separated list of the email address or integration endpoint
+// (such as PagerDuty or webhook) to notify when the alert status changes. Multiple target types can be in the list.
+// Alert target format: ({email}|pd:{pd_key}|target:{alert-target-id}).
+func (o AlertOutput) Target() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Alert) pulumi.StringPtrOutput { return v.Target }).(pulumi.StringPtrOutput)
+}
+
+// Targets for severity
+func (o AlertOutput) ThresholdTargets() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Alert) pulumi.StringMapOutput { return v.ThresholdTargets }).(pulumi.StringMapOutput)
 }
 
 type AlertArrayOutput struct{ *pulumi.OutputState }

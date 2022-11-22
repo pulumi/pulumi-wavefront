@@ -16,21 +16,19 @@ namespace Pulumi.Wavefront
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Wavefront = Pulumi.Wavefront;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var derived = new Wavefront.DerivedMetric("derived", new()
     ///     {
-    ///         var derived = new Wavefront.DerivedMetric("derived", new Wavefront.DerivedMetricArgs
-    ///         {
-    ///             Minutes = 5,
-    ///             Query = "aliasMetric(5, \"some.metric\")",
-    ///         });
-    ///     }
+    ///         Minutes = 5,
+    ///         Query = "aliasMetric(5, \"some.metric\")",
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -42,7 +40,7 @@ namespace Pulumi.Wavefront
     /// ```
     /// </summary>
     [WavefrontResourceType("wavefront:index/derivedMetric:DerivedMetric")]
-    public partial class DerivedMetric : Pulumi.CustomResource
+    public partial class DerivedMetric : global::Pulumi.CustomResource
     {
         /// <summary>
         /// User-supplied additional explanatory information for the derived metric.
@@ -118,7 +116,7 @@ namespace Pulumi.Wavefront
         }
     }
 
-    public sealed class DerivedMetricArgs : Pulumi.ResourceArgs
+    public sealed class DerivedMetricArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// User-supplied additional explanatory information for the derived metric.
@@ -159,9 +157,10 @@ namespace Pulumi.Wavefront
         public DerivedMetricArgs()
         {
         }
+        public static new DerivedMetricArgs Empty => new DerivedMetricArgs();
     }
 
-    public sealed class DerivedMetricState : Pulumi.ResourceArgs
+    public sealed class DerivedMetricState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// User-supplied additional explanatory information for the derived metric.
@@ -202,5 +201,6 @@ namespace Pulumi.Wavefront
         public DerivedMetricState()
         {
         }
+        public static new DerivedMetricState Empty => new DerivedMetricState();
     }
 }

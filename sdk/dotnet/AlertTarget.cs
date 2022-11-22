@@ -15,33 +15,31 @@ namespace Pulumi.Wavefront
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Wavefront = Pulumi.Wavefront;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testTarget = new Wavefront.AlertTarget("testTarget", new()
     ///     {
-    ///         var testTarget = new Wavefront.AlertTarget("testTarget", new Wavefront.AlertTargetArgs
+    ///         ContentType = "application/json",
+    ///         CustomHeaders = 
     ///         {
-    ///             ContentType = "application/json",
-    ///             CustomHeaders = 
-    ///             {
-    ///                 { "Testing", "true" },
-    ///             },
-    ///             Description = "Test target",
-    ///             Method = "WEBHOOK",
-    ///             Recipient = "https://hooks.slack.com/services/test/me",
-    ///             Template = "{}",
-    ///             Triggers = 
-    ///             {
-    ///                 "ALERT_OPENED",
-    ///                 "ALERT_RESOLVED",
-    ///             },
-    ///         });
-    ///     }
+    ///             { "Testing", "true" },
+    ///         },
+    ///         Description = "Test target",
+    ///         Method = "WEBHOOK",
+    ///         Recipient = "https://hooks.slack.com/services/test/me",
+    ///         Template = "{}",
+    ///         Triggers = new[]
+    ///         {
+    ///             "ALERT_OPENED",
+    ///             "ALERT_RESOLVED",
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// ## Attributes Reference
     /// 
@@ -60,56 +58,54 @@ namespace Pulumi.Wavefront
     /// ### Example
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Wavefront = Pulumi.Wavefront;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testTarget = new Wavefront.AlertTarget("testTarget", new()
     ///     {
-    ///         var testTarget = new Wavefront.AlertTarget("testTarget", new Wavefront.AlertTargetArgs
+    ///         ContentType = "application/json",
+    ///         CustomHeaders = 
     ///         {
-    ///             ContentType = "application/json",
-    ///             CustomHeaders = 
+    ///             { "Testing", "true" },
+    ///         },
+    ///         Description = "Test target",
+    ///         Method = "WEBHOOK",
+    ///         Recipient = "https://hooks.slack.com/services/test/me",
+    ///         Routes = new[]
+    ///         {
+    ///             new Wavefront.Inputs.AlertTargetRouteArgs
     ///             {
-    ///                 { "Testing", "true" },
-    ///             },
-    ///             Description = "Test target",
-    ///             Method = "WEBHOOK",
-    ///             Recipient = "https://hooks.slack.com/services/test/me",
-    ///             Routes = 
-    ///             {
-    ///                 new Wavefront.Inputs.AlertTargetRouteArgs
+    ///                 Filter = 
     ///                 {
-    ///                     Filter = 
-    ///                     {
-    ///                         { "key", "env" },
-    ///                         { "value", "prod" },
-    ///                     },
-    ///                     Method = "WEBHOOK",
-    ///                     Target = "https://hooks.slack.com/services/test/me/prod",
+    ///                     { "key", "env" },
+    ///                     { "value", "prod" },
     ///                 },
-    ///                 new Wavefront.Inputs.AlertTargetRouteArgs
-    ///                 {
-    ///                     Filter = 
-    ///                     {
-    ///                         { "key", "env" },
-    ///                         { "value", "dev" },
-    ///                     },
-    ///                     Method = "WEBHOOK",
-    ///                     Target = "https://hooks.slack.com/services/test/me/dev",
-    ///                 },
+    ///                 Method = "WEBHOOK",
+    ///                 Target = "https://hooks.slack.com/services/test/me/prod",
     ///             },
-    ///             Template = "{}",
-    ///             Triggers = 
+    ///             new Wavefront.Inputs.AlertTargetRouteArgs
     ///             {
-    ///                 "ALERT_OPENED",
-    ///                 "ALERT_RESOLVED",
+    ///                 Filter = 
+    ///                 {
+    ///                     { "key", "env" },
+    ///                     { "value", "dev" },
+    ///                 },
+    ///                 Method = "WEBHOOK",
+    ///                 Target = "https://hooks.slack.com/services/test/me/dev",
     ///             },
-    ///         });
-    ///     }
+    ///         },
+    ///         Template = "{}",
+    ///         Triggers = new[]
+    ///         {
+    ///             "ALERT_OPENED",
+    ///             "ALERT_RESOLVED",
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -121,7 +117,7 @@ namespace Pulumi.Wavefront
     /// ```
     /// </summary>
     [WavefrontResourceType("wavefront:index/alertTarget:AlertTarget")]
-    public partial class AlertTarget : Pulumi.CustomResource
+    public partial class AlertTarget : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The value of the `Content-Type` header of the webhook.
@@ -239,7 +235,7 @@ namespace Pulumi.Wavefront
         }
     }
 
-    public sealed class AlertTargetArgs : Pulumi.ResourceArgs
+    public sealed class AlertTargetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The value of the `Content-Type` header of the webhook.
@@ -331,9 +327,10 @@ namespace Pulumi.Wavefront
         public AlertTargetArgs()
         {
         }
+        public static new AlertTargetArgs Empty => new AlertTargetArgs();
     }
 
-    public sealed class AlertTargetState : Pulumi.ResourceArgs
+    public sealed class AlertTargetState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The value of the `Content-Type` header of the webhook.
@@ -428,5 +425,6 @@ namespace Pulumi.Wavefront
         public AlertTargetState()
         {
         }
+        public static new AlertTargetState Empty => new AlertTargetState();
     }
 }

@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Wavefront.Inputs
 {
 
-    public sealed class DashboardSectionRowChartSourceArgs : Pulumi.ResourceArgs
+    public sealed class DashboardSectionRowChartSourceArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Whether the source is disabled.
@@ -51,5 +51,6 @@ namespace Pulumi.Wavefront.Inputs
         public DashboardSectionRowChartSourceArgs()
         {
         }
+        public static new DashboardSectionRowChartSourceArgs Empty => new DashboardSectionRowChartSourceArgs();
     }
 }

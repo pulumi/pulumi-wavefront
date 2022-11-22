@@ -127,15 +127,17 @@ export class CloudIntegrationGcpBilling extends pulumi.CustomResource {
                 throw new Error("Missing required property 'service'");
             }
             resourceInputs["additionalTags"] = args ? args.additionalTags : undefined;
-            resourceInputs["apiKey"] = args ? args.apiKey : undefined;
+            resourceInputs["apiKey"] = args?.apiKey ? pulumi.secret(args.apiKey) : undefined;
             resourceInputs["forceSave"] = args ? args.forceSave : undefined;
-            resourceInputs["jsonKey"] = args ? args.jsonKey : undefined;
+            resourceInputs["jsonKey"] = args?.jsonKey ? pulumi.secret(args.jsonKey) : undefined;
             resourceInputs["name"] = args ? args.name : undefined;
             resourceInputs["projectId"] = args ? args.projectId : undefined;
             resourceInputs["service"] = args ? args.service : undefined;
             resourceInputs["serviceRefreshRateInMinutes"] = args ? args.serviceRefreshRateInMinutes : undefined;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+        const secretOpts = { additionalSecretOutputs: ["apiKey", "jsonKey"] };
+        opts = pulumi.mergeOptions(opts, secretOpts);
         super(CloudIntegrationGcpBilling.__pulumiType, name, resourceInputs, opts);
     }
 }

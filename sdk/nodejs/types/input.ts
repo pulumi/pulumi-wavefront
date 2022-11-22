@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 
 export interface AlertTargetRoute {
     filter?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
@@ -398,4 +399,54 @@ export interface DashboardSectionRowChartSource {
      * A description for the purpose of this source.
      */
     sourceDescription?: pulumi.Input<string>;
+}
+
+export interface MetricsPolicyPolicyRule {
+    /**
+     * Valid options are `ALLOW` and `BLOCK`.
+     */
+    accessType: pulumi.Input<string>;
+    /**
+     * List of account ids to apply Metrics Policy to. Must have at least one associated account_id, user_group_id, or role_id.
+     */
+    accountIds?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * A detailed description of the Metrics Policy. The description is visible only when you edit the rule.
+     */
+    description: pulumi.Input<string>;
+    /**
+     * The unique name identifier for a Metrics Policy. The name is visible on the Metrics Security Policy page.
+     */
+    name: pulumi.Input<string>;
+    /**
+     * List of prefixes to match metrics on. You can specify the full metric name or use a wildcard character in metric names, sources, or point tags. The wildcard character alone (*) means all metrics.
+     */
+    prefixes: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * -(Optional) List of role ids to apply Metrics Policy to. Must have at least one associated account_id, user_group_id, or role_id.
+     */
+    roleIds?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * List of Key/Value tags to select target metrics for policy.
+     */
+    tags?: pulumi.Input<pulumi.Input<inputs.MetricsPolicyPolicyRuleTag>[]>;
+    /**
+     * Bool where `true` require all tags are met by selected metrics, else `false` select metrics that match any give tag.
+     */
+    tagsAnded: pulumi.Input<boolean>;
+    /**
+     * List of user group ids to apply Metrics Policy to. Must have at least one associated account_id, user_group_id, or role_id.
+     */
+    userGroupIds?: pulumi.Input<pulumi.Input<string>[]>;
+}
+
+export interface MetricsPolicyPolicyRuleTag {
+    /**
+     * The tag's key.
+     */
+    key: pulumi.Input<string>;
+    /**
+     * The tag's value.
+     */
+    value: pulumi.Input<string>;
 }

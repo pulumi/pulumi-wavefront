@@ -15,6 +15,31 @@ import javax.annotation.Nullable;
  * Provides an External ID for use in Amazon Web Services IAM Roles. This allows External IDs to be created and deleted.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.wavefront.CloudIntegrationAwsExternalId;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var externalId = new CloudIntegrationAwsExternalId(&#34;externalId&#34;);
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

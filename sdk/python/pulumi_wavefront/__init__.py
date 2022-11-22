@@ -17,14 +17,34 @@ from .cloud_integration_ec2 import *
 from .cloud_integration_gcp import *
 from .cloud_integration_gcp_billing import *
 from .cloud_integration_new_relic import *
-from .cloud_integration_tesla import *
 from .dashboard import *
 from .dashboard_json import *
 from .derived_metric import *
+from .event import *
 from .external_link import *
+from .get_alert import *
+from .get_alerts import *
+from .get_dashboard import *
+from .get_dashboards import *
 from .get_default_user_group import *
+from .get_derived_metric import *
+from .get_derived_metrics import *
+from .get_event import *
+from .get_events import *
+from .get_external_link import *
+from .get_external_links import *
+from .get_maintenance_window import *
+from .get_maintenance_window_all import *
+from .get_metrics_policy import *
+from .get_role import *
+from .get_roles import *
+from .get_user import *
+from .get_user_group import *
+from .get_user_groups import *
+from .get_users import *
 from .ingestion_policy import *
 from .maintenance_window import *
+from .metrics_policy import *
 from .provider import *
 from .role import *
 from .service_account import *
@@ -141,14 +161,6 @@ _utilities.register(
  },
  {
   "pkg": "wavefront",
-  "mod": "index/cloudIntegrationTesla",
-  "fqn": "pulumi_wavefront",
-  "classes": {
-   "wavefront:index/cloudIntegrationTesla:CloudIntegrationTesla": "CloudIntegrationTesla"
-  }
- },
- {
-  "pkg": "wavefront",
   "mod": "index/dashboard",
   "fqn": "pulumi_wavefront",
   "classes": {
@@ -173,6 +185,14 @@ _utilities.register(
  },
  {
   "pkg": "wavefront",
+  "mod": "index/event",
+  "fqn": "pulumi_wavefront",
+  "classes": {
+   "wavefront:index/event:Event": "Event"
+  }
+ },
+ {
+  "pkg": "wavefront",
   "mod": "index/externalLink",
   "fqn": "pulumi_wavefront",
   "classes": {
@@ -193,6 +213,14 @@ _utilities.register(
   "fqn": "pulumi_wavefront",
   "classes": {
    "wavefront:index/maintenanceWindow:MaintenanceWindow": "MaintenanceWindow"
+  }
+ },
+ {
+  "pkg": "wavefront",
+  "mod": "index/metricsPolicy",
+  "fqn": "pulumi_wavefront",
+  "classes": {
+   "wavefront:index/metricsPolicy:MetricsPolicy": "MetricsPolicy"
   }
  },
  {

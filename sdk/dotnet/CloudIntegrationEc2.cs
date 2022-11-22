@@ -16,24 +16,21 @@ namespace Pulumi.Wavefront
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Wavefront = Pulumi.Wavefront;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
-    ///     {
-    ///         var extId = new Wavefront.CloudIntegrationAwsExternalId("extId", new Wavefront.CloudIntegrationAwsExternalIdArgs
-    ///         {
-    ///         });
-    ///         var ec2 = new Wavefront.CloudIntegrationEc2("ec2", new Wavefront.CloudIntegrationEc2Args
-    ///         {
-    ///             RoleArn = "arn:aws::1234567:role/example-arn",
-    ///             ExternalId = extId.Id,
-    ///         });
-    ///     }
+    ///     var extId = new Wavefront.CloudIntegrationAwsExternalId("extId");
     /// 
-    /// }
+    ///     var ec2 = new Wavefront.CloudIntegrationEc2("ec2", new()
+    ///     {
+    ///         RoleArn = "arn:aws::1234567:role/example-arn",
+    ///         ExternalId = extId.Id,
+    ///     });
+    /// 
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -45,7 +42,7 @@ namespace Pulumi.Wavefront
     /// ```
     /// </summary>
     [WavefrontResourceType("wavefront:index/cloudIntegrationEc2:CloudIntegrationEc2")]
-    public partial class CloudIntegrationEc2 : Pulumi.CustomResource
+    public partial class CloudIntegrationEc2 : global::Pulumi.CustomResource
     {
         /// <summary>
         /// A list of point tag key-values to add to every point ingested using this integration.
@@ -141,7 +138,7 @@ namespace Pulumi.Wavefront
         }
     }
 
-    public sealed class CloudIntegrationEc2Args : Pulumi.ResourceArgs
+    public sealed class CloudIntegrationEc2Args : global::Pulumi.ResourceArgs
     {
         [Input("additionalTags")]
         private InputMap<string>? _additionalTags;
@@ -208,9 +205,10 @@ namespace Pulumi.Wavefront
         public CloudIntegrationEc2Args()
         {
         }
+        public static new CloudIntegrationEc2Args Empty => new CloudIntegrationEc2Args();
     }
 
-    public sealed class CloudIntegrationEc2State : Pulumi.ResourceArgs
+    public sealed class CloudIntegrationEc2State : global::Pulumi.ResourceArgs
     {
         [Input("additionalTags")]
         private InputMap<string>? _additionalTags;
@@ -277,5 +275,6 @@ namespace Pulumi.Wavefront
         public CloudIntegrationEc2State()
         {
         }
+        public static new CloudIntegrationEc2State Empty => new CloudIntegrationEc2State();
     }
 }
