@@ -290,6 +290,48 @@ func (o CloudIntegrationEc2Output) ToCloudIntegrationEc2OutputWithContext(ctx co
 	return o
 }
 
+// A list of point tag key-values to add to every point ingested using this integration.
+func (o CloudIntegrationEc2Output) AdditionalTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *CloudIntegrationEc2) pulumi.StringMapOutput { return v.AdditionalTags }).(pulumi.StringMapOutput)
+}
+
+// The Role ARN that the customer has created in AWS IAM to allow access to Wavefront.
+func (o CloudIntegrationEc2Output) ExternalId() pulumi.StringOutput {
+	return o.ApplyT(func(v *CloudIntegrationEc2) pulumi.StringOutput { return v.ExternalId }).(pulumi.StringOutput)
+}
+
+// Forces this resource to save, even if errors are present.
+func (o CloudIntegrationEc2Output) ForceSave() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *CloudIntegrationEc2) pulumi.BoolPtrOutput { return v.ForceSave }).(pulumi.BoolPtrOutput)
+}
+
+// A list of AWS instance tags to use as the `source` name
+// in a series. Default is `["hostname", "host", "name"]`. If no tag in the list is found, the series source
+// is set to the instance id.
+func (o CloudIntegrationEc2Output) HostnameTags() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *CloudIntegrationEc2) pulumi.StringArrayOutput { return v.HostnameTags }).(pulumi.StringArrayOutput)
+}
+
+// The human-readable name of this integration.
+func (o CloudIntegrationEc2Output) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v *CloudIntegrationEc2) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
+}
+
+// The external ID corresponding to the Role ARN.
+func (o CloudIntegrationEc2Output) RoleArn() pulumi.StringOutput {
+	return o.ApplyT(func(v *CloudIntegrationEc2) pulumi.StringOutput { return v.RoleArn }).(pulumi.StringOutput)
+}
+
+// A value denoting which cloud service this service integrates with.
+func (o CloudIntegrationEc2Output) Service() pulumi.StringOutput {
+	return o.ApplyT(func(v *CloudIntegrationEc2) pulumi.StringOutput { return v.Service }).(pulumi.StringOutput)
+}
+
+// How often, in minutes, to refresh the service.
+func (o CloudIntegrationEc2Output) ServiceRefreshRateInMinutes() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *CloudIntegrationEc2) pulumi.IntPtrOutput { return v.ServiceRefreshRateInMinutes }).(pulumi.IntPtrOutput)
+}
+
 type CloudIntegrationEc2ArrayOutput struct{ *pulumi.OutputState }
 
 func (CloudIntegrationEc2ArrayOutput) ElementType() reflect.Type {

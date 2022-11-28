@@ -15,16 +15,15 @@ namespace Pulumi.Wavefront
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Wavefront = Pulumi.Wavefront;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testDashboardJson = new Wavefront.DashboardJson("testDashboardJson", new()
     ///     {
-    ///         var testDashboardJson = new Wavefront.DashboardJson("testDashboardJson", new Wavefront.DashboardJsonArgs
-    ///         {
-    ///             DashboardJson = @"{
+    ///         JSON = @"{
     ///   ""name"": ""Terraform Test Dashboard Json"",
     ///   ""description"": ""a"",
     ///   ""eventFilterType"": ""BYCHART"",
@@ -123,11 +122,12 @@ namespace Pulumi.Wavefront
     /// }
     /// 
     /// ",
-    ///         });
-    ///     }
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
+    /// 
+    /// **Note:** If there are dynamic variables in the Wavefront dashboard json, then these variables must be present in a separate file as mentioned in below section.
     /// 
     /// ## Import
     /// 
@@ -138,7 +138,7 @@ namespace Pulumi.Wavefront
     /// ```
     /// </summary>
     [WavefrontResourceType("wavefront:index/dashboardJson:DashboardJson")]
-    public partial class DashboardJson : Pulumi.CustomResource
+    public partial class DashboardJson : global::Pulumi.CustomResource
     {
         /// <summary>
         /// See the [Wavefront API Documentation](https://docs.wavefront.com/wavefront_api.html#api-documentation-wavefront-instance) 
@@ -191,7 +191,7 @@ namespace Pulumi.Wavefront
         }
     }
 
-    public sealed class DashboardJsonArgs : Pulumi.ResourceArgs
+    public sealed class DashboardJsonArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// See the [Wavefront API Documentation](https://docs.wavefront.com/wavefront_api.html#api-documentation-wavefront-instance) 
@@ -203,9 +203,10 @@ namespace Pulumi.Wavefront
         public DashboardJsonArgs()
         {
         }
+        public static new DashboardJsonArgs Empty => new DashboardJsonArgs();
     }
 
-    public sealed class DashboardJsonState : Pulumi.ResourceArgs
+    public sealed class DashboardJsonState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// See the [Wavefront API Documentation](https://docs.wavefront.com/wavefront_api.html#api-documentation-wavefront-instance) 
@@ -217,5 +218,6 @@ namespace Pulumi.Wavefront
         public DashboardJsonState()
         {
         }
+        public static new DashboardJsonState Empty => new DashboardJsonState();
     }
 }

@@ -1539,6 +1539,5412 @@ func (o DashboardSectionRowChartSourceArrayOutput) Index(i pulumi.IntInput) Dash
 	}).(DashboardSectionRowChartSourceOutput)
 }
 
+type MetricsPolicyPolicyRule struct {
+	// Valid options are `ALLOW` and `BLOCK`.
+	AccessType string `pulumi:"accessType"`
+	// List of account ids to apply Metrics Policy to. Must have at least one associated account_id, user_group_id, or role_id.
+	AccountIds []string `pulumi:"accountIds"`
+	// A detailed description of the Metrics Policy. The description is visible only when you edit the rule.
+	Description string `pulumi:"description"`
+	// The unique name identifier for a Metrics Policy. The name is visible on the Metrics Security Policy page.
+	Name string `pulumi:"name"`
+	// List of prefixes to match metrics on. You can specify the full metric name or use a wildcard character in metric names, sources, or point tags. The wildcard character alone (*) means all metrics.
+	Prefixes []string `pulumi:"prefixes"`
+	// -(Optional) List of role ids to apply Metrics Policy to. Must have at least one associated account_id, user_group_id, or role_id.
+	RoleIds []string `pulumi:"roleIds"`
+	// List of Key/Value tags to select target metrics for policy.
+	Tags []MetricsPolicyPolicyRuleTag `pulumi:"tags"`
+	// Bool where `true` require all tags are met by selected metrics, else `false` select metrics that match any give tag.
+	TagsAnded bool `pulumi:"tagsAnded"`
+	// List of user group ids to apply Metrics Policy to. Must have at least one associated account_id, user_group_id, or role_id.
+	UserGroupIds []string `pulumi:"userGroupIds"`
+}
+
+// MetricsPolicyPolicyRuleInput is an input type that accepts MetricsPolicyPolicyRuleArgs and MetricsPolicyPolicyRuleOutput values.
+// You can construct a concrete instance of `MetricsPolicyPolicyRuleInput` via:
+//
+//	MetricsPolicyPolicyRuleArgs{...}
+type MetricsPolicyPolicyRuleInput interface {
+	pulumi.Input
+
+	ToMetricsPolicyPolicyRuleOutput() MetricsPolicyPolicyRuleOutput
+	ToMetricsPolicyPolicyRuleOutputWithContext(context.Context) MetricsPolicyPolicyRuleOutput
+}
+
+type MetricsPolicyPolicyRuleArgs struct {
+	// Valid options are `ALLOW` and `BLOCK`.
+	AccessType pulumi.StringInput `pulumi:"accessType"`
+	// List of account ids to apply Metrics Policy to. Must have at least one associated account_id, user_group_id, or role_id.
+	AccountIds pulumi.StringArrayInput `pulumi:"accountIds"`
+	// A detailed description of the Metrics Policy. The description is visible only when you edit the rule.
+	Description pulumi.StringInput `pulumi:"description"`
+	// The unique name identifier for a Metrics Policy. The name is visible on the Metrics Security Policy page.
+	Name pulumi.StringInput `pulumi:"name"`
+	// List of prefixes to match metrics on. You can specify the full metric name or use a wildcard character in metric names, sources, or point tags. The wildcard character alone (*) means all metrics.
+	Prefixes pulumi.StringArrayInput `pulumi:"prefixes"`
+	// -(Optional) List of role ids to apply Metrics Policy to. Must have at least one associated account_id, user_group_id, or role_id.
+	RoleIds pulumi.StringArrayInput `pulumi:"roleIds"`
+	// List of Key/Value tags to select target metrics for policy.
+	Tags MetricsPolicyPolicyRuleTagArrayInput `pulumi:"tags"`
+	// Bool where `true` require all tags are met by selected metrics, else `false` select metrics that match any give tag.
+	TagsAnded pulumi.BoolInput `pulumi:"tagsAnded"`
+	// List of user group ids to apply Metrics Policy to. Must have at least one associated account_id, user_group_id, or role_id.
+	UserGroupIds pulumi.StringArrayInput `pulumi:"userGroupIds"`
+}
+
+func (MetricsPolicyPolicyRuleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MetricsPolicyPolicyRule)(nil)).Elem()
+}
+
+func (i MetricsPolicyPolicyRuleArgs) ToMetricsPolicyPolicyRuleOutput() MetricsPolicyPolicyRuleOutput {
+	return i.ToMetricsPolicyPolicyRuleOutputWithContext(context.Background())
+}
+
+func (i MetricsPolicyPolicyRuleArgs) ToMetricsPolicyPolicyRuleOutputWithContext(ctx context.Context) MetricsPolicyPolicyRuleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MetricsPolicyPolicyRuleOutput)
+}
+
+// MetricsPolicyPolicyRuleArrayInput is an input type that accepts MetricsPolicyPolicyRuleArray and MetricsPolicyPolicyRuleArrayOutput values.
+// You can construct a concrete instance of `MetricsPolicyPolicyRuleArrayInput` via:
+//
+//	MetricsPolicyPolicyRuleArray{ MetricsPolicyPolicyRuleArgs{...} }
+type MetricsPolicyPolicyRuleArrayInput interface {
+	pulumi.Input
+
+	ToMetricsPolicyPolicyRuleArrayOutput() MetricsPolicyPolicyRuleArrayOutput
+	ToMetricsPolicyPolicyRuleArrayOutputWithContext(context.Context) MetricsPolicyPolicyRuleArrayOutput
+}
+
+type MetricsPolicyPolicyRuleArray []MetricsPolicyPolicyRuleInput
+
+func (MetricsPolicyPolicyRuleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MetricsPolicyPolicyRule)(nil)).Elem()
+}
+
+func (i MetricsPolicyPolicyRuleArray) ToMetricsPolicyPolicyRuleArrayOutput() MetricsPolicyPolicyRuleArrayOutput {
+	return i.ToMetricsPolicyPolicyRuleArrayOutputWithContext(context.Background())
+}
+
+func (i MetricsPolicyPolicyRuleArray) ToMetricsPolicyPolicyRuleArrayOutputWithContext(ctx context.Context) MetricsPolicyPolicyRuleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MetricsPolicyPolicyRuleArrayOutput)
+}
+
+type MetricsPolicyPolicyRuleOutput struct{ *pulumi.OutputState }
+
+func (MetricsPolicyPolicyRuleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MetricsPolicyPolicyRule)(nil)).Elem()
+}
+
+func (o MetricsPolicyPolicyRuleOutput) ToMetricsPolicyPolicyRuleOutput() MetricsPolicyPolicyRuleOutput {
+	return o
+}
+
+func (o MetricsPolicyPolicyRuleOutput) ToMetricsPolicyPolicyRuleOutputWithContext(ctx context.Context) MetricsPolicyPolicyRuleOutput {
+	return o
+}
+
+// Valid options are `ALLOW` and `BLOCK`.
+func (o MetricsPolicyPolicyRuleOutput) AccessType() pulumi.StringOutput {
+	return o.ApplyT(func(v MetricsPolicyPolicyRule) string { return v.AccessType }).(pulumi.StringOutput)
+}
+
+// List of account ids to apply Metrics Policy to. Must have at least one associated account_id, user_group_id, or role_id.
+func (o MetricsPolicyPolicyRuleOutput) AccountIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v MetricsPolicyPolicyRule) []string { return v.AccountIds }).(pulumi.StringArrayOutput)
+}
+
+// A detailed description of the Metrics Policy. The description is visible only when you edit the rule.
+func (o MetricsPolicyPolicyRuleOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v MetricsPolicyPolicyRule) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// The unique name identifier for a Metrics Policy. The name is visible on the Metrics Security Policy page.
+func (o MetricsPolicyPolicyRuleOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v MetricsPolicyPolicyRule) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// List of prefixes to match metrics on. You can specify the full metric name or use a wildcard character in metric names, sources, or point tags. The wildcard character alone (*) means all metrics.
+func (o MetricsPolicyPolicyRuleOutput) Prefixes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v MetricsPolicyPolicyRule) []string { return v.Prefixes }).(pulumi.StringArrayOutput)
+}
+
+// -(Optional) List of role ids to apply Metrics Policy to. Must have at least one associated account_id, user_group_id, or role_id.
+func (o MetricsPolicyPolicyRuleOutput) RoleIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v MetricsPolicyPolicyRule) []string { return v.RoleIds }).(pulumi.StringArrayOutput)
+}
+
+// List of Key/Value tags to select target metrics for policy.
+func (o MetricsPolicyPolicyRuleOutput) Tags() MetricsPolicyPolicyRuleTagArrayOutput {
+	return o.ApplyT(func(v MetricsPolicyPolicyRule) []MetricsPolicyPolicyRuleTag { return v.Tags }).(MetricsPolicyPolicyRuleTagArrayOutput)
+}
+
+// Bool where `true` require all tags are met by selected metrics, else `false` select metrics that match any give tag.
+func (o MetricsPolicyPolicyRuleOutput) TagsAnded() pulumi.BoolOutput {
+	return o.ApplyT(func(v MetricsPolicyPolicyRule) bool { return v.TagsAnded }).(pulumi.BoolOutput)
+}
+
+// List of user group ids to apply Metrics Policy to. Must have at least one associated account_id, user_group_id, or role_id.
+func (o MetricsPolicyPolicyRuleOutput) UserGroupIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v MetricsPolicyPolicyRule) []string { return v.UserGroupIds }).(pulumi.StringArrayOutput)
+}
+
+type MetricsPolicyPolicyRuleArrayOutput struct{ *pulumi.OutputState }
+
+func (MetricsPolicyPolicyRuleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MetricsPolicyPolicyRule)(nil)).Elem()
+}
+
+func (o MetricsPolicyPolicyRuleArrayOutput) ToMetricsPolicyPolicyRuleArrayOutput() MetricsPolicyPolicyRuleArrayOutput {
+	return o
+}
+
+func (o MetricsPolicyPolicyRuleArrayOutput) ToMetricsPolicyPolicyRuleArrayOutputWithContext(ctx context.Context) MetricsPolicyPolicyRuleArrayOutput {
+	return o
+}
+
+func (o MetricsPolicyPolicyRuleArrayOutput) Index(i pulumi.IntInput) MetricsPolicyPolicyRuleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) MetricsPolicyPolicyRule {
+		return vs[0].([]MetricsPolicyPolicyRule)[vs[1].(int)]
+	}).(MetricsPolicyPolicyRuleOutput)
+}
+
+type MetricsPolicyPolicyRuleTag struct {
+	// The tag's key.
+	Key string `pulumi:"key"`
+	// The tag's value.
+	Value string `pulumi:"value"`
+}
+
+// MetricsPolicyPolicyRuleTagInput is an input type that accepts MetricsPolicyPolicyRuleTagArgs and MetricsPolicyPolicyRuleTagOutput values.
+// You can construct a concrete instance of `MetricsPolicyPolicyRuleTagInput` via:
+//
+//	MetricsPolicyPolicyRuleTagArgs{...}
+type MetricsPolicyPolicyRuleTagInput interface {
+	pulumi.Input
+
+	ToMetricsPolicyPolicyRuleTagOutput() MetricsPolicyPolicyRuleTagOutput
+	ToMetricsPolicyPolicyRuleTagOutputWithContext(context.Context) MetricsPolicyPolicyRuleTagOutput
+}
+
+type MetricsPolicyPolicyRuleTagArgs struct {
+	// The tag's key.
+	Key pulumi.StringInput `pulumi:"key"`
+	// The tag's value.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (MetricsPolicyPolicyRuleTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MetricsPolicyPolicyRuleTag)(nil)).Elem()
+}
+
+func (i MetricsPolicyPolicyRuleTagArgs) ToMetricsPolicyPolicyRuleTagOutput() MetricsPolicyPolicyRuleTagOutput {
+	return i.ToMetricsPolicyPolicyRuleTagOutputWithContext(context.Background())
+}
+
+func (i MetricsPolicyPolicyRuleTagArgs) ToMetricsPolicyPolicyRuleTagOutputWithContext(ctx context.Context) MetricsPolicyPolicyRuleTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MetricsPolicyPolicyRuleTagOutput)
+}
+
+// MetricsPolicyPolicyRuleTagArrayInput is an input type that accepts MetricsPolicyPolicyRuleTagArray and MetricsPolicyPolicyRuleTagArrayOutput values.
+// You can construct a concrete instance of `MetricsPolicyPolicyRuleTagArrayInput` via:
+//
+//	MetricsPolicyPolicyRuleTagArray{ MetricsPolicyPolicyRuleTagArgs{...} }
+type MetricsPolicyPolicyRuleTagArrayInput interface {
+	pulumi.Input
+
+	ToMetricsPolicyPolicyRuleTagArrayOutput() MetricsPolicyPolicyRuleTagArrayOutput
+	ToMetricsPolicyPolicyRuleTagArrayOutputWithContext(context.Context) MetricsPolicyPolicyRuleTagArrayOutput
+}
+
+type MetricsPolicyPolicyRuleTagArray []MetricsPolicyPolicyRuleTagInput
+
+func (MetricsPolicyPolicyRuleTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MetricsPolicyPolicyRuleTag)(nil)).Elem()
+}
+
+func (i MetricsPolicyPolicyRuleTagArray) ToMetricsPolicyPolicyRuleTagArrayOutput() MetricsPolicyPolicyRuleTagArrayOutput {
+	return i.ToMetricsPolicyPolicyRuleTagArrayOutputWithContext(context.Background())
+}
+
+func (i MetricsPolicyPolicyRuleTagArray) ToMetricsPolicyPolicyRuleTagArrayOutputWithContext(ctx context.Context) MetricsPolicyPolicyRuleTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MetricsPolicyPolicyRuleTagArrayOutput)
+}
+
+type MetricsPolicyPolicyRuleTagOutput struct{ *pulumi.OutputState }
+
+func (MetricsPolicyPolicyRuleTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MetricsPolicyPolicyRuleTag)(nil)).Elem()
+}
+
+func (o MetricsPolicyPolicyRuleTagOutput) ToMetricsPolicyPolicyRuleTagOutput() MetricsPolicyPolicyRuleTagOutput {
+	return o
+}
+
+func (o MetricsPolicyPolicyRuleTagOutput) ToMetricsPolicyPolicyRuleTagOutputWithContext(ctx context.Context) MetricsPolicyPolicyRuleTagOutput {
+	return o
+}
+
+// The tag's key.
+func (o MetricsPolicyPolicyRuleTagOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v MetricsPolicyPolicyRuleTag) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// The tag's value.
+func (o MetricsPolicyPolicyRuleTagOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v MetricsPolicyPolicyRuleTag) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type MetricsPolicyPolicyRuleTagArrayOutput struct{ *pulumi.OutputState }
+
+func (MetricsPolicyPolicyRuleTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MetricsPolicyPolicyRuleTag)(nil)).Elem()
+}
+
+func (o MetricsPolicyPolicyRuleTagArrayOutput) ToMetricsPolicyPolicyRuleTagArrayOutput() MetricsPolicyPolicyRuleTagArrayOutput {
+	return o
+}
+
+func (o MetricsPolicyPolicyRuleTagArrayOutput) ToMetricsPolicyPolicyRuleTagArrayOutputWithContext(ctx context.Context) MetricsPolicyPolicyRuleTagArrayOutput {
+	return o
+}
+
+func (o MetricsPolicyPolicyRuleTagArrayOutput) Index(i pulumi.IntInput) MetricsPolicyPolicyRuleTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) MetricsPolicyPolicyRuleTag {
+		return vs[0].([]MetricsPolicyPolicyRuleTag)[vs[1].(int)]
+	}).(MetricsPolicyPolicyRuleTagOutput)
+}
+
+type GetAlertFailingHostLabelPair struct {
+	Firing int    `pulumi:"firing"`
+	Host   string `pulumi:"host"`
+}
+
+// GetAlertFailingHostLabelPairInput is an input type that accepts GetAlertFailingHostLabelPairArgs and GetAlertFailingHostLabelPairOutput values.
+// You can construct a concrete instance of `GetAlertFailingHostLabelPairInput` via:
+//
+//	GetAlertFailingHostLabelPairArgs{...}
+type GetAlertFailingHostLabelPairInput interface {
+	pulumi.Input
+
+	ToGetAlertFailingHostLabelPairOutput() GetAlertFailingHostLabelPairOutput
+	ToGetAlertFailingHostLabelPairOutputWithContext(context.Context) GetAlertFailingHostLabelPairOutput
+}
+
+type GetAlertFailingHostLabelPairArgs struct {
+	Firing pulumi.IntInput    `pulumi:"firing"`
+	Host   pulumi.StringInput `pulumi:"host"`
+}
+
+func (GetAlertFailingHostLabelPairArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAlertFailingHostLabelPair)(nil)).Elem()
+}
+
+func (i GetAlertFailingHostLabelPairArgs) ToGetAlertFailingHostLabelPairOutput() GetAlertFailingHostLabelPairOutput {
+	return i.ToGetAlertFailingHostLabelPairOutputWithContext(context.Background())
+}
+
+func (i GetAlertFailingHostLabelPairArgs) ToGetAlertFailingHostLabelPairOutputWithContext(ctx context.Context) GetAlertFailingHostLabelPairOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAlertFailingHostLabelPairOutput)
+}
+
+// GetAlertFailingHostLabelPairArrayInput is an input type that accepts GetAlertFailingHostLabelPairArray and GetAlertFailingHostLabelPairArrayOutput values.
+// You can construct a concrete instance of `GetAlertFailingHostLabelPairArrayInput` via:
+//
+//	GetAlertFailingHostLabelPairArray{ GetAlertFailingHostLabelPairArgs{...} }
+type GetAlertFailingHostLabelPairArrayInput interface {
+	pulumi.Input
+
+	ToGetAlertFailingHostLabelPairArrayOutput() GetAlertFailingHostLabelPairArrayOutput
+	ToGetAlertFailingHostLabelPairArrayOutputWithContext(context.Context) GetAlertFailingHostLabelPairArrayOutput
+}
+
+type GetAlertFailingHostLabelPairArray []GetAlertFailingHostLabelPairInput
+
+func (GetAlertFailingHostLabelPairArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAlertFailingHostLabelPair)(nil)).Elem()
+}
+
+func (i GetAlertFailingHostLabelPairArray) ToGetAlertFailingHostLabelPairArrayOutput() GetAlertFailingHostLabelPairArrayOutput {
+	return i.ToGetAlertFailingHostLabelPairArrayOutputWithContext(context.Background())
+}
+
+func (i GetAlertFailingHostLabelPairArray) ToGetAlertFailingHostLabelPairArrayOutputWithContext(ctx context.Context) GetAlertFailingHostLabelPairArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAlertFailingHostLabelPairArrayOutput)
+}
+
+type GetAlertFailingHostLabelPairOutput struct{ *pulumi.OutputState }
+
+func (GetAlertFailingHostLabelPairOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAlertFailingHostLabelPair)(nil)).Elem()
+}
+
+func (o GetAlertFailingHostLabelPairOutput) ToGetAlertFailingHostLabelPairOutput() GetAlertFailingHostLabelPairOutput {
+	return o
+}
+
+func (o GetAlertFailingHostLabelPairOutput) ToGetAlertFailingHostLabelPairOutputWithContext(ctx context.Context) GetAlertFailingHostLabelPairOutput {
+	return o
+}
+
+func (o GetAlertFailingHostLabelPairOutput) Firing() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAlertFailingHostLabelPair) int { return v.Firing }).(pulumi.IntOutput)
+}
+
+func (o GetAlertFailingHostLabelPairOutput) Host() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlertFailingHostLabelPair) string { return v.Host }).(pulumi.StringOutput)
+}
+
+type GetAlertFailingHostLabelPairArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAlertFailingHostLabelPairArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAlertFailingHostLabelPair)(nil)).Elem()
+}
+
+func (o GetAlertFailingHostLabelPairArrayOutput) ToGetAlertFailingHostLabelPairArrayOutput() GetAlertFailingHostLabelPairArrayOutput {
+	return o
+}
+
+func (o GetAlertFailingHostLabelPairArrayOutput) ToGetAlertFailingHostLabelPairArrayOutputWithContext(ctx context.Context) GetAlertFailingHostLabelPairArrayOutput {
+	return o
+}
+
+func (o GetAlertFailingHostLabelPairArrayOutput) Index(i pulumi.IntInput) GetAlertFailingHostLabelPairOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAlertFailingHostLabelPair {
+		return vs[0].([]GetAlertFailingHostLabelPair)[vs[1].(int)]
+	}).(GetAlertFailingHostLabelPairOutput)
+}
+
+type GetAlertInMaintenanceHostLabelPair struct {
+	Firing int    `pulumi:"firing"`
+	Host   string `pulumi:"host"`
+}
+
+// GetAlertInMaintenanceHostLabelPairInput is an input type that accepts GetAlertInMaintenanceHostLabelPairArgs and GetAlertInMaintenanceHostLabelPairOutput values.
+// You can construct a concrete instance of `GetAlertInMaintenanceHostLabelPairInput` via:
+//
+//	GetAlertInMaintenanceHostLabelPairArgs{...}
+type GetAlertInMaintenanceHostLabelPairInput interface {
+	pulumi.Input
+
+	ToGetAlertInMaintenanceHostLabelPairOutput() GetAlertInMaintenanceHostLabelPairOutput
+	ToGetAlertInMaintenanceHostLabelPairOutputWithContext(context.Context) GetAlertInMaintenanceHostLabelPairOutput
+}
+
+type GetAlertInMaintenanceHostLabelPairArgs struct {
+	Firing pulumi.IntInput    `pulumi:"firing"`
+	Host   pulumi.StringInput `pulumi:"host"`
+}
+
+func (GetAlertInMaintenanceHostLabelPairArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAlertInMaintenanceHostLabelPair)(nil)).Elem()
+}
+
+func (i GetAlertInMaintenanceHostLabelPairArgs) ToGetAlertInMaintenanceHostLabelPairOutput() GetAlertInMaintenanceHostLabelPairOutput {
+	return i.ToGetAlertInMaintenanceHostLabelPairOutputWithContext(context.Background())
+}
+
+func (i GetAlertInMaintenanceHostLabelPairArgs) ToGetAlertInMaintenanceHostLabelPairOutputWithContext(ctx context.Context) GetAlertInMaintenanceHostLabelPairOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAlertInMaintenanceHostLabelPairOutput)
+}
+
+// GetAlertInMaintenanceHostLabelPairArrayInput is an input type that accepts GetAlertInMaintenanceHostLabelPairArray and GetAlertInMaintenanceHostLabelPairArrayOutput values.
+// You can construct a concrete instance of `GetAlertInMaintenanceHostLabelPairArrayInput` via:
+//
+//	GetAlertInMaintenanceHostLabelPairArray{ GetAlertInMaintenanceHostLabelPairArgs{...} }
+type GetAlertInMaintenanceHostLabelPairArrayInput interface {
+	pulumi.Input
+
+	ToGetAlertInMaintenanceHostLabelPairArrayOutput() GetAlertInMaintenanceHostLabelPairArrayOutput
+	ToGetAlertInMaintenanceHostLabelPairArrayOutputWithContext(context.Context) GetAlertInMaintenanceHostLabelPairArrayOutput
+}
+
+type GetAlertInMaintenanceHostLabelPairArray []GetAlertInMaintenanceHostLabelPairInput
+
+func (GetAlertInMaintenanceHostLabelPairArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAlertInMaintenanceHostLabelPair)(nil)).Elem()
+}
+
+func (i GetAlertInMaintenanceHostLabelPairArray) ToGetAlertInMaintenanceHostLabelPairArrayOutput() GetAlertInMaintenanceHostLabelPairArrayOutput {
+	return i.ToGetAlertInMaintenanceHostLabelPairArrayOutputWithContext(context.Background())
+}
+
+func (i GetAlertInMaintenanceHostLabelPairArray) ToGetAlertInMaintenanceHostLabelPairArrayOutputWithContext(ctx context.Context) GetAlertInMaintenanceHostLabelPairArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAlertInMaintenanceHostLabelPairArrayOutput)
+}
+
+type GetAlertInMaintenanceHostLabelPairOutput struct{ *pulumi.OutputState }
+
+func (GetAlertInMaintenanceHostLabelPairOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAlertInMaintenanceHostLabelPair)(nil)).Elem()
+}
+
+func (o GetAlertInMaintenanceHostLabelPairOutput) ToGetAlertInMaintenanceHostLabelPairOutput() GetAlertInMaintenanceHostLabelPairOutput {
+	return o
+}
+
+func (o GetAlertInMaintenanceHostLabelPairOutput) ToGetAlertInMaintenanceHostLabelPairOutputWithContext(ctx context.Context) GetAlertInMaintenanceHostLabelPairOutput {
+	return o
+}
+
+func (o GetAlertInMaintenanceHostLabelPairOutput) Firing() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAlertInMaintenanceHostLabelPair) int { return v.Firing }).(pulumi.IntOutput)
+}
+
+func (o GetAlertInMaintenanceHostLabelPairOutput) Host() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlertInMaintenanceHostLabelPair) string { return v.Host }).(pulumi.StringOutput)
+}
+
+type GetAlertInMaintenanceHostLabelPairArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAlertInMaintenanceHostLabelPairArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAlertInMaintenanceHostLabelPair)(nil)).Elem()
+}
+
+func (o GetAlertInMaintenanceHostLabelPairArrayOutput) ToGetAlertInMaintenanceHostLabelPairArrayOutput() GetAlertInMaintenanceHostLabelPairArrayOutput {
+	return o
+}
+
+func (o GetAlertInMaintenanceHostLabelPairArrayOutput) ToGetAlertInMaintenanceHostLabelPairArrayOutputWithContext(ctx context.Context) GetAlertInMaintenanceHostLabelPairArrayOutput {
+	return o
+}
+
+func (o GetAlertInMaintenanceHostLabelPairArrayOutput) Index(i pulumi.IntInput) GetAlertInMaintenanceHostLabelPairOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAlertInMaintenanceHostLabelPair {
+		return vs[0].([]GetAlertInMaintenanceHostLabelPair)[vs[1].(int)]
+	}).(GetAlertInMaintenanceHostLabelPairOutput)
+}
+
+type GetAlertsAlert struct {
+	// User-supplied additional explanatory information about this alert.
+	AdditionalInformation string `pulumi:"additionalInformation"`
+	AlertType             string `pulumi:"alertType"`
+	// A list of users or groups that can modify the alert.
+	CanModifies []string `pulumi:"canModifies"`
+	// A list of users or groups that can view the alert.
+	CanViews []string `pulumi:"canViews"`
+	// A Wavefront query that is evaluated at regular intervals (default is 1 minute). The alert fires and notifications are triggered when a data series matching this query evaluates to a non-zero value for a set number of consecutive minutes.
+	Condition string `pulumi:"condition"`
+	// A map of severity to condition for which this alert will trigger.
+	Conditions map[string]string `pulumi:"conditions"`
+	// A second query the results of which are displayed in the alert user interface instead of the condition query.
+	DisplayExpression string `pulumi:"displayExpression"`
+	// A Boolean flag to enable real-time evaluation.
+	EvaluateRealtimeData bool `pulumi:"evaluateRealtimeData"`
+	// A list of failing host label pairs.
+	FailingHostLabelPairs []GetAlertsAlertFailingHostLabelPair `pulumi:"failingHostLabelPairs"`
+	// The ID of the alert in Wavefront.
+	// * `alertType`- The type of alert in Wavefront.
+	Id string `pulumi:"id"`
+	// A list of in maintenance host label pairs.
+	InMaintenanceHostLabelPairs []GetAlertsAlertInMaintenanceHostLabelPair `pulumi:"inMaintenanceHostLabelPairs"`
+	// A Boolean flag indicating whether to include obsolete metrics or not.
+	IncludeObsoleteMetrics bool `pulumi:"includeObsoleteMetrics"`
+	// The number of consecutive minutes that a series matching the condition query must evaluate to "true" (non-zero value) before the alert fires.
+	Minutes int `pulumi:"minutes"`
+	// The name of the alert as it is displayed in Wavefront.
+	Name string `pulumi:"name"`
+	// How often to re-trigger a continually failing alert.
+	NotificationResendFrequencyMinutes int `pulumi:"notificationResendFrequencyMinutes"`
+	// The specified query is executed every `processRateMinutes` minutes.
+	ProcessRateMinutes int `pulumi:"processRateMinutes"`
+	// The number of consecutive minutes that a firing series matching the condition query must evaluate to "false" (zero value) before the alert resolves.
+	ResolveAfterMinutes int `pulumi:"resolveAfterMinutes"`
+	// The severity of the alert.
+	Severity      string   `pulumi:"severity"`
+	SeverityLists []string `pulumi:"severityLists"`
+	// The status of the alert.
+	Statuses []string `pulumi:"statuses"`
+	// A set of tags assigned to the alert.
+	Tags []string `pulumi:"tags"`
+	// An email address or integration endpoint (such as PagerDuty or webhook) to notify when the alert status changes.
+	Target string `pulumi:"target"`
+	// A comma-separated list of the email addresses or integration endpoints (such as PagerDuty or webhook) to notify when the alert status changes. Multiple target types can be in the list.
+	Targets map[string]string `pulumi:"targets"`
+}
+
+// GetAlertsAlertInput is an input type that accepts GetAlertsAlertArgs and GetAlertsAlertOutput values.
+// You can construct a concrete instance of `GetAlertsAlertInput` via:
+//
+//	GetAlertsAlertArgs{...}
+type GetAlertsAlertInput interface {
+	pulumi.Input
+
+	ToGetAlertsAlertOutput() GetAlertsAlertOutput
+	ToGetAlertsAlertOutputWithContext(context.Context) GetAlertsAlertOutput
+}
+
+type GetAlertsAlertArgs struct {
+	// User-supplied additional explanatory information about this alert.
+	AdditionalInformation pulumi.StringInput `pulumi:"additionalInformation"`
+	AlertType             pulumi.StringInput `pulumi:"alertType"`
+	// A list of users or groups that can modify the alert.
+	CanModifies pulumi.StringArrayInput `pulumi:"canModifies"`
+	// A list of users or groups that can view the alert.
+	CanViews pulumi.StringArrayInput `pulumi:"canViews"`
+	// A Wavefront query that is evaluated at regular intervals (default is 1 minute). The alert fires and notifications are triggered when a data series matching this query evaluates to a non-zero value for a set number of consecutive minutes.
+	Condition pulumi.StringInput `pulumi:"condition"`
+	// A map of severity to condition for which this alert will trigger.
+	Conditions pulumi.StringMapInput `pulumi:"conditions"`
+	// A second query the results of which are displayed in the alert user interface instead of the condition query.
+	DisplayExpression pulumi.StringInput `pulumi:"displayExpression"`
+	// A Boolean flag to enable real-time evaluation.
+	EvaluateRealtimeData pulumi.BoolInput `pulumi:"evaluateRealtimeData"`
+	// A list of failing host label pairs.
+	FailingHostLabelPairs GetAlertsAlertFailingHostLabelPairArrayInput `pulumi:"failingHostLabelPairs"`
+	// The ID of the alert in Wavefront.
+	// * `alertType`- The type of alert in Wavefront.
+	Id pulumi.StringInput `pulumi:"id"`
+	// A list of in maintenance host label pairs.
+	InMaintenanceHostLabelPairs GetAlertsAlertInMaintenanceHostLabelPairArrayInput `pulumi:"inMaintenanceHostLabelPairs"`
+	// A Boolean flag indicating whether to include obsolete metrics or not.
+	IncludeObsoleteMetrics pulumi.BoolInput `pulumi:"includeObsoleteMetrics"`
+	// The number of consecutive minutes that a series matching the condition query must evaluate to "true" (non-zero value) before the alert fires.
+	Minutes pulumi.IntInput `pulumi:"minutes"`
+	// The name of the alert as it is displayed in Wavefront.
+	Name pulumi.StringInput `pulumi:"name"`
+	// How often to re-trigger a continually failing alert.
+	NotificationResendFrequencyMinutes pulumi.IntInput `pulumi:"notificationResendFrequencyMinutes"`
+	// The specified query is executed every `processRateMinutes` minutes.
+	ProcessRateMinutes pulumi.IntInput `pulumi:"processRateMinutes"`
+	// The number of consecutive minutes that a firing series matching the condition query must evaluate to "false" (zero value) before the alert resolves.
+	ResolveAfterMinutes pulumi.IntInput `pulumi:"resolveAfterMinutes"`
+	// The severity of the alert.
+	Severity      pulumi.StringInput      `pulumi:"severity"`
+	SeverityLists pulumi.StringArrayInput `pulumi:"severityLists"`
+	// The status of the alert.
+	Statuses pulumi.StringArrayInput `pulumi:"statuses"`
+	// A set of tags assigned to the alert.
+	Tags pulumi.StringArrayInput `pulumi:"tags"`
+	// An email address or integration endpoint (such as PagerDuty or webhook) to notify when the alert status changes.
+	Target pulumi.StringInput `pulumi:"target"`
+	// A comma-separated list of the email addresses or integration endpoints (such as PagerDuty or webhook) to notify when the alert status changes. Multiple target types can be in the list.
+	Targets pulumi.StringMapInput `pulumi:"targets"`
+}
+
+func (GetAlertsAlertArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAlertsAlert)(nil)).Elem()
+}
+
+func (i GetAlertsAlertArgs) ToGetAlertsAlertOutput() GetAlertsAlertOutput {
+	return i.ToGetAlertsAlertOutputWithContext(context.Background())
+}
+
+func (i GetAlertsAlertArgs) ToGetAlertsAlertOutputWithContext(ctx context.Context) GetAlertsAlertOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAlertsAlertOutput)
+}
+
+// GetAlertsAlertArrayInput is an input type that accepts GetAlertsAlertArray and GetAlertsAlertArrayOutput values.
+// You can construct a concrete instance of `GetAlertsAlertArrayInput` via:
+//
+//	GetAlertsAlertArray{ GetAlertsAlertArgs{...} }
+type GetAlertsAlertArrayInput interface {
+	pulumi.Input
+
+	ToGetAlertsAlertArrayOutput() GetAlertsAlertArrayOutput
+	ToGetAlertsAlertArrayOutputWithContext(context.Context) GetAlertsAlertArrayOutput
+}
+
+type GetAlertsAlertArray []GetAlertsAlertInput
+
+func (GetAlertsAlertArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAlertsAlert)(nil)).Elem()
+}
+
+func (i GetAlertsAlertArray) ToGetAlertsAlertArrayOutput() GetAlertsAlertArrayOutput {
+	return i.ToGetAlertsAlertArrayOutputWithContext(context.Background())
+}
+
+func (i GetAlertsAlertArray) ToGetAlertsAlertArrayOutputWithContext(ctx context.Context) GetAlertsAlertArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAlertsAlertArrayOutput)
+}
+
+type GetAlertsAlertOutput struct{ *pulumi.OutputState }
+
+func (GetAlertsAlertOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAlertsAlert)(nil)).Elem()
+}
+
+func (o GetAlertsAlertOutput) ToGetAlertsAlertOutput() GetAlertsAlertOutput {
+	return o
+}
+
+func (o GetAlertsAlertOutput) ToGetAlertsAlertOutputWithContext(ctx context.Context) GetAlertsAlertOutput {
+	return o
+}
+
+// User-supplied additional explanatory information about this alert.
+func (o GetAlertsAlertOutput) AdditionalInformation() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlertsAlert) string { return v.AdditionalInformation }).(pulumi.StringOutput)
+}
+
+func (o GetAlertsAlertOutput) AlertType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlertsAlert) string { return v.AlertType }).(pulumi.StringOutput)
+}
+
+// A list of users or groups that can modify the alert.
+func (o GetAlertsAlertOutput) CanModifies() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetAlertsAlert) []string { return v.CanModifies }).(pulumi.StringArrayOutput)
+}
+
+// A list of users or groups that can view the alert.
+func (o GetAlertsAlertOutput) CanViews() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetAlertsAlert) []string { return v.CanViews }).(pulumi.StringArrayOutput)
+}
+
+// A Wavefront query that is evaluated at regular intervals (default is 1 minute). The alert fires and notifications are triggered when a data series matching this query evaluates to a non-zero value for a set number of consecutive minutes.
+func (o GetAlertsAlertOutput) Condition() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlertsAlert) string { return v.Condition }).(pulumi.StringOutput)
+}
+
+// A map of severity to condition for which this alert will trigger.
+func (o GetAlertsAlertOutput) Conditions() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetAlertsAlert) map[string]string { return v.Conditions }).(pulumi.StringMapOutput)
+}
+
+// A second query the results of which are displayed in the alert user interface instead of the condition query.
+func (o GetAlertsAlertOutput) DisplayExpression() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlertsAlert) string { return v.DisplayExpression }).(pulumi.StringOutput)
+}
+
+// A Boolean flag to enable real-time evaluation.
+func (o GetAlertsAlertOutput) EvaluateRealtimeData() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetAlertsAlert) bool { return v.EvaluateRealtimeData }).(pulumi.BoolOutput)
+}
+
+// A list of failing host label pairs.
+func (o GetAlertsAlertOutput) FailingHostLabelPairs() GetAlertsAlertFailingHostLabelPairArrayOutput {
+	return o.ApplyT(func(v GetAlertsAlert) []GetAlertsAlertFailingHostLabelPair { return v.FailingHostLabelPairs }).(GetAlertsAlertFailingHostLabelPairArrayOutput)
+}
+
+// The ID of the alert in Wavefront.
+// * `alertType`- The type of alert in Wavefront.
+func (o GetAlertsAlertOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlertsAlert) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// A list of in maintenance host label pairs.
+func (o GetAlertsAlertOutput) InMaintenanceHostLabelPairs() GetAlertsAlertInMaintenanceHostLabelPairArrayOutput {
+	return o.ApplyT(func(v GetAlertsAlert) []GetAlertsAlertInMaintenanceHostLabelPair {
+		return v.InMaintenanceHostLabelPairs
+	}).(GetAlertsAlertInMaintenanceHostLabelPairArrayOutput)
+}
+
+// A Boolean flag indicating whether to include obsolete metrics or not.
+func (o GetAlertsAlertOutput) IncludeObsoleteMetrics() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetAlertsAlert) bool { return v.IncludeObsoleteMetrics }).(pulumi.BoolOutput)
+}
+
+// The number of consecutive minutes that a series matching the condition query must evaluate to "true" (non-zero value) before the alert fires.
+func (o GetAlertsAlertOutput) Minutes() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAlertsAlert) int { return v.Minutes }).(pulumi.IntOutput)
+}
+
+// The name of the alert as it is displayed in Wavefront.
+func (o GetAlertsAlertOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlertsAlert) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// How often to re-trigger a continually failing alert.
+func (o GetAlertsAlertOutput) NotificationResendFrequencyMinutes() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAlertsAlert) int { return v.NotificationResendFrequencyMinutes }).(pulumi.IntOutput)
+}
+
+// The specified query is executed every `processRateMinutes` minutes.
+func (o GetAlertsAlertOutput) ProcessRateMinutes() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAlertsAlert) int { return v.ProcessRateMinutes }).(pulumi.IntOutput)
+}
+
+// The number of consecutive minutes that a firing series matching the condition query must evaluate to "false" (zero value) before the alert resolves.
+func (o GetAlertsAlertOutput) ResolveAfterMinutes() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAlertsAlert) int { return v.ResolveAfterMinutes }).(pulumi.IntOutput)
+}
+
+// The severity of the alert.
+func (o GetAlertsAlertOutput) Severity() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlertsAlert) string { return v.Severity }).(pulumi.StringOutput)
+}
+
+func (o GetAlertsAlertOutput) SeverityLists() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetAlertsAlert) []string { return v.SeverityLists }).(pulumi.StringArrayOutput)
+}
+
+// The status of the alert.
+func (o GetAlertsAlertOutput) Statuses() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetAlertsAlert) []string { return v.Statuses }).(pulumi.StringArrayOutput)
+}
+
+// A set of tags assigned to the alert.
+func (o GetAlertsAlertOutput) Tags() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetAlertsAlert) []string { return v.Tags }).(pulumi.StringArrayOutput)
+}
+
+// An email address or integration endpoint (such as PagerDuty or webhook) to notify when the alert status changes.
+func (o GetAlertsAlertOutput) Target() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlertsAlert) string { return v.Target }).(pulumi.StringOutput)
+}
+
+// A comma-separated list of the email addresses or integration endpoints (such as PagerDuty or webhook) to notify when the alert status changes. Multiple target types can be in the list.
+func (o GetAlertsAlertOutput) Targets() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetAlertsAlert) map[string]string { return v.Targets }).(pulumi.StringMapOutput)
+}
+
+type GetAlertsAlertArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAlertsAlertArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAlertsAlert)(nil)).Elem()
+}
+
+func (o GetAlertsAlertArrayOutput) ToGetAlertsAlertArrayOutput() GetAlertsAlertArrayOutput {
+	return o
+}
+
+func (o GetAlertsAlertArrayOutput) ToGetAlertsAlertArrayOutputWithContext(ctx context.Context) GetAlertsAlertArrayOutput {
+	return o
+}
+
+func (o GetAlertsAlertArrayOutput) Index(i pulumi.IntInput) GetAlertsAlertOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAlertsAlert {
+		return vs[0].([]GetAlertsAlert)[vs[1].(int)]
+	}).(GetAlertsAlertOutput)
+}
+
+type GetAlertsAlertFailingHostLabelPair struct {
+	Firing int    `pulumi:"firing"`
+	Host   string `pulumi:"host"`
+}
+
+// GetAlertsAlertFailingHostLabelPairInput is an input type that accepts GetAlertsAlertFailingHostLabelPairArgs and GetAlertsAlertFailingHostLabelPairOutput values.
+// You can construct a concrete instance of `GetAlertsAlertFailingHostLabelPairInput` via:
+//
+//	GetAlertsAlertFailingHostLabelPairArgs{...}
+type GetAlertsAlertFailingHostLabelPairInput interface {
+	pulumi.Input
+
+	ToGetAlertsAlertFailingHostLabelPairOutput() GetAlertsAlertFailingHostLabelPairOutput
+	ToGetAlertsAlertFailingHostLabelPairOutputWithContext(context.Context) GetAlertsAlertFailingHostLabelPairOutput
+}
+
+type GetAlertsAlertFailingHostLabelPairArgs struct {
+	Firing pulumi.IntInput    `pulumi:"firing"`
+	Host   pulumi.StringInput `pulumi:"host"`
+}
+
+func (GetAlertsAlertFailingHostLabelPairArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAlertsAlertFailingHostLabelPair)(nil)).Elem()
+}
+
+func (i GetAlertsAlertFailingHostLabelPairArgs) ToGetAlertsAlertFailingHostLabelPairOutput() GetAlertsAlertFailingHostLabelPairOutput {
+	return i.ToGetAlertsAlertFailingHostLabelPairOutputWithContext(context.Background())
+}
+
+func (i GetAlertsAlertFailingHostLabelPairArgs) ToGetAlertsAlertFailingHostLabelPairOutputWithContext(ctx context.Context) GetAlertsAlertFailingHostLabelPairOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAlertsAlertFailingHostLabelPairOutput)
+}
+
+// GetAlertsAlertFailingHostLabelPairArrayInput is an input type that accepts GetAlertsAlertFailingHostLabelPairArray and GetAlertsAlertFailingHostLabelPairArrayOutput values.
+// You can construct a concrete instance of `GetAlertsAlertFailingHostLabelPairArrayInput` via:
+//
+//	GetAlertsAlertFailingHostLabelPairArray{ GetAlertsAlertFailingHostLabelPairArgs{...} }
+type GetAlertsAlertFailingHostLabelPairArrayInput interface {
+	pulumi.Input
+
+	ToGetAlertsAlertFailingHostLabelPairArrayOutput() GetAlertsAlertFailingHostLabelPairArrayOutput
+	ToGetAlertsAlertFailingHostLabelPairArrayOutputWithContext(context.Context) GetAlertsAlertFailingHostLabelPairArrayOutput
+}
+
+type GetAlertsAlertFailingHostLabelPairArray []GetAlertsAlertFailingHostLabelPairInput
+
+func (GetAlertsAlertFailingHostLabelPairArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAlertsAlertFailingHostLabelPair)(nil)).Elem()
+}
+
+func (i GetAlertsAlertFailingHostLabelPairArray) ToGetAlertsAlertFailingHostLabelPairArrayOutput() GetAlertsAlertFailingHostLabelPairArrayOutput {
+	return i.ToGetAlertsAlertFailingHostLabelPairArrayOutputWithContext(context.Background())
+}
+
+func (i GetAlertsAlertFailingHostLabelPairArray) ToGetAlertsAlertFailingHostLabelPairArrayOutputWithContext(ctx context.Context) GetAlertsAlertFailingHostLabelPairArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAlertsAlertFailingHostLabelPairArrayOutput)
+}
+
+type GetAlertsAlertFailingHostLabelPairOutput struct{ *pulumi.OutputState }
+
+func (GetAlertsAlertFailingHostLabelPairOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAlertsAlertFailingHostLabelPair)(nil)).Elem()
+}
+
+func (o GetAlertsAlertFailingHostLabelPairOutput) ToGetAlertsAlertFailingHostLabelPairOutput() GetAlertsAlertFailingHostLabelPairOutput {
+	return o
+}
+
+func (o GetAlertsAlertFailingHostLabelPairOutput) ToGetAlertsAlertFailingHostLabelPairOutputWithContext(ctx context.Context) GetAlertsAlertFailingHostLabelPairOutput {
+	return o
+}
+
+func (o GetAlertsAlertFailingHostLabelPairOutput) Firing() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAlertsAlertFailingHostLabelPair) int { return v.Firing }).(pulumi.IntOutput)
+}
+
+func (o GetAlertsAlertFailingHostLabelPairOutput) Host() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlertsAlertFailingHostLabelPair) string { return v.Host }).(pulumi.StringOutput)
+}
+
+type GetAlertsAlertFailingHostLabelPairArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAlertsAlertFailingHostLabelPairArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAlertsAlertFailingHostLabelPair)(nil)).Elem()
+}
+
+func (o GetAlertsAlertFailingHostLabelPairArrayOutput) ToGetAlertsAlertFailingHostLabelPairArrayOutput() GetAlertsAlertFailingHostLabelPairArrayOutput {
+	return o
+}
+
+func (o GetAlertsAlertFailingHostLabelPairArrayOutput) ToGetAlertsAlertFailingHostLabelPairArrayOutputWithContext(ctx context.Context) GetAlertsAlertFailingHostLabelPairArrayOutput {
+	return o
+}
+
+func (o GetAlertsAlertFailingHostLabelPairArrayOutput) Index(i pulumi.IntInput) GetAlertsAlertFailingHostLabelPairOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAlertsAlertFailingHostLabelPair {
+		return vs[0].([]GetAlertsAlertFailingHostLabelPair)[vs[1].(int)]
+	}).(GetAlertsAlertFailingHostLabelPairOutput)
+}
+
+type GetAlertsAlertInMaintenanceHostLabelPair struct {
+	Firing int    `pulumi:"firing"`
+	Host   string `pulumi:"host"`
+}
+
+// GetAlertsAlertInMaintenanceHostLabelPairInput is an input type that accepts GetAlertsAlertInMaintenanceHostLabelPairArgs and GetAlertsAlertInMaintenanceHostLabelPairOutput values.
+// You can construct a concrete instance of `GetAlertsAlertInMaintenanceHostLabelPairInput` via:
+//
+//	GetAlertsAlertInMaintenanceHostLabelPairArgs{...}
+type GetAlertsAlertInMaintenanceHostLabelPairInput interface {
+	pulumi.Input
+
+	ToGetAlertsAlertInMaintenanceHostLabelPairOutput() GetAlertsAlertInMaintenanceHostLabelPairOutput
+	ToGetAlertsAlertInMaintenanceHostLabelPairOutputWithContext(context.Context) GetAlertsAlertInMaintenanceHostLabelPairOutput
+}
+
+type GetAlertsAlertInMaintenanceHostLabelPairArgs struct {
+	Firing pulumi.IntInput    `pulumi:"firing"`
+	Host   pulumi.StringInput `pulumi:"host"`
+}
+
+func (GetAlertsAlertInMaintenanceHostLabelPairArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAlertsAlertInMaintenanceHostLabelPair)(nil)).Elem()
+}
+
+func (i GetAlertsAlertInMaintenanceHostLabelPairArgs) ToGetAlertsAlertInMaintenanceHostLabelPairOutput() GetAlertsAlertInMaintenanceHostLabelPairOutput {
+	return i.ToGetAlertsAlertInMaintenanceHostLabelPairOutputWithContext(context.Background())
+}
+
+func (i GetAlertsAlertInMaintenanceHostLabelPairArgs) ToGetAlertsAlertInMaintenanceHostLabelPairOutputWithContext(ctx context.Context) GetAlertsAlertInMaintenanceHostLabelPairOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAlertsAlertInMaintenanceHostLabelPairOutput)
+}
+
+// GetAlertsAlertInMaintenanceHostLabelPairArrayInput is an input type that accepts GetAlertsAlertInMaintenanceHostLabelPairArray and GetAlertsAlertInMaintenanceHostLabelPairArrayOutput values.
+// You can construct a concrete instance of `GetAlertsAlertInMaintenanceHostLabelPairArrayInput` via:
+//
+//	GetAlertsAlertInMaintenanceHostLabelPairArray{ GetAlertsAlertInMaintenanceHostLabelPairArgs{...} }
+type GetAlertsAlertInMaintenanceHostLabelPairArrayInput interface {
+	pulumi.Input
+
+	ToGetAlertsAlertInMaintenanceHostLabelPairArrayOutput() GetAlertsAlertInMaintenanceHostLabelPairArrayOutput
+	ToGetAlertsAlertInMaintenanceHostLabelPairArrayOutputWithContext(context.Context) GetAlertsAlertInMaintenanceHostLabelPairArrayOutput
+}
+
+type GetAlertsAlertInMaintenanceHostLabelPairArray []GetAlertsAlertInMaintenanceHostLabelPairInput
+
+func (GetAlertsAlertInMaintenanceHostLabelPairArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAlertsAlertInMaintenanceHostLabelPair)(nil)).Elem()
+}
+
+func (i GetAlertsAlertInMaintenanceHostLabelPairArray) ToGetAlertsAlertInMaintenanceHostLabelPairArrayOutput() GetAlertsAlertInMaintenanceHostLabelPairArrayOutput {
+	return i.ToGetAlertsAlertInMaintenanceHostLabelPairArrayOutputWithContext(context.Background())
+}
+
+func (i GetAlertsAlertInMaintenanceHostLabelPairArray) ToGetAlertsAlertInMaintenanceHostLabelPairArrayOutputWithContext(ctx context.Context) GetAlertsAlertInMaintenanceHostLabelPairArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAlertsAlertInMaintenanceHostLabelPairArrayOutput)
+}
+
+type GetAlertsAlertInMaintenanceHostLabelPairOutput struct{ *pulumi.OutputState }
+
+func (GetAlertsAlertInMaintenanceHostLabelPairOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAlertsAlertInMaintenanceHostLabelPair)(nil)).Elem()
+}
+
+func (o GetAlertsAlertInMaintenanceHostLabelPairOutput) ToGetAlertsAlertInMaintenanceHostLabelPairOutput() GetAlertsAlertInMaintenanceHostLabelPairOutput {
+	return o
+}
+
+func (o GetAlertsAlertInMaintenanceHostLabelPairOutput) ToGetAlertsAlertInMaintenanceHostLabelPairOutputWithContext(ctx context.Context) GetAlertsAlertInMaintenanceHostLabelPairOutput {
+	return o
+}
+
+func (o GetAlertsAlertInMaintenanceHostLabelPairOutput) Firing() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAlertsAlertInMaintenanceHostLabelPair) int { return v.Firing }).(pulumi.IntOutput)
+}
+
+func (o GetAlertsAlertInMaintenanceHostLabelPairOutput) Host() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlertsAlertInMaintenanceHostLabelPair) string { return v.Host }).(pulumi.StringOutput)
+}
+
+type GetAlertsAlertInMaintenanceHostLabelPairArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAlertsAlertInMaintenanceHostLabelPairArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAlertsAlertInMaintenanceHostLabelPair)(nil)).Elem()
+}
+
+func (o GetAlertsAlertInMaintenanceHostLabelPairArrayOutput) ToGetAlertsAlertInMaintenanceHostLabelPairArrayOutput() GetAlertsAlertInMaintenanceHostLabelPairArrayOutput {
+	return o
+}
+
+func (o GetAlertsAlertInMaintenanceHostLabelPairArrayOutput) ToGetAlertsAlertInMaintenanceHostLabelPairArrayOutputWithContext(ctx context.Context) GetAlertsAlertInMaintenanceHostLabelPairArrayOutput {
+	return o
+}
+
+func (o GetAlertsAlertInMaintenanceHostLabelPairArrayOutput) Index(i pulumi.IntInput) GetAlertsAlertInMaintenanceHostLabelPairOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAlertsAlertInMaintenanceHostLabelPair {
+		return vs[0].([]GetAlertsAlertInMaintenanceHostLabelPair)[vs[1].(int)]
+	}).(GetAlertsAlertInMaintenanceHostLabelPairOutput)
+}
+
+type GetDashboardParameterDetail struct {
+	// The default value of the parameter.
+	DefaultValue string `pulumi:"defaultValue"`
+	// For `DYNAMIC` parameter types, the type of the field. Valid options are `SOURCE`,
+	// `SOURCE_TAG`, `METRIC_NAME`, `TAG_KEY`, and `MATCHING_SOURCE_TAG`.
+	DynamicFieldType string `pulumi:"dynamicFieldType"`
+	// If `true` the parameter will only be shown on the edit view of the dashboard.
+	HideFromView bool `pulumi:"hideFromView"`
+	// The label for the parameter.
+	Label string `pulumi:"label"`
+	// The type of the parameter. `SIMPLE`, `LIST`, or `DYNAMIC`.
+	ParameterType string `pulumi:"parameterType"`
+	// For `DYNAMIC` parameter types, the query to execute to return values.
+	QueryValue string `pulumi:"queryValue"`
+	// For `TAG_KEY` dynamic field types, the tag key to return.
+	TagKey string `pulumi:"tagKey"`
+	// A string to string map. At least one of the keys must match the value of
+	// `defaultValue`.
+	ValuesToReadableStrings map[string]string `pulumi:"valuesToReadableStrings"`
+}
+
+// GetDashboardParameterDetailInput is an input type that accepts GetDashboardParameterDetailArgs and GetDashboardParameterDetailOutput values.
+// You can construct a concrete instance of `GetDashboardParameterDetailInput` via:
+//
+//	GetDashboardParameterDetailArgs{...}
+type GetDashboardParameterDetailInput interface {
+	pulumi.Input
+
+	ToGetDashboardParameterDetailOutput() GetDashboardParameterDetailOutput
+	ToGetDashboardParameterDetailOutputWithContext(context.Context) GetDashboardParameterDetailOutput
+}
+
+type GetDashboardParameterDetailArgs struct {
+	// The default value of the parameter.
+	DefaultValue pulumi.StringInput `pulumi:"defaultValue"`
+	// For `DYNAMIC` parameter types, the type of the field. Valid options are `SOURCE`,
+	// `SOURCE_TAG`, `METRIC_NAME`, `TAG_KEY`, and `MATCHING_SOURCE_TAG`.
+	DynamicFieldType pulumi.StringInput `pulumi:"dynamicFieldType"`
+	// If `true` the parameter will only be shown on the edit view of the dashboard.
+	HideFromView pulumi.BoolInput `pulumi:"hideFromView"`
+	// The label for the parameter.
+	Label pulumi.StringInput `pulumi:"label"`
+	// The type of the parameter. `SIMPLE`, `LIST`, or `DYNAMIC`.
+	ParameterType pulumi.StringInput `pulumi:"parameterType"`
+	// For `DYNAMIC` parameter types, the query to execute to return values.
+	QueryValue pulumi.StringInput `pulumi:"queryValue"`
+	// For `TAG_KEY` dynamic field types, the tag key to return.
+	TagKey pulumi.StringInput `pulumi:"tagKey"`
+	// A string to string map. At least one of the keys must match the value of
+	// `defaultValue`.
+	ValuesToReadableStrings pulumi.StringMapInput `pulumi:"valuesToReadableStrings"`
+}
+
+func (GetDashboardParameterDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDashboardParameterDetail)(nil)).Elem()
+}
+
+func (i GetDashboardParameterDetailArgs) ToGetDashboardParameterDetailOutput() GetDashboardParameterDetailOutput {
+	return i.ToGetDashboardParameterDetailOutputWithContext(context.Background())
+}
+
+func (i GetDashboardParameterDetailArgs) ToGetDashboardParameterDetailOutputWithContext(ctx context.Context) GetDashboardParameterDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDashboardParameterDetailOutput)
+}
+
+// GetDashboardParameterDetailArrayInput is an input type that accepts GetDashboardParameterDetailArray and GetDashboardParameterDetailArrayOutput values.
+// You can construct a concrete instance of `GetDashboardParameterDetailArrayInput` via:
+//
+//	GetDashboardParameterDetailArray{ GetDashboardParameterDetailArgs{...} }
+type GetDashboardParameterDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetDashboardParameterDetailArrayOutput() GetDashboardParameterDetailArrayOutput
+	ToGetDashboardParameterDetailArrayOutputWithContext(context.Context) GetDashboardParameterDetailArrayOutput
+}
+
+type GetDashboardParameterDetailArray []GetDashboardParameterDetailInput
+
+func (GetDashboardParameterDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDashboardParameterDetail)(nil)).Elem()
+}
+
+func (i GetDashboardParameterDetailArray) ToGetDashboardParameterDetailArrayOutput() GetDashboardParameterDetailArrayOutput {
+	return i.ToGetDashboardParameterDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetDashboardParameterDetailArray) ToGetDashboardParameterDetailArrayOutputWithContext(ctx context.Context) GetDashboardParameterDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDashboardParameterDetailArrayOutput)
+}
+
+type GetDashboardParameterDetailOutput struct{ *pulumi.OutputState }
+
+func (GetDashboardParameterDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDashboardParameterDetail)(nil)).Elem()
+}
+
+func (o GetDashboardParameterDetailOutput) ToGetDashboardParameterDetailOutput() GetDashboardParameterDetailOutput {
+	return o
+}
+
+func (o GetDashboardParameterDetailOutput) ToGetDashboardParameterDetailOutputWithContext(ctx context.Context) GetDashboardParameterDetailOutput {
+	return o
+}
+
+// The default value of the parameter.
+func (o GetDashboardParameterDetailOutput) DefaultValue() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDashboardParameterDetail) string { return v.DefaultValue }).(pulumi.StringOutput)
+}
+
+// For `DYNAMIC` parameter types, the type of the field. Valid options are `SOURCE`,
+// `SOURCE_TAG`, `METRIC_NAME`, `TAG_KEY`, and `MATCHING_SOURCE_TAG`.
+func (o GetDashboardParameterDetailOutput) DynamicFieldType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDashboardParameterDetail) string { return v.DynamicFieldType }).(pulumi.StringOutput)
+}
+
+// If `true` the parameter will only be shown on the edit view of the dashboard.
+func (o GetDashboardParameterDetailOutput) HideFromView() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDashboardParameterDetail) bool { return v.HideFromView }).(pulumi.BoolOutput)
+}
+
+// The label for the parameter.
+func (o GetDashboardParameterDetailOutput) Label() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDashboardParameterDetail) string { return v.Label }).(pulumi.StringOutput)
+}
+
+// The type of the parameter. `SIMPLE`, `LIST`, or `DYNAMIC`.
+func (o GetDashboardParameterDetailOutput) ParameterType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDashboardParameterDetail) string { return v.ParameterType }).(pulumi.StringOutput)
+}
+
+// For `DYNAMIC` parameter types, the query to execute to return values.
+func (o GetDashboardParameterDetailOutput) QueryValue() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDashboardParameterDetail) string { return v.QueryValue }).(pulumi.StringOutput)
+}
+
+// For `TAG_KEY` dynamic field types, the tag key to return.
+func (o GetDashboardParameterDetailOutput) TagKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDashboardParameterDetail) string { return v.TagKey }).(pulumi.StringOutput)
+}
+
+// A string to string map. At least one of the keys must match the value of
+// `defaultValue`.
+func (o GetDashboardParameterDetailOutput) ValuesToReadableStrings() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDashboardParameterDetail) map[string]string { return v.ValuesToReadableStrings }).(pulumi.StringMapOutput)
+}
+
+type GetDashboardParameterDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDashboardParameterDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDashboardParameterDetail)(nil)).Elem()
+}
+
+func (o GetDashboardParameterDetailArrayOutput) ToGetDashboardParameterDetailArrayOutput() GetDashboardParameterDetailArrayOutput {
+	return o
+}
+
+func (o GetDashboardParameterDetailArrayOutput) ToGetDashboardParameterDetailArrayOutputWithContext(ctx context.Context) GetDashboardParameterDetailArrayOutput {
+	return o
+}
+
+func (o GetDashboardParameterDetailArrayOutput) Index(i pulumi.IntInput) GetDashboardParameterDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDashboardParameterDetail {
+		return vs[0].([]GetDashboardParameterDetail)[vs[1].(int)]
+	}).(GetDashboardParameterDetailOutput)
+}
+
+type GetDashboardSection struct {
+	// The name of the parameters.
+	Name string                   `pulumi:"name"`
+	Rows []GetDashboardSectionRow `pulumi:"rows"`
+}
+
+// GetDashboardSectionInput is an input type that accepts GetDashboardSectionArgs and GetDashboardSectionOutput values.
+// You can construct a concrete instance of `GetDashboardSectionInput` via:
+//
+//	GetDashboardSectionArgs{...}
+type GetDashboardSectionInput interface {
+	pulumi.Input
+
+	ToGetDashboardSectionOutput() GetDashboardSectionOutput
+	ToGetDashboardSectionOutputWithContext(context.Context) GetDashboardSectionOutput
+}
+
+type GetDashboardSectionArgs struct {
+	// The name of the parameters.
+	Name pulumi.StringInput               `pulumi:"name"`
+	Rows GetDashboardSectionRowArrayInput `pulumi:"rows"`
+}
+
+func (GetDashboardSectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDashboardSection)(nil)).Elem()
+}
+
+func (i GetDashboardSectionArgs) ToGetDashboardSectionOutput() GetDashboardSectionOutput {
+	return i.ToGetDashboardSectionOutputWithContext(context.Background())
+}
+
+func (i GetDashboardSectionArgs) ToGetDashboardSectionOutputWithContext(ctx context.Context) GetDashboardSectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDashboardSectionOutput)
+}
+
+// GetDashboardSectionArrayInput is an input type that accepts GetDashboardSectionArray and GetDashboardSectionArrayOutput values.
+// You can construct a concrete instance of `GetDashboardSectionArrayInput` via:
+//
+//	GetDashboardSectionArray{ GetDashboardSectionArgs{...} }
+type GetDashboardSectionArrayInput interface {
+	pulumi.Input
+
+	ToGetDashboardSectionArrayOutput() GetDashboardSectionArrayOutput
+	ToGetDashboardSectionArrayOutputWithContext(context.Context) GetDashboardSectionArrayOutput
+}
+
+type GetDashboardSectionArray []GetDashboardSectionInput
+
+func (GetDashboardSectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDashboardSection)(nil)).Elem()
+}
+
+func (i GetDashboardSectionArray) ToGetDashboardSectionArrayOutput() GetDashboardSectionArrayOutput {
+	return i.ToGetDashboardSectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetDashboardSectionArray) ToGetDashboardSectionArrayOutputWithContext(ctx context.Context) GetDashboardSectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDashboardSectionArrayOutput)
+}
+
+type GetDashboardSectionOutput struct{ *pulumi.OutputState }
+
+func (GetDashboardSectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDashboardSection)(nil)).Elem()
+}
+
+func (o GetDashboardSectionOutput) ToGetDashboardSectionOutput() GetDashboardSectionOutput {
+	return o
+}
+
+func (o GetDashboardSectionOutput) ToGetDashboardSectionOutputWithContext(ctx context.Context) GetDashboardSectionOutput {
+	return o
+}
+
+// The name of the parameters.
+func (o GetDashboardSectionOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDashboardSection) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetDashboardSectionOutput) Rows() GetDashboardSectionRowArrayOutput {
+	return o.ApplyT(func(v GetDashboardSection) []GetDashboardSectionRow { return v.Rows }).(GetDashboardSectionRowArrayOutput)
+}
+
+type GetDashboardSectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDashboardSectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDashboardSection)(nil)).Elem()
+}
+
+func (o GetDashboardSectionArrayOutput) ToGetDashboardSectionArrayOutput() GetDashboardSectionArrayOutput {
+	return o
+}
+
+func (o GetDashboardSectionArrayOutput) ToGetDashboardSectionArrayOutputWithContext(ctx context.Context) GetDashboardSectionArrayOutput {
+	return o
+}
+
+func (o GetDashboardSectionArrayOutput) Index(i pulumi.IntInput) GetDashboardSectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDashboardSection {
+		return vs[0].([]GetDashboardSection)[vs[1].(int)]
+	}).(GetDashboardSectionOutput)
+}
+
+type GetDashboardSectionRow struct {
+	Charts       []GetDashboardSectionRowChart `pulumi:"charts"`
+	HeightFactor int                           `pulumi:"heightFactor"`
+	// The name of the parameters.
+	Name string `pulumi:"name"`
+}
+
+// GetDashboardSectionRowInput is an input type that accepts GetDashboardSectionRowArgs and GetDashboardSectionRowOutput values.
+// You can construct a concrete instance of `GetDashboardSectionRowInput` via:
+//
+//	GetDashboardSectionRowArgs{...}
+type GetDashboardSectionRowInput interface {
+	pulumi.Input
+
+	ToGetDashboardSectionRowOutput() GetDashboardSectionRowOutput
+	ToGetDashboardSectionRowOutputWithContext(context.Context) GetDashboardSectionRowOutput
+}
+
+type GetDashboardSectionRowArgs struct {
+	Charts       GetDashboardSectionRowChartArrayInput `pulumi:"charts"`
+	HeightFactor pulumi.IntInput                       `pulumi:"heightFactor"`
+	// The name of the parameters.
+	Name pulumi.StringInput `pulumi:"name"`
+}
+
+func (GetDashboardSectionRowArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDashboardSectionRow)(nil)).Elem()
+}
+
+func (i GetDashboardSectionRowArgs) ToGetDashboardSectionRowOutput() GetDashboardSectionRowOutput {
+	return i.ToGetDashboardSectionRowOutputWithContext(context.Background())
+}
+
+func (i GetDashboardSectionRowArgs) ToGetDashboardSectionRowOutputWithContext(ctx context.Context) GetDashboardSectionRowOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDashboardSectionRowOutput)
+}
+
+// GetDashboardSectionRowArrayInput is an input type that accepts GetDashboardSectionRowArray and GetDashboardSectionRowArrayOutput values.
+// You can construct a concrete instance of `GetDashboardSectionRowArrayInput` via:
+//
+//	GetDashboardSectionRowArray{ GetDashboardSectionRowArgs{...} }
+type GetDashboardSectionRowArrayInput interface {
+	pulumi.Input
+
+	ToGetDashboardSectionRowArrayOutput() GetDashboardSectionRowArrayOutput
+	ToGetDashboardSectionRowArrayOutputWithContext(context.Context) GetDashboardSectionRowArrayOutput
+}
+
+type GetDashboardSectionRowArray []GetDashboardSectionRowInput
+
+func (GetDashboardSectionRowArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDashboardSectionRow)(nil)).Elem()
+}
+
+func (i GetDashboardSectionRowArray) ToGetDashboardSectionRowArrayOutput() GetDashboardSectionRowArrayOutput {
+	return i.ToGetDashboardSectionRowArrayOutputWithContext(context.Background())
+}
+
+func (i GetDashboardSectionRowArray) ToGetDashboardSectionRowArrayOutputWithContext(ctx context.Context) GetDashboardSectionRowArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDashboardSectionRowArrayOutput)
+}
+
+type GetDashboardSectionRowOutput struct{ *pulumi.OutputState }
+
+func (GetDashboardSectionRowOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDashboardSectionRow)(nil)).Elem()
+}
+
+func (o GetDashboardSectionRowOutput) ToGetDashboardSectionRowOutput() GetDashboardSectionRowOutput {
+	return o
+}
+
+func (o GetDashboardSectionRowOutput) ToGetDashboardSectionRowOutputWithContext(ctx context.Context) GetDashboardSectionRowOutput {
+	return o
+}
+
+func (o GetDashboardSectionRowOutput) Charts() GetDashboardSectionRowChartArrayOutput {
+	return o.ApplyT(func(v GetDashboardSectionRow) []GetDashboardSectionRowChart { return v.Charts }).(GetDashboardSectionRowChartArrayOutput)
+}
+
+func (o GetDashboardSectionRowOutput) HeightFactor() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDashboardSectionRow) int { return v.HeightFactor }).(pulumi.IntOutput)
+}
+
+// The name of the parameters.
+func (o GetDashboardSectionRowOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDashboardSectionRow) string { return v.Name }).(pulumi.StringOutput)
+}
+
+type GetDashboardSectionRowArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDashboardSectionRowArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDashboardSectionRow)(nil)).Elem()
+}
+
+func (o GetDashboardSectionRowArrayOutput) ToGetDashboardSectionRowArrayOutput() GetDashboardSectionRowArrayOutput {
+	return o
+}
+
+func (o GetDashboardSectionRowArrayOutput) ToGetDashboardSectionRowArrayOutputWithContext(ctx context.Context) GetDashboardSectionRowArrayOutput {
+	return o
+}
+
+func (o GetDashboardSectionRowArrayOutput) Index(i pulumi.IntInput) GetDashboardSectionRowOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDashboardSectionRow {
+		return vs[0].([]GetDashboardSectionRow)[vs[1].(int)]
+	}).(GetDashboardSectionRowOutput)
+}
+
+type GetDashboardSectionRowChart struct {
+	// The base of logarithmic scale charts. Omit or set to 0 for the default linear scale. Usually set to 10 for the traditional logarithmic scale.
+	Base            int                                       `pulumi:"base"`
+	ChartAttributes string                                    `pulumi:"chartAttributes"`
+	ChartSettings   []GetDashboardSectionRowChartChartSetting `pulumi:"chartSettings"`
+	// Description of the chart.
+	Description            string `pulumi:"description"`
+	IncludeObsoleteMetrics bool   `pulumi:"includeObsoleteMetrics"`
+	InterpolatePointsKey   bool   `pulumi:"interpolatePointsKey"`
+	// The name of the parameters.
+	Name            string                              `pulumi:"name"`
+	NoDefaultEvents bool                                `pulumi:"noDefaultEvents"`
+	Sources         []GetDashboardSectionRowChartSource `pulumi:"sources"`
+	// Summarization strategy for the chart. MEAN is default.
+	Summarization string `pulumi:"summarization"`
+	// String to label the units of the chart on the Y-Axis.
+	Units string `pulumi:"units"`
+}
+
+// GetDashboardSectionRowChartInput is an input type that accepts GetDashboardSectionRowChartArgs and GetDashboardSectionRowChartOutput values.
+// You can construct a concrete instance of `GetDashboardSectionRowChartInput` via:
+//
+//	GetDashboardSectionRowChartArgs{...}
+type GetDashboardSectionRowChartInput interface {
+	pulumi.Input
+
+	ToGetDashboardSectionRowChartOutput() GetDashboardSectionRowChartOutput
+	ToGetDashboardSectionRowChartOutputWithContext(context.Context) GetDashboardSectionRowChartOutput
+}
+
+type GetDashboardSectionRowChartArgs struct {
+	// The base of logarithmic scale charts. Omit or set to 0 for the default linear scale. Usually set to 10 for the traditional logarithmic scale.
+	Base            pulumi.IntInput                                   `pulumi:"base"`
+	ChartAttributes pulumi.StringInput                                `pulumi:"chartAttributes"`
+	ChartSettings   GetDashboardSectionRowChartChartSettingArrayInput `pulumi:"chartSettings"`
+	// Description of the chart.
+	Description            pulumi.StringInput `pulumi:"description"`
+	IncludeObsoleteMetrics pulumi.BoolInput   `pulumi:"includeObsoleteMetrics"`
+	InterpolatePointsKey   pulumi.BoolInput   `pulumi:"interpolatePointsKey"`
+	// The name of the parameters.
+	Name            pulumi.StringInput                          `pulumi:"name"`
+	NoDefaultEvents pulumi.BoolInput                            `pulumi:"noDefaultEvents"`
+	Sources         GetDashboardSectionRowChartSourceArrayInput `pulumi:"sources"`
+	// Summarization strategy for the chart. MEAN is default.
+	Summarization pulumi.StringInput `pulumi:"summarization"`
+	// String to label the units of the chart on the Y-Axis.
+	Units pulumi.StringInput `pulumi:"units"`
+}
+
+func (GetDashboardSectionRowChartArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDashboardSectionRowChart)(nil)).Elem()
+}
+
+func (i GetDashboardSectionRowChartArgs) ToGetDashboardSectionRowChartOutput() GetDashboardSectionRowChartOutput {
+	return i.ToGetDashboardSectionRowChartOutputWithContext(context.Background())
+}
+
+func (i GetDashboardSectionRowChartArgs) ToGetDashboardSectionRowChartOutputWithContext(ctx context.Context) GetDashboardSectionRowChartOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDashboardSectionRowChartOutput)
+}
+
+// GetDashboardSectionRowChartArrayInput is an input type that accepts GetDashboardSectionRowChartArray and GetDashboardSectionRowChartArrayOutput values.
+// You can construct a concrete instance of `GetDashboardSectionRowChartArrayInput` via:
+//
+//	GetDashboardSectionRowChartArray{ GetDashboardSectionRowChartArgs{...} }
+type GetDashboardSectionRowChartArrayInput interface {
+	pulumi.Input
+
+	ToGetDashboardSectionRowChartArrayOutput() GetDashboardSectionRowChartArrayOutput
+	ToGetDashboardSectionRowChartArrayOutputWithContext(context.Context) GetDashboardSectionRowChartArrayOutput
+}
+
+type GetDashboardSectionRowChartArray []GetDashboardSectionRowChartInput
+
+func (GetDashboardSectionRowChartArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDashboardSectionRowChart)(nil)).Elem()
+}
+
+func (i GetDashboardSectionRowChartArray) ToGetDashboardSectionRowChartArrayOutput() GetDashboardSectionRowChartArrayOutput {
+	return i.ToGetDashboardSectionRowChartArrayOutputWithContext(context.Background())
+}
+
+func (i GetDashboardSectionRowChartArray) ToGetDashboardSectionRowChartArrayOutputWithContext(ctx context.Context) GetDashboardSectionRowChartArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDashboardSectionRowChartArrayOutput)
+}
+
+type GetDashboardSectionRowChartOutput struct{ *pulumi.OutputState }
+
+func (GetDashboardSectionRowChartOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDashboardSectionRowChart)(nil)).Elem()
+}
+
+func (o GetDashboardSectionRowChartOutput) ToGetDashboardSectionRowChartOutput() GetDashboardSectionRowChartOutput {
+	return o
+}
+
+func (o GetDashboardSectionRowChartOutput) ToGetDashboardSectionRowChartOutputWithContext(ctx context.Context) GetDashboardSectionRowChartOutput {
+	return o
+}
+
+// The base of logarithmic scale charts. Omit or set to 0 for the default linear scale. Usually set to 10 for the traditional logarithmic scale.
+func (o GetDashboardSectionRowChartOutput) Base() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDashboardSectionRowChart) int { return v.Base }).(pulumi.IntOutput)
+}
+
+func (o GetDashboardSectionRowChartOutput) ChartAttributes() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDashboardSectionRowChart) string { return v.ChartAttributes }).(pulumi.StringOutput)
+}
+
+func (o GetDashboardSectionRowChartOutput) ChartSettings() GetDashboardSectionRowChartChartSettingArrayOutput {
+	return o.ApplyT(func(v GetDashboardSectionRowChart) []GetDashboardSectionRowChartChartSetting { return v.ChartSettings }).(GetDashboardSectionRowChartChartSettingArrayOutput)
+}
+
+// Description of the chart.
+func (o GetDashboardSectionRowChartOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDashboardSectionRowChart) string { return v.Description }).(pulumi.StringOutput)
+}
+
+func (o GetDashboardSectionRowChartOutput) IncludeObsoleteMetrics() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDashboardSectionRowChart) bool { return v.IncludeObsoleteMetrics }).(pulumi.BoolOutput)
+}
+
+func (o GetDashboardSectionRowChartOutput) InterpolatePointsKey() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDashboardSectionRowChart) bool { return v.InterpolatePointsKey }).(pulumi.BoolOutput)
+}
+
+// The name of the parameters.
+func (o GetDashboardSectionRowChartOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDashboardSectionRowChart) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetDashboardSectionRowChartOutput) NoDefaultEvents() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDashboardSectionRowChart) bool { return v.NoDefaultEvents }).(pulumi.BoolOutput)
+}
+
+func (o GetDashboardSectionRowChartOutput) Sources() GetDashboardSectionRowChartSourceArrayOutput {
+	return o.ApplyT(func(v GetDashboardSectionRowChart) []GetDashboardSectionRowChartSource { return v.Sources }).(GetDashboardSectionRowChartSourceArrayOutput)
+}
+
+// Summarization strategy for the chart. MEAN is default.
+func (o GetDashboardSectionRowChartOutput) Summarization() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDashboardSectionRowChart) string { return v.Summarization }).(pulumi.StringOutput)
+}
+
+// String to label the units of the chart on the Y-Axis.
+func (o GetDashboardSectionRowChartOutput) Units() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDashboardSectionRowChart) string { return v.Units }).(pulumi.StringOutput)
+}
+
+type GetDashboardSectionRowChartArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDashboardSectionRowChartArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDashboardSectionRowChart)(nil)).Elem()
+}
+
+func (o GetDashboardSectionRowChartArrayOutput) ToGetDashboardSectionRowChartArrayOutput() GetDashboardSectionRowChartArrayOutput {
+	return o
+}
+
+func (o GetDashboardSectionRowChartArrayOutput) ToGetDashboardSectionRowChartArrayOutputWithContext(ctx context.Context) GetDashboardSectionRowChartArrayOutput {
+	return o
+}
+
+func (o GetDashboardSectionRowChartArrayOutput) Index(i pulumi.IntInput) GetDashboardSectionRowChartOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDashboardSectionRowChart {
+		return vs[0].([]GetDashboardSectionRowChart)[vs[1].(int)]
+	}).(GetDashboardSectionRowChartOutput)
+}
+
+type GetDashboardSectionRowChartChartSetting struct {
+	// This setting is deprecated.
+	AutoColumnTags bool `pulumi:"autoColumnTags"`
+	// This setting is deprecated.
+	ColumnTags string `pulumi:"columnTags"`
+	// For the tabular view, a list of point tags to display when using the `custom` tag display mode.
+	CustomTags []string `pulumi:"customTags"`
+	// Threshold (in seconds) for time delta between consecutive points in a series above which a dotted line will replace a solid in line plots. Default is 60.
+	ExpectedDataSpacing int `pulumi:"expectedDataSpacing"`
+	// (Optional) For a chart with a fixed legend, a list of statistics to display in the legend.
+	FixedLegendDisplayStats []string `pulumi:"fixedLegendDisplayStats"`
+	// (Optional) Whether to enable a fixed tabular legend adjacent to the chart.
+	FixedLegendEnabled bool `pulumi:"fixedLegendEnabled"`
+	// (Optional) Statistic to use for determining whether a series is displayed on the fixed legend. Valid options are `CURRENT`, `MEAN`, `MEDIAN`, `SUM`, `MIN`, `MAX`, and `COUNT`.
+	FixedLegendFilterField string `pulumi:"fixedLegendFilterField"`
+	// (Optional) Number of series to include in the fixed legend.
+	FixedLegendFilterLimit int `pulumi:"fixedLegendFilterLimit"`
+	// (Optional) Whether to display `TOP` or `BOTTOM` ranked series in a fixed legend. Valid options are `TOP`, and `BOTTOM`.
+	FixedLegendFilterSort string `pulumi:"fixedLegendFilterSort"`
+	// (Optional) This setting is deprecated.
+	FixedLegendHideLabel bool `pulumi:"fixedLegendHideLabel"`
+	// (Optional)  Where the fixed legend should be displayed with respect to the chart. Valid options are `RIGHT`, `TOP`, `LEFT`, `BOTTOM`.
+	FixedLegendPosition string `pulumi:"fixedLegendPosition"`
+	// (Optional) If `true`, the legend uses non-summarized stats instead of summarized.
+	FixedLegendUseRawStats bool `pulumi:"fixedLegendUseRawStats"`
+	// For the tabular view, whether to group multi metrics into a single row by a common source. If set to `false`, each source is displayed in its own row. If set to `true`, multiple metrics for the same host are displayed as different columns in the same row.
+	GroupBySource bool `pulumi:"groupBySource"`
+	// (Optional) Whether to disable the display of the floating legend (but reenable it when the ctrl-key is pressed).
+	InvertDynamicLegendHoverControl bool `pulumi:"invertDynamicLegendHoverControl"`
+	// Plot interpolation type.  `linear` is default. Valid options are `linear`, `step-before`, `step-after`, `basis`, `cardinal`, and `monotone`.
+	LineType string `pulumi:"lineType"`
+	// Max value of the Y-axis. Set to null or leave blank for auto.
+	Max float64 `pulumi:"max"`
+	// Min value of the Y-axis. Set to null or leave blank for auto.
+	Min float64 `pulumi:"min"`
+	// For the tabular view defines how many point tags to display.
+	NumTags int `pulumi:"numTags"`
+	// The markdown content for a Markdown display, in plain text.
+	PlainMarkdownContent string `pulumi:"plainMarkdownContent"`
+	// For the tabular view, whether to display sources. Default is `true`.
+	ShowHosts bool `pulumi:"showHosts"`
+	// For the tabular view, whether to display labels. Default is `true`.
+	ShowLabels bool `pulumi:"showLabels"`
+	// For the tabular view, whether to display raw values. Default is `false`.
+	ShowRawValues bool `pulumi:"showRawValues"`
+	// For the tabular view, whether to display values in descending order. Default is `false`.
+	SortValuesDescending bool `pulumi:"sortValuesDescending"`
+	// For the single stat view, the decimal precision of the displayed number.
+	SparklineDecimalPrecision int `pulumi:"sparklineDecimalPrecision"`
+	// For the single stat view, the color of the displayed text (when not dynamically determined). Values should be in RGBA format.
+	SparklineDisplayColor string `pulumi:"sparklineDisplayColor"`
+	// For the single stat view, the font size of the displayed text, in percent.
+	SparklineDisplayFontSize string `pulumi:"sparklineDisplayFontSize"`
+	// For the single stat view, the horizontal position of the displayed text. Valid options are `MIDDLE`, `LEFT`, `RIGHT`.
+	SparklineDisplayHorizontalPosition string `pulumi:"sparklineDisplayHorizontalPosition"`
+	// For the single stat view, a string to append to the displayed text.
+	SparklineDisplayPostfix string `pulumi:"sparklineDisplayPostfix"`
+	// For the single stat view, a string to add before the displayed text.
+	SparklineDisplayPrefix string `pulumi:"sparklineDisplayPrefix"`
+	// For the single stat view, where to display the name of the query or the value of the query. Valid options are `VALUE` or `LABEL`.
+	SparklineDisplayValueType string `pulumi:"sparklineDisplayValueType"`
+	// This setting is deprecated.
+	SparklineDisplayVerticalPosition string `pulumi:"sparklineDisplayVerticalPosition"`
+	// For the single stat view, the color of the background fill. Values should be in RGBA format.
+	SparklineFillColor string `pulumi:"sparklineFillColor"`
+	// For the single stat view, the color of the line. Values should be in RGBA format.
+	SparklineLineColor string `pulumi:"sparklineLineColor"`
+	// For the single stat view, this determines whether the sparkline of the statistic is displayed in the chart. Valid options are `BACKGROUND`, `BOTTOM`, `NONE`.
+	SparklineSize string `pulumi:"sparklineSize"`
+	// For the single stat view, whether to apply dynamic color settings to the displayed `TEXT` or `BACKGROUND`. Valid options are `TEXT` or `BACKGROUND`.
+	SparklineValueColorMapApplyTo string `pulumi:"sparklineValueColorMapApplyTo"`
+	// For the single stat view, a list of colors that differing query values map to. Must contain one more element than `sparklineValueColorMapValuesV2`. Values should be in RGBA format.
+	SparklineValueColorMapColors []string `pulumi:"sparklineValueColorMapColors"`
+	// This setting is deprecated.
+	SparklineValueColorMapValues []int `pulumi:"sparklineValueColorMapValues"`
+	// For the single stat view, a list of boundaries for mapping different query values to colors. Must contain one element less than `sparklineValueColorMapColors`.
+	SparklineValueColorMapValuesV2s []float64 `pulumi:"sparklineValueColorMapValuesV2s"`
+	// For the single stat view, a list of display text values that different query values map to. Must contain one more element than `sparklineValueTextMapThresholds`.
+	SparklineValueTextMapTexts []string `pulumi:"sparklineValueTextMapTexts"`
+	// For the single stat view, a list of threshold boundaries for mapping different query values to display text. Must contain one element less than `sparklineValueTextMapText`.
+	SparklineValueTextMapThresholds []float64 `pulumi:"sparklineValueTextMapThresholds"`
+	// Type of stacked chart (applicable only if chart type is `stacked`). `zero` (default) means stacked from y=0. `expand` means normalized from 0 to 1.  `wiggle` means minimize weighted changes. `silhouette` means to center the stream. Valid options are `zero`, `expand`, `wiggle`, `silhouette`, and `bars`.
+	StackType string `pulumi:"stackType"`
+	// For the tabular view, which mode to use to determine which point tags to display. Valid options are `all`, `top`, or `custom`.
+	TagMode string `pulumi:"tagMode"`
+	// For x-y scatterplots, whether to color more recent points as darker than older points.
+	TimeBasedColoring bool `pulumi:"timeBasedColoring"`
+	// Chart Type. `line` refers to the Line Plot, `scatter` to the Point Plot, `stacked-area` to the Stacked Area plot, `table` to the Tabular View, `scatterplot-xy` to Scatter Plot, `markdown-widget` to the Markdown display, and `sparkline` to the Single Stat view. Valid options are `line`, `scatterplot`,
+	// `stacked-area`, `stacked-column`, `table`, `scatterplot-xy`, `markdown-widget`, `sparkline`, `globe`, `nodemap`, `top-k`, `status-list`, and `histogram`.
+	Type string `pulumi:"type"`
+	// Width, in minutes, of the time window to use for `last` windowing.
+	WindowSize int `pulumi:"windowSize"`
+	// For the tabular view, whether to use the full time window for the query or the last X minutes. Valid options are `full` or `last`.
+	Windowing string `pulumi:"windowing"`
+	// For x-y scatterplots, max value for the X-axis. Set to null for auto.
+	Xmax float64 `pulumi:"xmax"`
+	// For x-y scatterplots, min value for the X-axis. Set to null for auto.
+	Xmin            float64 `pulumi:"xmin"`
+	Y0ScaleSiBy1024 bool    `pulumi:"y0ScaleSiBy1024"`
+	// (Optional) Whether to automatically adjust magnitude labels and units for the left Y-axis to favor smaller magnitudes and larger units.
+	Y0UnitAutoscaling bool    `pulumi:"y0UnitAutoscaling"`
+	Y1Max             float64 `pulumi:"y1Max"`
+	Y1Min             float64 `pulumi:"y1Min"`
+	Y1ScaleSiBy1024   bool    `pulumi:"y1ScaleSiBy1024"`
+	// (Optional) Whether to automatically adjust magnitude labels and units for the right Y-axis to favor smaller magnitudes and larger units.
+	Y1UnitAutoscaling bool `pulumi:"y1UnitAutoscaling"`
+	// For plots with multiple Y-axes, units for right side Y-axis.
+	Y1Units string `pulumi:"y1Units"`
+	// For x-y scatterplots, max value for the Y-axis. Set to null for auto.
+	Ymax float64 `pulumi:"ymax"`
+	// For x-y scatterplots, min value for the Y-axis. Set to null for auto.
+	Ymin float64 `pulumi:"ymin"`
+}
+
+// GetDashboardSectionRowChartChartSettingInput is an input type that accepts GetDashboardSectionRowChartChartSettingArgs and GetDashboardSectionRowChartChartSettingOutput values.
+// You can construct a concrete instance of `GetDashboardSectionRowChartChartSettingInput` via:
+//
+//	GetDashboardSectionRowChartChartSettingArgs{...}
+type GetDashboardSectionRowChartChartSettingInput interface {
+	pulumi.Input
+
+	ToGetDashboardSectionRowChartChartSettingOutput() GetDashboardSectionRowChartChartSettingOutput
+	ToGetDashboardSectionRowChartChartSettingOutputWithContext(context.Context) GetDashboardSectionRowChartChartSettingOutput
+}
+
+type GetDashboardSectionRowChartChartSettingArgs struct {
+	// This setting is deprecated.
+	AutoColumnTags pulumi.BoolInput `pulumi:"autoColumnTags"`
+	// This setting is deprecated.
+	ColumnTags pulumi.StringInput `pulumi:"columnTags"`
+	// For the tabular view, a list of point tags to display when using the `custom` tag display mode.
+	CustomTags pulumi.StringArrayInput `pulumi:"customTags"`
+	// Threshold (in seconds) for time delta between consecutive points in a series above which a dotted line will replace a solid in line plots. Default is 60.
+	ExpectedDataSpacing pulumi.IntInput `pulumi:"expectedDataSpacing"`
+	// (Optional) For a chart with a fixed legend, a list of statistics to display in the legend.
+	FixedLegendDisplayStats pulumi.StringArrayInput `pulumi:"fixedLegendDisplayStats"`
+	// (Optional) Whether to enable a fixed tabular legend adjacent to the chart.
+	FixedLegendEnabled pulumi.BoolInput `pulumi:"fixedLegendEnabled"`
+	// (Optional) Statistic to use for determining whether a series is displayed on the fixed legend. Valid options are `CURRENT`, `MEAN`, `MEDIAN`, `SUM`, `MIN`, `MAX`, and `COUNT`.
+	FixedLegendFilterField pulumi.StringInput `pulumi:"fixedLegendFilterField"`
+	// (Optional) Number of series to include in the fixed legend.
+	FixedLegendFilterLimit pulumi.IntInput `pulumi:"fixedLegendFilterLimit"`
+	// (Optional) Whether to display `TOP` or `BOTTOM` ranked series in a fixed legend. Valid options are `TOP`, and `BOTTOM`.
+	FixedLegendFilterSort pulumi.StringInput `pulumi:"fixedLegendFilterSort"`
+	// (Optional) This setting is deprecated.
+	FixedLegendHideLabel pulumi.BoolInput `pulumi:"fixedLegendHideLabel"`
+	// (Optional)  Where the fixed legend should be displayed with respect to the chart. Valid options are `RIGHT`, `TOP`, `LEFT`, `BOTTOM`.
+	FixedLegendPosition pulumi.StringInput `pulumi:"fixedLegendPosition"`
+	// (Optional) If `true`, the legend uses non-summarized stats instead of summarized.
+	FixedLegendUseRawStats pulumi.BoolInput `pulumi:"fixedLegendUseRawStats"`
+	// For the tabular view, whether to group multi metrics into a single row by a common source. If set to `false`, each source is displayed in its own row. If set to `true`, multiple metrics for the same host are displayed as different columns in the same row.
+	GroupBySource pulumi.BoolInput `pulumi:"groupBySource"`
+	// (Optional) Whether to disable the display of the floating legend (but reenable it when the ctrl-key is pressed).
+	InvertDynamicLegendHoverControl pulumi.BoolInput `pulumi:"invertDynamicLegendHoverControl"`
+	// Plot interpolation type.  `linear` is default. Valid options are `linear`, `step-before`, `step-after`, `basis`, `cardinal`, and `monotone`.
+	LineType pulumi.StringInput `pulumi:"lineType"`
+	// Max value of the Y-axis. Set to null or leave blank for auto.
+	Max pulumi.Float64Input `pulumi:"max"`
+	// Min value of the Y-axis. Set to null or leave blank for auto.
+	Min pulumi.Float64Input `pulumi:"min"`
+	// For the tabular view defines how many point tags to display.
+	NumTags pulumi.IntInput `pulumi:"numTags"`
+	// The markdown content for a Markdown display, in plain text.
+	PlainMarkdownContent pulumi.StringInput `pulumi:"plainMarkdownContent"`
+	// For the tabular view, whether to display sources. Default is `true`.
+	ShowHosts pulumi.BoolInput `pulumi:"showHosts"`
+	// For the tabular view, whether to display labels. Default is `true`.
+	ShowLabels pulumi.BoolInput `pulumi:"showLabels"`
+	// For the tabular view, whether to display raw values. Default is `false`.
+	ShowRawValues pulumi.BoolInput `pulumi:"showRawValues"`
+	// For the tabular view, whether to display values in descending order. Default is `false`.
+	SortValuesDescending pulumi.BoolInput `pulumi:"sortValuesDescending"`
+	// For the single stat view, the decimal precision of the displayed number.
+	SparklineDecimalPrecision pulumi.IntInput `pulumi:"sparklineDecimalPrecision"`
+	// For the single stat view, the color of the displayed text (when not dynamically determined). Values should be in RGBA format.
+	SparklineDisplayColor pulumi.StringInput `pulumi:"sparklineDisplayColor"`
+	// For the single stat view, the font size of the displayed text, in percent.
+	SparklineDisplayFontSize pulumi.StringInput `pulumi:"sparklineDisplayFontSize"`
+	// For the single stat view, the horizontal position of the displayed text. Valid options are `MIDDLE`, `LEFT`, `RIGHT`.
+	SparklineDisplayHorizontalPosition pulumi.StringInput `pulumi:"sparklineDisplayHorizontalPosition"`
+	// For the single stat view, a string to append to the displayed text.
+	SparklineDisplayPostfix pulumi.StringInput `pulumi:"sparklineDisplayPostfix"`
+	// For the single stat view, a string to add before the displayed text.
+	SparklineDisplayPrefix pulumi.StringInput `pulumi:"sparklineDisplayPrefix"`
+	// For the single stat view, where to display the name of the query or the value of the query. Valid options are `VALUE` or `LABEL`.
+	SparklineDisplayValueType pulumi.StringInput `pulumi:"sparklineDisplayValueType"`
+	// This setting is deprecated.
+	SparklineDisplayVerticalPosition pulumi.StringInput `pulumi:"sparklineDisplayVerticalPosition"`
+	// For the single stat view, the color of the background fill. Values should be in RGBA format.
+	SparklineFillColor pulumi.StringInput `pulumi:"sparklineFillColor"`
+	// For the single stat view, the color of the line. Values should be in RGBA format.
+	SparklineLineColor pulumi.StringInput `pulumi:"sparklineLineColor"`
+	// For the single stat view, this determines whether the sparkline of the statistic is displayed in the chart. Valid options are `BACKGROUND`, `BOTTOM`, `NONE`.
+	SparklineSize pulumi.StringInput `pulumi:"sparklineSize"`
+	// For the single stat view, whether to apply dynamic color settings to the displayed `TEXT` or `BACKGROUND`. Valid options are `TEXT` or `BACKGROUND`.
+	SparklineValueColorMapApplyTo pulumi.StringInput `pulumi:"sparklineValueColorMapApplyTo"`
+	// For the single stat view, a list of colors that differing query values map to. Must contain one more element than `sparklineValueColorMapValuesV2`. Values should be in RGBA format.
+	SparklineValueColorMapColors pulumi.StringArrayInput `pulumi:"sparklineValueColorMapColors"`
+	// This setting is deprecated.
+	SparklineValueColorMapValues pulumi.IntArrayInput `pulumi:"sparklineValueColorMapValues"`
+	// For the single stat view, a list of boundaries for mapping different query values to colors. Must contain one element less than `sparklineValueColorMapColors`.
+	SparklineValueColorMapValuesV2s pulumi.Float64ArrayInput `pulumi:"sparklineValueColorMapValuesV2s"`
+	// For the single stat view, a list of display text values that different query values map to. Must contain one more element than `sparklineValueTextMapThresholds`.
+	SparklineValueTextMapTexts pulumi.StringArrayInput `pulumi:"sparklineValueTextMapTexts"`
+	// For the single stat view, a list of threshold boundaries for mapping different query values to display text. Must contain one element less than `sparklineValueTextMapText`.
+	SparklineValueTextMapThresholds pulumi.Float64ArrayInput `pulumi:"sparklineValueTextMapThresholds"`
+	// Type of stacked chart (applicable only if chart type is `stacked`). `zero` (default) means stacked from y=0. `expand` means normalized from 0 to 1.  `wiggle` means minimize weighted changes. `silhouette` means to center the stream. Valid options are `zero`, `expand`, `wiggle`, `silhouette`, and `bars`.
+	StackType pulumi.StringInput `pulumi:"stackType"`
+	// For the tabular view, which mode to use to determine which point tags to display. Valid options are `all`, `top`, or `custom`.
+	TagMode pulumi.StringInput `pulumi:"tagMode"`
+	// For x-y scatterplots, whether to color more recent points as darker than older points.
+	TimeBasedColoring pulumi.BoolInput `pulumi:"timeBasedColoring"`
+	// Chart Type. `line` refers to the Line Plot, `scatter` to the Point Plot, `stacked-area` to the Stacked Area plot, `table` to the Tabular View, `scatterplot-xy` to Scatter Plot, `markdown-widget` to the Markdown display, and `sparkline` to the Single Stat view. Valid options are `line`, `scatterplot`,
+	// `stacked-area`, `stacked-column`, `table`, `scatterplot-xy`, `markdown-widget`, `sparkline`, `globe`, `nodemap`, `top-k`, `status-list`, and `histogram`.
+	Type pulumi.StringInput `pulumi:"type"`
+	// Width, in minutes, of the time window to use for `last` windowing.
+	WindowSize pulumi.IntInput `pulumi:"windowSize"`
+	// For the tabular view, whether to use the full time window for the query or the last X minutes. Valid options are `full` or `last`.
+	Windowing pulumi.StringInput `pulumi:"windowing"`
+	// For x-y scatterplots, max value for the X-axis. Set to null for auto.
+	Xmax pulumi.Float64Input `pulumi:"xmax"`
+	// For x-y scatterplots, min value for the X-axis. Set to null for auto.
+	Xmin            pulumi.Float64Input `pulumi:"xmin"`
+	Y0ScaleSiBy1024 pulumi.BoolInput    `pulumi:"y0ScaleSiBy1024"`
+	// (Optional) Whether to automatically adjust magnitude labels and units for the left Y-axis to favor smaller magnitudes and larger units.
+	Y0UnitAutoscaling pulumi.BoolInput    `pulumi:"y0UnitAutoscaling"`
+	Y1Max             pulumi.Float64Input `pulumi:"y1Max"`
+	Y1Min             pulumi.Float64Input `pulumi:"y1Min"`
+	Y1ScaleSiBy1024   pulumi.BoolInput    `pulumi:"y1ScaleSiBy1024"`
+	// (Optional) Whether to automatically adjust magnitude labels and units for the right Y-axis to favor smaller magnitudes and larger units.
+	Y1UnitAutoscaling pulumi.BoolInput `pulumi:"y1UnitAutoscaling"`
+	// For plots with multiple Y-axes, units for right side Y-axis.
+	Y1Units pulumi.StringInput `pulumi:"y1Units"`
+	// For x-y scatterplots, max value for the Y-axis. Set to null for auto.
+	Ymax pulumi.Float64Input `pulumi:"ymax"`
+	// For x-y scatterplots, min value for the Y-axis. Set to null for auto.
+	Ymin pulumi.Float64Input `pulumi:"ymin"`
+}
+
+func (GetDashboardSectionRowChartChartSettingArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDashboardSectionRowChartChartSetting)(nil)).Elem()
+}
+
+func (i GetDashboardSectionRowChartChartSettingArgs) ToGetDashboardSectionRowChartChartSettingOutput() GetDashboardSectionRowChartChartSettingOutput {
+	return i.ToGetDashboardSectionRowChartChartSettingOutputWithContext(context.Background())
+}
+
+func (i GetDashboardSectionRowChartChartSettingArgs) ToGetDashboardSectionRowChartChartSettingOutputWithContext(ctx context.Context) GetDashboardSectionRowChartChartSettingOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDashboardSectionRowChartChartSettingOutput)
+}
+
+// GetDashboardSectionRowChartChartSettingArrayInput is an input type that accepts GetDashboardSectionRowChartChartSettingArray and GetDashboardSectionRowChartChartSettingArrayOutput values.
+// You can construct a concrete instance of `GetDashboardSectionRowChartChartSettingArrayInput` via:
+//
+//	GetDashboardSectionRowChartChartSettingArray{ GetDashboardSectionRowChartChartSettingArgs{...} }
+type GetDashboardSectionRowChartChartSettingArrayInput interface {
+	pulumi.Input
+
+	ToGetDashboardSectionRowChartChartSettingArrayOutput() GetDashboardSectionRowChartChartSettingArrayOutput
+	ToGetDashboardSectionRowChartChartSettingArrayOutputWithContext(context.Context) GetDashboardSectionRowChartChartSettingArrayOutput
+}
+
+type GetDashboardSectionRowChartChartSettingArray []GetDashboardSectionRowChartChartSettingInput
+
+func (GetDashboardSectionRowChartChartSettingArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDashboardSectionRowChartChartSetting)(nil)).Elem()
+}
+
+func (i GetDashboardSectionRowChartChartSettingArray) ToGetDashboardSectionRowChartChartSettingArrayOutput() GetDashboardSectionRowChartChartSettingArrayOutput {
+	return i.ToGetDashboardSectionRowChartChartSettingArrayOutputWithContext(context.Background())
+}
+
+func (i GetDashboardSectionRowChartChartSettingArray) ToGetDashboardSectionRowChartChartSettingArrayOutputWithContext(ctx context.Context) GetDashboardSectionRowChartChartSettingArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDashboardSectionRowChartChartSettingArrayOutput)
+}
+
+type GetDashboardSectionRowChartChartSettingOutput struct{ *pulumi.OutputState }
+
+func (GetDashboardSectionRowChartChartSettingOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDashboardSectionRowChartChartSetting)(nil)).Elem()
+}
+
+func (o GetDashboardSectionRowChartChartSettingOutput) ToGetDashboardSectionRowChartChartSettingOutput() GetDashboardSectionRowChartChartSettingOutput {
+	return o
+}
+
+func (o GetDashboardSectionRowChartChartSettingOutput) ToGetDashboardSectionRowChartChartSettingOutputWithContext(ctx context.Context) GetDashboardSectionRowChartChartSettingOutput {
+	return o
+}
+
+// This setting is deprecated.
+func (o GetDashboardSectionRowChartChartSettingOutput) AutoColumnTags() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDashboardSectionRowChartChartSetting) bool { return v.AutoColumnTags }).(pulumi.BoolOutput)
+}
+
+// This setting is deprecated.
+func (o GetDashboardSectionRowChartChartSettingOutput) ColumnTags() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDashboardSectionRowChartChartSetting) string { return v.ColumnTags }).(pulumi.StringOutput)
+}
+
+// For the tabular view, a list of point tags to display when using the `custom` tag display mode.
+func (o GetDashboardSectionRowChartChartSettingOutput) CustomTags() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDashboardSectionRowChartChartSetting) []string { return v.CustomTags }).(pulumi.StringArrayOutput)
+}
+
+// Threshold (in seconds) for time delta between consecutive points in a series above which a dotted line will replace a solid in line plots. Default is 60.
+func (o GetDashboardSectionRowChartChartSettingOutput) ExpectedDataSpacing() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDashboardSectionRowChartChartSetting) int { return v.ExpectedDataSpacing }).(pulumi.IntOutput)
+}
+
+// (Optional) For a chart with a fixed legend, a list of statistics to display in the legend.
+func (o GetDashboardSectionRowChartChartSettingOutput) FixedLegendDisplayStats() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDashboardSectionRowChartChartSetting) []string { return v.FixedLegendDisplayStats }).(pulumi.StringArrayOutput)
+}
+
+// (Optional) Whether to enable a fixed tabular legend adjacent to the chart.
+func (o GetDashboardSectionRowChartChartSettingOutput) FixedLegendEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDashboardSectionRowChartChartSetting) bool { return v.FixedLegendEnabled }).(pulumi.BoolOutput)
+}
+
+// (Optional) Statistic to use for determining whether a series is displayed on the fixed legend. Valid options are `CURRENT`, `MEAN`, `MEDIAN`, `SUM`, `MIN`, `MAX`, and `COUNT`.
+func (o GetDashboardSectionRowChartChartSettingOutput) FixedLegendFilterField() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDashboardSectionRowChartChartSetting) string { return v.FixedLegendFilterField }).(pulumi.StringOutput)
+}
+
+// (Optional) Number of series to include in the fixed legend.
+func (o GetDashboardSectionRowChartChartSettingOutput) FixedLegendFilterLimit() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDashboardSectionRowChartChartSetting) int { return v.FixedLegendFilterLimit }).(pulumi.IntOutput)
+}
+
+// (Optional) Whether to display `TOP` or `BOTTOM` ranked series in a fixed legend. Valid options are `TOP`, and `BOTTOM`.
+func (o GetDashboardSectionRowChartChartSettingOutput) FixedLegendFilterSort() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDashboardSectionRowChartChartSetting) string { return v.FixedLegendFilterSort }).(pulumi.StringOutput)
+}
+
+// (Optional) This setting is deprecated.
+func (o GetDashboardSectionRowChartChartSettingOutput) FixedLegendHideLabel() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDashboardSectionRowChartChartSetting) bool { return v.FixedLegendHideLabel }).(pulumi.BoolOutput)
+}
+
+// (Optional)  Where the fixed legend should be displayed with respect to the chart. Valid options are `RIGHT`, `TOP`, `LEFT`, `BOTTOM`.
+func (o GetDashboardSectionRowChartChartSettingOutput) FixedLegendPosition() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDashboardSectionRowChartChartSetting) string { return v.FixedLegendPosition }).(pulumi.StringOutput)
+}
+
+// (Optional) If `true`, the legend uses non-summarized stats instead of summarized.
+func (o GetDashboardSectionRowChartChartSettingOutput) FixedLegendUseRawStats() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDashboardSectionRowChartChartSetting) bool { return v.FixedLegendUseRawStats }).(pulumi.BoolOutput)
+}
+
+// For the tabular view, whether to group multi metrics into a single row by a common source. If set to `false`, each source is displayed in its own row. If set to `true`, multiple metrics for the same host are displayed as different columns in the same row.
+func (o GetDashboardSectionRowChartChartSettingOutput) GroupBySource() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDashboardSectionRowChartChartSetting) bool { return v.GroupBySource }).(pulumi.BoolOutput)
+}
+
+// (Optional) Whether to disable the display of the floating legend (but reenable it when the ctrl-key is pressed).
+func (o GetDashboardSectionRowChartChartSettingOutput) InvertDynamicLegendHoverControl() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDashboardSectionRowChartChartSetting) bool { return v.InvertDynamicLegendHoverControl }).(pulumi.BoolOutput)
+}
+
+// Plot interpolation type.  `linear` is default. Valid options are `linear`, `step-before`, `step-after`, `basis`, `cardinal`, and `monotone`.
+func (o GetDashboardSectionRowChartChartSettingOutput) LineType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDashboardSectionRowChartChartSetting) string { return v.LineType }).(pulumi.StringOutput)
+}
+
+// Max value of the Y-axis. Set to null or leave blank for auto.
+func (o GetDashboardSectionRowChartChartSettingOutput) Max() pulumi.Float64Output {
+	return o.ApplyT(func(v GetDashboardSectionRowChartChartSetting) float64 { return v.Max }).(pulumi.Float64Output)
+}
+
+// Min value of the Y-axis. Set to null or leave blank for auto.
+func (o GetDashboardSectionRowChartChartSettingOutput) Min() pulumi.Float64Output {
+	return o.ApplyT(func(v GetDashboardSectionRowChartChartSetting) float64 { return v.Min }).(pulumi.Float64Output)
+}
+
+// For the tabular view defines how many point tags to display.
+func (o GetDashboardSectionRowChartChartSettingOutput) NumTags() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDashboardSectionRowChartChartSetting) int { return v.NumTags }).(pulumi.IntOutput)
+}
+
+// The markdown content for a Markdown display, in plain text.
+func (o GetDashboardSectionRowChartChartSettingOutput) PlainMarkdownContent() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDashboardSectionRowChartChartSetting) string { return v.PlainMarkdownContent }).(pulumi.StringOutput)
+}
+
+// For the tabular view, whether to display sources. Default is `true`.
+func (o GetDashboardSectionRowChartChartSettingOutput) ShowHosts() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDashboardSectionRowChartChartSetting) bool { return v.ShowHosts }).(pulumi.BoolOutput)
+}
+
+// For the tabular view, whether to display labels. Default is `true`.
+func (o GetDashboardSectionRowChartChartSettingOutput) ShowLabels() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDashboardSectionRowChartChartSetting) bool { return v.ShowLabels }).(pulumi.BoolOutput)
+}
+
+// For the tabular view, whether to display raw values. Default is `false`.
+func (o GetDashboardSectionRowChartChartSettingOutput) ShowRawValues() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDashboardSectionRowChartChartSetting) bool { return v.ShowRawValues }).(pulumi.BoolOutput)
+}
+
+// For the tabular view, whether to display values in descending order. Default is `false`.
+func (o GetDashboardSectionRowChartChartSettingOutput) SortValuesDescending() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDashboardSectionRowChartChartSetting) bool { return v.SortValuesDescending }).(pulumi.BoolOutput)
+}
+
+// For the single stat view, the decimal precision of the displayed number.
+func (o GetDashboardSectionRowChartChartSettingOutput) SparklineDecimalPrecision() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDashboardSectionRowChartChartSetting) int { return v.SparklineDecimalPrecision }).(pulumi.IntOutput)
+}
+
+// For the single stat view, the color of the displayed text (when not dynamically determined). Values should be in RGBA format.
+func (o GetDashboardSectionRowChartChartSettingOutput) SparklineDisplayColor() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDashboardSectionRowChartChartSetting) string { return v.SparklineDisplayColor }).(pulumi.StringOutput)
+}
+
+// For the single stat view, the font size of the displayed text, in percent.
+func (o GetDashboardSectionRowChartChartSettingOutput) SparklineDisplayFontSize() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDashboardSectionRowChartChartSetting) string { return v.SparklineDisplayFontSize }).(pulumi.StringOutput)
+}
+
+// For the single stat view, the horizontal position of the displayed text. Valid options are `MIDDLE`, `LEFT`, `RIGHT`.
+func (o GetDashboardSectionRowChartChartSettingOutput) SparklineDisplayHorizontalPosition() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDashboardSectionRowChartChartSetting) string { return v.SparklineDisplayHorizontalPosition }).(pulumi.StringOutput)
+}
+
+// For the single stat view, a string to append to the displayed text.
+func (o GetDashboardSectionRowChartChartSettingOutput) SparklineDisplayPostfix() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDashboardSectionRowChartChartSetting) string { return v.SparklineDisplayPostfix }).(pulumi.StringOutput)
+}
+
+// For the single stat view, a string to add before the displayed text.
+func (o GetDashboardSectionRowChartChartSettingOutput) SparklineDisplayPrefix() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDashboardSectionRowChartChartSetting) string { return v.SparklineDisplayPrefix }).(pulumi.StringOutput)
+}
+
+// For the single stat view, where to display the name of the query or the value of the query. Valid options are `VALUE` or `LABEL`.
+func (o GetDashboardSectionRowChartChartSettingOutput) SparklineDisplayValueType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDashboardSectionRowChartChartSetting) string { return v.SparklineDisplayValueType }).(pulumi.StringOutput)
+}
+
+// This setting is deprecated.
+func (o GetDashboardSectionRowChartChartSettingOutput) SparklineDisplayVerticalPosition() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDashboardSectionRowChartChartSetting) string { return v.SparklineDisplayVerticalPosition }).(pulumi.StringOutput)
+}
+
+// For the single stat view, the color of the background fill. Values should be in RGBA format.
+func (o GetDashboardSectionRowChartChartSettingOutput) SparklineFillColor() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDashboardSectionRowChartChartSetting) string { return v.SparklineFillColor }).(pulumi.StringOutput)
+}
+
+// For the single stat view, the color of the line. Values should be in RGBA format.
+func (o GetDashboardSectionRowChartChartSettingOutput) SparklineLineColor() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDashboardSectionRowChartChartSetting) string { return v.SparklineLineColor }).(pulumi.StringOutput)
+}
+
+// For the single stat view, this determines whether the sparkline of the statistic is displayed in the chart. Valid options are `BACKGROUND`, `BOTTOM`, `NONE`.
+func (o GetDashboardSectionRowChartChartSettingOutput) SparklineSize() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDashboardSectionRowChartChartSetting) string { return v.SparklineSize }).(pulumi.StringOutput)
+}
+
+// For the single stat view, whether to apply dynamic color settings to the displayed `TEXT` or `BACKGROUND`. Valid options are `TEXT` or `BACKGROUND`.
+func (o GetDashboardSectionRowChartChartSettingOutput) SparklineValueColorMapApplyTo() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDashboardSectionRowChartChartSetting) string { return v.SparklineValueColorMapApplyTo }).(pulumi.StringOutput)
+}
+
+// For the single stat view, a list of colors that differing query values map to. Must contain one more element than `sparklineValueColorMapValuesV2`. Values should be in RGBA format.
+func (o GetDashboardSectionRowChartChartSettingOutput) SparklineValueColorMapColors() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDashboardSectionRowChartChartSetting) []string { return v.SparklineValueColorMapColors }).(pulumi.StringArrayOutput)
+}
+
+// This setting is deprecated.
+func (o GetDashboardSectionRowChartChartSettingOutput) SparklineValueColorMapValues() pulumi.IntArrayOutput {
+	return o.ApplyT(func(v GetDashboardSectionRowChartChartSetting) []int { return v.SparklineValueColorMapValues }).(pulumi.IntArrayOutput)
+}
+
+// For the single stat view, a list of boundaries for mapping different query values to colors. Must contain one element less than `sparklineValueColorMapColors`.
+func (o GetDashboardSectionRowChartChartSettingOutput) SparklineValueColorMapValuesV2s() pulumi.Float64ArrayOutput {
+	return o.ApplyT(func(v GetDashboardSectionRowChartChartSetting) []float64 { return v.SparklineValueColorMapValuesV2s }).(pulumi.Float64ArrayOutput)
+}
+
+// For the single stat view, a list of display text values that different query values map to. Must contain one more element than `sparklineValueTextMapThresholds`.
+func (o GetDashboardSectionRowChartChartSettingOutput) SparklineValueTextMapTexts() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDashboardSectionRowChartChartSetting) []string { return v.SparklineValueTextMapTexts }).(pulumi.StringArrayOutput)
+}
+
+// For the single stat view, a list of threshold boundaries for mapping different query values to display text. Must contain one element less than `sparklineValueTextMapText`.
+func (o GetDashboardSectionRowChartChartSettingOutput) SparklineValueTextMapThresholds() pulumi.Float64ArrayOutput {
+	return o.ApplyT(func(v GetDashboardSectionRowChartChartSetting) []float64 { return v.SparklineValueTextMapThresholds }).(pulumi.Float64ArrayOutput)
+}
+
+// Type of stacked chart (applicable only if chart type is `stacked`). `zero` (default) means stacked from y=0. `expand` means normalized from 0 to 1.  `wiggle` means minimize weighted changes. `silhouette` means to center the stream. Valid options are `zero`, `expand`, `wiggle`, `silhouette`, and `bars`.
+func (o GetDashboardSectionRowChartChartSettingOutput) StackType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDashboardSectionRowChartChartSetting) string { return v.StackType }).(pulumi.StringOutput)
+}
+
+// For the tabular view, which mode to use to determine which point tags to display. Valid options are `all`, `top`, or `custom`.
+func (o GetDashboardSectionRowChartChartSettingOutput) TagMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDashboardSectionRowChartChartSetting) string { return v.TagMode }).(pulumi.StringOutput)
+}
+
+// For x-y scatterplots, whether to color more recent points as darker than older points.
+func (o GetDashboardSectionRowChartChartSettingOutput) TimeBasedColoring() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDashboardSectionRowChartChartSetting) bool { return v.TimeBasedColoring }).(pulumi.BoolOutput)
+}
+
+// Chart Type. `line` refers to the Line Plot, `scatter` to the Point Plot, `stacked-area` to the Stacked Area plot, `table` to the Tabular View, `scatterplot-xy` to Scatter Plot, `markdown-widget` to the Markdown display, and `sparkline` to the Single Stat view. Valid options are `line`, `scatterplot`,
+// `stacked-area`, `stacked-column`, `table`, `scatterplot-xy`, `markdown-widget`, `sparkline`, `globe`, `nodemap`, `top-k`, `status-list`, and `histogram`.
+func (o GetDashboardSectionRowChartChartSettingOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDashboardSectionRowChartChartSetting) string { return v.Type }).(pulumi.StringOutput)
+}
+
+// Width, in minutes, of the time window to use for `last` windowing.
+func (o GetDashboardSectionRowChartChartSettingOutput) WindowSize() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDashboardSectionRowChartChartSetting) int { return v.WindowSize }).(pulumi.IntOutput)
+}
+
+// For the tabular view, whether to use the full time window for the query or the last X minutes. Valid options are `full` or `last`.
+func (o GetDashboardSectionRowChartChartSettingOutput) Windowing() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDashboardSectionRowChartChartSetting) string { return v.Windowing }).(pulumi.StringOutput)
+}
+
+// For x-y scatterplots, max value for the X-axis. Set to null for auto.
+func (o GetDashboardSectionRowChartChartSettingOutput) Xmax() pulumi.Float64Output {
+	return o.ApplyT(func(v GetDashboardSectionRowChartChartSetting) float64 { return v.Xmax }).(pulumi.Float64Output)
+}
+
+// For x-y scatterplots, min value for the X-axis. Set to null for auto.
+func (o GetDashboardSectionRowChartChartSettingOutput) Xmin() pulumi.Float64Output {
+	return o.ApplyT(func(v GetDashboardSectionRowChartChartSetting) float64 { return v.Xmin }).(pulumi.Float64Output)
+}
+
+func (o GetDashboardSectionRowChartChartSettingOutput) Y0ScaleSiBy1024() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDashboardSectionRowChartChartSetting) bool { return v.Y0ScaleSiBy1024 }).(pulumi.BoolOutput)
+}
+
+// (Optional) Whether to automatically adjust magnitude labels and units for the left Y-axis to favor smaller magnitudes and larger units.
+func (o GetDashboardSectionRowChartChartSettingOutput) Y0UnitAutoscaling() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDashboardSectionRowChartChartSetting) bool { return v.Y0UnitAutoscaling }).(pulumi.BoolOutput)
+}
+
+func (o GetDashboardSectionRowChartChartSettingOutput) Y1Max() pulumi.Float64Output {
+	return o.ApplyT(func(v GetDashboardSectionRowChartChartSetting) float64 { return v.Y1Max }).(pulumi.Float64Output)
+}
+
+func (o GetDashboardSectionRowChartChartSettingOutput) Y1Min() pulumi.Float64Output {
+	return o.ApplyT(func(v GetDashboardSectionRowChartChartSetting) float64 { return v.Y1Min }).(pulumi.Float64Output)
+}
+
+func (o GetDashboardSectionRowChartChartSettingOutput) Y1ScaleSiBy1024() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDashboardSectionRowChartChartSetting) bool { return v.Y1ScaleSiBy1024 }).(pulumi.BoolOutput)
+}
+
+// (Optional) Whether to automatically adjust magnitude labels and units for the right Y-axis to favor smaller magnitudes and larger units.
+func (o GetDashboardSectionRowChartChartSettingOutput) Y1UnitAutoscaling() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDashboardSectionRowChartChartSetting) bool { return v.Y1UnitAutoscaling }).(pulumi.BoolOutput)
+}
+
+// For plots with multiple Y-axes, units for right side Y-axis.
+func (o GetDashboardSectionRowChartChartSettingOutput) Y1Units() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDashboardSectionRowChartChartSetting) string { return v.Y1Units }).(pulumi.StringOutput)
+}
+
+// For x-y scatterplots, max value for the Y-axis. Set to null for auto.
+func (o GetDashboardSectionRowChartChartSettingOutput) Ymax() pulumi.Float64Output {
+	return o.ApplyT(func(v GetDashboardSectionRowChartChartSetting) float64 { return v.Ymax }).(pulumi.Float64Output)
+}
+
+// For x-y scatterplots, min value for the Y-axis. Set to null for auto.
+func (o GetDashboardSectionRowChartChartSettingOutput) Ymin() pulumi.Float64Output {
+	return o.ApplyT(func(v GetDashboardSectionRowChartChartSetting) float64 { return v.Ymin }).(pulumi.Float64Output)
+}
+
+type GetDashboardSectionRowChartChartSettingArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDashboardSectionRowChartChartSettingArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDashboardSectionRowChartChartSetting)(nil)).Elem()
+}
+
+func (o GetDashboardSectionRowChartChartSettingArrayOutput) ToGetDashboardSectionRowChartChartSettingArrayOutput() GetDashboardSectionRowChartChartSettingArrayOutput {
+	return o
+}
+
+func (o GetDashboardSectionRowChartChartSettingArrayOutput) ToGetDashboardSectionRowChartChartSettingArrayOutputWithContext(ctx context.Context) GetDashboardSectionRowChartChartSettingArrayOutput {
+	return o
+}
+
+func (o GetDashboardSectionRowChartChartSettingArrayOutput) Index(i pulumi.IntInput) GetDashboardSectionRowChartChartSettingOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDashboardSectionRowChartChartSetting {
+		return vs[0].([]GetDashboardSectionRowChartChartSetting)[vs[1].(int)]
+	}).(GetDashboardSectionRowChartChartSettingOutput)
+}
+
+type GetDashboardSectionRowChartSource struct {
+	// Whether the source is disabled.
+	Disabled bool `pulumi:"disabled"`
+	// The name of the parameters.
+	Name string `pulumi:"name"`
+	// Query expression to plot on the chart.
+	Query               string `pulumi:"query"`
+	QuerybuilderEnabled bool   `pulumi:"querybuilderEnabled"`
+	// For scatter plots, does this query source the X-axis or the Y-axis, `X`, or `Y`.
+	ScatterPlotSource string `pulumi:"scatterPlotSource"`
+	SecondaryAxis     bool   `pulumi:"secondaryAxis"`
+	SourceColor       string `pulumi:"sourceColor"`
+	// A description for the purpose of this source.
+	SourceDescription string `pulumi:"sourceDescription"`
+}
+
+// GetDashboardSectionRowChartSourceInput is an input type that accepts GetDashboardSectionRowChartSourceArgs and GetDashboardSectionRowChartSourceOutput values.
+// You can construct a concrete instance of `GetDashboardSectionRowChartSourceInput` via:
+//
+//	GetDashboardSectionRowChartSourceArgs{...}
+type GetDashboardSectionRowChartSourceInput interface {
+	pulumi.Input
+
+	ToGetDashboardSectionRowChartSourceOutput() GetDashboardSectionRowChartSourceOutput
+	ToGetDashboardSectionRowChartSourceOutputWithContext(context.Context) GetDashboardSectionRowChartSourceOutput
+}
+
+type GetDashboardSectionRowChartSourceArgs struct {
+	// Whether the source is disabled.
+	Disabled pulumi.BoolInput `pulumi:"disabled"`
+	// The name of the parameters.
+	Name pulumi.StringInput `pulumi:"name"`
+	// Query expression to plot on the chart.
+	Query               pulumi.StringInput `pulumi:"query"`
+	QuerybuilderEnabled pulumi.BoolInput   `pulumi:"querybuilderEnabled"`
+	// For scatter plots, does this query source the X-axis or the Y-axis, `X`, or `Y`.
+	ScatterPlotSource pulumi.StringInput `pulumi:"scatterPlotSource"`
+	SecondaryAxis     pulumi.BoolInput   `pulumi:"secondaryAxis"`
+	SourceColor       pulumi.StringInput `pulumi:"sourceColor"`
+	// A description for the purpose of this source.
+	SourceDescription pulumi.StringInput `pulumi:"sourceDescription"`
+}
+
+func (GetDashboardSectionRowChartSourceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDashboardSectionRowChartSource)(nil)).Elem()
+}
+
+func (i GetDashboardSectionRowChartSourceArgs) ToGetDashboardSectionRowChartSourceOutput() GetDashboardSectionRowChartSourceOutput {
+	return i.ToGetDashboardSectionRowChartSourceOutputWithContext(context.Background())
+}
+
+func (i GetDashboardSectionRowChartSourceArgs) ToGetDashboardSectionRowChartSourceOutputWithContext(ctx context.Context) GetDashboardSectionRowChartSourceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDashboardSectionRowChartSourceOutput)
+}
+
+// GetDashboardSectionRowChartSourceArrayInput is an input type that accepts GetDashboardSectionRowChartSourceArray and GetDashboardSectionRowChartSourceArrayOutput values.
+// You can construct a concrete instance of `GetDashboardSectionRowChartSourceArrayInput` via:
+//
+//	GetDashboardSectionRowChartSourceArray{ GetDashboardSectionRowChartSourceArgs{...} }
+type GetDashboardSectionRowChartSourceArrayInput interface {
+	pulumi.Input
+
+	ToGetDashboardSectionRowChartSourceArrayOutput() GetDashboardSectionRowChartSourceArrayOutput
+	ToGetDashboardSectionRowChartSourceArrayOutputWithContext(context.Context) GetDashboardSectionRowChartSourceArrayOutput
+}
+
+type GetDashboardSectionRowChartSourceArray []GetDashboardSectionRowChartSourceInput
+
+func (GetDashboardSectionRowChartSourceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDashboardSectionRowChartSource)(nil)).Elem()
+}
+
+func (i GetDashboardSectionRowChartSourceArray) ToGetDashboardSectionRowChartSourceArrayOutput() GetDashboardSectionRowChartSourceArrayOutput {
+	return i.ToGetDashboardSectionRowChartSourceArrayOutputWithContext(context.Background())
+}
+
+func (i GetDashboardSectionRowChartSourceArray) ToGetDashboardSectionRowChartSourceArrayOutputWithContext(ctx context.Context) GetDashboardSectionRowChartSourceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDashboardSectionRowChartSourceArrayOutput)
+}
+
+type GetDashboardSectionRowChartSourceOutput struct{ *pulumi.OutputState }
+
+func (GetDashboardSectionRowChartSourceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDashboardSectionRowChartSource)(nil)).Elem()
+}
+
+func (o GetDashboardSectionRowChartSourceOutput) ToGetDashboardSectionRowChartSourceOutput() GetDashboardSectionRowChartSourceOutput {
+	return o
+}
+
+func (o GetDashboardSectionRowChartSourceOutput) ToGetDashboardSectionRowChartSourceOutputWithContext(ctx context.Context) GetDashboardSectionRowChartSourceOutput {
+	return o
+}
+
+// Whether the source is disabled.
+func (o GetDashboardSectionRowChartSourceOutput) Disabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDashboardSectionRowChartSource) bool { return v.Disabled }).(pulumi.BoolOutput)
+}
+
+// The name of the parameters.
+func (o GetDashboardSectionRowChartSourceOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDashboardSectionRowChartSource) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// Query expression to plot on the chart.
+func (o GetDashboardSectionRowChartSourceOutput) Query() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDashboardSectionRowChartSource) string { return v.Query }).(pulumi.StringOutput)
+}
+
+func (o GetDashboardSectionRowChartSourceOutput) QuerybuilderEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDashboardSectionRowChartSource) bool { return v.QuerybuilderEnabled }).(pulumi.BoolOutput)
+}
+
+// For scatter plots, does this query source the X-axis or the Y-axis, `X`, or `Y`.
+func (o GetDashboardSectionRowChartSourceOutput) ScatterPlotSource() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDashboardSectionRowChartSource) string { return v.ScatterPlotSource }).(pulumi.StringOutput)
+}
+
+func (o GetDashboardSectionRowChartSourceOutput) SecondaryAxis() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDashboardSectionRowChartSource) bool { return v.SecondaryAxis }).(pulumi.BoolOutput)
+}
+
+func (o GetDashboardSectionRowChartSourceOutput) SourceColor() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDashboardSectionRowChartSource) string { return v.SourceColor }).(pulumi.StringOutput)
+}
+
+// A description for the purpose of this source.
+func (o GetDashboardSectionRowChartSourceOutput) SourceDescription() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDashboardSectionRowChartSource) string { return v.SourceDescription }).(pulumi.StringOutput)
+}
+
+type GetDashboardSectionRowChartSourceArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDashboardSectionRowChartSourceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDashboardSectionRowChartSource)(nil)).Elem()
+}
+
+func (o GetDashboardSectionRowChartSourceArrayOutput) ToGetDashboardSectionRowChartSourceArrayOutput() GetDashboardSectionRowChartSourceArrayOutput {
+	return o
+}
+
+func (o GetDashboardSectionRowChartSourceArrayOutput) ToGetDashboardSectionRowChartSourceArrayOutputWithContext(ctx context.Context) GetDashboardSectionRowChartSourceArrayOutput {
+	return o
+}
+
+func (o GetDashboardSectionRowChartSourceArrayOutput) Index(i pulumi.IntInput) GetDashboardSectionRowChartSourceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDashboardSectionRowChartSource {
+		return vs[0].([]GetDashboardSectionRowChartSource)[vs[1].(int)]
+	}).(GetDashboardSectionRowChartSourceOutput)
+}
+
+type GetDashboardsDashboard struct {
+	// A list of users that have modify ACL access to the dashboard.
+	CanModifies []string `pulumi:"canModifies"`
+	// A list of users that have view ACL access to the dashboard.
+	CanViews           []string `pulumi:"canViews"`
+	ChartTitleBgColor  string   `pulumi:"chartTitleBgColor"`
+	ChartTitleColor    string   `pulumi:"chartTitleColor"`
+	ChartTitleScalar   int      `pulumi:"chartTitleScalar"`
+	CreatedEpochMillis int      `pulumi:"createdEpochMillis"`
+	CreatorId          string   `pulumi:"creatorId"`
+	Customer           string   `pulumi:"customer"`
+	DefaultEndTime     int      `pulumi:"defaultEndTime"`
+	DefaultStartTime   int      `pulumi:"defaultStartTime"`
+	DefaultTimeWindow  string   `pulumi:"defaultTimeWindow"`
+	Deleted            bool     `pulumi:"deleted"`
+	// Description of the chart.
+	Description        string `pulumi:"description"`
+	DisplayDescription bool   `pulumi:"displayDescription"`
+	// Whether the dashboard parameters section is opened by default when the dashboard is shown.
+	DisplayQueryParameters bool `pulumi:"displayQueryParameters"`
+	// Whether the "pills" quick-linked the sections of the dashboard are displayed by default when the dashboard is shown.
+	DisplaySectionTableOfContents bool `pulumi:"displaySectionTableOfContents"`
+	// How charts belonging to this dashboard should display events. `BYCHART` is default if
+	// unspecified. Valid options are: `BYCHART`, `AUTOMATIC`, `ALL`, `NONE`, `BYDASHBOARD`, and `BYCHARTANDDASHBOARD`.
+	EventFilterType string `pulumi:"eventFilterType"`
+	EventQuery      string `pulumi:"eventQuery"`
+	Favorite        bool   `pulumi:"favorite"`
+	Hidden          bool   `pulumi:"hidden"`
+	Id              string `pulumi:"id"`
+	// The name of the parameters.
+	Name         string `pulumi:"name"`
+	NumCharts    int    `pulumi:"numCharts"`
+	NumFavorites int    `pulumi:"numFavorites"`
+	// The current JSON representation of dashboard parameters. See parameter details.
+	ParameterDetails []GetDashboardsDashboardParameterDetail `pulumi:"parameterDetails"`
+	Parameters       map[string]interface{}                  `pulumi:"parameters"`
+	Sections         []GetDashboardsDashboardSection         `pulumi:"sections"`
+	SystemOwned      bool                                    `pulumi:"systemOwned"`
+	// A set of tags to assign to this resource.
+	Tags               []string `pulumi:"tags"`
+	UpdatedEpochMillis int      `pulumi:"updatedEpochMillis"`
+	UpdaterId          string   `pulumi:"updaterId"`
+	// Unique identifier, also a URL slug of the dashboard.
+	Url            string `pulumi:"url"`
+	ViewsLastDay   int    `pulumi:"viewsLastDay"`
+	ViewsLastMonth int    `pulumi:"viewsLastMonth"`
+	ViewsLastWeek  int    `pulumi:"viewsLastWeek"`
+}
+
+// GetDashboardsDashboardInput is an input type that accepts GetDashboardsDashboardArgs and GetDashboardsDashboardOutput values.
+// You can construct a concrete instance of `GetDashboardsDashboardInput` via:
+//
+//	GetDashboardsDashboardArgs{...}
+type GetDashboardsDashboardInput interface {
+	pulumi.Input
+
+	ToGetDashboardsDashboardOutput() GetDashboardsDashboardOutput
+	ToGetDashboardsDashboardOutputWithContext(context.Context) GetDashboardsDashboardOutput
+}
+
+type GetDashboardsDashboardArgs struct {
+	// A list of users that have modify ACL access to the dashboard.
+	CanModifies pulumi.StringArrayInput `pulumi:"canModifies"`
+	// A list of users that have view ACL access to the dashboard.
+	CanViews           pulumi.StringArrayInput `pulumi:"canViews"`
+	ChartTitleBgColor  pulumi.StringInput      `pulumi:"chartTitleBgColor"`
+	ChartTitleColor    pulumi.StringInput      `pulumi:"chartTitleColor"`
+	ChartTitleScalar   pulumi.IntInput         `pulumi:"chartTitleScalar"`
+	CreatedEpochMillis pulumi.IntInput         `pulumi:"createdEpochMillis"`
+	CreatorId          pulumi.StringInput      `pulumi:"creatorId"`
+	Customer           pulumi.StringInput      `pulumi:"customer"`
+	DefaultEndTime     pulumi.IntInput         `pulumi:"defaultEndTime"`
+	DefaultStartTime   pulumi.IntInput         `pulumi:"defaultStartTime"`
+	DefaultTimeWindow  pulumi.StringInput      `pulumi:"defaultTimeWindow"`
+	Deleted            pulumi.BoolInput        `pulumi:"deleted"`
+	// Description of the chart.
+	Description        pulumi.StringInput `pulumi:"description"`
+	DisplayDescription pulumi.BoolInput   `pulumi:"displayDescription"`
+	// Whether the dashboard parameters section is opened by default when the dashboard is shown.
+	DisplayQueryParameters pulumi.BoolInput `pulumi:"displayQueryParameters"`
+	// Whether the "pills" quick-linked the sections of the dashboard are displayed by default when the dashboard is shown.
+	DisplaySectionTableOfContents pulumi.BoolInput `pulumi:"displaySectionTableOfContents"`
+	// How charts belonging to this dashboard should display events. `BYCHART` is default if
+	// unspecified. Valid options are: `BYCHART`, `AUTOMATIC`, `ALL`, `NONE`, `BYDASHBOARD`, and `BYCHARTANDDASHBOARD`.
+	EventFilterType pulumi.StringInput `pulumi:"eventFilterType"`
+	EventQuery      pulumi.StringInput `pulumi:"eventQuery"`
+	Favorite        pulumi.BoolInput   `pulumi:"favorite"`
+	Hidden          pulumi.BoolInput   `pulumi:"hidden"`
+	Id              pulumi.StringInput `pulumi:"id"`
+	// The name of the parameters.
+	Name         pulumi.StringInput `pulumi:"name"`
+	NumCharts    pulumi.IntInput    `pulumi:"numCharts"`
+	NumFavorites pulumi.IntInput    `pulumi:"numFavorites"`
+	// The current JSON representation of dashboard parameters. See parameter details.
+	ParameterDetails GetDashboardsDashboardParameterDetailArrayInput `pulumi:"parameterDetails"`
+	Parameters       pulumi.MapInput                                 `pulumi:"parameters"`
+	Sections         GetDashboardsDashboardSectionArrayInput         `pulumi:"sections"`
+	SystemOwned      pulumi.BoolInput                                `pulumi:"systemOwned"`
+	// A set of tags to assign to this resource.
+	Tags               pulumi.StringArrayInput `pulumi:"tags"`
+	UpdatedEpochMillis pulumi.IntInput         `pulumi:"updatedEpochMillis"`
+	UpdaterId          pulumi.StringInput      `pulumi:"updaterId"`
+	// Unique identifier, also a URL slug of the dashboard.
+	Url            pulumi.StringInput `pulumi:"url"`
+	ViewsLastDay   pulumi.IntInput    `pulumi:"viewsLastDay"`
+	ViewsLastMonth pulumi.IntInput    `pulumi:"viewsLastMonth"`
+	ViewsLastWeek  pulumi.IntInput    `pulumi:"viewsLastWeek"`
+}
+
+func (GetDashboardsDashboardArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDashboardsDashboard)(nil)).Elem()
+}
+
+func (i GetDashboardsDashboardArgs) ToGetDashboardsDashboardOutput() GetDashboardsDashboardOutput {
+	return i.ToGetDashboardsDashboardOutputWithContext(context.Background())
+}
+
+func (i GetDashboardsDashboardArgs) ToGetDashboardsDashboardOutputWithContext(ctx context.Context) GetDashboardsDashboardOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDashboardsDashboardOutput)
+}
+
+// GetDashboardsDashboardArrayInput is an input type that accepts GetDashboardsDashboardArray and GetDashboardsDashboardArrayOutput values.
+// You can construct a concrete instance of `GetDashboardsDashboardArrayInput` via:
+//
+//	GetDashboardsDashboardArray{ GetDashboardsDashboardArgs{...} }
+type GetDashboardsDashboardArrayInput interface {
+	pulumi.Input
+
+	ToGetDashboardsDashboardArrayOutput() GetDashboardsDashboardArrayOutput
+	ToGetDashboardsDashboardArrayOutputWithContext(context.Context) GetDashboardsDashboardArrayOutput
+}
+
+type GetDashboardsDashboardArray []GetDashboardsDashboardInput
+
+func (GetDashboardsDashboardArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDashboardsDashboard)(nil)).Elem()
+}
+
+func (i GetDashboardsDashboardArray) ToGetDashboardsDashboardArrayOutput() GetDashboardsDashboardArrayOutput {
+	return i.ToGetDashboardsDashboardArrayOutputWithContext(context.Background())
+}
+
+func (i GetDashboardsDashboardArray) ToGetDashboardsDashboardArrayOutputWithContext(ctx context.Context) GetDashboardsDashboardArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDashboardsDashboardArrayOutput)
+}
+
+type GetDashboardsDashboardOutput struct{ *pulumi.OutputState }
+
+func (GetDashboardsDashboardOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDashboardsDashboard)(nil)).Elem()
+}
+
+func (o GetDashboardsDashboardOutput) ToGetDashboardsDashboardOutput() GetDashboardsDashboardOutput {
+	return o
+}
+
+func (o GetDashboardsDashboardOutput) ToGetDashboardsDashboardOutputWithContext(ctx context.Context) GetDashboardsDashboardOutput {
+	return o
+}
+
+// A list of users that have modify ACL access to the dashboard.
+func (o GetDashboardsDashboardOutput) CanModifies() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDashboardsDashboard) []string { return v.CanModifies }).(pulumi.StringArrayOutput)
+}
+
+// A list of users that have view ACL access to the dashboard.
+func (o GetDashboardsDashboardOutput) CanViews() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDashboardsDashboard) []string { return v.CanViews }).(pulumi.StringArrayOutput)
+}
+
+func (o GetDashboardsDashboardOutput) ChartTitleBgColor() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDashboardsDashboard) string { return v.ChartTitleBgColor }).(pulumi.StringOutput)
+}
+
+func (o GetDashboardsDashboardOutput) ChartTitleColor() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDashboardsDashboard) string { return v.ChartTitleColor }).(pulumi.StringOutput)
+}
+
+func (o GetDashboardsDashboardOutput) ChartTitleScalar() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDashboardsDashboard) int { return v.ChartTitleScalar }).(pulumi.IntOutput)
+}
+
+func (o GetDashboardsDashboardOutput) CreatedEpochMillis() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDashboardsDashboard) int { return v.CreatedEpochMillis }).(pulumi.IntOutput)
+}
+
+func (o GetDashboardsDashboardOutput) CreatorId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDashboardsDashboard) string { return v.CreatorId }).(pulumi.StringOutput)
+}
+
+func (o GetDashboardsDashboardOutput) Customer() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDashboardsDashboard) string { return v.Customer }).(pulumi.StringOutput)
+}
+
+func (o GetDashboardsDashboardOutput) DefaultEndTime() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDashboardsDashboard) int { return v.DefaultEndTime }).(pulumi.IntOutput)
+}
+
+func (o GetDashboardsDashboardOutput) DefaultStartTime() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDashboardsDashboard) int { return v.DefaultStartTime }).(pulumi.IntOutput)
+}
+
+func (o GetDashboardsDashboardOutput) DefaultTimeWindow() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDashboardsDashboard) string { return v.DefaultTimeWindow }).(pulumi.StringOutput)
+}
+
+func (o GetDashboardsDashboardOutput) Deleted() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDashboardsDashboard) bool { return v.Deleted }).(pulumi.BoolOutput)
+}
+
+// Description of the chart.
+func (o GetDashboardsDashboardOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDashboardsDashboard) string { return v.Description }).(pulumi.StringOutput)
+}
+
+func (o GetDashboardsDashboardOutput) DisplayDescription() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDashboardsDashboard) bool { return v.DisplayDescription }).(pulumi.BoolOutput)
+}
+
+// Whether the dashboard parameters section is opened by default when the dashboard is shown.
+func (o GetDashboardsDashboardOutput) DisplayQueryParameters() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDashboardsDashboard) bool { return v.DisplayQueryParameters }).(pulumi.BoolOutput)
+}
+
+// Whether the "pills" quick-linked the sections of the dashboard are displayed by default when the dashboard is shown.
+func (o GetDashboardsDashboardOutput) DisplaySectionTableOfContents() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDashboardsDashboard) bool { return v.DisplaySectionTableOfContents }).(pulumi.BoolOutput)
+}
+
+// How charts belonging to this dashboard should display events. `BYCHART` is default if
+// unspecified. Valid options are: `BYCHART`, `AUTOMATIC`, `ALL`, `NONE`, `BYDASHBOARD`, and `BYCHARTANDDASHBOARD`.
+func (o GetDashboardsDashboardOutput) EventFilterType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDashboardsDashboard) string { return v.EventFilterType }).(pulumi.StringOutput)
+}
+
+func (o GetDashboardsDashboardOutput) EventQuery() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDashboardsDashboard) string { return v.EventQuery }).(pulumi.StringOutput)
+}
+
+func (o GetDashboardsDashboardOutput) Favorite() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDashboardsDashboard) bool { return v.Favorite }).(pulumi.BoolOutput)
+}
+
+func (o GetDashboardsDashboardOutput) Hidden() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDashboardsDashboard) bool { return v.Hidden }).(pulumi.BoolOutput)
+}
+
+func (o GetDashboardsDashboardOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDashboardsDashboard) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The name of the parameters.
+func (o GetDashboardsDashboardOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDashboardsDashboard) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetDashboardsDashboardOutput) NumCharts() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDashboardsDashboard) int { return v.NumCharts }).(pulumi.IntOutput)
+}
+
+func (o GetDashboardsDashboardOutput) NumFavorites() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDashboardsDashboard) int { return v.NumFavorites }).(pulumi.IntOutput)
+}
+
+// The current JSON representation of dashboard parameters. See parameter details.
+func (o GetDashboardsDashboardOutput) ParameterDetails() GetDashboardsDashboardParameterDetailArrayOutput {
+	return o.ApplyT(func(v GetDashboardsDashboard) []GetDashboardsDashboardParameterDetail { return v.ParameterDetails }).(GetDashboardsDashboardParameterDetailArrayOutput)
+}
+
+func (o GetDashboardsDashboardOutput) Parameters() pulumi.MapOutput {
+	return o.ApplyT(func(v GetDashboardsDashboard) map[string]interface{} { return v.Parameters }).(pulumi.MapOutput)
+}
+
+func (o GetDashboardsDashboardOutput) Sections() GetDashboardsDashboardSectionArrayOutput {
+	return o.ApplyT(func(v GetDashboardsDashboard) []GetDashboardsDashboardSection { return v.Sections }).(GetDashboardsDashboardSectionArrayOutput)
+}
+
+func (o GetDashboardsDashboardOutput) SystemOwned() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDashboardsDashboard) bool { return v.SystemOwned }).(pulumi.BoolOutput)
+}
+
+// A set of tags to assign to this resource.
+func (o GetDashboardsDashboardOutput) Tags() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDashboardsDashboard) []string { return v.Tags }).(pulumi.StringArrayOutput)
+}
+
+func (o GetDashboardsDashboardOutput) UpdatedEpochMillis() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDashboardsDashboard) int { return v.UpdatedEpochMillis }).(pulumi.IntOutput)
+}
+
+func (o GetDashboardsDashboardOutput) UpdaterId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDashboardsDashboard) string { return v.UpdaterId }).(pulumi.StringOutput)
+}
+
+// Unique identifier, also a URL slug of the dashboard.
+func (o GetDashboardsDashboardOutput) Url() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDashboardsDashboard) string { return v.Url }).(pulumi.StringOutput)
+}
+
+func (o GetDashboardsDashboardOutput) ViewsLastDay() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDashboardsDashboard) int { return v.ViewsLastDay }).(pulumi.IntOutput)
+}
+
+func (o GetDashboardsDashboardOutput) ViewsLastMonth() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDashboardsDashboard) int { return v.ViewsLastMonth }).(pulumi.IntOutput)
+}
+
+func (o GetDashboardsDashboardOutput) ViewsLastWeek() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDashboardsDashboard) int { return v.ViewsLastWeek }).(pulumi.IntOutput)
+}
+
+type GetDashboardsDashboardArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDashboardsDashboardArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDashboardsDashboard)(nil)).Elem()
+}
+
+func (o GetDashboardsDashboardArrayOutput) ToGetDashboardsDashboardArrayOutput() GetDashboardsDashboardArrayOutput {
+	return o
+}
+
+func (o GetDashboardsDashboardArrayOutput) ToGetDashboardsDashboardArrayOutputWithContext(ctx context.Context) GetDashboardsDashboardArrayOutput {
+	return o
+}
+
+func (o GetDashboardsDashboardArrayOutput) Index(i pulumi.IntInput) GetDashboardsDashboardOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDashboardsDashboard {
+		return vs[0].([]GetDashboardsDashboard)[vs[1].(int)]
+	}).(GetDashboardsDashboardOutput)
+}
+
+type GetDashboardsDashboardParameterDetail struct {
+	// The default value of the parameter.
+	DefaultValue string `pulumi:"defaultValue"`
+	// For `DYNAMIC` parameter types, the type of the field. Valid options are `SOURCE`,
+	// `SOURCE_TAG`, `METRIC_NAME`, `TAG_KEY`, and `MATCHING_SOURCE_TAG`.
+	DynamicFieldType string `pulumi:"dynamicFieldType"`
+	// If `true` the parameter will only be shown on the edit view of the dashboard.
+	HideFromView bool `pulumi:"hideFromView"`
+	// The label for the parameter.
+	Label string `pulumi:"label"`
+	// The type of the parameter. `SIMPLE`, `LIST`, or `DYNAMIC`.
+	ParameterType string `pulumi:"parameterType"`
+	// For `DYNAMIC` parameter types, the query to execute to return values.
+	QueryValue string `pulumi:"queryValue"`
+	// For `TAG_KEY` dynamic field types, the tag key to return.
+	TagKey string `pulumi:"tagKey"`
+	// A string to string map. At least one of the keys must match the value of
+	// `defaultValue`.
+	ValuesToReadableStrings map[string]string `pulumi:"valuesToReadableStrings"`
+}
+
+// GetDashboardsDashboardParameterDetailInput is an input type that accepts GetDashboardsDashboardParameterDetailArgs and GetDashboardsDashboardParameterDetailOutput values.
+// You can construct a concrete instance of `GetDashboardsDashboardParameterDetailInput` via:
+//
+//	GetDashboardsDashboardParameterDetailArgs{...}
+type GetDashboardsDashboardParameterDetailInput interface {
+	pulumi.Input
+
+	ToGetDashboardsDashboardParameterDetailOutput() GetDashboardsDashboardParameterDetailOutput
+	ToGetDashboardsDashboardParameterDetailOutputWithContext(context.Context) GetDashboardsDashboardParameterDetailOutput
+}
+
+type GetDashboardsDashboardParameterDetailArgs struct {
+	// The default value of the parameter.
+	DefaultValue pulumi.StringInput `pulumi:"defaultValue"`
+	// For `DYNAMIC` parameter types, the type of the field. Valid options are `SOURCE`,
+	// `SOURCE_TAG`, `METRIC_NAME`, `TAG_KEY`, and `MATCHING_SOURCE_TAG`.
+	DynamicFieldType pulumi.StringInput `pulumi:"dynamicFieldType"`
+	// If `true` the parameter will only be shown on the edit view of the dashboard.
+	HideFromView pulumi.BoolInput `pulumi:"hideFromView"`
+	// The label for the parameter.
+	Label pulumi.StringInput `pulumi:"label"`
+	// The type of the parameter. `SIMPLE`, `LIST`, or `DYNAMIC`.
+	ParameterType pulumi.StringInput `pulumi:"parameterType"`
+	// For `DYNAMIC` parameter types, the query to execute to return values.
+	QueryValue pulumi.StringInput `pulumi:"queryValue"`
+	// For `TAG_KEY` dynamic field types, the tag key to return.
+	TagKey pulumi.StringInput `pulumi:"tagKey"`
+	// A string to string map. At least one of the keys must match the value of
+	// `defaultValue`.
+	ValuesToReadableStrings pulumi.StringMapInput `pulumi:"valuesToReadableStrings"`
+}
+
+func (GetDashboardsDashboardParameterDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDashboardsDashboardParameterDetail)(nil)).Elem()
+}
+
+func (i GetDashboardsDashboardParameterDetailArgs) ToGetDashboardsDashboardParameterDetailOutput() GetDashboardsDashboardParameterDetailOutput {
+	return i.ToGetDashboardsDashboardParameterDetailOutputWithContext(context.Background())
+}
+
+func (i GetDashboardsDashboardParameterDetailArgs) ToGetDashboardsDashboardParameterDetailOutputWithContext(ctx context.Context) GetDashboardsDashboardParameterDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDashboardsDashboardParameterDetailOutput)
+}
+
+// GetDashboardsDashboardParameterDetailArrayInput is an input type that accepts GetDashboardsDashboardParameterDetailArray and GetDashboardsDashboardParameterDetailArrayOutput values.
+// You can construct a concrete instance of `GetDashboardsDashboardParameterDetailArrayInput` via:
+//
+//	GetDashboardsDashboardParameterDetailArray{ GetDashboardsDashboardParameterDetailArgs{...} }
+type GetDashboardsDashboardParameterDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetDashboardsDashboardParameterDetailArrayOutput() GetDashboardsDashboardParameterDetailArrayOutput
+	ToGetDashboardsDashboardParameterDetailArrayOutputWithContext(context.Context) GetDashboardsDashboardParameterDetailArrayOutput
+}
+
+type GetDashboardsDashboardParameterDetailArray []GetDashboardsDashboardParameterDetailInput
+
+func (GetDashboardsDashboardParameterDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDashboardsDashboardParameterDetail)(nil)).Elem()
+}
+
+func (i GetDashboardsDashboardParameterDetailArray) ToGetDashboardsDashboardParameterDetailArrayOutput() GetDashboardsDashboardParameterDetailArrayOutput {
+	return i.ToGetDashboardsDashboardParameterDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetDashboardsDashboardParameterDetailArray) ToGetDashboardsDashboardParameterDetailArrayOutputWithContext(ctx context.Context) GetDashboardsDashboardParameterDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDashboardsDashboardParameterDetailArrayOutput)
+}
+
+type GetDashboardsDashboardParameterDetailOutput struct{ *pulumi.OutputState }
+
+func (GetDashboardsDashboardParameterDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDashboardsDashboardParameterDetail)(nil)).Elem()
+}
+
+func (o GetDashboardsDashboardParameterDetailOutput) ToGetDashboardsDashboardParameterDetailOutput() GetDashboardsDashboardParameterDetailOutput {
+	return o
+}
+
+func (o GetDashboardsDashboardParameterDetailOutput) ToGetDashboardsDashboardParameterDetailOutputWithContext(ctx context.Context) GetDashboardsDashboardParameterDetailOutput {
+	return o
+}
+
+// The default value of the parameter.
+func (o GetDashboardsDashboardParameterDetailOutput) DefaultValue() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDashboardsDashboardParameterDetail) string { return v.DefaultValue }).(pulumi.StringOutput)
+}
+
+// For `DYNAMIC` parameter types, the type of the field. Valid options are `SOURCE`,
+// `SOURCE_TAG`, `METRIC_NAME`, `TAG_KEY`, and `MATCHING_SOURCE_TAG`.
+func (o GetDashboardsDashboardParameterDetailOutput) DynamicFieldType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDashboardsDashboardParameterDetail) string { return v.DynamicFieldType }).(pulumi.StringOutput)
+}
+
+// If `true` the parameter will only be shown on the edit view of the dashboard.
+func (o GetDashboardsDashboardParameterDetailOutput) HideFromView() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDashboardsDashboardParameterDetail) bool { return v.HideFromView }).(pulumi.BoolOutput)
+}
+
+// The label for the parameter.
+func (o GetDashboardsDashboardParameterDetailOutput) Label() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDashboardsDashboardParameterDetail) string { return v.Label }).(pulumi.StringOutput)
+}
+
+// The type of the parameter. `SIMPLE`, `LIST`, or `DYNAMIC`.
+func (o GetDashboardsDashboardParameterDetailOutput) ParameterType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDashboardsDashboardParameterDetail) string { return v.ParameterType }).(pulumi.StringOutput)
+}
+
+// For `DYNAMIC` parameter types, the query to execute to return values.
+func (o GetDashboardsDashboardParameterDetailOutput) QueryValue() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDashboardsDashboardParameterDetail) string { return v.QueryValue }).(pulumi.StringOutput)
+}
+
+// For `TAG_KEY` dynamic field types, the tag key to return.
+func (o GetDashboardsDashboardParameterDetailOutput) TagKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDashboardsDashboardParameterDetail) string { return v.TagKey }).(pulumi.StringOutput)
+}
+
+// A string to string map. At least one of the keys must match the value of
+// `defaultValue`.
+func (o GetDashboardsDashboardParameterDetailOutput) ValuesToReadableStrings() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDashboardsDashboardParameterDetail) map[string]string { return v.ValuesToReadableStrings }).(pulumi.StringMapOutput)
+}
+
+type GetDashboardsDashboardParameterDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDashboardsDashboardParameterDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDashboardsDashboardParameterDetail)(nil)).Elem()
+}
+
+func (o GetDashboardsDashboardParameterDetailArrayOutput) ToGetDashboardsDashboardParameterDetailArrayOutput() GetDashboardsDashboardParameterDetailArrayOutput {
+	return o
+}
+
+func (o GetDashboardsDashboardParameterDetailArrayOutput) ToGetDashboardsDashboardParameterDetailArrayOutputWithContext(ctx context.Context) GetDashboardsDashboardParameterDetailArrayOutput {
+	return o
+}
+
+func (o GetDashboardsDashboardParameterDetailArrayOutput) Index(i pulumi.IntInput) GetDashboardsDashboardParameterDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDashboardsDashboardParameterDetail {
+		return vs[0].([]GetDashboardsDashboardParameterDetail)[vs[1].(int)]
+	}).(GetDashboardsDashboardParameterDetailOutput)
+}
+
+type GetDashboardsDashboardSection struct {
+	// The name of the parameters.
+	Name string                             `pulumi:"name"`
+	Rows []GetDashboardsDashboardSectionRow `pulumi:"rows"`
+}
+
+// GetDashboardsDashboardSectionInput is an input type that accepts GetDashboardsDashboardSectionArgs and GetDashboardsDashboardSectionOutput values.
+// You can construct a concrete instance of `GetDashboardsDashboardSectionInput` via:
+//
+//	GetDashboardsDashboardSectionArgs{...}
+type GetDashboardsDashboardSectionInput interface {
+	pulumi.Input
+
+	ToGetDashboardsDashboardSectionOutput() GetDashboardsDashboardSectionOutput
+	ToGetDashboardsDashboardSectionOutputWithContext(context.Context) GetDashboardsDashboardSectionOutput
+}
+
+type GetDashboardsDashboardSectionArgs struct {
+	// The name of the parameters.
+	Name pulumi.StringInput                         `pulumi:"name"`
+	Rows GetDashboardsDashboardSectionRowArrayInput `pulumi:"rows"`
+}
+
+func (GetDashboardsDashboardSectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDashboardsDashboardSection)(nil)).Elem()
+}
+
+func (i GetDashboardsDashboardSectionArgs) ToGetDashboardsDashboardSectionOutput() GetDashboardsDashboardSectionOutput {
+	return i.ToGetDashboardsDashboardSectionOutputWithContext(context.Background())
+}
+
+func (i GetDashboardsDashboardSectionArgs) ToGetDashboardsDashboardSectionOutputWithContext(ctx context.Context) GetDashboardsDashboardSectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDashboardsDashboardSectionOutput)
+}
+
+// GetDashboardsDashboardSectionArrayInput is an input type that accepts GetDashboardsDashboardSectionArray and GetDashboardsDashboardSectionArrayOutput values.
+// You can construct a concrete instance of `GetDashboardsDashboardSectionArrayInput` via:
+//
+//	GetDashboardsDashboardSectionArray{ GetDashboardsDashboardSectionArgs{...} }
+type GetDashboardsDashboardSectionArrayInput interface {
+	pulumi.Input
+
+	ToGetDashboardsDashboardSectionArrayOutput() GetDashboardsDashboardSectionArrayOutput
+	ToGetDashboardsDashboardSectionArrayOutputWithContext(context.Context) GetDashboardsDashboardSectionArrayOutput
+}
+
+type GetDashboardsDashboardSectionArray []GetDashboardsDashboardSectionInput
+
+func (GetDashboardsDashboardSectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDashboardsDashboardSection)(nil)).Elem()
+}
+
+func (i GetDashboardsDashboardSectionArray) ToGetDashboardsDashboardSectionArrayOutput() GetDashboardsDashboardSectionArrayOutput {
+	return i.ToGetDashboardsDashboardSectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetDashboardsDashboardSectionArray) ToGetDashboardsDashboardSectionArrayOutputWithContext(ctx context.Context) GetDashboardsDashboardSectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDashboardsDashboardSectionArrayOutput)
+}
+
+type GetDashboardsDashboardSectionOutput struct{ *pulumi.OutputState }
+
+func (GetDashboardsDashboardSectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDashboardsDashboardSection)(nil)).Elem()
+}
+
+func (o GetDashboardsDashboardSectionOutput) ToGetDashboardsDashboardSectionOutput() GetDashboardsDashboardSectionOutput {
+	return o
+}
+
+func (o GetDashboardsDashboardSectionOutput) ToGetDashboardsDashboardSectionOutputWithContext(ctx context.Context) GetDashboardsDashboardSectionOutput {
+	return o
+}
+
+// The name of the parameters.
+func (o GetDashboardsDashboardSectionOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDashboardsDashboardSection) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetDashboardsDashboardSectionOutput) Rows() GetDashboardsDashboardSectionRowArrayOutput {
+	return o.ApplyT(func(v GetDashboardsDashboardSection) []GetDashboardsDashboardSectionRow { return v.Rows }).(GetDashboardsDashboardSectionRowArrayOutput)
+}
+
+type GetDashboardsDashboardSectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDashboardsDashboardSectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDashboardsDashboardSection)(nil)).Elem()
+}
+
+func (o GetDashboardsDashboardSectionArrayOutput) ToGetDashboardsDashboardSectionArrayOutput() GetDashboardsDashboardSectionArrayOutput {
+	return o
+}
+
+func (o GetDashboardsDashboardSectionArrayOutput) ToGetDashboardsDashboardSectionArrayOutputWithContext(ctx context.Context) GetDashboardsDashboardSectionArrayOutput {
+	return o
+}
+
+func (o GetDashboardsDashboardSectionArrayOutput) Index(i pulumi.IntInput) GetDashboardsDashboardSectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDashboardsDashboardSection {
+		return vs[0].([]GetDashboardsDashboardSection)[vs[1].(int)]
+	}).(GetDashboardsDashboardSectionOutput)
+}
+
+type GetDashboardsDashboardSectionRow struct {
+	Charts       []GetDashboardsDashboardSectionRowChart `pulumi:"charts"`
+	HeightFactor int                                     `pulumi:"heightFactor"`
+	// The name of the parameters.
+	Name string `pulumi:"name"`
+}
+
+// GetDashboardsDashboardSectionRowInput is an input type that accepts GetDashboardsDashboardSectionRowArgs and GetDashboardsDashboardSectionRowOutput values.
+// You can construct a concrete instance of `GetDashboardsDashboardSectionRowInput` via:
+//
+//	GetDashboardsDashboardSectionRowArgs{...}
+type GetDashboardsDashboardSectionRowInput interface {
+	pulumi.Input
+
+	ToGetDashboardsDashboardSectionRowOutput() GetDashboardsDashboardSectionRowOutput
+	ToGetDashboardsDashboardSectionRowOutputWithContext(context.Context) GetDashboardsDashboardSectionRowOutput
+}
+
+type GetDashboardsDashboardSectionRowArgs struct {
+	Charts       GetDashboardsDashboardSectionRowChartArrayInput `pulumi:"charts"`
+	HeightFactor pulumi.IntInput                                 `pulumi:"heightFactor"`
+	// The name of the parameters.
+	Name pulumi.StringInput `pulumi:"name"`
+}
+
+func (GetDashboardsDashboardSectionRowArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDashboardsDashboardSectionRow)(nil)).Elem()
+}
+
+func (i GetDashboardsDashboardSectionRowArgs) ToGetDashboardsDashboardSectionRowOutput() GetDashboardsDashboardSectionRowOutput {
+	return i.ToGetDashboardsDashboardSectionRowOutputWithContext(context.Background())
+}
+
+func (i GetDashboardsDashboardSectionRowArgs) ToGetDashboardsDashboardSectionRowOutputWithContext(ctx context.Context) GetDashboardsDashboardSectionRowOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDashboardsDashboardSectionRowOutput)
+}
+
+// GetDashboardsDashboardSectionRowArrayInput is an input type that accepts GetDashboardsDashboardSectionRowArray and GetDashboardsDashboardSectionRowArrayOutput values.
+// You can construct a concrete instance of `GetDashboardsDashboardSectionRowArrayInput` via:
+//
+//	GetDashboardsDashboardSectionRowArray{ GetDashboardsDashboardSectionRowArgs{...} }
+type GetDashboardsDashboardSectionRowArrayInput interface {
+	pulumi.Input
+
+	ToGetDashboardsDashboardSectionRowArrayOutput() GetDashboardsDashboardSectionRowArrayOutput
+	ToGetDashboardsDashboardSectionRowArrayOutputWithContext(context.Context) GetDashboardsDashboardSectionRowArrayOutput
+}
+
+type GetDashboardsDashboardSectionRowArray []GetDashboardsDashboardSectionRowInput
+
+func (GetDashboardsDashboardSectionRowArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDashboardsDashboardSectionRow)(nil)).Elem()
+}
+
+func (i GetDashboardsDashboardSectionRowArray) ToGetDashboardsDashboardSectionRowArrayOutput() GetDashboardsDashboardSectionRowArrayOutput {
+	return i.ToGetDashboardsDashboardSectionRowArrayOutputWithContext(context.Background())
+}
+
+func (i GetDashboardsDashboardSectionRowArray) ToGetDashboardsDashboardSectionRowArrayOutputWithContext(ctx context.Context) GetDashboardsDashboardSectionRowArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDashboardsDashboardSectionRowArrayOutput)
+}
+
+type GetDashboardsDashboardSectionRowOutput struct{ *pulumi.OutputState }
+
+func (GetDashboardsDashboardSectionRowOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDashboardsDashboardSectionRow)(nil)).Elem()
+}
+
+func (o GetDashboardsDashboardSectionRowOutput) ToGetDashboardsDashboardSectionRowOutput() GetDashboardsDashboardSectionRowOutput {
+	return o
+}
+
+func (o GetDashboardsDashboardSectionRowOutput) ToGetDashboardsDashboardSectionRowOutputWithContext(ctx context.Context) GetDashboardsDashboardSectionRowOutput {
+	return o
+}
+
+func (o GetDashboardsDashboardSectionRowOutput) Charts() GetDashboardsDashboardSectionRowChartArrayOutput {
+	return o.ApplyT(func(v GetDashboardsDashboardSectionRow) []GetDashboardsDashboardSectionRowChart { return v.Charts }).(GetDashboardsDashboardSectionRowChartArrayOutput)
+}
+
+func (o GetDashboardsDashboardSectionRowOutput) HeightFactor() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDashboardsDashboardSectionRow) int { return v.HeightFactor }).(pulumi.IntOutput)
+}
+
+// The name of the parameters.
+func (o GetDashboardsDashboardSectionRowOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDashboardsDashboardSectionRow) string { return v.Name }).(pulumi.StringOutput)
+}
+
+type GetDashboardsDashboardSectionRowArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDashboardsDashboardSectionRowArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDashboardsDashboardSectionRow)(nil)).Elem()
+}
+
+func (o GetDashboardsDashboardSectionRowArrayOutput) ToGetDashboardsDashboardSectionRowArrayOutput() GetDashboardsDashboardSectionRowArrayOutput {
+	return o
+}
+
+func (o GetDashboardsDashboardSectionRowArrayOutput) ToGetDashboardsDashboardSectionRowArrayOutputWithContext(ctx context.Context) GetDashboardsDashboardSectionRowArrayOutput {
+	return o
+}
+
+func (o GetDashboardsDashboardSectionRowArrayOutput) Index(i pulumi.IntInput) GetDashboardsDashboardSectionRowOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDashboardsDashboardSectionRow {
+		return vs[0].([]GetDashboardsDashboardSectionRow)[vs[1].(int)]
+	}).(GetDashboardsDashboardSectionRowOutput)
+}
+
+type GetDashboardsDashboardSectionRowChart struct {
+	// The base of logarithmic scale charts. Omit or set to 0 for the default linear scale. Usually set to 10 for the traditional logarithmic scale.
+	Base            int                                                 `pulumi:"base"`
+	ChartAttributes string                                              `pulumi:"chartAttributes"`
+	ChartSettings   []GetDashboardsDashboardSectionRowChartChartSetting `pulumi:"chartSettings"`
+	// Description of the chart.
+	Description            string `pulumi:"description"`
+	IncludeObsoleteMetrics bool   `pulumi:"includeObsoleteMetrics"`
+	InterpolatePointsKey   bool   `pulumi:"interpolatePointsKey"`
+	// The name of the parameters.
+	Name            string                                        `pulumi:"name"`
+	NoDefaultEvents bool                                          `pulumi:"noDefaultEvents"`
+	Sources         []GetDashboardsDashboardSectionRowChartSource `pulumi:"sources"`
+	// Summarization strategy for the chart. MEAN is default.
+	Summarization string `pulumi:"summarization"`
+	// String to label the units of the chart on the Y-Axis.
+	Units string `pulumi:"units"`
+}
+
+// GetDashboardsDashboardSectionRowChartInput is an input type that accepts GetDashboardsDashboardSectionRowChartArgs and GetDashboardsDashboardSectionRowChartOutput values.
+// You can construct a concrete instance of `GetDashboardsDashboardSectionRowChartInput` via:
+//
+//	GetDashboardsDashboardSectionRowChartArgs{...}
+type GetDashboardsDashboardSectionRowChartInput interface {
+	pulumi.Input
+
+	ToGetDashboardsDashboardSectionRowChartOutput() GetDashboardsDashboardSectionRowChartOutput
+	ToGetDashboardsDashboardSectionRowChartOutputWithContext(context.Context) GetDashboardsDashboardSectionRowChartOutput
+}
+
+type GetDashboardsDashboardSectionRowChartArgs struct {
+	// The base of logarithmic scale charts. Omit or set to 0 for the default linear scale. Usually set to 10 for the traditional logarithmic scale.
+	Base            pulumi.IntInput                                             `pulumi:"base"`
+	ChartAttributes pulumi.StringInput                                          `pulumi:"chartAttributes"`
+	ChartSettings   GetDashboardsDashboardSectionRowChartChartSettingArrayInput `pulumi:"chartSettings"`
+	// Description of the chart.
+	Description            pulumi.StringInput `pulumi:"description"`
+	IncludeObsoleteMetrics pulumi.BoolInput   `pulumi:"includeObsoleteMetrics"`
+	InterpolatePointsKey   pulumi.BoolInput   `pulumi:"interpolatePointsKey"`
+	// The name of the parameters.
+	Name            pulumi.StringInput                                    `pulumi:"name"`
+	NoDefaultEvents pulumi.BoolInput                                      `pulumi:"noDefaultEvents"`
+	Sources         GetDashboardsDashboardSectionRowChartSourceArrayInput `pulumi:"sources"`
+	// Summarization strategy for the chart. MEAN is default.
+	Summarization pulumi.StringInput `pulumi:"summarization"`
+	// String to label the units of the chart on the Y-Axis.
+	Units pulumi.StringInput `pulumi:"units"`
+}
+
+func (GetDashboardsDashboardSectionRowChartArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDashboardsDashboardSectionRowChart)(nil)).Elem()
+}
+
+func (i GetDashboardsDashboardSectionRowChartArgs) ToGetDashboardsDashboardSectionRowChartOutput() GetDashboardsDashboardSectionRowChartOutput {
+	return i.ToGetDashboardsDashboardSectionRowChartOutputWithContext(context.Background())
+}
+
+func (i GetDashboardsDashboardSectionRowChartArgs) ToGetDashboardsDashboardSectionRowChartOutputWithContext(ctx context.Context) GetDashboardsDashboardSectionRowChartOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDashboardsDashboardSectionRowChartOutput)
+}
+
+// GetDashboardsDashboardSectionRowChartArrayInput is an input type that accepts GetDashboardsDashboardSectionRowChartArray and GetDashboardsDashboardSectionRowChartArrayOutput values.
+// You can construct a concrete instance of `GetDashboardsDashboardSectionRowChartArrayInput` via:
+//
+//	GetDashboardsDashboardSectionRowChartArray{ GetDashboardsDashboardSectionRowChartArgs{...} }
+type GetDashboardsDashboardSectionRowChartArrayInput interface {
+	pulumi.Input
+
+	ToGetDashboardsDashboardSectionRowChartArrayOutput() GetDashboardsDashboardSectionRowChartArrayOutput
+	ToGetDashboardsDashboardSectionRowChartArrayOutputWithContext(context.Context) GetDashboardsDashboardSectionRowChartArrayOutput
+}
+
+type GetDashboardsDashboardSectionRowChartArray []GetDashboardsDashboardSectionRowChartInput
+
+func (GetDashboardsDashboardSectionRowChartArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDashboardsDashboardSectionRowChart)(nil)).Elem()
+}
+
+func (i GetDashboardsDashboardSectionRowChartArray) ToGetDashboardsDashboardSectionRowChartArrayOutput() GetDashboardsDashboardSectionRowChartArrayOutput {
+	return i.ToGetDashboardsDashboardSectionRowChartArrayOutputWithContext(context.Background())
+}
+
+func (i GetDashboardsDashboardSectionRowChartArray) ToGetDashboardsDashboardSectionRowChartArrayOutputWithContext(ctx context.Context) GetDashboardsDashboardSectionRowChartArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDashboardsDashboardSectionRowChartArrayOutput)
+}
+
+type GetDashboardsDashboardSectionRowChartOutput struct{ *pulumi.OutputState }
+
+func (GetDashboardsDashboardSectionRowChartOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDashboardsDashboardSectionRowChart)(nil)).Elem()
+}
+
+func (o GetDashboardsDashboardSectionRowChartOutput) ToGetDashboardsDashboardSectionRowChartOutput() GetDashboardsDashboardSectionRowChartOutput {
+	return o
+}
+
+func (o GetDashboardsDashboardSectionRowChartOutput) ToGetDashboardsDashboardSectionRowChartOutputWithContext(ctx context.Context) GetDashboardsDashboardSectionRowChartOutput {
+	return o
+}
+
+// The base of logarithmic scale charts. Omit or set to 0 for the default linear scale. Usually set to 10 for the traditional logarithmic scale.
+func (o GetDashboardsDashboardSectionRowChartOutput) Base() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDashboardsDashboardSectionRowChart) int { return v.Base }).(pulumi.IntOutput)
+}
+
+func (o GetDashboardsDashboardSectionRowChartOutput) ChartAttributes() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDashboardsDashboardSectionRowChart) string { return v.ChartAttributes }).(pulumi.StringOutput)
+}
+
+func (o GetDashboardsDashboardSectionRowChartOutput) ChartSettings() GetDashboardsDashboardSectionRowChartChartSettingArrayOutput {
+	return o.ApplyT(func(v GetDashboardsDashboardSectionRowChart) []GetDashboardsDashboardSectionRowChartChartSetting {
+		return v.ChartSettings
+	}).(GetDashboardsDashboardSectionRowChartChartSettingArrayOutput)
+}
+
+// Description of the chart.
+func (o GetDashboardsDashboardSectionRowChartOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDashboardsDashboardSectionRowChart) string { return v.Description }).(pulumi.StringOutput)
+}
+
+func (o GetDashboardsDashboardSectionRowChartOutput) IncludeObsoleteMetrics() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDashboardsDashboardSectionRowChart) bool { return v.IncludeObsoleteMetrics }).(pulumi.BoolOutput)
+}
+
+func (o GetDashboardsDashboardSectionRowChartOutput) InterpolatePointsKey() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDashboardsDashboardSectionRowChart) bool { return v.InterpolatePointsKey }).(pulumi.BoolOutput)
+}
+
+// The name of the parameters.
+func (o GetDashboardsDashboardSectionRowChartOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDashboardsDashboardSectionRowChart) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetDashboardsDashboardSectionRowChartOutput) NoDefaultEvents() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDashboardsDashboardSectionRowChart) bool { return v.NoDefaultEvents }).(pulumi.BoolOutput)
+}
+
+func (o GetDashboardsDashboardSectionRowChartOutput) Sources() GetDashboardsDashboardSectionRowChartSourceArrayOutput {
+	return o.ApplyT(func(v GetDashboardsDashboardSectionRowChart) []GetDashboardsDashboardSectionRowChartSource {
+		return v.Sources
+	}).(GetDashboardsDashboardSectionRowChartSourceArrayOutput)
+}
+
+// Summarization strategy for the chart. MEAN is default.
+func (o GetDashboardsDashboardSectionRowChartOutput) Summarization() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDashboardsDashboardSectionRowChart) string { return v.Summarization }).(pulumi.StringOutput)
+}
+
+// String to label the units of the chart on the Y-Axis.
+func (o GetDashboardsDashboardSectionRowChartOutput) Units() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDashboardsDashboardSectionRowChart) string { return v.Units }).(pulumi.StringOutput)
+}
+
+type GetDashboardsDashboardSectionRowChartArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDashboardsDashboardSectionRowChartArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDashboardsDashboardSectionRowChart)(nil)).Elem()
+}
+
+func (o GetDashboardsDashboardSectionRowChartArrayOutput) ToGetDashboardsDashboardSectionRowChartArrayOutput() GetDashboardsDashboardSectionRowChartArrayOutput {
+	return o
+}
+
+func (o GetDashboardsDashboardSectionRowChartArrayOutput) ToGetDashboardsDashboardSectionRowChartArrayOutputWithContext(ctx context.Context) GetDashboardsDashboardSectionRowChartArrayOutput {
+	return o
+}
+
+func (o GetDashboardsDashboardSectionRowChartArrayOutput) Index(i pulumi.IntInput) GetDashboardsDashboardSectionRowChartOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDashboardsDashboardSectionRowChart {
+		return vs[0].([]GetDashboardsDashboardSectionRowChart)[vs[1].(int)]
+	}).(GetDashboardsDashboardSectionRowChartOutput)
+}
+
+type GetDashboardsDashboardSectionRowChartChartSetting struct {
+	// This setting is deprecated.
+	AutoColumnTags bool `pulumi:"autoColumnTags"`
+	// This setting is deprecated.
+	ColumnTags string `pulumi:"columnTags"`
+	// For the tabular view, a list of point tags to display when using the `custom` tag display mode.
+	CustomTags []string `pulumi:"customTags"`
+	// Threshold (in seconds) for time delta between consecutive points in a series above which a dotted line will replace a solid in line plots. Default is 60.
+	ExpectedDataSpacing int `pulumi:"expectedDataSpacing"`
+	// (Optional) For a chart with a fixed legend, a list of statistics to display in the legend.
+	FixedLegendDisplayStats []string `pulumi:"fixedLegendDisplayStats"`
+	// (Optional) Whether to enable a fixed tabular legend adjacent to the chart.
+	FixedLegendEnabled bool `pulumi:"fixedLegendEnabled"`
+	// (Optional) Statistic to use for determining whether a series is displayed on the fixed legend. Valid options are `CURRENT`, `MEAN`, `MEDIAN`, `SUM`, `MIN`, `MAX`, and `COUNT`.
+	FixedLegendFilterField string `pulumi:"fixedLegendFilterField"`
+	// (Optional) Number of series to include in the fixed legend.
+	FixedLegendFilterLimit int `pulumi:"fixedLegendFilterLimit"`
+	// (Optional) Whether to display `TOP` or `BOTTOM` ranked series in a fixed legend. Valid options are `TOP`, and `BOTTOM`.
+	FixedLegendFilterSort string `pulumi:"fixedLegendFilterSort"`
+	// (Optional) This setting is deprecated.
+	FixedLegendHideLabel bool `pulumi:"fixedLegendHideLabel"`
+	// (Optional)  Where the fixed legend should be displayed with respect to the chart. Valid options are `RIGHT`, `TOP`, `LEFT`, `BOTTOM`.
+	FixedLegendPosition string `pulumi:"fixedLegendPosition"`
+	// (Optional) If `true`, the legend uses non-summarized stats instead of summarized.
+	FixedLegendUseRawStats bool `pulumi:"fixedLegendUseRawStats"`
+	// For the tabular view, whether to group multi metrics into a single row by a common source. If set to `false`, each source is displayed in its own row. If set to `true`, multiple metrics for the same host are displayed as different columns in the same row.
+	GroupBySource bool `pulumi:"groupBySource"`
+	// (Optional) Whether to disable the display of the floating legend (but reenable it when the ctrl-key is pressed).
+	InvertDynamicLegendHoverControl bool `pulumi:"invertDynamicLegendHoverControl"`
+	// Plot interpolation type.  `linear` is default. Valid options are `linear`, `step-before`, `step-after`, `basis`, `cardinal`, and `monotone`.
+	LineType string `pulumi:"lineType"`
+	// Max value of the Y-axis. Set to null or leave blank for auto.
+	Max float64 `pulumi:"max"`
+	// Min value of the Y-axis. Set to null or leave blank for auto.
+	Min float64 `pulumi:"min"`
+	// For the tabular view defines how many point tags to display.
+	NumTags int `pulumi:"numTags"`
+	// The markdown content for a Markdown display, in plain text.
+	PlainMarkdownContent string `pulumi:"plainMarkdownContent"`
+	// For the tabular view, whether to display sources. Default is `true`.
+	ShowHosts bool `pulumi:"showHosts"`
+	// For the tabular view, whether to display labels. Default is `true`.
+	ShowLabels bool `pulumi:"showLabels"`
+	// For the tabular view, whether to display raw values. Default is `false`.
+	ShowRawValues bool `pulumi:"showRawValues"`
+	// For the tabular view, whether to display values in descending order. Default is `false`.
+	SortValuesDescending bool `pulumi:"sortValuesDescending"`
+	// For the single stat view, the decimal precision of the displayed number.
+	SparklineDecimalPrecision int `pulumi:"sparklineDecimalPrecision"`
+	// For the single stat view, the color of the displayed text (when not dynamically determined). Values should be in RGBA format.
+	SparklineDisplayColor string `pulumi:"sparklineDisplayColor"`
+	// For the single stat view, the font size of the displayed text, in percent.
+	SparklineDisplayFontSize string `pulumi:"sparklineDisplayFontSize"`
+	// For the single stat view, the horizontal position of the displayed text. Valid options are `MIDDLE`, `LEFT`, `RIGHT`.
+	SparklineDisplayHorizontalPosition string `pulumi:"sparklineDisplayHorizontalPosition"`
+	// For the single stat view, a string to append to the displayed text.
+	SparklineDisplayPostfix string `pulumi:"sparklineDisplayPostfix"`
+	// For the single stat view, a string to add before the displayed text.
+	SparklineDisplayPrefix string `pulumi:"sparklineDisplayPrefix"`
+	// For the single stat view, where to display the name of the query or the value of the query. Valid options are `VALUE` or `LABEL`.
+	SparklineDisplayValueType string `pulumi:"sparklineDisplayValueType"`
+	// This setting is deprecated.
+	SparklineDisplayVerticalPosition string `pulumi:"sparklineDisplayVerticalPosition"`
+	// For the single stat view, the color of the background fill. Values should be in RGBA format.
+	SparklineFillColor string `pulumi:"sparklineFillColor"`
+	// For the single stat view, the color of the line. Values should be in RGBA format.
+	SparklineLineColor string `pulumi:"sparklineLineColor"`
+	// For the single stat view, this determines whether the sparkline of the statistic is displayed in the chart. Valid options are `BACKGROUND`, `BOTTOM`, `NONE`.
+	SparklineSize string `pulumi:"sparklineSize"`
+	// For the single stat view, whether to apply dynamic color settings to the displayed `TEXT` or `BACKGROUND`. Valid options are `TEXT` or `BACKGROUND`.
+	SparklineValueColorMapApplyTo string `pulumi:"sparklineValueColorMapApplyTo"`
+	// For the single stat view, a list of colors that differing query values map to. Must contain one more element than `sparklineValueColorMapValuesV2`. Values should be in RGBA format.
+	SparklineValueColorMapColors []string `pulumi:"sparklineValueColorMapColors"`
+	// This setting is deprecated.
+	SparklineValueColorMapValues []int `pulumi:"sparklineValueColorMapValues"`
+	// For the single stat view, a list of boundaries for mapping different query values to colors. Must contain one element less than `sparklineValueColorMapColors`.
+	SparklineValueColorMapValuesV2s []float64 `pulumi:"sparklineValueColorMapValuesV2s"`
+	// For the single stat view, a list of display text values that different query values map to. Must contain one more element than `sparklineValueTextMapThresholds`.
+	SparklineValueTextMapTexts []string `pulumi:"sparklineValueTextMapTexts"`
+	// For the single stat view, a list of threshold boundaries for mapping different query values to display text. Must contain one element less than `sparklineValueTextMapText`.
+	SparklineValueTextMapThresholds []float64 `pulumi:"sparklineValueTextMapThresholds"`
+	// Type of stacked chart (applicable only if chart type is `stacked`). `zero` (default) means stacked from y=0. `expand` means normalized from 0 to 1.  `wiggle` means minimize weighted changes. `silhouette` means to center the stream. Valid options are `zero`, `expand`, `wiggle`, `silhouette`, and `bars`.
+	StackType string `pulumi:"stackType"`
+	// For the tabular view, which mode to use to determine which point tags to display. Valid options are `all`, `top`, or `custom`.
+	TagMode string `pulumi:"tagMode"`
+	// For x-y scatterplots, whether to color more recent points as darker than older points.
+	TimeBasedColoring bool `pulumi:"timeBasedColoring"`
+	// Chart Type. `line` refers to the Line Plot, `scatter` to the Point Plot, `stacked-area` to the Stacked Area plot, `table` to the Tabular View, `scatterplot-xy` to Scatter Plot, `markdown-widget` to the Markdown display, and `sparkline` to the Single Stat view. Valid options are `line`, `scatterplot`, `stacked-area`, `stacked-column`, `table`, `scatterplot-xy`, `markdown-widget`, `sparkline`, `globe`, `nodemap`, `top-k`, `status-list`, and `histogram`.
+	Type string `pulumi:"type"`
+	// Width, in minutes, of the time window to use for `last` windowing.
+	WindowSize int `pulumi:"windowSize"`
+	// For the tabular view, whether to use the full time window for the query or the last X minutes. Valid options are `full` or `last`.
+	Windowing string `pulumi:"windowing"`
+	// For x-y scatterplots, max value for the X-axis. Set to null for auto.
+	Xmax float64 `pulumi:"xmax"`
+	// For x-y scatterplots, min value for the X-axis. Set to null for auto.
+	Xmin            float64 `pulumi:"xmin"`
+	Y0ScaleSiBy1024 bool    `pulumi:"y0ScaleSiBy1024"`
+	// (Optional) Whether to automatically adjust magnitude labels and units for the left Y-axis to favor smaller magnitudes and larger units.
+	Y0UnitAutoscaling bool    `pulumi:"y0UnitAutoscaling"`
+	Y1Max             float64 `pulumi:"y1Max"`
+	Y1Min             float64 `pulumi:"y1Min"`
+	Y1ScaleSiBy1024   bool    `pulumi:"y1ScaleSiBy1024"`
+	// (Optional) Whether to automatically adjust magnitude labels and units for the right Y-axis to favor smaller magnitudes and larger units.
+	Y1UnitAutoscaling bool `pulumi:"y1UnitAutoscaling"`
+	// For plots with multiple Y-axes, units for right side Y-axis.
+	Y1Units string `pulumi:"y1Units"`
+	// For x-y scatterplots, max value for the Y-axis. Set to null for auto.
+	Ymax float64 `pulumi:"ymax"`
+	// For x-y scatterplots, min value for the Y-axis. Set to null for auto.
+	Ymin float64 `pulumi:"ymin"`
+}
+
+// GetDashboardsDashboardSectionRowChartChartSettingInput is an input type that accepts GetDashboardsDashboardSectionRowChartChartSettingArgs and GetDashboardsDashboardSectionRowChartChartSettingOutput values.
+// You can construct a concrete instance of `GetDashboardsDashboardSectionRowChartChartSettingInput` via:
+//
+//	GetDashboardsDashboardSectionRowChartChartSettingArgs{...}
+type GetDashboardsDashboardSectionRowChartChartSettingInput interface {
+	pulumi.Input
+
+	ToGetDashboardsDashboardSectionRowChartChartSettingOutput() GetDashboardsDashboardSectionRowChartChartSettingOutput
+	ToGetDashboardsDashboardSectionRowChartChartSettingOutputWithContext(context.Context) GetDashboardsDashboardSectionRowChartChartSettingOutput
+}
+
+type GetDashboardsDashboardSectionRowChartChartSettingArgs struct {
+	// This setting is deprecated.
+	AutoColumnTags pulumi.BoolInput `pulumi:"autoColumnTags"`
+	// This setting is deprecated.
+	ColumnTags pulumi.StringInput `pulumi:"columnTags"`
+	// For the tabular view, a list of point tags to display when using the `custom` tag display mode.
+	CustomTags pulumi.StringArrayInput `pulumi:"customTags"`
+	// Threshold (in seconds) for time delta between consecutive points in a series above which a dotted line will replace a solid in line plots. Default is 60.
+	ExpectedDataSpacing pulumi.IntInput `pulumi:"expectedDataSpacing"`
+	// (Optional) For a chart with a fixed legend, a list of statistics to display in the legend.
+	FixedLegendDisplayStats pulumi.StringArrayInput `pulumi:"fixedLegendDisplayStats"`
+	// (Optional) Whether to enable a fixed tabular legend adjacent to the chart.
+	FixedLegendEnabled pulumi.BoolInput `pulumi:"fixedLegendEnabled"`
+	// (Optional) Statistic to use for determining whether a series is displayed on the fixed legend. Valid options are `CURRENT`, `MEAN`, `MEDIAN`, `SUM`, `MIN`, `MAX`, and `COUNT`.
+	FixedLegendFilterField pulumi.StringInput `pulumi:"fixedLegendFilterField"`
+	// (Optional) Number of series to include in the fixed legend.
+	FixedLegendFilterLimit pulumi.IntInput `pulumi:"fixedLegendFilterLimit"`
+	// (Optional) Whether to display `TOP` or `BOTTOM` ranked series in a fixed legend. Valid options are `TOP`, and `BOTTOM`.
+	FixedLegendFilterSort pulumi.StringInput `pulumi:"fixedLegendFilterSort"`
+	// (Optional) This setting is deprecated.
+	FixedLegendHideLabel pulumi.BoolInput `pulumi:"fixedLegendHideLabel"`
+	// (Optional)  Where the fixed legend should be displayed with respect to the chart. Valid options are `RIGHT`, `TOP`, `LEFT`, `BOTTOM`.
+	FixedLegendPosition pulumi.StringInput `pulumi:"fixedLegendPosition"`
+	// (Optional) If `true`, the legend uses non-summarized stats instead of summarized.
+	FixedLegendUseRawStats pulumi.BoolInput `pulumi:"fixedLegendUseRawStats"`
+	// For the tabular view, whether to group multi metrics into a single row by a common source. If set to `false`, each source is displayed in its own row. If set to `true`, multiple metrics for the same host are displayed as different columns in the same row.
+	GroupBySource pulumi.BoolInput `pulumi:"groupBySource"`
+	// (Optional) Whether to disable the display of the floating legend (but reenable it when the ctrl-key is pressed).
+	InvertDynamicLegendHoverControl pulumi.BoolInput `pulumi:"invertDynamicLegendHoverControl"`
+	// Plot interpolation type.  `linear` is default. Valid options are `linear`, `step-before`, `step-after`, `basis`, `cardinal`, and `monotone`.
+	LineType pulumi.StringInput `pulumi:"lineType"`
+	// Max value of the Y-axis. Set to null or leave blank for auto.
+	Max pulumi.Float64Input `pulumi:"max"`
+	// Min value of the Y-axis. Set to null or leave blank for auto.
+	Min pulumi.Float64Input `pulumi:"min"`
+	// For the tabular view defines how many point tags to display.
+	NumTags pulumi.IntInput `pulumi:"numTags"`
+	// The markdown content for a Markdown display, in plain text.
+	PlainMarkdownContent pulumi.StringInput `pulumi:"plainMarkdownContent"`
+	// For the tabular view, whether to display sources. Default is `true`.
+	ShowHosts pulumi.BoolInput `pulumi:"showHosts"`
+	// For the tabular view, whether to display labels. Default is `true`.
+	ShowLabels pulumi.BoolInput `pulumi:"showLabels"`
+	// For the tabular view, whether to display raw values. Default is `false`.
+	ShowRawValues pulumi.BoolInput `pulumi:"showRawValues"`
+	// For the tabular view, whether to display values in descending order. Default is `false`.
+	SortValuesDescending pulumi.BoolInput `pulumi:"sortValuesDescending"`
+	// For the single stat view, the decimal precision of the displayed number.
+	SparklineDecimalPrecision pulumi.IntInput `pulumi:"sparklineDecimalPrecision"`
+	// For the single stat view, the color of the displayed text (when not dynamically determined). Values should be in RGBA format.
+	SparklineDisplayColor pulumi.StringInput `pulumi:"sparklineDisplayColor"`
+	// For the single stat view, the font size of the displayed text, in percent.
+	SparklineDisplayFontSize pulumi.StringInput `pulumi:"sparklineDisplayFontSize"`
+	// For the single stat view, the horizontal position of the displayed text. Valid options are `MIDDLE`, `LEFT`, `RIGHT`.
+	SparklineDisplayHorizontalPosition pulumi.StringInput `pulumi:"sparklineDisplayHorizontalPosition"`
+	// For the single stat view, a string to append to the displayed text.
+	SparklineDisplayPostfix pulumi.StringInput `pulumi:"sparklineDisplayPostfix"`
+	// For the single stat view, a string to add before the displayed text.
+	SparklineDisplayPrefix pulumi.StringInput `pulumi:"sparklineDisplayPrefix"`
+	// For the single stat view, where to display the name of the query or the value of the query. Valid options are `VALUE` or `LABEL`.
+	SparklineDisplayValueType pulumi.StringInput `pulumi:"sparklineDisplayValueType"`
+	// This setting is deprecated.
+	SparklineDisplayVerticalPosition pulumi.StringInput `pulumi:"sparklineDisplayVerticalPosition"`
+	// For the single stat view, the color of the background fill. Values should be in RGBA format.
+	SparklineFillColor pulumi.StringInput `pulumi:"sparklineFillColor"`
+	// For the single stat view, the color of the line. Values should be in RGBA format.
+	SparklineLineColor pulumi.StringInput `pulumi:"sparklineLineColor"`
+	// For the single stat view, this determines whether the sparkline of the statistic is displayed in the chart. Valid options are `BACKGROUND`, `BOTTOM`, `NONE`.
+	SparklineSize pulumi.StringInput `pulumi:"sparklineSize"`
+	// For the single stat view, whether to apply dynamic color settings to the displayed `TEXT` or `BACKGROUND`. Valid options are `TEXT` or `BACKGROUND`.
+	SparklineValueColorMapApplyTo pulumi.StringInput `pulumi:"sparklineValueColorMapApplyTo"`
+	// For the single stat view, a list of colors that differing query values map to. Must contain one more element than `sparklineValueColorMapValuesV2`. Values should be in RGBA format.
+	SparklineValueColorMapColors pulumi.StringArrayInput `pulumi:"sparklineValueColorMapColors"`
+	// This setting is deprecated.
+	SparklineValueColorMapValues pulumi.IntArrayInput `pulumi:"sparklineValueColorMapValues"`
+	// For the single stat view, a list of boundaries for mapping different query values to colors. Must contain one element less than `sparklineValueColorMapColors`.
+	SparklineValueColorMapValuesV2s pulumi.Float64ArrayInput `pulumi:"sparklineValueColorMapValuesV2s"`
+	// For the single stat view, a list of display text values that different query values map to. Must contain one more element than `sparklineValueTextMapThresholds`.
+	SparklineValueTextMapTexts pulumi.StringArrayInput `pulumi:"sparklineValueTextMapTexts"`
+	// For the single stat view, a list of threshold boundaries for mapping different query values to display text. Must contain one element less than `sparklineValueTextMapText`.
+	SparklineValueTextMapThresholds pulumi.Float64ArrayInput `pulumi:"sparklineValueTextMapThresholds"`
+	// Type of stacked chart (applicable only if chart type is `stacked`). `zero` (default) means stacked from y=0. `expand` means normalized from 0 to 1.  `wiggle` means minimize weighted changes. `silhouette` means to center the stream. Valid options are `zero`, `expand`, `wiggle`, `silhouette`, and `bars`.
+	StackType pulumi.StringInput `pulumi:"stackType"`
+	// For the tabular view, which mode to use to determine which point tags to display. Valid options are `all`, `top`, or `custom`.
+	TagMode pulumi.StringInput `pulumi:"tagMode"`
+	// For x-y scatterplots, whether to color more recent points as darker than older points.
+	TimeBasedColoring pulumi.BoolInput `pulumi:"timeBasedColoring"`
+	// Chart Type. `line` refers to the Line Plot, `scatter` to the Point Plot, `stacked-area` to the Stacked Area plot, `table` to the Tabular View, `scatterplot-xy` to Scatter Plot, `markdown-widget` to the Markdown display, and `sparkline` to the Single Stat view. Valid options are `line`, `scatterplot`, `stacked-area`, `stacked-column`, `table`, `scatterplot-xy`, `markdown-widget`, `sparkline`, `globe`, `nodemap`, `top-k`, `status-list`, and `histogram`.
+	Type pulumi.StringInput `pulumi:"type"`
+	// Width, in minutes, of the time window to use for `last` windowing.
+	WindowSize pulumi.IntInput `pulumi:"windowSize"`
+	// For the tabular view, whether to use the full time window for the query or the last X minutes. Valid options are `full` or `last`.
+	Windowing pulumi.StringInput `pulumi:"windowing"`
+	// For x-y scatterplots, max value for the X-axis. Set to null for auto.
+	Xmax pulumi.Float64Input `pulumi:"xmax"`
+	// For x-y scatterplots, min value for the X-axis. Set to null for auto.
+	Xmin            pulumi.Float64Input `pulumi:"xmin"`
+	Y0ScaleSiBy1024 pulumi.BoolInput    `pulumi:"y0ScaleSiBy1024"`
+	// (Optional) Whether to automatically adjust magnitude labels and units for the left Y-axis to favor smaller magnitudes and larger units.
+	Y0UnitAutoscaling pulumi.BoolInput    `pulumi:"y0UnitAutoscaling"`
+	Y1Max             pulumi.Float64Input `pulumi:"y1Max"`
+	Y1Min             pulumi.Float64Input `pulumi:"y1Min"`
+	Y1ScaleSiBy1024   pulumi.BoolInput    `pulumi:"y1ScaleSiBy1024"`
+	// (Optional) Whether to automatically adjust magnitude labels and units for the right Y-axis to favor smaller magnitudes and larger units.
+	Y1UnitAutoscaling pulumi.BoolInput `pulumi:"y1UnitAutoscaling"`
+	// For plots with multiple Y-axes, units for right side Y-axis.
+	Y1Units pulumi.StringInput `pulumi:"y1Units"`
+	// For x-y scatterplots, max value for the Y-axis. Set to null for auto.
+	Ymax pulumi.Float64Input `pulumi:"ymax"`
+	// For x-y scatterplots, min value for the Y-axis. Set to null for auto.
+	Ymin pulumi.Float64Input `pulumi:"ymin"`
+}
+
+func (GetDashboardsDashboardSectionRowChartChartSettingArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDashboardsDashboardSectionRowChartChartSetting)(nil)).Elem()
+}
+
+func (i GetDashboardsDashboardSectionRowChartChartSettingArgs) ToGetDashboardsDashboardSectionRowChartChartSettingOutput() GetDashboardsDashboardSectionRowChartChartSettingOutput {
+	return i.ToGetDashboardsDashboardSectionRowChartChartSettingOutputWithContext(context.Background())
+}
+
+func (i GetDashboardsDashboardSectionRowChartChartSettingArgs) ToGetDashboardsDashboardSectionRowChartChartSettingOutputWithContext(ctx context.Context) GetDashboardsDashboardSectionRowChartChartSettingOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDashboardsDashboardSectionRowChartChartSettingOutput)
+}
+
+// GetDashboardsDashboardSectionRowChartChartSettingArrayInput is an input type that accepts GetDashboardsDashboardSectionRowChartChartSettingArray and GetDashboardsDashboardSectionRowChartChartSettingArrayOutput values.
+// You can construct a concrete instance of `GetDashboardsDashboardSectionRowChartChartSettingArrayInput` via:
+//
+//	GetDashboardsDashboardSectionRowChartChartSettingArray{ GetDashboardsDashboardSectionRowChartChartSettingArgs{...} }
+type GetDashboardsDashboardSectionRowChartChartSettingArrayInput interface {
+	pulumi.Input
+
+	ToGetDashboardsDashboardSectionRowChartChartSettingArrayOutput() GetDashboardsDashboardSectionRowChartChartSettingArrayOutput
+	ToGetDashboardsDashboardSectionRowChartChartSettingArrayOutputWithContext(context.Context) GetDashboardsDashboardSectionRowChartChartSettingArrayOutput
+}
+
+type GetDashboardsDashboardSectionRowChartChartSettingArray []GetDashboardsDashboardSectionRowChartChartSettingInput
+
+func (GetDashboardsDashboardSectionRowChartChartSettingArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDashboardsDashboardSectionRowChartChartSetting)(nil)).Elem()
+}
+
+func (i GetDashboardsDashboardSectionRowChartChartSettingArray) ToGetDashboardsDashboardSectionRowChartChartSettingArrayOutput() GetDashboardsDashboardSectionRowChartChartSettingArrayOutput {
+	return i.ToGetDashboardsDashboardSectionRowChartChartSettingArrayOutputWithContext(context.Background())
+}
+
+func (i GetDashboardsDashboardSectionRowChartChartSettingArray) ToGetDashboardsDashboardSectionRowChartChartSettingArrayOutputWithContext(ctx context.Context) GetDashboardsDashboardSectionRowChartChartSettingArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDashboardsDashboardSectionRowChartChartSettingArrayOutput)
+}
+
+type GetDashboardsDashboardSectionRowChartChartSettingOutput struct{ *pulumi.OutputState }
+
+func (GetDashboardsDashboardSectionRowChartChartSettingOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDashboardsDashboardSectionRowChartChartSetting)(nil)).Elem()
+}
+
+func (o GetDashboardsDashboardSectionRowChartChartSettingOutput) ToGetDashboardsDashboardSectionRowChartChartSettingOutput() GetDashboardsDashboardSectionRowChartChartSettingOutput {
+	return o
+}
+
+func (o GetDashboardsDashboardSectionRowChartChartSettingOutput) ToGetDashboardsDashboardSectionRowChartChartSettingOutputWithContext(ctx context.Context) GetDashboardsDashboardSectionRowChartChartSettingOutput {
+	return o
+}
+
+// This setting is deprecated.
+func (o GetDashboardsDashboardSectionRowChartChartSettingOutput) AutoColumnTags() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDashboardsDashboardSectionRowChartChartSetting) bool { return v.AutoColumnTags }).(pulumi.BoolOutput)
+}
+
+// This setting is deprecated.
+func (o GetDashboardsDashboardSectionRowChartChartSettingOutput) ColumnTags() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDashboardsDashboardSectionRowChartChartSetting) string { return v.ColumnTags }).(pulumi.StringOutput)
+}
+
+// For the tabular view, a list of point tags to display when using the `custom` tag display mode.
+func (o GetDashboardsDashboardSectionRowChartChartSettingOutput) CustomTags() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDashboardsDashboardSectionRowChartChartSetting) []string { return v.CustomTags }).(pulumi.StringArrayOutput)
+}
+
+// Threshold (in seconds) for time delta between consecutive points in a series above which a dotted line will replace a solid in line plots. Default is 60.
+func (o GetDashboardsDashboardSectionRowChartChartSettingOutput) ExpectedDataSpacing() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDashboardsDashboardSectionRowChartChartSetting) int { return v.ExpectedDataSpacing }).(pulumi.IntOutput)
+}
+
+// (Optional) For a chart with a fixed legend, a list of statistics to display in the legend.
+func (o GetDashboardsDashboardSectionRowChartChartSettingOutput) FixedLegendDisplayStats() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDashboardsDashboardSectionRowChartChartSetting) []string { return v.FixedLegendDisplayStats }).(pulumi.StringArrayOutput)
+}
+
+// (Optional) Whether to enable a fixed tabular legend adjacent to the chart.
+func (o GetDashboardsDashboardSectionRowChartChartSettingOutput) FixedLegendEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDashboardsDashboardSectionRowChartChartSetting) bool { return v.FixedLegendEnabled }).(pulumi.BoolOutput)
+}
+
+// (Optional) Statistic to use for determining whether a series is displayed on the fixed legend. Valid options are `CURRENT`, `MEAN`, `MEDIAN`, `SUM`, `MIN`, `MAX`, and `COUNT`.
+func (o GetDashboardsDashboardSectionRowChartChartSettingOutput) FixedLegendFilterField() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDashboardsDashboardSectionRowChartChartSetting) string { return v.FixedLegendFilterField }).(pulumi.StringOutput)
+}
+
+// (Optional) Number of series to include in the fixed legend.
+func (o GetDashboardsDashboardSectionRowChartChartSettingOutput) FixedLegendFilterLimit() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDashboardsDashboardSectionRowChartChartSetting) int { return v.FixedLegendFilterLimit }).(pulumi.IntOutput)
+}
+
+// (Optional) Whether to display `TOP` or `BOTTOM` ranked series in a fixed legend. Valid options are `TOP`, and `BOTTOM`.
+func (o GetDashboardsDashboardSectionRowChartChartSettingOutput) FixedLegendFilterSort() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDashboardsDashboardSectionRowChartChartSetting) string { return v.FixedLegendFilterSort }).(pulumi.StringOutput)
+}
+
+// (Optional) This setting is deprecated.
+func (o GetDashboardsDashboardSectionRowChartChartSettingOutput) FixedLegendHideLabel() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDashboardsDashboardSectionRowChartChartSetting) bool { return v.FixedLegendHideLabel }).(pulumi.BoolOutput)
+}
+
+// (Optional)  Where the fixed legend should be displayed with respect to the chart. Valid options are `RIGHT`, `TOP`, `LEFT`, `BOTTOM`.
+func (o GetDashboardsDashboardSectionRowChartChartSettingOutput) FixedLegendPosition() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDashboardsDashboardSectionRowChartChartSetting) string { return v.FixedLegendPosition }).(pulumi.StringOutput)
+}
+
+// (Optional) If `true`, the legend uses non-summarized stats instead of summarized.
+func (o GetDashboardsDashboardSectionRowChartChartSettingOutput) FixedLegendUseRawStats() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDashboardsDashboardSectionRowChartChartSetting) bool { return v.FixedLegendUseRawStats }).(pulumi.BoolOutput)
+}
+
+// For the tabular view, whether to group multi metrics into a single row by a common source. If set to `false`, each source is displayed in its own row. If set to `true`, multiple metrics for the same host are displayed as different columns in the same row.
+func (o GetDashboardsDashboardSectionRowChartChartSettingOutput) GroupBySource() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDashboardsDashboardSectionRowChartChartSetting) bool { return v.GroupBySource }).(pulumi.BoolOutput)
+}
+
+// (Optional) Whether to disable the display of the floating legend (but reenable it when the ctrl-key is pressed).
+func (o GetDashboardsDashboardSectionRowChartChartSettingOutput) InvertDynamicLegendHoverControl() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDashboardsDashboardSectionRowChartChartSetting) bool {
+		return v.InvertDynamicLegendHoverControl
+	}).(pulumi.BoolOutput)
+}
+
+// Plot interpolation type.  `linear` is default. Valid options are `linear`, `step-before`, `step-after`, `basis`, `cardinal`, and `monotone`.
+func (o GetDashboardsDashboardSectionRowChartChartSettingOutput) LineType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDashboardsDashboardSectionRowChartChartSetting) string { return v.LineType }).(pulumi.StringOutput)
+}
+
+// Max value of the Y-axis. Set to null or leave blank for auto.
+func (o GetDashboardsDashboardSectionRowChartChartSettingOutput) Max() pulumi.Float64Output {
+	return o.ApplyT(func(v GetDashboardsDashboardSectionRowChartChartSetting) float64 { return v.Max }).(pulumi.Float64Output)
+}
+
+// Min value of the Y-axis. Set to null or leave blank for auto.
+func (o GetDashboardsDashboardSectionRowChartChartSettingOutput) Min() pulumi.Float64Output {
+	return o.ApplyT(func(v GetDashboardsDashboardSectionRowChartChartSetting) float64 { return v.Min }).(pulumi.Float64Output)
+}
+
+// For the tabular view defines how many point tags to display.
+func (o GetDashboardsDashboardSectionRowChartChartSettingOutput) NumTags() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDashboardsDashboardSectionRowChartChartSetting) int { return v.NumTags }).(pulumi.IntOutput)
+}
+
+// The markdown content for a Markdown display, in plain text.
+func (o GetDashboardsDashboardSectionRowChartChartSettingOutput) PlainMarkdownContent() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDashboardsDashboardSectionRowChartChartSetting) string { return v.PlainMarkdownContent }).(pulumi.StringOutput)
+}
+
+// For the tabular view, whether to display sources. Default is `true`.
+func (o GetDashboardsDashboardSectionRowChartChartSettingOutput) ShowHosts() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDashboardsDashboardSectionRowChartChartSetting) bool { return v.ShowHosts }).(pulumi.BoolOutput)
+}
+
+// For the tabular view, whether to display labels. Default is `true`.
+func (o GetDashboardsDashboardSectionRowChartChartSettingOutput) ShowLabels() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDashboardsDashboardSectionRowChartChartSetting) bool { return v.ShowLabels }).(pulumi.BoolOutput)
+}
+
+// For the tabular view, whether to display raw values. Default is `false`.
+func (o GetDashboardsDashboardSectionRowChartChartSettingOutput) ShowRawValues() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDashboardsDashboardSectionRowChartChartSetting) bool { return v.ShowRawValues }).(pulumi.BoolOutput)
+}
+
+// For the tabular view, whether to display values in descending order. Default is `false`.
+func (o GetDashboardsDashboardSectionRowChartChartSettingOutput) SortValuesDescending() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDashboardsDashboardSectionRowChartChartSetting) bool { return v.SortValuesDescending }).(pulumi.BoolOutput)
+}
+
+// For the single stat view, the decimal precision of the displayed number.
+func (o GetDashboardsDashboardSectionRowChartChartSettingOutput) SparklineDecimalPrecision() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDashboardsDashboardSectionRowChartChartSetting) int { return v.SparklineDecimalPrecision }).(pulumi.IntOutput)
+}
+
+// For the single stat view, the color of the displayed text (when not dynamically determined). Values should be in RGBA format.
+func (o GetDashboardsDashboardSectionRowChartChartSettingOutput) SparklineDisplayColor() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDashboardsDashboardSectionRowChartChartSetting) string { return v.SparklineDisplayColor }).(pulumi.StringOutput)
+}
+
+// For the single stat view, the font size of the displayed text, in percent.
+func (o GetDashboardsDashboardSectionRowChartChartSettingOutput) SparklineDisplayFontSize() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDashboardsDashboardSectionRowChartChartSetting) string { return v.SparklineDisplayFontSize }).(pulumi.StringOutput)
+}
+
+// For the single stat view, the horizontal position of the displayed text. Valid options are `MIDDLE`, `LEFT`, `RIGHT`.
+func (o GetDashboardsDashboardSectionRowChartChartSettingOutput) SparklineDisplayHorizontalPosition() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDashboardsDashboardSectionRowChartChartSetting) string {
+		return v.SparklineDisplayHorizontalPosition
+	}).(pulumi.StringOutput)
+}
+
+// For the single stat view, a string to append to the displayed text.
+func (o GetDashboardsDashboardSectionRowChartChartSettingOutput) SparklineDisplayPostfix() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDashboardsDashboardSectionRowChartChartSetting) string { return v.SparklineDisplayPostfix }).(pulumi.StringOutput)
+}
+
+// For the single stat view, a string to add before the displayed text.
+func (o GetDashboardsDashboardSectionRowChartChartSettingOutput) SparklineDisplayPrefix() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDashboardsDashboardSectionRowChartChartSetting) string { return v.SparklineDisplayPrefix }).(pulumi.StringOutput)
+}
+
+// For the single stat view, where to display the name of the query or the value of the query. Valid options are `VALUE` or `LABEL`.
+func (o GetDashboardsDashboardSectionRowChartChartSettingOutput) SparklineDisplayValueType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDashboardsDashboardSectionRowChartChartSetting) string { return v.SparklineDisplayValueType }).(pulumi.StringOutput)
+}
+
+// This setting is deprecated.
+func (o GetDashboardsDashboardSectionRowChartChartSettingOutput) SparklineDisplayVerticalPosition() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDashboardsDashboardSectionRowChartChartSetting) string {
+		return v.SparklineDisplayVerticalPosition
+	}).(pulumi.StringOutput)
+}
+
+// For the single stat view, the color of the background fill. Values should be in RGBA format.
+func (o GetDashboardsDashboardSectionRowChartChartSettingOutput) SparklineFillColor() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDashboardsDashboardSectionRowChartChartSetting) string { return v.SparklineFillColor }).(pulumi.StringOutput)
+}
+
+// For the single stat view, the color of the line. Values should be in RGBA format.
+func (o GetDashboardsDashboardSectionRowChartChartSettingOutput) SparklineLineColor() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDashboardsDashboardSectionRowChartChartSetting) string { return v.SparklineLineColor }).(pulumi.StringOutput)
+}
+
+// For the single stat view, this determines whether the sparkline of the statistic is displayed in the chart. Valid options are `BACKGROUND`, `BOTTOM`, `NONE`.
+func (o GetDashboardsDashboardSectionRowChartChartSettingOutput) SparklineSize() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDashboardsDashboardSectionRowChartChartSetting) string { return v.SparklineSize }).(pulumi.StringOutput)
+}
+
+// For the single stat view, whether to apply dynamic color settings to the displayed `TEXT` or `BACKGROUND`. Valid options are `TEXT` or `BACKGROUND`.
+func (o GetDashboardsDashboardSectionRowChartChartSettingOutput) SparklineValueColorMapApplyTo() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDashboardsDashboardSectionRowChartChartSetting) string {
+		return v.SparklineValueColorMapApplyTo
+	}).(pulumi.StringOutput)
+}
+
+// For the single stat view, a list of colors that differing query values map to. Must contain one more element than `sparklineValueColorMapValuesV2`. Values should be in RGBA format.
+func (o GetDashboardsDashboardSectionRowChartChartSettingOutput) SparklineValueColorMapColors() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDashboardsDashboardSectionRowChartChartSetting) []string {
+		return v.SparklineValueColorMapColors
+	}).(pulumi.StringArrayOutput)
+}
+
+// This setting is deprecated.
+func (o GetDashboardsDashboardSectionRowChartChartSettingOutput) SparklineValueColorMapValues() pulumi.IntArrayOutput {
+	return o.ApplyT(func(v GetDashboardsDashboardSectionRowChartChartSetting) []int { return v.SparklineValueColorMapValues }).(pulumi.IntArrayOutput)
+}
+
+// For the single stat view, a list of boundaries for mapping different query values to colors. Must contain one element less than `sparklineValueColorMapColors`.
+func (o GetDashboardsDashboardSectionRowChartChartSettingOutput) SparklineValueColorMapValuesV2s() pulumi.Float64ArrayOutput {
+	return o.ApplyT(func(v GetDashboardsDashboardSectionRowChartChartSetting) []float64 {
+		return v.SparklineValueColorMapValuesV2s
+	}).(pulumi.Float64ArrayOutput)
+}
+
+// For the single stat view, a list of display text values that different query values map to. Must contain one more element than `sparklineValueTextMapThresholds`.
+func (o GetDashboardsDashboardSectionRowChartChartSettingOutput) SparklineValueTextMapTexts() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDashboardsDashboardSectionRowChartChartSetting) []string {
+		return v.SparklineValueTextMapTexts
+	}).(pulumi.StringArrayOutput)
+}
+
+// For the single stat view, a list of threshold boundaries for mapping different query values to display text. Must contain one element less than `sparklineValueTextMapText`.
+func (o GetDashboardsDashboardSectionRowChartChartSettingOutput) SparklineValueTextMapThresholds() pulumi.Float64ArrayOutput {
+	return o.ApplyT(func(v GetDashboardsDashboardSectionRowChartChartSetting) []float64 {
+		return v.SparklineValueTextMapThresholds
+	}).(pulumi.Float64ArrayOutput)
+}
+
+// Type of stacked chart (applicable only if chart type is `stacked`). `zero` (default) means stacked from y=0. `expand` means normalized from 0 to 1.  `wiggle` means minimize weighted changes. `silhouette` means to center the stream. Valid options are `zero`, `expand`, `wiggle`, `silhouette`, and `bars`.
+func (o GetDashboardsDashboardSectionRowChartChartSettingOutput) StackType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDashboardsDashboardSectionRowChartChartSetting) string { return v.StackType }).(pulumi.StringOutput)
+}
+
+// For the tabular view, which mode to use to determine which point tags to display. Valid options are `all`, `top`, or `custom`.
+func (o GetDashboardsDashboardSectionRowChartChartSettingOutput) TagMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDashboardsDashboardSectionRowChartChartSetting) string { return v.TagMode }).(pulumi.StringOutput)
+}
+
+// For x-y scatterplots, whether to color more recent points as darker than older points.
+func (o GetDashboardsDashboardSectionRowChartChartSettingOutput) TimeBasedColoring() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDashboardsDashboardSectionRowChartChartSetting) bool { return v.TimeBasedColoring }).(pulumi.BoolOutput)
+}
+
+// Chart Type. `line` refers to the Line Plot, `scatter` to the Point Plot, `stacked-area` to the Stacked Area plot, `table` to the Tabular View, `scatterplot-xy` to Scatter Plot, `markdown-widget` to the Markdown display, and `sparkline` to the Single Stat view. Valid options are `line`, `scatterplot`, `stacked-area`, `stacked-column`, `table`, `scatterplot-xy`, `markdown-widget`, `sparkline`, `globe`, `nodemap`, `top-k`, `status-list`, and `histogram`.
+func (o GetDashboardsDashboardSectionRowChartChartSettingOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDashboardsDashboardSectionRowChartChartSetting) string { return v.Type }).(pulumi.StringOutput)
+}
+
+// Width, in minutes, of the time window to use for `last` windowing.
+func (o GetDashboardsDashboardSectionRowChartChartSettingOutput) WindowSize() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDashboardsDashboardSectionRowChartChartSetting) int { return v.WindowSize }).(pulumi.IntOutput)
+}
+
+// For the tabular view, whether to use the full time window for the query or the last X minutes. Valid options are `full` or `last`.
+func (o GetDashboardsDashboardSectionRowChartChartSettingOutput) Windowing() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDashboardsDashboardSectionRowChartChartSetting) string { return v.Windowing }).(pulumi.StringOutput)
+}
+
+// For x-y scatterplots, max value for the X-axis. Set to null for auto.
+func (o GetDashboardsDashboardSectionRowChartChartSettingOutput) Xmax() pulumi.Float64Output {
+	return o.ApplyT(func(v GetDashboardsDashboardSectionRowChartChartSetting) float64 { return v.Xmax }).(pulumi.Float64Output)
+}
+
+// For x-y scatterplots, min value for the X-axis. Set to null for auto.
+func (o GetDashboardsDashboardSectionRowChartChartSettingOutput) Xmin() pulumi.Float64Output {
+	return o.ApplyT(func(v GetDashboardsDashboardSectionRowChartChartSetting) float64 { return v.Xmin }).(pulumi.Float64Output)
+}
+
+func (o GetDashboardsDashboardSectionRowChartChartSettingOutput) Y0ScaleSiBy1024() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDashboardsDashboardSectionRowChartChartSetting) bool { return v.Y0ScaleSiBy1024 }).(pulumi.BoolOutput)
+}
+
+// (Optional) Whether to automatically adjust magnitude labels and units for the left Y-axis to favor smaller magnitudes and larger units.
+func (o GetDashboardsDashboardSectionRowChartChartSettingOutput) Y0UnitAutoscaling() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDashboardsDashboardSectionRowChartChartSetting) bool { return v.Y0UnitAutoscaling }).(pulumi.BoolOutput)
+}
+
+func (o GetDashboardsDashboardSectionRowChartChartSettingOutput) Y1Max() pulumi.Float64Output {
+	return o.ApplyT(func(v GetDashboardsDashboardSectionRowChartChartSetting) float64 { return v.Y1Max }).(pulumi.Float64Output)
+}
+
+func (o GetDashboardsDashboardSectionRowChartChartSettingOutput) Y1Min() pulumi.Float64Output {
+	return o.ApplyT(func(v GetDashboardsDashboardSectionRowChartChartSetting) float64 { return v.Y1Min }).(pulumi.Float64Output)
+}
+
+func (o GetDashboardsDashboardSectionRowChartChartSettingOutput) Y1ScaleSiBy1024() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDashboardsDashboardSectionRowChartChartSetting) bool { return v.Y1ScaleSiBy1024 }).(pulumi.BoolOutput)
+}
+
+// (Optional) Whether to automatically adjust magnitude labels and units for the right Y-axis to favor smaller magnitudes and larger units.
+func (o GetDashboardsDashboardSectionRowChartChartSettingOutput) Y1UnitAutoscaling() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDashboardsDashboardSectionRowChartChartSetting) bool { return v.Y1UnitAutoscaling }).(pulumi.BoolOutput)
+}
+
+// For plots with multiple Y-axes, units for right side Y-axis.
+func (o GetDashboardsDashboardSectionRowChartChartSettingOutput) Y1Units() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDashboardsDashboardSectionRowChartChartSetting) string { return v.Y1Units }).(pulumi.StringOutput)
+}
+
+// For x-y scatterplots, max value for the Y-axis. Set to null for auto.
+func (o GetDashboardsDashboardSectionRowChartChartSettingOutput) Ymax() pulumi.Float64Output {
+	return o.ApplyT(func(v GetDashboardsDashboardSectionRowChartChartSetting) float64 { return v.Ymax }).(pulumi.Float64Output)
+}
+
+// For x-y scatterplots, min value for the Y-axis. Set to null for auto.
+func (o GetDashboardsDashboardSectionRowChartChartSettingOutput) Ymin() pulumi.Float64Output {
+	return o.ApplyT(func(v GetDashboardsDashboardSectionRowChartChartSetting) float64 { return v.Ymin }).(pulumi.Float64Output)
+}
+
+type GetDashboardsDashboardSectionRowChartChartSettingArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDashboardsDashboardSectionRowChartChartSettingArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDashboardsDashboardSectionRowChartChartSetting)(nil)).Elem()
+}
+
+func (o GetDashboardsDashboardSectionRowChartChartSettingArrayOutput) ToGetDashboardsDashboardSectionRowChartChartSettingArrayOutput() GetDashboardsDashboardSectionRowChartChartSettingArrayOutput {
+	return o
+}
+
+func (o GetDashboardsDashboardSectionRowChartChartSettingArrayOutput) ToGetDashboardsDashboardSectionRowChartChartSettingArrayOutputWithContext(ctx context.Context) GetDashboardsDashboardSectionRowChartChartSettingArrayOutput {
+	return o
+}
+
+func (o GetDashboardsDashboardSectionRowChartChartSettingArrayOutput) Index(i pulumi.IntInput) GetDashboardsDashboardSectionRowChartChartSettingOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDashboardsDashboardSectionRowChartChartSetting {
+		return vs[0].([]GetDashboardsDashboardSectionRowChartChartSetting)[vs[1].(int)]
+	}).(GetDashboardsDashboardSectionRowChartChartSettingOutput)
+}
+
+type GetDashboardsDashboardSectionRowChartSource struct {
+	// Whether the source is disabled.
+	Disabled bool `pulumi:"disabled"`
+	// The name of the parameters.
+	Name string `pulumi:"name"`
+	// Query expression to plot on the chart.
+	Query               string `pulumi:"query"`
+	QuerybuilderEnabled bool   `pulumi:"querybuilderEnabled"`
+	// For scatter plots, does this query source the X-axis or the Y-axis, `X`, or `Y`.
+	ScatterPlotSource string `pulumi:"scatterPlotSource"`
+	SecondaryAxis     bool   `pulumi:"secondaryAxis"`
+	SourceColor       string `pulumi:"sourceColor"`
+	// A description for the purpose of this source.
+	SourceDescription string `pulumi:"sourceDescription"`
+}
+
+// GetDashboardsDashboardSectionRowChartSourceInput is an input type that accepts GetDashboardsDashboardSectionRowChartSourceArgs and GetDashboardsDashboardSectionRowChartSourceOutput values.
+// You can construct a concrete instance of `GetDashboardsDashboardSectionRowChartSourceInput` via:
+//
+//	GetDashboardsDashboardSectionRowChartSourceArgs{...}
+type GetDashboardsDashboardSectionRowChartSourceInput interface {
+	pulumi.Input
+
+	ToGetDashboardsDashboardSectionRowChartSourceOutput() GetDashboardsDashboardSectionRowChartSourceOutput
+	ToGetDashboardsDashboardSectionRowChartSourceOutputWithContext(context.Context) GetDashboardsDashboardSectionRowChartSourceOutput
+}
+
+type GetDashboardsDashboardSectionRowChartSourceArgs struct {
+	// Whether the source is disabled.
+	Disabled pulumi.BoolInput `pulumi:"disabled"`
+	// The name of the parameters.
+	Name pulumi.StringInput `pulumi:"name"`
+	// Query expression to plot on the chart.
+	Query               pulumi.StringInput `pulumi:"query"`
+	QuerybuilderEnabled pulumi.BoolInput   `pulumi:"querybuilderEnabled"`
+	// For scatter plots, does this query source the X-axis or the Y-axis, `X`, or `Y`.
+	ScatterPlotSource pulumi.StringInput `pulumi:"scatterPlotSource"`
+	SecondaryAxis     pulumi.BoolInput   `pulumi:"secondaryAxis"`
+	SourceColor       pulumi.StringInput `pulumi:"sourceColor"`
+	// A description for the purpose of this source.
+	SourceDescription pulumi.StringInput `pulumi:"sourceDescription"`
+}
+
+func (GetDashboardsDashboardSectionRowChartSourceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDashboardsDashboardSectionRowChartSource)(nil)).Elem()
+}
+
+func (i GetDashboardsDashboardSectionRowChartSourceArgs) ToGetDashboardsDashboardSectionRowChartSourceOutput() GetDashboardsDashboardSectionRowChartSourceOutput {
+	return i.ToGetDashboardsDashboardSectionRowChartSourceOutputWithContext(context.Background())
+}
+
+func (i GetDashboardsDashboardSectionRowChartSourceArgs) ToGetDashboardsDashboardSectionRowChartSourceOutputWithContext(ctx context.Context) GetDashboardsDashboardSectionRowChartSourceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDashboardsDashboardSectionRowChartSourceOutput)
+}
+
+// GetDashboardsDashboardSectionRowChartSourceArrayInput is an input type that accepts GetDashboardsDashboardSectionRowChartSourceArray and GetDashboardsDashboardSectionRowChartSourceArrayOutput values.
+// You can construct a concrete instance of `GetDashboardsDashboardSectionRowChartSourceArrayInput` via:
+//
+//	GetDashboardsDashboardSectionRowChartSourceArray{ GetDashboardsDashboardSectionRowChartSourceArgs{...} }
+type GetDashboardsDashboardSectionRowChartSourceArrayInput interface {
+	pulumi.Input
+
+	ToGetDashboardsDashboardSectionRowChartSourceArrayOutput() GetDashboardsDashboardSectionRowChartSourceArrayOutput
+	ToGetDashboardsDashboardSectionRowChartSourceArrayOutputWithContext(context.Context) GetDashboardsDashboardSectionRowChartSourceArrayOutput
+}
+
+type GetDashboardsDashboardSectionRowChartSourceArray []GetDashboardsDashboardSectionRowChartSourceInput
+
+func (GetDashboardsDashboardSectionRowChartSourceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDashboardsDashboardSectionRowChartSource)(nil)).Elem()
+}
+
+func (i GetDashboardsDashboardSectionRowChartSourceArray) ToGetDashboardsDashboardSectionRowChartSourceArrayOutput() GetDashboardsDashboardSectionRowChartSourceArrayOutput {
+	return i.ToGetDashboardsDashboardSectionRowChartSourceArrayOutputWithContext(context.Background())
+}
+
+func (i GetDashboardsDashboardSectionRowChartSourceArray) ToGetDashboardsDashboardSectionRowChartSourceArrayOutputWithContext(ctx context.Context) GetDashboardsDashboardSectionRowChartSourceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDashboardsDashboardSectionRowChartSourceArrayOutput)
+}
+
+type GetDashboardsDashboardSectionRowChartSourceOutput struct{ *pulumi.OutputState }
+
+func (GetDashboardsDashboardSectionRowChartSourceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDashboardsDashboardSectionRowChartSource)(nil)).Elem()
+}
+
+func (o GetDashboardsDashboardSectionRowChartSourceOutput) ToGetDashboardsDashboardSectionRowChartSourceOutput() GetDashboardsDashboardSectionRowChartSourceOutput {
+	return o
+}
+
+func (o GetDashboardsDashboardSectionRowChartSourceOutput) ToGetDashboardsDashboardSectionRowChartSourceOutputWithContext(ctx context.Context) GetDashboardsDashboardSectionRowChartSourceOutput {
+	return o
+}
+
+// Whether the source is disabled.
+func (o GetDashboardsDashboardSectionRowChartSourceOutput) Disabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDashboardsDashboardSectionRowChartSource) bool { return v.Disabled }).(pulumi.BoolOutput)
+}
+
+// The name of the parameters.
+func (o GetDashboardsDashboardSectionRowChartSourceOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDashboardsDashboardSectionRowChartSource) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// Query expression to plot on the chart.
+func (o GetDashboardsDashboardSectionRowChartSourceOutput) Query() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDashboardsDashboardSectionRowChartSource) string { return v.Query }).(pulumi.StringOutput)
+}
+
+func (o GetDashboardsDashboardSectionRowChartSourceOutput) QuerybuilderEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDashboardsDashboardSectionRowChartSource) bool { return v.QuerybuilderEnabled }).(pulumi.BoolOutput)
+}
+
+// For scatter plots, does this query source the X-axis or the Y-axis, `X`, or `Y`.
+func (o GetDashboardsDashboardSectionRowChartSourceOutput) ScatterPlotSource() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDashboardsDashboardSectionRowChartSource) string { return v.ScatterPlotSource }).(pulumi.StringOutput)
+}
+
+func (o GetDashboardsDashboardSectionRowChartSourceOutput) SecondaryAxis() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDashboardsDashboardSectionRowChartSource) bool { return v.SecondaryAxis }).(pulumi.BoolOutput)
+}
+
+func (o GetDashboardsDashboardSectionRowChartSourceOutput) SourceColor() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDashboardsDashboardSectionRowChartSource) string { return v.SourceColor }).(pulumi.StringOutput)
+}
+
+// A description for the purpose of this source.
+func (o GetDashboardsDashboardSectionRowChartSourceOutput) SourceDescription() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDashboardsDashboardSectionRowChartSource) string { return v.SourceDescription }).(pulumi.StringOutput)
+}
+
+type GetDashboardsDashboardSectionRowChartSourceArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDashboardsDashboardSectionRowChartSourceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDashboardsDashboardSectionRowChartSource)(nil)).Elem()
+}
+
+func (o GetDashboardsDashboardSectionRowChartSourceArrayOutput) ToGetDashboardsDashboardSectionRowChartSourceArrayOutput() GetDashboardsDashboardSectionRowChartSourceArrayOutput {
+	return o
+}
+
+func (o GetDashboardsDashboardSectionRowChartSourceArrayOutput) ToGetDashboardsDashboardSectionRowChartSourceArrayOutputWithContext(ctx context.Context) GetDashboardsDashboardSectionRowChartSourceArrayOutput {
+	return o
+}
+
+func (o GetDashboardsDashboardSectionRowChartSourceArrayOutput) Index(i pulumi.IntInput) GetDashboardsDashboardSectionRowChartSourceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDashboardsDashboardSectionRowChartSource {
+		return vs[0].([]GetDashboardsDashboardSectionRowChartSource)[vs[1].(int)]
+	}).(GetDashboardsDashboardSectionRowChartSourceOutput)
+}
+
+type GetDerivedMetricsDerivedMetric struct {
+	// User-supplied additional explanatory information about the derived metric.
+	AdditionalInformation string `pulumi:"additionalInformation"`
+	// The ID of the user who created the derived metric.
+	CreateUserId string `pulumi:"createUserId"`
+	// The timestamp in epoch milliseconds indicating when the derived metric is created.
+	CreatedEpochMillis int `pulumi:"createdEpochMillis"`
+	// A Boolean flag indicating whether the derived metric is deleted or not.
+	Deleted bool `pulumi:"deleted"`
+	// A list of hosts used in the derived metric.
+	HostsUseds []string `pulumi:"hostsUseds"`
+	// The ID of the derived metric in Wavefront.
+	// * `query`- A Wavefront query that is evaluated at regular intervals (default is 1 minute).
+	Id string `pulumi:"id"`
+	// A Boolean variable indicating trash status.
+	InTrash bool `pulumi:"inTrash"`
+	// A Boolean flag indicating whether to include obsolete metrics or not.
+	IncludeObsoleteMetrics bool `pulumi:"includeObsoleteMetrics"`
+	// Last error message occurred.
+	LastErrorMessage string `pulumi:"lastErrorMessage"`
+	// Timestamp of the last failed derived metric.
+	LastFailedTime int `pulumi:"lastFailedTime"`
+	// The last processed timestamp.
+	LastProcessedMillis int `pulumi:"lastProcessedMillis"`
+	// The timestamp indicating the last time the query was executed.
+	// * `metricsUsed` -A list of metrics used in the derived metric.
+	LastQueryTime int      `pulumi:"lastQueryTime"`
+	MetricsUseds  []string `pulumi:"metricsUseds"`
+	// How frequently the query generating the derived metric is run.
+	Minutes int `pulumi:"minutes"`
+	// The name of the derived metric in Wavefront.
+	Name string `pulumi:"name"`
+	// The number of points scanned when the last query was executed.
+	PointsScannedAtLastQuery int `pulumi:"pointsScannedAtLastQuery"`
+	// The specified query is executed every `processRateMinutes` minutes.
+	ProcessRateMinutes int    `pulumi:"processRateMinutes"`
+	Query              string `pulumi:"query"`
+	// A Boolean variable indicating whether query is failing for the derived metric.
+	QueryFailing bool `pulumi:"queryFailing"`
+	// A Boolean flag for enabling `queryQb`
+	QueryQbEnabled bool `pulumi:"queryQbEnabled"`
+	// The status of the derived metric.
+	Statuses []string `pulumi:"statuses"`
+	// A set of tags assigned to the derived metric.
+	Tags []string `pulumi:"tags"`
+	// The ID of the user who updated the derived metric.
+	UpdateUserId string `pulumi:"updateUserId"`
+	// The timestamp in epoch milliseconds indicating when the derived metric is updated.
+	UpdatedEpochMillis int `pulumi:"updatedEpochMillis"`
+}
+
+// GetDerivedMetricsDerivedMetricInput is an input type that accepts GetDerivedMetricsDerivedMetricArgs and GetDerivedMetricsDerivedMetricOutput values.
+// You can construct a concrete instance of `GetDerivedMetricsDerivedMetricInput` via:
+//
+//	GetDerivedMetricsDerivedMetricArgs{...}
+type GetDerivedMetricsDerivedMetricInput interface {
+	pulumi.Input
+
+	ToGetDerivedMetricsDerivedMetricOutput() GetDerivedMetricsDerivedMetricOutput
+	ToGetDerivedMetricsDerivedMetricOutputWithContext(context.Context) GetDerivedMetricsDerivedMetricOutput
+}
+
+type GetDerivedMetricsDerivedMetricArgs struct {
+	// User-supplied additional explanatory information about the derived metric.
+	AdditionalInformation pulumi.StringInput `pulumi:"additionalInformation"`
+	// The ID of the user who created the derived metric.
+	CreateUserId pulumi.StringInput `pulumi:"createUserId"`
+	// The timestamp in epoch milliseconds indicating when the derived metric is created.
+	CreatedEpochMillis pulumi.IntInput `pulumi:"createdEpochMillis"`
+	// A Boolean flag indicating whether the derived metric is deleted or not.
+	Deleted pulumi.BoolInput `pulumi:"deleted"`
+	// A list of hosts used in the derived metric.
+	HostsUseds pulumi.StringArrayInput `pulumi:"hostsUseds"`
+	// The ID of the derived metric in Wavefront.
+	// * `query`- A Wavefront query that is evaluated at regular intervals (default is 1 minute).
+	Id pulumi.StringInput `pulumi:"id"`
+	// A Boolean variable indicating trash status.
+	InTrash pulumi.BoolInput `pulumi:"inTrash"`
+	// A Boolean flag indicating whether to include obsolete metrics or not.
+	IncludeObsoleteMetrics pulumi.BoolInput `pulumi:"includeObsoleteMetrics"`
+	// Last error message occurred.
+	LastErrorMessage pulumi.StringInput `pulumi:"lastErrorMessage"`
+	// Timestamp of the last failed derived metric.
+	LastFailedTime pulumi.IntInput `pulumi:"lastFailedTime"`
+	// The last processed timestamp.
+	LastProcessedMillis pulumi.IntInput `pulumi:"lastProcessedMillis"`
+	// The timestamp indicating the last time the query was executed.
+	// * `metricsUsed` -A list of metrics used in the derived metric.
+	LastQueryTime pulumi.IntInput         `pulumi:"lastQueryTime"`
+	MetricsUseds  pulumi.StringArrayInput `pulumi:"metricsUseds"`
+	// How frequently the query generating the derived metric is run.
+	Minutes pulumi.IntInput `pulumi:"minutes"`
+	// The name of the derived metric in Wavefront.
+	Name pulumi.StringInput `pulumi:"name"`
+	// The number of points scanned when the last query was executed.
+	PointsScannedAtLastQuery pulumi.IntInput `pulumi:"pointsScannedAtLastQuery"`
+	// The specified query is executed every `processRateMinutes` minutes.
+	ProcessRateMinutes pulumi.IntInput    `pulumi:"processRateMinutes"`
+	Query              pulumi.StringInput `pulumi:"query"`
+	// A Boolean variable indicating whether query is failing for the derived metric.
+	QueryFailing pulumi.BoolInput `pulumi:"queryFailing"`
+	// A Boolean flag for enabling `queryQb`
+	QueryQbEnabled pulumi.BoolInput `pulumi:"queryQbEnabled"`
+	// The status of the derived metric.
+	Statuses pulumi.StringArrayInput `pulumi:"statuses"`
+	// A set of tags assigned to the derived metric.
+	Tags pulumi.StringArrayInput `pulumi:"tags"`
+	// The ID of the user who updated the derived metric.
+	UpdateUserId pulumi.StringInput `pulumi:"updateUserId"`
+	// The timestamp in epoch milliseconds indicating when the derived metric is updated.
+	UpdatedEpochMillis pulumi.IntInput `pulumi:"updatedEpochMillis"`
+}
+
+func (GetDerivedMetricsDerivedMetricArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDerivedMetricsDerivedMetric)(nil)).Elem()
+}
+
+func (i GetDerivedMetricsDerivedMetricArgs) ToGetDerivedMetricsDerivedMetricOutput() GetDerivedMetricsDerivedMetricOutput {
+	return i.ToGetDerivedMetricsDerivedMetricOutputWithContext(context.Background())
+}
+
+func (i GetDerivedMetricsDerivedMetricArgs) ToGetDerivedMetricsDerivedMetricOutputWithContext(ctx context.Context) GetDerivedMetricsDerivedMetricOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDerivedMetricsDerivedMetricOutput)
+}
+
+// GetDerivedMetricsDerivedMetricArrayInput is an input type that accepts GetDerivedMetricsDerivedMetricArray and GetDerivedMetricsDerivedMetricArrayOutput values.
+// You can construct a concrete instance of `GetDerivedMetricsDerivedMetricArrayInput` via:
+//
+//	GetDerivedMetricsDerivedMetricArray{ GetDerivedMetricsDerivedMetricArgs{...} }
+type GetDerivedMetricsDerivedMetricArrayInput interface {
+	pulumi.Input
+
+	ToGetDerivedMetricsDerivedMetricArrayOutput() GetDerivedMetricsDerivedMetricArrayOutput
+	ToGetDerivedMetricsDerivedMetricArrayOutputWithContext(context.Context) GetDerivedMetricsDerivedMetricArrayOutput
+}
+
+type GetDerivedMetricsDerivedMetricArray []GetDerivedMetricsDerivedMetricInput
+
+func (GetDerivedMetricsDerivedMetricArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDerivedMetricsDerivedMetric)(nil)).Elem()
+}
+
+func (i GetDerivedMetricsDerivedMetricArray) ToGetDerivedMetricsDerivedMetricArrayOutput() GetDerivedMetricsDerivedMetricArrayOutput {
+	return i.ToGetDerivedMetricsDerivedMetricArrayOutputWithContext(context.Background())
+}
+
+func (i GetDerivedMetricsDerivedMetricArray) ToGetDerivedMetricsDerivedMetricArrayOutputWithContext(ctx context.Context) GetDerivedMetricsDerivedMetricArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDerivedMetricsDerivedMetricArrayOutput)
+}
+
+type GetDerivedMetricsDerivedMetricOutput struct{ *pulumi.OutputState }
+
+func (GetDerivedMetricsDerivedMetricOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDerivedMetricsDerivedMetric)(nil)).Elem()
+}
+
+func (o GetDerivedMetricsDerivedMetricOutput) ToGetDerivedMetricsDerivedMetricOutput() GetDerivedMetricsDerivedMetricOutput {
+	return o
+}
+
+func (o GetDerivedMetricsDerivedMetricOutput) ToGetDerivedMetricsDerivedMetricOutputWithContext(ctx context.Context) GetDerivedMetricsDerivedMetricOutput {
+	return o
+}
+
+// User-supplied additional explanatory information about the derived metric.
+func (o GetDerivedMetricsDerivedMetricOutput) AdditionalInformation() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDerivedMetricsDerivedMetric) string { return v.AdditionalInformation }).(pulumi.StringOutput)
+}
+
+// The ID of the user who created the derived metric.
+func (o GetDerivedMetricsDerivedMetricOutput) CreateUserId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDerivedMetricsDerivedMetric) string { return v.CreateUserId }).(pulumi.StringOutput)
+}
+
+// The timestamp in epoch milliseconds indicating when the derived metric is created.
+func (o GetDerivedMetricsDerivedMetricOutput) CreatedEpochMillis() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDerivedMetricsDerivedMetric) int { return v.CreatedEpochMillis }).(pulumi.IntOutput)
+}
+
+// A Boolean flag indicating whether the derived metric is deleted or not.
+func (o GetDerivedMetricsDerivedMetricOutput) Deleted() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDerivedMetricsDerivedMetric) bool { return v.Deleted }).(pulumi.BoolOutput)
+}
+
+// A list of hosts used in the derived metric.
+func (o GetDerivedMetricsDerivedMetricOutput) HostsUseds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDerivedMetricsDerivedMetric) []string { return v.HostsUseds }).(pulumi.StringArrayOutput)
+}
+
+// The ID of the derived metric in Wavefront.
+// * `query`- A Wavefront query that is evaluated at regular intervals (default is 1 minute).
+func (o GetDerivedMetricsDerivedMetricOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDerivedMetricsDerivedMetric) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// A Boolean variable indicating trash status.
+func (o GetDerivedMetricsDerivedMetricOutput) InTrash() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDerivedMetricsDerivedMetric) bool { return v.InTrash }).(pulumi.BoolOutput)
+}
+
+// A Boolean flag indicating whether to include obsolete metrics or not.
+func (o GetDerivedMetricsDerivedMetricOutput) IncludeObsoleteMetrics() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDerivedMetricsDerivedMetric) bool { return v.IncludeObsoleteMetrics }).(pulumi.BoolOutput)
+}
+
+// Last error message occurred.
+func (o GetDerivedMetricsDerivedMetricOutput) LastErrorMessage() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDerivedMetricsDerivedMetric) string { return v.LastErrorMessage }).(pulumi.StringOutput)
+}
+
+// Timestamp of the last failed derived metric.
+func (o GetDerivedMetricsDerivedMetricOutput) LastFailedTime() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDerivedMetricsDerivedMetric) int { return v.LastFailedTime }).(pulumi.IntOutput)
+}
+
+// The last processed timestamp.
+func (o GetDerivedMetricsDerivedMetricOutput) LastProcessedMillis() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDerivedMetricsDerivedMetric) int { return v.LastProcessedMillis }).(pulumi.IntOutput)
+}
+
+// The timestamp indicating the last time the query was executed.
+// * `metricsUsed` -A list of metrics used in the derived metric.
+func (o GetDerivedMetricsDerivedMetricOutput) LastQueryTime() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDerivedMetricsDerivedMetric) int { return v.LastQueryTime }).(pulumi.IntOutput)
+}
+
+func (o GetDerivedMetricsDerivedMetricOutput) MetricsUseds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDerivedMetricsDerivedMetric) []string { return v.MetricsUseds }).(pulumi.StringArrayOutput)
+}
+
+// How frequently the query generating the derived metric is run.
+func (o GetDerivedMetricsDerivedMetricOutput) Minutes() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDerivedMetricsDerivedMetric) int { return v.Minutes }).(pulumi.IntOutput)
+}
+
+// The name of the derived metric in Wavefront.
+func (o GetDerivedMetricsDerivedMetricOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDerivedMetricsDerivedMetric) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// The number of points scanned when the last query was executed.
+func (o GetDerivedMetricsDerivedMetricOutput) PointsScannedAtLastQuery() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDerivedMetricsDerivedMetric) int { return v.PointsScannedAtLastQuery }).(pulumi.IntOutput)
+}
+
+// The specified query is executed every `processRateMinutes` minutes.
+func (o GetDerivedMetricsDerivedMetricOutput) ProcessRateMinutes() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDerivedMetricsDerivedMetric) int { return v.ProcessRateMinutes }).(pulumi.IntOutput)
+}
+
+func (o GetDerivedMetricsDerivedMetricOutput) Query() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDerivedMetricsDerivedMetric) string { return v.Query }).(pulumi.StringOutput)
+}
+
+// A Boolean variable indicating whether query is failing for the derived metric.
+func (o GetDerivedMetricsDerivedMetricOutput) QueryFailing() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDerivedMetricsDerivedMetric) bool { return v.QueryFailing }).(pulumi.BoolOutput)
+}
+
+// A Boolean flag for enabling `queryQb`
+func (o GetDerivedMetricsDerivedMetricOutput) QueryQbEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDerivedMetricsDerivedMetric) bool { return v.QueryQbEnabled }).(pulumi.BoolOutput)
+}
+
+// The status of the derived metric.
+func (o GetDerivedMetricsDerivedMetricOutput) Statuses() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDerivedMetricsDerivedMetric) []string { return v.Statuses }).(pulumi.StringArrayOutput)
+}
+
+// A set of tags assigned to the derived metric.
+func (o GetDerivedMetricsDerivedMetricOutput) Tags() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDerivedMetricsDerivedMetric) []string { return v.Tags }).(pulumi.StringArrayOutput)
+}
+
+// The ID of the user who updated the derived metric.
+func (o GetDerivedMetricsDerivedMetricOutput) UpdateUserId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDerivedMetricsDerivedMetric) string { return v.UpdateUserId }).(pulumi.StringOutput)
+}
+
+// The timestamp in epoch milliseconds indicating when the derived metric is updated.
+func (o GetDerivedMetricsDerivedMetricOutput) UpdatedEpochMillis() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDerivedMetricsDerivedMetric) int { return v.UpdatedEpochMillis }).(pulumi.IntOutput)
+}
+
+type GetDerivedMetricsDerivedMetricArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDerivedMetricsDerivedMetricArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDerivedMetricsDerivedMetric)(nil)).Elem()
+}
+
+func (o GetDerivedMetricsDerivedMetricArrayOutput) ToGetDerivedMetricsDerivedMetricArrayOutput() GetDerivedMetricsDerivedMetricArrayOutput {
+	return o
+}
+
+func (o GetDerivedMetricsDerivedMetricArrayOutput) ToGetDerivedMetricsDerivedMetricArrayOutputWithContext(ctx context.Context) GetDerivedMetricsDerivedMetricArrayOutput {
+	return o
+}
+
+func (o GetDerivedMetricsDerivedMetricArrayOutput) Index(i pulumi.IntInput) GetDerivedMetricsDerivedMetricOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDerivedMetricsDerivedMetric {
+		return vs[0].([]GetDerivedMetricsDerivedMetric)[vs[1].(int)]
+	}).(GetDerivedMetricsDerivedMetricOutput)
+}
+
+type GetEventsEvent struct {
+	// Annotations associated with the event.
+	Annotations map[string]string `pulumi:"annotations"`
+	// The description of the event.
+	Details    string `pulumi:"details"`
+	EndtimeKey int    `pulumi:"endtimeKey"`
+	// The ID of the event in Wavefront.
+	// * `startTime`- The start time of the event in epoch milliseconds.
+	Id string `pulumi:"id"`
+	// A Boolean flag. If set to `true`, creates a point-in-time event (i.e. with no duration).
+	IsEphemeral bool `pulumi:"isEphemeral"`
+	// The name of the event in Wavefront.
+	Name string `pulumi:"name"`
+	// The severity category of the event.
+	Severity  string `pulumi:"severity"`
+	StartTime int    `pulumi:"startTime"`
+	// A set of tags assigned to the event.
+	Tags []string `pulumi:"tags"`
+	// The type of the event.
+	Type string `pulumi:"type"`
+}
+
+// GetEventsEventInput is an input type that accepts GetEventsEventArgs and GetEventsEventOutput values.
+// You can construct a concrete instance of `GetEventsEventInput` via:
+//
+//	GetEventsEventArgs{...}
+type GetEventsEventInput interface {
+	pulumi.Input
+
+	ToGetEventsEventOutput() GetEventsEventOutput
+	ToGetEventsEventOutputWithContext(context.Context) GetEventsEventOutput
+}
+
+type GetEventsEventArgs struct {
+	// Annotations associated with the event.
+	Annotations pulumi.StringMapInput `pulumi:"annotations"`
+	// The description of the event.
+	Details    pulumi.StringInput `pulumi:"details"`
+	EndtimeKey pulumi.IntInput    `pulumi:"endtimeKey"`
+	// The ID of the event in Wavefront.
+	// * `startTime`- The start time of the event in epoch milliseconds.
+	Id pulumi.StringInput `pulumi:"id"`
+	// A Boolean flag. If set to `true`, creates a point-in-time event (i.e. with no duration).
+	IsEphemeral pulumi.BoolInput `pulumi:"isEphemeral"`
+	// The name of the event in Wavefront.
+	Name pulumi.StringInput `pulumi:"name"`
+	// The severity category of the event.
+	Severity  pulumi.StringInput `pulumi:"severity"`
+	StartTime pulumi.IntInput    `pulumi:"startTime"`
+	// A set of tags assigned to the event.
+	Tags pulumi.StringArrayInput `pulumi:"tags"`
+	// The type of the event.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetEventsEventArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetEventsEvent)(nil)).Elem()
+}
+
+func (i GetEventsEventArgs) ToGetEventsEventOutput() GetEventsEventOutput {
+	return i.ToGetEventsEventOutputWithContext(context.Background())
+}
+
+func (i GetEventsEventArgs) ToGetEventsEventOutputWithContext(ctx context.Context) GetEventsEventOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetEventsEventOutput)
+}
+
+// GetEventsEventArrayInput is an input type that accepts GetEventsEventArray and GetEventsEventArrayOutput values.
+// You can construct a concrete instance of `GetEventsEventArrayInput` via:
+//
+//	GetEventsEventArray{ GetEventsEventArgs{...} }
+type GetEventsEventArrayInput interface {
+	pulumi.Input
+
+	ToGetEventsEventArrayOutput() GetEventsEventArrayOutput
+	ToGetEventsEventArrayOutputWithContext(context.Context) GetEventsEventArrayOutput
+}
+
+type GetEventsEventArray []GetEventsEventInput
+
+func (GetEventsEventArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetEventsEvent)(nil)).Elem()
+}
+
+func (i GetEventsEventArray) ToGetEventsEventArrayOutput() GetEventsEventArrayOutput {
+	return i.ToGetEventsEventArrayOutputWithContext(context.Background())
+}
+
+func (i GetEventsEventArray) ToGetEventsEventArrayOutputWithContext(ctx context.Context) GetEventsEventArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetEventsEventArrayOutput)
+}
+
+type GetEventsEventOutput struct{ *pulumi.OutputState }
+
+func (GetEventsEventOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetEventsEvent)(nil)).Elem()
+}
+
+func (o GetEventsEventOutput) ToGetEventsEventOutput() GetEventsEventOutput {
+	return o
+}
+
+func (o GetEventsEventOutput) ToGetEventsEventOutputWithContext(ctx context.Context) GetEventsEventOutput {
+	return o
+}
+
+// Annotations associated with the event.
+func (o GetEventsEventOutput) Annotations() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetEventsEvent) map[string]string { return v.Annotations }).(pulumi.StringMapOutput)
+}
+
+// The description of the event.
+func (o GetEventsEventOutput) Details() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEventsEvent) string { return v.Details }).(pulumi.StringOutput)
+}
+
+func (o GetEventsEventOutput) EndtimeKey() pulumi.IntOutput {
+	return o.ApplyT(func(v GetEventsEvent) int { return v.EndtimeKey }).(pulumi.IntOutput)
+}
+
+// The ID of the event in Wavefront.
+// * `startTime`- The start time of the event in epoch milliseconds.
+func (o GetEventsEventOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEventsEvent) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// A Boolean flag. If set to `true`, creates a point-in-time event (i.e. with no duration).
+func (o GetEventsEventOutput) IsEphemeral() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetEventsEvent) bool { return v.IsEphemeral }).(pulumi.BoolOutput)
+}
+
+// The name of the event in Wavefront.
+func (o GetEventsEventOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEventsEvent) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// The severity category of the event.
+func (o GetEventsEventOutput) Severity() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEventsEvent) string { return v.Severity }).(pulumi.StringOutput)
+}
+
+func (o GetEventsEventOutput) StartTime() pulumi.IntOutput {
+	return o.ApplyT(func(v GetEventsEvent) int { return v.StartTime }).(pulumi.IntOutput)
+}
+
+// A set of tags assigned to the event.
+func (o GetEventsEventOutput) Tags() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetEventsEvent) []string { return v.Tags }).(pulumi.StringArrayOutput)
+}
+
+// The type of the event.
+func (o GetEventsEventOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEventsEvent) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetEventsEventArrayOutput struct{ *pulumi.OutputState }
+
+func (GetEventsEventArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetEventsEvent)(nil)).Elem()
+}
+
+func (o GetEventsEventArrayOutput) ToGetEventsEventArrayOutput() GetEventsEventArrayOutput {
+	return o
+}
+
+func (o GetEventsEventArrayOutput) ToGetEventsEventArrayOutputWithContext(ctx context.Context) GetEventsEventArrayOutput {
+	return o
+}
+
+func (o GetEventsEventArrayOutput) Index(i pulumi.IntInput) GetEventsEventOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetEventsEvent {
+		return vs[0].([]GetEventsEvent)[vs[1].(int)]
+	}).(GetEventsEventOutput)
+}
+
+type GetExternalLinksExternalLink struct {
+	// The timestamp in epoch milliseconds indicating when the external link is created.
+	CreatedEpochMillis int `pulumi:"createdEpochMillis"`
+	// The ID of the user who created the external link.
+	CreatorId string `pulumi:"creatorId"`
+	// Human-readable description of the link.
+	Description string `pulumi:"description"`
+	// The ID of the external link.
+	Id string `pulumi:"id"`
+	// Whether this is a "Log Integration" subType of external link.
+	IsLogIntegration bool `pulumi:"isLogIntegration"`
+	// Controls whether a link is displayed in the context menu of a highlighted series. If present, the metric name of the highlighted series must match this regular expression in order for the link to be displayed.
+	MetricFilterRegex string `pulumi:"metricFilterRegex"`
+	// The name of the external link.
+	Name string `pulumi:"name"`
+	// (Optional) Controls whether a link is displayed in the context menu of a highlighted
+	// series. This is a map from string to regular expression. The highlighted series must contain point tags whose
+	// keys are present in the keys of this map and whose values match the regular expressions associated with those
+	// keys in order for the link to be displayed.
+	PointTagFilterRegexes map[string]string `pulumi:"pointTagFilterRegexes"`
+	// Controls whether a link is displayed in the context menu of a highlighted series. If present, the source name of the highlighted series must match this regular expression in order for the link to be displayed.
+	SourceFilterRegex string `pulumi:"sourceFilterRegex"`
+	// The mustache template for the link. The template must expand to a full URL, including scheme, origin, etc.
+	Template string `pulumi:"template"`
+	// The timestamp in epoch milliseconds indicating when the external link is updated.
+	UpdatedEpochMillis int `pulumi:"updatedEpochMillis"`
+	// The ID of the user who updated the external link.
+	UpdaterId string `pulumi:"updaterId"`
+}
+
+// GetExternalLinksExternalLinkInput is an input type that accepts GetExternalLinksExternalLinkArgs and GetExternalLinksExternalLinkOutput values.
+// You can construct a concrete instance of `GetExternalLinksExternalLinkInput` via:
+//
+//	GetExternalLinksExternalLinkArgs{...}
+type GetExternalLinksExternalLinkInput interface {
+	pulumi.Input
+
+	ToGetExternalLinksExternalLinkOutput() GetExternalLinksExternalLinkOutput
+	ToGetExternalLinksExternalLinkOutputWithContext(context.Context) GetExternalLinksExternalLinkOutput
+}
+
+type GetExternalLinksExternalLinkArgs struct {
+	// The timestamp in epoch milliseconds indicating when the external link is created.
+	CreatedEpochMillis pulumi.IntInput `pulumi:"createdEpochMillis"`
+	// The ID of the user who created the external link.
+	CreatorId pulumi.StringInput `pulumi:"creatorId"`
+	// Human-readable description of the link.
+	Description pulumi.StringInput `pulumi:"description"`
+	// The ID of the external link.
+	Id pulumi.StringInput `pulumi:"id"`
+	// Whether this is a "Log Integration" subType of external link.
+	IsLogIntegration pulumi.BoolInput `pulumi:"isLogIntegration"`
+	// Controls whether a link is displayed in the context menu of a highlighted series. If present, the metric name of the highlighted series must match this regular expression in order for the link to be displayed.
+	MetricFilterRegex pulumi.StringInput `pulumi:"metricFilterRegex"`
+	// The name of the external link.
+	Name pulumi.StringInput `pulumi:"name"`
+	// (Optional) Controls whether a link is displayed in the context menu of a highlighted
+	// series. This is a map from string to regular expression. The highlighted series must contain point tags whose
+	// keys are present in the keys of this map and whose values match the regular expressions associated with those
+	// keys in order for the link to be displayed.
+	PointTagFilterRegexes pulumi.StringMapInput `pulumi:"pointTagFilterRegexes"`
+	// Controls whether a link is displayed in the context menu of a highlighted series. If present, the source name of the highlighted series must match this regular expression in order for the link to be displayed.
+	SourceFilterRegex pulumi.StringInput `pulumi:"sourceFilterRegex"`
+	// The mustache template for the link. The template must expand to a full URL, including scheme, origin, etc.
+	Template pulumi.StringInput `pulumi:"template"`
+	// The timestamp in epoch milliseconds indicating when the external link is updated.
+	UpdatedEpochMillis pulumi.IntInput `pulumi:"updatedEpochMillis"`
+	// The ID of the user who updated the external link.
+	UpdaterId pulumi.StringInput `pulumi:"updaterId"`
+}
+
+func (GetExternalLinksExternalLinkArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalLinksExternalLink)(nil)).Elem()
+}
+
+func (i GetExternalLinksExternalLinkArgs) ToGetExternalLinksExternalLinkOutput() GetExternalLinksExternalLinkOutput {
+	return i.ToGetExternalLinksExternalLinkOutputWithContext(context.Background())
+}
+
+func (i GetExternalLinksExternalLinkArgs) ToGetExternalLinksExternalLinkOutputWithContext(ctx context.Context) GetExternalLinksExternalLinkOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalLinksExternalLinkOutput)
+}
+
+// GetExternalLinksExternalLinkArrayInput is an input type that accepts GetExternalLinksExternalLinkArray and GetExternalLinksExternalLinkArrayOutput values.
+// You can construct a concrete instance of `GetExternalLinksExternalLinkArrayInput` via:
+//
+//	GetExternalLinksExternalLinkArray{ GetExternalLinksExternalLinkArgs{...} }
+type GetExternalLinksExternalLinkArrayInput interface {
+	pulumi.Input
+
+	ToGetExternalLinksExternalLinkArrayOutput() GetExternalLinksExternalLinkArrayOutput
+	ToGetExternalLinksExternalLinkArrayOutputWithContext(context.Context) GetExternalLinksExternalLinkArrayOutput
+}
+
+type GetExternalLinksExternalLinkArray []GetExternalLinksExternalLinkInput
+
+func (GetExternalLinksExternalLinkArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalLinksExternalLink)(nil)).Elem()
+}
+
+func (i GetExternalLinksExternalLinkArray) ToGetExternalLinksExternalLinkArrayOutput() GetExternalLinksExternalLinkArrayOutput {
+	return i.ToGetExternalLinksExternalLinkArrayOutputWithContext(context.Background())
+}
+
+func (i GetExternalLinksExternalLinkArray) ToGetExternalLinksExternalLinkArrayOutputWithContext(ctx context.Context) GetExternalLinksExternalLinkArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalLinksExternalLinkArrayOutput)
+}
+
+type GetExternalLinksExternalLinkOutput struct{ *pulumi.OutputState }
+
+func (GetExternalLinksExternalLinkOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalLinksExternalLink)(nil)).Elem()
+}
+
+func (o GetExternalLinksExternalLinkOutput) ToGetExternalLinksExternalLinkOutput() GetExternalLinksExternalLinkOutput {
+	return o
+}
+
+func (o GetExternalLinksExternalLinkOutput) ToGetExternalLinksExternalLinkOutputWithContext(ctx context.Context) GetExternalLinksExternalLinkOutput {
+	return o
+}
+
+// The timestamp in epoch milliseconds indicating when the external link is created.
+func (o GetExternalLinksExternalLinkOutput) CreatedEpochMillis() pulumi.IntOutput {
+	return o.ApplyT(func(v GetExternalLinksExternalLink) int { return v.CreatedEpochMillis }).(pulumi.IntOutput)
+}
+
+// The ID of the user who created the external link.
+func (o GetExternalLinksExternalLinkOutput) CreatorId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalLinksExternalLink) string { return v.CreatorId }).(pulumi.StringOutput)
+}
+
+// Human-readable description of the link.
+func (o GetExternalLinksExternalLinkOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalLinksExternalLink) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// The ID of the external link.
+func (o GetExternalLinksExternalLinkOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalLinksExternalLink) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Whether this is a "Log Integration" subType of external link.
+func (o GetExternalLinksExternalLinkOutput) IsLogIntegration() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetExternalLinksExternalLink) bool { return v.IsLogIntegration }).(pulumi.BoolOutput)
+}
+
+// Controls whether a link is displayed in the context menu of a highlighted series. If present, the metric name of the highlighted series must match this regular expression in order for the link to be displayed.
+func (o GetExternalLinksExternalLinkOutput) MetricFilterRegex() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalLinksExternalLink) string { return v.MetricFilterRegex }).(pulumi.StringOutput)
+}
+
+// The name of the external link.
+func (o GetExternalLinksExternalLinkOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalLinksExternalLink) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// (Optional) Controls whether a link is displayed in the context menu of a highlighted
+// series. This is a map from string to regular expression. The highlighted series must contain point tags whose
+// keys are present in the keys of this map and whose values match the regular expressions associated with those
+// keys in order for the link to be displayed.
+func (o GetExternalLinksExternalLinkOutput) PointTagFilterRegexes() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetExternalLinksExternalLink) map[string]string { return v.PointTagFilterRegexes }).(pulumi.StringMapOutput)
+}
+
+// Controls whether a link is displayed in the context menu of a highlighted series. If present, the source name of the highlighted series must match this regular expression in order for the link to be displayed.
+func (o GetExternalLinksExternalLinkOutput) SourceFilterRegex() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalLinksExternalLink) string { return v.SourceFilterRegex }).(pulumi.StringOutput)
+}
+
+// The mustache template for the link. The template must expand to a full URL, including scheme, origin, etc.
+func (o GetExternalLinksExternalLinkOutput) Template() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalLinksExternalLink) string { return v.Template }).(pulumi.StringOutput)
+}
+
+// The timestamp in epoch milliseconds indicating when the external link is updated.
+func (o GetExternalLinksExternalLinkOutput) UpdatedEpochMillis() pulumi.IntOutput {
+	return o.ApplyT(func(v GetExternalLinksExternalLink) int { return v.UpdatedEpochMillis }).(pulumi.IntOutput)
+}
+
+// The ID of the user who updated the external link.
+func (o GetExternalLinksExternalLinkOutput) UpdaterId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalLinksExternalLink) string { return v.UpdaterId }).(pulumi.StringOutput)
+}
+
+type GetExternalLinksExternalLinkArrayOutput struct{ *pulumi.OutputState }
+
+func (GetExternalLinksExternalLinkArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalLinksExternalLink)(nil)).Elem()
+}
+
+func (o GetExternalLinksExternalLinkArrayOutput) ToGetExternalLinksExternalLinkArrayOutput() GetExternalLinksExternalLinkArrayOutput {
+	return o
+}
+
+func (o GetExternalLinksExternalLinkArrayOutput) ToGetExternalLinksExternalLinkArrayOutputWithContext(ctx context.Context) GetExternalLinksExternalLinkArrayOutput {
+	return o
+}
+
+func (o GetExternalLinksExternalLinkArrayOutput) Index(i pulumi.IntInput) GetExternalLinksExternalLinkOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExternalLinksExternalLink {
+		return vs[0].([]GetExternalLinksExternalLink)[vs[1].(int)]
+	}).(GetExternalLinksExternalLinkOutput)
+}
+
+type GetMaintenanceWindowAllMaintenanceWindow struct {
+	CreatedEpochMillis              int      `pulumi:"createdEpochMillis"`
+	CreatorId                       string   `pulumi:"creatorId"`
+	CustomerId                      string   `pulumi:"customerId"`
+	EndTimeInSeconds                int      `pulumi:"endTimeInSeconds"`
+	EventName                       string   `pulumi:"eventName"`
+	HostTagGroupHostNamesGroupAnded bool     `pulumi:"hostTagGroupHostNamesGroupAnded"`
+	Id                              string   `pulumi:"id"`
+	Reason                          string   `pulumi:"reason"`
+	RelevantCustomerTags            []string `pulumi:"relevantCustomerTags"`
+	RelevantHostNames               []string `pulumi:"relevantHostNames"`
+	RelevantHostTags                []string `pulumi:"relevantHostTags"`
+	RelevantHostTagsAnded           bool     `pulumi:"relevantHostTagsAnded"`
+	RunningState                    string   `pulumi:"runningState"`
+	SortAttr                        int      `pulumi:"sortAttr"`
+	StartTimeInSeconds              int      `pulumi:"startTimeInSeconds"`
+	Title                           string   `pulumi:"title"`
+	UpdatedEpochMillis              int      `pulumi:"updatedEpochMillis"`
+	UpdaterId                       string   `pulumi:"updaterId"`
+}
+
+// GetMaintenanceWindowAllMaintenanceWindowInput is an input type that accepts GetMaintenanceWindowAllMaintenanceWindowArgs and GetMaintenanceWindowAllMaintenanceWindowOutput values.
+// You can construct a concrete instance of `GetMaintenanceWindowAllMaintenanceWindowInput` via:
+//
+//	GetMaintenanceWindowAllMaintenanceWindowArgs{...}
+type GetMaintenanceWindowAllMaintenanceWindowInput interface {
+	pulumi.Input
+
+	ToGetMaintenanceWindowAllMaintenanceWindowOutput() GetMaintenanceWindowAllMaintenanceWindowOutput
+	ToGetMaintenanceWindowAllMaintenanceWindowOutputWithContext(context.Context) GetMaintenanceWindowAllMaintenanceWindowOutput
+}
+
+type GetMaintenanceWindowAllMaintenanceWindowArgs struct {
+	CreatedEpochMillis              pulumi.IntInput         `pulumi:"createdEpochMillis"`
+	CreatorId                       pulumi.StringInput      `pulumi:"creatorId"`
+	CustomerId                      pulumi.StringInput      `pulumi:"customerId"`
+	EndTimeInSeconds                pulumi.IntInput         `pulumi:"endTimeInSeconds"`
+	EventName                       pulumi.StringInput      `pulumi:"eventName"`
+	HostTagGroupHostNamesGroupAnded pulumi.BoolInput        `pulumi:"hostTagGroupHostNamesGroupAnded"`
+	Id                              pulumi.StringInput      `pulumi:"id"`
+	Reason                          pulumi.StringInput      `pulumi:"reason"`
+	RelevantCustomerTags            pulumi.StringArrayInput `pulumi:"relevantCustomerTags"`
+	RelevantHostNames               pulumi.StringArrayInput `pulumi:"relevantHostNames"`
+	RelevantHostTags                pulumi.StringArrayInput `pulumi:"relevantHostTags"`
+	RelevantHostTagsAnded           pulumi.BoolInput        `pulumi:"relevantHostTagsAnded"`
+	RunningState                    pulumi.StringInput      `pulumi:"runningState"`
+	SortAttr                        pulumi.IntInput         `pulumi:"sortAttr"`
+	StartTimeInSeconds              pulumi.IntInput         `pulumi:"startTimeInSeconds"`
+	Title                           pulumi.StringInput      `pulumi:"title"`
+	UpdatedEpochMillis              pulumi.IntInput         `pulumi:"updatedEpochMillis"`
+	UpdaterId                       pulumi.StringInput      `pulumi:"updaterId"`
+}
+
+func (GetMaintenanceWindowAllMaintenanceWindowArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMaintenanceWindowAllMaintenanceWindow)(nil)).Elem()
+}
+
+func (i GetMaintenanceWindowAllMaintenanceWindowArgs) ToGetMaintenanceWindowAllMaintenanceWindowOutput() GetMaintenanceWindowAllMaintenanceWindowOutput {
+	return i.ToGetMaintenanceWindowAllMaintenanceWindowOutputWithContext(context.Background())
+}
+
+func (i GetMaintenanceWindowAllMaintenanceWindowArgs) ToGetMaintenanceWindowAllMaintenanceWindowOutputWithContext(ctx context.Context) GetMaintenanceWindowAllMaintenanceWindowOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMaintenanceWindowAllMaintenanceWindowOutput)
+}
+
+// GetMaintenanceWindowAllMaintenanceWindowArrayInput is an input type that accepts GetMaintenanceWindowAllMaintenanceWindowArray and GetMaintenanceWindowAllMaintenanceWindowArrayOutput values.
+// You can construct a concrete instance of `GetMaintenanceWindowAllMaintenanceWindowArrayInput` via:
+//
+//	GetMaintenanceWindowAllMaintenanceWindowArray{ GetMaintenanceWindowAllMaintenanceWindowArgs{...} }
+type GetMaintenanceWindowAllMaintenanceWindowArrayInput interface {
+	pulumi.Input
+
+	ToGetMaintenanceWindowAllMaintenanceWindowArrayOutput() GetMaintenanceWindowAllMaintenanceWindowArrayOutput
+	ToGetMaintenanceWindowAllMaintenanceWindowArrayOutputWithContext(context.Context) GetMaintenanceWindowAllMaintenanceWindowArrayOutput
+}
+
+type GetMaintenanceWindowAllMaintenanceWindowArray []GetMaintenanceWindowAllMaintenanceWindowInput
+
+func (GetMaintenanceWindowAllMaintenanceWindowArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMaintenanceWindowAllMaintenanceWindow)(nil)).Elem()
+}
+
+func (i GetMaintenanceWindowAllMaintenanceWindowArray) ToGetMaintenanceWindowAllMaintenanceWindowArrayOutput() GetMaintenanceWindowAllMaintenanceWindowArrayOutput {
+	return i.ToGetMaintenanceWindowAllMaintenanceWindowArrayOutputWithContext(context.Background())
+}
+
+func (i GetMaintenanceWindowAllMaintenanceWindowArray) ToGetMaintenanceWindowAllMaintenanceWindowArrayOutputWithContext(ctx context.Context) GetMaintenanceWindowAllMaintenanceWindowArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMaintenanceWindowAllMaintenanceWindowArrayOutput)
+}
+
+type GetMaintenanceWindowAllMaintenanceWindowOutput struct{ *pulumi.OutputState }
+
+func (GetMaintenanceWindowAllMaintenanceWindowOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMaintenanceWindowAllMaintenanceWindow)(nil)).Elem()
+}
+
+func (o GetMaintenanceWindowAllMaintenanceWindowOutput) ToGetMaintenanceWindowAllMaintenanceWindowOutput() GetMaintenanceWindowAllMaintenanceWindowOutput {
+	return o
+}
+
+func (o GetMaintenanceWindowAllMaintenanceWindowOutput) ToGetMaintenanceWindowAllMaintenanceWindowOutputWithContext(ctx context.Context) GetMaintenanceWindowAllMaintenanceWindowOutput {
+	return o
+}
+
+func (o GetMaintenanceWindowAllMaintenanceWindowOutput) CreatedEpochMillis() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMaintenanceWindowAllMaintenanceWindow) int { return v.CreatedEpochMillis }).(pulumi.IntOutput)
+}
+
+func (o GetMaintenanceWindowAllMaintenanceWindowOutput) CreatorId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMaintenanceWindowAllMaintenanceWindow) string { return v.CreatorId }).(pulumi.StringOutput)
+}
+
+func (o GetMaintenanceWindowAllMaintenanceWindowOutput) CustomerId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMaintenanceWindowAllMaintenanceWindow) string { return v.CustomerId }).(pulumi.StringOutput)
+}
+
+func (o GetMaintenanceWindowAllMaintenanceWindowOutput) EndTimeInSeconds() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMaintenanceWindowAllMaintenanceWindow) int { return v.EndTimeInSeconds }).(pulumi.IntOutput)
+}
+
+func (o GetMaintenanceWindowAllMaintenanceWindowOutput) EventName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMaintenanceWindowAllMaintenanceWindow) string { return v.EventName }).(pulumi.StringOutput)
+}
+
+func (o GetMaintenanceWindowAllMaintenanceWindowOutput) HostTagGroupHostNamesGroupAnded() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMaintenanceWindowAllMaintenanceWindow) bool { return v.HostTagGroupHostNamesGroupAnded }).(pulumi.BoolOutput)
+}
+
+func (o GetMaintenanceWindowAllMaintenanceWindowOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMaintenanceWindowAllMaintenanceWindow) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func (o GetMaintenanceWindowAllMaintenanceWindowOutput) Reason() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMaintenanceWindowAllMaintenanceWindow) string { return v.Reason }).(pulumi.StringOutput)
+}
+
+func (o GetMaintenanceWindowAllMaintenanceWindowOutput) RelevantCustomerTags() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMaintenanceWindowAllMaintenanceWindow) []string { return v.RelevantCustomerTags }).(pulumi.StringArrayOutput)
+}
+
+func (o GetMaintenanceWindowAllMaintenanceWindowOutput) RelevantHostNames() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMaintenanceWindowAllMaintenanceWindow) []string { return v.RelevantHostNames }).(pulumi.StringArrayOutput)
+}
+
+func (o GetMaintenanceWindowAllMaintenanceWindowOutput) RelevantHostTags() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMaintenanceWindowAllMaintenanceWindow) []string { return v.RelevantHostTags }).(pulumi.StringArrayOutput)
+}
+
+func (o GetMaintenanceWindowAllMaintenanceWindowOutput) RelevantHostTagsAnded() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMaintenanceWindowAllMaintenanceWindow) bool { return v.RelevantHostTagsAnded }).(pulumi.BoolOutput)
+}
+
+func (o GetMaintenanceWindowAllMaintenanceWindowOutput) RunningState() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMaintenanceWindowAllMaintenanceWindow) string { return v.RunningState }).(pulumi.StringOutput)
+}
+
+func (o GetMaintenanceWindowAllMaintenanceWindowOutput) SortAttr() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMaintenanceWindowAllMaintenanceWindow) int { return v.SortAttr }).(pulumi.IntOutput)
+}
+
+func (o GetMaintenanceWindowAllMaintenanceWindowOutput) StartTimeInSeconds() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMaintenanceWindowAllMaintenanceWindow) int { return v.StartTimeInSeconds }).(pulumi.IntOutput)
+}
+
+func (o GetMaintenanceWindowAllMaintenanceWindowOutput) Title() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMaintenanceWindowAllMaintenanceWindow) string { return v.Title }).(pulumi.StringOutput)
+}
+
+func (o GetMaintenanceWindowAllMaintenanceWindowOutput) UpdatedEpochMillis() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMaintenanceWindowAllMaintenanceWindow) int { return v.UpdatedEpochMillis }).(pulumi.IntOutput)
+}
+
+func (o GetMaintenanceWindowAllMaintenanceWindowOutput) UpdaterId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMaintenanceWindowAllMaintenanceWindow) string { return v.UpdaterId }).(pulumi.StringOutput)
+}
+
+type GetMaintenanceWindowAllMaintenanceWindowArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMaintenanceWindowAllMaintenanceWindowArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMaintenanceWindowAllMaintenanceWindow)(nil)).Elem()
+}
+
+func (o GetMaintenanceWindowAllMaintenanceWindowArrayOutput) ToGetMaintenanceWindowAllMaintenanceWindowArrayOutput() GetMaintenanceWindowAllMaintenanceWindowArrayOutput {
+	return o
+}
+
+func (o GetMaintenanceWindowAllMaintenanceWindowArrayOutput) ToGetMaintenanceWindowAllMaintenanceWindowArrayOutputWithContext(ctx context.Context) GetMaintenanceWindowAllMaintenanceWindowArrayOutput {
+	return o
+}
+
+func (o GetMaintenanceWindowAllMaintenanceWindowArrayOutput) Index(i pulumi.IntInput) GetMaintenanceWindowAllMaintenanceWindowOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMaintenanceWindowAllMaintenanceWindow {
+		return vs[0].([]GetMaintenanceWindowAllMaintenanceWindow)[vs[1].(int)]
+	}).(GetMaintenanceWindowAllMaintenanceWindowOutput)
+}
+
+type GetMetricsPolicyPolicyRule struct {
+	AccessType   string                          `pulumi:"accessType"`
+	AccountIds   []string                        `pulumi:"accountIds"`
+	Description  string                          `pulumi:"description"`
+	Name         string                          `pulumi:"name"`
+	Prefixes     []string                        `pulumi:"prefixes"`
+	RoleIds      []string                        `pulumi:"roleIds"`
+	Tags         []GetMetricsPolicyPolicyRuleTag `pulumi:"tags"`
+	TagsAnded    bool                            `pulumi:"tagsAnded"`
+	UserGroupIds []string                        `pulumi:"userGroupIds"`
+}
+
+// GetMetricsPolicyPolicyRuleInput is an input type that accepts GetMetricsPolicyPolicyRuleArgs and GetMetricsPolicyPolicyRuleOutput values.
+// You can construct a concrete instance of `GetMetricsPolicyPolicyRuleInput` via:
+//
+//	GetMetricsPolicyPolicyRuleArgs{...}
+type GetMetricsPolicyPolicyRuleInput interface {
+	pulumi.Input
+
+	ToGetMetricsPolicyPolicyRuleOutput() GetMetricsPolicyPolicyRuleOutput
+	ToGetMetricsPolicyPolicyRuleOutputWithContext(context.Context) GetMetricsPolicyPolicyRuleOutput
+}
+
+type GetMetricsPolicyPolicyRuleArgs struct {
+	AccessType   pulumi.StringInput                      `pulumi:"accessType"`
+	AccountIds   pulumi.StringArrayInput                 `pulumi:"accountIds"`
+	Description  pulumi.StringInput                      `pulumi:"description"`
+	Name         pulumi.StringInput                      `pulumi:"name"`
+	Prefixes     pulumi.StringArrayInput                 `pulumi:"prefixes"`
+	RoleIds      pulumi.StringArrayInput                 `pulumi:"roleIds"`
+	Tags         GetMetricsPolicyPolicyRuleTagArrayInput `pulumi:"tags"`
+	TagsAnded    pulumi.BoolInput                        `pulumi:"tagsAnded"`
+	UserGroupIds pulumi.StringArrayInput                 `pulumi:"userGroupIds"`
+}
+
+func (GetMetricsPolicyPolicyRuleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMetricsPolicyPolicyRule)(nil)).Elem()
+}
+
+func (i GetMetricsPolicyPolicyRuleArgs) ToGetMetricsPolicyPolicyRuleOutput() GetMetricsPolicyPolicyRuleOutput {
+	return i.ToGetMetricsPolicyPolicyRuleOutputWithContext(context.Background())
+}
+
+func (i GetMetricsPolicyPolicyRuleArgs) ToGetMetricsPolicyPolicyRuleOutputWithContext(ctx context.Context) GetMetricsPolicyPolicyRuleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMetricsPolicyPolicyRuleOutput)
+}
+
+// GetMetricsPolicyPolicyRuleArrayInput is an input type that accepts GetMetricsPolicyPolicyRuleArray and GetMetricsPolicyPolicyRuleArrayOutput values.
+// You can construct a concrete instance of `GetMetricsPolicyPolicyRuleArrayInput` via:
+//
+//	GetMetricsPolicyPolicyRuleArray{ GetMetricsPolicyPolicyRuleArgs{...} }
+type GetMetricsPolicyPolicyRuleArrayInput interface {
+	pulumi.Input
+
+	ToGetMetricsPolicyPolicyRuleArrayOutput() GetMetricsPolicyPolicyRuleArrayOutput
+	ToGetMetricsPolicyPolicyRuleArrayOutputWithContext(context.Context) GetMetricsPolicyPolicyRuleArrayOutput
+}
+
+type GetMetricsPolicyPolicyRuleArray []GetMetricsPolicyPolicyRuleInput
+
+func (GetMetricsPolicyPolicyRuleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMetricsPolicyPolicyRule)(nil)).Elem()
+}
+
+func (i GetMetricsPolicyPolicyRuleArray) ToGetMetricsPolicyPolicyRuleArrayOutput() GetMetricsPolicyPolicyRuleArrayOutput {
+	return i.ToGetMetricsPolicyPolicyRuleArrayOutputWithContext(context.Background())
+}
+
+func (i GetMetricsPolicyPolicyRuleArray) ToGetMetricsPolicyPolicyRuleArrayOutputWithContext(ctx context.Context) GetMetricsPolicyPolicyRuleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMetricsPolicyPolicyRuleArrayOutput)
+}
+
+type GetMetricsPolicyPolicyRuleOutput struct{ *pulumi.OutputState }
+
+func (GetMetricsPolicyPolicyRuleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMetricsPolicyPolicyRule)(nil)).Elem()
+}
+
+func (o GetMetricsPolicyPolicyRuleOutput) ToGetMetricsPolicyPolicyRuleOutput() GetMetricsPolicyPolicyRuleOutput {
+	return o
+}
+
+func (o GetMetricsPolicyPolicyRuleOutput) ToGetMetricsPolicyPolicyRuleOutputWithContext(ctx context.Context) GetMetricsPolicyPolicyRuleOutput {
+	return o
+}
+
+func (o GetMetricsPolicyPolicyRuleOutput) AccessType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMetricsPolicyPolicyRule) string { return v.AccessType }).(pulumi.StringOutput)
+}
+
+func (o GetMetricsPolicyPolicyRuleOutput) AccountIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMetricsPolicyPolicyRule) []string { return v.AccountIds }).(pulumi.StringArrayOutput)
+}
+
+func (o GetMetricsPolicyPolicyRuleOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMetricsPolicyPolicyRule) string { return v.Description }).(pulumi.StringOutput)
+}
+
+func (o GetMetricsPolicyPolicyRuleOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMetricsPolicyPolicyRule) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetMetricsPolicyPolicyRuleOutput) Prefixes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMetricsPolicyPolicyRule) []string { return v.Prefixes }).(pulumi.StringArrayOutput)
+}
+
+func (o GetMetricsPolicyPolicyRuleOutput) RoleIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMetricsPolicyPolicyRule) []string { return v.RoleIds }).(pulumi.StringArrayOutput)
+}
+
+func (o GetMetricsPolicyPolicyRuleOutput) Tags() GetMetricsPolicyPolicyRuleTagArrayOutput {
+	return o.ApplyT(func(v GetMetricsPolicyPolicyRule) []GetMetricsPolicyPolicyRuleTag { return v.Tags }).(GetMetricsPolicyPolicyRuleTagArrayOutput)
+}
+
+func (o GetMetricsPolicyPolicyRuleOutput) TagsAnded() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMetricsPolicyPolicyRule) bool { return v.TagsAnded }).(pulumi.BoolOutput)
+}
+
+func (o GetMetricsPolicyPolicyRuleOutput) UserGroupIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMetricsPolicyPolicyRule) []string { return v.UserGroupIds }).(pulumi.StringArrayOutput)
+}
+
+type GetMetricsPolicyPolicyRuleArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMetricsPolicyPolicyRuleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMetricsPolicyPolicyRule)(nil)).Elem()
+}
+
+func (o GetMetricsPolicyPolicyRuleArrayOutput) ToGetMetricsPolicyPolicyRuleArrayOutput() GetMetricsPolicyPolicyRuleArrayOutput {
+	return o
+}
+
+func (o GetMetricsPolicyPolicyRuleArrayOutput) ToGetMetricsPolicyPolicyRuleArrayOutputWithContext(ctx context.Context) GetMetricsPolicyPolicyRuleArrayOutput {
+	return o
+}
+
+func (o GetMetricsPolicyPolicyRuleArrayOutput) Index(i pulumi.IntInput) GetMetricsPolicyPolicyRuleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMetricsPolicyPolicyRule {
+		return vs[0].([]GetMetricsPolicyPolicyRule)[vs[1].(int)]
+	}).(GetMetricsPolicyPolicyRuleOutput)
+}
+
+type GetMetricsPolicyPolicyRuleTag struct {
+	Key   string `pulumi:"key"`
+	Value string `pulumi:"value"`
+}
+
+// GetMetricsPolicyPolicyRuleTagInput is an input type that accepts GetMetricsPolicyPolicyRuleTagArgs and GetMetricsPolicyPolicyRuleTagOutput values.
+// You can construct a concrete instance of `GetMetricsPolicyPolicyRuleTagInput` via:
+//
+//	GetMetricsPolicyPolicyRuleTagArgs{...}
+type GetMetricsPolicyPolicyRuleTagInput interface {
+	pulumi.Input
+
+	ToGetMetricsPolicyPolicyRuleTagOutput() GetMetricsPolicyPolicyRuleTagOutput
+	ToGetMetricsPolicyPolicyRuleTagOutputWithContext(context.Context) GetMetricsPolicyPolicyRuleTagOutput
+}
+
+type GetMetricsPolicyPolicyRuleTagArgs struct {
+	Key   pulumi.StringInput `pulumi:"key"`
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetMetricsPolicyPolicyRuleTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMetricsPolicyPolicyRuleTag)(nil)).Elem()
+}
+
+func (i GetMetricsPolicyPolicyRuleTagArgs) ToGetMetricsPolicyPolicyRuleTagOutput() GetMetricsPolicyPolicyRuleTagOutput {
+	return i.ToGetMetricsPolicyPolicyRuleTagOutputWithContext(context.Background())
+}
+
+func (i GetMetricsPolicyPolicyRuleTagArgs) ToGetMetricsPolicyPolicyRuleTagOutputWithContext(ctx context.Context) GetMetricsPolicyPolicyRuleTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMetricsPolicyPolicyRuleTagOutput)
+}
+
+// GetMetricsPolicyPolicyRuleTagArrayInput is an input type that accepts GetMetricsPolicyPolicyRuleTagArray and GetMetricsPolicyPolicyRuleTagArrayOutput values.
+// You can construct a concrete instance of `GetMetricsPolicyPolicyRuleTagArrayInput` via:
+//
+//	GetMetricsPolicyPolicyRuleTagArray{ GetMetricsPolicyPolicyRuleTagArgs{...} }
+type GetMetricsPolicyPolicyRuleTagArrayInput interface {
+	pulumi.Input
+
+	ToGetMetricsPolicyPolicyRuleTagArrayOutput() GetMetricsPolicyPolicyRuleTagArrayOutput
+	ToGetMetricsPolicyPolicyRuleTagArrayOutputWithContext(context.Context) GetMetricsPolicyPolicyRuleTagArrayOutput
+}
+
+type GetMetricsPolicyPolicyRuleTagArray []GetMetricsPolicyPolicyRuleTagInput
+
+func (GetMetricsPolicyPolicyRuleTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMetricsPolicyPolicyRuleTag)(nil)).Elem()
+}
+
+func (i GetMetricsPolicyPolicyRuleTagArray) ToGetMetricsPolicyPolicyRuleTagArrayOutput() GetMetricsPolicyPolicyRuleTagArrayOutput {
+	return i.ToGetMetricsPolicyPolicyRuleTagArrayOutputWithContext(context.Background())
+}
+
+func (i GetMetricsPolicyPolicyRuleTagArray) ToGetMetricsPolicyPolicyRuleTagArrayOutputWithContext(ctx context.Context) GetMetricsPolicyPolicyRuleTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMetricsPolicyPolicyRuleTagArrayOutput)
+}
+
+type GetMetricsPolicyPolicyRuleTagOutput struct{ *pulumi.OutputState }
+
+func (GetMetricsPolicyPolicyRuleTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMetricsPolicyPolicyRuleTag)(nil)).Elem()
+}
+
+func (o GetMetricsPolicyPolicyRuleTagOutput) ToGetMetricsPolicyPolicyRuleTagOutput() GetMetricsPolicyPolicyRuleTagOutput {
+	return o
+}
+
+func (o GetMetricsPolicyPolicyRuleTagOutput) ToGetMetricsPolicyPolicyRuleTagOutputWithContext(ctx context.Context) GetMetricsPolicyPolicyRuleTagOutput {
+	return o
+}
+
+func (o GetMetricsPolicyPolicyRuleTagOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMetricsPolicyPolicyRuleTag) string { return v.Key }).(pulumi.StringOutput)
+}
+
+func (o GetMetricsPolicyPolicyRuleTagOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMetricsPolicyPolicyRuleTag) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetMetricsPolicyPolicyRuleTagArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMetricsPolicyPolicyRuleTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMetricsPolicyPolicyRuleTag)(nil)).Elem()
+}
+
+func (o GetMetricsPolicyPolicyRuleTagArrayOutput) ToGetMetricsPolicyPolicyRuleTagArrayOutput() GetMetricsPolicyPolicyRuleTagArrayOutput {
+	return o
+}
+
+func (o GetMetricsPolicyPolicyRuleTagArrayOutput) ToGetMetricsPolicyPolicyRuleTagArrayOutputWithContext(ctx context.Context) GetMetricsPolicyPolicyRuleTagArrayOutput {
+	return o
+}
+
+func (o GetMetricsPolicyPolicyRuleTagArrayOutput) Index(i pulumi.IntInput) GetMetricsPolicyPolicyRuleTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMetricsPolicyPolicyRuleTag {
+		return vs[0].([]GetMetricsPolicyPolicyRuleTag)[vs[1].(int)]
+	}).(GetMetricsPolicyPolicyRuleTagOutput)
+}
+
+type GetRolesRole struct {
+	// The Role's description.
+	Description string `pulumi:"description"`
+	// The Role ID.
+	Id string `pulumi:"id"`
+	// The Role Name.
+	Name string `pulumi:"name"`
+	// List of Permissions (Strings) associated with Role.
+	Permissions []string `pulumi:"permissions"`
+}
+
+// GetRolesRoleInput is an input type that accepts GetRolesRoleArgs and GetRolesRoleOutput values.
+// You can construct a concrete instance of `GetRolesRoleInput` via:
+//
+//	GetRolesRoleArgs{...}
+type GetRolesRoleInput interface {
+	pulumi.Input
+
+	ToGetRolesRoleOutput() GetRolesRoleOutput
+	ToGetRolesRoleOutputWithContext(context.Context) GetRolesRoleOutput
+}
+
+type GetRolesRoleArgs struct {
+	// The Role's description.
+	Description pulumi.StringInput `pulumi:"description"`
+	// The Role ID.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The Role Name.
+	Name pulumi.StringInput `pulumi:"name"`
+	// List of Permissions (Strings) associated with Role.
+	Permissions pulumi.StringArrayInput `pulumi:"permissions"`
+}
+
+func (GetRolesRoleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRolesRole)(nil)).Elem()
+}
+
+func (i GetRolesRoleArgs) ToGetRolesRoleOutput() GetRolesRoleOutput {
+	return i.ToGetRolesRoleOutputWithContext(context.Background())
+}
+
+func (i GetRolesRoleArgs) ToGetRolesRoleOutputWithContext(ctx context.Context) GetRolesRoleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRolesRoleOutput)
+}
+
+// GetRolesRoleArrayInput is an input type that accepts GetRolesRoleArray and GetRolesRoleArrayOutput values.
+// You can construct a concrete instance of `GetRolesRoleArrayInput` via:
+//
+//	GetRolesRoleArray{ GetRolesRoleArgs{...} }
+type GetRolesRoleArrayInput interface {
+	pulumi.Input
+
+	ToGetRolesRoleArrayOutput() GetRolesRoleArrayOutput
+	ToGetRolesRoleArrayOutputWithContext(context.Context) GetRolesRoleArrayOutput
+}
+
+type GetRolesRoleArray []GetRolesRoleInput
+
+func (GetRolesRoleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRolesRole)(nil)).Elem()
+}
+
+func (i GetRolesRoleArray) ToGetRolesRoleArrayOutput() GetRolesRoleArrayOutput {
+	return i.ToGetRolesRoleArrayOutputWithContext(context.Background())
+}
+
+func (i GetRolesRoleArray) ToGetRolesRoleArrayOutputWithContext(ctx context.Context) GetRolesRoleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRolesRoleArrayOutput)
+}
+
+type GetRolesRoleOutput struct{ *pulumi.OutputState }
+
+func (GetRolesRoleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRolesRole)(nil)).Elem()
+}
+
+func (o GetRolesRoleOutput) ToGetRolesRoleOutput() GetRolesRoleOutput {
+	return o
+}
+
+func (o GetRolesRoleOutput) ToGetRolesRoleOutputWithContext(ctx context.Context) GetRolesRoleOutput {
+	return o
+}
+
+// The Role's description.
+func (o GetRolesRoleOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRolesRole) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// The Role ID.
+func (o GetRolesRoleOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRolesRole) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The Role Name.
+func (o GetRolesRoleOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRolesRole) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// List of Permissions (Strings) associated with Role.
+func (o GetRolesRoleOutput) Permissions() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetRolesRole) []string { return v.Permissions }).(pulumi.StringArrayOutput)
+}
+
+type GetRolesRoleArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRolesRoleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRolesRole)(nil)).Elem()
+}
+
+func (o GetRolesRoleArrayOutput) ToGetRolesRoleArrayOutput() GetRolesRoleArrayOutput {
+	return o
+}
+
+func (o GetRolesRoleArrayOutput) ToGetRolesRoleArrayOutputWithContext(ctx context.Context) GetRolesRoleArrayOutput {
+	return o
+}
+
+func (o GetRolesRoleArrayOutput) Index(i pulumi.IntInput) GetRolesRoleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRolesRole {
+		return vs[0].([]GetRolesRole)[vs[1].(int)]
+	}).(GetRolesRoleOutput)
+}
+
+type GetUserGroupsUserGroup struct {
+	// The group description.
+	Description string `pulumi:"description"`
+	// The group ID.
+	Id string `pulumi:"id"`
+	// The group name.
+	Name string `pulumi:"name"`
+	// List of roles associated with the group.
+	Roles []string `pulumi:"roles"`
+	// List of users assigned to the group.
+	Users []string `pulumi:"users"`
+}
+
+// GetUserGroupsUserGroupInput is an input type that accepts GetUserGroupsUserGroupArgs and GetUserGroupsUserGroupOutput values.
+// You can construct a concrete instance of `GetUserGroupsUserGroupInput` via:
+//
+//	GetUserGroupsUserGroupArgs{...}
+type GetUserGroupsUserGroupInput interface {
+	pulumi.Input
+
+	ToGetUserGroupsUserGroupOutput() GetUserGroupsUserGroupOutput
+	ToGetUserGroupsUserGroupOutputWithContext(context.Context) GetUserGroupsUserGroupOutput
+}
+
+type GetUserGroupsUserGroupArgs struct {
+	// The group description.
+	Description pulumi.StringInput `pulumi:"description"`
+	// The group ID.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The group name.
+	Name pulumi.StringInput `pulumi:"name"`
+	// List of roles associated with the group.
+	Roles pulumi.StringArrayInput `pulumi:"roles"`
+	// List of users assigned to the group.
+	Users pulumi.StringArrayInput `pulumi:"users"`
+}
+
+func (GetUserGroupsUserGroupArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUserGroupsUserGroup)(nil)).Elem()
+}
+
+func (i GetUserGroupsUserGroupArgs) ToGetUserGroupsUserGroupOutput() GetUserGroupsUserGroupOutput {
+	return i.ToGetUserGroupsUserGroupOutputWithContext(context.Background())
+}
+
+func (i GetUserGroupsUserGroupArgs) ToGetUserGroupsUserGroupOutputWithContext(ctx context.Context) GetUserGroupsUserGroupOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUserGroupsUserGroupOutput)
+}
+
+// GetUserGroupsUserGroupArrayInput is an input type that accepts GetUserGroupsUserGroupArray and GetUserGroupsUserGroupArrayOutput values.
+// You can construct a concrete instance of `GetUserGroupsUserGroupArrayInput` via:
+//
+//	GetUserGroupsUserGroupArray{ GetUserGroupsUserGroupArgs{...} }
+type GetUserGroupsUserGroupArrayInput interface {
+	pulumi.Input
+
+	ToGetUserGroupsUserGroupArrayOutput() GetUserGroupsUserGroupArrayOutput
+	ToGetUserGroupsUserGroupArrayOutputWithContext(context.Context) GetUserGroupsUserGroupArrayOutput
+}
+
+type GetUserGroupsUserGroupArray []GetUserGroupsUserGroupInput
+
+func (GetUserGroupsUserGroupArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUserGroupsUserGroup)(nil)).Elem()
+}
+
+func (i GetUserGroupsUserGroupArray) ToGetUserGroupsUserGroupArrayOutput() GetUserGroupsUserGroupArrayOutput {
+	return i.ToGetUserGroupsUserGroupArrayOutputWithContext(context.Background())
+}
+
+func (i GetUserGroupsUserGroupArray) ToGetUserGroupsUserGroupArrayOutputWithContext(ctx context.Context) GetUserGroupsUserGroupArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUserGroupsUserGroupArrayOutput)
+}
+
+type GetUserGroupsUserGroupOutput struct{ *pulumi.OutputState }
+
+func (GetUserGroupsUserGroupOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUserGroupsUserGroup)(nil)).Elem()
+}
+
+func (o GetUserGroupsUserGroupOutput) ToGetUserGroupsUserGroupOutput() GetUserGroupsUserGroupOutput {
+	return o
+}
+
+func (o GetUserGroupsUserGroupOutput) ToGetUserGroupsUserGroupOutputWithContext(ctx context.Context) GetUserGroupsUserGroupOutput {
+	return o
+}
+
+// The group description.
+func (o GetUserGroupsUserGroupOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUserGroupsUserGroup) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// The group ID.
+func (o GetUserGroupsUserGroupOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUserGroupsUserGroup) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The group name.
+func (o GetUserGroupsUserGroupOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUserGroupsUserGroup) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// List of roles associated with the group.
+func (o GetUserGroupsUserGroupOutput) Roles() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetUserGroupsUserGroup) []string { return v.Roles }).(pulumi.StringArrayOutput)
+}
+
+// List of users assigned to the group.
+func (o GetUserGroupsUserGroupOutput) Users() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetUserGroupsUserGroup) []string { return v.Users }).(pulumi.StringArrayOutput)
+}
+
+type GetUserGroupsUserGroupArrayOutput struct{ *pulumi.OutputState }
+
+func (GetUserGroupsUserGroupArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUserGroupsUserGroup)(nil)).Elem()
+}
+
+func (o GetUserGroupsUserGroupArrayOutput) ToGetUserGroupsUserGroupArrayOutput() GetUserGroupsUserGroupArrayOutput {
+	return o
+}
+
+func (o GetUserGroupsUserGroupArrayOutput) ToGetUserGroupsUserGroupArrayOutputWithContext(ctx context.Context) GetUserGroupsUserGroupArrayOutput {
+	return o
+}
+
+func (o GetUserGroupsUserGroupArrayOutput) Index(i pulumi.IntInput) GetUserGroupsUserGroupOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetUserGroupsUserGroup {
+		return vs[0].([]GetUserGroupsUserGroup)[vs[1].(int)]
+	}).(GetUserGroupsUserGroupOutput)
+}
+
+type GetUsersUser struct {
+	Customer string `pulumi:"customer"`
+	Email    string `pulumi:"email"`
+	// When the user last logged in to Wavefront.
+	LastSuccessfulLogin int `pulumi:"lastSuccessfulLogin"`
+	// List of permissions granted to a user.
+	Permissions []string `pulumi:"permissions"`
+	// List of User Group Ids the user is a member of.
+	// * `customer`- The customer the user is associated with.
+	UserGroupIds []string `pulumi:"userGroupIds"`
+}
+
+// GetUsersUserInput is an input type that accepts GetUsersUserArgs and GetUsersUserOutput values.
+// You can construct a concrete instance of `GetUsersUserInput` via:
+//
+//	GetUsersUserArgs{...}
+type GetUsersUserInput interface {
+	pulumi.Input
+
+	ToGetUsersUserOutput() GetUsersUserOutput
+	ToGetUsersUserOutputWithContext(context.Context) GetUsersUserOutput
+}
+
+type GetUsersUserArgs struct {
+	Customer pulumi.StringInput `pulumi:"customer"`
+	Email    pulumi.StringInput `pulumi:"email"`
+	// When the user last logged in to Wavefront.
+	LastSuccessfulLogin pulumi.IntInput `pulumi:"lastSuccessfulLogin"`
+	// List of permissions granted to a user.
+	Permissions pulumi.StringArrayInput `pulumi:"permissions"`
+	// List of User Group Ids the user is a member of.
+	// * `customer`- The customer the user is associated with.
+	UserGroupIds pulumi.StringArrayInput `pulumi:"userGroupIds"`
+}
+
+func (GetUsersUserArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUsersUser)(nil)).Elem()
+}
+
+func (i GetUsersUserArgs) ToGetUsersUserOutput() GetUsersUserOutput {
+	return i.ToGetUsersUserOutputWithContext(context.Background())
+}
+
+func (i GetUsersUserArgs) ToGetUsersUserOutputWithContext(ctx context.Context) GetUsersUserOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUsersUserOutput)
+}
+
+// GetUsersUserArrayInput is an input type that accepts GetUsersUserArray and GetUsersUserArrayOutput values.
+// You can construct a concrete instance of `GetUsersUserArrayInput` via:
+//
+//	GetUsersUserArray{ GetUsersUserArgs{...} }
+type GetUsersUserArrayInput interface {
+	pulumi.Input
+
+	ToGetUsersUserArrayOutput() GetUsersUserArrayOutput
+	ToGetUsersUserArrayOutputWithContext(context.Context) GetUsersUserArrayOutput
+}
+
+type GetUsersUserArray []GetUsersUserInput
+
+func (GetUsersUserArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUsersUser)(nil)).Elem()
+}
+
+func (i GetUsersUserArray) ToGetUsersUserArrayOutput() GetUsersUserArrayOutput {
+	return i.ToGetUsersUserArrayOutputWithContext(context.Background())
+}
+
+func (i GetUsersUserArray) ToGetUsersUserArrayOutputWithContext(ctx context.Context) GetUsersUserArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUsersUserArrayOutput)
+}
+
+type GetUsersUserOutput struct{ *pulumi.OutputState }
+
+func (GetUsersUserOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUsersUser)(nil)).Elem()
+}
+
+func (o GetUsersUserOutput) ToGetUsersUserOutput() GetUsersUserOutput {
+	return o
+}
+
+func (o GetUsersUserOutput) ToGetUsersUserOutputWithContext(ctx context.Context) GetUsersUserOutput {
+	return o
+}
+
+func (o GetUsersUserOutput) Customer() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUsersUser) string { return v.Customer }).(pulumi.StringOutput)
+}
+
+func (o GetUsersUserOutput) Email() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUsersUser) string { return v.Email }).(pulumi.StringOutput)
+}
+
+// When the user last logged in to Wavefront.
+func (o GetUsersUserOutput) LastSuccessfulLogin() pulumi.IntOutput {
+	return o.ApplyT(func(v GetUsersUser) int { return v.LastSuccessfulLogin }).(pulumi.IntOutput)
+}
+
+// List of permissions granted to a user.
+func (o GetUsersUserOutput) Permissions() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetUsersUser) []string { return v.Permissions }).(pulumi.StringArrayOutput)
+}
+
+// List of User Group Ids the user is a member of.
+// * `customer`- The customer the user is associated with.
+func (o GetUsersUserOutput) UserGroupIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetUsersUser) []string { return v.UserGroupIds }).(pulumi.StringArrayOutput)
+}
+
+type GetUsersUserArrayOutput struct{ *pulumi.OutputState }
+
+func (GetUsersUserArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUsersUser)(nil)).Elem()
+}
+
+func (o GetUsersUserArrayOutput) ToGetUsersUserArrayOutput() GetUsersUserArrayOutput {
+	return o
+}
+
+func (o GetUsersUserArrayOutput) ToGetUsersUserArrayOutputWithContext(ctx context.Context) GetUsersUserArrayOutput {
+	return o
+}
+
+func (o GetUsersUserArrayOutput) Index(i pulumi.IntInput) GetUsersUserOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetUsersUser {
+		return vs[0].([]GetUsersUser)[vs[1].(int)]
+	}).(GetUsersUserOutput)
+}
+
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*AlertTargetRouteInput)(nil)).Elem(), AlertTargetRouteArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AlertTargetRouteArrayInput)(nil)).Elem(), AlertTargetRouteArray{})
@@ -1555,6 +6961,64 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*DashboardSectionRowChartChartSettingInput)(nil)).Elem(), DashboardSectionRowChartChartSettingArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DashboardSectionRowChartSourceInput)(nil)).Elem(), DashboardSectionRowChartSourceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DashboardSectionRowChartSourceArrayInput)(nil)).Elem(), DashboardSectionRowChartSourceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MetricsPolicyPolicyRuleInput)(nil)).Elem(), MetricsPolicyPolicyRuleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MetricsPolicyPolicyRuleArrayInput)(nil)).Elem(), MetricsPolicyPolicyRuleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MetricsPolicyPolicyRuleTagInput)(nil)).Elem(), MetricsPolicyPolicyRuleTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MetricsPolicyPolicyRuleTagArrayInput)(nil)).Elem(), MetricsPolicyPolicyRuleTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAlertFailingHostLabelPairInput)(nil)).Elem(), GetAlertFailingHostLabelPairArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAlertFailingHostLabelPairArrayInput)(nil)).Elem(), GetAlertFailingHostLabelPairArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAlertInMaintenanceHostLabelPairInput)(nil)).Elem(), GetAlertInMaintenanceHostLabelPairArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAlertInMaintenanceHostLabelPairArrayInput)(nil)).Elem(), GetAlertInMaintenanceHostLabelPairArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAlertsAlertInput)(nil)).Elem(), GetAlertsAlertArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAlertsAlertArrayInput)(nil)).Elem(), GetAlertsAlertArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAlertsAlertFailingHostLabelPairInput)(nil)).Elem(), GetAlertsAlertFailingHostLabelPairArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAlertsAlertFailingHostLabelPairArrayInput)(nil)).Elem(), GetAlertsAlertFailingHostLabelPairArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAlertsAlertInMaintenanceHostLabelPairInput)(nil)).Elem(), GetAlertsAlertInMaintenanceHostLabelPairArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAlertsAlertInMaintenanceHostLabelPairArrayInput)(nil)).Elem(), GetAlertsAlertInMaintenanceHostLabelPairArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDashboardParameterDetailInput)(nil)).Elem(), GetDashboardParameterDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDashboardParameterDetailArrayInput)(nil)).Elem(), GetDashboardParameterDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDashboardSectionInput)(nil)).Elem(), GetDashboardSectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDashboardSectionArrayInput)(nil)).Elem(), GetDashboardSectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDashboardSectionRowInput)(nil)).Elem(), GetDashboardSectionRowArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDashboardSectionRowArrayInput)(nil)).Elem(), GetDashboardSectionRowArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDashboardSectionRowChartInput)(nil)).Elem(), GetDashboardSectionRowChartArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDashboardSectionRowChartArrayInput)(nil)).Elem(), GetDashboardSectionRowChartArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDashboardSectionRowChartChartSettingInput)(nil)).Elem(), GetDashboardSectionRowChartChartSettingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDashboardSectionRowChartChartSettingArrayInput)(nil)).Elem(), GetDashboardSectionRowChartChartSettingArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDashboardSectionRowChartSourceInput)(nil)).Elem(), GetDashboardSectionRowChartSourceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDashboardSectionRowChartSourceArrayInput)(nil)).Elem(), GetDashboardSectionRowChartSourceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDashboardsDashboardInput)(nil)).Elem(), GetDashboardsDashboardArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDashboardsDashboardArrayInput)(nil)).Elem(), GetDashboardsDashboardArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDashboardsDashboardParameterDetailInput)(nil)).Elem(), GetDashboardsDashboardParameterDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDashboardsDashboardParameterDetailArrayInput)(nil)).Elem(), GetDashboardsDashboardParameterDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDashboardsDashboardSectionInput)(nil)).Elem(), GetDashboardsDashboardSectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDashboardsDashboardSectionArrayInput)(nil)).Elem(), GetDashboardsDashboardSectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDashboardsDashboardSectionRowInput)(nil)).Elem(), GetDashboardsDashboardSectionRowArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDashboardsDashboardSectionRowArrayInput)(nil)).Elem(), GetDashboardsDashboardSectionRowArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDashboardsDashboardSectionRowChartInput)(nil)).Elem(), GetDashboardsDashboardSectionRowChartArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDashboardsDashboardSectionRowChartArrayInput)(nil)).Elem(), GetDashboardsDashboardSectionRowChartArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDashboardsDashboardSectionRowChartChartSettingInput)(nil)).Elem(), GetDashboardsDashboardSectionRowChartChartSettingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDashboardsDashboardSectionRowChartChartSettingArrayInput)(nil)).Elem(), GetDashboardsDashboardSectionRowChartChartSettingArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDashboardsDashboardSectionRowChartSourceInput)(nil)).Elem(), GetDashboardsDashboardSectionRowChartSourceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDashboardsDashboardSectionRowChartSourceArrayInput)(nil)).Elem(), GetDashboardsDashboardSectionRowChartSourceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDerivedMetricsDerivedMetricInput)(nil)).Elem(), GetDerivedMetricsDerivedMetricArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDerivedMetricsDerivedMetricArrayInput)(nil)).Elem(), GetDerivedMetricsDerivedMetricArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetEventsEventInput)(nil)).Elem(), GetEventsEventArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetEventsEventArrayInput)(nil)).Elem(), GetEventsEventArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalLinksExternalLinkInput)(nil)).Elem(), GetExternalLinksExternalLinkArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalLinksExternalLinkArrayInput)(nil)).Elem(), GetExternalLinksExternalLinkArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMaintenanceWindowAllMaintenanceWindowInput)(nil)).Elem(), GetMaintenanceWindowAllMaintenanceWindowArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMaintenanceWindowAllMaintenanceWindowArrayInput)(nil)).Elem(), GetMaintenanceWindowAllMaintenanceWindowArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMetricsPolicyPolicyRuleInput)(nil)).Elem(), GetMetricsPolicyPolicyRuleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMetricsPolicyPolicyRuleArrayInput)(nil)).Elem(), GetMetricsPolicyPolicyRuleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMetricsPolicyPolicyRuleTagInput)(nil)).Elem(), GetMetricsPolicyPolicyRuleTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMetricsPolicyPolicyRuleTagArrayInput)(nil)).Elem(), GetMetricsPolicyPolicyRuleTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRolesRoleInput)(nil)).Elem(), GetRolesRoleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRolesRoleArrayInput)(nil)).Elem(), GetRolesRoleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUserGroupsUserGroupInput)(nil)).Elem(), GetUserGroupsUserGroupArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUserGroupsUserGroupArrayInput)(nil)).Elem(), GetUserGroupsUserGroupArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUsersUserInput)(nil)).Elem(), GetUsersUserArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUsersUserArrayInput)(nil)).Elem(), GetUsersUserArray{})
 	pulumi.RegisterOutputType(AlertTargetRouteOutput{})
 	pulumi.RegisterOutputType(AlertTargetRouteArrayOutput{})
 	pulumi.RegisterOutputType(CloudIntegrationNewRelicMetricFilterOutput{})
@@ -1570,4 +7034,62 @@ func init() {
 	pulumi.RegisterOutputType(DashboardSectionRowChartChartSettingOutput{})
 	pulumi.RegisterOutputType(DashboardSectionRowChartSourceOutput{})
 	pulumi.RegisterOutputType(DashboardSectionRowChartSourceArrayOutput{})
+	pulumi.RegisterOutputType(MetricsPolicyPolicyRuleOutput{})
+	pulumi.RegisterOutputType(MetricsPolicyPolicyRuleArrayOutput{})
+	pulumi.RegisterOutputType(MetricsPolicyPolicyRuleTagOutput{})
+	pulumi.RegisterOutputType(MetricsPolicyPolicyRuleTagArrayOutput{})
+	pulumi.RegisterOutputType(GetAlertFailingHostLabelPairOutput{})
+	pulumi.RegisterOutputType(GetAlertFailingHostLabelPairArrayOutput{})
+	pulumi.RegisterOutputType(GetAlertInMaintenanceHostLabelPairOutput{})
+	pulumi.RegisterOutputType(GetAlertInMaintenanceHostLabelPairArrayOutput{})
+	pulumi.RegisterOutputType(GetAlertsAlertOutput{})
+	pulumi.RegisterOutputType(GetAlertsAlertArrayOutput{})
+	pulumi.RegisterOutputType(GetAlertsAlertFailingHostLabelPairOutput{})
+	pulumi.RegisterOutputType(GetAlertsAlertFailingHostLabelPairArrayOutput{})
+	pulumi.RegisterOutputType(GetAlertsAlertInMaintenanceHostLabelPairOutput{})
+	pulumi.RegisterOutputType(GetAlertsAlertInMaintenanceHostLabelPairArrayOutput{})
+	pulumi.RegisterOutputType(GetDashboardParameterDetailOutput{})
+	pulumi.RegisterOutputType(GetDashboardParameterDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetDashboardSectionOutput{})
+	pulumi.RegisterOutputType(GetDashboardSectionArrayOutput{})
+	pulumi.RegisterOutputType(GetDashboardSectionRowOutput{})
+	pulumi.RegisterOutputType(GetDashboardSectionRowArrayOutput{})
+	pulumi.RegisterOutputType(GetDashboardSectionRowChartOutput{})
+	pulumi.RegisterOutputType(GetDashboardSectionRowChartArrayOutput{})
+	pulumi.RegisterOutputType(GetDashboardSectionRowChartChartSettingOutput{})
+	pulumi.RegisterOutputType(GetDashboardSectionRowChartChartSettingArrayOutput{})
+	pulumi.RegisterOutputType(GetDashboardSectionRowChartSourceOutput{})
+	pulumi.RegisterOutputType(GetDashboardSectionRowChartSourceArrayOutput{})
+	pulumi.RegisterOutputType(GetDashboardsDashboardOutput{})
+	pulumi.RegisterOutputType(GetDashboardsDashboardArrayOutput{})
+	pulumi.RegisterOutputType(GetDashboardsDashboardParameterDetailOutput{})
+	pulumi.RegisterOutputType(GetDashboardsDashboardParameterDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetDashboardsDashboardSectionOutput{})
+	pulumi.RegisterOutputType(GetDashboardsDashboardSectionArrayOutput{})
+	pulumi.RegisterOutputType(GetDashboardsDashboardSectionRowOutput{})
+	pulumi.RegisterOutputType(GetDashboardsDashboardSectionRowArrayOutput{})
+	pulumi.RegisterOutputType(GetDashboardsDashboardSectionRowChartOutput{})
+	pulumi.RegisterOutputType(GetDashboardsDashboardSectionRowChartArrayOutput{})
+	pulumi.RegisterOutputType(GetDashboardsDashboardSectionRowChartChartSettingOutput{})
+	pulumi.RegisterOutputType(GetDashboardsDashboardSectionRowChartChartSettingArrayOutput{})
+	pulumi.RegisterOutputType(GetDashboardsDashboardSectionRowChartSourceOutput{})
+	pulumi.RegisterOutputType(GetDashboardsDashboardSectionRowChartSourceArrayOutput{})
+	pulumi.RegisterOutputType(GetDerivedMetricsDerivedMetricOutput{})
+	pulumi.RegisterOutputType(GetDerivedMetricsDerivedMetricArrayOutput{})
+	pulumi.RegisterOutputType(GetEventsEventOutput{})
+	pulumi.RegisterOutputType(GetEventsEventArrayOutput{})
+	pulumi.RegisterOutputType(GetExternalLinksExternalLinkOutput{})
+	pulumi.RegisterOutputType(GetExternalLinksExternalLinkArrayOutput{})
+	pulumi.RegisterOutputType(GetMaintenanceWindowAllMaintenanceWindowOutput{})
+	pulumi.RegisterOutputType(GetMaintenanceWindowAllMaintenanceWindowArrayOutput{})
+	pulumi.RegisterOutputType(GetMetricsPolicyPolicyRuleOutput{})
+	pulumi.RegisterOutputType(GetMetricsPolicyPolicyRuleArrayOutput{})
+	pulumi.RegisterOutputType(GetMetricsPolicyPolicyRuleTagOutput{})
+	pulumi.RegisterOutputType(GetMetricsPolicyPolicyRuleTagArrayOutput{})
+	pulumi.RegisterOutputType(GetRolesRoleOutput{})
+	pulumi.RegisterOutputType(GetRolesRoleArrayOutput{})
+	pulumi.RegisterOutputType(GetUserGroupsUserGroupOutput{})
+	pulumi.RegisterOutputType(GetUserGroupsUserGroupArrayOutput{})
+	pulumi.RegisterOutputType(GetUsersUserOutput{})
+	pulumi.RegisterOutputType(GetUsersUserArrayOutput{})
 }

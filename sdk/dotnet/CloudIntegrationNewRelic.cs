@@ -16,20 +16,18 @@ namespace Pulumi.Wavefront
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Wavefront = Pulumi.Wavefront;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var newrelic = new Wavefront.CloudIntegrationNewRelic("newrelic", new()
     ///     {
-    ///         var newrelic = new Wavefront.CloudIntegrationNewRelic("newrelic", new Wavefront.CloudIntegrationNewRelicArgs
-    ///         {
-    ///             ApiKey = "example-api-key",
-    ///         });
-    ///     }
+    ///         ApiKey = "example-api-key",
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -41,7 +39,7 @@ namespace Pulumi.Wavefront
     /// ```
     /// </summary>
     [WavefrontResourceType("wavefront:index/cloudIntegrationNewRelic:CloudIntegrationNewRelic")]
-    public partial class CloudIntegrationNewRelic : Pulumi.CustomResource
+    public partial class CloudIntegrationNewRelic : global::Pulumi.CustomResource
     {
         /// <summary>
         /// A list of point tag key-values to add to every point ingested using this integration.
@@ -120,6 +118,10 @@ namespace Pulumi.Wavefront
             var defaultOptions = new CustomResourceOptions
             {
                 Version = Utilities.Version,
+                AdditionalSecretOutputs =
+                {
+                    "apiKey",
+                },
             };
             var merged = CustomResourceOptions.Merge(defaultOptions, options);
             // Override the ID if one was specified for consistency with other language SDKs.
@@ -141,7 +143,7 @@ namespace Pulumi.Wavefront
         }
     }
 
-    public sealed class CloudIntegrationNewRelicArgs : Pulumi.ResourceArgs
+    public sealed class CloudIntegrationNewRelicArgs : global::Pulumi.ResourceArgs
     {
         [Input("additionalTags")]
         private InputMap<string>? _additionalTags;
@@ -155,11 +157,21 @@ namespace Pulumi.Wavefront
             set => _additionalTags = value;
         }
 
+        [Input("apiKey", required: true)]
+        private Input<string>? _apiKey;
+
         /// <summary>
         /// New Relic REST API key.
         /// </summary>
-        [Input("apiKey", required: true)]
-        public Input<string> ApiKey { get; set; } = null!;
+        public Input<string>? ApiKey
+        {
+            get => _apiKey;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _apiKey = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         /// <summary>
         /// A regular expression that an application name must match (case-insensitively) in order to collect metrics.
@@ -212,9 +224,10 @@ namespace Pulumi.Wavefront
         public CloudIntegrationNewRelicArgs()
         {
         }
+        public static new CloudIntegrationNewRelicArgs Empty => new CloudIntegrationNewRelicArgs();
     }
 
-    public sealed class CloudIntegrationNewRelicState : Pulumi.ResourceArgs
+    public sealed class CloudIntegrationNewRelicState : global::Pulumi.ResourceArgs
     {
         [Input("additionalTags")]
         private InputMap<string>? _additionalTags;
@@ -228,11 +241,21 @@ namespace Pulumi.Wavefront
             set => _additionalTags = value;
         }
 
+        [Input("apiKey")]
+        private Input<string>? _apiKey;
+
         /// <summary>
         /// New Relic REST API key.
         /// </summary>
-        [Input("apiKey")]
-        public Input<string>? ApiKey { get; set; }
+        public Input<string>? ApiKey
+        {
+            get => _apiKey;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _apiKey = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         /// <summary>
         /// A regular expression that an application name must match (case-insensitively) in order to collect metrics.
@@ -285,5 +308,6 @@ namespace Pulumi.Wavefront
         public CloudIntegrationNewRelicState()
         {
         }
+        public static new CloudIntegrationNewRelicState Empty => new CloudIntegrationNewRelicState();
     }
 }

@@ -15,20 +15,18 @@ namespace Pulumi.Wavefront
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Wavefront = Pulumi.Wavefront;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var basic = new Wavefront.UserGroup("basic", new()
     ///     {
-    ///         var basic = new Wavefront.UserGroup("basic", new Wavefront.UserGroupArgs
-    ///         {
-    ///             Description = "Basic User Group for Unit Tests",
-    ///         });
-    ///     }
+    ///         Description = "Basic User Group for Unit Tests",
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -40,7 +38,7 @@ namespace Pulumi.Wavefront
     /// ```
     /// </summary>
     [WavefrontResourceType("wavefront:index/userGroup:UserGroup")]
-    public partial class UserGroup : Pulumi.CustomResource
+    public partial class UserGroup : global::Pulumi.CustomResource
     {
         /// <summary>
         /// A short description of the user group.
@@ -98,7 +96,7 @@ namespace Pulumi.Wavefront
         }
     }
 
-    public sealed class UserGroupArgs : Pulumi.ResourceArgs
+    public sealed class UserGroupArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// A short description of the user group.
@@ -115,9 +113,10 @@ namespace Pulumi.Wavefront
         public UserGroupArgs()
         {
         }
+        public static new UserGroupArgs Empty => new UserGroupArgs();
     }
 
-    public sealed class UserGroupState : Pulumi.ResourceArgs
+    public sealed class UserGroupState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// A short description of the user group.
@@ -134,5 +133,6 @@ namespace Pulumi.Wavefront
         public UserGroupState()
         {
         }
+        public static new UserGroupState Empty => new UserGroupState();
     }
 }

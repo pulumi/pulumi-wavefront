@@ -16,26 +16,24 @@ namespace Pulumi.Wavefront
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Wavefront = Pulumi.Wavefront;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var azureActivityLog = new Wavefront.CloudIntegrationAzureActivityLog("azureActivityLog", new()
     ///     {
-    ///         var azureActivityLog = new Wavefront.CloudIntegrationAzureActivityLog("azureActivityLog", new Wavefront.CloudIntegrationAzureActivityLogArgs
+    ///         CategoryFilters = new[]
     ///         {
-    ///             CategoryFilters = 
-    ///             {
-    ///                 "ADMINISTRATIVE",
-    ///             },
-    ///             ClientId = "client-id2",
-    ///             ClientSecret = "client-secret2",
-    ///             Tenant = "my-tenant2",
-    ///         });
-    ///     }
+    ///             "ADMINISTRATIVE",
+    ///         },
+    ///         ClientId = "client-id2",
+    ///         ClientSecret = "client-secret2",
+    ///         Tenant = "my-tenant2",
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -47,7 +45,7 @@ namespace Pulumi.Wavefront
     /// ```
     /// </summary>
     [WavefrontResourceType("wavefront:index/cloudIntegrationAzureActivityLog:CloudIntegrationAzureActivityLog")]
-    public partial class CloudIntegrationAzureActivityLog : Pulumi.CustomResource
+    public partial class CloudIntegrationAzureActivityLog : global::Pulumi.CustomResource
     {
         /// <summary>
         /// A list of point tag key-values to add to every point ingested using this integration.
@@ -126,6 +124,10 @@ namespace Pulumi.Wavefront
             var defaultOptions = new CustomResourceOptions
             {
                 Version = Utilities.Version,
+                AdditionalSecretOutputs =
+                {
+                    "clientSecret",
+                },
             };
             var merged = CustomResourceOptions.Merge(defaultOptions, options);
             // Override the ID if one was specified for consistency with other language SDKs.
@@ -147,7 +149,7 @@ namespace Pulumi.Wavefront
         }
     }
 
-    public sealed class CloudIntegrationAzureActivityLogArgs : Pulumi.ResourceArgs
+    public sealed class CloudIntegrationAzureActivityLogArgs : global::Pulumi.ResourceArgs
     {
         [Input("additionalTags")]
         private InputMap<string>? _additionalTags;
@@ -179,11 +181,21 @@ namespace Pulumi.Wavefront
         [Input("clientId", required: true)]
         public Input<string> ClientId { get; set; } = null!;
 
+        [Input("clientSecret", required: true)]
+        private Input<string>? _clientSecret;
+
         /// <summary>
         /// Client secret for an Azure service account within your project.
         /// </summary>
-        [Input("clientSecret", required: true)]
-        public Input<string> ClientSecret { get; set; } = null!;
+        public Input<string>? ClientSecret
+        {
+            get => _clientSecret;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _clientSecret = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         /// <summary>
         /// Forces this resource to save, even if errors are present.
@@ -218,9 +230,10 @@ namespace Pulumi.Wavefront
         public CloudIntegrationAzureActivityLogArgs()
         {
         }
+        public static new CloudIntegrationAzureActivityLogArgs Empty => new CloudIntegrationAzureActivityLogArgs();
     }
 
-    public sealed class CloudIntegrationAzureActivityLogState : Pulumi.ResourceArgs
+    public sealed class CloudIntegrationAzureActivityLogState : global::Pulumi.ResourceArgs
     {
         [Input("additionalTags")]
         private InputMap<string>? _additionalTags;
@@ -252,11 +265,21 @@ namespace Pulumi.Wavefront
         [Input("clientId")]
         public Input<string>? ClientId { get; set; }
 
+        [Input("clientSecret")]
+        private Input<string>? _clientSecret;
+
         /// <summary>
         /// Client secret for an Azure service account within your project.
         /// </summary>
-        [Input("clientSecret")]
-        public Input<string>? ClientSecret { get; set; }
+        public Input<string>? ClientSecret
+        {
+            get => _clientSecret;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _clientSecret = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         /// <summary>
         /// Forces this resource to save, even if errors are present.
@@ -291,5 +314,6 @@ namespace Pulumi.Wavefront
         public CloudIntegrationAzureActivityLogState()
         {
         }
+        public static new CloudIntegrationAzureActivityLogState Empty => new CloudIntegrationAzureActivityLogState();
     }
 }

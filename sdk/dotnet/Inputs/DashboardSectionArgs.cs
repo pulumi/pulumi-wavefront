@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Wavefront.Inputs
 {
 
-    public sealed class DashboardSectionArgs : Pulumi.ResourceArgs
+    public sealed class DashboardSectionArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Name of this section.
@@ -33,5 +33,6 @@ namespace Pulumi.Wavefront.Inputs
         public DashboardSectionArgs()
         {
         }
+        public static new DashboardSectionArgs Empty => new DashboardSectionArgs();
     }
 }

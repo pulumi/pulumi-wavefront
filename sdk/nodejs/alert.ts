@@ -113,6 +113,10 @@ export class Alert extends pulumi.CustomResource {
      */
     public readonly notificationResendFrequencyMinutes!: pulumi.Output<number | undefined>;
     /**
+     * The specified query is executed every `processRateMinutes` minutes.
+     */
+    public readonly processRateMinutes!: pulumi.Output<number | undefined>;
+    /**
      * The number of consecutive minutes that a firing series matching the condition
      * query must evaluate to "false" (zero value) before the alert resolves.  When unset, this defaults to
      * the same value as `minutes`.
@@ -160,6 +164,7 @@ export class Alert extends pulumi.CustomResource {
             resourceInputs["minutes"] = state ? state.minutes : undefined;
             resourceInputs["name"] = state ? state.name : undefined;
             resourceInputs["notificationResendFrequencyMinutes"] = state ? state.notificationResendFrequencyMinutes : undefined;
+            resourceInputs["processRateMinutes"] = state ? state.processRateMinutes : undefined;
             resourceInputs["resolveAfterMinutes"] = state ? state.resolveAfterMinutes : undefined;
             resourceInputs["severity"] = state ? state.severity : undefined;
             resourceInputs["tags"] = state ? state.tags : undefined;
@@ -183,6 +188,7 @@ export class Alert extends pulumi.CustomResource {
             resourceInputs["minutes"] = args ? args.minutes : undefined;
             resourceInputs["name"] = args ? args.name : undefined;
             resourceInputs["notificationResendFrequencyMinutes"] = args ? args.notificationResendFrequencyMinutes : undefined;
+            resourceInputs["processRateMinutes"] = args ? args.processRateMinutes : undefined;
             resourceInputs["resolveAfterMinutes"] = args ? args.resolveAfterMinutes : undefined;
             resourceInputs["severity"] = args ? args.severity : undefined;
             resourceInputs["tags"] = args ? args.tags : undefined;
@@ -247,6 +253,10 @@ export interface AlertState {
      * If absent or <= 0, no re-triggering occurs.
      */
     notificationResendFrequencyMinutes?: pulumi.Input<number>;
+    /**
+     * The specified query is executed every `processRateMinutes` minutes.
+     */
+    processRateMinutes?: pulumi.Input<number>;
     /**
      * The number of consecutive minutes that a firing series matching the condition
      * query must evaluate to "false" (zero value) before the alert resolves.  When unset, this defaults to
@@ -326,6 +336,10 @@ export interface AlertArgs {
      * If absent or <= 0, no re-triggering occurs.
      */
     notificationResendFrequencyMinutes?: pulumi.Input<number>;
+    /**
+     * The specified query is executed every `processRateMinutes` minutes.
+     */
+    processRateMinutes?: pulumi.Input<number>;
     /**
      * The number of consecutive minutes that a firing series matching the condition
      * query must evaluate to "false" (zero value) before the alert resolves.  When unset, this defaults to

@@ -208,6 +208,16 @@ func (o UserGroupOutput) ToUserGroupOutputWithContext(ctx context.Context) UserG
 	return o
 }
 
+// A short description of the user group.
+func (o UserGroupOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v *UserGroup) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+}
+
+// The name of the user group.
+func (o UserGroupOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v *UserGroup) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
+}
+
 type UserGroupArrayOutput struct{ *pulumi.OutputState }
 
 func (UserGroupArrayOutput) ElementType() reflect.Type {

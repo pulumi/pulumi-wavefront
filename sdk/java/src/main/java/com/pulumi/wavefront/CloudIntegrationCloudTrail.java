@@ -22,6 +22,40 @@ import javax.annotation.Nullable;
  * updated, and deleted.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.wavefront.CloudIntegrationAwsExternalId;
+ * import com.pulumi.wavefront.CloudIntegrationCloudTrail;
+ * import com.pulumi.wavefront.CloudIntegrationCloudTrailArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var extId = new CloudIntegrationAwsExternalId(&#34;extId&#34;);
+ * 
+ *         var cloudtrail = new CloudIntegrationCloudTrail(&#34;cloudtrail&#34;, CloudIntegrationCloudTrailArgs.builder()        
+ *             .roleArn(&#34;arn:aws::1234567:role/example-arn&#34;)
+ *             .externalId(extId.id())
+ *             .region(&#34;us-west-2&#34;)
+ *             .bucketName(&#34;example-s3-bucket&#34;)
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

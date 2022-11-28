@@ -259,6 +259,38 @@ func (o ServiceAccountOutput) ToServiceAccountOutputWithContext(ctx context.Cont
 	return o
 }
 
+// Whether or not the service account is active.
+func (o ServiceAccountOutput) Active() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *ServiceAccount) pulumi.BoolPtrOutput { return v.Active }).(pulumi.BoolPtrOutput)
+}
+
+// The description of the service account.
+func (o ServiceAccountOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ServiceAccount) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
+}
+
+// The unique identifier of the service account to create. Must have the prefix `sa::`.
+func (o ServiceAccountOutput) Identifier() pulumi.StringOutput {
+	return o.ApplyT(func(v *ServiceAccount) pulumi.StringOutput { return v.Identifier }).(pulumi.StringOutput)
+}
+
+// ID of ingestion policy.
+func (o ServiceAccountOutput) IngestionPolicy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ServiceAccount) pulumi.StringPtrOutput { return v.IngestionPolicy }).(pulumi.StringPtrOutput)
+}
+
+// List of permission to grant to this service account.  Valid options are
+// `agentManagement`, `alertsManagement`, `dashboardManagement`, `embeddedCharts`, `eventsManagement`, `externalLinksManagement`,
+// `hostTagManagement`, `metricsManagement`, and `userManagement`.
+func (o ServiceAccountOutput) Permissions() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *ServiceAccount) pulumi.StringArrayOutput { return v.Permissions }).(pulumi.StringArrayOutput)
+}
+
+// List of user groups for this service account.
+func (o ServiceAccountOutput) UserGroups() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *ServiceAccount) pulumi.StringArrayOutput { return v.UserGroups }).(pulumi.StringArrayOutput)
+}
+
 type ServiceAccountArrayOutput struct{ *pulumi.OutputState }
 
 func (ServiceAccountArrayOutput) ElementType() reflect.Type {

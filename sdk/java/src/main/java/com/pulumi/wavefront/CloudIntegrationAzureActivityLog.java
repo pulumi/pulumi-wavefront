@@ -23,6 +23,37 @@ import javax.annotation.Nullable;
  * updated, and deleted.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.wavefront.CloudIntegrationAzureActivityLog;
+ * import com.pulumi.wavefront.CloudIntegrationAzureActivityLogArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var azureActivityLog = new CloudIntegrationAzureActivityLog(&#34;azureActivityLog&#34;, CloudIntegrationAzureActivityLogArgs.builder()        
+ *             .categoryFilters(&#34;ADMINISTRATIVE&#34;)
+ *             .clientId(&#34;client-id2&#34;)
+ *             .clientSecret(&#34;client-secret2&#34;)
+ *             .tenant(&#34;my-tenant2&#34;)
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 
@@ -194,6 +225,9 @@ public class CloudIntegrationAzureActivityLog extends com.pulumi.resources.Custo
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
+            .additionalSecretOutputs(List.of(
+                "clientSecret"
+            ))
             .build();
         return com.pulumi.resources.CustomResourceOptions.merge(defaultOptions, options, id);
     }

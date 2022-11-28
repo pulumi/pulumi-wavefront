@@ -45,11 +45,19 @@ public final class IngestionPolicyState extends com.pulumi.resources.ResourceArg
         return Optional.ofNullable(this.name);
     }
 
+    @Import(name="scope")
+    private @Nullable Output<String> scope;
+
+    public Optional<Output<String>> scope() {
+        return Optional.ofNullable(this.scope);
+    }
+
     private IngestionPolicyState() {}
 
     private IngestionPolicyState(IngestionPolicyState $) {
         this.description = $.description;
         this.name = $.name;
+        this.scope = $.scope;
     }
 
     public static Builder builder() {
@@ -110,6 +118,15 @@ public final class IngestionPolicyState extends com.pulumi.resources.ResourceArg
          */
         public Builder name(String name) {
             return name(Output.of(name));
+        }
+
+        public Builder scope(@Nullable Output<String> scope) {
+            $.scope = scope;
+            return this;
+        }
+
+        public Builder scope(String scope) {
+            return scope(Output.of(scope));
         }
 
         public IngestionPolicyState build() {

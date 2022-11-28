@@ -17,6 +17,34 @@ import javax.annotation.Nullable;
  * Provides a Wavefront User Group Resource. This allows user groups to be created, updated, and deleted.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.wavefront.UserGroup;
+ * import com.pulumi.wavefront.UserGroupArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var basic = new UserGroup(&#34;basic&#34;, UserGroupArgs.builder()        
+ *             .description(&#34;Basic User Group for Unit Tests&#34;)
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

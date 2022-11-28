@@ -45,11 +45,19 @@ public final class IngestionPolicyArgs extends com.pulumi.resources.ResourceArgs
         return Optional.ofNullable(this.name);
     }
 
+    @Import(name="scope", required=true)
+    private Output<String> scope;
+
+    public Output<String> scope() {
+        return this.scope;
+    }
+
     private IngestionPolicyArgs() {}
 
     private IngestionPolicyArgs(IngestionPolicyArgs $) {
         this.description = $.description;
         this.name = $.name;
+        this.scope = $.scope;
     }
 
     public static Builder builder() {
@@ -112,8 +120,18 @@ public final class IngestionPolicyArgs extends com.pulumi.resources.ResourceArgs
             return name(Output.of(name));
         }
 
+        public Builder scope(Output<String> scope) {
+            $.scope = scope;
+            return this;
+        }
+
+        public Builder scope(String scope) {
+            return scope(Output.of(scope));
+        }
+
         public IngestionPolicyArgs build() {
             $.description = Objects.requireNonNull($.description, "expected parameter 'description' to be non-null");
+            $.scope = Objects.requireNonNull($.scope, "expected parameter 'scope' to be non-null");
             return $;
         }
     }

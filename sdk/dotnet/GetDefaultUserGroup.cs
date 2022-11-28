@@ -13,29 +13,9 @@ namespace Pulumi.Wavefront
     {
         /// <summary>
         /// Use this data source to get the Group ID of the `Everyone` group in Wavefront. 
-        /// 
-        /// {{% examples %}}
-        /// ## Example Usage
-        /// {{% example %}}
-        /// 
-        /// ```csharp
-        /// using Pulumi;
-        /// using Wavefront = Pulumi.Wavefront;
-        /// 
-        /// class MyStack : Stack
-        /// {
-        ///     public MyStack()
-        ///     {
-        ///         var everyoneGroup = Output.Create(Wavefront.GetDefaultUserGroup.InvokeAsync());
-        ///     }
-        /// 
-        /// }
-        /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
         /// </summary>
         public static Task<GetDefaultUserGroupResult> InvokeAsync(InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetDefaultUserGroupResult>("wavefront:index/getDefaultUserGroup:getDefaultUserGroup", InvokeArgs.Empty, options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetDefaultUserGroupResult>("wavefront:index/getDefaultUserGroup:getDefaultUserGroup", InvokeArgs.Empty, options.WithDefaults());
     }
 
 

@@ -54,7 +54,8 @@ type IngestionPolicy struct {
 	// The description of the ingestion policy.
 	Description pulumi.StringOutput `pulumi:"description"`
 	// The name of the ingestion policy.
-	Name pulumi.StringOutput `pulumi:"name"`
+	Name  pulumi.StringOutput `pulumi:"name"`
+	Scope pulumi.StringOutput `pulumi:"scope"`
 }
 
 // NewIngestionPolicy registers a new resource with the given unique name, arguments, and options.
@@ -66,6 +67,9 @@ func NewIngestionPolicy(ctx *pulumi.Context,
 
 	if args.Description == nil {
 		return nil, errors.New("invalid value for required argument 'Description'")
+	}
+	if args.Scope == nil {
+		return nil, errors.New("invalid value for required argument 'Scope'")
 	}
 	var resource IngestionPolicy
 	err := ctx.RegisterResource("wavefront:index/ingestionPolicy:IngestionPolicy", name, args, &resource, opts...)
@@ -92,14 +96,16 @@ type ingestionPolicyState struct {
 	// The description of the ingestion policy.
 	Description *string `pulumi:"description"`
 	// The name of the ingestion policy.
-	Name *string `pulumi:"name"`
+	Name  *string `pulumi:"name"`
+	Scope *string `pulumi:"scope"`
 }
 
 type IngestionPolicyState struct {
 	// The description of the ingestion policy.
 	Description pulumi.StringPtrInput
 	// The name of the ingestion policy.
-	Name pulumi.StringPtrInput
+	Name  pulumi.StringPtrInput
+	Scope pulumi.StringPtrInput
 }
 
 func (IngestionPolicyState) ElementType() reflect.Type {
@@ -110,7 +116,8 @@ type ingestionPolicyArgs struct {
 	// The description of the ingestion policy.
 	Description string `pulumi:"description"`
 	// The name of the ingestion policy.
-	Name *string `pulumi:"name"`
+	Name  *string `pulumi:"name"`
+	Scope string  `pulumi:"scope"`
 }
 
 // The set of arguments for constructing a IngestionPolicy resource.
@@ -118,7 +125,8 @@ type IngestionPolicyArgs struct {
 	// The description of the ingestion policy.
 	Description pulumi.StringInput
 	// The name of the ingestion policy.
-	Name pulumi.StringPtrInput
+	Name  pulumi.StringPtrInput
+	Scope pulumi.StringInput
 }
 
 func (IngestionPolicyArgs) ElementType() reflect.Type {
@@ -206,6 +214,20 @@ func (o IngestionPolicyOutput) ToIngestionPolicyOutput() IngestionPolicyOutput {
 
 func (o IngestionPolicyOutput) ToIngestionPolicyOutputWithContext(ctx context.Context) IngestionPolicyOutput {
 	return o
+}
+
+// The description of the ingestion policy.
+func (o IngestionPolicyOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v *IngestionPolicy) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+}
+
+// The name of the ingestion policy.
+func (o IngestionPolicyOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v *IngestionPolicy) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o IngestionPolicyOutput) Scope() pulumi.StringOutput {
+	return o.ApplyT(func(v *IngestionPolicy) pulumi.StringOutput { return v.Scope }).(pulumi.StringOutput)
 }
 
 type IngestionPolicyArrayOutput struct{ *pulumi.OutputState }

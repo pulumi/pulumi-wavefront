@@ -187,6 +187,21 @@ public final class AlertArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * The specified query is executed every `process_rate_minutes` minutes.
+     * 
+     */
+    @Import(name="processRateMinutes")
+    private @Nullable Output<Integer> processRateMinutes;
+
+    /**
+     * @return The specified query is executed every `process_rate_minutes` minutes.
+     * 
+     */
+    public Optional<Output<Integer>> processRateMinutes() {
+        return Optional.ofNullable(this.processRateMinutes);
+    }
+
+    /**
      * The number of consecutive minutes that a firing series matching the condition
      * query must evaluate to &#34;false&#34; (zero value) before the alert resolves.  When unset, this defaults to
      * the same value as `minutes`.
@@ -282,6 +297,7 @@ public final class AlertArgs extends com.pulumi.resources.ResourceArgs {
         this.minutes = $.minutes;
         this.name = $.name;
         this.notificationResendFrequencyMinutes = $.notificationResendFrequencyMinutes;
+        this.processRateMinutes = $.processRateMinutes;
         this.resolveAfterMinutes = $.resolveAfterMinutes;
         this.severity = $.severity;
         this.tags = $.tags;
@@ -553,6 +569,27 @@ public final class AlertArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder notificationResendFrequencyMinutes(Integer notificationResendFrequencyMinutes) {
             return notificationResendFrequencyMinutes(Output.of(notificationResendFrequencyMinutes));
+        }
+
+        /**
+         * @param processRateMinutes The specified query is executed every `process_rate_minutes` minutes.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder processRateMinutes(@Nullable Output<Integer> processRateMinutes) {
+            $.processRateMinutes = processRateMinutes;
+            return this;
+        }
+
+        /**
+         * @param processRateMinutes The specified query is executed every `process_rate_minutes` minutes.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder processRateMinutes(Integer processRateMinutes) {
+            return processRateMinutes(Output.of(processRateMinutes));
         }
 
         /**

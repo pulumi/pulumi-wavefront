@@ -94,6 +94,18 @@ func (o ProviderOutput) ToProviderOutputWithContext(ctx context.Context) Provide
 	return o
 }
 
+func (o ProviderOutput) Address() pulumi.StringOutput {
+	return o.ApplyT(func(v *Provider) pulumi.StringOutput { return v.Address }).(pulumi.StringOutput)
+}
+
+func (o ProviderOutput) HttpProxy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Provider) pulumi.StringPtrOutput { return v.HttpProxy }).(pulumi.StringPtrOutput)
+}
+
+func (o ProviderOutput) Token() pulumi.StringOutput {
+	return o.ApplyT(func(v *Provider) pulumi.StringOutput { return v.Token }).(pulumi.StringOutput)
+}
+
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ProviderInput)(nil)).Elem(), &Provider{})
 	pulumi.RegisterOutputType(ProviderOutput{})

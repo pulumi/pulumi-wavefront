@@ -346,6 +346,71 @@ func (o CloudIntegrationCloudWatchOutput) ToCloudIntegrationCloudWatchOutputWith
 	return o
 }
 
+// A list of point tag key-values to add to every point ingested using this integration.
+func (o CloudIntegrationCloudWatchOutput) AdditionalTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *CloudIntegrationCloudWatch) pulumi.StringMapOutput { return v.AdditionalTags }).(pulumi.StringMapOutput)
+}
+
+// The Role ARN that the customer has created in AWS IAM to allow access to Wavefront.
+func (o CloudIntegrationCloudWatchOutput) ExternalId() pulumi.StringOutput {
+	return o.ApplyT(func(v *CloudIntegrationCloudWatch) pulumi.StringOutput { return v.ExternalId }).(pulumi.StringOutput)
+}
+
+// Forces this resource to save, even if errors are present.
+func (o CloudIntegrationCloudWatchOutput) ForceSave() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *CloudIntegrationCloudWatch) pulumi.BoolPtrOutput { return v.ForceSave }).(pulumi.BoolPtrOutput)
+}
+
+// A string->string map allow list of instance tag-value pairs (in AWS).
+// If the instance's AWS tags match this allow list, CloudWatch data about this instance is ingested.
+// Multiple entries are OR'ed.
+func (o CloudIntegrationCloudWatchOutput) InstanceSelectionTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *CloudIntegrationCloudWatch) pulumi.StringMapOutput { return v.InstanceSelectionTags }).(pulumi.StringMapOutput)
+}
+
+// A regular expression that a CloudWatch metric name must match (case-insensitively) in order to be ingested.
+func (o CloudIntegrationCloudWatchOutput) MetricFilterRegex() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CloudIntegrationCloudWatch) pulumi.StringPtrOutput { return v.MetricFilterRegex }).(pulumi.StringPtrOutput)
+}
+
+// The human-readable name of this integration.
+func (o CloudIntegrationCloudWatchOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v *CloudIntegrationCloudWatch) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
+}
+
+// A list of namespaces that limit what we query from CloudWatch.
+func (o CloudIntegrationCloudWatchOutput) Namespaces() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *CloudIntegrationCloudWatch) pulumi.StringArrayOutput { return v.Namespaces }).(pulumi.StringArrayOutput)
+}
+
+// A regular expression that AWS tag key name must match (case-insensitively)
+// in order to be ingested.
+func (o CloudIntegrationCloudWatchOutput) PointTagFilterRegex() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CloudIntegrationCloudWatch) pulumi.StringPtrOutput { return v.PointTagFilterRegex }).(pulumi.StringPtrOutput)
+}
+
+// The external ID corresponding to the Role ARN.
+func (o CloudIntegrationCloudWatchOutput) RoleArn() pulumi.StringOutput {
+	return o.ApplyT(func(v *CloudIntegrationCloudWatch) pulumi.StringOutput { return v.RoleArn }).(pulumi.StringOutput)
+}
+
+// A value denoting which cloud service this service integrates with.
+func (o CloudIntegrationCloudWatchOutput) Service() pulumi.StringOutput {
+	return o.ApplyT(func(v *CloudIntegrationCloudWatch) pulumi.StringOutput { return v.Service }).(pulumi.StringOutput)
+}
+
+// How often, in minutes, to refresh the service.
+func (o CloudIntegrationCloudWatchOutput) ServiceRefreshRateInMinutes() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *CloudIntegrationCloudWatch) pulumi.IntPtrOutput { return v.ServiceRefreshRateInMinutes }).(pulumi.IntPtrOutput)
+}
+
+// A string->string map of allow list of volume tag-value pairs (in AWS).
+// If the volume's AWS tags match this allow list, CloudWatch data about this volume is ingested.
+// Multiple entries are OR'ed.
+func (o CloudIntegrationCloudWatchOutput) VolumeSelectionTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *CloudIntegrationCloudWatch) pulumi.StringMapOutput { return v.VolumeSelectionTags }).(pulumi.StringMapOutput)
+}
+
 type CloudIntegrationCloudWatchArrayOutput struct{ *pulumi.OutputState }
 
 func (CloudIntegrationCloudWatchArrayOutput) ElementType() reflect.Type {

@@ -183,7 +183,7 @@ export class CloudIntegrationAppDynamics extends pulumi.CustomResource {
             resourceInputs["enableOverallPerfMetrics"] = args ? args.enableOverallPerfMetrics : undefined;
             resourceInputs["enableRollup"] = args ? args.enableRollup : undefined;
             resourceInputs["enableServiceEndpointMetrics"] = args ? args.enableServiceEndpointMetrics : undefined;
-            resourceInputs["encryptedPassword"] = args ? args.encryptedPassword : undefined;
+            resourceInputs["encryptedPassword"] = args?.encryptedPassword ? pulumi.secret(args.encryptedPassword) : undefined;
             resourceInputs["forceSave"] = args ? args.forceSave : undefined;
             resourceInputs["name"] = args ? args.name : undefined;
             resourceInputs["service"] = args ? args.service : undefined;
@@ -191,6 +191,8 @@ export class CloudIntegrationAppDynamics extends pulumi.CustomResource {
             resourceInputs["userName"] = args ? args.userName : undefined;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+        const secretOpts = { additionalSecretOutputs: ["encryptedPassword"] };
+        opts = pulumi.mergeOptions(opts, secretOpts);
         super(CloudIntegrationAppDynamics.__pulumiType, name, resourceInputs, opts);
     }
 }

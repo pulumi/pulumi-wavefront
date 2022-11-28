@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Wavefront.Inputs
 {
 
-    public sealed class DashboardSectionRowGetArgs : Pulumi.ResourceArgs
+    public sealed class DashboardSectionRowGetArgs : global::Pulumi.ResourceArgs
     {
         [Input("charts", required: true)]
         private InputList<Inputs.DashboardSectionRowChartGetArgs>? _charts;
@@ -27,5 +27,6 @@ namespace Pulumi.Wavefront.Inputs
         public DashboardSectionRowGetArgs()
         {
         }
+        public static new DashboardSectionRowGetArgs Empty => new DashboardSectionRowGetArgs();
     }
 }

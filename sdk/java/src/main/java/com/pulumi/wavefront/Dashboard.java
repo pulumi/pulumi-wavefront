@@ -21,6 +21,83 @@ import javax.annotation.Nullable;
 /**
  * Provides a Wavefront Dashboard resource.  This allows dashboards to be created, updated, and deleted.
  * 
+ * ## Example Usage
+ * 
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.wavefront.User;
+ * import com.pulumi.wavefront.UserArgs;
+ * import com.pulumi.wavefront.Dashboard;
+ * import com.pulumi.wavefront.DashboardArgs;
+ * import com.pulumi.wavefront.inputs.DashboardSectionArgs;
+ * import com.pulumi.wavefront.inputs.DashboardParameterDetailArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var basic = new User(&#34;basic&#34;, UserArgs.builder()        
+ *             .email(&#34;test+tftesting@example.com&#34;)
+ *             .groups(            
+ *                 &#34;agent_management&#34;,
+ *                 &#34;alerts_management&#34;)
+ *             .build());
+ * 
+ *         var testDashboard = new Dashboard(&#34;testDashboard&#34;, DashboardArgs.builder()        
+ *             .description(&#34;testing, testing&#34;)
+ *             .url(&#34;tftestcreate&#34;)
+ *             .displaySectionTableOfContents(true)
+ *             .displayQueryParameters(true)
+ *             .canViews(basic.id())
+ *             .sections(DashboardSectionArgs.builder()
+ *                 .name(&#34;section 1&#34;)
+ *                 .rows(DashboardSectionRowArgs.builder()
+ *                     .charts(DashboardSectionRowChartArgs.builder()
+ *                         .name(&#34;chart 1&#34;)
+ *                         .description(&#34;chart number 1&#34;)
+ *                         .units(&#34;something per unit&#34;)
+ *                         .sources(DashboardSectionRowChartSourceArgs.builder()
+ *                             .name(&#34;source name&#34;)
+ *                             .query(&#34;ts()&#34;)
+ *                             .build())
+ *                         .chartSetting(DashboardSectionRowChartChartSettingArgs.builder()
+ *                             .type(&#34;linear&#34;)
+ *                             .build())
+ *                         .summarization(&#34;MEAN&#34;)
+ *                         .build())
+ *                     .build())
+ *                 .build())
+ *             .parameterDetails(DashboardParameterDetailArgs.builder()
+ *                 .name(&#34;param1&#34;)
+ *                 .label(&#34;param1&#34;)
+ *                 .defaultValue(&#34;Label&#34;)
+ *                 .hideFromView(false)
+ *                 .parameterType(&#34;SIMPLE&#34;)
+ *                 .valuesToReadableStrings(Map.of(&#34;Label&#34;, &#34;test&#34;))
+ *                 .build())
+ *             .tags(            
+ *                 &#34;b&#34;,
+ *                 &#34;terraform&#34;,
+ *                 &#34;a&#34;,
+ *                 &#34;test&#34;)
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
+ * 
  * ## Import
  * 
  * Dashboards can be imported by using the `id`, e.g.

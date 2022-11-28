@@ -15,20 +15,18 @@ namespace Pulumi.Wavefront
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Wavefront = Pulumi.Wavefront;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var basic = new Wavefront.User("basic", new()
     ///     {
-    ///         var basic = new Wavefront.User("basic", new Wavefront.UserArgs
-    ///         {
-    ///             Email = "test+tftesting@example.com",
-    ///         });
-    ///     }
+    ///         Email = "test+tftesting@example.com",
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -40,7 +38,7 @@ namespace Pulumi.Wavefront
     /// ```
     /// </summary>
     [WavefrontResourceType("wavefront:index/user:User")]
-    public partial class User : Pulumi.CustomResource
+    public partial class User : global::Pulumi.CustomResource
     {
         [Output("customer")]
         public Output<string> Customer { get; private set; } = null!;
@@ -109,7 +107,7 @@ namespace Pulumi.Wavefront
         }
     }
 
-    public sealed class UserArgs : Pulumi.ResourceArgs
+    public sealed class UserArgs : global::Pulumi.ResourceArgs
     {
         [Input("customer")]
         public Input<string>? Customer { get; set; }
@@ -149,9 +147,10 @@ namespace Pulumi.Wavefront
         public UserArgs()
         {
         }
+        public static new UserArgs Empty => new UserArgs();
     }
 
-    public sealed class UserState : Pulumi.ResourceArgs
+    public sealed class UserState : global::Pulumi.ResourceArgs
     {
         [Input("customer")]
         public Input<string>? Customer { get; set; }
@@ -191,5 +190,6 @@ namespace Pulumi.Wavefront
         public UserState()
         {
         }
+        public static new UserState Empty => new UserState();
     }
 }

@@ -15,21 +15,19 @@ namespace Pulumi.Wavefront
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Wavefront = Pulumi.Wavefront;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var basic = new Wavefront.ExternalLink("basic", new()
     ///     {
-    ///         var basic = new Wavefront.ExternalLink("basic", new Wavefront.ExternalLinkArgs
-    ///         {
-    ///             Description = "An external link description",
-    ///             Template = "https://example.com/source={{{source}}}&amp;startTime={{startEpochMillis}}",
-    ///         });
-    ///     }
+    ///         Description = "An external link description",
+    ///         Template = "https://example.com/source={{{source}}}&amp;startTime={{startEpochMillis}}",
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -41,7 +39,7 @@ namespace Pulumi.Wavefront
     /// ```
     /// </summary>
     [WavefrontResourceType("wavefront:index/externalLink:ExternalLink")]
-    public partial class ExternalLink : Pulumi.CustomResource
+    public partial class ExternalLink : global::Pulumi.CustomResource
     {
         /// <summary>
         /// Human-readable description for this link.
@@ -132,7 +130,7 @@ namespace Pulumi.Wavefront
         }
     }
 
-    public sealed class ExternalLinkArgs : Pulumi.ResourceArgs
+    public sealed class ExternalLinkArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Human-readable description for this link.
@@ -188,9 +186,10 @@ namespace Pulumi.Wavefront
         public ExternalLinkArgs()
         {
         }
+        public static new ExternalLinkArgs Empty => new ExternalLinkArgs();
     }
 
-    public sealed class ExternalLinkState : Pulumi.ResourceArgs
+    public sealed class ExternalLinkState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Human-readable description for this link.
@@ -246,5 +245,6 @@ namespace Pulumi.Wavefront
         public ExternalLinkState()
         {
         }
+        public static new ExternalLinkState Empty => new ExternalLinkState();
     }
 }

@@ -22,6 +22,42 @@ import javax.annotation.Nullable;
  * Provides a wavefront Alert Target resource. This allows alert targets to created, updated, and deleted.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.wavefront.AlertTarget;
+ * import com.pulumi.wavefront.AlertTargetArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testTarget = new AlertTarget(&#34;testTarget&#34;, AlertTargetArgs.builder()        
+ *             .contentType(&#34;application/json&#34;)
+ *             .customHeaders(Map.of(&#34;Testing&#34;, &#34;true&#34;))
+ *             .description(&#34;Test target&#34;)
+ *             .method(&#34;WEBHOOK&#34;)
+ *             .recipient(&#34;https://hooks.slack.com/services/test/me&#34;)
+ *             .template(&#34;{}&#34;)
+ *             .triggers(            
+ *                 &#34;ALERT_OPENED&#34;,
+ *                 &#34;ALERT_RESOLVED&#34;)
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * ## Attributes Reference
  * 
  * * `target_id` - The target ID prefixed with `target:` for interpolating into a Wavefront Alert.
@@ -37,6 +73,60 @@ import javax.annotation.Nullable;
  *   (e.g. `env prod`)
  * 
  * ### Example
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.wavefront.AlertTarget;
+ * import com.pulumi.wavefront.AlertTargetArgs;
+ * import com.pulumi.wavefront.inputs.AlertTargetRouteArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testTarget = new AlertTarget(&#34;testTarget&#34;, AlertTargetArgs.builder()        
+ *             .contentType(&#34;application/json&#34;)
+ *             .customHeaders(Map.of(&#34;Testing&#34;, &#34;true&#34;))
+ *             .description(&#34;Test target&#34;)
+ *             .method(&#34;WEBHOOK&#34;)
+ *             .recipient(&#34;https://hooks.slack.com/services/test/me&#34;)
+ *             .routes(            
+ *                 AlertTargetRouteArgs.builder()
+ *                     .filter(Map.ofEntries(
+ *                         Map.entry(&#34;key&#34;, &#34;env&#34;),
+ *                         Map.entry(&#34;value&#34;, &#34;prod&#34;)
+ *                     ))
+ *                     .method(&#34;WEBHOOK&#34;)
+ *                     .target(&#34;https://hooks.slack.com/services/test/me/prod&#34;)
+ *                     .build(),
+ *                 AlertTargetRouteArgs.builder()
+ *                     .filter(Map.ofEntries(
+ *                         Map.entry(&#34;key&#34;, &#34;env&#34;),
+ *                         Map.entry(&#34;value&#34;, &#34;dev&#34;)
+ *                     ))
+ *                     .method(&#34;WEBHOOK&#34;)
+ *                     .target(&#34;https://hooks.slack.com/services/test/me/dev&#34;)
+ *                     .build())
+ *             .template(&#34;{}&#34;)
+ *             .triggers(            
+ *                 &#34;ALERT_OPENED&#34;,
+ *                 &#34;ALERT_RESOLVED&#34;)
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

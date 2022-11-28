@@ -23,6 +23,38 @@ import javax.annotation.Nullable;
  * integrations to be created, updated, and deleted.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.wavefront.CloudIntegrationGcp;
+ * import com.pulumi.wavefront.CloudIntegrationGcpArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var gcp = new CloudIntegrationGcp(&#34;gcp&#34;, CloudIntegrationGcpArgs.builder()        
+ *             .jsonKey(&#34;&#34;&#34;
+ * {...your gcp key ...}
+ * 
+ *             &#34;&#34;&#34;)
+ *             .projectId(&#34;example-gcp-project&#34;)
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 
@@ -204,6 +236,9 @@ public class CloudIntegrationGcp extends com.pulumi.resources.CustomResource {
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
+            .additionalSecretOutputs(List.of(
+                "jsonKey"
+            ))
             .build();
         return com.pulumi.resources.CustomResourceOptions.merge(defaultOptions, options, id);
     }

@@ -296,6 +296,64 @@ func (o DashboardOutput) ToDashboardOutputWithContext(ctx context.Context) Dashb
 	return o
 }
 
+// A list of users that have modify ACL access to the dashboard.
+func (o DashboardOutput) CanModifies() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *Dashboard) pulumi.StringArrayOutput { return v.CanModifies }).(pulumi.StringArrayOutput)
+}
+
+// A list of users that have view ACL access to the dashboard.
+func (o DashboardOutput) CanViews() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *Dashboard) pulumi.StringArrayOutput { return v.CanViews }).(pulumi.StringArrayOutput)
+}
+
+// Human-readable description of the dashboard.
+func (o DashboardOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v *Dashboard) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+}
+
+// Whether the dashboard parameters section is opened by default when the dashboard
+// is shown.
+func (o DashboardOutput) DisplayQueryParameters() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *Dashboard) pulumi.BoolPtrOutput { return v.DisplayQueryParameters }).(pulumi.BoolPtrOutput)
+}
+
+// Whether the "pills" quick-linked the sections of the dashboard are
+// displayed by default when the dashboard is shown.
+func (o DashboardOutput) DisplaySectionTableOfContents() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *Dashboard) pulumi.BoolPtrOutput { return v.DisplaySectionTableOfContents }).(pulumi.BoolPtrOutput)
+}
+
+// How charts belonging to this dashboard should display events. `BYCHART` is default if
+// unspecified. Valid options are: `BYCHART`, `AUTOMATIC`, `ALL`, `NONE`, `BYDASHBOARD`, and `BYCHARTANDDASHBOARD`.
+func (o DashboardOutput) EventFilterType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Dashboard) pulumi.StringPtrOutput { return v.EventFilterType }).(pulumi.StringPtrOutput)
+}
+
+// Name of the dashboard.
+func (o DashboardOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v *Dashboard) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
+}
+
+// The current JSON representation of dashboard parameters. See parameter details.
+func (o DashboardOutput) ParameterDetails() DashboardParameterDetailArrayOutput {
+	return o.ApplyT(func(v *Dashboard) DashboardParameterDetailArrayOutput { return v.ParameterDetails }).(DashboardParameterDetailArrayOutput)
+}
+
+// Dashboard chart sections. See dashboard sections.
+func (o DashboardOutput) Sections() DashboardSectionArrayOutput {
+	return o.ApplyT(func(v *Dashboard) DashboardSectionArrayOutput { return v.Sections }).(DashboardSectionArrayOutput)
+}
+
+// A set of tags to assign to this resource.
+func (o DashboardOutput) Tags() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *Dashboard) pulumi.StringArrayOutput { return v.Tags }).(pulumi.StringArrayOutput)
+}
+
+// Unique identifier, also a URL slug of the dashboard.
+func (o DashboardOutput) Url() pulumi.StringOutput {
+	return o.ApplyT(func(v *Dashboard) pulumi.StringOutput { return v.Url }).(pulumi.StringOutput)
+}
+
 type DashboardArrayOutput struct{ *pulumi.OutputState }
 
 func (DashboardArrayOutput) ElementType() reflect.Type {

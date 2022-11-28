@@ -44,20 +44,22 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &CloudIntegrationGcpBilling{}
 	case "wavefront:index/cloudIntegrationNewRelic:CloudIntegrationNewRelic":
 		r = &CloudIntegrationNewRelic{}
-	case "wavefront:index/cloudIntegrationTesla:CloudIntegrationTesla":
-		r = &CloudIntegrationTesla{}
 	case "wavefront:index/dashboard:Dashboard":
 		r = &Dashboard{}
 	case "wavefront:index/dashboardJson:DashboardJson":
 		r = &DashboardJson{}
 	case "wavefront:index/derivedMetric:DerivedMetric":
 		r = &DerivedMetric{}
+	case "wavefront:index/event:Event":
+		r = &Event{}
 	case "wavefront:index/externalLink:ExternalLink":
 		r = &ExternalLink{}
 	case "wavefront:index/ingestionPolicy:IngestionPolicy":
 		r = &IngestionPolicy{}
 	case "wavefront:index/maintenanceWindow:MaintenanceWindow":
 		r = &MaintenanceWindow{}
+	case "wavefront:index/metricsPolicy:MetricsPolicy":
+		r = &MetricsPolicy{}
 	case "wavefront:index/role:Role":
 		r = &Role{}
 	case "wavefront:index/serviceAccount:ServiceAccount":
@@ -156,11 +158,6 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"wavefront",
-		"index/cloudIntegrationTesla",
-		&module{version},
-	)
-	pulumi.RegisterResourceModule(
-		"wavefront",
 		"index/dashboard",
 		&module{version},
 	)
@@ -176,6 +173,11 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"wavefront",
+		"index/event",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"wavefront",
 		"index/externalLink",
 		&module{version},
 	)
@@ -187,6 +189,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"wavefront",
 		"index/maintenanceWindow",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"wavefront",
+		"index/metricsPolicy",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

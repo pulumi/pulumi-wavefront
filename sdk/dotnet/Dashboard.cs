@@ -21,7 +21,7 @@ namespace Pulumi.Wavefront
     /// ```
     /// </summary>
     [WavefrontResourceType("wavefront:index/dashboard:Dashboard")]
-    public partial class Dashboard : Pulumi.CustomResource
+    public partial class Dashboard : global::Pulumi.CustomResource
     {
         /// <summary>
         /// A list of users that have modify ACL access to the dashboard.
@@ -136,7 +136,7 @@ namespace Pulumi.Wavefront
         }
     }
 
-    public sealed class DashboardArgs : Pulumi.ResourceArgs
+    public sealed class DashboardArgs : global::Pulumi.ResourceArgs
     {
         [Input("canModifies")]
         private InputList<string>? _canModifies;
@@ -240,9 +240,10 @@ namespace Pulumi.Wavefront
         public DashboardArgs()
         {
         }
+        public static new DashboardArgs Empty => new DashboardArgs();
     }
 
-    public sealed class DashboardState : Pulumi.ResourceArgs
+    public sealed class DashboardState : global::Pulumi.ResourceArgs
     {
         [Input("canModifies")]
         private InputList<string>? _canModifies;
@@ -346,5 +347,6 @@ namespace Pulumi.Wavefront
         public DashboardState()
         {
         }
+        public static new DashboardState Empty => new DashboardState();
     }
 }
