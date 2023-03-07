@@ -123,7 +123,7 @@ export class Alert extends pulumi.CustomResource {
      */
     public readonly resolveAfterMinutes!: pulumi.Output<number | undefined>;
     /**
-     * - Severity of the alert, valid values are `INFO`, `SMOKE`, `WARN`, `SEVERE`.
+     * Severity of the alert, valid values are `INFO`, `SMOKE`, `WARN`, `SEVERE`.
      */
     public readonly severity!: pulumi.Output<string>;
     /**
@@ -264,7 +264,7 @@ export interface AlertState {
      */
     resolveAfterMinutes?: pulumi.Input<number>;
     /**
-     * - Severity of the alert, valid values are `INFO`, `SMOKE`, `WARN`, `SEVERE`.
+     * Severity of the alert, valid values are `INFO`, `SMOKE`, `WARN`, `SEVERE`.
      */
     severity?: pulumi.Input<string>;
     /**
@@ -347,7 +347,7 @@ export interface AlertArgs {
      */
     resolveAfterMinutes?: pulumi.Input<number>;
     /**
-     * - Severity of the alert, valid values are `INFO`, `SMOKE`, `WARN`, `SEVERE`.
+     * Severity of the alert, valid values are `INFO`, `SMOKE`, `WARN`, `SEVERE`.
      */
     severity?: pulumi.Input<string>;
     /**

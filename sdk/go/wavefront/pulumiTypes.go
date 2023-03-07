@@ -1550,7 +1550,7 @@ type MetricsPolicyPolicyRule struct {
 	Name string `pulumi:"name"`
 	// List of prefixes to match metrics on. You can specify the full metric name or use a wildcard character in metric names, sources, or point tags. The wildcard character alone (*) means all metrics.
 	Prefixes []string `pulumi:"prefixes"`
-	// -(Optional) List of role ids to apply Metrics Policy to. Must have at least one associated account_id, user_group_id, or role_id.
+	// List of role ids to apply Metrics Policy to. Must have at least one associated account_id, user_group_id, or role_id.
 	RoleIds []string `pulumi:"roleIds"`
 	// List of Key/Value tags to select target metrics for policy.
 	Tags []MetricsPolicyPolicyRuleTag `pulumi:"tags"`
@@ -1582,7 +1582,7 @@ type MetricsPolicyPolicyRuleArgs struct {
 	Name pulumi.StringInput `pulumi:"name"`
 	// List of prefixes to match metrics on. You can specify the full metric name or use a wildcard character in metric names, sources, or point tags. The wildcard character alone (*) means all metrics.
 	Prefixes pulumi.StringArrayInput `pulumi:"prefixes"`
-	// -(Optional) List of role ids to apply Metrics Policy to. Must have at least one associated account_id, user_group_id, or role_id.
+	// List of role ids to apply Metrics Policy to. Must have at least one associated account_id, user_group_id, or role_id.
 	RoleIds pulumi.StringArrayInput `pulumi:"roleIds"`
 	// List of Key/Value tags to select target metrics for policy.
 	Tags MetricsPolicyPolicyRuleTagArrayInput `pulumi:"tags"`
@@ -1668,7 +1668,7 @@ func (o MetricsPolicyPolicyRuleOutput) Prefixes() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v MetricsPolicyPolicyRule) []string { return v.Prefixes }).(pulumi.StringArrayOutput)
 }
 
-// -(Optional) List of role ids to apply Metrics Policy to. Must have at least one associated account_id, user_group_id, or role_id.
+// List of role ids to apply Metrics Policy to. Must have at least one associated account_id, user_group_id, or role_id.
 func (o MetricsPolicyPolicyRuleOutput) RoleIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v MetricsPolicyPolicyRule) []string { return v.RoleIds }).(pulumi.StringArrayOutput)
 }
@@ -2017,7 +2017,8 @@ func (o GetAlertInMaintenanceHostLabelPairArrayOutput) Index(i pulumi.IntInput) 
 type GetAlertsAlert struct {
 	// User-supplied additional explanatory information about this alert.
 	AdditionalInformation string `pulumi:"additionalInformation"`
-	AlertType             string `pulumi:"alertType"`
+	// The type of alert in Wavefront.
+	AlertType string `pulumi:"alertType"`
 	// A list of users or groups that can modify the alert.
 	CanModifies []string `pulumi:"canModifies"`
 	// A list of users or groups that can view the alert.
@@ -2033,7 +2034,6 @@ type GetAlertsAlert struct {
 	// A list of failing host label pairs.
 	FailingHostLabelPairs []GetAlertsAlertFailingHostLabelPair `pulumi:"failingHostLabelPairs"`
 	// The ID of the alert in Wavefront.
-	// * `alertType`- The type of alert in Wavefront.
 	Id string `pulumi:"id"`
 	// A list of in maintenance host label pairs.
 	InMaintenanceHostLabelPairs []GetAlertsAlertInMaintenanceHostLabelPair `pulumi:"inMaintenanceHostLabelPairs"`
@@ -2076,7 +2076,8 @@ type GetAlertsAlertInput interface {
 type GetAlertsAlertArgs struct {
 	// User-supplied additional explanatory information about this alert.
 	AdditionalInformation pulumi.StringInput `pulumi:"additionalInformation"`
-	AlertType             pulumi.StringInput `pulumi:"alertType"`
+	// The type of alert in Wavefront.
+	AlertType pulumi.StringInput `pulumi:"alertType"`
 	// A list of users or groups that can modify the alert.
 	CanModifies pulumi.StringArrayInput `pulumi:"canModifies"`
 	// A list of users or groups that can view the alert.
@@ -2092,7 +2093,6 @@ type GetAlertsAlertArgs struct {
 	// A list of failing host label pairs.
 	FailingHostLabelPairs GetAlertsAlertFailingHostLabelPairArrayInput `pulumi:"failingHostLabelPairs"`
 	// The ID of the alert in Wavefront.
-	// * `alertType`- The type of alert in Wavefront.
 	Id pulumi.StringInput `pulumi:"id"`
 	// A list of in maintenance host label pairs.
 	InMaintenanceHostLabelPairs GetAlertsAlertInMaintenanceHostLabelPairArrayInput `pulumi:"inMaintenanceHostLabelPairs"`
@@ -2177,6 +2177,7 @@ func (o GetAlertsAlertOutput) AdditionalInformation() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAlertsAlert) string { return v.AdditionalInformation }).(pulumi.StringOutput)
 }
 
+// The type of alert in Wavefront.
 func (o GetAlertsAlertOutput) AlertType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAlertsAlert) string { return v.AlertType }).(pulumi.StringOutput)
 }
@@ -2217,7 +2218,6 @@ func (o GetAlertsAlertOutput) FailingHostLabelPairs() GetAlertsAlertFailingHostL
 }
 
 // The ID of the alert in Wavefront.
-// * `alertType`- The type of alert in Wavefront.
 func (o GetAlertsAlertOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAlertsAlert) string { return v.Id }).(pulumi.StringOutput)
 }
@@ -5448,7 +5448,6 @@ type GetDerivedMetricsDerivedMetric struct {
 	// A list of hosts used in the derived metric.
 	HostsUseds []string `pulumi:"hostsUseds"`
 	// The ID of the derived metric in Wavefront.
-	// * `query`- A Wavefront query that is evaluated at regular intervals (default is 1 minute).
 	Id string `pulumi:"id"`
 	// A Boolean variable indicating trash status.
 	InTrash bool `pulumi:"inTrash"`
@@ -5461,9 +5460,9 @@ type GetDerivedMetricsDerivedMetric struct {
 	// The last processed timestamp.
 	LastProcessedMillis int `pulumi:"lastProcessedMillis"`
 	// The timestamp indicating the last time the query was executed.
-	// * `metricsUsed` -A list of metrics used in the derived metric.
-	LastQueryTime int      `pulumi:"lastQueryTime"`
-	MetricsUseds  []string `pulumi:"metricsUseds"`
+	LastQueryTime int `pulumi:"lastQueryTime"`
+	// A list of metrics used in the derived metric.
+	MetricsUseds []string `pulumi:"metricsUseds"`
 	// How frequently the query generating the derived metric is run.
 	Minutes int `pulumi:"minutes"`
 	// The name of the derived metric in Wavefront.
@@ -5471,8 +5470,9 @@ type GetDerivedMetricsDerivedMetric struct {
 	// The number of points scanned when the last query was executed.
 	PointsScannedAtLastQuery int `pulumi:"pointsScannedAtLastQuery"`
 	// The specified query is executed every `processRateMinutes` minutes.
-	ProcessRateMinutes int    `pulumi:"processRateMinutes"`
-	Query              string `pulumi:"query"`
+	ProcessRateMinutes int `pulumi:"processRateMinutes"`
+	// A Wavefront query that is evaluated at regular intervals (default is 1 minute).
+	Query string `pulumi:"query"`
 	// A Boolean variable indicating whether query is failing for the derived metric.
 	QueryFailing bool `pulumi:"queryFailing"`
 	// A Boolean flag for enabling `queryQb`
@@ -5510,7 +5510,6 @@ type GetDerivedMetricsDerivedMetricArgs struct {
 	// A list of hosts used in the derived metric.
 	HostsUseds pulumi.StringArrayInput `pulumi:"hostsUseds"`
 	// The ID of the derived metric in Wavefront.
-	// * `query`- A Wavefront query that is evaluated at regular intervals (default is 1 minute).
 	Id pulumi.StringInput `pulumi:"id"`
 	// A Boolean variable indicating trash status.
 	InTrash pulumi.BoolInput `pulumi:"inTrash"`
@@ -5523,9 +5522,9 @@ type GetDerivedMetricsDerivedMetricArgs struct {
 	// The last processed timestamp.
 	LastProcessedMillis pulumi.IntInput `pulumi:"lastProcessedMillis"`
 	// The timestamp indicating the last time the query was executed.
-	// * `metricsUsed` -A list of metrics used in the derived metric.
-	LastQueryTime pulumi.IntInput         `pulumi:"lastQueryTime"`
-	MetricsUseds  pulumi.StringArrayInput `pulumi:"metricsUseds"`
+	LastQueryTime pulumi.IntInput `pulumi:"lastQueryTime"`
+	// A list of metrics used in the derived metric.
+	MetricsUseds pulumi.StringArrayInput `pulumi:"metricsUseds"`
 	// How frequently the query generating the derived metric is run.
 	Minutes pulumi.IntInput `pulumi:"minutes"`
 	// The name of the derived metric in Wavefront.
@@ -5533,8 +5532,9 @@ type GetDerivedMetricsDerivedMetricArgs struct {
 	// The number of points scanned when the last query was executed.
 	PointsScannedAtLastQuery pulumi.IntInput `pulumi:"pointsScannedAtLastQuery"`
 	// The specified query is executed every `processRateMinutes` minutes.
-	ProcessRateMinutes pulumi.IntInput    `pulumi:"processRateMinutes"`
-	Query              pulumi.StringInput `pulumi:"query"`
+	ProcessRateMinutes pulumi.IntInput `pulumi:"processRateMinutes"`
+	// A Wavefront query that is evaluated at regular intervals (default is 1 minute).
+	Query pulumi.StringInput `pulumi:"query"`
 	// A Boolean variable indicating whether query is failing for the derived metric.
 	QueryFailing pulumi.BoolInput `pulumi:"queryFailing"`
 	// A Boolean flag for enabling `queryQb`
@@ -5626,7 +5626,6 @@ func (o GetDerivedMetricsDerivedMetricOutput) HostsUseds() pulumi.StringArrayOut
 }
 
 // The ID of the derived metric in Wavefront.
-// * `query`- A Wavefront query that is evaluated at regular intervals (default is 1 minute).
 func (o GetDerivedMetricsDerivedMetricOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDerivedMetricsDerivedMetric) string { return v.Id }).(pulumi.StringOutput)
 }
@@ -5657,11 +5656,11 @@ func (o GetDerivedMetricsDerivedMetricOutput) LastProcessedMillis() pulumi.IntOu
 }
 
 // The timestamp indicating the last time the query was executed.
-// * `metricsUsed` -A list of metrics used in the derived metric.
 func (o GetDerivedMetricsDerivedMetricOutput) LastQueryTime() pulumi.IntOutput {
 	return o.ApplyT(func(v GetDerivedMetricsDerivedMetric) int { return v.LastQueryTime }).(pulumi.IntOutput)
 }
 
+// A list of metrics used in the derived metric.
 func (o GetDerivedMetricsDerivedMetricOutput) MetricsUseds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetDerivedMetricsDerivedMetric) []string { return v.MetricsUseds }).(pulumi.StringArrayOutput)
 }
@@ -5686,6 +5685,7 @@ func (o GetDerivedMetricsDerivedMetricOutput) ProcessRateMinutes() pulumi.IntOut
 	return o.ApplyT(func(v GetDerivedMetricsDerivedMetric) int { return v.ProcessRateMinutes }).(pulumi.IntOutput)
 }
 
+// A Wavefront query that is evaluated at regular intervals (default is 1 minute).
 func (o GetDerivedMetricsDerivedMetricOutput) Query() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDerivedMetricsDerivedMetric) string { return v.Query }).(pulumi.StringOutput)
 }
@@ -5747,15 +5747,15 @@ type GetEventsEvent struct {
 	Details    string `pulumi:"details"`
 	EndtimeKey int    `pulumi:"endtimeKey"`
 	// The ID of the event in Wavefront.
-	// * `startTime`- The start time of the event in epoch milliseconds.
 	Id string `pulumi:"id"`
 	// A Boolean flag. If set to `true`, creates a point-in-time event (i.e. with no duration).
 	IsEphemeral bool `pulumi:"isEphemeral"`
 	// The name of the event in Wavefront.
 	Name string `pulumi:"name"`
 	// The severity category of the event.
-	Severity  string `pulumi:"severity"`
-	StartTime int    `pulumi:"startTime"`
+	Severity string `pulumi:"severity"`
+	// The start time of the event in epoch milliseconds.
+	StartTime int `pulumi:"startTime"`
 	// A set of tags assigned to the event.
 	Tags []string `pulumi:"tags"`
 	// The type of the event.
@@ -5780,15 +5780,15 @@ type GetEventsEventArgs struct {
 	Details    pulumi.StringInput `pulumi:"details"`
 	EndtimeKey pulumi.IntInput    `pulumi:"endtimeKey"`
 	// The ID of the event in Wavefront.
-	// * `startTime`- The start time of the event in epoch milliseconds.
 	Id pulumi.StringInput `pulumi:"id"`
 	// A Boolean flag. If set to `true`, creates a point-in-time event (i.e. with no duration).
 	IsEphemeral pulumi.BoolInput `pulumi:"isEphemeral"`
 	// The name of the event in Wavefront.
 	Name pulumi.StringInput `pulumi:"name"`
 	// The severity category of the event.
-	Severity  pulumi.StringInput `pulumi:"severity"`
-	StartTime pulumi.IntInput    `pulumi:"startTime"`
+	Severity pulumi.StringInput `pulumi:"severity"`
+	// The start time of the event in epoch milliseconds.
+	StartTime pulumi.IntInput `pulumi:"startTime"`
 	// A set of tags assigned to the event.
 	Tags pulumi.StringArrayInput `pulumi:"tags"`
 	// The type of the event.
@@ -5861,7 +5861,6 @@ func (o GetEventsEventOutput) EndtimeKey() pulumi.IntOutput {
 }
 
 // The ID of the event in Wavefront.
-// * `startTime`- The start time of the event in epoch milliseconds.
 func (o GetEventsEventOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetEventsEvent) string { return v.Id }).(pulumi.StringOutput)
 }
@@ -5881,6 +5880,7 @@ func (o GetEventsEventOutput) Severity() pulumi.StringOutput {
 	return o.ApplyT(func(v GetEventsEvent) string { return v.Severity }).(pulumi.StringOutput)
 }
 
+// The start time of the event in epoch milliseconds.
 func (o GetEventsEventOutput) StartTime() pulumi.IntOutput {
 	return o.ApplyT(func(v GetEventsEvent) int { return v.StartTime }).(pulumi.IntOutput)
 }
@@ -6816,6 +6816,7 @@ func (o GetUserGroupsUserGroupArrayOutput) Index(i pulumi.IntInput) GetUserGroup
 }
 
 type GetUsersUser struct {
+	// The customer the user is associated with.
 	Customer string `pulumi:"customer"`
 	Email    string `pulumi:"email"`
 	// When the user last logged in to Wavefront.
@@ -6823,7 +6824,6 @@ type GetUsersUser struct {
 	// List of permissions granted to a user.
 	Permissions []string `pulumi:"permissions"`
 	// List of User Group Ids the user is a member of.
-	// * `customer`- The customer the user is associated with.
 	UserGroupIds []string `pulumi:"userGroupIds"`
 }
 
@@ -6839,6 +6839,7 @@ type GetUsersUserInput interface {
 }
 
 type GetUsersUserArgs struct {
+	// The customer the user is associated with.
 	Customer pulumi.StringInput `pulumi:"customer"`
 	Email    pulumi.StringInput `pulumi:"email"`
 	// When the user last logged in to Wavefront.
@@ -6846,7 +6847,6 @@ type GetUsersUserArgs struct {
 	// List of permissions granted to a user.
 	Permissions pulumi.StringArrayInput `pulumi:"permissions"`
 	// List of User Group Ids the user is a member of.
-	// * `customer`- The customer the user is associated with.
 	UserGroupIds pulumi.StringArrayInput `pulumi:"userGroupIds"`
 }
 
@@ -6901,6 +6901,7 @@ func (o GetUsersUserOutput) ToGetUsersUserOutputWithContext(ctx context.Context)
 	return o
 }
 
+// The customer the user is associated with.
 func (o GetUsersUserOutput) Customer() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUsersUser) string { return v.Customer }).(pulumi.StringOutput)
 }
@@ -6920,7 +6921,6 @@ func (o GetUsersUserOutput) Permissions() pulumi.StringArrayOutput {
 }
 
 // List of User Group Ids the user is a member of.
-// * `customer`- The customer the user is associated with.
 func (o GetUsersUserOutput) UserGroupIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetUsersUser) []string { return v.UserGroupIds }).(pulumi.StringArrayOutput)
 }

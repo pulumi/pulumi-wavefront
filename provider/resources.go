@@ -20,9 +20,11 @@ import (
 	"unicode"
 
 	"github.com/pulumi/pulumi-terraform-bridge/v3/pkg/tfbridge"
+	"github.com/pulumi/pulumi-terraform-bridge/v3/pkg/tfbridge/x"
 	shimv2 "github.com/pulumi/pulumi-terraform-bridge/v3/pkg/tfshim/sdk-v2"
 	"github.com/pulumi/pulumi-wavefront/provider/pkg/version"
 	"github.com/pulumi/pulumi/sdk/v3/go/common/tokens"
+	"github.com/pulumi/pulumi/sdk/v3/go/common/util/contract"
 	"github.com/vmware/terraform-provider-wavefront/wavefront"
 )
 
@@ -110,26 +112,32 @@ func Provider() tfbridge.ProviderInfo {
 			"wavefront_ingestion_policy":   {Tok: makeResource(mainMod, "IngestionPolicy")},
 		},
 		DataSources: map[string]*tfbridge.DataSourceInfo{
-			"wavefront_alert":                  {Tok: makeDataSource(mainMod, "getAlert")},
-			"wavefront_alerts":                 {Tok: makeDataSource(mainMod, "getAlerts")},
-			"wavefront_dashboard":              {Tok: makeDataSource(mainMod, "getDashboard")},
-			"wavefront_dashboards":             {Tok: makeDataSource(mainMod, "getDashboards")},
-			"wavefront_default_user_group":     {Tok: makeDataSource(mainMod, "getDefaultUserGroup")},
-			"wavefront_derived_metric":         {Tok: makeDataSource(mainMod, "getDerivedMetric")},
-			"wavefront_derived_metrics":        {Tok: makeDataSource(mainMod, "getDerivedMetrics")},
-			"wavefront_event":                  {Tok: makeDataSource(mainMod, "getEvent")},
-			"wavefront_events":                 {Tok: makeDataSource(mainMod, "getEvents")},
-			"wavefront_external_link":          {Tok: makeDataSource(mainMod, "getExternalLink")},
-			"wavefront_external_links":         {Tok: makeDataSource(mainMod, "getExternalLinks")},
-			"wavefront_maintenance_window":     {Tok: makeDataSource(mainMod, "getMaintenanceWindow")},
-			"wavefront_maintenance_window_all": {Tok: makeDataSource(mainMod, "getMaintenanceWindowAll")},
-			"wavefront_metrics_policy":         {Tok: makeDataSource(mainMod, "getMetricsPolicy")},
-			"wavefront_role":                   {Tok: makeDataSource(mainMod, "getRole")},
-			"wavefront_roles":                  {Tok: makeDataSource(mainMod, "getRoles")},
-			"wavefront_user":                   {Tok: makeDataSource(mainMod, "getUser")},
-			"wavefront_user_group":             {Tok: makeDataSource(mainMod, "getUserGroup")},
-			"wavefront_user_groups":            {Tok: makeDataSource(mainMod, "getUserGroups")},
-			"wavefront_users":                  {Tok: makeDataSource(mainMod, "getUsers")},
+			"wavefront_alert":              {Tok: makeDataSource(mainMod, "getAlert")},
+			"wavefront_alerts":             {Tok: makeDataSource(mainMod, "getAlerts")},
+			"wavefront_dashboard":          {Tok: makeDataSource(mainMod, "getDashboard")},
+			"wavefront_dashboards":         {Tok: makeDataSource(mainMod, "getDashboards")},
+			"wavefront_default_user_group": {Tok: makeDataSource(mainMod, "getDefaultUserGroup")},
+			"wavefront_derived_metric":     {Tok: makeDataSource(mainMod, "getDerivedMetric")},
+			"wavefront_derived_metrics":    {Tok: makeDataSource(mainMod, "getDerivedMetrics")},
+			"wavefront_event":              {Tok: makeDataSource(mainMod, "getEvent")},
+			"wavefront_events":             {Tok: makeDataSource(mainMod, "getEvents")},
+			"wavefront_external_link":      {Tok: makeDataSource(mainMod, "getExternalLink")},
+			"wavefront_external_links":     {Tok: makeDataSource(mainMod, "getExternalLinks")},
+			"wavefront_maintenance_window": {Tok: makeDataSource(mainMod, "getMaintenanceWindow")},
+			"wavefront_maintenance_window_all": {
+				Tok:  makeDataSource(mainMod, "getMaintenanceWindowAll"),
+				Docs: noUpstreamDocs,
+			},
+			"wavefront_metrics_policy": {
+				Tok:  makeDataSource(mainMod, "getMetricsPolicy"),
+				Docs: noUpstreamDocs,
+			},
+			"wavefront_role":        {Tok: makeDataSource(mainMod, "getRole")},
+			"wavefront_roles":       {Tok: makeDataSource(mainMod, "getRoles")},
+			"wavefront_user":        {Tok: makeDataSource(mainMod, "getUser")},
+			"wavefront_user_group":  {Tok: makeDataSource(mainMod, "getUserGroup")},
+			"wavefront_user_groups": {Tok: makeDataSource(mainMod, "getUserGroups")},
+			"wavefront_users":       {Tok: makeDataSource(mainMod, "getUsers")},
 		},
 		JavaScript: &tfbridge.JavaScriptInfo{
 			Dependencies: map[string]string{
@@ -164,7 +172,14 @@ func Provider() tfbridge.ProviderInfo {
 		},
 	}
 
+	err := x.ComputeDefaults(&prov, x.TokensSingleModule("wavefront_", mainMod,
+		x.MakeStandardToken(mainPkg)))
+	contract.AssertNoError(err)
 	prov.SetAutonaming(255, "-")
 
 	return prov
+}
+
+var noUpstreamDocs = &tfbridge.DocInfo{
+	Markdown: []byte(" "),
 }

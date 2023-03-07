@@ -26,7 +26,7 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err = wavefront.GetUserGroups(ctx, &GetUserGroupsArgs{
+//			_, err := wavefront.GetUserGroups(ctx, &wavefront.GetUserGroupsArgs{
 //				Limit:  pulumi.IntRef(10),
 //				Offset: pulumi.IntRef(0),
 //			}, nil)

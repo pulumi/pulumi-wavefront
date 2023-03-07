@@ -8,6 +8,30 @@ import (
 )
 
 // Use this data source to get all users in Wavefront.
+//
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := wavefront.GetUsers(ctx, nil, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 func GetUsers(ctx *pulumi.Context, opts ...pulumi.InvokeOption) (*GetUsersResult, error) {
 	var rv GetUsersResult
 	err := ctx.Invoke("wavefront:index/getUsers:getUsers", nil, &rv, opts...)

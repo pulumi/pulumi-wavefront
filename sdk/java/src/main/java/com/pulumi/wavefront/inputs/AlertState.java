@@ -221,14 +221,14 @@ public final class AlertState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * - Severity of the alert, valid values are `INFO`, `SMOKE`, `WARN`, `SEVERE`.
+     * Severity of the alert, valid values are `INFO`, `SMOKE`, `WARN`, `SEVERE`.
      * 
      */
     @Import(name="severity")
     private @Nullable Output<String> severity;
 
     /**
-     * @return - Severity of the alert, valid values are `INFO`, `SMOKE`, `WARN`, `SEVERE`.
+     * @return Severity of the alert, valid values are `INFO`, `SMOKE`, `WARN`, `SEVERE`.
      * 
      */
     public Optional<Output<String>> severity() {
@@ -618,7 +618,7 @@ public final class AlertState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param severity - Severity of the alert, valid values are `INFO`, `SMOKE`, `WARN`, `SEVERE`.
+         * @param severity Severity of the alert, valid values are `INFO`, `SMOKE`, `WARN`, `SEVERE`.
          * 
          * @return builder
          * 
@@ -629,7 +629,7 @@ public final class AlertState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param severity - Severity of the alert, valid values are `INFO`, `SMOKE`, `WARN`, `SEVERE`.
+         * @param severity Severity of the alert, valid values are `INFO`, `SMOKE`, `WARN`, `SEVERE`.
          * 
          * @return builder
          * 

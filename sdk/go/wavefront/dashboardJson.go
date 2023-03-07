@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pkg/errors"
+	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -20,8 +20,6 @@ import (
 //
 // import (
 //
-//	"fmt"
-//
 //	"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
@@ -30,106 +28,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := wavefront.NewDashboardJson(ctx, "testDashboardJson", &wavefront.DashboardJsonArgs{
-//				DashboardJson: pulumi.String(fmt.Sprintf(`{
-//	  "name": "Terraform Test Dashboard Json",
-//	  "description": "a",
-//	  "eventFilterType": "BYCHART",
-//	  "eventQuery": "",
-//	  "defaultTimeWindow": "",
-//	  "url": "tftestimport",
-//	  "displayDescription": false,
-//	  "displaySectionTableOfContents": true,
-//	  "displayQueryParameters": false,
-//	  "sections": [
-//	    {
-//	      "name": "section 1",
-//	      "rows": [
-//	        {
-//	          "charts": [
-//	            {
-//	              "name": "chart 1",
-//	              "sources": [
-//	                {
-//	                  "name": "source 1",
-//	                  "query": "ts()",
-//	                  "scatterPlotSource": "Y",
-//	                  "querybuilderEnabled": false,
-//	                  "sourceDescription": ""
-//	                }
-//	              ],
-//	              "units": "someunit",
-//	              "base": 0,
-//	              "noDefaultEvents": false,
-//	              "interpolatePoints": false,
-//	              "includeObsoleteMetrics": false,
-//	              "description": "This is chart 1, showing something",
-//	              "chartSettings": {
-//	                "type": "markdown-widget",
-//	                "max": 100,
-//	                "expectedDataSpacing": 120,
-//	                "windowing": "full",
-//	                "windowSize": 10,
-//	                "autoColumnTags": false,
-//	                "columnTags": "deprecated",
-//	                "tagMode": "all",
-//	                "numTags": 2,
-//	                "customTags": [
-//	                  "tag1",
-//	                  "tag2"
-//	                ],
-//	                "groupBySource": true,
-//	                "y1Max": 100,
-//	                "y1Units": "units",
-//	                "y0ScaleSIBy1024": true,
-//	                "y1ScaleSIBy1024": true,
-//	                "y0UnitAutoscaling": true,
-//	                "y1UnitAutoscaling": true,
-//	                "fixedLegendEnabled": true,
-//	                "fixedLegendUseRawStats": true,
-//	                "fixedLegendPosition": "RIGHT",
-//	                "fixedLegendDisplayStats": [
-//	                  "stat1",
-//	                  "stat2"
-//	                ],
-//	                "fixedLegendFilterSort": "TOP",
-//	                "fixedLegendFilterLimit": 1,
-//	                "fixedLegendFilterField": "CURRENT",
-//	                "plainMarkdownContent": "markdown content"
-//	              },
-//	              "summarization": "MEAN"
-//	            }
-//	          ],
-//	          "heightFactor": 50
-//	        }
-//	      ]
-//	    }
-//	  ],
-//	  "parameterDetails": {
-//	    "param": {
-//	      "hideFromView": false,
-//	      "description": null,
-//	      "allowAll": null,
-//	      "tagKey": null,
-//	      "queryValue": null,
-//	      "dynamicFieldType": null,
-//	      "reverseDynSort": null,
-//	      "parameterType": "SIMPLE",
-//	      "label": "test",
-//	      "defaultValue": "Label",
-//	      "valuesToReadableStrings": {
-//	        "Label": "test"
-//	      },
-//	      "selectedLabel": "Label",
-//	      "value": "test"
-//	    }
-//	  },
-//	  "tags" :{
-//	    "customerTags":  ["terraform"]
-//	  }
-//	}
-//
-// `)),
-//
+//				DashboardJson: pulumi.String("{\n  \"name\": \"Terraform Test Dashboard Json\",\n  \"description\": \"a\",\n  \"eventFilterType\": \"BYCHART\",\n  \"eventQuery\": \"\",\n  \"defaultTimeWindow\": \"\",\n  \"url\": \"tftestimport\",\n  \"displayDescription\": false,\n  \"displaySectionTableOfContents\": true,\n  \"displayQueryParameters\": false,\n  \"sections\": [\n    {\n      \"name\": \"section 1\",\n      \"rows\": [\n        {\n          \"charts\": [\n            {\n              \"name\": \"chart 1\",\n              \"sources\": [\n                {\n                  \"name\": \"source 1\",\n                  \"query\": \"ts()\",\n                  \"scatterPlotSource\": \"Y\",\n                  \"querybuilderEnabled\": false,\n                  \"sourceDescription\": \"\"\n                }\n              ],\n              \"units\": \"someunit\",\n              \"base\": 0,\n              \"noDefaultEvents\": false,\n              \"interpolatePoints\": false,\n              \"includeObsoleteMetrics\": false,\n              \"description\": \"This is chart 1, showing something\",\n              \"chartSettings\": {\n                \"type\": \"markdown-widget\",\n                \"max\": 100,\n                \"expectedDataSpacing\": 120,\n                \"windowing\": \"full\",\n                \"windowSize\": 10,\n                \"autoColumnTags\": false,\n                \"columnTags\": \"deprecated\",\n                \"tagMode\": \"all\",\n                \"numTags\": 2,\n                \"customTags\": [\n                  \"tag1\",\n                  \"tag2\"\n                ],\n                \"groupBySource\": true,\n                \"y1Max\": 100,\n                \"y1Units\": \"units\",\n                \"y0ScaleSIBy1024\": true,\n                \"y1ScaleSIBy1024\": true,\n                \"y0UnitAutoscaling\": true,\n                \"y1UnitAutoscaling\": true,\n                \"fixedLegendEnabled\": true,\n                \"fixedLegendUseRawStats\": true,\n                \"fixedLegendPosition\": \"RIGHT\",\n                \"fixedLegendDisplayStats\": [\n                  \"stat1\",\n                  \"stat2\"\n                ],\n                \"fixedLegendFilterSort\": \"TOP\",\n                \"fixedLegendFilterLimit\": 1,\n                \"fixedLegendFilterField\": \"CURRENT\",\n                \"plainMarkdownContent\": \"markdown content\"\n              },\n              \"summarization\": \"MEAN\"\n            }\n          ],\n          \"heightFactor\": 50\n        }\n      ]\n    }\n  ],\n  \"parameterDetails\": {\n    \"param\": {\n      \"hideFromView\": false,\n      \"description\": null,\n      \"allowAll\": null,\n      \"tagKey\": null,\n      \"queryValue\": null,\n      \"dynamicFieldType\": null,\n      \"reverseDynSort\": null,\n      \"parameterType\": \"SIMPLE\",\n      \"label\": \"test\",\n      \"defaultValue\": \"Label\",\n      \"valuesToReadableStrings\": {\n        \"Label\": \"test\"\n      },\n      \"selectedLabel\": \"Label\",\n      \"value\": \"test\"\n    }\n  },\n  \"tags\" :{\n    \"customerTags\":  [\"terraform\"]\n  }\n}\n\n"),
 //			})
 //			if err != nil {
 //				return err

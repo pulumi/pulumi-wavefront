@@ -7,11 +7,8 @@ import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 export function getMetricsPolicy(opts?: pulumi.InvokeOptions): Promise<GetMetricsPolicyResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("wavefront:index/getMetricsPolicy:getMetricsPolicy", {
     }, opts);
 }

@@ -13,8 +13,7 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as wavefront from "@pulumi/wavefront";
  *
- * const testDashboardJson = new wavefront.DashboardJson("test_dashboard_json", {
- *     dashboardJson: `{
+ * const testDashboardJson = new wavefront.DashboardJson("testDashboardJson", {dashboardJson: `{
  *   "name": "Terraform Test Dashboard Json",
  *   "description": "a",
  *   "eventFilterType": "BYCHART",
@@ -111,8 +110,8 @@ import * as utilities from "./utilities";
  *     "customerTags":  ["terraform"]
  *   }
  * }
- * `,
- * });
+ *
+ * `});
  * ```
  *
  * **Note:** If there are dynamic variables in the Wavefront dashboard json, then these variables must be present in a separate file as mentioned in below section.

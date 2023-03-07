@@ -26,7 +26,7 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err = wavefront.LookupExternalLink(ctx, &GetExternalLinkArgs{
+//			_, err := wavefront.LookupExternalLink(ctx, &wavefront.LookupExternalLinkArgs{
 //				Id: "sample-external-link-id",
 //			}, nil)
 //			if err != nil {

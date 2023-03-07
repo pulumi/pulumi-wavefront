@@ -1530,7 +1530,7 @@ class MetricsPolicyPolicyRuleArgs:
         :param pulumi.Input[Sequence[pulumi.Input[str]]] prefixes: List of prefixes to match metrics on. You can specify the full metric name or use a wildcard character in metric names, sources, or point tags. The wildcard character alone (*) means all metrics.
         :param pulumi.Input[bool] tags_anded: Bool where `true` require all tags are met by selected metrics, else `false` select metrics that match any give tag.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] account_ids: List of account ids to apply Metrics Policy to. Must have at least one associated account_id, user_group_id, or role_id.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] role_ids: -(Optional) List of role ids to apply Metrics Policy to. Must have at least one associated account_id, user_group_id, or role_id.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] role_ids: List of role ids to apply Metrics Policy to. Must have at least one associated account_id, user_group_id, or role_id.
         :param pulumi.Input[Sequence[pulumi.Input['MetricsPolicyPolicyRuleTagArgs']]] tags: List of Key/Value tags to select target metrics for policy.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] user_group_ids: List of user group ids to apply Metrics Policy to. Must have at least one associated account_id, user_group_id, or role_id.
         """
@@ -1624,7 +1624,7 @@ class MetricsPolicyPolicyRuleArgs:
     @pulumi.getter(name="roleIds")
     def role_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        -(Optional) List of role ids to apply Metrics Policy to. Must have at least one associated account_id, user_group_id, or role_id.
+        List of role ids to apply Metrics Policy to. Must have at least one associated account_id, user_group_id, or role_id.
         """
         return pulumi.get(self, "role_ids")
 

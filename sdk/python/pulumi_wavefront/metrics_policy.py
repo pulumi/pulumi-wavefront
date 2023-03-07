@@ -45,6 +45,7 @@ class _MetricsPolicyState:
                  updater_id: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering MetricsPolicy resources.
+        :param pulumi.Input[str] customer: The customer the user is associated with.
         :param pulumi.Input[Sequence[pulumi.Input['MetricsPolicyPolicyRuleArgs']]] policy_rules: List of Metrics Policies, must have at least one entry.
         :param pulumi.Input[int] updated_epoch_millis: When the policy was applied in epoch_millis.
         :param pulumi.Input[str] updater_id: The account_id who applied the current policy.
@@ -61,6 +62,9 @@ class _MetricsPolicyState:
     @property
     @pulumi.getter
     def customer(self) -> Optional[pulumi.Input[str]]:
+        """
+        The customer the user is associated with.
+        """
         return pulumi.get(self, "customer")
 
     @customer.setter
@@ -114,9 +118,35 @@ class MetricsPolicy(pulumi.CustomResource):
         """
         Provides a Wavefront Metrics Policy Resource. This allows management of Metrics Policy to control access to time series, histograms, and delta counters
 
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_wavefront as wavefront
+
+        everyone = wavefront.get_default_user_group()
+        main = wavefront.MetricsPolicy("main", policy_rules=[wavefront.MetricsPolicyPolicyRuleArgs(
+            name="Allow All Metrics",
+            description="Predefined policy rule. Allows access to all metrics (timeseries, histograms, and counters) for all accounts. If this rule is removed, all accounts can access all metrics if there are no matching blocking rules.",
+            prefixes=["*"],
+            tags_anded=False,
+            access_type="ALLOW",
+            user_group_ids=[everyone.group_id],
+        )])
+        ```
         ## Data Source
 
         Provides a Wavefront Metrics Policy Data Source. This allows looking up the current policy and associated rules.
+
+        ### Example
+
+        ```python
+        import pulumi
+        import pulumi_wavefront as wavefront
+
+        policy_metrics_policy = wavefront.get_metrics_policy()
+        pulumi.export("policy", policy_metrics_policy)
+        ```
 
         ## Import
 
@@ -139,9 +169,35 @@ class MetricsPolicy(pulumi.CustomResource):
         """
         Provides a Wavefront Metrics Policy Resource. This allows management of Metrics Policy to control access to time series, histograms, and delta counters
 
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_wavefront as wavefront
+
+        everyone = wavefront.get_default_user_group()
+        main = wavefront.MetricsPolicy("main", policy_rules=[wavefront.MetricsPolicyPolicyRuleArgs(
+            name="Allow All Metrics",
+            description="Predefined policy rule. Allows access to all metrics (timeseries, histograms, and counters) for all accounts. If this rule is removed, all accounts can access all metrics if there are no matching blocking rules.",
+            prefixes=["*"],
+            tags_anded=False,
+            access_type="ALLOW",
+            user_group_ids=[everyone.group_id],
+        )])
+        ```
         ## Data Source
 
         Provides a Wavefront Metrics Policy Data Source. This allows looking up the current policy and associated rules.
+
+        ### Example
+
+        ```python
+        import pulumi
+        import pulumi_wavefront as wavefront
+
+        policy_metrics_policy = wavefront.get_metrics_policy()
+        pulumi.export("policy", policy_metrics_policy)
+        ```
 
         ## Import
 
@@ -203,6 +259,7 @@ class MetricsPolicy(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[str] customer: The customer the user is associated with.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MetricsPolicyPolicyRuleArgs']]]] policy_rules: List of Metrics Policies, must have at least one entry.
         :param pulumi.Input[int] updated_epoch_millis: When the policy was applied in epoch_millis.
         :param pulumi.Input[str] updater_id: The account_id who applied the current policy.
@@ -220,6 +277,9 @@ class MetricsPolicy(pulumi.CustomResource):
     @property
     @pulumi.getter
     def customer(self) -> pulumi.Output[str]:
+        """
+        The customer the user is associated with.
+        """
         return pulumi.get(self, "customer")
 
     @property

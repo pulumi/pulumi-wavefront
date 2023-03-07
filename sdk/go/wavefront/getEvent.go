@@ -26,7 +26,7 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err = wavefront.LookupEvent(ctx, &GetEventArgs{
+//			_, err := wavefront.LookupEvent(ctx, &wavefront.LookupEventArgs{
 //				Id: "sample-event-id",
 //			}, nil)
 //			if err != nil {
@@ -60,15 +60,15 @@ type LookupEventResult struct {
 	Details    string `pulumi:"details"`
 	EndtimeKey int    `pulumi:"endtimeKey"`
 	// The ID of the event in Wavefront.
-	// * `startTime`- The start time of the event in epoch milliseconds.
 	Id string `pulumi:"id"`
 	// A Boolean flag. If set to `true`, creates a point-in-time event (i.e. with no duration).
 	IsEphemeral bool `pulumi:"isEphemeral"`
 	// The name of the event in Wavefront.
 	Name string `pulumi:"name"`
 	// The severity category of the event.
-	Severity  string `pulumi:"severity"`
-	StartTime int    `pulumi:"startTime"`
+	Severity string `pulumi:"severity"`
+	// The start time of the event in epoch milliseconds.
+	StartTime int `pulumi:"startTime"`
 	// A set of tags assigned to the event.
 	Tags []string `pulumi:"tags"`
 	// The type of the event.
@@ -128,7 +128,6 @@ func (o LookupEventResultOutput) EndtimeKey() pulumi.IntOutput {
 }
 
 // The ID of the event in Wavefront.
-// * `startTime`- The start time of the event in epoch milliseconds.
 func (o LookupEventResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupEventResult) string { return v.Id }).(pulumi.StringOutput)
 }
@@ -148,6 +147,7 @@ func (o LookupEventResultOutput) Severity() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupEventResult) string { return v.Severity }).(pulumi.StringOutput)
 }
 
+// The start time of the event in epoch milliseconds.
 func (o LookupEventResultOutput) StartTime() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupEventResult) int { return v.StartTime }).(pulumi.IntOutput)
 }

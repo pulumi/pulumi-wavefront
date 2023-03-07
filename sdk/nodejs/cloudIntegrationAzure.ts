@@ -14,7 +14,7 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as wavefront from "@pulumi/wavefront";
  *
- * const azureActivityLog = new wavefront.CloudIntegrationAzureActivityLog("azure_activity_log", {
+ * const azureActivityLog = new wavefront.CloudIntegrationAzureActivityLog("azureActivityLog", {
  *     clientId: "client-id2",
  *     clientSecret: "client-secret2",
  *     tenant: "my-tenant2",

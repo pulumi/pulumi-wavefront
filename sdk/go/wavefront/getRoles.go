@@ -26,7 +26,7 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err = wavefront.GetRoles(ctx, &GetRolesArgs{
+//			_, err := wavefront.GetRoles(ctx, &wavefront.GetRolesArgs{
 //				Limit:  pulumi.IntRef(10),
 //				Offset: pulumi.IntRef(0),
 //			}, nil)

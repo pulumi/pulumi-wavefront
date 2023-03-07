@@ -15,20 +15,16 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as wavefront from "@pulumi/wavefront";
  *
- * // Get the information about all dashboards.
- * const example = pulumi.output(wavefront.getDashboards({
+ * const example = wavefront.getDashboards({
  *     limit: 10,
  *     offset: 0,
- * }));
+ * });
  * ```
  */
 export function getDashboards(args?: GetDashboardsArgs, opts?: pulumi.InvokeOptions): Promise<GetDashboardsResult> {
     args = args || {};
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("wavefront:index/getDashboards:getDashboards", {
         "limit": args.limit,
         "offset": args.offset,
@@ -64,9 +60,23 @@ export interface GetDashboardsResult {
     readonly limit?: number;
     readonly offset?: number;
 }
-
+/**
+ * Use this data source to get information about all Wavefront dashboards.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as wavefront from "@pulumi/wavefront";
+ *
+ * const example = wavefront.getDashboards({
+ *     limit: 10,
+ *     offset: 0,
+ * });
+ * ```
+ */
 export function getDashboardsOutput(args?: GetDashboardsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDashboardsResult> {
-    return pulumi.output(args).apply(a => getDashboards(a, opts))
+    return pulumi.output(args).apply((a: any) => getDashboards(a, opts))
 }
 
 /**

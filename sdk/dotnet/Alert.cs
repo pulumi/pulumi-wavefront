@@ -134,7 +134,7 @@ namespace Pulumi.Wavefront
         public Output<int?> ResolveAfterMinutes { get; private set; } = null!;
 
         /// <summary>
-        /// - Severity of the alert, valid values are `INFO`, `SMOKE`, `WARN`, `SEVERE`.
+        /// Severity of the alert, valid values are `INFO`, `SMOKE`, `WARN`, `SEVERE`.
         /// </summary>
         [Output("severity")]
         public Output<string> Severity { get; private set; } = null!;
@@ -307,7 +307,7 @@ namespace Pulumi.Wavefront
         public Input<int>? ResolveAfterMinutes { get; set; }
 
         /// <summary>
-        /// - Severity of the alert, valid values are `INFO`, `SMOKE`, `WARN`, `SEVERE`.
+        /// Severity of the alert, valid values are `INFO`, `SMOKE`, `WARN`, `SEVERE`.
         /// </summary>
         [Input("severity")]
         public Input<string>? Severity { get; set; }
@@ -454,7 +454,7 @@ namespace Pulumi.Wavefront
         public Input<int>? ResolveAfterMinutes { get; set; }
 
         /// <summary>
-        /// - Severity of the alert, valid values are `INFO`, `SMOKE`, `WARN`, `SEVERE`.
+        /// Severity of the alert, valid values are `INFO`, `SMOKE`, `WARN`, `SEVERE`.
         /// </summary>
         [Input("severity")]
         public Input<string>? Severity { get; set; }

@@ -39,7 +39,7 @@ public final class MetricsPolicyPolicyRule {
      */
     private List<String> prefixes;
     /**
-     * @return -(Optional) List of role ids to apply Metrics Policy to. Must have at least one associated account_id, user_group_id, or role_id.
+     * @return List of role ids to apply Metrics Policy to. Must have at least one associated account_id, user_group_id, or role_id.
      * 
      */
     private @Nullable List<String> roleIds;
@@ -96,7 +96,7 @@ public final class MetricsPolicyPolicyRule {
         return this.prefixes;
     }
     /**
-     * @return -(Optional) List of role ids to apply Metrics Policy to. Must have at least one associated account_id, user_group_id, or role_id.
+     * @return List of role ids to apply Metrics Policy to. Must have at least one associated account_id, user_group_id, or role_id.
      * 
      */
     public List<String> roleIds() {

@@ -26,7 +26,7 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err = wavefront.LookupUserGroup(ctx, &GetUserGroupArgs{
+//			_, err := wavefront.LookupUserGroup(ctx, &wavefront.LookupUserGroupArgs{
 //				Id: "user-group-id",
 //			}, nil)
 //			if err != nil {

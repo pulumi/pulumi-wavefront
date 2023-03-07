@@ -39,7 +39,6 @@ public final class GetDerivedMetricsDerivedMetric {
     private List<String> hostsUseds;
     /**
      * @return The ID of the derived metric in Wavefront.
-     * * `query`- A Wavefront query that is evaluated at regular intervals (default is 1 minute).
      * 
      */
     private String id;
@@ -70,10 +69,13 @@ public final class GetDerivedMetricsDerivedMetric {
     private Integer lastProcessedMillis;
     /**
      * @return The timestamp indicating the last time the query was executed.
-     * * `metrics_used` -A list of metrics used in the derived metric.
      * 
      */
     private Integer lastQueryTime;
+    /**
+     * @return A list of metrics used in the derived metric.
+     * 
+     */
     private List<String> metricsUseds;
     /**
      * @return How frequently the query generating the derived metric is run.
@@ -95,6 +97,10 @@ public final class GetDerivedMetricsDerivedMetric {
      * 
      */
     private Integer processRateMinutes;
+    /**
+     * @return A Wavefront query that is evaluated at regular intervals (default is 1 minute).
+     * 
+     */
     private String query;
     /**
      * @return A Boolean variable indicating whether query is failing for the derived metric.
@@ -165,7 +171,6 @@ public final class GetDerivedMetricsDerivedMetric {
     }
     /**
      * @return The ID of the derived metric in Wavefront.
-     * * `query`- A Wavefront query that is evaluated at regular intervals (default is 1 minute).
      * 
      */
     public String id() {
@@ -208,12 +213,15 @@ public final class GetDerivedMetricsDerivedMetric {
     }
     /**
      * @return The timestamp indicating the last time the query was executed.
-     * * `metrics_used` -A list of metrics used in the derived metric.
      * 
      */
     public Integer lastQueryTime() {
         return this.lastQueryTime;
     }
+    /**
+     * @return A list of metrics used in the derived metric.
+     * 
+     */
     public List<String> metricsUseds() {
         return this.metricsUseds;
     }
@@ -245,6 +253,10 @@ public final class GetDerivedMetricsDerivedMetric {
     public Integer processRateMinutes() {
         return this.processRateMinutes;
     }
+    /**
+     * @return A Wavefront query that is evaluated at regular intervals (default is 1 minute).
+     * 
+     */
     public String query() {
         return this.query;
     }

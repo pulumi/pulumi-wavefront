@@ -260,14 +260,14 @@ public class Alert extends com.pulumi.resources.CustomResource {
         return Codegen.optional(this.resolveAfterMinutes);
     }
     /**
-     * - Severity of the alert, valid values are `INFO`, `SMOKE`, `WARN`, `SEVERE`.
+     * Severity of the alert, valid values are `INFO`, `SMOKE`, `WARN`, `SEVERE`.
      * 
      */
     @Export(name="severity", type=String.class, parameters={})
     private Output<String> severity;
 
     /**
-     * @return - Severity of the alert, valid values are `INFO`, `SMOKE`, `WARN`, `SEVERE`.
+     * @return Severity of the alert, valid values are `INFO`, `SMOKE`, `WARN`, `SEVERE`.
      * 
      */
     public Output<String> severity() {

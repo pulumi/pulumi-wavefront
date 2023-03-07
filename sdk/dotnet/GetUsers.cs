@@ -13,6 +13,26 @@ namespace Pulumi.Wavefront
     {
         /// <summary>
         /// Use this data source to get all users in Wavefront. 
+        /// 
+        /// 
+        /// 
+        /// {{% examples %}}
+        /// ## Example Usage
+        /// {{% example %}}
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using Pulumi;
+        /// using Wavefront = Pulumi.Wavefront;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var users = Wavefront.GetUsers.Invoke();
+        /// 
+        /// });
+        /// ```
+        /// {{% /example %}}
+        /// {{% /examples %}}
         /// </summary>
         public static Task<GetUsersResult> InvokeAsync(InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetUsersResult>("wavefront:index/getUsers:getUsers", InvokeArgs.Empty, options.WithDefaults());

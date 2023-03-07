@@ -15,20 +15,16 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as wavefront from "@pulumi/wavefront";
  *
- * // Get the information about all alerts.
- * const example = pulumi.output(wavefront.getAlerts({
+ * const example = wavefront.getAlerts({
  *     limit: 10,
  *     offset: 0,
- * }));
+ * });
  * ```
  */
 export function getAlerts(args?: GetAlertsArgs, opts?: pulumi.InvokeOptions): Promise<GetAlertsResult> {
     args = args || {};
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("wavefront:index/getAlerts:getAlerts", {
         "limit": args.limit,
         "offset": args.offset,
@@ -64,9 +60,23 @@ export interface GetAlertsResult {
     readonly limit?: number;
     readonly offset?: number;
 }
-
+/**
+ * Use this data source to get information about all Wavefront alerts.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as wavefront from "@pulumi/wavefront";
+ *
+ * const example = wavefront.getAlerts({
+ *     limit: 10,
+ *     offset: 0,
+ * });
+ * ```
+ */
 export function getAlertsOutput(args?: GetAlertsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAlertsResult> {
-    return pulumi.output(args).apply(a => getAlerts(a, opts))
+    return pulumi.output(args).apply((a: any) => getAlerts(a, opts))
 }
 
 /**

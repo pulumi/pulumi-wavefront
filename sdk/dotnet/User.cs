@@ -40,6 +40,9 @@ namespace Pulumi.Wavefront
     [WavefrontResourceType("wavefront:index/user:User")]
     public partial class User : global::Pulumi.CustomResource
     {
+        /// <summary>
+        /// The customer the user is associated with.
+        /// </summary>
         [Output("customer")]
         public Output<string> Customer { get; private set; } = null!;
 
@@ -109,6 +112,9 @@ namespace Pulumi.Wavefront
 
     public sealed class UserArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The customer the user is associated with.
+        /// </summary>
         [Input("customer")]
         public Input<string>? Customer { get; set; }
 
@@ -152,6 +158,9 @@ namespace Pulumi.Wavefront
 
     public sealed class UserState : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The customer the user is associated with.
+        /// </summary>
         [Input("customer")]
         public Input<string>? Customer { get; set; }
 

@@ -423,7 +423,7 @@ export interface MetricsPolicyPolicyRule {
      */
     prefixes: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * -(Optional) List of role ids to apply Metrics Policy to. Must have at least one associated account_id, user_group_id, or role_id.
+     * List of role ids to apply Metrics Policy to. Must have at least one associated account_id, user_group_id, or role_id.
      */
     roleIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**

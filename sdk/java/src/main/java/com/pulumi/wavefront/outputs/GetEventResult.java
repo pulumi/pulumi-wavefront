@@ -26,7 +26,6 @@ public final class GetEventResult {
     private Integer endtimeKey;
     /**
      * @return The ID of the event in Wavefront.
-     * * `start_time`- The start time of the event in epoch milliseconds.
      * 
      */
     private String id;
@@ -45,6 +44,10 @@ public final class GetEventResult {
      * 
      */
     private String severity;
+    /**
+     * @return The start time of the event in epoch milliseconds.
+     * 
+     */
     private Integer startTime;
     /**
      * @return A set of tags assigned to the event.
@@ -77,7 +80,6 @@ public final class GetEventResult {
     }
     /**
      * @return The ID of the event in Wavefront.
-     * * `start_time`- The start time of the event in epoch milliseconds.
      * 
      */
     public String id() {
@@ -104,6 +106,10 @@ public final class GetEventResult {
     public String severity() {
         return this.severity;
     }
+    /**
+     * @return The start time of the event in epoch milliseconds.
+     * 
+     */
     public Integer startTime() {
         return this.startTime;
     }

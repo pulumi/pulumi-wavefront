@@ -26,7 +26,7 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err = wavefront.GetDashboards(ctx, &GetDashboardsArgs{
+//			_, err := wavefront.GetDashboards(ctx, &wavefront.GetDashboardsArgs{
 //				Limit:  pulumi.IntRef(10),
 //				Offset: pulumi.IntRef(0),
 //			}, nil)

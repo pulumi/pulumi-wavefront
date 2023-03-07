@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pkg/errors"
+	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -51,6 +51,7 @@ import (
 type User struct {
 	pulumi.CustomResourceState
 
+	// The customer the user is associated with.
 	Customer pulumi.StringOutput `pulumi:"customer"`
 	// The unique identifier of the user account to create. Must be a valid email address.
 	Email pulumi.StringOutput `pulumi:"email"`
@@ -94,6 +95,7 @@ func GetUser(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering User resources.
 type userState struct {
+	// The customer the user is associated with.
 	Customer *string `pulumi:"customer"`
 	// The unique identifier of the user account to create. Must be a valid email address.
 	Email *string `pulumi:"email"`
@@ -106,6 +108,7 @@ type userState struct {
 }
 
 type UserState struct {
+	// The customer the user is associated with.
 	Customer pulumi.StringPtrInput
 	// The unique identifier of the user account to create. Must be a valid email address.
 	Email pulumi.StringPtrInput
@@ -122,6 +125,7 @@ func (UserState) ElementType() reflect.Type {
 }
 
 type userArgs struct {
+	// The customer the user is associated with.
 	Customer *string `pulumi:"customer"`
 	// The unique identifier of the user account to create. Must be a valid email address.
 	Email string `pulumi:"email"`
@@ -135,6 +139,7 @@ type userArgs struct {
 
 // The set of arguments for constructing a User resource.
 type UserArgs struct {
+	// The customer the user is associated with.
 	Customer pulumi.StringPtrInput
 	// The unique identifier of the user account to create. Must be a valid email address.
 	Email pulumi.StringInput
@@ -233,6 +238,7 @@ func (o UserOutput) ToUserOutputWithContext(ctx context.Context) UserOutput {
 	return o
 }
 
+// The customer the user is associated with.
 func (o UserOutput) Customer() pulumi.StringOutput {
 	return o.ApplyT(func(v *User) pulumi.StringOutput { return v.Customer }).(pulumi.StringOutput)
 }

@@ -13,18 +13,14 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as wavefront from "@pulumi/wavefront";
  *
- * // Get the information about specific maintenance window.
- * const example = pulumi.output(wavefront.getMaintenanceWindow({
+ * const example = wavefront.getMaintenanceWindow({
  *     id: "sample-maintenance-window-id",
- * }));
+ * });
  * ```
  */
 export function getMaintenanceWindow(args: GetMaintenanceWindowArgs, opts?: pulumi.InvokeOptions): Promise<GetMaintenanceWindowResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("wavefront:index/getMaintenanceWindow:getMaintenanceWindow", {
         "id": args.id,
     }, opts);
@@ -123,9 +119,22 @@ export interface GetMaintenanceWindowResult {
      */
     readonly updaterId: string;
 }
-
+/**
+ * Use this data source to get information about a Wavefront maintenance window by its ID.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as wavefront from "@pulumi/wavefront";
+ *
+ * const example = wavefront.getMaintenanceWindow({
+ *     id: "sample-maintenance-window-id",
+ * });
+ * ```
+ */
 export function getMaintenanceWindowOutput(args: GetMaintenanceWindowOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMaintenanceWindowResult> {
-    return pulumi.output(args).apply(a => getMaintenanceWindow(a, opts))
+    return pulumi.output(args).apply((a: any) => getMaintenanceWindow(a, opts))
 }
 
 /**

@@ -17,6 +17,9 @@ namespace Pulumi.Wavefront.Outputs
         /// User-supplied additional explanatory information about this alert.
         /// </summary>
         public readonly string AdditionalInformation;
+        /// <summary>
+        /// The type of alert in Wavefront.
+        /// </summary>
         public readonly string AlertType;
         /// <summary>
         /// A list of users or groups that can modify the alert.
@@ -48,7 +51,6 @@ namespace Pulumi.Wavefront.Outputs
         public readonly ImmutableArray<Outputs.GetAlertsAlertFailingHostLabelPairResult> FailingHostLabelPairs;
         /// <summary>
         /// The ID of the alert in Wavefront.
-        /// * `alert_type`- The type of alert in Wavefront.
         /// </summary>
         public readonly string Id;
         /// <summary>
