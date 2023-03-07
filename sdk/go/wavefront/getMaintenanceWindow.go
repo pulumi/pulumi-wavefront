@@ -26,7 +26,7 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err = wavefront.LookupMaintenanceWindow(ctx, &GetMaintenanceWindowArgs{
+//			_, err := wavefront.LookupMaintenanceWindow(ctx, &wavefront.LookupMaintenanceWindowArgs{
 //				Id: "sample-maintenance-window-id",
 //			}, nil)
 //			if err != nil {

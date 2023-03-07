@@ -140,7 +140,6 @@ class GetDerivedMetricResult:
     def id(self) -> str:
         """
         The ID of the derived metric in Wavefront.
-        * `query`- A Wavefront query that is evaluated at regular intervals (default is 1 minute).
         """
         return pulumi.get(self, "id")
 
@@ -155,6 +154,9 @@ class GetDerivedMetricResult:
     @property
     @pulumi.getter(name="includeObsoleteMetrics")
     def include_obsolete_metrics(self) -> bool:
+        """
+        A Boolean flag indicating whether to include obsolete metrics or not.
+        """
         return pulumi.get(self, "include_obsolete_metrics")
 
     @property
@@ -218,7 +220,6 @@ class GetDerivedMetricResult:
     def points_scanned_at_last_query(self) -> int:
         """
         The number of points scanned when last query was executed.
-        * `include_obsolete_metrics` -A Boolean flag indicating whether to include obsolete metrics or not.
         """
         return pulumi.get(self, "points_scanned_at_last_query")
 
@@ -233,6 +234,9 @@ class GetDerivedMetricResult:
     @property
     @pulumi.getter
     def query(self) -> str:
+        """
+        A Wavefront query that is evaluated at regular intervals (default is 1 minute).
+        """
         return pulumi.get(self, "query")
 
     @property

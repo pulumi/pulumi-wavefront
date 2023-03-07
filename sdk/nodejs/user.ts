@@ -13,9 +13,7 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as wavefront from "@pulumi/wavefront";
  *
- * const basic = new wavefront.User("basic", {
- *     email: "test+tftesting@example.com",
- * });
+ * const basic = new wavefront.User("basic", {email: "test+tftesting@example.com"});
  * ```
  *
  * ## Import
@@ -54,6 +52,9 @@ export class User extends pulumi.CustomResource {
         return obj['__pulumiType'] === User.__pulumiType;
     }
 
+    /**
+     * The customer the user is associated with.
+     */
     public readonly customer!: pulumi.Output<string>;
     /**
      * The unique identifier of the user account to create. Must be a valid email address.
@@ -106,6 +107,9 @@ export class User extends pulumi.CustomResource {
  * Input properties used for looking up and filtering User resources.
  */
 export interface UserState {
+    /**
+     * The customer the user is associated with.
+     */
     customer?: pulumi.Input<string>;
     /**
      * The unique identifier of the user account to create. Must be a valid email address.
@@ -127,6 +131,9 @@ export interface UserState {
  * The set of arguments for constructing a User resource.
  */
 export interface UserArgs {
+    /**
+     * The customer the user is associated with.
+     */
     customer?: pulumi.Input<string>;
     /**
      * The unique identifier of the user account to create. Must be a valid email address.

@@ -7,15 +7,82 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pkg/errors"
+	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 // Provides a Wavefront Metrics Policy Resource. This allows management of Metrics Policy to control access to time series, histograms, and delta counters
 //
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			everyone, err := wavefront.GetDefaultUserGroup(ctx, nil, nil)
+//			if err != nil {
+//				return err
+//			}
+//			_, err = wavefront.NewMetricsPolicy(ctx, "main", &wavefront.MetricsPolicyArgs{
+//				PolicyRules: wavefront.MetricsPolicyPolicyRuleArray{
+//					&wavefront.MetricsPolicyPolicyRuleArgs{
+//						Name:        pulumi.String("Allow All Metrics"),
+//						Description: pulumi.String("Predefined policy rule. Allows access to all metrics (timeseries, histograms, and counters) for all accounts. If this rule is removed, all accounts can access all metrics if there are no matching blocking rules."),
+//						Prefixes: pulumi.StringArray{
+//							pulumi.String("*"),
+//						},
+//						TagsAnded:  pulumi.Bool(false),
+//						AccessType: pulumi.String("ALLOW"),
+//						UserGroupIds: pulumi.StringArray{
+//							*pulumi.String(everyone.GroupId),
+//						},
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 // ## Data Source
 //
 // Provides a Wavefront Metrics Policy Data Source. This allows looking up the current policy and associated rules.
+//
+// ### Example
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			policyMetricsPolicy, err := wavefront.LookupMetricsPolicy(ctx, nil, nil)
+//			if err != nil {
+//				return err
+//			}
+//			ctx.Export("policy", policyMetricsPolicy)
+//			return nil
+//		})
+//	}
+//
+// ```
 //
 // ## Import
 //
@@ -29,6 +96,7 @@ import (
 type MetricsPolicy struct {
 	pulumi.CustomResourceState
 
+	// The customer the user is associated with.
 	Customer pulumi.StringOutput `pulumi:"customer"`
 	// List of Metrics Policies, must have at least one entry.
 	PolicyRules MetricsPolicyPolicyRuleArrayOutput `pulumi:"policyRules"`
@@ -70,6 +138,7 @@ func GetMetricsPolicy(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering MetricsPolicy resources.
 type metricsPolicyState struct {
+	// The customer the user is associated with.
 	Customer *string `pulumi:"customer"`
 	// List of Metrics Policies, must have at least one entry.
 	PolicyRules []MetricsPolicyPolicyRule `pulumi:"policyRules"`
@@ -80,6 +149,7 @@ type metricsPolicyState struct {
 }
 
 type MetricsPolicyState struct {
+	// The customer the user is associated with.
 	Customer pulumi.StringPtrInput
 	// List of Metrics Policies, must have at least one entry.
 	PolicyRules MetricsPolicyPolicyRuleArrayInput
@@ -191,6 +261,7 @@ func (o MetricsPolicyOutput) ToMetricsPolicyOutputWithContext(ctx context.Contex
 	return o
 }
 
+// The customer the user is associated with.
 func (o MetricsPolicyOutput) Customer() pulumi.StringOutput {
 	return o.ApplyT(func(v *MetricsPolicy) pulumi.StringOutput { return v.Customer }).(pulumi.StringOutput)
 }

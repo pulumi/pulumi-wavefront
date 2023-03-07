@@ -15,20 +15,16 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as wavefront from "@pulumi/wavefront";
  *
- * // Get the information about all external links.
- * const example = pulumi.output(wavefront.getExternalLinks({
+ * const example = wavefront.getExternalLinks({
  *     limit: 10,
  *     offset: 0,
- * }));
+ * });
  * ```
  */
 export function getExternalLinks(args?: GetExternalLinksArgs, opts?: pulumi.InvokeOptions): Promise<GetExternalLinksResult> {
     args = args || {};
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("wavefront:index/getExternalLinks:getExternalLinks", {
         "limit": args.limit,
         "offset": args.offset,
@@ -64,9 +60,23 @@ export interface GetExternalLinksResult {
     readonly limit?: number;
     readonly offset?: number;
 }
-
+/**
+ * Use this data source to get information about all Wavefront external links.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as wavefront from "@pulumi/wavefront";
+ *
+ * const example = wavefront.getExternalLinks({
+ *     limit: 10,
+ *     offset: 0,
+ * });
+ * ```
+ */
 export function getExternalLinksOutput(args?: GetExternalLinksOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExternalLinksResult> {
-    return pulumi.output(args).apply(a => getExternalLinks(a, opts))
+    return pulumi.output(args).apply((a: any) => getExternalLinks(a, opts))
 }
 
 /**

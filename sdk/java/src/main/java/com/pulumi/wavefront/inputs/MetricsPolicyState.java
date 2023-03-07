@@ -18,9 +18,17 @@ public final class MetricsPolicyState extends com.pulumi.resources.ResourceArgs 
 
     public static final MetricsPolicyState Empty = new MetricsPolicyState();
 
+    /**
+     * The customer the user is associated with.
+     * 
+     */
     @Import(name="customer")
     private @Nullable Output<String> customer;
 
+    /**
+     * @return The customer the user is associated with.
+     * 
+     */
     public Optional<Output<String>> customer() {
         return Optional.ofNullable(this.customer);
     }
@@ -97,11 +105,23 @@ public final class MetricsPolicyState extends com.pulumi.resources.ResourceArgs 
             $ = new MetricsPolicyState(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param customer The customer the user is associated with.
+         * 
+         * @return builder
+         * 
+         */
         public Builder customer(@Nullable Output<String> customer) {
             $.customer = customer;
             return this;
         }
 
+        /**
+         * @param customer The customer the user is associated with.
+         * 
+         * @return builder
+         * 
+         */
         public Builder customer(String customer) {
             return customer(Output.of(customer));
         }

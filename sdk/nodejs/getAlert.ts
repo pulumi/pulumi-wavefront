@@ -15,18 +15,14 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as wavefront from "@pulumi/wavefront";
  *
- * // Get the information about the alert.
- * const example = pulumi.output(wavefront.getAlert({
+ * const example = wavefront.getAlert({
  *     id: "alert-id",
- * }));
+ * });
  * ```
  */
 export function getAlert(args: GetAlertArgs, opts?: pulumi.InvokeOptions): Promise<GetAlertResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("wavefront:index/getAlert:getAlert", {
         "id": args.id,
         "targets": args.targets,
@@ -55,6 +51,9 @@ export interface GetAlertResult {
      * User-supplied additional explanatory information about this alert.
      */
     readonly additionalInformation: string;
+    /**
+     * The type of alert in Wavefront.
+     */
     readonly alertType: string;
     /**
      * A list of users or groups that can modify the alert.
@@ -86,7 +85,6 @@ export interface GetAlertResult {
     readonly failingHostLabelPairs: outputs.GetAlertFailingHostLabelPair[];
     /**
      * The ID of the alert in Wavefront.
-     * * `alertType`- The type of alert in Wavefront.
      */
     readonly id: string;
     /**
@@ -139,9 +137,22 @@ export interface GetAlertResult {
      */
     readonly targets?: {[key: string]: string};
 }
-
+/**
+ * Use this data source to get information about a Wavefront alert by its ID.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as wavefront from "@pulumi/wavefront";
+ *
+ * const example = wavefront.getAlert({
+ *     id: "alert-id",
+ * });
+ * ```
+ */
 export function getAlertOutput(args: GetAlertOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAlertResult> {
-    return pulumi.output(args).apply(a => getAlert(a, opts))
+    return pulumi.output(args).apply((a: any) => getAlert(a, opts))
 }
 
 /**

@@ -35,7 +35,6 @@ namespace Pulumi.Wavefront.Outputs
         public readonly ImmutableArray<string> HostsUseds;
         /// <summary>
         /// The ID of the derived metric in Wavefront.
-        /// * `query`- A Wavefront query that is evaluated at regular intervals (default is 1 minute).
         /// </summary>
         public readonly string Id;
         /// <summary>
@@ -60,9 +59,11 @@ namespace Pulumi.Wavefront.Outputs
         public readonly int LastProcessedMillis;
         /// <summary>
         /// The timestamp indicating the last time the query was executed.
-        /// * `metrics_used` -A list of metrics used in the derived metric.
         /// </summary>
         public readonly int LastQueryTime;
+        /// <summary>
+        /// A list of metrics used in the derived metric.
+        /// </summary>
         public readonly ImmutableArray<string> MetricsUseds;
         /// <summary>
         /// How frequently the query generating the derived metric is run.
@@ -80,6 +81,9 @@ namespace Pulumi.Wavefront.Outputs
         /// The specified query is executed every `process_rate_minutes` minutes.
         /// </summary>
         public readonly int ProcessRateMinutes;
+        /// <summary>
+        /// A Wavefront query that is evaluated at regular intervals (default is 1 minute).
+        /// </summary>
         public readonly string Query;
         /// <summary>
         /// A Boolean variable indicating whether query is failing for the derived metric.

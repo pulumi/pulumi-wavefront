@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pkg/errors"
+	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -21,8 +21,6 @@ import (
 //
 // import (
 //
-//	"fmt"
-//
 //	"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
@@ -31,7 +29,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := wavefront.NewCloudIntegrationGcp(ctx, "gcp", &wavefront.CloudIntegrationGcpArgs{
-//				JsonKey:   pulumi.String(fmt.Sprintf("{...your gcp key ...}\n\n")),
+//				JsonKey:   pulumi.String("{...your gcp key ...}\n\n"),
 //				ProjectId: pulumi.String("example-gcp-project"),
 //			})
 //			if err != nil {
@@ -97,7 +95,7 @@ func NewCloudIntegrationGcp(ctx *pulumi.Context,
 		return nil, errors.New("invalid value for required argument 'Service'")
 	}
 	if args.JsonKey != nil {
-		args.JsonKey = pulumi.ToSecret(args.JsonKey).(pulumi.StringOutput)
+		args.JsonKey = pulumi.ToSecret(args.JsonKey).(pulumi.StringInput)
 	}
 	secrets := pulumi.AdditionalSecretOutputs([]string{
 		"jsonKey",

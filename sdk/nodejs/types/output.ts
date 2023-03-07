@@ -416,6 +416,9 @@ export interface GetAlertsAlert {
      * User-supplied additional explanatory information about this alert.
      */
     additionalInformation: string;
+    /**
+     * The type of alert in Wavefront.
+     */
     alertType: string;
     /**
      * A list of users or groups that can modify the alert.
@@ -447,7 +450,6 @@ export interface GetAlertsAlert {
     failingHostLabelPairs: outputs.GetAlertsAlertFailingHostLabelPair[];
     /**
      * The ID of the alert in Wavefront.
-     * * `alertType`- The type of alert in Wavefront.
      */
     id: string;
     /**
@@ -1260,7 +1262,6 @@ export interface GetDerivedMetricsDerivedMetric {
     hostsUseds: string[];
     /**
      * The ID of the derived metric in Wavefront.
-     * * `query`- A Wavefront query that is evaluated at regular intervals (default is 1 minute).
      */
     id: string;
     /**
@@ -1285,9 +1286,11 @@ export interface GetDerivedMetricsDerivedMetric {
     lastProcessedMillis: number;
     /**
      * The timestamp indicating the last time the query was executed.
-     * * `metricsUsed` -A list of metrics used in the derived metric.
      */
     lastQueryTime: number;
+    /**
+     * A list of metrics used in the derived metric.
+     */
     metricsUseds: string[];
     /**
      * How frequently the query generating the derived metric is run.
@@ -1305,6 +1308,9 @@ export interface GetDerivedMetricsDerivedMetric {
      * The specified query is executed every `processRateMinutes` minutes.
      */
     processRateMinutes: number;
+    /**
+     * A Wavefront query that is evaluated at regular intervals (default is 1 minute).
+     */
     query: string;
     /**
      * A Boolean variable indicating whether query is failing for the derived metric.
@@ -1344,7 +1350,6 @@ export interface GetEventsEvent {
     endtimeKey: number;
     /**
      * The ID of the event in Wavefront.
-     * * `startTime`- The start time of the event in epoch milliseconds.
      */
     id: string;
     /**
@@ -1359,6 +1364,9 @@ export interface GetEventsEvent {
      * The severity category of the event.
      */
     severity: string;
+    /**
+     * The start time of the event in epoch milliseconds.
+     */
     startTime: number;
     /**
      * A set of tags assigned to the event.
@@ -1505,6 +1513,9 @@ export interface GetUserGroupsUserGroup {
 }
 
 export interface GetUsersUser {
+    /**
+     * The customer the user is associated with.
+     */
     customer: string;
     email: string;
     /**
@@ -1517,7 +1528,6 @@ export interface GetUsersUser {
     permissions: string[];
     /**
      * List of User Group Ids the user is a member of.
-     * * `customer`- The customer the user is associated with.
      */
     userGroupIds: string[];
 }
@@ -1544,7 +1554,7 @@ export interface MetricsPolicyPolicyRule {
      */
     prefixes: string[];
     /**
-     * -(Optional) List of role ids to apply Metrics Policy to. Must have at least one associated account_id, user_group_id, or role_id.
+     * List of role ids to apply Metrics Policy to. Must have at least one associated account_id, user_group_id, or role_id.
      */
     roleIds?: string[];
     /**

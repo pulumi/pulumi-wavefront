@@ -56,7 +56,7 @@ class AlertArgs:
         :param pulumi.Input[int] resolve_after_minutes: The number of consecutive minutes that a firing series matching the condition
                query must evaluate to "false" (zero value) before the alert resolves.  When unset, this defaults to
                the same value as `minutes`.
-        :param pulumi.Input[str] severity: - Severity of the alert, valid values are `INFO`, `SMOKE`, `WARN`, `SEVERE`.
+        :param pulumi.Input[str] severity: Severity of the alert, valid values are `INFO`, `SMOKE`, `WARN`, `SEVERE`.
         :param pulumi.Input[str] target: A comma-separated list of the email address or integration endpoint 
                (such as PagerDuty or webhook) to notify when the alert status changes. Multiple target types can be in the list.
                Alert target format: ({email}|pd:{pd_key}|target:{alert-target-id}).
@@ -264,7 +264,7 @@ class AlertArgs:
     @pulumi.getter
     def severity(self) -> Optional[pulumi.Input[str]]:
         """
-        - Severity of the alert, valid values are `INFO`, `SMOKE`, `WARN`, `SEVERE`.
+        Severity of the alert, valid values are `INFO`, `SMOKE`, `WARN`, `SEVERE`.
         """
         return pulumi.get(self, "severity")
 
@@ -343,7 +343,7 @@ class _AlertState:
         :param pulumi.Input[int] resolve_after_minutes: The number of consecutive minutes that a firing series matching the condition
                query must evaluate to "false" (zero value) before the alert resolves.  When unset, this defaults to
                the same value as `minutes`.
-        :param pulumi.Input[str] severity: - Severity of the alert, valid values are `INFO`, `SMOKE`, `WARN`, `SEVERE`.
+        :param pulumi.Input[str] severity: Severity of the alert, valid values are `INFO`, `SMOKE`, `WARN`, `SEVERE`.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] tags: A set of tags to assign to this resource.
         :param pulumi.Input[str] target: A comma-separated list of the email address or integration endpoint 
                (such as PagerDuty or webhook) to notify when the alert status changes. Multiple target types can be in the list.
@@ -542,7 +542,7 @@ class _AlertState:
     @pulumi.getter
     def severity(self) -> Optional[pulumi.Input[str]]:
         """
-        - Severity of the alert, valid values are `INFO`, `SMOKE`, `WARN`, `SEVERE`.
+        Severity of the alert, valid values are `INFO`, `SMOKE`, `WARN`, `SEVERE`.
         """
         return pulumi.get(self, "severity")
 
@@ -666,7 +666,7 @@ class Alert(pulumi.CustomResource):
         :param pulumi.Input[int] resolve_after_minutes: The number of consecutive minutes that a firing series matching the condition
                query must evaluate to "false" (zero value) before the alert resolves.  When unset, this defaults to
                the same value as `minutes`.
-        :param pulumi.Input[str] severity: - Severity of the alert, valid values are `INFO`, `SMOKE`, `WARN`, `SEVERE`.
+        :param pulumi.Input[str] severity: Severity of the alert, valid values are `INFO`, `SMOKE`, `WARN`, `SEVERE`.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] tags: A set of tags to assign to this resource.
         :param pulumi.Input[str] target: A comma-separated list of the email address or integration endpoint 
                (such as PagerDuty or webhook) to notify when the alert status changes. Multiple target types can be in the list.
@@ -825,7 +825,7 @@ class Alert(pulumi.CustomResource):
         :param pulumi.Input[int] resolve_after_minutes: The number of consecutive minutes that a firing series matching the condition
                query must evaluate to "false" (zero value) before the alert resolves.  When unset, this defaults to
                the same value as `minutes`.
-        :param pulumi.Input[str] severity: - Severity of the alert, valid values are `INFO`, `SMOKE`, `WARN`, `SEVERE`.
+        :param pulumi.Input[str] severity: Severity of the alert, valid values are `INFO`, `SMOKE`, `WARN`, `SEVERE`.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] tags: A set of tags to assign to this resource.
         :param pulumi.Input[str] target: A comma-separated list of the email address or integration endpoint 
                (such as PagerDuty or webhook) to notify when the alert status changes. Multiple target types can be in the list.
@@ -965,7 +965,7 @@ class Alert(pulumi.CustomResource):
     @pulumi.getter
     def severity(self) -> pulumi.Output[str]:
         """
-        - Severity of the alert, valid values are `INFO`, `SMOKE`, `WARN`, `SEVERE`.
+        Severity of the alert, valid values are `INFO`, `SMOKE`, `WARN`, `SEVERE`.
         """
         return pulumi.get(self, "severity")
 

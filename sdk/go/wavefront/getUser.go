@@ -26,7 +26,7 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err = wavefront.LookupUser(ctx, &GetUserArgs{
+//			_, err := wavefront.LookupUser(ctx, &wavefront.LookupUserArgs{
 //				Email: "example.user@example.com",
 //			}, nil)
 //			if err != nil {
@@ -54,6 +54,7 @@ type LookupUserArgs struct {
 
 // A collection of values returned by getUser.
 type LookupUserResult struct {
+	// The customer the user is associated with.
 	Customer string `pulumi:"customer"`
 	Email    string `pulumi:"email"`
 	// The provider-assigned unique ID for this managed resource.
@@ -63,7 +64,6 @@ type LookupUserResult struct {
 	// List of permissions granted to a user.
 	Permissions []string `pulumi:"permissions"`
 	// List of User Group Ids the user is a member of.
-	// * `customer`- The customer the user is associated with.
 	UserGroupIds []string `pulumi:"userGroupIds"`
 }
 
@@ -105,6 +105,7 @@ func (o LookupUserResultOutput) ToLookupUserResultOutputWithContext(ctx context.
 	return o
 }
 
+// The customer the user is associated with.
 func (o LookupUserResultOutput) Customer() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupUserResult) string { return v.Customer }).(pulumi.StringOutput)
 }
@@ -129,7 +130,6 @@ func (o LookupUserResultOutput) Permissions() pulumi.StringArrayOutput {
 }
 
 // List of User Group Ids the user is a member of.
-// * `customer`- The customer the user is associated with.
 func (o LookupUserResultOutput) UserGroupIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupUserResult) []string { return v.UserGroupIds }).(pulumi.StringArrayOutput)
 }

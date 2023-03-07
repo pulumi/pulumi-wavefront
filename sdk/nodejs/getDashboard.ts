@@ -15,18 +15,14 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as wavefront from "@pulumi/wavefront";
  *
- * // Get the information about a dashboard.
- * const example = pulumi.output(wavefront.getDashboard({
+ * const example = wavefront.getDashboard({
  *     id: "dashboard-id",
- * }));
+ * });
  * ```
  */
 export function getDashboard(args: GetDashboardArgs, opts?: pulumi.InvokeOptions): Promise<GetDashboardResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("wavefront:index/getDashboard:getDashboard", {
         "id": args.id,
     }, opts);
@@ -115,9 +111,22 @@ export interface GetDashboardResult {
     readonly viewsLastMonth: number;
     readonly viewsLastWeek: number;
 }
-
+/**
+ * Use this data source to get information about a certain Wavefront dashboard by its ID.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as wavefront from "@pulumi/wavefront";
+ *
+ * const example = wavefront.getDashboard({
+ *     id: "dashboard-id",
+ * });
+ * ```
+ */
 export function getDashboardOutput(args: GetDashboardOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDashboardResult> {
-    return pulumi.output(args).apply(a => getDashboard(a, opts))
+    return pulumi.output(args).apply((a: any) => getDashboard(a, opts))
 }
 
 /**

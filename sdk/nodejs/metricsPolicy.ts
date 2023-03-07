@@ -9,9 +9,35 @@ import * as utilities from "./utilities";
 /**
  * Provides a Wavefront Metrics Policy Resource. This allows management of Metrics Policy to control access to time series, histograms, and delta counters
  *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as wavefront from "@pulumi/wavefront";
+ *
+ * const everyone = wavefront.getDefaultUserGroup({});
+ * const main = new wavefront.MetricsPolicy("main", {policyRules: [{
+ *     name: "Allow All Metrics",
+ *     description: "Predefined policy rule. Allows access to all metrics (timeseries, histograms, and counters) for all accounts. If this rule is removed, all accounts can access all metrics if there are no matching blocking rules.",
+ *     prefixes: ["*"],
+ *     tagsAnded: false,
+ *     accessType: "ALLOW",
+ *     userGroupIds: [everyone.then(everyone => everyone.groupId)],
+ * }]});
+ * ```
  * ## Data Source
  *
  * Provides a Wavefront Metrics Policy Data Source. This allows looking up the current policy and associated rules.
+ *
+ * ### Example
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as wavefront from "@pulumi/wavefront";
+ *
+ * const policyMetricsPolicy = wavefront.getMetricsPolicy({});
+ * export const policy = policyMetricsPolicy;
+ * ```
  *
  * ## Import
  *
@@ -49,6 +75,9 @@ export class MetricsPolicy extends pulumi.CustomResource {
         return obj['__pulumiType'] === MetricsPolicy.__pulumiType;
     }
 
+    /**
+     * The customer the user is associated with.
+     */
     public /*out*/ readonly customer!: pulumi.Output<string>;
     /**
      * List of Metrics Policies, must have at least one entry.
@@ -99,6 +128,9 @@ export class MetricsPolicy extends pulumi.CustomResource {
  * Input properties used for looking up and filtering MetricsPolicy resources.
  */
 export interface MetricsPolicyState {
+    /**
+     * The customer the user is associated with.
+     */
     customer?: pulumi.Input<string>;
     /**
      * List of Metrics Policies, must have at least one entry.

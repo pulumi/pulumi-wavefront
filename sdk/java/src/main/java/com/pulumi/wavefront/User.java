@@ -58,9 +58,17 @@ import javax.annotation.Nullable;
  */
 @ResourceType(type="wavefront:index/user:User")
 public class User extends com.pulumi.resources.CustomResource {
+    /**
+     * The customer the user is associated with.
+     * 
+     */
     @Export(name="customer", type=String.class, parameters={})
     private Output<String> customer;
 
+    /**
+     * @return The customer the user is associated with.
+     * 
+     */
     public Output<String> customer() {
         return this.customer;
     }

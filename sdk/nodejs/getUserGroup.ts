@@ -13,18 +13,14 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as wavefront from "@pulumi/wavefront";
  *
- * // Get the information about the user group.
- * const example = pulumi.output(wavefront.getUserGroup({
+ * const example = wavefront.getUserGroup({
  *     id: "user-group-id",
- * }));
+ * });
  * ```
  */
 export function getUserGroup(args: GetUserGroupArgs, opts?: pulumi.InvokeOptions): Promise<GetUserGroupResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("wavefront:index/getUserGroup:getUserGroup", {
         "id": args.id,
     }, opts);
@@ -65,9 +61,22 @@ export interface GetUserGroupResult {
      */
     readonly users: string[];
 }
-
+/**
+ * Use this data source to get information about a Wavefront user group by its ID.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as wavefront from "@pulumi/wavefront";
+ *
+ * const example = wavefront.getUserGroup({
+ *     id: "user-group-id",
+ * });
+ * ```
+ */
 export function getUserGroupOutput(args: GetUserGroupOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetUserGroupResult> {
-    return pulumi.output(args).apply(a => getUserGroup(a, opts))
+    return pulumi.output(args).apply((a: any) => getUserGroup(a, opts))
 }
 
 /**

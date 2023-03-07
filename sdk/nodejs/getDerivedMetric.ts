@@ -13,18 +13,14 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as wavefront from "@pulumi/wavefront";
  *
- * //Get the information about a derived metric.
- * const example = pulumi.output(wavefront.getDerivedMetric({
+ * const example = wavefront.getDerivedMetric({
  *     id: "derived_metric_id",
- * }));
+ * });
  * ```
  */
 export function getDerivedMetric(args: GetDerivedMetricArgs, opts?: pulumi.InvokeOptions): Promise<GetDerivedMetricResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("wavefront:index/getDerivedMetric:getDerivedMetric", {
         "id": args.id,
     }, opts);
@@ -66,13 +62,15 @@ export interface GetDerivedMetricResult {
     readonly hostsUseds: string[];
     /**
      * The ID of the derived metric in Wavefront.
-     * * `query`- A Wavefront query that is evaluated at regular intervals (default is 1 minute).
      */
     readonly id: string;
     /**
      * A Boolean variable indicating trash status.
      */
     readonly inTrash: boolean;
+    /**
+     * A Boolean flag indicating whether to include obsolete metrics or not.
+     */
     readonly includeObsoleteMetrics: boolean;
     /**
      * Last error message occurred.
@@ -104,13 +102,15 @@ export interface GetDerivedMetricResult {
     readonly name: string;
     /**
      * The number of points scanned when last query was executed.
-     * * `includeObsoleteMetrics` -A Boolean flag indicating whether to include obsolete metrics or not.
      */
     readonly pointsScannedAtLastQuery: number;
     /**
      * The specified query is executed every `processRateMinutes` minutes.
      */
     readonly processRateMinutes: number;
+    /**
+     * A Wavefront query that is evaluated at regular intervals (default is 1 minute).
+     */
     readonly query: string;
     /**
      * A Boolean variable indicating whether query is failing for the derived metric.
@@ -137,9 +137,22 @@ export interface GetDerivedMetricResult {
      */
     readonly updatedEpochMillis: number;
 }
-
+/**
+ * Use this data source to get information about a certain Wavefront derived metric by its ID.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as wavefront from "@pulumi/wavefront";
+ *
+ * const example = wavefront.getDerivedMetric({
+ *     id: "derived_metric_id",
+ * });
+ * ```
+ */
 export function getDerivedMetricOutput(args: GetDerivedMetricOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDerivedMetricResult> {
-    return pulumi.output(args).apply(a => getDerivedMetric(a, opts))
+    return pulumi.output(args).apply((a: any) => getDerivedMetric(a, opts))
 }
 
 /**

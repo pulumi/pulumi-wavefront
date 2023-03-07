@@ -8,11 +8,8 @@ import * as utilities from "./utilities";
 
 export function getMaintenanceWindowAll(args?: GetMaintenanceWindowAllArgs, opts?: pulumi.InvokeOptions): Promise<GetMaintenanceWindowAllResult> {
     args = args || {};
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("wavefront:index/getMaintenanceWindowAll:getMaintenanceWindowAll", {
         "limit": args.limit,
         "offset": args.offset,
@@ -39,9 +36,8 @@ export interface GetMaintenanceWindowAllResult {
     readonly maintenanceWindows: outputs.GetMaintenanceWindowAllMaintenanceWindow[];
     readonly offset?: number;
 }
-
 export function getMaintenanceWindowAllOutput(args?: GetMaintenanceWindowAllOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMaintenanceWindowAllResult> {
-    return pulumi.output(args).apply(a => getMaintenanceWindowAll(a, opts))
+    return pulumi.output(args).apply((a: any) => getMaintenanceWindowAll(a, opts))
 }
 
 /**

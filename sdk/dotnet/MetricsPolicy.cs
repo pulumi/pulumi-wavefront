@@ -12,9 +12,62 @@ namespace Pulumi.Wavefront
     /// <summary>
     /// Provides a Wavefront Metrics Policy Resource. This allows management of Metrics Policy to control access to time series, histograms, and delta counters
     /// 
+    /// ## Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using Pulumi;
+    /// using Wavefront = Pulumi.Wavefront;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var everyone = Wavefront.GetDefaultUserGroup.Invoke();
+    /// 
+    ///     var main = new Wavefront.MetricsPolicy("main", new()
+    ///     {
+    ///         PolicyRules = new[]
+    ///         {
+    ///             new Wavefront.Inputs.MetricsPolicyPolicyRuleArgs
+    ///             {
+    ///                 Name = "Allow All Metrics",
+    ///                 Description = "Predefined policy rule. Allows access to all metrics (timeseries, histograms, and counters) for all accounts. If this rule is removed, all accounts can access all metrics if there are no matching blocking rules.",
+    ///                 Prefixes = new[]
+    ///                 {
+    ///                     "*",
+    ///                 },
+    ///                 TagsAnded = false,
+    ///                 AccessType = "ALLOW",
+    ///                 UserGroupIds = new[]
+    ///                 {
+    ///                     everyone.Apply(getDefaultUserGroupResult =&gt; getDefaultUserGroupResult.GroupId),
+    ///                 },
+    ///             },
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
     /// ## Data Source
     /// 
     /// Provides a Wavefront Metrics Policy Data Source. This allows looking up the current policy and associated rules.
+    /// 
+    /// ### Example
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using Pulumi;
+    /// using Wavefront = Pulumi.Wavefront;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var policyMetricsPolicy = Wavefront.GetMetricsPolicy.Invoke();
+    /// 
+    ///     return new Dictionary&lt;string, object?&gt;
+    ///     {
+    ///         ["policy"] = policyMetricsPolicy,
+    ///     };
+    /// });
+    /// ```
     /// 
     /// ## Import
     /// 
@@ -27,6 +80,9 @@ namespace Pulumi.Wavefront
     [WavefrontResourceType("wavefront:index/metricsPolicy:MetricsPolicy")]
     public partial class MetricsPolicy : global::Pulumi.CustomResource
     {
+        /// <summary>
+        /// The customer the user is associated with.
+        /// </summary>
         [Output("customer")]
         public Output<string> Customer { get; private set; } = null!;
 
@@ -114,6 +170,9 @@ namespace Pulumi.Wavefront
 
     public sealed class MetricsPolicyState : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The customer the user is associated with.
+        /// </summary>
         [Input("customer")]
         public Input<string>? Customer { get; set; }
 

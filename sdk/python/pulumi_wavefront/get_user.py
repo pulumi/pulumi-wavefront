@@ -44,6 +44,9 @@ class GetUserResult:
     @property
     @pulumi.getter
     def customer(self) -> str:
+        """
+        The customer the user is associated with.
+        """
         return pulumi.get(self, "customer")
 
     @property
@@ -80,7 +83,6 @@ class GetUserResult:
     def user_group_ids(self) -> Sequence[str]:
         """
         List of User Group Ids the user is a member of.
-        * `customer`- The customer the user is associated with.
         """
         return pulumi.get(self, "user_group_ids")
 

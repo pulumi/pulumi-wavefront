@@ -39,7 +39,6 @@ public final class GetDerivedMetricResult {
     private List<String> hostsUseds;
     /**
      * @return The ID of the derived metric in Wavefront.
-     * * `query`- A Wavefront query that is evaluated at regular intervals (default is 1 minute).
      * 
      */
     private String id;
@@ -48,6 +47,10 @@ public final class GetDerivedMetricResult {
      * 
      */
     private Boolean inTrash;
+    /**
+     * @return A Boolean flag indicating whether to include obsolete metrics or not.
+     * 
+     */
     private Boolean includeObsoleteMetrics;
     /**
      * @return Last error message occurred.
@@ -86,7 +89,6 @@ public final class GetDerivedMetricResult {
     private String name;
     /**
      * @return The number of points scanned when last query was executed.
-     * * `include_obsolete_metrics` -A Boolean flag indicating whether to include obsolete metrics or not.
      * 
      */
     private Integer pointsScannedAtLastQuery;
@@ -95,6 +97,10 @@ public final class GetDerivedMetricResult {
      * 
      */
     private Integer processRateMinutes;
+    /**
+     * @return A Wavefront query that is evaluated at regular intervals (default is 1 minute).
+     * 
+     */
     private String query;
     /**
      * @return A Boolean variable indicating whether query is failing for the derived metric.
@@ -165,7 +171,6 @@ public final class GetDerivedMetricResult {
     }
     /**
      * @return The ID of the derived metric in Wavefront.
-     * * `query`- A Wavefront query that is evaluated at regular intervals (default is 1 minute).
      * 
      */
     public String id() {
@@ -178,6 +183,10 @@ public final class GetDerivedMetricResult {
     public Boolean inTrash() {
         return this.inTrash;
     }
+    /**
+     * @return A Boolean flag indicating whether to include obsolete metrics or not.
+     * 
+     */
     public Boolean includeObsoleteMetrics() {
         return this.includeObsoleteMetrics;
     }
@@ -232,7 +241,6 @@ public final class GetDerivedMetricResult {
     }
     /**
      * @return The number of points scanned when last query was executed.
-     * * `include_obsolete_metrics` -A Boolean flag indicating whether to include obsolete metrics or not.
      * 
      */
     public Integer pointsScannedAtLastQuery() {
@@ -245,6 +253,10 @@ public final class GetDerivedMetricResult {
     public Integer processRateMinutes() {
         return this.processRateMinutes;
     }
+    /**
+     * @return A Wavefront query that is evaluated at regular intervals (default is 1 minute).
+     * 
+     */
     public String query() {
         return this.query;
     }

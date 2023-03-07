@@ -15,20 +15,16 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as wavefront from "@pulumi/wavefront";
  *
- * // Get all Roles
- * const roles = pulumi.output(wavefront.getRoles({
+ * const roles = wavefront.getRoles({
  *     limit: 10,
  *     offset: 0,
- * }));
+ * });
  * ```
  */
 export function getRoles(args?: GetRolesArgs, opts?: pulumi.InvokeOptions): Promise<GetRolesResult> {
     args = args || {};
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("wavefront:index/getRoles:getRoles", {
         "limit": args.limit,
         "offset": args.offset,
@@ -64,9 +60,23 @@ export interface GetRolesResult {
      */
     readonly roles: outputs.GetRolesRole[];
 }
-
+/**
+ * Use this data source to get all Roles in Wavefront.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as wavefront from "@pulumi/wavefront";
+ *
+ * const roles = wavefront.getRoles({
+ *     limit: 10,
+ *     offset: 0,
+ * });
+ * ```
+ */
 export function getRolesOutput(args?: GetRolesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRolesResult> {
-    return pulumi.output(args).apply(a => getRoles(a, opts))
+    return pulumi.output(args).apply((a: any) => getRoles(a, opts))
 }
 
 /**

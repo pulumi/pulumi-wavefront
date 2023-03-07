@@ -34,7 +34,7 @@ namespace Pulumi.Wavefront.Outputs
         /// </summary>
         public readonly ImmutableArray<string> Prefixes;
         /// <summary>
-        /// -(Optional) List of role ids to apply Metrics Policy to. Must have at least one associated account_id, user_group_id, or role_id.
+        /// List of role ids to apply Metrics Policy to. Must have at least one associated account_id, user_group_id, or role_id.
         /// </summary>
         public readonly ImmutableArray<string> RoleIds;
         /// <summary>

@@ -94,14 +94,14 @@ public final class MetricsPolicyPolicyRuleArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * -(Optional) List of role ids to apply Metrics Policy to. Must have at least one associated account_id, user_group_id, or role_id.
+     * List of role ids to apply Metrics Policy to. Must have at least one associated account_id, user_group_id, or role_id.
      * 
      */
     @Import(name="roleIds")
     private @Nullable Output<List<String>> roleIds;
 
     /**
-     * @return -(Optional) List of role ids to apply Metrics Policy to. Must have at least one associated account_id, user_group_id, or role_id.
+     * @return List of role ids to apply Metrics Policy to. Must have at least one associated account_id, user_group_id, or role_id.
      * 
      */
     public Optional<Output<List<String>>> roleIds() {
@@ -311,7 +311,7 @@ public final class MetricsPolicyPolicyRuleArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param roleIds -(Optional) List of role ids to apply Metrics Policy to. Must have at least one associated account_id, user_group_id, or role_id.
+         * @param roleIds List of role ids to apply Metrics Policy to. Must have at least one associated account_id, user_group_id, or role_id.
          * 
          * @return builder
          * 
@@ -322,7 +322,7 @@ public final class MetricsPolicyPolicyRuleArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param roleIds -(Optional) List of role ids to apply Metrics Policy to. Must have at least one associated account_id, user_group_id, or role_id.
+         * @param roleIds List of role ids to apply Metrics Policy to. Must have at least one associated account_id, user_group_id, or role_id.
          * 
          * @return builder
          * 
@@ -332,7 +332,7 @@ public final class MetricsPolicyPolicyRuleArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param roleIds -(Optional) List of role ids to apply Metrics Policy to. Must have at least one associated account_id, user_group_id, or role_id.
+         * @param roleIds List of role ids to apply Metrics Policy to. Must have at least one associated account_id, user_group_id, or role_id.
          * 
          * @return builder
          * 

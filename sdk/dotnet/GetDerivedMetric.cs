@@ -121,13 +121,15 @@ namespace Pulumi.Wavefront
         public readonly ImmutableArray<string> HostsUseds;
         /// <summary>
         /// The ID of the derived metric in Wavefront.
-        /// * `query`- A Wavefront query that is evaluated at regular intervals (default is 1 minute).
         /// </summary>
         public readonly string Id;
         /// <summary>
         /// A Boolean variable indicating trash status.
         /// </summary>
         public readonly bool InTrash;
+        /// <summary>
+        /// A Boolean flag indicating whether to include obsolete metrics or not.
+        /// </summary>
         public readonly bool IncludeObsoleteMetrics;
         /// <summary>
         /// Last error message occurred.
@@ -159,13 +161,15 @@ namespace Pulumi.Wavefront
         public readonly string Name;
         /// <summary>
         /// The number of points scanned when last query was executed.
-        /// * `include_obsolete_metrics` -A Boolean flag indicating whether to include obsolete metrics or not.
         /// </summary>
         public readonly int PointsScannedAtLastQuery;
         /// <summary>
         /// The specified query is executed every `process_rate_minutes` minutes.
         /// </summary>
         public readonly int ProcessRateMinutes;
+        /// <summary>
+        /// A Wavefront query that is evaluated at regular intervals (default is 1 minute).
+        /// </summary>
         public readonly string Query;
         /// <summary>
         /// A Boolean variable indicating whether query is failing for the derived metric.

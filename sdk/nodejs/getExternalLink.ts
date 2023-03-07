@@ -13,18 +13,14 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as wavefront from "@pulumi/wavefront";
  *
- * // Get the information about a specific external links.
- * const example = pulumi.output(wavefront.getExternalLink({
+ * const example = wavefront.getExternalLink({
  *     id: "sample-external-link-id",
- * }));
+ * });
  * ```
  */
 export function getExternalLink(args: GetExternalLinkArgs, opts?: pulumi.InvokeOptions): Promise<GetExternalLinkResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("wavefront:index/getExternalLink:getExternalLink", {
         "id": args.id,
     }, opts);
@@ -96,9 +92,22 @@ export interface GetExternalLinkResult {
      */
     readonly updaterId: string;
 }
-
+/**
+ * Use this data source to get information about a Wavefront external link by its ID.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as wavefront from "@pulumi/wavefront";
+ *
+ * const example = wavefront.getExternalLink({
+ *     id: "sample-external-link-id",
+ * });
+ * ```
+ */
 export function getExternalLinkOutput(args: GetExternalLinkOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExternalLinkResult> {
-    return pulumi.output(args).apply(a => getExternalLink(a, opts))
+    return pulumi.output(args).apply((a: any) => getExternalLink(a, opts))
 }
 
 /**

@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pkg/errors"
+	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -86,7 +86,7 @@ func NewCloudIntegrationNewRelic(ctx *pulumi.Context,
 		return nil, errors.New("invalid value for required argument 'Service'")
 	}
 	if args.ApiKey != nil {
-		args.ApiKey = pulumi.ToSecret(args.ApiKey).(pulumi.StringOutput)
+		args.ApiKey = pulumi.ToSecret(args.ApiKey).(pulumi.StringInput)
 	}
 	secrets := pulumi.AdditionalSecretOutputs([]string{
 		"apiKey",

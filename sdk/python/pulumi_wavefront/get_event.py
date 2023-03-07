@@ -79,7 +79,6 @@ class GetEventResult:
     def id(self) -> str:
         """
         The ID of the event in Wavefront.
-        * `start_time`- The start time of the event in epoch milliseconds.
         """
         return pulumi.get(self, "id")
 
@@ -110,6 +109,9 @@ class GetEventResult:
     @property
     @pulumi.getter(name="startTime")
     def start_time(self) -> int:
+        """
+        The start time of the event in epoch milliseconds.
+        """
         return pulumi.get(self, "start_time")
 
     @property

@@ -104,6 +104,9 @@ class GetAlertResult:
     @property
     @pulumi.getter(name="alertType")
     def alert_type(self) -> str:
+        """
+        The type of alert in Wavefront.
+        """
         return pulumi.get(self, "alert_type")
 
     @property
@@ -167,7 +170,6 @@ class GetAlertResult:
     def id(self) -> str:
         """
         The ID of the alert in Wavefront.
-        * `alert_type`- The type of alert in Wavefront.
         """
         return pulumi.get(self, "id")
 

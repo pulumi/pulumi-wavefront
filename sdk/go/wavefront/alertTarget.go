@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pkg/errors"
+	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -85,8 +85,8 @@ import (
 //				Description: pulumi.String("Test target"),
 //				Method:      pulumi.String("WEBHOOK"),
 //				Recipient:   pulumi.String("https://hooks.slack.com/services/test/me"),
-//				Routes: AlertTargetRouteArray{
-//					&AlertTargetRouteArgs{
+//				Routes: wavefront.AlertTargetRouteArray{
+//					&wavefront.AlertTargetRouteArgs{
 //						Filter: pulumi.StringMap{
 //							"key":   pulumi.String("env"),
 //							"value": pulumi.String("prod"),
@@ -94,7 +94,7 @@ import (
 //						Method: pulumi.String("WEBHOOK"),
 //						Target: pulumi.String("https://hooks.slack.com/services/test/me/prod"),
 //					},
-//					&AlertTargetRouteArgs{
+//					&wavefront.AlertTargetRouteArgs{
 //						Filter: pulumi.StringMap{
 //							"key":   pulumi.String("env"),
 //							"value": pulumi.String("dev"),

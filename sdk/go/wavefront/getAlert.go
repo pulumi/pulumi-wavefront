@@ -26,7 +26,7 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err = wavefront.LookupAlert(ctx, &GetAlertArgs{
+//			_, err := wavefront.LookupAlert(ctx, &wavefront.LookupAlertArgs{
 //				Id: "alert-id",
 //			}, nil)
 //			if err != nil {
@@ -58,7 +58,8 @@ type LookupAlertArgs struct {
 type LookupAlertResult struct {
 	// User-supplied additional explanatory information about this alert.
 	AdditionalInformation string `pulumi:"additionalInformation"`
-	AlertType             string `pulumi:"alertType"`
+	// The type of alert in Wavefront.
+	AlertType string `pulumi:"alertType"`
 	// A list of users or groups that can modify the alert.
 	CanModifies []string `pulumi:"canModifies"`
 	// A list of users or groups that can view the alert.
@@ -74,7 +75,6 @@ type LookupAlertResult struct {
 	// A list of failing host label pairs.
 	FailingHostLabelPairs []GetAlertFailingHostLabelPair `pulumi:"failingHostLabelPairs"`
 	// The ID of the alert in Wavefront.
-	// * `alertType`- The type of alert in Wavefront.
 	Id string `pulumi:"id"`
 	// A list of in maintenance host label pairs.
 	InMaintenanceHostLabelPairs []GetAlertInMaintenanceHostLabelPair `pulumi:"inMaintenanceHostLabelPairs"`
@@ -148,6 +148,7 @@ func (o LookupAlertResultOutput) AdditionalInformation() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAlertResult) string { return v.AdditionalInformation }).(pulumi.StringOutput)
 }
 
+// The type of alert in Wavefront.
 func (o LookupAlertResultOutput) AlertType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAlertResult) string { return v.AlertType }).(pulumi.StringOutput)
 }
@@ -188,7 +189,6 @@ func (o LookupAlertResultOutput) FailingHostLabelPairs() GetAlertFailingHostLabe
 }
 
 // The ID of the alert in Wavefront.
-// * `alertType`- The type of alert in Wavefront.
 func (o LookupAlertResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAlertResult) string { return v.Id }).(pulumi.StringOutput)
 }

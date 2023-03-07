@@ -26,7 +26,7 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err = wavefront.GetAlerts(ctx, &GetAlertsArgs{
+//			_, err := wavefront.GetAlerts(ctx, &wavefront.GetAlertsArgs{
 //				Limit:  pulumi.IntRef(10),
 //				Offset: pulumi.IntRef(0),
 //			}, nil)

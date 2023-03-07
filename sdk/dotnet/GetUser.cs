@@ -99,6 +99,9 @@ namespace Pulumi.Wavefront
     [OutputType]
     public sealed class GetUserResult
     {
+        /// <summary>
+        /// The customer the user is associated with.
+        /// </summary>
         public readonly string Customer;
         public readonly string Email;
         /// <summary>
@@ -115,7 +118,6 @@ namespace Pulumi.Wavefront
         public readonly ImmutableArray<string> Permissions;
         /// <summary>
         /// List of User Group Ids the user is a member of.
-        /// * `customer`- The customer the user is associated with.
         /// </summary>
         public readonly ImmutableArray<string> UserGroupIds;
 

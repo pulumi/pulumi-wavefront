@@ -1428,7 +1428,7 @@ class MetricsPolicyPolicyRule(dict):
         :param Sequence[str] prefixes: List of prefixes to match metrics on. You can specify the full metric name or use a wildcard character in metric names, sources, or point tags. The wildcard character alone (*) means all metrics.
         :param bool tags_anded: Bool where `true` require all tags are met by selected metrics, else `false` select metrics that match any give tag.
         :param Sequence[str] account_ids: List of account ids to apply Metrics Policy to. Must have at least one associated account_id, user_group_id, or role_id.
-        :param Sequence[str] role_ids: -(Optional) List of role ids to apply Metrics Policy to. Must have at least one associated account_id, user_group_id, or role_id.
+        :param Sequence[str] role_ids: List of role ids to apply Metrics Policy to. Must have at least one associated account_id, user_group_id, or role_id.
         :param Sequence['MetricsPolicyPolicyRuleTagArgs'] tags: List of Key/Value tags to select target metrics for policy.
         :param Sequence[str] user_group_ids: List of user group ids to apply Metrics Policy to. Must have at least one associated account_id, user_group_id, or role_id.
         """
@@ -1498,7 +1498,7 @@ class MetricsPolicyPolicyRule(dict):
     @pulumi.getter(name="roleIds")
     def role_ids(self) -> Optional[Sequence[str]]:
         """
-        -(Optional) List of role ids to apply Metrics Policy to. Must have at least one associated account_id, user_group_id, or role_id.
+        List of role ids to apply Metrics Policy to. Must have at least one associated account_id, user_group_id, or role_id.
         """
         return pulumi.get(self, "role_ids")
 
@@ -1614,6 +1614,7 @@ class GetAlertsAlertResult(dict):
                  targets: Optional[Mapping[str, str]] = None):
         """
         :param str additional_information: User-supplied additional explanatory information about this alert.
+        :param str alert_type: The type of alert in Wavefront.
         :param Sequence[str] can_modifies: A list of users or groups that can modify the alert.
         :param Sequence[str] can_views: A list of users or groups that can view the alert.
         :param str condition: A Wavefront query that is evaluated at regular intervals (default is 1 minute). The alert fires and notifications are triggered when a data series matching this query evaluates to a non-zero value for a set number of consecutive minutes.
@@ -1622,7 +1623,6 @@ class GetAlertsAlertResult(dict):
         :param bool evaluate_realtime_data: A Boolean flag to enable real-time evaluation.
         :param Sequence['GetAlertsAlertFailingHostLabelPairArgs'] failing_host_label_pairs: A list of failing host label pairs.
         :param str id: The ID of the alert in Wavefront.
-               * `alert_type`- The type of alert in Wavefront.
         :param Sequence['GetAlertsAlertInMaintenanceHostLabelPairArgs'] in_maintenance_host_label_pairs: A list of in maintenance host label pairs.
         :param bool include_obsolete_metrics: A Boolean flag indicating whether to include obsolete metrics or not.
         :param int minutes: The number of consecutive minutes that a series matching the condition query must evaluate to "true" (non-zero value) before the alert fires.
@@ -1672,6 +1672,9 @@ class GetAlertsAlertResult(dict):
     @property
     @pulumi.getter(name="alertType")
     def alert_type(self) -> str:
+        """
+        The type of alert in Wavefront.
+        """
         return pulumi.get(self, "alert_type")
 
     @property
@@ -1735,7 +1738,6 @@ class GetAlertsAlertResult(dict):
     def id(self) -> str:
         """
         The ID of the alert in Wavefront.
-        * `alert_type`- The type of alert in Wavefront.
         """
         return pulumi.get(self, "id")
 
@@ -4131,18 +4133,18 @@ class GetDerivedMetricsDerivedMetricResult(dict):
         :param bool deleted: A Boolean flag indicating whether the derived metric is deleted or not.
         :param Sequence[str] hosts_useds: A list of hosts used in the derived metric.
         :param str id: The ID of the derived metric in Wavefront.
-               * `query`- A Wavefront query that is evaluated at regular intervals (default is 1 minute).
         :param bool in_trash: A Boolean variable indicating trash status.
         :param bool include_obsolete_metrics: A Boolean flag indicating whether to include obsolete metrics or not.
         :param str last_error_message: Last error message occurred.
         :param int last_failed_time: Timestamp of the last failed derived metric.
         :param int last_processed_millis: The last processed timestamp.
         :param int last_query_time: The timestamp indicating the last time the query was executed.
-               * `metrics_used` -A list of metrics used in the derived metric.
+        :param Sequence[str] metrics_useds: A list of metrics used in the derived metric.
         :param int minutes: How frequently the query generating the derived metric is run.
         :param str name: The name of the derived metric in Wavefront.
         :param int points_scanned_at_last_query: The number of points scanned when the last query was executed.
         :param int process_rate_minutes: The specified query is executed every `process_rate_minutes` minutes.
+        :param str query: A Wavefront query that is evaluated at regular intervals (default is 1 minute).
         :param bool query_failing: A Boolean variable indicating whether query is failing for the derived metric.
         :param bool query_qb_enabled: A Boolean flag for enabling `query_qb`
         :param Sequence[str] statuses: The status of the derived metric.
@@ -4220,7 +4222,6 @@ class GetDerivedMetricsDerivedMetricResult(dict):
     def id(self) -> str:
         """
         The ID of the derived metric in Wavefront.
-        * `query`- A Wavefront query that is evaluated at regular intervals (default is 1 minute).
         """
         return pulumi.get(self, "id")
 
@@ -4269,13 +4270,15 @@ class GetDerivedMetricsDerivedMetricResult(dict):
     def last_query_time(self) -> int:
         """
         The timestamp indicating the last time the query was executed.
-        * `metrics_used` -A list of metrics used in the derived metric.
         """
         return pulumi.get(self, "last_query_time")
 
     @property
     @pulumi.getter(name="metricsUseds")
     def metrics_useds(self) -> Sequence[str]:
+        """
+        A list of metrics used in the derived metric.
+        """
         return pulumi.get(self, "metrics_useds")
 
     @property
@@ -4313,6 +4316,9 @@ class GetDerivedMetricsDerivedMetricResult(dict):
     @property
     @pulumi.getter
     def query(self) -> str:
+        """
+        A Wavefront query that is evaluated at regular intervals (default is 1 minute).
+        """
         return pulumi.get(self, "query")
 
     @property
@@ -4381,10 +4387,10 @@ class GetEventsEventResult(dict):
         :param Mapping[str, str] annotations: Annotations associated with the event.
         :param str details: The description of the event.
         :param str id: The ID of the event in Wavefront.
-               * `start_time`- The start time of the event in epoch milliseconds.
         :param bool is_ephemeral: A Boolean flag. If set to `true`, creates a point-in-time event (i.e. with no duration).
         :param str name: The name of the event in Wavefront.
         :param str severity: The severity category of the event.
+        :param int start_time: The start time of the event in epoch milliseconds.
         :param Sequence[str] tags: A set of tags assigned to the event.
         :param str type: The type of the event.
         """
@@ -4425,7 +4431,6 @@ class GetEventsEventResult(dict):
     def id(self) -> str:
         """
         The ID of the event in Wavefront.
-        * `start_time`- The start time of the event in epoch milliseconds.
         """
         return pulumi.get(self, "id")
 
@@ -4456,6 +4461,9 @@ class GetEventsEventResult(dict):
     @property
     @pulumi.getter(name="startTime")
     def start_time(self) -> int:
+        """
+        The start time of the event in epoch milliseconds.
+        """
         return pulumi.get(self, "start_time")
 
     @property
@@ -4960,10 +4968,10 @@ class GetUsersUserResult(dict):
                  permissions: Sequence[str],
                  user_group_ids: Sequence[str]):
         """
+        :param str customer: The customer the user is associated with.
         :param int last_successful_login: When the user last logged in to Wavefront.
         :param Sequence[str] permissions: List of permissions granted to a user.
         :param Sequence[str] user_group_ids: List of User Group Ids the user is a member of.
-               * `customer`- The customer the user is associated with.
         """
         pulumi.set(__self__, "customer", customer)
         pulumi.set(__self__, "email", email)
@@ -4974,6 +4982,9 @@ class GetUsersUserResult(dict):
     @property
     @pulumi.getter
     def customer(self) -> str:
+        """
+        The customer the user is associated with.
+        """
         return pulumi.get(self, "customer")
 
     @property
@@ -5002,7 +5013,6 @@ class GetUsersUserResult(dict):
     def user_group_ids(self) -> Sequence[str]:
         """
         List of User Group Ids the user is a member of.
-        * `customer`- The customer the user is associated with.
         """
         return pulumi.get(self, "user_group_ids")
 

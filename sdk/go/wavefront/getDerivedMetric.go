@@ -26,7 +26,7 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err = wavefront.LookupDerivedMetric(ctx, &GetDerivedMetricArgs{
+//			_, err := wavefront.LookupDerivedMetric(ctx, &wavefront.LookupDerivedMetricArgs{
 //				Id: "derived_metric_id",
 //			}, nil)
 //			if err != nil {
@@ -65,10 +65,10 @@ type LookupDerivedMetricResult struct {
 	// A list of hosts used in the derived metric.
 	HostsUseds []string `pulumi:"hostsUseds"`
 	// The ID of the derived metric in Wavefront.
-	// * `query`- A Wavefront query that is evaluated at regular intervals (default is 1 minute).
 	Id string `pulumi:"id"`
 	// A Boolean variable indicating trash status.
-	InTrash                bool `pulumi:"inTrash"`
+	InTrash bool `pulumi:"inTrash"`
+	// A Boolean flag indicating whether to include obsolete metrics or not.
 	IncludeObsoleteMetrics bool `pulumi:"includeObsoleteMetrics"`
 	// Last error message occurred.
 	LastErrorMessage string `pulumi:"lastErrorMessage"`
@@ -85,11 +85,11 @@ type LookupDerivedMetricResult struct {
 	// The name of the derived metric in Wavefront.
 	Name string `pulumi:"name"`
 	// The number of points scanned when last query was executed.
-	// * `includeObsoleteMetrics` -A Boolean flag indicating whether to include obsolete metrics or not.
 	PointsScannedAtLastQuery int `pulumi:"pointsScannedAtLastQuery"`
 	// The specified query is executed every `processRateMinutes` minutes.
-	ProcessRateMinutes int    `pulumi:"processRateMinutes"`
-	Query              string `pulumi:"query"`
+	ProcessRateMinutes int `pulumi:"processRateMinutes"`
+	// A Wavefront query that is evaluated at regular intervals (default is 1 minute).
+	Query string `pulumi:"query"`
 	// A Boolean variable indicating whether query is failing for the derived metric.
 	QueryFailing bool `pulumi:"queryFailing"`
 	// A Boolean flag for enabling `queryQb`
@@ -168,7 +168,6 @@ func (o LookupDerivedMetricResultOutput) HostsUseds() pulumi.StringArrayOutput {
 }
 
 // The ID of the derived metric in Wavefront.
-// * `query`- A Wavefront query that is evaluated at regular intervals (default is 1 minute).
 func (o LookupDerivedMetricResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDerivedMetricResult) string { return v.Id }).(pulumi.StringOutput)
 }
@@ -178,6 +177,7 @@ func (o LookupDerivedMetricResultOutput) InTrash() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupDerivedMetricResult) bool { return v.InTrash }).(pulumi.BoolOutput)
 }
 
+// A Boolean flag indicating whether to include obsolete metrics or not.
 func (o LookupDerivedMetricResultOutput) IncludeObsoleteMetrics() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupDerivedMetricResult) bool { return v.IncludeObsoleteMetrics }).(pulumi.BoolOutput)
 }
@@ -218,7 +218,6 @@ func (o LookupDerivedMetricResultOutput) Name() pulumi.StringOutput {
 }
 
 // The number of points scanned when last query was executed.
-// * `includeObsoleteMetrics` -A Boolean flag indicating whether to include obsolete metrics or not.
 func (o LookupDerivedMetricResultOutput) PointsScannedAtLastQuery() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupDerivedMetricResult) int { return v.PointsScannedAtLastQuery }).(pulumi.IntOutput)
 }
@@ -228,6 +227,7 @@ func (o LookupDerivedMetricResultOutput) ProcessRateMinutes() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupDerivedMetricResult) int { return v.ProcessRateMinutes }).(pulumi.IntOutput)
 }
 
+// A Wavefront query that is evaluated at regular intervals (default is 1 minute).
 func (o LookupDerivedMetricResultOutput) Query() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDerivedMetricResult) string { return v.Query }).(pulumi.StringOutput)
 }

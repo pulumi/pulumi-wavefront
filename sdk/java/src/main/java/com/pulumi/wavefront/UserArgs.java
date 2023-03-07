@@ -16,9 +16,17 @@ public final class UserArgs extends com.pulumi.resources.ResourceArgs {
 
     public static final UserArgs Empty = new UserArgs();
 
+    /**
+     * The customer the user is associated with.
+     * 
+     */
     @Import(name="customer")
     private @Nullable Output<String> customer;
 
+    /**
+     * @return The customer the user is associated with.
+     * 
+     */
     public Optional<Output<String>> customer() {
         return Optional.ofNullable(this.customer);
     }
@@ -99,11 +107,23 @@ public final class UserArgs extends com.pulumi.resources.ResourceArgs {
             $ = new UserArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param customer The customer the user is associated with.
+         * 
+         * @return builder
+         * 
+         */
         public Builder customer(@Nullable Output<String> customer) {
             $.customer = customer;
             return this;
         }
 
+        /**
+         * @param customer The customer the user is associated with.
+         * 
+         * @return builder
+         * 
+         */
         public Builder customer(String customer) {
             return customer(Output.of(customer));
         }

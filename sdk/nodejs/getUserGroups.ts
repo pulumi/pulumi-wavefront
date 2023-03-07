@@ -15,20 +15,16 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as wavefront from "@pulumi/wavefront";
  *
- * // Get all user groups
- * const groups = pulumi.output(wavefront.getUserGroups({
+ * const groups = wavefront.getUserGroups({
  *     limit: 10,
  *     offset: 0,
- * }));
+ * });
  * ```
  */
 export function getUserGroups(args?: GetUserGroupsArgs, opts?: pulumi.InvokeOptions): Promise<GetUserGroupsResult> {
     args = args || {};
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("wavefront:index/getUserGroups:getUserGroups", {
         "limit": args.limit,
         "offset": args.offset,
@@ -64,9 +60,23 @@ export interface GetUserGroupsResult {
      */
     readonly userGroups: outputs.GetUserGroupsUserGroup[];
 }
-
+/**
+ * Use this data source to get all User Groups in Wavefront.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as wavefront from "@pulumi/wavefront";
+ *
+ * const groups = wavefront.getUserGroups({
+ *     limit: 10,
+ *     offset: 0,
+ * });
+ * ```
+ */
 export function getUserGroupsOutput(args?: GetUserGroupsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetUserGroupsResult> {
-    return pulumi.output(args).apply(a => getUserGroups(a, opts))
+    return pulumi.output(args).apply((a: any) => getUserGroups(a, opts))
 }
 
 /**

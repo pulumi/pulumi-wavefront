@@ -13,9 +13,7 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as wavefront from "@pulumi/wavefront";
  *
- * const basic = new wavefront.IngestionPolicy("basic", {
- *     description: "An ingestion policy for testing",
- * });
+ * const basic = new wavefront.IngestionPolicy("basic", {description: "An ingestion policy for testing"});
  * ```
  *
  * ## Import

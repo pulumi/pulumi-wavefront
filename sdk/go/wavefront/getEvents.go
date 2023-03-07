@@ -26,7 +26,7 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err = wavefront.GetEvents(ctx, &GetEventsArgs{
+//			_, err := wavefront.GetEvents(ctx, &wavefront.GetEventsArgs{
 //				EarliestStartTimeEpochMillis: 1665427195,
 //				LatestStartTimeEpochMillis:   1665427195,
 //				Limit:                        pulumi.IntRef(10),

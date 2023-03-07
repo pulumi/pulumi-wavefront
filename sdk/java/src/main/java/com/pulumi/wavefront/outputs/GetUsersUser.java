@@ -11,6 +11,10 @@ import java.util.Objects;
 
 @CustomType
 public final class GetUsersUser {
+    /**
+     * @return The customer the user is associated with.
+     * 
+     */
     private String customer;
     private String email;
     /**
@@ -25,12 +29,15 @@ public final class GetUsersUser {
     private List<String> permissions;
     /**
      * @return List of User Group Ids the user is a member of.
-     * * `customer`- The customer the user is associated with.
      * 
      */
     private List<String> userGroupIds;
 
     private GetUsersUser() {}
+    /**
+     * @return The customer the user is associated with.
+     * 
+     */
     public String customer() {
         return this.customer;
     }
@@ -53,7 +60,6 @@ public final class GetUsersUser {
     }
     /**
      * @return List of User Group Ids the user is a member of.
-     * * `customer`- The customer the user is associated with.
      * 
      */
     public List<String> userGroupIds() {

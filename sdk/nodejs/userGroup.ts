@@ -13,9 +13,7 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as wavefront from "@pulumi/wavefront";
  *
- * const basic = new wavefront.UserGroup("basic", {
- *     description: "Basic User Group for Unit Tests",
- * });
+ * const basic = new wavefront.UserGroup("basic", {description: "Basic User Group for Unit Tests"});
  * ```
  *
  * ## Import

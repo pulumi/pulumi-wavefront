@@ -15,16 +15,12 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as wavefront from "@pulumi/wavefront";
  *
- * // Get all users
- * const users = pulumi.output(wavefront.getUsers());
+ * const users = wavefront.getUsers({});
  * ```
  */
 export function getUsers(opts?: pulumi.InvokeOptions): Promise<GetUsersResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("wavefront:index/getUsers:getUsers", {
     }, opts);
 }

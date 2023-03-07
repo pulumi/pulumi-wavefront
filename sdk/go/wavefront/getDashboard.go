@@ -26,7 +26,7 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err = wavefront.LookupDashboard(ctx, &GetDashboardArgs{
+//			_, err := wavefront.LookupDashboard(ctx, &wavefront.LookupDashboardArgs{
 //				Id: "dashboard-id",
 //			}, nil)
 //			if err != nil {

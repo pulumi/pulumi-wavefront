@@ -822,6 +822,31 @@ public final class WavefrontFunctions {
      * Use this data source to get the Group ID of the `Everyone` group in Wavefront.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.wavefront.WavefrontFunctions;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var everyoneGroup = WavefrontFunctions.getDefaultUserGroup();
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDefaultUserGroupResult> getDefaultUserGroup() {
@@ -831,6 +856,31 @@ public final class WavefrontFunctions {
      * Use this data source to get the Group ID of the `Everyone` group in Wavefront.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.wavefront.WavefrontFunctions;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var everyoneGroup = WavefrontFunctions.getDefaultUserGroup();
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDefaultUserGroupResult> getDefaultUserGroupPlain() {
@@ -840,6 +890,31 @@ public final class WavefrontFunctions {
      * Use this data source to get the Group ID of the `Everyone` group in Wavefront.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.wavefront.WavefrontFunctions;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var everyoneGroup = WavefrontFunctions.getDefaultUserGroup();
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDefaultUserGroupResult> getDefaultUserGroup(InvokeArgs args) {
@@ -849,6 +924,31 @@ public final class WavefrontFunctions {
      * Use this data source to get the Group ID of the `Everyone` group in Wavefront.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.wavefront.WavefrontFunctions;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var everyoneGroup = WavefrontFunctions.getDefaultUserGroup();
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDefaultUserGroupResult> getDefaultUserGroupPlain(InvokeArgs args) {
@@ -858,6 +958,31 @@ public final class WavefrontFunctions {
      * Use this data source to get the Group ID of the `Everyone` group in Wavefront.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.wavefront.WavefrontFunctions;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var everyoneGroup = WavefrontFunctions.getDefaultUserGroup();
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDefaultUserGroupResult> getDefaultUserGroup(InvokeArgs args, InvokeOptions options) {
@@ -867,6 +992,31 @@ public final class WavefrontFunctions {
      * Use this data source to get the Group ID of the `Everyone` group in Wavefront.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.wavefront.WavefrontFunctions;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var everyoneGroup = WavefrontFunctions.getDefaultUserGroup();
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDefaultUserGroupResult> getDefaultUserGroupPlain(InvokeArgs args, InvokeOptions options) {
@@ -3020,6 +3170,31 @@ public final class WavefrontFunctions {
      * Use this data source to get all users in Wavefront.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.wavefront.WavefrontFunctions;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var users = WavefrontFunctions.getUsers();
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetUsersResult> getUsers() {
@@ -3029,6 +3204,31 @@ public final class WavefrontFunctions {
      * Use this data source to get all users in Wavefront.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.wavefront.WavefrontFunctions;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var users = WavefrontFunctions.getUsers();
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetUsersResult> getUsersPlain() {
@@ -3038,6 +3238,31 @@ public final class WavefrontFunctions {
      * Use this data source to get all users in Wavefront.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.wavefront.WavefrontFunctions;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var users = WavefrontFunctions.getUsers();
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetUsersResult> getUsers(InvokeArgs args) {
@@ -3047,6 +3272,31 @@ public final class WavefrontFunctions {
      * Use this data source to get all users in Wavefront.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.wavefront.WavefrontFunctions;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var users = WavefrontFunctions.getUsers();
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetUsersResult> getUsersPlain(InvokeArgs args) {
@@ -3056,6 +3306,31 @@ public final class WavefrontFunctions {
      * Use this data source to get all users in Wavefront.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.wavefront.WavefrontFunctions;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var users = WavefrontFunctions.getUsers();
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetUsersResult> getUsers(InvokeArgs args, InvokeOptions options) {
@@ -3065,6 +3340,31 @@ public final class WavefrontFunctions {
      * Use this data source to get all users in Wavefront.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.wavefront.WavefrontFunctions;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var users = WavefrontFunctions.getUsers();
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetUsersResult> getUsersPlain(InvokeArgs args, InvokeOptions options) {

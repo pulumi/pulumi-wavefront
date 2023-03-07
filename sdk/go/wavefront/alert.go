@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pkg/errors"
+	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -95,7 +95,7 @@ type Alert struct {
 	// query must evaluate to "false" (zero value) before the alert resolves.  When unset, this defaults to
 	// the same value as `minutes`.
 	ResolveAfterMinutes pulumi.IntPtrOutput `pulumi:"resolveAfterMinutes"`
-	// - Severity of the alert, valid values are `INFO`, `SMOKE`, `WARN`, `SEVERE`.
+	// Severity of the alert, valid values are `INFO`, `SMOKE`, `WARN`, `SEVERE`.
 	Severity pulumi.StringOutput `pulumi:"severity"`
 	// A set of tags to assign to this resource.
 	Tags pulumi.StringArrayOutput `pulumi:"tags"`
@@ -177,7 +177,7 @@ type alertState struct {
 	// query must evaluate to "false" (zero value) before the alert resolves.  When unset, this defaults to
 	// the same value as `minutes`.
 	ResolveAfterMinutes *int `pulumi:"resolveAfterMinutes"`
-	// - Severity of the alert, valid values are `INFO`, `SMOKE`, `WARN`, `SEVERE`.
+	// Severity of the alert, valid values are `INFO`, `SMOKE`, `WARN`, `SEVERE`.
 	Severity *string `pulumi:"severity"`
 	// A set of tags to assign to this resource.
 	Tags []string `pulumi:"tags"`
@@ -225,7 +225,7 @@ type AlertState struct {
 	// query must evaluate to "false" (zero value) before the alert resolves.  When unset, this defaults to
 	// the same value as `minutes`.
 	ResolveAfterMinutes pulumi.IntPtrInput
-	// - Severity of the alert, valid values are `INFO`, `SMOKE`, `WARN`, `SEVERE`.
+	// Severity of the alert, valid values are `INFO`, `SMOKE`, `WARN`, `SEVERE`.
 	Severity pulumi.StringPtrInput
 	// A set of tags to assign to this resource.
 	Tags pulumi.StringArrayInput
@@ -277,7 +277,7 @@ type alertArgs struct {
 	// query must evaluate to "false" (zero value) before the alert resolves.  When unset, this defaults to
 	// the same value as `minutes`.
 	ResolveAfterMinutes *int `pulumi:"resolveAfterMinutes"`
-	// - Severity of the alert, valid values are `INFO`, `SMOKE`, `WARN`, `SEVERE`.
+	// Severity of the alert, valid values are `INFO`, `SMOKE`, `WARN`, `SEVERE`.
 	Severity *string `pulumi:"severity"`
 	// A set of tags to assign to this resource.
 	Tags []string `pulumi:"tags"`
@@ -326,7 +326,7 @@ type AlertArgs struct {
 	// query must evaluate to "false" (zero value) before the alert resolves.  When unset, this defaults to
 	// the same value as `minutes`.
 	ResolveAfterMinutes pulumi.IntPtrInput
-	// - Severity of the alert, valid values are `INFO`, `SMOKE`, `WARN`, `SEVERE`.
+	// Severity of the alert, valid values are `INFO`, `SMOKE`, `WARN`, `SEVERE`.
 	Severity pulumi.StringPtrInput
 	// A set of tags to assign to this resource.
 	Tags pulumi.StringArrayInput
@@ -496,7 +496,7 @@ func (o AlertOutput) ResolveAfterMinutes() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *Alert) pulumi.IntPtrOutput { return v.ResolveAfterMinutes }).(pulumi.IntPtrOutput)
 }
 
-// - Severity of the alert, valid values are `INFO`, `SMOKE`, `WARN`, `SEVERE`.
+// Severity of the alert, valid values are `INFO`, `SMOKE`, `WARN`, `SEVERE`.
 func (o AlertOutput) Severity() pulumi.StringOutput {
 	return o.ApplyT(func(v *Alert) pulumi.StringOutput { return v.Severity }).(pulumi.StringOutput)
 }

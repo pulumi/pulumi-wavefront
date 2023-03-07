@@ -13,18 +13,14 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as wavefront from "@pulumi/wavefront";
  *
- * // Get the information about a Wavefront event by its ID.
- * const example = pulumi.output(wavefront.getEvent({
+ * const example = wavefront.getEvent({
  *     id: "sample-event-id",
- * }));
+ * });
  * ```
  */
 export function getEvent(args: GetEventArgs, opts?: pulumi.InvokeOptions): Promise<GetEventResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("wavefront:index/getEvent:getEvent", {
         "id": args.id,
     }, opts);
@@ -55,7 +51,6 @@ export interface GetEventResult {
     readonly endtimeKey: number;
     /**
      * The ID of the event in Wavefront.
-     * * `startTime`- The start time of the event in epoch milliseconds.
      */
     readonly id: string;
     /**
@@ -70,6 +65,9 @@ export interface GetEventResult {
      * The severity category of the event.
      */
     readonly severity: string;
+    /**
+     * The start time of the event in epoch milliseconds.
+     */
     readonly startTime: number;
     /**
      * A set of tags assigned to the event.
@@ -80,9 +78,22 @@ export interface GetEventResult {
      */
     readonly type: string;
 }
-
+/**
+ * Use this data source to get information about a certain Wavefront event.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as wavefront from "@pulumi/wavefront";
+ *
+ * const example = wavefront.getEvent({
+ *     id: "sample-event-id",
+ * });
+ * ```
+ */
 export function getEventOutput(args: GetEventOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetEventResult> {
-    return pulumi.output(args).apply(a => getEvent(a, opts))
+    return pulumi.output(args).apply((a: any) => getEvent(a, opts))
 }
 
 /**

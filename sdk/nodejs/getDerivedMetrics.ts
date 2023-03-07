@@ -15,20 +15,16 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as wavefront from "@pulumi/wavefront";
  *
- * // Get the information about all derived metrics.
- * const example = pulumi.output(wavefront.getDerivedMetrics({
+ * const example = wavefront.getDerivedMetrics({
  *     limit: 10,
  *     offset: 0,
- * }));
+ * });
  * ```
  */
 export function getDerivedMetrics(args?: GetDerivedMetricsArgs, opts?: pulumi.InvokeOptions): Promise<GetDerivedMetricsResult> {
     args = args || {};
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("wavefront:index/getDerivedMetrics:getDerivedMetrics", {
         "limit": args.limit,
         "offset": args.offset,
@@ -64,9 +60,23 @@ export interface GetDerivedMetricsResult {
     readonly limit?: number;
     readonly offset?: number;
 }
-
+/**
+ * Use this data source to get information about all Wavefront derived metrics.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as wavefront from "@pulumi/wavefront";
+ *
+ * const example = wavefront.getDerivedMetrics({
+ *     limit: 10,
+ *     offset: 0,
+ * });
+ * ```
+ */
 export function getDerivedMetricsOutput(args?: GetDerivedMetricsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDerivedMetricsResult> {
-    return pulumi.output(args).apply(a => getDerivedMetrics(a, opts))
+    return pulumi.output(args).apply((a: any) => getDerivedMetrics(a, opts))
 }
 
 /**

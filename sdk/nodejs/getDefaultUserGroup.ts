@@ -13,16 +13,12 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as wavefront from "@pulumi/wavefront";
  *
- * // Get the default user group "Everyone"
- * const everyoneGroup = pulumi.output(wavefront.getDefaultUserGroup());
+ * const everyoneGroup = wavefront.getDefaultUserGroup({});
  * ```
  */
 export function getDefaultUserGroup(opts?: pulumi.InvokeOptions): Promise<GetDefaultUserGroupResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("wavefront:index/getDefaultUserGroup:getDefaultUserGroup", {
     }, opts);
 }

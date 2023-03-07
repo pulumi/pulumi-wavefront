@@ -24,7 +24,6 @@ namespace Pulumi.Wavefront.Outputs
         public readonly int EndtimeKey;
         /// <summary>
         /// The ID of the event in Wavefront.
-        /// * `start_time`- The start time of the event in epoch milliseconds.
         /// </summary>
         public readonly string Id;
         /// <summary>
@@ -39,6 +38,9 @@ namespace Pulumi.Wavefront.Outputs
         /// The severity category of the event.
         /// </summary>
         public readonly string Severity;
+        /// <summary>
+        /// The start time of the event in epoch milliseconds.
+        /// </summary>
         public readonly int StartTime;
         /// <summary>
         /// A set of tags assigned to the event.

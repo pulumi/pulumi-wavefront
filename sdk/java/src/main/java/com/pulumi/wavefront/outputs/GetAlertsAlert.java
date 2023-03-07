@@ -21,6 +21,10 @@ public final class GetAlertsAlert {
      * 
      */
     private String additionalInformation;
+    /**
+     * @return The type of alert in Wavefront.
+     * 
+     */
     private String alertType;
     /**
      * @return A list of users or groups that can modify the alert.
@@ -59,7 +63,6 @@ public final class GetAlertsAlert {
     private List<GetAlertsAlertFailingHostLabelPair> failingHostLabelPairs;
     /**
      * @return The ID of the alert in Wavefront.
-     * * `alert_type`- The type of alert in Wavefront.
      * 
      */
     private String id;
@@ -133,6 +136,10 @@ public final class GetAlertsAlert {
     public String additionalInformation() {
         return this.additionalInformation;
     }
+    /**
+     * @return The type of alert in Wavefront.
+     * 
+     */
     public String alertType() {
         return this.alertType;
     }
@@ -187,7 +194,6 @@ public final class GetAlertsAlert {
     }
     /**
      * @return The ID of the alert in Wavefront.
-     * * `alert_type`- The type of alert in Wavefront.
      * 
      */
     public String id() {

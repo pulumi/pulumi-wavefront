@@ -13,18 +13,14 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as wavefront from "@pulumi/wavefront";
  *
- * // Get the info for user "example.user@example.com"
- * const example = pulumi.output(wavefront.getUser({
+ * const example = wavefront.getUser({
  *     email: "example.user@example.com",
- * }));
+ * });
  * ```
  */
 export function getUser(args: GetUserArgs, opts?: pulumi.InvokeOptions): Promise<GetUserResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("wavefront:index/getUser:getUser", {
         "email": args.email,
     }, opts);
@@ -44,6 +40,9 @@ export interface GetUserArgs {
  * A collection of values returned by getUser.
  */
 export interface GetUserResult {
+    /**
+     * The customer the user is associated with.
+     */
     readonly customer: string;
     readonly email: string;
     /**
@@ -60,13 +59,25 @@ export interface GetUserResult {
     readonly permissions: string[];
     /**
      * List of User Group Ids the user is a member of.
-     * * `customer`- The customer the user is associated with.
      */
     readonly userGroupIds: string[];
 }
-
+/**
+ * Use this data source to get information for a given user by email from Wavefront.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as wavefront from "@pulumi/wavefront";
+ *
+ * const example = wavefront.getUser({
+ *     email: "example.user@example.com",
+ * });
+ * ```
+ */
 export function getUserOutput(args: GetUserOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetUserResult> {
-    return pulumi.output(args).apply(a => getUser(a, opts))
+    return pulumi.output(args).apply((a: any) => getUser(a, opts))
 }
 
 /**

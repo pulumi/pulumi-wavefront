@@ -19,9 +19,77 @@ import javax.annotation.Nullable;
 /**
  * Provides a Wavefront Metrics Policy Resource. This allows management of Metrics Policy to control access to time series, histograms, and delta counters
  * 
+ * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.wavefront.WavefrontFunctions;
+ * import com.pulumi.wavefront.MetricsPolicy;
+ * import com.pulumi.wavefront.MetricsPolicyArgs;
+ * import com.pulumi.wavefront.inputs.MetricsPolicyPolicyRuleArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         final var everyone = WavefrontFunctions.getDefaultUserGroup();
+ * 
+ *         var main = new MetricsPolicy(&#34;main&#34;, MetricsPolicyArgs.builder()        
+ *             .policyRules(MetricsPolicyPolicyRuleArgs.builder()
+ *                 .name(&#34;Allow All Metrics&#34;)
+ *                 .description(&#34;Predefined policy rule. Allows access to all metrics (timeseries, histograms, and counters) for all accounts. If this rule is removed, all accounts can access all metrics if there are no matching blocking rules.&#34;)
+ *                 .prefixes(&#34;*&#34;)
+ *                 .tagsAnded(false)
+ *                 .accessType(&#34;ALLOW&#34;)
+ *                 .userGroupIds(everyone.applyValue(getDefaultUserGroupResult -&gt; getDefaultUserGroupResult.groupId()))
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * ## Data Source
  * 
  * Provides a Wavefront Metrics Policy Data Source. This allows looking up the current policy and associated rules.
+ * 
+ * ### Example
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.wavefront.WavefrontFunctions;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         final var policyMetricsPolicy = WavefrontFunctions.getMetricsPolicy();
+ * 
+ *         ctx.export(&#34;policy&#34;, policyMetricsPolicy.applyValue(getMetricsPolicyResult -&gt; getMetricsPolicyResult));
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 
@@ -34,9 +102,17 @@ import javax.annotation.Nullable;
  */
 @ResourceType(type="wavefront:index/metricsPolicy:MetricsPolicy")
 public class MetricsPolicy extends com.pulumi.resources.CustomResource {
+    /**
+     * The customer the user is associated with.
+     * 
+     */
     @Export(name="customer", type=String.class, parameters={})
     private Output<String> customer;
 
+    /**
+     * @return The customer the user is associated with.
+     * 
+     */
     public Output<String> customer() {
         return this.customer;
     }
