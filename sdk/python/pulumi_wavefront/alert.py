@@ -39,8 +39,8 @@ class AlertArgs:
                Useful for linking runbooks, migrations, etc.
         :param pulumi.Input[str] alert_type: The type of alert in Wavefront.  Either `CLASSIC` (default) 
                or `THRESHOLD`.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] can_modifies: A list of users or groups that can modify this resource.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] can_views: A list of users or groups that can view this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] can_modifies: A list of valid users or groups that can modify this resource on a tenant.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] can_views: A list of valid users or groups that can view this resource on a tenant. Default is Empty list.
         :param pulumi.Input[str] condition: A Wavefront query that is evaluated at regular intervals (default is 1 minute).
                The alert fires and notifications are triggered when a data series matching this query evaluates
                to a non-zero value for a set number of consecutive minutes.
@@ -52,7 +52,7 @@ class AlertArgs:
         :param pulumi.Input[str] name: The name of the alert as it is displayed in Wavefront.
         :param pulumi.Input[int] notification_resend_frequency_minutes: How often to re-trigger a continually failing alert. 
                If absent or <= 0, no re-triggering occurs.
-        :param pulumi.Input[int] process_rate_minutes: The specified query is executed every `process_rate_minutes` minutes.
+        :param pulumi.Input[int] process_rate_minutes: The specified query is executed every `process_rate_minutes` minutes. Default value is 5 minutes.
         :param pulumi.Input[int] resolve_after_minutes: The number of consecutive minutes that a firing series matching the condition
                query must evaluate to "false" (zero value) before the alert resolves.  When unset, this defaults to
                the same value as `minutes`.
@@ -60,7 +60,7 @@ class AlertArgs:
         :param pulumi.Input[str] target: A comma-separated list of the email address or integration endpoint 
                (such as PagerDuty or webhook) to notify when the alert status changes. Multiple target types can be in the list.
                Alert target format: ({email}|pd:{pd_key}|target:{alert-target-id}).
-        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] threshold_targets: Targets for severity
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] threshold_targets: A string to string map of Targets for severity.
         """
         pulumi.set(__self__, "minutes", minutes)
         pulumi.set(__self__, "tags", tags)
@@ -148,7 +148,7 @@ class AlertArgs:
     @pulumi.getter(name="canModifies")
     def can_modifies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        A list of users or groups that can modify this resource.
+        A list of valid users or groups that can modify this resource on a tenant.
         """
         return pulumi.get(self, "can_modifies")
 
@@ -160,7 +160,7 @@ class AlertArgs:
     @pulumi.getter(name="canViews")
     def can_views(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        A list of users or groups that can view this resource.
+        A list of valid users or groups that can view this resource on a tenant. Default is Empty list.
         """
         return pulumi.get(self, "can_views")
 
@@ -238,7 +238,7 @@ class AlertArgs:
     @pulumi.getter(name="processRateMinutes")
     def process_rate_minutes(self) -> Optional[pulumi.Input[int]]:
         """
-        The specified query is executed every `process_rate_minutes` minutes.
+        The specified query is executed every `process_rate_minutes` minutes. Default value is 5 minutes.
         """
         return pulumi.get(self, "process_rate_minutes")
 
@@ -290,7 +290,7 @@ class AlertArgs:
     @pulumi.getter(name="thresholdTargets")
     def threshold_targets(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
-        Targets for severity
+        A string to string map of Targets for severity.
         """
         return pulumi.get(self, "threshold_targets")
 
@@ -324,8 +324,8 @@ class _AlertState:
                Useful for linking runbooks, migrations, etc.
         :param pulumi.Input[str] alert_type: The type of alert in Wavefront.  Either `CLASSIC` (default) 
                or `THRESHOLD`.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] can_modifies: A list of users or groups that can modify this resource.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] can_views: A list of users or groups that can view this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] can_modifies: A list of valid users or groups that can modify this resource on a tenant.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] can_views: A list of valid users or groups that can view this resource on a tenant. Default is Empty list.
         :param pulumi.Input[str] condition: A Wavefront query that is evaluated at regular intervals (default is 1 minute).
                The alert fires and notifications are triggered when a data series matching this query evaluates
                to a non-zero value for a set number of consecutive minutes.
@@ -339,7 +339,7 @@ class _AlertState:
         :param pulumi.Input[str] name: The name of the alert as it is displayed in Wavefront.
         :param pulumi.Input[int] notification_resend_frequency_minutes: How often to re-trigger a continually failing alert. 
                If absent or <= 0, no re-triggering occurs.
-        :param pulumi.Input[int] process_rate_minutes: The specified query is executed every `process_rate_minutes` minutes.
+        :param pulumi.Input[int] process_rate_minutes: The specified query is executed every `process_rate_minutes` minutes. Default value is 5 minutes.
         :param pulumi.Input[int] resolve_after_minutes: The number of consecutive minutes that a firing series matching the condition
                query must evaluate to "false" (zero value) before the alert resolves.  When unset, this defaults to
                the same value as `minutes`.
@@ -348,7 +348,7 @@ class _AlertState:
         :param pulumi.Input[str] target: A comma-separated list of the email address or integration endpoint 
                (such as PagerDuty or webhook) to notify when the alert status changes. Multiple target types can be in the list.
                Alert target format: ({email}|pd:{pd_key}|target:{alert-target-id}).
-        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] threshold_targets: Targets for severity
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] threshold_targets: A string to string map of Targets for severity.
         """
         if additional_information is not None:
             pulumi.set(__self__, "additional_information", additional_information)
@@ -413,7 +413,7 @@ class _AlertState:
     @pulumi.getter(name="canModifies")
     def can_modifies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        A list of users or groups that can modify this resource.
+        A list of valid users or groups that can modify this resource on a tenant.
         """
         return pulumi.get(self, "can_modifies")
 
@@ -425,7 +425,7 @@ class _AlertState:
     @pulumi.getter(name="canViews")
     def can_views(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        A list of users or groups that can view this resource.
+        A list of valid users or groups that can view this resource on a tenant. Default is Empty list.
         """
         return pulumi.get(self, "can_views")
 
@@ -516,7 +516,7 @@ class _AlertState:
     @pulumi.getter(name="processRateMinutes")
     def process_rate_minutes(self) -> Optional[pulumi.Input[int]]:
         """
-        The specified query is executed every `process_rate_minutes` minutes.
+        The specified query is executed every `process_rate_minutes` minutes. Default value is 5 minutes.
         """
         return pulumi.get(self, "process_rate_minutes")
 
@@ -580,7 +580,7 @@ class _AlertState:
     @pulumi.getter(name="thresholdTargets")
     def threshold_targets(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
-        Targets for severity
+        A string to string map of Targets for severity.
         """
         return pulumi.get(self, "threshold_targets")
 
@@ -647,8 +647,8 @@ class Alert(pulumi.CustomResource):
                Useful for linking runbooks, migrations, etc.
         :param pulumi.Input[str] alert_type: The type of alert in Wavefront.  Either `CLASSIC` (default) 
                or `THRESHOLD`.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] can_modifies: A list of users or groups that can modify this resource.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] can_views: A list of users or groups that can view this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] can_modifies: A list of valid users or groups that can modify this resource on a tenant.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] can_views: A list of valid users or groups that can view this resource on a tenant. Default is Empty list.
         :param pulumi.Input[str] condition: A Wavefront query that is evaluated at regular intervals (default is 1 minute).
                The alert fires and notifications are triggered when a data series matching this query evaluates
                to a non-zero value for a set number of consecutive minutes.
@@ -662,7 +662,7 @@ class Alert(pulumi.CustomResource):
         :param pulumi.Input[str] name: The name of the alert as it is displayed in Wavefront.
         :param pulumi.Input[int] notification_resend_frequency_minutes: How often to re-trigger a continually failing alert. 
                If absent or <= 0, no re-triggering occurs.
-        :param pulumi.Input[int] process_rate_minutes: The specified query is executed every `process_rate_minutes` minutes.
+        :param pulumi.Input[int] process_rate_minutes: The specified query is executed every `process_rate_minutes` minutes. Default value is 5 minutes.
         :param pulumi.Input[int] resolve_after_minutes: The number of consecutive minutes that a firing series matching the condition
                query must evaluate to "false" (zero value) before the alert resolves.  When unset, this defaults to
                the same value as `minutes`.
@@ -671,7 +671,7 @@ class Alert(pulumi.CustomResource):
         :param pulumi.Input[str] target: A comma-separated list of the email address or integration endpoint 
                (such as PagerDuty or webhook) to notify when the alert status changes. Multiple target types can be in the list.
                Alert target format: ({email}|pd:{pd_key}|target:{alert-target-id}).
-        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] threshold_targets: Targets for severity
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] threshold_targets: A string to string map of Targets for severity.
         """
         ...
     @overload
@@ -806,8 +806,8 @@ class Alert(pulumi.CustomResource):
                Useful for linking runbooks, migrations, etc.
         :param pulumi.Input[str] alert_type: The type of alert in Wavefront.  Either `CLASSIC` (default) 
                or `THRESHOLD`.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] can_modifies: A list of users or groups that can modify this resource.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] can_views: A list of users or groups that can view this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] can_modifies: A list of valid users or groups that can modify this resource on a tenant.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] can_views: A list of valid users or groups that can view this resource on a tenant. Default is Empty list.
         :param pulumi.Input[str] condition: A Wavefront query that is evaluated at regular intervals (default is 1 minute).
                The alert fires and notifications are triggered when a data series matching this query evaluates
                to a non-zero value for a set number of consecutive minutes.
@@ -821,7 +821,7 @@ class Alert(pulumi.CustomResource):
         :param pulumi.Input[str] name: The name of the alert as it is displayed in Wavefront.
         :param pulumi.Input[int] notification_resend_frequency_minutes: How often to re-trigger a continually failing alert. 
                If absent or <= 0, no re-triggering occurs.
-        :param pulumi.Input[int] process_rate_minutes: The specified query is executed every `process_rate_minutes` minutes.
+        :param pulumi.Input[int] process_rate_minutes: The specified query is executed every `process_rate_minutes` minutes. Default value is 5 minutes.
         :param pulumi.Input[int] resolve_after_minutes: The number of consecutive minutes that a firing series matching the condition
                query must evaluate to "false" (zero value) before the alert resolves.  When unset, this defaults to
                the same value as `minutes`.
@@ -830,7 +830,7 @@ class Alert(pulumi.CustomResource):
         :param pulumi.Input[str] target: A comma-separated list of the email address or integration endpoint 
                (such as PagerDuty or webhook) to notify when the alert status changes. Multiple target types can be in the list.
                Alert target format: ({email}|pd:{pd_key}|target:{alert-target-id}).
-        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] threshold_targets: Targets for severity
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] threshold_targets: A string to string map of Targets for severity.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -876,7 +876,7 @@ class Alert(pulumi.CustomResource):
     @pulumi.getter(name="canModifies")
     def can_modifies(self) -> pulumi.Output[Sequence[str]]:
         """
-        A list of users or groups that can modify this resource.
+        A list of valid users or groups that can modify this resource on a tenant.
         """
         return pulumi.get(self, "can_modifies")
 
@@ -884,7 +884,7 @@ class Alert(pulumi.CustomResource):
     @pulumi.getter(name="canViews")
     def can_views(self) -> pulumi.Output[Optional[Sequence[str]]]:
         """
-        A list of users or groups that can view this resource.
+        A list of valid users or groups that can view this resource on a tenant. Default is Empty list.
         """
         return pulumi.get(self, "can_views")
 
@@ -947,7 +947,7 @@ class Alert(pulumi.CustomResource):
     @pulumi.getter(name="processRateMinutes")
     def process_rate_minutes(self) -> pulumi.Output[Optional[int]]:
         """
-        The specified query is executed every `process_rate_minutes` minutes.
+        The specified query is executed every `process_rate_minutes` minutes. Default value is 5 minutes.
         """
         return pulumi.get(self, "process_rate_minutes")
 
@@ -991,7 +991,7 @@ class Alert(pulumi.CustomResource):
     @pulumi.getter(name="thresholdTargets")
     def threshold_targets(self) -> pulumi.Output[Optional[Mapping[str, str]]]:
         """
-        Targets for severity
+        A string to string map of Targets for severity.
         """
         return pulumi.get(self, "threshold_targets")
 

@@ -16,6 +16,7 @@ namespace Pulumi.Wavefront
     /// 
     /// ```csharp
     /// using System.Collections.Generic;
+    /// using System.Linq;
     /// using Pulumi;
     /// using Wavefront = Pulumi.Wavefront;
     /// 
@@ -65,13 +66,13 @@ namespace Pulumi.Wavefront
         public Output<string?> AlertType { get; private set; } = null!;
 
         /// <summary>
-        /// A list of users or groups that can modify this resource.
+        /// A list of valid users or groups that can modify this resource on a tenant.
         /// </summary>
         [Output("canModifies")]
         public Output<ImmutableArray<string>> CanModifies { get; private set; } = null!;
 
         /// <summary>
-        /// A list of users or groups that can view this resource.
+        /// A list of valid users or groups that can view this resource on a tenant. Default is Empty list.
         /// </summary>
         [Output("canViews")]
         public Output<ImmutableArray<string>> CanViews { get; private set; } = null!;
@@ -120,7 +121,7 @@ namespace Pulumi.Wavefront
         public Output<int?> NotificationResendFrequencyMinutes { get; private set; } = null!;
 
         /// <summary>
-        /// The specified query is executed every `process_rate_minutes` minutes.
+        /// The specified query is executed every `process_rate_minutes` minutes. Default value is 5 minutes.
         /// </summary>
         [Output("processRateMinutes")]
         public Output<int?> ProcessRateMinutes { get; private set; } = null!;
@@ -154,7 +155,7 @@ namespace Pulumi.Wavefront
         public Output<string?> Target { get; private set; } = null!;
 
         /// <summary>
-        /// Targets for severity
+        /// A string to string map of Targets for severity.
         /// </summary>
         [Output("thresholdTargets")]
         public Output<ImmutableDictionary<string, string>?> ThresholdTargets { get; private set; } = null!;
@@ -223,7 +224,7 @@ namespace Pulumi.Wavefront
         private InputList<string>? _canModifies;
 
         /// <summary>
-        /// A list of users or groups that can modify this resource.
+        /// A list of valid users or groups that can modify this resource on a tenant.
         /// </summary>
         public InputList<string> CanModifies
         {
@@ -235,7 +236,7 @@ namespace Pulumi.Wavefront
         private InputList<string>? _canViews;
 
         /// <summary>
-        /// A list of users or groups that can view this resource.
+        /// A list of valid users or groups that can view this resource on a tenant. Default is Empty list.
         /// </summary>
         public InputList<string> CanViews
         {
@@ -293,7 +294,7 @@ namespace Pulumi.Wavefront
         public Input<int>? NotificationResendFrequencyMinutes { get; set; }
 
         /// <summary>
-        /// The specified query is executed every `process_rate_minutes` minutes.
+        /// The specified query is executed every `process_rate_minutes` minutes. Default value is 5 minutes.
         /// </summary>
         [Input("processRateMinutes")]
         public Input<int>? ProcessRateMinutes { get; set; }
@@ -336,7 +337,7 @@ namespace Pulumi.Wavefront
         private InputMap<string>? _thresholdTargets;
 
         /// <summary>
-        /// Targets for severity
+        /// A string to string map of Targets for severity.
         /// </summary>
         public InputMap<string> ThresholdTargets
         {
@@ -370,7 +371,7 @@ namespace Pulumi.Wavefront
         private InputList<string>? _canModifies;
 
         /// <summary>
-        /// A list of users or groups that can modify this resource.
+        /// A list of valid users or groups that can modify this resource on a tenant.
         /// </summary>
         public InputList<string> CanModifies
         {
@@ -382,7 +383,7 @@ namespace Pulumi.Wavefront
         private InputList<string>? _canViews;
 
         /// <summary>
-        /// A list of users or groups that can view this resource.
+        /// A list of valid users or groups that can view this resource on a tenant. Default is Empty list.
         /// </summary>
         public InputList<string> CanViews
         {
@@ -440,7 +441,7 @@ namespace Pulumi.Wavefront
         public Input<int>? NotificationResendFrequencyMinutes { get; set; }
 
         /// <summary>
-        /// The specified query is executed every `process_rate_minutes` minutes.
+        /// The specified query is executed every `process_rate_minutes` minutes. Default value is 5 minutes.
         /// </summary>
         [Input("processRateMinutes")]
         public Input<int>? ProcessRateMinutes { get; set; }
@@ -483,7 +484,7 @@ namespace Pulumi.Wavefront
         private InputMap<string>? _thresholdTargets;
 
         /// <summary>
-        /// Targets for severity
+        /// A string to string map of Targets for severity.
         /// </summary>
         public InputMap<string> ThresholdTargets
         {

@@ -20,6 +20,7 @@ namespace Pulumi.Wavefront
         /// 
         /// ```csharp
         /// using System.Collections.Generic;
+        /// using System.Linq;
         /// using Pulumi;
         /// using Wavefront = Pulumi.Wavefront;
         /// 
@@ -48,6 +49,7 @@ namespace Pulumi.Wavefront
         /// 
         /// ```csharp
         /// using System.Collections.Generic;
+        /// using System.Linq;
         /// using Pulumi;
         /// using Wavefront = Pulumi.Wavefront;
         /// 
