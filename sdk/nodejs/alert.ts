@@ -74,11 +74,11 @@ export class Alert extends pulumi.CustomResource {
      */
     public readonly alertType!: pulumi.Output<string | undefined>;
     /**
-     * A list of users or groups that can modify this resource.
+     * A list of valid users or groups that can modify this resource on a tenant.
      */
     public readonly canModifies!: pulumi.Output<string[]>;
     /**
-     * A list of users or groups that can view this resource.
+     * A list of valid users or groups that can view this resource on a tenant. Default is Empty list.
      */
     public readonly canViews!: pulumi.Output<string[] | undefined>;
     /**
@@ -113,7 +113,7 @@ export class Alert extends pulumi.CustomResource {
      */
     public readonly notificationResendFrequencyMinutes!: pulumi.Output<number | undefined>;
     /**
-     * The specified query is executed every `processRateMinutes` minutes.
+     * The specified query is executed every `processRateMinutes` minutes. Default value is 5 minutes.
      */
     public readonly processRateMinutes!: pulumi.Output<number | undefined>;
     /**
@@ -137,7 +137,7 @@ export class Alert extends pulumi.CustomResource {
      */
     public readonly target!: pulumi.Output<string | undefined>;
     /**
-     * Targets for severity
+     * A string to string map of Targets for severity.
      */
     public readonly thresholdTargets!: pulumi.Output<{[key: string]: string} | undefined>;
 
@@ -215,11 +215,11 @@ export interface AlertState {
      */
     alertType?: pulumi.Input<string>;
     /**
-     * A list of users or groups that can modify this resource.
+     * A list of valid users or groups that can modify this resource on a tenant.
      */
     canModifies?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * A list of users or groups that can view this resource.
+     * A list of valid users or groups that can view this resource on a tenant. Default is Empty list.
      */
     canViews?: pulumi.Input<pulumi.Input<string>[]>;
     /**
@@ -254,7 +254,7 @@ export interface AlertState {
      */
     notificationResendFrequencyMinutes?: pulumi.Input<number>;
     /**
-     * The specified query is executed every `processRateMinutes` minutes.
+     * The specified query is executed every `processRateMinutes` minutes. Default value is 5 minutes.
      */
     processRateMinutes?: pulumi.Input<number>;
     /**
@@ -278,7 +278,7 @@ export interface AlertState {
      */
     target?: pulumi.Input<string>;
     /**
-     * Targets for severity
+     * A string to string map of Targets for severity.
      */
     thresholdTargets?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
 }
@@ -298,11 +298,11 @@ export interface AlertArgs {
      */
     alertType?: pulumi.Input<string>;
     /**
-     * A list of users or groups that can modify this resource.
+     * A list of valid users or groups that can modify this resource on a tenant.
      */
     canModifies?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * A list of users or groups that can view this resource.
+     * A list of valid users or groups that can view this resource on a tenant. Default is Empty list.
      */
     canViews?: pulumi.Input<pulumi.Input<string>[]>;
     /**
@@ -337,7 +337,7 @@ export interface AlertArgs {
      */
     notificationResendFrequencyMinutes?: pulumi.Input<number>;
     /**
-     * The specified query is executed every `processRateMinutes` minutes.
+     * The specified query is executed every `processRateMinutes` minutes. Default value is 5 minutes.
      */
     processRateMinutes?: pulumi.Input<number>;
     /**
@@ -361,7 +361,7 @@ export interface AlertArgs {
      */
     target?: pulumi.Input<string>;
     /**
-     * Targets for severity
+     * A string to string map of Targets for severity.
      */
     thresholdTargets?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
 }

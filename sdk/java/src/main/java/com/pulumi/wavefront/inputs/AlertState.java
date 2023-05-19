@@ -53,14 +53,14 @@ public final class AlertState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * A list of users or groups that can modify this resource.
+     * A list of valid users or groups that can modify this resource on a tenant.
      * 
      */
     @Import(name="canModifies")
     private @Nullable Output<List<String>> canModifies;
 
     /**
-     * @return A list of users or groups that can modify this resource.
+     * @return A list of valid users or groups that can modify this resource on a tenant.
      * 
      */
     public Optional<Output<List<String>>> canModifies() {
@@ -68,14 +68,14 @@ public final class AlertState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * A list of users or groups that can view this resource.
+     * A list of valid users or groups that can view this resource on a tenant. Default is Empty list.
      * 
      */
     @Import(name="canViews")
     private @Nullable Output<List<String>> canViews;
 
     /**
-     * @return A list of users or groups that can view this resource.
+     * @return A list of valid users or groups that can view this resource on a tenant. Default is Empty list.
      * 
      */
     public Optional<Output<List<String>>> canViews() {
@@ -187,14 +187,14 @@ public final class AlertState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The specified query is executed every `process_rate_minutes` minutes.
+     * The specified query is executed every `process_rate_minutes` minutes. Default value is 5 minutes.
      * 
      */
     @Import(name="processRateMinutes")
     private @Nullable Output<Integer> processRateMinutes;
 
     /**
-     * @return The specified query is executed every `process_rate_minutes` minutes.
+     * @return The specified query is executed every `process_rate_minutes` minutes. Default value is 5 minutes.
      * 
      */
     public Optional<Output<Integer>> processRateMinutes() {
@@ -270,14 +270,14 @@ public final class AlertState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Targets for severity
+     * A string to string map of Targets for severity.
      * 
      */
     @Import(name="thresholdTargets")
     private @Nullable Output<Map<String,String>> thresholdTargets;
 
     /**
-     * @return Targets for severity
+     * @return A string to string map of Targets for severity.
      * 
      */
     public Optional<Output<Map<String,String>>> thresholdTargets() {
@@ -370,7 +370,7 @@ public final class AlertState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param canModifies A list of users or groups that can modify this resource.
+         * @param canModifies A list of valid users or groups that can modify this resource on a tenant.
          * 
          * @return builder
          * 
@@ -381,7 +381,7 @@ public final class AlertState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param canModifies A list of users or groups that can modify this resource.
+         * @param canModifies A list of valid users or groups that can modify this resource on a tenant.
          * 
          * @return builder
          * 
@@ -391,7 +391,7 @@ public final class AlertState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param canModifies A list of users or groups that can modify this resource.
+         * @param canModifies A list of valid users or groups that can modify this resource on a tenant.
          * 
          * @return builder
          * 
@@ -401,7 +401,7 @@ public final class AlertState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param canViews A list of users or groups that can view this resource.
+         * @param canViews A list of valid users or groups that can view this resource on a tenant. Default is Empty list.
          * 
          * @return builder
          * 
@@ -412,7 +412,7 @@ public final class AlertState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param canViews A list of users or groups that can view this resource.
+         * @param canViews A list of valid users or groups that can view this resource on a tenant. Default is Empty list.
          * 
          * @return builder
          * 
@@ -422,7 +422,7 @@ public final class AlertState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param canViews A list of users or groups that can view this resource.
+         * @param canViews A list of valid users or groups that can view this resource on a tenant. Default is Empty list.
          * 
          * @return builder
          * 
@@ -572,7 +572,7 @@ public final class AlertState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param processRateMinutes The specified query is executed every `process_rate_minutes` minutes.
+         * @param processRateMinutes The specified query is executed every `process_rate_minutes` minutes. Default value is 5 minutes.
          * 
          * @return builder
          * 
@@ -583,7 +583,7 @@ public final class AlertState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param processRateMinutes The specified query is executed every `process_rate_minutes` minutes.
+         * @param processRateMinutes The specified query is executed every `process_rate_minutes` minutes. Default value is 5 minutes.
          * 
          * @return builder
          * 
@@ -695,7 +695,7 @@ public final class AlertState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param thresholdTargets Targets for severity
+         * @param thresholdTargets A string to string map of Targets for severity.
          * 
          * @return builder
          * 
@@ -706,7 +706,7 @@ public final class AlertState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param thresholdTargets Targets for severity
+         * @param thresholdTargets A string to string map of Targets for severity.
          * 
          * @return builder
          * 

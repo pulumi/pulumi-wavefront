@@ -102,28 +102,28 @@ public class Alert extends com.pulumi.resources.CustomResource {
         return Codegen.optional(this.alertType);
     }
     /**
-     * A list of users or groups that can modify this resource.
+     * A list of valid users or groups that can modify this resource on a tenant.
      * 
      */
     @Export(name="canModifies", type=List.class, parameters={String.class})
     private Output<List<String>> canModifies;
 
     /**
-     * @return A list of users or groups that can modify this resource.
+     * @return A list of valid users or groups that can modify this resource on a tenant.
      * 
      */
     public Output<List<String>> canModifies() {
         return this.canModifies;
     }
     /**
-     * A list of users or groups that can view this resource.
+     * A list of valid users or groups that can view this resource on a tenant. Default is Empty list.
      * 
      */
     @Export(name="canViews", type=List.class, parameters={String.class})
     private Output</* @Nullable */ List<String>> canViews;
 
     /**
-     * @return A list of users or groups that can view this resource.
+     * @return A list of valid users or groups that can view this resource on a tenant. Default is Empty list.
      * 
      */
     public Output<Optional<List<String>>> canViews() {
@@ -228,14 +228,14 @@ public class Alert extends com.pulumi.resources.CustomResource {
         return Codegen.optional(this.notificationResendFrequencyMinutes);
     }
     /**
-     * The specified query is executed every `process_rate_minutes` minutes.
+     * The specified query is executed every `process_rate_minutes` minutes. Default value is 5 minutes.
      * 
      */
     @Export(name="processRateMinutes", type=Integer.class, parameters={})
     private Output</* @Nullable */ Integer> processRateMinutes;
 
     /**
-     * @return The specified query is executed every `process_rate_minutes` minutes.
+     * @return The specified query is executed every `process_rate_minutes` minutes. Default value is 5 minutes.
      * 
      */
     public Output<Optional<Integer>> processRateMinutes() {
@@ -306,14 +306,14 @@ public class Alert extends com.pulumi.resources.CustomResource {
         return Codegen.optional(this.target);
     }
     /**
-     * Targets for severity
+     * A string to string map of Targets for severity.
      * 
      */
     @Export(name="thresholdTargets", type=Map.class, parameters={String.class, String.class})
     private Output</* @Nullable */ Map<String,String>> thresholdTargets;
 
     /**
-     * @return Targets for severity
+     * @return A string to string map of Targets for severity.
      * 
      */
     public Output<Optional<Map<String,String>>> thresholdTargets() {

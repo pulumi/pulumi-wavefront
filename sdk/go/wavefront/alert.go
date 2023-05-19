@@ -66,9 +66,9 @@ type Alert struct {
 	// The type of alert in Wavefront.  Either `CLASSIC` (default)
 	// or `THRESHOLD`.
 	AlertType pulumi.StringPtrOutput `pulumi:"alertType"`
-	// A list of users or groups that can modify this resource.
+	// A list of valid users or groups that can modify this resource on a tenant.
 	CanModifies pulumi.StringArrayOutput `pulumi:"canModifies"`
-	// A list of users or groups that can view this resource.
+	// A list of valid users or groups that can view this resource on a tenant. Default is Empty list.
 	CanViews pulumi.StringArrayOutput `pulumi:"canViews"`
 	// A Wavefront query that is evaluated at regular intervals (default is 1 minute).
 	// The alert fires and notifications are triggered when a data series matching this query evaluates
@@ -89,7 +89,7 @@ type Alert struct {
 	// How often to re-trigger a continually failing alert.
 	// If absent or <= 0, no re-triggering occurs.
 	NotificationResendFrequencyMinutes pulumi.IntPtrOutput `pulumi:"notificationResendFrequencyMinutes"`
-	// The specified query is executed every `processRateMinutes` minutes.
+	// The specified query is executed every `processRateMinutes` minutes. Default value is 5 minutes.
 	ProcessRateMinutes pulumi.IntPtrOutput `pulumi:"processRateMinutes"`
 	// The number of consecutive minutes that a firing series matching the condition
 	// query must evaluate to "false" (zero value) before the alert resolves.  When unset, this defaults to
@@ -103,7 +103,7 @@ type Alert struct {
 	// (such as PagerDuty or webhook) to notify when the alert status changes. Multiple target types can be in the list.
 	// Alert target format: ({email}|pd:{pd_key}|target:{alert-target-id}).
 	Target pulumi.StringPtrOutput `pulumi:"target"`
-	// Targets for severity
+	// A string to string map of Targets for severity.
 	ThresholdTargets pulumi.StringMapOutput `pulumi:"thresholdTargets"`
 }
 
@@ -148,9 +148,9 @@ type alertState struct {
 	// The type of alert in Wavefront.  Either `CLASSIC` (default)
 	// or `THRESHOLD`.
 	AlertType *string `pulumi:"alertType"`
-	// A list of users or groups that can modify this resource.
+	// A list of valid users or groups that can modify this resource on a tenant.
 	CanModifies []string `pulumi:"canModifies"`
-	// A list of users or groups that can view this resource.
+	// A list of valid users or groups that can view this resource on a tenant. Default is Empty list.
 	CanViews []string `pulumi:"canViews"`
 	// A Wavefront query that is evaluated at regular intervals (default is 1 minute).
 	// The alert fires and notifications are triggered when a data series matching this query evaluates
@@ -171,7 +171,7 @@ type alertState struct {
 	// How often to re-trigger a continually failing alert.
 	// If absent or <= 0, no re-triggering occurs.
 	NotificationResendFrequencyMinutes *int `pulumi:"notificationResendFrequencyMinutes"`
-	// The specified query is executed every `processRateMinutes` minutes.
+	// The specified query is executed every `processRateMinutes` minutes. Default value is 5 minutes.
 	ProcessRateMinutes *int `pulumi:"processRateMinutes"`
 	// The number of consecutive minutes that a firing series matching the condition
 	// query must evaluate to "false" (zero value) before the alert resolves.  When unset, this defaults to
@@ -185,7 +185,7 @@ type alertState struct {
 	// (such as PagerDuty or webhook) to notify when the alert status changes. Multiple target types can be in the list.
 	// Alert target format: ({email}|pd:{pd_key}|target:{alert-target-id}).
 	Target *string `pulumi:"target"`
-	// Targets for severity
+	// A string to string map of Targets for severity.
 	ThresholdTargets map[string]string `pulumi:"thresholdTargets"`
 }
 
@@ -196,9 +196,9 @@ type AlertState struct {
 	// The type of alert in Wavefront.  Either `CLASSIC` (default)
 	// or `THRESHOLD`.
 	AlertType pulumi.StringPtrInput
-	// A list of users or groups that can modify this resource.
+	// A list of valid users or groups that can modify this resource on a tenant.
 	CanModifies pulumi.StringArrayInput
-	// A list of users or groups that can view this resource.
+	// A list of valid users or groups that can view this resource on a tenant. Default is Empty list.
 	CanViews pulumi.StringArrayInput
 	// A Wavefront query that is evaluated at regular intervals (default is 1 minute).
 	// The alert fires and notifications are triggered when a data series matching this query evaluates
@@ -219,7 +219,7 @@ type AlertState struct {
 	// How often to re-trigger a continually failing alert.
 	// If absent or <= 0, no re-triggering occurs.
 	NotificationResendFrequencyMinutes pulumi.IntPtrInput
-	// The specified query is executed every `processRateMinutes` minutes.
+	// The specified query is executed every `processRateMinutes` minutes. Default value is 5 minutes.
 	ProcessRateMinutes pulumi.IntPtrInput
 	// The number of consecutive minutes that a firing series matching the condition
 	// query must evaluate to "false" (zero value) before the alert resolves.  When unset, this defaults to
@@ -233,7 +233,7 @@ type AlertState struct {
 	// (such as PagerDuty or webhook) to notify when the alert status changes. Multiple target types can be in the list.
 	// Alert target format: ({email}|pd:{pd_key}|target:{alert-target-id}).
 	Target pulumi.StringPtrInput
-	// Targets for severity
+	// A string to string map of Targets for severity.
 	ThresholdTargets pulumi.StringMapInput
 }
 
@@ -248,9 +248,9 @@ type alertArgs struct {
 	// The type of alert in Wavefront.  Either `CLASSIC` (default)
 	// or `THRESHOLD`.
 	AlertType *string `pulumi:"alertType"`
-	// A list of users or groups that can modify this resource.
+	// A list of valid users or groups that can modify this resource on a tenant.
 	CanModifies []string `pulumi:"canModifies"`
-	// A list of users or groups that can view this resource.
+	// A list of valid users or groups that can view this resource on a tenant. Default is Empty list.
 	CanViews []string `pulumi:"canViews"`
 	// A Wavefront query that is evaluated at regular intervals (default is 1 minute).
 	// The alert fires and notifications are triggered when a data series matching this query evaluates
@@ -271,7 +271,7 @@ type alertArgs struct {
 	// How often to re-trigger a continually failing alert.
 	// If absent or <= 0, no re-triggering occurs.
 	NotificationResendFrequencyMinutes *int `pulumi:"notificationResendFrequencyMinutes"`
-	// The specified query is executed every `processRateMinutes` minutes.
+	// The specified query is executed every `processRateMinutes` minutes. Default value is 5 minutes.
 	ProcessRateMinutes *int `pulumi:"processRateMinutes"`
 	// The number of consecutive minutes that a firing series matching the condition
 	// query must evaluate to "false" (zero value) before the alert resolves.  When unset, this defaults to
@@ -285,7 +285,7 @@ type alertArgs struct {
 	// (such as PagerDuty or webhook) to notify when the alert status changes. Multiple target types can be in the list.
 	// Alert target format: ({email}|pd:{pd_key}|target:{alert-target-id}).
 	Target *string `pulumi:"target"`
-	// Targets for severity
+	// A string to string map of Targets for severity.
 	ThresholdTargets map[string]string `pulumi:"thresholdTargets"`
 }
 
@@ -297,9 +297,9 @@ type AlertArgs struct {
 	// The type of alert in Wavefront.  Either `CLASSIC` (default)
 	// or `THRESHOLD`.
 	AlertType pulumi.StringPtrInput
-	// A list of users or groups that can modify this resource.
+	// A list of valid users or groups that can modify this resource on a tenant.
 	CanModifies pulumi.StringArrayInput
-	// A list of users or groups that can view this resource.
+	// A list of valid users or groups that can view this resource on a tenant. Default is Empty list.
 	CanViews pulumi.StringArrayInput
 	// A Wavefront query that is evaluated at regular intervals (default is 1 minute).
 	// The alert fires and notifications are triggered when a data series matching this query evaluates
@@ -320,7 +320,7 @@ type AlertArgs struct {
 	// How often to re-trigger a continually failing alert.
 	// If absent or <= 0, no re-triggering occurs.
 	NotificationResendFrequencyMinutes pulumi.IntPtrInput
-	// The specified query is executed every `processRateMinutes` minutes.
+	// The specified query is executed every `processRateMinutes` minutes. Default value is 5 minutes.
 	ProcessRateMinutes pulumi.IntPtrInput
 	// The number of consecutive minutes that a firing series matching the condition
 	// query must evaluate to "false" (zero value) before the alert resolves.  When unset, this defaults to
@@ -334,7 +334,7 @@ type AlertArgs struct {
 	// (such as PagerDuty or webhook) to notify when the alert status changes. Multiple target types can be in the list.
 	// Alert target format: ({email}|pd:{pd_key}|target:{alert-target-id}).
 	Target pulumi.StringPtrInput
-	// Targets for severity
+	// A string to string map of Targets for severity.
 	ThresholdTargets pulumi.StringMapInput
 }
 
@@ -437,12 +437,12 @@ func (o AlertOutput) AlertType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *Alert) pulumi.StringPtrOutput { return v.AlertType }).(pulumi.StringPtrOutput)
 }
 
-// A list of users or groups that can modify this resource.
+// A list of valid users or groups that can modify this resource on a tenant.
 func (o AlertOutput) CanModifies() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *Alert) pulumi.StringArrayOutput { return v.CanModifies }).(pulumi.StringArrayOutput)
 }
 
-// A list of users or groups that can view this resource.
+// A list of valid users or groups that can view this resource on a tenant. Default is Empty list.
 func (o AlertOutput) CanViews() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *Alert) pulumi.StringArrayOutput { return v.CanViews }).(pulumi.StringArrayOutput)
 }
@@ -484,7 +484,7 @@ func (o AlertOutput) NotificationResendFrequencyMinutes() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *Alert) pulumi.IntPtrOutput { return v.NotificationResendFrequencyMinutes }).(pulumi.IntPtrOutput)
 }
 
-// The specified query is executed every `processRateMinutes` minutes.
+// The specified query is executed every `processRateMinutes` minutes. Default value is 5 minutes.
 func (o AlertOutput) ProcessRateMinutes() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *Alert) pulumi.IntPtrOutput { return v.ProcessRateMinutes }).(pulumi.IntPtrOutput)
 }
@@ -513,7 +513,7 @@ func (o AlertOutput) Target() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *Alert) pulumi.StringPtrOutput { return v.Target }).(pulumi.StringPtrOutput)
 }
 
-// Targets for severity
+// A string to string map of Targets for severity.
 func (o AlertOutput) ThresholdTargets() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *Alert) pulumi.StringMapOutput { return v.ThresholdTargets }).(pulumi.StringMapOutput)
 }
