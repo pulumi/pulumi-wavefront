@@ -1,4 +1,4 @@
-module github.com/pulumi/pulumi-wavefront/sdk
+module github.com/pulumi/pulumi-wavefront/sdkv2
 
 go 1.19
 
