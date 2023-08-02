@@ -4,6 +4,7 @@
 package wavefront
 
 import (
+	"github.com/pulumi/pulumi-wavefront/sdk/v2/go/wavefront/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -16,7 +17,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront"
+//	"github.com/pulumi/pulumi-wavefront/sdk/v2/go/wavefront"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -33,6 +34,7 @@ import (
 //
 // ```
 func GetUsers(ctx *pulumi.Context, opts ...pulumi.InvokeOption) (*GetUsersResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetUsersResult
 	err := ctx.Invoke("wavefront:index/getUsers:getUsers", nil, &rv, opts...)
 	if err != nil {

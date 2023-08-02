@@ -5,7 +5,9 @@ package com.pulumi.wavefront.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.wavefront.inputs.IngestionPolicyTagArgs;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -14,6 +16,13 @@ import javax.annotation.Nullable;
 public final class IngestionPolicyState extends com.pulumi.resources.ResourceArgs {
 
     public static final IngestionPolicyState Empty = new IngestionPolicyState();
+
+    @Import(name="accounts")
+    private @Nullable Output<List<String>> accounts;
+
+    public Optional<Output<List<String>>> accounts() {
+        return Optional.ofNullable(this.accounts);
+    }
 
     /**
      * The description of the ingestion policy.
@@ -28,6 +37,13 @@ public final class IngestionPolicyState extends com.pulumi.resources.ResourceArg
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
+    }
+
+    @Import(name="groups")
+    private @Nullable Output<List<String>> groups;
+
+    public Optional<Output<List<String>>> groups() {
+        return Optional.ofNullable(this.groups);
     }
 
     /**
@@ -45,6 +61,13 @@ public final class IngestionPolicyState extends com.pulumi.resources.ResourceArg
         return Optional.ofNullable(this.name);
     }
 
+    @Import(name="namespaces")
+    private @Nullable Output<List<String>> namespaces;
+
+    public Optional<Output<List<String>>> namespaces() {
+        return Optional.ofNullable(this.namespaces);
+    }
+
     @Import(name="scope")
     private @Nullable Output<String> scope;
 
@@ -52,12 +75,31 @@ public final class IngestionPolicyState extends com.pulumi.resources.ResourceArg
         return Optional.ofNullable(this.scope);
     }
 
+    @Import(name="sources")
+    private @Nullable Output<List<String>> sources;
+
+    public Optional<Output<List<String>>> sources() {
+        return Optional.ofNullable(this.sources);
+    }
+
+    @Import(name="tags")
+    private @Nullable Output<List<IngestionPolicyTagArgs>> tags;
+
+    public Optional<Output<List<IngestionPolicyTagArgs>>> tags() {
+        return Optional.ofNullable(this.tags);
+    }
+
     private IngestionPolicyState() {}
 
     private IngestionPolicyState(IngestionPolicyState $) {
+        this.accounts = $.accounts;
         this.description = $.description;
+        this.groups = $.groups;
         this.name = $.name;
+        this.namespaces = $.namespaces;
         this.scope = $.scope;
+        this.sources = $.sources;
+        this.tags = $.tags;
     }
 
     public static Builder builder() {
@@ -76,6 +118,19 @@ public final class IngestionPolicyState extends com.pulumi.resources.ResourceArg
 
         public Builder(IngestionPolicyState defaults) {
             $ = new IngestionPolicyState(Objects.requireNonNull(defaults));
+        }
+
+        public Builder accounts(@Nullable Output<List<String>> accounts) {
+            $.accounts = accounts;
+            return this;
+        }
+
+        public Builder accounts(List<String> accounts) {
+            return accounts(Output.of(accounts));
+        }
+
+        public Builder accounts(String... accounts) {
+            return accounts(List.of(accounts));
         }
 
         /**
@@ -99,6 +154,19 @@ public final class IngestionPolicyState extends com.pulumi.resources.ResourceArg
             return description(Output.of(description));
         }
 
+        public Builder groups(@Nullable Output<List<String>> groups) {
+            $.groups = groups;
+            return this;
+        }
+
+        public Builder groups(List<String> groups) {
+            return groups(Output.of(groups));
+        }
+
+        public Builder groups(String... groups) {
+            return groups(List.of(groups));
+        }
+
         /**
          * @param name The name of the ingestion policy.
          * 
@@ -120,6 +188,19 @@ public final class IngestionPolicyState extends com.pulumi.resources.ResourceArg
             return name(Output.of(name));
         }
 
+        public Builder namespaces(@Nullable Output<List<String>> namespaces) {
+            $.namespaces = namespaces;
+            return this;
+        }
+
+        public Builder namespaces(List<String> namespaces) {
+            return namespaces(Output.of(namespaces));
+        }
+
+        public Builder namespaces(String... namespaces) {
+            return namespaces(List.of(namespaces));
+        }
+
         public Builder scope(@Nullable Output<String> scope) {
             $.scope = scope;
             return this;
@@ -127,6 +208,32 @@ public final class IngestionPolicyState extends com.pulumi.resources.ResourceArg
 
         public Builder scope(String scope) {
             return scope(Output.of(scope));
+        }
+
+        public Builder sources(@Nullable Output<List<String>> sources) {
+            $.sources = sources;
+            return this;
+        }
+
+        public Builder sources(List<String> sources) {
+            return sources(Output.of(sources));
+        }
+
+        public Builder sources(String... sources) {
+            return sources(List.of(sources));
+        }
+
+        public Builder tags(@Nullable Output<List<IngestionPolicyTagArgs>> tags) {
+            $.tags = tags;
+            return this;
+        }
+
+        public Builder tags(List<IngestionPolicyTagArgs> tags) {
+            return tags(Output.of(tags));
+        }
+
+        public Builder tags(IngestionPolicyTagArgs... tags) {
+            return tags(List.of(tags));
         }
 
         public IngestionPolicyState build() {

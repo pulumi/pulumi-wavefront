@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-wavefront/sdk/v2/go/wavefront/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -19,7 +20,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront"
+//	"github.com/pulumi/pulumi-wavefront/sdk/v2/go/wavefront"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -38,6 +39,7 @@ import (
 //
 // ```
 func LookupEvent(ctx *pulumi.Context, args *LookupEventArgs, opts ...pulumi.InvokeOption) (*LookupEventResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupEventResult
 	err := ctx.Invoke("wavefront:index/getEvent:getEvent", args, &rv, opts...)
 	if err != nil {

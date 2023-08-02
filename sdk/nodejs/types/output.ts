@@ -103,6 +103,10 @@ export interface DashboardSectionRowChart {
      */
     name: string;
     /**
+     * Show events related to the sources included in queries
+     */
+    noDefaultEvents?: boolean;
+    /**
      * Query expression to plot on the chart. See chart source queries.
      */
     sources: outputs.DashboardSectionRowChartSource[];
@@ -1530,6 +1534,11 @@ export interface GetUsersUser {
      * List of User Group Ids the user is a member of.
      */
     userGroupIds: string[];
+}
+
+export interface IngestionPolicyTag {
+    key: string;
+    value: string;
 }
 
 export interface MetricsPolicyPolicyRule {

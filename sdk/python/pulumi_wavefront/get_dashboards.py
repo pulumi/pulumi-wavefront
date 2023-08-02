@@ -102,10 +102,10 @@ def get_dashboards(limit: Optional[int] = None,
     __ret__ = pulumi.runtime.invoke('wavefront:index/getDashboards:getDashboards', __args__, opts=opts, typ=GetDashboardsResult).value
 
     return AwaitableGetDashboardsResult(
-        dashboards=__ret__.dashboards,
-        id=__ret__.id,
-        limit=__ret__.limit,
-        offset=__ret__.offset)
+        dashboards=pulumi.get(__ret__, 'dashboards'),
+        id=pulumi.get(__ret__, 'id'),
+        limit=pulumi.get(__ret__, 'limit'),
+        offset=pulumi.get(__ret__, 'offset'))
 
 
 @_utilities.lift_output_func(get_dashboards)

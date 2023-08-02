@@ -74,5 +74,5 @@ def get_default_user_group(opts: Optional[pulumi.InvokeOptions] = None) -> Await
     __ret__ = pulumi.runtime.invoke('wavefront:index/getDefaultUserGroup:getDefaultUserGroup', __args__, opts=opts, typ=GetDefaultUserGroupResult).value
 
     return AwaitableGetDefaultUserGroupResult(
-        group_id=__ret__.group_id,
-        id=__ret__.id)
+        group_id=pulumi.get(__ret__, 'group_id'),
+        id=pulumi.get(__ret__, 'id'))

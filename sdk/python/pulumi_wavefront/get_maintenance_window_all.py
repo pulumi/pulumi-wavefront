@@ -85,10 +85,10 @@ def get_maintenance_window_all(limit: Optional[int] = None,
     __ret__ = pulumi.runtime.invoke('wavefront:index/getMaintenanceWindowAll:getMaintenanceWindowAll', __args__, opts=opts, typ=GetMaintenanceWindowAllResult).value
 
     return AwaitableGetMaintenanceWindowAllResult(
-        id=__ret__.id,
-        limit=__ret__.limit,
-        maintenance_windows=__ret__.maintenance_windows,
-        offset=__ret__.offset)
+        id=pulumi.get(__ret__, 'id'),
+        limit=pulumi.get(__ret__, 'limit'),
+        maintenance_windows=pulumi.get(__ret__, 'maintenance_windows'),
+        offset=pulumi.get(__ret__, 'offset'))
 
 
 @_utilities.lift_output_func(get_maintenance_window_all)

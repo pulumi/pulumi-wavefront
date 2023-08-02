@@ -18,6 +18,7 @@ __all__ = [
     'DashboardSectionRowChartArgs',
     'DashboardSectionRowChartChartSettingArgs',
     'DashboardSectionRowChartSourceArgs',
+    'IngestionPolicyTagArgs',
     'MetricsPolicyPolicyRuleArgs',
     'MetricsPolicyPolicyRuleTagArgs',
 ]
@@ -322,7 +323,8 @@ class DashboardSectionRowChartArgs:
                  units: pulumi.Input[str],
                  base: Optional[pulumi.Input[int]] = None,
                  chart_attribute: Optional[pulumi.Input[str]] = None,
-                 description: Optional[pulumi.Input[str]] = None):
+                 description: Optional[pulumi.Input[str]] = None,
+                 no_default_events: Optional[pulumi.Input[bool]] = None):
         """
         :param pulumi.Input['DashboardSectionRowChartChartSettingArgs'] chart_setting: Chart settings. See chart settings.
         :param pulumi.Input[str] name: Name of the source.
@@ -332,6 +334,7 @@ class DashboardSectionRowChartArgs:
         :param pulumi.Input[str] units: String to label the units of the chart on the Y-Axis.
         :param pulumi.Input[int] base: The base of logarithmic scale charts. Omit or set to 0 for the default linear scale. Usually set to 10 for the traditional logarithmic scale.
         :param pulumi.Input[str] description: Description of the chart.
+        :param pulumi.Input[bool] no_default_events: Show events related to the sources included in queries
         """
         pulumi.set(__self__, "chart_setting", chart_setting)
         pulumi.set(__self__, "name", name)
@@ -344,6 +347,8 @@ class DashboardSectionRowChartArgs:
             pulumi.set(__self__, "chart_attribute", chart_attribute)
         if description is not None:
             pulumi.set(__self__, "description", description)
+        if no_default_events is not None:
+            pulumi.set(__self__, "no_default_events", no_default_events)
 
     @property
     @pulumi.getter(name="chartSetting")
@@ -438,6 +443,18 @@ class DashboardSectionRowChartArgs:
     @description.setter
     def description(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "description", value)
+
+    @property
+    @pulumi.getter(name="noDefaultEvents")
+    def no_default_events(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Show events related to the sources included in queries
+        """
+        return pulumi.get(self, "no_default_events")
+
+    @no_default_events.setter
+    def no_default_events(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "no_default_events", value)
 
 
 @pulumi.input_type
@@ -1509,6 +1526,33 @@ class DashboardSectionRowChartSourceArgs:
     @source_description.setter
     def source_description(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "source_description", value)
+
+
+@pulumi.input_type
+class IngestionPolicyTagArgs:
+    def __init__(__self__, *,
+                 key: pulumi.Input[str],
+                 value: pulumi.Input[str]):
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: pulumi.Input[str]):
+        pulumi.set(self, "key", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
 
 
 @pulumi.input_type

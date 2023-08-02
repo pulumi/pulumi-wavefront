@@ -39,6 +39,12 @@ namespace Pulumi.Wavefront.Inputs
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
 
+        /// <summary>
+        /// Show events related to the sources included in queries
+        /// </summary>
+        [Input("noDefaultEvents")]
+        public Input<bool>? NoDefaultEvents { get; set; }
+
         [Input("sources", required: true)]
         private InputList<Inputs.DashboardSectionRowChartSourceArgs>? _sources;
 

@@ -102,10 +102,10 @@ def get_alerts(limit: Optional[int] = None,
     __ret__ = pulumi.runtime.invoke('wavefront:index/getAlerts:getAlerts', __args__, opts=opts, typ=GetAlertsResult).value
 
     return AwaitableGetAlertsResult(
-        alerts=__ret__.alerts,
-        id=__ret__.id,
-        limit=__ret__.limit,
-        offset=__ret__.offset)
+        alerts=pulumi.get(__ret__, 'alerts'),
+        id=pulumi.get(__ret__, 'id'),
+        limit=pulumi.get(__ret__, 'limit'),
+        offset=pulumi.get(__ret__, 'offset'))
 
 
 @_utilities.lift_output_func(get_alerts)

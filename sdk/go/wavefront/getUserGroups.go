@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-wavefront/sdk/v2/go/wavefront/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -19,7 +20,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront"
+//	"github.com/pulumi/pulumi-wavefront/sdk/v2/go/wavefront"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -39,6 +40,7 @@ import (
 //
 // ```
 func GetUserGroups(ctx *pulumi.Context, args *GetUserGroupsArgs, opts ...pulumi.InvokeOption) (*GetUserGroupsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetUserGroupsResult
 	err := ctx.Invoke("wavefront:index/getUserGroups:getUserGroups", args, &rv, opts...)
 	if err != nil {

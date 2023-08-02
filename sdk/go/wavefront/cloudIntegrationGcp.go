@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-wavefront/sdk/v2/go/wavefront/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -21,7 +22,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront"
+//	"github.com/pulumi/pulumi-wavefront/sdk/v2/go/wavefront"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -101,6 +102,7 @@ func NewCloudIntegrationGcp(ctx *pulumi.Context,
 		"jsonKey",
 	})
 	opts = append(opts, secrets)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource CloudIntegrationGcp
 	err := ctx.RegisterResource("wavefront:index/cloudIntegrationGcp:CloudIntegrationGcp", name, args, &resource, opts...)
 	if err != nil {

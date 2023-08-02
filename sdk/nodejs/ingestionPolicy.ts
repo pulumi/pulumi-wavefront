@@ -2,6 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
+import * as inputs from "./types/input";
+import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 /**
@@ -52,15 +54,20 @@ export class IngestionPolicy extends pulumi.CustomResource {
         return obj['__pulumiType'] === IngestionPolicy.__pulumiType;
     }
 
+    public readonly accounts!: pulumi.Output<string[] | undefined>;
     /**
      * The description of the ingestion policy.
      */
     public readonly description!: pulumi.Output<string>;
+    public readonly groups!: pulumi.Output<string[] | undefined>;
     /**
      * The name of the ingestion policy.
      */
     public readonly name!: pulumi.Output<string>;
+    public readonly namespaces!: pulumi.Output<string[] | undefined>;
     public readonly scope!: pulumi.Output<string>;
+    public readonly sources!: pulumi.Output<string[] | undefined>;
+    public readonly tags!: pulumi.Output<outputs.IngestionPolicyTag[] | undefined>;
 
     /**
      * Create a IngestionPolicy resource with the given unique name, arguments, and options.
@@ -75,9 +82,14 @@ export class IngestionPolicy extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as IngestionPolicyState | undefined;
+            resourceInputs["accounts"] = state ? state.accounts : undefined;
             resourceInputs["description"] = state ? state.description : undefined;
+            resourceInputs["groups"] = state ? state.groups : undefined;
             resourceInputs["name"] = state ? state.name : undefined;
+            resourceInputs["namespaces"] = state ? state.namespaces : undefined;
             resourceInputs["scope"] = state ? state.scope : undefined;
+            resourceInputs["sources"] = state ? state.sources : undefined;
+            resourceInputs["tags"] = state ? state.tags : undefined;
         } else {
             const args = argsOrState as IngestionPolicyArgs | undefined;
             if ((!args || args.description === undefined) && !opts.urn) {
@@ -86,9 +98,14 @@ export class IngestionPolicy extends pulumi.CustomResource {
             if ((!args || args.scope === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'scope'");
             }
+            resourceInputs["accounts"] = args ? args.accounts : undefined;
             resourceInputs["description"] = args ? args.description : undefined;
+            resourceInputs["groups"] = args ? args.groups : undefined;
             resourceInputs["name"] = args ? args.name : undefined;
+            resourceInputs["namespaces"] = args ? args.namespaces : undefined;
             resourceInputs["scope"] = args ? args.scope : undefined;
+            resourceInputs["sources"] = args ? args.sources : undefined;
+            resourceInputs["tags"] = args ? args.tags : undefined;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(IngestionPolicy.__pulumiType, name, resourceInputs, opts);
@@ -99,28 +116,38 @@ export class IngestionPolicy extends pulumi.CustomResource {
  * Input properties used for looking up and filtering IngestionPolicy resources.
  */
 export interface IngestionPolicyState {
+    accounts?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * The description of the ingestion policy.
      */
     description?: pulumi.Input<string>;
+    groups?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * The name of the ingestion policy.
      */
     name?: pulumi.Input<string>;
+    namespaces?: pulumi.Input<pulumi.Input<string>[]>;
     scope?: pulumi.Input<string>;
+    sources?: pulumi.Input<pulumi.Input<string>[]>;
+    tags?: pulumi.Input<pulumi.Input<inputs.IngestionPolicyTag>[]>;
 }
 
 /**
  * The set of arguments for constructing a IngestionPolicy resource.
  */
 export interface IngestionPolicyArgs {
+    accounts?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * The description of the ingestion policy.
      */
     description: pulumi.Input<string>;
+    groups?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * The name of the ingestion policy.
      */
     name?: pulumi.Input<string>;
+    namespaces?: pulumi.Input<pulumi.Input<string>[]>;
     scope: pulumi.Input<string>;
+    sources?: pulumi.Input<pulumi.Input<string>[]>;
+    tags?: pulumi.Input<pulumi.Input<inputs.IngestionPolicyTag>[]>;
 }

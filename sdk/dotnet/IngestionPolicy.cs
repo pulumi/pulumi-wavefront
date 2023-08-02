@@ -41,11 +41,17 @@ namespace Pulumi.Wavefront
     [WavefrontResourceType("wavefront:index/ingestionPolicy:IngestionPolicy")]
     public partial class IngestionPolicy : global::Pulumi.CustomResource
     {
+        [Output("accounts")]
+        public Output<ImmutableArray<string>> Accounts { get; private set; } = null!;
+
         /// <summary>
         /// The description of the ingestion policy.
         /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
+
+        [Output("groups")]
+        public Output<ImmutableArray<string>> Groups { get; private set; } = null!;
 
         /// <summary>
         /// The name of the ingestion policy.
@@ -53,8 +59,17 @@ namespace Pulumi.Wavefront
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
 
+        [Output("namespaces")]
+        public Output<ImmutableArray<string>> Namespaces { get; private set; } = null!;
+
         [Output("scope")]
         public Output<string> Scope { get; private set; } = null!;
+
+        [Output("sources")]
+        public Output<ImmutableArray<string>> Sources { get; private set; } = null!;
+
+        [Output("tags")]
+        public Output<ImmutableArray<Outputs.IngestionPolicyTag>> Tags { get; private set; } = null!;
 
 
         /// <summary>
@@ -102,11 +117,27 @@ namespace Pulumi.Wavefront
 
     public sealed class IngestionPolicyArgs : global::Pulumi.ResourceArgs
     {
+        [Input("accounts")]
+        private InputList<string>? _accounts;
+        public InputList<string> Accounts
+        {
+            get => _accounts ?? (_accounts = new InputList<string>());
+            set => _accounts = value;
+        }
+
         /// <summary>
         /// The description of the ingestion policy.
         /// </summary>
         [Input("description", required: true)]
         public Input<string> Description { get; set; } = null!;
+
+        [Input("groups")]
+        private InputList<string>? _groups;
+        public InputList<string> Groups
+        {
+            get => _groups ?? (_groups = new InputList<string>());
+            set => _groups = value;
+        }
 
         /// <summary>
         /// The name of the ingestion policy.
@@ -114,8 +145,32 @@ namespace Pulumi.Wavefront
         [Input("name")]
         public Input<string>? Name { get; set; }
 
+        [Input("namespaces")]
+        private InputList<string>? _namespaces;
+        public InputList<string> Namespaces
+        {
+            get => _namespaces ?? (_namespaces = new InputList<string>());
+            set => _namespaces = value;
+        }
+
         [Input("scope", required: true)]
         public Input<string> Scope { get; set; } = null!;
+
+        [Input("sources")]
+        private InputList<string>? _sources;
+        public InputList<string> Sources
+        {
+            get => _sources ?? (_sources = new InputList<string>());
+            set => _sources = value;
+        }
+
+        [Input("tags")]
+        private InputList<Inputs.IngestionPolicyTagArgs>? _tags;
+        public InputList<Inputs.IngestionPolicyTagArgs> Tags
+        {
+            get => _tags ?? (_tags = new InputList<Inputs.IngestionPolicyTagArgs>());
+            set => _tags = value;
+        }
 
         public IngestionPolicyArgs()
         {
@@ -125,11 +180,27 @@ namespace Pulumi.Wavefront
 
     public sealed class IngestionPolicyState : global::Pulumi.ResourceArgs
     {
+        [Input("accounts")]
+        private InputList<string>? _accounts;
+        public InputList<string> Accounts
+        {
+            get => _accounts ?? (_accounts = new InputList<string>());
+            set => _accounts = value;
+        }
+
         /// <summary>
         /// The description of the ingestion policy.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
+
+        [Input("groups")]
+        private InputList<string>? _groups;
+        public InputList<string> Groups
+        {
+            get => _groups ?? (_groups = new InputList<string>());
+            set => _groups = value;
+        }
 
         /// <summary>
         /// The name of the ingestion policy.
@@ -137,8 +208,32 @@ namespace Pulumi.Wavefront
         [Input("name")]
         public Input<string>? Name { get; set; }
 
+        [Input("namespaces")]
+        private InputList<string>? _namespaces;
+        public InputList<string> Namespaces
+        {
+            get => _namespaces ?? (_namespaces = new InputList<string>());
+            set => _namespaces = value;
+        }
+
         [Input("scope")]
         public Input<string>? Scope { get; set; }
+
+        [Input("sources")]
+        private InputList<string>? _sources;
+        public InputList<string> Sources
+        {
+            get => _sources ?? (_sources = new InputList<string>());
+            set => _sources = value;
+        }
+
+        [Input("tags")]
+        private InputList<Inputs.IngestionPolicyTagGetArgs>? _tags;
+        public InputList<Inputs.IngestionPolicyTagGetArgs> Tags
+        {
+            get => _tags ?? (_tags = new InputList<Inputs.IngestionPolicyTagGetArgs>());
+            set => _tags = value;
+        }
 
         public IngestionPolicyState()
         {

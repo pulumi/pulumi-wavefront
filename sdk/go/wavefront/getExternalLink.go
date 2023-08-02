@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-wavefront/sdk/v2/go/wavefront/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -19,7 +20,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront"
+//	"github.com/pulumi/pulumi-wavefront/sdk/v2/go/wavefront"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -38,6 +39,7 @@ import (
 //
 // ```
 func LookupExternalLink(ctx *pulumi.Context, args *LookupExternalLinkArgs, opts ...pulumi.InvokeOption) (*LookupExternalLinkResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupExternalLinkResult
 	err := ctx.Invoke("wavefront:index/getExternalLink:getExternalLink", args, &rv, opts...)
 	if err != nil {

@@ -202,18 +202,18 @@ def get_external_link(id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('wavefront:index/getExternalLink:getExternalLink', __args__, opts=opts, typ=GetExternalLinkResult).value
 
     return AwaitableGetExternalLinkResult(
-        created_epoch_millis=__ret__.created_epoch_millis,
-        creator_id=__ret__.creator_id,
-        description=__ret__.description,
-        id=__ret__.id,
-        is_log_integration=__ret__.is_log_integration,
-        metric_filter_regex=__ret__.metric_filter_regex,
-        name=__ret__.name,
-        point_tag_filter_regexes=__ret__.point_tag_filter_regexes,
-        source_filter_regex=__ret__.source_filter_regex,
-        template=__ret__.template,
-        updated_epoch_millis=__ret__.updated_epoch_millis,
-        updater_id=__ret__.updater_id)
+        created_epoch_millis=pulumi.get(__ret__, 'created_epoch_millis'),
+        creator_id=pulumi.get(__ret__, 'creator_id'),
+        description=pulumi.get(__ret__, 'description'),
+        id=pulumi.get(__ret__, 'id'),
+        is_log_integration=pulumi.get(__ret__, 'is_log_integration'),
+        metric_filter_regex=pulumi.get(__ret__, 'metric_filter_regex'),
+        name=pulumi.get(__ret__, 'name'),
+        point_tag_filter_regexes=pulumi.get(__ret__, 'point_tag_filter_regexes'),
+        source_filter_regex=pulumi.get(__ret__, 'source_filter_regex'),
+        template=pulumi.get(__ret__, 'template'),
+        updated_epoch_millis=pulumi.get(__ret__, 'updated_epoch_millis'),
+        updater_id=pulumi.get(__ret__, 'updater_id'))
 
 
 @_utilities.lift_output_func(get_external_link)

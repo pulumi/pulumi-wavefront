@@ -6,6 +6,7 @@ package com.pulumi.wavefront.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.wavefront.outputs.DashboardSectionRowChartChartSetting;
 import com.pulumi.wavefront.outputs.DashboardSectionRowChartSource;
+import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -36,6 +37,11 @@ public final class DashboardSectionRowChart {
      * 
      */
     private String name;
+    /**
+     * @return Show events related to the sources included in queries
+     * 
+     */
+    private @Nullable Boolean noDefaultEvents;
     /**
      * @return Query expression to plot on the chart. See chart source queries.
      * 
@@ -86,6 +92,13 @@ public final class DashboardSectionRowChart {
         return this.name;
     }
     /**
+     * @return Show events related to the sources included in queries
+     * 
+     */
+    public Optional<Boolean> noDefaultEvents() {
+        return Optional.ofNullable(this.noDefaultEvents);
+    }
+    /**
      * @return Query expression to plot on the chart. See chart source queries.
      * 
      */
@@ -122,6 +135,7 @@ public final class DashboardSectionRowChart {
         private DashboardSectionRowChartChartSetting chartSetting;
         private @Nullable String description;
         private String name;
+        private @Nullable Boolean noDefaultEvents;
         private List<DashboardSectionRowChartSource> sources;
         private String summarization;
         private String units;
@@ -133,6 +147,7 @@ public final class DashboardSectionRowChart {
     	      this.chartSetting = defaults.chartSetting;
     	      this.description = defaults.description;
     	      this.name = defaults.name;
+    	      this.noDefaultEvents = defaults.noDefaultEvents;
     	      this.sources = defaults.sources;
     	      this.summarization = defaults.summarization;
     	      this.units = defaults.units;
@@ -164,6 +179,11 @@ public final class DashboardSectionRowChart {
             return this;
         }
         @CustomType.Setter
+        public Builder noDefaultEvents(@Nullable Boolean noDefaultEvents) {
+            this.noDefaultEvents = noDefaultEvents;
+            return this;
+        }
+        @CustomType.Setter
         public Builder sources(List<DashboardSectionRowChartSource> sources) {
             this.sources = Objects.requireNonNull(sources);
             return this;
@@ -188,6 +208,7 @@ public final class DashboardSectionRowChart {
             o.chartSetting = chartSetting;
             o.description = description;
             o.name = name;
+            o.noDefaultEvents = noDefaultEvents;
             o.sources = sources;
             o.summarization = summarization;
             o.units = units;

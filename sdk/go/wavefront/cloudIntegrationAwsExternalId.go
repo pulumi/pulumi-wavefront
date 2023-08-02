@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-wavefront/sdk/v2/go/wavefront/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -19,7 +20,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront"
+//	"github.com/pulumi/pulumi-wavefront/sdk/v2/go/wavefront"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -56,6 +57,7 @@ func NewCloudIntegrationAwsExternalId(ctx *pulumi.Context,
 		args = &CloudIntegrationAwsExternalIdArgs{}
 	}
 
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource CloudIntegrationAwsExternalId
 	err := ctx.RegisterResource("wavefront:index/cloudIntegrationAwsExternalId:CloudIntegrationAwsExternalId", name, args, &resource, opts...)
 	if err != nil {

@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.wavefront.inputs.DashboardSectionRowChartChartSettingArgs;
 import com.pulumi.wavefront.inputs.DashboardSectionRowChartSourceArgs;
+import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -87,6 +88,21 @@ public final class DashboardSectionRowChartArgs extends com.pulumi.resources.Res
     }
 
     /**
+     * Show events related to the sources included in queries
+     * 
+     */
+    @Import(name="noDefaultEvents")
+    private @Nullable Output<Boolean> noDefaultEvents;
+
+    /**
+     * @return Show events related to the sources included in queries
+     * 
+     */
+    public Optional<Output<Boolean>> noDefaultEvents() {
+        return Optional.ofNullable(this.noDefaultEvents);
+    }
+
+    /**
      * Query expression to plot on the chart. See chart source queries.
      * 
      */
@@ -141,6 +157,7 @@ public final class DashboardSectionRowChartArgs extends com.pulumi.resources.Res
         this.chartSetting = $.chartSetting;
         this.description = $.description;
         this.name = $.name;
+        this.noDefaultEvents = $.noDefaultEvents;
         this.sources = $.sources;
         this.summarization = $.summarization;
         this.units = $.units;
@@ -255,6 +272,27 @@ public final class DashboardSectionRowChartArgs extends com.pulumi.resources.Res
          */
         public Builder name(String name) {
             return name(Output.of(name));
+        }
+
+        /**
+         * @param noDefaultEvents Show events related to the sources included in queries
+         * 
+         * @return builder
+         * 
+         */
+        public Builder noDefaultEvents(@Nullable Output<Boolean> noDefaultEvents) {
+            $.noDefaultEvents = noDefaultEvents;
+            return this;
+        }
+
+        /**
+         * @param noDefaultEvents Show events related to the sources included in queries
+         * 
+         * @return builder
+         * 
+         */
+        public Builder noDefaultEvents(Boolean noDefaultEvents) {
+            return noDefaultEvents(Output.of(noDefaultEvents));
         }
 
         /**

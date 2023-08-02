@@ -103,10 +103,10 @@ def get_role(id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('wavefront:index/getRole:getRole', __args__, opts=opts, typ=GetRoleResult).value
 
     return AwaitableGetRoleResult(
-        description=__ret__.description,
-        id=__ret__.id,
-        name=__ret__.name,
-        permissions=__ret__.permissions)
+        description=pulumi.get(__ret__, 'description'),
+        id=pulumi.get(__ret__, 'id'),
+        name=pulumi.get(__ret__, 'name'),
+        permissions=pulumi.get(__ret__, 'permissions'))
 
 
 @_utilities.lift_output_func(get_role)

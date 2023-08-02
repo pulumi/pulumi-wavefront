@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-wavefront/sdk/v2/go/wavefront/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -21,7 +22,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront"
+//	"github.com/pulumi/pulumi-wavefront/sdk/v2/go/wavefront"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -118,6 +119,7 @@ func NewCloudIntegrationAppDynamics(ctx *pulumi.Context,
 		"encryptedPassword",
 	})
 	opts = append(opts, secrets)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource CloudIntegrationAppDynamics
 	err := ctx.RegisterResource("wavefront:index/cloudIntegrationAppDynamics:CloudIntegrationAppDynamics", name, args, &resource, opts...)
 	if err != nil {
