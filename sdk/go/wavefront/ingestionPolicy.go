@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-wavefront/sdk/v2/go/wavefront/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -20,7 +21,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront"
+//	"github.com/pulumi/pulumi-wavefront/sdk/v2/go/wavefront"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -51,11 +52,16 @@ import (
 type IngestionPolicy struct {
 	pulumi.CustomResourceState
 
+	Accounts pulumi.StringArrayOutput `pulumi:"accounts"`
 	// The description of the ingestion policy.
-	Description pulumi.StringOutput `pulumi:"description"`
+	Description pulumi.StringOutput      `pulumi:"description"`
+	Groups      pulumi.StringArrayOutput `pulumi:"groups"`
 	// The name of the ingestion policy.
-	Name  pulumi.StringOutput `pulumi:"name"`
-	Scope pulumi.StringOutput `pulumi:"scope"`
+	Name       pulumi.StringOutput           `pulumi:"name"`
+	Namespaces pulumi.StringArrayOutput      `pulumi:"namespaces"`
+	Scope      pulumi.StringOutput           `pulumi:"scope"`
+	Sources    pulumi.StringArrayOutput      `pulumi:"sources"`
+	Tags       IngestionPolicyTagArrayOutput `pulumi:"tags"`
 }
 
 // NewIngestionPolicy registers a new resource with the given unique name, arguments, and options.
@@ -71,6 +77,7 @@ func NewIngestionPolicy(ctx *pulumi.Context,
 	if args.Scope == nil {
 		return nil, errors.New("invalid value for required argument 'Scope'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource IngestionPolicy
 	err := ctx.RegisterResource("wavefront:index/ingestionPolicy:IngestionPolicy", name, args, &resource, opts...)
 	if err != nil {
@@ -93,19 +100,29 @@ func GetIngestionPolicy(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering IngestionPolicy resources.
 type ingestionPolicyState struct {
+	Accounts []string `pulumi:"accounts"`
 	// The description of the ingestion policy.
-	Description *string `pulumi:"description"`
+	Description *string  `pulumi:"description"`
+	Groups      []string `pulumi:"groups"`
 	// The name of the ingestion policy.
-	Name  *string `pulumi:"name"`
-	Scope *string `pulumi:"scope"`
+	Name       *string              `pulumi:"name"`
+	Namespaces []string             `pulumi:"namespaces"`
+	Scope      *string              `pulumi:"scope"`
+	Sources    []string             `pulumi:"sources"`
+	Tags       []IngestionPolicyTag `pulumi:"tags"`
 }
 
 type IngestionPolicyState struct {
+	Accounts pulumi.StringArrayInput
 	// The description of the ingestion policy.
 	Description pulumi.StringPtrInput
+	Groups      pulumi.StringArrayInput
 	// The name of the ingestion policy.
-	Name  pulumi.StringPtrInput
-	Scope pulumi.StringPtrInput
+	Name       pulumi.StringPtrInput
+	Namespaces pulumi.StringArrayInput
+	Scope      pulumi.StringPtrInput
+	Sources    pulumi.StringArrayInput
+	Tags       IngestionPolicyTagArrayInput
 }
 
 func (IngestionPolicyState) ElementType() reflect.Type {
@@ -113,20 +130,30 @@ func (IngestionPolicyState) ElementType() reflect.Type {
 }
 
 type ingestionPolicyArgs struct {
+	Accounts []string `pulumi:"accounts"`
 	// The description of the ingestion policy.
-	Description string `pulumi:"description"`
+	Description string   `pulumi:"description"`
+	Groups      []string `pulumi:"groups"`
 	// The name of the ingestion policy.
-	Name  *string `pulumi:"name"`
-	Scope string  `pulumi:"scope"`
+	Name       *string              `pulumi:"name"`
+	Namespaces []string             `pulumi:"namespaces"`
+	Scope      string               `pulumi:"scope"`
+	Sources    []string             `pulumi:"sources"`
+	Tags       []IngestionPolicyTag `pulumi:"tags"`
 }
 
 // The set of arguments for constructing a IngestionPolicy resource.
 type IngestionPolicyArgs struct {
+	Accounts pulumi.StringArrayInput
 	// The description of the ingestion policy.
 	Description pulumi.StringInput
+	Groups      pulumi.StringArrayInput
 	// The name of the ingestion policy.
-	Name  pulumi.StringPtrInput
-	Scope pulumi.StringInput
+	Name       pulumi.StringPtrInput
+	Namespaces pulumi.StringArrayInput
+	Scope      pulumi.StringInput
+	Sources    pulumi.StringArrayInput
+	Tags       IngestionPolicyTagArrayInput
 }
 
 func (IngestionPolicyArgs) ElementType() reflect.Type {
@@ -216,9 +243,17 @@ func (o IngestionPolicyOutput) ToIngestionPolicyOutputWithContext(ctx context.Co
 	return o
 }
 
+func (o IngestionPolicyOutput) Accounts() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *IngestionPolicy) pulumi.StringArrayOutput { return v.Accounts }).(pulumi.StringArrayOutput)
+}
+
 // The description of the ingestion policy.
 func (o IngestionPolicyOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v *IngestionPolicy) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+}
+
+func (o IngestionPolicyOutput) Groups() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *IngestionPolicy) pulumi.StringArrayOutput { return v.Groups }).(pulumi.StringArrayOutput)
 }
 
 // The name of the ingestion policy.
@@ -226,8 +261,20 @@ func (o IngestionPolicyOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *IngestionPolicy) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }
 
+func (o IngestionPolicyOutput) Namespaces() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *IngestionPolicy) pulumi.StringArrayOutput { return v.Namespaces }).(pulumi.StringArrayOutput)
+}
+
 func (o IngestionPolicyOutput) Scope() pulumi.StringOutput {
 	return o.ApplyT(func(v *IngestionPolicy) pulumi.StringOutput { return v.Scope }).(pulumi.StringOutput)
+}
+
+func (o IngestionPolicyOutput) Sources() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *IngestionPolicy) pulumi.StringArrayOutput { return v.Sources }).(pulumi.StringArrayOutput)
+}
+
+func (o IngestionPolicyOutput) Tags() IngestionPolicyTagArrayOutput {
+	return o.ApplyT(func(v *IngestionPolicy) IngestionPolicyTagArrayOutput { return v.Tags }).(IngestionPolicyTagArrayOutput)
 }
 
 type IngestionPolicyArrayOutput struct{ *pulumi.OutputState }

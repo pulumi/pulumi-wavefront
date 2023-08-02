@@ -115,11 +115,11 @@ def get_user_group(id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('wavefront:index/getUserGroup:getUserGroup', __args__, opts=opts, typ=GetUserGroupResult).value
 
     return AwaitableGetUserGroupResult(
-        description=__ret__.description,
-        id=__ret__.id,
-        name=__ret__.name,
-        roles=__ret__.roles,
-        users=__ret__.users)
+        description=pulumi.get(__ret__, 'description'),
+        id=pulumi.get(__ret__, 'id'),
+        name=pulumi.get(__ret__, 'name'),
+        roles=pulumi.get(__ret__, 'roles'),
+        users=pulumi.get(__ret__, 'users'))
 
 
 @_utilities.lift_output_func(get_user_group)

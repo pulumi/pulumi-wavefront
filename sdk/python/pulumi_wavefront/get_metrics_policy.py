@@ -89,8 +89,8 @@ def get_metrics_policy(opts: Optional[pulumi.InvokeOptions] = None) -> Awaitable
     __ret__ = pulumi.runtime.invoke('wavefront:index/getMetricsPolicy:getMetricsPolicy', __args__, opts=opts, typ=GetMetricsPolicyResult).value
 
     return AwaitableGetMetricsPolicyResult(
-        customer=__ret__.customer,
-        id=__ret__.id,
-        policy_rules=__ret__.policy_rules,
-        updated_epoch_millis=__ret__.updated_epoch_millis,
-        updater_id=__ret__.updater_id)
+        customer=pulumi.get(__ret__, 'customer'),
+        id=pulumi.get(__ret__, 'id'),
+        policy_rules=pulumi.get(__ret__, 'policy_rules'),
+        updated_epoch_millis=pulumi.get(__ret__, 'updated_epoch_millis'),
+        updater_id=pulumi.get(__ret__, 'updater_id'))

@@ -102,10 +102,10 @@ def get_derived_metrics(limit: Optional[int] = None,
     __ret__ = pulumi.runtime.invoke('wavefront:index/getDerivedMetrics:getDerivedMetrics', __args__, opts=opts, typ=GetDerivedMetricsResult).value
 
     return AwaitableGetDerivedMetricsResult(
-        derived_metrics=__ret__.derived_metrics,
-        id=__ret__.id,
-        limit=__ret__.limit,
-        offset=__ret__.offset)
+        derived_metrics=pulumi.get(__ret__, 'derived_metrics'),
+        id=pulumi.get(__ret__, 'id'),
+        limit=pulumi.get(__ret__, 'limit'),
+        offset=pulumi.get(__ret__, 'offset'))
 
 
 @_utilities.lift_output_func(get_derived_metrics)

@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-wavefront/sdk/v2/go/wavefront/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -19,7 +20,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-wavefront/sdk/go/wavefront"
+//	"github.com/pulumi/pulumi-wavefront/sdk/v2/go/wavefront"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -39,6 +40,7 @@ import (
 //
 // ```
 func GetDerivedMetrics(ctx *pulumi.Context, args *GetDerivedMetricsArgs, opts ...pulumi.InvokeOption) (*GetDerivedMetricsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetDerivedMetricsResult
 	err := ctx.Invoke("wavefront:index/getDerivedMetrics:getDerivedMetrics", args, &rv, opts...)
 	if err != nil {

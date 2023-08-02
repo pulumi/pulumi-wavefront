@@ -8,6 +8,8 @@ import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
+from . import outputs
+from ._inputs import *
 
 __all__ = ['IngestionPolicyArgs', 'IngestionPolicy']
 
@@ -16,7 +18,12 @@ class IngestionPolicyArgs:
     def __init__(__self__, *,
                  description: pulumi.Input[str],
                  scope: pulumi.Input[str],
-                 name: Optional[pulumi.Input[str]] = None):
+                 accounts: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 groups: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 name: Optional[pulumi.Input[str]] = None,
+                 namespaces: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 sources: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 tags: Optional[pulumi.Input[Sequence[pulumi.Input['IngestionPolicyTagArgs']]]] = None):
         """
         The set of arguments for constructing a IngestionPolicy resource.
         :param pulumi.Input[str] description: The description of the ingestion policy.
@@ -24,8 +31,18 @@ class IngestionPolicyArgs:
         """
         pulumi.set(__self__, "description", description)
         pulumi.set(__self__, "scope", scope)
+        if accounts is not None:
+            pulumi.set(__self__, "accounts", accounts)
+        if groups is not None:
+            pulumi.set(__self__, "groups", groups)
         if name is not None:
             pulumi.set(__self__, "name", name)
+        if namespaces is not None:
+            pulumi.set(__self__, "namespaces", namespaces)
+        if sources is not None:
+            pulumi.set(__self__, "sources", sources)
+        if tags is not None:
+            pulumi.set(__self__, "tags", tags)
 
     @property
     @pulumi.getter
@@ -50,6 +67,24 @@ class IngestionPolicyArgs:
 
     @property
     @pulumi.getter
+    def accounts(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        return pulumi.get(self, "accounts")
+
+    @accounts.setter
+    def accounts(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "accounts", value)
+
+    @property
+    @pulumi.getter
+    def groups(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        return pulumi.get(self, "groups")
+
+    @groups.setter
+    def groups(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "groups", value)
+
+    @property
+    @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
         The name of the ingestion policy.
@@ -60,24 +95,75 @@ class IngestionPolicyArgs:
     def name(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "name", value)
 
+    @property
+    @pulumi.getter
+    def namespaces(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        return pulumi.get(self, "namespaces")
+
+    @namespaces.setter
+    def namespaces(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "namespaces", value)
+
+    @property
+    @pulumi.getter
+    def sources(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        return pulumi.get(self, "sources")
+
+    @sources.setter
+    def sources(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "sources", value)
+
+    @property
+    @pulumi.getter
+    def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IngestionPolicyTagArgs']]]]:
+        return pulumi.get(self, "tags")
+
+    @tags.setter
+    def tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IngestionPolicyTagArgs']]]]):
+        pulumi.set(self, "tags", value)
+
 
 @pulumi.input_type
 class _IngestionPolicyState:
     def __init__(__self__, *,
+                 accounts: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
+                 groups: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  name: Optional[pulumi.Input[str]] = None,
-                 scope: Optional[pulumi.Input[str]] = None):
+                 namespaces: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 scope: Optional[pulumi.Input[str]] = None,
+                 sources: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 tags: Optional[pulumi.Input[Sequence[pulumi.Input['IngestionPolicyTagArgs']]]] = None):
         """
         Input properties used for looking up and filtering IngestionPolicy resources.
         :param pulumi.Input[str] description: The description of the ingestion policy.
         :param pulumi.Input[str] name: The name of the ingestion policy.
         """
+        if accounts is not None:
+            pulumi.set(__self__, "accounts", accounts)
         if description is not None:
             pulumi.set(__self__, "description", description)
+        if groups is not None:
+            pulumi.set(__self__, "groups", groups)
         if name is not None:
             pulumi.set(__self__, "name", name)
+        if namespaces is not None:
+            pulumi.set(__self__, "namespaces", namespaces)
         if scope is not None:
             pulumi.set(__self__, "scope", scope)
+        if sources is not None:
+            pulumi.set(__self__, "sources", sources)
+        if tags is not None:
+            pulumi.set(__self__, "tags", tags)
+
+    @property
+    @pulumi.getter
+    def accounts(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        return pulumi.get(self, "accounts")
+
+    @accounts.setter
+    def accounts(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "accounts", value)
 
     @property
     @pulumi.getter
@@ -93,6 +179,15 @@ class _IngestionPolicyState:
 
     @property
     @pulumi.getter
+    def groups(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        return pulumi.get(self, "groups")
+
+    @groups.setter
+    def groups(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "groups", value)
+
+    @property
+    @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
         The name of the ingestion policy.
@@ -105,6 +200,15 @@ class _IngestionPolicyState:
 
     @property
     @pulumi.getter
+    def namespaces(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        return pulumi.get(self, "namespaces")
+
+    @namespaces.setter
+    def namespaces(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "namespaces", value)
+
+    @property
+    @pulumi.getter
     def scope(self) -> Optional[pulumi.Input[str]]:
         return pulumi.get(self, "scope")
 
@@ -112,15 +216,38 @@ class _IngestionPolicyState:
     def scope(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "scope", value)
 
+    @property
+    @pulumi.getter
+    def sources(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        return pulumi.get(self, "sources")
+
+    @sources.setter
+    def sources(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "sources", value)
+
+    @property
+    @pulumi.getter
+    def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IngestionPolicyTagArgs']]]]:
+        return pulumi.get(self, "tags")
+
+    @tags.setter
+    def tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IngestionPolicyTagArgs']]]]):
+        pulumi.set(self, "tags", value)
+
 
 class IngestionPolicy(pulumi.CustomResource):
     @overload
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 accounts: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
+                 groups: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  name: Optional[pulumi.Input[str]] = None,
+                 namespaces: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  scope: Optional[pulumi.Input[str]] = None,
+                 sources: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['IngestionPolicyTagArgs']]]]] = None,
                  __props__=None):
         """
         Provides a Wavefront Ingestion Policy Resource. This allows ingestion policies to be created, updated, and deleted.
@@ -188,9 +315,14 @@ class IngestionPolicy(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 accounts: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
+                 groups: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  name: Optional[pulumi.Input[str]] = None,
+                 namespaces: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  scope: Optional[pulumi.Input[str]] = None,
+                 sources: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['IngestionPolicyTagArgs']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -200,13 +332,18 @@ class IngestionPolicy(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = IngestionPolicyArgs.__new__(IngestionPolicyArgs)
 
+            __props__.__dict__["accounts"] = accounts
             if description is None and not opts.urn:
                 raise TypeError("Missing required property 'description'")
             __props__.__dict__["description"] = description
+            __props__.__dict__["groups"] = groups
             __props__.__dict__["name"] = name
+            __props__.__dict__["namespaces"] = namespaces
             if scope is None and not opts.urn:
                 raise TypeError("Missing required property 'scope'")
             __props__.__dict__["scope"] = scope
+            __props__.__dict__["sources"] = sources
+            __props__.__dict__["tags"] = tags
         super(IngestionPolicy, __self__).__init__(
             'wavefront:index/ingestionPolicy:IngestionPolicy',
             resource_name,
@@ -217,9 +354,14 @@ class IngestionPolicy(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
+            accounts: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             description: Optional[pulumi.Input[str]] = None,
+            groups: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             name: Optional[pulumi.Input[str]] = None,
-            scope: Optional[pulumi.Input[str]] = None) -> 'IngestionPolicy':
+            namespaces: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+            scope: Optional[pulumi.Input[str]] = None,
+            sources: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+            tags: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['IngestionPolicyTagArgs']]]]] = None) -> 'IngestionPolicy':
         """
         Get an existing IngestionPolicy resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -234,10 +376,20 @@ class IngestionPolicy(pulumi.CustomResource):
 
         __props__ = _IngestionPolicyState.__new__(_IngestionPolicyState)
 
+        __props__.__dict__["accounts"] = accounts
         __props__.__dict__["description"] = description
+        __props__.__dict__["groups"] = groups
         __props__.__dict__["name"] = name
+        __props__.__dict__["namespaces"] = namespaces
         __props__.__dict__["scope"] = scope
+        __props__.__dict__["sources"] = sources
+        __props__.__dict__["tags"] = tags
         return IngestionPolicy(resource_name, opts=opts, __props__=__props__)
+
+    @property
+    @pulumi.getter
+    def accounts(self) -> pulumi.Output[Optional[Sequence[str]]]:
+        return pulumi.get(self, "accounts")
 
     @property
     @pulumi.getter
@@ -249,6 +401,11 @@ class IngestionPolicy(pulumi.CustomResource):
 
     @property
     @pulumi.getter
+    def groups(self) -> pulumi.Output[Optional[Sequence[str]]]:
+        return pulumi.get(self, "groups")
+
+    @property
+    @pulumi.getter
     def name(self) -> pulumi.Output[str]:
         """
         The name of the ingestion policy.
@@ -257,6 +414,21 @@ class IngestionPolicy(pulumi.CustomResource):
 
     @property
     @pulumi.getter
+    def namespaces(self) -> pulumi.Output[Optional[Sequence[str]]]:
+        return pulumi.get(self, "namespaces")
+
+    @property
+    @pulumi.getter
     def scope(self) -> pulumi.Output[str]:
         return pulumi.get(self, "scope")
+
+    @property
+    @pulumi.getter
+    def sources(self) -> pulumi.Output[Optional[Sequence[str]]]:
+        return pulumi.get(self, "sources")
+
+    @property
+    @pulumi.getter
+    def tags(self) -> pulumi.Output[Optional[Sequence['outputs.IngestionPolicyTag']]]:
+        return pulumi.get(self, "tags")
 

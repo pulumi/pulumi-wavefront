@@ -172,16 +172,16 @@ def get_event(id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('wavefront:index/getEvent:getEvent', __args__, opts=opts, typ=GetEventResult).value
 
     return AwaitableGetEventResult(
-        annotations=__ret__.annotations,
-        details=__ret__.details,
-        endtime_key=__ret__.endtime_key,
-        id=__ret__.id,
-        is_ephemeral=__ret__.is_ephemeral,
-        name=__ret__.name,
-        severity=__ret__.severity,
-        start_time=__ret__.start_time,
-        tags=__ret__.tags,
-        type=__ret__.type)
+        annotations=pulumi.get(__ret__, 'annotations'),
+        details=pulumi.get(__ret__, 'details'),
+        endtime_key=pulumi.get(__ret__, 'endtime_key'),
+        id=pulumi.get(__ret__, 'id'),
+        is_ephemeral=pulumi.get(__ret__, 'is_ephemeral'),
+        name=pulumi.get(__ret__, 'name'),
+        severity=pulumi.get(__ret__, 'severity'),
+        start_time=pulumi.get(__ret__, 'start_time'),
+        tags=pulumi.get(__ret__, 'tags'),
+        type=pulumi.get(__ret__, 'type'))
 
 
 @_utilities.lift_output_func(get_event)

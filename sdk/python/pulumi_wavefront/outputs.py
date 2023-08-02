@@ -19,6 +19,7 @@ __all__ = [
     'DashboardSectionRowChart',
     'DashboardSectionRowChartChartSetting',
     'DashboardSectionRowChartSource',
+    'IngestionPolicyTag',
     'MetricsPolicyPolicyRule',
     'MetricsPolicyPolicyRuleTag',
     'GetAlertFailingHostLabelPairResult',
@@ -329,6 +330,8 @@ class DashboardSectionRowChart(dict):
             suggest = "chart_setting"
         elif key == "chartAttribute":
             suggest = "chart_attribute"
+        elif key == "noDefaultEvents":
+            suggest = "no_default_events"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in DashboardSectionRowChart. Access the value via the '{suggest}' property getter instead.")
@@ -349,7 +352,8 @@ class DashboardSectionRowChart(dict):
                  units: str,
                  base: Optional[int] = None,
                  chart_attribute: Optional[str] = None,
-                 description: Optional[str] = None):
+                 description: Optional[str] = None,
+                 no_default_events: Optional[bool] = None):
         """
         :param 'DashboardSectionRowChartChartSettingArgs' chart_setting: Chart settings. See chart settings.
         :param str name: Name of the source.
@@ -359,6 +363,7 @@ class DashboardSectionRowChart(dict):
         :param str units: String to label the units of the chart on the Y-Axis.
         :param int base: The base of logarithmic scale charts. Omit or set to 0 for the default linear scale. Usually set to 10 for the traditional logarithmic scale.
         :param str description: Description of the chart.
+        :param bool no_default_events: Show events related to the sources included in queries
         """
         pulumi.set(__self__, "chart_setting", chart_setting)
         pulumi.set(__self__, "name", name)
@@ -371,6 +376,8 @@ class DashboardSectionRowChart(dict):
             pulumi.set(__self__, "chart_attribute", chart_attribute)
         if description is not None:
             pulumi.set(__self__, "description", description)
+        if no_default_events is not None:
+            pulumi.set(__self__, "no_default_events", no_default_events)
 
     @property
     @pulumi.getter(name="chartSetting")
@@ -433,6 +440,14 @@ class DashboardSectionRowChart(dict):
         Description of the chart.
         """
         return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="noDefaultEvents")
+    def no_default_events(self) -> Optional[bool]:
+        """
+        Show events related to the sources included in queries
+        """
+        return pulumi.get(self, "no_default_events")
 
 
 @pulumi.output_type
@@ -1382,6 +1397,25 @@ class DashboardSectionRowChartSource(dict):
         A description for the purpose of this source.
         """
         return pulumi.get(self, "source_description")
+
+
+@pulumi.output_type
+class IngestionPolicyTag(dict):
+    def __init__(__self__, *,
+                 key: str,
+                 value: str):
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> str:
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def value(self) -> str:
+        return pulumi.get(self, "value")
 
 
 @pulumi.output_type

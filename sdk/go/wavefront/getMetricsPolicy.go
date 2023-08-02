@@ -4,10 +4,12 @@
 package wavefront
 
 import (
+	"github.com/pulumi/pulumi-wavefront/sdk/v2/go/wavefront/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 func LookupMetricsPolicy(ctx *pulumi.Context, opts ...pulumi.InvokeOption) (*LookupMetricsPolicyResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupMetricsPolicyResult
 	err := ctx.Invoke("wavefront:index/getMetricsPolicy:getMetricsPolicy", nil, &rv, opts...)
 	if err != nil {

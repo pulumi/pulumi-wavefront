@@ -277,24 +277,24 @@ def get_maintenance_window(id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('wavefront:index/getMaintenanceWindow:getMaintenanceWindow', __args__, opts=opts, typ=GetMaintenanceWindowResult).value
 
     return AwaitableGetMaintenanceWindowResult(
-        created_epoch_millis=__ret__.created_epoch_millis,
-        creator_id=__ret__.creator_id,
-        customer_id=__ret__.customer_id,
-        end_time_in_seconds=__ret__.end_time_in_seconds,
-        event_name=__ret__.event_name,
-        host_tag_group_host_names_group_anded=__ret__.host_tag_group_host_names_group_anded,
-        id=__ret__.id,
-        reason=__ret__.reason,
-        relevant_customer_tags=__ret__.relevant_customer_tags,
-        relevant_host_names=__ret__.relevant_host_names,
-        relevant_host_tags=__ret__.relevant_host_tags,
-        relevant_host_tags_anded=__ret__.relevant_host_tags_anded,
-        running_state=__ret__.running_state,
-        sort_attr=__ret__.sort_attr,
-        start_time_in_seconds=__ret__.start_time_in_seconds,
-        title=__ret__.title,
-        updated_epoch_millis=__ret__.updated_epoch_millis,
-        updater_id=__ret__.updater_id)
+        created_epoch_millis=pulumi.get(__ret__, 'created_epoch_millis'),
+        creator_id=pulumi.get(__ret__, 'creator_id'),
+        customer_id=pulumi.get(__ret__, 'customer_id'),
+        end_time_in_seconds=pulumi.get(__ret__, 'end_time_in_seconds'),
+        event_name=pulumi.get(__ret__, 'event_name'),
+        host_tag_group_host_names_group_anded=pulumi.get(__ret__, 'host_tag_group_host_names_group_anded'),
+        id=pulumi.get(__ret__, 'id'),
+        reason=pulumi.get(__ret__, 'reason'),
+        relevant_customer_tags=pulumi.get(__ret__, 'relevant_customer_tags'),
+        relevant_host_names=pulumi.get(__ret__, 'relevant_host_names'),
+        relevant_host_tags=pulumi.get(__ret__, 'relevant_host_tags'),
+        relevant_host_tags_anded=pulumi.get(__ret__, 'relevant_host_tags_anded'),
+        running_state=pulumi.get(__ret__, 'running_state'),
+        sort_attr=pulumi.get(__ret__, 'sort_attr'),
+        start_time_in_seconds=pulumi.get(__ret__, 'start_time_in_seconds'),
+        title=pulumi.get(__ret__, 'title'),
+        updated_epoch_millis=pulumi.get(__ret__, 'updated_epoch_millis'),
+        updater_id=pulumi.get(__ret__, 'updater_id'))
 
 
 @_utilities.lift_output_func(get_maintenance_window)

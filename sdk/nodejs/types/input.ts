@@ -103,6 +103,10 @@ export interface DashboardSectionRowChart {
      */
     name: pulumi.Input<string>;
     /**
+     * Show events related to the sources included in queries
+     */
+    noDefaultEvents?: pulumi.Input<boolean>;
+    /**
      * Query expression to plot on the chart. See chart source queries.
      */
     sources: pulumi.Input<pulumi.Input<inputs.DashboardSectionRowChartSource>[]>;
@@ -399,6 +403,11 @@ export interface DashboardSectionRowChartSource {
      * A description for the purpose of this source.
      */
     sourceDescription?: pulumi.Input<string>;
+}
+
+export interface IngestionPolicyTag {
+    key: pulumi.Input<string>;
+    value: pulumi.Input<string>;
 }
 
 export interface MetricsPolicyPolicyRule {

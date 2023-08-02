@@ -7,10 +7,12 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-wavefront/sdk/v2/go/wavefront/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 func GetMaintenanceWindowAll(ctx *pulumi.Context, args *GetMaintenanceWindowAllArgs, opts ...pulumi.InvokeOption) (*GetMaintenanceWindowAllResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetMaintenanceWindowAllResult
 	err := ctx.Invoke("wavefront:index/getMaintenanceWindowAll:getMaintenanceWindowAll", args, &rv, opts...)
 	if err != nil {

@@ -134,12 +134,12 @@ def get_events(earliest_start_time_epoch_millis: Optional[int] = None,
     __ret__ = pulumi.runtime.invoke('wavefront:index/getEvents:getEvents', __args__, opts=opts, typ=GetEventsResult).value
 
     return AwaitableGetEventsResult(
-        earliest_start_time_epoch_millis=__ret__.earliest_start_time_epoch_millis,
-        events=__ret__.events,
-        id=__ret__.id,
-        latest_start_time_epoch_millis=__ret__.latest_start_time_epoch_millis,
-        limit=__ret__.limit,
-        offset=__ret__.offset)
+        earliest_start_time_epoch_millis=pulumi.get(__ret__, 'earliest_start_time_epoch_millis'),
+        events=pulumi.get(__ret__, 'events'),
+        id=pulumi.get(__ret__, 'id'),
+        latest_start_time_epoch_millis=pulumi.get(__ret__, 'latest_start_time_epoch_millis'),
+        limit=pulumi.get(__ret__, 'limit'),
+        offset=pulumi.get(__ret__, 'offset'))
 
 
 @_utilities.lift_output_func(get_events)

@@ -7,8 +7,11 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-wavefront/sdk/v2/go/wavefront/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
+
+var _ = internal.GetEnvOrDefault
 
 type AlertTargetRoute struct {
 	Filter map[string]string `pulumi:"filter"`
@@ -613,6 +616,8 @@ type DashboardSectionRowChart struct {
 	Description *string `pulumi:"description"`
 	// Name of the source.
 	Name string `pulumi:"name"`
+	// Show events related to the sources included in queries
+	NoDefaultEvents *bool `pulumi:"noDefaultEvents"`
 	// Query expression to plot on the chart. See chart source queries.
 	Sources []DashboardSectionRowChartSource `pulumi:"sources"`
 	// Summarization strategy for the chart. MEAN is default. Valid options are, `MEAN`,
@@ -643,6 +648,8 @@ type DashboardSectionRowChartArgs struct {
 	Description pulumi.StringPtrInput `pulumi:"description"`
 	// Name of the source.
 	Name pulumi.StringInput `pulumi:"name"`
+	// Show events related to the sources included in queries
+	NoDefaultEvents pulumi.BoolPtrInput `pulumi:"noDefaultEvents"`
 	// Query expression to plot on the chart. See chart source queries.
 	Sources DashboardSectionRowChartSourceArrayInput `pulumi:"sources"`
 	// Summarization strategy for the chart. MEAN is default. Valid options are, `MEAN`,
@@ -725,6 +732,11 @@ func (o DashboardSectionRowChartOutput) Description() pulumi.StringPtrOutput {
 // Name of the source.
 func (o DashboardSectionRowChartOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v DashboardSectionRowChart) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// Show events related to the sources included in queries
+func (o DashboardSectionRowChartOutput) NoDefaultEvents() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v DashboardSectionRowChart) *bool { return v.NoDefaultEvents }).(pulumi.BoolPtrOutput)
 }
 
 // Query expression to plot on the chart. See chart source queries.
@@ -1537,6 +1549,106 @@ func (o DashboardSectionRowChartSourceArrayOutput) Index(i pulumi.IntInput) Dash
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DashboardSectionRowChartSource {
 		return vs[0].([]DashboardSectionRowChartSource)[vs[1].(int)]
 	}).(DashboardSectionRowChartSourceOutput)
+}
+
+type IngestionPolicyTag struct {
+	Key   string `pulumi:"key"`
+	Value string `pulumi:"value"`
+}
+
+// IngestionPolicyTagInput is an input type that accepts IngestionPolicyTagArgs and IngestionPolicyTagOutput values.
+// You can construct a concrete instance of `IngestionPolicyTagInput` via:
+//
+//	IngestionPolicyTagArgs{...}
+type IngestionPolicyTagInput interface {
+	pulumi.Input
+
+	ToIngestionPolicyTagOutput() IngestionPolicyTagOutput
+	ToIngestionPolicyTagOutputWithContext(context.Context) IngestionPolicyTagOutput
+}
+
+type IngestionPolicyTagArgs struct {
+	Key   pulumi.StringInput `pulumi:"key"`
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (IngestionPolicyTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*IngestionPolicyTag)(nil)).Elem()
+}
+
+func (i IngestionPolicyTagArgs) ToIngestionPolicyTagOutput() IngestionPolicyTagOutput {
+	return i.ToIngestionPolicyTagOutputWithContext(context.Background())
+}
+
+func (i IngestionPolicyTagArgs) ToIngestionPolicyTagOutputWithContext(ctx context.Context) IngestionPolicyTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IngestionPolicyTagOutput)
+}
+
+// IngestionPolicyTagArrayInput is an input type that accepts IngestionPolicyTagArray and IngestionPolicyTagArrayOutput values.
+// You can construct a concrete instance of `IngestionPolicyTagArrayInput` via:
+//
+//	IngestionPolicyTagArray{ IngestionPolicyTagArgs{...} }
+type IngestionPolicyTagArrayInput interface {
+	pulumi.Input
+
+	ToIngestionPolicyTagArrayOutput() IngestionPolicyTagArrayOutput
+	ToIngestionPolicyTagArrayOutputWithContext(context.Context) IngestionPolicyTagArrayOutput
+}
+
+type IngestionPolicyTagArray []IngestionPolicyTagInput
+
+func (IngestionPolicyTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]IngestionPolicyTag)(nil)).Elem()
+}
+
+func (i IngestionPolicyTagArray) ToIngestionPolicyTagArrayOutput() IngestionPolicyTagArrayOutput {
+	return i.ToIngestionPolicyTagArrayOutputWithContext(context.Background())
+}
+
+func (i IngestionPolicyTagArray) ToIngestionPolicyTagArrayOutputWithContext(ctx context.Context) IngestionPolicyTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IngestionPolicyTagArrayOutput)
+}
+
+type IngestionPolicyTagOutput struct{ *pulumi.OutputState }
+
+func (IngestionPolicyTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*IngestionPolicyTag)(nil)).Elem()
+}
+
+func (o IngestionPolicyTagOutput) ToIngestionPolicyTagOutput() IngestionPolicyTagOutput {
+	return o
+}
+
+func (o IngestionPolicyTagOutput) ToIngestionPolicyTagOutputWithContext(ctx context.Context) IngestionPolicyTagOutput {
+	return o
+}
+
+func (o IngestionPolicyTagOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v IngestionPolicyTag) string { return v.Key }).(pulumi.StringOutput)
+}
+
+func (o IngestionPolicyTagOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v IngestionPolicyTag) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type IngestionPolicyTagArrayOutput struct{ *pulumi.OutputState }
+
+func (IngestionPolicyTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]IngestionPolicyTag)(nil)).Elem()
+}
+
+func (o IngestionPolicyTagArrayOutput) ToIngestionPolicyTagArrayOutput() IngestionPolicyTagArrayOutput {
+	return o
+}
+
+func (o IngestionPolicyTagArrayOutput) ToIngestionPolicyTagArrayOutputWithContext(ctx context.Context) IngestionPolicyTagArrayOutput {
+	return o
+}
+
+func (o IngestionPolicyTagArrayOutput) Index(i pulumi.IntInput) IngestionPolicyTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) IngestionPolicyTag {
+		return vs[0].([]IngestionPolicyTag)[vs[1].(int)]
+	}).(IngestionPolicyTagOutput)
 }
 
 type MetricsPolicyPolicyRule struct {
@@ -6961,6 +7073,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*DashboardSectionRowChartChartSettingInput)(nil)).Elem(), DashboardSectionRowChartChartSettingArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DashboardSectionRowChartSourceInput)(nil)).Elem(), DashboardSectionRowChartSourceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DashboardSectionRowChartSourceArrayInput)(nil)).Elem(), DashboardSectionRowChartSourceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IngestionPolicyTagInput)(nil)).Elem(), IngestionPolicyTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IngestionPolicyTagArrayInput)(nil)).Elem(), IngestionPolicyTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MetricsPolicyPolicyRuleInput)(nil)).Elem(), MetricsPolicyPolicyRuleArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MetricsPolicyPolicyRuleArrayInput)(nil)).Elem(), MetricsPolicyPolicyRuleArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MetricsPolicyPolicyRuleTagInput)(nil)).Elem(), MetricsPolicyPolicyRuleTagArgs{})
@@ -7034,6 +7148,8 @@ func init() {
 	pulumi.RegisterOutputType(DashboardSectionRowChartChartSettingOutput{})
 	pulumi.RegisterOutputType(DashboardSectionRowChartSourceOutput{})
 	pulumi.RegisterOutputType(DashboardSectionRowChartSourceArrayOutput{})
+	pulumi.RegisterOutputType(IngestionPolicyTagOutput{})
+	pulumi.RegisterOutputType(IngestionPolicyTagArrayOutput{})
 	pulumi.RegisterOutputType(MetricsPolicyPolicyRuleOutput{})
 	pulumi.RegisterOutputType(MetricsPolicyPolicyRuleArrayOutput{})
 	pulumi.RegisterOutputType(MetricsPolicyPolicyRuleTagOutput{})

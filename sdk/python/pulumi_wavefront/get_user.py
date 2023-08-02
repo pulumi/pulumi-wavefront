@@ -124,12 +124,12 @@ def get_user(email: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('wavefront:index/getUser:getUser', __args__, opts=opts, typ=GetUserResult).value
 
     return AwaitableGetUserResult(
-        customer=__ret__.customer,
-        email=__ret__.email,
-        id=__ret__.id,
-        last_successful_login=__ret__.last_successful_login,
-        permissions=__ret__.permissions,
-        user_group_ids=__ret__.user_group_ids)
+        customer=pulumi.get(__ret__, 'customer'),
+        email=pulumi.get(__ret__, 'email'),
+        id=pulumi.get(__ret__, 'id'),
+        last_successful_login=pulumi.get(__ret__, 'last_successful_login'),
+        permissions=pulumi.get(__ret__, 'permissions'),
+        user_group_ids=pulumi.get(__ret__, 'user_group_ids'))
 
 
 @_utilities.lift_output_func(get_user)

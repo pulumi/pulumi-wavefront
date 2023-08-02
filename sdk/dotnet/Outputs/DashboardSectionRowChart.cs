@@ -31,6 +31,10 @@ namespace Pulumi.Wavefront.Outputs
         /// </summary>
         public readonly string Name;
         /// <summary>
+        /// Show events related to the sources included in queries
+        /// </summary>
+        public readonly bool? NoDefaultEvents;
+        /// <summary>
         /// Query expression to plot on the chart. See chart source queries.
         /// </summary>
         public readonly ImmutableArray<Outputs.DashboardSectionRowChartSource> Sources;
@@ -56,6 +60,8 @@ namespace Pulumi.Wavefront.Outputs
 
             string name,
 
+            bool? noDefaultEvents,
+
             ImmutableArray<Outputs.DashboardSectionRowChartSource> sources,
 
             string summarization,
@@ -67,6 +73,7 @@ namespace Pulumi.Wavefront.Outputs
             ChartSetting = chartSetting;
             Description = description;
             Name = name;
+            NoDefaultEvents = noDefaultEvents;
             Sources = sources;
             Summarization = summarization;
             Units = units;

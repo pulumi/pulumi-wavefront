@@ -10,7 +10,10 @@ import com.pulumi.core.internal.Codegen;
 import com.pulumi.wavefront.IngestionPolicyArgs;
 import com.pulumi.wavefront.Utilities;
 import com.pulumi.wavefront.inputs.IngestionPolicyState;
+import com.pulumi.wavefront.outputs.IngestionPolicyTag;
 import java.lang.String;
+import java.util.List;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -57,6 +60,12 @@ import javax.annotation.Nullable;
  */
 @ResourceType(type="wavefront:index/ingestionPolicy:IngestionPolicy")
 public class IngestionPolicy extends com.pulumi.resources.CustomResource {
+    @Export(name="accounts", type=List.class, parameters={String.class})
+    private Output</* @Nullable */ List<String>> accounts;
+
+    public Output<Optional<List<String>>> accounts() {
+        return Codegen.optional(this.accounts);
+    }
     /**
      * The description of the ingestion policy.
      * 
@@ -70,6 +79,12 @@ public class IngestionPolicy extends com.pulumi.resources.CustomResource {
      */
     public Output<String> description() {
         return this.description;
+    }
+    @Export(name="groups", type=List.class, parameters={String.class})
+    private Output</* @Nullable */ List<String>> groups;
+
+    public Output<Optional<List<String>>> groups() {
+        return Codegen.optional(this.groups);
     }
     /**
      * The name of the ingestion policy.
@@ -85,11 +100,29 @@ public class IngestionPolicy extends com.pulumi.resources.CustomResource {
     public Output<String> name() {
         return this.name;
     }
+    @Export(name="namespaces", type=List.class, parameters={String.class})
+    private Output</* @Nullable */ List<String>> namespaces;
+
+    public Output<Optional<List<String>>> namespaces() {
+        return Codegen.optional(this.namespaces);
+    }
     @Export(name="scope", type=String.class, parameters={})
     private Output<String> scope;
 
     public Output<String> scope() {
         return this.scope;
+    }
+    @Export(name="sources", type=List.class, parameters={String.class})
+    private Output</* @Nullable */ List<String>> sources;
+
+    public Output<Optional<List<String>>> sources() {
+        return Codegen.optional(this.sources);
+    }
+    @Export(name="tags", type=List.class, parameters={IngestionPolicyTag.class})
+    private Output</* @Nullable */ List<IngestionPolicyTag>> tags;
+
+    public Output<Optional<List<IngestionPolicyTag>>> tags() {
+        return Codegen.optional(this.tags);
     }
 
     /**

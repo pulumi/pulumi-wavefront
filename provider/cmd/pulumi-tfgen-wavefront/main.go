@@ -17,8 +17,8 @@ package main
 import (
 	"github.com/pulumi/pulumi-terraform-bridge/v3/pkg/tfgen"
 
-	wavefront "github.com/pulumi/pulumi-wavefront/provider"
-	"github.com/pulumi/pulumi-wavefront/provider/pkg/version"
+	wavefront "github.com/pulumi/pulumi-wavefront/provider/v2"
+	"github.com/pulumi/pulumi-wavefront/provider/v2/pkg/version"
 )
 
 func main() {
