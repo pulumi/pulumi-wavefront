@@ -20,7 +20,7 @@ import (
 	"unicode"
 
 	"github.com/pulumi/pulumi-terraform-bridge/v3/pkg/tfbridge"
-	"github.com/pulumi/pulumi-terraform-bridge/v3/pkg/tfbridge/x"
+	bridgetokens "github.com/pulumi/pulumi-terraform-bridge/v3/pkg/tfbridge/tokens"
 	shimv2 "github.com/pulumi/pulumi-terraform-bridge/v3/pkg/tfshim/sdk-v2"
 	"github.com/pulumi/pulumi-wavefront/provider/v2/pkg/version"
 	"github.com/pulumi/pulumi/sdk/v3/go/common/tokens"
@@ -172,8 +172,8 @@ func Provider() tfbridge.ProviderInfo {
 		},
 	}
 
-	err := x.ComputeDefaults(&prov, x.TokensSingleModule("wavefront_", mainMod,
-		x.MakeStandardToken(mainPkg)))
+	err := prov.ComputeTokens(bridgetokens.SingleModule("wavefront_", mainMod,
+		bridgetokens.MakeStandard(mainPkg)))
 	contract.AssertNoErrorf(err, "failed to compute defaults")
 	prov.SetAutonaming(255, "-")
 
