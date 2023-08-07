@@ -3,9 +3,9 @@ module github.com/pulumi/pulumi-wavefront/provider/v2
 go 1.19
 
 require (
-	github.com/pulumi/pulumi-terraform-bridge/v3 v3.55.0
+	github.com/pulumi/pulumi-terraform-bridge/v3 v3.56.1
 	github.com/pulumi/pulumi/sdk/v3 v3.76.1
-	github.com/vmware/terraform-provider-wavefront v0.0.0-20230728191319-73bd9b83fd34
+	github.com/vmware/terraform-provider-wavefront v0.0.0-20230801220302-e4538050c3e8
 )
 
 require (
@@ -41,8 +41,7 @@ require (
 	github.com/Masterminds/sprig/v3 v3.2.2 // indirect
 	github.com/Microsoft/go-winio v0.5.2 // indirect
 	github.com/ProtonMail/go-crypto v0.0.0-20230217124315-7d5c6f04bbb8 // indirect
-	github.com/WavefrontHQ/go-wavefront-management-api v1.16.0 // indirect
-	github.com/WavefrontHQ/go-wavefront-management-api/v2 v2.0.1 // indirect
+	github.com/WavefrontHQ/go-wavefront-management-api/v2 v2.1.0 // indirect
 	github.com/acomagu/bufpipe v1.0.4 // indirect
 	github.com/aead/chacha20 v0.0.0-20180709150244-8b13a72661da // indirect
 	github.com/agext/levenshtein v1.2.3 // indirect

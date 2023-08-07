@@ -744,10 +744,8 @@ github.com/Shopify/logrus-bugsnag v0.0.0-20171204204709-577dee27f20d/go.mod h1:H
 github.com/Shopify/sarama v1.19.0/go.mod h1:FVkBWblsNy7DGZRfXLU0O9RCGt5g3g3yEuWXgklEdEo=
 github.com/Shopify/toxiproxy v2.1.4+incompatible/go.mod h1:OXgGpZ6Cli1/URJOF1DMxUHB2q5Ap20/P/eIdh4G0pI=
 github.com/VividCortex/gohistogram v1.0.0/go.mod h1:Pf5mBqqDxYaXu3hDrrU+w6nw50o/4+TcAqDqk/vUH7g=
-github.com/WavefrontHQ/go-wavefront-management-api v1.16.0 h1:TnwD32ulsMVpzJWr4+Op9G3H3YnCdXK87yaMvrrQ7pA=
-github.com/WavefrontHQ/go-wavefront-management-api v1.16.0/go.mod h1:lvOQYngtif/hxow8fjOM7ox/nSyYGyBjNwDBXxcTjvk=
-github.com/WavefrontHQ/go-wavefront-management-api/v2 v2.0.1 h1:3q3Yowb110YrDqs75mH0kr7HnCysINNtJ1msdGt1e+s=
-github.com/WavefrontHQ/go-wavefront-management-api/v2 v2.0.1/go.mod h1:kEo78iw4P8e5zeC7cOJHEde7v5tNseDhlddQXcCa9Bc=
+github.com/WavefrontHQ/go-wavefront-management-api/v2 v2.1.0 h1:0V662BBrSmeWb2OZyeKIOi10YUsOWODDawimWuO2Eho=
+github.com/WavefrontHQ/go-wavefront-management-api/v2 v2.1.0/go.mod h1:kEo78iw4P8e5zeC7cOJHEde7v5tNseDhlddQXcCa9Bc=
 github.com/acomagu/bufpipe v1.0.3/go.mod h1:mxdxdup/WdsKVreO5GpW4+M/1CE2sMG4jeGJ2sYmHc4=
 github.com/acomagu/bufpipe v1.0.4 h1:e3H4WUzM3npvo5uv95QuJM3cQspFNtFBzvJ2oNjKIDQ=
 github.com/acomagu/bufpipe v1.0.4/go.mod h1:mxdxdup/WdsKVreO5GpW4+M/1CE2sMG4jeGJ2sYmHc4=
@@ -2135,8 +2133,8 @@ github.com/prometheus/tsdb v0.7.1/go.mod h1:qhTCs0VvXwvX/y3TZrWD7rabWM+ijKTux40T
 github.com/pulumi/pulumi-java/pkg v0.9.4 h1:gIQZmlUI1o9ye8CL2XFqtmAX6Lwr9uj/+HzjboiSmK4=
 github.com/pulumi/pulumi-java/pkg v0.9.4/go.mod h1:c6rSw/+q4O0IImgJ9axxoC6QesbPYWBaG5gimbHouUQ=
 github.com/pulumi/pulumi-terraform-bridge/testing v0.0.1 h1:SCg1gjfY9N4yn8U8peIUYATifjoDABkyR7H9lmefsfc=
-github.com/pulumi/pulumi-terraform-bridge/v3 v3.55.0 h1:A33Ji/QSCYy2Jk5+1BzA5vFmK7Rvq6XFo8jS69QahVo=
-github.com/pulumi/pulumi-terraform-bridge/v3 v3.55.0/go.mod h1:ykaml8e6XS/yI9JOcNZ+6gLirs6EWTB0FmjbT+JyEdU=
+github.com/pulumi/pulumi-terraform-bridge/v3 v3.56.1 h1:OXecHzpPIJrYQJXpzwAgsYYWdEo8e5bNVPxPYKdZV3s=
+github.com/pulumi/pulumi-terraform-bridge/v3 v3.56.1/go.mod h1:ykaml8e6XS/yI9JOcNZ+6gLirs6EWTB0FmjbT+JyEdU=
 github.com/pulumi/pulumi-terraform-bridge/x/muxer v0.0.4 h1:rIzMmtcVpPX8ynaz6/nW5AHNY63DiNfCohqmxWvMpM4=
 github.com/pulumi/pulumi-terraform-bridge/x/muxer v0.0.4/go.mod h1:Kt8RIZWa/N8rW3+0g6NrqCBmF3o+HuIhFaZpssEkG6w=
 github.com/pulumi/pulumi-yaml v1.1.1 h1:8pyBNIU8+ym0wYpjhsCqN+cutygfK1XbhY2YEeNfyXY=
@@ -2330,8 +2328,8 @@ github.com/vmihailenco/msgpack/v5 v5.3.5/go.mod h1:7xyJ9e+0+9SaZT0Wt1RGleJXzli6Q
 github.com/vmihailenco/tagparser v0.1.1/go.mod h1:OeAg3pn3UbLjkWt+rN9oFYB6u/cQgqMEUPoW2WPyhdI=
 github.com/vmihailenco/tagparser/v2 v2.0.0 h1:y09buUbR+b5aycVFQs/g70pqKVZNBmxwAhO7/IwNM9g=
 github.com/vmihailenco/tagparser/v2 v2.0.0/go.mod h1:Wri+At7QHww0WTrCBeu4J6bNtoV6mEfg5OIWRZA9qds=
-github.com/vmware/terraform-provider-wavefront v0.0.0-20230728191319-73bd9b83fd34 h1:1ImRPJVXCGGthbv7c6/87rXxTYvQ+PQeZRwpy+X0kkI=
-github.com/vmware/terraform-provider-wavefront v0.0.0-20230728191319-73bd9b83fd34/go.mod h1:fmMdNDeLQBZs7K7+LerRtSoIvcoKQ9SjzOAc1m1yWC0=
+github.com/vmware/terraform-provider-wavefront v0.0.0-20230801220302-e4538050c3e8 h1:ANRQJChuIT8SF6ZeVpfN2MFTvylw22z9sWU+e9bthLQ=
+github.com/vmware/terraform-provider-wavefront v0.0.0-20230801220302-e4538050c3e8/go.mod h1:uUMTRiwpP7Ms8q/w91UDKri40zpRv0YSQlLT39WL904=
 github.com/vultr/govultr/v2 v2.17.2/go.mod h1:ZFOKGWmgjytfyjeyAdhQlSWwTjh2ig+X49cAp50dzXI=
 github.com/willf/bitset v1.1.11-0.20200630133818-d5bec3311243/go.mod h1:RjeCKbqT1RxIR/KWY6phxZiaY1IyutSBfGjNPySAYV4=
 github.com/willf/bitset v1.1.11/go.mod h1:83CECat5yLh5zVOf4P1ErAgKA5UDvKtgyUABdr3+MjI=
