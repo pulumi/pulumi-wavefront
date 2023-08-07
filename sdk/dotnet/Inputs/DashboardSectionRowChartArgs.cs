@@ -58,7 +58,7 @@ namespace Pulumi.Wavefront.Inputs
         }
 
         /// <summary>
-        /// Summarization strategy for the chart. MEAN is default. Valid options are, `MEAN`, 
+        /// Summarization strategy for the chart. MEAN is default. Valid options are, `MEAN`,
         /// `MEDIAN`, `MIN`, `MAX`, `SUM`, `COUNT`, `LAST`, `FIRST`.
         /// </summary>
         [Input("summarization", required: true)]

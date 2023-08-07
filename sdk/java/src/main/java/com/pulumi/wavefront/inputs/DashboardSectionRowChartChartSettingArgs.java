@@ -209,7 +209,7 @@ public final class DashboardSectionRowChartChartSettingArgs extends com.pulumi.r
 
     /**
      * For the tabular view, whether to group multi metrics into a single row by a common source.
-     * If `false`, each source is displayed in its own row.  if `true`, multiple metrics for the same host are displayed as different
+     * If `false`, each source is displayed in its own row. if `true`, multiple metrics for the same host are displayed as different
      * columns in the same row.
      * 
      */
@@ -218,7 +218,7 @@ public final class DashboardSectionRowChartChartSettingArgs extends com.pulumi.r
 
     /**
      * @return For the tabular view, whether to group multi metrics into a single row by a common source.
-     * If `false`, each source is displayed in its own row.  if `true`, multiple metrics for the same host are displayed as different
+     * If `false`, each source is displayed in its own row. if `true`, multiple metrics for the same host are displayed as different
      * columns in the same row.
      * 
      */
@@ -507,7 +507,7 @@ public final class DashboardSectionRowChartChartSettingArgs extends com.pulumi.r
     }
 
     /**
-     * For the single stat view, the color of the background fill.  Values should be
+     * For the single stat view, the color of the background fill. Values should be
      * in `rgba(,,,,)`.
      * 
      */
@@ -515,7 +515,7 @@ public final class DashboardSectionRowChartChartSettingArgs extends com.pulumi.r
     private @Nullable Output<String> sparklineFillColor;
 
     /**
-     * @return For the single stat view, the color of the background fill.  Values should be
+     * @return For the single stat view, the color of the background fill. Values should be
      * in `rgba(,,,,)`.
      * 
      */
@@ -524,14 +524,14 @@ public final class DashboardSectionRowChartChartSettingArgs extends com.pulumi.r
     }
 
     /**
-     * For the single stat view, the color of the line.  Values should be in `rgba(,,,,)` format.
+     * For the single stat view, the color of the line. Values should be in `rgba(,,,,)` format.
      * 
      */
     @Import(name="sparklineLineColor")
     private @Nullable Output<String> sparklineLineColor;
 
     /**
-     * @return For the single stat view, the color of the line.  Values should be in `rgba(,,,,)` format.
+     * @return For the single stat view, the color of the line. Values should be in `rgba(,,,,)` format.
      * 
      */
     public Optional<Output<String>> sparklineLineColor() {
@@ -606,7 +606,7 @@ public final class DashboardSectionRowChartChartSettingArgs extends com.pulumi.r
 
     /**
      * For the single stat view, a list of boundaries for mapping different
-     * query values to colors.  Must contain one element less than `sparkline_value_color_map_colors`.
+     * query values to colors. Must contain one element less than `sparkline_value_color_map_colors`.
      * 
      */
     @Import(name="sparklineValueColorMapValuesV2s")
@@ -614,7 +614,7 @@ public final class DashboardSectionRowChartChartSettingArgs extends com.pulumi.r
 
     /**
      * @return For the single stat view, a list of boundaries for mapping different
-     * query values to colors.  Must contain one element less than `sparkline_value_color_map_colors`.
+     * query values to colors. Must contain one element less than `sparkline_value_color_map_colors`.
      * 
      */
     public Optional<Output<List<Double>>> sparklineValueColorMapValuesV2s() {
@@ -623,7 +623,7 @@ public final class DashboardSectionRowChartChartSettingArgs extends com.pulumi.r
 
     /**
      * For the single stat view, a list of display text values that different query
-     * values map to.  Must contain one more element than `sparkline_value_text_map_thresholds`.
+     * values map to. Must contain one more element than `sparkline_value_text_map_thresholds`.
      * 
      */
     @Import(name="sparklineValueTextMapTexts")
@@ -631,7 +631,7 @@ public final class DashboardSectionRowChartChartSettingArgs extends com.pulumi.r
 
     /**
      * @return For the single stat view, a list of display text values that different query
-     * values map to.  Must contain one more element than `sparkline_value_text_map_thresholds`.
+     * values map to. Must contain one more element than `sparkline_value_text_map_thresholds`.
      * 
      */
     public Optional<Output<List<String>>> sparklineValueTextMapTexts() {
@@ -640,7 +640,7 @@ public final class DashboardSectionRowChartChartSettingArgs extends com.pulumi.r
 
     /**
      * For the single stat view, a list of threshold boundaries for
-     * mapping different query values to display text.  Must contain one element less than `sparkline_value_text_map_text`.
+     * mapping different query values to display text. Must contain one element less than `sparkline_value_text_map_text`.
      * 
      */
     @Import(name="sparklineValueTextMapThresholds")
@@ -648,7 +648,7 @@ public final class DashboardSectionRowChartChartSettingArgs extends com.pulumi.r
 
     /**
      * @return For the single stat view, a list of threshold boundaries for
-     * mapping different query values to display text.  Must contain one element less than `sparkline_value_text_map_text`.
+     * mapping different query values to display text. Must contain one element less than `sparkline_value_text_map_text`.
      * 
      */
     public Optional<Output<List<Double>>> sparklineValueTextMapThresholds() {
@@ -709,7 +709,7 @@ public final class DashboardSectionRowChartChartSettingArgs extends com.pulumi.r
     /**
      * Chart Type. `line` refers to the Line Plot, `scatter` to the Point Plot, `stacked-area` to
      * the Stacked Area plot, `table` to the Tabular View, `scatterplot-xy` to Scatter Plot, `markdown-widget` to the
-     * Markdown display, and `sparkline` to the Single Stat view. Valid options are `line`, `scatterplot`,
+     * Markdown display, and `sparkline` to the Single Stat view. Valid options are`line`, `scatterplot`,
      * `stacked-area`, `stacked-column`, `table`, `scatterplot-xy`, `markdown-widget`, `sparkline`, `globe`, `nodemap`,
      * `top-k`, `status-list`, and `histogram`.
      * 
@@ -720,7 +720,7 @@ public final class DashboardSectionRowChartChartSettingArgs extends com.pulumi.r
     /**
      * @return Chart Type. `line` refers to the Line Plot, `scatter` to the Point Plot, `stacked-area` to
      * the Stacked Area plot, `table` to the Tabular View, `scatterplot-xy` to Scatter Plot, `markdown-widget` to the
-     * Markdown display, and `sparkline` to the Single Stat view. Valid options are `line`, `scatterplot`,
+     * Markdown display, and `sparkline` to the Single Stat view. Valid options are`line`, `scatterplot`,
      * `stacked-area`, `stacked-column`, `table`, `scatterplot-xy`, `markdown-widget`, `sparkline`, `globe`, `nodemap`,
      * `top-k`, `status-list`, and `histogram`.
      * 
@@ -1288,7 +1288,7 @@ public final class DashboardSectionRowChartChartSettingArgs extends com.pulumi.r
 
         /**
          * @param groupBySource For the tabular view, whether to group multi metrics into a single row by a common source.
-         * If `false`, each source is displayed in its own row.  if `true`, multiple metrics for the same host are displayed as different
+         * If `false`, each source is displayed in its own row. if `true`, multiple metrics for the same host are displayed as different
          * columns in the same row.
          * 
          * @return builder
@@ -1301,7 +1301,7 @@ public final class DashboardSectionRowChartChartSettingArgs extends com.pulumi.r
 
         /**
          * @param groupBySource For the tabular view, whether to group multi metrics into a single row by a common source.
-         * If `false`, each source is displayed in its own row.  if `true`, multiple metrics for the same host are displayed as different
+         * If `false`, each source is displayed in its own row. if `true`, multiple metrics for the same host are displayed as different
          * columns in the same row.
          * 
          * @return builder
@@ -1700,7 +1700,7 @@ public final class DashboardSectionRowChartChartSettingArgs extends com.pulumi.r
         }
 
         /**
-         * @param sparklineFillColor For the single stat view, the color of the background fill.  Values should be
+         * @param sparklineFillColor For the single stat view, the color of the background fill. Values should be
          * in `rgba(,,,,)`.
          * 
          * @return builder
@@ -1712,7 +1712,7 @@ public final class DashboardSectionRowChartChartSettingArgs extends com.pulumi.r
         }
 
         /**
-         * @param sparklineFillColor For the single stat view, the color of the background fill.  Values should be
+         * @param sparklineFillColor For the single stat view, the color of the background fill. Values should be
          * in `rgba(,,,,)`.
          * 
          * @return builder
@@ -1723,7 +1723,7 @@ public final class DashboardSectionRowChartChartSettingArgs extends com.pulumi.r
         }
 
         /**
-         * @param sparklineLineColor For the single stat view, the color of the line.  Values should be in `rgba(,,,,)` format.
+         * @param sparklineLineColor For the single stat view, the color of the line. Values should be in `rgba(,,,,)` format.
          * 
          * @return builder
          * 
@@ -1734,7 +1734,7 @@ public final class DashboardSectionRowChartChartSettingArgs extends com.pulumi.r
         }
 
         /**
-         * @param sparklineLineColor For the single stat view, the color of the line.  Values should be in `rgba(,,,,)` format.
+         * @param sparklineLineColor For the single stat view, the color of the line. Values should be in `rgba(,,,,)` format.
          * 
          * @return builder
          * 
@@ -1856,7 +1856,7 @@ public final class DashboardSectionRowChartChartSettingArgs extends com.pulumi.r
 
         /**
          * @param sparklineValueColorMapValuesV2s For the single stat view, a list of boundaries for mapping different
-         * query values to colors.  Must contain one element less than `sparkline_value_color_map_colors`.
+         * query values to colors. Must contain one element less than `sparkline_value_color_map_colors`.
          * 
          * @return builder
          * 
@@ -1868,7 +1868,7 @@ public final class DashboardSectionRowChartChartSettingArgs extends com.pulumi.r
 
         /**
          * @param sparklineValueColorMapValuesV2s For the single stat view, a list of boundaries for mapping different
-         * query values to colors.  Must contain one element less than `sparkline_value_color_map_colors`.
+         * query values to colors. Must contain one element less than `sparkline_value_color_map_colors`.
          * 
          * @return builder
          * 
@@ -1879,7 +1879,7 @@ public final class DashboardSectionRowChartChartSettingArgs extends com.pulumi.r
 
         /**
          * @param sparklineValueColorMapValuesV2s For the single stat view, a list of boundaries for mapping different
-         * query values to colors.  Must contain one element less than `sparkline_value_color_map_colors`.
+         * query values to colors. Must contain one element less than `sparkline_value_color_map_colors`.
          * 
          * @return builder
          * 
@@ -1890,7 +1890,7 @@ public final class DashboardSectionRowChartChartSettingArgs extends com.pulumi.r
 
         /**
          * @param sparklineValueTextMapTexts For the single stat view, a list of display text values that different query
-         * values map to.  Must contain one more element than `sparkline_value_text_map_thresholds`.
+         * values map to. Must contain one more element than `sparkline_value_text_map_thresholds`.
          * 
          * @return builder
          * 
@@ -1902,7 +1902,7 @@ public final class DashboardSectionRowChartChartSettingArgs extends com.pulumi.r
 
         /**
          * @param sparklineValueTextMapTexts For the single stat view, a list of display text values that different query
-         * values map to.  Must contain one more element than `sparkline_value_text_map_thresholds`.
+         * values map to. Must contain one more element than `sparkline_value_text_map_thresholds`.
          * 
          * @return builder
          * 
@@ -1913,7 +1913,7 @@ public final class DashboardSectionRowChartChartSettingArgs extends com.pulumi.r
 
         /**
          * @param sparklineValueTextMapTexts For the single stat view, a list of display text values that different query
-         * values map to.  Must contain one more element than `sparkline_value_text_map_thresholds`.
+         * values map to. Must contain one more element than `sparkline_value_text_map_thresholds`.
          * 
          * @return builder
          * 
@@ -1924,7 +1924,7 @@ public final class DashboardSectionRowChartChartSettingArgs extends com.pulumi.r
 
         /**
          * @param sparklineValueTextMapThresholds For the single stat view, a list of threshold boundaries for
-         * mapping different query values to display text.  Must contain one element less than `sparkline_value_text_map_text`.
+         * mapping different query values to display text. Must contain one element less than `sparkline_value_text_map_text`.
          * 
          * @return builder
          * 
@@ -1936,7 +1936,7 @@ public final class DashboardSectionRowChartChartSettingArgs extends com.pulumi.r
 
         /**
          * @param sparklineValueTextMapThresholds For the single stat view, a list of threshold boundaries for
-         * mapping different query values to display text.  Must contain one element less than `sparkline_value_text_map_text`.
+         * mapping different query values to display text. Must contain one element less than `sparkline_value_text_map_text`.
          * 
          * @return builder
          * 
@@ -1947,7 +1947,7 @@ public final class DashboardSectionRowChartChartSettingArgs extends com.pulumi.r
 
         /**
          * @param sparklineValueTextMapThresholds For the single stat view, a list of threshold boundaries for
-         * mapping different query values to display text.  Must contain one element less than `sparkline_value_text_map_text`.
+         * mapping different query values to display text. Must contain one element less than `sparkline_value_text_map_text`.
          * 
          * @return builder
          * 
@@ -2028,7 +2028,7 @@ public final class DashboardSectionRowChartChartSettingArgs extends com.pulumi.r
         /**
          * @param type Chart Type. `line` refers to the Line Plot, `scatter` to the Point Plot, `stacked-area` to
          * the Stacked Area plot, `table` to the Tabular View, `scatterplot-xy` to Scatter Plot, `markdown-widget` to the
-         * Markdown display, and `sparkline` to the Single Stat view. Valid options are `line`, `scatterplot`,
+         * Markdown display, and `sparkline` to the Single Stat view. Valid options are`line`, `scatterplot`,
          * `stacked-area`, `stacked-column`, `table`, `scatterplot-xy`, `markdown-widget`, `sparkline`, `globe`, `nodemap`,
          * `top-k`, `status-list`, and `histogram`.
          * 
@@ -2043,7 +2043,7 @@ public final class DashboardSectionRowChartChartSettingArgs extends com.pulumi.r
         /**
          * @param type Chart Type. `line` refers to the Line Plot, `scatter` to the Point Plot, `stacked-area` to
          * the Stacked Area plot, `table` to the Tabular View, `scatterplot-xy` to Scatter Plot, `markdown-widget` to the
-         * Markdown display, and `sparkline` to the Single Stat view. Valid options are `line`, `scatterplot`,
+         * Markdown display, and `sparkline` to the Single Stat view. Valid options are`line`, `scatterplot`,
          * `stacked-area`, `stacked-column`, `table`, `scatterplot-xy`, `markdown-widget`, `sparkline`, `globe`, `nodemap`,
          * `top-k`, `status-list`, and `histogram`.
          * 

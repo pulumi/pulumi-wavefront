@@ -102,7 +102,7 @@ namespace Pulumi.Wavefront.Inputs
 
         /// <summary>
         /// For the tabular view, whether to group multi metrics into a single row by a common source.
-        /// If `false`, each source is displayed in its own row.  if `true`, multiple metrics for the same host are displayed as different
+        /// If `false`, each source is displayed in its own row. if `true`, multiple metrics for the same host are displayed as different
         /// columns in the same row.
         /// </summary>
         [Input("groupBySource")]
@@ -116,7 +116,7 @@ namespace Pulumi.Wavefront.Inputs
         public Input<bool>? InvertDynamicLegendHoverControl { get; set; }
 
         /// <summary>
-        /// Plot interpolation type.  `linear` is default. Valid options are `linear`, `step-before`, 
+        /// Plot interpolation type.  `linear` is default. Valid options are `linear`, `step-before`,
         /// `step-after`, `basis`, `cardinal`, and `monotone`.
         /// </summary>
         [Input("lineType")]
@@ -177,7 +177,7 @@ namespace Pulumi.Wavefront.Inputs
         public Input<int>? SparklineDecimalPrecision { get; set; }
 
         /// <summary>
-        /// For the single stat view, the color of the displayed text (when not dynamically determined). 
+        /// For the single stat view, the color of the displayed text (when not dynamically determined).
         /// Values should be in `rgba(,,,,)` format.
         /// </summary>
         [Input("sparklineDisplayColor")]
@@ -222,14 +222,14 @@ namespace Pulumi.Wavefront.Inputs
         public Input<string>? SparklineDisplayVerticalPosition { get; set; }
 
         /// <summary>
-        /// For the single stat view, the color of the background fill.  Values should be
+        /// For the single stat view, the color of the background fill. Values should be
         /// in `rgba(,,,,)`.
         /// </summary>
         [Input("sparklineFillColor")]
         public Input<string>? SparklineFillColor { get; set; }
 
         /// <summary>
-        /// For the single stat view, the color of the line.  Values should be in `rgba(,,,,)` format.
+        /// For the single stat view, the color of the line. Values should be in `rgba(,,,,)` format.
         /// </summary>
         [Input("sparklineLineColor")]
         public Input<string>? SparklineLineColor { get; set; }
@@ -242,7 +242,7 @@ namespace Pulumi.Wavefront.Inputs
         public Input<string>? SparklineSize { get; set; }
 
         /// <summary>
-        /// For the single stat view, whether to apply dynamic color settings to 
+        /// For the single stat view, whether to apply dynamic color settings to
         /// the displayed `TEXT` or `BACKGROUND`. Valid options are `TEXT` or `BACKGROUND`.
         /// </summary>
         [Input("sparklineValueColorMapApplyTo")]
@@ -252,7 +252,7 @@ namespace Pulumi.Wavefront.Inputs
         private InputList<string>? _sparklineValueColorMapColors;
 
         /// <summary>
-        /// For the single stat view, A list of colors that differing query values map to. 
+        /// For the single stat view, A list of colors that differing query values map to.
         /// Must contain one more element than `sparkline_value_color_map_values_v2`. Values should be in `rgba(,,,,)`.
         /// </summary>
         public InputList<string> SparklineValueColorMapColors
@@ -278,7 +278,7 @@ namespace Pulumi.Wavefront.Inputs
 
         /// <summary>
         /// For the single stat view, a list of boundaries for mapping different
-        /// query values to colors.  Must contain one element less than `sparkline_value_color_map_colors`.
+        /// query values to colors. Must contain one element less than `sparkline_value_color_map_colors`.
         /// </summary>
         public InputList<double> SparklineValueColorMapValuesV2s
         {
@@ -291,7 +291,7 @@ namespace Pulumi.Wavefront.Inputs
 
         /// <summary>
         /// For the single stat view, a list of display text values that different query
-        /// values map to.  Must contain one more element than `sparkline_value_text_map_thresholds`.
+        /// values map to. Must contain one more element than `sparkline_value_text_map_thresholds`.
         /// </summary>
         public InputList<string> SparklineValueTextMapTexts
         {
@@ -303,8 +303,8 @@ namespace Pulumi.Wavefront.Inputs
         private InputList<double>? _sparklineValueTextMapThresholds;
 
         /// <summary>
-        /// For the single stat view, a list of threshold boundaries for 
-        /// mapping different query values to display text.  Must contain one element less than `sparkline_value_text_map_text`.
+        /// For the single stat view, a list of threshold boundaries for
+        /// mapping different query values to display text. Must contain one element less than `sparkline_value_text_map_text`.
         /// </summary>
         public InputList<double> SparklineValueTextMapThresholds
         {
@@ -334,9 +334,9 @@ namespace Pulumi.Wavefront.Inputs
         public Input<bool>? TimeBasedColoring { get; set; }
 
         /// <summary>
-        /// Chart Type. `line` refers to the Line Plot, `scatter` to the Point Plot, `stacked-area` to 
+        /// Chart Type. `line` refers to the Line Plot, `scatter` to the Point Plot, `stacked-area` to
         /// the Stacked Area plot, `table` to the Tabular View, `scatterplot-xy` to Scatter Plot, `markdown-widget` to the
-        /// Markdown display, and `sparkline` to the Single Stat view. Valid options are `line`, `scatterplot`,
+        /// Markdown display, and `sparkline` to the Single Stat view. Valid options are`line`, `scatterplot`,
         /// `stacked-area`, `stacked-column`, `table`, `scatterplot-xy`, `markdown-widget`, `sparkline`, `globe`, `nodemap`,
         /// `top-k`, `status-list`, and `histogram`.
         /// </summary>

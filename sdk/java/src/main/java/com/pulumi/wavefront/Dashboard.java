@@ -19,7 +19,7 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
- * Provides a Wavefront Dashboard resource.  This allows dashboards to be created, updated, and deleted.
+ * Provides a Wavefront Dashboard resource. This allows dashboards to be created, updated, and deleted.
  * 
  * ## Example Usage
  * 

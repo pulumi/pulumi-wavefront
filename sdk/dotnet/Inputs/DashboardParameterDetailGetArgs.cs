@@ -65,7 +65,7 @@ namespace Pulumi.Wavefront.Inputs
         private InputMap<string>? _valuesToReadableStrings;
 
         /// <summary>
-        /// A string-&gt;string map.  At least one of the keys must match the value of
+        /// A string-&gt;string map. At least one of the keys must match the value of
         /// `default_value`.
         /// </summary>
         public InputMap<string> ValuesToReadableStrings

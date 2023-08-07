@@ -37,9 +37,9 @@ class DashboardArgs:
         :param pulumi.Input[Sequence[pulumi.Input[str]]] can_views: A list of users that have view ACL access to the dashboard.
         :param pulumi.Input[bool] display_query_parameters: Whether the dashboard parameters section is opened by default when the dashboard
                is shown.
-        :param pulumi.Input[bool] display_section_table_of_contents: Whether the "pills" quick-linked the sections of the dashboard are 
+        :param pulumi.Input[bool] display_section_table_of_contents: Whether the "pills" quick-linked the sections of the dashboard are
                displayed by default when the dashboard is shown.
-        :param pulumi.Input[str] event_filter_type: How charts belonging to this dashboard should display events. `BYCHART` is default if 
+        :param pulumi.Input[str] event_filter_type: How charts belonging to this dashboard should display events. `BYCHART` is default if
                unspecified. Valid options are: `BYCHART`, `AUTOMATIC`, `ALL`, `NONE`, `BYDASHBOARD`, and `BYCHARTANDDASHBOARD`.
         :param pulumi.Input[str] name: Name of the dashboard.
         :param pulumi.Input[Sequence[pulumi.Input['DashboardParameterDetailArgs']]] parameter_details: The current JSON representation of dashboard parameters. See parameter details.
@@ -152,7 +152,7 @@ class DashboardArgs:
     @pulumi.getter(name="displaySectionTableOfContents")
     def display_section_table_of_contents(self) -> Optional[pulumi.Input[bool]]:
         """
-        Whether the "pills" quick-linked the sections of the dashboard are 
+        Whether the "pills" quick-linked the sections of the dashboard are
         displayed by default when the dashboard is shown.
         """
         return pulumi.get(self, "display_section_table_of_contents")
@@ -165,7 +165,7 @@ class DashboardArgs:
     @pulumi.getter(name="eventFilterType")
     def event_filter_type(self) -> Optional[pulumi.Input[str]]:
         """
-        How charts belonging to this dashboard should display events. `BYCHART` is default if 
+        How charts belonging to this dashboard should display events. `BYCHART` is default if
         unspecified. Valid options are: `BYCHART`, `AUTOMATIC`, `ALL`, `NONE`, `BYDASHBOARD`, and `BYCHARTANDDASHBOARD`.
         """
         return pulumi.get(self, "event_filter_type")
@@ -220,9 +220,9 @@ class _DashboardState:
         :param pulumi.Input[str] description: Human-readable description of the dashboard.
         :param pulumi.Input[bool] display_query_parameters: Whether the dashboard parameters section is opened by default when the dashboard
                is shown.
-        :param pulumi.Input[bool] display_section_table_of_contents: Whether the "pills" quick-linked the sections of the dashboard are 
+        :param pulumi.Input[bool] display_section_table_of_contents: Whether the "pills" quick-linked the sections of the dashboard are
                displayed by default when the dashboard is shown.
-        :param pulumi.Input[str] event_filter_type: How charts belonging to this dashboard should display events. `BYCHART` is default if 
+        :param pulumi.Input[str] event_filter_type: How charts belonging to this dashboard should display events. `BYCHART` is default if
                unspecified. Valid options are: `BYCHART`, `AUTOMATIC`, `ALL`, `NONE`, `BYDASHBOARD`, and `BYCHARTANDDASHBOARD`.
         :param pulumi.Input[str] name: Name of the dashboard.
         :param pulumi.Input[Sequence[pulumi.Input['DashboardParameterDetailArgs']]] parameter_details: The current JSON representation of dashboard parameters. See parameter details.
@@ -306,7 +306,7 @@ class _DashboardState:
     @pulumi.getter(name="displaySectionTableOfContents")
     def display_section_table_of_contents(self) -> Optional[pulumi.Input[bool]]:
         """
-        Whether the "pills" quick-linked the sections of the dashboard are 
+        Whether the "pills" quick-linked the sections of the dashboard are
         displayed by default when the dashboard is shown.
         """
         return pulumi.get(self, "display_section_table_of_contents")
@@ -319,7 +319,7 @@ class _DashboardState:
     @pulumi.getter(name="eventFilterType")
     def event_filter_type(self) -> Optional[pulumi.Input[str]]:
         """
-        How charts belonging to this dashboard should display events. `BYCHART` is default if 
+        How charts belonging to this dashboard should display events. `BYCHART` is default if
         unspecified. Valid options are: `BYCHART`, `AUTOMATIC`, `ALL`, `NONE`, `BYDASHBOARD`, and `BYCHARTANDDASHBOARD`.
         """
         return pulumi.get(self, "event_filter_type")
@@ -407,7 +407,7 @@ class Dashboard(pulumi.CustomResource):
                  url: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        Provides a Wavefront Dashboard resource.  This allows dashboards to be created, updated, and deleted.
+        Provides a Wavefront Dashboard resource. This allows dashboards to be created, updated, and deleted.
 
         ## Import
 
@@ -424,9 +424,9 @@ class Dashboard(pulumi.CustomResource):
         :param pulumi.Input[str] description: Human-readable description of the dashboard.
         :param pulumi.Input[bool] display_query_parameters: Whether the dashboard parameters section is opened by default when the dashboard
                is shown.
-        :param pulumi.Input[bool] display_section_table_of_contents: Whether the "pills" quick-linked the sections of the dashboard are 
+        :param pulumi.Input[bool] display_section_table_of_contents: Whether the "pills" quick-linked the sections of the dashboard are
                displayed by default when the dashboard is shown.
-        :param pulumi.Input[str] event_filter_type: How charts belonging to this dashboard should display events. `BYCHART` is default if 
+        :param pulumi.Input[str] event_filter_type: How charts belonging to this dashboard should display events. `BYCHART` is default if
                unspecified. Valid options are: `BYCHART`, `AUTOMATIC`, `ALL`, `NONE`, `BYDASHBOARD`, and `BYCHARTANDDASHBOARD`.
         :param pulumi.Input[str] name: Name of the dashboard.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DashboardParameterDetailArgs']]]] parameter_details: The current JSON representation of dashboard parameters. See parameter details.
@@ -441,7 +441,7 @@ class Dashboard(pulumi.CustomResource):
                  args: DashboardArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Provides a Wavefront Dashboard resource.  This allows dashboards to be created, updated, and deleted.
+        Provides a Wavefront Dashboard resource. This allows dashboards to be created, updated, and deleted.
 
         ## Import
 
@@ -538,9 +538,9 @@ class Dashboard(pulumi.CustomResource):
         :param pulumi.Input[str] description: Human-readable description of the dashboard.
         :param pulumi.Input[bool] display_query_parameters: Whether the dashboard parameters section is opened by default when the dashboard
                is shown.
-        :param pulumi.Input[bool] display_section_table_of_contents: Whether the "pills" quick-linked the sections of the dashboard are 
+        :param pulumi.Input[bool] display_section_table_of_contents: Whether the "pills" quick-linked the sections of the dashboard are
                displayed by default when the dashboard is shown.
-        :param pulumi.Input[str] event_filter_type: How charts belonging to this dashboard should display events. `BYCHART` is default if 
+        :param pulumi.Input[str] event_filter_type: How charts belonging to this dashboard should display events. `BYCHART` is default if
                unspecified. Valid options are: `BYCHART`, `AUTOMATIC`, `ALL`, `NONE`, `BYDASHBOARD`, and `BYCHARTANDDASHBOARD`.
         :param pulumi.Input[str] name: Name of the dashboard.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DashboardParameterDetailArgs']]]] parameter_details: The current JSON representation of dashboard parameters. See parameter details.
@@ -602,7 +602,7 @@ class Dashboard(pulumi.CustomResource):
     @pulumi.getter(name="displaySectionTableOfContents")
     def display_section_table_of_contents(self) -> pulumi.Output[Optional[bool]]:
         """
-        Whether the "pills" quick-linked the sections of the dashboard are 
+        Whether the "pills" quick-linked the sections of the dashboard are
         displayed by default when the dashboard is shown.
         """
         return pulumi.get(self, "display_section_table_of_contents")
@@ -611,7 +611,7 @@ class Dashboard(pulumi.CustomResource):
     @pulumi.getter(name="eventFilterType")
     def event_filter_type(self) -> pulumi.Output[Optional[str]]:
         """
-        How charts belonging to this dashboard should display events. `BYCHART` is default if 
+        How charts belonging to this dashboard should display events. `BYCHART` is default if
         unspecified. Valid options are: `BYCHART`, `AUTOMATIC`, `ALL`, `NONE`, `BYDASHBOARD`, and `BYCHARTANDDASHBOARD`.
         """
         return pulumi.get(self, "event_filter_type")

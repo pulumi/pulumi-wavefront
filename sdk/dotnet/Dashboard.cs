@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Wavefront
 {
     /// <summary>
-    /// Provides a Wavefront Dashboard resource.  This allows dashboards to be created, updated, and deleted.
+    /// Provides a Wavefront Dashboard resource. This allows dashboards to be created, updated, and deleted.
     /// 
     /// ## Import
     /// 
@@ -49,14 +49,14 @@ namespace Pulumi.Wavefront
         public Output<bool?> DisplayQueryParameters { get; private set; } = null!;
 
         /// <summary>
-        /// Whether the "pills" quick-linked the sections of the dashboard are 
+        /// Whether the "pills" quick-linked the sections of the dashboard are
         /// displayed by default when the dashboard is shown.
         /// </summary>
         [Output("displaySectionTableOfContents")]
         public Output<bool?> DisplaySectionTableOfContents { get; private set; } = null!;
 
         /// <summary>
-        /// How charts belonging to this dashboard should display events. `BYCHART` is default if 
+        /// How charts belonging to this dashboard should display events. `BYCHART` is default if
         /// unspecified. Valid options are: `BYCHART`, `AUTOMATIC`, `ALL`, `NONE`, `BYDASHBOARD`, and `BYCHARTANDDASHBOARD`.
         /// </summary>
         [Output("eventFilterType")]
@@ -176,14 +176,14 @@ namespace Pulumi.Wavefront
         public Input<bool>? DisplayQueryParameters { get; set; }
 
         /// <summary>
-        /// Whether the "pills" quick-linked the sections of the dashboard are 
+        /// Whether the "pills" quick-linked the sections of the dashboard are
         /// displayed by default when the dashboard is shown.
         /// </summary>
         [Input("displaySectionTableOfContents")]
         public Input<bool>? DisplaySectionTableOfContents { get; set; }
 
         /// <summary>
-        /// How charts belonging to this dashboard should display events. `BYCHART` is default if 
+        /// How charts belonging to this dashboard should display events. `BYCHART` is default if
         /// unspecified. Valid options are: `BYCHART`, `AUTOMATIC`, `ALL`, `NONE`, `BYDASHBOARD`, and `BYCHARTANDDASHBOARD`.
         /// </summary>
         [Input("eventFilterType")]
@@ -283,14 +283,14 @@ namespace Pulumi.Wavefront
         public Input<bool>? DisplayQueryParameters { get; set; }
 
         /// <summary>
-        /// Whether the "pills" quick-linked the sections of the dashboard are 
+        /// Whether the "pills" quick-linked the sections of the dashboard are
         /// displayed by default when the dashboard is shown.
         /// </summary>
         [Input("displaySectionTableOfContents")]
         public Input<bool>? DisplaySectionTableOfContents { get; set; }
 
         /// <summary>
-        /// How charts belonging to this dashboard should display events. `BYCHART` is default if 
+        /// How charts belonging to this dashboard should display events. `BYCHART` is default if
         /// unspecified. Valid options are: `BYCHART`, `AUTOMATIC`, `ALL`, `NONE`, `BYDASHBOARD`, and `BYCHARTANDDASHBOARD`.
         /// </summary>
         [Input("eventFilterType")]

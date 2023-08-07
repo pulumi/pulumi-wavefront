@@ -39,7 +39,7 @@ namespace Pulumi.Wavefront.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.DashboardSectionRowChartSource> Sources;
         /// <summary>
-        /// Summarization strategy for the chart. MEAN is default. Valid options are, `MEAN`, 
+        /// Summarization strategy for the chart. MEAN is default. Valid options are, `MEAN`,
         /// `MEDIAN`, `MIN`, `MAX`, `SUM`, `COUNT`, `LAST`, `FIRST`.
         /// </summary>
         public readonly string Summarization;
