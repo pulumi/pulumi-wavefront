@@ -60,7 +60,7 @@ export interface DashboardParameterDetail {
      */
     tagKey?: pulumi.Input<string>;
     /**
-     * A string->string map.  At least one of the keys must match the value of
+     * A string->string map. At least one of the keys must match the value of
      * `defaultValue`.
      */
     valuesToReadableStrings: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
@@ -111,7 +111,7 @@ export interface DashboardSectionRowChart {
      */
     sources: pulumi.Input<pulumi.Input<inputs.DashboardSectionRowChartSource>[]>;
     /**
-     * Summarization strategy for the chart. MEAN is default. Valid options are, `MEAN`, 
+     * Summarization strategy for the chart. MEAN is default. Valid options are, `MEAN`,
      * `MEDIAN`, `MIN`, `MAX`, `SUM`, `COUNT`, `LAST`, `FIRST`.
      */
     summarization: pulumi.Input<string>;
@@ -176,7 +176,7 @@ export interface DashboardSectionRowChartChartSetting {
     fixedLegendUseRawStats?: pulumi.Input<boolean>;
     /**
      * For the tabular view, whether to group multi metrics into a single row by a common source.
-     * If `false`, each source is displayed in its own row.  if `true`, multiple metrics for the same host are displayed as different
+     * If `false`, each source is displayed in its own row. if `true`, multiple metrics for the same host are displayed as different
      * columns in the same row.
      */
     groupBySource?: pulumi.Input<boolean>;
@@ -186,7 +186,7 @@ export interface DashboardSectionRowChartChartSetting {
      */
     invertDynamicLegendHoverControl?: pulumi.Input<boolean>;
     /**
-     * Plot interpolation type.  `linear` is default. Valid options are `linear`, `step-before`, 
+     * Plot interpolation type.  `linear` is default. Valid options are `linear`, `step-before`,
      * `step-after`, `basis`, `cardinal`, and `monotone`.
      */
     lineType?: pulumi.Input<string>;
@@ -227,7 +227,7 @@ export interface DashboardSectionRowChartChartSetting {
      */
     sparklineDecimalPrecision?: pulumi.Input<number>;
     /**
-     * For the single stat view, the color of the displayed text (when not dynamically determined). 
+     * For the single stat view, the color of the displayed text (when not dynamically determined).
      * Values should be in `rgba(,,,,)` format.
      */
     sparklineDisplayColor?: pulumi.Input<string>;
@@ -258,12 +258,12 @@ export interface DashboardSectionRowChartChartSetting {
      */
     sparklineDisplayVerticalPosition?: pulumi.Input<string>;
     /**
-     * For the single stat view, the color of the background fill.  Values should be
+     * For the single stat view, the color of the background fill. Values should be
      * in `rgba(,,,,)`.
      */
     sparklineFillColor?: pulumi.Input<string>;
     /**
-     * For the single stat view, the color of the line.  Values should be in `rgba(,,,,)` format.
+     * For the single stat view, the color of the line. Values should be in `rgba(,,,,)` format.
      */
     sparklineLineColor?: pulumi.Input<string>;
     /**
@@ -272,12 +272,12 @@ export interface DashboardSectionRowChartChartSetting {
      */
     sparklineSize?: pulumi.Input<string>;
     /**
-     * For the single stat view, whether to apply dynamic color settings to 
+     * For the single stat view, whether to apply dynamic color settings to
      * the displayed `TEXT` or `BACKGROUND`. Valid options are `TEXT` or `BACKGROUND`.
      */
     sparklineValueColorMapApplyTo?: pulumi.Input<string>;
     /**
-     * For the single stat view, A list of colors that differing query values map to. 
+     * For the single stat view, A list of colors that differing query values map to.
      * Must contain one more element than `sparklineValueColorMapValuesV2`. Values should be in `rgba(,,,,)`.
      */
     sparklineValueColorMapColors?: pulumi.Input<pulumi.Input<string>[]>;
@@ -287,17 +287,17 @@ export interface DashboardSectionRowChartChartSetting {
     sparklineValueColorMapValues?: pulumi.Input<pulumi.Input<number>[]>;
     /**
      * For the single stat view, a list of boundaries for mapping different
-     * query values to colors.  Must contain one element less than `sparklineValueColorMapColors`.
+     * query values to colors. Must contain one element less than `sparklineValueColorMapColors`.
      */
     sparklineValueColorMapValuesV2s?: pulumi.Input<pulumi.Input<number>[]>;
     /**
      * For the single stat view, a list of display text values that different query
-     * values map to.  Must contain one more element than `sparklineValueTextMapThresholds`.
+     * values map to. Must contain one more element than `sparklineValueTextMapThresholds`.
      */
     sparklineValueTextMapTexts?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * For the single stat view, a list of threshold boundaries for 
-     * mapping different query values to display text.  Must contain one element less than `sparklineValueTextMapText`.
+     * For the single stat view, a list of threshold boundaries for
+     * mapping different query values to display text. Must contain one element less than `sparklineValueTextMapText`.
      */
     sparklineValueTextMapThresholds?: pulumi.Input<pulumi.Input<number>[]>;
     /**
@@ -316,9 +316,9 @@ export interface DashboardSectionRowChartChartSetting {
      */
     timeBasedColoring?: pulumi.Input<boolean>;
     /**
-     * Chart Type. `line` refers to the Line Plot, `scatter` to the Point Plot, `stacked-area` to 
+     * Chart Type. `line` refers to the Line Plot, `scatter` to the Point Plot, `stacked-area` to
      * the Stacked Area plot, `table` to the Tabular View, `scatterplot-xy` to Scatter Plot, `markdown-widget` to the
-     * Markdown display, and `sparkline` to the Single Stat view. Valid options are `line`, `scatterplot`,
+     * Markdown display, and `sparkline` to the Single Stat view. Valid options are`line`, `scatterplot`,
      * `stacked-area`, `stacked-column`, `table`, `scatterplot-xy`, `markdown-widget`, `sparkline`, `globe`, `nodemap`,
      * `top-k`, `status-list`, and `histogram`.
      */

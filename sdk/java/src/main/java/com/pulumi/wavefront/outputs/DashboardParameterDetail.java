@@ -55,7 +55,7 @@ public final class DashboardParameterDetail {
      */
     private @Nullable String tagKey;
     /**
-     * @return A string-&gt;string map.  At least one of the keys must match the value of
+     * @return A string-&gt;string map. At least one of the keys must match the value of
      * `default_value`.
      * 
      */
@@ -120,7 +120,7 @@ public final class DashboardParameterDetail {
         return Optional.ofNullable(this.tagKey);
     }
     /**
-     * @return A string-&gt;string map.  At least one of the keys must match the value of
+     * @return A string-&gt;string map. At least one of the keys must match the value of
      * `default_value`.
      * 
      */

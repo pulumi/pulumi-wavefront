@@ -12,7 +12,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Provides a Wavefront Dashboard resource.  This allows dashboards to be created, updated, and deleted.
+// Provides a Wavefront Dashboard resource. This allows dashboards to be created, updated, and deleted.
 //
 // ## Import
 //

@@ -47,7 +47,7 @@ namespace Pulumi.Wavefront.Outputs
         /// </summary>
         public readonly string? TagKey;
         /// <summary>
-        /// A string-&gt;string map.  At least one of the keys must match the value of
+        /// A string-&gt;string map. At least one of the keys must match the value of
         /// `default_value`.
         /// </summary>
         public readonly ImmutableDictionary<string, string> ValuesToReadableStrings;

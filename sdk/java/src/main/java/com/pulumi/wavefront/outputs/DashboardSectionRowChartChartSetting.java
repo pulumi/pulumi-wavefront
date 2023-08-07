@@ -81,7 +81,7 @@ public final class DashboardSectionRowChartChartSetting {
     private @Nullable Boolean fixedLegendUseRawStats;
     /**
      * @return For the tabular view, whether to group multi metrics into a single row by a common source.
-     * If `false`, each source is displayed in its own row.  if `true`, multiple metrics for the same host are displayed as different
+     * If `false`, each source is displayed in its own row. if `true`, multiple metrics for the same host are displayed as different
      * columns in the same row.
      * 
      */
@@ -182,13 +182,13 @@ public final class DashboardSectionRowChartChartSetting {
      */
     private @Nullable String sparklineDisplayVerticalPosition;
     /**
-     * @return For the single stat view, the color of the background fill.  Values should be
+     * @return For the single stat view, the color of the background fill. Values should be
      * in `rgba(,,,,)`.
      * 
      */
     private @Nullable String sparklineFillColor;
     /**
-     * @return For the single stat view, the color of the line.  Values should be in `rgba(,,,,)` format.
+     * @return For the single stat view, the color of the line. Values should be in `rgba(,,,,)` format.
      * 
      */
     private @Nullable String sparklineLineColor;
@@ -217,19 +217,19 @@ public final class DashboardSectionRowChartChartSetting {
     private @Nullable List<Integer> sparklineValueColorMapValues;
     /**
      * @return For the single stat view, a list of boundaries for mapping different
-     * query values to colors.  Must contain one element less than `sparkline_value_color_map_colors`.
+     * query values to colors. Must contain one element less than `sparkline_value_color_map_colors`.
      * 
      */
     private @Nullable List<Double> sparklineValueColorMapValuesV2s;
     /**
      * @return For the single stat view, a list of display text values that different query
-     * values map to.  Must contain one more element than `sparkline_value_text_map_thresholds`.
+     * values map to. Must contain one more element than `sparkline_value_text_map_thresholds`.
      * 
      */
     private @Nullable List<String> sparklineValueTextMapTexts;
     /**
      * @return For the single stat view, a list of threshold boundaries for
-     * mapping different query values to display text.  Must contain one element less than `sparkline_value_text_map_text`.
+     * mapping different query values to display text. Must contain one element less than `sparkline_value_text_map_text`.
      * 
      */
     private @Nullable List<Double> sparklineValueTextMapThresholds;
@@ -254,7 +254,7 @@ public final class DashboardSectionRowChartChartSetting {
     /**
      * @return Chart Type. `line` refers to the Line Plot, `scatter` to the Point Plot, `stacked-area` to
      * the Stacked Area plot, `table` to the Tabular View, `scatterplot-xy` to Scatter Plot, `markdown-widget` to the
-     * Markdown display, and `sparkline` to the Single Stat view. Valid options are `line`, `scatterplot`,
+     * Markdown display, and `sparkline` to the Single Stat view. Valid options are`line`, `scatterplot`,
      * `stacked-area`, `stacked-column`, `table`, `scatterplot-xy`, `markdown-widget`, `sparkline`, `globe`, `nodemap`,
      * `top-k`, `status-list`, and `histogram`.
      * 
@@ -418,7 +418,7 @@ public final class DashboardSectionRowChartChartSetting {
     }
     /**
      * @return For the tabular view, whether to group multi metrics into a single row by a common source.
-     * If `false`, each source is displayed in its own row.  if `true`, multiple metrics for the same host are displayed as different
+     * If `false`, each source is displayed in its own row. if `true`, multiple metrics for the same host are displayed as different
      * columns in the same row.
      * 
      */
@@ -557,7 +557,7 @@ public final class DashboardSectionRowChartChartSetting {
         return Optional.ofNullable(this.sparklineDisplayVerticalPosition);
     }
     /**
-     * @return For the single stat view, the color of the background fill.  Values should be
+     * @return For the single stat view, the color of the background fill. Values should be
      * in `rgba(,,,,)`.
      * 
      */
@@ -565,7 +565,7 @@ public final class DashboardSectionRowChartChartSetting {
         return Optional.ofNullable(this.sparklineFillColor);
     }
     /**
-     * @return For the single stat view, the color of the line.  Values should be in `rgba(,,,,)` format.
+     * @return For the single stat view, the color of the line. Values should be in `rgba(,,,,)` format.
      * 
      */
     public Optional<String> sparklineLineColor() {
@@ -604,7 +604,7 @@ public final class DashboardSectionRowChartChartSetting {
     }
     /**
      * @return For the single stat view, a list of boundaries for mapping different
-     * query values to colors.  Must contain one element less than `sparkline_value_color_map_colors`.
+     * query values to colors. Must contain one element less than `sparkline_value_color_map_colors`.
      * 
      */
     public List<Double> sparklineValueColorMapValuesV2s() {
@@ -612,7 +612,7 @@ public final class DashboardSectionRowChartChartSetting {
     }
     /**
      * @return For the single stat view, a list of display text values that different query
-     * values map to.  Must contain one more element than `sparkline_value_text_map_thresholds`.
+     * values map to. Must contain one more element than `sparkline_value_text_map_thresholds`.
      * 
      */
     public List<String> sparklineValueTextMapTexts() {
@@ -620,7 +620,7 @@ public final class DashboardSectionRowChartChartSetting {
     }
     /**
      * @return For the single stat view, a list of threshold boundaries for
-     * mapping different query values to display text.  Must contain one element less than `sparkline_value_text_map_text`.
+     * mapping different query values to display text. Must contain one element less than `sparkline_value_text_map_text`.
      * 
      */
     public List<Double> sparklineValueTextMapThresholds() {
@@ -653,7 +653,7 @@ public final class DashboardSectionRowChartChartSetting {
     /**
      * @return Chart Type. `line` refers to the Line Plot, `scatter` to the Point Plot, `stacked-area` to
      * the Stacked Area plot, `table` to the Tabular View, `scatterplot-xy` to Scatter Plot, `markdown-widget` to the
-     * Markdown display, and `sparkline` to the Single Stat view. Valid options are `line`, `scatterplot`,
+     * Markdown display, and `sparkline` to the Single Stat view. Valid options are`line`, `scatterplot`,
      * `stacked-area`, `stacked-column`, `table`, `scatterplot-xy`, `markdown-widget`, `sparkline`, `globe`, `nodemap`,
      * `top-k`, `status-list`, and `histogram`.
      * 

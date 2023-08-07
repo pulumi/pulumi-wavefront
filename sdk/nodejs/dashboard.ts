@@ -7,7 +7,7 @@ import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 /**
- * Provides a Wavefront Dashboard resource.  This allows dashboards to be created, updated, and deleted.
+ * Provides a Wavefront Dashboard resource. This allows dashboards to be created, updated, and deleted.
  *
  * ## Import
  *
@@ -63,12 +63,12 @@ export class Dashboard extends pulumi.CustomResource {
      */
     public readonly displayQueryParameters!: pulumi.Output<boolean | undefined>;
     /**
-     * Whether the "pills" quick-linked the sections of the dashboard are 
+     * Whether the "pills" quick-linked the sections of the dashboard are
      * displayed by default when the dashboard is shown.
      */
     public readonly displaySectionTableOfContents!: pulumi.Output<boolean | undefined>;
     /**
-     * How charts belonging to this dashboard should display events. `BYCHART` is default if 
+     * How charts belonging to this dashboard should display events. `BYCHART` is default if
      * unspecified. Valid options are: `BYCHART`, `AUTOMATIC`, `ALL`, `NONE`, `BYDASHBOARD`, and `BYCHARTANDDASHBOARD`.
      */
     public readonly eventFilterType!: pulumi.Output<string | undefined>;
@@ -170,12 +170,12 @@ export interface DashboardState {
      */
     displayQueryParameters?: pulumi.Input<boolean>;
     /**
-     * Whether the "pills" quick-linked the sections of the dashboard are 
+     * Whether the "pills" quick-linked the sections of the dashboard are
      * displayed by default when the dashboard is shown.
      */
     displaySectionTableOfContents?: pulumi.Input<boolean>;
     /**
-     * How charts belonging to this dashboard should display events. `BYCHART` is default if 
+     * How charts belonging to this dashboard should display events. `BYCHART` is default if
      * unspecified. Valid options are: `BYCHART`, `AUTOMATIC`, `ALL`, `NONE`, `BYDASHBOARD`, and `BYCHARTANDDASHBOARD`.
      */
     eventFilterType?: pulumi.Input<string>;
@@ -223,12 +223,12 @@ export interface DashboardArgs {
      */
     displayQueryParameters?: pulumi.Input<boolean>;
     /**
-     * Whether the "pills" quick-linked the sections of the dashboard are 
+     * Whether the "pills" quick-linked the sections of the dashboard are
      * displayed by default when the dashboard is shown.
      */
     displaySectionTableOfContents?: pulumi.Input<boolean>;
     /**
-     * How charts belonging to this dashboard should display events. `BYCHART` is default if 
+     * How charts belonging to this dashboard should display events. `BYCHART` is default if
      * unspecified. Valid options are: `BYCHART`, `AUTOMATIC`, `ALL`, `NONE`, `BYDASHBOARD`, and `BYCHARTANDDASHBOARD`.
      */
     eventFilterType?: pulumi.Input<string>;

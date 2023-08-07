@@ -246,7 +246,7 @@ type DashboardParameterDetail struct {
 	QueryValue *string `pulumi:"queryValue"`
 	// for `TAG_KEY` dynamic field types, the tag key to return.
 	TagKey *string `pulumi:"tagKey"`
-	// A string->string map.  At least one of the keys must match the value of
+	// A string->string map. At least one of the keys must match the value of
 	// `defaultValue`.
 	ValuesToReadableStrings map[string]string `pulumi:"valuesToReadableStrings"`
 }
@@ -280,7 +280,7 @@ type DashboardParameterDetailArgs struct {
 	QueryValue pulumi.StringPtrInput `pulumi:"queryValue"`
 	// for `TAG_KEY` dynamic field types, the tag key to return.
 	TagKey pulumi.StringPtrInput `pulumi:"tagKey"`
-	// A string->string map.  At least one of the keys must match the value of
+	// A string->string map. At least one of the keys must match the value of
 	// `defaultValue`.
 	ValuesToReadableStrings pulumi.StringMapInput `pulumi:"valuesToReadableStrings"`
 }
@@ -377,7 +377,7 @@ func (o DashboardParameterDetailOutput) TagKey() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DashboardParameterDetail) *string { return v.TagKey }).(pulumi.StringPtrOutput)
 }
 
-// A string->string map.  At least one of the keys must match the value of
+// A string->string map. At least one of the keys must match the value of
 // `defaultValue`.
 func (o DashboardParameterDetailOutput) ValuesToReadableStrings() pulumi.StringMapOutput {
 	return o.ApplyT(func(v DashboardParameterDetail) map[string]string { return v.ValuesToReadableStrings }).(pulumi.StringMapOutput)
@@ -805,7 +805,7 @@ type DashboardSectionRowChartChartSetting struct {
 	// If `true`, the legend uses non-summarized stats instead of summarized.
 	FixedLegendUseRawStats *bool `pulumi:"fixedLegendUseRawStats"`
 	// For the tabular view, whether to group multi metrics into a single row by a common source.
-	// If `false`, each source is displayed in its own row.  if `true`, multiple metrics for the same host are displayed as different
+	// If `false`, each source is displayed in its own row. if `true`, multiple metrics for the same host are displayed as different
 	// columns in the same row.
 	GroupBySource *bool `pulumi:"groupBySource"`
 	// Whether to disable the display of the floating legend (but
@@ -849,10 +849,10 @@ type DashboardSectionRowChartChartSetting struct {
 	SparklineDisplayValueType *string `pulumi:"sparklineDisplayValueType"`
 	// This setting is deprecated.
 	SparklineDisplayVerticalPosition *string `pulumi:"sparklineDisplayVerticalPosition"`
-	// For the single stat view, the color of the background fill.  Values should be
+	// For the single stat view, the color of the background fill. Values should be
 	// in `rgba(,,,,)`.
 	SparklineFillColor *string `pulumi:"sparklineFillColor"`
-	// For the single stat view, the color of the line.  Values should be in `rgba(,,,,)` format.
+	// For the single stat view, the color of the line. Values should be in `rgba(,,,,)` format.
 	SparklineLineColor *string `pulumi:"sparklineLineColor"`
 	// For the single stat view, this determines whether the sparkline of the statistic is displayed in the chart.
 	// Valid options are `BACKGROUND`, `BOTTOM`, `NONE`.
@@ -866,13 +866,13 @@ type DashboardSectionRowChartChartSetting struct {
 	// This setting is deprecated.
 	SparklineValueColorMapValues []int `pulumi:"sparklineValueColorMapValues"`
 	// For the single stat view, a list of boundaries for mapping different
-	// query values to colors.  Must contain one element less than `sparklineValueColorMapColors`.
+	// query values to colors. Must contain one element less than `sparklineValueColorMapColors`.
 	SparklineValueColorMapValuesV2s []float64 `pulumi:"sparklineValueColorMapValuesV2s"`
 	// For the single stat view, a list of display text values that different query
-	// values map to.  Must contain one more element than `sparklineValueTextMapThresholds`.
+	// values map to. Must contain one more element than `sparklineValueTextMapThresholds`.
 	SparklineValueTextMapTexts []string `pulumi:"sparklineValueTextMapTexts"`
 	// For the single stat view, a list of threshold boundaries for
-	// mapping different query values to display text.  Must contain one element less than `sparklineValueTextMapText`.
+	// mapping different query values to display text. Must contain one element less than `sparklineValueTextMapText`.
 	SparklineValueTextMapThresholds []float64 `pulumi:"sparklineValueTextMapThresholds"`
 	// Type of stacked chart (applicable only if chart type is `stacked`). `zero` (default) means
 	// stacked from y=0. `expand` means normalized from 0 to 1.  `wiggle` means minimize weighted changes. `silhouette` means to
@@ -885,7 +885,7 @@ type DashboardSectionRowChartChartSetting struct {
 	TimeBasedColoring *bool `pulumi:"timeBasedColoring"`
 	// Chart Type. `line` refers to the Line Plot, `scatter` to the Point Plot, `stacked-area` to
 	// the Stacked Area plot, `table` to the Tabular View, `scatterplot-xy` to Scatter Plot, `markdown-widget` to the
-	// Markdown display, and `sparkline` to the Single Stat view. Valid options are `line`, `scatterplot`,
+	// Markdown display, and `sparkline` to the Single Stat view. Valid options are`line`, `scatterplot`,
 	// `stacked-area`, `stacked-column`, `table`, `scatterplot-xy`, `markdown-widget`, `sparkline`, `globe`, `nodemap`,
 	// `top-k`, `status-list`, and `histogram`.
 	Type string `pulumi:"type"`
@@ -959,7 +959,7 @@ type DashboardSectionRowChartChartSettingArgs struct {
 	// If `true`, the legend uses non-summarized stats instead of summarized.
 	FixedLegendUseRawStats pulumi.BoolPtrInput `pulumi:"fixedLegendUseRawStats"`
 	// For the tabular view, whether to group multi metrics into a single row by a common source.
-	// If `false`, each source is displayed in its own row.  if `true`, multiple metrics for the same host are displayed as different
+	// If `false`, each source is displayed in its own row. if `true`, multiple metrics for the same host are displayed as different
 	// columns in the same row.
 	GroupBySource pulumi.BoolPtrInput `pulumi:"groupBySource"`
 	// Whether to disable the display of the floating legend (but
@@ -1003,10 +1003,10 @@ type DashboardSectionRowChartChartSettingArgs struct {
 	SparklineDisplayValueType pulumi.StringPtrInput `pulumi:"sparklineDisplayValueType"`
 	// This setting is deprecated.
 	SparklineDisplayVerticalPosition pulumi.StringPtrInput `pulumi:"sparklineDisplayVerticalPosition"`
-	// For the single stat view, the color of the background fill.  Values should be
+	// For the single stat view, the color of the background fill. Values should be
 	// in `rgba(,,,,)`.
 	SparklineFillColor pulumi.StringPtrInput `pulumi:"sparklineFillColor"`
-	// For the single stat view, the color of the line.  Values should be in `rgba(,,,,)` format.
+	// For the single stat view, the color of the line. Values should be in `rgba(,,,,)` format.
 	SparklineLineColor pulumi.StringPtrInput `pulumi:"sparklineLineColor"`
 	// For the single stat view, this determines whether the sparkline of the statistic is displayed in the chart.
 	// Valid options are `BACKGROUND`, `BOTTOM`, `NONE`.
@@ -1020,13 +1020,13 @@ type DashboardSectionRowChartChartSettingArgs struct {
 	// This setting is deprecated.
 	SparklineValueColorMapValues pulumi.IntArrayInput `pulumi:"sparklineValueColorMapValues"`
 	// For the single stat view, a list of boundaries for mapping different
-	// query values to colors.  Must contain one element less than `sparklineValueColorMapColors`.
+	// query values to colors. Must contain one element less than `sparklineValueColorMapColors`.
 	SparklineValueColorMapValuesV2s pulumi.Float64ArrayInput `pulumi:"sparklineValueColorMapValuesV2s"`
 	// For the single stat view, a list of display text values that different query
-	// values map to.  Must contain one more element than `sparklineValueTextMapThresholds`.
+	// values map to. Must contain one more element than `sparklineValueTextMapThresholds`.
 	SparklineValueTextMapTexts pulumi.StringArrayInput `pulumi:"sparklineValueTextMapTexts"`
 	// For the single stat view, a list of threshold boundaries for
-	// mapping different query values to display text.  Must contain one element less than `sparklineValueTextMapText`.
+	// mapping different query values to display text. Must contain one element less than `sparklineValueTextMapText`.
 	SparklineValueTextMapThresholds pulumi.Float64ArrayInput `pulumi:"sparklineValueTextMapThresholds"`
 	// Type of stacked chart (applicable only if chart type is `stacked`). `zero` (default) means
 	// stacked from y=0. `expand` means normalized from 0 to 1.  `wiggle` means minimize weighted changes. `silhouette` means to
@@ -1039,7 +1039,7 @@ type DashboardSectionRowChartChartSettingArgs struct {
 	TimeBasedColoring pulumi.BoolPtrInput `pulumi:"timeBasedColoring"`
 	// Chart Type. `line` refers to the Line Plot, `scatter` to the Point Plot, `stacked-area` to
 	// the Stacked Area plot, `table` to the Tabular View, `scatterplot-xy` to Scatter Plot, `markdown-widget` to the
-	// Markdown display, and `sparkline` to the Single Stat view. Valid options are `line`, `scatterplot`,
+	// Markdown display, and `sparkline` to the Single Stat view. Valid options are`line`, `scatterplot`,
 	// `stacked-area`, `stacked-column`, `table`, `scatterplot-xy`, `markdown-widget`, `sparkline`, `globe`, `nodemap`,
 	// `top-k`, `status-list`, and `histogram`.
 	Type pulumi.StringInput `pulumi:"type"`
@@ -1163,7 +1163,7 @@ func (o DashboardSectionRowChartChartSettingOutput) FixedLegendUseRawStats() pul
 }
 
 // For the tabular view, whether to group multi metrics into a single row by a common source.
-// If `false`, each source is displayed in its own row.  if `true`, multiple metrics for the same host are displayed as different
+// If `false`, each source is displayed in its own row. if `true`, multiple metrics for the same host are displayed as different
 // columns in the same row.
 func (o DashboardSectionRowChartChartSettingOutput) GroupBySource() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v DashboardSectionRowChartChartSetting) *bool { return v.GroupBySource }).(pulumi.BoolPtrOutput)
@@ -1264,13 +1264,13 @@ func (o DashboardSectionRowChartChartSettingOutput) SparklineDisplayVerticalPosi
 	return o.ApplyT(func(v DashboardSectionRowChartChartSetting) *string { return v.SparklineDisplayVerticalPosition }).(pulumi.StringPtrOutput)
 }
 
-// For the single stat view, the color of the background fill.  Values should be
+// For the single stat view, the color of the background fill. Values should be
 // in `rgba(,,,,)`.
 func (o DashboardSectionRowChartChartSettingOutput) SparklineFillColor() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DashboardSectionRowChartChartSetting) *string { return v.SparklineFillColor }).(pulumi.StringPtrOutput)
 }
 
-// For the single stat view, the color of the line.  Values should be in `rgba(,,,,)` format.
+// For the single stat view, the color of the line. Values should be in `rgba(,,,,)` format.
 func (o DashboardSectionRowChartChartSettingOutput) SparklineLineColor() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DashboardSectionRowChartChartSetting) *string { return v.SparklineLineColor }).(pulumi.StringPtrOutput)
 }
@@ -1299,19 +1299,19 @@ func (o DashboardSectionRowChartChartSettingOutput) SparklineValueColorMapValues
 }
 
 // For the single stat view, a list of boundaries for mapping different
-// query values to colors.  Must contain one element less than `sparklineValueColorMapColors`.
+// query values to colors. Must contain one element less than `sparklineValueColorMapColors`.
 func (o DashboardSectionRowChartChartSettingOutput) SparklineValueColorMapValuesV2s() pulumi.Float64ArrayOutput {
 	return o.ApplyT(func(v DashboardSectionRowChartChartSetting) []float64 { return v.SparklineValueColorMapValuesV2s }).(pulumi.Float64ArrayOutput)
 }
 
 // For the single stat view, a list of display text values that different query
-// values map to.  Must contain one more element than `sparklineValueTextMapThresholds`.
+// values map to. Must contain one more element than `sparklineValueTextMapThresholds`.
 func (o DashboardSectionRowChartChartSettingOutput) SparklineValueTextMapTexts() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v DashboardSectionRowChartChartSetting) []string { return v.SparklineValueTextMapTexts }).(pulumi.StringArrayOutput)
 }
 
 // For the single stat view, a list of threshold boundaries for
-// mapping different query values to display text.  Must contain one element less than `sparklineValueTextMapText`.
+// mapping different query values to display text. Must contain one element less than `sparklineValueTextMapText`.
 func (o DashboardSectionRowChartChartSettingOutput) SparklineValueTextMapThresholds() pulumi.Float64ArrayOutput {
 	return o.ApplyT(func(v DashboardSectionRowChartChartSetting) []float64 { return v.SparklineValueTextMapThresholds }).(pulumi.Float64ArrayOutput)
 }
@@ -1336,7 +1336,7 @@ func (o DashboardSectionRowChartChartSettingOutput) TimeBasedColoring() pulumi.B
 
 // Chart Type. `line` refers to the Line Plot, `scatter` to the Point Plot, `stacked-area` to
 // the Stacked Area plot, `table` to the Tabular View, `scatterplot-xy` to Scatter Plot, `markdown-widget` to the
-// Markdown display, and `sparkline` to the Single Stat view. Valid options are `line`, `scatterplot`,
+// Markdown display, and `sparkline` to the Single Stat view. Valid options are`line`, `scatterplot`,
 // `stacked-area`, `stacked-column`, `table`, `scatterplot-xy`, `markdown-widget`, `sparkline`, `globe`, `nodemap`,
 // `top-k`, `status-list`, and `histogram`.
 func (o DashboardSectionRowChartChartSettingOutput) Type() pulumi.StringOutput {

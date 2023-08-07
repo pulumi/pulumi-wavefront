@@ -140,7 +140,7 @@ public final class DashboardParameterDetailArgs extends com.pulumi.resources.Res
     }
 
     /**
-     * A string-&gt;string map.  At least one of the keys must match the value of
+     * A string-&gt;string map. At least one of the keys must match the value of
      * `default_value`.
      * 
      */
@@ -148,7 +148,7 @@ public final class DashboardParameterDetailArgs extends com.pulumi.resources.Res
     private Output<Map<String,String>> valuesToReadableStrings;
 
     /**
-     * @return A string-&gt;string map.  At least one of the keys must match the value of
+     * @return A string-&gt;string map. At least one of the keys must match the value of
      * `default_value`.
      * 
      */
@@ -359,7 +359,7 @@ public final class DashboardParameterDetailArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param valuesToReadableStrings A string-&gt;string map.  At least one of the keys must match the value of
+         * @param valuesToReadableStrings A string-&gt;string map. At least one of the keys must match the value of
          * `default_value`.
          * 
          * @return builder
@@ -371,7 +371,7 @@ public final class DashboardParameterDetailArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param valuesToReadableStrings A string-&gt;string map.  At least one of the keys must match the value of
+         * @param valuesToReadableStrings A string-&gt;string map. At least one of the keys must match the value of
          * `default_value`.
          * 
          * @return builder

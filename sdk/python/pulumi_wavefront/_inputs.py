@@ -123,7 +123,7 @@ class DashboardParameterDetailArgs:
         :param pulumi.Input[str] label: The label for the parameter.
         :param pulumi.Input[str] name: The name of the parameters.
         :param pulumi.Input[str] parameter_type: The type of the parameter. `SIMPLE`, `LIST`, or `DYNAMIC`.
-        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] values_to_readable_strings: A string->string map.  At least one of the keys must match the value of
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] values_to_readable_strings: A string->string map. At least one of the keys must match the value of
                `default_value`.
         :param pulumi.Input[str] dynamic_field_type: For `DYNAMIC` parameter types, the type of the field. Valid options are `SOURCE`,
                `SOURCE_TAG`, `METRIC_NAME`, `TAG_KEY`, and `MATCHING_SOURCE_TAG`.
@@ -207,7 +207,7 @@ class DashboardParameterDetailArgs:
     @pulumi.getter(name="valuesToReadableStrings")
     def values_to_readable_strings(self) -> pulumi.Input[Mapping[str, pulumi.Input[str]]]:
         """
-        A string->string map.  At least one of the keys must match the value of
+        A string->string map. At least one of the keys must match the value of
         `default_value`.
         """
         return pulumi.get(self, "values_to_readable_strings")
@@ -329,7 +329,7 @@ class DashboardSectionRowChartArgs:
         :param pulumi.Input['DashboardSectionRowChartChartSettingArgs'] chart_setting: Chart settings. See chart settings.
         :param pulumi.Input[str] name: Name of the source.
         :param pulumi.Input[Sequence[pulumi.Input['DashboardSectionRowChartSourceArgs']]] sources: Query expression to plot on the chart. See chart source queries.
-        :param pulumi.Input[str] summarization: Summarization strategy for the chart. MEAN is default. Valid options are, `MEAN`, 
+        :param pulumi.Input[str] summarization: Summarization strategy for the chart. MEAN is default. Valid options are, `MEAN`,
                `MEDIAN`, `MIN`, `MAX`, `SUM`, `COUNT`, `LAST`, `FIRST`.
         :param pulumi.Input[str] units: String to label the units of the chart on the Y-Axis.
         :param pulumi.Input[int] base: The base of logarithmic scale charts. Omit or set to 0 for the default linear scale. Usually set to 10 for the traditional logarithmic scale.
@@ -390,7 +390,7 @@ class DashboardSectionRowChartArgs:
     @pulumi.getter
     def summarization(self) -> pulumi.Input[str]:
         """
-        Summarization strategy for the chart. MEAN is default. Valid options are, `MEAN`, 
+        Summarization strategy for the chart. MEAN is default. Valid options are, `MEAN`,
         `MEDIAN`, `MIN`, `MAX`, `SUM`, `COUNT`, `LAST`, `FIRST`.
         """
         return pulumi.get(self, "summarization")
@@ -518,9 +518,9 @@ class DashboardSectionRowChartChartSettingArgs:
                  ymax: Optional[pulumi.Input[float]] = None,
                  ymin: Optional[pulumi.Input[float]] = None):
         """
-        :param pulumi.Input[str] type: Chart Type. `line` refers to the Line Plot, `scatter` to the Point Plot, `stacked-area` to 
+        :param pulumi.Input[str] type: Chart Type. `line` refers to the Line Plot, `scatter` to the Point Plot, `stacked-area` to
                the Stacked Area plot, `table` to the Tabular View, `scatterplot-xy` to Scatter Plot, `markdown-widget` to the
-               Markdown display, and `sparkline` to the Single Stat view. Valid options are `line`, `scatterplot`,
+               Markdown display, and `sparkline` to the Single Stat view. Valid options are`line`, `scatterplot`,
                `stacked-area`, `stacked-column`, `table`, `scatterplot-xy`, `markdown-widget`, `sparkline`, `globe`, `nodemap`,
                `top-k`, `status-list`, and `histogram`.
         :param pulumi.Input[bool] auto_column_tags: This setting is deprecated.
@@ -540,11 +540,11 @@ class DashboardSectionRowChartChartSettingArgs:
                Valid options are `RIGHT`, `TOP`, `LEFT`, `BOTTOM`.
         :param pulumi.Input[bool] fixed_legend_use_raw_stats: If `true`, the legend uses non-summarized stats instead of summarized.
         :param pulumi.Input[bool] group_by_source: For the tabular view, whether to group multi metrics into a single row by a common source.
-               If `false`, each source is displayed in its own row.  if `true`, multiple metrics for the same host are displayed as different
+               If `false`, each source is displayed in its own row. if `true`, multiple metrics for the same host are displayed as different
                columns in the same row.
         :param pulumi.Input[bool] invert_dynamic_legend_hover_control: Whether to disable the display of the floating legend (but
                reenable it when the ctrl-key is pressed).
-        :param pulumi.Input[str] line_type: Plot interpolation type.  `linear` is default. Valid options are `linear`, `step-before`, 
+        :param pulumi.Input[str] line_type: Plot interpolation type.  `linear` is default. Valid options are `linear`, `step-before`,
                `step-after`, `basis`, `cardinal`, and `monotone`.
         :param pulumi.Input[float] max: Max value of the Y-axis. Set to null or leave blank for auto.
         :param pulumi.Input[float] min: Min value of the Y-axis. Set to null or leave blank for auto.
@@ -555,7 +555,7 @@ class DashboardSectionRowChartChartSettingArgs:
         :param pulumi.Input[bool] show_raw_values: For the tabular view, whether to display raw values. Default is `false`.
         :param pulumi.Input[bool] sort_values_descending: For the tabular view, whether to display values in descending order. Default is `false`.
         :param pulumi.Input[int] sparkline_decimal_precision: For the single stat view, the decimal precision of the displayed number.
-        :param pulumi.Input[str] sparkline_display_color: For the single stat view, the color of the displayed text (when not dynamically determined). 
+        :param pulumi.Input[str] sparkline_display_color: For the single stat view, the color of the displayed text (when not dynamically determined).
                Values should be in `rgba(,,,,)` format.
         :param pulumi.Input[str] sparkline_display_font_size: For the single stat view, the font size of the displayed text, in percent.
         :param pulumi.Input[str] sparkline_display_horizontal_position: For the single stat view, the horizontal position of the displayed text.
@@ -565,22 +565,22 @@ class DashboardSectionRowChartChartSettingArgs:
         :param pulumi.Input[str] sparkline_display_value_type: For the single stat view, where to display the name of the query or the value of the query.
                Valid options are `VALUE` or `LABEL`.
         :param pulumi.Input[str] sparkline_display_vertical_position: This setting is deprecated.
-        :param pulumi.Input[str] sparkline_fill_color: For the single stat view, the color of the background fill.  Values should be
+        :param pulumi.Input[str] sparkline_fill_color: For the single stat view, the color of the background fill. Values should be
                in `rgba(,,,,)`.
-        :param pulumi.Input[str] sparkline_line_color: For the single stat view, the color of the line.  Values should be in `rgba(,,,,)` format.
+        :param pulumi.Input[str] sparkline_line_color: For the single stat view, the color of the line. Values should be in `rgba(,,,,)` format.
         :param pulumi.Input[str] sparkline_size: For the single stat view, this determines whether the sparkline of the statistic is displayed in the chart.
                Valid options are `BACKGROUND`, `BOTTOM`, `NONE`.
-        :param pulumi.Input[str] sparkline_value_color_map_apply_to: For the single stat view, whether to apply dynamic color settings to 
+        :param pulumi.Input[str] sparkline_value_color_map_apply_to: For the single stat view, whether to apply dynamic color settings to
                the displayed `TEXT` or `BACKGROUND`. Valid options are `TEXT` or `BACKGROUND`.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] sparkline_value_color_map_colors: For the single stat view, A list of colors that differing query values map to. 
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] sparkline_value_color_map_colors: For the single stat view, A list of colors that differing query values map to.
                Must contain one more element than `sparkline_value_color_map_values_v2`. Values should be in `rgba(,,,,)`.
         :param pulumi.Input[Sequence[pulumi.Input[int]]] sparkline_value_color_map_values: This setting is deprecated.
         :param pulumi.Input[Sequence[pulumi.Input[float]]] sparkline_value_color_map_values_v2s: For the single stat view, a list of boundaries for mapping different
-               query values to colors.  Must contain one element less than `sparkline_value_color_map_colors`.
+               query values to colors. Must contain one element less than `sparkline_value_color_map_colors`.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] sparkline_value_text_map_texts: For the single stat view, a list of display text values that different query
-               values map to.  Must contain one more element than `sparkline_value_text_map_thresholds`.
-        :param pulumi.Input[Sequence[pulumi.Input[float]]] sparkline_value_text_map_thresholds: For the single stat view, a list of threshold boundaries for 
-               mapping different query values to display text.  Must contain one element less than `sparkline_value_text_map_text`.
+               values map to. Must contain one more element than `sparkline_value_text_map_thresholds`.
+        :param pulumi.Input[Sequence[pulumi.Input[float]]] sparkline_value_text_map_thresholds: For the single stat view, a list of threshold boundaries for
+               mapping different query values to display text. Must contain one element less than `sparkline_value_text_map_text`.
         :param pulumi.Input[str] stack_type: Type of stacked chart (applicable only if chart type is `stacked`). `zero` (default) means
                stacked from y=0. `expand` means normalized from 0 to 1.  `wiggle` means minimize weighted changes. `silhouette` means to
                center the stream. Valid options are `zero`, `expand`, `wiggle`, `silhouette`, and `bars`.
@@ -720,9 +720,9 @@ class DashboardSectionRowChartChartSettingArgs:
     @pulumi.getter
     def type(self) -> pulumi.Input[str]:
         """
-        Chart Type. `line` refers to the Line Plot, `scatter` to the Point Plot, `stacked-area` to 
+        Chart Type. `line` refers to the Line Plot, `scatter` to the Point Plot, `stacked-area` to
         the Stacked Area plot, `table` to the Tabular View, `scatterplot-xy` to Scatter Plot, `markdown-widget` to the
-        Markdown display, and `sparkline` to the Single Stat view. Valid options are `line`, `scatterplot`,
+        Markdown display, and `sparkline` to the Single Stat view. Valid options are`line`, `scatterplot`,
         `stacked-area`, `stacked-column`, `table`, `scatterplot-xy`, `markdown-widget`, `sparkline`, `globe`, `nodemap`,
         `top-k`, `status-list`, and `histogram`.
         """
@@ -885,7 +885,7 @@ class DashboardSectionRowChartChartSettingArgs:
     def group_by_source(self) -> Optional[pulumi.Input[bool]]:
         """
         For the tabular view, whether to group multi metrics into a single row by a common source.
-        If `false`, each source is displayed in its own row.  if `true`, multiple metrics for the same host are displayed as different
+        If `false`, each source is displayed in its own row. if `true`, multiple metrics for the same host are displayed as different
         columns in the same row.
         """
         return pulumi.get(self, "group_by_source")
@@ -911,7 +911,7 @@ class DashboardSectionRowChartChartSettingArgs:
     @pulumi.getter(name="lineType")
     def line_type(self) -> Optional[pulumi.Input[str]]:
         """
-        Plot interpolation type.  `linear` is default. Valid options are `linear`, `step-before`, 
+        Plot interpolation type.  `linear` is default. Valid options are `linear`, `step-before`,
         `step-after`, `basis`, `cardinal`, and `monotone`.
         """
         return pulumi.get(self, "line_type")
@@ -1032,7 +1032,7 @@ class DashboardSectionRowChartChartSettingArgs:
     @pulumi.getter(name="sparklineDisplayColor")
     def sparkline_display_color(self) -> Optional[pulumi.Input[str]]:
         """
-        For the single stat view, the color of the displayed text (when not dynamically determined). 
+        For the single stat view, the color of the displayed text (when not dynamically determined).
         Values should be in `rgba(,,,,)` format.
         """
         return pulumi.get(self, "sparkline_display_color")
@@ -1119,7 +1119,7 @@ class DashboardSectionRowChartChartSettingArgs:
     @pulumi.getter(name="sparklineFillColor")
     def sparkline_fill_color(self) -> Optional[pulumi.Input[str]]:
         """
-        For the single stat view, the color of the background fill.  Values should be
+        For the single stat view, the color of the background fill. Values should be
         in `rgba(,,,,)`.
         """
         return pulumi.get(self, "sparkline_fill_color")
@@ -1132,7 +1132,7 @@ class DashboardSectionRowChartChartSettingArgs:
     @pulumi.getter(name="sparklineLineColor")
     def sparkline_line_color(self) -> Optional[pulumi.Input[str]]:
         """
-        For the single stat view, the color of the line.  Values should be in `rgba(,,,,)` format.
+        For the single stat view, the color of the line. Values should be in `rgba(,,,,)` format.
         """
         return pulumi.get(self, "sparkline_line_color")
 
@@ -1157,7 +1157,7 @@ class DashboardSectionRowChartChartSettingArgs:
     @pulumi.getter(name="sparklineValueColorMapApplyTo")
     def sparkline_value_color_map_apply_to(self) -> Optional[pulumi.Input[str]]:
         """
-        For the single stat view, whether to apply dynamic color settings to 
+        For the single stat view, whether to apply dynamic color settings to
         the displayed `TEXT` or `BACKGROUND`. Valid options are `TEXT` or `BACKGROUND`.
         """
         return pulumi.get(self, "sparkline_value_color_map_apply_to")
@@ -1170,7 +1170,7 @@ class DashboardSectionRowChartChartSettingArgs:
     @pulumi.getter(name="sparklineValueColorMapColors")
     def sparkline_value_color_map_colors(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        For the single stat view, A list of colors that differing query values map to. 
+        For the single stat view, A list of colors that differing query values map to.
         Must contain one more element than `sparkline_value_color_map_values_v2`. Values should be in `rgba(,,,,)`.
         """
         return pulumi.get(self, "sparkline_value_color_map_colors")
@@ -1196,7 +1196,7 @@ class DashboardSectionRowChartChartSettingArgs:
     def sparkline_value_color_map_values_v2s(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[float]]]]:
         """
         For the single stat view, a list of boundaries for mapping different
-        query values to colors.  Must contain one element less than `sparkline_value_color_map_colors`.
+        query values to colors. Must contain one element less than `sparkline_value_color_map_colors`.
         """
         return pulumi.get(self, "sparkline_value_color_map_values_v2s")
 
@@ -1209,7 +1209,7 @@ class DashboardSectionRowChartChartSettingArgs:
     def sparkline_value_text_map_texts(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
         For the single stat view, a list of display text values that different query
-        values map to.  Must contain one more element than `sparkline_value_text_map_thresholds`.
+        values map to. Must contain one more element than `sparkline_value_text_map_thresholds`.
         """
         return pulumi.get(self, "sparkline_value_text_map_texts")
 
@@ -1221,8 +1221,8 @@ class DashboardSectionRowChartChartSettingArgs:
     @pulumi.getter(name="sparklineValueTextMapThresholds")
     def sparkline_value_text_map_thresholds(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[float]]]]:
         """
-        For the single stat view, a list of threshold boundaries for 
-        mapping different query values to display text.  Must contain one element less than `sparkline_value_text_map_text`.
+        For the single stat view, a list of threshold boundaries for
+        mapping different query values to display text. Must contain one element less than `sparkline_value_text_map_text`.
         """
         return pulumi.get(self, "sparkline_value_text_map_thresholds")
 
