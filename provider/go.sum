@@ -2133,8 +2133,8 @@ github.com/prometheus/tsdb v0.7.1/go.mod h1:qhTCs0VvXwvX/y3TZrWD7rabWM+ijKTux40T
 github.com/pulumi/pulumi-java/pkg v0.9.4 h1:gIQZmlUI1o9ye8CL2XFqtmAX6Lwr9uj/+HzjboiSmK4=
 github.com/pulumi/pulumi-java/pkg v0.9.4/go.mod h1:c6rSw/+q4O0IImgJ9axxoC6QesbPYWBaG5gimbHouUQ=
 github.com/pulumi/pulumi-terraform-bridge/testing v0.0.1 h1:SCg1gjfY9N4yn8U8peIUYATifjoDABkyR7H9lmefsfc=
-github.com/pulumi/pulumi-terraform-bridge/v3 v3.56.1 h1:OXecHzpPIJrYQJXpzwAgsYYWdEo8e5bNVPxPYKdZV3s=
-github.com/pulumi/pulumi-terraform-bridge/v3 v3.56.1/go.mod h1:ykaml8e6XS/yI9JOcNZ+6gLirs6EWTB0FmjbT+JyEdU=
+github.com/pulumi/pulumi-terraform-bridge/v3 v3.56.2 h1:NY9kPxzquV8rW/YYYlu0o7LLF/NmfUGEY/uZ06h/CMw=
+github.com/pulumi/pulumi-terraform-bridge/v3 v3.56.2/go.mod h1:ykaml8e6XS/yI9JOcNZ+6gLirs6EWTB0FmjbT+JyEdU=
 github.com/pulumi/pulumi-terraform-bridge/x/muxer v0.0.4 h1:rIzMmtcVpPX8ynaz6/nW5AHNY63DiNfCohqmxWvMpM4=
 github.com/pulumi/pulumi-terraform-bridge/x/muxer v0.0.4/go.mod h1:Kt8RIZWa/N8rW3+0g6NrqCBmF3o+HuIhFaZpssEkG6w=
 github.com/pulumi/pulumi-yaml v1.1.1 h1:8pyBNIU8+ym0wYpjhsCqN+cutygfK1XbhY2YEeNfyXY=
@@ -2328,8 +2328,8 @@ github.com/vmihailenco/msgpack/v5 v5.3.5/go.mod h1:7xyJ9e+0+9SaZT0Wt1RGleJXzli6Q
 github.com/vmihailenco/tagparser v0.1.1/go.mod h1:OeAg3pn3UbLjkWt+rN9oFYB6u/cQgqMEUPoW2WPyhdI=
 github.com/vmihailenco/tagparser/v2 v2.0.0 h1:y09buUbR+b5aycVFQs/g70pqKVZNBmxwAhO7/IwNM9g=
 github.com/vmihailenco/tagparser/v2 v2.0.0/go.mod h1:Wri+At7QHww0WTrCBeu4J6bNtoV6mEfg5OIWRZA9qds=
-github.com/vmware/terraform-provider-wavefront v0.0.0-20230801220302-e4538050c3e8 h1:ANRQJChuIT8SF6ZeVpfN2MFTvylw22z9sWU+e9bthLQ=
-github.com/vmware/terraform-provider-wavefront v0.0.0-20230801220302-e4538050c3e8/go.mod h1:uUMTRiwpP7Ms8q/w91UDKri40zpRv0YSQlLT39WL904=
+github.com/vmware/terraform-provider-wavefront v0.0.0-20230808000921-0f52eec14793 h1:WkTcyo580kyFRVZRPmF705XyeZJpfJXs0N7JjvH59us=
+github.com/vmware/terraform-provider-wavefront v0.0.0-20230808000921-0f52eec14793/go.mod h1:uUMTRiwpP7Ms8q/w91UDKri40zpRv0YSQlLT39WL904=
 github.com/vultr/govultr/v2 v2.17.2/go.mod h1:ZFOKGWmgjytfyjeyAdhQlSWwTjh2ig+X49cAp50dzXI=
 github.com/willf/bitset v1.1.11-0.20200630133818-d5bec3311243/go.mod h1:RjeCKbqT1RxIR/KWY6phxZiaY1IyutSBfGjNPySAYV4=
 github.com/willf/bitset v1.1.11/go.mod h1:83CECat5yLh5zVOf4P1ErAgKA5UDvKtgyUABdr3+MjI=
