@@ -62,7 +62,7 @@ export class CloudIntegrationAppDynamics extends pulumi.CustomResource {
      */
     public readonly additionalTags!: pulumi.Output<{[key: string]: string} | undefined>;
     /**
-     * List of regular expressions that an application name must match (case-insensitively) 
+     * List of regular expressions that an application name must match (case-insensitively)
      * in order to be ingested.
      */
     public readonly appFilterRegexes!: pulumi.Output<string[] | undefined>;
@@ -95,7 +95,7 @@ export class CloudIntegrationAppDynamics extends pulumi.CustomResource {
      */
     public readonly enableOverallPerfMetrics!: pulumi.Output<boolean | undefined>;
     /**
-     * Set this to `false` to get separate results for all values within the time range, 
+     * Set this to `false` to get separate results for all values within the time range,
      * by default it is `true`.
      */
     public readonly enableRollup!: pulumi.Output<boolean | undefined>;
@@ -206,7 +206,7 @@ export interface CloudIntegrationAppDynamicsState {
      */
     additionalTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
-     * List of regular expressions that an application name must match (case-insensitively) 
+     * List of regular expressions that an application name must match (case-insensitively)
      * in order to be ingested.
      */
     appFilterRegexes?: pulumi.Input<pulumi.Input<string>[]>;
@@ -239,7 +239,7 @@ export interface CloudIntegrationAppDynamicsState {
      */
     enableOverallPerfMetrics?: pulumi.Input<boolean>;
     /**
-     * Set this to `false` to get separate results for all values within the time range, 
+     * Set this to `false` to get separate results for all values within the time range,
      * by default it is `true`.
      */
     enableRollup?: pulumi.Input<boolean>;
@@ -282,7 +282,7 @@ export interface CloudIntegrationAppDynamicsArgs {
      */
     additionalTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
-     * List of regular expressions that an application name must match (case-insensitively) 
+     * List of regular expressions that an application name must match (case-insensitively)
      * in order to be ingested.
      */
     appFilterRegexes?: pulumi.Input<pulumi.Input<string>[]>;
@@ -315,7 +315,7 @@ export interface CloudIntegrationAppDynamicsArgs {
      */
     enableOverallPerfMetrics?: pulumi.Input<boolean>;
     /**
-     * Set this to `false` to get separate results for all values within the time range, 
+     * Set this to `false` to get separate results for all values within the time range,
      * by default it is `true`.
      */
     enableRollup?: pulumi.Input<boolean>;

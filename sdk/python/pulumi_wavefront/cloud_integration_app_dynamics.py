@@ -38,7 +38,7 @@ class CloudIntegrationAppDynamicsArgs:
         :param pulumi.Input[str] service: A value denoting which cloud service this service integrates with.
         :param pulumi.Input[str] user_name: Username is a combination of userName and the account name.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] additional_tags: A list of point tag key-values to add to every point ingested using this integration.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] app_filter_regexes: List of regular expressions that an application name must match (case-insensitively) 
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] app_filter_regexes: List of regular expressions that an application name must match (case-insensitively)
                in order to be ingested.
         :param pulumi.Input[bool] enable_app_infra_metrics: Boolean flag to control Application Infrastructure metric ingestion.
         :param pulumi.Input[bool] enable_backend_metrics: Boolean flag to control Backend metric ingestion.
@@ -46,7 +46,7 @@ class CloudIntegrationAppDynamicsArgs:
         :param pulumi.Input[bool] enable_error_metrics: Boolean flag to control Error metric ingestion.
         :param pulumi.Input[bool] enable_individual_node_metrics: Boolean flag to control Individual Node metric ingestion.
         :param pulumi.Input[bool] enable_overall_perf_metrics: Boolean flag to control Overall Performance metric ingestion.
-        :param pulumi.Input[bool] enable_rollup: Set this to `false` to get separate results for all values within the time range, 
+        :param pulumi.Input[bool] enable_rollup: Set this to `false` to get separate results for all values within the time range,
                by default it is `true`.
         :param pulumi.Input[bool] enable_service_endpoint_metrics: Boolean flag to control Service End point metric ingestion.
         :param pulumi.Input[bool] force_save: Forces this resource to save, even if errors are present.
@@ -148,7 +148,7 @@ class CloudIntegrationAppDynamicsArgs:
     @pulumi.getter(name="appFilterRegexes")
     def app_filter_regexes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        List of regular expressions that an application name must match (case-insensitively) 
+        List of regular expressions that an application name must match (case-insensitively)
         in order to be ingested.
         """
         return pulumi.get(self, "app_filter_regexes")
@@ -233,7 +233,7 @@ class CloudIntegrationAppDynamicsArgs:
     @pulumi.getter(name="enableRollup")
     def enable_rollup(self) -> Optional[pulumi.Input[bool]]:
         """
-        Set this to `false` to get separate results for all values within the time range, 
+        Set this to `false` to get separate results for all values within the time range,
         by default it is `true`.
         """
         return pulumi.get(self, "enable_rollup")
@@ -314,7 +314,7 @@ class _CloudIntegrationAppDynamicsState:
         """
         Input properties used for looking up and filtering CloudIntegrationAppDynamics resources.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] additional_tags: A list of point tag key-values to add to every point ingested using this integration.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] app_filter_regexes: List of regular expressions that an application name must match (case-insensitively) 
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] app_filter_regexes: List of regular expressions that an application name must match (case-insensitively)
                in order to be ingested.
         :param pulumi.Input[str] controller_name: Name of the SaaS controller.
         :param pulumi.Input[bool] enable_app_infra_metrics: Boolean flag to control Application Infrastructure metric ingestion.
@@ -323,7 +323,7 @@ class _CloudIntegrationAppDynamicsState:
         :param pulumi.Input[bool] enable_error_metrics: Boolean flag to control Error metric ingestion.
         :param pulumi.Input[bool] enable_individual_node_metrics: Boolean flag to control Individual Node metric ingestion.
         :param pulumi.Input[bool] enable_overall_perf_metrics: Boolean flag to control Overall Performance metric ingestion.
-        :param pulumi.Input[bool] enable_rollup: Set this to `false` to get separate results for all values within the time range, 
+        :param pulumi.Input[bool] enable_rollup: Set this to `false` to get separate results for all values within the time range,
                by default it is `true`.
         :param pulumi.Input[bool] enable_service_endpoint_metrics: Boolean flag to control Service End point metric ingestion.
         :param pulumi.Input[str] encrypted_password: Password for AppDynamics user.
@@ -384,7 +384,7 @@ class _CloudIntegrationAppDynamicsState:
     @pulumi.getter(name="appFilterRegexes")
     def app_filter_regexes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        List of regular expressions that an application name must match (case-insensitively) 
+        List of regular expressions that an application name must match (case-insensitively)
         in order to be ingested.
         """
         return pulumi.get(self, "app_filter_regexes")
@@ -481,7 +481,7 @@ class _CloudIntegrationAppDynamicsState:
     @pulumi.getter(name="enableRollup")
     def enable_rollup(self) -> Optional[pulumi.Input[bool]]:
         """
-        Set this to `false` to get separate results for all values within the time range, 
+        Set this to `false` to get separate results for all values within the time range,
         by default it is `true`.
         """
         return pulumi.get(self, "enable_rollup")
@@ -625,7 +625,7 @@ class CloudIntegrationAppDynamics(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] additional_tags: A list of point tag key-values to add to every point ingested using this integration.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] app_filter_regexes: List of regular expressions that an application name must match (case-insensitively) 
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] app_filter_regexes: List of regular expressions that an application name must match (case-insensitively)
                in order to be ingested.
         :param pulumi.Input[str] controller_name: Name of the SaaS controller.
         :param pulumi.Input[bool] enable_app_infra_metrics: Boolean flag to control Application Infrastructure metric ingestion.
@@ -634,7 +634,7 @@ class CloudIntegrationAppDynamics(pulumi.CustomResource):
         :param pulumi.Input[bool] enable_error_metrics: Boolean flag to control Error metric ingestion.
         :param pulumi.Input[bool] enable_individual_node_metrics: Boolean flag to control Individual Node metric ingestion.
         :param pulumi.Input[bool] enable_overall_perf_metrics: Boolean flag to control Overall Performance metric ingestion.
-        :param pulumi.Input[bool] enable_rollup: Set this to `false` to get separate results for all values within the time range, 
+        :param pulumi.Input[bool] enable_rollup: Set this to `false` to get separate results for all values within the time range,
                by default it is `true`.
         :param pulumi.Input[bool] enable_service_endpoint_metrics: Boolean flag to control Service End point metric ingestion.
         :param pulumi.Input[str] encrypted_password: Password for AppDynamics user.
@@ -777,7 +777,7 @@ class CloudIntegrationAppDynamics(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] additional_tags: A list of point tag key-values to add to every point ingested using this integration.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] app_filter_regexes: List of regular expressions that an application name must match (case-insensitively) 
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] app_filter_regexes: List of regular expressions that an application name must match (case-insensitively)
                in order to be ingested.
         :param pulumi.Input[str] controller_name: Name of the SaaS controller.
         :param pulumi.Input[bool] enable_app_infra_metrics: Boolean flag to control Application Infrastructure metric ingestion.
@@ -786,7 +786,7 @@ class CloudIntegrationAppDynamics(pulumi.CustomResource):
         :param pulumi.Input[bool] enable_error_metrics: Boolean flag to control Error metric ingestion.
         :param pulumi.Input[bool] enable_individual_node_metrics: Boolean flag to control Individual Node metric ingestion.
         :param pulumi.Input[bool] enable_overall_perf_metrics: Boolean flag to control Overall Performance metric ingestion.
-        :param pulumi.Input[bool] enable_rollup: Set this to `false` to get separate results for all values within the time range, 
+        :param pulumi.Input[bool] enable_rollup: Set this to `false` to get separate results for all values within the time range,
                by default it is `true`.
         :param pulumi.Input[bool] enable_service_endpoint_metrics: Boolean flag to control Service End point metric ingestion.
         :param pulumi.Input[str] encrypted_password: Password for AppDynamics user.
@@ -831,7 +831,7 @@ class CloudIntegrationAppDynamics(pulumi.CustomResource):
     @pulumi.getter(name="appFilterRegexes")
     def app_filter_regexes(self) -> pulumi.Output[Optional[Sequence[str]]]:
         """
-        List of regular expressions that an application name must match (case-insensitively) 
+        List of regular expressions that an application name must match (case-insensitively)
         in order to be ingested.
         """
         return pulumi.get(self, "app_filter_regexes")
@@ -896,7 +896,7 @@ class CloudIntegrationAppDynamics(pulumi.CustomResource):
     @pulumi.getter(name="enableRollup")
     def enable_rollup(self) -> pulumi.Output[Optional[bool]]:
         """
-        Set this to `false` to get separate results for all values within the time range, 
+        Set this to `false` to get separate results for all values within the time range,
         by default it is `true`.
         """
         return pulumi.get(self, "enable_rollup")

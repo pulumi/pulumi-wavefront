@@ -65,7 +65,7 @@ export class Role extends pulumi.CustomResource {
      */
     public readonly name!: pulumi.Output<string>;
     /**
-     * A list of permissions to assign to this role. Valid options are 
+     * A list of permissions to assign to this role. Valid options are
      * `agentManagement`, `alertsManagement`, `dashboardManagement`, `embeddedCharts`, `eventsManagement`, `externalLinksManagement`,
      * `hostTagManagement`, `metricsManagement`, and `userManagement`.
      */
@@ -117,7 +117,7 @@ export interface RoleState {
      */
     name?: pulumi.Input<string>;
     /**
-     * A list of permissions to assign to this role. Valid options are 
+     * A list of permissions to assign to this role. Valid options are
      * `agentManagement`, `alertsManagement`, `dashboardManagement`, `embeddedCharts`, `eventsManagement`, `externalLinksManagement`,
      * `hostTagManagement`, `metricsManagement`, and `userManagement`.
      */
@@ -141,7 +141,7 @@ export interface RoleArgs {
      */
     name?: pulumi.Input<string>;
     /**
-     * A list of permissions to assign to this role. Valid options are 
+     * A list of permissions to assign to this role. Valid options are
      * `agentManagement`, `alertsManagement`, `dashboardManagement`, `embeddedCharts`, `eventsManagement`, `externalLinksManagement`,
      * `hostTagManagement`, `metricsManagement`, and `userManagement`.
      */

@@ -23,7 +23,7 @@ class RoleArgs:
         :param pulumi.Input[Sequence[pulumi.Input[str]]] assignees: A list of user groups or accounts to assign to this role.
         :param pulumi.Input[str] description: A short description of the role.
         :param pulumi.Input[str] name: The name of the role.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] permissions: A list of permissions to assign to this role. Valid options are 
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] permissions: A list of permissions to assign to this role. Valid options are
                `agent_management`, `alerts_management`, `dashboard_management`, `embedded_charts`, `events_management`, `external_links_management`,
                `host_tag_management`, `metrics_management`, and `user_management`.
         """
@@ -76,7 +76,7 @@ class RoleArgs:
     @pulumi.getter
     def permissions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        A list of permissions to assign to this role. Valid options are 
+        A list of permissions to assign to this role. Valid options are
         `agent_management`, `alerts_management`, `dashboard_management`, `embedded_charts`, `events_management`, `external_links_management`,
         `host_tag_management`, `metrics_management`, and `user_management`.
         """
@@ -99,7 +99,7 @@ class _RoleState:
         :param pulumi.Input[Sequence[pulumi.Input[str]]] assignees: A list of user groups or accounts to assign to this role.
         :param pulumi.Input[str] description: A short description of the role.
         :param pulumi.Input[str] name: The name of the role.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] permissions: A list of permissions to assign to this role. Valid options are 
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] permissions: A list of permissions to assign to this role. Valid options are
                `agent_management`, `alerts_management`, `dashboard_management`, `embedded_charts`, `events_management`, `external_links_management`,
                `host_tag_management`, `metrics_management`, and `user_management`.
         """
@@ -152,7 +152,7 @@ class _RoleState:
     @pulumi.getter
     def permissions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        A list of permissions to assign to this role. Valid options are 
+        A list of permissions to assign to this role. Valid options are
         `agent_management`, `alerts_management`, `dashboard_management`, `embedded_charts`, `events_management`, `external_links_management`,
         `host_tag_management`, `metrics_management`, and `user_management`.
         """
@@ -198,7 +198,7 @@ class Role(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[str]]] assignees: A list of user groups or accounts to assign to this role.
         :param pulumi.Input[str] description: A short description of the role.
         :param pulumi.Input[str] name: The name of the role.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] permissions: A list of permissions to assign to this role. Valid options are 
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] permissions: A list of permissions to assign to this role. Valid options are
                `agent_management`, `alerts_management`, `dashboard_management`, `embedded_charts`, `events_management`, `external_links_management`,
                `host_tag_management`, `metrics_management`, and `user_management`.
         """
@@ -284,7 +284,7 @@ class Role(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[str]]] assignees: A list of user groups or accounts to assign to this role.
         :param pulumi.Input[str] description: A short description of the role.
         :param pulumi.Input[str] name: The name of the role.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] permissions: A list of permissions to assign to this role. Valid options are 
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] permissions: A list of permissions to assign to this role. Valid options are
                `agent_management`, `alerts_management`, `dashboard_management`, `embedded_charts`, `events_management`, `external_links_management`,
                `host_tag_management`, `metrics_management`, and `user_management`.
         """
@@ -326,7 +326,7 @@ class Role(pulumi.CustomResource):
     @pulumi.getter
     def permissions(self) -> pulumi.Output[Optional[Sequence[str]]]:
         """
-        A list of permissions to assign to this role. Valid options are 
+        A list of permissions to assign to this role. Valid options are
         `agent_management`, `alerts_management`, `dashboard_management`, `embedded_charts`, `events_management`, `external_links_management`,
         `host_tag_management`, `metrics_management`, and `user_management`.
         """

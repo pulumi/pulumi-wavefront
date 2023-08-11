@@ -8,7 +8,7 @@ import (
 	"reflect"
 
 	"errors"
-	"github.com/pulumi/pulumi-wavefront/sdk/v2/go/wavefront/internal"
+	"github.com/pulumi/pulumi-wavefront/sdk/v3/go/wavefront/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -22,7 +22,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-wavefront/sdk/v2/go/wavefront"
+//	"github.com/pulumi/pulumi-wavefront/sdk/v3/go/wavefront"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -56,7 +56,7 @@ type CloudIntegrationGcp struct {
 
 	// A list of point tag key-values to add to every point ingested using this integration.
 	AdditionalTags pulumi.StringMapOutput `pulumi:"additionalTags"`
-	// A list of Google Cloud Platform (GCP) services.  Valid values are `APPENGINE`,
+	// A list of Google Cloud Platform (GCP) services. Valid values are `APPENGINE`,
 	// `BIGQUERY`, `BIGTABLE`, `CLOUDFUNCTIONS`, `CLOUDIOT`, `CLOUDSQL`, `CLOUDTASKS`, `COMPUTE`, `CONTAINER`,
 	// `DATAFLOW`, `DATAPROC`, `DATASTORE`, `FIREBASEDATABASE`, `FIREBASEHOSTING`, `FIRESTORE`, `INTERCONNECT`,
 	// `LOADBALANCING`, `LOGGING`, `ML`, `MONITORING`, `PUBSUB`, `REDIS`, `ROUTER`, `SERVICERUNTIME`, `SPANNER`, `STORAGE`,
@@ -127,7 +127,7 @@ func GetCloudIntegrationGcp(ctx *pulumi.Context,
 type cloudIntegrationGcpState struct {
 	// A list of point tag key-values to add to every point ingested using this integration.
 	AdditionalTags map[string]string `pulumi:"additionalTags"`
-	// A list of Google Cloud Platform (GCP) services.  Valid values are `APPENGINE`,
+	// A list of Google Cloud Platform (GCP) services. Valid values are `APPENGINE`,
 	// `BIGQUERY`, `BIGTABLE`, `CLOUDFUNCTIONS`, `CLOUDIOT`, `CLOUDSQL`, `CLOUDTASKS`, `COMPUTE`, `CONTAINER`,
 	// `DATAFLOW`, `DATAPROC`, `DATASTORE`, `FIREBASEDATABASE`, `FIREBASEHOSTING`, `FIRESTORE`, `INTERCONNECT`,
 	// `LOADBALANCING`, `LOGGING`, `ML`, `MONITORING`, `PUBSUB`, `REDIS`, `ROUTER`, `SERVICERUNTIME`, `SPANNER`, `STORAGE`,
@@ -153,7 +153,7 @@ type cloudIntegrationGcpState struct {
 type CloudIntegrationGcpState struct {
 	// A list of point tag key-values to add to every point ingested using this integration.
 	AdditionalTags pulumi.StringMapInput
-	// A list of Google Cloud Platform (GCP) services.  Valid values are `APPENGINE`,
+	// A list of Google Cloud Platform (GCP) services. Valid values are `APPENGINE`,
 	// `BIGQUERY`, `BIGTABLE`, `CLOUDFUNCTIONS`, `CLOUDIOT`, `CLOUDSQL`, `CLOUDTASKS`, `COMPUTE`, `CONTAINER`,
 	// `DATAFLOW`, `DATAPROC`, `DATASTORE`, `FIREBASEDATABASE`, `FIREBASEHOSTING`, `FIRESTORE`, `INTERCONNECT`,
 	// `LOADBALANCING`, `LOGGING`, `ML`, `MONITORING`, `PUBSUB`, `REDIS`, `ROUTER`, `SERVICERUNTIME`, `SPANNER`, `STORAGE`,
@@ -183,7 +183,7 @@ func (CloudIntegrationGcpState) ElementType() reflect.Type {
 type cloudIntegrationGcpArgs struct {
 	// A list of point tag key-values to add to every point ingested using this integration.
 	AdditionalTags map[string]string `pulumi:"additionalTags"`
-	// A list of Google Cloud Platform (GCP) services.  Valid values are `APPENGINE`,
+	// A list of Google Cloud Platform (GCP) services. Valid values are `APPENGINE`,
 	// `BIGQUERY`, `BIGTABLE`, `CLOUDFUNCTIONS`, `CLOUDIOT`, `CLOUDSQL`, `CLOUDTASKS`, `COMPUTE`, `CONTAINER`,
 	// `DATAFLOW`, `DATAPROC`, `DATASTORE`, `FIREBASEDATABASE`, `FIREBASEHOSTING`, `FIRESTORE`, `INTERCONNECT`,
 	// `LOADBALANCING`, `LOGGING`, `ML`, `MONITORING`, `PUBSUB`, `REDIS`, `ROUTER`, `SERVICERUNTIME`, `SPANNER`, `STORAGE`,
@@ -210,7 +210,7 @@ type cloudIntegrationGcpArgs struct {
 type CloudIntegrationGcpArgs struct {
 	// A list of point tag key-values to add to every point ingested using this integration.
 	AdditionalTags pulumi.StringMapInput
-	// A list of Google Cloud Platform (GCP) services.  Valid values are `APPENGINE`,
+	// A list of Google Cloud Platform (GCP) services. Valid values are `APPENGINE`,
 	// `BIGQUERY`, `BIGTABLE`, `CLOUDFUNCTIONS`, `CLOUDIOT`, `CLOUDSQL`, `CLOUDTASKS`, `COMPUTE`, `CONTAINER`,
 	// `DATAFLOW`, `DATAPROC`, `DATASTORE`, `FIREBASEDATABASE`, `FIREBASEHOSTING`, `FIRESTORE`, `INTERCONNECT`,
 	// `LOADBALANCING`, `LOGGING`, `ML`, `MONITORING`, `PUBSUB`, `REDIS`, `ROUTER`, `SERVICERUNTIME`, `SPANNER`, `STORAGE`,
@@ -325,7 +325,7 @@ func (o CloudIntegrationGcpOutput) AdditionalTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *CloudIntegrationGcp) pulumi.StringMapOutput { return v.AdditionalTags }).(pulumi.StringMapOutput)
 }
 
-// A list of Google Cloud Platform (GCP) services.  Valid values are `APPENGINE`,
+// A list of Google Cloud Platform (GCP) services. Valid values are `APPENGINE`,
 // `BIGQUERY`, `BIGTABLE`, `CLOUDFUNCTIONS`, `CLOUDIOT`, `CLOUDSQL`, `CLOUDTASKS`, `COMPUTE`, `CONTAINER`,
 // `DATAFLOW`, `DATAPROC`, `DATASTORE`, `FIREBASEDATABASE`, `FIREBASEHOSTING`, `FIRESTORE`, `INTERCONNECT`,
 // `LOADBALANCING`, `LOGGING`, `ML`, `MONITORING`, `PUBSUB`, `REDIS`, `ROUTER`, `SERVICERUNTIME`, `SPANNER`, `STORAGE`,

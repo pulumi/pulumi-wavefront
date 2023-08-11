@@ -5,7 +5,7 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 /**
- * Provides a Wavefront Alert resource.  This allows alerts to be created, updated, and deleted.
+ * Provides a Wavefront Alert resource. This allows alerts to be created, updated, and deleted.
  *
  * ## Example Usage
  *
@@ -69,7 +69,7 @@ export class Alert extends pulumi.CustomResource {
      */
     public readonly additionalInformation!: pulumi.Output<string | undefined>;
     /**
-     * The type of alert in Wavefront.  Either `CLASSIC` (default) 
+     * The type of alert in Wavefront. Either `CLASSIC` (default)
      * or `THRESHOLD`.
      */
     public readonly alertType!: pulumi.Output<string | undefined>;
@@ -88,18 +88,18 @@ export class Alert extends pulumi.CustomResource {
      */
     public readonly condition!: pulumi.Output<string | undefined>;
     /**
-     * a string->string map of `severity` to `condition` 
+     * a string->string map of `severity` to `condition`
      * for which this alert will trigger.
      */
     public readonly conditions!: pulumi.Output<{[key: string]: string} | undefined>;
     /**
      * A second query whose results are displayed in the alert user
-     * interface instead of the condition query.  This field is often used to display a version
+     * interface instead of the condition query. This field is often used to display a version
      * of the condition query with Boolean operators removed so that numerical values are plotted.
      */
     public readonly displayExpression!: pulumi.Output<string | undefined>;
     /**
-     * The number of consecutive minutes that a series matching the condition query must 
+     * The number of consecutive minutes that a series matching the condition query must
      * evaluate to "true" (non-zero value) before the alert fires.
      */
     public readonly minutes!: pulumi.Output<number>;
@@ -108,7 +108,7 @@ export class Alert extends pulumi.CustomResource {
      */
     public readonly name!: pulumi.Output<string>;
     /**
-     * How often to re-trigger a continually failing alert. 
+     * How often to re-trigger a continually failing alert.
      * If absent or <= 0, no re-triggering occurs.
      */
     public readonly notificationResendFrequencyMinutes!: pulumi.Output<number | undefined>;
@@ -118,7 +118,7 @@ export class Alert extends pulumi.CustomResource {
     public readonly processRateMinutes!: pulumi.Output<number | undefined>;
     /**
      * The number of consecutive minutes that a firing series matching the condition
-     * query must evaluate to "false" (zero value) before the alert resolves.  When unset, this defaults to
+     * query must evaluate to "false" (zero value) before the alert resolves. When unset, this defaults to
      * the same value as `minutes`.
      */
     public readonly resolveAfterMinutes!: pulumi.Output<number | undefined>;
@@ -131,7 +131,7 @@ export class Alert extends pulumi.CustomResource {
      */
     public readonly tags!: pulumi.Output<string[]>;
     /**
-     * A comma-separated list of the email address or integration endpoint 
+     * A comma-separated list of the email address or integration endpoint
      * (such as PagerDuty or webhook) to notify when the alert status changes. Multiple target types can be in the list.
      * Alert target format: ({email}|pd:{pd_key}|target:{alert-target-id}).
      */
@@ -210,7 +210,7 @@ export interface AlertState {
      */
     additionalInformation?: pulumi.Input<string>;
     /**
-     * The type of alert in Wavefront.  Either `CLASSIC` (default) 
+     * The type of alert in Wavefront. Either `CLASSIC` (default)
      * or `THRESHOLD`.
      */
     alertType?: pulumi.Input<string>;
@@ -229,18 +229,18 @@ export interface AlertState {
      */
     condition?: pulumi.Input<string>;
     /**
-     * a string->string map of `severity` to `condition` 
+     * a string->string map of `severity` to `condition`
      * for which this alert will trigger.
      */
     conditions?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * A second query whose results are displayed in the alert user
-     * interface instead of the condition query.  This field is often used to display a version
+     * interface instead of the condition query. This field is often used to display a version
      * of the condition query with Boolean operators removed so that numerical values are plotted.
      */
     displayExpression?: pulumi.Input<string>;
     /**
-     * The number of consecutive minutes that a series matching the condition query must 
+     * The number of consecutive minutes that a series matching the condition query must
      * evaluate to "true" (non-zero value) before the alert fires.
      */
     minutes?: pulumi.Input<number>;
@@ -249,7 +249,7 @@ export interface AlertState {
      */
     name?: pulumi.Input<string>;
     /**
-     * How often to re-trigger a continually failing alert. 
+     * How often to re-trigger a continually failing alert.
      * If absent or <= 0, no re-triggering occurs.
      */
     notificationResendFrequencyMinutes?: pulumi.Input<number>;
@@ -259,7 +259,7 @@ export interface AlertState {
     processRateMinutes?: pulumi.Input<number>;
     /**
      * The number of consecutive minutes that a firing series matching the condition
-     * query must evaluate to "false" (zero value) before the alert resolves.  When unset, this defaults to
+     * query must evaluate to "false" (zero value) before the alert resolves. When unset, this defaults to
      * the same value as `minutes`.
      */
     resolveAfterMinutes?: pulumi.Input<number>;
@@ -272,7 +272,7 @@ export interface AlertState {
      */
     tags?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * A comma-separated list of the email address or integration endpoint 
+     * A comma-separated list of the email address or integration endpoint
      * (such as PagerDuty or webhook) to notify when the alert status changes. Multiple target types can be in the list.
      * Alert target format: ({email}|pd:{pd_key}|target:{alert-target-id}).
      */
@@ -293,7 +293,7 @@ export interface AlertArgs {
      */
     additionalInformation?: pulumi.Input<string>;
     /**
-     * The type of alert in Wavefront.  Either `CLASSIC` (default) 
+     * The type of alert in Wavefront. Either `CLASSIC` (default)
      * or `THRESHOLD`.
      */
     alertType?: pulumi.Input<string>;
@@ -312,18 +312,18 @@ export interface AlertArgs {
      */
     condition?: pulumi.Input<string>;
     /**
-     * a string->string map of `severity` to `condition` 
+     * a string->string map of `severity` to `condition`
      * for which this alert will trigger.
      */
     conditions?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * A second query whose results are displayed in the alert user
-     * interface instead of the condition query.  This field is often used to display a version
+     * interface instead of the condition query. This field is often used to display a version
      * of the condition query with Boolean operators removed so that numerical values are plotted.
      */
     displayExpression?: pulumi.Input<string>;
     /**
-     * The number of consecutive minutes that a series matching the condition query must 
+     * The number of consecutive minutes that a series matching the condition query must
      * evaluate to "true" (non-zero value) before the alert fires.
      */
     minutes: pulumi.Input<number>;
@@ -332,7 +332,7 @@ export interface AlertArgs {
      */
     name?: pulumi.Input<string>;
     /**
-     * How often to re-trigger a continually failing alert. 
+     * How often to re-trigger a continually failing alert.
      * If absent or <= 0, no re-triggering occurs.
      */
     notificationResendFrequencyMinutes?: pulumi.Input<number>;
@@ -342,7 +342,7 @@ export interface AlertArgs {
     processRateMinutes?: pulumi.Input<number>;
     /**
      * The number of consecutive minutes that a firing series matching the condition
-     * query must evaluate to "false" (zero value) before the alert resolves.  When unset, this defaults to
+     * query must evaluate to "false" (zero value) before the alert resolves. When unset, this defaults to
      * the same value as `minutes`.
      */
     resolveAfterMinutes?: pulumi.Input<number>;
@@ -355,7 +355,7 @@ export interface AlertArgs {
      */
     tags: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * A comma-separated list of the email address or integration endpoint 
+     * A comma-separated list of the email address or integration endpoint
      * (such as PagerDuty or webhook) to notify when the alert status changes. Multiple target types can be in the list.
      * Alert target format: ({email}|pd:{pd_key}|target:{alert-target-id}).
      */

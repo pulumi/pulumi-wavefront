@@ -7,16 +7,20 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-wavefront/sdk/v2/go/wavefront/internal"
+	"github.com/pulumi/pulumi-wavefront/sdk/v3/go/wavefront/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 var _ = internal.GetEnvOrDefault
 
 type AlertTargetRoute struct {
+	// (Required) String that filters the route. Space delimited. Currently only allows a single key value pair.
+	// (e.g. `env prod`)
 	Filter map[string]string `pulumi:"filter"`
 	// The notification method used for notification target. One of `WEBHOOK`, `EMAIL`, `PAGERDUTY`.
 	Method string `pulumi:"method"`
+	// (Required) The endpoint for the alert route. `EMAIL`: email address. `PAGERDUTY`: PagerDuty routing
+	// key. `WEBHOOK`: URL endpoint.
 	Target string `pulumi:"target"`
 }
 
@@ -32,9 +36,13 @@ type AlertTargetRouteInput interface {
 }
 
 type AlertTargetRouteArgs struct {
+	// (Required) String that filters the route. Space delimited. Currently only allows a single key value pair.
+	// (e.g. `env prod`)
 	Filter pulumi.StringMapInput `pulumi:"filter"`
 	// The notification method used for notification target. One of `WEBHOOK`, `EMAIL`, `PAGERDUTY`.
 	Method pulumi.StringInput `pulumi:"method"`
+	// (Required) The endpoint for the alert route. `EMAIL`: email address. `PAGERDUTY`: PagerDuty routing
+	// key. `WEBHOOK`: URL endpoint.
 	Target pulumi.StringInput `pulumi:"target"`
 }
 
@@ -89,6 +97,8 @@ func (o AlertTargetRouteOutput) ToAlertTargetRouteOutputWithContext(ctx context.
 	return o
 }
 
+// (Required) String that filters the route. Space delimited. Currently only allows a single key value pair.
+// (e.g. `env prod`)
 func (o AlertTargetRouteOutput) Filter() pulumi.StringMapOutput {
 	return o.ApplyT(func(v AlertTargetRoute) map[string]string { return v.Filter }).(pulumi.StringMapOutput)
 }
@@ -98,6 +108,8 @@ func (o AlertTargetRouteOutput) Method() pulumi.StringOutput {
 	return o.ApplyT(func(v AlertTargetRoute) string { return v.Method }).(pulumi.StringOutput)
 }
 
+// (Required) The endpoint for the alert route. `EMAIL`: email address. `PAGERDUTY`: PagerDuty routing
+// key. `WEBHOOK`: URL endpoint.
 func (o AlertTargetRouteOutput) Target() pulumi.StringOutput {
 	return o.ApplyT(func(v AlertTargetRoute) string { return v.Target }).(pulumi.StringOutput)
 }
@@ -3254,7 +3266,7 @@ type GetDashboardSectionRowChartChartSetting struct {
 	TagMode string `pulumi:"tagMode"`
 	// For x-y scatterplots, whether to color more recent points as darker than older points.
 	TimeBasedColoring bool `pulumi:"timeBasedColoring"`
-	// Chart Type. `line` refers to the Line Plot, `scatter` to the Point Plot, `stacked-area` to the Stacked Area plot, `table` to the Tabular View, `scatterplot-xy` to Scatter Plot, `markdown-widget` to the Markdown display, and `sparkline` to the Single Stat view. Valid options are `line`, `scatterplot`,
+	// Chart Type. `line` refers to the Line Plot, `scatter` to the Point Plot, `stacked-area` to the Stacked Area plot, `table` to the Tabular View, `scatterplot-xy` to Scatter Plot, `markdown-widget` to the Markdown display, and `sparkline` to the Single Stat view. Valid options are`line`, `scatterplot`,
 	// `stacked-area`, `stacked-column`, `table`, `scatterplot-xy`, `markdown-widget`, `sparkline`, `globe`, `nodemap`, `top-k`, `status-list`, and `histogram`.
 	Type string `pulumi:"type"`
 	// Width, in minutes, of the time window to use for `last` windowing.
@@ -3379,7 +3391,7 @@ type GetDashboardSectionRowChartChartSettingArgs struct {
 	TagMode pulumi.StringInput `pulumi:"tagMode"`
 	// For x-y scatterplots, whether to color more recent points as darker than older points.
 	TimeBasedColoring pulumi.BoolInput `pulumi:"timeBasedColoring"`
-	// Chart Type. `line` refers to the Line Plot, `scatter` to the Point Plot, `stacked-area` to the Stacked Area plot, `table` to the Tabular View, `scatterplot-xy` to Scatter Plot, `markdown-widget` to the Markdown display, and `sparkline` to the Single Stat view. Valid options are `line`, `scatterplot`,
+	// Chart Type. `line` refers to the Line Plot, `scatter` to the Point Plot, `stacked-area` to the Stacked Area plot, `table` to the Tabular View, `scatterplot-xy` to Scatter Plot, `markdown-widget` to the Markdown display, and `sparkline` to the Single Stat view. Valid options are`line`, `scatterplot`,
 	// `stacked-area`, `stacked-column`, `table`, `scatterplot-xy`, `markdown-widget`, `sparkline`, `globe`, `nodemap`, `top-k`, `status-list`, and `histogram`.
 	Type pulumi.StringInput `pulumi:"type"`
 	// Width, in minutes, of the time window to use for `last` windowing.
@@ -3672,7 +3684,7 @@ func (o GetDashboardSectionRowChartChartSettingOutput) TimeBasedColoring() pulum
 	return o.ApplyT(func(v GetDashboardSectionRowChartChartSetting) bool { return v.TimeBasedColoring }).(pulumi.BoolOutput)
 }
 
-// Chart Type. `line` refers to the Line Plot, `scatter` to the Point Plot, `stacked-area` to the Stacked Area plot, `table` to the Tabular View, `scatterplot-xy` to Scatter Plot, `markdown-widget` to the Markdown display, and `sparkline` to the Single Stat view. Valid options are `line`, `scatterplot`,
+// Chart Type. `line` refers to the Line Plot, `scatter` to the Point Plot, `stacked-area` to the Stacked Area plot, `table` to the Tabular View, `scatterplot-xy` to Scatter Plot, `markdown-widget` to the Markdown display, and `sparkline` to the Single Stat view. Valid options are`line`, `scatterplot`,
 // `stacked-area`, `stacked-column`, `table`, `scatterplot-xy`, `markdown-widget`, `sparkline`, `globe`, `nodemap`, `top-k`, `status-list`, and `histogram`.
 func (o GetDashboardSectionRowChartChartSettingOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDashboardSectionRowChartChartSetting) string { return v.Type }).(pulumi.StringOutput)
@@ -4879,7 +4891,7 @@ type GetDashboardsDashboardSectionRowChartChartSetting struct {
 	TagMode string `pulumi:"tagMode"`
 	// For x-y scatterplots, whether to color more recent points as darker than older points.
 	TimeBasedColoring bool `pulumi:"timeBasedColoring"`
-	// Chart Type. `line` refers to the Line Plot, `scatter` to the Point Plot, `stacked-area` to the Stacked Area plot, `table` to the Tabular View, `scatterplot-xy` to Scatter Plot, `markdown-widget` to the Markdown display, and `sparkline` to the Single Stat view. Valid options are `line`, `scatterplot`, `stacked-area`, `stacked-column`, `table`, `scatterplot-xy`, `markdown-widget`, `sparkline`, `globe`, `nodemap`, `top-k`, `status-list`, and `histogram`.
+	// Chart Type. `line` refers to the Line Plot, `scatter` to the Point Plot, `stacked-area` to the Stacked Area plot, `table` to the Tabular View, `scatterplot-xy` to Scatter Plot, `markdown-widget` to the Markdown display, and `sparkline` to the Single Stat view. Valid options are`line`, `scatterplot`, `stacked-area`, `stacked-column`, `table`, `scatterplot-xy`, `markdown-widget`, `sparkline`, `globe`, `nodemap`, `top-k`, `status-list`, and `histogram`.
 	Type string `pulumi:"type"`
 	// Width, in minutes, of the time window to use for `last` windowing.
 	WindowSize int `pulumi:"windowSize"`
@@ -5003,7 +5015,7 @@ type GetDashboardsDashboardSectionRowChartChartSettingArgs struct {
 	TagMode pulumi.StringInput `pulumi:"tagMode"`
 	// For x-y scatterplots, whether to color more recent points as darker than older points.
 	TimeBasedColoring pulumi.BoolInput `pulumi:"timeBasedColoring"`
-	// Chart Type. `line` refers to the Line Plot, `scatter` to the Point Plot, `stacked-area` to the Stacked Area plot, `table` to the Tabular View, `scatterplot-xy` to Scatter Plot, `markdown-widget` to the Markdown display, and `sparkline` to the Single Stat view. Valid options are `line`, `scatterplot`, `stacked-area`, `stacked-column`, `table`, `scatterplot-xy`, `markdown-widget`, `sparkline`, `globe`, `nodemap`, `top-k`, `status-list`, and `histogram`.
+	// Chart Type. `line` refers to the Line Plot, `scatter` to the Point Plot, `stacked-area` to the Stacked Area plot, `table` to the Tabular View, `scatterplot-xy` to Scatter Plot, `markdown-widget` to the Markdown display, and `sparkline` to the Single Stat view. Valid options are`line`, `scatterplot`, `stacked-area`, `stacked-column`, `table`, `scatterplot-xy`, `markdown-widget`, `sparkline`, `globe`, `nodemap`, `top-k`, `status-list`, and `histogram`.
 	Type pulumi.StringInput `pulumi:"type"`
 	// Width, in minutes, of the time window to use for `last` windowing.
 	WindowSize pulumi.IntInput `pulumi:"windowSize"`
@@ -5311,7 +5323,7 @@ func (o GetDashboardsDashboardSectionRowChartChartSettingOutput) TimeBasedColori
 	return o.ApplyT(func(v GetDashboardsDashboardSectionRowChartChartSetting) bool { return v.TimeBasedColoring }).(pulumi.BoolOutput)
 }
 
-// Chart Type. `line` refers to the Line Plot, `scatter` to the Point Plot, `stacked-area` to the Stacked Area plot, `table` to the Tabular View, `scatterplot-xy` to Scatter Plot, `markdown-widget` to the Markdown display, and `sparkline` to the Single Stat view. Valid options are `line`, `scatterplot`, `stacked-area`, `stacked-column`, `table`, `scatterplot-xy`, `markdown-widget`, `sparkline`, `globe`, `nodemap`, `top-k`, `status-list`, and `histogram`.
+// Chart Type. `line` refers to the Line Plot, `scatter` to the Point Plot, `stacked-area` to the Stacked Area plot, `table` to the Tabular View, `scatterplot-xy` to Scatter Plot, `markdown-widget` to the Markdown display, and `sparkline` to the Single Stat view. Valid options are`line`, `scatterplot`, `stacked-area`, `stacked-column`, `table`, `scatterplot-xy`, `markdown-widget`, `sparkline`, `globe`, `nodemap`, `top-k`, `status-list`, and `histogram`.
 func (o GetDashboardsDashboardSectionRowChartChartSettingOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDashboardsDashboardSectionRowChartChartSetting) string { return v.Type }).(pulumi.StringOutput)
 }

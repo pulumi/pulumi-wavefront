@@ -6,11 +6,19 @@ import * as inputs from "../types/input";
 import * as outputs from "../types/output";
 
 export interface AlertTargetRoute {
+    /**
+     * (Required) String that filters the route. Space delimited. Currently only allows a single key value pair.
+     * (e.g. `env prod`)
+     */
     filter?: {[key: string]: string};
     /**
      * The notification method used for notification target. One of `WEBHOOK`, `EMAIL`, `PAGERDUTY`.
      */
     method: string;
+    /**
+     * (Required) The endpoint for the alert route. `EMAIL`: email address. `PAGERDUTY`: PagerDuty routing
+     * key. `WEBHOOK`: URL endpoint.
+     */
     target: string;
 }
 
@@ -774,7 +782,7 @@ export interface GetDashboardSectionRowChartChartSetting {
      */
     timeBasedColoring: boolean;
     /**
-     * Chart Type. `line` refers to the Line Plot, `scatter` to the Point Plot, `stacked-area` to the Stacked Area plot, `table` to the Tabular View, `scatterplot-xy` to Scatter Plot, `markdown-widget` to the Markdown display, and `sparkline` to the Single Stat view. Valid options are `line`, `scatterplot`,
+     * Chart Type. `line` refers to the Line Plot, `scatter` to the Point Plot, `stacked-area` to the Stacked Area plot, `table` to the Tabular View, `scatterplot-xy` to Scatter Plot, `markdown-widget` to the Markdown display, and `sparkline` to the Single Stat view. Valid options are`line`, `scatterplot`,
      * `stacked-area`, `stacked-column`, `table`, `scatterplot-xy`, `markdown-widget`, `sparkline`, `globe`, `nodemap`, `top-k`, `status-list`, and `histogram`.
      */
     type: string;
@@ -1172,7 +1180,7 @@ export interface GetDashboardsDashboardSectionRowChartChartSetting {
      */
     timeBasedColoring: boolean;
     /**
-     * Chart Type. `line` refers to the Line Plot, `scatter` to the Point Plot, `stacked-area` to the Stacked Area plot, `table` to the Tabular View, `scatterplot-xy` to Scatter Plot, `markdown-widget` to the Markdown display, and `sparkline` to the Single Stat view. Valid options are `line`, `scatterplot`, `stacked-area`, `stacked-column`, `table`, `scatterplot-xy`, `markdown-widget`, `sparkline`, `globe`, `nodemap`, `top-k`, `status-list`, and `histogram`.
+     * Chart Type. `line` refers to the Line Plot, `scatter` to the Point Plot, `stacked-area` to the Stacked Area plot, `table` to the Tabular View, `scatterplot-xy` to Scatter Plot, `markdown-widget` to the Markdown display, and `sparkline` to the Single Stat view. Valid options are`line`, `scatterplot`, `stacked-area`, `stacked-column`, `table`, `scatterplot-xy`, `markdown-widget`, `sparkline`, `globe`, `nodemap`, `top-k`, `status-list`, and `histogram`.
      */
     type: string;
     /**

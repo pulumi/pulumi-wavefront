@@ -30,7 +30,7 @@ class CloudIntegrationGcpArgs:
         :param pulumi.Input[str] project_id: The Google Cloud Platform (GCP) Project ID.
         :param pulumi.Input[str] service: A value denoting which cloud service this service integrates with.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] additional_tags: A list of point tag key-values to add to every point ingested using this integration.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] categories: A list of Google Cloud Platform (GCP) services.  Valid values are `APPENGINE`, 
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] categories: A list of Google Cloud Platform (GCP) services. Valid values are `APPENGINE`,
                `BIGQUERY`, `BIGTABLE`, `CLOUDFUNCTIONS`, `CLOUDIOT`, `CLOUDSQL`, `CLOUDTASKS`, `COMPUTE`, `CONTAINER`,
                `DATAFLOW`, `DATAPROC`, `DATASTORE`, `FIREBASEDATABASE`, `FIREBASEHOSTING`, `FIRESTORE`, `INTERCONNECT`,
                `LOADBALANCING`, `LOGGING`, `ML`, `MONITORING`, `PUBSUB`, `REDIS`, `ROUTER`, `SERVICERUNTIME`, `SPANNER`, `STORAGE`,
@@ -109,7 +109,7 @@ class CloudIntegrationGcpArgs:
     @pulumi.getter
     def categories(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        A list of Google Cloud Platform (GCP) services.  Valid values are `APPENGINE`, 
+        A list of Google Cloud Platform (GCP) services. Valid values are `APPENGINE`,
         `BIGQUERY`, `BIGTABLE`, `CLOUDFUNCTIONS`, `CLOUDIOT`, `CLOUDSQL`, `CLOUDTASKS`, `COMPUTE`, `CONTAINER`,
         `DATAFLOW`, `DATAPROC`, `DATASTORE`, `FIREBASEDATABASE`, `FIREBASEHOSTING`, `FIRESTORE`, `INTERCONNECT`,
         `LOADBALANCING`, `LOGGING`, `ML`, `MONITORING`, `PUBSUB`, `REDIS`, `ROUTER`, `SERVICERUNTIME`, `SPANNER`, `STORAGE`,
@@ -185,7 +185,7 @@ class _CloudIntegrationGcpState:
         """
         Input properties used for looking up and filtering CloudIntegrationGcp resources.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] additional_tags: A list of point tag key-values to add to every point ingested using this integration.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] categories: A list of Google Cloud Platform (GCP) services.  Valid values are `APPENGINE`, 
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] categories: A list of Google Cloud Platform (GCP) services. Valid values are `APPENGINE`,
                `BIGQUERY`, `BIGTABLE`, `CLOUDFUNCTIONS`, `CLOUDIOT`, `CLOUDSQL`, `CLOUDTASKS`, `COMPUTE`, `CONTAINER`,
                `DATAFLOW`, `DATAPROC`, `DATASTORE`, `FIREBASEDATABASE`, `FIREBASEHOSTING`, `FIRESTORE`, `INTERCONNECT`,
                `LOADBALANCING`, `LOGGING`, `ML`, `MONITORING`, `PUBSUB`, `REDIS`, `ROUTER`, `SERVICERUNTIME`, `SPANNER`, `STORAGE`,
@@ -234,7 +234,7 @@ class _CloudIntegrationGcpState:
     @pulumi.getter
     def categories(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        A list of Google Cloud Platform (GCP) services.  Valid values are `APPENGINE`, 
+        A list of Google Cloud Platform (GCP) services. Valid values are `APPENGINE`,
         `BIGQUERY`, `BIGTABLE`, `CLOUDFUNCTIONS`, `CLOUDIOT`, `CLOUDSQL`, `CLOUDTASKS`, `COMPUTE`, `CONTAINER`,
         `DATAFLOW`, `DATAPROC`, `DATASTORE`, `FIREBASEDATABASE`, `FIREBASEHOSTING`, `FIRESTORE`, `INTERCONNECT`,
         `LOADBALANCING`, `LOGGING`, `ML`, `MONITORING`, `PUBSUB`, `REDIS`, `ROUTER`, `SERVICERUNTIME`, `SPANNER`, `STORAGE`,
@@ -375,7 +375,7 @@ class CloudIntegrationGcp(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] additional_tags: A list of point tag key-values to add to every point ingested using this integration.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] categories: A list of Google Cloud Platform (GCP) services.  Valid values are `APPENGINE`, 
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] categories: A list of Google Cloud Platform (GCP) services. Valid values are `APPENGINE`,
                `BIGQUERY`, `BIGTABLE`, `CLOUDFUNCTIONS`, `CLOUDIOT`, `CLOUDSQL`, `CLOUDTASKS`, `COMPUTE`, `CONTAINER`,
                `DATAFLOW`, `DATAPROC`, `DATASTORE`, `FIREBASEDATABASE`, `FIREBASEHOSTING`, `FIRESTORE`, `INTERCONNECT`,
                `LOADBALANCING`, `LOGGING`, `ML`, `MONITORING`, `PUBSUB`, `REDIS`, `ROUTER`, `SERVICERUNTIME`, `SPANNER`, `STORAGE`,
@@ -497,7 +497,7 @@ class CloudIntegrationGcp(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] additional_tags: A list of point tag key-values to add to every point ingested using this integration.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] categories: A list of Google Cloud Platform (GCP) services.  Valid values are `APPENGINE`, 
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] categories: A list of Google Cloud Platform (GCP) services. Valid values are `APPENGINE`,
                `BIGQUERY`, `BIGTABLE`, `CLOUDFUNCTIONS`, `CLOUDIOT`, `CLOUDSQL`, `CLOUDTASKS`, `COMPUTE`, `CONTAINER`,
                `DATAFLOW`, `DATAPROC`, `DATASTORE`, `FIREBASEDATABASE`, `FIREBASEHOSTING`, `FIRESTORE`, `INTERCONNECT`,
                `LOADBALANCING`, `LOGGING`, `ML`, `MONITORING`, `PUBSUB`, `REDIS`, `ROUTER`, `SERVICERUNTIME`, `SPANNER`, `STORAGE`,
@@ -538,7 +538,7 @@ class CloudIntegrationGcp(pulumi.CustomResource):
     @pulumi.getter
     def categories(self) -> pulumi.Output[Optional[Sequence[str]]]:
         """
-        A list of Google Cloud Platform (GCP) services.  Valid values are `APPENGINE`, 
+        A list of Google Cloud Platform (GCP) services. Valid values are `APPENGINE`,
         `BIGQUERY`, `BIGTABLE`, `CLOUDFUNCTIONS`, `CLOUDIOT`, `CLOUDSQL`, `CLOUDTASKS`, `COMPUTE`, `CONTAINER`,
         `DATAFLOW`, `DATAPROC`, `DATASTORE`, `FIREBASEDATABASE`, `FIREBASEHOSTING`, `FIRESTORE`, `INTERCONNECT`,
         `LOADBALANCING`, `LOGGING`, `ML`, `MONITORING`, `PUBSUB`, `REDIS`, `ROUTER`, `SERVICERUNTIME`, `SPANNER`, `STORAGE`,

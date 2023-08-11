@@ -61,7 +61,7 @@ export class User extends pulumi.CustomResource {
      */
     public readonly email!: pulumi.Output<string>;
     /**
-     * List of permission to grant to this user.  Valid options are
+     * List of permission to grant to this user. Valid options are
      * `agentManagement`, `alertsManagement`, `dashboardManagement`, `embeddedCharts`, `eventsManagement`, `externalLinksManagement`,
      * `hostTagManagement`, `metricsManagement`, and `userManagement`.
      */
@@ -116,7 +116,7 @@ export interface UserState {
      */
     email?: pulumi.Input<string>;
     /**
-     * List of permission to grant to this user.  Valid options are
+     * List of permission to grant to this user. Valid options are
      * `agentManagement`, `alertsManagement`, `dashboardManagement`, `embeddedCharts`, `eventsManagement`, `externalLinksManagement`,
      * `hostTagManagement`, `metricsManagement`, and `userManagement`.
      */
@@ -140,7 +140,7 @@ export interface UserArgs {
      */
     email: pulumi.Input<string>;
     /**
-     * List of permission to grant to this user.  Valid options are
+     * List of permission to grant to this user. Valid options are
      * `agentManagement`, `alertsManagement`, `dashboardManagement`, `embeddedCharts`, `eventsManagement`, `externalLinksManagement`,
      * `hostTagManagement`, `metricsManagement`, and `userManagement`.
      */

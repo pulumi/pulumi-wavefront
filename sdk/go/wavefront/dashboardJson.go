@@ -8,11 +8,11 @@ import (
 	"reflect"
 
 	"errors"
-	"github.com/pulumi/pulumi-wavefront/sdk/v2/go/wavefront/internal"
+	"github.com/pulumi/pulumi-wavefront/sdk/v3/go/wavefront/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Provides a Wavefront Dashboard JSON resource.  This allows dashboards to be created, updated, and deleted.
+// Provides a Wavefront Dashboard JSON resource. This allows dashboards to be created, updated, and deleted.
 //
 // ## Example Usage
 //
@@ -21,7 +21,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-wavefront/sdk/v2/go/wavefront"
+//	"github.com/pulumi/pulumi-wavefront/sdk/v3/go/wavefront"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -30,6 +30,16 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := wavefront.NewDashboardJson(ctx, "testDashboardJson", &wavefront.DashboardJsonArgs{
 //				DashboardJson: pulumi.String(`  {
+//	    "acl": {
+//	      "canModify": [
+//	        "group-uuid",
+//	        "role-uuid"
+//	      ],
+//	      "canView": [
+//	        "group-uuid",
+//	        "role-uuid"
+//	      ]
+//	    },
 //	    "name": "Terraform Test Dashboard Json",
 //	    "description": "a",
 //	    "eventFilterType": "BYCHART",
@@ -151,7 +161,9 @@ import (
 //
 // ```
 //
-// **Note:** If there are dynamic variables in the Wavefront dashboard json, then these variables must be present in a separate file as mentioned in the section below.
+// *
+// *Note:
+// ** If there are dynamic variables in the Wavefront dashboard json, then these variables must be present in a separate file as mentioned in the section below.
 //
 // ## Import
 //
