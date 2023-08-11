@@ -16,9 +16,19 @@ public final class AlertTargetRouteArgs extends com.pulumi.resources.ResourceArg
 
     public static final AlertTargetRouteArgs Empty = new AlertTargetRouteArgs();
 
+    /**
+     * (Required) String that filters the route. Space delimited. Currently only allows a single key value pair.
+     * (e.g. `env prod`)
+     * 
+     */
     @Import(name="filter")
     private @Nullable Output<Map<String,String>> filter;
 
+    /**
+     * @return (Required) String that filters the route. Space delimited. Currently only allows a single key value pair.
+     * (e.g. `env prod`)
+     * 
+     */
     public Optional<Output<Map<String,String>>> filter() {
         return Optional.ofNullable(this.filter);
     }
@@ -38,9 +48,19 @@ public final class AlertTargetRouteArgs extends com.pulumi.resources.ResourceArg
         return this.method;
     }
 
+    /**
+     * (Required) The endpoint for the alert route. `EMAIL`: email address. `PAGERDUTY`: PagerDuty routing
+     * key. `WEBHOOK`: URL endpoint.
+     * 
+     */
     @Import(name="target", required=true)
     private Output<String> target;
 
+    /**
+     * @return (Required) The endpoint for the alert route. `EMAIL`: email address. `PAGERDUTY`: PagerDuty routing
+     * key. `WEBHOOK`: URL endpoint.
+     * 
+     */
     public Output<String> target() {
         return this.target;
     }
@@ -71,11 +91,25 @@ public final class AlertTargetRouteArgs extends com.pulumi.resources.ResourceArg
             $ = new AlertTargetRouteArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param filter (Required) String that filters the route. Space delimited. Currently only allows a single key value pair.
+         * (e.g. `env prod`)
+         * 
+         * @return builder
+         * 
+         */
         public Builder filter(@Nullable Output<Map<String,String>> filter) {
             $.filter = filter;
             return this;
         }
 
+        /**
+         * @param filter (Required) String that filters the route. Space delimited. Currently only allows a single key value pair.
+         * (e.g. `env prod`)
+         * 
+         * @return builder
+         * 
+         */
         public Builder filter(Map<String,String> filter) {
             return filter(Output.of(filter));
         }
@@ -101,11 +135,25 @@ public final class AlertTargetRouteArgs extends com.pulumi.resources.ResourceArg
             return method(Output.of(method));
         }
 
+        /**
+         * @param target (Required) The endpoint for the alert route. `EMAIL`: email address. `PAGERDUTY`: PagerDuty routing
+         * key. `WEBHOOK`: URL endpoint.
+         * 
+         * @return builder
+         * 
+         */
         public Builder target(Output<String> target) {
             $.target = target;
             return this;
         }
 
+        /**
+         * @param target (Required) The endpoint for the alert route. `EMAIL`: email address. `PAGERDUTY`: PagerDuty routing
+         * key. `WEBHOOK`: URL endpoint.
+         * 
+         * @return builder
+         * 
+         */
         public Builder target(String target) {
             return target(Output.of(target));
         }

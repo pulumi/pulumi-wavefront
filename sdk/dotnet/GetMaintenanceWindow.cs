@@ -122,7 +122,7 @@ namespace Pulumi.Wavefront
         /// </summary>
         public readonly string EventName;
         /// <summary>
-        /// If set to `true`, the source or host must be in `relevant_host_names` and must have tags matching the specification formed by `relevant_host_tags` and `relevant_host_tags_anded` in for this maintenance window to apply. 
+        /// If set to `true`, the source or host must be in `relevant_host_names` and must have tags matching the specification formed by `relevant_host_tags` and `relevant_host_tags_anded` in for this maintenance window to apply.
         /// If set to false, the source or host must either be in `relevant_host_names` or match `relevant_host_tags` and `relevant_host_tags_anded`. Default value is `false`.
         /// </summary>
         public readonly bool HostTagGroupHostNamesGroupAnded;

@@ -78,7 +78,7 @@ public final class ServiceAccountState extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * List of permission to grant to this service account.  Valid options are
+     * List of permission to grant to this service account. Valid options are
      * `agent_management`, `alerts_management`, `dashboard_management`, `embedded_charts`, `events_management`, `external_links_management`,
      * `host_tag_management`, `metrics_management`, and `user_management`.
      * 
@@ -87,7 +87,7 @@ public final class ServiceAccountState extends com.pulumi.resources.ResourceArgs
     private @Nullable Output<List<String>> permissions;
 
     /**
-     * @return List of permission to grant to this service account.  Valid options are
+     * @return List of permission to grant to this service account. Valid options are
      * `agent_management`, `alerts_management`, `dashboard_management`, `embedded_charts`, `events_management`, `external_links_management`,
      * `host_tag_management`, `metrics_management`, and `user_management`.
      * 
@@ -225,7 +225,7 @@ public final class ServiceAccountState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param permissions List of permission to grant to this service account.  Valid options are
+         * @param permissions List of permission to grant to this service account. Valid options are
          * `agent_management`, `alerts_management`, `dashboard_management`, `embedded_charts`, `events_management`, `external_links_management`,
          * `host_tag_management`, `metrics_management`, and `user_management`.
          * 
@@ -238,7 +238,7 @@ public final class ServiceAccountState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param permissions List of permission to grant to this service account.  Valid options are
+         * @param permissions List of permission to grant to this service account. Valid options are
          * `agent_management`, `alerts_management`, `dashboard_management`, `embedded_charts`, `events_management`, `external_links_management`,
          * `host_tag_management`, `metrics_management`, and `user_management`.
          * 
@@ -250,7 +250,7 @@ public final class ServiceAccountState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param permissions List of permission to grant to this service account.  Valid options are
+         * @param permissions List of permission to grant to this service account. Valid options are
          * `agent_management`, `alerts_management`, `dashboard_management`, `embedded_charts`, `events_management`, `external_links_management`,
          * `host_tag_management`, `metrics_management`, and `user_management`.
          * 

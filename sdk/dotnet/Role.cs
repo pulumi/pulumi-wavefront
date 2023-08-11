@@ -57,7 +57,7 @@ namespace Pulumi.Wavefront
         public Output<string> Name { get; private set; } = null!;
 
         /// <summary>
-        /// A list of permissions to assign to this role. Valid options are 
+        /// A list of permissions to assign to this role. Valid options are
         /// `agent_management`, `alerts_management`, `dashboard_management`, `embedded_charts`, `events_management`, `external_links_management`,
         /// `host_tag_management`, `metrics_management`, and `user_management`.
         /// </summary>
@@ -138,7 +138,7 @@ namespace Pulumi.Wavefront
         private InputList<string>? _permissions;
 
         /// <summary>
-        /// A list of permissions to assign to this role. Valid options are 
+        /// A list of permissions to assign to this role. Valid options are
         /// `agent_management`, `alerts_management`, `dashboard_management`, `embedded_charts`, `events_management`, `external_links_management`,
         /// `host_tag_management`, `metrics_management`, and `user_management`.
         /// </summary>
@@ -184,7 +184,7 @@ namespace Pulumi.Wavefront
         private InputList<string>? _permissions;
 
         /// <summary>
-        /// A list of permissions to assign to this role. Valid options are 
+        /// A list of permissions to assign to this role. Valid options are
         /// `agent_management`, `alerts_management`, `dashboard_management`, `embedded_charts`, `events_management`, `external_links_management`,
         /// `host_tag_management`, `metrics_management`, and `user_management`.
         /// </summary>

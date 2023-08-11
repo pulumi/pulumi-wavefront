@@ -36,7 +36,7 @@ public final class AlertState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The type of alert in Wavefront.  Either `CLASSIC` (default)
+     * The type of alert in Wavefront. Either `CLASSIC` (default)
      * or `THRESHOLD`.
      * 
      */
@@ -44,7 +44,7 @@ public final class AlertState extends com.pulumi.resources.ResourceArgs {
     private @Nullable Output<String> alertType;
 
     /**
-     * @return The type of alert in Wavefront.  Either `CLASSIC` (default)
+     * @return The type of alert in Wavefront. Either `CLASSIC` (default)
      * or `THRESHOLD`.
      * 
      */
@@ -120,7 +120,7 @@ public final class AlertState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * A second query whose results are displayed in the alert user
-     * interface instead of the condition query.  This field is often used to display a version
+     * interface instead of the condition query. This field is often used to display a version
      * of the condition query with Boolean operators removed so that numerical values are plotted.
      * 
      */
@@ -129,7 +129,7 @@ public final class AlertState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * @return A second query whose results are displayed in the alert user
-     * interface instead of the condition query.  This field is often used to display a version
+     * interface instead of the condition query. This field is often used to display a version
      * of the condition query with Boolean operators removed so that numerical values are plotted.
      * 
      */
@@ -203,7 +203,7 @@ public final class AlertState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * The number of consecutive minutes that a firing series matching the condition
-     * query must evaluate to &#34;false&#34; (zero value) before the alert resolves.  When unset, this defaults to
+     * query must evaluate to &#34;false&#34; (zero value) before the alert resolves. When unset, this defaults to
      * the same value as `minutes`.
      * 
      */
@@ -212,7 +212,7 @@ public final class AlertState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * @return The number of consecutive minutes that a firing series matching the condition
-     * query must evaluate to &#34;false&#34; (zero value) before the alert resolves.  When unset, this defaults to
+     * query must evaluate to &#34;false&#34; (zero value) before the alert resolves. When unset, this defaults to
      * the same value as `minutes`.
      * 
      */
@@ -347,7 +347,7 @@ public final class AlertState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param alertType The type of alert in Wavefront.  Either `CLASSIC` (default)
+         * @param alertType The type of alert in Wavefront. Either `CLASSIC` (default)
          * or `THRESHOLD`.
          * 
          * @return builder
@@ -359,7 +359,7 @@ public final class AlertState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param alertType The type of alert in Wavefront.  Either `CLASSIC` (default)
+         * @param alertType The type of alert in Wavefront. Either `CLASSIC` (default)
          * or `THRESHOLD`.
          * 
          * @return builder
@@ -481,7 +481,7 @@ public final class AlertState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param displayExpression A second query whose results are displayed in the alert user
-         * interface instead of the condition query.  This field is often used to display a version
+         * interface instead of the condition query. This field is often used to display a version
          * of the condition query with Boolean operators removed so that numerical values are plotted.
          * 
          * @return builder
@@ -494,7 +494,7 @@ public final class AlertState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param displayExpression A second query whose results are displayed in the alert user
-         * interface instead of the condition query.  This field is often used to display a version
+         * interface instead of the condition query. This field is often used to display a version
          * of the condition query with Boolean operators removed so that numerical values are plotted.
          * 
          * @return builder
@@ -594,7 +594,7 @@ public final class AlertState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param resolveAfterMinutes The number of consecutive minutes that a firing series matching the condition
-         * query must evaluate to &#34;false&#34; (zero value) before the alert resolves.  When unset, this defaults to
+         * query must evaluate to &#34;false&#34; (zero value) before the alert resolves. When unset, this defaults to
          * the same value as `minutes`.
          * 
          * @return builder
@@ -607,7 +607,7 @@ public final class AlertState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param resolveAfterMinutes The number of consecutive minutes that a firing series matching the condition
-         * query must evaluate to &#34;false&#34; (zero value) before the alert resolves.  When unset, this defaults to
+         * query must evaluate to &#34;false&#34; (zero value) before the alert resolves. When unset, this defaults to
          * the same value as `minutes`.
          * 
          * @return builder

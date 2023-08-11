@@ -20,14 +20,14 @@ public final class DashboardState extends com.pulumi.resources.ResourceArgs {
     public static final DashboardState Empty = new DashboardState();
 
     /**
-     * A list of users that have modify ACL access to the dashboard.
+     * A list of users/groups/roles that can modify the dashboard.
      * 
      */
     @Import(name="canModifies")
     private @Nullable Output<List<String>> canModifies;
 
     /**
-     * @return A list of users that have modify ACL access to the dashboard.
+     * @return A list of users/groups/roles that can modify the dashboard.
      * 
      */
     public Optional<Output<List<String>>> canModifies() {
@@ -35,14 +35,14 @@ public final class DashboardState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * A list of users that have view ACL access to the dashboard.
+     * A list of users/groups/roles that can view the dashboard.
      * 
      */
     @Import(name="canViews")
     private @Nullable Output<List<String>> canViews;
 
     /**
-     * @return A list of users that have view ACL access to the dashboard.
+     * @return A list of users/groups/roles that can view the dashboard.
      * 
      */
     public Optional<Output<List<String>>> canViews() {
@@ -225,7 +225,7 @@ public final class DashboardState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param canModifies A list of users that have modify ACL access to the dashboard.
+         * @param canModifies A list of users/groups/roles that can modify the dashboard.
          * 
          * @return builder
          * 
@@ -236,7 +236,7 @@ public final class DashboardState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param canModifies A list of users that have modify ACL access to the dashboard.
+         * @param canModifies A list of users/groups/roles that can modify the dashboard.
          * 
          * @return builder
          * 
@@ -246,7 +246,7 @@ public final class DashboardState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param canModifies A list of users that have modify ACL access to the dashboard.
+         * @param canModifies A list of users/groups/roles that can modify the dashboard.
          * 
          * @return builder
          * 
@@ -256,7 +256,7 @@ public final class DashboardState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param canViews A list of users that have view ACL access to the dashboard.
+         * @param canViews A list of users/groups/roles that can view the dashboard.
          * 
          * @return builder
          * 
@@ -267,7 +267,7 @@ public final class DashboardState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param canViews A list of users that have view ACL access to the dashboard.
+         * @param canViews A list of users/groups/roles that can view the dashboard.
          * 
          * @return builder
          * 
@@ -277,7 +277,7 @@ public final class DashboardState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param canViews A list of users that have view ACL access to the dashboard.
+         * @param canViews A list of users/groups/roles that can view the dashboard.
          * 
          * @return builder
          * 

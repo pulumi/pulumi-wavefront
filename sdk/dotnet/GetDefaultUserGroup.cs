@@ -12,7 +12,7 @@ namespace Pulumi.Wavefront
     public static class GetDefaultUserGroup
     {
         /// <summary>
-        /// Use this data source to get the Group ID of the `Everyone` group in Wavefront. 
+        /// Use this data source to get the Group ID of the `Everyone` group in Wavefront.
         /// 
         /// {{% examples %}}
         /// ## Example Usage

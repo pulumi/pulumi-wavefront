@@ -70,7 +70,7 @@ public class Event extends com.pulumi.resources.CustomResource {
      * The annotations associated with the event.
      * 
      */
-    @Export(name="annotations", type=Map.class, parameters={String.class, String.class})
+    @Export(name="annotations", refs={Map.class,String.class}, tree="[0,1,1]")
     private Output<Map<String,String>> annotations;
 
     /**
@@ -80,7 +80,7 @@ public class Event extends com.pulumi.resources.CustomResource {
     public Output<Map<String,String>> annotations() {
         return this.annotations;
     }
-    @Export(name="endtimeKey", type=Integer.class, parameters={})
+    @Export(name="endtimeKey", refs={Integer.class}, tree="[0]")
     private Output</* @Nullable */ Integer> endtimeKey;
 
     public Output<Optional<Integer>> endtimeKey() {
@@ -90,7 +90,7 @@ public class Event extends com.pulumi.resources.CustomResource {
      * The name of the event as it is displayed in Wavefront.
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
@@ -104,7 +104,7 @@ public class Event extends com.pulumi.resources.CustomResource {
      * The start time of the event in epoch milliseconds.
      * 
      */
-    @Export(name="startTime", type=Integer.class, parameters={})
+    @Export(name="startTime", refs={Integer.class}, tree="[0]")
     private Output</* @Nullable */ Integer> startTime;
 
     /**
@@ -118,7 +118,7 @@ public class Event extends com.pulumi.resources.CustomResource {
      * A set of tags to assign to this resource.
      * 
      */
-    @Export(name="tags", type=List.class, parameters={String.class})
+    @Export(name="tags", refs={List.class,String.class}, tree="[0,1]")
     private Output</* @Nullable */ List<String>> tags;
 
     /**

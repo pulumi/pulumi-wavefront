@@ -65,7 +65,7 @@ public class ExternalLink extends com.pulumi.resources.CustomResource {
      * Human-readable description for this link.
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
@@ -79,7 +79,7 @@ public class ExternalLink extends com.pulumi.resources.CustomResource {
      * Whether this is a &#34;Log Integration&#34; subType of external link.
      * 
      */
-    @Export(name="isLogIntegration", type=Boolean.class, parameters={})
+    @Export(name="isLogIntegration", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> isLogIntegration;
 
     /**
@@ -93,7 +93,7 @@ public class ExternalLink extends com.pulumi.resources.CustomResource {
      * Controls whether a link is displayed in the context menu of a highlighted series. If present, the metric name of the highlighted series must match this regular expression in order for the link to be displayed.
      * 
      */
-    @Export(name="metricFilterRegex", type=String.class, parameters={})
+    @Export(name="metricFilterRegex", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> metricFilterRegex;
 
     /**
@@ -107,7 +107,7 @@ public class ExternalLink extends com.pulumi.resources.CustomResource {
      * The name of the external link.
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
@@ -124,7 +124,7 @@ public class ExternalLink extends com.pulumi.resources.CustomResource {
      * keys in order for the link to be displayed.
      * 
      */
-    @Export(name="pointTagFilterRegexes", type=Map.class, parameters={String.class, String.class})
+    @Export(name="pointTagFilterRegexes", refs={Map.class,String.class}, tree="[0,1,1]")
     private Output</* @Nullable */ Map<String,String>> pointTagFilterRegexes;
 
     /**
@@ -141,7 +141,7 @@ public class ExternalLink extends com.pulumi.resources.CustomResource {
      * Controls whether a link is displayed in the context menu of a highlighted series. If present, the source name of the highlighted series must match this regular expression in order for the link to be displayed.
      * 
      */
-    @Export(name="sourceFilterRegex", type=String.class, parameters={})
+    @Export(name="sourceFilterRegex", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> sourceFilterRegex;
 
     /**
@@ -155,7 +155,7 @@ public class ExternalLink extends com.pulumi.resources.CustomResource {
      * The mustache template for this link. The template must expand to a full URL, including scheme, origin, etc.
      * 
      */
-    @Export(name="template", type=String.class, parameters={})
+    @Export(name="template", refs={String.class}, tree="[0]")
     private Output<String> template;
 
     /**

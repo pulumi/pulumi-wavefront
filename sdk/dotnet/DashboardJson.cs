@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Wavefront
 {
     /// <summary>
-    /// Provides a Wavefront Dashboard JSON resource.  This allows dashboards to be created, updated, and deleted.
+    /// Provides a Wavefront Dashboard JSON resource. This allows dashboards to be created, updated, and deleted.
     /// 
     /// ## Example Usage
     /// 
@@ -25,6 +25,16 @@ namespace Pulumi.Wavefront
     ///     var testDashboardJson = new Wavefront.DashboardJson("testDashboardJson", new()
     ///     {
     ///         JSON = @"  {
+    ///     ""acl"": {
+    ///       ""canModify"": [
+    ///         ""group-uuid"",
+    ///         ""role-uuid""
+    ///       ],
+    ///       ""canView"": [
+    ///         ""group-uuid"",
+    ///         ""role-uuid""
+    ///       ]
+    ///     },
     ///     ""name"": ""Terraform Test Dashboard Json"",
     ///     ""description"": ""a"",
     ///     ""eventFilterType"": ""BYCHART"",
@@ -140,7 +150,9 @@ namespace Pulumi.Wavefront
     /// });
     /// ```
     /// 
-    /// **Note:** If there are dynamic variables in the Wavefront dashboard json, then these variables must be present in a separate file as mentioned in the section below.
+    /// * 
+    /// *Note:
+    /// ** If there are dynamic variables in the Wavefront dashboard json, then these variables must be present in a separate file as mentioned in the section below.
     /// 
     /// ## Import
     /// 
@@ -154,7 +166,7 @@ namespace Pulumi.Wavefront
     public partial class DashboardJson : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// See the [Wavefront API Documentation](https://docs.wavefront.com/wavefront_api.html#api-documentation-wavefront-instance) 
+        /// See the [Wavefront API Documentation](https://docs.wavefront.com/wavefront_api.html#api-documentation-wavefront-instance)
         /// for instructions on how to get to your API documentation for more details.
         /// </summary>
         [Output("dashboardJson")]
@@ -207,7 +219,7 @@ namespace Pulumi.Wavefront
     public sealed class DashboardJsonArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// See the [Wavefront API Documentation](https://docs.wavefront.com/wavefront_api.html#api-documentation-wavefront-instance) 
+        /// See the [Wavefront API Documentation](https://docs.wavefront.com/wavefront_api.html#api-documentation-wavefront-instance)
         /// for instructions on how to get to your API documentation for more details.
         /// </summary>
         [Input("dashboardJson", required: true)]
@@ -222,7 +234,7 @@ namespace Pulumi.Wavefront
     public sealed class DashboardJsonState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// See the [Wavefront API Documentation](https://docs.wavefront.com/wavefront_api.html#api-documentation-wavefront-instance) 
+        /// See the [Wavefront API Documentation](https://docs.wavefront.com/wavefront_api.html#api-documentation-wavefront-instance)
         /// for instructions on how to get to your API documentation for more details.
         /// </summary>
         [Input("dashboardJson")]

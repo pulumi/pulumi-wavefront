@@ -14,7 +14,6 @@ namespace Pulumi.Wavefront
         /// <summary>
         /// Use this data source to get information about all Wavefront events.
         /// 
-        /// 
         /// {{% examples %}}
         /// ## Example Usage
         /// {{% example %}}
@@ -45,7 +44,6 @@ namespace Pulumi.Wavefront
 
         /// <summary>
         /// Use this data source to get information about all Wavefront events.
-        /// 
         /// 
         /// {{% examples %}}
         /// ## Example Usage

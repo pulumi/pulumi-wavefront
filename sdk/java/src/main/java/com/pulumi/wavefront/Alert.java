@@ -18,7 +18,7 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
- * Provides a Wavefront Alert resource.  This allows alerts to be created, updated, and deleted.
+ * Provides a Wavefront Alert resource. This allows alerts to be created, updated, and deleted.
  * 
  * ## Example Usage
  * ```java
@@ -74,7 +74,7 @@ public class Alert extends com.pulumi.resources.CustomResource {
      * Useful for linking runbooks, migrations, etc.
      * 
      */
-    @Export(name="additionalInformation", type=String.class, parameters={})
+    @Export(name="additionalInformation", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> additionalInformation;
 
     /**
@@ -86,15 +86,15 @@ public class Alert extends com.pulumi.resources.CustomResource {
         return Codegen.optional(this.additionalInformation);
     }
     /**
-     * The type of alert in Wavefront.  Either `CLASSIC` (default)
+     * The type of alert in Wavefront. Either `CLASSIC` (default)
      * or `THRESHOLD`.
      * 
      */
-    @Export(name="alertType", type=String.class, parameters={})
+    @Export(name="alertType", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> alertType;
 
     /**
-     * @return The type of alert in Wavefront.  Either `CLASSIC` (default)
+     * @return The type of alert in Wavefront. Either `CLASSIC` (default)
      * or `THRESHOLD`.
      * 
      */
@@ -105,7 +105,7 @@ public class Alert extends com.pulumi.resources.CustomResource {
      * A list of valid users or groups that can modify this resource on a tenant.
      * 
      */
-    @Export(name="canModifies", type=List.class, parameters={String.class})
+    @Export(name="canModifies", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> canModifies;
 
     /**
@@ -119,7 +119,7 @@ public class Alert extends com.pulumi.resources.CustomResource {
      * A list of valid users or groups that can view this resource on a tenant. Default is Empty list.
      * 
      */
-    @Export(name="canViews", type=List.class, parameters={String.class})
+    @Export(name="canViews", refs={List.class,String.class}, tree="[0,1]")
     private Output</* @Nullable */ List<String>> canViews;
 
     /**
@@ -135,7 +135,7 @@ public class Alert extends com.pulumi.resources.CustomResource {
      * to a non-zero value for a set number of consecutive minutes.
      * 
      */
-    @Export(name="condition", type=String.class, parameters={})
+    @Export(name="condition", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> condition;
 
     /**
@@ -152,7 +152,7 @@ public class Alert extends com.pulumi.resources.CustomResource {
      * for which this alert will trigger.
      * 
      */
-    @Export(name="conditions", type=Map.class, parameters={String.class, String.class})
+    @Export(name="conditions", refs={Map.class,String.class}, tree="[0,1,1]")
     private Output</* @Nullable */ Map<String,String>> conditions;
 
     /**
@@ -165,16 +165,16 @@ public class Alert extends com.pulumi.resources.CustomResource {
     }
     /**
      * A second query whose results are displayed in the alert user
-     * interface instead of the condition query.  This field is often used to display a version
+     * interface instead of the condition query. This field is often used to display a version
      * of the condition query with Boolean operators removed so that numerical values are plotted.
      * 
      */
-    @Export(name="displayExpression", type=String.class, parameters={})
+    @Export(name="displayExpression", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> displayExpression;
 
     /**
      * @return A second query whose results are displayed in the alert user
-     * interface instead of the condition query.  This field is often used to display a version
+     * interface instead of the condition query. This field is often used to display a version
      * of the condition query with Boolean operators removed so that numerical values are plotted.
      * 
      */
@@ -186,7 +186,7 @@ public class Alert extends com.pulumi.resources.CustomResource {
      * evaluate to &#34;true&#34; (non-zero value) before the alert fires.
      * 
      */
-    @Export(name="minutes", type=Integer.class, parameters={})
+    @Export(name="minutes", refs={Integer.class}, tree="[0]")
     private Output<Integer> minutes;
 
     /**
@@ -201,7 +201,7 @@ public class Alert extends com.pulumi.resources.CustomResource {
      * The name of the alert as it is displayed in Wavefront.
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
@@ -216,7 +216,7 @@ public class Alert extends com.pulumi.resources.CustomResource {
      * If absent or &lt;= 0, no re-triggering occurs.
      * 
      */
-    @Export(name="notificationResendFrequencyMinutes", type=Integer.class, parameters={})
+    @Export(name="notificationResendFrequencyMinutes", refs={Integer.class}, tree="[0]")
     private Output</* @Nullable */ Integer> notificationResendFrequencyMinutes;
 
     /**
@@ -231,7 +231,7 @@ public class Alert extends com.pulumi.resources.CustomResource {
      * The specified query is executed every `process_rate_minutes` minutes. Default value is 5 minutes.
      * 
      */
-    @Export(name="processRateMinutes", type=Integer.class, parameters={})
+    @Export(name="processRateMinutes", refs={Integer.class}, tree="[0]")
     private Output</* @Nullable */ Integer> processRateMinutes;
 
     /**
@@ -243,16 +243,16 @@ public class Alert extends com.pulumi.resources.CustomResource {
     }
     /**
      * The number of consecutive minutes that a firing series matching the condition
-     * query must evaluate to &#34;false&#34; (zero value) before the alert resolves.  When unset, this defaults to
+     * query must evaluate to &#34;false&#34; (zero value) before the alert resolves. When unset, this defaults to
      * the same value as `minutes`.
      * 
      */
-    @Export(name="resolveAfterMinutes", type=Integer.class, parameters={})
+    @Export(name="resolveAfterMinutes", refs={Integer.class}, tree="[0]")
     private Output</* @Nullable */ Integer> resolveAfterMinutes;
 
     /**
      * @return The number of consecutive minutes that a firing series matching the condition
-     * query must evaluate to &#34;false&#34; (zero value) before the alert resolves.  When unset, this defaults to
+     * query must evaluate to &#34;false&#34; (zero value) before the alert resolves. When unset, this defaults to
      * the same value as `minutes`.
      * 
      */
@@ -263,7 +263,7 @@ public class Alert extends com.pulumi.resources.CustomResource {
      * Severity of the alert, valid values are `INFO`, `SMOKE`, `WARN`, `SEVERE`.
      * 
      */
-    @Export(name="severity", type=String.class, parameters={})
+    @Export(name="severity", refs={String.class}, tree="[0]")
     private Output<String> severity;
 
     /**
@@ -277,7 +277,7 @@ public class Alert extends com.pulumi.resources.CustomResource {
      * A set of tags to assign to this resource.
      * 
      */
-    @Export(name="tags", type=List.class, parameters={String.class})
+    @Export(name="tags", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> tags;
 
     /**
@@ -293,7 +293,7 @@ public class Alert extends com.pulumi.resources.CustomResource {
      * Alert target format: ({email}|pd:{pd_key}|target:{alert-target-id}).
      * 
      */
-    @Export(name="target", type=String.class, parameters={})
+    @Export(name="target", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> target;
 
     /**
@@ -309,7 +309,7 @@ public class Alert extends com.pulumi.resources.CustomResource {
      * A string to string map of Targets for severity.
      * 
      */
-    @Export(name="thresholdTargets", type=Map.class, parameters={String.class, String.class})
+    @Export(name="thresholdTargets", refs={Map.class,String.class}, tree="[0,1,1]")
     private Output</* @Nullable */ Map<String,String>> thresholdTargets;
 
     /**

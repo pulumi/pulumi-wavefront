@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Wavefront
 {
     /// <summary>
-    /// Provides a Wavefront Alert resource.  This allows alerts to be created, updated, and deleted.
+    /// Provides a Wavefront Alert resource. This allows alerts to be created, updated, and deleted.
     /// 
     /// ## Example Usage
     /// 
@@ -59,7 +59,7 @@ namespace Pulumi.Wavefront
         public Output<string?> AdditionalInformation { get; private set; } = null!;
 
         /// <summary>
-        /// The type of alert in Wavefront.  Either `CLASSIC` (default) 
+        /// The type of alert in Wavefront. Either `CLASSIC` (default)
         /// or `THRESHOLD`.
         /// </summary>
         [Output("alertType")]
@@ -86,7 +86,7 @@ namespace Pulumi.Wavefront
         public Output<string?> Condition { get; private set; } = null!;
 
         /// <summary>
-        /// a string-&gt;string map of `severity` to `condition` 
+        /// a string-&gt;string map of `severity` to `condition`
         /// for which this alert will trigger.
         /// </summary>
         [Output("conditions")]
@@ -94,14 +94,14 @@ namespace Pulumi.Wavefront
 
         /// <summary>
         /// A second query whose results are displayed in the alert user
-        /// interface instead of the condition query.  This field is often used to display a version
+        /// interface instead of the condition query. This field is often used to display a version
         /// of the condition query with Boolean operators removed so that numerical values are plotted.
         /// </summary>
         [Output("displayExpression")]
         public Output<string?> DisplayExpression { get; private set; } = null!;
 
         /// <summary>
-        /// The number of consecutive minutes that a series matching the condition query must 
+        /// The number of consecutive minutes that a series matching the condition query must
         /// evaluate to "true" (non-zero value) before the alert fires.
         /// </summary>
         [Output("minutes")]
@@ -114,7 +114,7 @@ namespace Pulumi.Wavefront
         public Output<string> Name { get; private set; } = null!;
 
         /// <summary>
-        /// How often to re-trigger a continually failing alert. 
+        /// How often to re-trigger a continually failing alert.
         /// If absent or &lt;= 0, no re-triggering occurs.
         /// </summary>
         [Output("notificationResendFrequencyMinutes")]
@@ -128,7 +128,7 @@ namespace Pulumi.Wavefront
 
         /// <summary>
         /// The number of consecutive minutes that a firing series matching the condition
-        /// query must evaluate to "false" (zero value) before the alert resolves.  When unset, this defaults to
+        /// query must evaluate to "false" (zero value) before the alert resolves. When unset, this defaults to
         /// the same value as `minutes`.
         /// </summary>
         [Output("resolveAfterMinutes")]
@@ -147,7 +147,7 @@ namespace Pulumi.Wavefront
         public Output<ImmutableArray<string>> Tags { get; private set; } = null!;
 
         /// <summary>
-        /// A comma-separated list of the email address or integration endpoint 
+        /// A comma-separated list of the email address or integration endpoint
         /// (such as PagerDuty or webhook) to notify when the alert status changes. Multiple target types can be in the list.
         /// Alert target format: ({email}|pd:{pd_key}|target:{alert-target-id}).
         /// </summary>
@@ -214,7 +214,7 @@ namespace Pulumi.Wavefront
         public Input<string>? AdditionalInformation { get; set; }
 
         /// <summary>
-        /// The type of alert in Wavefront.  Either `CLASSIC` (default) 
+        /// The type of alert in Wavefront. Either `CLASSIC` (default)
         /// or `THRESHOLD`.
         /// </summary>
         [Input("alertType")]
@@ -256,7 +256,7 @@ namespace Pulumi.Wavefront
         private InputMap<string>? _conditions;
 
         /// <summary>
-        /// a string-&gt;string map of `severity` to `condition` 
+        /// a string-&gt;string map of `severity` to `condition`
         /// for which this alert will trigger.
         /// </summary>
         public InputMap<string> Conditions
@@ -267,14 +267,14 @@ namespace Pulumi.Wavefront
 
         /// <summary>
         /// A second query whose results are displayed in the alert user
-        /// interface instead of the condition query.  This field is often used to display a version
+        /// interface instead of the condition query. This field is often used to display a version
         /// of the condition query with Boolean operators removed so that numerical values are plotted.
         /// </summary>
         [Input("displayExpression")]
         public Input<string>? DisplayExpression { get; set; }
 
         /// <summary>
-        /// The number of consecutive minutes that a series matching the condition query must 
+        /// The number of consecutive minutes that a series matching the condition query must
         /// evaluate to "true" (non-zero value) before the alert fires.
         /// </summary>
         [Input("minutes", required: true)]
@@ -287,7 +287,7 @@ namespace Pulumi.Wavefront
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// How often to re-trigger a continually failing alert. 
+        /// How often to re-trigger a continually failing alert.
         /// If absent or &lt;= 0, no re-triggering occurs.
         /// </summary>
         [Input("notificationResendFrequencyMinutes")]
@@ -301,7 +301,7 @@ namespace Pulumi.Wavefront
 
         /// <summary>
         /// The number of consecutive minutes that a firing series matching the condition
-        /// query must evaluate to "false" (zero value) before the alert resolves.  When unset, this defaults to
+        /// query must evaluate to "false" (zero value) before the alert resolves. When unset, this defaults to
         /// the same value as `minutes`.
         /// </summary>
         [Input("resolveAfterMinutes")]
@@ -326,7 +326,7 @@ namespace Pulumi.Wavefront
         }
 
         /// <summary>
-        /// A comma-separated list of the email address or integration endpoint 
+        /// A comma-separated list of the email address or integration endpoint
         /// (such as PagerDuty or webhook) to notify when the alert status changes. Multiple target types can be in the list.
         /// Alert target format: ({email}|pd:{pd_key}|target:{alert-target-id}).
         /// </summary>
@@ -361,7 +361,7 @@ namespace Pulumi.Wavefront
         public Input<string>? AdditionalInformation { get; set; }
 
         /// <summary>
-        /// The type of alert in Wavefront.  Either `CLASSIC` (default) 
+        /// The type of alert in Wavefront. Either `CLASSIC` (default)
         /// or `THRESHOLD`.
         /// </summary>
         [Input("alertType")]
@@ -403,7 +403,7 @@ namespace Pulumi.Wavefront
         private InputMap<string>? _conditions;
 
         /// <summary>
-        /// a string-&gt;string map of `severity` to `condition` 
+        /// a string-&gt;string map of `severity` to `condition`
         /// for which this alert will trigger.
         /// </summary>
         public InputMap<string> Conditions
@@ -414,14 +414,14 @@ namespace Pulumi.Wavefront
 
         /// <summary>
         /// A second query whose results are displayed in the alert user
-        /// interface instead of the condition query.  This field is often used to display a version
+        /// interface instead of the condition query. This field is often used to display a version
         /// of the condition query with Boolean operators removed so that numerical values are plotted.
         /// </summary>
         [Input("displayExpression")]
         public Input<string>? DisplayExpression { get; set; }
 
         /// <summary>
-        /// The number of consecutive minutes that a series matching the condition query must 
+        /// The number of consecutive minutes that a series matching the condition query must
         /// evaluate to "true" (non-zero value) before the alert fires.
         /// </summary>
         [Input("minutes")]
@@ -434,7 +434,7 @@ namespace Pulumi.Wavefront
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// How often to re-trigger a continually failing alert. 
+        /// How often to re-trigger a continually failing alert.
         /// If absent or &lt;= 0, no re-triggering occurs.
         /// </summary>
         [Input("notificationResendFrequencyMinutes")]
@@ -448,7 +448,7 @@ namespace Pulumi.Wavefront
 
         /// <summary>
         /// The number of consecutive minutes that a firing series matching the condition
-        /// query must evaluate to "false" (zero value) before the alert resolves.  When unset, this defaults to
+        /// query must evaluate to "false" (zero value) before the alert resolves. When unset, this defaults to
         /// the same value as `minutes`.
         /// </summary>
         [Input("resolveAfterMinutes")]
@@ -473,7 +473,7 @@ namespace Pulumi.Wavefront
         }
 
         /// <summary>
-        /// A comma-separated list of the email address or integration endpoint 
+        /// A comma-separated list of the email address or integration endpoint
         /// (such as PagerDuty or webhook) to notify when the alert status changes. Multiple target types can be in the list.
         /// Alert target format: ({email}|pd:{pd_key}|target:{alert-target-id}).
         /// </summary>

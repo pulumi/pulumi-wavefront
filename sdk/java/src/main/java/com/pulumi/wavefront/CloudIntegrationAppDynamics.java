@@ -69,7 +69,7 @@ public class CloudIntegrationAppDynamics extends com.pulumi.resources.CustomReso
      * A list of point tag key-values to add to every point ingested using this integration.
      * 
      */
-    @Export(name="additionalTags", type=Map.class, parameters={String.class, String.class})
+    @Export(name="additionalTags", refs={Map.class,String.class}, tree="[0,1,1]")
     private Output</* @Nullable */ Map<String,String>> additionalTags;
 
     /**
@@ -84,7 +84,7 @@ public class CloudIntegrationAppDynamics extends com.pulumi.resources.CustomReso
      * in order to be ingested.
      * 
      */
-    @Export(name="appFilterRegexes", type=List.class, parameters={String.class})
+    @Export(name="appFilterRegexes", refs={List.class,String.class}, tree="[0,1]")
     private Output</* @Nullable */ List<String>> appFilterRegexes;
 
     /**
@@ -99,7 +99,7 @@ public class CloudIntegrationAppDynamics extends com.pulumi.resources.CustomReso
      * Name of the SaaS controller.
      * 
      */
-    @Export(name="controllerName", type=String.class, parameters={})
+    @Export(name="controllerName", refs={String.class}, tree="[0]")
     private Output<String> controllerName;
 
     /**
@@ -113,7 +113,7 @@ public class CloudIntegrationAppDynamics extends com.pulumi.resources.CustomReso
      * Boolean flag to control Application Infrastructure metric ingestion.
      * 
      */
-    @Export(name="enableAppInfraMetrics", type=Boolean.class, parameters={})
+    @Export(name="enableAppInfraMetrics", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> enableAppInfraMetrics;
 
     /**
@@ -127,7 +127,7 @@ public class CloudIntegrationAppDynamics extends com.pulumi.resources.CustomReso
      * Boolean flag to control Backend metric ingestion.
      * 
      */
-    @Export(name="enableBackendMetrics", type=Boolean.class, parameters={})
+    @Export(name="enableBackendMetrics", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> enableBackendMetrics;
 
     /**
@@ -141,7 +141,7 @@ public class CloudIntegrationAppDynamics extends com.pulumi.resources.CustomReso
      * Boolean flag to control Business Transaction metric ingestion.
      * 
      */
-    @Export(name="enableBusinessTrxMetrics", type=Boolean.class, parameters={})
+    @Export(name="enableBusinessTrxMetrics", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> enableBusinessTrxMetrics;
 
     /**
@@ -155,7 +155,7 @@ public class CloudIntegrationAppDynamics extends com.pulumi.resources.CustomReso
      * Boolean flag to control Error metric ingestion.
      * 
      */
-    @Export(name="enableErrorMetrics", type=Boolean.class, parameters={})
+    @Export(name="enableErrorMetrics", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> enableErrorMetrics;
 
     /**
@@ -169,7 +169,7 @@ public class CloudIntegrationAppDynamics extends com.pulumi.resources.CustomReso
      * Boolean flag to control Individual Node metric ingestion.
      * 
      */
-    @Export(name="enableIndividualNodeMetrics", type=Boolean.class, parameters={})
+    @Export(name="enableIndividualNodeMetrics", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> enableIndividualNodeMetrics;
 
     /**
@@ -183,7 +183,7 @@ public class CloudIntegrationAppDynamics extends com.pulumi.resources.CustomReso
      * Boolean flag to control Overall Performance metric ingestion.
      * 
      */
-    @Export(name="enableOverallPerfMetrics", type=Boolean.class, parameters={})
+    @Export(name="enableOverallPerfMetrics", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> enableOverallPerfMetrics;
 
     /**
@@ -198,7 +198,7 @@ public class CloudIntegrationAppDynamics extends com.pulumi.resources.CustomReso
      * by default it is `true`.
      * 
      */
-    @Export(name="enableRollup", type=Boolean.class, parameters={})
+    @Export(name="enableRollup", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> enableRollup;
 
     /**
@@ -213,7 +213,7 @@ public class CloudIntegrationAppDynamics extends com.pulumi.resources.CustomReso
      * Boolean flag to control Service End point metric ingestion.
      * 
      */
-    @Export(name="enableServiceEndpointMetrics", type=Boolean.class, parameters={})
+    @Export(name="enableServiceEndpointMetrics", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> enableServiceEndpointMetrics;
 
     /**
@@ -227,7 +227,7 @@ public class CloudIntegrationAppDynamics extends com.pulumi.resources.CustomReso
      * Password for AppDynamics user.
      * 
      */
-    @Export(name="encryptedPassword", type=String.class, parameters={})
+    @Export(name="encryptedPassword", refs={String.class}, tree="[0]")
     private Output<String> encryptedPassword;
 
     /**
@@ -241,7 +241,7 @@ public class CloudIntegrationAppDynamics extends com.pulumi.resources.CustomReso
      * Forces this resource to save, even if errors are present.
      * 
      */
-    @Export(name="forceSave", type=Boolean.class, parameters={})
+    @Export(name="forceSave", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> forceSave;
 
     /**
@@ -255,7 +255,7 @@ public class CloudIntegrationAppDynamics extends com.pulumi.resources.CustomReso
      * The human-readable name of this integration.
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
@@ -269,7 +269,7 @@ public class CloudIntegrationAppDynamics extends com.pulumi.resources.CustomReso
      * A value denoting which cloud service this service integrates with.
      * 
      */
-    @Export(name="service", type=String.class, parameters={})
+    @Export(name="service", refs={String.class}, tree="[0]")
     private Output<String> service;
 
     /**
@@ -283,7 +283,7 @@ public class CloudIntegrationAppDynamics extends com.pulumi.resources.CustomReso
      * How often, in minutes, to refresh the service.
      * 
      */
-    @Export(name="serviceRefreshRateInMinutes", type=Integer.class, parameters={})
+    @Export(name="serviceRefreshRateInMinutes", refs={Integer.class}, tree="[0]")
     private Output</* @Nullable */ Integer> serviceRefreshRateInMinutes;
 
     /**
@@ -297,7 +297,7 @@ public class CloudIntegrationAppDynamics extends com.pulumi.resources.CustomReso
      * Username is a combination of userName and the account name.
      * 
      */
-    @Export(name="userName", type=String.class, parameters={})
+    @Export(name="userName", refs={String.class}, tree="[0]")
     private Output<String> userName;
 
     /**

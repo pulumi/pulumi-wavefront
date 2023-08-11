@@ -65,7 +65,7 @@ public class ServiceAccount extends com.pulumi.resources.CustomResource {
      * Whether or not the service account is active.
      * 
      */
-    @Export(name="active", type=Boolean.class, parameters={})
+    @Export(name="active", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> active;
 
     /**
@@ -79,7 +79,7 @@ public class ServiceAccount extends com.pulumi.resources.CustomResource {
      * The description of the service account.
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> description;
 
     /**
@@ -93,7 +93,7 @@ public class ServiceAccount extends com.pulumi.resources.CustomResource {
      * The unique identifier of the service account to create. Must have the prefix `sa::`.
      * 
      */
-    @Export(name="identifier", type=String.class, parameters={})
+    @Export(name="identifier", refs={String.class}, tree="[0]")
     private Output<String> identifier;
 
     /**
@@ -107,7 +107,7 @@ public class ServiceAccount extends com.pulumi.resources.CustomResource {
      * ID of ingestion policy.
      * 
      */
-    @Export(name="ingestionPolicy", type=String.class, parameters={})
+    @Export(name="ingestionPolicy", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> ingestionPolicy;
 
     /**
@@ -118,16 +118,16 @@ public class ServiceAccount extends com.pulumi.resources.CustomResource {
         return Codegen.optional(this.ingestionPolicy);
     }
     /**
-     * List of permission to grant to this service account.  Valid options are
+     * List of permission to grant to this service account. Valid options are
      * `agent_management`, `alerts_management`, `dashboard_management`, `embedded_charts`, `events_management`, `external_links_management`,
      * `host_tag_management`, `metrics_management`, and `user_management`.
      * 
      */
-    @Export(name="permissions", type=List.class, parameters={String.class})
+    @Export(name="permissions", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> permissions;
 
     /**
-     * @return List of permission to grant to this service account.  Valid options are
+     * @return List of permission to grant to this service account. Valid options are
      * `agent_management`, `alerts_management`, `dashboard_management`, `embedded_charts`, `events_management`, `external_links_management`,
      * `host_tag_management`, `metrics_management`, and `user_management`.
      * 
@@ -139,7 +139,7 @@ public class ServiceAccount extends com.pulumi.resources.CustomResource {
      * List of user groups for this service account.
      * 
      */
-    @Export(name="userGroups", type=List.class, parameters={String.class})
+    @Export(name="userGroups", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> userGroups;
 
     /**

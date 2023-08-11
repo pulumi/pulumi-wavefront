@@ -11,15 +11,30 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class AlertTargetRoute {
+    /**
+     * @return (Required) String that filters the route. Space delimited. Currently only allows a single key value pair.
+     * (e.g. `env prod`)
+     * 
+     */
     private @Nullable Map<String,String> filter;
     /**
      * @return The notification method used for notification target. One of `WEBHOOK`, `EMAIL`, `PAGERDUTY`.
      * 
      */
     private String method;
+    /**
+     * @return (Required) The endpoint for the alert route. `EMAIL`: email address. `PAGERDUTY`: PagerDuty routing
+     * key. `WEBHOOK`: URL endpoint.
+     * 
+     */
     private String target;
 
     private AlertTargetRoute() {}
+    /**
+     * @return (Required) String that filters the route. Space delimited. Currently only allows a single key value pair.
+     * (e.g. `env prod`)
+     * 
+     */
     public Map<String,String> filter() {
         return this.filter == null ? Map.of() : this.filter;
     }
@@ -30,6 +45,11 @@ public final class AlertTargetRoute {
     public String method() {
         return this.method;
     }
+    /**
+     * @return (Required) The endpoint for the alert route. `EMAIL`: email address. `PAGERDUTY`: PagerDuty routing
+     * key. `WEBHOOK`: URL endpoint.
+     * 
+     */
     public String target() {
         return this.target;
     }

@@ -106,7 +106,7 @@ public class MetricsPolicy extends com.pulumi.resources.CustomResource {
      * The customer the user is associated with.
      * 
      */
-    @Export(name="customer", type=String.class, parameters={})
+    @Export(name="customer", refs={String.class}, tree="[0]")
     private Output<String> customer;
 
     /**
@@ -120,7 +120,7 @@ public class MetricsPolicy extends com.pulumi.resources.CustomResource {
      * List of Metrics Policies, must have at least one entry.
      * 
      */
-    @Export(name="policyRules", type=List.class, parameters={MetricsPolicyPolicyRule.class})
+    @Export(name="policyRules", refs={List.class,MetricsPolicyPolicyRule.class}, tree="[0,1]")
     private Output<List<MetricsPolicyPolicyRule>> policyRules;
 
     /**
@@ -134,7 +134,7 @@ public class MetricsPolicy extends com.pulumi.resources.CustomResource {
      * When the policy was applied in epoch_millis.
      * 
      */
-    @Export(name="updatedEpochMillis", type=Integer.class, parameters={})
+    @Export(name="updatedEpochMillis", refs={Integer.class}, tree="[0]")
     private Output<Integer> updatedEpochMillis;
 
     /**
@@ -148,7 +148,7 @@ public class MetricsPolicy extends com.pulumi.resources.CustomResource {
      * The account_id who applied the current policy.
      * 
      */
-    @Export(name="updaterId", type=String.class, parameters={})
+    @Export(name="updaterId", refs={String.class}, tree="[0]")
     private Output<String> updaterId;
 
     /**

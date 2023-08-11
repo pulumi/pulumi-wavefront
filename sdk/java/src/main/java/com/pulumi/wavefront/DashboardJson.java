@@ -14,7 +14,7 @@ import java.lang.String;
 import javax.annotation.Nullable;
 
 /**
- * Provides a Wavefront Dashboard JSON resource.  This allows dashboards to be created, updated, and deleted.
+ * Provides a Wavefront Dashboard JSON resource. This allows dashboards to be created, updated, and deleted.
  * 
  * ## Example Usage
  * ```java
@@ -41,6 +41,16 @@ import javax.annotation.Nullable;
  *         var testDashboardJson = new DashboardJson(&#34;testDashboardJson&#34;, DashboardJsonArgs.builder()        
  *             .dashboardJson(&#34;&#34;&#34;
  *   {
+ *     &#34;acl&#34;: {
+ *       &#34;canModify&#34;: [
+ *         &#34;group-uuid&#34;,
+ *         &#34;role-uuid&#34;
+ *       ],
+ *       &#34;canView&#34;: [
+ *         &#34;group-uuid&#34;,
+ *         &#34;role-uuid&#34;
+ *       ]
+ *     },
  *     &#34;name&#34;: &#34;Terraform Test Dashboard Json&#34;,
  *     &#34;description&#34;: &#34;a&#34;,
  *     &#34;eventFilterType&#34;: &#34;BYCHART&#34;,
@@ -157,7 +167,9 @@ import javax.annotation.Nullable;
  * }
  * ```
  * 
- * **Note:** If there are dynamic variables in the Wavefront dashboard json, then these variables must be present in a separate file as mentioned in the section below.
+ * * 
+ * *Note:
+ * ** If there are dynamic variables in the Wavefront dashboard json, then these variables must be present in a separate file as mentioned in the section below.
  * 
  * ## Import
  * 
@@ -175,7 +187,7 @@ public class DashboardJson extends com.pulumi.resources.CustomResource {
      * for instructions on how to get to your API documentation for more details.
      * 
      */
-    @Export(name="dashboardJson", type=String.class, parameters={})
+    @Export(name="dashboardJson", refs={String.class}, tree="[0]")
     private Output<String> dashboardJson;
 
     /**

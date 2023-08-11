@@ -51,7 +51,7 @@ namespace Pulumi.Wavefront
         public Output<ImmutableDictionary<string, string>?> AdditionalTags { get; private set; } = null!;
 
         /// <summary>
-        /// List of regular expressions that an application name must match (case-insensitively) 
+        /// List of regular expressions that an application name must match (case-insensitively)
         /// in order to be ingested.
         /// </summary>
         [Output("appFilterRegexes")]
@@ -100,7 +100,7 @@ namespace Pulumi.Wavefront
         public Output<bool?> EnableOverallPerfMetrics { get; private set; } = null!;
 
         /// <summary>
-        /// Set this to `false` to get separate results for all values within the time range, 
+        /// Set this to `false` to get separate results for all values within the time range,
         /// by default it is `true`.
         /// </summary>
         [Output("enableRollup")]
@@ -214,7 +214,7 @@ namespace Pulumi.Wavefront
         private InputList<string>? _appFilterRegexes;
 
         /// <summary>
-        /// List of regular expressions that an application name must match (case-insensitively) 
+        /// List of regular expressions that an application name must match (case-insensitively)
         /// in order to be ingested.
         /// </summary>
         public InputList<string> AppFilterRegexes
@@ -266,7 +266,7 @@ namespace Pulumi.Wavefront
         public Input<bool>? EnableOverallPerfMetrics { get; set; }
 
         /// <summary>
-        /// Set this to `false` to get separate results for all values within the time range, 
+        /// Set this to `false` to get separate results for all values within the time range,
         /// by default it is `true`.
         /// </summary>
         [Input("enableRollup")]
@@ -348,7 +348,7 @@ namespace Pulumi.Wavefront
         private InputList<string>? _appFilterRegexes;
 
         /// <summary>
-        /// List of regular expressions that an application name must match (case-insensitively) 
+        /// List of regular expressions that an application name must match (case-insensitively)
         /// in order to be ingested.
         /// </summary>
         public InputList<string> AppFilterRegexes
@@ -400,7 +400,7 @@ namespace Pulumi.Wavefront
         public Input<bool>? EnableOverallPerfMetrics { get; set; }
 
         /// <summary>
-        /// Set this to `false` to get separate results for all values within the time range, 
+        /// Set this to `false` to get separate results for all values within the time range,
         /// by default it is `true`.
         /// </summary>
         [Input("enableRollup")]

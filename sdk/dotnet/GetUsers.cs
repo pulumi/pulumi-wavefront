@@ -12,9 +12,7 @@ namespace Pulumi.Wavefront
     public static class GetUsers
     {
         /// <summary>
-        /// Use this data source to get all users in Wavefront. 
-        /// 
-        /// 
+        /// Use this data source to get all users in Wavefront.
         /// 
         /// {{% examples %}}
         /// ## Example Usage

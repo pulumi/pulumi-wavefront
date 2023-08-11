@@ -72,7 +72,7 @@ public class CloudIntegrationCloudWatch extends com.pulumi.resources.CustomResou
      * A list of point tag key-values to add to every point ingested using this integration.
      * 
      */
-    @Export(name="additionalTags", type=Map.class, parameters={String.class, String.class})
+    @Export(name="additionalTags", refs={Map.class,String.class}, tree="[0,1,1]")
     private Output</* @Nullable */ Map<String,String>> additionalTags;
 
     /**
@@ -86,7 +86,7 @@ public class CloudIntegrationCloudWatch extends com.pulumi.resources.CustomResou
      * The Role ARN that the customer has created in AWS IAM to allow access to Wavefront.
      * 
      */
-    @Export(name="externalId", type=String.class, parameters={})
+    @Export(name="externalId", refs={String.class}, tree="[0]")
     private Output<String> externalId;
 
     /**
@@ -100,7 +100,7 @@ public class CloudIntegrationCloudWatch extends com.pulumi.resources.CustomResou
      * Forces this resource to save, even if errors are present.
      * 
      */
-    @Export(name="forceSave", type=Boolean.class, parameters={})
+    @Export(name="forceSave", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> forceSave;
 
     /**
@@ -116,7 +116,7 @@ public class CloudIntegrationCloudWatch extends com.pulumi.resources.CustomResou
      * Multiple entries are OR&#39;ed.
      * 
      */
-    @Export(name="instanceSelectionTags", type=Map.class, parameters={String.class, String.class})
+    @Export(name="instanceSelectionTags", refs={Map.class,String.class}, tree="[0,1,1]")
     private Output</* @Nullable */ Map<String,String>> instanceSelectionTags;
 
     /**
@@ -132,7 +132,7 @@ public class CloudIntegrationCloudWatch extends com.pulumi.resources.CustomResou
      * A regular expression that a CloudWatch metric name must match (case-insensitively) in order to be ingested.
      * 
      */
-    @Export(name="metricFilterRegex", type=String.class, parameters={})
+    @Export(name="metricFilterRegex", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> metricFilterRegex;
 
     /**
@@ -146,7 +146,7 @@ public class CloudIntegrationCloudWatch extends com.pulumi.resources.CustomResou
      * The human-readable name of this integration.
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
@@ -160,7 +160,7 @@ public class CloudIntegrationCloudWatch extends com.pulumi.resources.CustomResou
      * A list of namespaces that limit what we query from CloudWatch.
      * 
      */
-    @Export(name="namespaces", type=List.class, parameters={String.class})
+    @Export(name="namespaces", refs={List.class,String.class}, tree="[0,1]")
     private Output</* @Nullable */ List<String>> namespaces;
 
     /**
@@ -175,7 +175,7 @@ public class CloudIntegrationCloudWatch extends com.pulumi.resources.CustomResou
      * in order to be ingested.
      * 
      */
-    @Export(name="pointTagFilterRegex", type=String.class, parameters={})
+    @Export(name="pointTagFilterRegex", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> pointTagFilterRegex;
 
     /**
@@ -190,7 +190,7 @@ public class CloudIntegrationCloudWatch extends com.pulumi.resources.CustomResou
      * The external ID corresponding to the Role ARN.
      * 
      */
-    @Export(name="roleArn", type=String.class, parameters={})
+    @Export(name="roleArn", refs={String.class}, tree="[0]")
     private Output<String> roleArn;
 
     /**
@@ -204,7 +204,7 @@ public class CloudIntegrationCloudWatch extends com.pulumi.resources.CustomResou
      * A value denoting which cloud service this service integrates with.
      * 
      */
-    @Export(name="service", type=String.class, parameters={})
+    @Export(name="service", refs={String.class}, tree="[0]")
     private Output<String> service;
 
     /**
@@ -218,7 +218,7 @@ public class CloudIntegrationCloudWatch extends com.pulumi.resources.CustomResou
      * How often, in minutes, to refresh the service.
      * 
      */
-    @Export(name="serviceRefreshRateInMinutes", type=Integer.class, parameters={})
+    @Export(name="serviceRefreshRateInMinutes", refs={Integer.class}, tree="[0]")
     private Output</* @Nullable */ Integer> serviceRefreshRateInMinutes;
 
     /**
@@ -234,7 +234,7 @@ public class CloudIntegrationCloudWatch extends com.pulumi.resources.CustomResou
      * Multiple entries are OR&#39;ed.
      * 
      */
-    @Export(name="volumeSelectionTags", type=Map.class, parameters={String.class, String.class})
+    @Export(name="volumeSelectionTags", refs={Map.class,String.class}, tree="[0,1,1]")
     private Output</* @Nullable */ Map<String,String>> volumeSelectionTags;
 
     /**

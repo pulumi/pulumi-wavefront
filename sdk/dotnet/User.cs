@@ -54,7 +54,7 @@ namespace Pulumi.Wavefront
         public Output<string> Email { get; private set; } = null!;
 
         /// <summary>
-        /// List of permission to grant to this user.  Valid options are
+        /// List of permission to grant to this user. Valid options are
         /// `agent_management`, `alerts_management`, `dashboard_management`, `embedded_charts`, `events_management`, `external_links_management`,
         /// `host_tag_management`, `metrics_management`, and `user_management`.
         /// </summary>
@@ -129,7 +129,7 @@ namespace Pulumi.Wavefront
         private InputList<string>? _permissions;
 
         /// <summary>
-        /// List of permission to grant to this user.  Valid options are
+        /// List of permission to grant to this user. Valid options are
         /// `agent_management`, `alerts_management`, `dashboard_management`, `embedded_charts`, `events_management`, `external_links_management`,
         /// `host_tag_management`, `metrics_management`, and `user_management`.
         /// </summary>
@@ -175,7 +175,7 @@ namespace Pulumi.Wavefront
         private InputList<string>? _permissions;
 
         /// <summary>
-        /// List of permission to grant to this user.  Valid options are
+        /// List of permission to grant to this user. Valid options are
         /// `agent_management`, `alerts_management`, `dashboard_management`, `embedded_charts`, `events_management`, `external_links_management`,
         /// `host_tag_management`, `metrics_management`, and `user_management`.
         /// </summary>

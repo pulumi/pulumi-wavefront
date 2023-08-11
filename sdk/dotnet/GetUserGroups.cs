@@ -12,7 +12,7 @@ namespace Pulumi.Wavefront
     public static class GetUserGroups
     {
         /// <summary>
-        /// Use this data source to get all User Groups in Wavefront. 
+        /// Use this data source to get all User Groups in Wavefront.
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -41,7 +41,7 @@ namespace Pulumi.Wavefront
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetUserGroupsResult>("wavefront:index/getUserGroups:getUserGroups", args ?? new GetUserGroupsArgs(), options.WithDefaults());
 
         /// <summary>
-        /// Use this data source to get all User Groups in Wavefront. 
+        /// Use this data source to get all User Groups in Wavefront.
         /// 
         /// {{% examples %}}
         /// ## Example Usage
