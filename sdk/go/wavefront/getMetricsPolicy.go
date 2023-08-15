@@ -4,7 +4,7 @@
 package wavefront
 
 import (
-	"github.com/pulumi/pulumi-wavefront/sdk/v2/go/wavefront/internal"
+	"github.com/pulumi/pulumi-wavefront/sdk/v3/go/wavefront/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 

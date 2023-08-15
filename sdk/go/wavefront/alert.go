@@ -8,11 +8,11 @@ import (
 	"reflect"
 
 	"errors"
-	"github.com/pulumi/pulumi-wavefront/sdk/v2/go/wavefront/internal"
+	"github.com/pulumi/pulumi-wavefront/sdk/v3/go/wavefront/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Provides a Wavefront Alert resource.  This allows alerts to be created, updated, and deleted.
+// Provides a Wavefront Alert resource. This allows alerts to be created, updated, and deleted.
 //
 // ## Example Usage
 //
@@ -21,7 +21,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-wavefront/sdk/v2/go/wavefront"
+//	"github.com/pulumi/pulumi-wavefront/sdk/v3/go/wavefront"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -64,7 +64,7 @@ type Alert struct {
 	// User-supplied additional explanatory information for this alert.
 	// Useful for linking runbooks, migrations, etc.
 	AdditionalInformation pulumi.StringPtrOutput `pulumi:"additionalInformation"`
-	// The type of alert in Wavefront.  Either `CLASSIC` (default)
+	// The type of alert in Wavefront. Either `CLASSIC` (default)
 	// or `THRESHOLD`.
 	AlertType pulumi.StringPtrOutput `pulumi:"alertType"`
 	// A list of valid users or groups that can modify this resource on a tenant.
@@ -79,7 +79,7 @@ type Alert struct {
 	// for which this alert will trigger.
 	Conditions pulumi.StringMapOutput `pulumi:"conditions"`
 	// A second query whose results are displayed in the alert user
-	// interface instead of the condition query.  This field is often used to display a version
+	// interface instead of the condition query. This field is often used to display a version
 	// of the condition query with Boolean operators removed so that numerical values are plotted.
 	DisplayExpression pulumi.StringPtrOutput `pulumi:"displayExpression"`
 	// The number of consecutive minutes that a series matching the condition query must
@@ -93,7 +93,7 @@ type Alert struct {
 	// The specified query is executed every `processRateMinutes` minutes. Default value is 5 minutes.
 	ProcessRateMinutes pulumi.IntPtrOutput `pulumi:"processRateMinutes"`
 	// The number of consecutive minutes that a firing series matching the condition
-	// query must evaluate to "false" (zero value) before the alert resolves.  When unset, this defaults to
+	// query must evaluate to "false" (zero value) before the alert resolves. When unset, this defaults to
 	// the same value as `minutes`.
 	ResolveAfterMinutes pulumi.IntPtrOutput `pulumi:"resolveAfterMinutes"`
 	// Severity of the alert, valid values are `INFO`, `SMOKE`, `WARN`, `SEVERE`.
@@ -147,7 +147,7 @@ type alertState struct {
 	// User-supplied additional explanatory information for this alert.
 	// Useful for linking runbooks, migrations, etc.
 	AdditionalInformation *string `pulumi:"additionalInformation"`
-	// The type of alert in Wavefront.  Either `CLASSIC` (default)
+	// The type of alert in Wavefront. Either `CLASSIC` (default)
 	// or `THRESHOLD`.
 	AlertType *string `pulumi:"alertType"`
 	// A list of valid users or groups that can modify this resource on a tenant.
@@ -162,7 +162,7 @@ type alertState struct {
 	// for which this alert will trigger.
 	Conditions map[string]string `pulumi:"conditions"`
 	// A second query whose results are displayed in the alert user
-	// interface instead of the condition query.  This field is often used to display a version
+	// interface instead of the condition query. This field is often used to display a version
 	// of the condition query with Boolean operators removed so that numerical values are plotted.
 	DisplayExpression *string `pulumi:"displayExpression"`
 	// The number of consecutive minutes that a series matching the condition query must
@@ -176,7 +176,7 @@ type alertState struct {
 	// The specified query is executed every `processRateMinutes` minutes. Default value is 5 minutes.
 	ProcessRateMinutes *int `pulumi:"processRateMinutes"`
 	// The number of consecutive minutes that a firing series matching the condition
-	// query must evaluate to "false" (zero value) before the alert resolves.  When unset, this defaults to
+	// query must evaluate to "false" (zero value) before the alert resolves. When unset, this defaults to
 	// the same value as `minutes`.
 	ResolveAfterMinutes *int `pulumi:"resolveAfterMinutes"`
 	// Severity of the alert, valid values are `INFO`, `SMOKE`, `WARN`, `SEVERE`.
@@ -195,7 +195,7 @@ type AlertState struct {
 	// User-supplied additional explanatory information for this alert.
 	// Useful for linking runbooks, migrations, etc.
 	AdditionalInformation pulumi.StringPtrInput
-	// The type of alert in Wavefront.  Either `CLASSIC` (default)
+	// The type of alert in Wavefront. Either `CLASSIC` (default)
 	// or `THRESHOLD`.
 	AlertType pulumi.StringPtrInput
 	// A list of valid users or groups that can modify this resource on a tenant.
@@ -210,7 +210,7 @@ type AlertState struct {
 	// for which this alert will trigger.
 	Conditions pulumi.StringMapInput
 	// A second query whose results are displayed in the alert user
-	// interface instead of the condition query.  This field is often used to display a version
+	// interface instead of the condition query. This field is often used to display a version
 	// of the condition query with Boolean operators removed so that numerical values are plotted.
 	DisplayExpression pulumi.StringPtrInput
 	// The number of consecutive minutes that a series matching the condition query must
@@ -224,7 +224,7 @@ type AlertState struct {
 	// The specified query is executed every `processRateMinutes` minutes. Default value is 5 minutes.
 	ProcessRateMinutes pulumi.IntPtrInput
 	// The number of consecutive minutes that a firing series matching the condition
-	// query must evaluate to "false" (zero value) before the alert resolves.  When unset, this defaults to
+	// query must evaluate to "false" (zero value) before the alert resolves. When unset, this defaults to
 	// the same value as `minutes`.
 	ResolveAfterMinutes pulumi.IntPtrInput
 	// Severity of the alert, valid values are `INFO`, `SMOKE`, `WARN`, `SEVERE`.
@@ -247,7 +247,7 @@ type alertArgs struct {
 	// User-supplied additional explanatory information for this alert.
 	// Useful for linking runbooks, migrations, etc.
 	AdditionalInformation *string `pulumi:"additionalInformation"`
-	// The type of alert in Wavefront.  Either `CLASSIC` (default)
+	// The type of alert in Wavefront. Either `CLASSIC` (default)
 	// or `THRESHOLD`.
 	AlertType *string `pulumi:"alertType"`
 	// A list of valid users or groups that can modify this resource on a tenant.
@@ -262,7 +262,7 @@ type alertArgs struct {
 	// for which this alert will trigger.
 	Conditions map[string]string `pulumi:"conditions"`
 	// A second query whose results are displayed in the alert user
-	// interface instead of the condition query.  This field is often used to display a version
+	// interface instead of the condition query. This field is often used to display a version
 	// of the condition query with Boolean operators removed so that numerical values are plotted.
 	DisplayExpression *string `pulumi:"displayExpression"`
 	// The number of consecutive minutes that a series matching the condition query must
@@ -276,7 +276,7 @@ type alertArgs struct {
 	// The specified query is executed every `processRateMinutes` minutes. Default value is 5 minutes.
 	ProcessRateMinutes *int `pulumi:"processRateMinutes"`
 	// The number of consecutive minutes that a firing series matching the condition
-	// query must evaluate to "false" (zero value) before the alert resolves.  When unset, this defaults to
+	// query must evaluate to "false" (zero value) before the alert resolves. When unset, this defaults to
 	// the same value as `minutes`.
 	ResolveAfterMinutes *int `pulumi:"resolveAfterMinutes"`
 	// Severity of the alert, valid values are `INFO`, `SMOKE`, `WARN`, `SEVERE`.
@@ -296,7 +296,7 @@ type AlertArgs struct {
 	// User-supplied additional explanatory information for this alert.
 	// Useful for linking runbooks, migrations, etc.
 	AdditionalInformation pulumi.StringPtrInput
-	// The type of alert in Wavefront.  Either `CLASSIC` (default)
+	// The type of alert in Wavefront. Either `CLASSIC` (default)
 	// or `THRESHOLD`.
 	AlertType pulumi.StringPtrInput
 	// A list of valid users or groups that can modify this resource on a tenant.
@@ -311,7 +311,7 @@ type AlertArgs struct {
 	// for which this alert will trigger.
 	Conditions pulumi.StringMapInput
 	// A second query whose results are displayed in the alert user
-	// interface instead of the condition query.  This field is often used to display a version
+	// interface instead of the condition query. This field is often used to display a version
 	// of the condition query with Boolean operators removed so that numerical values are plotted.
 	DisplayExpression pulumi.StringPtrInput
 	// The number of consecutive minutes that a series matching the condition query must
@@ -325,7 +325,7 @@ type AlertArgs struct {
 	// The specified query is executed every `processRateMinutes` minutes. Default value is 5 minutes.
 	ProcessRateMinutes pulumi.IntPtrInput
 	// The number of consecutive minutes that a firing series matching the condition
-	// query must evaluate to "false" (zero value) before the alert resolves.  When unset, this defaults to
+	// query must evaluate to "false" (zero value) before the alert resolves. When unset, this defaults to
 	// the same value as `minutes`.
 	ResolveAfterMinutes pulumi.IntPtrInput
 	// Severity of the alert, valid values are `INFO`, `SMOKE`, `WARN`, `SEVERE`.
@@ -433,7 +433,7 @@ func (o AlertOutput) AdditionalInformation() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *Alert) pulumi.StringPtrOutput { return v.AdditionalInformation }).(pulumi.StringPtrOutput)
 }
 
-// The type of alert in Wavefront.  Either `CLASSIC` (default)
+// The type of alert in Wavefront. Either `CLASSIC` (default)
 // or `THRESHOLD`.
 func (o AlertOutput) AlertType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *Alert) pulumi.StringPtrOutput { return v.AlertType }).(pulumi.StringPtrOutput)
@@ -463,7 +463,7 @@ func (o AlertOutput) Conditions() pulumi.StringMapOutput {
 }
 
 // A second query whose results are displayed in the alert user
-// interface instead of the condition query.  This field is often used to display a version
+// interface instead of the condition query. This field is often used to display a version
 // of the condition query with Boolean operators removed so that numerical values are plotted.
 func (o AlertOutput) DisplayExpression() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *Alert) pulumi.StringPtrOutput { return v.DisplayExpression }).(pulumi.StringPtrOutput)
@@ -492,7 +492,7 @@ func (o AlertOutput) ProcessRateMinutes() pulumi.IntPtrOutput {
 }
 
 // The number of consecutive minutes that a firing series matching the condition
-// query must evaluate to "false" (zero value) before the alert resolves.  When unset, this defaults to
+// query must evaluate to "false" (zero value) before the alert resolves. When unset, this defaults to
 // the same value as `minutes`.
 func (o AlertOutput) ResolveAfterMinutes() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *Alert) pulumi.IntPtrOutput { return v.ResolveAfterMinutes }).(pulumi.IntPtrOutput)

@@ -42,73 +42,6 @@ namespace Pulumi.Wavefront
     /// 
     /// });
     /// ```
-    /// ## Attributes Reference
-    /// 
-    /// * `target_id` - The target ID prefixed with `target:` for interpolating into a Wavefront Alert.
-    /// 
-    /// ### Route
-    /// 
-    /// The `route` mapping supports the following:
-    /// 
-    /// * `method` - (Required)  The notification method used for notification target. One of `WEBHOOK`, `EMAIL`, `PAGERDUTY`.
-    /// * `target` - (Required) The endpoint for the alert route. `EMAIL`: email address. `PAGERDUTY`: PagerDuty routing
-    ///   key. `WEBHOOK`: URL endpoint.
-    /// * `filter` - (Required) String that filters the route. Space delimited.  Currently only allows a single key value pair.
-    ///   (e.g. `env prod`)
-    /// 
-    /// ### Example
-    /// 
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using System.Linq;
-    /// using Pulumi;
-    /// using Wavefront = Pulumi.Wavefront;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var testTarget = new Wavefront.AlertTarget("testTarget", new()
-    ///     {
-    ///         ContentType = "application/json",
-    ///         CustomHeaders = 
-    ///         {
-    ///             { "Testing", "true" },
-    ///         },
-    ///         Description = "Test target",
-    ///         Method = "WEBHOOK",
-    ///         Recipient = "https://hooks.slack.com/services/test/me",
-    ///         Routes = new[]
-    ///         {
-    ///             new Wavefront.Inputs.AlertTargetRouteArgs
-    ///             {
-    ///                 Filter = 
-    ///                 {
-    ///                     { "key", "env" },
-    ///                     { "value", "prod" },
-    ///                 },
-    ///                 Method = "WEBHOOK",
-    ///                 Target = "https://hooks.slack.com/services/test/me/prod",
-    ///             },
-    ///             new Wavefront.Inputs.AlertTargetRouteArgs
-    ///             {
-    ///                 Filter = 
-    ///                 {
-    ///                     { "key", "env" },
-    ///                     { "value", "dev" },
-    ///                 },
-    ///                 Method = "WEBHOOK",
-    ///                 Target = "https://hooks.slack.com/services/test/me/dev",
-    ///             },
-    ///         },
-    ///         Template = "{}",
-    ///         Triggers = new[]
-    ///         {
-    ///             "ALERT_OPENED",
-    ///             "ALERT_RESOLVED",
-    ///         },
-    ///     });
-    /// 
-    /// });
-    /// ```
     /// 
     /// ## Import
     /// 
@@ -128,7 +61,7 @@ namespace Pulumi.Wavefront
         public Output<string?> ContentType { get; private set; } = null!;
 
         /// <summary>
-        /// A `string-&gt;string` map specifying the custom HTTP header key/value pairs that will be 
+        /// A `string-&gt;string` map specifying the custom HTTP header key/value pairs that will be
         /// sent in the requests with a method of `WEBHOOK`.
         /// </summary>
         [Output("customHeaders")]
@@ -165,7 +98,7 @@ namespace Pulumi.Wavefront
         public Output<string> Name { get; private set; } = null!;
 
         /// <summary>
-        /// The end point for the notification Target.  `EMAIL`: email address. `PAGERDUTY`: PagerDuty 
+        /// The end point for the notification Target.  `EMAIL`: email address. `PAGERDUTY`: PagerDuty
         /// routing key. `WEBHOOK`: URL endpoint.
         /// </summary>
         [Output("recipient")]
@@ -177,6 +110,9 @@ namespace Pulumi.Wavefront
         [Output("routes")]
         public Output<ImmutableArray<Outputs.AlertTargetRoute>> Routes { get; private set; } = null!;
 
+        /// <summary>
+        /// The target ID prefixed with `target:` for interpolating into a Wavefront Alert.
+        /// </summary>
         [Output("targetId")]
         public Output<string> TargetId { get; private set; } = null!;
 
@@ -249,7 +185,7 @@ namespace Pulumi.Wavefront
         private InputMap<string>? _customHeaders;
 
         /// <summary>
-        /// A `string-&gt;string` map specifying the custom HTTP header key/value pairs that will be 
+        /// A `string-&gt;string` map specifying the custom HTTP header key/value pairs that will be
         /// sent in the requests with a method of `WEBHOOK`.
         /// </summary>
         public InputMap<string> CustomHeaders
@@ -289,7 +225,7 @@ namespace Pulumi.Wavefront
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// The end point for the notification Target.  `EMAIL`: email address. `PAGERDUTY`: PagerDuty 
+        /// The end point for the notification Target.  `EMAIL`: email address. `PAGERDUTY`: PagerDuty
         /// routing key. `WEBHOOK`: URL endpoint.
         /// </summary>
         [Input("recipient", required: true)]
@@ -344,7 +280,7 @@ namespace Pulumi.Wavefront
         private InputMap<string>? _customHeaders;
 
         /// <summary>
-        /// A `string-&gt;string` map specifying the custom HTTP header key/value pairs that will be 
+        /// A `string-&gt;string` map specifying the custom HTTP header key/value pairs that will be
         /// sent in the requests with a method of `WEBHOOK`.
         /// </summary>
         public InputMap<string> CustomHeaders
@@ -384,7 +320,7 @@ namespace Pulumi.Wavefront
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// The end point for the notification Target.  `EMAIL`: email address. `PAGERDUTY`: PagerDuty 
+        /// The end point for the notification Target.  `EMAIL`: email address. `PAGERDUTY`: PagerDuty
         /// routing key. `WEBHOOK`: URL endpoint.
         /// </summary>
         [Input("recipient")]
@@ -402,6 +338,9 @@ namespace Pulumi.Wavefront
             set => _routes = value;
         }
 
+        /// <summary>
+        /// The target ID prefixed with `target:` for interpolating into a Wavefront Alert.
+        /// </summary>
         [Input("targetId")]
         public Input<string>? TargetId { get; set; }
 

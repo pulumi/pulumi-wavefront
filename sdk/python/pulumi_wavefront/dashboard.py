@@ -33,8 +33,8 @@ class DashboardArgs:
         :param pulumi.Input[Sequence[pulumi.Input['DashboardSectionArgs']]] sections: Dashboard chart sections. See dashboard sections.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] tags: A set of tags to assign to this resource.
         :param pulumi.Input[str] url: Unique identifier, also a URL slug of the dashboard.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] can_modifies: A list of users that have modify ACL access to the dashboard.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] can_views: A list of users that have view ACL access to the dashboard.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] can_modifies: A list of users/groups/roles that can modify the dashboard.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] can_views: A list of users/groups/roles that can view the dashboard.
         :param pulumi.Input[bool] display_query_parameters: Whether the dashboard parameters section is opened by default when the dashboard
                is shown.
         :param pulumi.Input[bool] display_section_table_of_contents: Whether the "pills" quick-linked the sections of the dashboard are
@@ -115,7 +115,7 @@ class DashboardArgs:
     @pulumi.getter(name="canModifies")
     def can_modifies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        A list of users that have modify ACL access to the dashboard.
+        A list of users/groups/roles that can modify the dashboard.
         """
         return pulumi.get(self, "can_modifies")
 
@@ -127,7 +127,7 @@ class DashboardArgs:
     @pulumi.getter(name="canViews")
     def can_views(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        A list of users that have view ACL access to the dashboard.
+        A list of users/groups/roles that can view the dashboard.
         """
         return pulumi.get(self, "can_views")
 
@@ -215,8 +215,8 @@ class _DashboardState:
                  url: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering Dashboard resources.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] can_modifies: A list of users that have modify ACL access to the dashboard.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] can_views: A list of users that have view ACL access to the dashboard.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] can_modifies: A list of users/groups/roles that can modify the dashboard.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] can_views: A list of users/groups/roles that can view the dashboard.
         :param pulumi.Input[str] description: Human-readable description of the dashboard.
         :param pulumi.Input[bool] display_query_parameters: Whether the dashboard parameters section is opened by default when the dashboard
                is shown.
@@ -257,7 +257,7 @@ class _DashboardState:
     @pulumi.getter(name="canModifies")
     def can_modifies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        A list of users that have modify ACL access to the dashboard.
+        A list of users/groups/roles that can modify the dashboard.
         """
         return pulumi.get(self, "can_modifies")
 
@@ -269,7 +269,7 @@ class _DashboardState:
     @pulumi.getter(name="canViews")
     def can_views(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        A list of users that have view ACL access to the dashboard.
+        A list of users/groups/roles that can view the dashboard.
         """
         return pulumi.get(self, "can_views")
 
@@ -419,8 +419,8 @@ class Dashboard(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] can_modifies: A list of users that have modify ACL access to the dashboard.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] can_views: A list of users that have view ACL access to the dashboard.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] can_modifies: A list of users/groups/roles that can modify the dashboard.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] can_views: A list of users/groups/roles that can view the dashboard.
         :param pulumi.Input[str] description: Human-readable description of the dashboard.
         :param pulumi.Input[bool] display_query_parameters: Whether the dashboard parameters section is opened by default when the dashboard
                is shown.
@@ -533,8 +533,8 @@ class Dashboard(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] can_modifies: A list of users that have modify ACL access to the dashboard.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] can_views: A list of users that have view ACL access to the dashboard.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] can_modifies: A list of users/groups/roles that can modify the dashboard.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] can_views: A list of users/groups/roles that can view the dashboard.
         :param pulumi.Input[str] description: Human-readable description of the dashboard.
         :param pulumi.Input[bool] display_query_parameters: Whether the dashboard parameters section is opened by default when the dashboard
                is shown.
@@ -569,7 +569,7 @@ class Dashboard(pulumi.CustomResource):
     @pulumi.getter(name="canModifies")
     def can_modifies(self) -> pulumi.Output[Sequence[str]]:
         """
-        A list of users that have modify ACL access to the dashboard.
+        A list of users/groups/roles that can modify the dashboard.
         """
         return pulumi.get(self, "can_modifies")
 
@@ -577,7 +577,7 @@ class Dashboard(pulumi.CustomResource):
     @pulumi.getter(name="canViews")
     def can_views(self) -> pulumi.Output[Optional[Sequence[str]]]:
         """
-        A list of users that have view ACL access to the dashboard.
+        A list of users/groups/roles that can view the dashboard.
         """
         return pulumi.get(self, "can_views")
 

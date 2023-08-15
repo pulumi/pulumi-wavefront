@@ -30,13 +30,13 @@ class AlertTargetArgs:
         """
         The set of arguments for constructing a AlertTarget resource.
         :param pulumi.Input[str] description: Description describing this alert target.
-        :param pulumi.Input[str] recipient: The end point for the notification Target.  `EMAIL`: email address. `PAGERDUTY`: PagerDuty 
+        :param pulumi.Input[str] recipient: The end point for the notification Target.  `EMAIL`: email address. `PAGERDUTY`: PagerDuty
                routing key. `WEBHOOK`: URL endpoint.
         :param pulumi.Input[str] template: A mustache template that will form the body of the POST request, email, and summary of the PagerDuty.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] triggers: A list of occurrences on which this webhook will be fired. Valid values are `ALERT_OPENED`,
                `ALERT_UPDATED`, `ALERT_RESOLVED`, `ALERT_MAINTENANCE`, `ALERT_SNOOZED`, `ALERT_NO_DATA`, `ALERT_NO_DATA_RESOLVED`, `ALERT_NO_DATA_MAINTENANCE`.
         :param pulumi.Input[str] content_type: The value of the `Content-Type` header of the webhook.
-        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] custom_headers: A `string->string` map specifying the custom HTTP header key/value pairs that will be 
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] custom_headers: A `string->string` map specifying the custom HTTP header key/value pairs that will be
                sent in the requests with a method of `WEBHOOK`.
         :param pulumi.Input[str] email_subject: The subject title of an email notification target.
         :param pulumi.Input[bool] is_html_content: Determine whether the email alert content is sent as HTML or text.
@@ -79,7 +79,7 @@ class AlertTargetArgs:
     @pulumi.getter
     def recipient(self) -> pulumi.Input[str]:
         """
-        The end point for the notification Target.  `EMAIL`: email address. `PAGERDUTY`: PagerDuty 
+        The end point for the notification Target.  `EMAIL`: email address. `PAGERDUTY`: PagerDuty
         routing key. `WEBHOOK`: URL endpoint.
         """
         return pulumi.get(self, "recipient")
@@ -129,7 +129,7 @@ class AlertTargetArgs:
     @pulumi.getter(name="customHeaders")
     def custom_headers(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
-        A `string->string` map specifying the custom HTTP header key/value pairs that will be 
+        A `string->string` map specifying the custom HTTP header key/value pairs that will be
         sent in the requests with a method of `WEBHOOK`.
         """
         return pulumi.get(self, "custom_headers")
@@ -217,16 +217,17 @@ class _AlertTargetState:
         """
         Input properties used for looking up and filtering AlertTarget resources.
         :param pulumi.Input[str] content_type: The value of the `Content-Type` header of the webhook.
-        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] custom_headers: A `string->string` map specifying the custom HTTP header key/value pairs that will be 
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] custom_headers: A `string->string` map specifying the custom HTTP header key/value pairs that will be
                sent in the requests with a method of `WEBHOOK`.
         :param pulumi.Input[str] description: Description describing this alert target.
         :param pulumi.Input[str] email_subject: The subject title of an email notification target.
         :param pulumi.Input[bool] is_html_content: Determine whether the email alert content is sent as HTML or text.
         :param pulumi.Input[str] method: The notification method used for notification target. One of `WEBHOOK`, `EMAIL`, `PAGERDUTY`.
         :param pulumi.Input[str] name: The name of the alert target as it is displayed in Wavefront.
-        :param pulumi.Input[str] recipient: The end point for the notification Target.  `EMAIL`: email address. `PAGERDUTY`: PagerDuty 
+        :param pulumi.Input[str] recipient: The end point for the notification Target.  `EMAIL`: email address. `PAGERDUTY`: PagerDuty
                routing key. `WEBHOOK`: URL endpoint.
         :param pulumi.Input[Sequence[pulumi.Input['AlertTargetRouteArgs']]] routes: List of routing targets that this alert target will notify. See Route
+        :param pulumi.Input[str] target_id: The target ID prefixed with `target:` for interpolating into a Wavefront Alert.
         :param pulumi.Input[str] template: A mustache template that will form the body of the POST request, email, and summary of the PagerDuty.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] triggers: A list of occurrences on which this webhook will be fired. Valid values are `ALERT_OPENED`,
                `ALERT_UPDATED`, `ALERT_RESOLVED`, `ALERT_MAINTENANCE`, `ALERT_SNOOZED`, `ALERT_NO_DATA`, `ALERT_NO_DATA_RESOLVED`, `ALERT_NO_DATA_MAINTENANCE`.
@@ -272,7 +273,7 @@ class _AlertTargetState:
     @pulumi.getter(name="customHeaders")
     def custom_headers(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
-        A `string->string` map specifying the custom HTTP header key/value pairs that will be 
+        A `string->string` map specifying the custom HTTP header key/value pairs that will be
         sent in the requests with a method of `WEBHOOK`.
         """
         return pulumi.get(self, "custom_headers")
@@ -345,7 +346,7 @@ class _AlertTargetState:
     @pulumi.getter
     def recipient(self) -> Optional[pulumi.Input[str]]:
         """
-        The end point for the notification Target.  `EMAIL`: email address. `PAGERDUTY`: PagerDuty 
+        The end point for the notification Target.  `EMAIL`: email address. `PAGERDUTY`: PagerDuty
         routing key. `WEBHOOK`: URL endpoint.
         """
         return pulumi.get(self, "recipient")
@@ -369,6 +370,9 @@ class _AlertTargetState:
     @property
     @pulumi.getter(name="targetId")
     def target_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The target ID prefixed with `target:` for interpolating into a Wavefront Alert.
+        """
         return pulumi.get(self, "target_id")
 
     @target_id.setter
@@ -441,58 +445,6 @@ class AlertTarget(pulumi.CustomResource):
                 "ALERT_RESOLVED",
             ])
         ```
-        ## Attributes Reference
-
-        * `target_id` - The target ID prefixed with `target:` for interpolating into a Wavefront Alert.
-
-        ### Route
-
-        The `route` mapping supports the following:
-
-        * `method` - (Required)  The notification method used for notification target. One of `WEBHOOK`, `EMAIL`, `PAGERDUTY`.
-        * `target` - (Required) The endpoint for the alert route. `EMAIL`: email address. `PAGERDUTY`: PagerDuty routing
-          key. `WEBHOOK`: URL endpoint.
-        * `filter` - (Required) String that filters the route. Space delimited.  Currently only allows a single key value pair.
-          (e.g. `env prod`)
-
-        ### Example
-
-        ```python
-        import pulumi
-        import pulumi_wavefront as wavefront
-
-        test_target = wavefront.AlertTarget("testTarget",
-            content_type="application/json",
-            custom_headers={
-                "Testing": "true",
-            },
-            description="Test target",
-            method="WEBHOOK",
-            recipient="https://hooks.slack.com/services/test/me",
-            routes=[
-                wavefront.AlertTargetRouteArgs(
-                    filter={
-                        "key": "env",
-                        "value": "prod",
-                    },
-                    method="WEBHOOK",
-                    target="https://hooks.slack.com/services/test/me/prod",
-                ),
-                wavefront.AlertTargetRouteArgs(
-                    filter={
-                        "key": "env",
-                        "value": "dev",
-                    },
-                    method="WEBHOOK",
-                    target="https://hooks.slack.com/services/test/me/dev",
-                ),
-            ],
-            template="{}",
-            triggers=[
-                "ALERT_OPENED",
-                "ALERT_RESOLVED",
-            ])
-        ```
 
         ## Import
 
@@ -505,14 +457,14 @@ class AlertTarget(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] content_type: The value of the `Content-Type` header of the webhook.
-        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] custom_headers: A `string->string` map specifying the custom HTTP header key/value pairs that will be 
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] custom_headers: A `string->string` map specifying the custom HTTP header key/value pairs that will be
                sent in the requests with a method of `WEBHOOK`.
         :param pulumi.Input[str] description: Description describing this alert target.
         :param pulumi.Input[str] email_subject: The subject title of an email notification target.
         :param pulumi.Input[bool] is_html_content: Determine whether the email alert content is sent as HTML or text.
         :param pulumi.Input[str] method: The notification method used for notification target. One of `WEBHOOK`, `EMAIL`, `PAGERDUTY`.
         :param pulumi.Input[str] name: The name of the alert target as it is displayed in Wavefront.
-        :param pulumi.Input[str] recipient: The end point for the notification Target.  `EMAIL`: email address. `PAGERDUTY`: PagerDuty 
+        :param pulumi.Input[str] recipient: The end point for the notification Target.  `EMAIL`: email address. `PAGERDUTY`: PagerDuty
                routing key. `WEBHOOK`: URL endpoint.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AlertTargetRouteArgs']]]] routes: List of routing targets that this alert target will notify. See Route
         :param pulumi.Input[str] template: A mustache template that will form the body of the POST request, email, and summary of the PagerDuty.
@@ -542,58 +494,6 @@ class AlertTarget(pulumi.CustomResource):
             description="Test target",
             method="WEBHOOK",
             recipient="https://hooks.slack.com/services/test/me",
-            template="{}",
-            triggers=[
-                "ALERT_OPENED",
-                "ALERT_RESOLVED",
-            ])
-        ```
-        ## Attributes Reference
-
-        * `target_id` - The target ID prefixed with `target:` for interpolating into a Wavefront Alert.
-
-        ### Route
-
-        The `route` mapping supports the following:
-
-        * `method` - (Required)  The notification method used for notification target. One of `WEBHOOK`, `EMAIL`, `PAGERDUTY`.
-        * `target` - (Required) The endpoint for the alert route. `EMAIL`: email address. `PAGERDUTY`: PagerDuty routing
-          key. `WEBHOOK`: URL endpoint.
-        * `filter` - (Required) String that filters the route. Space delimited.  Currently only allows a single key value pair.
-          (e.g. `env prod`)
-
-        ### Example
-
-        ```python
-        import pulumi
-        import pulumi_wavefront as wavefront
-
-        test_target = wavefront.AlertTarget("testTarget",
-            content_type="application/json",
-            custom_headers={
-                "Testing": "true",
-            },
-            description="Test target",
-            method="WEBHOOK",
-            recipient="https://hooks.slack.com/services/test/me",
-            routes=[
-                wavefront.AlertTargetRouteArgs(
-                    filter={
-                        "key": "env",
-                        "value": "prod",
-                    },
-                    method="WEBHOOK",
-                    target="https://hooks.slack.com/services/test/me/prod",
-                ),
-                wavefront.AlertTargetRouteArgs(
-                    filter={
-                        "key": "env",
-                        "value": "dev",
-                    },
-                    method="WEBHOOK",
-                    target="https://hooks.slack.com/services/test/me/dev",
-                ),
-            ],
             template="{}",
             triggers=[
                 "ALERT_OPENED",
@@ -694,16 +594,17 @@ class AlertTarget(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] content_type: The value of the `Content-Type` header of the webhook.
-        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] custom_headers: A `string->string` map specifying the custom HTTP header key/value pairs that will be 
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] custom_headers: A `string->string` map specifying the custom HTTP header key/value pairs that will be
                sent in the requests with a method of `WEBHOOK`.
         :param pulumi.Input[str] description: Description describing this alert target.
         :param pulumi.Input[str] email_subject: The subject title of an email notification target.
         :param pulumi.Input[bool] is_html_content: Determine whether the email alert content is sent as HTML or text.
         :param pulumi.Input[str] method: The notification method used for notification target. One of `WEBHOOK`, `EMAIL`, `PAGERDUTY`.
         :param pulumi.Input[str] name: The name of the alert target as it is displayed in Wavefront.
-        :param pulumi.Input[str] recipient: The end point for the notification Target.  `EMAIL`: email address. `PAGERDUTY`: PagerDuty 
+        :param pulumi.Input[str] recipient: The end point for the notification Target.  `EMAIL`: email address. `PAGERDUTY`: PagerDuty
                routing key. `WEBHOOK`: URL endpoint.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AlertTargetRouteArgs']]]] routes: List of routing targets that this alert target will notify. See Route
+        :param pulumi.Input[str] target_id: The target ID prefixed with `target:` for interpolating into a Wavefront Alert.
         :param pulumi.Input[str] template: A mustache template that will form the body of the POST request, email, and summary of the PagerDuty.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] triggers: A list of occurrences on which this webhook will be fired. Valid values are `ALERT_OPENED`,
                `ALERT_UPDATED`, `ALERT_RESOLVED`, `ALERT_MAINTENANCE`, `ALERT_SNOOZED`, `ALERT_NO_DATA`, `ALERT_NO_DATA_RESOLVED`, `ALERT_NO_DATA_MAINTENANCE`.
@@ -738,7 +639,7 @@ class AlertTarget(pulumi.CustomResource):
     @pulumi.getter(name="customHeaders")
     def custom_headers(self) -> pulumi.Output[Optional[Mapping[str, str]]]:
         """
-        A `string->string` map specifying the custom HTTP header key/value pairs that will be 
+        A `string->string` map specifying the custom HTTP header key/value pairs that will be
         sent in the requests with a method of `WEBHOOK`.
         """
         return pulumi.get(self, "custom_headers")
@@ -787,7 +688,7 @@ class AlertTarget(pulumi.CustomResource):
     @pulumi.getter
     def recipient(self) -> pulumi.Output[str]:
         """
-        The end point for the notification Target.  `EMAIL`: email address. `PAGERDUTY`: PagerDuty 
+        The end point for the notification Target.  `EMAIL`: email address. `PAGERDUTY`: PagerDuty
         routing key. `WEBHOOK`: URL endpoint.
         """
         return pulumi.get(self, "recipient")
@@ -803,6 +704,9 @@ class AlertTarget(pulumi.CustomResource):
     @property
     @pulumi.getter(name="targetId")
     def target_id(self) -> pulumi.Output[str]:
+        """
+        The target ID prefixed with `target:` for interpolating into a Wavefront Alert.
+        """
         return pulumi.get(self, "target_id")
 
     @property

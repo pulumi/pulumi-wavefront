@@ -8,7 +8,7 @@ import (
 	"reflect"
 
 	"errors"
-	"github.com/pulumi/pulumi-wavefront/sdk/v2/go/wavefront/internal"
+	"github.com/pulumi/pulumi-wavefront/sdk/v3/go/wavefront/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -21,7 +21,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-wavefront/sdk/v2/go/wavefront"
+//	"github.com/pulumi/pulumi-wavefront/sdk/v3/go/wavefront"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -56,7 +56,7 @@ type User struct {
 	Customer pulumi.StringOutput `pulumi:"customer"`
 	// The unique identifier of the user account to create. Must be a valid email address.
 	Email pulumi.StringOutput `pulumi:"email"`
-	// List of permission to grant to this user.  Valid options are
+	// List of permission to grant to this user. Valid options are
 	// `agentManagement`, `alertsManagement`, `dashboardManagement`, `embeddedCharts`, `eventsManagement`, `externalLinksManagement`,
 	// `hostTagManagement`, `metricsManagement`, and `userManagement`.
 	Permissions pulumi.StringArrayOutput `pulumi:"permissions"`
@@ -101,7 +101,7 @@ type userState struct {
 	Customer *string `pulumi:"customer"`
 	// The unique identifier of the user account to create. Must be a valid email address.
 	Email *string `pulumi:"email"`
-	// List of permission to grant to this user.  Valid options are
+	// List of permission to grant to this user. Valid options are
 	// `agentManagement`, `alertsManagement`, `dashboardManagement`, `embeddedCharts`, `eventsManagement`, `externalLinksManagement`,
 	// `hostTagManagement`, `metricsManagement`, and `userManagement`.
 	Permissions []string `pulumi:"permissions"`
@@ -114,7 +114,7 @@ type UserState struct {
 	Customer pulumi.StringPtrInput
 	// The unique identifier of the user account to create. Must be a valid email address.
 	Email pulumi.StringPtrInput
-	// List of permission to grant to this user.  Valid options are
+	// List of permission to grant to this user. Valid options are
 	// `agentManagement`, `alertsManagement`, `dashboardManagement`, `embeddedCharts`, `eventsManagement`, `externalLinksManagement`,
 	// `hostTagManagement`, `metricsManagement`, and `userManagement`.
 	Permissions pulumi.StringArrayInput
@@ -131,7 +131,7 @@ type userArgs struct {
 	Customer *string `pulumi:"customer"`
 	// The unique identifier of the user account to create. Must be a valid email address.
 	Email string `pulumi:"email"`
-	// List of permission to grant to this user.  Valid options are
+	// List of permission to grant to this user. Valid options are
 	// `agentManagement`, `alertsManagement`, `dashboardManagement`, `embeddedCharts`, `eventsManagement`, `externalLinksManagement`,
 	// `hostTagManagement`, `metricsManagement`, and `userManagement`.
 	Permissions []string `pulumi:"permissions"`
@@ -145,7 +145,7 @@ type UserArgs struct {
 	Customer pulumi.StringPtrInput
 	// The unique identifier of the user account to create. Must be a valid email address.
 	Email pulumi.StringInput
-	// List of permission to grant to this user.  Valid options are
+	// List of permission to grant to this user. Valid options are
 	// `agentManagement`, `alertsManagement`, `dashboardManagement`, `embeddedCharts`, `eventsManagement`, `externalLinksManagement`,
 	// `hostTagManagement`, `metricsManagement`, and `userManagement`.
 	Permissions pulumi.StringArrayInput
@@ -250,7 +250,7 @@ func (o UserOutput) Email() pulumi.StringOutput {
 	return o.ApplyT(func(v *User) pulumi.StringOutput { return v.Email }).(pulumi.StringOutput)
 }
 
-// List of permission to grant to this user.  Valid options are
+// List of permission to grant to this user. Valid options are
 // `agentManagement`, `alertsManagement`, `dashboardManagement`, `embeddedCharts`, `eventsManagement`, `externalLinksManagement`,
 // `hostTagManagement`, `metricsManagement`, and `userManagement`.
 func (o UserOutput) Permissions() pulumi.StringArrayOutput {

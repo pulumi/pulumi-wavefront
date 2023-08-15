@@ -58,75 +58,6 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
- * ## Attributes Reference
- * 
- * * `target_id` - The target ID prefixed with `target:` for interpolating into a Wavefront Alert.
- * 
- * ### Route
- * 
- * The `route` mapping supports the following:
- * 
- * * `method` - (Required)  The notification method used for notification target. One of `WEBHOOK`, `EMAIL`, `PAGERDUTY`.
- * * `target` - (Required) The endpoint for the alert route. `EMAIL`: email address. `PAGERDUTY`: PagerDuty routing
- *   key. `WEBHOOK`: URL endpoint.
- * * `filter` - (Required) String that filters the route. Space delimited.  Currently only allows a single key value pair.
- *   (e.g. `env prod`)
- * 
- * ### Example
- * ```java
- * package generated_program;
- * 
- * import com.pulumi.Context;
- * import com.pulumi.Pulumi;
- * import com.pulumi.core.Output;
- * import com.pulumi.wavefront.AlertTarget;
- * import com.pulumi.wavefront.AlertTargetArgs;
- * import com.pulumi.wavefront.inputs.AlertTargetRouteArgs;
- * import java.util.List;
- * import java.util.ArrayList;
- * import java.util.Map;
- * import java.io.File;
- * import java.nio.file.Files;
- * import java.nio.file.Paths;
- * 
- * public class App {
- *     public static void main(String[] args) {
- *         Pulumi.run(App::stack);
- *     }
- * 
- *     public static void stack(Context ctx) {
- *         var testTarget = new AlertTarget(&#34;testTarget&#34;, AlertTargetArgs.builder()        
- *             .contentType(&#34;application/json&#34;)
- *             .customHeaders(Map.of(&#34;Testing&#34;, &#34;true&#34;))
- *             .description(&#34;Test target&#34;)
- *             .method(&#34;WEBHOOK&#34;)
- *             .recipient(&#34;https://hooks.slack.com/services/test/me&#34;)
- *             .routes(            
- *                 AlertTargetRouteArgs.builder()
- *                     .filter(Map.ofEntries(
- *                         Map.entry(&#34;key&#34;, &#34;env&#34;),
- *                         Map.entry(&#34;value&#34;, &#34;prod&#34;)
- *                     ))
- *                     .method(&#34;WEBHOOK&#34;)
- *                     .target(&#34;https://hooks.slack.com/services/test/me/prod&#34;)
- *                     .build(),
- *                 AlertTargetRouteArgs.builder()
- *                     .filter(Map.ofEntries(
- *                         Map.entry(&#34;key&#34;, &#34;env&#34;),
- *                         Map.entry(&#34;value&#34;, &#34;dev&#34;)
- *                     ))
- *                     .method(&#34;WEBHOOK&#34;)
- *                     .target(&#34;https://hooks.slack.com/services/test/me/dev&#34;)
- *                     .build())
- *             .template(&#34;{}&#34;)
- *             .triggers(            
- *                 &#34;ALERT_OPENED&#34;,
- *                 &#34;ALERT_RESOLVED&#34;)
- *             .build());
- * 
- *     }
- * }
- * ```
  * 
  * ## Import
  * 
@@ -143,7 +74,7 @@ public class AlertTarget extends com.pulumi.resources.CustomResource {
      * The value of the `Content-Type` header of the webhook.
      * 
      */
-    @Export(name="contentType", type=String.class, parameters={})
+    @Export(name="contentType", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> contentType;
 
     /**
@@ -158,7 +89,7 @@ public class AlertTarget extends com.pulumi.resources.CustomResource {
      * sent in the requests with a method of `WEBHOOK`.
      * 
      */
-    @Export(name="customHeaders", type=Map.class, parameters={String.class, String.class})
+    @Export(name="customHeaders", refs={Map.class,String.class}, tree="[0,1,1]")
     private Output</* @Nullable */ Map<String,String>> customHeaders;
 
     /**
@@ -173,7 +104,7 @@ public class AlertTarget extends com.pulumi.resources.CustomResource {
      * Description describing this alert target.
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
@@ -187,7 +118,7 @@ public class AlertTarget extends com.pulumi.resources.CustomResource {
      * The subject title of an email notification target.
      * 
      */
-    @Export(name="emailSubject", type=String.class, parameters={})
+    @Export(name="emailSubject", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> emailSubject;
 
     /**
@@ -201,7 +132,7 @@ public class AlertTarget extends com.pulumi.resources.CustomResource {
      * Determine whether the email alert content is sent as HTML or text.
      * 
      */
-    @Export(name="isHtmlContent", type=Boolean.class, parameters={})
+    @Export(name="isHtmlContent", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> isHtmlContent;
 
     /**
@@ -215,7 +146,7 @@ public class AlertTarget extends com.pulumi.resources.CustomResource {
      * The notification method used for notification target. One of `WEBHOOK`, `EMAIL`, `PAGERDUTY`.
      * 
      */
-    @Export(name="method", type=String.class, parameters={})
+    @Export(name="method", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> method;
 
     /**
@@ -229,7 +160,7 @@ public class AlertTarget extends com.pulumi.resources.CustomResource {
      * The name of the alert target as it is displayed in Wavefront.
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
@@ -244,7 +175,7 @@ public class AlertTarget extends com.pulumi.resources.CustomResource {
      * routing key. `WEBHOOK`: URL endpoint.
      * 
      */
-    @Export(name="recipient", type=String.class, parameters={})
+    @Export(name="recipient", refs={String.class}, tree="[0]")
     private Output<String> recipient;
 
     /**
@@ -259,7 +190,7 @@ public class AlertTarget extends com.pulumi.resources.CustomResource {
      * List of routing targets that this alert target will notify. See Route
      * 
      */
-    @Export(name="routes", type=List.class, parameters={AlertTargetRoute.class})
+    @Export(name="routes", refs={List.class,AlertTargetRoute.class}, tree="[0,1]")
     private Output</* @Nullable */ List<AlertTargetRoute>> routes;
 
     /**
@@ -269,9 +200,17 @@ public class AlertTarget extends com.pulumi.resources.CustomResource {
     public Output<Optional<List<AlertTargetRoute>>> routes() {
         return Codegen.optional(this.routes);
     }
-    @Export(name="targetId", type=String.class, parameters={})
+    /**
+     * The target ID prefixed with `target:` for interpolating into a Wavefront Alert.
+     * 
+     */
+    @Export(name="targetId", refs={String.class}, tree="[0]")
     private Output<String> targetId;
 
+    /**
+     * @return The target ID prefixed with `target:` for interpolating into a Wavefront Alert.
+     * 
+     */
     public Output<String> targetId() {
         return this.targetId;
     }
@@ -279,7 +218,7 @@ public class AlertTarget extends com.pulumi.resources.CustomResource {
      * A mustache template that will form the body of the POST request, email, and summary of the PagerDuty.
      * 
      */
-    @Export(name="template", type=String.class, parameters={})
+    @Export(name="template", refs={String.class}, tree="[0]")
     private Output<String> template;
 
     /**
@@ -294,7 +233,7 @@ public class AlertTarget extends com.pulumi.resources.CustomResource {
      * `ALERT_UPDATED`, `ALERT_RESOLVED`, `ALERT_MAINTENANCE`, `ALERT_SNOOZED`, `ALERT_NO_DATA`, `ALERT_NO_DATA_RESOLVED`, `ALERT_NO_DATA_MAINTENANCE`.
      * 
      */
-    @Export(name="triggers", type=List.class, parameters={String.class})
+    @Export(name="triggers", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> triggers;
 
     /**

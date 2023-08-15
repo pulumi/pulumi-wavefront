@@ -8,7 +8,7 @@ import (
 	"reflect"
 
 	"errors"
-	"github.com/pulumi/pulumi-wavefront/sdk/v2/go/wavefront/internal"
+	"github.com/pulumi/pulumi-wavefront/sdk/v3/go/wavefront/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -21,7 +21,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-wavefront/sdk/v2/go/wavefront"
+//	"github.com/pulumi/pulumi-wavefront/sdk/v3/go/wavefront"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -37,74 +37,6 @@ import (
 //				Method:      pulumi.String("WEBHOOK"),
 //				Recipient:   pulumi.String("https://hooks.slack.com/services/test/me"),
 //				Template:    pulumi.String("{}"),
-//				Triggers: pulumi.StringArray{
-//					pulumi.String("ALERT_OPENED"),
-//					pulumi.String("ALERT_RESOLVED"),
-//				},
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
-// ## Attributes Reference
-//
-// * `targetId` - The target ID prefixed with `target:` for interpolating into a Wavefront Alert.
-//
-// ### Route
-//
-// The `route` mapping supports the following:
-//
-//   - `method` - (Required)  The notification method used for notification target. One of `WEBHOOK`, `EMAIL`, `PAGERDUTY`.
-//   - `target` - (Required) The endpoint for the alert route. `EMAIL`: email address. `PAGERDUTY`: PagerDuty routing
-//     key. `WEBHOOK`: URL endpoint.
-//   - `filter` - (Required) String that filters the route. Space delimited.  Currently only allows a single key value pair.
-//     (e.g. `env prod`)
-//
-// ### Example
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-wavefront/sdk/v2/go/wavefront"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := wavefront.NewAlertTarget(ctx, "testTarget", &wavefront.AlertTargetArgs{
-//				ContentType: pulumi.String("application/json"),
-//				CustomHeaders: pulumi.StringMap{
-//					"Testing": pulumi.String("true"),
-//				},
-//				Description: pulumi.String("Test target"),
-//				Method:      pulumi.String("WEBHOOK"),
-//				Recipient:   pulumi.String("https://hooks.slack.com/services/test/me"),
-//				Routes: wavefront.AlertTargetRouteArray{
-//					&wavefront.AlertTargetRouteArgs{
-//						Filter: pulumi.StringMap{
-//							"key":   pulumi.String("env"),
-//							"value": pulumi.String("prod"),
-//						},
-//						Method: pulumi.String("WEBHOOK"),
-//						Target: pulumi.String("https://hooks.slack.com/services/test/me/prod"),
-//					},
-//					&wavefront.AlertTargetRouteArgs{
-//						Filter: pulumi.StringMap{
-//							"key":   pulumi.String("env"),
-//							"value": pulumi.String("dev"),
-//						},
-//						Method: pulumi.String("WEBHOOK"),
-//						Target: pulumi.String("https://hooks.slack.com/services/test/me/dev"),
-//					},
-//				},
-//				Template: pulumi.String("{}"),
 //				Triggers: pulumi.StringArray{
 //					pulumi.String("ALERT_OPENED"),
 //					pulumi.String("ALERT_RESOLVED"),
@@ -150,8 +82,9 @@ type AlertTarget struct {
 	// routing key. `WEBHOOK`: URL endpoint.
 	Recipient pulumi.StringOutput `pulumi:"recipient"`
 	// List of routing targets that this alert target will notify. See Route
-	Routes   AlertTargetRouteArrayOutput `pulumi:"routes"`
-	TargetId pulumi.StringOutput         `pulumi:"targetId"`
+	Routes AlertTargetRouteArrayOutput `pulumi:"routes"`
+	// The target ID prefixed with `target:` for interpolating into a Wavefront Alert.
+	TargetId pulumi.StringOutput `pulumi:"targetId"`
 	// A mustache template that will form the body of the POST request, email, and summary of the PagerDuty.
 	Template pulumi.StringOutput `pulumi:"template"`
 	// A list of occurrences on which this webhook will be fired. Valid values are `ALERT_OPENED`,
@@ -220,8 +153,9 @@ type alertTargetState struct {
 	// routing key. `WEBHOOK`: URL endpoint.
 	Recipient *string `pulumi:"recipient"`
 	// List of routing targets that this alert target will notify. See Route
-	Routes   []AlertTargetRoute `pulumi:"routes"`
-	TargetId *string            `pulumi:"targetId"`
+	Routes []AlertTargetRoute `pulumi:"routes"`
+	// The target ID prefixed with `target:` for interpolating into a Wavefront Alert.
+	TargetId *string `pulumi:"targetId"`
 	// A mustache template that will form the body of the POST request, email, and summary of the PagerDuty.
 	Template *string `pulumi:"template"`
 	// A list of occurrences on which this webhook will be fired. Valid values are `ALERT_OPENED`,
@@ -249,7 +183,8 @@ type AlertTargetState struct {
 	// routing key. `WEBHOOK`: URL endpoint.
 	Recipient pulumi.StringPtrInput
 	// List of routing targets that this alert target will notify. See Route
-	Routes   AlertTargetRouteArrayInput
+	Routes AlertTargetRouteArrayInput
+	// The target ID prefixed with `target:` for interpolating into a Wavefront Alert.
 	TargetId pulumi.StringPtrInput
 	// A mustache template that will form the body of the POST request, email, and summary of the PagerDuty.
 	Template pulumi.StringPtrInput
@@ -453,6 +388,7 @@ func (o AlertTargetOutput) Routes() AlertTargetRouteArrayOutput {
 	return o.ApplyT(func(v *AlertTarget) AlertTargetRouteArrayOutput { return v.Routes }).(AlertTargetRouteArrayOutput)
 }
 
+// The target ID prefixed with `target:` for interpolating into a Wavefront Alert.
 func (o AlertTargetOutput) TargetId() pulumi.StringOutput {
 	return o.ApplyT(func(v *AlertTarget) pulumi.StringOutput { return v.TargetId }).(pulumi.StringOutput)
 }

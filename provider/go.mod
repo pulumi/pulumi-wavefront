@@ -1,11 +1,11 @@
-module github.com/pulumi/pulumi-wavefront/provider/v2
+module github.com/pulumi/pulumi-wavefront/provider/v3
 
 go 1.19
 
 require (
-	github.com/pulumi/pulumi-terraform-bridge/v3 v3.56.1
+	github.com/pulumi/pulumi-terraform-bridge/v3 v3.56.2
 	github.com/pulumi/pulumi/sdk/v3 v3.76.1
-	github.com/vmware/terraform-provider-wavefront v0.0.0-20230801220302-e4538050c3e8
+	github.com/vmware/terraform-provider-wavefront v0.0.0-20230808000921-0f52eec14793
 )
 
 require (

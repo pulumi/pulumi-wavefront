@@ -35,7 +35,7 @@ public final class CloudIntegrationGcpState extends com.pulumi.resources.Resourc
     }
 
     /**
-     * A list of Google Cloud Platform (GCP) services.  Valid values are `APPENGINE`,
+     * A list of Google Cloud Platform (GCP) services. Valid values are `APPENGINE`,
      * `BIGQUERY`, `BIGTABLE`, `CLOUDFUNCTIONS`, `CLOUDIOT`, `CLOUDSQL`, `CLOUDTASKS`, `COMPUTE`, `CONTAINER`,
      * `DATAFLOW`, `DATAPROC`, `DATASTORE`, `FIREBASEDATABASE`, `FIREBASEHOSTING`, `FIRESTORE`, `INTERCONNECT`,
      * `LOADBALANCING`, `LOGGING`, `ML`, `MONITORING`, `PUBSUB`, `REDIS`, `ROUTER`, `SERVICERUNTIME`, `SPANNER`, `STORAGE`,
@@ -46,7 +46,7 @@ public final class CloudIntegrationGcpState extends com.pulumi.resources.Resourc
     private @Nullable Output<List<String>> categories;
 
     /**
-     * @return A list of Google Cloud Platform (GCP) services.  Valid values are `APPENGINE`,
+     * @return A list of Google Cloud Platform (GCP) services. Valid values are `APPENGINE`,
      * `BIGQUERY`, `BIGTABLE`, `CLOUDFUNCTIONS`, `CLOUDIOT`, `CLOUDSQL`, `CLOUDTASKS`, `COMPUTE`, `CONTAINER`,
      * `DATAFLOW`, `DATAPROC`, `DATASTORE`, `FIREBASEDATABASE`, `FIREBASEHOSTING`, `FIRESTORE`, `INTERCONNECT`,
      * `LOADBALANCING`, `LOGGING`, `ML`, `MONITORING`, `PUBSUB`, `REDIS`, `ROUTER`, `SERVICERUNTIME`, `SPANNER`, `STORAGE`,
@@ -218,7 +218,7 @@ public final class CloudIntegrationGcpState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param categories A list of Google Cloud Platform (GCP) services.  Valid values are `APPENGINE`,
+         * @param categories A list of Google Cloud Platform (GCP) services. Valid values are `APPENGINE`,
          * `BIGQUERY`, `BIGTABLE`, `CLOUDFUNCTIONS`, `CLOUDIOT`, `CLOUDSQL`, `CLOUDTASKS`, `COMPUTE`, `CONTAINER`,
          * `DATAFLOW`, `DATAPROC`, `DATASTORE`, `FIREBASEDATABASE`, `FIREBASEHOSTING`, `FIRESTORE`, `INTERCONNECT`,
          * `LOADBALANCING`, `LOGGING`, `ML`, `MONITORING`, `PUBSUB`, `REDIS`, `ROUTER`, `SERVICERUNTIME`, `SPANNER`, `STORAGE`,
@@ -233,7 +233,7 @@ public final class CloudIntegrationGcpState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param categories A list of Google Cloud Platform (GCP) services.  Valid values are `APPENGINE`,
+         * @param categories A list of Google Cloud Platform (GCP) services. Valid values are `APPENGINE`,
          * `BIGQUERY`, `BIGTABLE`, `CLOUDFUNCTIONS`, `CLOUDIOT`, `CLOUDSQL`, `CLOUDTASKS`, `COMPUTE`, `CONTAINER`,
          * `DATAFLOW`, `DATAPROC`, `DATASTORE`, `FIREBASEDATABASE`, `FIREBASEHOSTING`, `FIRESTORE`, `INTERCONNECT`,
          * `LOADBALANCING`, `LOGGING`, `ML`, `MONITORING`, `PUBSUB`, `REDIS`, `ROUTER`, `SERVICERUNTIME`, `SPANNER`, `STORAGE`,
@@ -247,7 +247,7 @@ public final class CloudIntegrationGcpState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param categories A list of Google Cloud Platform (GCP) services.  Valid values are `APPENGINE`,
+         * @param categories A list of Google Cloud Platform (GCP) services. Valid values are `APPENGINE`,
          * `BIGQUERY`, `BIGTABLE`, `CLOUDFUNCTIONS`, `CLOUDIOT`, `CLOUDSQL`, `CLOUDTASKS`, `COMPUTE`, `CONTAINER`,
          * `DATAFLOW`, `DATAPROC`, `DATASTORE`, `FIREBASEDATABASE`, `FIREBASEHOSTING`, `FIRESTORE`, `INTERCONNECT`,
          * `LOADBALANCING`, `LOGGING`, `ML`, `MONITORING`, `PUBSUB`, `REDIS`, `ROUTER`, `SERVICERUNTIME`, `SPANNER`, `STORAGE`,

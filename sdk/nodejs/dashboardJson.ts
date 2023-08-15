@@ -5,7 +5,7 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 /**
- * Provides a Wavefront Dashboard JSON resource.  This allows dashboards to be created, updated, and deleted.
+ * Provides a Wavefront Dashboard JSON resource. This allows dashboards to be created, updated, and deleted.
  *
  * ## Example Usage
  *
@@ -14,6 +14,16 @@ import * as utilities from "./utilities";
  * import * as wavefront from "@pulumi/wavefront";
  *
  * const testDashboardJson = new wavefront.DashboardJson("testDashboardJson", {dashboardJson: `  {
+ *     "acl": {
+ *       "canModify": [
+ *         "group-uuid",
+ *         "role-uuid"
+ *       ],
+ *       "canView": [
+ *         "group-uuid",
+ *         "role-uuid"
+ *       ]
+ *     },
  *     "name": "Terraform Test Dashboard Json",
  *     "description": "a",
  *     "eventFilterType": "BYCHART",
@@ -126,7 +136,9 @@ import * as utilities from "./utilities";
  * `});
  * ```
  *
- * **Note:** If there are dynamic variables in the Wavefront dashboard json, then these variables must be present in a separate file as mentioned in the section below.
+ * * 
+ * *Note:
+ * ** If there are dynamic variables in the Wavefront dashboard json, then these variables must be present in a separate file as mentioned in the section below.
  *
  * ## Import
  *
@@ -165,7 +177,7 @@ export class DashboardJson extends pulumi.CustomResource {
     }
 
     /**
-     * See the [Wavefront API Documentation](https://docs.wavefront.com/wavefront_api.html#api-documentation-wavefront-instance) 
+     * See the [Wavefront API Documentation](https://docs.wavefront.com/wavefront_api.html#api-documentation-wavefront-instance)
      * for instructions on how to get to your API documentation for more details.
      */
     public readonly dashboardJson!: pulumi.Output<string>;
@@ -201,7 +213,7 @@ export class DashboardJson extends pulumi.CustomResource {
  */
 export interface DashboardJsonState {
     /**
-     * See the [Wavefront API Documentation](https://docs.wavefront.com/wavefront_api.html#api-documentation-wavefront-instance) 
+     * See the [Wavefront API Documentation](https://docs.wavefront.com/wavefront_api.html#api-documentation-wavefront-instance)
      * for instructions on how to get to your API documentation for more details.
      */
     dashboardJson?: pulumi.Input<string>;
@@ -212,7 +224,7 @@ export interface DashboardJsonState {
  */
 export interface DashboardJsonArgs {
     /**
-     * See the [Wavefront API Documentation](https://docs.wavefront.com/wavefront_api.html#api-documentation-wavefront-instance) 
+     * See the [Wavefront API Documentation](https://docs.wavefront.com/wavefront_api.html#api-documentation-wavefront-instance)
      * for instructions on how to get to your API documentation for more details.
      */
     dashboardJson: pulumi.Input<string>;

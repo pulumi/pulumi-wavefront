@@ -34,7 +34,7 @@ To use from Python, install using `pip`:
 
 To use from Go, use `go get` to grab the latest version of the library
 
-    $ go get github.com/pulumi/pulumi-wavefront/sdk/v2
+    $ go get github.com/pulumi/pulumi-wavefront/sdk/v3
 
 ### .NET
 

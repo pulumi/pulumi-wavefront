@@ -30,59 +30,6 @@ import * as utilities from "./utilities";
  *     ],
  * });
  * ```
- * ## Attributes Reference
- *
- * * `targetId` - The target ID prefixed with `target:` for interpolating into a Wavefront Alert.
- *
- * ### Route
- *
- * The `route` mapping supports the following:
- *
- * * `method` - (Required)  The notification method used for notification target. One of `WEBHOOK`, `EMAIL`, `PAGERDUTY`.
- * * `target` - (Required) The endpoint for the alert route. `EMAIL`: email address. `PAGERDUTY`: PagerDuty routing
- *   key. `WEBHOOK`: URL endpoint.
- * * `filter` - (Required) String that filters the route. Space delimited.  Currently only allows a single key value pair.
- *   (e.g. `env prod`)
- *
- * ### Example
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as wavefront from "@pulumi/wavefront";
- *
- * const testTarget = new wavefront.AlertTarget("testTarget", {
- *     contentType: "application/json",
- *     customHeaders: {
- *         Testing: "true",
- *     },
- *     description: "Test target",
- *     method: "WEBHOOK",
- *     recipient: "https://hooks.slack.com/services/test/me",
- *     routes: [
- *         {
- *             filter: {
- *                 key: "env",
- *                 value: "prod",
- *             },
- *             method: "WEBHOOK",
- *             target: "https://hooks.slack.com/services/test/me/prod",
- *         },
- *         {
- *             filter: {
- *                 key: "env",
- *                 value: "dev",
- *             },
- *             method: "WEBHOOK",
- *             target: "https://hooks.slack.com/services/test/me/dev",
- *         },
- *     ],
- *     template: "{}",
- *     triggers: [
- *         "ALERT_OPENED",
- *         "ALERT_RESOLVED",
- *     ],
- * });
- * ```
  *
  * ## Import
  *
@@ -125,7 +72,7 @@ export class AlertTarget extends pulumi.CustomResource {
      */
     public readonly contentType!: pulumi.Output<string | undefined>;
     /**
-     * A `string->string` map specifying the custom HTTP header key/value pairs that will be 
+     * A `string->string` map specifying the custom HTTP header key/value pairs that will be
      * sent in the requests with a method of `WEBHOOK`.
      */
     public readonly customHeaders!: pulumi.Output<{[key: string]: string} | undefined>;
@@ -150,7 +97,7 @@ export class AlertTarget extends pulumi.CustomResource {
      */
     public readonly name!: pulumi.Output<string>;
     /**
-     * The end point for the notification Target.  `EMAIL`: email address. `PAGERDUTY`: PagerDuty 
+     * The end point for the notification Target.  `EMAIL`: email address. `PAGERDUTY`: PagerDuty
      * routing key. `WEBHOOK`: URL endpoint.
      */
     public readonly recipient!: pulumi.Output<string>;
@@ -158,6 +105,9 @@ export class AlertTarget extends pulumi.CustomResource {
      * List of routing targets that this alert target will notify. See Route
      */
     public readonly routes!: pulumi.Output<outputs.AlertTargetRoute[] | undefined>;
+    /**
+     * The target ID prefixed with `target:` for interpolating into a Wavefront Alert.
+     */
     public /*out*/ readonly targetId!: pulumi.Output<string>;
     /**
      * A mustache template that will form the body of the POST request, email, and summary of the PagerDuty.
@@ -235,7 +185,7 @@ export interface AlertTargetState {
      */
     contentType?: pulumi.Input<string>;
     /**
-     * A `string->string` map specifying the custom HTTP header key/value pairs that will be 
+     * A `string->string` map specifying the custom HTTP header key/value pairs that will be
      * sent in the requests with a method of `WEBHOOK`.
      */
     customHeaders?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
@@ -260,7 +210,7 @@ export interface AlertTargetState {
      */
     name?: pulumi.Input<string>;
     /**
-     * The end point for the notification Target.  `EMAIL`: email address. `PAGERDUTY`: PagerDuty 
+     * The end point for the notification Target.  `EMAIL`: email address. `PAGERDUTY`: PagerDuty
      * routing key. `WEBHOOK`: URL endpoint.
      */
     recipient?: pulumi.Input<string>;
@@ -268,6 +218,9 @@ export interface AlertTargetState {
      * List of routing targets that this alert target will notify. See Route
      */
     routes?: pulumi.Input<pulumi.Input<inputs.AlertTargetRoute>[]>;
+    /**
+     * The target ID prefixed with `target:` for interpolating into a Wavefront Alert.
+     */
     targetId?: pulumi.Input<string>;
     /**
      * A mustache template that will form the body of the POST request, email, and summary of the PagerDuty.
@@ -289,7 +242,7 @@ export interface AlertTargetArgs {
      */
     contentType?: pulumi.Input<string>;
     /**
-     * A `string->string` map specifying the custom HTTP header key/value pairs that will be 
+     * A `string->string` map specifying the custom HTTP header key/value pairs that will be
      * sent in the requests with a method of `WEBHOOK`.
      */
     customHeaders?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
@@ -314,7 +267,7 @@ export interface AlertTargetArgs {
      */
     name?: pulumi.Input<string>;
     /**
-     * The end point for the notification Target.  `EMAIL`: email address. `PAGERDUTY`: PagerDuty 
+     * The end point for the notification Target.  `EMAIL`: email address. `PAGERDUTY`: PagerDuty
      * routing key. `WEBHOOK`: URL endpoint.
      */
     recipient: pulumi.Input<string>;

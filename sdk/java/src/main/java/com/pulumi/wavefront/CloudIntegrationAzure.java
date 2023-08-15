@@ -69,7 +69,7 @@ public class CloudIntegrationAzure extends com.pulumi.resources.CustomResource {
      * A list of point tag key-values to add to every point ingested using this integration.
      * 
      */
-    @Export(name="additionalTags", type=Map.class, parameters={String.class, String.class})
+    @Export(name="additionalTags", refs={Map.class,String.class}, tree="[0,1,1]")
     private Output</* @Nullable */ Map<String,String>> additionalTags;
 
     /**
@@ -83,7 +83,7 @@ public class CloudIntegrationAzure extends com.pulumi.resources.CustomResource {
      * A list of Azure Activity Log categories.
      * 
      */
-    @Export(name="categoryFilters", type=List.class, parameters={String.class})
+    @Export(name="categoryFilters", refs={List.class,String.class}, tree="[0,1]")
     private Output</* @Nullable */ List<String>> categoryFilters;
 
     /**
@@ -97,7 +97,7 @@ public class CloudIntegrationAzure extends com.pulumi.resources.CustomResource {
      * Client ID for an Azure service account within your project.
      * 
      */
-    @Export(name="clientId", type=String.class, parameters={})
+    @Export(name="clientId", refs={String.class}, tree="[0]")
     private Output<String> clientId;
 
     /**
@@ -111,7 +111,7 @@ public class CloudIntegrationAzure extends com.pulumi.resources.CustomResource {
      * Client secret for an Azure service account within your project.
      * 
      */
-    @Export(name="clientSecret", type=String.class, parameters={})
+    @Export(name="clientSecret", refs={String.class}, tree="[0]")
     private Output<String> clientSecret;
 
     /**
@@ -125,7 +125,7 @@ public class CloudIntegrationAzure extends com.pulumi.resources.CustomResource {
      * Forces this resource to save, even if errors are present.
      * 
      */
-    @Export(name="forceSave", type=Boolean.class, parameters={})
+    @Export(name="forceSave", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> forceSave;
 
     /**
@@ -139,7 +139,7 @@ public class CloudIntegrationAzure extends com.pulumi.resources.CustomResource {
      * A regular expression that a metric name must match (case-insensitively) in order to be ingested.
      * 
      */
-    @Export(name="metricFilterRegex", type=String.class, parameters={})
+    @Export(name="metricFilterRegex", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> metricFilterRegex;
 
     /**
@@ -153,7 +153,7 @@ public class CloudIntegrationAzure extends com.pulumi.resources.CustomResource {
      * The human-readable name of this integration.
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
@@ -167,7 +167,7 @@ public class CloudIntegrationAzure extends com.pulumi.resources.CustomResource {
      * A list of Azure resource groups from which to pull metrics.
      * 
      */
-    @Export(name="resourceGroupFilters", type=List.class, parameters={String.class})
+    @Export(name="resourceGroupFilters", refs={List.class,String.class}, tree="[0,1]")
     private Output</* @Nullable */ List<String>> resourceGroupFilters;
 
     /**
@@ -181,7 +181,7 @@ public class CloudIntegrationAzure extends com.pulumi.resources.CustomResource {
      * A value denoting which cloud service this service integrates with.
      * 
      */
-    @Export(name="service", type=String.class, parameters={})
+    @Export(name="service", refs={String.class}, tree="[0]")
     private Output<String> service;
 
     /**
@@ -195,7 +195,7 @@ public class CloudIntegrationAzure extends com.pulumi.resources.CustomResource {
      * How often, in minutes, to refresh the service.
      * 
      */
-    @Export(name="serviceRefreshRateInMinutes", type=Integer.class, parameters={})
+    @Export(name="serviceRefreshRateInMinutes", refs={Integer.class}, tree="[0]")
     private Output</* @Nullable */ Integer> serviceRefreshRateInMinutes;
 
     /**
@@ -209,7 +209,7 @@ public class CloudIntegrationAzure extends com.pulumi.resources.CustomResource {
      * Tenant ID for an Azure service account within your project.
      * 
      */
-    @Export(name="tenant", type=String.class, parameters={})
+    @Export(name="tenant", refs={String.class}, tree="[0]")
     private Output<String> tenant;
 
     /**

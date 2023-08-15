@@ -61,7 +61,7 @@ public class UserGroup extends com.pulumi.resources.CustomResource {
      * A short description of the user group.
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
@@ -75,7 +75,7 @@ public class UserGroup extends com.pulumi.resources.CustomResource {
      * The name of the user group.
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**

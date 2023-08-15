@@ -8,7 +8,7 @@ import (
 	"reflect"
 
 	"errors"
-	"github.com/pulumi/pulumi-wavefront/sdk/v2/go/wavefront/internal"
+	"github.com/pulumi/pulumi-wavefront/sdk/v3/go/wavefront/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -26,9 +26,9 @@ import (
 type Dashboard struct {
 	pulumi.CustomResourceState
 
-	// A list of users that have modify ACL access to the dashboard.
+	// A list of users/groups/roles that can modify the dashboard.
 	CanModifies pulumi.StringArrayOutput `pulumi:"canModifies"`
-	// A list of users that have view ACL access to the dashboard.
+	// A list of users/groups/roles that can view the dashboard.
 	CanViews pulumi.StringArrayOutput `pulumi:"canViews"`
 	// Human-readable description of the dashboard.
 	Description pulumi.StringOutput `pulumi:"description"`
@@ -95,9 +95,9 @@ func GetDashboard(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering Dashboard resources.
 type dashboardState struct {
-	// A list of users that have modify ACL access to the dashboard.
+	// A list of users/groups/roles that can modify the dashboard.
 	CanModifies []string `pulumi:"canModifies"`
-	// A list of users that have view ACL access to the dashboard.
+	// A list of users/groups/roles that can view the dashboard.
 	CanViews []string `pulumi:"canViews"`
 	// Human-readable description of the dashboard.
 	Description *string `pulumi:"description"`
@@ -123,9 +123,9 @@ type dashboardState struct {
 }
 
 type DashboardState struct {
-	// A list of users that have modify ACL access to the dashboard.
+	// A list of users/groups/roles that can modify the dashboard.
 	CanModifies pulumi.StringArrayInput
-	// A list of users that have view ACL access to the dashboard.
+	// A list of users/groups/roles that can view the dashboard.
 	CanViews pulumi.StringArrayInput
 	// Human-readable description of the dashboard.
 	Description pulumi.StringPtrInput
@@ -155,9 +155,9 @@ func (DashboardState) ElementType() reflect.Type {
 }
 
 type dashboardArgs struct {
-	// A list of users that have modify ACL access to the dashboard.
+	// A list of users/groups/roles that can modify the dashboard.
 	CanModifies []string `pulumi:"canModifies"`
-	// A list of users that have view ACL access to the dashboard.
+	// A list of users/groups/roles that can view the dashboard.
 	CanViews []string `pulumi:"canViews"`
 	// Human-readable description of the dashboard.
 	Description string `pulumi:"description"`
@@ -184,9 +184,9 @@ type dashboardArgs struct {
 
 // The set of arguments for constructing a Dashboard resource.
 type DashboardArgs struct {
-	// A list of users that have modify ACL access to the dashboard.
+	// A list of users/groups/roles that can modify the dashboard.
 	CanModifies pulumi.StringArrayInput
-	// A list of users that have view ACL access to the dashboard.
+	// A list of users/groups/roles that can view the dashboard.
 	CanViews pulumi.StringArrayInput
 	// Human-readable description of the dashboard.
 	Description pulumi.StringInput
@@ -298,12 +298,12 @@ func (o DashboardOutput) ToDashboardOutputWithContext(ctx context.Context) Dashb
 	return o
 }
 
-// A list of users that have modify ACL access to the dashboard.
+// A list of users/groups/roles that can modify the dashboard.
 func (o DashboardOutput) CanModifies() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *Dashboard) pulumi.StringArrayOutput { return v.CanModifies }).(pulumi.StringArrayOutput)
 }
 
-// A list of users that have view ACL access to the dashboard.
+// A list of users/groups/roles that can view the dashboard.
 func (o DashboardOutput) CanViews() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *Dashboard) pulumi.StringArrayOutput { return v.CanViews }).(pulumi.StringArrayOutput)
 }

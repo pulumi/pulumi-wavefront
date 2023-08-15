@@ -12,7 +12,7 @@ namespace Pulumi.Wavefront
     public static class GetRoles
     {
         /// <summary>
-        /// Use this data source to get all Roles in Wavefront. 
+        /// Use this data source to get all Roles in Wavefront.
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -41,7 +41,7 @@ namespace Pulumi.Wavefront
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetRolesResult>("wavefront:index/getRoles:getRoles", args ?? new GetRolesArgs(), options.WithDefaults());
 
         /// <summary>
-        /// Use this data source to get all Roles in Wavefront. 
+        /// Use this data source to get all Roles in Wavefront.
         /// 
         /// {{% examples %}}
         /// ## Example Usage

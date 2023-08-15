@@ -60,7 +60,7 @@ public class Role extends com.pulumi.resources.CustomResource {
      * A list of user groups or accounts to assign to this role.
      * 
      */
-    @Export(name="assignees", type=List.class, parameters={String.class})
+    @Export(name="assignees", refs={List.class,String.class}, tree="[0,1]")
     private Output</* @Nullable */ List<String>> assignees;
 
     /**
@@ -74,7 +74,7 @@ public class Role extends com.pulumi.resources.CustomResource {
      * A short description of the role.
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> description;
 
     /**
@@ -88,7 +88,7 @@ public class Role extends com.pulumi.resources.CustomResource {
      * The name of the role.
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
@@ -104,7 +104,7 @@ public class Role extends com.pulumi.resources.CustomResource {
      * `host_tag_management`, `metrics_management`, and `user_management`.
      * 
      */
-    @Export(name="permissions", type=List.class, parameters={String.class})
+    @Export(name="permissions", refs={List.class,String.class}, tree="[0,1]")
     private Output</* @Nullable */ List<String>> permissions;
 
     /**

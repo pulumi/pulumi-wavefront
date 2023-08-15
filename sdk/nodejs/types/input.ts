@@ -6,11 +6,19 @@ import * as inputs from "../types/input";
 import * as outputs from "../types/output";
 
 export interface AlertTargetRoute {
+    /**
+     * (Required) String that filters the route. Space delimited. Currently only allows a single key value pair.
+     * (e.g. `env prod`)
+     */
     filter?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * The notification method used for notification target. One of `WEBHOOK`, `EMAIL`, `PAGERDUTY`.
      */
     method: pulumi.Input<string>;
+    /**
+     * (Required) The endpoint for the alert route. `EMAIL`: email address. `PAGERDUTY`: PagerDuty routing
+     * key. `WEBHOOK`: URL endpoint.
+     */
     target: pulumi.Input<string>;
 }
 

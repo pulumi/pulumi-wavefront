@@ -68,7 +68,7 @@ public class CloudIntegrationNewRelic extends com.pulumi.resources.CustomResourc
      * A list of point tag key-values to add to every point ingested using this integration.
      * 
      */
-    @Export(name="additionalTags", type=Map.class, parameters={String.class, String.class})
+    @Export(name="additionalTags", refs={Map.class,String.class}, tree="[0,1,1]")
     private Output</* @Nullable */ Map<String,String>> additionalTags;
 
     /**
@@ -82,7 +82,7 @@ public class CloudIntegrationNewRelic extends com.pulumi.resources.CustomResourc
      * New Relic REST API key.
      * 
      */
-    @Export(name="apiKey", type=String.class, parameters={})
+    @Export(name="apiKey", refs={String.class}, tree="[0]")
     private Output<String> apiKey;
 
     /**
@@ -96,7 +96,7 @@ public class CloudIntegrationNewRelic extends com.pulumi.resources.CustomResourc
      * A regular expression that an application name must match (case-insensitively) in order to collect metrics.
      * 
      */
-    @Export(name="appFilterRegex", type=String.class, parameters={})
+    @Export(name="appFilterRegex", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> appFilterRegex;
 
     /**
@@ -110,7 +110,7 @@ public class CloudIntegrationNewRelic extends com.pulumi.resources.CustomResourc
      * Forces this resource to save, even if errors are present.
      * 
      */
-    @Export(name="forceSave", type=Boolean.class, parameters={})
+    @Export(name="forceSave", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> forceSave;
 
     /**
@@ -124,7 +124,7 @@ public class CloudIntegrationNewRelic extends com.pulumi.resources.CustomResourc
      * A regular expression that a host name must match (case-insensitively) in order to collect metrics.
      * 
      */
-    @Export(name="hostFilterRegex", type=String.class, parameters={})
+    @Export(name="hostFilterRegex", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> hostFilterRegex;
 
     /**
@@ -138,7 +138,7 @@ public class CloudIntegrationNewRelic extends com.pulumi.resources.CustomResourc
      * See Metric Filter.
      * 
      */
-    @Export(name="metricFilters", type=List.class, parameters={CloudIntegrationNewRelicMetricFilter.class})
+    @Export(name="metricFilters", refs={List.class,CloudIntegrationNewRelicMetricFilter.class}, tree="[0,1]")
     private Output</* @Nullable */ List<CloudIntegrationNewRelicMetricFilter>> metricFilters;
 
     /**
@@ -152,7 +152,7 @@ public class CloudIntegrationNewRelic extends com.pulumi.resources.CustomResourc
      * The human-readable name of this integration.
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
@@ -166,7 +166,7 @@ public class CloudIntegrationNewRelic extends com.pulumi.resources.CustomResourc
      * A value denoting which cloud service this service integrates with.
      * 
      */
-    @Export(name="service", type=String.class, parameters={})
+    @Export(name="service", refs={String.class}, tree="[0]")
     private Output<String> service;
 
     /**
@@ -180,7 +180,7 @@ public class CloudIntegrationNewRelic extends com.pulumi.resources.CustomResourc
      * How often, in minutes, to refresh the service.
      * 
      */
-    @Export(name="serviceRefreshRateInMinutes", type=Integer.class, parameters={})
+    @Export(name="serviceRefreshRateInMinutes", refs={Integer.class}, tree="[0]")
     private Output</* @Nullable */ Integer> serviceRefreshRateInMinutes;
 
     /**

@@ -26,7 +26,7 @@ class ServiceAccountArgs:
         :param pulumi.Input[bool] active: Whether or not the service account is active.
         :param pulumi.Input[str] description: The description of the service account.
         :param pulumi.Input[str] ingestion_policy: ID of ingestion policy.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] permissions: List of permission to grant to this service account.  Valid options are
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] permissions: List of permission to grant to this service account. Valid options are
                `agent_management`, `alerts_management`, `dashboard_management`, `embedded_charts`, `events_management`, `external_links_management`,
                `host_tag_management`, `metrics_management`, and `user_management`.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] user_groups: List of user groups for this service account.
@@ -95,7 +95,7 @@ class ServiceAccountArgs:
     @pulumi.getter
     def permissions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        List of permission to grant to this service account.  Valid options are
+        List of permission to grant to this service account. Valid options are
         `agent_management`, `alerts_management`, `dashboard_management`, `embedded_charts`, `events_management`, `external_links_management`,
         `host_tag_management`, `metrics_management`, and `user_management`.
         """
@@ -133,7 +133,7 @@ class _ServiceAccountState:
         :param pulumi.Input[str] description: The description of the service account.
         :param pulumi.Input[str] identifier: The unique identifier of the service account to create. Must have the prefix `sa::`.
         :param pulumi.Input[str] ingestion_policy: ID of ingestion policy.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] permissions: List of permission to grant to this service account.  Valid options are
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] permissions: List of permission to grant to this service account. Valid options are
                `agent_management`, `alerts_management`, `dashboard_management`, `embedded_charts`, `events_management`, `external_links_management`,
                `host_tag_management`, `metrics_management`, and `user_management`.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] user_groups: List of user groups for this service account.
@@ -203,7 +203,7 @@ class _ServiceAccountState:
     @pulumi.getter
     def permissions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        List of permission to grant to this service account.  Valid options are
+        List of permission to grant to this service account. Valid options are
         `agent_management`, `alerts_management`, `dashboard_management`, `embedded_charts`, `events_management`, `external_links_management`,
         `host_tag_management`, `metrics_management`, and `user_management`.
         """
@@ -266,7 +266,7 @@ class ServiceAccount(pulumi.CustomResource):
         :param pulumi.Input[str] description: The description of the service account.
         :param pulumi.Input[str] identifier: The unique identifier of the service account to create. Must have the prefix `sa::`.
         :param pulumi.Input[str] ingestion_policy: ID of ingestion policy.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] permissions: List of permission to grant to this service account.  Valid options are
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] permissions: List of permission to grant to this service account. Valid options are
                `agent_management`, `alerts_management`, `dashboard_management`, `embedded_charts`, `events_management`, `external_links_management`,
                `host_tag_management`, `metrics_management`, and `user_management`.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] user_groups: List of user groups for this service account.
@@ -364,7 +364,7 @@ class ServiceAccount(pulumi.CustomResource):
         :param pulumi.Input[str] description: The description of the service account.
         :param pulumi.Input[str] identifier: The unique identifier of the service account to create. Must have the prefix `sa::`.
         :param pulumi.Input[str] ingestion_policy: ID of ingestion policy.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] permissions: List of permission to grant to this service account.  Valid options are
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] permissions: List of permission to grant to this service account. Valid options are
                `agent_management`, `alerts_management`, `dashboard_management`, `embedded_charts`, `events_management`, `external_links_management`,
                `host_tag_management`, `metrics_management`, and `user_management`.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] user_groups: List of user groups for this service account.
@@ -417,7 +417,7 @@ class ServiceAccount(pulumi.CustomResource):
     @pulumi.getter
     def permissions(self) -> pulumi.Output[Sequence[str]]:
         """
-        List of permission to grant to this service account.  Valid options are
+        List of permission to grant to this service account. Valid options are
         `agent_management`, `alerts_management`, `dashboard_management`, `embedded_charts`, `events_management`, `external_links_management`,
         `host_tag_management`, `metrics_management`, and `user_management`.
         """

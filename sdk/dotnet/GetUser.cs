@@ -12,7 +12,7 @@ namespace Pulumi.Wavefront
     public static class GetUser
     {
         /// <summary>
-        /// Use this data source to get information for a given user by email from Wavefront. 
+        /// Use this data source to get information for a given user by email from Wavefront.
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -40,7 +40,7 @@ namespace Pulumi.Wavefront
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetUserResult>("wavefront:index/getUser:getUser", args ?? new GetUserArgs(), options.WithDefaults());
 
         /// <summary>
-        /// Use this data source to get information for a given user by email from Wavefront. 
+        /// Use this data source to get information for a given user by email from Wavefront.
         /// 
         /// {{% examples %}}
         /// ## Example Usage

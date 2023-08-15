@@ -46,11 +46,11 @@ export class Dashboard extends pulumi.CustomResource {
     }
 
     /**
-     * A list of users that have modify ACL access to the dashboard.
+     * A list of users/groups/roles that can modify the dashboard.
      */
     public readonly canModifies!: pulumi.Output<string[]>;
     /**
-     * A list of users that have view ACL access to the dashboard.
+     * A list of users/groups/roles that can view the dashboard.
      */
     public readonly canViews!: pulumi.Output<string[] | undefined>;
     /**
@@ -153,11 +153,11 @@ export class Dashboard extends pulumi.CustomResource {
  */
 export interface DashboardState {
     /**
-     * A list of users that have modify ACL access to the dashboard.
+     * A list of users/groups/roles that can modify the dashboard.
      */
     canModifies?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * A list of users that have view ACL access to the dashboard.
+     * A list of users/groups/roles that can view the dashboard.
      */
     canViews?: pulumi.Input<pulumi.Input<string>[]>;
     /**
@@ -206,11 +206,11 @@ export interface DashboardState {
  */
 export interface DashboardArgs {
     /**
-     * A list of users that have modify ACL access to the dashboard.
+     * A list of users/groups/roles that can modify the dashboard.
      */
     canModifies?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * A list of users that have view ACL access to the dashboard.
+     * A list of users/groups/roles that can view the dashboard.
      */
     canViews?: pulumi.Input<pulumi.Input<string>[]>;
     /**

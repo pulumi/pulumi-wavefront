@@ -70,7 +70,7 @@ public class CloudIntegrationAzureActivityLog extends com.pulumi.resources.Custo
      * A list of point tag key-values to add to every point ingested using this integration.
      * 
      */
-    @Export(name="additionalTags", type=Map.class, parameters={String.class, String.class})
+    @Export(name="additionalTags", refs={Map.class,String.class}, tree="[0,1,1]")
     private Output</* @Nullable */ Map<String,String>> additionalTags;
 
     /**
@@ -84,7 +84,7 @@ public class CloudIntegrationAzureActivityLog extends com.pulumi.resources.Custo
      * A list of Azure services (such as Microsoft.Compute/virtualMachines) from which to pull metrics.
      * 
      */
-    @Export(name="categoryFilters", type=List.class, parameters={String.class})
+    @Export(name="categoryFilters", refs={List.class,String.class}, tree="[0,1]")
     private Output</* @Nullable */ List<String>> categoryFilters;
 
     /**
@@ -98,7 +98,7 @@ public class CloudIntegrationAzureActivityLog extends com.pulumi.resources.Custo
      * Client ID for an Azure service account within your project.
      * 
      */
-    @Export(name="clientId", type=String.class, parameters={})
+    @Export(name="clientId", refs={String.class}, tree="[0]")
     private Output<String> clientId;
 
     /**
@@ -112,7 +112,7 @@ public class CloudIntegrationAzureActivityLog extends com.pulumi.resources.Custo
      * Client secret for an Azure service account within your project.
      * 
      */
-    @Export(name="clientSecret", type=String.class, parameters={})
+    @Export(name="clientSecret", refs={String.class}, tree="[0]")
     private Output<String> clientSecret;
 
     /**
@@ -126,7 +126,7 @@ public class CloudIntegrationAzureActivityLog extends com.pulumi.resources.Custo
      * Forces this resource to save, even if errors are present.
      * 
      */
-    @Export(name="forceSave", type=Boolean.class, parameters={})
+    @Export(name="forceSave", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> forceSave;
 
     /**
@@ -140,7 +140,7 @@ public class CloudIntegrationAzureActivityLog extends com.pulumi.resources.Custo
      * The human-readable name of this integration.
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
@@ -154,7 +154,7 @@ public class CloudIntegrationAzureActivityLog extends com.pulumi.resources.Custo
      * A value denoting which cloud service this service integrates with.
      * 
      */
-    @Export(name="service", type=String.class, parameters={})
+    @Export(name="service", refs={String.class}, tree="[0]")
     private Output<String> service;
 
     /**
@@ -168,7 +168,7 @@ public class CloudIntegrationAzureActivityLog extends com.pulumi.resources.Custo
      * How often, in minutes, to refresh the service.
      * 
      */
-    @Export(name="serviceRefreshRateInMinutes", type=Integer.class, parameters={})
+    @Export(name="serviceRefreshRateInMinutes", refs={Integer.class}, tree="[0]")
     private Output</* @Nullable */ Integer> serviceRefreshRateInMinutes;
 
     /**
@@ -182,7 +182,7 @@ public class CloudIntegrationAzureActivityLog extends com.pulumi.resources.Custo
      * Tenant ID for an Azure service account within your project.
      * 
      */
-    @Export(name="tenant", type=String.class, parameters={})
+    @Export(name="tenant", refs={String.class}, tree="[0]")
     private Output<String> tenant;
 
     /**

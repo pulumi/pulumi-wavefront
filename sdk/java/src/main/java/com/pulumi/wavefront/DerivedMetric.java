@@ -66,7 +66,7 @@ public class DerivedMetric extends com.pulumi.resources.CustomResource {
      * User-supplied additional explanatory information for the derived metric.
      * 
      */
-    @Export(name="additionalInformation", type=String.class, parameters={})
+    @Export(name="additionalInformation", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> additionalInformation;
 
     /**
@@ -80,7 +80,7 @@ public class DerivedMetric extends com.pulumi.resources.CustomResource {
      * How frequently the query generating the derived metric is run.
      * 
      */
-    @Export(name="minutes", type=Integer.class, parameters={})
+    @Export(name="minutes", refs={Integer.class}, tree="[0]")
     private Output<Integer> minutes;
 
     /**
@@ -94,7 +94,7 @@ public class DerivedMetric extends com.pulumi.resources.CustomResource {
      * The name of the Derived Metric in Wavefront.
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
@@ -108,7 +108,7 @@ public class DerivedMetric extends com.pulumi.resources.CustomResource {
      * A Wavefront query that is evaluated at regular intervals (default is 1 minute).
      * 
      */
-    @Export(name="query", type=String.class, parameters={})
+    @Export(name="query", refs={String.class}, tree="[0]")
     private Output<String> query;
 
     /**
@@ -122,7 +122,7 @@ public class DerivedMetric extends com.pulumi.resources.CustomResource {
      * A set of tags to assign to this resource.
      * 
      */
-    @Export(name="tags", type=List.class, parameters={String.class})
+    @Export(name="tags", refs={List.class,String.class}, tree="[0,1]")
     private Output</* @Nullable */ List<String>> tags;
 
     /**

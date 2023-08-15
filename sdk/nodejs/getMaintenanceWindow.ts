@@ -61,7 +61,7 @@ export interface GetMaintenanceWindowResult {
      */
     readonly eventName: string;
     /**
-     * If set to `true`, the source or host must be in `relevantHostNames` and must have tags matching the specification formed by `relevantHostTags` and `relevantHostTagsAnded` in for this maintenance window to apply. 
+     * If set to `true`, the source or host must be in `relevantHostNames` and must have tags matching the specification formed by `relevantHostTags` and `relevantHostTagsAnded` in for this maintenance window to apply.
      * If set to false, the source or host must either be in `relevantHostNames` or match `relevantHostTags` and `relevantHostTagsAnded`. Default value is `false`.
      */
     readonly hostTagGroupHostNamesGroupAnded: boolean;

@@ -60,7 +60,7 @@ import javax.annotation.Nullable;
  */
 @ResourceType(type="wavefront:index/ingestionPolicy:IngestionPolicy")
 public class IngestionPolicy extends com.pulumi.resources.CustomResource {
-    @Export(name="accounts", type=List.class, parameters={String.class})
+    @Export(name="accounts", refs={List.class,String.class}, tree="[0,1]")
     private Output</* @Nullable */ List<String>> accounts;
 
     public Output<Optional<List<String>>> accounts() {
@@ -70,7 +70,7 @@ public class IngestionPolicy extends com.pulumi.resources.CustomResource {
      * The description of the ingestion policy.
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
@@ -80,7 +80,7 @@ public class IngestionPolicy extends com.pulumi.resources.CustomResource {
     public Output<String> description() {
         return this.description;
     }
-    @Export(name="groups", type=List.class, parameters={String.class})
+    @Export(name="groups", refs={List.class,String.class}, tree="[0,1]")
     private Output</* @Nullable */ List<String>> groups;
 
     public Output<Optional<List<String>>> groups() {
@@ -90,7 +90,7 @@ public class IngestionPolicy extends com.pulumi.resources.CustomResource {
      * The name of the ingestion policy.
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
@@ -100,25 +100,25 @@ public class IngestionPolicy extends com.pulumi.resources.CustomResource {
     public Output<String> name() {
         return this.name;
     }
-    @Export(name="namespaces", type=List.class, parameters={String.class})
+    @Export(name="namespaces", refs={List.class,String.class}, tree="[0,1]")
     private Output</* @Nullable */ List<String>> namespaces;
 
     public Output<Optional<List<String>>> namespaces() {
         return Codegen.optional(this.namespaces);
     }
-    @Export(name="scope", type=String.class, parameters={})
+    @Export(name="scope", refs={String.class}, tree="[0]")
     private Output<String> scope;
 
     public Output<String> scope() {
         return this.scope;
     }
-    @Export(name="sources", type=List.class, parameters={String.class})
+    @Export(name="sources", refs={List.class,String.class}, tree="[0,1]")
     private Output</* @Nullable */ List<String>> sources;
 
     public Output<Optional<List<String>>> sources() {
         return Codegen.optional(this.sources);
     }
-    @Export(name="tags", type=List.class, parameters={IngestionPolicyTag.class})
+    @Export(name="tags", refs={List.class,IngestionPolicyTag.class}, tree="[0,1]")
     private Output</* @Nullable */ List<IngestionPolicyTag>> tags;
 
     public Output<Optional<List<IngestionPolicyTag>>> tags() {

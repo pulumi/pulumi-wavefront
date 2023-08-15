@@ -8,7 +8,7 @@ import (
 	"reflect"
 
 	"errors"
-	"github.com/pulumi/pulumi-wavefront/sdk/v2/go/wavefront/internal"
+	"github.com/pulumi/pulumi-wavefront/sdk/v3/go/wavefront/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -21,7 +21,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-wavefront/sdk/v2/go/wavefront"
+//	"github.com/pulumi/pulumi-wavefront/sdk/v3/go/wavefront"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -61,7 +61,7 @@ type ServiceAccount struct {
 	Identifier pulumi.StringOutput `pulumi:"identifier"`
 	// ID of ingestion policy.
 	IngestionPolicy pulumi.StringPtrOutput `pulumi:"ingestionPolicy"`
-	// List of permission to grant to this service account.  Valid options are
+	// List of permission to grant to this service account. Valid options are
 	// `agentManagement`, `alertsManagement`, `dashboardManagement`, `embeddedCharts`, `eventsManagement`, `externalLinksManagement`,
 	// `hostTagManagement`, `metricsManagement`, and `userManagement`.
 	Permissions pulumi.StringArrayOutput `pulumi:"permissions"`
@@ -110,7 +110,7 @@ type serviceAccountState struct {
 	Identifier *string `pulumi:"identifier"`
 	// ID of ingestion policy.
 	IngestionPolicy *string `pulumi:"ingestionPolicy"`
-	// List of permission to grant to this service account.  Valid options are
+	// List of permission to grant to this service account. Valid options are
 	// `agentManagement`, `alertsManagement`, `dashboardManagement`, `embeddedCharts`, `eventsManagement`, `externalLinksManagement`,
 	// `hostTagManagement`, `metricsManagement`, and `userManagement`.
 	Permissions []string `pulumi:"permissions"`
@@ -127,7 +127,7 @@ type ServiceAccountState struct {
 	Identifier pulumi.StringPtrInput
 	// ID of ingestion policy.
 	IngestionPolicy pulumi.StringPtrInput
-	// List of permission to grant to this service account.  Valid options are
+	// List of permission to grant to this service account. Valid options are
 	// `agentManagement`, `alertsManagement`, `dashboardManagement`, `embeddedCharts`, `eventsManagement`, `externalLinksManagement`,
 	// `hostTagManagement`, `metricsManagement`, and `userManagement`.
 	Permissions pulumi.StringArrayInput
@@ -148,7 +148,7 @@ type serviceAccountArgs struct {
 	Identifier string `pulumi:"identifier"`
 	// ID of ingestion policy.
 	IngestionPolicy *string `pulumi:"ingestionPolicy"`
-	// List of permission to grant to this service account.  Valid options are
+	// List of permission to grant to this service account. Valid options are
 	// `agentManagement`, `alertsManagement`, `dashboardManagement`, `embeddedCharts`, `eventsManagement`, `externalLinksManagement`,
 	// `hostTagManagement`, `metricsManagement`, and `userManagement`.
 	Permissions []string `pulumi:"permissions"`
@@ -166,7 +166,7 @@ type ServiceAccountArgs struct {
 	Identifier pulumi.StringInput
 	// ID of ingestion policy.
 	IngestionPolicy pulumi.StringPtrInput
-	// List of permission to grant to this service account.  Valid options are
+	// List of permission to grant to this service account. Valid options are
 	// `agentManagement`, `alertsManagement`, `dashboardManagement`, `embeddedCharts`, `eventsManagement`, `externalLinksManagement`,
 	// `hostTagManagement`, `metricsManagement`, and `userManagement`.
 	Permissions pulumi.StringArrayInput
@@ -281,7 +281,7 @@ func (o ServiceAccountOutput) IngestionPolicy() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ServiceAccount) pulumi.StringPtrOutput { return v.IngestionPolicy }).(pulumi.StringPtrOutput)
 }
 
-// List of permission to grant to this service account.  Valid options are
+// List of permission to grant to this service account. Valid options are
 // `agentManagement`, `alertsManagement`, `dashboardManagement`, `embeddedCharts`, `eventsManagement`, `externalLinksManagement`,
 // `hostTagManagement`, `metricsManagement`, and `userManagement`.
 func (o ServiceAccountOutput) Permissions() pulumi.StringArrayOutput {

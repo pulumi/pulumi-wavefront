@@ -22,19 +22,19 @@ import javax.annotation.Nullable;
  */
 @ResourceType(type="pulumi:providers:wavefront")
 public class Provider extends com.pulumi.resources.ProviderResource {
-    @Export(name="address", type=String.class, parameters={})
+    @Export(name="address", refs={String.class}, tree="[0]")
     private Output<String> address;
 
     public Output<String> address() {
         return this.address;
     }
-    @Export(name="httpProxy", type=String.class, parameters={})
+    @Export(name="httpProxy", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> httpProxy;
 
     public Output<Optional<String>> httpProxy() {
         return Codegen.optional(this.httpProxy);
     }
-    @Export(name="token", type=String.class, parameters={})
+    @Export(name="token", refs={String.class}, tree="[0]")
     private Output<String> token;
 
     public Output<String> token() {

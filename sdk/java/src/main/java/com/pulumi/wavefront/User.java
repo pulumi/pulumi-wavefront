@@ -62,7 +62,7 @@ public class User extends com.pulumi.resources.CustomResource {
      * The customer the user is associated with.
      * 
      */
-    @Export(name="customer", type=String.class, parameters={})
+    @Export(name="customer", refs={String.class}, tree="[0]")
     private Output<String> customer;
 
     /**
@@ -76,7 +76,7 @@ public class User extends com.pulumi.resources.CustomResource {
      * The unique identifier of the user account to create. Must be a valid email address.
      * 
      */
-    @Export(name="email", type=String.class, parameters={})
+    @Export(name="email", refs={String.class}, tree="[0]")
     private Output<String> email;
 
     /**
@@ -87,16 +87,16 @@ public class User extends com.pulumi.resources.CustomResource {
         return this.email;
     }
     /**
-     * List of permission to grant to this user.  Valid options are
+     * List of permission to grant to this user. Valid options are
      * `agent_management`, `alerts_management`, `dashboard_management`, `embedded_charts`, `events_management`, `external_links_management`,
      * `host_tag_management`, `metrics_management`, and `user_management`.
      * 
      */
-    @Export(name="permissions", type=List.class, parameters={String.class})
+    @Export(name="permissions", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> permissions;
 
     /**
-     * @return List of permission to grant to this user.  Valid options are
+     * @return List of permission to grant to this user. Valid options are
      * `agent_management`, `alerts_management`, `dashboard_management`, `embedded_charts`, `events_management`, `external_links_management`,
      * `host_tag_management`, `metrics_management`, and `user_management`.
      * 
@@ -108,7 +108,7 @@ public class User extends com.pulumi.resources.CustomResource {
      * List of user groups to this user.
      * 
      */
-    @Export(name="userGroups", type=List.class, parameters={String.class})
+    @Export(name="userGroups", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> userGroups;
 
     /**

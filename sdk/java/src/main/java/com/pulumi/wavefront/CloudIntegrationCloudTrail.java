@@ -72,7 +72,7 @@ public class CloudIntegrationCloudTrail extends com.pulumi.resources.CustomResou
      * A list of point tag key-values to add to every point ingested using this integration.
      * 
      */
-    @Export(name="additionalTags", type=Map.class, parameters={String.class, String.class})
+    @Export(name="additionalTags", refs={Map.class,String.class}, tree="[0,1,1]")
     private Output</* @Nullable */ Map<String,String>> additionalTags;
 
     /**
@@ -86,7 +86,7 @@ public class CloudIntegrationCloudTrail extends com.pulumi.resources.CustomResou
      * Name of the S3 bucket where CloudTrail logs are stored.
      * 
      */
-    @Export(name="bucketName", type=String.class, parameters={})
+    @Export(name="bucketName", refs={String.class}, tree="[0]")
     private Output<String> bucketName;
 
     /**
@@ -100,7 +100,7 @@ public class CloudIntegrationCloudTrail extends com.pulumi.resources.CustomResou
      * The Role ARN that the customer has created in AWS IAM to allow access to Wavefront.
      * 
      */
-    @Export(name="externalId", type=String.class, parameters={})
+    @Export(name="externalId", refs={String.class}, tree="[0]")
     private Output<String> externalId;
 
     /**
@@ -114,7 +114,7 @@ public class CloudIntegrationCloudTrail extends com.pulumi.resources.CustomResou
      * Rule to filter CloudTrail log event.
      * 
      */
-    @Export(name="filterRule", type=String.class, parameters={})
+    @Export(name="filterRule", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> filterRule;
 
     /**
@@ -128,7 +128,7 @@ public class CloudIntegrationCloudTrail extends com.pulumi.resources.CustomResou
      * Forces this resource to save, even if errors are present.
      * 
      */
-    @Export(name="forceSave", type=Boolean.class, parameters={})
+    @Export(name="forceSave", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> forceSave;
 
     /**
@@ -142,7 +142,7 @@ public class CloudIntegrationCloudTrail extends com.pulumi.resources.CustomResou
      * The human-readable name of this integration.
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
@@ -156,7 +156,7 @@ public class CloudIntegrationCloudTrail extends com.pulumi.resources.CustomResou
      * The common prefix, if any, appended to all CloudTrail log files.
      * 
      */
-    @Export(name="prefix", type=String.class, parameters={})
+    @Export(name="prefix", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> prefix;
 
     /**
@@ -170,7 +170,7 @@ public class CloudIntegrationCloudTrail extends com.pulumi.resources.CustomResou
      * The AWS region of the S3 bucket where CloudTrail logs are stored.
      * 
      */
-    @Export(name="region", type=String.class, parameters={})
+    @Export(name="region", refs={String.class}, tree="[0]")
     private Output<String> region;
 
     /**
@@ -184,7 +184,7 @@ public class CloudIntegrationCloudTrail extends com.pulumi.resources.CustomResou
      * The external ID corresponding to the Role ARN.
      * 
      */
-    @Export(name="roleArn", type=String.class, parameters={})
+    @Export(name="roleArn", refs={String.class}, tree="[0]")
     private Output<String> roleArn;
 
     /**
@@ -198,7 +198,7 @@ public class CloudIntegrationCloudTrail extends com.pulumi.resources.CustomResou
      * A value denoting which cloud service this service integrates with.
      * 
      */
-    @Export(name="service", type=String.class, parameters={})
+    @Export(name="service", refs={String.class}, tree="[0]")
     private Output<String> service;
 
     /**
@@ -212,7 +212,7 @@ public class CloudIntegrationCloudTrail extends com.pulumi.resources.CustomResou
      * How often, in minutes, to refresh the service.
      * 
      */
-    @Export(name="serviceRefreshRateInMinutes", type=Integer.class, parameters={})
+    @Export(name="serviceRefreshRateInMinutes", refs={Integer.class}, tree="[0]")
     private Output</* @Nullable */ Integer> serviceRefreshRateInMinutes;
 
     /**

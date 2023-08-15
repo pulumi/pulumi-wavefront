@@ -110,28 +110,28 @@ import javax.annotation.Nullable;
 @ResourceType(type="wavefront:index/dashboard:Dashboard")
 public class Dashboard extends com.pulumi.resources.CustomResource {
     /**
-     * A list of users that have modify ACL access to the dashboard.
+     * A list of users/groups/roles that can modify the dashboard.
      * 
      */
-    @Export(name="canModifies", type=List.class, parameters={String.class})
+    @Export(name="canModifies", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> canModifies;
 
     /**
-     * @return A list of users that have modify ACL access to the dashboard.
+     * @return A list of users/groups/roles that can modify the dashboard.
      * 
      */
     public Output<List<String>> canModifies() {
         return this.canModifies;
     }
     /**
-     * A list of users that have view ACL access to the dashboard.
+     * A list of users/groups/roles that can view the dashboard.
      * 
      */
-    @Export(name="canViews", type=List.class, parameters={String.class})
+    @Export(name="canViews", refs={List.class,String.class}, tree="[0,1]")
     private Output</* @Nullable */ List<String>> canViews;
 
     /**
-     * @return A list of users that have view ACL access to the dashboard.
+     * @return A list of users/groups/roles that can view the dashboard.
      * 
      */
     public Output<Optional<List<String>>> canViews() {
@@ -141,7 +141,7 @@ public class Dashboard extends com.pulumi.resources.CustomResource {
      * Human-readable description of the dashboard.
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
@@ -156,7 +156,7 @@ public class Dashboard extends com.pulumi.resources.CustomResource {
      * is shown.
      * 
      */
-    @Export(name="displayQueryParameters", type=Boolean.class, parameters={})
+    @Export(name="displayQueryParameters", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> displayQueryParameters;
 
     /**
@@ -172,7 +172,7 @@ public class Dashboard extends com.pulumi.resources.CustomResource {
      * displayed by default when the dashboard is shown.
      * 
      */
-    @Export(name="displaySectionTableOfContents", type=Boolean.class, parameters={})
+    @Export(name="displaySectionTableOfContents", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> displaySectionTableOfContents;
 
     /**
@@ -188,7 +188,7 @@ public class Dashboard extends com.pulumi.resources.CustomResource {
      * unspecified. Valid options are: `BYCHART`, `AUTOMATIC`, `ALL`, `NONE`, `BYDASHBOARD`, and `BYCHARTANDDASHBOARD`.
      * 
      */
-    @Export(name="eventFilterType", type=String.class, parameters={})
+    @Export(name="eventFilterType", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> eventFilterType;
 
     /**
@@ -203,7 +203,7 @@ public class Dashboard extends com.pulumi.resources.CustomResource {
      * Name of the dashboard.
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
@@ -217,7 +217,7 @@ public class Dashboard extends com.pulumi.resources.CustomResource {
      * The current JSON representation of dashboard parameters. See parameter details.
      * 
      */
-    @Export(name="parameterDetails", type=List.class, parameters={DashboardParameterDetail.class})
+    @Export(name="parameterDetails", refs={List.class,DashboardParameterDetail.class}, tree="[0,1]")
     private Output</* @Nullable */ List<DashboardParameterDetail>> parameterDetails;
 
     /**
@@ -231,7 +231,7 @@ public class Dashboard extends com.pulumi.resources.CustomResource {
      * Dashboard chart sections. See dashboard sections.
      * 
      */
-    @Export(name="sections", type=List.class, parameters={DashboardSection.class})
+    @Export(name="sections", refs={List.class,DashboardSection.class}, tree="[0,1]")
     private Output<List<DashboardSection>> sections;
 
     /**
@@ -245,7 +245,7 @@ public class Dashboard extends com.pulumi.resources.CustomResource {
      * A set of tags to assign to this resource.
      * 
      */
-    @Export(name="tags", type=List.class, parameters={String.class})
+    @Export(name="tags", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> tags;
 
     /**
@@ -259,7 +259,7 @@ public class Dashboard extends com.pulumi.resources.CustomResource {
      * Unique identifier, also a URL slug of the dashboard.
      * 
      */
-    @Export(name="url", type=String.class, parameters={})
+    @Export(name="url", refs={String.class}, tree="[0]")
     private Output<String> url;
 
     /**

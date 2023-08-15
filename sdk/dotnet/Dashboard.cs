@@ -24,13 +24,13 @@ namespace Pulumi.Wavefront
     public partial class Dashboard : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// A list of users that have modify ACL access to the dashboard.
+        /// A list of users/groups/roles that can modify the dashboard.
         /// </summary>
         [Output("canModifies")]
         public Output<ImmutableArray<string>> CanModifies { get; private set; } = null!;
 
         /// <summary>
-        /// A list of users that have view ACL access to the dashboard.
+        /// A list of users/groups/roles that can view the dashboard.
         /// </summary>
         [Output("canViews")]
         public Output<ImmutableArray<string>> CanViews { get; private set; } = null!;
@@ -142,7 +142,7 @@ namespace Pulumi.Wavefront
         private InputList<string>? _canModifies;
 
         /// <summary>
-        /// A list of users that have modify ACL access to the dashboard.
+        /// A list of users/groups/roles that can modify the dashboard.
         /// </summary>
         public InputList<string> CanModifies
         {
@@ -154,7 +154,7 @@ namespace Pulumi.Wavefront
         private InputList<string>? _canViews;
 
         /// <summary>
-        /// A list of users that have view ACL access to the dashboard.
+        /// A list of users/groups/roles that can view the dashboard.
         /// </summary>
         public InputList<string> CanViews
         {
@@ -249,7 +249,7 @@ namespace Pulumi.Wavefront
         private InputList<string>? _canModifies;
 
         /// <summary>
-        /// A list of users that have modify ACL access to the dashboard.
+        /// A list of users/groups/roles that can modify the dashboard.
         /// </summary>
         public InputList<string> CanModifies
         {
@@ -261,7 +261,7 @@ namespace Pulumi.Wavefront
         private InputList<string>? _canViews;
 
         /// <summary>
-        /// A list of users that have view ACL access to the dashboard.
+        /// A list of users/groups/roles that can view the dashboard.
         /// </summary>
         public InputList<string> CanViews
         {

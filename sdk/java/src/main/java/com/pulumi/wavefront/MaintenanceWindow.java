@@ -71,7 +71,7 @@ public class MaintenanceWindow extends com.pulumi.resources.CustomResource {
      * end time in seconds after 1 Jan 1970 GMT.
      * 
      */
-    @Export(name="endTimeInSeconds", type=Integer.class, parameters={})
+    @Export(name="endTimeInSeconds", refs={Integer.class}, tree="[0]")
     private Output<Integer> endTimeInSeconds;
 
     /**
@@ -88,7 +88,7 @@ public class MaintenanceWindow extends com.pulumi.resources.CustomResource {
      * or match `relevant_host_tags` and `relevant_host_tags_anded`. Default: `false`.
      * 
      */
-    @Export(name="hostTagGroupHostNamesGroupAnded", type=Boolean.class, parameters={})
+    @Export(name="hostTagGroupHostNamesGroupAnded", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> hostTagGroupHostNamesGroupAnded;
 
     /**
@@ -105,7 +105,7 @@ public class MaintenanceWindow extends com.pulumi.resources.CustomResource {
      * The reason for the maintenance window.
      * 
      */
-    @Export(name="reason", type=String.class, parameters={})
+    @Export(name="reason", refs={String.class}, tree="[0]")
     private Output<String> reason;
 
     /**
@@ -121,7 +121,7 @@ public class MaintenanceWindow extends com.pulumi.resources.CustomResource {
      * is required.
      * 
      */
-    @Export(name="relevantCustomerTags", type=List.class, parameters={String.class})
+    @Export(name="relevantCustomerTags", refs={List.class,String.class}, tree="[0,1]")
     private Output</* @Nullable */ List<String>> relevantCustomerTags;
 
     /**
@@ -139,7 +139,7 @@ public class MaintenanceWindow extends com.pulumi.resources.CustomResource {
      * is required.
      * 
      */
-    @Export(name="relevantHostNames", type=List.class, parameters={String.class})
+    @Export(name="relevantHostNames", refs={List.class,String.class}, tree="[0,1]")
     private Output</* @Nullable */ List<String>> relevantHostNames;
 
     /**
@@ -157,7 +157,7 @@ public class MaintenanceWindow extends com.pulumi.resources.CustomResource {
      * `relevant_host_names` is required.
      * 
      */
-    @Export(name="relevantHostTags", type=List.class, parameters={String.class})
+    @Export(name="relevantHostTags", refs={List.class,String.class}, tree="[0,1]")
     private Output</* @Nullable */ List<String>> relevantHostTags;
 
     /**
@@ -175,7 +175,7 @@ public class MaintenanceWindow extends com.pulumi.resources.CustomResource {
      * the tags are OR&#39;ed, and a source/host must contain one of the tags. Default: `false`.
      * 
      */
-    @Export(name="relevantHostTagsAnded", type=Boolean.class, parameters={})
+    @Export(name="relevantHostTagsAnded", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> relevantHostTagsAnded;
 
     /**
@@ -191,7 +191,7 @@ public class MaintenanceWindow extends com.pulumi.resources.CustomResource {
      * start time in seconds after 1 Jan 1970 GMT.
      * 
      */
-    @Export(name="startTimeInSeconds", type=Integer.class, parameters={})
+    @Export(name="startTimeInSeconds", refs={Integer.class}, tree="[0]")
     private Output<Integer> startTimeInSeconds;
 
     /**
@@ -205,7 +205,7 @@ public class MaintenanceWindow extends com.pulumi.resources.CustomResource {
      * The title of the maintenance window.
      * 
      */
-    @Export(name="title", type=String.class, parameters={})
+    @Export(name="title", refs={String.class}, tree="[0]")
     private Output<String> title;
 
     /**

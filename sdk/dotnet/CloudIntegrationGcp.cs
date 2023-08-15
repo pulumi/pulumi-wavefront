@@ -52,7 +52,7 @@ namespace Pulumi.Wavefront
         public Output<ImmutableDictionary<string, string>?> AdditionalTags { get; private set; } = null!;
 
         /// <summary>
-        /// A list of Google Cloud Platform (GCP) services.  Valid values are `APPENGINE`, 
+        /// A list of Google Cloud Platform (GCP) services. Valid values are `APPENGINE`,
         /// `BIGQUERY`, `BIGTABLE`, `CLOUDFUNCTIONS`, `CLOUDIOT`, `CLOUDSQL`, `CLOUDTASKS`, `COMPUTE`, `CONTAINER`,
         /// `DATAFLOW`, `DATAPROC`, `DATASTORE`, `FIREBASEDATABASE`, `FIREBASEHOSTING`, `FIRESTORE`, `INTERCONNECT`,
         /// `LOADBALANCING`, `LOGGING`, `ML`, `MONITORING`, `PUBSUB`, `REDIS`, `ROUTER`, `SERVICERUNTIME`, `SPANNER`, `STORAGE`,
@@ -170,7 +170,7 @@ namespace Pulumi.Wavefront
         private InputList<string>? _categories;
 
         /// <summary>
-        /// A list of Google Cloud Platform (GCP) services.  Valid values are `APPENGINE`, 
+        /// A list of Google Cloud Platform (GCP) services. Valid values are `APPENGINE`,
         /// `BIGQUERY`, `BIGTABLE`, `CLOUDFUNCTIONS`, `CLOUDIOT`, `CLOUDSQL`, `CLOUDTASKS`, `COMPUTE`, `CONTAINER`,
         /// `DATAFLOW`, `DATAPROC`, `DATASTORE`, `FIREBASEDATABASE`, `FIREBASEHOSTING`, `FIRESTORE`, `INTERCONNECT`,
         /// `LOADBALANCING`, `LOGGING`, `ML`, `MONITORING`, `PUBSUB`, `REDIS`, `ROUTER`, `SERVICERUNTIME`, `SPANNER`, `STORAGE`,
@@ -259,7 +259,7 @@ namespace Pulumi.Wavefront
         private InputList<string>? _categories;
 
         /// <summary>
-        /// A list of Google Cloud Platform (GCP) services.  Valid values are `APPENGINE`, 
+        /// A list of Google Cloud Platform (GCP) services. Valid values are `APPENGINE`,
         /// `BIGQUERY`, `BIGTABLE`, `CLOUDFUNCTIONS`, `CLOUDIOT`, `CLOUDSQL`, `CLOUDTASKS`, `COMPUTE`, `CONTAINER`,
         /// `DATAFLOW`, `DATAPROC`, `DATASTORE`, `FIREBASEDATABASE`, `FIREBASEHOSTING`, `FIRESTORE`, `INTERCONNECT`,
         /// `LOADBALANCING`, `LOGGING`, `ML`, `MONITORING`, `PUBSUB`, `REDIS`, `ROUTER`, `SERVICERUNTIME`, `SPANNER`, `STORAGE`,

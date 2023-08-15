@@ -13,11 +13,19 @@ namespace Pulumi.Wavefront.Outputs
     [OutputType]
     public sealed class AlertTargetRoute
     {
+        /// <summary>
+        /// (Required) String that filters the route. Space delimited. Currently only allows a single key value pair.
+        /// (e.g. `env prod`)
+        /// </summary>
         public readonly ImmutableDictionary<string, string>? Filter;
         /// <summary>
         /// The notification method used for notification target. One of `WEBHOOK`, `EMAIL`, `PAGERDUTY`.
         /// </summary>
         public readonly string Method;
+        /// <summary>
+        /// (Required) The endpoint for the alert route. `EMAIL`: email address. `PAGERDUTY`: PagerDuty routing
+        /// key. `WEBHOOK`: URL endpoint.
+        /// </summary>
         public readonly string Target;
 
         [OutputConstructor]

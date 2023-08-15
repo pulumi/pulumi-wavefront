@@ -72,7 +72,7 @@ export class ServiceAccount extends pulumi.CustomResource {
      */
     public readonly ingestionPolicy!: pulumi.Output<string | undefined>;
     /**
-     * List of permission to grant to this service account.  Valid options are
+     * List of permission to grant to this service account. Valid options are
      * `agentManagement`, `alertsManagement`, `dashboardManagement`, `embeddedCharts`, `eventsManagement`, `externalLinksManagement`,
      * `hostTagManagement`, `metricsManagement`, and `userManagement`.
      */
@@ -139,7 +139,7 @@ export interface ServiceAccountState {
      */
     ingestionPolicy?: pulumi.Input<string>;
     /**
-     * List of permission to grant to this service account.  Valid options are
+     * List of permission to grant to this service account. Valid options are
      * `agentManagement`, `alertsManagement`, `dashboardManagement`, `embeddedCharts`, `eventsManagement`, `externalLinksManagement`,
      * `hostTagManagement`, `metricsManagement`, and `userManagement`.
      */
@@ -171,7 +171,7 @@ export interface ServiceAccountArgs {
      */
     ingestionPolicy?: pulumi.Input<string>;
     /**
-     * List of permission to grant to this service account.  Valid options are
+     * List of permission to grant to this service account. Valid options are
      * `agentManagement`, `alertsManagement`, `dashboardManagement`, `embeddedCharts`, `eventsManagement`, `externalLinksManagement`,
      * `hostTagManagement`, `metricsManagement`, and `userManagement`.
      */

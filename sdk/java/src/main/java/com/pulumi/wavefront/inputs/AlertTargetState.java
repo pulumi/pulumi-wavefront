@@ -158,9 +158,17 @@ public final class AlertTargetState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.routes);
     }
 
+    /**
+     * The target ID prefixed with `target:` for interpolating into a Wavefront Alert.
+     * 
+     */
     @Import(name="targetId")
     private @Nullable Output<String> targetId;
 
+    /**
+     * @return The target ID prefixed with `target:` for interpolating into a Wavefront Alert.
+     * 
+     */
     public Optional<Output<String>> targetId() {
         return Optional.ofNullable(this.targetId);
     }
@@ -435,11 +443,23 @@ public final class AlertTargetState extends com.pulumi.resources.ResourceArgs {
             return routes(List.of(routes));
         }
 
+        /**
+         * @param targetId The target ID prefixed with `target:` for interpolating into a Wavefront Alert.
+         * 
+         * @return builder
+         * 
+         */
         public Builder targetId(@Nullable Output<String> targetId) {
             $.targetId = targetId;
             return this;
         }
 
+        /**
+         * @param targetId The target ID prefixed with `target:` for interpolating into a Wavefront Alert.
+         * 
+         * @return builder
+         * 
+         */
         public Builder targetId(String targetId) {
             return targetId(Output.of(targetId));
         }

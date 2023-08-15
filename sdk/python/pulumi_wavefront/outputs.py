@@ -59,6 +59,10 @@ class AlertTargetRoute(dict):
                  filter: Optional[Mapping[str, str]] = None):
         """
         :param str method: The notification method used for notification target. One of `WEBHOOK`, `EMAIL`, `PAGERDUTY`.
+        :param str target: (Required) The endpoint for the alert route. `EMAIL`: email address. `PAGERDUTY`: PagerDuty routing
+               key. `WEBHOOK`: URL endpoint.
+        :param Mapping[str, str] filter: (Required) String that filters the route. Space delimited. Currently only allows a single key value pair.
+               (e.g. `env prod`)
         """
         pulumi.set(__self__, "method", method)
         pulumi.set(__self__, "target", target)
@@ -76,11 +80,19 @@ class AlertTargetRoute(dict):
     @property
     @pulumi.getter
     def target(self) -> str:
+        """
+        (Required) The endpoint for the alert route. `EMAIL`: email address. `PAGERDUTY`: PagerDuty routing
+        key. `WEBHOOK`: URL endpoint.
+        """
         return pulumi.get(self, "target")
 
     @property
     @pulumi.getter
     def filter(self) -> Optional[Mapping[str, str]]:
+        """
+        (Required) String that filters the route. Space delimited. Currently only allows a single key value pair.
+        (e.g. `env prod`)
+        """
         return pulumi.get(self, "filter")
 
 
@@ -2279,7 +2291,7 @@ class GetDashboardSectionRowChartChartSettingResult(dict):
         :param str stack_type: Type of stacked chart (applicable only if chart type is `stacked`). `zero` (default) means stacked from y=0. `expand` means normalized from 0 to 1.  `wiggle` means minimize weighted changes. `silhouette` means to center the stream. Valid options are `zero`, `expand`, `wiggle`, `silhouette`, and `bars`.
         :param str tag_mode: For the tabular view, which mode to use to determine which point tags to display. Valid options are `all`, `top`, or `custom`.
         :param bool time_based_coloring: For x-y scatterplots, whether to color more recent points as darker than older points.
-        :param str type: Chart Type. `line` refers to the Line Plot, `scatter` to the Point Plot, `stacked-area` to the Stacked Area plot, `table` to the Tabular View, `scatterplot-xy` to Scatter Plot, `markdown-widget` to the Markdown display, and `sparkline` to the Single Stat view. Valid options are `line`, `scatterplot`,
+        :param str type: Chart Type. `line` refers to the Line Plot, `scatter` to the Point Plot, `stacked-area` to the Stacked Area plot, `table` to the Tabular View, `scatterplot-xy` to Scatter Plot, `markdown-widget` to the Markdown display, and `sparkline` to the Single Stat view. Valid options are`line`, `scatterplot`,
                `stacked-area`, `stacked-column`, `table`, `scatterplot-xy`, `markdown-widget`, `sparkline`, `globe`, `nodemap`, `top-k`, `status-list`, and `histogram`.
         :param int window_size: Width, in minutes, of the time window to use for `last` windowing.
         :param str windowing: For the tabular view, whether to use the full time window for the query or the last X minutes. Valid options are `full` or `last`.
@@ -2697,7 +2709,7 @@ class GetDashboardSectionRowChartChartSettingResult(dict):
     @pulumi.getter
     def type(self) -> str:
         """
-        Chart Type. `line` refers to the Line Plot, `scatter` to the Point Plot, `stacked-area` to the Stacked Area plot, `table` to the Tabular View, `scatterplot-xy` to Scatter Plot, `markdown-widget` to the Markdown display, and `sparkline` to the Single Stat view. Valid options are `line`, `scatterplot`,
+        Chart Type. `line` refers to the Line Plot, `scatter` to the Point Plot, `stacked-area` to the Stacked Area plot, `table` to the Tabular View, `scatterplot-xy` to Scatter Plot, `markdown-widget` to the Markdown display, and `sparkline` to the Single Stat view. Valid options are`line`, `scatterplot`,
         `stacked-area`, `stacked-column`, `table`, `scatterplot-xy`, `markdown-widget`, `sparkline`, `globe`, `nodemap`, `top-k`, `status-list`, and `histogram`.
         """
         return pulumi.get(self, "type")
@@ -3536,7 +3548,7 @@ class GetDashboardsDashboardSectionRowChartChartSettingResult(dict):
         :param str stack_type: Type of stacked chart (applicable only if chart type is `stacked`). `zero` (default) means stacked from y=0. `expand` means normalized from 0 to 1.  `wiggle` means minimize weighted changes. `silhouette` means to center the stream. Valid options are `zero`, `expand`, `wiggle`, `silhouette`, and `bars`.
         :param str tag_mode: For the tabular view, which mode to use to determine which point tags to display. Valid options are `all`, `top`, or `custom`.
         :param bool time_based_coloring: For x-y scatterplots, whether to color more recent points as darker than older points.
-        :param str type: Chart Type. `line` refers to the Line Plot, `scatter` to the Point Plot, `stacked-area` to the Stacked Area plot, `table` to the Tabular View, `scatterplot-xy` to Scatter Plot, `markdown-widget` to the Markdown display, and `sparkline` to the Single Stat view. Valid options are `line`, `scatterplot`, `stacked-area`, `stacked-column`, `table`, `scatterplot-xy`, `markdown-widget`, `sparkline`, `globe`, `nodemap`, `top-k`, `status-list`, and `histogram`.
+        :param str type: Chart Type. `line` refers to the Line Plot, `scatter` to the Point Plot, `stacked-area` to the Stacked Area plot, `table` to the Tabular View, `scatterplot-xy` to Scatter Plot, `markdown-widget` to the Markdown display, and `sparkline` to the Single Stat view. Valid options are`line`, `scatterplot`, `stacked-area`, `stacked-column`, `table`, `scatterplot-xy`, `markdown-widget`, `sparkline`, `globe`, `nodemap`, `top-k`, `status-list`, and `histogram`.
         :param int window_size: Width, in minutes, of the time window to use for `last` windowing.
         :param str windowing: For the tabular view, whether to use the full time window for the query or the last X minutes. Valid options are `full` or `last`.
         :param float xmax: For x-y scatterplots, max value for the X-axis. Set to null for auto.
@@ -3953,7 +3965,7 @@ class GetDashboardsDashboardSectionRowChartChartSettingResult(dict):
     @pulumi.getter
     def type(self) -> str:
         """
-        Chart Type. `line` refers to the Line Plot, `scatter` to the Point Plot, `stacked-area` to the Stacked Area plot, `table` to the Tabular View, `scatterplot-xy` to Scatter Plot, `markdown-widget` to the Markdown display, and `sparkline` to the Single Stat view. Valid options are `line`, `scatterplot`, `stacked-area`, `stacked-column`, `table`, `scatterplot-xy`, `markdown-widget`, `sparkline`, `globe`, `nodemap`, `top-k`, `status-list`, and `histogram`.
+        Chart Type. `line` refers to the Line Plot, `scatter` to the Point Plot, `stacked-area` to the Stacked Area plot, `table` to the Tabular View, `scatterplot-xy` to Scatter Plot, `markdown-widget` to the Markdown display, and `sparkline` to the Single Stat view. Valid options are`line`, `scatterplot`, `stacked-area`, `stacked-column`, `table`, `scatterplot-xy`, `markdown-widget`, `sparkline`, `globe`, `nodemap`, `top-k`, `status-list`, and `histogram`.
         """
         return pulumi.get(self, "type")
 

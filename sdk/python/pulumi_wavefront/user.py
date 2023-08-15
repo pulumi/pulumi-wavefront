@@ -22,7 +22,7 @@ class UserArgs:
         The set of arguments for constructing a User resource.
         :param pulumi.Input[str] email: The unique identifier of the user account to create. Must be a valid email address.
         :param pulumi.Input[str] customer: The customer the user is associated with.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] permissions: List of permission to grant to this user.  Valid options are
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] permissions: List of permission to grant to this user. Valid options are
                `agent_management`, `alerts_management`, `dashboard_management`, `embedded_charts`, `events_management`, `external_links_management`,
                `host_tag_management`, `metrics_management`, and `user_management`.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] user_groups: List of user groups to this user.
@@ -63,7 +63,7 @@ class UserArgs:
     @pulumi.getter
     def permissions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        List of permission to grant to this user.  Valid options are
+        List of permission to grant to this user. Valid options are
         `agent_management`, `alerts_management`, `dashboard_management`, `embedded_charts`, `events_management`, `external_links_management`,
         `host_tag_management`, `metrics_management`, and `user_management`.
         """
@@ -97,7 +97,7 @@ class _UserState:
         Input properties used for looking up and filtering User resources.
         :param pulumi.Input[str] customer: The customer the user is associated with.
         :param pulumi.Input[str] email: The unique identifier of the user account to create. Must be a valid email address.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] permissions: List of permission to grant to this user.  Valid options are
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] permissions: List of permission to grant to this user. Valid options are
                `agent_management`, `alerts_management`, `dashboard_management`, `embedded_charts`, `events_management`, `external_links_management`,
                `host_tag_management`, `metrics_management`, and `user_management`.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] user_groups: List of user groups to this user.
@@ -139,7 +139,7 @@ class _UserState:
     @pulumi.getter
     def permissions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        List of permission to grant to this user.  Valid options are
+        List of permission to grant to this user. Valid options are
         `agent_management`, `alerts_management`, `dashboard_management`, `embedded_charts`, `events_management`, `external_links_management`,
         `host_tag_management`, `metrics_management`, and `user_management`.
         """
@@ -196,7 +196,7 @@ class User(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] customer: The customer the user is associated with.
         :param pulumi.Input[str] email: The unique identifier of the user account to create. Must be a valid email address.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] permissions: List of permission to grant to this user.  Valid options are
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] permissions: List of permission to grant to this user. Valid options are
                `agent_management`, `alerts_management`, `dashboard_management`, `embedded_charts`, `events_management`, `external_links_management`,
                `host_tag_management`, `metrics_management`, and `user_management`.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] user_groups: List of user groups to this user.
@@ -284,7 +284,7 @@ class User(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] customer: The customer the user is associated with.
         :param pulumi.Input[str] email: The unique identifier of the user account to create. Must be a valid email address.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] permissions: List of permission to grant to this user.  Valid options are
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] permissions: List of permission to grant to this user. Valid options are
                `agent_management`, `alerts_management`, `dashboard_management`, `embedded_charts`, `events_management`, `external_links_management`,
                `host_tag_management`, `metrics_management`, and `user_management`.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] user_groups: List of user groups to this user.
@@ -319,7 +319,7 @@ class User(pulumi.CustomResource):
     @pulumi.getter
     def permissions(self) -> pulumi.Output[Sequence[str]]:
         """
-        List of permission to grant to this user.  Valid options are
+        List of permission to grant to this user. Valid options are
         `agent_management`, `alerts_management`, `dashboard_management`, `embedded_charts`, `events_management`, `external_links_management`,
         `host_tag_management`, `metrics_management`, and `user_management`.
         """

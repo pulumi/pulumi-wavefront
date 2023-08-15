@@ -14,6 +14,11 @@ namespace Pulumi.Wavefront.Inputs
     {
         [Input("filter")]
         private InputMap<string>? _filter;
+
+        /// <summary>
+        /// (Required) String that filters the route. Space delimited. Currently only allows a single key value pair.
+        /// (e.g. `env prod`)
+        /// </summary>
         public InputMap<string> Filter
         {
             get => _filter ?? (_filter = new InputMap<string>());
@@ -26,6 +31,10 @@ namespace Pulumi.Wavefront.Inputs
         [Input("method", required: true)]
         public Input<string> Method { get; set; } = null!;
 
+        /// <summary>
+        /// (Required) The endpoint for the alert route. `EMAIL`: email address. `PAGERDUTY`: PagerDuty routing
+        /// key. `WEBHOOK`: URL endpoint.
+        /// </summary>
         [Input("target", required: true)]
         public Input<string> Target { get; set; } = null!;
 

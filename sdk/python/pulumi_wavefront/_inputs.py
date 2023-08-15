@@ -31,6 +31,10 @@ class AlertTargetRouteArgs:
                  filter: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None):
         """
         :param pulumi.Input[str] method: The notification method used for notification target. One of `WEBHOOK`, `EMAIL`, `PAGERDUTY`.
+        :param pulumi.Input[str] target: (Required) The endpoint for the alert route. `EMAIL`: email address. `PAGERDUTY`: PagerDuty routing
+               key. `WEBHOOK`: URL endpoint.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] filter: (Required) String that filters the route. Space delimited. Currently only allows a single key value pair.
+               (e.g. `env prod`)
         """
         pulumi.set(__self__, "method", method)
         pulumi.set(__self__, "target", target)
@@ -52,6 +56,10 @@ class AlertTargetRouteArgs:
     @property
     @pulumi.getter
     def target(self) -> pulumi.Input[str]:
+        """
+        (Required) The endpoint for the alert route. `EMAIL`: email address. `PAGERDUTY`: PagerDuty routing
+        key. `WEBHOOK`: URL endpoint.
+        """
         return pulumi.get(self, "target")
 
     @target.setter
@@ -61,6 +69,10 @@ class AlertTargetRouteArgs:
     @property
     @pulumi.getter
     def filter(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
+        """
+        (Required) String that filters the route. Space delimited. Currently only allows a single key value pair.
+        (e.g. `env prod`)
+        """
         return pulumi.get(self, "filter")
 
     @filter.setter
