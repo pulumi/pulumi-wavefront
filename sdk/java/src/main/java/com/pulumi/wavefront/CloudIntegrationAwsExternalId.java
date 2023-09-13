@@ -43,7 +43,7 @@ import javax.annotation.Nullable;
  * 
  * ## Import
  * 
- * External IDs can be imported by using the `id`, e.g.
+ * External IDs can be imported by using the `id`, e.g.:
  * 
  * ```sh
  *  $ pulumi import wavefront:index/cloudIntegrationAwsExternalId:CloudIntegrationAwsExternalId external_id uGJdkH3k

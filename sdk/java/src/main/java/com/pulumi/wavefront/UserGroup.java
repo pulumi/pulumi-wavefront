@@ -48,7 +48,7 @@ import javax.annotation.Nullable;
  * 
  * ## Import
  * 
- * User Groups can be imported by using the `id`, e.g.
+ * User Groups can be imported by using the `id`, e.g.:
  * 
  * ```sh
  *  $ pulumi import wavefront:index/userGroup:UserGroup some_group a411c16b-3cf7-4f03-bf11-8ca05aab898d

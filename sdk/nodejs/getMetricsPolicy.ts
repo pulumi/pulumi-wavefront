@@ -26,3 +26,6 @@ export interface GetMetricsPolicyResult {
     readonly updatedEpochMillis: number;
     readonly updaterId: string;
 }
+export function getMetricsPolicyOutput(opts?: pulumi.InvokeOptions): pulumi.Output<GetMetricsPolicyResult> {
+    return pulumi.output(getMetricsPolicy(opts))
+}

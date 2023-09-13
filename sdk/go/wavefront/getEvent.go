@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-wavefront/sdk/v3/go/wavefront/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Use this data source to get information about a certain Wavefront event.
@@ -113,6 +114,12 @@ func (o LookupEventResultOutput) ToLookupEventResultOutput() LookupEventResultOu
 
 func (o LookupEventResultOutput) ToLookupEventResultOutputWithContext(ctx context.Context) LookupEventResultOutput {
 	return o
+}
+
+func (o LookupEventResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupEventResult] {
+	return pulumix.Output[LookupEventResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Annotations associated with the event.

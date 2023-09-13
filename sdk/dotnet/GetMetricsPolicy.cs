@@ -13,6 +13,9 @@ namespace Pulumi.Wavefront
     {
         public static Task<GetMetricsPolicyResult> InvokeAsync(InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetMetricsPolicyResult>("wavefront:index/getMetricsPolicy:getMetricsPolicy", InvokeArgs.Empty, options.WithDefaults());
+
+        public static Output<GetMetricsPolicyResult> Invoke(InvokeOptions? options = null)
+            => global::Pulumi.Deployment.Instance.Invoke<GetMetricsPolicyResult>("wavefront:index/getMetricsPolicy:getMetricsPolicy", InvokeArgs.Empty, options.WithDefaults());
     }
 
 

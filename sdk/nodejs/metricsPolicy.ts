@@ -41,7 +41,7 @@ import * as utilities from "./utilities";
  *
  * ## Import
  *
- * Users can be imported by using the `updated_epoch_millis`, e.g.
+ * Users can be imported by using the `updated_epoch_millis`, e.g.:
  *
  * ```sh
  *  $ pulumi import wavefront:index/metricsPolicy:MetricsPolicy some_metrics_policy 1651846476678

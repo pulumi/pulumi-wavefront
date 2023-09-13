@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-wavefront/sdk/v3/go/wavefront/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Provides a Wavefront Derived Metric Resource. This allows derived metrics to be created,
@@ -44,7 +45,7 @@ import (
 //
 // ## Import
 //
-// Derived Metrics can be imported by using the `id`, e.g.
+// Derived Metrics can be imported by using the `id`, e.g.:
 //
 // ```sh
 //
@@ -181,6 +182,12 @@ func (i *DerivedMetric) ToDerivedMetricOutputWithContext(ctx context.Context) De
 	return pulumi.ToOutputWithContext(ctx, i).(DerivedMetricOutput)
 }
 
+func (i *DerivedMetric) ToOutput(ctx context.Context) pulumix.Output[*DerivedMetric] {
+	return pulumix.Output[*DerivedMetric]{
+		OutputState: i.ToDerivedMetricOutputWithContext(ctx).OutputState,
+	}
+}
+
 // DerivedMetricArrayInput is an input type that accepts DerivedMetricArray and DerivedMetricArrayOutput values.
 // You can construct a concrete instance of `DerivedMetricArrayInput` via:
 //
@@ -204,6 +211,12 @@ func (i DerivedMetricArray) ToDerivedMetricArrayOutput() DerivedMetricArrayOutpu
 
 func (i DerivedMetricArray) ToDerivedMetricArrayOutputWithContext(ctx context.Context) DerivedMetricArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DerivedMetricArrayOutput)
+}
+
+func (i DerivedMetricArray) ToOutput(ctx context.Context) pulumix.Output[[]*DerivedMetric] {
+	return pulumix.Output[[]*DerivedMetric]{
+		OutputState: i.ToDerivedMetricArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // DerivedMetricMapInput is an input type that accepts DerivedMetricMap and DerivedMetricMapOutput values.
@@ -231,6 +244,12 @@ func (i DerivedMetricMap) ToDerivedMetricMapOutputWithContext(ctx context.Contex
 	return pulumi.ToOutputWithContext(ctx, i).(DerivedMetricMapOutput)
 }
 
+func (i DerivedMetricMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DerivedMetric] {
+	return pulumix.Output[map[string]*DerivedMetric]{
+		OutputState: i.ToDerivedMetricMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type DerivedMetricOutput struct{ *pulumi.OutputState }
 
 func (DerivedMetricOutput) ElementType() reflect.Type {
@@ -243,6 +262,12 @@ func (o DerivedMetricOutput) ToDerivedMetricOutput() DerivedMetricOutput {
 
 func (o DerivedMetricOutput) ToDerivedMetricOutputWithContext(ctx context.Context) DerivedMetricOutput {
 	return o
+}
+
+func (o DerivedMetricOutput) ToOutput(ctx context.Context) pulumix.Output[*DerivedMetric] {
+	return pulumix.Output[*DerivedMetric]{
+		OutputState: o.OutputState,
+	}
 }
 
 // User-supplied additional explanatory information for the derived metric.
@@ -284,6 +309,12 @@ func (o DerivedMetricArrayOutput) ToDerivedMetricArrayOutputWithContext(ctx cont
 	return o
 }
 
+func (o DerivedMetricArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DerivedMetric] {
+	return pulumix.Output[[]*DerivedMetric]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o DerivedMetricArrayOutput) Index(i pulumi.IntInput) DerivedMetricOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *DerivedMetric {
 		return vs[0].([]*DerivedMetric)[vs[1].(int)]
@@ -302,6 +333,12 @@ func (o DerivedMetricMapOutput) ToDerivedMetricMapOutput() DerivedMetricMapOutpu
 
 func (o DerivedMetricMapOutput) ToDerivedMetricMapOutputWithContext(ctx context.Context) DerivedMetricMapOutput {
 	return o
+}
+
+func (o DerivedMetricMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DerivedMetric] {
+	return pulumix.Output[map[string]*DerivedMetric]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o DerivedMetricMapOutput) MapIndex(k pulumi.StringInput) DerivedMetricOutput {

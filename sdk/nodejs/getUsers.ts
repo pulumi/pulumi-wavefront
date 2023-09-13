@@ -38,3 +38,18 @@ export interface GetUsersResult {
      */
     readonly users: outputs.GetUsersUser[];
 }
+/**
+ * Use this data source to get all users in Wavefront.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as wavefront from "@pulumi/wavefront";
+ *
+ * const users = wavefront.getUsers({});
+ * ```
+ */
+export function getUsersOutput(opts?: pulumi.InvokeOptions): pulumi.Output<GetUsersResult> {
+    return pulumi.output(getUsers(opts))
+}

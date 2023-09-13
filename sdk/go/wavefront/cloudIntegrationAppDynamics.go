@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-wavefront/sdk/v3/go/wavefront/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Provides a Wavefront Cloud Integration for AppDynamics. This allows AppDynamics cloud integrations to be created,
@@ -45,7 +46,7 @@ import (
 //
 // ## Import
 //
-// AppDynamic Cloud Integrations can be imported by using the `id`, e.g.
+// AppDynamic Cloud Integrations can be imported by using the `id`, e.g.:
 //
 // ```sh
 //
@@ -325,6 +326,12 @@ func (i *CloudIntegrationAppDynamics) ToCloudIntegrationAppDynamicsOutputWithCon
 	return pulumi.ToOutputWithContext(ctx, i).(CloudIntegrationAppDynamicsOutput)
 }
 
+func (i *CloudIntegrationAppDynamics) ToOutput(ctx context.Context) pulumix.Output[*CloudIntegrationAppDynamics] {
+	return pulumix.Output[*CloudIntegrationAppDynamics]{
+		OutputState: i.ToCloudIntegrationAppDynamicsOutputWithContext(ctx).OutputState,
+	}
+}
+
 // CloudIntegrationAppDynamicsArrayInput is an input type that accepts CloudIntegrationAppDynamicsArray and CloudIntegrationAppDynamicsArrayOutput values.
 // You can construct a concrete instance of `CloudIntegrationAppDynamicsArrayInput` via:
 //
@@ -348,6 +355,12 @@ func (i CloudIntegrationAppDynamicsArray) ToCloudIntegrationAppDynamicsArrayOutp
 
 func (i CloudIntegrationAppDynamicsArray) ToCloudIntegrationAppDynamicsArrayOutputWithContext(ctx context.Context) CloudIntegrationAppDynamicsArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(CloudIntegrationAppDynamicsArrayOutput)
+}
+
+func (i CloudIntegrationAppDynamicsArray) ToOutput(ctx context.Context) pulumix.Output[[]*CloudIntegrationAppDynamics] {
+	return pulumix.Output[[]*CloudIntegrationAppDynamics]{
+		OutputState: i.ToCloudIntegrationAppDynamicsArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // CloudIntegrationAppDynamicsMapInput is an input type that accepts CloudIntegrationAppDynamicsMap and CloudIntegrationAppDynamicsMapOutput values.
@@ -375,6 +388,12 @@ func (i CloudIntegrationAppDynamicsMap) ToCloudIntegrationAppDynamicsMapOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(CloudIntegrationAppDynamicsMapOutput)
 }
 
+func (i CloudIntegrationAppDynamicsMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*CloudIntegrationAppDynamics] {
+	return pulumix.Output[map[string]*CloudIntegrationAppDynamics]{
+		OutputState: i.ToCloudIntegrationAppDynamicsMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type CloudIntegrationAppDynamicsOutput struct{ *pulumi.OutputState }
 
 func (CloudIntegrationAppDynamicsOutput) ElementType() reflect.Type {
@@ -387,6 +406,12 @@ func (o CloudIntegrationAppDynamicsOutput) ToCloudIntegrationAppDynamicsOutput()
 
 func (o CloudIntegrationAppDynamicsOutput) ToCloudIntegrationAppDynamicsOutputWithContext(ctx context.Context) CloudIntegrationAppDynamicsOutput {
 	return o
+}
+
+func (o CloudIntegrationAppDynamicsOutput) ToOutput(ctx context.Context) pulumix.Output[*CloudIntegrationAppDynamics] {
+	return pulumix.Output[*CloudIntegrationAppDynamics]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A list of point tag key-values to add to every point ingested using this integration.
@@ -490,6 +515,12 @@ func (o CloudIntegrationAppDynamicsArrayOutput) ToCloudIntegrationAppDynamicsArr
 	return o
 }
 
+func (o CloudIntegrationAppDynamicsArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*CloudIntegrationAppDynamics] {
+	return pulumix.Output[[]*CloudIntegrationAppDynamics]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o CloudIntegrationAppDynamicsArrayOutput) Index(i pulumi.IntInput) CloudIntegrationAppDynamicsOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *CloudIntegrationAppDynamics {
 		return vs[0].([]*CloudIntegrationAppDynamics)[vs[1].(int)]
@@ -508,6 +539,12 @@ func (o CloudIntegrationAppDynamicsMapOutput) ToCloudIntegrationAppDynamicsMapOu
 
 func (o CloudIntegrationAppDynamicsMapOutput) ToCloudIntegrationAppDynamicsMapOutputWithContext(ctx context.Context) CloudIntegrationAppDynamicsMapOutput {
 	return o
+}
+
+func (o CloudIntegrationAppDynamicsMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*CloudIntegrationAppDynamics] {
+	return pulumix.Output[map[string]*CloudIntegrationAppDynamics]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o CloudIntegrationAppDynamicsMapOutput) MapIndex(k pulumi.StringInput) CloudIntegrationAppDynamicsOutput {

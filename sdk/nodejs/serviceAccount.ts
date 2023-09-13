@@ -21,7 +21,7 @@ import * as utilities from "./utilities";
  *
  * ## Import
  *
- * Service accounts can be imported by using `identifier`, e.g.
+ * Service accounts can be imported by using `identifier`, e.g.:
  *
  * ```sh
  *  $ pulumi import wavefront:index/serviceAccount:ServiceAccount basic sa::tftesting

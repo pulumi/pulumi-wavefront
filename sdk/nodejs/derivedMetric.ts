@@ -22,7 +22,7 @@ import * as utilities from "./utilities";
  *
  * ## Import
  *
- * Derived Metrics can be imported by using the `id`, e.g.
+ * Derived Metrics can be imported by using the `id`, e.g.:
  *
  * ```sh
  *  $ pulumi import wavefront:index/derivedMetric:DerivedMetric derived_metric 1577102900578

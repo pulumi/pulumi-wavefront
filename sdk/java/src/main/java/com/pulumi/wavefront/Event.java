@@ -57,7 +57,7 @@ import javax.annotation.Nullable;
  * 
  * ## Import
  * 
- * You can import events by using the id, for example
+ * You can import events by using the id, for example:
  * 
  * ```sh
  *  $ pulumi import wavefront:index/event:Event event 1479868728473

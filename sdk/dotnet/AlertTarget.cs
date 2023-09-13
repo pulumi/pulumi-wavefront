@@ -45,7 +45,7 @@ namespace Pulumi.Wavefront
     /// 
     /// ## Import
     /// 
-    /// Alert Targets can be imported using the `id`, e.g.
+    /// Alert Targets can be imported using the `id`, e.g.:
     /// 
     /// ```sh
     ///  $ pulumi import wavefront:index/alertTarget:AlertTarget alert_target abcdEFGhijKLMNO

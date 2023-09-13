@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-wavefront/sdk/v3/go/wavefront/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Use this data source to get information about a certain Wavefront derived metric by its ID.
@@ -142,6 +143,12 @@ func (o LookupDerivedMetricResultOutput) ToLookupDerivedMetricResultOutput() Loo
 
 func (o LookupDerivedMetricResultOutput) ToLookupDerivedMetricResultOutputWithContext(ctx context.Context) LookupDerivedMetricResultOutput {
 	return o
+}
+
+func (o LookupDerivedMetricResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupDerivedMetricResult] {
+	return pulumix.Output[LookupDerivedMetricResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // User-supplied additional explanatory information about the derived metric.

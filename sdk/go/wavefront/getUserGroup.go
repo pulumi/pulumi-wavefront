@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-wavefront/sdk/v3/go/wavefront/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Use this data source to get information about a Wavefront user group by its ID.
@@ -104,6 +105,12 @@ func (o LookupUserGroupResultOutput) ToLookupUserGroupResultOutput() LookupUserG
 
 func (o LookupUserGroupResultOutput) ToLookupUserGroupResultOutputWithContext(ctx context.Context) LookupUserGroupResultOutput {
 	return o
+}
+
+func (o LookupUserGroupResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupUserGroupResult] {
+	return pulumix.Output[LookupUserGroupResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Human-readable description of the group.
