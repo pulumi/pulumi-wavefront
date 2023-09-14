@@ -56,7 +56,7 @@ import javax.annotation.Nullable;
  * 
  * ## Import
  * 
- * AppDynamic Cloud Integrations can be imported by using the `id`, e.g.
+ * AppDynamic Cloud Integrations can be imported by using the `id`, e.g.:
  * 
  * ```sh
  *  $ pulumi import wavefront:index/cloudIntegrationAppDynamics:CloudIntegrationAppDynamics app_dynamics a411c16b-3cf7-4f03-bf11-8ca05aab898d

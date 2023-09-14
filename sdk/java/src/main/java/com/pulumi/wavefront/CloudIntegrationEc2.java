@@ -58,7 +58,7 @@ import javax.annotation.Nullable;
  * 
  * ## Import
  * 
- * EC2 Cloud Integrations can be imported by using the `id`, e.g.
+ * EC2 Cloud Integrations can be imported by using the `id`, e.g.:
  * 
  * ```sh
  *  $ pulumi import wavefront:index/cloudIntegrationEc2:CloudIntegrationEc2 ec2 a411c16b-3cf7-4f03-bf11-8ca05aab898d

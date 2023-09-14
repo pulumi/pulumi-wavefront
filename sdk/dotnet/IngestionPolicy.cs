@@ -32,7 +32,7 @@ namespace Pulumi.Wavefront
     /// 
     /// ## Import
     /// 
-    /// ingestion policies can be imported by using the `id`, e.g.
+    /// ingestion policies can be imported by using the `id`, e.g.:
     /// 
     /// ```sh
     ///  $ pulumi import wavefront:index/ingestionPolicy:IngestionPolicy basic test_ingestion-1611946841064

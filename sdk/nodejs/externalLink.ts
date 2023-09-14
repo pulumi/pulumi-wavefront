@@ -21,7 +21,7 @@ import * as utilities from "./utilities";
  *
  * ## Import
  *
- * Maintenance windows can be imported by using the `id`, e.g.
+ * Maintenance windows can be imported by using the `id`, e.g.:
  *
  * ```sh
  *  $ pulumi import wavefront:index/externalLink:ExternalLink basic fVj6fz6zYC4aBkID

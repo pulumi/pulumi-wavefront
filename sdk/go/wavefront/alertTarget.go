@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-wavefront/sdk/v3/go/wavefront/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Provides a wavefront Alert Target resource. This allows alert targets to created, updated, and deleted.
@@ -53,7 +54,7 @@ import (
 //
 // ## Import
 //
-// Alert Targets can be imported using the `id`, e.g.
+// Alert Targets can be imported using the `id`, e.g.:
 //
 // ```sh
 //
@@ -277,6 +278,12 @@ func (i *AlertTarget) ToAlertTargetOutputWithContext(ctx context.Context) AlertT
 	return pulumi.ToOutputWithContext(ctx, i).(AlertTargetOutput)
 }
 
+func (i *AlertTarget) ToOutput(ctx context.Context) pulumix.Output[*AlertTarget] {
+	return pulumix.Output[*AlertTarget]{
+		OutputState: i.ToAlertTargetOutputWithContext(ctx).OutputState,
+	}
+}
+
 // AlertTargetArrayInput is an input type that accepts AlertTargetArray and AlertTargetArrayOutput values.
 // You can construct a concrete instance of `AlertTargetArrayInput` via:
 //
@@ -300,6 +307,12 @@ func (i AlertTargetArray) ToAlertTargetArrayOutput() AlertTargetArrayOutput {
 
 func (i AlertTargetArray) ToAlertTargetArrayOutputWithContext(ctx context.Context) AlertTargetArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AlertTargetArrayOutput)
+}
+
+func (i AlertTargetArray) ToOutput(ctx context.Context) pulumix.Output[[]*AlertTarget] {
+	return pulumix.Output[[]*AlertTarget]{
+		OutputState: i.ToAlertTargetArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // AlertTargetMapInput is an input type that accepts AlertTargetMap and AlertTargetMapOutput values.
@@ -327,6 +340,12 @@ func (i AlertTargetMap) ToAlertTargetMapOutputWithContext(ctx context.Context) A
 	return pulumi.ToOutputWithContext(ctx, i).(AlertTargetMapOutput)
 }
 
+func (i AlertTargetMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*AlertTarget] {
+	return pulumix.Output[map[string]*AlertTarget]{
+		OutputState: i.ToAlertTargetMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type AlertTargetOutput struct{ *pulumi.OutputState }
 
 func (AlertTargetOutput) ElementType() reflect.Type {
@@ -339,6 +358,12 @@ func (o AlertTargetOutput) ToAlertTargetOutput() AlertTargetOutput {
 
 func (o AlertTargetOutput) ToAlertTargetOutputWithContext(ctx context.Context) AlertTargetOutput {
 	return o
+}
+
+func (o AlertTargetOutput) ToOutput(ctx context.Context) pulumix.Output[*AlertTarget] {
+	return pulumix.Output[*AlertTarget]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The value of the `Content-Type` header of the webhook.
@@ -418,6 +443,12 @@ func (o AlertTargetArrayOutput) ToAlertTargetArrayOutputWithContext(ctx context.
 	return o
 }
 
+func (o AlertTargetArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*AlertTarget] {
+	return pulumix.Output[[]*AlertTarget]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o AlertTargetArrayOutput) Index(i pulumi.IntInput) AlertTargetOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *AlertTarget {
 		return vs[0].([]*AlertTarget)[vs[1].(int)]
@@ -436,6 +467,12 @@ func (o AlertTargetMapOutput) ToAlertTargetMapOutput() AlertTargetMapOutput {
 
 func (o AlertTargetMapOutput) ToAlertTargetMapOutputWithContext(ctx context.Context) AlertTargetMapOutput {
 	return o
+}
+
+func (o AlertTargetMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*AlertTarget] {
+	return pulumix.Output[map[string]*AlertTarget]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o AlertTargetMapOutput) MapIndex(k pulumi.StringInput) AlertTargetOutput {

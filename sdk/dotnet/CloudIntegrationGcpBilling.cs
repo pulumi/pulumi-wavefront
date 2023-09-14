@@ -37,7 +37,7 @@ namespace Pulumi.Wavefront
     /// 
     /// ## Import
     /// 
-    /// GCP Billing Cloud Integrations can be imported by using the `id`, e.g.
+    /// GCP Billing Cloud Integrations can be imported by using the `id`, e.g.:
     /// 
     /// ```sh
     ///  $ pulumi import wavefront:index/cloudIntegrationGcpBilling:CloudIntegrationGcpBilling gcp_billing a411c16b-3cf7-4f03-bf11-8ca05aab898d

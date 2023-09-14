@@ -207,7 +207,7 @@ class DashboardJson(pulumi.CustomResource):
 
         ## Import
 
-        Dashboard JSON can be imported by using the `id`, e.g.
+        Dashboard JSON can be imported by using the `id`, e.g.:
 
         ```sh
          $ pulumi import wavefront:index/dashboardJson:DashboardJson dashboard_json tftestimport
@@ -362,7 +362,7 @@ class DashboardJson(pulumi.CustomResource):
 
         ## Import
 
-        Dashboard JSON can be imported by using the `id`, e.g.
+        Dashboard JSON can be imported by using the `id`, e.g.:
 
         ```sh
          $ pulumi import wavefront:index/dashboardJson:DashboardJson dashboard_json tftestimport

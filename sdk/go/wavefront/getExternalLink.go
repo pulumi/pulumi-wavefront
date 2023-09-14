@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-wavefront/sdk/v3/go/wavefront/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Use this data source to get information about a Wavefront external link by its ID.
@@ -121,6 +122,12 @@ func (o LookupExternalLinkResultOutput) ToLookupExternalLinkResultOutput() Looku
 
 func (o LookupExternalLinkResultOutput) ToLookupExternalLinkResultOutputWithContext(ctx context.Context) LookupExternalLinkResultOutput {
 	return o
+}
+
+func (o LookupExternalLinkResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupExternalLinkResult] {
+	return pulumix.Output[LookupExternalLinkResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The timestamp in epoch milliseconds indicating when the external link is created.

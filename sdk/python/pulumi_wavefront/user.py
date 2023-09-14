@@ -186,7 +186,7 @@ class User(pulumi.CustomResource):
 
         ## Import
 
-        Users can be imported by using the `id`, e.g.
+        Users can be imported by using the `id`, e.g.:
 
         ```sh
          $ pulumi import wavefront:index/user:User some_user test@example.com
@@ -221,7 +221,7 @@ class User(pulumi.CustomResource):
 
         ## Import
 
-        Users can be imported by using the `id`, e.g.
+        Users can be imported by using the `id`, e.g.:
 
         ```sh
          $ pulumi import wavefront:index/user:User some_user test@example.com

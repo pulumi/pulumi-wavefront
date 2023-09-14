@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-wavefront/sdk/v3/go/wavefront/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Provides a Wavefront Cloud Integration for Microsoft Azure. This allows Azure cloud integrations to be created,
@@ -45,7 +46,7 @@ import (
 //
 // ## Import
 //
-// Azure Cloud Integrations can be imported by using the `id`, e.g.
+// Azure Cloud Integrations can be imported by using the `id`, e.g.:
 //
 // ```sh
 //
@@ -255,6 +256,12 @@ func (i *CloudIntegrationAzure) ToCloudIntegrationAzureOutputWithContext(ctx con
 	return pulumi.ToOutputWithContext(ctx, i).(CloudIntegrationAzureOutput)
 }
 
+func (i *CloudIntegrationAzure) ToOutput(ctx context.Context) pulumix.Output[*CloudIntegrationAzure] {
+	return pulumix.Output[*CloudIntegrationAzure]{
+		OutputState: i.ToCloudIntegrationAzureOutputWithContext(ctx).OutputState,
+	}
+}
+
 // CloudIntegrationAzureArrayInput is an input type that accepts CloudIntegrationAzureArray and CloudIntegrationAzureArrayOutput values.
 // You can construct a concrete instance of `CloudIntegrationAzureArrayInput` via:
 //
@@ -278,6 +285,12 @@ func (i CloudIntegrationAzureArray) ToCloudIntegrationAzureArrayOutput() CloudIn
 
 func (i CloudIntegrationAzureArray) ToCloudIntegrationAzureArrayOutputWithContext(ctx context.Context) CloudIntegrationAzureArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(CloudIntegrationAzureArrayOutput)
+}
+
+func (i CloudIntegrationAzureArray) ToOutput(ctx context.Context) pulumix.Output[[]*CloudIntegrationAzure] {
+	return pulumix.Output[[]*CloudIntegrationAzure]{
+		OutputState: i.ToCloudIntegrationAzureArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // CloudIntegrationAzureMapInput is an input type that accepts CloudIntegrationAzureMap and CloudIntegrationAzureMapOutput values.
@@ -305,6 +318,12 @@ func (i CloudIntegrationAzureMap) ToCloudIntegrationAzureMapOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(CloudIntegrationAzureMapOutput)
 }
 
+func (i CloudIntegrationAzureMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*CloudIntegrationAzure] {
+	return pulumix.Output[map[string]*CloudIntegrationAzure]{
+		OutputState: i.ToCloudIntegrationAzureMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type CloudIntegrationAzureOutput struct{ *pulumi.OutputState }
 
 func (CloudIntegrationAzureOutput) ElementType() reflect.Type {
@@ -317,6 +336,12 @@ func (o CloudIntegrationAzureOutput) ToCloudIntegrationAzureOutput() CloudIntegr
 
 func (o CloudIntegrationAzureOutput) ToCloudIntegrationAzureOutputWithContext(ctx context.Context) CloudIntegrationAzureOutput {
 	return o
+}
+
+func (o CloudIntegrationAzureOutput) ToOutput(ctx context.Context) pulumix.Output[*CloudIntegrationAzure] {
+	return pulumix.Output[*CloudIntegrationAzure]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A list of point tag key-values to add to every point ingested using this integration.
@@ -388,6 +413,12 @@ func (o CloudIntegrationAzureArrayOutput) ToCloudIntegrationAzureArrayOutputWith
 	return o
 }
 
+func (o CloudIntegrationAzureArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*CloudIntegrationAzure] {
+	return pulumix.Output[[]*CloudIntegrationAzure]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o CloudIntegrationAzureArrayOutput) Index(i pulumi.IntInput) CloudIntegrationAzureOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *CloudIntegrationAzure {
 		return vs[0].([]*CloudIntegrationAzure)[vs[1].(int)]
@@ -406,6 +437,12 @@ func (o CloudIntegrationAzureMapOutput) ToCloudIntegrationAzureMapOutput() Cloud
 
 func (o CloudIntegrationAzureMapOutput) ToCloudIntegrationAzureMapOutputWithContext(ctx context.Context) CloudIntegrationAzureMapOutput {
 	return o
+}
+
+func (o CloudIntegrationAzureMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*CloudIntegrationAzure] {
+	return pulumix.Output[map[string]*CloudIntegrationAzure]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o CloudIntegrationAzureMapOutput) MapIndex(k pulumi.StringInput) CloudIntegrationAzureOutput {

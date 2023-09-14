@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-wavefront/sdk/v3/go/wavefront/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Provides a Wavefront Cloud Integration for New Relic. This allows New Relic cloud integrations to be created,
@@ -43,7 +44,7 @@ import (
 //
 // ## Import
 //
-// NewRelic Integrations can be imported by using the `id`, e.g.
+// NewRelic Integrations can be imported by using the `id`, e.g.:
 //
 // ```sh
 //
@@ -227,6 +228,12 @@ func (i *CloudIntegrationNewRelic) ToCloudIntegrationNewRelicOutputWithContext(c
 	return pulumi.ToOutputWithContext(ctx, i).(CloudIntegrationNewRelicOutput)
 }
 
+func (i *CloudIntegrationNewRelic) ToOutput(ctx context.Context) pulumix.Output[*CloudIntegrationNewRelic] {
+	return pulumix.Output[*CloudIntegrationNewRelic]{
+		OutputState: i.ToCloudIntegrationNewRelicOutputWithContext(ctx).OutputState,
+	}
+}
+
 // CloudIntegrationNewRelicArrayInput is an input type that accepts CloudIntegrationNewRelicArray and CloudIntegrationNewRelicArrayOutput values.
 // You can construct a concrete instance of `CloudIntegrationNewRelicArrayInput` via:
 //
@@ -250,6 +257,12 @@ func (i CloudIntegrationNewRelicArray) ToCloudIntegrationNewRelicArrayOutput() C
 
 func (i CloudIntegrationNewRelicArray) ToCloudIntegrationNewRelicArrayOutputWithContext(ctx context.Context) CloudIntegrationNewRelicArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(CloudIntegrationNewRelicArrayOutput)
+}
+
+func (i CloudIntegrationNewRelicArray) ToOutput(ctx context.Context) pulumix.Output[[]*CloudIntegrationNewRelic] {
+	return pulumix.Output[[]*CloudIntegrationNewRelic]{
+		OutputState: i.ToCloudIntegrationNewRelicArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // CloudIntegrationNewRelicMapInput is an input type that accepts CloudIntegrationNewRelicMap and CloudIntegrationNewRelicMapOutput values.
@@ -277,6 +290,12 @@ func (i CloudIntegrationNewRelicMap) ToCloudIntegrationNewRelicMapOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(CloudIntegrationNewRelicMapOutput)
 }
 
+func (i CloudIntegrationNewRelicMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*CloudIntegrationNewRelic] {
+	return pulumix.Output[map[string]*CloudIntegrationNewRelic]{
+		OutputState: i.ToCloudIntegrationNewRelicMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type CloudIntegrationNewRelicOutput struct{ *pulumi.OutputState }
 
 func (CloudIntegrationNewRelicOutput) ElementType() reflect.Type {
@@ -289,6 +308,12 @@ func (o CloudIntegrationNewRelicOutput) ToCloudIntegrationNewRelicOutput() Cloud
 
 func (o CloudIntegrationNewRelicOutput) ToCloudIntegrationNewRelicOutputWithContext(ctx context.Context) CloudIntegrationNewRelicOutput {
 	return o
+}
+
+func (o CloudIntegrationNewRelicOutput) ToOutput(ctx context.Context) pulumix.Output[*CloudIntegrationNewRelic] {
+	return pulumix.Output[*CloudIntegrationNewRelic]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A list of point tag key-values to add to every point ingested using this integration.
@@ -352,6 +377,12 @@ func (o CloudIntegrationNewRelicArrayOutput) ToCloudIntegrationNewRelicArrayOutp
 	return o
 }
 
+func (o CloudIntegrationNewRelicArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*CloudIntegrationNewRelic] {
+	return pulumix.Output[[]*CloudIntegrationNewRelic]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o CloudIntegrationNewRelicArrayOutput) Index(i pulumi.IntInput) CloudIntegrationNewRelicOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *CloudIntegrationNewRelic {
 		return vs[0].([]*CloudIntegrationNewRelic)[vs[1].(int)]
@@ -370,6 +401,12 @@ func (o CloudIntegrationNewRelicMapOutput) ToCloudIntegrationNewRelicMapOutput()
 
 func (o CloudIntegrationNewRelicMapOutput) ToCloudIntegrationNewRelicMapOutputWithContext(ctx context.Context) CloudIntegrationNewRelicMapOutput {
 	return o
+}
+
+func (o CloudIntegrationNewRelicMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*CloudIntegrationNewRelic] {
+	return pulumix.Output[map[string]*CloudIntegrationNewRelic]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o CloudIntegrationNewRelicMapOutput) MapIndex(k pulumi.StringInput) CloudIntegrationNewRelicOutput {

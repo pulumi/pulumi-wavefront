@@ -112,7 +112,8 @@ utilities.lazyLoad(exports, ["getDashboards","getDashboardsOutput"], () => requi
 
 export { GetDefaultUserGroupResult } from "./getDefaultUserGroup";
 export const getDefaultUserGroup: typeof import("./getDefaultUserGroup").getDefaultUserGroup = null as any;
-utilities.lazyLoad(exports, ["getDefaultUserGroup"], () => require("./getDefaultUserGroup"));
+export const getDefaultUserGroupOutput: typeof import("./getDefaultUserGroup").getDefaultUserGroupOutput = null as any;
+utilities.lazyLoad(exports, ["getDefaultUserGroup","getDefaultUserGroupOutput"], () => require("./getDefaultUserGroup"));
 
 export { GetDerivedMetricArgs, GetDerivedMetricResult, GetDerivedMetricOutputArgs } from "./getDerivedMetric";
 export const getDerivedMetric: typeof import("./getDerivedMetric").getDerivedMetric = null as any;
@@ -156,7 +157,8 @@ utilities.lazyLoad(exports, ["getMaintenanceWindowAll","getMaintenanceWindowAllO
 
 export { GetMetricsPolicyResult } from "./getMetricsPolicy";
 export const getMetricsPolicy: typeof import("./getMetricsPolicy").getMetricsPolicy = null as any;
-utilities.lazyLoad(exports, ["getMetricsPolicy"], () => require("./getMetricsPolicy"));
+export const getMetricsPolicyOutput: typeof import("./getMetricsPolicy").getMetricsPolicyOutput = null as any;
+utilities.lazyLoad(exports, ["getMetricsPolicy","getMetricsPolicyOutput"], () => require("./getMetricsPolicy"));
 
 export { GetRoleArgs, GetRoleResult, GetRoleOutputArgs } from "./getRole";
 export const getRole: typeof import("./getRole").getRole = null as any;
@@ -185,7 +187,8 @@ utilities.lazyLoad(exports, ["getUserGroups","getUserGroupsOutput"], () => requi
 
 export { GetUsersResult } from "./getUsers";
 export const getUsers: typeof import("./getUsers").getUsers = null as any;
-utilities.lazyLoad(exports, ["getUsers"], () => require("./getUsers"));
+export const getUsersOutput: typeof import("./getUsers").getUsersOutput = null as any;
+utilities.lazyLoad(exports, ["getUsers","getUsersOutput"], () => require("./getUsers"));
 
 export { IngestionPolicyArgs, IngestionPolicyState } from "./ingestionPolicy";
 export type IngestionPolicy = import("./ingestionPolicy").IngestionPolicy;

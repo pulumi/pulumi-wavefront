@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-wavefront/sdk/v3/go/wavefront/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Provides a Wavefront Metrics Policy Resource. This allows management of Metrics Policy to control access to time series, histograms, and delta counters
@@ -87,7 +88,7 @@ import (
 //
 // ## Import
 //
-// Users can be imported by using the `updated_epoch_millis`, e.g.
+// Users can be imported by using the `updated_epoch_millis`, e.g.:
 //
 // ```sh
 //
@@ -199,6 +200,12 @@ func (i *MetricsPolicy) ToMetricsPolicyOutputWithContext(ctx context.Context) Me
 	return pulumi.ToOutputWithContext(ctx, i).(MetricsPolicyOutput)
 }
 
+func (i *MetricsPolicy) ToOutput(ctx context.Context) pulumix.Output[*MetricsPolicy] {
+	return pulumix.Output[*MetricsPolicy]{
+		OutputState: i.ToMetricsPolicyOutputWithContext(ctx).OutputState,
+	}
+}
+
 // MetricsPolicyArrayInput is an input type that accepts MetricsPolicyArray and MetricsPolicyArrayOutput values.
 // You can construct a concrete instance of `MetricsPolicyArrayInput` via:
 //
@@ -222,6 +229,12 @@ func (i MetricsPolicyArray) ToMetricsPolicyArrayOutput() MetricsPolicyArrayOutpu
 
 func (i MetricsPolicyArray) ToMetricsPolicyArrayOutputWithContext(ctx context.Context) MetricsPolicyArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(MetricsPolicyArrayOutput)
+}
+
+func (i MetricsPolicyArray) ToOutput(ctx context.Context) pulumix.Output[[]*MetricsPolicy] {
+	return pulumix.Output[[]*MetricsPolicy]{
+		OutputState: i.ToMetricsPolicyArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // MetricsPolicyMapInput is an input type that accepts MetricsPolicyMap and MetricsPolicyMapOutput values.
@@ -249,6 +262,12 @@ func (i MetricsPolicyMap) ToMetricsPolicyMapOutputWithContext(ctx context.Contex
 	return pulumi.ToOutputWithContext(ctx, i).(MetricsPolicyMapOutput)
 }
 
+func (i MetricsPolicyMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*MetricsPolicy] {
+	return pulumix.Output[map[string]*MetricsPolicy]{
+		OutputState: i.ToMetricsPolicyMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type MetricsPolicyOutput struct{ *pulumi.OutputState }
 
 func (MetricsPolicyOutput) ElementType() reflect.Type {
@@ -261,6 +280,12 @@ func (o MetricsPolicyOutput) ToMetricsPolicyOutput() MetricsPolicyOutput {
 
 func (o MetricsPolicyOutput) ToMetricsPolicyOutputWithContext(ctx context.Context) MetricsPolicyOutput {
 	return o
+}
+
+func (o MetricsPolicyOutput) ToOutput(ctx context.Context) pulumix.Output[*MetricsPolicy] {
+	return pulumix.Output[*MetricsPolicy]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The customer the user is associated with.
@@ -297,6 +322,12 @@ func (o MetricsPolicyArrayOutput) ToMetricsPolicyArrayOutputWithContext(ctx cont
 	return o
 }
 
+func (o MetricsPolicyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*MetricsPolicy] {
+	return pulumix.Output[[]*MetricsPolicy]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o MetricsPolicyArrayOutput) Index(i pulumi.IntInput) MetricsPolicyOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *MetricsPolicy {
 		return vs[0].([]*MetricsPolicy)[vs[1].(int)]
@@ -315,6 +346,12 @@ func (o MetricsPolicyMapOutput) ToMetricsPolicyMapOutput() MetricsPolicyMapOutpu
 
 func (o MetricsPolicyMapOutput) ToMetricsPolicyMapOutputWithContext(ctx context.Context) MetricsPolicyMapOutput {
 	return o
+}
+
+func (o MetricsPolicyMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*MetricsPolicy] {
+	return pulumix.Output[map[string]*MetricsPolicy]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o MetricsPolicyMapOutput) MapIndex(k pulumi.StringInput) MetricsPolicyOutput {
