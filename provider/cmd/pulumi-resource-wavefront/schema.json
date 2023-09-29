@@ -2769,7 +2769,7 @@
                 },
                 "condition": {
                     "type": "string",
-                    "description": "A Wavefront query that is evaluated at regular intervals (default is 1 minute).\nThe alert fires and notifications are triggered when a data series matching this query evaluates\nto a non-zero value for a set number of consecutive minutes.\n"
+                    "description": "A Wavefront query that is evaluated at regular intervals (default is 1 minute).\nThe alert fires and notifications are triggered when a data series matching this query evaluates \nto a non-zero value for a set number of consecutive minutes.\n"
                 },
                 "conditions": {
                     "type": "object",
@@ -2857,7 +2857,7 @@
                 },
                 "condition": {
                     "type": "string",
-                    "description": "A Wavefront query that is evaluated at regular intervals (default is 1 minute).\nThe alert fires and notifications are triggered when a data series matching this query evaluates\nto a non-zero value for a set number of consecutive minutes.\n"
+                    "description": "A Wavefront query that is evaluated at regular intervals (default is 1 minute).\nThe alert fires and notifications are triggered when a data series matching this query evaluates \nto a non-zero value for a set number of consecutive minutes.\n"
                 },
                 "conditions": {
                     "type": "object",
@@ -2944,7 +2944,7 @@
                     },
                     "condition": {
                         "type": "string",
-                        "description": "A Wavefront query that is evaluated at regular intervals (default is 1 minute).\nThe alert fires and notifications are triggered when a data series matching this query evaluates\nto a non-zero value for a set number of consecutive minutes.\n"
+                        "description": "A Wavefront query that is evaluated at regular intervals (default is 1 minute).\nThe alert fires and notifications are triggered when a data series matching this query evaluates \nto a non-zero value for a set number of consecutive minutes.\n"
                     },
                     "conditions": {
                         "type": "object",
@@ -3998,7 +3998,7 @@
                     "additionalProperties": {
                         "type": "string"
                     },
-                    "description": "A string-\u003estring map allow list of instance tag-value pairs (in AWS).\nIf the instance's AWS tags match this allow list, CloudWatch data about this instance is ingested.\nMultiple entries are OR'ed.\n"
+                    "description": "A string-\u003estring map allow list of instance tag-value pairs (in AWS).\nIf the instance's AWS tags match this allow list, CloudWatch data about this instance is ingested. \nMultiple entries are OR'ed.\n"
                 },
                 "metricFilterRegex": {
                     "type": "string",
@@ -4036,7 +4036,7 @@
                     "additionalProperties": {
                         "type": "string"
                     },
-                    "description": "A string-\u003estring map of allow list of volume tag-value pairs (in AWS).\nIf the volume's AWS tags match this allow list, CloudWatch data about this volume is ingested.\nMultiple entries are OR'ed.\n"
+                    "description": "A string-\u003estring map of allow list of volume tag-value pairs (in AWS).\nIf the volume's AWS tags match this allow list, CloudWatch data about this volume is ingested. \nMultiple entries are OR'ed.\n"
                 }
             },
             "required": [
@@ -4067,7 +4067,7 @@
                     "additionalProperties": {
                         "type": "string"
                     },
-                    "description": "A string-\u003estring map allow list of instance tag-value pairs (in AWS).\nIf the instance's AWS tags match this allow list, CloudWatch data about this instance is ingested.\nMultiple entries are OR'ed.\n"
+                    "description": "A string-\u003estring map allow list of instance tag-value pairs (in AWS).\nIf the instance's AWS tags match this allow list, CloudWatch data about this instance is ingested. \nMultiple entries are OR'ed.\n"
                 },
                 "metricFilterRegex": {
                     "type": "string",
@@ -4106,7 +4106,7 @@
                     "additionalProperties": {
                         "type": "string"
                     },
-                    "description": "A string-\u003estring map of allow list of volume tag-value pairs (in AWS).\nIf the volume's AWS tags match this allow list, CloudWatch data about this volume is ingested.\nMultiple entries are OR'ed.\n"
+                    "description": "A string-\u003estring map of allow list of volume tag-value pairs (in AWS).\nIf the volume's AWS tags match this allow list, CloudWatch data about this volume is ingested. \nMultiple entries are OR'ed.\n"
                 }
             },
             "requiredInputs": [
@@ -4138,7 +4138,7 @@
                         "additionalProperties": {
                             "type": "string"
                         },
-                        "description": "A string-\u003estring map allow list of instance tag-value pairs (in AWS).\nIf the instance's AWS tags match this allow list, CloudWatch data about this instance is ingested.\nMultiple entries are OR'ed.\n"
+                        "description": "A string-\u003estring map allow list of instance tag-value pairs (in AWS).\nIf the instance's AWS tags match this allow list, CloudWatch data about this instance is ingested. \nMultiple entries are OR'ed.\n"
                     },
                     "metricFilterRegex": {
                         "type": "string",
@@ -4177,7 +4177,7 @@
                         "additionalProperties": {
                             "type": "string"
                         },
-                        "description": "A string-\u003estring map of allow list of volume tag-value pairs (in AWS).\nIf the volume's AWS tags match this allow list, CloudWatch data about this volume is ingested.\nMultiple entries are OR'ed.\n"
+                        "description": "A string-\u003estring map of allow list of volume tag-value pairs (in AWS).\nIf the volume's AWS tags match this allow list, CloudWatch data about this volume is ingested. \nMultiple entries are OR'ed.\n"
                     }
                 },
                 "type": "object"
@@ -4340,7 +4340,7 @@
                     "items": {
                         "type": "string"
                     },
-                    "description": "A list of Google Cloud Platform (GCP) services.  Valid values are `APPENGINE`, \n`BIGQUERY`, `BIGTABLE`, `CLOUDFUNCTIONS`, `CLOUDIOT`, `CLOUDSQL`, `CLOUDTASKS`, `COMPUTE`, `CONTAINER`,\n`DATAFLOW`, `DATAPROC`, `DATASTORE`, `FIREBASEDATABASE`, `FIREBASEHOSTING`, `FIRESTORE`, `INTERCONNECT`,\n`LOADBALANCING`, `LOGGING`, `ML`, `MONITORING`, `PUBSUB`, `REDIS`, `ROUTER`, `SERVICERUNTIME`, `SPANNER`, `STORAGE`,\n`TPU`, and `VPN`.\n"
+                    "description": "A list of Google Cloud Platform (GCP) services.  Valid values are `APPENGINE`, \n`BIGQUERY`, `BIGTABLE`, `CLOUDFUNCTIONS`, `CLOUDIOT`, `CLOUDSQL`, `CLOUDTASKS`, `COMPUTE`, `CONTAINER`, \n`DATAFLOW`, `DATAPROC`, `DATASTORE`, `FIREBASEDATABASE`, `FIREBASEHOSTING`, `FIRESTORE`, `INTERCONNECT`, \n`LOADBALANCING`, `LOGGING`, `ML`, `MONITORING`, `PUBSUB`, `REDIS`, `ROUTER`, `SERVICERUNTIME`, `SPANNER`, `STORAGE`,\n`TPU`, and `VPN`.\n"
                 },
                 "forceSave": {
                     "type": "boolean",
@@ -4391,7 +4391,7 @@
                     "items": {
                         "type": "string"
                     },
-                    "description": "A list of Google Cloud Platform (GCP) services.  Valid values are `APPENGINE`, \n`BIGQUERY`, `BIGTABLE`, `CLOUDFUNCTIONS`, `CLOUDIOT`, `CLOUDSQL`, `CLOUDTASKS`, `COMPUTE`, `CONTAINER`,\n`DATAFLOW`, `DATAPROC`, `DATASTORE`, `FIREBASEDATABASE`, `FIREBASEHOSTING`, `FIRESTORE`, `INTERCONNECT`,\n`LOADBALANCING`, `LOGGING`, `ML`, `MONITORING`, `PUBSUB`, `REDIS`, `ROUTER`, `SERVICERUNTIME`, `SPANNER`, `STORAGE`,\n`TPU`, and `VPN`.\n"
+                    "description": "A list of Google Cloud Platform (GCP) services.  Valid values are `APPENGINE`, \n`BIGQUERY`, `BIGTABLE`, `CLOUDFUNCTIONS`, `CLOUDIOT`, `CLOUDSQL`, `CLOUDTASKS`, `COMPUTE`, `CONTAINER`, \n`DATAFLOW`, `DATAPROC`, `DATASTORE`, `FIREBASEDATABASE`, `FIREBASEHOSTING`, `FIRESTORE`, `INTERCONNECT`, \n`LOADBALANCING`, `LOGGING`, `ML`, `MONITORING`, `PUBSUB`, `REDIS`, `ROUTER`, `SERVICERUNTIME`, `SPANNER`, `STORAGE`,\n`TPU`, and `VPN`.\n"
                 },
                 "forceSave": {
                     "type": "boolean",
@@ -4444,7 +4444,7 @@
                         "items": {
                             "type": "string"
                         },
-                        "description": "A list of Google Cloud Platform (GCP) services.  Valid values are `APPENGINE`, \n`BIGQUERY`, `BIGTABLE`, `CLOUDFUNCTIONS`, `CLOUDIOT`, `CLOUDSQL`, `CLOUDTASKS`, `COMPUTE`, `CONTAINER`,\n`DATAFLOW`, `DATAPROC`, `DATASTORE`, `FIREBASEDATABASE`, `FIREBASEHOSTING`, `FIRESTORE`, `INTERCONNECT`,\n`LOADBALANCING`, `LOGGING`, `ML`, `MONITORING`, `PUBSUB`, `REDIS`, `ROUTER`, `SERVICERUNTIME`, `SPANNER`, `STORAGE`,\n`TPU`, and `VPN`.\n"
+                        "description": "A list of Google Cloud Platform (GCP) services.  Valid values are `APPENGINE`, \n`BIGQUERY`, `BIGTABLE`, `CLOUDFUNCTIONS`, `CLOUDIOT`, `CLOUDSQL`, `CLOUDTASKS`, `COMPUTE`, `CONTAINER`, \n`DATAFLOW`, `DATAPROC`, `DATASTORE`, `FIREBASEDATABASE`, `FIREBASEHOSTING`, `FIRESTORE`, `INTERCONNECT`, \n`LOADBALANCING`, `LOGGING`, `ML`, `MONITORING`, `PUBSUB`, `REDIS`, `ROUTER`, `SERVICERUNTIME`, `SPANNER`, `STORAGE`,\n`TPU`, and `VPN`.\n"
                     },
                     "forceSave": {
                         "type": "boolean",
