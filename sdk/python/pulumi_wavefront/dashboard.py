@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 from . import outputs
 from ._inputs import *
@@ -44,24 +44,53 @@ class DashboardArgs:
         :param pulumi.Input[str] name: Name of the dashboard.
         :param pulumi.Input[Sequence[pulumi.Input['DashboardParameterDetailArgs']]] parameter_details: The current JSON representation of dashboard parameters. See parameter details.
         """
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "sections", sections)
-        pulumi.set(__self__, "tags", tags)
-        pulumi.set(__self__, "url", url)
+        DashboardArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            description=description,
+            sections=sections,
+            tags=tags,
+            url=url,
+            can_modifies=can_modifies,
+            can_views=can_views,
+            display_query_parameters=display_query_parameters,
+            display_section_table_of_contents=display_section_table_of_contents,
+            event_filter_type=event_filter_type,
+            name=name,
+            parameter_details=parameter_details,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             description: pulumi.Input[str],
+             sections: pulumi.Input[Sequence[pulumi.Input['DashboardSectionArgs']]],
+             tags: pulumi.Input[Sequence[pulumi.Input[str]]],
+             url: pulumi.Input[str],
+             can_modifies: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             can_views: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             display_query_parameters: Optional[pulumi.Input[bool]] = None,
+             display_section_table_of_contents: Optional[pulumi.Input[bool]] = None,
+             event_filter_type: Optional[pulumi.Input[str]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             parameter_details: Optional[pulumi.Input[Sequence[pulumi.Input['DashboardParameterDetailArgs']]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("description", description)
+        _setter("sections", sections)
+        _setter("tags", tags)
+        _setter("url", url)
         if can_modifies is not None:
-            pulumi.set(__self__, "can_modifies", can_modifies)
+            _setter("can_modifies", can_modifies)
         if can_views is not None:
-            pulumi.set(__self__, "can_views", can_views)
+            _setter("can_views", can_views)
         if display_query_parameters is not None:
-            pulumi.set(__self__, "display_query_parameters", display_query_parameters)
+            _setter("display_query_parameters", display_query_parameters)
         if display_section_table_of_contents is not None:
-            pulumi.set(__self__, "display_section_table_of_contents", display_section_table_of_contents)
+            _setter("display_section_table_of_contents", display_section_table_of_contents)
         if event_filter_type is not None:
-            pulumi.set(__self__, "event_filter_type", event_filter_type)
+            _setter("event_filter_type", event_filter_type)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if parameter_details is not None:
-            pulumi.set(__self__, "parameter_details", parameter_details)
+            _setter("parameter_details", parameter_details)
 
     @property
     @pulumi.getter
@@ -230,28 +259,57 @@ class _DashboardState:
         :param pulumi.Input[Sequence[pulumi.Input[str]]] tags: A set of tags to assign to this resource.
         :param pulumi.Input[str] url: Unique identifier, also a URL slug of the dashboard.
         """
+        _DashboardState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            can_modifies=can_modifies,
+            can_views=can_views,
+            description=description,
+            display_query_parameters=display_query_parameters,
+            display_section_table_of_contents=display_section_table_of_contents,
+            event_filter_type=event_filter_type,
+            name=name,
+            parameter_details=parameter_details,
+            sections=sections,
+            tags=tags,
+            url=url,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             can_modifies: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             can_views: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             display_query_parameters: Optional[pulumi.Input[bool]] = None,
+             display_section_table_of_contents: Optional[pulumi.Input[bool]] = None,
+             event_filter_type: Optional[pulumi.Input[str]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             parameter_details: Optional[pulumi.Input[Sequence[pulumi.Input['DashboardParameterDetailArgs']]]] = None,
+             sections: Optional[pulumi.Input[Sequence[pulumi.Input['DashboardSectionArgs']]]] = None,
+             tags: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             url: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if can_modifies is not None:
-            pulumi.set(__self__, "can_modifies", can_modifies)
+            _setter("can_modifies", can_modifies)
         if can_views is not None:
-            pulumi.set(__self__, "can_views", can_views)
+            _setter("can_views", can_views)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if display_query_parameters is not None:
-            pulumi.set(__self__, "display_query_parameters", display_query_parameters)
+            _setter("display_query_parameters", display_query_parameters)
         if display_section_table_of_contents is not None:
-            pulumi.set(__self__, "display_section_table_of_contents", display_section_table_of_contents)
+            _setter("display_section_table_of_contents", display_section_table_of_contents)
         if event_filter_type is not None:
-            pulumi.set(__self__, "event_filter_type", event_filter_type)
+            _setter("event_filter_type", event_filter_type)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if parameter_details is not None:
-            pulumi.set(__self__, "parameter_details", parameter_details)
+            _setter("parameter_details", parameter_details)
         if sections is not None:
-            pulumi.set(__self__, "sections", sections)
+            _setter("sections", sections)
         if tags is not None:
-            pulumi.set(__self__, "tags", tags)
+            _setter("tags", tags)
         if url is not None:
-            pulumi.set(__self__, "url", url)
+            _setter("url", url)
 
     @property
     @pulumi.getter(name="canModifies")
@@ -461,6 +519,10 @@ class Dashboard(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            DashboardArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

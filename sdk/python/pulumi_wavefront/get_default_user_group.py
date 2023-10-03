@@ -6,13 +6,14 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 
 __all__ = [
     'GetDefaultUserGroupResult',
     'AwaitableGetDefaultUserGroupResult',
     'get_default_user_group',
+    'get_default_user_group_output',
 ]
 
 @pulumi.output_type
@@ -76,3 +77,20 @@ def get_default_user_group(opts: Optional[pulumi.InvokeOptions] = None) -> Await
     return AwaitableGetDefaultUserGroupResult(
         group_id=pulumi.get(__ret__, 'group_id'),
         id=pulumi.get(__ret__, 'id'))
+
+
+@_utilities.lift_output_func(get_default_user_group)
+def get_default_user_group_output(opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDefaultUserGroupResult]:
+    """
+    Use this data source to get the Group ID of the `Everyone` group in Wavefront.
+
+    ## Example Usage
+
+    ```python
+    import pulumi
+    import pulumi_wavefront as wavefront
+
+    everyone_group = wavefront.get_default_user_group()
+    ```
+    """
+    ...

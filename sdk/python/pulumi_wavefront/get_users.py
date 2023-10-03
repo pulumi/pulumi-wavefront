@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 from . import outputs
 
@@ -14,6 +14,7 @@ __all__ = [
     'GetUsersResult',
     'AwaitableGetUsersResult',
     'get_users',
+    'get_users_output',
 ]
 
 @pulumi.output_type
@@ -76,3 +77,20 @@ def get_users(opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetUsersR
     return AwaitableGetUsersResult(
         id=pulumi.get(__ret__, 'id'),
         users=pulumi.get(__ret__, 'users'))
+
+
+@_utilities.lift_output_func(get_users)
+def get_users_output(opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetUsersResult]:
+    """
+    Use this data source to get all users in Wavefront.
+
+    ## Example Usage
+
+    ```python
+    import pulumi
+    import pulumi_wavefront as wavefront
+
+    users = wavefront.get_users()
+    ```
+    """
+    ...

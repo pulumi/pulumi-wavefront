@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 
 __all__ = ['CloudIntegrationCloudWatchArgs', 'CloudIntegrationCloudWatch']
@@ -46,27 +46,58 @@ class CloudIntegrationCloudWatchArgs:
                If the volume's AWS tags match this allow list, CloudWatch data about this volume is ingested.
                Multiple entries are OR'ed.
         """
-        pulumi.set(__self__, "external_id", external_id)
-        pulumi.set(__self__, "role_arn", role_arn)
-        pulumi.set(__self__, "service", service)
+        CloudIntegrationCloudWatchArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            external_id=external_id,
+            role_arn=role_arn,
+            service=service,
+            additional_tags=additional_tags,
+            force_save=force_save,
+            instance_selection_tags=instance_selection_tags,
+            metric_filter_regex=metric_filter_regex,
+            name=name,
+            namespaces=namespaces,
+            point_tag_filter_regex=point_tag_filter_regex,
+            service_refresh_rate_in_minutes=service_refresh_rate_in_minutes,
+            volume_selection_tags=volume_selection_tags,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             external_id: pulumi.Input[str],
+             role_arn: pulumi.Input[str],
+             service: pulumi.Input[str],
+             additional_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+             force_save: Optional[pulumi.Input[bool]] = None,
+             instance_selection_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+             metric_filter_regex: Optional[pulumi.Input[str]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             namespaces: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             point_tag_filter_regex: Optional[pulumi.Input[str]] = None,
+             service_refresh_rate_in_minutes: Optional[pulumi.Input[int]] = None,
+             volume_selection_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("external_id", external_id)
+        _setter("role_arn", role_arn)
+        _setter("service", service)
         if additional_tags is not None:
-            pulumi.set(__self__, "additional_tags", additional_tags)
+            _setter("additional_tags", additional_tags)
         if force_save is not None:
-            pulumi.set(__self__, "force_save", force_save)
+            _setter("force_save", force_save)
         if instance_selection_tags is not None:
-            pulumi.set(__self__, "instance_selection_tags", instance_selection_tags)
+            _setter("instance_selection_tags", instance_selection_tags)
         if metric_filter_regex is not None:
-            pulumi.set(__self__, "metric_filter_regex", metric_filter_regex)
+            _setter("metric_filter_regex", metric_filter_regex)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if namespaces is not None:
-            pulumi.set(__self__, "namespaces", namespaces)
+            _setter("namespaces", namespaces)
         if point_tag_filter_regex is not None:
-            pulumi.set(__self__, "point_tag_filter_regex", point_tag_filter_regex)
+            _setter("point_tag_filter_regex", point_tag_filter_regex)
         if service_refresh_rate_in_minutes is not None:
-            pulumi.set(__self__, "service_refresh_rate_in_minutes", service_refresh_rate_in_minutes)
+            _setter("service_refresh_rate_in_minutes", service_refresh_rate_in_minutes)
         if volume_selection_tags is not None:
-            pulumi.set(__self__, "volume_selection_tags", volume_selection_tags)
+            _setter("volume_selection_tags", volume_selection_tags)
 
     @property
     @pulumi.getter(name="externalId")
@@ -253,30 +284,61 @@ class _CloudIntegrationCloudWatchState:
                If the volume's AWS tags match this allow list, CloudWatch data about this volume is ingested.
                Multiple entries are OR'ed.
         """
+        _CloudIntegrationCloudWatchState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            additional_tags=additional_tags,
+            external_id=external_id,
+            force_save=force_save,
+            instance_selection_tags=instance_selection_tags,
+            metric_filter_regex=metric_filter_regex,
+            name=name,
+            namespaces=namespaces,
+            point_tag_filter_regex=point_tag_filter_regex,
+            role_arn=role_arn,
+            service=service,
+            service_refresh_rate_in_minutes=service_refresh_rate_in_minutes,
+            volume_selection_tags=volume_selection_tags,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             additional_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+             external_id: Optional[pulumi.Input[str]] = None,
+             force_save: Optional[pulumi.Input[bool]] = None,
+             instance_selection_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+             metric_filter_regex: Optional[pulumi.Input[str]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             namespaces: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             point_tag_filter_regex: Optional[pulumi.Input[str]] = None,
+             role_arn: Optional[pulumi.Input[str]] = None,
+             service: Optional[pulumi.Input[str]] = None,
+             service_refresh_rate_in_minutes: Optional[pulumi.Input[int]] = None,
+             volume_selection_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if additional_tags is not None:
-            pulumi.set(__self__, "additional_tags", additional_tags)
+            _setter("additional_tags", additional_tags)
         if external_id is not None:
-            pulumi.set(__self__, "external_id", external_id)
+            _setter("external_id", external_id)
         if force_save is not None:
-            pulumi.set(__self__, "force_save", force_save)
+            _setter("force_save", force_save)
         if instance_selection_tags is not None:
-            pulumi.set(__self__, "instance_selection_tags", instance_selection_tags)
+            _setter("instance_selection_tags", instance_selection_tags)
         if metric_filter_regex is not None:
-            pulumi.set(__self__, "metric_filter_regex", metric_filter_regex)
+            _setter("metric_filter_regex", metric_filter_regex)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if namespaces is not None:
-            pulumi.set(__self__, "namespaces", namespaces)
+            _setter("namespaces", namespaces)
         if point_tag_filter_regex is not None:
-            pulumi.set(__self__, "point_tag_filter_regex", point_tag_filter_regex)
+            _setter("point_tag_filter_regex", point_tag_filter_regex)
         if role_arn is not None:
-            pulumi.set(__self__, "role_arn", role_arn)
+            _setter("role_arn", role_arn)
         if service is not None:
-            pulumi.set(__self__, "service", service)
+            _setter("service", service)
         if service_refresh_rate_in_minutes is not None:
-            pulumi.set(__self__, "service_refresh_rate_in_minutes", service_refresh_rate_in_minutes)
+            _setter("service_refresh_rate_in_minutes", service_refresh_rate_in_minutes)
         if volume_selection_tags is not None:
-            pulumi.set(__self__, "volume_selection_tags", volume_selection_tags)
+            _setter("volume_selection_tags", volume_selection_tags)
 
     @property
     @pulumi.getter(name="additionalTags")
@@ -532,6 +594,10 @@ class CloudIntegrationCloudWatch(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            CloudIntegrationCloudWatchArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

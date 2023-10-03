@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 
 __all__ = ['CloudIntegrationEc2Args', 'CloudIntegrationEc2']
@@ -35,19 +35,42 @@ class CloudIntegrationEc2Args:
         :param pulumi.Input[str] name: The human-readable name of this integration.
         :param pulumi.Input[int] service_refresh_rate_in_minutes: How often, in minutes, to refresh the service.
         """
-        pulumi.set(__self__, "external_id", external_id)
-        pulumi.set(__self__, "role_arn", role_arn)
-        pulumi.set(__self__, "service", service)
+        CloudIntegrationEc2Args._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            external_id=external_id,
+            role_arn=role_arn,
+            service=service,
+            additional_tags=additional_tags,
+            force_save=force_save,
+            hostname_tags=hostname_tags,
+            name=name,
+            service_refresh_rate_in_minutes=service_refresh_rate_in_minutes,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             external_id: pulumi.Input[str],
+             role_arn: pulumi.Input[str],
+             service: pulumi.Input[str],
+             additional_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+             force_save: Optional[pulumi.Input[bool]] = None,
+             hostname_tags: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             service_refresh_rate_in_minutes: Optional[pulumi.Input[int]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("external_id", external_id)
+        _setter("role_arn", role_arn)
+        _setter("service", service)
         if additional_tags is not None:
-            pulumi.set(__self__, "additional_tags", additional_tags)
+            _setter("additional_tags", additional_tags)
         if force_save is not None:
-            pulumi.set(__self__, "force_save", force_save)
+            _setter("force_save", force_save)
         if hostname_tags is not None:
-            pulumi.set(__self__, "hostname_tags", hostname_tags)
+            _setter("hostname_tags", hostname_tags)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if service_refresh_rate_in_minutes is not None:
-            pulumi.set(__self__, "service_refresh_rate_in_minutes", service_refresh_rate_in_minutes)
+            _setter("service_refresh_rate_in_minutes", service_refresh_rate_in_minutes)
 
     @property
     @pulumi.getter(name="externalId")
@@ -172,22 +195,45 @@ class _CloudIntegrationEc2State:
         :param pulumi.Input[str] service: A value denoting which cloud service this service integrates with.
         :param pulumi.Input[int] service_refresh_rate_in_minutes: How often, in minutes, to refresh the service.
         """
+        _CloudIntegrationEc2State._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            additional_tags=additional_tags,
+            external_id=external_id,
+            force_save=force_save,
+            hostname_tags=hostname_tags,
+            name=name,
+            role_arn=role_arn,
+            service=service,
+            service_refresh_rate_in_minutes=service_refresh_rate_in_minutes,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             additional_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+             external_id: Optional[pulumi.Input[str]] = None,
+             force_save: Optional[pulumi.Input[bool]] = None,
+             hostname_tags: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             role_arn: Optional[pulumi.Input[str]] = None,
+             service: Optional[pulumi.Input[str]] = None,
+             service_refresh_rate_in_minutes: Optional[pulumi.Input[int]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if additional_tags is not None:
-            pulumi.set(__self__, "additional_tags", additional_tags)
+            _setter("additional_tags", additional_tags)
         if external_id is not None:
-            pulumi.set(__self__, "external_id", external_id)
+            _setter("external_id", external_id)
         if force_save is not None:
-            pulumi.set(__self__, "force_save", force_save)
+            _setter("force_save", force_save)
         if hostname_tags is not None:
-            pulumi.set(__self__, "hostname_tags", hostname_tags)
+            _setter("hostname_tags", hostname_tags)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if role_arn is not None:
-            pulumi.set(__self__, "role_arn", role_arn)
+            _setter("role_arn", role_arn)
         if service is not None:
-            pulumi.set(__self__, "service", service)
+            _setter("service", service)
         if service_refresh_rate_in_minutes is not None:
-            pulumi.set(__self__, "service_refresh_rate_in_minutes", service_refresh_rate_in_minutes)
+            _setter("service_refresh_rate_in_minutes", service_refresh_rate_in_minutes)
 
     @property
     @pulumi.getter(name="additionalTags")
@@ -379,6 +425,10 @@ class CloudIntegrationEc2(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            CloudIntegrationEc2Args._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
