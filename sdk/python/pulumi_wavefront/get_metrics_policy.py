@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 from . import outputs
 
@@ -14,6 +14,7 @@ __all__ = [
     'GetMetricsPolicyResult',
     'AwaitableGetMetricsPolicyResult',
     'get_metrics_policy',
+    'get_metrics_policy_output',
 ]
 
 @pulumi.output_type
@@ -94,3 +95,11 @@ def get_metrics_policy(opts: Optional[pulumi.InvokeOptions] = None) -> Awaitable
         policy_rules=pulumi.get(__ret__, 'policy_rules'),
         updated_epoch_millis=pulumi.get(__ret__, 'updated_epoch_millis'),
         updater_id=pulumi.get(__ret__, 'updater_id'))
+
+
+@_utilities.lift_output_func(get_metrics_policy)
+def get_metrics_policy_output(opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMetricsPolicyResult]:
+    """
+    Use this data source to access information about an existing resource.
+    """
+    ...

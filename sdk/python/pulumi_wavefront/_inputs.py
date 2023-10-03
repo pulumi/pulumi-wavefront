@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 
 __all__ = [
@@ -36,10 +36,23 @@ class AlertTargetRouteArgs:
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] filter: (Required) String that filters the route. Space delimited. Currently only allows a single key value pair.
                (e.g. `env prod`)
         """
-        pulumi.set(__self__, "method", method)
-        pulumi.set(__self__, "target", target)
+        AlertTargetRouteArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            method=method,
+            target=target,
+            filter=filter,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             method: pulumi.Input[str],
+             target: pulumi.Input[str],
+             filter: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("method", method)
+        _setter("target", target)
         if filter is not None:
-            pulumi.set(__self__, "filter", filter)
+            _setter("filter", filter)
 
     @property
     @pulumi.getter
@@ -89,8 +102,19 @@ class CloudIntegrationNewRelicMetricFilterArgs:
         :param pulumi.Input[str] app_name: The name of a NewRelic App.
         :param pulumi.Input[str] metric_filter_regex: A regular expression that a metric name must match (case-insensitively) in order to be ingested.
         """
-        pulumi.set(__self__, "app_name", app_name)
-        pulumi.set(__self__, "metric_filter_regex", metric_filter_regex)
+        CloudIntegrationNewRelicMetricFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            app_name=app_name,
+            metric_filter_regex=metric_filter_regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             app_name: pulumi.Input[str],
+             metric_filter_regex: pulumi.Input[str],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("app_name", app_name)
+        _setter("metric_filter_regex", metric_filter_regex)
 
     @property
     @pulumi.getter(name="appName")
@@ -142,18 +166,43 @@ class DashboardParameterDetailArgs:
         :param pulumi.Input[str] query_value: For `DYNAMIC` parameter types, the query to execute to return values.
         :param pulumi.Input[str] tag_key: for `TAG_KEY` dynamic field types, the tag key to return.
         """
-        pulumi.set(__self__, "default_value", default_value)
-        pulumi.set(__self__, "hide_from_view", hide_from_view)
-        pulumi.set(__self__, "label", label)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "parameter_type", parameter_type)
-        pulumi.set(__self__, "values_to_readable_strings", values_to_readable_strings)
+        DashboardParameterDetailArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            default_value=default_value,
+            hide_from_view=hide_from_view,
+            label=label,
+            name=name,
+            parameter_type=parameter_type,
+            values_to_readable_strings=values_to_readable_strings,
+            dynamic_field_type=dynamic_field_type,
+            query_value=query_value,
+            tag_key=tag_key,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             default_value: pulumi.Input[str],
+             hide_from_view: pulumi.Input[bool],
+             label: pulumi.Input[str],
+             name: pulumi.Input[str],
+             parameter_type: pulumi.Input[str],
+             values_to_readable_strings: pulumi.Input[Mapping[str, pulumi.Input[str]]],
+             dynamic_field_type: Optional[pulumi.Input[str]] = None,
+             query_value: Optional[pulumi.Input[str]] = None,
+             tag_key: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("default_value", default_value)
+        _setter("hide_from_view", hide_from_view)
+        _setter("label", label)
+        _setter("name", name)
+        _setter("parameter_type", parameter_type)
+        _setter("values_to_readable_strings", values_to_readable_strings)
         if dynamic_field_type is not None:
-            pulumi.set(__self__, "dynamic_field_type", dynamic_field_type)
+            _setter("dynamic_field_type", dynamic_field_type)
         if query_value is not None:
-            pulumi.set(__self__, "query_value", query_value)
+            _setter("query_value", query_value)
         if tag_key is not None:
-            pulumi.set(__self__, "tag_key", tag_key)
+            _setter("tag_key", tag_key)
 
     @property
     @pulumi.getter(name="defaultValue")
@@ -275,8 +324,19 @@ class DashboardSectionArgs:
         :param pulumi.Input[str] name: Name of this section.
         :param pulumi.Input[Sequence[pulumi.Input['DashboardSectionRowArgs']]] rows: See dashboard section rows.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "rows", rows)
+        DashboardSectionArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            rows=rows,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: pulumi.Input[str],
+             rows: pulumi.Input[Sequence[pulumi.Input['DashboardSectionRowArgs']]],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("rows", rows)
 
     @property
     @pulumi.getter
@@ -310,7 +370,16 @@ class DashboardSectionRowArgs:
         """
         :param pulumi.Input[Sequence[pulumi.Input['DashboardSectionRowChartArgs']]] charts: Charts in this section. See dashboard chart.
         """
-        pulumi.set(__self__, "charts", charts)
+        DashboardSectionRowArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            charts=charts,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             charts: pulumi.Input[Sequence[pulumi.Input['DashboardSectionRowChartArgs']]],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("charts", charts)
 
     @property
     @pulumi.getter
@@ -348,19 +417,44 @@ class DashboardSectionRowChartArgs:
         :param pulumi.Input[str] description: Description of the chart.
         :param pulumi.Input[bool] no_default_events: Show events related to the sources included in queries
         """
-        pulumi.set(__self__, "chart_setting", chart_setting)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "sources", sources)
-        pulumi.set(__self__, "summarization", summarization)
-        pulumi.set(__self__, "units", units)
+        DashboardSectionRowChartArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            chart_setting=chart_setting,
+            name=name,
+            sources=sources,
+            summarization=summarization,
+            units=units,
+            base=base,
+            chart_attribute=chart_attribute,
+            description=description,
+            no_default_events=no_default_events,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             chart_setting: pulumi.Input['DashboardSectionRowChartChartSettingArgs'],
+             name: pulumi.Input[str],
+             sources: pulumi.Input[Sequence[pulumi.Input['DashboardSectionRowChartSourceArgs']]],
+             summarization: pulumi.Input[str],
+             units: pulumi.Input[str],
+             base: Optional[pulumi.Input[int]] = None,
+             chart_attribute: Optional[pulumi.Input[str]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             no_default_events: Optional[pulumi.Input[bool]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("chart_setting", chart_setting)
+        _setter("name", name)
+        _setter("sources", sources)
+        _setter("summarization", summarization)
+        _setter("units", units)
         if base is not None:
-            pulumi.set(__self__, "base", base)
+            _setter("base", base)
         if chart_attribute is not None:
-            pulumi.set(__self__, "chart_attribute", chart_attribute)
+            _setter("chart_attribute", chart_attribute)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if no_default_events is not None:
-            pulumi.set(__self__, "no_default_events", no_default_events)
+            _setter("no_default_events", no_default_events)
 
     @property
     @pulumi.getter(name="chartSetting")
@@ -614,119 +708,240 @@ class DashboardSectionRowChartChartSettingArgs:
         :param pulumi.Input[float] ymax: For x-y scatterplots, max value for the Y-axis. Set to null for auto.
         :param pulumi.Input[float] ymin: For x-y scatterplots, min value for the Y-axis. Set to null for auto.
         """
-        pulumi.set(__self__, "type", type)
+        DashboardSectionRowChartChartSettingArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            type=type,
+            auto_column_tags=auto_column_tags,
+            column_tags=column_tags,
+            custom_tags=custom_tags,
+            expected_data_spacing=expected_data_spacing,
+            fixed_legend_display_stats=fixed_legend_display_stats,
+            fixed_legend_enabled=fixed_legend_enabled,
+            fixed_legend_filter_field=fixed_legend_filter_field,
+            fixed_legend_filter_limit=fixed_legend_filter_limit,
+            fixed_legend_filter_sort=fixed_legend_filter_sort,
+            fixed_legend_hide_label=fixed_legend_hide_label,
+            fixed_legend_position=fixed_legend_position,
+            fixed_legend_use_raw_stats=fixed_legend_use_raw_stats,
+            group_by_source=group_by_source,
+            invert_dynamic_legend_hover_control=invert_dynamic_legend_hover_control,
+            line_type=line_type,
+            max=max,
+            min=min,
+            num_tags=num_tags,
+            plain_markdown_content=plain_markdown_content,
+            show_hosts=show_hosts,
+            show_labels=show_labels,
+            show_raw_values=show_raw_values,
+            sort_values_descending=sort_values_descending,
+            sparkline_decimal_precision=sparkline_decimal_precision,
+            sparkline_display_color=sparkline_display_color,
+            sparkline_display_font_size=sparkline_display_font_size,
+            sparkline_display_horizontal_position=sparkline_display_horizontal_position,
+            sparkline_display_postfix=sparkline_display_postfix,
+            sparkline_display_prefix=sparkline_display_prefix,
+            sparkline_display_value_type=sparkline_display_value_type,
+            sparkline_display_vertical_position=sparkline_display_vertical_position,
+            sparkline_fill_color=sparkline_fill_color,
+            sparkline_line_color=sparkline_line_color,
+            sparkline_size=sparkline_size,
+            sparkline_value_color_map_apply_to=sparkline_value_color_map_apply_to,
+            sparkline_value_color_map_colors=sparkline_value_color_map_colors,
+            sparkline_value_color_map_values=sparkline_value_color_map_values,
+            sparkline_value_color_map_values_v2s=sparkline_value_color_map_values_v2s,
+            sparkline_value_text_map_texts=sparkline_value_text_map_texts,
+            sparkline_value_text_map_thresholds=sparkline_value_text_map_thresholds,
+            stack_type=stack_type,
+            tag_mode=tag_mode,
+            time_based_coloring=time_based_coloring,
+            window_size=window_size,
+            windowing=windowing,
+            xmax=xmax,
+            xmin=xmin,
+            y0_scale_si_by1024=y0_scale_si_by1024,
+            y0_unit_autoscaling=y0_unit_autoscaling,
+            y1_scale_si_by1024=y1_scale_si_by1024,
+            y1_unit_autoscaling=y1_unit_autoscaling,
+            y1_units=y1_units,
+            y1max=y1max,
+            y1min=y1min,
+            ymax=ymax,
+            ymin=ymin,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             type: pulumi.Input[str],
+             auto_column_tags: Optional[pulumi.Input[bool]] = None,
+             column_tags: Optional[pulumi.Input[str]] = None,
+             custom_tags: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             expected_data_spacing: Optional[pulumi.Input[int]] = None,
+             fixed_legend_display_stats: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             fixed_legend_enabled: Optional[pulumi.Input[bool]] = None,
+             fixed_legend_filter_field: Optional[pulumi.Input[str]] = None,
+             fixed_legend_filter_limit: Optional[pulumi.Input[int]] = None,
+             fixed_legend_filter_sort: Optional[pulumi.Input[str]] = None,
+             fixed_legend_hide_label: Optional[pulumi.Input[bool]] = None,
+             fixed_legend_position: Optional[pulumi.Input[str]] = None,
+             fixed_legend_use_raw_stats: Optional[pulumi.Input[bool]] = None,
+             group_by_source: Optional[pulumi.Input[bool]] = None,
+             invert_dynamic_legend_hover_control: Optional[pulumi.Input[bool]] = None,
+             line_type: Optional[pulumi.Input[str]] = None,
+             max: Optional[pulumi.Input[float]] = None,
+             min: Optional[pulumi.Input[float]] = None,
+             num_tags: Optional[pulumi.Input[int]] = None,
+             plain_markdown_content: Optional[pulumi.Input[str]] = None,
+             show_hosts: Optional[pulumi.Input[bool]] = None,
+             show_labels: Optional[pulumi.Input[bool]] = None,
+             show_raw_values: Optional[pulumi.Input[bool]] = None,
+             sort_values_descending: Optional[pulumi.Input[bool]] = None,
+             sparkline_decimal_precision: Optional[pulumi.Input[int]] = None,
+             sparkline_display_color: Optional[pulumi.Input[str]] = None,
+             sparkline_display_font_size: Optional[pulumi.Input[str]] = None,
+             sparkline_display_horizontal_position: Optional[pulumi.Input[str]] = None,
+             sparkline_display_postfix: Optional[pulumi.Input[str]] = None,
+             sparkline_display_prefix: Optional[pulumi.Input[str]] = None,
+             sparkline_display_value_type: Optional[pulumi.Input[str]] = None,
+             sparkline_display_vertical_position: Optional[pulumi.Input[str]] = None,
+             sparkline_fill_color: Optional[pulumi.Input[str]] = None,
+             sparkline_line_color: Optional[pulumi.Input[str]] = None,
+             sparkline_size: Optional[pulumi.Input[str]] = None,
+             sparkline_value_color_map_apply_to: Optional[pulumi.Input[str]] = None,
+             sparkline_value_color_map_colors: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             sparkline_value_color_map_values: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None,
+             sparkline_value_color_map_values_v2s: Optional[pulumi.Input[Sequence[pulumi.Input[float]]]] = None,
+             sparkline_value_text_map_texts: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             sparkline_value_text_map_thresholds: Optional[pulumi.Input[Sequence[pulumi.Input[float]]]] = None,
+             stack_type: Optional[pulumi.Input[str]] = None,
+             tag_mode: Optional[pulumi.Input[str]] = None,
+             time_based_coloring: Optional[pulumi.Input[bool]] = None,
+             window_size: Optional[pulumi.Input[int]] = None,
+             windowing: Optional[pulumi.Input[str]] = None,
+             xmax: Optional[pulumi.Input[float]] = None,
+             xmin: Optional[pulumi.Input[float]] = None,
+             y0_scale_si_by1024: Optional[pulumi.Input[bool]] = None,
+             y0_unit_autoscaling: Optional[pulumi.Input[bool]] = None,
+             y1_scale_si_by1024: Optional[pulumi.Input[bool]] = None,
+             y1_unit_autoscaling: Optional[pulumi.Input[bool]] = None,
+             y1_units: Optional[pulumi.Input[str]] = None,
+             y1max: Optional[pulumi.Input[float]] = None,
+             y1min: Optional[pulumi.Input[float]] = None,
+             ymax: Optional[pulumi.Input[float]] = None,
+             ymin: Optional[pulumi.Input[float]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("type", type)
         if auto_column_tags is not None:
-            pulumi.set(__self__, "auto_column_tags", auto_column_tags)
+            _setter("auto_column_tags", auto_column_tags)
         if column_tags is not None:
-            pulumi.set(__self__, "column_tags", column_tags)
+            _setter("column_tags", column_tags)
         if custom_tags is not None:
-            pulumi.set(__self__, "custom_tags", custom_tags)
+            _setter("custom_tags", custom_tags)
         if expected_data_spacing is not None:
-            pulumi.set(__self__, "expected_data_spacing", expected_data_spacing)
+            _setter("expected_data_spacing", expected_data_spacing)
         if fixed_legend_display_stats is not None:
-            pulumi.set(__self__, "fixed_legend_display_stats", fixed_legend_display_stats)
+            _setter("fixed_legend_display_stats", fixed_legend_display_stats)
         if fixed_legend_enabled is not None:
-            pulumi.set(__self__, "fixed_legend_enabled", fixed_legend_enabled)
+            _setter("fixed_legend_enabled", fixed_legend_enabled)
         if fixed_legend_filter_field is not None:
-            pulumi.set(__self__, "fixed_legend_filter_field", fixed_legend_filter_field)
+            _setter("fixed_legend_filter_field", fixed_legend_filter_field)
         if fixed_legend_filter_limit is not None:
-            pulumi.set(__self__, "fixed_legend_filter_limit", fixed_legend_filter_limit)
+            _setter("fixed_legend_filter_limit", fixed_legend_filter_limit)
         if fixed_legend_filter_sort is not None:
-            pulumi.set(__self__, "fixed_legend_filter_sort", fixed_legend_filter_sort)
+            _setter("fixed_legend_filter_sort", fixed_legend_filter_sort)
         if fixed_legend_hide_label is not None:
-            pulumi.set(__self__, "fixed_legend_hide_label", fixed_legend_hide_label)
+            _setter("fixed_legend_hide_label", fixed_legend_hide_label)
         if fixed_legend_position is not None:
-            pulumi.set(__self__, "fixed_legend_position", fixed_legend_position)
+            _setter("fixed_legend_position", fixed_legend_position)
         if fixed_legend_use_raw_stats is not None:
-            pulumi.set(__self__, "fixed_legend_use_raw_stats", fixed_legend_use_raw_stats)
+            _setter("fixed_legend_use_raw_stats", fixed_legend_use_raw_stats)
         if group_by_source is not None:
-            pulumi.set(__self__, "group_by_source", group_by_source)
+            _setter("group_by_source", group_by_source)
         if invert_dynamic_legend_hover_control is not None:
-            pulumi.set(__self__, "invert_dynamic_legend_hover_control", invert_dynamic_legend_hover_control)
+            _setter("invert_dynamic_legend_hover_control", invert_dynamic_legend_hover_control)
         if line_type is not None:
-            pulumi.set(__self__, "line_type", line_type)
+            _setter("line_type", line_type)
         if max is not None:
-            pulumi.set(__self__, "max", max)
+            _setter("max", max)
         if min is not None:
-            pulumi.set(__self__, "min", min)
+            _setter("min", min)
         if num_tags is not None:
-            pulumi.set(__self__, "num_tags", num_tags)
+            _setter("num_tags", num_tags)
         if plain_markdown_content is not None:
-            pulumi.set(__self__, "plain_markdown_content", plain_markdown_content)
+            _setter("plain_markdown_content", plain_markdown_content)
         if show_hosts is not None:
-            pulumi.set(__self__, "show_hosts", show_hosts)
+            _setter("show_hosts", show_hosts)
         if show_labels is not None:
-            pulumi.set(__self__, "show_labels", show_labels)
+            _setter("show_labels", show_labels)
         if show_raw_values is not None:
-            pulumi.set(__self__, "show_raw_values", show_raw_values)
+            _setter("show_raw_values", show_raw_values)
         if sort_values_descending is not None:
-            pulumi.set(__self__, "sort_values_descending", sort_values_descending)
+            _setter("sort_values_descending", sort_values_descending)
         if sparkline_decimal_precision is not None:
-            pulumi.set(__self__, "sparkline_decimal_precision", sparkline_decimal_precision)
+            _setter("sparkline_decimal_precision", sparkline_decimal_precision)
         if sparkline_display_color is not None:
-            pulumi.set(__self__, "sparkline_display_color", sparkline_display_color)
+            _setter("sparkline_display_color", sparkline_display_color)
         if sparkline_display_font_size is not None:
-            pulumi.set(__self__, "sparkline_display_font_size", sparkline_display_font_size)
+            _setter("sparkline_display_font_size", sparkline_display_font_size)
         if sparkline_display_horizontal_position is not None:
-            pulumi.set(__self__, "sparkline_display_horizontal_position", sparkline_display_horizontal_position)
+            _setter("sparkline_display_horizontal_position", sparkline_display_horizontal_position)
         if sparkline_display_postfix is not None:
-            pulumi.set(__self__, "sparkline_display_postfix", sparkline_display_postfix)
+            _setter("sparkline_display_postfix", sparkline_display_postfix)
         if sparkline_display_prefix is not None:
-            pulumi.set(__self__, "sparkline_display_prefix", sparkline_display_prefix)
+            _setter("sparkline_display_prefix", sparkline_display_prefix)
         if sparkline_display_value_type is not None:
-            pulumi.set(__self__, "sparkline_display_value_type", sparkline_display_value_type)
+            _setter("sparkline_display_value_type", sparkline_display_value_type)
         if sparkline_display_vertical_position is not None:
-            pulumi.set(__self__, "sparkline_display_vertical_position", sparkline_display_vertical_position)
+            _setter("sparkline_display_vertical_position", sparkline_display_vertical_position)
         if sparkline_fill_color is not None:
-            pulumi.set(__self__, "sparkline_fill_color", sparkline_fill_color)
+            _setter("sparkline_fill_color", sparkline_fill_color)
         if sparkline_line_color is not None:
-            pulumi.set(__self__, "sparkline_line_color", sparkline_line_color)
+            _setter("sparkline_line_color", sparkline_line_color)
         if sparkline_size is not None:
-            pulumi.set(__self__, "sparkline_size", sparkline_size)
+            _setter("sparkline_size", sparkline_size)
         if sparkline_value_color_map_apply_to is not None:
-            pulumi.set(__self__, "sparkline_value_color_map_apply_to", sparkline_value_color_map_apply_to)
+            _setter("sparkline_value_color_map_apply_to", sparkline_value_color_map_apply_to)
         if sparkline_value_color_map_colors is not None:
-            pulumi.set(__self__, "sparkline_value_color_map_colors", sparkline_value_color_map_colors)
+            _setter("sparkline_value_color_map_colors", sparkline_value_color_map_colors)
         if sparkline_value_color_map_values is not None:
-            pulumi.set(__self__, "sparkline_value_color_map_values", sparkline_value_color_map_values)
+            _setter("sparkline_value_color_map_values", sparkline_value_color_map_values)
         if sparkline_value_color_map_values_v2s is not None:
-            pulumi.set(__self__, "sparkline_value_color_map_values_v2s", sparkline_value_color_map_values_v2s)
+            _setter("sparkline_value_color_map_values_v2s", sparkline_value_color_map_values_v2s)
         if sparkline_value_text_map_texts is not None:
-            pulumi.set(__self__, "sparkline_value_text_map_texts", sparkline_value_text_map_texts)
+            _setter("sparkline_value_text_map_texts", sparkline_value_text_map_texts)
         if sparkline_value_text_map_thresholds is not None:
-            pulumi.set(__self__, "sparkline_value_text_map_thresholds", sparkline_value_text_map_thresholds)
+            _setter("sparkline_value_text_map_thresholds", sparkline_value_text_map_thresholds)
         if stack_type is not None:
-            pulumi.set(__self__, "stack_type", stack_type)
+            _setter("stack_type", stack_type)
         if tag_mode is not None:
-            pulumi.set(__self__, "tag_mode", tag_mode)
+            _setter("tag_mode", tag_mode)
         if time_based_coloring is not None:
-            pulumi.set(__self__, "time_based_coloring", time_based_coloring)
+            _setter("time_based_coloring", time_based_coloring)
         if window_size is not None:
-            pulumi.set(__self__, "window_size", window_size)
+            _setter("window_size", window_size)
         if windowing is not None:
-            pulumi.set(__self__, "windowing", windowing)
+            _setter("windowing", windowing)
         if xmax is not None:
-            pulumi.set(__self__, "xmax", xmax)
+            _setter("xmax", xmax)
         if xmin is not None:
-            pulumi.set(__self__, "xmin", xmin)
+            _setter("xmin", xmin)
         if y0_scale_si_by1024 is not None:
-            pulumi.set(__self__, "y0_scale_si_by1024", y0_scale_si_by1024)
+            _setter("y0_scale_si_by1024", y0_scale_si_by1024)
         if y0_unit_autoscaling is not None:
-            pulumi.set(__self__, "y0_unit_autoscaling", y0_unit_autoscaling)
+            _setter("y0_unit_autoscaling", y0_unit_autoscaling)
         if y1_scale_si_by1024 is not None:
-            pulumi.set(__self__, "y1_scale_si_by1024", y1_scale_si_by1024)
+            _setter("y1_scale_si_by1024", y1_scale_si_by1024)
         if y1_unit_autoscaling is not None:
-            pulumi.set(__self__, "y1_unit_autoscaling", y1_unit_autoscaling)
+            _setter("y1_unit_autoscaling", y1_unit_autoscaling)
         if y1_units is not None:
-            pulumi.set(__self__, "y1_units", y1_units)
+            _setter("y1_units", y1_units)
         if y1max is not None:
-            pulumi.set(__self__, "y1max", y1max)
+            _setter("y1max", y1max)
         if y1min is not None:
-            pulumi.set(__self__, "y1min", y1min)
+            _setter("y1min", y1min)
         if ymax is not None:
-            pulumi.set(__self__, "ymax", ymax)
+            _setter("ymax", ymax)
         if ymin is not None:
-            pulumi.set(__self__, "ymin", ymin)
+            _setter("ymin", ymin)
 
     @property
     @pulumi.getter
@@ -1456,16 +1671,35 @@ class DashboardSectionRowChartSourceArgs:
         :param pulumi.Input[str] scatter_plot_source: For scatter plots, does this query source the X-axis or the Y-axis, `X`, or `Y`.
         :param pulumi.Input[str] source_description: A description for the purpose of this source.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "query", query)
+        DashboardSectionRowChartSourceArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            query=query,
+            disabled=disabled,
+            query_builder_enabled=query_builder_enabled,
+            scatter_plot_source=scatter_plot_source,
+            source_description=source_description,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: pulumi.Input[str],
+             query: pulumi.Input[str],
+             disabled: Optional[pulumi.Input[bool]] = None,
+             query_builder_enabled: Optional[pulumi.Input[bool]] = None,
+             scatter_plot_source: Optional[pulumi.Input[str]] = None,
+             source_description: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("query", query)
         if disabled is not None:
-            pulumi.set(__self__, "disabled", disabled)
+            _setter("disabled", disabled)
         if query_builder_enabled is not None:
-            pulumi.set(__self__, "query_builder_enabled", query_builder_enabled)
+            _setter("query_builder_enabled", query_builder_enabled)
         if scatter_plot_source is not None:
-            pulumi.set(__self__, "scatter_plot_source", scatter_plot_source)
+            _setter("scatter_plot_source", scatter_plot_source)
         if source_description is not None:
-            pulumi.set(__self__, "source_description", source_description)
+            _setter("source_description", source_description)
 
     @property
     @pulumi.getter
@@ -1545,8 +1779,19 @@ class IngestionPolicyTagArgs:
     def __init__(__self__, *,
                  key: pulumi.Input[str],
                  value: pulumi.Input[str]):
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "value", value)
+        IngestionPolicyTagArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            key=key,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             key: pulumi.Input[str],
+             value: pulumi.Input[str],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("key", key)
+        _setter("value", value)
 
     @property
     @pulumi.getter
@@ -1590,19 +1835,44 @@ class MetricsPolicyPolicyRuleArgs:
         :param pulumi.Input[Sequence[pulumi.Input['MetricsPolicyPolicyRuleTagArgs']]] tags: List of Key/Value tags to select target metrics for policy.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] user_group_ids: List of user group ids to apply Metrics Policy to. Must have at least one associated account_id, user_group_id, or role_id.
         """
-        pulumi.set(__self__, "access_type", access_type)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "prefixes", prefixes)
-        pulumi.set(__self__, "tags_anded", tags_anded)
+        MetricsPolicyPolicyRuleArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            access_type=access_type,
+            description=description,
+            name=name,
+            prefixes=prefixes,
+            tags_anded=tags_anded,
+            account_ids=account_ids,
+            role_ids=role_ids,
+            tags=tags,
+            user_group_ids=user_group_ids,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             access_type: pulumi.Input[str],
+             description: pulumi.Input[str],
+             name: pulumi.Input[str],
+             prefixes: pulumi.Input[Sequence[pulumi.Input[str]]],
+             tags_anded: pulumi.Input[bool],
+             account_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             role_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             tags: Optional[pulumi.Input[Sequence[pulumi.Input['MetricsPolicyPolicyRuleTagArgs']]]] = None,
+             user_group_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("access_type", access_type)
+        _setter("description", description)
+        _setter("name", name)
+        _setter("prefixes", prefixes)
+        _setter("tags_anded", tags_anded)
         if account_ids is not None:
-            pulumi.set(__self__, "account_ids", account_ids)
+            _setter("account_ids", account_ids)
         if role_ids is not None:
-            pulumi.set(__self__, "role_ids", role_ids)
+            _setter("role_ids", role_ids)
         if tags is not None:
-            pulumi.set(__self__, "tags", tags)
+            _setter("tags", tags)
         if user_group_ids is not None:
-            pulumi.set(__self__, "user_group_ids", user_group_ids)
+            _setter("user_group_ids", user_group_ids)
 
     @property
     @pulumi.getter(name="accessType")
@@ -1722,8 +1992,19 @@ class MetricsPolicyPolicyRuleTagArgs:
         :param pulumi.Input[str] key: The tag's key.
         :param pulumi.Input[str] value: The tag's value.
         """
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "value", value)
+        MetricsPolicyPolicyRuleTagArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            key=key,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             key: pulumi.Input[str],
+             value: pulumi.Input[str],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("key", key)
+        _setter("value", value)
 
     @property
     @pulumi.getter

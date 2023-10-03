@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 from . import outputs
 
@@ -64,10 +64,23 @@ class AlertTargetRoute(dict):
         :param Mapping[str, str] filter: (Required) String that filters the route. Space delimited. Currently only allows a single key value pair.
                (e.g. `env prod`)
         """
-        pulumi.set(__self__, "method", method)
-        pulumi.set(__self__, "target", target)
+        AlertTargetRoute._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            method=method,
+            target=target,
+            filter=filter,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             method: str,
+             target: str,
+             filter: Optional[Mapping[str, str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("method", method)
+        _setter("target", target)
         if filter is not None:
-            pulumi.set(__self__, "filter", filter)
+            _setter("filter", filter)
 
     @property
     @pulumi.getter
@@ -124,8 +137,19 @@ class CloudIntegrationNewRelicMetricFilter(dict):
         :param str app_name: The name of a NewRelic App.
         :param str metric_filter_regex: A regular expression that a metric name must match (case-insensitively) in order to be ingested.
         """
-        pulumi.set(__self__, "app_name", app_name)
-        pulumi.set(__self__, "metric_filter_regex", metric_filter_regex)
+        CloudIntegrationNewRelicMetricFilter._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            app_name=app_name,
+            metric_filter_regex=metric_filter_regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             app_name: str,
+             metric_filter_regex: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("app_name", app_name)
+        _setter("metric_filter_regex", metric_filter_regex)
 
     @property
     @pulumi.getter(name="appName")
@@ -198,18 +222,43 @@ class DashboardParameterDetail(dict):
         :param str query_value: For `DYNAMIC` parameter types, the query to execute to return values.
         :param str tag_key: for `TAG_KEY` dynamic field types, the tag key to return.
         """
-        pulumi.set(__self__, "default_value", default_value)
-        pulumi.set(__self__, "hide_from_view", hide_from_view)
-        pulumi.set(__self__, "label", label)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "parameter_type", parameter_type)
-        pulumi.set(__self__, "values_to_readable_strings", values_to_readable_strings)
+        DashboardParameterDetail._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            default_value=default_value,
+            hide_from_view=hide_from_view,
+            label=label,
+            name=name,
+            parameter_type=parameter_type,
+            values_to_readable_strings=values_to_readable_strings,
+            dynamic_field_type=dynamic_field_type,
+            query_value=query_value,
+            tag_key=tag_key,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             default_value: str,
+             hide_from_view: bool,
+             label: str,
+             name: str,
+             parameter_type: str,
+             values_to_readable_strings: Mapping[str, str],
+             dynamic_field_type: Optional[str] = None,
+             query_value: Optional[str] = None,
+             tag_key: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("default_value", default_value)
+        _setter("hide_from_view", hide_from_view)
+        _setter("label", label)
+        _setter("name", name)
+        _setter("parameter_type", parameter_type)
+        _setter("values_to_readable_strings", values_to_readable_strings)
         if dynamic_field_type is not None:
-            pulumi.set(__self__, "dynamic_field_type", dynamic_field_type)
+            _setter("dynamic_field_type", dynamic_field_type)
         if query_value is not None:
-            pulumi.set(__self__, "query_value", query_value)
+            _setter("query_value", query_value)
         if tag_key is not None:
-            pulumi.set(__self__, "tag_key", tag_key)
+            _setter("tag_key", tag_key)
 
     @property
     @pulumi.getter(name="defaultValue")
@@ -295,8 +344,19 @@ class DashboardSection(dict):
         :param str name: Name of this section.
         :param Sequence['DashboardSectionRowArgs'] rows: See dashboard section rows.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "rows", rows)
+        DashboardSection._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            rows=rows,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             rows: Sequence['outputs.DashboardSectionRow'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("rows", rows)
 
     @property
     @pulumi.getter
@@ -322,7 +382,16 @@ class DashboardSectionRow(dict):
         """
         :param Sequence['DashboardSectionRowChartArgs'] charts: Charts in this section. See dashboard chart.
         """
-        pulumi.set(__self__, "charts", charts)
+        DashboardSectionRow._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            charts=charts,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             charts: Sequence['outputs.DashboardSectionRowChart'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("charts", charts)
 
     @property
     @pulumi.getter
@@ -377,19 +446,44 @@ class DashboardSectionRowChart(dict):
         :param str description: Description of the chart.
         :param bool no_default_events: Show events related to the sources included in queries
         """
-        pulumi.set(__self__, "chart_setting", chart_setting)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "sources", sources)
-        pulumi.set(__self__, "summarization", summarization)
-        pulumi.set(__self__, "units", units)
+        DashboardSectionRowChart._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            chart_setting=chart_setting,
+            name=name,
+            sources=sources,
+            summarization=summarization,
+            units=units,
+            base=base,
+            chart_attribute=chart_attribute,
+            description=description,
+            no_default_events=no_default_events,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             chart_setting: 'outputs.DashboardSectionRowChartChartSetting',
+             name: str,
+             sources: Sequence['outputs.DashboardSectionRowChartSource'],
+             summarization: str,
+             units: str,
+             base: Optional[int] = None,
+             chart_attribute: Optional[str] = None,
+             description: Optional[str] = None,
+             no_default_events: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("chart_setting", chart_setting)
+        _setter("name", name)
+        _setter("sources", sources)
+        _setter("summarization", summarization)
+        _setter("units", units)
         if base is not None:
-            pulumi.set(__self__, "base", base)
+            _setter("base", base)
         if chart_attribute is not None:
-            pulumi.set(__self__, "chart_attribute", chart_attribute)
+            _setter("chart_attribute", chart_attribute)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if no_default_events is not None:
-            pulumi.set(__self__, "no_default_events", no_default_events)
+            _setter("no_default_events", no_default_events)
 
     @property
     @pulumi.getter(name="chartSetting")
@@ -716,119 +810,240 @@ class DashboardSectionRowChartChartSetting(dict):
         :param float ymax: For x-y scatterplots, max value for the Y-axis. Set to null for auto.
         :param float ymin: For x-y scatterplots, min value for the Y-axis. Set to null for auto.
         """
-        pulumi.set(__self__, "type", type)
+        DashboardSectionRowChartChartSetting._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            type=type,
+            auto_column_tags=auto_column_tags,
+            column_tags=column_tags,
+            custom_tags=custom_tags,
+            expected_data_spacing=expected_data_spacing,
+            fixed_legend_display_stats=fixed_legend_display_stats,
+            fixed_legend_enabled=fixed_legend_enabled,
+            fixed_legend_filter_field=fixed_legend_filter_field,
+            fixed_legend_filter_limit=fixed_legend_filter_limit,
+            fixed_legend_filter_sort=fixed_legend_filter_sort,
+            fixed_legend_hide_label=fixed_legend_hide_label,
+            fixed_legend_position=fixed_legend_position,
+            fixed_legend_use_raw_stats=fixed_legend_use_raw_stats,
+            group_by_source=group_by_source,
+            invert_dynamic_legend_hover_control=invert_dynamic_legend_hover_control,
+            line_type=line_type,
+            max=max,
+            min=min,
+            num_tags=num_tags,
+            plain_markdown_content=plain_markdown_content,
+            show_hosts=show_hosts,
+            show_labels=show_labels,
+            show_raw_values=show_raw_values,
+            sort_values_descending=sort_values_descending,
+            sparkline_decimal_precision=sparkline_decimal_precision,
+            sparkline_display_color=sparkline_display_color,
+            sparkline_display_font_size=sparkline_display_font_size,
+            sparkline_display_horizontal_position=sparkline_display_horizontal_position,
+            sparkline_display_postfix=sparkline_display_postfix,
+            sparkline_display_prefix=sparkline_display_prefix,
+            sparkline_display_value_type=sparkline_display_value_type,
+            sparkline_display_vertical_position=sparkline_display_vertical_position,
+            sparkline_fill_color=sparkline_fill_color,
+            sparkline_line_color=sparkline_line_color,
+            sparkline_size=sparkline_size,
+            sparkline_value_color_map_apply_to=sparkline_value_color_map_apply_to,
+            sparkline_value_color_map_colors=sparkline_value_color_map_colors,
+            sparkline_value_color_map_values=sparkline_value_color_map_values,
+            sparkline_value_color_map_values_v2s=sparkline_value_color_map_values_v2s,
+            sparkline_value_text_map_texts=sparkline_value_text_map_texts,
+            sparkline_value_text_map_thresholds=sparkline_value_text_map_thresholds,
+            stack_type=stack_type,
+            tag_mode=tag_mode,
+            time_based_coloring=time_based_coloring,
+            window_size=window_size,
+            windowing=windowing,
+            xmax=xmax,
+            xmin=xmin,
+            y0_scale_si_by1024=y0_scale_si_by1024,
+            y0_unit_autoscaling=y0_unit_autoscaling,
+            y1_scale_si_by1024=y1_scale_si_by1024,
+            y1_unit_autoscaling=y1_unit_autoscaling,
+            y1_units=y1_units,
+            y1max=y1max,
+            y1min=y1min,
+            ymax=ymax,
+            ymin=ymin,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             type: str,
+             auto_column_tags: Optional[bool] = None,
+             column_tags: Optional[str] = None,
+             custom_tags: Optional[Sequence[str]] = None,
+             expected_data_spacing: Optional[int] = None,
+             fixed_legend_display_stats: Optional[Sequence[str]] = None,
+             fixed_legend_enabled: Optional[bool] = None,
+             fixed_legend_filter_field: Optional[str] = None,
+             fixed_legend_filter_limit: Optional[int] = None,
+             fixed_legend_filter_sort: Optional[str] = None,
+             fixed_legend_hide_label: Optional[bool] = None,
+             fixed_legend_position: Optional[str] = None,
+             fixed_legend_use_raw_stats: Optional[bool] = None,
+             group_by_source: Optional[bool] = None,
+             invert_dynamic_legend_hover_control: Optional[bool] = None,
+             line_type: Optional[str] = None,
+             max: Optional[float] = None,
+             min: Optional[float] = None,
+             num_tags: Optional[int] = None,
+             plain_markdown_content: Optional[str] = None,
+             show_hosts: Optional[bool] = None,
+             show_labels: Optional[bool] = None,
+             show_raw_values: Optional[bool] = None,
+             sort_values_descending: Optional[bool] = None,
+             sparkline_decimal_precision: Optional[int] = None,
+             sparkline_display_color: Optional[str] = None,
+             sparkline_display_font_size: Optional[str] = None,
+             sparkline_display_horizontal_position: Optional[str] = None,
+             sparkline_display_postfix: Optional[str] = None,
+             sparkline_display_prefix: Optional[str] = None,
+             sparkline_display_value_type: Optional[str] = None,
+             sparkline_display_vertical_position: Optional[str] = None,
+             sparkline_fill_color: Optional[str] = None,
+             sparkline_line_color: Optional[str] = None,
+             sparkline_size: Optional[str] = None,
+             sparkline_value_color_map_apply_to: Optional[str] = None,
+             sparkline_value_color_map_colors: Optional[Sequence[str]] = None,
+             sparkline_value_color_map_values: Optional[Sequence[int]] = None,
+             sparkline_value_color_map_values_v2s: Optional[Sequence[float]] = None,
+             sparkline_value_text_map_texts: Optional[Sequence[str]] = None,
+             sparkline_value_text_map_thresholds: Optional[Sequence[float]] = None,
+             stack_type: Optional[str] = None,
+             tag_mode: Optional[str] = None,
+             time_based_coloring: Optional[bool] = None,
+             window_size: Optional[int] = None,
+             windowing: Optional[str] = None,
+             xmax: Optional[float] = None,
+             xmin: Optional[float] = None,
+             y0_scale_si_by1024: Optional[bool] = None,
+             y0_unit_autoscaling: Optional[bool] = None,
+             y1_scale_si_by1024: Optional[bool] = None,
+             y1_unit_autoscaling: Optional[bool] = None,
+             y1_units: Optional[str] = None,
+             y1max: Optional[float] = None,
+             y1min: Optional[float] = None,
+             ymax: Optional[float] = None,
+             ymin: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("type", type)
         if auto_column_tags is not None:
-            pulumi.set(__self__, "auto_column_tags", auto_column_tags)
+            _setter("auto_column_tags", auto_column_tags)
         if column_tags is not None:
-            pulumi.set(__self__, "column_tags", column_tags)
+            _setter("column_tags", column_tags)
         if custom_tags is not None:
-            pulumi.set(__self__, "custom_tags", custom_tags)
+            _setter("custom_tags", custom_tags)
         if expected_data_spacing is not None:
-            pulumi.set(__self__, "expected_data_spacing", expected_data_spacing)
+            _setter("expected_data_spacing", expected_data_spacing)
         if fixed_legend_display_stats is not None:
-            pulumi.set(__self__, "fixed_legend_display_stats", fixed_legend_display_stats)
+            _setter("fixed_legend_display_stats", fixed_legend_display_stats)
         if fixed_legend_enabled is not None:
-            pulumi.set(__self__, "fixed_legend_enabled", fixed_legend_enabled)
+            _setter("fixed_legend_enabled", fixed_legend_enabled)
         if fixed_legend_filter_field is not None:
-            pulumi.set(__self__, "fixed_legend_filter_field", fixed_legend_filter_field)
+            _setter("fixed_legend_filter_field", fixed_legend_filter_field)
         if fixed_legend_filter_limit is not None:
-            pulumi.set(__self__, "fixed_legend_filter_limit", fixed_legend_filter_limit)
+            _setter("fixed_legend_filter_limit", fixed_legend_filter_limit)
         if fixed_legend_filter_sort is not None:
-            pulumi.set(__self__, "fixed_legend_filter_sort", fixed_legend_filter_sort)
+            _setter("fixed_legend_filter_sort", fixed_legend_filter_sort)
         if fixed_legend_hide_label is not None:
-            pulumi.set(__self__, "fixed_legend_hide_label", fixed_legend_hide_label)
+            _setter("fixed_legend_hide_label", fixed_legend_hide_label)
         if fixed_legend_position is not None:
-            pulumi.set(__self__, "fixed_legend_position", fixed_legend_position)
+            _setter("fixed_legend_position", fixed_legend_position)
         if fixed_legend_use_raw_stats is not None:
-            pulumi.set(__self__, "fixed_legend_use_raw_stats", fixed_legend_use_raw_stats)
+            _setter("fixed_legend_use_raw_stats", fixed_legend_use_raw_stats)
         if group_by_source is not None:
-            pulumi.set(__self__, "group_by_source", group_by_source)
+            _setter("group_by_source", group_by_source)
         if invert_dynamic_legend_hover_control is not None:
-            pulumi.set(__self__, "invert_dynamic_legend_hover_control", invert_dynamic_legend_hover_control)
+            _setter("invert_dynamic_legend_hover_control", invert_dynamic_legend_hover_control)
         if line_type is not None:
-            pulumi.set(__self__, "line_type", line_type)
+            _setter("line_type", line_type)
         if max is not None:
-            pulumi.set(__self__, "max", max)
+            _setter("max", max)
         if min is not None:
-            pulumi.set(__self__, "min", min)
+            _setter("min", min)
         if num_tags is not None:
-            pulumi.set(__self__, "num_tags", num_tags)
+            _setter("num_tags", num_tags)
         if plain_markdown_content is not None:
-            pulumi.set(__self__, "plain_markdown_content", plain_markdown_content)
+            _setter("plain_markdown_content", plain_markdown_content)
         if show_hosts is not None:
-            pulumi.set(__self__, "show_hosts", show_hosts)
+            _setter("show_hosts", show_hosts)
         if show_labels is not None:
-            pulumi.set(__self__, "show_labels", show_labels)
+            _setter("show_labels", show_labels)
         if show_raw_values is not None:
-            pulumi.set(__self__, "show_raw_values", show_raw_values)
+            _setter("show_raw_values", show_raw_values)
         if sort_values_descending is not None:
-            pulumi.set(__self__, "sort_values_descending", sort_values_descending)
+            _setter("sort_values_descending", sort_values_descending)
         if sparkline_decimal_precision is not None:
-            pulumi.set(__self__, "sparkline_decimal_precision", sparkline_decimal_precision)
+            _setter("sparkline_decimal_precision", sparkline_decimal_precision)
         if sparkline_display_color is not None:
-            pulumi.set(__self__, "sparkline_display_color", sparkline_display_color)
+            _setter("sparkline_display_color", sparkline_display_color)
         if sparkline_display_font_size is not None:
-            pulumi.set(__self__, "sparkline_display_font_size", sparkline_display_font_size)
+            _setter("sparkline_display_font_size", sparkline_display_font_size)
         if sparkline_display_horizontal_position is not None:
-            pulumi.set(__self__, "sparkline_display_horizontal_position", sparkline_display_horizontal_position)
+            _setter("sparkline_display_horizontal_position", sparkline_display_horizontal_position)
         if sparkline_display_postfix is not None:
-            pulumi.set(__self__, "sparkline_display_postfix", sparkline_display_postfix)
+            _setter("sparkline_display_postfix", sparkline_display_postfix)
         if sparkline_display_prefix is not None:
-            pulumi.set(__self__, "sparkline_display_prefix", sparkline_display_prefix)
+            _setter("sparkline_display_prefix", sparkline_display_prefix)
         if sparkline_display_value_type is not None:
-            pulumi.set(__self__, "sparkline_display_value_type", sparkline_display_value_type)
+            _setter("sparkline_display_value_type", sparkline_display_value_type)
         if sparkline_display_vertical_position is not None:
-            pulumi.set(__self__, "sparkline_display_vertical_position", sparkline_display_vertical_position)
+            _setter("sparkline_display_vertical_position", sparkline_display_vertical_position)
         if sparkline_fill_color is not None:
-            pulumi.set(__self__, "sparkline_fill_color", sparkline_fill_color)
+            _setter("sparkline_fill_color", sparkline_fill_color)
         if sparkline_line_color is not None:
-            pulumi.set(__self__, "sparkline_line_color", sparkline_line_color)
+            _setter("sparkline_line_color", sparkline_line_color)
         if sparkline_size is not None:
-            pulumi.set(__self__, "sparkline_size", sparkline_size)
+            _setter("sparkline_size", sparkline_size)
         if sparkline_value_color_map_apply_to is not None:
-            pulumi.set(__self__, "sparkline_value_color_map_apply_to", sparkline_value_color_map_apply_to)
+            _setter("sparkline_value_color_map_apply_to", sparkline_value_color_map_apply_to)
         if sparkline_value_color_map_colors is not None:
-            pulumi.set(__self__, "sparkline_value_color_map_colors", sparkline_value_color_map_colors)
+            _setter("sparkline_value_color_map_colors", sparkline_value_color_map_colors)
         if sparkline_value_color_map_values is not None:
-            pulumi.set(__self__, "sparkline_value_color_map_values", sparkline_value_color_map_values)
+            _setter("sparkline_value_color_map_values", sparkline_value_color_map_values)
         if sparkline_value_color_map_values_v2s is not None:
-            pulumi.set(__self__, "sparkline_value_color_map_values_v2s", sparkline_value_color_map_values_v2s)
+            _setter("sparkline_value_color_map_values_v2s", sparkline_value_color_map_values_v2s)
         if sparkline_value_text_map_texts is not None:
-            pulumi.set(__self__, "sparkline_value_text_map_texts", sparkline_value_text_map_texts)
+            _setter("sparkline_value_text_map_texts", sparkline_value_text_map_texts)
         if sparkline_value_text_map_thresholds is not None:
-            pulumi.set(__self__, "sparkline_value_text_map_thresholds", sparkline_value_text_map_thresholds)
+            _setter("sparkline_value_text_map_thresholds", sparkline_value_text_map_thresholds)
         if stack_type is not None:
-            pulumi.set(__self__, "stack_type", stack_type)
+            _setter("stack_type", stack_type)
         if tag_mode is not None:
-            pulumi.set(__self__, "tag_mode", tag_mode)
+            _setter("tag_mode", tag_mode)
         if time_based_coloring is not None:
-            pulumi.set(__self__, "time_based_coloring", time_based_coloring)
+            _setter("time_based_coloring", time_based_coloring)
         if window_size is not None:
-            pulumi.set(__self__, "window_size", window_size)
+            _setter("window_size", window_size)
         if windowing is not None:
-            pulumi.set(__self__, "windowing", windowing)
+            _setter("windowing", windowing)
         if xmax is not None:
-            pulumi.set(__self__, "xmax", xmax)
+            _setter("xmax", xmax)
         if xmin is not None:
-            pulumi.set(__self__, "xmin", xmin)
+            _setter("xmin", xmin)
         if y0_scale_si_by1024 is not None:
-            pulumi.set(__self__, "y0_scale_si_by1024", y0_scale_si_by1024)
+            _setter("y0_scale_si_by1024", y0_scale_si_by1024)
         if y0_unit_autoscaling is not None:
-            pulumi.set(__self__, "y0_unit_autoscaling", y0_unit_autoscaling)
+            _setter("y0_unit_autoscaling", y0_unit_autoscaling)
         if y1_scale_si_by1024 is not None:
-            pulumi.set(__self__, "y1_scale_si_by1024", y1_scale_si_by1024)
+            _setter("y1_scale_si_by1024", y1_scale_si_by1024)
         if y1_unit_autoscaling is not None:
-            pulumi.set(__self__, "y1_unit_autoscaling", y1_unit_autoscaling)
+            _setter("y1_unit_autoscaling", y1_unit_autoscaling)
         if y1_units is not None:
-            pulumi.set(__self__, "y1_units", y1_units)
+            _setter("y1_units", y1_units)
         if y1max is not None:
-            pulumi.set(__self__, "y1max", y1max)
+            _setter("y1max", y1max)
         if y1min is not None:
-            pulumi.set(__self__, "y1min", y1min)
+            _setter("y1min", y1min)
         if ymax is not None:
-            pulumi.set(__self__, "ymax", ymax)
+            _setter("ymax", ymax)
         if ymin is not None:
-            pulumi.set(__self__, "ymin", ymin)
+            _setter("ymin", ymin)
 
     @property
     @pulumi.getter
@@ -1351,16 +1566,35 @@ class DashboardSectionRowChartSource(dict):
         :param str scatter_plot_source: For scatter plots, does this query source the X-axis or the Y-axis, `X`, or `Y`.
         :param str source_description: A description for the purpose of this source.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "query", query)
+        DashboardSectionRowChartSource._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            query=query,
+            disabled=disabled,
+            query_builder_enabled=query_builder_enabled,
+            scatter_plot_source=scatter_plot_source,
+            source_description=source_description,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             query: str,
+             disabled: Optional[bool] = None,
+             query_builder_enabled: Optional[bool] = None,
+             scatter_plot_source: Optional[str] = None,
+             source_description: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("query", query)
         if disabled is not None:
-            pulumi.set(__self__, "disabled", disabled)
+            _setter("disabled", disabled)
         if query_builder_enabled is not None:
-            pulumi.set(__self__, "query_builder_enabled", query_builder_enabled)
+            _setter("query_builder_enabled", query_builder_enabled)
         if scatter_plot_source is not None:
-            pulumi.set(__self__, "scatter_plot_source", scatter_plot_source)
+            _setter("scatter_plot_source", scatter_plot_source)
         if source_description is not None:
-            pulumi.set(__self__, "source_description", source_description)
+            _setter("source_description", source_description)
 
     @property
     @pulumi.getter
@@ -1416,8 +1650,19 @@ class IngestionPolicyTag(dict):
     def __init__(__self__, *,
                  key: str,
                  value: str):
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "value", value)
+        IngestionPolicyTag._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            key=key,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             key: str,
+             value: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("key", key)
+        _setter("value", value)
 
     @property
     @pulumi.getter
@@ -1478,19 +1723,44 @@ class MetricsPolicyPolicyRule(dict):
         :param Sequence['MetricsPolicyPolicyRuleTagArgs'] tags: List of Key/Value tags to select target metrics for policy.
         :param Sequence[str] user_group_ids: List of user group ids to apply Metrics Policy to. Must have at least one associated account_id, user_group_id, or role_id.
         """
-        pulumi.set(__self__, "access_type", access_type)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "prefixes", prefixes)
-        pulumi.set(__self__, "tags_anded", tags_anded)
+        MetricsPolicyPolicyRule._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            access_type=access_type,
+            description=description,
+            name=name,
+            prefixes=prefixes,
+            tags_anded=tags_anded,
+            account_ids=account_ids,
+            role_ids=role_ids,
+            tags=tags,
+            user_group_ids=user_group_ids,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             access_type: str,
+             description: str,
+             name: str,
+             prefixes: Sequence[str],
+             tags_anded: bool,
+             account_ids: Optional[Sequence[str]] = None,
+             role_ids: Optional[Sequence[str]] = None,
+             tags: Optional[Sequence['outputs.MetricsPolicyPolicyRuleTag']] = None,
+             user_group_ids: Optional[Sequence[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("access_type", access_type)
+        _setter("description", description)
+        _setter("name", name)
+        _setter("prefixes", prefixes)
+        _setter("tags_anded", tags_anded)
         if account_ids is not None:
-            pulumi.set(__self__, "account_ids", account_ids)
+            _setter("account_ids", account_ids)
         if role_ids is not None:
-            pulumi.set(__self__, "role_ids", role_ids)
+            _setter("role_ids", role_ids)
         if tags is not None:
-            pulumi.set(__self__, "tags", tags)
+            _setter("tags", tags)
         if user_group_ids is not None:
-            pulumi.set(__self__, "user_group_ids", user_group_ids)
+            _setter("user_group_ids", user_group_ids)
 
     @property
     @pulumi.getter(name="accessType")
@@ -1574,8 +1844,19 @@ class MetricsPolicyPolicyRuleTag(dict):
         :param str key: The tag's key.
         :param str value: The tag's value.
         """
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "value", value)
+        MetricsPolicyPolicyRuleTag._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            key=key,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             key: str,
+             value: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("key", key)
+        _setter("value", value)
 
     @property
     @pulumi.getter
@@ -1599,8 +1880,19 @@ class GetAlertFailingHostLabelPairResult(dict):
     def __init__(__self__, *,
                  firing: int,
                  host: str):
-        pulumi.set(__self__, "firing", firing)
-        pulumi.set(__self__, "host", host)
+        GetAlertFailingHostLabelPairResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            firing=firing,
+            host=host,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             firing: int,
+             host: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("firing", firing)
+        _setter("host", host)
 
     @property
     @pulumi.getter
@@ -1618,8 +1910,19 @@ class GetAlertInMaintenanceHostLabelPairResult(dict):
     def __init__(__self__, *,
                  firing: int,
                  host: str):
-        pulumi.set(__self__, "firing", firing)
-        pulumi.set(__self__, "host", host)
+        GetAlertInMaintenanceHostLabelPairResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            firing=firing,
+            host=host,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             firing: int,
+             host: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("firing", firing)
+        _setter("host", host)
 
     @property
     @pulumi.getter
@@ -1682,30 +1985,83 @@ class GetAlertsAlertResult(dict):
         :param str target: An email address or integration endpoint (such as PagerDuty or webhook) to notify when the alert status changes.
         :param Mapping[str, str] targets: A comma-separated list of the email addresses or integration endpoints (such as PagerDuty or webhook) to notify when the alert status changes. Multiple target types can be in the list.
         """
-        pulumi.set(__self__, "additional_information", additional_information)
-        pulumi.set(__self__, "alert_type", alert_type)
-        pulumi.set(__self__, "can_modifies", can_modifies)
-        pulumi.set(__self__, "can_views", can_views)
-        pulumi.set(__self__, "condition", condition)
-        pulumi.set(__self__, "conditions", conditions)
-        pulumi.set(__self__, "display_expression", display_expression)
-        pulumi.set(__self__, "evaluate_realtime_data", evaluate_realtime_data)
-        pulumi.set(__self__, "failing_host_label_pairs", failing_host_label_pairs)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "in_maintenance_host_label_pairs", in_maintenance_host_label_pairs)
-        pulumi.set(__self__, "include_obsolete_metrics", include_obsolete_metrics)
-        pulumi.set(__self__, "minutes", minutes)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "notification_resend_frequency_minutes", notification_resend_frequency_minutes)
-        pulumi.set(__self__, "process_rate_minutes", process_rate_minutes)
-        pulumi.set(__self__, "resolve_after_minutes", resolve_after_minutes)
-        pulumi.set(__self__, "severity", severity)
-        pulumi.set(__self__, "severity_lists", severity_lists)
-        pulumi.set(__self__, "statuses", statuses)
-        pulumi.set(__self__, "tags", tags)
-        pulumi.set(__self__, "target", target)
+        GetAlertsAlertResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            additional_information=additional_information,
+            alert_type=alert_type,
+            can_modifies=can_modifies,
+            can_views=can_views,
+            condition=condition,
+            conditions=conditions,
+            display_expression=display_expression,
+            evaluate_realtime_data=evaluate_realtime_data,
+            failing_host_label_pairs=failing_host_label_pairs,
+            id=id,
+            in_maintenance_host_label_pairs=in_maintenance_host_label_pairs,
+            include_obsolete_metrics=include_obsolete_metrics,
+            minutes=minutes,
+            name=name,
+            notification_resend_frequency_minutes=notification_resend_frequency_minutes,
+            process_rate_minutes=process_rate_minutes,
+            resolve_after_minutes=resolve_after_minutes,
+            severity=severity,
+            severity_lists=severity_lists,
+            statuses=statuses,
+            tags=tags,
+            target=target,
+            targets=targets,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             additional_information: str,
+             alert_type: str,
+             can_modifies: Sequence[str],
+             can_views: Sequence[str],
+             condition: str,
+             conditions: Mapping[str, str],
+             display_expression: str,
+             evaluate_realtime_data: bool,
+             failing_host_label_pairs: Sequence['outputs.GetAlertsAlertFailingHostLabelPairResult'],
+             id: str,
+             in_maintenance_host_label_pairs: Sequence['outputs.GetAlertsAlertInMaintenanceHostLabelPairResult'],
+             include_obsolete_metrics: bool,
+             minutes: int,
+             name: str,
+             notification_resend_frequency_minutes: int,
+             process_rate_minutes: int,
+             resolve_after_minutes: int,
+             severity: str,
+             severity_lists: Sequence[str],
+             statuses: Sequence[str],
+             tags: Sequence[str],
+             target: str,
+             targets: Optional[Mapping[str, str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("additional_information", additional_information)
+        _setter("alert_type", alert_type)
+        _setter("can_modifies", can_modifies)
+        _setter("can_views", can_views)
+        _setter("condition", condition)
+        _setter("conditions", conditions)
+        _setter("display_expression", display_expression)
+        _setter("evaluate_realtime_data", evaluate_realtime_data)
+        _setter("failing_host_label_pairs", failing_host_label_pairs)
+        _setter("id", id)
+        _setter("in_maintenance_host_label_pairs", in_maintenance_host_label_pairs)
+        _setter("include_obsolete_metrics", include_obsolete_metrics)
+        _setter("minutes", minutes)
+        _setter("name", name)
+        _setter("notification_resend_frequency_minutes", notification_resend_frequency_minutes)
+        _setter("process_rate_minutes", process_rate_minutes)
+        _setter("resolve_after_minutes", resolve_after_minutes)
+        _setter("severity", severity)
+        _setter("severity_lists", severity_lists)
+        _setter("statuses", statuses)
+        _setter("tags", tags)
+        _setter("target", target)
         if targets is not None:
-            pulumi.set(__self__, "targets", targets)
+            _setter("targets", targets)
 
     @property
     @pulumi.getter(name="additionalInformation")
@@ -1894,8 +2250,19 @@ class GetAlertsAlertFailingHostLabelPairResult(dict):
     def __init__(__self__, *,
                  firing: int,
                  host: str):
-        pulumi.set(__self__, "firing", firing)
-        pulumi.set(__self__, "host", host)
+        GetAlertsAlertFailingHostLabelPairResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            firing=firing,
+            host=host,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             firing: int,
+             host: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("firing", firing)
+        _setter("host", host)
 
     @property
     @pulumi.getter
@@ -1913,8 +2280,19 @@ class GetAlertsAlertInMaintenanceHostLabelPairResult(dict):
     def __init__(__self__, *,
                  firing: int,
                  host: str):
-        pulumi.set(__self__, "firing", firing)
-        pulumi.set(__self__, "host", host)
+        GetAlertsAlertInMaintenanceHostLabelPairResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            firing=firing,
+            host=host,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             firing: int,
+             host: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("firing", firing)
+        _setter("host", host)
 
     @property
     @pulumi.getter
@@ -1950,14 +2328,37 @@ class GetDashboardParameterDetailResult(dict):
         :param Mapping[str, str] values_to_readable_strings: A string to string map. At least one of the keys must match the value of
                `default_value`.
         """
-        pulumi.set(__self__, "default_value", default_value)
-        pulumi.set(__self__, "dynamic_field_type", dynamic_field_type)
-        pulumi.set(__self__, "hide_from_view", hide_from_view)
-        pulumi.set(__self__, "label", label)
-        pulumi.set(__self__, "parameter_type", parameter_type)
-        pulumi.set(__self__, "query_value", query_value)
-        pulumi.set(__self__, "tag_key", tag_key)
-        pulumi.set(__self__, "values_to_readable_strings", values_to_readable_strings)
+        GetDashboardParameterDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            default_value=default_value,
+            dynamic_field_type=dynamic_field_type,
+            hide_from_view=hide_from_view,
+            label=label,
+            parameter_type=parameter_type,
+            query_value=query_value,
+            tag_key=tag_key,
+            values_to_readable_strings=values_to_readable_strings,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             default_value: str,
+             dynamic_field_type: str,
+             hide_from_view: bool,
+             label: str,
+             parameter_type: str,
+             query_value: str,
+             tag_key: str,
+             values_to_readable_strings: Mapping[str, str],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("default_value", default_value)
+        _setter("dynamic_field_type", dynamic_field_type)
+        _setter("hide_from_view", hide_from_view)
+        _setter("label", label)
+        _setter("parameter_type", parameter_type)
+        _setter("query_value", query_value)
+        _setter("tag_key", tag_key)
+        _setter("values_to_readable_strings", values_to_readable_strings)
 
     @property
     @pulumi.getter(name="defaultValue")
@@ -2034,8 +2435,19 @@ class GetDashboardSectionResult(dict):
         """
         :param str name: The name of the parameters.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "rows", rows)
+        GetDashboardSectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            rows=rows,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             rows: Sequence['outputs.GetDashboardSectionRowResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("rows", rows)
 
     @property
     @pulumi.getter
@@ -2060,9 +2472,22 @@ class GetDashboardSectionRowResult(dict):
         """
         :param str name: The name of the parameters.
         """
-        pulumi.set(__self__, "charts", charts)
-        pulumi.set(__self__, "height_factor", height_factor)
-        pulumi.set(__self__, "name", name)
+        GetDashboardSectionRowResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            charts=charts,
+            height_factor=height_factor,
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             charts: Sequence['outputs.GetDashboardSectionRowChartResult'],
+             height_factor: int,
+             name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("charts", charts)
+        _setter("height_factor", height_factor)
+        _setter("name", name)
 
     @property
     @pulumi.getter
@@ -2104,17 +2529,46 @@ class GetDashboardSectionRowChartResult(dict):
         :param str summarization: Summarization strategy for the chart. MEAN is default.
         :param str units: String to label the units of the chart on the Y-Axis.
         """
-        pulumi.set(__self__, "base", base)
-        pulumi.set(__self__, "chart_attributes", chart_attributes)
-        pulumi.set(__self__, "chart_settings", chart_settings)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "include_obsolete_metrics", include_obsolete_metrics)
-        pulumi.set(__self__, "interpolate_points_key", interpolate_points_key)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "no_default_events", no_default_events)
-        pulumi.set(__self__, "sources", sources)
-        pulumi.set(__self__, "summarization", summarization)
-        pulumi.set(__self__, "units", units)
+        GetDashboardSectionRowChartResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            base=base,
+            chart_attributes=chart_attributes,
+            chart_settings=chart_settings,
+            description=description,
+            include_obsolete_metrics=include_obsolete_metrics,
+            interpolate_points_key=interpolate_points_key,
+            name=name,
+            no_default_events=no_default_events,
+            sources=sources,
+            summarization=summarization,
+            units=units,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             base: int,
+             chart_attributes: str,
+             chart_settings: Sequence['outputs.GetDashboardSectionRowChartChartSettingResult'],
+             description: str,
+             include_obsolete_metrics: bool,
+             interpolate_points_key: bool,
+             name: str,
+             no_default_events: bool,
+             sources: Sequence['outputs.GetDashboardSectionRowChartSourceResult'],
+             summarization: str,
+             units: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("base", base)
+        _setter("chart_attributes", chart_attributes)
+        _setter("chart_settings", chart_settings)
+        _setter("description", description)
+        _setter("include_obsolete_metrics", include_obsolete_metrics)
+        _setter("interpolate_points_key", interpolate_points_key)
+        _setter("name", name)
+        _setter("no_default_events", no_default_events)
+        _setter("sources", sources)
+        _setter("summarization", summarization)
+        _setter("units", units)
 
     @property
     @pulumi.getter
@@ -2303,63 +2757,184 @@ class GetDashboardSectionRowChartChartSettingResult(dict):
         :param float ymax: For x-y scatterplots, max value for the Y-axis. Set to null for auto.
         :param float ymin: For x-y scatterplots, min value for the Y-axis. Set to null for auto.
         """
-        pulumi.set(__self__, "auto_column_tags", auto_column_tags)
-        pulumi.set(__self__, "column_tags", column_tags)
-        pulumi.set(__self__, "custom_tags", custom_tags)
-        pulumi.set(__self__, "expected_data_spacing", expected_data_spacing)
-        pulumi.set(__self__, "fixed_legend_display_stats", fixed_legend_display_stats)
-        pulumi.set(__self__, "fixed_legend_enabled", fixed_legend_enabled)
-        pulumi.set(__self__, "fixed_legend_filter_field", fixed_legend_filter_field)
-        pulumi.set(__self__, "fixed_legend_filter_limit", fixed_legend_filter_limit)
-        pulumi.set(__self__, "fixed_legend_filter_sort", fixed_legend_filter_sort)
-        pulumi.set(__self__, "fixed_legend_hide_label", fixed_legend_hide_label)
-        pulumi.set(__self__, "fixed_legend_position", fixed_legend_position)
-        pulumi.set(__self__, "fixed_legend_use_raw_stats", fixed_legend_use_raw_stats)
-        pulumi.set(__self__, "group_by_source", group_by_source)
-        pulumi.set(__self__, "invert_dynamic_legend_hover_control", invert_dynamic_legend_hover_control)
-        pulumi.set(__self__, "line_type", line_type)
-        pulumi.set(__self__, "max", max)
-        pulumi.set(__self__, "min", min)
-        pulumi.set(__self__, "num_tags", num_tags)
-        pulumi.set(__self__, "plain_markdown_content", plain_markdown_content)
-        pulumi.set(__self__, "show_hosts", show_hosts)
-        pulumi.set(__self__, "show_labels", show_labels)
-        pulumi.set(__self__, "show_raw_values", show_raw_values)
-        pulumi.set(__self__, "sort_values_descending", sort_values_descending)
-        pulumi.set(__self__, "sparkline_decimal_precision", sparkline_decimal_precision)
-        pulumi.set(__self__, "sparkline_display_color", sparkline_display_color)
-        pulumi.set(__self__, "sparkline_display_font_size", sparkline_display_font_size)
-        pulumi.set(__self__, "sparkline_display_horizontal_position", sparkline_display_horizontal_position)
-        pulumi.set(__self__, "sparkline_display_postfix", sparkline_display_postfix)
-        pulumi.set(__self__, "sparkline_display_prefix", sparkline_display_prefix)
-        pulumi.set(__self__, "sparkline_display_value_type", sparkline_display_value_type)
-        pulumi.set(__self__, "sparkline_display_vertical_position", sparkline_display_vertical_position)
-        pulumi.set(__self__, "sparkline_fill_color", sparkline_fill_color)
-        pulumi.set(__self__, "sparkline_line_color", sparkline_line_color)
-        pulumi.set(__self__, "sparkline_size", sparkline_size)
-        pulumi.set(__self__, "sparkline_value_color_map_apply_to", sparkline_value_color_map_apply_to)
-        pulumi.set(__self__, "sparkline_value_color_map_colors", sparkline_value_color_map_colors)
-        pulumi.set(__self__, "sparkline_value_color_map_values", sparkline_value_color_map_values)
-        pulumi.set(__self__, "sparkline_value_color_map_values_v2s", sparkline_value_color_map_values_v2s)
-        pulumi.set(__self__, "sparkline_value_text_map_texts", sparkline_value_text_map_texts)
-        pulumi.set(__self__, "sparkline_value_text_map_thresholds", sparkline_value_text_map_thresholds)
-        pulumi.set(__self__, "stack_type", stack_type)
-        pulumi.set(__self__, "tag_mode", tag_mode)
-        pulumi.set(__self__, "time_based_coloring", time_based_coloring)
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "window_size", window_size)
-        pulumi.set(__self__, "windowing", windowing)
-        pulumi.set(__self__, "xmax", xmax)
-        pulumi.set(__self__, "xmin", xmin)
-        pulumi.set(__self__, "y0_scale_si_by1024", y0_scale_si_by1024)
-        pulumi.set(__self__, "y0_unit_autoscaling", y0_unit_autoscaling)
-        pulumi.set(__self__, "y1_max", y1_max)
-        pulumi.set(__self__, "y1_min", y1_min)
-        pulumi.set(__self__, "y1_scale_si_by1024", y1_scale_si_by1024)
-        pulumi.set(__self__, "y1_unit_autoscaling", y1_unit_autoscaling)
-        pulumi.set(__self__, "y1_units", y1_units)
-        pulumi.set(__self__, "ymax", ymax)
-        pulumi.set(__self__, "ymin", ymin)
+        GetDashboardSectionRowChartChartSettingResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            auto_column_tags=auto_column_tags,
+            column_tags=column_tags,
+            custom_tags=custom_tags,
+            expected_data_spacing=expected_data_spacing,
+            fixed_legend_display_stats=fixed_legend_display_stats,
+            fixed_legend_enabled=fixed_legend_enabled,
+            fixed_legend_filter_field=fixed_legend_filter_field,
+            fixed_legend_filter_limit=fixed_legend_filter_limit,
+            fixed_legend_filter_sort=fixed_legend_filter_sort,
+            fixed_legend_hide_label=fixed_legend_hide_label,
+            fixed_legend_position=fixed_legend_position,
+            fixed_legend_use_raw_stats=fixed_legend_use_raw_stats,
+            group_by_source=group_by_source,
+            invert_dynamic_legend_hover_control=invert_dynamic_legend_hover_control,
+            line_type=line_type,
+            max=max,
+            min=min,
+            num_tags=num_tags,
+            plain_markdown_content=plain_markdown_content,
+            show_hosts=show_hosts,
+            show_labels=show_labels,
+            show_raw_values=show_raw_values,
+            sort_values_descending=sort_values_descending,
+            sparkline_decimal_precision=sparkline_decimal_precision,
+            sparkline_display_color=sparkline_display_color,
+            sparkline_display_font_size=sparkline_display_font_size,
+            sparkline_display_horizontal_position=sparkline_display_horizontal_position,
+            sparkline_display_postfix=sparkline_display_postfix,
+            sparkline_display_prefix=sparkline_display_prefix,
+            sparkline_display_value_type=sparkline_display_value_type,
+            sparkline_display_vertical_position=sparkline_display_vertical_position,
+            sparkline_fill_color=sparkline_fill_color,
+            sparkline_line_color=sparkline_line_color,
+            sparkline_size=sparkline_size,
+            sparkline_value_color_map_apply_to=sparkline_value_color_map_apply_to,
+            sparkline_value_color_map_colors=sparkline_value_color_map_colors,
+            sparkline_value_color_map_values=sparkline_value_color_map_values,
+            sparkline_value_color_map_values_v2s=sparkline_value_color_map_values_v2s,
+            sparkline_value_text_map_texts=sparkline_value_text_map_texts,
+            sparkline_value_text_map_thresholds=sparkline_value_text_map_thresholds,
+            stack_type=stack_type,
+            tag_mode=tag_mode,
+            time_based_coloring=time_based_coloring,
+            type=type,
+            window_size=window_size,
+            windowing=windowing,
+            xmax=xmax,
+            xmin=xmin,
+            y0_scale_si_by1024=y0_scale_si_by1024,
+            y0_unit_autoscaling=y0_unit_autoscaling,
+            y1_max=y1_max,
+            y1_min=y1_min,
+            y1_scale_si_by1024=y1_scale_si_by1024,
+            y1_unit_autoscaling=y1_unit_autoscaling,
+            y1_units=y1_units,
+            ymax=ymax,
+            ymin=ymin,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             auto_column_tags: bool,
+             column_tags: str,
+             custom_tags: Sequence[str],
+             expected_data_spacing: int,
+             fixed_legend_display_stats: Sequence[str],
+             fixed_legend_enabled: bool,
+             fixed_legend_filter_field: str,
+             fixed_legend_filter_limit: int,
+             fixed_legend_filter_sort: str,
+             fixed_legend_hide_label: bool,
+             fixed_legend_position: str,
+             fixed_legend_use_raw_stats: bool,
+             group_by_source: bool,
+             invert_dynamic_legend_hover_control: bool,
+             line_type: str,
+             max: float,
+             min: float,
+             num_tags: int,
+             plain_markdown_content: str,
+             show_hosts: bool,
+             show_labels: bool,
+             show_raw_values: bool,
+             sort_values_descending: bool,
+             sparkline_decimal_precision: int,
+             sparkline_display_color: str,
+             sparkline_display_font_size: str,
+             sparkline_display_horizontal_position: str,
+             sparkline_display_postfix: str,
+             sparkline_display_prefix: str,
+             sparkline_display_value_type: str,
+             sparkline_display_vertical_position: str,
+             sparkline_fill_color: str,
+             sparkline_line_color: str,
+             sparkline_size: str,
+             sparkline_value_color_map_apply_to: str,
+             sparkline_value_color_map_colors: Sequence[str],
+             sparkline_value_color_map_values: Sequence[int],
+             sparkline_value_color_map_values_v2s: Sequence[float],
+             sparkline_value_text_map_texts: Sequence[str],
+             sparkline_value_text_map_thresholds: Sequence[float],
+             stack_type: str,
+             tag_mode: str,
+             time_based_coloring: bool,
+             type: str,
+             window_size: int,
+             windowing: str,
+             xmax: float,
+             xmin: float,
+             y0_scale_si_by1024: bool,
+             y0_unit_autoscaling: bool,
+             y1_max: float,
+             y1_min: float,
+             y1_scale_si_by1024: bool,
+             y1_unit_autoscaling: bool,
+             y1_units: str,
+             ymax: float,
+             ymin: float,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("auto_column_tags", auto_column_tags)
+        _setter("column_tags", column_tags)
+        _setter("custom_tags", custom_tags)
+        _setter("expected_data_spacing", expected_data_spacing)
+        _setter("fixed_legend_display_stats", fixed_legend_display_stats)
+        _setter("fixed_legend_enabled", fixed_legend_enabled)
+        _setter("fixed_legend_filter_field", fixed_legend_filter_field)
+        _setter("fixed_legend_filter_limit", fixed_legend_filter_limit)
+        _setter("fixed_legend_filter_sort", fixed_legend_filter_sort)
+        _setter("fixed_legend_hide_label", fixed_legend_hide_label)
+        _setter("fixed_legend_position", fixed_legend_position)
+        _setter("fixed_legend_use_raw_stats", fixed_legend_use_raw_stats)
+        _setter("group_by_source", group_by_source)
+        _setter("invert_dynamic_legend_hover_control", invert_dynamic_legend_hover_control)
+        _setter("line_type", line_type)
+        _setter("max", max)
+        _setter("min", min)
+        _setter("num_tags", num_tags)
+        _setter("plain_markdown_content", plain_markdown_content)
+        _setter("show_hosts", show_hosts)
+        _setter("show_labels", show_labels)
+        _setter("show_raw_values", show_raw_values)
+        _setter("sort_values_descending", sort_values_descending)
+        _setter("sparkline_decimal_precision", sparkline_decimal_precision)
+        _setter("sparkline_display_color", sparkline_display_color)
+        _setter("sparkline_display_font_size", sparkline_display_font_size)
+        _setter("sparkline_display_horizontal_position", sparkline_display_horizontal_position)
+        _setter("sparkline_display_postfix", sparkline_display_postfix)
+        _setter("sparkline_display_prefix", sparkline_display_prefix)
+        _setter("sparkline_display_value_type", sparkline_display_value_type)
+        _setter("sparkline_display_vertical_position", sparkline_display_vertical_position)
+        _setter("sparkline_fill_color", sparkline_fill_color)
+        _setter("sparkline_line_color", sparkline_line_color)
+        _setter("sparkline_size", sparkline_size)
+        _setter("sparkline_value_color_map_apply_to", sparkline_value_color_map_apply_to)
+        _setter("sparkline_value_color_map_colors", sparkline_value_color_map_colors)
+        _setter("sparkline_value_color_map_values", sparkline_value_color_map_values)
+        _setter("sparkline_value_color_map_values_v2s", sparkline_value_color_map_values_v2s)
+        _setter("sparkline_value_text_map_texts", sparkline_value_text_map_texts)
+        _setter("sparkline_value_text_map_thresholds", sparkline_value_text_map_thresholds)
+        _setter("stack_type", stack_type)
+        _setter("tag_mode", tag_mode)
+        _setter("time_based_coloring", time_based_coloring)
+        _setter("type", type)
+        _setter("window_size", window_size)
+        _setter("windowing", windowing)
+        _setter("xmax", xmax)
+        _setter("xmin", xmin)
+        _setter("y0_scale_si_by1024", y0_scale_si_by1024)
+        _setter("y0_unit_autoscaling", y0_unit_autoscaling)
+        _setter("y1_max", y1_max)
+        _setter("y1_min", y1_min)
+        _setter("y1_scale_si_by1024", y1_scale_si_by1024)
+        _setter("y1_unit_autoscaling", y1_unit_autoscaling)
+        _setter("y1_units", y1_units)
+        _setter("ymax", ymax)
+        _setter("ymin", ymin)
 
     @property
     @pulumi.getter(name="autoColumnTags")
@@ -2825,14 +3400,37 @@ class GetDashboardSectionRowChartSourceResult(dict):
         :param str scatter_plot_source: For scatter plots, does this query source the X-axis or the Y-axis, `X`, or `Y`.
         :param str source_description: A description for the purpose of this source.
         """
-        pulumi.set(__self__, "disabled", disabled)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "query", query)
-        pulumi.set(__self__, "querybuilder_enabled", querybuilder_enabled)
-        pulumi.set(__self__, "scatter_plot_source", scatter_plot_source)
-        pulumi.set(__self__, "secondary_axis", secondary_axis)
-        pulumi.set(__self__, "source_color", source_color)
-        pulumi.set(__self__, "source_description", source_description)
+        GetDashboardSectionRowChartSourceResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            disabled=disabled,
+            name=name,
+            query=query,
+            querybuilder_enabled=querybuilder_enabled,
+            scatter_plot_source=scatter_plot_source,
+            secondary_axis=secondary_axis,
+            source_color=source_color,
+            source_description=source_description,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             disabled: bool,
+             name: str,
+             query: str,
+             querybuilder_enabled: bool,
+             scatter_plot_source: str,
+             secondary_axis: bool,
+             source_color: str,
+             source_description: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("disabled", disabled)
+        _setter("name", name)
+        _setter("query", query)
+        _setter("querybuilder_enabled", querybuilder_enabled)
+        _setter("scatter_plot_source", scatter_plot_source)
+        _setter("secondary_axis", secondary_axis)
+        _setter("source_color", source_color)
+        _setter("source_description", source_description)
 
     @property
     @pulumi.getter
@@ -2941,41 +3539,118 @@ class GetDashboardsDashboardResult(dict):
         :param Sequence[str] tags: A set of tags to assign to this resource.
         :param str url: Unique identifier, also a URL slug of the dashboard.
         """
-        pulumi.set(__self__, "can_modifies", can_modifies)
-        pulumi.set(__self__, "can_views", can_views)
-        pulumi.set(__self__, "chart_title_bg_color", chart_title_bg_color)
-        pulumi.set(__self__, "chart_title_color", chart_title_color)
-        pulumi.set(__self__, "chart_title_scalar", chart_title_scalar)
-        pulumi.set(__self__, "created_epoch_millis", created_epoch_millis)
-        pulumi.set(__self__, "creator_id", creator_id)
-        pulumi.set(__self__, "customer", customer)
-        pulumi.set(__self__, "default_end_time", default_end_time)
-        pulumi.set(__self__, "default_start_time", default_start_time)
-        pulumi.set(__self__, "default_time_window", default_time_window)
-        pulumi.set(__self__, "deleted", deleted)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_description", display_description)
-        pulumi.set(__self__, "display_query_parameters", display_query_parameters)
-        pulumi.set(__self__, "display_section_table_of_contents", display_section_table_of_contents)
-        pulumi.set(__self__, "event_filter_type", event_filter_type)
-        pulumi.set(__self__, "event_query", event_query)
-        pulumi.set(__self__, "favorite", favorite)
-        pulumi.set(__self__, "hidden", hidden)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "num_charts", num_charts)
-        pulumi.set(__self__, "num_favorites", num_favorites)
-        pulumi.set(__self__, "parameter_details", parameter_details)
-        pulumi.set(__self__, "parameters", parameters)
-        pulumi.set(__self__, "sections", sections)
-        pulumi.set(__self__, "system_owned", system_owned)
-        pulumi.set(__self__, "tags", tags)
-        pulumi.set(__self__, "updated_epoch_millis", updated_epoch_millis)
-        pulumi.set(__self__, "updater_id", updater_id)
-        pulumi.set(__self__, "url", url)
-        pulumi.set(__self__, "views_last_day", views_last_day)
-        pulumi.set(__self__, "views_last_month", views_last_month)
-        pulumi.set(__self__, "views_last_week", views_last_week)
+        GetDashboardsDashboardResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            can_modifies=can_modifies,
+            can_views=can_views,
+            chart_title_bg_color=chart_title_bg_color,
+            chart_title_color=chart_title_color,
+            chart_title_scalar=chart_title_scalar,
+            created_epoch_millis=created_epoch_millis,
+            creator_id=creator_id,
+            customer=customer,
+            default_end_time=default_end_time,
+            default_start_time=default_start_time,
+            default_time_window=default_time_window,
+            deleted=deleted,
+            description=description,
+            display_description=display_description,
+            display_query_parameters=display_query_parameters,
+            display_section_table_of_contents=display_section_table_of_contents,
+            event_filter_type=event_filter_type,
+            event_query=event_query,
+            favorite=favorite,
+            hidden=hidden,
+            id=id,
+            name=name,
+            num_charts=num_charts,
+            num_favorites=num_favorites,
+            parameter_details=parameter_details,
+            parameters=parameters,
+            sections=sections,
+            system_owned=system_owned,
+            tags=tags,
+            updated_epoch_millis=updated_epoch_millis,
+            updater_id=updater_id,
+            url=url,
+            views_last_day=views_last_day,
+            views_last_month=views_last_month,
+            views_last_week=views_last_week,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             can_modifies: Sequence[str],
+             can_views: Sequence[str],
+             chart_title_bg_color: str,
+             chart_title_color: str,
+             chart_title_scalar: int,
+             created_epoch_millis: int,
+             creator_id: str,
+             customer: str,
+             default_end_time: int,
+             default_start_time: int,
+             default_time_window: str,
+             deleted: bool,
+             description: str,
+             display_description: bool,
+             display_query_parameters: bool,
+             display_section_table_of_contents: bool,
+             event_filter_type: str,
+             event_query: str,
+             favorite: bool,
+             hidden: bool,
+             id: str,
+             name: str,
+             num_charts: int,
+             num_favorites: int,
+             parameter_details: Sequence['outputs.GetDashboardsDashboardParameterDetailResult'],
+             parameters: Mapping[str, Any],
+             sections: Sequence['outputs.GetDashboardsDashboardSectionResult'],
+             system_owned: bool,
+             tags: Sequence[str],
+             updated_epoch_millis: int,
+             updater_id: str,
+             url: str,
+             views_last_day: int,
+             views_last_month: int,
+             views_last_week: int,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("can_modifies", can_modifies)
+        _setter("can_views", can_views)
+        _setter("chart_title_bg_color", chart_title_bg_color)
+        _setter("chart_title_color", chart_title_color)
+        _setter("chart_title_scalar", chart_title_scalar)
+        _setter("created_epoch_millis", created_epoch_millis)
+        _setter("creator_id", creator_id)
+        _setter("customer", customer)
+        _setter("default_end_time", default_end_time)
+        _setter("default_start_time", default_start_time)
+        _setter("default_time_window", default_time_window)
+        _setter("deleted", deleted)
+        _setter("description", description)
+        _setter("display_description", display_description)
+        _setter("display_query_parameters", display_query_parameters)
+        _setter("display_section_table_of_contents", display_section_table_of_contents)
+        _setter("event_filter_type", event_filter_type)
+        _setter("event_query", event_query)
+        _setter("favorite", favorite)
+        _setter("hidden", hidden)
+        _setter("id", id)
+        _setter("name", name)
+        _setter("num_charts", num_charts)
+        _setter("num_favorites", num_favorites)
+        _setter("parameter_details", parameter_details)
+        _setter("parameters", parameters)
+        _setter("sections", sections)
+        _setter("system_owned", system_owned)
+        _setter("tags", tags)
+        _setter("updated_epoch_millis", updated_epoch_millis)
+        _setter("updater_id", updater_id)
+        _setter("url", url)
+        _setter("views_last_day", views_last_day)
+        _setter("views_last_month", views_last_month)
+        _setter("views_last_week", views_last_week)
 
     @property
     @pulumi.getter(name="canModifies")
@@ -3207,14 +3882,37 @@ class GetDashboardsDashboardParameterDetailResult(dict):
         :param Mapping[str, str] values_to_readable_strings: A string to string map. At least one of the keys must match the value of
                `default_value`.
         """
-        pulumi.set(__self__, "default_value", default_value)
-        pulumi.set(__self__, "dynamic_field_type", dynamic_field_type)
-        pulumi.set(__self__, "hide_from_view", hide_from_view)
-        pulumi.set(__self__, "label", label)
-        pulumi.set(__self__, "parameter_type", parameter_type)
-        pulumi.set(__self__, "query_value", query_value)
-        pulumi.set(__self__, "tag_key", tag_key)
-        pulumi.set(__self__, "values_to_readable_strings", values_to_readable_strings)
+        GetDashboardsDashboardParameterDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            default_value=default_value,
+            dynamic_field_type=dynamic_field_type,
+            hide_from_view=hide_from_view,
+            label=label,
+            parameter_type=parameter_type,
+            query_value=query_value,
+            tag_key=tag_key,
+            values_to_readable_strings=values_to_readable_strings,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             default_value: str,
+             dynamic_field_type: str,
+             hide_from_view: bool,
+             label: str,
+             parameter_type: str,
+             query_value: str,
+             tag_key: str,
+             values_to_readable_strings: Mapping[str, str],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("default_value", default_value)
+        _setter("dynamic_field_type", dynamic_field_type)
+        _setter("hide_from_view", hide_from_view)
+        _setter("label", label)
+        _setter("parameter_type", parameter_type)
+        _setter("query_value", query_value)
+        _setter("tag_key", tag_key)
+        _setter("values_to_readable_strings", values_to_readable_strings)
 
     @property
     @pulumi.getter(name="defaultValue")
@@ -3291,8 +3989,19 @@ class GetDashboardsDashboardSectionResult(dict):
         """
         :param str name: The name of the parameters.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "rows", rows)
+        GetDashboardsDashboardSectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            rows=rows,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             rows: Sequence['outputs.GetDashboardsDashboardSectionRowResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("rows", rows)
 
     @property
     @pulumi.getter
@@ -3317,9 +4026,22 @@ class GetDashboardsDashboardSectionRowResult(dict):
         """
         :param str name: The name of the parameters.
         """
-        pulumi.set(__self__, "charts", charts)
-        pulumi.set(__self__, "height_factor", height_factor)
-        pulumi.set(__self__, "name", name)
+        GetDashboardsDashboardSectionRowResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            charts=charts,
+            height_factor=height_factor,
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             charts: Sequence['outputs.GetDashboardsDashboardSectionRowChartResult'],
+             height_factor: int,
+             name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("charts", charts)
+        _setter("height_factor", height_factor)
+        _setter("name", name)
 
     @property
     @pulumi.getter
@@ -3361,17 +4083,46 @@ class GetDashboardsDashboardSectionRowChartResult(dict):
         :param str summarization: Summarization strategy for the chart. MEAN is default.
         :param str units: String to label the units of the chart on the Y-Axis.
         """
-        pulumi.set(__self__, "base", base)
-        pulumi.set(__self__, "chart_attributes", chart_attributes)
-        pulumi.set(__self__, "chart_settings", chart_settings)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "include_obsolete_metrics", include_obsolete_metrics)
-        pulumi.set(__self__, "interpolate_points_key", interpolate_points_key)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "no_default_events", no_default_events)
-        pulumi.set(__self__, "sources", sources)
-        pulumi.set(__self__, "summarization", summarization)
-        pulumi.set(__self__, "units", units)
+        GetDashboardsDashboardSectionRowChartResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            base=base,
+            chart_attributes=chart_attributes,
+            chart_settings=chart_settings,
+            description=description,
+            include_obsolete_metrics=include_obsolete_metrics,
+            interpolate_points_key=interpolate_points_key,
+            name=name,
+            no_default_events=no_default_events,
+            sources=sources,
+            summarization=summarization,
+            units=units,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             base: int,
+             chart_attributes: str,
+             chart_settings: Sequence['outputs.GetDashboardsDashboardSectionRowChartChartSettingResult'],
+             description: str,
+             include_obsolete_metrics: bool,
+             interpolate_points_key: bool,
+             name: str,
+             no_default_events: bool,
+             sources: Sequence['outputs.GetDashboardsDashboardSectionRowChartSourceResult'],
+             summarization: str,
+             units: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("base", base)
+        _setter("chart_attributes", chart_attributes)
+        _setter("chart_settings", chart_settings)
+        _setter("description", description)
+        _setter("include_obsolete_metrics", include_obsolete_metrics)
+        _setter("interpolate_points_key", interpolate_points_key)
+        _setter("name", name)
+        _setter("no_default_events", no_default_events)
+        _setter("sources", sources)
+        _setter("summarization", summarization)
+        _setter("units", units)
 
     @property
     @pulumi.getter
@@ -3559,63 +4310,184 @@ class GetDashboardsDashboardSectionRowChartChartSettingResult(dict):
         :param float ymax: For x-y scatterplots, max value for the Y-axis. Set to null for auto.
         :param float ymin: For x-y scatterplots, min value for the Y-axis. Set to null for auto.
         """
-        pulumi.set(__self__, "auto_column_tags", auto_column_tags)
-        pulumi.set(__self__, "column_tags", column_tags)
-        pulumi.set(__self__, "custom_tags", custom_tags)
-        pulumi.set(__self__, "expected_data_spacing", expected_data_spacing)
-        pulumi.set(__self__, "fixed_legend_display_stats", fixed_legend_display_stats)
-        pulumi.set(__self__, "fixed_legend_enabled", fixed_legend_enabled)
-        pulumi.set(__self__, "fixed_legend_filter_field", fixed_legend_filter_field)
-        pulumi.set(__self__, "fixed_legend_filter_limit", fixed_legend_filter_limit)
-        pulumi.set(__self__, "fixed_legend_filter_sort", fixed_legend_filter_sort)
-        pulumi.set(__self__, "fixed_legend_hide_label", fixed_legend_hide_label)
-        pulumi.set(__self__, "fixed_legend_position", fixed_legend_position)
-        pulumi.set(__self__, "fixed_legend_use_raw_stats", fixed_legend_use_raw_stats)
-        pulumi.set(__self__, "group_by_source", group_by_source)
-        pulumi.set(__self__, "invert_dynamic_legend_hover_control", invert_dynamic_legend_hover_control)
-        pulumi.set(__self__, "line_type", line_type)
-        pulumi.set(__self__, "max", max)
-        pulumi.set(__self__, "min", min)
-        pulumi.set(__self__, "num_tags", num_tags)
-        pulumi.set(__self__, "plain_markdown_content", plain_markdown_content)
-        pulumi.set(__self__, "show_hosts", show_hosts)
-        pulumi.set(__self__, "show_labels", show_labels)
-        pulumi.set(__self__, "show_raw_values", show_raw_values)
-        pulumi.set(__self__, "sort_values_descending", sort_values_descending)
-        pulumi.set(__self__, "sparkline_decimal_precision", sparkline_decimal_precision)
-        pulumi.set(__self__, "sparkline_display_color", sparkline_display_color)
-        pulumi.set(__self__, "sparkline_display_font_size", sparkline_display_font_size)
-        pulumi.set(__self__, "sparkline_display_horizontal_position", sparkline_display_horizontal_position)
-        pulumi.set(__self__, "sparkline_display_postfix", sparkline_display_postfix)
-        pulumi.set(__self__, "sparkline_display_prefix", sparkline_display_prefix)
-        pulumi.set(__self__, "sparkline_display_value_type", sparkline_display_value_type)
-        pulumi.set(__self__, "sparkline_display_vertical_position", sparkline_display_vertical_position)
-        pulumi.set(__self__, "sparkline_fill_color", sparkline_fill_color)
-        pulumi.set(__self__, "sparkline_line_color", sparkline_line_color)
-        pulumi.set(__self__, "sparkline_size", sparkline_size)
-        pulumi.set(__self__, "sparkline_value_color_map_apply_to", sparkline_value_color_map_apply_to)
-        pulumi.set(__self__, "sparkline_value_color_map_colors", sparkline_value_color_map_colors)
-        pulumi.set(__self__, "sparkline_value_color_map_values", sparkline_value_color_map_values)
-        pulumi.set(__self__, "sparkline_value_color_map_values_v2s", sparkline_value_color_map_values_v2s)
-        pulumi.set(__self__, "sparkline_value_text_map_texts", sparkline_value_text_map_texts)
-        pulumi.set(__self__, "sparkline_value_text_map_thresholds", sparkline_value_text_map_thresholds)
-        pulumi.set(__self__, "stack_type", stack_type)
-        pulumi.set(__self__, "tag_mode", tag_mode)
-        pulumi.set(__self__, "time_based_coloring", time_based_coloring)
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "window_size", window_size)
-        pulumi.set(__self__, "windowing", windowing)
-        pulumi.set(__self__, "xmax", xmax)
-        pulumi.set(__self__, "xmin", xmin)
-        pulumi.set(__self__, "y0_scale_si_by1024", y0_scale_si_by1024)
-        pulumi.set(__self__, "y0_unit_autoscaling", y0_unit_autoscaling)
-        pulumi.set(__self__, "y1_max", y1_max)
-        pulumi.set(__self__, "y1_min", y1_min)
-        pulumi.set(__self__, "y1_scale_si_by1024", y1_scale_si_by1024)
-        pulumi.set(__self__, "y1_unit_autoscaling", y1_unit_autoscaling)
-        pulumi.set(__self__, "y1_units", y1_units)
-        pulumi.set(__self__, "ymax", ymax)
-        pulumi.set(__self__, "ymin", ymin)
+        GetDashboardsDashboardSectionRowChartChartSettingResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            auto_column_tags=auto_column_tags,
+            column_tags=column_tags,
+            custom_tags=custom_tags,
+            expected_data_spacing=expected_data_spacing,
+            fixed_legend_display_stats=fixed_legend_display_stats,
+            fixed_legend_enabled=fixed_legend_enabled,
+            fixed_legend_filter_field=fixed_legend_filter_field,
+            fixed_legend_filter_limit=fixed_legend_filter_limit,
+            fixed_legend_filter_sort=fixed_legend_filter_sort,
+            fixed_legend_hide_label=fixed_legend_hide_label,
+            fixed_legend_position=fixed_legend_position,
+            fixed_legend_use_raw_stats=fixed_legend_use_raw_stats,
+            group_by_source=group_by_source,
+            invert_dynamic_legend_hover_control=invert_dynamic_legend_hover_control,
+            line_type=line_type,
+            max=max,
+            min=min,
+            num_tags=num_tags,
+            plain_markdown_content=plain_markdown_content,
+            show_hosts=show_hosts,
+            show_labels=show_labels,
+            show_raw_values=show_raw_values,
+            sort_values_descending=sort_values_descending,
+            sparkline_decimal_precision=sparkline_decimal_precision,
+            sparkline_display_color=sparkline_display_color,
+            sparkline_display_font_size=sparkline_display_font_size,
+            sparkline_display_horizontal_position=sparkline_display_horizontal_position,
+            sparkline_display_postfix=sparkline_display_postfix,
+            sparkline_display_prefix=sparkline_display_prefix,
+            sparkline_display_value_type=sparkline_display_value_type,
+            sparkline_display_vertical_position=sparkline_display_vertical_position,
+            sparkline_fill_color=sparkline_fill_color,
+            sparkline_line_color=sparkline_line_color,
+            sparkline_size=sparkline_size,
+            sparkline_value_color_map_apply_to=sparkline_value_color_map_apply_to,
+            sparkline_value_color_map_colors=sparkline_value_color_map_colors,
+            sparkline_value_color_map_values=sparkline_value_color_map_values,
+            sparkline_value_color_map_values_v2s=sparkline_value_color_map_values_v2s,
+            sparkline_value_text_map_texts=sparkline_value_text_map_texts,
+            sparkline_value_text_map_thresholds=sparkline_value_text_map_thresholds,
+            stack_type=stack_type,
+            tag_mode=tag_mode,
+            time_based_coloring=time_based_coloring,
+            type=type,
+            window_size=window_size,
+            windowing=windowing,
+            xmax=xmax,
+            xmin=xmin,
+            y0_scale_si_by1024=y0_scale_si_by1024,
+            y0_unit_autoscaling=y0_unit_autoscaling,
+            y1_max=y1_max,
+            y1_min=y1_min,
+            y1_scale_si_by1024=y1_scale_si_by1024,
+            y1_unit_autoscaling=y1_unit_autoscaling,
+            y1_units=y1_units,
+            ymax=ymax,
+            ymin=ymin,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             auto_column_tags: bool,
+             column_tags: str,
+             custom_tags: Sequence[str],
+             expected_data_spacing: int,
+             fixed_legend_display_stats: Sequence[str],
+             fixed_legend_enabled: bool,
+             fixed_legend_filter_field: str,
+             fixed_legend_filter_limit: int,
+             fixed_legend_filter_sort: str,
+             fixed_legend_hide_label: bool,
+             fixed_legend_position: str,
+             fixed_legend_use_raw_stats: bool,
+             group_by_source: bool,
+             invert_dynamic_legend_hover_control: bool,
+             line_type: str,
+             max: float,
+             min: float,
+             num_tags: int,
+             plain_markdown_content: str,
+             show_hosts: bool,
+             show_labels: bool,
+             show_raw_values: bool,
+             sort_values_descending: bool,
+             sparkline_decimal_precision: int,
+             sparkline_display_color: str,
+             sparkline_display_font_size: str,
+             sparkline_display_horizontal_position: str,
+             sparkline_display_postfix: str,
+             sparkline_display_prefix: str,
+             sparkline_display_value_type: str,
+             sparkline_display_vertical_position: str,
+             sparkline_fill_color: str,
+             sparkline_line_color: str,
+             sparkline_size: str,
+             sparkline_value_color_map_apply_to: str,
+             sparkline_value_color_map_colors: Sequence[str],
+             sparkline_value_color_map_values: Sequence[int],
+             sparkline_value_color_map_values_v2s: Sequence[float],
+             sparkline_value_text_map_texts: Sequence[str],
+             sparkline_value_text_map_thresholds: Sequence[float],
+             stack_type: str,
+             tag_mode: str,
+             time_based_coloring: bool,
+             type: str,
+             window_size: int,
+             windowing: str,
+             xmax: float,
+             xmin: float,
+             y0_scale_si_by1024: bool,
+             y0_unit_autoscaling: bool,
+             y1_max: float,
+             y1_min: float,
+             y1_scale_si_by1024: bool,
+             y1_unit_autoscaling: bool,
+             y1_units: str,
+             ymax: float,
+             ymin: float,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("auto_column_tags", auto_column_tags)
+        _setter("column_tags", column_tags)
+        _setter("custom_tags", custom_tags)
+        _setter("expected_data_spacing", expected_data_spacing)
+        _setter("fixed_legend_display_stats", fixed_legend_display_stats)
+        _setter("fixed_legend_enabled", fixed_legend_enabled)
+        _setter("fixed_legend_filter_field", fixed_legend_filter_field)
+        _setter("fixed_legend_filter_limit", fixed_legend_filter_limit)
+        _setter("fixed_legend_filter_sort", fixed_legend_filter_sort)
+        _setter("fixed_legend_hide_label", fixed_legend_hide_label)
+        _setter("fixed_legend_position", fixed_legend_position)
+        _setter("fixed_legend_use_raw_stats", fixed_legend_use_raw_stats)
+        _setter("group_by_source", group_by_source)
+        _setter("invert_dynamic_legend_hover_control", invert_dynamic_legend_hover_control)
+        _setter("line_type", line_type)
+        _setter("max", max)
+        _setter("min", min)
+        _setter("num_tags", num_tags)
+        _setter("plain_markdown_content", plain_markdown_content)
+        _setter("show_hosts", show_hosts)
+        _setter("show_labels", show_labels)
+        _setter("show_raw_values", show_raw_values)
+        _setter("sort_values_descending", sort_values_descending)
+        _setter("sparkline_decimal_precision", sparkline_decimal_precision)
+        _setter("sparkline_display_color", sparkline_display_color)
+        _setter("sparkline_display_font_size", sparkline_display_font_size)
+        _setter("sparkline_display_horizontal_position", sparkline_display_horizontal_position)
+        _setter("sparkline_display_postfix", sparkline_display_postfix)
+        _setter("sparkline_display_prefix", sparkline_display_prefix)
+        _setter("sparkline_display_value_type", sparkline_display_value_type)
+        _setter("sparkline_display_vertical_position", sparkline_display_vertical_position)
+        _setter("sparkline_fill_color", sparkline_fill_color)
+        _setter("sparkline_line_color", sparkline_line_color)
+        _setter("sparkline_size", sparkline_size)
+        _setter("sparkline_value_color_map_apply_to", sparkline_value_color_map_apply_to)
+        _setter("sparkline_value_color_map_colors", sparkline_value_color_map_colors)
+        _setter("sparkline_value_color_map_values", sparkline_value_color_map_values)
+        _setter("sparkline_value_color_map_values_v2s", sparkline_value_color_map_values_v2s)
+        _setter("sparkline_value_text_map_texts", sparkline_value_text_map_texts)
+        _setter("sparkline_value_text_map_thresholds", sparkline_value_text_map_thresholds)
+        _setter("stack_type", stack_type)
+        _setter("tag_mode", tag_mode)
+        _setter("time_based_coloring", time_based_coloring)
+        _setter("type", type)
+        _setter("window_size", window_size)
+        _setter("windowing", windowing)
+        _setter("xmax", xmax)
+        _setter("xmin", xmin)
+        _setter("y0_scale_si_by1024", y0_scale_si_by1024)
+        _setter("y0_unit_autoscaling", y0_unit_autoscaling)
+        _setter("y1_max", y1_max)
+        _setter("y1_min", y1_min)
+        _setter("y1_scale_si_by1024", y1_scale_si_by1024)
+        _setter("y1_unit_autoscaling", y1_unit_autoscaling)
+        _setter("y1_units", y1_units)
+        _setter("ymax", ymax)
+        _setter("ymin", ymin)
 
     @property
     @pulumi.getter(name="autoColumnTags")
@@ -4080,14 +4952,37 @@ class GetDashboardsDashboardSectionRowChartSourceResult(dict):
         :param str scatter_plot_source: For scatter plots, does this query source the X-axis or the Y-axis, `X`, or `Y`.
         :param str source_description: A description for the purpose of this source.
         """
-        pulumi.set(__self__, "disabled", disabled)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "query", query)
-        pulumi.set(__self__, "querybuilder_enabled", querybuilder_enabled)
-        pulumi.set(__self__, "scatter_plot_source", scatter_plot_source)
-        pulumi.set(__self__, "secondary_axis", secondary_axis)
-        pulumi.set(__self__, "source_color", source_color)
-        pulumi.set(__self__, "source_description", source_description)
+        GetDashboardsDashboardSectionRowChartSourceResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            disabled=disabled,
+            name=name,
+            query=query,
+            querybuilder_enabled=querybuilder_enabled,
+            scatter_plot_source=scatter_plot_source,
+            secondary_axis=secondary_axis,
+            source_color=source_color,
+            source_description=source_description,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             disabled: bool,
+             name: str,
+             query: str,
+             querybuilder_enabled: bool,
+             scatter_plot_source: str,
+             secondary_axis: bool,
+             source_color: str,
+             source_description: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("disabled", disabled)
+        _setter("name", name)
+        _setter("query", query)
+        _setter("querybuilder_enabled", querybuilder_enabled)
+        _setter("scatter_plot_source", scatter_plot_source)
+        _setter("secondary_axis", secondary_axis)
+        _setter("source_color", source_color)
+        _setter("source_description", source_description)
 
     @property
     @pulumi.getter
@@ -4198,30 +5093,85 @@ class GetDerivedMetricsDerivedMetricResult(dict):
         :param str update_user_id: The ID of the user who updated the derived metric.
         :param int updated_epoch_millis: The timestamp in epoch milliseconds indicating when the derived metric is updated.
         """
-        pulumi.set(__self__, "additional_information", additional_information)
-        pulumi.set(__self__, "create_user_id", create_user_id)
-        pulumi.set(__self__, "created_epoch_millis", created_epoch_millis)
-        pulumi.set(__self__, "deleted", deleted)
-        pulumi.set(__self__, "hosts_useds", hosts_useds)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "in_trash", in_trash)
-        pulumi.set(__self__, "include_obsolete_metrics", include_obsolete_metrics)
-        pulumi.set(__self__, "last_error_message", last_error_message)
-        pulumi.set(__self__, "last_failed_time", last_failed_time)
-        pulumi.set(__self__, "last_processed_millis", last_processed_millis)
-        pulumi.set(__self__, "last_query_time", last_query_time)
-        pulumi.set(__self__, "metrics_useds", metrics_useds)
-        pulumi.set(__self__, "minutes", minutes)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "points_scanned_at_last_query", points_scanned_at_last_query)
-        pulumi.set(__self__, "process_rate_minutes", process_rate_minutes)
-        pulumi.set(__self__, "query", query)
-        pulumi.set(__self__, "query_failing", query_failing)
-        pulumi.set(__self__, "query_qb_enabled", query_qb_enabled)
-        pulumi.set(__self__, "statuses", statuses)
-        pulumi.set(__self__, "tags", tags)
-        pulumi.set(__self__, "update_user_id", update_user_id)
-        pulumi.set(__self__, "updated_epoch_millis", updated_epoch_millis)
+        GetDerivedMetricsDerivedMetricResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            additional_information=additional_information,
+            create_user_id=create_user_id,
+            created_epoch_millis=created_epoch_millis,
+            deleted=deleted,
+            hosts_useds=hosts_useds,
+            id=id,
+            in_trash=in_trash,
+            include_obsolete_metrics=include_obsolete_metrics,
+            last_error_message=last_error_message,
+            last_failed_time=last_failed_time,
+            last_processed_millis=last_processed_millis,
+            last_query_time=last_query_time,
+            metrics_useds=metrics_useds,
+            minutes=minutes,
+            name=name,
+            points_scanned_at_last_query=points_scanned_at_last_query,
+            process_rate_minutes=process_rate_minutes,
+            query=query,
+            query_failing=query_failing,
+            query_qb_enabled=query_qb_enabled,
+            statuses=statuses,
+            tags=tags,
+            update_user_id=update_user_id,
+            updated_epoch_millis=updated_epoch_millis,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             additional_information: str,
+             create_user_id: str,
+             created_epoch_millis: int,
+             deleted: bool,
+             hosts_useds: Sequence[str],
+             id: str,
+             in_trash: bool,
+             include_obsolete_metrics: bool,
+             last_error_message: str,
+             last_failed_time: int,
+             last_processed_millis: int,
+             last_query_time: int,
+             metrics_useds: Sequence[str],
+             minutes: int,
+             name: str,
+             points_scanned_at_last_query: int,
+             process_rate_minutes: int,
+             query: str,
+             query_failing: bool,
+             query_qb_enabled: bool,
+             statuses: Sequence[str],
+             tags: Sequence[str],
+             update_user_id: str,
+             updated_epoch_millis: int,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("additional_information", additional_information)
+        _setter("create_user_id", create_user_id)
+        _setter("created_epoch_millis", created_epoch_millis)
+        _setter("deleted", deleted)
+        _setter("hosts_useds", hosts_useds)
+        _setter("id", id)
+        _setter("in_trash", in_trash)
+        _setter("include_obsolete_metrics", include_obsolete_metrics)
+        _setter("last_error_message", last_error_message)
+        _setter("last_failed_time", last_failed_time)
+        _setter("last_processed_millis", last_processed_millis)
+        _setter("last_query_time", last_query_time)
+        _setter("metrics_useds", metrics_useds)
+        _setter("minutes", minutes)
+        _setter("name", name)
+        _setter("points_scanned_at_last_query", points_scanned_at_last_query)
+        _setter("process_rate_minutes", process_rate_minutes)
+        _setter("query", query)
+        _setter("query_failing", query_failing)
+        _setter("query_qb_enabled", query_qb_enabled)
+        _setter("statuses", statuses)
+        _setter("tags", tags)
+        _setter("update_user_id", update_user_id)
+        _setter("updated_epoch_millis", updated_epoch_millis)
 
     @property
     @pulumi.getter(name="additionalInformation")
@@ -4440,16 +5390,43 @@ class GetEventsEventResult(dict):
         :param Sequence[str] tags: A set of tags assigned to the event.
         :param str type: The type of the event.
         """
-        pulumi.set(__self__, "annotations", annotations)
-        pulumi.set(__self__, "details", details)
-        pulumi.set(__self__, "endtime_key", endtime_key)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_ephemeral", is_ephemeral)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "severity", severity)
-        pulumi.set(__self__, "start_time", start_time)
-        pulumi.set(__self__, "tags", tags)
-        pulumi.set(__self__, "type", type)
+        GetEventsEventResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            annotations=annotations,
+            details=details,
+            endtime_key=endtime_key,
+            id=id,
+            is_ephemeral=is_ephemeral,
+            name=name,
+            severity=severity,
+            start_time=start_time,
+            tags=tags,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             annotations: Mapping[str, str],
+             details: str,
+             endtime_key: int,
+             id: str,
+             is_ephemeral: bool,
+             name: str,
+             severity: str,
+             start_time: int,
+             tags: Sequence[str],
+             type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("annotations", annotations)
+        _setter("details", details)
+        _setter("endtime_key", endtime_key)
+        _setter("id", id)
+        _setter("is_ephemeral", is_ephemeral)
+        _setter("name", name)
+        _setter("severity", severity)
+        _setter("start_time", start_time)
+        _setter("tags", tags)
+        _setter("type", type)
 
     @property
     @pulumi.getter
@@ -4561,18 +5538,49 @@ class GetExternalLinksExternalLinkResult(dict):
         :param int updated_epoch_millis: The timestamp in epoch milliseconds indicating when the external link is updated.
         :param str updater_id: The ID of the user who updated the external link.
         """
-        pulumi.set(__self__, "created_epoch_millis", created_epoch_millis)
-        pulumi.set(__self__, "creator_id", creator_id)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_log_integration", is_log_integration)
-        pulumi.set(__self__, "metric_filter_regex", metric_filter_regex)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "point_tag_filter_regexes", point_tag_filter_regexes)
-        pulumi.set(__self__, "source_filter_regex", source_filter_regex)
-        pulumi.set(__self__, "template", template)
-        pulumi.set(__self__, "updated_epoch_millis", updated_epoch_millis)
-        pulumi.set(__self__, "updater_id", updater_id)
+        GetExternalLinksExternalLinkResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            created_epoch_millis=created_epoch_millis,
+            creator_id=creator_id,
+            description=description,
+            id=id,
+            is_log_integration=is_log_integration,
+            metric_filter_regex=metric_filter_regex,
+            name=name,
+            point_tag_filter_regexes=point_tag_filter_regexes,
+            source_filter_regex=source_filter_regex,
+            template=template,
+            updated_epoch_millis=updated_epoch_millis,
+            updater_id=updater_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             created_epoch_millis: int,
+             creator_id: str,
+             description: str,
+             id: str,
+             is_log_integration: bool,
+             metric_filter_regex: str,
+             name: str,
+             point_tag_filter_regexes: Mapping[str, str],
+             source_filter_regex: str,
+             template: str,
+             updated_epoch_millis: int,
+             updater_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("created_epoch_millis", created_epoch_millis)
+        _setter("creator_id", creator_id)
+        _setter("description", description)
+        _setter("id", id)
+        _setter("is_log_integration", is_log_integration)
+        _setter("metric_filter_regex", metric_filter_regex)
+        _setter("name", name)
+        _setter("point_tag_filter_regexes", point_tag_filter_regexes)
+        _setter("source_filter_regex", source_filter_regex)
+        _setter("template", template)
+        _setter("updated_epoch_millis", updated_epoch_millis)
+        _setter("updater_id", updater_id)
 
     @property
     @pulumi.getter(name="createdEpochMillis")
@@ -4695,24 +5703,67 @@ class GetMaintenanceWindowAllMaintenanceWindowResult(dict):
                  title: str,
                  updated_epoch_millis: int,
                  updater_id: str):
-        pulumi.set(__self__, "created_epoch_millis", created_epoch_millis)
-        pulumi.set(__self__, "creator_id", creator_id)
-        pulumi.set(__self__, "customer_id", customer_id)
-        pulumi.set(__self__, "end_time_in_seconds", end_time_in_seconds)
-        pulumi.set(__self__, "event_name", event_name)
-        pulumi.set(__self__, "host_tag_group_host_names_group_anded", host_tag_group_host_names_group_anded)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "reason", reason)
-        pulumi.set(__self__, "relevant_customer_tags", relevant_customer_tags)
-        pulumi.set(__self__, "relevant_host_names", relevant_host_names)
-        pulumi.set(__self__, "relevant_host_tags", relevant_host_tags)
-        pulumi.set(__self__, "relevant_host_tags_anded", relevant_host_tags_anded)
-        pulumi.set(__self__, "running_state", running_state)
-        pulumi.set(__self__, "sort_attr", sort_attr)
-        pulumi.set(__self__, "start_time_in_seconds", start_time_in_seconds)
-        pulumi.set(__self__, "title", title)
-        pulumi.set(__self__, "updated_epoch_millis", updated_epoch_millis)
-        pulumi.set(__self__, "updater_id", updater_id)
+        GetMaintenanceWindowAllMaintenanceWindowResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            created_epoch_millis=created_epoch_millis,
+            creator_id=creator_id,
+            customer_id=customer_id,
+            end_time_in_seconds=end_time_in_seconds,
+            event_name=event_name,
+            host_tag_group_host_names_group_anded=host_tag_group_host_names_group_anded,
+            id=id,
+            reason=reason,
+            relevant_customer_tags=relevant_customer_tags,
+            relevant_host_names=relevant_host_names,
+            relevant_host_tags=relevant_host_tags,
+            relevant_host_tags_anded=relevant_host_tags_anded,
+            running_state=running_state,
+            sort_attr=sort_attr,
+            start_time_in_seconds=start_time_in_seconds,
+            title=title,
+            updated_epoch_millis=updated_epoch_millis,
+            updater_id=updater_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             created_epoch_millis: int,
+             creator_id: str,
+             customer_id: str,
+             end_time_in_seconds: int,
+             event_name: str,
+             host_tag_group_host_names_group_anded: bool,
+             id: str,
+             reason: str,
+             relevant_customer_tags: Sequence[str],
+             relevant_host_names: Sequence[str],
+             relevant_host_tags: Sequence[str],
+             relevant_host_tags_anded: bool,
+             running_state: str,
+             sort_attr: int,
+             start_time_in_seconds: int,
+             title: str,
+             updated_epoch_millis: int,
+             updater_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("created_epoch_millis", created_epoch_millis)
+        _setter("creator_id", creator_id)
+        _setter("customer_id", customer_id)
+        _setter("end_time_in_seconds", end_time_in_seconds)
+        _setter("event_name", event_name)
+        _setter("host_tag_group_host_names_group_anded", host_tag_group_host_names_group_anded)
+        _setter("id", id)
+        _setter("reason", reason)
+        _setter("relevant_customer_tags", relevant_customer_tags)
+        _setter("relevant_host_names", relevant_host_names)
+        _setter("relevant_host_tags", relevant_host_tags)
+        _setter("relevant_host_tags_anded", relevant_host_tags_anded)
+        _setter("running_state", running_state)
+        _setter("sort_attr", sort_attr)
+        _setter("start_time_in_seconds", start_time_in_seconds)
+        _setter("title", title)
+        _setter("updated_epoch_millis", updated_epoch_millis)
+        _setter("updater_id", updater_id)
 
     @property
     @pulumi.getter(name="createdEpochMillis")
@@ -4817,15 +5868,40 @@ class GetMetricsPolicyPolicyRuleResult(dict):
                  tags: Sequence['outputs.GetMetricsPolicyPolicyRuleTagResult'],
                  tags_anded: bool,
                  user_group_ids: Sequence[str]):
-        pulumi.set(__self__, "access_type", access_type)
-        pulumi.set(__self__, "account_ids", account_ids)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "prefixes", prefixes)
-        pulumi.set(__self__, "role_ids", role_ids)
-        pulumi.set(__self__, "tags", tags)
-        pulumi.set(__self__, "tags_anded", tags_anded)
-        pulumi.set(__self__, "user_group_ids", user_group_ids)
+        GetMetricsPolicyPolicyRuleResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            access_type=access_type,
+            account_ids=account_ids,
+            description=description,
+            name=name,
+            prefixes=prefixes,
+            role_ids=role_ids,
+            tags=tags,
+            tags_anded=tags_anded,
+            user_group_ids=user_group_ids,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             access_type: str,
+             account_ids: Sequence[str],
+             description: str,
+             name: str,
+             prefixes: Sequence[str],
+             role_ids: Sequence[str],
+             tags: Sequence['outputs.GetMetricsPolicyPolicyRuleTagResult'],
+             tags_anded: bool,
+             user_group_ids: Sequence[str],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("access_type", access_type)
+        _setter("account_ids", account_ids)
+        _setter("description", description)
+        _setter("name", name)
+        _setter("prefixes", prefixes)
+        _setter("role_ids", role_ids)
+        _setter("tags", tags)
+        _setter("tags_anded", tags_anded)
+        _setter("user_group_ids", user_group_ids)
 
     @property
     @pulumi.getter(name="accessType")
@@ -4878,8 +5954,19 @@ class GetMetricsPolicyPolicyRuleTagResult(dict):
     def __init__(__self__, *,
                  key: str,
                  value: str):
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "value", value)
+        GetMetricsPolicyPolicyRuleTagResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            key=key,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             key: str,
+             value: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("key", key)
+        _setter("value", value)
 
     @property
     @pulumi.getter
@@ -4905,10 +5992,25 @@ class GetRolesRoleResult(dict):
         :param str name: The Role Name.
         :param Sequence[str] permissions: List of Permissions (Strings) associated with Role.
         """
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "permissions", permissions)
+        GetRolesRoleResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            description=description,
+            id=id,
+            name=name,
+            permissions=permissions,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             description: str,
+             id: str,
+             name: str,
+             permissions: Sequence[str],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("description", description)
+        _setter("id", id)
+        _setter("name", name)
+        _setter("permissions", permissions)
 
     @property
     @pulumi.getter
@@ -4958,11 +6060,28 @@ class GetUserGroupsUserGroupResult(dict):
         :param Sequence[str] roles: List of roles associated with the group.
         :param Sequence[str] users: List of users assigned to the group.
         """
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "roles", roles)
-        pulumi.set(__self__, "users", users)
+        GetUserGroupsUserGroupResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            description=description,
+            id=id,
+            name=name,
+            roles=roles,
+            users=users,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             description: str,
+             id: str,
+             name: str,
+             roles: Sequence[str],
+             users: Sequence[str],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("description", description)
+        _setter("id", id)
+        _setter("name", name)
+        _setter("roles", roles)
+        _setter("users", users)
 
     @property
     @pulumi.getter
@@ -5019,11 +6138,28 @@ class GetUsersUserResult(dict):
         :param Sequence[str] permissions: List of permissions granted to a user.
         :param Sequence[str] user_group_ids: List of User Group Ids the user is a member of.
         """
-        pulumi.set(__self__, "customer", customer)
-        pulumi.set(__self__, "email", email)
-        pulumi.set(__self__, "last_successful_login", last_successful_login)
-        pulumi.set(__self__, "permissions", permissions)
-        pulumi.set(__self__, "user_group_ids", user_group_ids)
+        GetUsersUserResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            customer=customer,
+            email=email,
+            last_successful_login=last_successful_login,
+            permissions=permissions,
+            user_group_ids=user_group_ids,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             customer: str,
+             email: str,
+             last_successful_login: int,
+             permissions: Sequence[str],
+             user_group_ids: Sequence[str],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("customer", customer)
+        _setter("email", email)
+        _setter("last_successful_login", last_successful_login)
+        _setter("permissions", permissions)
+        _setter("user_group_ids", user_group_ids)
 
     @property
     @pulumi.getter

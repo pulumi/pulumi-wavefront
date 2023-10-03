@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 
 __all__ = ['ExternalLinkArgs', 'ExternalLink']
@@ -34,18 +34,39 @@ class ExternalLinkArgs:
                keys in order for the link to be displayed.
         :param pulumi.Input[str] source_filter_regex: Controls whether a link is displayed in the context menu of a highlighted series. If present, the source name of the highlighted series must match this regular expression in order for the link to be displayed.
         """
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "template", template)
+        ExternalLinkArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            description=description,
+            template=template,
+            is_log_integration=is_log_integration,
+            metric_filter_regex=metric_filter_regex,
+            name=name,
+            point_tag_filter_regexes=point_tag_filter_regexes,
+            source_filter_regex=source_filter_regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             description: pulumi.Input[str],
+             template: pulumi.Input[str],
+             is_log_integration: Optional[pulumi.Input[bool]] = None,
+             metric_filter_regex: Optional[pulumi.Input[str]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             point_tag_filter_regexes: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+             source_filter_regex: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("description", description)
+        _setter("template", template)
         if is_log_integration is not None:
-            pulumi.set(__self__, "is_log_integration", is_log_integration)
+            _setter("is_log_integration", is_log_integration)
         if metric_filter_regex is not None:
-            pulumi.set(__self__, "metric_filter_regex", metric_filter_regex)
+            _setter("metric_filter_regex", metric_filter_regex)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if point_tag_filter_regexes is not None:
-            pulumi.set(__self__, "point_tag_filter_regexes", point_tag_filter_regexes)
+            _setter("point_tag_filter_regexes", point_tag_filter_regexes)
         if source_filter_regex is not None:
-            pulumi.set(__self__, "source_filter_regex", source_filter_regex)
+            _setter("source_filter_regex", source_filter_regex)
 
     @property
     @pulumi.getter
@@ -158,20 +179,41 @@ class _ExternalLinkState:
         :param pulumi.Input[str] source_filter_regex: Controls whether a link is displayed in the context menu of a highlighted series. If present, the source name of the highlighted series must match this regular expression in order for the link to be displayed.
         :param pulumi.Input[str] template: The mustache template for this link. The template must expand to a full URL, including scheme, origin, etc.
         """
+        _ExternalLinkState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            description=description,
+            is_log_integration=is_log_integration,
+            metric_filter_regex=metric_filter_regex,
+            name=name,
+            point_tag_filter_regexes=point_tag_filter_regexes,
+            source_filter_regex=source_filter_regex,
+            template=template,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             description: Optional[pulumi.Input[str]] = None,
+             is_log_integration: Optional[pulumi.Input[bool]] = None,
+             metric_filter_regex: Optional[pulumi.Input[str]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             point_tag_filter_regexes: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+             source_filter_regex: Optional[pulumi.Input[str]] = None,
+             template: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if is_log_integration is not None:
-            pulumi.set(__self__, "is_log_integration", is_log_integration)
+            _setter("is_log_integration", is_log_integration)
         if metric_filter_regex is not None:
-            pulumi.set(__self__, "metric_filter_regex", metric_filter_regex)
+            _setter("metric_filter_regex", metric_filter_regex)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if point_tag_filter_regexes is not None:
-            pulumi.set(__self__, "point_tag_filter_regexes", point_tag_filter_regexes)
+            _setter("point_tag_filter_regexes", point_tag_filter_regexes)
         if source_filter_regex is not None:
-            pulumi.set(__self__, "source_filter_regex", source_filter_regex)
+            _setter("source_filter_regex", source_filter_regex)
         if template is not None:
-            pulumi.set(__self__, "template", template)
+            _setter("template", template)
 
     @property
     @pulumi.getter
@@ -347,6 +389,10 @@ class ExternalLink(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            ExternalLinkArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

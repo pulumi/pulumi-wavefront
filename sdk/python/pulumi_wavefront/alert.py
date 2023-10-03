@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 
 __all__ = ['AlertArgs', 'Alert']
@@ -62,36 +62,75 @@ class AlertArgs:
                Alert target format: ({email}|pd:{pd_key}|target:{alert-target-id}).
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] threshold_targets: A string to string map of Targets for severity.
         """
-        pulumi.set(__self__, "minutes", minutes)
-        pulumi.set(__self__, "tags", tags)
+        AlertArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            minutes=minutes,
+            tags=tags,
+            additional_information=additional_information,
+            alert_type=alert_type,
+            can_modifies=can_modifies,
+            can_views=can_views,
+            condition=condition,
+            conditions=conditions,
+            display_expression=display_expression,
+            name=name,
+            notification_resend_frequency_minutes=notification_resend_frequency_minutes,
+            process_rate_minutes=process_rate_minutes,
+            resolve_after_minutes=resolve_after_minutes,
+            severity=severity,
+            target=target,
+            threshold_targets=threshold_targets,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             minutes: pulumi.Input[int],
+             tags: pulumi.Input[Sequence[pulumi.Input[str]]],
+             additional_information: Optional[pulumi.Input[str]] = None,
+             alert_type: Optional[pulumi.Input[str]] = None,
+             can_modifies: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             can_views: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             condition: Optional[pulumi.Input[str]] = None,
+             conditions: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+             display_expression: Optional[pulumi.Input[str]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             notification_resend_frequency_minutes: Optional[pulumi.Input[int]] = None,
+             process_rate_minutes: Optional[pulumi.Input[int]] = None,
+             resolve_after_minutes: Optional[pulumi.Input[int]] = None,
+             severity: Optional[pulumi.Input[str]] = None,
+             target: Optional[pulumi.Input[str]] = None,
+             threshold_targets: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("minutes", minutes)
+        _setter("tags", tags)
         if additional_information is not None:
-            pulumi.set(__self__, "additional_information", additional_information)
+            _setter("additional_information", additional_information)
         if alert_type is not None:
-            pulumi.set(__self__, "alert_type", alert_type)
+            _setter("alert_type", alert_type)
         if can_modifies is not None:
-            pulumi.set(__self__, "can_modifies", can_modifies)
+            _setter("can_modifies", can_modifies)
         if can_views is not None:
-            pulumi.set(__self__, "can_views", can_views)
+            _setter("can_views", can_views)
         if condition is not None:
-            pulumi.set(__self__, "condition", condition)
+            _setter("condition", condition)
         if conditions is not None:
-            pulumi.set(__self__, "conditions", conditions)
+            _setter("conditions", conditions)
         if display_expression is not None:
-            pulumi.set(__self__, "display_expression", display_expression)
+            _setter("display_expression", display_expression)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if notification_resend_frequency_minutes is not None:
-            pulumi.set(__self__, "notification_resend_frequency_minutes", notification_resend_frequency_minutes)
+            _setter("notification_resend_frequency_minutes", notification_resend_frequency_minutes)
         if process_rate_minutes is not None:
-            pulumi.set(__self__, "process_rate_minutes", process_rate_minutes)
+            _setter("process_rate_minutes", process_rate_minutes)
         if resolve_after_minutes is not None:
-            pulumi.set(__self__, "resolve_after_minutes", resolve_after_minutes)
+            _setter("resolve_after_minutes", resolve_after_minutes)
         if severity is not None:
-            pulumi.set(__self__, "severity", severity)
+            _setter("severity", severity)
         if target is not None:
-            pulumi.set(__self__, "target", target)
+            _setter("target", target)
         if threshold_targets is not None:
-            pulumi.set(__self__, "threshold_targets", threshold_targets)
+            _setter("threshold_targets", threshold_targets)
 
     @property
     @pulumi.getter
@@ -350,38 +389,77 @@ class _AlertState:
                Alert target format: ({email}|pd:{pd_key}|target:{alert-target-id}).
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] threshold_targets: A string to string map of Targets for severity.
         """
+        _AlertState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            additional_information=additional_information,
+            alert_type=alert_type,
+            can_modifies=can_modifies,
+            can_views=can_views,
+            condition=condition,
+            conditions=conditions,
+            display_expression=display_expression,
+            minutes=minutes,
+            name=name,
+            notification_resend_frequency_minutes=notification_resend_frequency_minutes,
+            process_rate_minutes=process_rate_minutes,
+            resolve_after_minutes=resolve_after_minutes,
+            severity=severity,
+            tags=tags,
+            target=target,
+            threshold_targets=threshold_targets,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             additional_information: Optional[pulumi.Input[str]] = None,
+             alert_type: Optional[pulumi.Input[str]] = None,
+             can_modifies: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             can_views: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             condition: Optional[pulumi.Input[str]] = None,
+             conditions: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+             display_expression: Optional[pulumi.Input[str]] = None,
+             minutes: Optional[pulumi.Input[int]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             notification_resend_frequency_minutes: Optional[pulumi.Input[int]] = None,
+             process_rate_minutes: Optional[pulumi.Input[int]] = None,
+             resolve_after_minutes: Optional[pulumi.Input[int]] = None,
+             severity: Optional[pulumi.Input[str]] = None,
+             tags: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             target: Optional[pulumi.Input[str]] = None,
+             threshold_targets: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if additional_information is not None:
-            pulumi.set(__self__, "additional_information", additional_information)
+            _setter("additional_information", additional_information)
         if alert_type is not None:
-            pulumi.set(__self__, "alert_type", alert_type)
+            _setter("alert_type", alert_type)
         if can_modifies is not None:
-            pulumi.set(__self__, "can_modifies", can_modifies)
+            _setter("can_modifies", can_modifies)
         if can_views is not None:
-            pulumi.set(__self__, "can_views", can_views)
+            _setter("can_views", can_views)
         if condition is not None:
-            pulumi.set(__self__, "condition", condition)
+            _setter("condition", condition)
         if conditions is not None:
-            pulumi.set(__self__, "conditions", conditions)
+            _setter("conditions", conditions)
         if display_expression is not None:
-            pulumi.set(__self__, "display_expression", display_expression)
+            _setter("display_expression", display_expression)
         if minutes is not None:
-            pulumi.set(__self__, "minutes", minutes)
+            _setter("minutes", minutes)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if notification_resend_frequency_minutes is not None:
-            pulumi.set(__self__, "notification_resend_frequency_minutes", notification_resend_frequency_minutes)
+            _setter("notification_resend_frequency_minutes", notification_resend_frequency_minutes)
         if process_rate_minutes is not None:
-            pulumi.set(__self__, "process_rate_minutes", process_rate_minutes)
+            _setter("process_rate_minutes", process_rate_minutes)
         if resolve_after_minutes is not None:
-            pulumi.set(__self__, "resolve_after_minutes", resolve_after_minutes)
+            _setter("resolve_after_minutes", resolve_after_minutes)
         if severity is not None:
-            pulumi.set(__self__, "severity", severity)
+            _setter("severity", severity)
         if tags is not None:
-            pulumi.set(__self__, "tags", tags)
+            _setter("tags", tags)
         if target is not None:
-            pulumi.set(__self__, "target", target)
+            _setter("target", target)
         if threshold_targets is not None:
-            pulumi.set(__self__, "threshold_targets", threshold_targets)
+            _setter("threshold_targets", threshold_targets)
 
     @property
     @pulumi.getter(name="additionalInformation")
@@ -719,6 +797,10 @@ class Alert(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            AlertArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
