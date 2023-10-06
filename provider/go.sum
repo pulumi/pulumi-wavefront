@@ -2373,8 +2373,8 @@ github.com/vmihailenco/msgpack/v5 v5.3.5 h1:5gO0H1iULLWGhs2H5tbAHIZTV8/cYafcFOr9
 github.com/vmihailenco/msgpack/v5 v5.3.5/go.mod h1:7xyJ9e+0+9SaZT0Wt1RGleJXzli6Q/V5KbhBonMG9jc=
 github.com/vmihailenco/tagparser/v2 v2.0.0 h1:y09buUbR+b5aycVFQs/g70pqKVZNBmxwAhO7/IwNM9g=
 github.com/vmihailenco/tagparser/v2 v2.0.0/go.mod h1:Wri+At7QHww0WTrCBeu4J6bNtoV6mEfg5OIWRZA9qds=
-github.com/vmware/terraform-provider-wavefront v0.0.0-20230808000921-0f52eec14793 h1:WkTcyo580kyFRVZRPmF705XyeZJpfJXs0N7JjvH59us=
-github.com/vmware/terraform-provider-wavefront v0.0.0-20230808000921-0f52eec14793/go.mod h1:uUMTRiwpP7Ms8q/w91UDKri40zpRv0YSQlLT39WL904=
+github.com/vmware/terraform-provider-wavefront v0.0.0-20231006175808-f201cdf04025 h1:VQMHvMqER7wNICFkLt0jT5FuZoL7KA955HJo2afIbHw=
+github.com/vmware/terraform-provider-wavefront v0.0.0-20231006175808-f201cdf04025/go.mod h1:4nMSp8b/e+v5K2BwxAZz6mps09yL7Kj5C5a2R2GBcCw=
 github.com/vultr/govultr/v2 v2.17.2/go.mod h1:ZFOKGWmgjytfyjeyAdhQlSWwTjh2ig+X49cAp50dzXI=
 github.com/willf/bitset v1.1.11-0.20200630133818-d5bec3311243/go.mod h1:RjeCKbqT1RxIR/KWY6phxZiaY1IyutSBfGjNPySAYV4=
 github.com/willf/bitset v1.1.11/go.mod h1:83CECat5yLh5zVOf4P1ErAgKA5UDvKtgyUABdr3+MjI=
