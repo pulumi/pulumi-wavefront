@@ -129,6 +129,15 @@ class UserGroup(pulumi.CustomResource):
         """
         Provides a Wavefront User Group Resource. This allows user groups to be created, updated, and deleted.
 
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_wavefront as wavefront
+
+        basic = wavefront.UserGroup("basic", description="Basic User Group for Unit Tests")
+        ```
+
         ## Import
 
         User Groups can be imported by using the `id`, e.g.:
@@ -150,6 +159,15 @@ class UserGroup(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Provides a Wavefront User Group Resource. This allows user groups to be created, updated, and deleted.
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_wavefront as wavefront
+
+        basic = wavefront.UserGroup("basic", description="Basic User Group for Unit Tests")
+        ```
 
         ## Import
 

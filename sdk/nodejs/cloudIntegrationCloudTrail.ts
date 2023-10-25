@@ -8,6 +8,21 @@ import * as utilities from "./utilities";
  * Provides a Wavefront Cloud Integration for CloudTrail. This allows CloudTrail cloud integrations to be created,
  * updated, and deleted.
  *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as wavefront from "@pulumi/wavefront";
+ *
+ * const extId = new wavefront.CloudIntegrationAwsExternalId("extId", {});
+ * const cloudtrail = new wavefront.CloudIntegrationCloudTrail("cloudtrail", {
+ *     roleArn: "arn:aws::1234567:role/example-arn",
+ *     externalId: extId.id,
+ *     region: "us-west-2",
+ *     bucketName: "example-s3-bucket",
+ * });
+ * ```
+ *
  * ## Import
  *
  * CloudTrail Cloud Integrations can be imported by using the `id`, e.g.:

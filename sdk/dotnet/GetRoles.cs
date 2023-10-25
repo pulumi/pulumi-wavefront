@@ -13,12 +13,58 @@ namespace Pulumi.Wavefront
     {
         /// <summary>
         /// Use this data source to get all Roles in Wavefront.
+        /// 
+        /// {{% examples %}}
+        /// ## Example Usage
+        /// {{% example %}}
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Wavefront = Pulumi.Wavefront;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var roles = Wavefront.GetRoles.Invoke(new()
+        ///     {
+        ///         Limit = 10,
+        ///         Offset = 0,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// {{% /example %}}
+        /// {{% /examples %}}
         /// </summary>
         public static Task<GetRolesResult> InvokeAsync(GetRolesArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetRolesResult>("wavefront:index/getRoles:getRoles", args ?? new GetRolesArgs(), options.WithDefaults());
 
         /// <summary>
         /// Use this data source to get all Roles in Wavefront.
+        /// 
+        /// {{% examples %}}
+        /// ## Example Usage
+        /// {{% example %}}
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Wavefront = Pulumi.Wavefront;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var roles = Wavefront.GetRoles.Invoke(new()
+        ///     {
+        ///         Limit = 10,
+        ///         Offset = 0,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// {{% /example %}}
+        /// {{% /examples %}}
         /// </summary>
         public static Output<GetRolesResult> Invoke(GetRolesInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetRolesResult>("wavefront:index/getRoles:getRoles", args ?? new GetRolesInvokeArgs(), options.WithDefaults());

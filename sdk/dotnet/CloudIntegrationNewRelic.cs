@@ -13,6 +13,24 @@ namespace Pulumi.Wavefront
     /// Provides a Wavefront Cloud Integration for New Relic. This allows New Relic cloud integrations to be created,
     /// updated, and deleted.
     /// 
+    /// ## Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Wavefront = Pulumi.Wavefront;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var newrelic = new Wavefront.CloudIntegrationNewRelic("newrelic", new()
+    ///     {
+    ///         ApiKey = "example-api-key",
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// 
     /// ## Import
     /// 
     /// NewRelic Integrations can be imported by using the `id`, e.g.:

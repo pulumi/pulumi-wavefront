@@ -8,6 +8,17 @@ import * as utilities from "./utilities";
 
 /**
  * Use this data source to get information about a Wavefront alert by its ID.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as wavefront from "@pulumi/wavefront";
+ *
+ * const example = wavefront.getAlert({
+ *     id: "alert-id",
+ * });
+ * ```
  */
 export function getAlert(args: GetAlertArgs, opts?: pulumi.InvokeOptions): Promise<GetAlertResult> {
 
@@ -128,6 +139,17 @@ export interface GetAlertResult {
 }
 /**
  * Use this data source to get information about a Wavefront alert by its ID.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as wavefront from "@pulumi/wavefront";
+ *
+ * const example = wavefront.getAlert({
+ *     id: "alert-id",
+ * });
+ * ```
  */
 export function getAlertOutput(args: GetAlertOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAlertResult> {
     return pulumi.output(args).apply((a: any) => getAlert(a, opts))

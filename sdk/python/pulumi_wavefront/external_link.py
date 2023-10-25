@@ -343,6 +343,17 @@ class ExternalLink(pulumi.CustomResource):
         """
         Provides a Wavefront External Link Resource. This allows external links to be created, updated, and deleted.
 
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_wavefront as wavefront
+
+        basic = wavefront.ExternalLink("basic",
+            description="An external link description",
+            template="https://example.com/source={{{source}}}&startTime={{startEpochMillis}}")
+        ```
+
         ## Import
 
         Maintenance windows can be imported by using the `id`, e.g.:
@@ -372,6 +383,17 @@ class ExternalLink(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Provides a Wavefront External Link Resource. This allows external links to be created, updated, and deleted.
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_wavefront as wavefront
+
+        basic = wavefront.ExternalLink("basic",
+            description="An external link description",
+            template="https://example.com/source={{{source}}}&startTime={{startEpochMillis}}")
+        ```
 
         ## Import
 

@@ -156,9 +156,35 @@ class MetricsPolicy(pulumi.CustomResource):
         """
         Provides a Wavefront Metrics Policy Resource. This allows management of Metrics Policy to control access to time series, histograms, and delta counters
 
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_wavefront as wavefront
+
+        everyone = wavefront.get_default_user_group()
+        main = wavefront.MetricsPolicy("main", policy_rules=[wavefront.MetricsPolicyPolicyRuleArgs(
+            name="Allow All Metrics",
+            description="Predefined policy rule. Allows access to all metrics (timeseries, histograms, and counters) for all accounts. If this rule is removed, all accounts can access all metrics if there are no matching blocking rules.",
+            prefixes=["*"],
+            tags_anded=False,
+            access_type="ALLOW",
+            user_group_ids=[everyone.group_id],
+        )])
+        ```
         ## Data Source
 
         Provides a Wavefront Metrics Policy Data Source. This allows looking up the current policy and associated rules.
+
+        ### Example
+
+        ```python
+        import pulumi
+        import pulumi_wavefront as wavefront
+
+        policy_metrics_policy = wavefront.get_metrics_policy()
+        pulumi.export("policy", policy_metrics_policy)
+        ```
 
         ## Import
 
@@ -181,9 +207,35 @@ class MetricsPolicy(pulumi.CustomResource):
         """
         Provides a Wavefront Metrics Policy Resource. This allows management of Metrics Policy to control access to time series, histograms, and delta counters
 
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_wavefront as wavefront
+
+        everyone = wavefront.get_default_user_group()
+        main = wavefront.MetricsPolicy("main", policy_rules=[wavefront.MetricsPolicyPolicyRuleArgs(
+            name="Allow All Metrics",
+            description="Predefined policy rule. Allows access to all metrics (timeseries, histograms, and counters) for all accounts. If this rule is removed, all accounts can access all metrics if there are no matching blocking rules.",
+            prefixes=["*"],
+            tags_anded=False,
+            access_type="ALLOW",
+            user_group_ids=[everyone.group_id],
+        )])
+        ```
         ## Data Source
 
         Provides a Wavefront Metrics Policy Data Source. This allows looking up the current policy and associated rules.
+
+        ### Example
+
+        ```python
+        import pulumi
+        import pulumi_wavefront as wavefront
+
+        policy_metrics_policy = wavefront.get_metrics_policy()
+        pulumi.export("policy", policy_metrics_policy)
+        ```
 
         ## Import
 

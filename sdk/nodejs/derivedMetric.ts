@@ -8,6 +8,18 @@ import * as utilities from "./utilities";
  * Provides a Wavefront Derived Metric Resource. This allows derived metrics to be created,
  * updated, and deleted.
  *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as wavefront from "@pulumi/wavefront";
+ *
+ * const derived = new wavefront.DerivedMetric("derived", {
+ *     minutes: 5,
+ *     query: "aliasMetric(5, \"some.metric\")",
+ * });
+ * ```
+ *
  * ## Import
  *
  * Derived Metrics can be imported by using the `id`, e.g.:

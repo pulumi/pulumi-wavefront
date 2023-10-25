@@ -8,6 +8,19 @@ import * as utilities from "./utilities";
  * Provides a Wavefront Cloud Integration for Microsoft Azure. This allows Azure cloud integrations to be created,
  * updated, and deleted.
  *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as wavefront from "@pulumi/wavefront";
+ *
+ * const azureActivityLog = new wavefront.CloudIntegrationAzureActivityLog("azureActivityLog", {
+ *     clientId: "client-id2",
+ *     clientSecret: "client-secret2",
+ *     tenant: "my-tenant2",
+ * });
+ * ```
+ *
  * ## Import
  *
  * Azure Cloud Integrations can be imported by using the `id`, e.g.:

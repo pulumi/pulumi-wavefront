@@ -16,6 +16,39 @@ import (
 // Provides a Wavefront Cloud Integration for CloudTrail. This allows CloudTrail cloud integrations to be created,
 // updated, and deleted.
 //
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-wavefront/sdk/v3/go/wavefront"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			extId, err := wavefront.NewCloudIntegrationAwsExternalId(ctx, "extId", nil)
+//			if err != nil {
+//				return err
+//			}
+//			_, err = wavefront.NewCloudIntegrationCloudTrail(ctx, "cloudtrail", &wavefront.CloudIntegrationCloudTrailArgs{
+//				RoleArn:    pulumi.String("arn:aws::1234567:role/example-arn"),
+//				ExternalId: extId.ID(),
+//				Region:     pulumi.String("us-west-2"),
+//				BucketName: pulumi.String("example-s3-bucket"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+//
 // ## Import
 //
 // CloudTrail Cloud Integrations can be imported by using the `id`, e.g.:

@@ -16,6 +16,37 @@ import (
 // Provides a Wavefront Cloud Integration for EC2. This allows EC2 cloud integrations to be created,
 // updated, and deleted.
 //
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-wavefront/sdk/v3/go/wavefront"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			extId, err := wavefront.NewCloudIntegrationAwsExternalId(ctx, "extId", nil)
+//			if err != nil {
+//				return err
+//			}
+//			_, err = wavefront.NewCloudIntegrationEc2(ctx, "ec2", &wavefront.CloudIntegrationEc2Args{
+//				RoleArn:    pulumi.String("arn:aws::1234567:role/example-arn"),
+//				ExternalId: extId.ID(),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+//
 // ## Import
 //
 // EC2 Cloud Integrations can be imported by using the `id`, e.g.:

@@ -7,6 +7,22 @@ import * as utilities from "./utilities";
 /**
  * Provides a Wavefront event resource. This allows events to be created, updated, and deleted.
  *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as wavefront from "@pulumi/wavefront";
+ *
+ * const event = new wavefront.Event("event", {
+ *     annotations: {
+ *         details: "description",
+ *         severity: "info",
+ *         type: "event type",
+ *     },
+ *     tags: ["eventTag1"],
+ * });
+ * ```
+ *
  * ## Import
  *
  * You can import events by using the id, for example:

@@ -215,6 +215,15 @@ class User(pulumi.CustomResource):
         """
         Provides a Wavefront User Resource. This allows user accounts to be created, updated, and deleted.
 
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_wavefront as wavefront
+
+        basic = wavefront.User("basic", email="test+tftesting@example.com")
+        ```
+
         ## Import
 
         Users can be imported by using the `id`, e.g.:
@@ -240,6 +249,15 @@ class User(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Provides a Wavefront User Resource. This allows user accounts to be created, updated, and deleted.
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_wavefront as wavefront
+
+        basic = wavefront.User("basic", email="test+tftesting@example.com")
+        ```
 
         ## Import
 

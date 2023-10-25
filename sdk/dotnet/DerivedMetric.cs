@@ -13,6 +13,25 @@ namespace Pulumi.Wavefront
     /// Provides a Wavefront Derived Metric Resource. This allows derived metrics to be created,
     /// updated, and deleted.
     /// 
+    /// ## Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Wavefront = Pulumi.Wavefront;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var derived = new Wavefront.DerivedMetric("derived", new()
+    ///     {
+    ///         Minutes = 5,
+    ///         Query = "aliasMetric(5, \"some.metric\")",
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// 
     /// ## Import
     /// 
     /// Derived Metrics can be imported by using the `id`, e.g.:

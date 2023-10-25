@@ -495,6 +495,20 @@ class CloudIntegrationCloudTrail(pulumi.CustomResource):
         Provides a Wavefront Cloud Integration for CloudTrail. This allows CloudTrail cloud integrations to be created,
         updated, and deleted.
 
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_wavefront as wavefront
+
+        ext_id = wavefront.CloudIntegrationAwsExternalId("extId")
+        cloudtrail = wavefront.CloudIntegrationCloudTrail("cloudtrail",
+            role_arn="arn:aws::1234567:role/example-arn",
+            external_id=ext_id.id,
+            region="us-west-2",
+            bucket_name="example-s3-bucket")
+        ```
+
         ## Import
 
         CloudTrail Cloud Integrations can be imported by using the `id`, e.g.:
@@ -526,6 +540,20 @@ class CloudIntegrationCloudTrail(pulumi.CustomResource):
         """
         Provides a Wavefront Cloud Integration for CloudTrail. This allows CloudTrail cloud integrations to be created,
         updated, and deleted.
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_wavefront as wavefront
+
+        ext_id = wavefront.CloudIntegrationAwsExternalId("extId")
+        cloudtrail = wavefront.CloudIntegrationCloudTrail("cloudtrail",
+            role_arn="arn:aws::1234567:role/example-arn",
+            external_id=ext_id.id,
+            region="us-west-2",
+            bucket_name="example-s3-bucket")
+        ```
 
         ## Import
 

@@ -9,6 +9,15 @@ import * as utilities from "./utilities";
 /**
  * Provides a Wavefront Ingestion Policy Resource. This allows ingestion policies to be created, updated, and deleted.
  *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as wavefront from "@pulumi/wavefront";
+ *
+ * const basic = new wavefront.IngestionPolicy("basic", {description: "An ingestion policy for testing"});
+ * ```
+ *
  * ## Import
  *
  * ingestion policies can be imported by using the `id`, e.g.:

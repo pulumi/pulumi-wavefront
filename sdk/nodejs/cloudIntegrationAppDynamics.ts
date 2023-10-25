@@ -8,6 +8,19 @@ import * as utilities from "./utilities";
  * Provides a Wavefront Cloud Integration for AppDynamics. This allows AppDynamics cloud integrations to be created,
  * updated, and deleted.
  *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as wavefront from "@pulumi/wavefront";
+ *
+ * const appDynamics = new wavefront.CloudIntegrationAppDynamics("appDynamics", {
+ *     controllerName: "exampleController",
+ *     encryptedPassword: "encryptedPassword",
+ *     userName: "example",
+ * });
+ * ```
+ *
  * ## Import
  *
  * AppDynamic Cloud Integrations can be imported by using the `id`, e.g.:

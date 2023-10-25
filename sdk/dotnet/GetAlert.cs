@@ -13,12 +13,56 @@ namespace Pulumi.Wavefront
     {
         /// <summary>
         /// Use this data source to get information about a Wavefront alert by its ID.
+        /// 
+        /// {{% examples %}}
+        /// ## Example Usage
+        /// {{% example %}}
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Wavefront = Pulumi.Wavefront;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var example = Wavefront.GetAlert.Invoke(new()
+        ///     {
+        ///         Id = "alert-id",
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// {{% /example %}}
+        /// {{% /examples %}}
         /// </summary>
         public static Task<GetAlertResult> InvokeAsync(GetAlertArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetAlertResult>("wavefront:index/getAlert:getAlert", args ?? new GetAlertArgs(), options.WithDefaults());
 
         /// <summary>
         /// Use this data source to get information about a Wavefront alert by its ID.
+        /// 
+        /// {{% examples %}}
+        /// ## Example Usage
+        /// {{% example %}}
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Wavefront = Pulumi.Wavefront;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var example = Wavefront.GetAlert.Invoke(new()
+        ///     {
+        ///         Id = "alert-id",
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// {{% /example %}}
+        /// {{% /examples %}}
         /// </summary>
         public static Output<GetAlertResult> Invoke(GetAlertInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAlertResult>("wavefront:index/getAlert:getAlert", args ?? new GetAlertInvokeArgs(), options.WithDefaults());

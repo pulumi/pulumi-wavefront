@@ -416,6 +416,19 @@ class CloudIntegrationAzureActivityLog(pulumi.CustomResource):
         Provides a Wavefront Cloud Integration for Azure Activity Logs. This allows Azure activity log cloud integrations to be created,
         updated, and deleted.
 
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_wavefront as wavefront
+
+        azure_activity_log = wavefront.CloudIntegrationAzureActivityLog("azureActivityLog",
+            category_filters=["ADMINISTRATIVE"],
+            client_id="client-id2",
+            client_secret="client-secret2",
+            tenant="my-tenant2")
+        ```
+
         ## Import
 
         Azure Activity Log Cloud Integrations can be imported by using the `id`, e.g.:
@@ -445,6 +458,19 @@ class CloudIntegrationAzureActivityLog(pulumi.CustomResource):
         """
         Provides a Wavefront Cloud Integration for Azure Activity Logs. This allows Azure activity log cloud integrations to be created,
         updated, and deleted.
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_wavefront as wavefront
+
+        azure_activity_log = wavefront.CloudIntegrationAzureActivityLog("azureActivityLog",
+            category_filters=["ADMINISTRATIVE"],
+            client_id="client-id2",
+            client_secret="client-secret2",
+            tenant="my-tenant2")
+        ```
 
         ## Import
 

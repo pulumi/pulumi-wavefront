@@ -6,6 +6,17 @@ import * as utilities from "./utilities";
 
 /**
  * Use this data source to get information about a Wavefront external link by its ID.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as wavefront from "@pulumi/wavefront";
+ *
+ * const example = wavefront.getExternalLink({
+ *     id: "sample-external-link-id",
+ * });
+ * ```
  */
 export function getExternalLink(args: GetExternalLinkArgs, opts?: pulumi.InvokeOptions): Promise<GetExternalLinkResult> {
 
@@ -83,6 +94,17 @@ export interface GetExternalLinkResult {
 }
 /**
  * Use this data source to get information about a Wavefront external link by its ID.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as wavefront from "@pulumi/wavefront";
+ *
+ * const example = wavefront.getExternalLink({
+ *     id: "sample-external-link-id",
+ * });
+ * ```
  */
 export function getExternalLinkOutput(args: GetExternalLinkOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExternalLinkResult> {
     return pulumi.output(args).apply((a: any) => getExternalLink(a, opts))

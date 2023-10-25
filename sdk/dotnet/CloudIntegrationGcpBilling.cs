@@ -13,6 +13,28 @@ namespace Pulumi.Wavefront
     /// Provides a Wavefront Cloud Integration for Google Cloud Billing. This allows GCP Billing cloud integrations to be created,
     /// updated, and deleted.
     /// 
+    /// ## Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Wavefront = Pulumi.Wavefront;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var gcpBilling = new Wavefront.CloudIntegrationGcpBilling("gcpBilling", new()
+    ///     {
+    ///         ApiKey = "example-api-key",
+    ///         JsonKey = @"{...your gcp key ...}
+    /// 
+    /// ",
+    ///         ProjectId = "example-gcp-project",
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// 
     /// ## Import
     /// 
     /// GCP Billing Cloud Integrations can be imported by using the `id`, e.g.:

@@ -463,6 +463,23 @@ class MaintenanceWindow(pulumi.CustomResource):
         """
         Provides a Wavefront Maintenance Window Resource. This allows maintenance windows to be created, updated, and deleted.
 
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_wavefront as wavefront
+
+        basic = wavefront.MaintenanceWindow("basic",
+            end_time_in_seconds=1601123456,
+            reason="Routine maintenance for 2020",
+            relevant_host_names=[
+                "my_hostname",
+                "my_other_hostname",
+            ],
+            start_time_in_seconds=1600123456,
+            title="Routine maintenance")
+        ```
+
         ## Import
 
         Maintenance windows can be imported using the `id`, e.g.
@@ -502,6 +519,23 @@ class MaintenanceWindow(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Provides a Wavefront Maintenance Window Resource. This allows maintenance windows to be created, updated, and deleted.
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_wavefront as wavefront
+
+        basic = wavefront.MaintenanceWindow("basic",
+            end_time_in_seconds=1601123456,
+            reason="Routine maintenance for 2020",
+            relevant_host_names=[
+                "my_hostname",
+                "my_other_hostname",
+            ],
+            start_time_in_seconds=1600123456,
+            title="Routine maintenance")
+        ```
 
         ## Import
 

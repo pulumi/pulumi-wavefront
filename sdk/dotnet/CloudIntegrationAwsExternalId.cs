@@ -12,6 +12,21 @@ namespace Pulumi.Wavefront
     /// <summary>
     /// Provides an External ID for use in Amazon Web Services IAM Roles. This allows External IDs to be created and deleted.
     /// 
+    /// ## Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Wavefront = Pulumi.Wavefront;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var externalId = new Wavefront.CloudIntegrationAwsExternalId("externalId");
+    /// 
+    /// });
+    /// ```
+    /// 
     /// ## Import
     /// 
     /// External IDs can be imported by using the `id`, e.g.:

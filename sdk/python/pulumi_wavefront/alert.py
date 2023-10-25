@@ -736,6 +736,25 @@ class Alert(pulumi.CustomResource):
         """
         Provides a Wavefront Alert resource. This allows alerts to be created, updated, and deleted.
 
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_wavefront as wavefront
+
+        foobar = wavefront.Alert("foobar",
+            condition="100-ts(\\"cpu.usage_idle\\", environment=preprod and cpu=cpu-total ) > 80",
+            display_expression="100-ts(\\"cpu.usage_idle\\", environment=preprod and cpu=cpu-total )",
+            minutes=5,
+            resolve_after_minutes=5,
+            severity="WARN",
+            tags=[
+                "terraform",
+                "test",
+            ],
+            target="test@example.com,target:alert-target-id")
+        ```
+
         ## Import
 
         Alerts can be imported using the `id`, e.g.
@@ -784,6 +803,25 @@ class Alert(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Provides a Wavefront Alert resource. This allows alerts to be created, updated, and deleted.
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_wavefront as wavefront
+
+        foobar = wavefront.Alert("foobar",
+            condition="100-ts(\\"cpu.usage_idle\\", environment=preprod and cpu=cpu-total ) > 80",
+            display_expression="100-ts(\\"cpu.usage_idle\\", environment=preprod and cpu=cpu-total )",
+            minutes=5,
+            resolve_after_minutes=5,
+            severity="WARN",
+            tags=[
+                "terraform",
+                "test",
+            ],
+            target="test@example.com,target:alert-target-id")
+        ```
 
         ## Import
 

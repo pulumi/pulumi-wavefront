@@ -12,6 +12,32 @@ namespace Pulumi.Wavefront
     /// <summary>
     /// Provides a Wavefront Maintenance Window Resource. This allows maintenance windows to be created, updated, and deleted.
     /// 
+    /// ## Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Wavefront = Pulumi.Wavefront;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var basic = new Wavefront.MaintenanceWindow("basic", new()
+    ///     {
+    ///         EndTimeInSeconds = 1601123456,
+    ///         Reason = "Routine maintenance for 2020",
+    ///         RelevantHostNames = new[]
+    ///         {
+    ///             "my_hostname",
+    ///             "my_other_hostname",
+    ///         },
+    ///         StartTimeInSeconds = 1600123456,
+    ///         Title = "Routine maintenance",
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// 
     /// ## Import
     /// 
     /// Maintenance windows can be imported using the `id`, e.g.

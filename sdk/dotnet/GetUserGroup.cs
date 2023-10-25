@@ -13,12 +13,56 @@ namespace Pulumi.Wavefront
     {
         /// <summary>
         /// Use this data source to get information about a Wavefront user group by its ID.
+        /// 
+        /// {{% examples %}}
+        /// ## Example Usage
+        /// {{% example %}}
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Wavefront = Pulumi.Wavefront;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var example = Wavefront.GetUserGroup.Invoke(new()
+        ///     {
+        ///         Id = "user-group-id",
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// {{% /example %}}
+        /// {{% /examples %}}
         /// </summary>
         public static Task<GetUserGroupResult> InvokeAsync(GetUserGroupArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetUserGroupResult>("wavefront:index/getUserGroup:getUserGroup", args ?? new GetUserGroupArgs(), options.WithDefaults());
 
         /// <summary>
         /// Use this data source to get information about a Wavefront user group by its ID.
+        /// 
+        /// {{% examples %}}
+        /// ## Example Usage
+        /// {{% example %}}
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Wavefront = Pulumi.Wavefront;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var example = Wavefront.GetUserGroup.Invoke(new()
+        ///     {
+        ///         Id = "user-group-id",
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// {{% /example %}}
+        /// {{% /examples %}}
         /// </summary>
         public static Output<GetUserGroupResult> Invoke(GetUserGroupInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetUserGroupResult>("wavefront:index/getUserGroup:getUserGroup", args ?? new GetUserGroupInvokeArgs(), options.WithDefaults());

@@ -13,6 +13,27 @@ namespace Pulumi.Wavefront
     /// Provides a Wavefront Cloud Integration for EC2. This allows EC2 cloud integrations to be created,
     /// updated, and deleted.
     /// 
+    /// ## Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Wavefront = Pulumi.Wavefront;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var extId = new Wavefront.CloudIntegrationAwsExternalId("extId");
+    /// 
+    ///     var ec2 = new Wavefront.CloudIntegrationEc2("ec2", new()
+    ///     {
+    ///         RoleArn = "arn:aws::1234567:role/example-arn",
+    ///         ExternalId = extId.Id,
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// 
     /// ## Import
     /// 
     /// EC2 Cloud Integrations can be imported by using the `id`, e.g.:

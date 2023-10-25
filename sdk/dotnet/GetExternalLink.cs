@@ -13,12 +13,56 @@ namespace Pulumi.Wavefront
     {
         /// <summary>
         /// Use this data source to get information about a Wavefront external link by its ID.
+        /// 
+        /// {{% examples %}}
+        /// ## Example Usage
+        /// {{% example %}}
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Wavefront = Pulumi.Wavefront;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var example = Wavefront.GetExternalLink.Invoke(new()
+        ///     {
+        ///         Id = "sample-external-link-id",
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// {{% /example %}}
+        /// {{% /examples %}}
         /// </summary>
         public static Task<GetExternalLinkResult> InvokeAsync(GetExternalLinkArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetExternalLinkResult>("wavefront:index/getExternalLink:getExternalLink", args ?? new GetExternalLinkArgs(), options.WithDefaults());
 
         /// <summary>
         /// Use this data source to get information about a Wavefront external link by its ID.
+        /// 
+        /// {{% examples %}}
+        /// ## Example Usage
+        /// {{% example %}}
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Wavefront = Pulumi.Wavefront;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var example = Wavefront.GetExternalLink.Invoke(new()
+        ///     {
+        ///         Id = "sample-external-link-id",
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// {{% /example %}}
+        /// {{% /examples %}}
         /// </summary>
         public static Output<GetExternalLinkResult> Invoke(GetExternalLinkInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetExternalLinkResult>("wavefront:index/getExternalLink:getExternalLink", args ?? new GetExternalLinkInvokeArgs(), options.WithDefaults());

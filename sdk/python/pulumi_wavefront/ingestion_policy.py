@@ -306,6 +306,15 @@ class IngestionPolicy(pulumi.CustomResource):
         """
         Provides a Wavefront Ingestion Policy Resource. This allows ingestion policies to be created, updated, and deleted.
 
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_wavefront as wavefront
+
+        basic = wavefront.IngestionPolicy("basic", description="An ingestion policy for testing")
+        ```
+
         ## Import
 
         ingestion policies can be imported by using the `id`, e.g.:
@@ -327,6 +336,15 @@ class IngestionPolicy(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Provides a Wavefront Ingestion Policy Resource. This allows ingestion policies to be created, updated, and deleted.
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_wavefront as wavefront
+
+        basic = wavefront.IngestionPolicy("basic", description="An ingestion policy for testing")
+        ```
 
         ## Import
 
