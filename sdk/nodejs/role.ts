@@ -7,6 +7,15 @@ import * as utilities from "./utilities";
 /**
  * Provides a Wavefront Role Resource. This allows roles to be created, updated, and deleted.
  *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as wavefront from "@pulumi/wavefront";
+ *
+ * const role = new wavefront.Role("role", {});
+ * ```
+ *
  * ## Import
  *
  * Roles can be imported by using the `id`, e.g.:

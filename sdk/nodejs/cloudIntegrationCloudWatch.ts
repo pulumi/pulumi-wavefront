@@ -8,6 +8,20 @@ import * as utilities from "./utilities";
  * Provides a Wavefront Cloud Integration for CloudWatch. This allows CloudWatch cloud integrations to be created,
  * updated, and deleted.
  *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as wavefront from "@pulumi/wavefront";
+ *
+ * const extId = new wavefront.CloudIntegrationAwsExternalId("extId", {});
+ * const cloudwatch = new wavefront.CloudIntegrationCloudWatch("cloudwatch", {
+ *     forceSave: true,
+ *     roleArn: "arn:aws::1234567:role/example-arn",
+ *     externalId: extId.id,
+ * });
+ * ```
+ *
  * ## Import
  *
  * CloudWatch Cloud Integrations can be imported by using the `id`, e.g.:

@@ -60,6 +60,15 @@ class AwaitableGetDefaultUserGroupResult(GetDefaultUserGroupResult):
 def get_default_user_group(opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDefaultUserGroupResult:
     """
     Use this data source to get the Group ID of the `Everyone` group in Wavefront.
+
+    ## Example Usage
+
+    ```python
+    import pulumi
+    import pulumi_wavefront as wavefront
+
+    everyone_group = wavefront.get_default_user_group()
+    ```
     """
     __args__ = dict()
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
@@ -74,5 +83,14 @@ def get_default_user_group(opts: Optional[pulumi.InvokeOptions] = None) -> Await
 def get_default_user_group_output(opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDefaultUserGroupResult]:
     """
     Use this data source to get the Group ID of the `Everyone` group in Wavefront.
+
+    ## Example Usage
+
+    ```python
+    import pulumi
+    import pulumi_wavefront as wavefront
+
+    everyone_group = wavefront.get_default_user_group()
+    ```
     """
     ...

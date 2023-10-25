@@ -383,6 +383,20 @@ class CloudIntegrationGcpBilling(pulumi.CustomResource):
         Provides a Wavefront Cloud Integration for Google Cloud Billing. This allows GCP Billing cloud integrations to be created,
         updated, and deleted.
 
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_wavefront as wavefront
+
+        gcp_billing = wavefront.CloudIntegrationGcpBilling("gcpBilling",
+            api_key="example-api-key",
+            json_key=\"\"\"{...your gcp key ...}
+
+        \"\"\",
+            project_id="example-gcp-project")
+        ```
+
         ## Import
 
         GCP Billing Cloud Integrations can be imported by using the `id`, e.g.:
@@ -412,6 +426,20 @@ class CloudIntegrationGcpBilling(pulumi.CustomResource):
         """
         Provides a Wavefront Cloud Integration for Google Cloud Billing. This allows GCP Billing cloud integrations to be created,
         updated, and deleted.
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_wavefront as wavefront
+
+        gcp_billing = wavefront.CloudIntegrationGcpBilling("gcpBilling",
+            api_key="example-api-key",
+            json_key=\"\"\"{...your gcp key ...}
+
+        \"\"\",
+            project_id="example-gcp-project")
+        ```
 
         ## Import
 

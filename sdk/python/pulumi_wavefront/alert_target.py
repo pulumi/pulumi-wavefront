@@ -515,6 +515,27 @@ class AlertTarget(pulumi.CustomResource):
         """
         Provides a wavefront Alert Target resource. This allows alert targets to created, updated, and deleted.
 
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_wavefront as wavefront
+
+        test_target = wavefront.AlertTarget("testTarget",
+            content_type="application/json",
+            custom_headers={
+                "Testing": "true",
+            },
+            description="Test target",
+            method="WEBHOOK",
+            recipient="https://hooks.slack.com/services/test/me",
+            template="{}",
+            triggers=[
+                "ALERT_OPENED",
+                "ALERT_RESOLVED",
+            ])
+        ```
+
         ## Import
 
         Alert Targets can be imported using the `id`, e.g.:
@@ -548,6 +569,27 @@ class AlertTarget(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Provides a wavefront Alert Target resource. This allows alert targets to created, updated, and deleted.
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_wavefront as wavefront
+
+        test_target = wavefront.AlertTarget("testTarget",
+            content_type="application/json",
+            custom_headers={
+                "Testing": "true",
+            },
+            description="Test target",
+            method="WEBHOOK",
+            recipient="https://hooks.slack.com/services/test/me",
+            template="{}",
+            triggers=[
+                "ALERT_OPENED",
+                "ALERT_RESOLVED",
+            ])
+        ```
 
         ## Import
 

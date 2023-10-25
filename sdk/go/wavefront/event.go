@@ -15,6 +15,39 @@ import (
 
 // Provides a Wavefront event resource. This allows events to be created, updated, and deleted.
 //
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-wavefront/sdk/v3/go/wavefront"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := wavefront.NewEvent(ctx, "event", &wavefront.EventArgs{
+//				Annotations: pulumi.StringMap{
+//					"details":  pulumi.String("description"),
+//					"severity": pulumi.String("info"),
+//					"type":     pulumi.String("event type"),
+//				},
+//				Tags: pulumi.StringArray{
+//					pulumi.String("eventTag1"),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+//
 // ## Import
 //
 // You can import events by using the id, for example:

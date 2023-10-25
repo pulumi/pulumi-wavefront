@@ -7,6 +7,26 @@ import * as utilities from "./utilities";
 /**
  * Provides a Wavefront Alert resource. This allows alerts to be created, updated, and deleted.
  *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as wavefront from "@pulumi/wavefront";
+ *
+ * const foobar = new wavefront.Alert("foobar", {
+ *     condition: "100-ts(\"cpu.usage_idle\", environment=preprod and cpu=cpu-total ) > 80",
+ *     displayExpression: "100-ts(\"cpu.usage_idle\", environment=preprod and cpu=cpu-total )",
+ *     minutes: 5,
+ *     resolveAfterMinutes: 5,
+ *     severity: "WARN",
+ *     tags: [
+ *         "terraform",
+ *         "test",
+ *     ],
+ *     target: "test@example.com,target:alert-target-id",
+ * });
+ * ```
+ *
  * ## Import
  *
  * Alerts can be imported using the `id`, e.g.

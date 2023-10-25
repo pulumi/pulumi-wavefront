@@ -8,6 +8,18 @@ import * as utilities from "./utilities";
 
 /**
  * Use this data source to get information about all Wavefront dashboards.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as wavefront from "@pulumi/wavefront";
+ *
+ * const example = wavefront.getDashboards({
+ *     limit: 10,
+ *     offset: 0,
+ * });
+ * ```
  */
 export function getDashboards(args?: GetDashboardsArgs, opts?: pulumi.InvokeOptions): Promise<GetDashboardsResult> {
     args = args || {};
@@ -50,6 +62,18 @@ export interface GetDashboardsResult {
 }
 /**
  * Use this data source to get information about all Wavefront dashboards.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as wavefront from "@pulumi/wavefront";
+ *
+ * const example = wavefront.getDashboards({
+ *     limit: 10,
+ *     offset: 0,
+ * });
+ * ```
  */
 export function getDashboardsOutput(args?: GetDashboardsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDashboardsResult> {
     return pulumi.output(args).apply((a: any) => getDashboards(a, opts))

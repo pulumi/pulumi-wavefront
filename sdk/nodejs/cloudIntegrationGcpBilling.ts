@@ -8,6 +8,21 @@ import * as utilities from "./utilities";
  * Provides a Wavefront Cloud Integration for Google Cloud Billing. This allows GCP Billing cloud integrations to be created,
  * updated, and deleted.
  *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as wavefront from "@pulumi/wavefront";
+ *
+ * const gcpBilling = new wavefront.CloudIntegrationGcpBilling("gcpBilling", {
+ *     apiKey: "example-api-key",
+ *     jsonKey: `{...your gcp key ...}
+ *
+ * `,
+ *     projectId: "example-gcp-project",
+ * });
+ * ```
+ *
  * ## Import
  *
  * GCP Billing Cloud Integrations can be imported by using the `id`, e.g.:

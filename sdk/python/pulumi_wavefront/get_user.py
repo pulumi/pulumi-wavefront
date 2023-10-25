@@ -106,6 +106,15 @@ def get_user(email: Optional[str] = None,
     """
     Use this data source to get information for a given user by email from Wavefront.
 
+    ## Example Usage
+
+    ```python
+    import pulumi
+    import pulumi_wavefront as wavefront
+
+    example = wavefront.get_user(email="example.user@example.com")
+    ```
+
 
     :param str email: The email associated with the user data to be fetched.
     """
@@ -128,6 +137,15 @@ def get_user_output(email: Optional[pulumi.Input[str]] = None,
                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetUserResult]:
     """
     Use this data source to get information for a given user by email from Wavefront.
+
+    ## Example Usage
+
+    ```python
+    import pulumi
+    import pulumi_wavefront as wavefront
+
+    example = wavefront.get_user(email="example.user@example.com")
+    ```
 
 
     :param str email: The email associated with the user data to be fetched.

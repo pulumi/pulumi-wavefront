@@ -240,6 +240,21 @@ class Event(pulumi.CustomResource):
         """
         Provides a Wavefront event resource. This allows events to be created, updated, and deleted.
 
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_wavefront as wavefront
+
+        event = wavefront.Event("event",
+            annotations={
+                "details": "description",
+                "severity": "info",
+                "type": "event type",
+            },
+            tags=["eventTag1"])
+        ```
+
         ## Import
 
         You can import events by using the id, for example:
@@ -263,6 +278,21 @@ class Event(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Provides a Wavefront event resource. This allows events to be created, updated, and deleted.
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_wavefront as wavefront
+
+        event = wavefront.Event("event",
+            annotations={
+                "details": "description",
+                "severity": "info",
+                "type": "event type",
+            },
+            tags=["eventTag1"])
+        ```
 
         ## Import
 

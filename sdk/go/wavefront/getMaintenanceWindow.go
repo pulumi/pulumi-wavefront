@@ -13,6 +13,32 @@ import (
 )
 
 // Use this data source to get information about a Wavefront maintenance window by its ID.
+//
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-wavefront/sdk/v3/go/wavefront"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := wavefront.LookupMaintenanceWindow(ctx, &wavefront.LookupMaintenanceWindowArgs{
+//				Id: "sample-maintenance-window-id",
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 func LookupMaintenanceWindow(ctx *pulumi.Context, args *LookupMaintenanceWindowArgs, opts ...pulumi.InvokeOption) (*LookupMaintenanceWindowResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupMaintenanceWindowResult

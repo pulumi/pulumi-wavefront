@@ -6,6 +6,17 @@ import * as utilities from "./utilities";
 
 /**
  * Use this data source to get information about a certain Wavefront event.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as wavefront from "@pulumi/wavefront";
+ *
+ * const example = wavefront.getEvent({
+ *     id: "sample-event-id",
+ * });
+ * ```
  */
 export function getEvent(args: GetEventArgs, opts?: pulumi.InvokeOptions): Promise<GetEventResult> {
 
@@ -69,6 +80,17 @@ export interface GetEventResult {
 }
 /**
  * Use this data source to get information about a certain Wavefront event.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as wavefront from "@pulumi/wavefront";
+ *
+ * const example = wavefront.getEvent({
+ *     id: "sample-event-id",
+ * });
+ * ```
  */
 export function getEventOutput(args: GetEventOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetEventResult> {
     return pulumi.output(args).apply((a: any) => getEvent(a, opts))

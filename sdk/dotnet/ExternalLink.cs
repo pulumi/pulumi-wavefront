@@ -12,6 +12,25 @@ namespace Pulumi.Wavefront
     /// <summary>
     /// Provides a Wavefront External Link Resource. This allows external links to be created, updated, and deleted.
     /// 
+    /// ## Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Wavefront = Pulumi.Wavefront;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var basic = new Wavefront.ExternalLink("basic", new()
+    ///     {
+    ///         Description = "An external link description",
+    ///         Template = "https://example.com/source={{{source}}}&amp;startTime={{startEpochMillis}}",
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// 
     /// ## Import
     /// 
     /// Maintenance windows can be imported by using the `id`, e.g.:

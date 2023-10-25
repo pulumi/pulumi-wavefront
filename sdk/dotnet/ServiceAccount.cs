@@ -12,6 +12,25 @@ namespace Pulumi.Wavefront
     /// <summary>
     /// Provides a Wavefront Service Account Resource. This allows service accounts to be created, updated, and deleted.
     /// 
+    /// ## Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Wavefront = Pulumi.Wavefront;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var basic = new Wavefront.ServiceAccount("basic", new()
+    ///     {
+    ///         Active = true,
+    ///         Identifier = "sa::tftesting",
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// 
     /// ## Import
     /// 
     /// Service accounts can be imported by using `identifier`, e.g.:

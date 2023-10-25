@@ -558,6 +558,19 @@ class CloudIntegrationCloudWatch(pulumi.CustomResource):
         Provides a Wavefront Cloud Integration for CloudWatch. This allows CloudWatch cloud integrations to be created,
         updated, and deleted.
 
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_wavefront as wavefront
+
+        ext_id = wavefront.CloudIntegrationAwsExternalId("extId")
+        cloudwatch = wavefront.CloudIntegrationCloudWatch("cloudwatch",
+            force_save=True,
+            role_arn="arn:aws::1234567:role/example-arn",
+            external_id=ext_id.id)
+        ```
+
         ## Import
 
         CloudWatch Cloud Integrations can be imported by using the `id`, e.g.:
@@ -595,6 +608,19 @@ class CloudIntegrationCloudWatch(pulumi.CustomResource):
         """
         Provides a Wavefront Cloud Integration for CloudWatch. This allows CloudWatch cloud integrations to be created,
         updated, and deleted.
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_wavefront as wavefront
+
+        ext_id = wavefront.CloudIntegrationAwsExternalId("extId")
+        cloudwatch = wavefront.CloudIntegrationCloudWatch("cloudwatch",
+            force_save=True,
+            role_arn="arn:aws::1234567:role/example-arn",
+            external_id=ext_id.id)
+        ```
 
         ## Import
 

@@ -8,6 +8,15 @@ import * as utilities from "./utilities";
 
 /**
  * Use this data source to get all users in Wavefront.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as wavefront from "@pulumi/wavefront";
+ *
+ * const users = wavefront.getUsers({});
+ * ```
  */
 export function getUsers(opts?: pulumi.InvokeOptions): Promise<GetUsersResult> {
 
@@ -31,6 +40,15 @@ export interface GetUsersResult {
 }
 /**
  * Use this data source to get all users in Wavefront.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as wavefront from "@pulumi/wavefront";
+ *
+ * const users = wavefront.getUsers({});
+ * ```
  */
 export function getUsersOutput(opts?: pulumi.InvokeOptions): pulumi.Output<GetUsersResult> {
     return pulumi.output(getUsers(opts))

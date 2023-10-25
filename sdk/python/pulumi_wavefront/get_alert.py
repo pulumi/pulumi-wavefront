@@ -312,6 +312,15 @@ def get_alert(id: Optional[str] = None,
     """
     Use this data source to get information about a Wavefront alert by its ID.
 
+    ## Example Usage
+
+    ```python
+    import pulumi
+    import pulumi_wavefront as wavefront
+
+    example = wavefront.get_alert(id="alert-id")
+    ```
+
 
     :param str id: The ID associated with the alert data to be fetched.
     :param Mapping[str, str] targets: A comma-separated list of the email addresses or integration endpoints (such as PagerDuty or webhook) to notify when the alert status changes. Multiple target types can be in the list.
@@ -354,6 +363,15 @@ def get_alert_output(id: Optional[pulumi.Input[str]] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAlertResult]:
     """
     Use this data source to get information about a Wavefront alert by its ID.
+
+    ## Example Usage
+
+    ```python
+    import pulumi
+    import pulumi_wavefront as wavefront
+
+    example = wavefront.get_alert(id="alert-id")
+    ```
 
 
     :param str id: The ID associated with the alert data to be fetched.

@@ -6,6 +6,15 @@ import * as utilities from "./utilities";
 
 /**
  * Use this data source to get the Group ID of the `Everyone` group in Wavefront.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as wavefront from "@pulumi/wavefront";
+ *
+ * const everyoneGroup = wavefront.getDefaultUserGroup({});
+ * ```
  */
 export function getDefaultUserGroup(opts?: pulumi.InvokeOptions): Promise<GetDefaultUserGroupResult> {
 
@@ -30,6 +39,15 @@ export interface GetDefaultUserGroupResult {
 }
 /**
  * Use this data source to get the Group ID of the `Everyone` group in Wavefront.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as wavefront from "@pulumi/wavefront";
+ *
+ * const everyoneGroup = wavefront.getDefaultUserGroup({});
+ * ```
  */
 export function getDefaultUserGroupOutput(opts?: pulumi.InvokeOptions): pulumi.Output<GetDefaultUserGroupResult> {
     return pulumi.output(getDefaultUserGroup(opts))

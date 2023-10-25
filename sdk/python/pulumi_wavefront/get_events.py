@@ -107,6 +107,18 @@ def get_events(earliest_start_time_epoch_millis: Optional[int] = None,
     """
     Use this data source to get information about all Wavefront events.
 
+    ## Example Usage
+
+    ```python
+    import pulumi
+    import pulumi_wavefront as wavefront
+
+    example = wavefront.get_events(earliest_start_time_epoch_millis=1665427195,
+        latest_start_time_epoch_millis=1665427195,
+        limit=10,
+        offset=0)
+    ```
+
 
     :param int earliest_start_time_epoch_millis: The earliest start time in epoch milliseconds.
     :param int latest_start_time_epoch_millis: The latest start time in epoch milliseconds.
@@ -138,6 +150,18 @@ def get_events_output(earliest_start_time_epoch_millis: Optional[pulumi.Input[in
                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetEventsResult]:
     """
     Use this data source to get information about all Wavefront events.
+
+    ## Example Usage
+
+    ```python
+    import pulumi
+    import pulumi_wavefront as wavefront
+
+    example = wavefront.get_events(earliest_start_time_epoch_millis=1665427195,
+        latest_start_time_epoch_millis=1665427195,
+        limit=10,
+        offset=0)
+    ```
 
 
     :param int earliest_start_time_epoch_millis: The earliest start time in epoch milliseconds.

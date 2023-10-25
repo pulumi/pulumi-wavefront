@@ -6,6 +6,17 @@ import * as utilities from "./utilities";
 
 /**
  * Use this data source to get information about a Wavefront user group by its ID.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as wavefront from "@pulumi/wavefront";
+ *
+ * const example = wavefront.getUserGroup({
+ *     id: "user-group-id",
+ * });
+ * ```
  */
 export function getUserGroup(args: GetUserGroupArgs, opts?: pulumi.InvokeOptions): Promise<GetUserGroupResult> {
 
@@ -52,6 +63,17 @@ export interface GetUserGroupResult {
 }
 /**
  * Use this data source to get information about a Wavefront user group by its ID.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as wavefront from "@pulumi/wavefront";
+ *
+ * const example = wavefront.getUserGroup({
+ *     id: "user-group-id",
+ * });
+ * ```
  */
 export function getUserGroupOutput(args: GetUserGroupOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetUserGroupResult> {
     return pulumi.output(args).apply((a: any) => getUserGroup(a, opts))

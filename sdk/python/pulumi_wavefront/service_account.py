@@ -293,6 +293,17 @@ class ServiceAccount(pulumi.CustomResource):
         """
         Provides a Wavefront Service Account Resource. This allows service accounts to be created, updated, and deleted.
 
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_wavefront as wavefront
+
+        basic = wavefront.ServiceAccount("basic",
+            active=True,
+            identifier="sa::tftesting")
+        ```
+
         ## Import
 
         Service accounts can be imported by using `identifier`, e.g.:
@@ -320,6 +331,17 @@ class ServiceAccount(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Provides a Wavefront Service Account Resource. This allows service accounts to be created, updated, and deleted.
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_wavefront as wavefront
+
+        basic = wavefront.ServiceAccount("basic",
+            active=True,
+            identifier="sa::tftesting")
+        ```
 
         ## Import
 

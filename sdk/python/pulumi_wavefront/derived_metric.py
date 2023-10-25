@@ -246,6 +246,17 @@ class DerivedMetric(pulumi.CustomResource):
         Provides a Wavefront Derived Metric Resource. This allows derived metrics to be created,
         updated, and deleted.
 
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_wavefront as wavefront
+
+        derived = wavefront.DerivedMetric("derived",
+            minutes=5,
+            query="aliasMetric(5, \\"some.metric\\")")
+        ```
+
         ## Import
 
         Derived Metrics can be imported by using the `id`, e.g.:
@@ -271,6 +282,17 @@ class DerivedMetric(pulumi.CustomResource):
         """
         Provides a Wavefront Derived Metric Resource. This allows derived metrics to be created,
         updated, and deleted.
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_wavefront as wavefront
+
+        derived = wavefront.DerivedMetric("derived",
+            minutes=5,
+            query="aliasMetric(5, \\"some.metric\\")")
+        ```
 
         ## Import
 

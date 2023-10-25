@@ -8,6 +8,20 @@ import * as utilities from "./utilities";
 
 /**
  * Use this data source to get information about all Wavefront events.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as wavefront from "@pulumi/wavefront";
+ *
+ * const example = wavefront.getEvents({
+ *     earliestStartTimeEpochMillis: 1665427195,
+ *     latestStartTimeEpochMillis: 1665427195,
+ *     limit: 10,
+ *     offset: 0,
+ * });
+ * ```
  */
 export function getEvents(args: GetEventsArgs, opts?: pulumi.InvokeOptions): Promise<GetEventsResult> {
 
@@ -67,6 +81,20 @@ export interface GetEventsResult {
 }
 /**
  * Use this data source to get information about all Wavefront events.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as wavefront from "@pulumi/wavefront";
+ *
+ * const example = wavefront.getEvents({
+ *     earliestStartTimeEpochMillis: 1665427195,
+ *     latestStartTimeEpochMillis: 1665427195,
+ *     limit: 10,
+ *     offset: 0,
+ * });
+ * ```
  */
 export function getEventsOutput(args: GetEventsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetEventsResult> {
     return pulumi.output(args).apply((a: any) => getEvents(a, opts))

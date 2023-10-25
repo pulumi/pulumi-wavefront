@@ -9,9 +9,35 @@ import * as utilities from "./utilities";
 /**
  * Provides a Wavefront Metrics Policy Resource. This allows management of Metrics Policy to control access to time series, histograms, and delta counters
  *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as wavefront from "@pulumi/wavefront";
+ *
+ * const everyone = wavefront.getDefaultUserGroup({});
+ * const main = new wavefront.MetricsPolicy("main", {policyRules: [{
+ *     name: "Allow All Metrics",
+ *     description: "Predefined policy rule. Allows access to all metrics (timeseries, histograms, and counters) for all accounts. If this rule is removed, all accounts can access all metrics if there are no matching blocking rules.",
+ *     prefixes: ["*"],
+ *     tagsAnded: false,
+ *     accessType: "ALLOW",
+ *     userGroupIds: [everyone.then(everyone => everyone.groupId)],
+ * }]});
+ * ```
  * ## Data Source
  *
  * Provides a Wavefront Metrics Policy Data Source. This allows looking up the current policy and associated rules.
+ *
+ * ### Example
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as wavefront from "@pulumi/wavefront";
+ *
+ * const policyMetricsPolicy = wavefront.getMetricsPolicy({});
+ * export const policy = policyMetricsPolicy;
+ * ```
  *
  * ## Import
  *

@@ -13,12 +13,62 @@ namespace Pulumi.Wavefront
     {
         /// <summary>
         /// Use this data source to get information about all Wavefront events.
+        /// 
+        /// {{% examples %}}
+        /// ## Example Usage
+        /// {{% example %}}
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Wavefront = Pulumi.Wavefront;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var example = Wavefront.GetEvents.Invoke(new()
+        ///     {
+        ///         EarliestStartTimeEpochMillis = 1665427195,
+        ///         LatestStartTimeEpochMillis = 1665427195,
+        ///         Limit = 10,
+        ///         Offset = 0,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// {{% /example %}}
+        /// {{% /examples %}}
         /// </summary>
         public static Task<GetEventsResult> InvokeAsync(GetEventsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetEventsResult>("wavefront:index/getEvents:getEvents", args ?? new GetEventsArgs(), options.WithDefaults());
 
         /// <summary>
         /// Use this data source to get information about all Wavefront events.
+        /// 
+        /// {{% examples %}}
+        /// ## Example Usage
+        /// {{% example %}}
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Wavefront = Pulumi.Wavefront;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var example = Wavefront.GetEvents.Invoke(new()
+        ///     {
+        ///         EarliestStartTimeEpochMillis = 1665427195,
+        ///         LatestStartTimeEpochMillis = 1665427195,
+        ///         Limit = 10,
+        ///         Offset = 0,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// {{% /example %}}
+        /// {{% /examples %}}
         /// </summary>
         public static Output<GetEventsResult> Invoke(GetEventsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetEventsResult>("wavefront:index/getEvents:getEvents", args ?? new GetEventsInvokeArgs(), options.WithDefaults());

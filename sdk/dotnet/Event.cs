@@ -12,6 +12,33 @@ namespace Pulumi.Wavefront
     /// <summary>
     /// Provides a Wavefront event resource. This allows events to be created, updated, and deleted.
     /// 
+    /// ## Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Wavefront = Pulumi.Wavefront;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var @event = new Wavefront.Event("event", new()
+    ///     {
+    ///         Annotations = 
+    ///         {
+    ///             { "details", "description" },
+    ///             { "severity", "info" },
+    ///             { "type", "event type" },
+    ///         },
+    ///         Tags = new[]
+    ///         {
+    ///             "eventTag1",
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// 
     /// ## Import
     /// 
     /// You can import events by using the id, for example:

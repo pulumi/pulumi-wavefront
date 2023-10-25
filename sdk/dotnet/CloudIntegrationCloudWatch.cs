@@ -13,6 +13,28 @@ namespace Pulumi.Wavefront
     /// Provides a Wavefront Cloud Integration for CloudWatch. This allows CloudWatch cloud integrations to be created,
     /// updated, and deleted.
     /// 
+    /// ## Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Wavefront = Pulumi.Wavefront;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var extId = new Wavefront.CloudIntegrationAwsExternalId("extId");
+    /// 
+    ///     var cloudwatch = new Wavefront.CloudIntegrationCloudWatch("cloudwatch", new()
+    ///     {
+    ///         ForceSave = true,
+    ///         RoleArn = "arn:aws::1234567:role/example-arn",
+    ///         ExternalId = extId.Id,
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// 
     /// ## Import
     /// 
     /// CloudWatch Cloud Integrations can be imported by using the `id`, e.g.:

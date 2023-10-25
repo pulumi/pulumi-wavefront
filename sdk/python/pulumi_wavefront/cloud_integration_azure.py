@@ -498,6 +498,18 @@ class CloudIntegrationAzure(pulumi.CustomResource):
         Provides a Wavefront Cloud Integration for Microsoft Azure. This allows Azure cloud integrations to be created,
         updated, and deleted.
 
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_wavefront as wavefront
+
+        azure_activity_log = wavefront.CloudIntegrationAzureActivityLog("azureActivityLog",
+            client_id="client-id2",
+            client_secret="client-secret2",
+            tenant="my-tenant2")
+        ```
+
         ## Import
 
         Azure Cloud Integrations can be imported by using the `id`, e.g.:
@@ -529,6 +541,18 @@ class CloudIntegrationAzure(pulumi.CustomResource):
         """
         Provides a Wavefront Cloud Integration for Microsoft Azure. This allows Azure cloud integrations to be created,
         updated, and deleted.
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_wavefront as wavefront
+
+        azure_activity_log = wavefront.CloudIntegrationAzureActivityLog("azureActivityLog",
+            client_id="client-id2",
+            client_secret="client-secret2",
+            tenant="my-tenant2")
+        ```
 
         ## Import
 

@@ -81,6 +81,16 @@ def get_dashboards(limit: Optional[int] = None,
     """
     Use this data source to get information about all Wavefront dashboards.
 
+    ## Example Usage
+
+    ```python
+    import pulumi
+    import pulumi_wavefront as wavefront
+
+    example = wavefront.get_dashboards(limit=10,
+        offset=0)
+    ```
+
 
     :param int limit: Limit is the maximum number of results to be returned. Defaults to 100.
     :param int offset: Offset is the offset from the first result to be returned. Defaults to 0.
@@ -104,6 +114,16 @@ def get_dashboards_output(limit: Optional[pulumi.Input[Optional[int]]] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDashboardsResult]:
     """
     Use this data source to get information about all Wavefront dashboards.
+
+    ## Example Usage
+
+    ```python
+    import pulumi
+    import pulumi_wavefront as wavefront
+
+    example = wavefront.get_dashboards(limit=10,
+        offset=0)
+    ```
 
 
     :param int limit: Limit is the maximum number of results to be returned. Defaults to 100.

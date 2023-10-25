@@ -15,6 +15,39 @@ import (
 
 // Provides a Wavefront Maintenance Window Resource. This allows maintenance windows to be created, updated, and deleted.
 //
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-wavefront/sdk/v3/go/wavefront"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := wavefront.NewMaintenanceWindow(ctx, "basic", &wavefront.MaintenanceWindowArgs{
+//				EndTimeInSeconds: pulumi.Int(1601123456),
+//				Reason:           pulumi.String("Routine maintenance for 2020"),
+//				RelevantHostNames: pulumi.StringArray{
+//					pulumi.String("my_hostname"),
+//					pulumi.String("my_other_hostname"),
+//				},
+//				StartTimeInSeconds: pulumi.Int(1600123456),
+//				Title:              pulumi.String("Routine maintenance"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+//
 // ## Import
 //
 // Maintenance windows can be imported using the `id`, e.g.

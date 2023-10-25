@@ -97,6 +97,15 @@ def get_user_group(id: Optional[str] = None,
     """
     Use this data source to get information about a Wavefront user group by its ID.
 
+    ## Example Usage
+
+    ```python
+    import pulumi
+    import pulumi_wavefront as wavefront
+
+    example = wavefront.get_user_group(id="user-group-id")
+    ```
+
 
     :param str id: The ID associated with the user group data to be fetched.
     """
@@ -118,6 +127,15 @@ def get_user_group_output(id: Optional[pulumi.Input[str]] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetUserGroupResult]:
     """
     Use this data source to get information about a Wavefront user group by its ID.
+
+    ## Example Usage
+
+    ```python
+    import pulumi
+    import pulumi_wavefront as wavefront
+
+    example = wavefront.get_user_group(id="user-group-id")
+    ```
 
 
     :param str id: The ID associated with the user group data to be fetched.

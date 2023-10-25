@@ -12,6 +12,34 @@ namespace Pulumi.Wavefront
     /// <summary>
     /// Provides a Wavefront Alert resource. This allows alerts to be created, updated, and deleted.
     /// 
+    /// ## Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Wavefront = Pulumi.Wavefront;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var foobar = new Wavefront.Alert("foobar", new()
+    ///     {
+    ///         Condition = "100-ts(\"cpu.usage_idle\", environment=preprod and cpu=cpu-total ) &gt; 80",
+    ///         DisplayExpression = "100-ts(\"cpu.usage_idle\", environment=preprod and cpu=cpu-total )",
+    ///         Minutes = 5,
+    ///         ResolveAfterMinutes = 5,
+    ///         Severity = "WARN",
+    ///         Tags = new[]
+    ///         {
+    ///             "terraform",
+    ///             "test",
+    ///         },
+    ///         Target = "test@example.com,target:alert-target-id",
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// 
     /// ## Import
     /// 
     /// Alerts can be imported using the `id`, e.g.

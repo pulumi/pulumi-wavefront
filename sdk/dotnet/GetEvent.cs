@@ -13,12 +13,56 @@ namespace Pulumi.Wavefront
     {
         /// <summary>
         /// Use this data source to get information about a certain Wavefront event.
+        /// 
+        /// {{% examples %}}
+        /// ## Example Usage
+        /// {{% example %}}
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Wavefront = Pulumi.Wavefront;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var example = Wavefront.GetEvent.Invoke(new()
+        ///     {
+        ///         Id = "sample-event-id",
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// {{% /example %}}
+        /// {{% /examples %}}
         /// </summary>
         public static Task<GetEventResult> InvokeAsync(GetEventArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetEventResult>("wavefront:index/getEvent:getEvent", args ?? new GetEventArgs(), options.WithDefaults());
 
         /// <summary>
         /// Use this data source to get information about a certain Wavefront event.
+        /// 
+        /// {{% examples %}}
+        /// ## Example Usage
+        /// {{% example %}}
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Wavefront = Pulumi.Wavefront;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var example = Wavefront.GetEvent.Invoke(new()
+        ///     {
+        ///         Id = "sample-event-id",
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// {{% /example %}}
+        /// {{% /examples %}}
         /// </summary>
         public static Output<GetEventResult> Invoke(GetEventInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetEventResult>("wavefront:index/getEvent:getEvent", args ?? new GetEventInvokeArgs(), options.WithDefaults());

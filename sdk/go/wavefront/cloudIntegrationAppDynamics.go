@@ -16,6 +16,34 @@ import (
 // Provides a Wavefront Cloud Integration for AppDynamics. This allows AppDynamics cloud integrations to be created,
 // updated, and deleted.
 //
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-wavefront/sdk/v3/go/wavefront"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := wavefront.NewCloudIntegrationAppDynamics(ctx, "appDynamics", &wavefront.CloudIntegrationAppDynamicsArgs{
+//				ControllerName:    pulumi.String("exampleController"),
+//				EncryptedPassword: pulumi.String("encryptedPassword"),
+//				UserName:          pulumi.String("example"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+//
 // ## Import
 //
 // AppDynamic Cloud Integrations can be imported by using the `id`, e.g.:

@@ -36,6 +36,15 @@ class CloudIntegrationAwsExternalId(pulumi.CustomResource):
         """
         Provides an External ID for use in Amazon Web Services IAM Roles. This allows External IDs to be created and deleted.
 
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_wavefront as wavefront
+
+        external_id = wavefront.CloudIntegrationAwsExternalId("externalId")
+        ```
+
         ## Import
 
         External IDs can be imported by using the `id`, e.g.:
@@ -55,6 +64,15 @@ class CloudIntegrationAwsExternalId(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Provides an External ID for use in Amazon Web Services IAM Roles. This allows External IDs to be created and deleted.
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_wavefront as wavefront
+
+        external_id = wavefront.CloudIntegrationAwsExternalId("externalId")
+        ```
 
         ## Import
 
