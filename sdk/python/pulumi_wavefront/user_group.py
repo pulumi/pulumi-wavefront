@@ -29,9 +29,13 @@ class UserGroupArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             description: pulumi.Input[str],
+             description: Optional[pulumi.Input[str]] = None,
              name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions] = None,
+             **kwargs):
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+
         _setter("description", description)
         if name is not None:
             _setter("name", name)
@@ -81,7 +85,9 @@ class _UserGroupState:
              _setter: Callable[[Any, Any], None],
              description: Optional[pulumi.Input[str]] = None,
              name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions] = None,
+             **kwargs):
+
         if description is not None:
             _setter("description", description)
         if name is not None:
@@ -123,15 +129,6 @@ class UserGroup(pulumi.CustomResource):
         """
         Provides a Wavefront User Group Resource. This allows user groups to be created, updated, and deleted.
 
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_wavefront as wavefront
-
-        basic = wavefront.UserGroup("basic", description="Basic User Group for Unit Tests")
-        ```
-
         ## Import
 
         User Groups can be imported by using the `id`, e.g.:
@@ -153,15 +150,6 @@ class UserGroup(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Provides a Wavefront User Group Resource. This allows user groups to be created, updated, and deleted.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_wavefront as wavefront
-
-        basic = wavefront.UserGroup("basic", description="Basic User Group for Unit Tests")
-        ```
 
         ## Import
 

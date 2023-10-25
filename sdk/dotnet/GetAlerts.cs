@@ -13,58 +13,12 @@ namespace Pulumi.Wavefront
     {
         /// <summary>
         /// Use this data source to get information about all Wavefront alerts.
-        /// 
-        /// {{% examples %}}
-        /// ## Example Usage
-        /// {{% example %}}
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using System.Linq;
-        /// using Pulumi;
-        /// using Wavefront = Pulumi.Wavefront;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var example = Wavefront.GetAlerts.Invoke(new()
-        ///     {
-        ///         Limit = 10,
-        ///         Offset = 0,
-        ///     });
-        /// 
-        /// });
-        /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
         /// </summary>
         public static Task<GetAlertsResult> InvokeAsync(GetAlertsArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetAlertsResult>("wavefront:index/getAlerts:getAlerts", args ?? new GetAlertsArgs(), options.WithDefaults());
 
         /// <summary>
         /// Use this data source to get information about all Wavefront alerts.
-        /// 
-        /// {{% examples %}}
-        /// ## Example Usage
-        /// {{% example %}}
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using System.Linq;
-        /// using Pulumi;
-        /// using Wavefront = Pulumi.Wavefront;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var example = Wavefront.GetAlerts.Invoke(new()
-        ///     {
-        ///         Limit = 10,
-        ///         Offset = 0,
-        ///     });
-        /// 
-        /// });
-        /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
         /// </summary>
         public static Output<GetAlertsResult> Invoke(GetAlertsInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAlertsResult>("wavefront:index/getAlerts:getAlerts", args ?? new GetAlertsInvokeArgs(), options.WithDefaults());

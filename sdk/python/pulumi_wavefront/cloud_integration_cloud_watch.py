@@ -64,9 +64,9 @@ class CloudIntegrationCloudWatchArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             external_id: pulumi.Input[str],
-             role_arn: pulumi.Input[str],
-             service: pulumi.Input[str],
+             external_id: Optional[pulumi.Input[str]] = None,
+             role_arn: Optional[pulumi.Input[str]] = None,
+             service: Optional[pulumi.Input[str]] = None,
              additional_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
              force_save: Optional[pulumi.Input[bool]] = None,
              instance_selection_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
@@ -76,7 +76,33 @@ class CloudIntegrationCloudWatchArgs:
              point_tag_filter_regex: Optional[pulumi.Input[str]] = None,
              service_refresh_rate_in_minutes: Optional[pulumi.Input[int]] = None,
              volume_selection_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions] = None,
+             **kwargs):
+        if external_id is None and 'externalId' in kwargs:
+            external_id = kwargs['externalId']
+        if external_id is None:
+            raise TypeError("Missing 'external_id' argument")
+        if role_arn is None and 'roleArn' in kwargs:
+            role_arn = kwargs['roleArn']
+        if role_arn is None:
+            raise TypeError("Missing 'role_arn' argument")
+        if service is None:
+            raise TypeError("Missing 'service' argument")
+        if additional_tags is None and 'additionalTags' in kwargs:
+            additional_tags = kwargs['additionalTags']
+        if force_save is None and 'forceSave' in kwargs:
+            force_save = kwargs['forceSave']
+        if instance_selection_tags is None and 'instanceSelectionTags' in kwargs:
+            instance_selection_tags = kwargs['instanceSelectionTags']
+        if metric_filter_regex is None and 'metricFilterRegex' in kwargs:
+            metric_filter_regex = kwargs['metricFilterRegex']
+        if point_tag_filter_regex is None and 'pointTagFilterRegex' in kwargs:
+            point_tag_filter_regex = kwargs['pointTagFilterRegex']
+        if service_refresh_rate_in_minutes is None and 'serviceRefreshRateInMinutes' in kwargs:
+            service_refresh_rate_in_minutes = kwargs['serviceRefreshRateInMinutes']
+        if volume_selection_tags is None and 'volumeSelectionTags' in kwargs:
+            volume_selection_tags = kwargs['volumeSelectionTags']
+
         _setter("external_id", external_id)
         _setter("role_arn", role_arn)
         _setter("service", service)
@@ -314,7 +340,27 @@ class _CloudIntegrationCloudWatchState:
              service: Optional[pulumi.Input[str]] = None,
              service_refresh_rate_in_minutes: Optional[pulumi.Input[int]] = None,
              volume_selection_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions] = None,
+             **kwargs):
+        if additional_tags is None and 'additionalTags' in kwargs:
+            additional_tags = kwargs['additionalTags']
+        if external_id is None and 'externalId' in kwargs:
+            external_id = kwargs['externalId']
+        if force_save is None and 'forceSave' in kwargs:
+            force_save = kwargs['forceSave']
+        if instance_selection_tags is None and 'instanceSelectionTags' in kwargs:
+            instance_selection_tags = kwargs['instanceSelectionTags']
+        if metric_filter_regex is None and 'metricFilterRegex' in kwargs:
+            metric_filter_regex = kwargs['metricFilterRegex']
+        if point_tag_filter_regex is None and 'pointTagFilterRegex' in kwargs:
+            point_tag_filter_regex = kwargs['pointTagFilterRegex']
+        if role_arn is None and 'roleArn' in kwargs:
+            role_arn = kwargs['roleArn']
+        if service_refresh_rate_in_minutes is None and 'serviceRefreshRateInMinutes' in kwargs:
+            service_refresh_rate_in_minutes = kwargs['serviceRefreshRateInMinutes']
+        if volume_selection_tags is None and 'volumeSelectionTags' in kwargs:
+            volume_selection_tags = kwargs['volumeSelectionTags']
+
         if additional_tags is not None:
             _setter("additional_tags", additional_tags)
         if external_id is not None:
@@ -512,19 +558,6 @@ class CloudIntegrationCloudWatch(pulumi.CustomResource):
         Provides a Wavefront Cloud Integration for CloudWatch. This allows CloudWatch cloud integrations to be created,
         updated, and deleted.
 
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_wavefront as wavefront
-
-        ext_id = wavefront.CloudIntegrationAwsExternalId("extId")
-        cloudwatch = wavefront.CloudIntegrationCloudWatch("cloudwatch",
-            force_save=True,
-            role_arn="arn:aws::1234567:role/example-arn",
-            external_id=ext_id.id)
-        ```
-
         ## Import
 
         CloudWatch Cloud Integrations can be imported by using the `id`, e.g.:
@@ -562,19 +595,6 @@ class CloudIntegrationCloudWatch(pulumi.CustomResource):
         """
         Provides a Wavefront Cloud Integration for CloudWatch. This allows CloudWatch cloud integrations to be created,
         updated, and deleted.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_wavefront as wavefront
-
-        ext_id = wavefront.CloudIntegrationAwsExternalId("extId")
-        cloudwatch = wavefront.CloudIntegrationCloudWatch("cloudwatch",
-            force_save=True,
-            role_arn="arn:aws::1234567:role/example-arn",
-            external_id=ext_id.id)
-        ```
 
         ## Import
 

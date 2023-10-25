@@ -12,37 +12,6 @@ namespace Pulumi.Wavefront
     /// <summary>
     /// Provides a wavefront Alert Target resource. This allows alert targets to created, updated, and deleted.
     /// 
-    /// ## Example Usage
-    /// 
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using System.Linq;
-    /// using Pulumi;
-    /// using Wavefront = Pulumi.Wavefront;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var testTarget = new Wavefront.AlertTarget("testTarget", new()
-    ///     {
-    ///         ContentType = "application/json",
-    ///         CustomHeaders = 
-    ///         {
-    ///             { "Testing", "true" },
-    ///         },
-    ///         Description = "Test target",
-    ///         Method = "WEBHOOK",
-    ///         Recipient = "https://hooks.slack.com/services/test/me",
-    ///         Template = "{}",
-    ///         Triggers = new[]
-    ///         {
-    ///             "ALERT_OPENED",
-    ///             "ALERT_RESOLVED",
-    ///         },
-    ///     });
-    /// 
-    /// });
-    /// ```
-    /// 
     /// ## Import
     /// 
     /// Alert Targets can be imported using the `id`, e.g.:

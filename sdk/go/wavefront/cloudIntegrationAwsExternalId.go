@@ -14,30 +14,6 @@ import (
 
 // Provides an External ID for use in Amazon Web Services IAM Roles. This allows External IDs to be created and deleted.
 //
-// ## Example Usage
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-wavefront/sdk/v3/go/wavefront"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := wavefront.NewCloudIntegrationAwsExternalId(ctx, "externalId", nil)
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
-//
 // ## Import
 //
 // External IDs can be imported by using the `id`, e.g.:

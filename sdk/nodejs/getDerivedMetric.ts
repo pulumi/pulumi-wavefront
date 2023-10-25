@@ -6,17 +6,6 @@ import * as utilities from "./utilities";
 
 /**
  * Use this data source to get information about a certain Wavefront derived metric by its ID.
- *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as wavefront from "@pulumi/wavefront";
- *
- * const example = wavefront.getDerivedMetric({
- *     id: "derived_metric_id",
- * });
- * ```
  */
 export function getDerivedMetric(args: GetDerivedMetricArgs, opts?: pulumi.InvokeOptions): Promise<GetDerivedMetricResult> {
 
@@ -139,17 +128,6 @@ export interface GetDerivedMetricResult {
 }
 /**
  * Use this data source to get information about a certain Wavefront derived metric by its ID.
- *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as wavefront from "@pulumi/wavefront";
- *
- * const example = wavefront.getDerivedMetric({
- *     id: "derived_metric_id",
- * });
- * ```
  */
 export function getDerivedMetricOutput(args: GetDerivedMetricOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDerivedMetricResult> {
     return pulumi.output(args).apply((a: any) => getDerivedMetric(a, opts))

@@ -29,10 +29,18 @@ class ProviderArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             address: pulumi.Input[str],
-             token: pulumi.Input[str],
+             address: Optional[pulumi.Input[str]] = None,
+             token: Optional[pulumi.Input[str]] = None,
              http_proxy: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions] = None,
+             **kwargs):
+        if address is None:
+            raise TypeError("Missing 'address' argument")
+        if token is None:
+            raise TypeError("Missing 'token' argument")
+        if http_proxy is None and 'httpProxy' in kwargs:
+            http_proxy = kwargs['httpProxy']
+
         _setter("address", address)
         _setter("token", token)
         if http_proxy is not None:

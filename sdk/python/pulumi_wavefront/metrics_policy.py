@@ -28,8 +28,14 @@ class MetricsPolicyArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             policy_rules: pulumi.Input[Sequence[pulumi.Input['MetricsPolicyPolicyRuleArgs']]],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             policy_rules: Optional[pulumi.Input[Sequence[pulumi.Input['MetricsPolicyPolicyRuleArgs']]]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
+             **kwargs):
+        if policy_rules is None and 'policyRules' in kwargs:
+            policy_rules = kwargs['policyRules']
+        if policy_rules is None:
+            raise TypeError("Missing 'policy_rules' argument")
+
         _setter("policy_rules", policy_rules)
 
     @property
@@ -73,7 +79,15 @@ class _MetricsPolicyState:
              policy_rules: Optional[pulumi.Input[Sequence[pulumi.Input['MetricsPolicyPolicyRuleArgs']]]] = None,
              updated_epoch_millis: Optional[pulumi.Input[int]] = None,
              updater_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions] = None,
+             **kwargs):
+        if policy_rules is None and 'policyRules' in kwargs:
+            policy_rules = kwargs['policyRules']
+        if updated_epoch_millis is None and 'updatedEpochMillis' in kwargs:
+            updated_epoch_millis = kwargs['updatedEpochMillis']
+        if updater_id is None and 'updaterId' in kwargs:
+            updater_id = kwargs['updaterId']
+
         if customer is not None:
             _setter("customer", customer)
         if policy_rules is not None:
@@ -142,35 +156,9 @@ class MetricsPolicy(pulumi.CustomResource):
         """
         Provides a Wavefront Metrics Policy Resource. This allows management of Metrics Policy to control access to time series, histograms, and delta counters
 
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_wavefront as wavefront
-
-        everyone = wavefront.get_default_user_group()
-        main = wavefront.MetricsPolicy("main", policy_rules=[wavefront.MetricsPolicyPolicyRuleArgs(
-            name="Allow All Metrics",
-            description="Predefined policy rule. Allows access to all metrics (timeseries, histograms, and counters) for all accounts. If this rule is removed, all accounts can access all metrics if there are no matching blocking rules.",
-            prefixes=["*"],
-            tags_anded=False,
-            access_type="ALLOW",
-            user_group_ids=[everyone.group_id],
-        )])
-        ```
         ## Data Source
 
         Provides a Wavefront Metrics Policy Data Source. This allows looking up the current policy and associated rules.
-
-        ### Example
-
-        ```python
-        import pulumi
-        import pulumi_wavefront as wavefront
-
-        policy_metrics_policy = wavefront.get_metrics_policy()
-        pulumi.export("policy", policy_metrics_policy)
-        ```
 
         ## Import
 
@@ -193,35 +181,9 @@ class MetricsPolicy(pulumi.CustomResource):
         """
         Provides a Wavefront Metrics Policy Resource. This allows management of Metrics Policy to control access to time series, histograms, and delta counters
 
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_wavefront as wavefront
-
-        everyone = wavefront.get_default_user_group()
-        main = wavefront.MetricsPolicy("main", policy_rules=[wavefront.MetricsPolicyPolicyRuleArgs(
-            name="Allow All Metrics",
-            description="Predefined policy rule. Allows access to all metrics (timeseries, histograms, and counters) for all accounts. If this rule is removed, all accounts can access all metrics if there are no matching blocking rules.",
-            prefixes=["*"],
-            tags_anded=False,
-            access_type="ALLOW",
-            user_group_ids=[everyone.group_id],
-        )])
-        ```
         ## Data Source
 
         Provides a Wavefront Metrics Policy Data Source. This allows looking up the current policy and associated rules.
-
-        ### Example
-
-        ```python
-        import pulumi
-        import pulumi_wavefront as wavefront
-
-        policy_metrics_policy = wavefront.get_metrics_policy()
-        pulumi.export("policy", policy_metrics_policy)
-        ```
 
         ## Import
 

@@ -49,15 +49,35 @@ class CloudIntegrationEc2Args:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             external_id: pulumi.Input[str],
-             role_arn: pulumi.Input[str],
-             service: pulumi.Input[str],
+             external_id: Optional[pulumi.Input[str]] = None,
+             role_arn: Optional[pulumi.Input[str]] = None,
+             service: Optional[pulumi.Input[str]] = None,
              additional_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
              force_save: Optional[pulumi.Input[bool]] = None,
              hostname_tags: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              name: Optional[pulumi.Input[str]] = None,
              service_refresh_rate_in_minutes: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions] = None,
+             **kwargs):
+        if external_id is None and 'externalId' in kwargs:
+            external_id = kwargs['externalId']
+        if external_id is None:
+            raise TypeError("Missing 'external_id' argument")
+        if role_arn is None and 'roleArn' in kwargs:
+            role_arn = kwargs['roleArn']
+        if role_arn is None:
+            raise TypeError("Missing 'role_arn' argument")
+        if service is None:
+            raise TypeError("Missing 'service' argument")
+        if additional_tags is None and 'additionalTags' in kwargs:
+            additional_tags = kwargs['additionalTags']
+        if force_save is None and 'forceSave' in kwargs:
+            force_save = kwargs['forceSave']
+        if hostname_tags is None and 'hostnameTags' in kwargs:
+            hostname_tags = kwargs['hostnameTags']
+        if service_refresh_rate_in_minutes is None and 'serviceRefreshRateInMinutes' in kwargs:
+            service_refresh_rate_in_minutes = kwargs['serviceRefreshRateInMinutes']
+
         _setter("external_id", external_id)
         _setter("role_arn", role_arn)
         _setter("service", service)
@@ -217,7 +237,21 @@ class _CloudIntegrationEc2State:
              role_arn: Optional[pulumi.Input[str]] = None,
              service: Optional[pulumi.Input[str]] = None,
              service_refresh_rate_in_minutes: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions] = None,
+             **kwargs):
+        if additional_tags is None and 'additionalTags' in kwargs:
+            additional_tags = kwargs['additionalTags']
+        if external_id is None and 'externalId' in kwargs:
+            external_id = kwargs['externalId']
+        if force_save is None and 'forceSave' in kwargs:
+            force_save = kwargs['forceSave']
+        if hostname_tags is None and 'hostnameTags' in kwargs:
+            hostname_tags = kwargs['hostnameTags']
+        if role_arn is None and 'roleArn' in kwargs:
+            role_arn = kwargs['roleArn']
+        if service_refresh_rate_in_minutes is None and 'serviceRefreshRateInMinutes' in kwargs:
+            service_refresh_rate_in_minutes = kwargs['serviceRefreshRateInMinutes']
+
         if additional_tags is not None:
             _setter("additional_tags", additional_tags)
         if external_id is not None:
@@ -352,18 +386,6 @@ class CloudIntegrationEc2(pulumi.CustomResource):
         Provides a Wavefront Cloud Integration for EC2. This allows EC2 cloud integrations to be created,
         updated, and deleted.
 
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_wavefront as wavefront
-
-        ext_id = wavefront.CloudIntegrationAwsExternalId("extId")
-        ec2 = wavefront.CloudIntegrationEc2("ec2",
-            role_arn="arn:aws::1234567:role/example-arn",
-            external_id=ext_id.id)
-        ```
-
         ## Import
 
         EC2 Cloud Integrations can be imported by using the `id`, e.g.:
@@ -394,18 +416,6 @@ class CloudIntegrationEc2(pulumi.CustomResource):
         """
         Provides a Wavefront Cloud Integration for EC2. This allows EC2 cloud integrations to be created,
         updated, and deleted.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_wavefront as wavefront
-
-        ext_id = wavefront.CloudIntegrationAwsExternalId("extId")
-        ec2 = wavefront.CloudIntegrationEc2("ec2",
-            role_arn="arn:aws::1234567:role/example-arn",
-            external_id=ext_id.id)
-        ```
 
         ## Import
 

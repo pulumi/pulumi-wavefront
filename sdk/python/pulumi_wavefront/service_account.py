@@ -43,13 +43,21 @@ class ServiceAccountArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             identifier: pulumi.Input[str],
+             identifier: Optional[pulumi.Input[str]] = None,
              active: Optional[pulumi.Input[bool]] = None,
              description: Optional[pulumi.Input[str]] = None,
              ingestion_policy: Optional[pulumi.Input[str]] = None,
              permissions: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              user_groups: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions] = None,
+             **kwargs):
+        if identifier is None:
+            raise TypeError("Missing 'identifier' argument")
+        if ingestion_policy is None and 'ingestionPolicy' in kwargs:
+            ingestion_policy = kwargs['ingestionPolicy']
+        if user_groups is None and 'userGroups' in kwargs:
+            user_groups = kwargs['userGroups']
+
         _setter("identifier", identifier)
         if active is not None:
             _setter("active", active)
@@ -175,7 +183,13 @@ class _ServiceAccountState:
              ingestion_policy: Optional[pulumi.Input[str]] = None,
              permissions: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              user_groups: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions] = None,
+             **kwargs):
+        if ingestion_policy is None and 'ingestionPolicy' in kwargs:
+            ingestion_policy = kwargs['ingestionPolicy']
+        if user_groups is None and 'userGroups' in kwargs:
+            user_groups = kwargs['userGroups']
+
         if active is not None:
             _setter("active", active)
         if description is not None:
@@ -279,17 +293,6 @@ class ServiceAccount(pulumi.CustomResource):
         """
         Provides a Wavefront Service Account Resource. This allows service accounts to be created, updated, and deleted.
 
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_wavefront as wavefront
-
-        basic = wavefront.ServiceAccount("basic",
-            active=True,
-            identifier="sa::tftesting")
-        ```
-
         ## Import
 
         Service accounts can be imported by using `identifier`, e.g.:
@@ -317,17 +320,6 @@ class ServiceAccount(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Provides a Wavefront Service Account Resource. This allows service accounts to be created, updated, and deleted.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_wavefront as wavefront
-
-        basic = wavefront.ServiceAccount("basic",
-            active=True,
-            identifier="sa::tftesting")
-        ```
 
         ## Import
 

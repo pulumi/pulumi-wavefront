@@ -7,18 +7,6 @@ import * as utilities from "./utilities";
 /**
  * Provides a Wavefront Service Account Resource. This allows service accounts to be created, updated, and deleted.
  *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as wavefront from "@pulumi/wavefront";
- *
- * const basic = new wavefront.ServiceAccount("basic", {
- *     active: true,
- *     identifier: "sa::tftesting",
- * });
- * ```
- *
  * ## Import
  *
  * Service accounts can be imported by using `identifier`, e.g.:

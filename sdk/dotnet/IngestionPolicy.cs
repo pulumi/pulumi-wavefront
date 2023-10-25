@@ -12,24 +12,6 @@ namespace Pulumi.Wavefront
     /// <summary>
     /// Provides a Wavefront Ingestion Policy Resource. This allows ingestion policies to be created, updated, and deleted.
     /// 
-    /// ## Example Usage
-    /// 
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using System.Linq;
-    /// using Pulumi;
-    /// using Wavefront = Pulumi.Wavefront;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var basic = new Wavefront.IngestionPolicy("basic", new()
-    ///     {
-    ///         Description = "An ingestion policy for testing",
-    ///     });
-    /// 
-    /// });
-    /// ```
-    /// 
     /// ## Import
     /// 
     /// ingestion policies can be imported by using the `id`, e.g.:

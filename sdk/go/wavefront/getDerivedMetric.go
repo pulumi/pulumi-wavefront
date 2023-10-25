@@ -13,32 +13,6 @@ import (
 )
 
 // Use this data source to get information about a certain Wavefront derived metric by its ID.
-//
-// ## Example Usage
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-wavefront/sdk/v3/go/wavefront"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := wavefront.LookupDerivedMetric(ctx, &wavefront.LookupDerivedMetricArgs{
-//				Id: "derived_metric_id",
-//			}, nil)
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
 func LookupDerivedMetric(ctx *pulumi.Context, args *LookupDerivedMetricArgs, opts ...pulumi.InvokeOption) (*LookupDerivedMetricResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupDerivedMetricResult

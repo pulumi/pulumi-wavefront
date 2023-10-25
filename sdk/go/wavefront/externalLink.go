@@ -15,33 +15,6 @@ import (
 
 // Provides a Wavefront External Link Resource. This allows external links to be created, updated, and deleted.
 //
-// ## Example Usage
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-wavefront/sdk/v3/go/wavefront"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := wavefront.NewExternalLink(ctx, "basic", &wavefront.ExternalLinkArgs{
-//				Description: pulumi.String("An external link description"),
-//				Template:    pulumi.String("https://example.com/source={{{source}}}&startTime={{startEpochMillis}}"),
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
-//
 // ## Import
 //
 // Maintenance windows can be imported by using the `id`, e.g.:

@@ -41,7 +41,9 @@ class RoleArgs:
              description: Optional[pulumi.Input[str]] = None,
              name: Optional[pulumi.Input[str]] = None,
              permissions: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions] = None,
+             **kwargs):
+
         if assignees is not None:
             _setter("assignees", assignees)
         if description is not None:
@@ -132,7 +134,9 @@ class _RoleState:
              description: Optional[pulumi.Input[str]] = None,
              name: Optional[pulumi.Input[str]] = None,
              permissions: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions] = None,
+             **kwargs):
+
         if assignees is not None:
             _setter("assignees", assignees)
         if description is not None:
@@ -206,15 +210,6 @@ class Role(pulumi.CustomResource):
         """
         Provides a Wavefront Role Resource. This allows roles to be created, updated, and deleted.
 
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_wavefront as wavefront
-
-        role = wavefront.Role("role")
-        ```
-
         ## Import
 
         Roles can be imported by using the `id`, e.g.:
@@ -240,15 +235,6 @@ class Role(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Provides a Wavefront Role Resource. This allows roles to be created, updated, and deleted.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_wavefront as wavefront
-
-        role = wavefront.Role("role")
-        ```
 
         ## Import
 

@@ -4,35 +4,15 @@
 package wavefront
 
 import (
+	"context"
+	"reflect"
+
 	"github.com/pulumi/pulumi-wavefront/sdk/v3/go/wavefront/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Use this data source to get the Group ID of the `Everyone` group in Wavefront.
-//
-// ## Example Usage
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-wavefront/sdk/v3/go/wavefront"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := wavefront.GetDefaultUserGroup(ctx, nil, nil)
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
 func GetDefaultUserGroup(ctx *pulumi.Context, opts ...pulumi.InvokeOption) (*GetDefaultUserGroupResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetDefaultUserGroupResult
@@ -50,4 +30,51 @@ type GetDefaultUserGroupResult struct {
 	GroupId string `pulumi:"groupId"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
+}
+
+func GetDefaultUserGroupOutput(ctx *pulumi.Context, opts ...pulumi.InvokeOption) GetDefaultUserGroupResultOutput {
+	return pulumi.ToOutput(0).ApplyT(func(int) (GetDefaultUserGroupResult, error) {
+		r, err := GetDefaultUserGroup(ctx, opts...)
+		var s GetDefaultUserGroupResult
+		if r != nil {
+			s = *r
+		}
+		return s, err
+	}).(GetDefaultUserGroupResultOutput)
+}
+
+// A collection of values returned by getDefaultUserGroup.
+type GetDefaultUserGroupResultOutput struct{ *pulumi.OutputState }
+
+func (GetDefaultUserGroupResultOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDefaultUserGroupResult)(nil)).Elem()
+}
+
+func (o GetDefaultUserGroupResultOutput) ToGetDefaultUserGroupResultOutput() GetDefaultUserGroupResultOutput {
+	return o
+}
+
+func (o GetDefaultUserGroupResultOutput) ToGetDefaultUserGroupResultOutputWithContext(ctx context.Context) GetDefaultUserGroupResultOutput {
+	return o
+}
+
+func (o GetDefaultUserGroupResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDefaultUserGroupResult] {
+	return pulumix.Output[GetDefaultUserGroupResult]{
+		OutputState: o.OutputState,
+	}
+}
+
+// Set to the Group ID of the `Everyone` group, suitable for referencing
+// in other resources that support group memberships.
+func (o GetDefaultUserGroupResultOutput) GroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDefaultUserGroupResult) string { return v.GroupId }).(pulumi.StringOutput)
+}
+
+// The provider-assigned unique ID for this managed resource.
+func (o GetDefaultUserGroupResultOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDefaultUserGroupResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func init() {
+	pulumi.RegisterOutputType(GetDefaultUserGroupResultOutput{})
 }

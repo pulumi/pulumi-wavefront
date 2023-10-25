@@ -16,38 +16,6 @@ import (
 // Provides a Wavefront Cloud Integration for CloudWatch. This allows CloudWatch cloud integrations to be created,
 // updated, and deleted.
 //
-// ## Example Usage
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-wavefront/sdk/v3/go/wavefront"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			extId, err := wavefront.NewCloudIntegrationAwsExternalId(ctx, "extId", nil)
-//			if err != nil {
-//				return err
-//			}
-//			_, err = wavefront.NewCloudIntegrationCloudWatch(ctx, "cloudwatch", &wavefront.CloudIntegrationCloudWatchArgs{
-//				ForceSave:  pulumi.Bool(true),
-//				RoleArn:    pulumi.String("arn:aws::1234567:role/example-arn"),
-//				ExternalId: extId.ID(),
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
-//
 // ## Import
 //
 // CloudWatch Cloud Integrations can be imported by using the `id`, e.g.:

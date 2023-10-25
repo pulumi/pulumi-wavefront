@@ -13,33 +13,6 @@ import (
 )
 
 // Use this data source to get all User Groups in Wavefront.
-//
-// ## Example Usage
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-wavefront/sdk/v3/go/wavefront"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := wavefront.GetUserGroups(ctx, &wavefront.GetUserGroupsArgs{
-//				Limit:  pulumi.IntRef(10),
-//				Offset: pulumi.IntRef(0),
-//			}, nil)
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
 func GetUserGroups(ctx *pulumi.Context, args *GetUserGroupsArgs, opts ...pulumi.InvokeOption) (*GetUserGroupsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetUserGroupsResult

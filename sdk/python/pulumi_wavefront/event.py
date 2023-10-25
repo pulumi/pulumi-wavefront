@@ -37,12 +37,20 @@ class EventArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             annotations: pulumi.Input[Mapping[str, pulumi.Input[str]]],
+             annotations: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
              endtime_key: Optional[pulumi.Input[int]] = None,
              name: Optional[pulumi.Input[str]] = None,
              start_time: Optional[pulumi.Input[int]] = None,
              tags: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions] = None,
+             **kwargs):
+        if annotations is None:
+            raise TypeError("Missing 'annotations' argument")
+        if endtime_key is None and 'endtimeKey' in kwargs:
+            endtime_key = kwargs['endtimeKey']
+        if start_time is None and 'startTime' in kwargs:
+            start_time = kwargs['startTime']
+
         _setter("annotations", annotations)
         if endtime_key is not None:
             _setter("endtime_key", endtime_key)
@@ -142,7 +150,13 @@ class _EventState:
              name: Optional[pulumi.Input[str]] = None,
              start_time: Optional[pulumi.Input[int]] = None,
              tags: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions] = None,
+             **kwargs):
+        if endtime_key is None and 'endtimeKey' in kwargs:
+            endtime_key = kwargs['endtimeKey']
+        if start_time is None and 'startTime' in kwargs:
+            start_time = kwargs['startTime']
+
         if annotations is not None:
             _setter("annotations", annotations)
         if endtime_key is not None:
@@ -226,21 +240,6 @@ class Event(pulumi.CustomResource):
         """
         Provides a Wavefront event resource. This allows events to be created, updated, and deleted.
 
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_wavefront as wavefront
-
-        event = wavefront.Event("event",
-            annotations={
-                "details": "description",
-                "severity": "info",
-                "type": "event type",
-            },
-            tags=["eventTag1"])
-        ```
-
         ## Import
 
         You can import events by using the id, for example:
@@ -264,21 +263,6 @@ class Event(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Provides a Wavefront event resource. This allows events to be created, updated, and deleted.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_wavefront as wavefront
-
-        event = wavefront.Event("event",
-            annotations={
-                "details": "description",
-                "severity": "info",
-                "type": "event type",
-            },
-            tags=["eventTag1"])
-        ```
 
         ## Import
 

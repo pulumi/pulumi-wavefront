@@ -259,15 +259,6 @@ def get_maintenance_window(id: Optional[str] = None,
     """
     Use this data source to get information about a Wavefront maintenance window by its ID.
 
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_wavefront as wavefront
-
-    example = wavefront.get_maintenance_window(id="sample-maintenance-window-id")
-    ```
-
 
     :param str id: The ID of the maintenance window.
     """
@@ -302,15 +293,6 @@ def get_maintenance_window_output(id: Optional[pulumi.Input[str]] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMaintenanceWindowResult]:
     """
     Use this data source to get information about a Wavefront maintenance window by its ID.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_wavefront as wavefront
-
-    example = wavefront.get_maintenance_window(id="sample-maintenance-window-id")
-    ```
 
 
     :param str id: The ID of the maintenance window.

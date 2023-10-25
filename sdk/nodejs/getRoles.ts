@@ -8,18 +8,6 @@ import * as utilities from "./utilities";
 
 /**
  * Use this data source to get all Roles in Wavefront.
- *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as wavefront from "@pulumi/wavefront";
- *
- * const roles = wavefront.getRoles({
- *     limit: 10,
- *     offset: 0,
- * });
- * ```
  */
 export function getRoles(args?: GetRolesArgs, opts?: pulumi.InvokeOptions): Promise<GetRolesResult> {
     args = args || {};
@@ -62,18 +50,6 @@ export interface GetRolesResult {
 }
 /**
  * Use this data source to get all Roles in Wavefront.
- *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as wavefront from "@pulumi/wavefront";
- *
- * const roles = wavefront.getRoles({
- *     limit: 10,
- *     offset: 0,
- * });
- * ```
  */
 export function getRolesOutput(args?: GetRolesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRolesResult> {
     return pulumi.output(args).apply((a: any) => getRoles(a, opts))

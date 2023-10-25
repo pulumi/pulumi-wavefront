@@ -325,15 +325,6 @@ def get_derived_metric(id: Optional[str] = None,
     """
     Use this data source to get information about a certain Wavefront derived metric by its ID.
 
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_wavefront as wavefront
-
-    example = wavefront.get_derived_metric(id="derived_metric_id")
-    ```
-
 
     :param str id: The ID associated with the derived metric data to be fetched.
     """
@@ -374,15 +365,6 @@ def get_derived_metric_output(id: Optional[pulumi.Input[str]] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDerivedMetricResult]:
     """
     Use this data source to get information about a certain Wavefront derived metric by its ID.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_wavefront as wavefront
-
-    example = wavefront.get_derived_metric(id="derived_metric_id")
-    ```
 
 
     :param str id: The ID associated with the derived metric data to be fetched.

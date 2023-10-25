@@ -84,8 +84,8 @@ class AlertArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             minutes: pulumi.Input[int],
-             tags: pulumi.Input[Sequence[pulumi.Input[str]]],
+             minutes: Optional[pulumi.Input[int]] = None,
+             tags: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              additional_information: Optional[pulumi.Input[str]] = None,
              alert_type: Optional[pulumi.Input[str]] = None,
              can_modifies: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
@@ -100,7 +100,31 @@ class AlertArgs:
              severity: Optional[pulumi.Input[str]] = None,
              target: Optional[pulumi.Input[str]] = None,
              threshold_targets: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions] = None,
+             **kwargs):
+        if minutes is None:
+            raise TypeError("Missing 'minutes' argument")
+        if tags is None:
+            raise TypeError("Missing 'tags' argument")
+        if additional_information is None and 'additionalInformation' in kwargs:
+            additional_information = kwargs['additionalInformation']
+        if alert_type is None and 'alertType' in kwargs:
+            alert_type = kwargs['alertType']
+        if can_modifies is None and 'canModifies' in kwargs:
+            can_modifies = kwargs['canModifies']
+        if can_views is None and 'canViews' in kwargs:
+            can_views = kwargs['canViews']
+        if display_expression is None and 'displayExpression' in kwargs:
+            display_expression = kwargs['displayExpression']
+        if notification_resend_frequency_minutes is None and 'notificationResendFrequencyMinutes' in kwargs:
+            notification_resend_frequency_minutes = kwargs['notificationResendFrequencyMinutes']
+        if process_rate_minutes is None and 'processRateMinutes' in kwargs:
+            process_rate_minutes = kwargs['processRateMinutes']
+        if resolve_after_minutes is None and 'resolveAfterMinutes' in kwargs:
+            resolve_after_minutes = kwargs['resolveAfterMinutes']
+        if threshold_targets is None and 'thresholdTargets' in kwargs:
+            threshold_targets = kwargs['thresholdTargets']
+
         _setter("minutes", minutes)
         _setter("tags", tags)
         if additional_information is not None:
@@ -427,7 +451,27 @@ class _AlertState:
              tags: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              target: Optional[pulumi.Input[str]] = None,
              threshold_targets: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions] = None,
+             **kwargs):
+        if additional_information is None and 'additionalInformation' in kwargs:
+            additional_information = kwargs['additionalInformation']
+        if alert_type is None and 'alertType' in kwargs:
+            alert_type = kwargs['alertType']
+        if can_modifies is None and 'canModifies' in kwargs:
+            can_modifies = kwargs['canModifies']
+        if can_views is None and 'canViews' in kwargs:
+            can_views = kwargs['canViews']
+        if display_expression is None and 'displayExpression' in kwargs:
+            display_expression = kwargs['displayExpression']
+        if notification_resend_frequency_minutes is None and 'notificationResendFrequencyMinutes' in kwargs:
+            notification_resend_frequency_minutes = kwargs['notificationResendFrequencyMinutes']
+        if process_rate_minutes is None and 'processRateMinutes' in kwargs:
+            process_rate_minutes = kwargs['processRateMinutes']
+        if resolve_after_minutes is None and 'resolveAfterMinutes' in kwargs:
+            resolve_after_minutes = kwargs['resolveAfterMinutes']
+        if threshold_targets is None and 'thresholdTargets' in kwargs:
+            threshold_targets = kwargs['thresholdTargets']
+
         if additional_information is not None:
             _setter("additional_information", additional_information)
         if alert_type is not None:
@@ -692,25 +736,6 @@ class Alert(pulumi.CustomResource):
         """
         Provides a Wavefront Alert resource. This allows alerts to be created, updated, and deleted.
 
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_wavefront as wavefront
-
-        foobar = wavefront.Alert("foobar",
-            condition="100-ts(\\"cpu.usage_idle\\", environment=preprod and cpu=cpu-total ) > 80",
-            display_expression="100-ts(\\"cpu.usage_idle\\", environment=preprod and cpu=cpu-total )",
-            minutes=5,
-            resolve_after_minutes=5,
-            severity="WARN",
-            tags=[
-                "terraform",
-                "test",
-            ],
-            target="test@example.com,target:alert-target-id")
-        ```
-
         ## Import
 
         Alerts can be imported using the `id`, e.g.
@@ -759,25 +784,6 @@ class Alert(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Provides a Wavefront Alert resource. This allows alerts to be created, updated, and deleted.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_wavefront as wavefront
-
-        foobar = wavefront.Alert("foobar",
-            condition="100-ts(\\"cpu.usage_idle\\", environment=preprod and cpu=cpu-total ) > 80",
-            display_expression="100-ts(\\"cpu.usage_idle\\", environment=preprod and cpu=cpu-total )",
-            minutes=5,
-            resolve_after_minutes=5,
-            severity="WARN",
-            tags=[
-                "terraform",
-                "test",
-            ],
-            target="test@example.com,target:alert-target-id")
-        ```
 
         ## Import
 

@@ -7,15 +7,6 @@ import * as utilities from "./utilities";
 /**
  * Provides an External ID for use in Amazon Web Services IAM Roles. This allows External IDs to be created and deleted.
  *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as wavefront from "@pulumi/wavefront";
- *
- * const externalId = new wavefront.CloudIntegrationAwsExternalId("externalId", {});
- * ```
- *
  * ## Import
  *
  * External IDs can be imported by using the `id`, e.g.:

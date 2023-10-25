@@ -38,12 +38,20 @@ class DerivedMetricArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             minutes: pulumi.Input[int],
-             query: pulumi.Input[str],
+             minutes: Optional[pulumi.Input[int]] = None,
+             query: Optional[pulumi.Input[str]] = None,
              additional_information: Optional[pulumi.Input[str]] = None,
              name: Optional[pulumi.Input[str]] = None,
              tags: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions] = None,
+             **kwargs):
+        if minutes is None:
+            raise TypeError("Missing 'minutes' argument")
+        if query is None:
+            raise TypeError("Missing 'query' argument")
+        if additional_information is None and 'additionalInformation' in kwargs:
+            additional_information = kwargs['additionalInformation']
+
         _setter("minutes", minutes)
         _setter("query", query)
         if additional_information is not None:
@@ -146,7 +154,11 @@ class _DerivedMetricState:
              name: Optional[pulumi.Input[str]] = None,
              query: Optional[pulumi.Input[str]] = None,
              tags: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions] = None,
+             **kwargs):
+        if additional_information is None and 'additionalInformation' in kwargs:
+            additional_information = kwargs['additionalInformation']
+
         if additional_information is not None:
             _setter("additional_information", additional_information)
         if minutes is not None:
@@ -234,17 +246,6 @@ class DerivedMetric(pulumi.CustomResource):
         Provides a Wavefront Derived Metric Resource. This allows derived metrics to be created,
         updated, and deleted.
 
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_wavefront as wavefront
-
-        derived = wavefront.DerivedMetric("derived",
-            minutes=5,
-            query="aliasMetric(5, \\"some.metric\\")")
-        ```
-
         ## Import
 
         Derived Metrics can be imported by using the `id`, e.g.:
@@ -270,17 +271,6 @@ class DerivedMetric(pulumi.CustomResource):
         """
         Provides a Wavefront Derived Metric Resource. This allows derived metrics to be created,
         updated, and deleted.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_wavefront as wavefront
-
-        derived = wavefront.DerivedMetric("derived",
-            minutes=5,
-            query="aliasMetric(5, \\"some.metric\\")")
-        ```
 
         ## Import
 
