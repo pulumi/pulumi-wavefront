@@ -3,7 +3,7 @@ module github.com/pulumi/pulumi-wavefront/provider/v3
 go 1.21
 
 require (
-	github.com/pulumi/pulumi-terraform-bridge/v3 v3.63.0
+	github.com/pulumi/pulumi-terraform-bridge/v3 v3.63.1
 	github.com/pulumi/pulumi/sdk/v3 v3.90.1
 	github.com/vmware/terraform-provider-wavefront v0.0.0-20231010210106-16a96b5db492
 )
