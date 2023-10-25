@@ -13,26 +13,6 @@ namespace Pulumi.Wavefront
     /// Provides a Wavefront Cloud Integration for AppDynamics. This allows AppDynamics cloud integrations to be created,
     /// updated, and deleted.
     /// 
-    /// ## Example Usage
-    /// 
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using System.Linq;
-    /// using Pulumi;
-    /// using Wavefront = Pulumi.Wavefront;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var appDynamics = new Wavefront.CloudIntegrationAppDynamics("appDynamics", new()
-    ///     {
-    ///         ControllerName = "exampleController",
-    ///         EncryptedPassword = "encryptedPassword",
-    ///         UserName = "example",
-    ///     });
-    /// 
-    /// });
-    /// ```
-    /// 
     /// ## Import
     /// 
     /// AppDynamic Cloud Integrations can be imported by using the `id`, e.g.:

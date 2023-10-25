@@ -47,14 +47,28 @@ class ExternalLinkArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             description: pulumi.Input[str],
-             template: pulumi.Input[str],
+             description: Optional[pulumi.Input[str]] = None,
+             template: Optional[pulumi.Input[str]] = None,
              is_log_integration: Optional[pulumi.Input[bool]] = None,
              metric_filter_regex: Optional[pulumi.Input[str]] = None,
              name: Optional[pulumi.Input[str]] = None,
              point_tag_filter_regexes: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
              source_filter_regex: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions] = None,
+             **kwargs):
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if template is None:
+            raise TypeError("Missing 'template' argument")
+        if is_log_integration is None and 'isLogIntegration' in kwargs:
+            is_log_integration = kwargs['isLogIntegration']
+        if metric_filter_regex is None and 'metricFilterRegex' in kwargs:
+            metric_filter_regex = kwargs['metricFilterRegex']
+        if point_tag_filter_regexes is None and 'pointTagFilterRegexes' in kwargs:
+            point_tag_filter_regexes = kwargs['pointTagFilterRegexes']
+        if source_filter_regex is None and 'sourceFilterRegex' in kwargs:
+            source_filter_regex = kwargs['sourceFilterRegex']
+
         _setter("description", description)
         _setter("template", template)
         if is_log_integration is not None:
@@ -199,7 +213,17 @@ class _ExternalLinkState:
              point_tag_filter_regexes: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
              source_filter_regex: Optional[pulumi.Input[str]] = None,
              template: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions] = None,
+             **kwargs):
+        if is_log_integration is None and 'isLogIntegration' in kwargs:
+            is_log_integration = kwargs['isLogIntegration']
+        if metric_filter_regex is None and 'metricFilterRegex' in kwargs:
+            metric_filter_regex = kwargs['metricFilterRegex']
+        if point_tag_filter_regexes is None and 'pointTagFilterRegexes' in kwargs:
+            point_tag_filter_regexes = kwargs['pointTagFilterRegexes']
+        if source_filter_regex is None and 'sourceFilterRegex' in kwargs:
+            source_filter_regex = kwargs['sourceFilterRegex']
+
         if description is not None:
             _setter("description", description)
         if is_log_integration is not None:
@@ -319,17 +343,6 @@ class ExternalLink(pulumi.CustomResource):
         """
         Provides a Wavefront External Link Resource. This allows external links to be created, updated, and deleted.
 
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_wavefront as wavefront
-
-        basic = wavefront.ExternalLink("basic",
-            description="An external link description",
-            template="https://example.com/source={{{source}}}&startTime={{startEpochMillis}}")
-        ```
-
         ## Import
 
         Maintenance windows can be imported by using the `id`, e.g.:
@@ -359,17 +372,6 @@ class ExternalLink(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Provides a Wavefront External Link Resource. This allows external links to be created, updated, and deleted.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_wavefront as wavefront
-
-        basic = wavefront.ExternalLink("basic",
-            description="An external link description",
-            template="https://example.com/source={{{source}}}&startTime={{startEpochMillis}}")
-        ```
 
         ## Import
 

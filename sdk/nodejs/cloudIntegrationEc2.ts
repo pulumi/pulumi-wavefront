@@ -8,19 +8,6 @@ import * as utilities from "./utilities";
  * Provides a Wavefront Cloud Integration for EC2. This allows EC2 cloud integrations to be created,
  * updated, and deleted.
  *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as wavefront from "@pulumi/wavefront";
- *
- * const extId = new wavefront.CloudIntegrationAwsExternalId("extId", {});
- * const ec2 = new wavefront.CloudIntegrationEc2("ec2", {
- *     roleArn: "arn:aws::1234567:role/example-arn",
- *     externalId: extId.id,
- * });
- * ```
- *
  * ## Import
  *
  * EC2 Cloud Integrations can be imported by using the `id`, e.g.:

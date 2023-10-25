@@ -7,15 +7,6 @@ import * as utilities from "./utilities";
 /**
  * Provides a Wavefront User Group Resource. This allows user groups to be created, updated, and deleted.
  *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as wavefront from "@pulumi/wavefront";
- *
- * const basic = new wavefront.UserGroup("basic", {description: "Basic User Group for Unit Tests"});
- * ```
- *
  * ## Import
  *
  * User Groups can be imported by using the `id`, e.g.:

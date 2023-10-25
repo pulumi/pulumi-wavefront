@@ -7,15 +7,6 @@ import * as utilities from "./utilities";
 /**
  * Provides a Wavefront User Resource. This allows user accounts to be created, updated, and deleted.
  *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as wavefront from "@pulumi/wavefront";
- *
- * const basic = new wavefront.User("basic", {email: "test+tftesting@example.com"});
- * ```
- *
  * ## Import
  *
  * Users can be imported by using the `id`, e.g.:

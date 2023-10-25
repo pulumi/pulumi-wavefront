@@ -184,15 +184,6 @@ def get_external_link(id: Optional[str] = None,
     """
     Use this data source to get information about a Wavefront external link by its ID.
 
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_wavefront as wavefront
-
-    example = wavefront.get_external_link(id="sample-external-link-id")
-    ```
-
 
     :param str id: The ID of the external link.
     """
@@ -221,15 +212,6 @@ def get_external_link_output(id: Optional[pulumi.Input[str]] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetExternalLinkResult]:
     """
     Use this data source to get information about a Wavefront external link by its ID.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_wavefront as wavefront
-
-    example = wavefront.get_external_link(id="sample-external-link-id")
-    ```
 
 
     :param str id: The ID of the external link.

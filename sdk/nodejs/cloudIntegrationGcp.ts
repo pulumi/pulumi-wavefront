@@ -8,20 +8,6 @@ import * as utilities from "./utilities";
  * Provides a Wavefront Cloud Integration for Google Cloud Platform. This allows Google Cloud Platform cloud
  * integrations to be created, updated, and deleted.
  *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as wavefront from "@pulumi/wavefront";
- *
- * const gcp = new wavefront.CloudIntegrationGcp("gcp", {
- *     jsonKey: `{...your gcp key ...}
- *
- * `,
- *     projectId: "example-gcp-project",
- * });
- * ```
- *
  * ## Import
  *
  * GCP Cloud Integrations can be imported by using the `id`, e.g.:

@@ -60,15 +60,6 @@ class AwaitableGetUsersResult(GetUsersResult):
 def get_users(opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetUsersResult:
     """
     Use this data source to get all users in Wavefront.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_wavefront as wavefront
-
-    users = wavefront.get_users()
-    ```
     """
     __args__ = dict()
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
@@ -83,14 +74,5 @@ def get_users(opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetUsersR
 def get_users_output(opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetUsersResult]:
     """
     Use this data source to get all users in Wavefront.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_wavefront as wavefront
-
-    users = wavefront.get_users()
-    ```
     """
     ...

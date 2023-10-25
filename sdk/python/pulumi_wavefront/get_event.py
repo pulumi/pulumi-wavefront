@@ -154,15 +154,6 @@ def get_event(id: Optional[str] = None,
     """
     Use this data source to get information about a certain Wavefront event.
 
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_wavefront as wavefront
-
-    example = wavefront.get_event(id="sample-event-id")
-    ```
-
 
     :param str id: The ID associated with the event data to be fetched.
     """
@@ -189,15 +180,6 @@ def get_event_output(id: Optional[pulumi.Input[str]] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetEventResult]:
     """
     Use this data source to get information about a certain Wavefront event.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_wavefront as wavefront
-
-    example = wavefront.get_event(id="sample-event-id")
-    ```
 
 
     :param str id: The ID associated with the event data to be fetched.

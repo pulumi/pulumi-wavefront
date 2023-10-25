@@ -37,11 +37,17 @@ class UserArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             email: pulumi.Input[str],
+             email: Optional[pulumi.Input[str]] = None,
              customer: Optional[pulumi.Input[str]] = None,
              permissions: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              user_groups: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions] = None,
+             **kwargs):
+        if email is None:
+            raise TypeError("Missing 'email' argument")
+        if user_groups is None and 'userGroups' in kwargs:
+            user_groups = kwargs['userGroups']
+
         _setter("email", email)
         if customer is not None:
             _setter("customer", customer)
@@ -131,7 +137,11 @@ class _UserState:
              email: Optional[pulumi.Input[str]] = None,
              permissions: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              user_groups: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions] = None,
+             **kwargs):
+        if user_groups is None and 'userGroups' in kwargs:
+            user_groups = kwargs['userGroups']
+
         if customer is not None:
             _setter("customer", customer)
         if email is not None:
@@ -205,15 +215,6 @@ class User(pulumi.CustomResource):
         """
         Provides a Wavefront User Resource. This allows user accounts to be created, updated, and deleted.
 
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_wavefront as wavefront
-
-        basic = wavefront.User("basic", email="test+tftesting@example.com")
-        ```
-
         ## Import
 
         Users can be imported by using the `id`, e.g.:
@@ -239,15 +240,6 @@ class User(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Provides a Wavefront User Resource. This allows user accounts to be created, updated, and deleted.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_wavefront as wavefront
-
-        basic = wavefront.User("basic", email="test+tftesting@example.com")
-        ```
 
         ## Import
 

@@ -386,15 +386,6 @@ def get_dashboard(id: Optional[str] = None,
     """
     Use this data source to get information about a certain Wavefront dashboard by its ID.
 
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_wavefront as wavefront
-
-    example = wavefront.get_dashboard(id="dashboard-id")
-    ```
-
 
     :param str id: The ID associated with the dashboard data to be fetched.
     """
@@ -446,15 +437,6 @@ def get_dashboard_output(id: Optional[pulumi.Input[str]] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDashboardResult]:
     """
     Use this data source to get information about a certain Wavefront dashboard by its ID.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_wavefront as wavefront
-
-    example = wavefront.get_dashboard(id="dashboard-id")
-    ```
 
 
     :param str id: The ID associated with the dashboard data to be fetched.

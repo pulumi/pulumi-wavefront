@@ -61,16 +61,40 @@ class MaintenanceWindowArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             end_time_in_seconds: pulumi.Input[int],
-             reason: pulumi.Input[str],
-             start_time_in_seconds: pulumi.Input[int],
-             title: pulumi.Input[str],
+             end_time_in_seconds: Optional[pulumi.Input[int]] = None,
+             reason: Optional[pulumi.Input[str]] = None,
+             start_time_in_seconds: Optional[pulumi.Input[int]] = None,
+             title: Optional[pulumi.Input[str]] = None,
              host_tag_group_host_names_group_anded: Optional[pulumi.Input[bool]] = None,
              relevant_customer_tags: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              relevant_host_names: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              relevant_host_tags: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              relevant_host_tags_anded: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions] = None,
+             **kwargs):
+        if end_time_in_seconds is None and 'endTimeInSeconds' in kwargs:
+            end_time_in_seconds = kwargs['endTimeInSeconds']
+        if end_time_in_seconds is None:
+            raise TypeError("Missing 'end_time_in_seconds' argument")
+        if reason is None:
+            raise TypeError("Missing 'reason' argument")
+        if start_time_in_seconds is None and 'startTimeInSeconds' in kwargs:
+            start_time_in_seconds = kwargs['startTimeInSeconds']
+        if start_time_in_seconds is None:
+            raise TypeError("Missing 'start_time_in_seconds' argument")
+        if title is None:
+            raise TypeError("Missing 'title' argument")
+        if host_tag_group_host_names_group_anded is None and 'hostTagGroupHostNamesGroupAnded' in kwargs:
+            host_tag_group_host_names_group_anded = kwargs['hostTagGroupHostNamesGroupAnded']
+        if relevant_customer_tags is None and 'relevantCustomerTags' in kwargs:
+            relevant_customer_tags = kwargs['relevantCustomerTags']
+        if relevant_host_names is None and 'relevantHostNames' in kwargs:
+            relevant_host_names = kwargs['relevantHostNames']
+        if relevant_host_tags is None and 'relevantHostTags' in kwargs:
+            relevant_host_tags = kwargs['relevantHostTags']
+        if relevant_host_tags_anded is None and 'relevantHostTagsAnded' in kwargs:
+            relevant_host_tags_anded = kwargs['relevantHostTagsAnded']
+
         _setter("end_time_in_seconds", end_time_in_seconds)
         _setter("reason", reason)
         _setter("start_time_in_seconds", start_time_in_seconds)
@@ -265,7 +289,23 @@ class _MaintenanceWindowState:
              relevant_host_tags_anded: Optional[pulumi.Input[bool]] = None,
              start_time_in_seconds: Optional[pulumi.Input[int]] = None,
              title: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions] = None,
+             **kwargs):
+        if end_time_in_seconds is None and 'endTimeInSeconds' in kwargs:
+            end_time_in_seconds = kwargs['endTimeInSeconds']
+        if host_tag_group_host_names_group_anded is None and 'hostTagGroupHostNamesGroupAnded' in kwargs:
+            host_tag_group_host_names_group_anded = kwargs['hostTagGroupHostNamesGroupAnded']
+        if relevant_customer_tags is None and 'relevantCustomerTags' in kwargs:
+            relevant_customer_tags = kwargs['relevantCustomerTags']
+        if relevant_host_names is None and 'relevantHostNames' in kwargs:
+            relevant_host_names = kwargs['relevantHostNames']
+        if relevant_host_tags is None and 'relevantHostTags' in kwargs:
+            relevant_host_tags = kwargs['relevantHostTags']
+        if relevant_host_tags_anded is None and 'relevantHostTagsAnded' in kwargs:
+            relevant_host_tags_anded = kwargs['relevantHostTagsAnded']
+        if start_time_in_seconds is None and 'startTimeInSeconds' in kwargs:
+            start_time_in_seconds = kwargs['startTimeInSeconds']
+
         if end_time_in_seconds is not None:
             _setter("end_time_in_seconds", end_time_in_seconds)
         if host_tag_group_host_names_group_anded is not None:
@@ -423,23 +463,6 @@ class MaintenanceWindow(pulumi.CustomResource):
         """
         Provides a Wavefront Maintenance Window Resource. This allows maintenance windows to be created, updated, and deleted.
 
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_wavefront as wavefront
-
-        basic = wavefront.MaintenanceWindow("basic",
-            end_time_in_seconds=1601123456,
-            reason="Routine maintenance for 2020",
-            relevant_host_names=[
-                "my_hostname",
-                "my_other_hostname",
-            ],
-            start_time_in_seconds=1600123456,
-            title="Routine maintenance")
-        ```
-
         ## Import
 
         Maintenance windows can be imported using the `id`, e.g.
@@ -479,23 +502,6 @@ class MaintenanceWindow(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Provides a Wavefront Maintenance Window Resource. This allows maintenance windows to be created, updated, and deleted.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_wavefront as wavefront
-
-        basic = wavefront.MaintenanceWindow("basic",
-            end_time_in_seconds=1601123456,
-            reason="Routine maintenance for 2020",
-            relevant_host_names=[
-                "my_hostname",
-                "my_other_hostname",
-            ],
-            start_time_in_seconds=1600123456,
-            title="Routine maintenance")
-        ```
 
         ## Import
 

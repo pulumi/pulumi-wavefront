@@ -48,15 +48,37 @@ class CloudIntegrationGcpBillingArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             api_key: pulumi.Input[str],
-             json_key: pulumi.Input[str],
-             project_id: pulumi.Input[str],
-             service: pulumi.Input[str],
+             api_key: Optional[pulumi.Input[str]] = None,
+             json_key: Optional[pulumi.Input[str]] = None,
+             project_id: Optional[pulumi.Input[str]] = None,
+             service: Optional[pulumi.Input[str]] = None,
              additional_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
              force_save: Optional[pulumi.Input[bool]] = None,
              name: Optional[pulumi.Input[str]] = None,
              service_refresh_rate_in_minutes: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions] = None,
+             **kwargs):
+        if api_key is None and 'apiKey' in kwargs:
+            api_key = kwargs['apiKey']
+        if api_key is None:
+            raise TypeError("Missing 'api_key' argument")
+        if json_key is None and 'jsonKey' in kwargs:
+            json_key = kwargs['jsonKey']
+        if json_key is None:
+            raise TypeError("Missing 'json_key' argument")
+        if project_id is None and 'projectId' in kwargs:
+            project_id = kwargs['projectId']
+        if project_id is None:
+            raise TypeError("Missing 'project_id' argument")
+        if service is None:
+            raise TypeError("Missing 'service' argument")
+        if additional_tags is None and 'additionalTags' in kwargs:
+            additional_tags = kwargs['additionalTags']
+        if force_save is None and 'forceSave' in kwargs:
+            force_save = kwargs['forceSave']
+        if service_refresh_rate_in_minutes is None and 'serviceRefreshRateInMinutes' in kwargs:
+            service_refresh_rate_in_minutes = kwargs['serviceRefreshRateInMinutes']
+
         _setter("api_key", api_key)
         _setter("json_key", json_key)
         _setter("project_id", project_id)
@@ -213,7 +235,21 @@ class _CloudIntegrationGcpBillingState:
              project_id: Optional[pulumi.Input[str]] = None,
              service: Optional[pulumi.Input[str]] = None,
              service_refresh_rate_in_minutes: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions] = None,
+             **kwargs):
+        if additional_tags is None and 'additionalTags' in kwargs:
+            additional_tags = kwargs['additionalTags']
+        if api_key is None and 'apiKey' in kwargs:
+            api_key = kwargs['apiKey']
+        if force_save is None and 'forceSave' in kwargs:
+            force_save = kwargs['forceSave']
+        if json_key is None and 'jsonKey' in kwargs:
+            json_key = kwargs['jsonKey']
+        if project_id is None and 'projectId' in kwargs:
+            project_id = kwargs['projectId']
+        if service_refresh_rate_in_minutes is None and 'serviceRefreshRateInMinutes' in kwargs:
+            service_refresh_rate_in_minutes = kwargs['serviceRefreshRateInMinutes']
+
         if additional_tags is not None:
             _setter("additional_tags", additional_tags)
         if api_key is not None:
@@ -347,20 +383,6 @@ class CloudIntegrationGcpBilling(pulumi.CustomResource):
         Provides a Wavefront Cloud Integration for Google Cloud Billing. This allows GCP Billing cloud integrations to be created,
         updated, and deleted.
 
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_wavefront as wavefront
-
-        gcp_billing = wavefront.CloudIntegrationGcpBilling("gcpBilling",
-            api_key="example-api-key",
-            json_key=\"\"\"{...your gcp key ...}
-
-        \"\"\",
-            project_id="example-gcp-project")
-        ```
-
         ## Import
 
         GCP Billing Cloud Integrations can be imported by using the `id`, e.g.:
@@ -390,20 +412,6 @@ class CloudIntegrationGcpBilling(pulumi.CustomResource):
         """
         Provides a Wavefront Cloud Integration for Google Cloud Billing. This allows GCP Billing cloud integrations to be created,
         updated, and deleted.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_wavefront as wavefront
-
-        gcp_billing = wavefront.CloudIntegrationGcpBilling("gcpBilling",
-            api_key="example-api-key",
-            json_key=\"\"\"{...your gcp key ...}
-
-        \"\"\",
-            project_id="example-gcp-project")
-        ```
 
         ## Import
 

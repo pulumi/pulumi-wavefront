@@ -56,10 +56,10 @@ class CloudIntegrationAzureArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             client_id: pulumi.Input[str],
-             client_secret: pulumi.Input[str],
-             service: pulumi.Input[str],
-             tenant: pulumi.Input[str],
+             client_id: Optional[pulumi.Input[str]] = None,
+             client_secret: Optional[pulumi.Input[str]] = None,
+             service: Optional[pulumi.Input[str]] = None,
+             tenant: Optional[pulumi.Input[str]] = None,
              additional_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
              category_filters: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              force_save: Optional[pulumi.Input[bool]] = None,
@@ -67,7 +67,33 @@ class CloudIntegrationAzureArgs:
              name: Optional[pulumi.Input[str]] = None,
              resource_group_filters: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              service_refresh_rate_in_minutes: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions] = None,
+             **kwargs):
+        if client_id is None and 'clientId' in kwargs:
+            client_id = kwargs['clientId']
+        if client_id is None:
+            raise TypeError("Missing 'client_id' argument")
+        if client_secret is None and 'clientSecret' in kwargs:
+            client_secret = kwargs['clientSecret']
+        if client_secret is None:
+            raise TypeError("Missing 'client_secret' argument")
+        if service is None:
+            raise TypeError("Missing 'service' argument")
+        if tenant is None:
+            raise TypeError("Missing 'tenant' argument")
+        if additional_tags is None and 'additionalTags' in kwargs:
+            additional_tags = kwargs['additionalTags']
+        if category_filters is None and 'categoryFilters' in kwargs:
+            category_filters = kwargs['categoryFilters']
+        if force_save is None and 'forceSave' in kwargs:
+            force_save = kwargs['forceSave']
+        if metric_filter_regex is None and 'metricFilterRegex' in kwargs:
+            metric_filter_regex = kwargs['metricFilterRegex']
+        if resource_group_filters is None and 'resourceGroupFilters' in kwargs:
+            resource_group_filters = kwargs['resourceGroupFilters']
+        if service_refresh_rate_in_minutes is None and 'serviceRefreshRateInMinutes' in kwargs:
+            service_refresh_rate_in_minutes = kwargs['serviceRefreshRateInMinutes']
+
         _setter("client_id", client_id)
         _setter("client_secret", client_secret)
         _setter("service", service)
@@ -276,7 +302,25 @@ class _CloudIntegrationAzureState:
              service: Optional[pulumi.Input[str]] = None,
              service_refresh_rate_in_minutes: Optional[pulumi.Input[int]] = None,
              tenant: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions] = None,
+             **kwargs):
+        if additional_tags is None and 'additionalTags' in kwargs:
+            additional_tags = kwargs['additionalTags']
+        if category_filters is None and 'categoryFilters' in kwargs:
+            category_filters = kwargs['categoryFilters']
+        if client_id is None and 'clientId' in kwargs:
+            client_id = kwargs['clientId']
+        if client_secret is None and 'clientSecret' in kwargs:
+            client_secret = kwargs['clientSecret']
+        if force_save is None and 'forceSave' in kwargs:
+            force_save = kwargs['forceSave']
+        if metric_filter_regex is None and 'metricFilterRegex' in kwargs:
+            metric_filter_regex = kwargs['metricFilterRegex']
+        if resource_group_filters is None and 'resourceGroupFilters' in kwargs:
+            resource_group_filters = kwargs['resourceGroupFilters']
+        if service_refresh_rate_in_minutes is None and 'serviceRefreshRateInMinutes' in kwargs:
+            service_refresh_rate_in_minutes = kwargs['serviceRefreshRateInMinutes']
+
         if additional_tags is not None:
             _setter("additional_tags", additional_tags)
         if category_filters is not None:
@@ -454,18 +498,6 @@ class CloudIntegrationAzure(pulumi.CustomResource):
         Provides a Wavefront Cloud Integration for Microsoft Azure. This allows Azure cloud integrations to be created,
         updated, and deleted.
 
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_wavefront as wavefront
-
-        azure_activity_log = wavefront.CloudIntegrationAzureActivityLog("azureActivityLog",
-            client_id="client-id2",
-            client_secret="client-secret2",
-            tenant="my-tenant2")
-        ```
-
         ## Import
 
         Azure Cloud Integrations can be imported by using the `id`, e.g.:
@@ -497,18 +529,6 @@ class CloudIntegrationAzure(pulumi.CustomResource):
         """
         Provides a Wavefront Cloud Integration for Microsoft Azure. This allows Azure cloud integrations to be created,
         updated, and deleted.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_wavefront as wavefront
-
-        azure_activity_log = wavefront.CloudIntegrationAzureActivityLog("azureActivityLog",
-            client_id="client-id2",
-            client_secret="client-secret2",
-            tenant="my-tenant2")
-        ```
 
         ## Import
 

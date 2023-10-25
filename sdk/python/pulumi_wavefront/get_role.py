@@ -85,15 +85,6 @@ def get_role(id: Optional[str] = None,
     """
     Use this data source to get information about a Wavefront role by its ID.
 
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_wavefront as wavefront
-
-    example = wavefront.get_role(id="role-id")
-    ```
-
 
     :param str id: The ID associated with the role data to be fetched.
     """
@@ -114,15 +105,6 @@ def get_role_output(id: Optional[pulumi.Input[str]] = None,
                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetRoleResult]:
     """
     Use this data source to get information about a Wavefront role by its ID.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_wavefront as wavefront
-
-    example = wavefront.get_role(id="role-id")
-    ```
 
 
     :param str id: The ID associated with the role data to be fetched.

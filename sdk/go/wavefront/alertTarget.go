@@ -15,43 +15,6 @@ import (
 
 // Provides a wavefront Alert Target resource. This allows alert targets to created, updated, and deleted.
 //
-// ## Example Usage
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-wavefront/sdk/v3/go/wavefront"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := wavefront.NewAlertTarget(ctx, "testTarget", &wavefront.AlertTargetArgs{
-//				ContentType: pulumi.String("application/json"),
-//				CustomHeaders: pulumi.StringMap{
-//					"Testing": pulumi.String("true"),
-//				},
-//				Description: pulumi.String("Test target"),
-//				Method:      pulumi.String("WEBHOOK"),
-//				Recipient:   pulumi.String("https://hooks.slack.com/services/test/me"),
-//				Template:    pulumi.String("{}"),
-//				Triggers: pulumi.StringArray{
-//					pulumi.String("ALERT_OPENED"),
-//					pulumi.String("ALERT_RESOLVED"),
-//				},
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
-//
 // ## Import
 //
 // Alert Targets can be imported using the `id`, e.g.:

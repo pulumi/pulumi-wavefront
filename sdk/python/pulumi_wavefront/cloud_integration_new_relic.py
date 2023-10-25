@@ -52,8 +52,8 @@ class CloudIntegrationNewRelicArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             api_key: pulumi.Input[str],
-             service: pulumi.Input[str],
+             api_key: Optional[pulumi.Input[str]] = None,
+             service: Optional[pulumi.Input[str]] = None,
              additional_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
              app_filter_regex: Optional[pulumi.Input[str]] = None,
              force_save: Optional[pulumi.Input[bool]] = None,
@@ -61,7 +61,27 @@ class CloudIntegrationNewRelicArgs:
              metric_filters: Optional[pulumi.Input[Sequence[pulumi.Input['CloudIntegrationNewRelicMetricFilterArgs']]]] = None,
              name: Optional[pulumi.Input[str]] = None,
              service_refresh_rate_in_minutes: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions] = None,
+             **kwargs):
+        if api_key is None and 'apiKey' in kwargs:
+            api_key = kwargs['apiKey']
+        if api_key is None:
+            raise TypeError("Missing 'api_key' argument")
+        if service is None:
+            raise TypeError("Missing 'service' argument")
+        if additional_tags is None and 'additionalTags' in kwargs:
+            additional_tags = kwargs['additionalTags']
+        if app_filter_regex is None and 'appFilterRegex' in kwargs:
+            app_filter_regex = kwargs['appFilterRegex']
+        if force_save is None and 'forceSave' in kwargs:
+            force_save = kwargs['forceSave']
+        if host_filter_regex is None and 'hostFilterRegex' in kwargs:
+            host_filter_regex = kwargs['hostFilterRegex']
+        if metric_filters is None and 'metricFilters' in kwargs:
+            metric_filters = kwargs['metricFilters']
+        if service_refresh_rate_in_minutes is None and 'serviceRefreshRateInMinutes' in kwargs:
+            service_refresh_rate_in_minutes = kwargs['serviceRefreshRateInMinutes']
+
         _setter("api_key", api_key)
         _setter("service", service)
         if additional_tags is not None:
@@ -236,7 +256,23 @@ class _CloudIntegrationNewRelicState:
              name: Optional[pulumi.Input[str]] = None,
              service: Optional[pulumi.Input[str]] = None,
              service_refresh_rate_in_minutes: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions] = None,
+             **kwargs):
+        if additional_tags is None and 'additionalTags' in kwargs:
+            additional_tags = kwargs['additionalTags']
+        if api_key is None and 'apiKey' in kwargs:
+            api_key = kwargs['apiKey']
+        if app_filter_regex is None and 'appFilterRegex' in kwargs:
+            app_filter_regex = kwargs['appFilterRegex']
+        if force_save is None and 'forceSave' in kwargs:
+            force_save = kwargs['forceSave']
+        if host_filter_regex is None and 'hostFilterRegex' in kwargs:
+            host_filter_regex = kwargs['hostFilterRegex']
+        if metric_filters is None and 'metricFilters' in kwargs:
+            metric_filters = kwargs['metricFilters']
+        if service_refresh_rate_in_minutes is None and 'serviceRefreshRateInMinutes' in kwargs:
+            service_refresh_rate_in_minutes = kwargs['serviceRefreshRateInMinutes']
+
         if additional_tags is not None:
             _setter("additional_tags", additional_tags)
         if api_key is not None:
@@ -384,15 +420,6 @@ class CloudIntegrationNewRelic(pulumi.CustomResource):
         Provides a Wavefront Cloud Integration for New Relic. This allows New Relic cloud integrations to be created,
         updated, and deleted.
 
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_wavefront as wavefront
-
-        newrelic = wavefront.CloudIntegrationNewRelic("newrelic", api_key="example-api-key")
-        ```
-
         ## Import
 
         NewRelic Integrations can be imported by using the `id`, e.g.:
@@ -422,15 +449,6 @@ class CloudIntegrationNewRelic(pulumi.CustomResource):
         """
         Provides a Wavefront Cloud Integration for New Relic. This allows New Relic cloud integrations to be created,
         updated, and deleted.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_wavefront as wavefront
-
-        newrelic = wavefront.CloudIntegrationNewRelic("newrelic", api_key="example-api-key")
-        ```
 
         ## Import
 

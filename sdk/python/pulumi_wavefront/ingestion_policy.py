@@ -43,15 +43,21 @@ class IngestionPolicyArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             description: pulumi.Input[str],
-             scope: pulumi.Input[str],
+             description: Optional[pulumi.Input[str]] = None,
+             scope: Optional[pulumi.Input[str]] = None,
              accounts: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              groups: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              name: Optional[pulumi.Input[str]] = None,
              namespaces: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              sources: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              tags: Optional[pulumi.Input[Sequence[pulumi.Input['IngestionPolicyTagArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions] = None,
+             **kwargs):
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if scope is None:
+            raise TypeError("Missing 'scope' argument")
+
         _setter("description", description)
         _setter("scope", scope)
         if accounts is not None:
@@ -184,7 +190,9 @@ class _IngestionPolicyState:
              scope: Optional[pulumi.Input[str]] = None,
              sources: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              tags: Optional[pulumi.Input[Sequence[pulumi.Input['IngestionPolicyTagArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions] = None,
+             **kwargs):
+
         if accounts is not None:
             _setter("accounts", accounts)
         if description is not None:
@@ -298,15 +306,6 @@ class IngestionPolicy(pulumi.CustomResource):
         """
         Provides a Wavefront Ingestion Policy Resource. This allows ingestion policies to be created, updated, and deleted.
 
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_wavefront as wavefront
-
-        basic = wavefront.IngestionPolicy("basic", description="An ingestion policy for testing")
-        ```
-
         ## Import
 
         ingestion policies can be imported by using the `id`, e.g.:
@@ -328,15 +327,6 @@ class IngestionPolicy(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Provides a Wavefront Ingestion Policy Resource. This allows ingestion policies to be created, updated, and deleted.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_wavefront as wavefront
-
-        basic = wavefront.IngestionPolicy("basic", description="An ingestion policy for testing")
-        ```
 
         ## Import
 

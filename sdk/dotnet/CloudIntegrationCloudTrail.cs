@@ -13,29 +13,6 @@ namespace Pulumi.Wavefront
     /// Provides a Wavefront Cloud Integration for CloudTrail. This allows CloudTrail cloud integrations to be created,
     /// updated, and deleted.
     /// 
-    /// ## Example Usage
-    /// 
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using System.Linq;
-    /// using Pulumi;
-    /// using Wavefront = Pulumi.Wavefront;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var extId = new Wavefront.CloudIntegrationAwsExternalId("extId");
-    /// 
-    ///     var cloudtrail = new Wavefront.CloudIntegrationCloudTrail("cloudtrail", new()
-    ///     {
-    ///         RoleArn = "arn:aws::1234567:role/example-arn",
-    ///         ExternalId = extId.Id,
-    ///         Region = "us-west-2",
-    ///         BucketName = "example-s3-bucket",
-    ///     });
-    /// 
-    /// });
-    /// ```
-    /// 
     /// ## Import
     /// 
     /// CloudTrail Cloud Integrations can be imported by using the `id`, e.g.:

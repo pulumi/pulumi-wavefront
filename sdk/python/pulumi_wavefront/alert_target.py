@@ -61,10 +61,10 @@ class AlertTargetArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             description: pulumi.Input[str],
-             recipient: pulumi.Input[str],
-             template: pulumi.Input[str],
-             triggers: pulumi.Input[Sequence[pulumi.Input[str]]],
+             description: Optional[pulumi.Input[str]] = None,
+             recipient: Optional[pulumi.Input[str]] = None,
+             template: Optional[pulumi.Input[str]] = None,
+             triggers: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              content_type: Optional[pulumi.Input[str]] = None,
              custom_headers: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
              email_subject: Optional[pulumi.Input[str]] = None,
@@ -72,7 +72,25 @@ class AlertTargetArgs:
              method: Optional[pulumi.Input[str]] = None,
              name: Optional[pulumi.Input[str]] = None,
              routes: Optional[pulumi.Input[Sequence[pulumi.Input['AlertTargetRouteArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions] = None,
+             **kwargs):
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if recipient is None:
+            raise TypeError("Missing 'recipient' argument")
+        if template is None:
+            raise TypeError("Missing 'template' argument")
+        if triggers is None:
+            raise TypeError("Missing 'triggers' argument")
+        if content_type is None and 'contentType' in kwargs:
+            content_type = kwargs['contentType']
+        if custom_headers is None and 'customHeaders' in kwargs:
+            custom_headers = kwargs['customHeaders']
+        if email_subject is None and 'emailSubject' in kwargs:
+            email_subject = kwargs['emailSubject']
+        if is_html_content is None and 'isHtmlContent' in kwargs:
+            is_html_content = kwargs['isHtmlContent']
+
         _setter("description", description)
         _setter("recipient", recipient)
         _setter("template", template)
@@ -291,7 +309,19 @@ class _AlertTargetState:
              target_id: Optional[pulumi.Input[str]] = None,
              template: Optional[pulumi.Input[str]] = None,
              triggers: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions] = None,
+             **kwargs):
+        if content_type is None and 'contentType' in kwargs:
+            content_type = kwargs['contentType']
+        if custom_headers is None and 'customHeaders' in kwargs:
+            custom_headers = kwargs['customHeaders']
+        if email_subject is None and 'emailSubject' in kwargs:
+            email_subject = kwargs['emailSubject']
+        if is_html_content is None and 'isHtmlContent' in kwargs:
+            is_html_content = kwargs['isHtmlContent']
+        if target_id is None and 'targetId' in kwargs:
+            target_id = kwargs['targetId']
+
         if content_type is not None:
             _setter("content_type", content_type)
         if custom_headers is not None:
@@ -485,27 +515,6 @@ class AlertTarget(pulumi.CustomResource):
         """
         Provides a wavefront Alert Target resource. This allows alert targets to created, updated, and deleted.
 
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_wavefront as wavefront
-
-        test_target = wavefront.AlertTarget("testTarget",
-            content_type="application/json",
-            custom_headers={
-                "Testing": "true",
-            },
-            description="Test target",
-            method="WEBHOOK",
-            recipient="https://hooks.slack.com/services/test/me",
-            template="{}",
-            triggers=[
-                "ALERT_OPENED",
-                "ALERT_RESOLVED",
-            ])
-        ```
-
         ## Import
 
         Alert Targets can be imported using the `id`, e.g.:
@@ -539,27 +548,6 @@ class AlertTarget(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Provides a wavefront Alert Target resource. This allows alert targets to created, updated, and deleted.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_wavefront as wavefront
-
-        test_target = wavefront.AlertTarget("testTarget",
-            content_type="application/json",
-            custom_headers={
-                "Testing": "true",
-            },
-            description="Test target",
-            method="WEBHOOK",
-            recipient="https://hooks.slack.com/services/test/me",
-            template="{}",
-            triggers=[
-                "ALERT_OPENED",
-                "ALERT_RESOLVED",
-            ])
-        ```
 
         ## Import
 

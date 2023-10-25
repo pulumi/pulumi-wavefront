@@ -15,41 +15,6 @@ import (
 
 // Provides a Wavefront Alert resource. This allows alerts to be created, updated, and deleted.
 //
-// ## Example Usage
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-wavefront/sdk/v3/go/wavefront"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := wavefront.NewAlert(ctx, "foobar", &wavefront.AlertArgs{
-//				Condition:           pulumi.String("100-ts(\"cpu.usage_idle\", environment=preprod and cpu=cpu-total ) > 80"),
-//				DisplayExpression:   pulumi.String("100-ts(\"cpu.usage_idle\", environment=preprod and cpu=cpu-total )"),
-//				Minutes:             pulumi.Int(5),
-//				ResolveAfterMinutes: pulumi.Int(5),
-//				Severity:            pulumi.String("WARN"),
-//				Tags: pulumi.StringArray{
-//					pulumi.String("terraform"),
-//					pulumi.String("test"),
-//				},
-//				Target: pulumi.String("test@example.com,target:alert-target-id"),
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
-//
 // ## Import
 //
 // Alerts can be imported using the `id`, e.g.

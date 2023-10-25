@@ -13,26 +13,6 @@ namespace Pulumi.Wavefront
     /// Provides a Wavefront Cloud Integration for Microsoft Azure. This allows Azure cloud integrations to be created,
     /// updated, and deleted.
     /// 
-    /// ## Example Usage
-    /// 
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using System.Linq;
-    /// using Pulumi;
-    /// using Wavefront = Pulumi.Wavefront;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var azureActivityLog = new Wavefront.CloudIntegrationAzureActivityLog("azureActivityLog", new()
-    ///     {
-    ///         ClientId = "client-id2",
-    ///         ClientSecret = "client-secret2",
-    ///         Tenant = "my-tenant2",
-    ///     });
-    /// 
-    /// });
-    /// ```
-    /// 
     /// ## Import
     /// 
     /// Azure Cloud Integrations can be imported by using the `id`, e.g.:

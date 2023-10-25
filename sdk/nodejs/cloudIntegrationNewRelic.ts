@@ -10,15 +10,6 @@ import * as utilities from "./utilities";
  * Provides a Wavefront Cloud Integration for New Relic. This allows New Relic cloud integrations to be created,
  * updated, and deleted.
  *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as wavefront from "@pulumi/wavefront";
- *
- * const newrelic = new wavefront.CloudIntegrationNewRelic("newrelic", {apiKey: "example-api-key"});
- * ```
- *
  * ## Import
  *
  * NewRelic Integrations can be imported by using the `id`, e.g.:

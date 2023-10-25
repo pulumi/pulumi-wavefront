@@ -4,8 +4,12 @@
 package wavefront
 
 import (
+	"context"
+	"reflect"
+
 	"github.com/pulumi/pulumi-wavefront/sdk/v3/go/wavefront/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func LookupMetricsPolicy(ctx *pulumi.Context, opts ...pulumi.InvokeOption) (*LookupMetricsPolicyResult, error) {
@@ -26,4 +30,61 @@ type LookupMetricsPolicyResult struct {
 	PolicyRules        []GetMetricsPolicyPolicyRule `pulumi:"policyRules"`
 	UpdatedEpochMillis int                          `pulumi:"updatedEpochMillis"`
 	UpdaterId          string                       `pulumi:"updaterId"`
+}
+
+func LookupMetricsPolicyOutput(ctx *pulumi.Context, opts ...pulumi.InvokeOption) LookupMetricsPolicyResultOutput {
+	return pulumi.ToOutput(0).ApplyT(func(int) (LookupMetricsPolicyResult, error) {
+		r, err := LookupMetricsPolicy(ctx, opts...)
+		var s LookupMetricsPolicyResult
+		if r != nil {
+			s = *r
+		}
+		return s, err
+	}).(LookupMetricsPolicyResultOutput)
+}
+
+// A collection of values returned by getMetricsPolicy.
+type LookupMetricsPolicyResultOutput struct{ *pulumi.OutputState }
+
+func (LookupMetricsPolicyResultOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*LookupMetricsPolicyResult)(nil)).Elem()
+}
+
+func (o LookupMetricsPolicyResultOutput) ToLookupMetricsPolicyResultOutput() LookupMetricsPolicyResultOutput {
+	return o
+}
+
+func (o LookupMetricsPolicyResultOutput) ToLookupMetricsPolicyResultOutputWithContext(ctx context.Context) LookupMetricsPolicyResultOutput {
+	return o
+}
+
+func (o LookupMetricsPolicyResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupMetricsPolicyResult] {
+	return pulumix.Output[LookupMetricsPolicyResult]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o LookupMetricsPolicyResultOutput) Customer() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupMetricsPolicyResult) string { return v.Customer }).(pulumi.StringOutput)
+}
+
+// The provider-assigned unique ID for this managed resource.
+func (o LookupMetricsPolicyResultOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupMetricsPolicyResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func (o LookupMetricsPolicyResultOutput) PolicyRules() GetMetricsPolicyPolicyRuleArrayOutput {
+	return o.ApplyT(func(v LookupMetricsPolicyResult) []GetMetricsPolicyPolicyRule { return v.PolicyRules }).(GetMetricsPolicyPolicyRuleArrayOutput)
+}
+
+func (o LookupMetricsPolicyResultOutput) UpdatedEpochMillis() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupMetricsPolicyResult) int { return v.UpdatedEpochMillis }).(pulumi.IntOutput)
+}
+
+func (o LookupMetricsPolicyResultOutput) UpdaterId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupMetricsPolicyResult) string { return v.UpdaterId }).(pulumi.StringOutput)
+}
+
+func init() {
+	pulumi.RegisterOutputType(LookupMetricsPolicyResultOutput{})
 }

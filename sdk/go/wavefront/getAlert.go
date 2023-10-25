@@ -13,32 +13,6 @@ import (
 )
 
 // Use this data source to get information about a Wavefront alert by its ID.
-//
-// ## Example Usage
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-wavefront/sdk/v3/go/wavefront"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := wavefront.LookupAlert(ctx, &wavefront.LookupAlertArgs{
-//				Id: "alert-id",
-//			}, nil)
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
 func LookupAlert(ctx *pulumi.Context, args *LookupAlertArgs, opts ...pulumi.InvokeOption) (*LookupAlertResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupAlertResult

@@ -7,24 +7,6 @@ import * as utilities from "./utilities";
 /**
  * Provides a Wavefront Maintenance Window Resource. This allows maintenance windows to be created, updated, and deleted.
  *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as wavefront from "@pulumi/wavefront";
- *
- * const basic = new wavefront.MaintenanceWindow("basic", {
- *     endTimeInSeconds: 1601123456,
- *     reason: "Routine maintenance for 2020",
- *     relevantHostNames: [
- *         "my_hostname",
- *         "my_other_hostname",
- *     ],
- *     startTimeInSeconds: 1600123456,
- *     title: "Routine maintenance",
- * });
- * ```
- *
  * ## Import
  *
  * Maintenance windows can be imported using the `id`, e.g.

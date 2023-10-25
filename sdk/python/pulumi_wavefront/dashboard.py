@@ -61,10 +61,10 @@ class DashboardArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             description: pulumi.Input[str],
-             sections: pulumi.Input[Sequence[pulumi.Input['DashboardSectionArgs']]],
-             tags: pulumi.Input[Sequence[pulumi.Input[str]]],
-             url: pulumi.Input[str],
+             description: Optional[pulumi.Input[str]] = None,
+             sections: Optional[pulumi.Input[Sequence[pulumi.Input['DashboardSectionArgs']]]] = None,
+             tags: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             url: Optional[pulumi.Input[str]] = None,
              can_modifies: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              can_views: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              display_query_parameters: Optional[pulumi.Input[bool]] = None,
@@ -72,7 +72,29 @@ class DashboardArgs:
              event_filter_type: Optional[pulumi.Input[str]] = None,
              name: Optional[pulumi.Input[str]] = None,
              parameter_details: Optional[pulumi.Input[Sequence[pulumi.Input['DashboardParameterDetailArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions] = None,
+             **kwargs):
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if sections is None:
+            raise TypeError("Missing 'sections' argument")
+        if tags is None:
+            raise TypeError("Missing 'tags' argument")
+        if url is None:
+            raise TypeError("Missing 'url' argument")
+        if can_modifies is None and 'canModifies' in kwargs:
+            can_modifies = kwargs['canModifies']
+        if can_views is None and 'canViews' in kwargs:
+            can_views = kwargs['canViews']
+        if display_query_parameters is None and 'displayQueryParameters' in kwargs:
+            display_query_parameters = kwargs['displayQueryParameters']
+        if display_section_table_of_contents is None and 'displaySectionTableOfContents' in kwargs:
+            display_section_table_of_contents = kwargs['displaySectionTableOfContents']
+        if event_filter_type is None and 'eventFilterType' in kwargs:
+            event_filter_type = kwargs['eventFilterType']
+        if parameter_details is None and 'parameterDetails' in kwargs:
+            parameter_details = kwargs['parameterDetails']
+
         _setter("description", description)
         _setter("sections", sections)
         _setter("tags", tags)
@@ -287,7 +309,21 @@ class _DashboardState:
              sections: Optional[pulumi.Input[Sequence[pulumi.Input['DashboardSectionArgs']]]] = None,
              tags: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              url: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions] = None,
+             **kwargs):
+        if can_modifies is None and 'canModifies' in kwargs:
+            can_modifies = kwargs['canModifies']
+        if can_views is None and 'canViews' in kwargs:
+            can_views = kwargs['canViews']
+        if display_query_parameters is None and 'displayQueryParameters' in kwargs:
+            display_query_parameters = kwargs['displayQueryParameters']
+        if display_section_table_of_contents is None and 'displaySectionTableOfContents' in kwargs:
+            display_section_table_of_contents = kwargs['displaySectionTableOfContents']
+        if event_filter_type is None and 'eventFilterType' in kwargs:
+            event_filter_type = kwargs['eventFilterType']
+        if parameter_details is None and 'parameterDetails' in kwargs:
+            parameter_details = kwargs['parameterDetails']
+
         if can_modifies is not None:
             _setter("can_modifies", can_modifies)
         if can_views is not None:

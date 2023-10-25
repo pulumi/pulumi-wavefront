@@ -13,56 +13,12 @@ namespace Pulumi.Wavefront
     {
         /// <summary>
         /// Use this data source to get information about a certain Wavefront derived metric by its ID.
-        /// 
-        /// {{% examples %}}
-        /// ## Example Usage
-        /// {{% example %}}
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using System.Linq;
-        /// using Pulumi;
-        /// using Wavefront = Pulumi.Wavefront;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var example = Wavefront.GetDerivedMetric.Invoke(new()
-        ///     {
-        ///         Id = "derived_metric_id",
-        ///     });
-        /// 
-        /// });
-        /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
         /// </summary>
         public static Task<GetDerivedMetricResult> InvokeAsync(GetDerivedMetricArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetDerivedMetricResult>("wavefront:index/getDerivedMetric:getDerivedMetric", args ?? new GetDerivedMetricArgs(), options.WithDefaults());
 
         /// <summary>
         /// Use this data source to get information about a certain Wavefront derived metric by its ID.
-        /// 
-        /// {{% examples %}}
-        /// ## Example Usage
-        /// {{% example %}}
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using System.Linq;
-        /// using Pulumi;
-        /// using Wavefront = Pulumi.Wavefront;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var example = Wavefront.GetDerivedMetric.Invoke(new()
-        ///     {
-        ///         Id = "derived_metric_id",
-        ///     });
-        /// 
-        /// });
-        /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
         /// </summary>
         public static Output<GetDerivedMetricResult> Invoke(GetDerivedMetricInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDerivedMetricResult>("wavefront:index/getDerivedMetric:getDerivedMetric", args ?? new GetDerivedMetricInvokeArgs(), options.WithDefaults());

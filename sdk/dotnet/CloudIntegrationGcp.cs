@@ -13,27 +13,6 @@ namespace Pulumi.Wavefront
     /// Provides a Wavefront Cloud Integration for Google Cloud Platform. This allows Google Cloud Platform cloud
     /// integrations to be created, updated, and deleted.
     /// 
-    /// ## Example Usage
-    /// 
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using System.Linq;
-    /// using Pulumi;
-    /// using Wavefront = Pulumi.Wavefront;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var gcp = new Wavefront.CloudIntegrationGcp("gcp", new()
-    ///     {
-    ///         JsonKey = @"{...your gcp key ...}
-    /// 
-    /// ",
-    ///         ProjectId = "example-gcp-project",
-    ///     });
-    /// 
-    /// });
-    /// ```
-    /// 
     /// ## Import
     /// 
     /// GCP Cloud Integrations can be imported by using the `id`, e.g.:

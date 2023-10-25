@@ -16,33 +16,6 @@ import (
 // Provides a Wavefront Derived Metric Resource. This allows derived metrics to be created,
 // updated, and deleted.
 //
-// ## Example Usage
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-wavefront/sdk/v3/go/wavefront"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := wavefront.NewDerivedMetric(ctx, "derived", &wavefront.DerivedMetricArgs{
-//				Minutes: pulumi.Int(5),
-//				Query:   pulumi.String("aliasMetric(5, \"some.metric\")"),
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
-//
 // ## Import
 //
 // Derived Metrics can be imported by using the `id`, e.g.:

@@ -81,16 +81,6 @@ def get_external_links(limit: Optional[int] = None,
     """
     Use this data source to get information about all Wavefront external links.
 
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_wavefront as wavefront
-
-    example = wavefront.get_external_links(limit=10,
-        offset=0)
-    ```
-
 
     :param int limit: Limit is the maximum number of results to be returned. Defaults to 100.
     :param int offset: Offset is the offset from the first result to be returned. Defaults to 0.
@@ -114,16 +104,6 @@ def get_external_links_output(limit: Optional[pulumi.Input[Optional[int]]] = Non
                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetExternalLinksResult]:
     """
     Use this data source to get information about all Wavefront external links.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_wavefront as wavefront
-
-    example = wavefront.get_external_links(limit=10,
-        offset=0)
-    ```
 
 
     :param int limit: Limit is the maximum number of results to be returned. Defaults to 100.
