@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 
 __all__ = ['UserArgs', 'User']
@@ -27,34 +27,13 @@ class UserArgs:
                `host_tag_management`, `metrics_management`, and `user_management`.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] user_groups: List of user groups to this user.
         """
-        UserArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            email=email,
-            customer=customer,
-            permissions=permissions,
-            user_groups=user_groups,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             email: Optional[pulumi.Input[str]] = None,
-             customer: Optional[pulumi.Input[str]] = None,
-             permissions: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             user_groups: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if email is None:
-            raise TypeError("Missing 'email' argument")
-        if user_groups is None and 'userGroups' in kwargs:
-            user_groups = kwargs['userGroups']
-
-        _setter("email", email)
+        pulumi.set(__self__, "email", email)
         if customer is not None:
-            _setter("customer", customer)
+            pulumi.set(__self__, "customer", customer)
         if permissions is not None:
-            _setter("permissions", permissions)
+            pulumi.set(__self__, "permissions", permissions)
         if user_groups is not None:
-            _setter("user_groups", user_groups)
+            pulumi.set(__self__, "user_groups", user_groups)
 
     @property
     @pulumi.getter
@@ -123,33 +102,14 @@ class _UserState:
                `host_tag_management`, `metrics_management`, and `user_management`.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] user_groups: List of user groups to this user.
         """
-        _UserState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            customer=customer,
-            email=email,
-            permissions=permissions,
-            user_groups=user_groups,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             customer: Optional[pulumi.Input[str]] = None,
-             email: Optional[pulumi.Input[str]] = None,
-             permissions: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             user_groups: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if user_groups is None and 'userGroups' in kwargs:
-            user_groups = kwargs['userGroups']
-
         if customer is not None:
-            _setter("customer", customer)
+            pulumi.set(__self__, "customer", customer)
         if email is not None:
-            _setter("email", email)
+            pulumi.set(__self__, "email", email)
         if permissions is not None:
-            _setter("permissions", permissions)
+            pulumi.set(__self__, "permissions", permissions)
         if user_groups is not None:
-            _setter("user_groups", user_groups)
+            pulumi.set(__self__, "user_groups", user_groups)
 
     @property
     @pulumi.getter
@@ -277,10 +237,6 @@ class User(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            UserArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

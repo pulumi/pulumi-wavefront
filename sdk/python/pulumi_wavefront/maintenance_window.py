@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 
 __all__ = ['MaintenanceWindowArgs', 'MaintenanceWindow']
@@ -46,69 +46,20 @@ class MaintenanceWindowArgs:
                If `true`, a source/host must contain all tags in order for the maintenance window to apply. If `false`,
                the tags are OR'ed, and a source/host must contain one of the tags. Default: `false`.
         """
-        MaintenanceWindowArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            end_time_in_seconds=end_time_in_seconds,
-            reason=reason,
-            start_time_in_seconds=start_time_in_seconds,
-            title=title,
-            host_tag_group_host_names_group_anded=host_tag_group_host_names_group_anded,
-            relevant_customer_tags=relevant_customer_tags,
-            relevant_host_names=relevant_host_names,
-            relevant_host_tags=relevant_host_tags,
-            relevant_host_tags_anded=relevant_host_tags_anded,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             end_time_in_seconds: Optional[pulumi.Input[int]] = None,
-             reason: Optional[pulumi.Input[str]] = None,
-             start_time_in_seconds: Optional[pulumi.Input[int]] = None,
-             title: Optional[pulumi.Input[str]] = None,
-             host_tag_group_host_names_group_anded: Optional[pulumi.Input[bool]] = None,
-             relevant_customer_tags: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             relevant_host_names: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             relevant_host_tags: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             relevant_host_tags_anded: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if end_time_in_seconds is None and 'endTimeInSeconds' in kwargs:
-            end_time_in_seconds = kwargs['endTimeInSeconds']
-        if end_time_in_seconds is None:
-            raise TypeError("Missing 'end_time_in_seconds' argument")
-        if reason is None:
-            raise TypeError("Missing 'reason' argument")
-        if start_time_in_seconds is None and 'startTimeInSeconds' in kwargs:
-            start_time_in_seconds = kwargs['startTimeInSeconds']
-        if start_time_in_seconds is None:
-            raise TypeError("Missing 'start_time_in_seconds' argument")
-        if title is None:
-            raise TypeError("Missing 'title' argument")
-        if host_tag_group_host_names_group_anded is None and 'hostTagGroupHostNamesGroupAnded' in kwargs:
-            host_tag_group_host_names_group_anded = kwargs['hostTagGroupHostNamesGroupAnded']
-        if relevant_customer_tags is None and 'relevantCustomerTags' in kwargs:
-            relevant_customer_tags = kwargs['relevantCustomerTags']
-        if relevant_host_names is None and 'relevantHostNames' in kwargs:
-            relevant_host_names = kwargs['relevantHostNames']
-        if relevant_host_tags is None and 'relevantHostTags' in kwargs:
-            relevant_host_tags = kwargs['relevantHostTags']
-        if relevant_host_tags_anded is None and 'relevantHostTagsAnded' in kwargs:
-            relevant_host_tags_anded = kwargs['relevantHostTagsAnded']
-
-        _setter("end_time_in_seconds", end_time_in_seconds)
-        _setter("reason", reason)
-        _setter("start_time_in_seconds", start_time_in_seconds)
-        _setter("title", title)
+        pulumi.set(__self__, "end_time_in_seconds", end_time_in_seconds)
+        pulumi.set(__self__, "reason", reason)
+        pulumi.set(__self__, "start_time_in_seconds", start_time_in_seconds)
+        pulumi.set(__self__, "title", title)
         if host_tag_group_host_names_group_anded is not None:
-            _setter("host_tag_group_host_names_group_anded", host_tag_group_host_names_group_anded)
+            pulumi.set(__self__, "host_tag_group_host_names_group_anded", host_tag_group_host_names_group_anded)
         if relevant_customer_tags is not None:
-            _setter("relevant_customer_tags", relevant_customer_tags)
+            pulumi.set(__self__, "relevant_customer_tags", relevant_customer_tags)
         if relevant_host_names is not None:
-            _setter("relevant_host_names", relevant_host_names)
+            pulumi.set(__self__, "relevant_host_names", relevant_host_names)
         if relevant_host_tags is not None:
-            _setter("relevant_host_tags", relevant_host_tags)
+            pulumi.set(__self__, "relevant_host_tags", relevant_host_tags)
         if relevant_host_tags_anded is not None:
-            _setter("relevant_host_tags_anded", relevant_host_tags_anded)
+            pulumi.set(__self__, "relevant_host_tags_anded", relevant_host_tags_anded)
 
     @property
     @pulumi.getter(name="endTimeInSeconds")
@@ -265,65 +216,24 @@ class _MaintenanceWindowState:
         :param pulumi.Input[int] start_time_in_seconds: start time in seconds after 1 Jan 1970 GMT.
         :param pulumi.Input[str] title: The title of the maintenance window.
         """
-        _MaintenanceWindowState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            end_time_in_seconds=end_time_in_seconds,
-            host_tag_group_host_names_group_anded=host_tag_group_host_names_group_anded,
-            reason=reason,
-            relevant_customer_tags=relevant_customer_tags,
-            relevant_host_names=relevant_host_names,
-            relevant_host_tags=relevant_host_tags,
-            relevant_host_tags_anded=relevant_host_tags_anded,
-            start_time_in_seconds=start_time_in_seconds,
-            title=title,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             end_time_in_seconds: Optional[pulumi.Input[int]] = None,
-             host_tag_group_host_names_group_anded: Optional[pulumi.Input[bool]] = None,
-             reason: Optional[pulumi.Input[str]] = None,
-             relevant_customer_tags: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             relevant_host_names: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             relevant_host_tags: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             relevant_host_tags_anded: Optional[pulumi.Input[bool]] = None,
-             start_time_in_seconds: Optional[pulumi.Input[int]] = None,
-             title: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if end_time_in_seconds is None and 'endTimeInSeconds' in kwargs:
-            end_time_in_seconds = kwargs['endTimeInSeconds']
-        if host_tag_group_host_names_group_anded is None and 'hostTagGroupHostNamesGroupAnded' in kwargs:
-            host_tag_group_host_names_group_anded = kwargs['hostTagGroupHostNamesGroupAnded']
-        if relevant_customer_tags is None and 'relevantCustomerTags' in kwargs:
-            relevant_customer_tags = kwargs['relevantCustomerTags']
-        if relevant_host_names is None and 'relevantHostNames' in kwargs:
-            relevant_host_names = kwargs['relevantHostNames']
-        if relevant_host_tags is None and 'relevantHostTags' in kwargs:
-            relevant_host_tags = kwargs['relevantHostTags']
-        if relevant_host_tags_anded is None and 'relevantHostTagsAnded' in kwargs:
-            relevant_host_tags_anded = kwargs['relevantHostTagsAnded']
-        if start_time_in_seconds is None and 'startTimeInSeconds' in kwargs:
-            start_time_in_seconds = kwargs['startTimeInSeconds']
-
         if end_time_in_seconds is not None:
-            _setter("end_time_in_seconds", end_time_in_seconds)
+            pulumi.set(__self__, "end_time_in_seconds", end_time_in_seconds)
         if host_tag_group_host_names_group_anded is not None:
-            _setter("host_tag_group_host_names_group_anded", host_tag_group_host_names_group_anded)
+            pulumi.set(__self__, "host_tag_group_host_names_group_anded", host_tag_group_host_names_group_anded)
         if reason is not None:
-            _setter("reason", reason)
+            pulumi.set(__self__, "reason", reason)
         if relevant_customer_tags is not None:
-            _setter("relevant_customer_tags", relevant_customer_tags)
+            pulumi.set(__self__, "relevant_customer_tags", relevant_customer_tags)
         if relevant_host_names is not None:
-            _setter("relevant_host_names", relevant_host_names)
+            pulumi.set(__self__, "relevant_host_names", relevant_host_names)
         if relevant_host_tags is not None:
-            _setter("relevant_host_tags", relevant_host_tags)
+            pulumi.set(__self__, "relevant_host_tags", relevant_host_tags)
         if relevant_host_tags_anded is not None:
-            _setter("relevant_host_tags_anded", relevant_host_tags_anded)
+            pulumi.set(__self__, "relevant_host_tags_anded", relevant_host_tags_anded)
         if start_time_in_seconds is not None:
-            _setter("start_time_in_seconds", start_time_in_seconds)
+            pulumi.set(__self__, "start_time_in_seconds", start_time_in_seconds)
         if title is not None:
-            _setter("title", title)
+            pulumi.set(__self__, "title", title)
 
     @property
     @pulumi.getter(name="endTimeInSeconds")
@@ -555,10 +465,6 @@ class MaintenanceWindow(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            MaintenanceWindowArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

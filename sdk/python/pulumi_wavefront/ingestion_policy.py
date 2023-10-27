@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 from . import outputs
 from ._inputs import *
@@ -29,49 +29,20 @@ class IngestionPolicyArgs:
         :param pulumi.Input[str] description: The description of the ingestion policy.
         :param pulumi.Input[str] name: The name of the ingestion policy.
         """
-        IngestionPolicyArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            description=description,
-            scope=scope,
-            accounts=accounts,
-            groups=groups,
-            name=name,
-            namespaces=namespaces,
-            sources=sources,
-            tags=tags,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             description: Optional[pulumi.Input[str]] = None,
-             scope: Optional[pulumi.Input[str]] = None,
-             accounts: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             groups: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             name: Optional[pulumi.Input[str]] = None,
-             namespaces: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             sources: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             tags: Optional[pulumi.Input[Sequence[pulumi.Input['IngestionPolicyTagArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if description is None:
-            raise TypeError("Missing 'description' argument")
-        if scope is None:
-            raise TypeError("Missing 'scope' argument")
-
-        _setter("description", description)
-        _setter("scope", scope)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "scope", scope)
         if accounts is not None:
-            _setter("accounts", accounts)
+            pulumi.set(__self__, "accounts", accounts)
         if groups is not None:
-            _setter("groups", groups)
+            pulumi.set(__self__, "groups", groups)
         if name is not None:
-            _setter("name", name)
+            pulumi.set(__self__, "name", name)
         if namespaces is not None:
-            _setter("namespaces", namespaces)
+            pulumi.set(__self__, "namespaces", namespaces)
         if sources is not None:
-            _setter("sources", sources)
+            pulumi.set(__self__, "sources", sources)
         if tags is not None:
-            _setter("tags", tags)
+            pulumi.set(__self__, "tags", tags)
 
     @property
     @pulumi.getter
@@ -168,47 +139,22 @@ class _IngestionPolicyState:
         :param pulumi.Input[str] description: The description of the ingestion policy.
         :param pulumi.Input[str] name: The name of the ingestion policy.
         """
-        _IngestionPolicyState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            accounts=accounts,
-            description=description,
-            groups=groups,
-            name=name,
-            namespaces=namespaces,
-            scope=scope,
-            sources=sources,
-            tags=tags,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             accounts: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             description: Optional[pulumi.Input[str]] = None,
-             groups: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             name: Optional[pulumi.Input[str]] = None,
-             namespaces: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             scope: Optional[pulumi.Input[str]] = None,
-             sources: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             tags: Optional[pulumi.Input[Sequence[pulumi.Input['IngestionPolicyTagArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-
         if accounts is not None:
-            _setter("accounts", accounts)
+            pulumi.set(__self__, "accounts", accounts)
         if description is not None:
-            _setter("description", description)
+            pulumi.set(__self__, "description", description)
         if groups is not None:
-            _setter("groups", groups)
+            pulumi.set(__self__, "groups", groups)
         if name is not None:
-            _setter("name", name)
+            pulumi.set(__self__, "name", name)
         if namespaces is not None:
-            _setter("namespaces", namespaces)
+            pulumi.set(__self__, "namespaces", namespaces)
         if scope is not None:
-            _setter("scope", scope)
+            pulumi.set(__self__, "scope", scope)
         if sources is not None:
-            _setter("sources", sources)
+            pulumi.set(__self__, "sources", sources)
         if tags is not None:
-            _setter("tags", tags)
+            pulumi.set(__self__, "tags", tags)
 
     @property
     @pulumi.getter
@@ -364,10 +310,6 @@ class IngestionPolicy(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            IngestionPolicyArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

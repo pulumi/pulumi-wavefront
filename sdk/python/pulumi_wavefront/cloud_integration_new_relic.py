@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 from . import outputs
 from ._inputs import *
@@ -37,67 +37,22 @@ class CloudIntegrationNewRelicArgs:
         :param pulumi.Input[str] name: The human-readable name of this integration.
         :param pulumi.Input[int] service_refresh_rate_in_minutes: How often, in minutes, to refresh the service.
         """
-        CloudIntegrationNewRelicArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            api_key=api_key,
-            service=service,
-            additional_tags=additional_tags,
-            app_filter_regex=app_filter_regex,
-            force_save=force_save,
-            host_filter_regex=host_filter_regex,
-            metric_filters=metric_filters,
-            name=name,
-            service_refresh_rate_in_minutes=service_refresh_rate_in_minutes,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             api_key: Optional[pulumi.Input[str]] = None,
-             service: Optional[pulumi.Input[str]] = None,
-             additional_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
-             app_filter_regex: Optional[pulumi.Input[str]] = None,
-             force_save: Optional[pulumi.Input[bool]] = None,
-             host_filter_regex: Optional[pulumi.Input[str]] = None,
-             metric_filters: Optional[pulumi.Input[Sequence[pulumi.Input['CloudIntegrationNewRelicMetricFilterArgs']]]] = None,
-             name: Optional[pulumi.Input[str]] = None,
-             service_refresh_rate_in_minutes: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if api_key is None and 'apiKey' in kwargs:
-            api_key = kwargs['apiKey']
-        if api_key is None:
-            raise TypeError("Missing 'api_key' argument")
-        if service is None:
-            raise TypeError("Missing 'service' argument")
-        if additional_tags is None and 'additionalTags' in kwargs:
-            additional_tags = kwargs['additionalTags']
-        if app_filter_regex is None and 'appFilterRegex' in kwargs:
-            app_filter_regex = kwargs['appFilterRegex']
-        if force_save is None and 'forceSave' in kwargs:
-            force_save = kwargs['forceSave']
-        if host_filter_regex is None and 'hostFilterRegex' in kwargs:
-            host_filter_regex = kwargs['hostFilterRegex']
-        if metric_filters is None and 'metricFilters' in kwargs:
-            metric_filters = kwargs['metricFilters']
-        if service_refresh_rate_in_minutes is None and 'serviceRefreshRateInMinutes' in kwargs:
-            service_refresh_rate_in_minutes = kwargs['serviceRefreshRateInMinutes']
-
-        _setter("api_key", api_key)
-        _setter("service", service)
+        pulumi.set(__self__, "api_key", api_key)
+        pulumi.set(__self__, "service", service)
         if additional_tags is not None:
-            _setter("additional_tags", additional_tags)
+            pulumi.set(__self__, "additional_tags", additional_tags)
         if app_filter_regex is not None:
-            _setter("app_filter_regex", app_filter_regex)
+            pulumi.set(__self__, "app_filter_regex", app_filter_regex)
         if force_save is not None:
-            _setter("force_save", force_save)
+            pulumi.set(__self__, "force_save", force_save)
         if host_filter_regex is not None:
-            _setter("host_filter_regex", host_filter_regex)
+            pulumi.set(__self__, "host_filter_regex", host_filter_regex)
         if metric_filters is not None:
-            _setter("metric_filters", metric_filters)
+            pulumi.set(__self__, "metric_filters", metric_filters)
         if name is not None:
-            _setter("name", name)
+            pulumi.set(__self__, "name", name)
         if service_refresh_rate_in_minutes is not None:
-            _setter("service_refresh_rate_in_minutes", service_refresh_rate_in_minutes)
+            pulumi.set(__self__, "service_refresh_rate_in_minutes", service_refresh_rate_in_minutes)
 
     @property
     @pulumi.getter(name="apiKey")
@@ -232,65 +187,24 @@ class _CloudIntegrationNewRelicState:
         :param pulumi.Input[str] service: A value denoting which cloud service this service integrates with.
         :param pulumi.Input[int] service_refresh_rate_in_minutes: How often, in minutes, to refresh the service.
         """
-        _CloudIntegrationNewRelicState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            additional_tags=additional_tags,
-            api_key=api_key,
-            app_filter_regex=app_filter_regex,
-            force_save=force_save,
-            host_filter_regex=host_filter_regex,
-            metric_filters=metric_filters,
-            name=name,
-            service=service,
-            service_refresh_rate_in_minutes=service_refresh_rate_in_minutes,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             additional_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
-             api_key: Optional[pulumi.Input[str]] = None,
-             app_filter_regex: Optional[pulumi.Input[str]] = None,
-             force_save: Optional[pulumi.Input[bool]] = None,
-             host_filter_regex: Optional[pulumi.Input[str]] = None,
-             metric_filters: Optional[pulumi.Input[Sequence[pulumi.Input['CloudIntegrationNewRelicMetricFilterArgs']]]] = None,
-             name: Optional[pulumi.Input[str]] = None,
-             service: Optional[pulumi.Input[str]] = None,
-             service_refresh_rate_in_minutes: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if additional_tags is None and 'additionalTags' in kwargs:
-            additional_tags = kwargs['additionalTags']
-        if api_key is None and 'apiKey' in kwargs:
-            api_key = kwargs['apiKey']
-        if app_filter_regex is None and 'appFilterRegex' in kwargs:
-            app_filter_regex = kwargs['appFilterRegex']
-        if force_save is None and 'forceSave' in kwargs:
-            force_save = kwargs['forceSave']
-        if host_filter_regex is None and 'hostFilterRegex' in kwargs:
-            host_filter_regex = kwargs['hostFilterRegex']
-        if metric_filters is None and 'metricFilters' in kwargs:
-            metric_filters = kwargs['metricFilters']
-        if service_refresh_rate_in_minutes is None and 'serviceRefreshRateInMinutes' in kwargs:
-            service_refresh_rate_in_minutes = kwargs['serviceRefreshRateInMinutes']
-
         if additional_tags is not None:
-            _setter("additional_tags", additional_tags)
+            pulumi.set(__self__, "additional_tags", additional_tags)
         if api_key is not None:
-            _setter("api_key", api_key)
+            pulumi.set(__self__, "api_key", api_key)
         if app_filter_regex is not None:
-            _setter("app_filter_regex", app_filter_regex)
+            pulumi.set(__self__, "app_filter_regex", app_filter_regex)
         if force_save is not None:
-            _setter("force_save", force_save)
+            pulumi.set(__self__, "force_save", force_save)
         if host_filter_regex is not None:
-            _setter("host_filter_regex", host_filter_regex)
+            pulumi.set(__self__, "host_filter_regex", host_filter_regex)
         if metric_filters is not None:
-            _setter("metric_filters", metric_filters)
+            pulumi.set(__self__, "metric_filters", metric_filters)
         if name is not None:
-            _setter("name", name)
+            pulumi.set(__self__, "name", name)
         if service is not None:
-            _setter("service", service)
+            pulumi.set(__self__, "service", service)
         if service_refresh_rate_in_minutes is not None:
-            _setter("service_refresh_rate_in_minutes", service_refresh_rate_in_minutes)
+            pulumi.set(__self__, "service_refresh_rate_in_minutes", service_refresh_rate_in_minutes)
 
     @property
     @pulumi.getter(name="additionalTags")
@@ -486,10 +400,6 @@ class CloudIntegrationNewRelic(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            CloudIntegrationNewRelicArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

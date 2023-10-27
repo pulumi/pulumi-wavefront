@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 from . import outputs
 from ._inputs import *
@@ -21,22 +21,7 @@ class MetricsPolicyArgs:
         The set of arguments for constructing a MetricsPolicy resource.
         :param pulumi.Input[Sequence[pulumi.Input['MetricsPolicyPolicyRuleArgs']]] policy_rules: List of Metrics Policies, must have at least one entry.
         """
-        MetricsPolicyArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            policy_rules=policy_rules,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             policy_rules: Optional[pulumi.Input[Sequence[pulumi.Input['MetricsPolicyPolicyRuleArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if policy_rules is None and 'policyRules' in kwargs:
-            policy_rules = kwargs['policyRules']
-        if policy_rules is None:
-            raise TypeError("Missing 'policy_rules' argument")
-
-        _setter("policy_rules", policy_rules)
+        pulumi.set(__self__, "policy_rules", policy_rules)
 
     @property
     @pulumi.getter(name="policyRules")
@@ -65,37 +50,14 @@ class _MetricsPolicyState:
         :param pulumi.Input[int] updated_epoch_millis: When the policy was applied in epoch_millis.
         :param pulumi.Input[str] updater_id: The account_id who applied the current policy.
         """
-        _MetricsPolicyState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            customer=customer,
-            policy_rules=policy_rules,
-            updated_epoch_millis=updated_epoch_millis,
-            updater_id=updater_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             customer: Optional[pulumi.Input[str]] = None,
-             policy_rules: Optional[pulumi.Input[Sequence[pulumi.Input['MetricsPolicyPolicyRuleArgs']]]] = None,
-             updated_epoch_millis: Optional[pulumi.Input[int]] = None,
-             updater_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if policy_rules is None and 'policyRules' in kwargs:
-            policy_rules = kwargs['policyRules']
-        if updated_epoch_millis is None and 'updatedEpochMillis' in kwargs:
-            updated_epoch_millis = kwargs['updatedEpochMillis']
-        if updater_id is None and 'updaterId' in kwargs:
-            updater_id = kwargs['updaterId']
-
         if customer is not None:
-            _setter("customer", customer)
+            pulumi.set(__self__, "customer", customer)
         if policy_rules is not None:
-            _setter("policy_rules", policy_rules)
+            pulumi.set(__self__, "policy_rules", policy_rules)
         if updated_epoch_millis is not None:
-            _setter("updated_epoch_millis", updated_epoch_millis)
+            pulumi.set(__self__, "updated_epoch_millis", updated_epoch_millis)
         if updater_id is not None:
-            _setter("updater_id", updater_id)
+            pulumi.set(__self__, "updater_id", updater_id)
 
     @property
     @pulumi.getter
@@ -255,10 +217,6 @@ class MetricsPolicy(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            MetricsPolicyArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
