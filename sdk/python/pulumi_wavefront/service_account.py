@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 
 __all__ = ['ServiceAccountArgs', 'ServiceAccount']
@@ -31,44 +31,17 @@ class ServiceAccountArgs:
                `host_tag_management`, `metrics_management`, and `user_management`.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] user_groups: List of user groups for this service account.
         """
-        ServiceAccountArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            identifier=identifier,
-            active=active,
-            description=description,
-            ingestion_policy=ingestion_policy,
-            permissions=permissions,
-            user_groups=user_groups,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             identifier: Optional[pulumi.Input[str]] = None,
-             active: Optional[pulumi.Input[bool]] = None,
-             description: Optional[pulumi.Input[str]] = None,
-             ingestion_policy: Optional[pulumi.Input[str]] = None,
-             permissions: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             user_groups: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if identifier is None:
-            raise TypeError("Missing 'identifier' argument")
-        if ingestion_policy is None and 'ingestionPolicy' in kwargs:
-            ingestion_policy = kwargs['ingestionPolicy']
-        if user_groups is None and 'userGroups' in kwargs:
-            user_groups = kwargs['userGroups']
-
-        _setter("identifier", identifier)
+        pulumi.set(__self__, "identifier", identifier)
         if active is not None:
-            _setter("active", active)
+            pulumi.set(__self__, "active", active)
         if description is not None:
-            _setter("description", description)
+            pulumi.set(__self__, "description", description)
         if ingestion_policy is not None:
-            _setter("ingestion_policy", ingestion_policy)
+            pulumi.set(__self__, "ingestion_policy", ingestion_policy)
         if permissions is not None:
-            _setter("permissions", permissions)
+            pulumi.set(__self__, "permissions", permissions)
         if user_groups is not None:
-            _setter("user_groups", user_groups)
+            pulumi.set(__self__, "user_groups", user_groups)
 
     @property
     @pulumi.getter
@@ -165,43 +138,18 @@ class _ServiceAccountState:
                `host_tag_management`, `metrics_management`, and `user_management`.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] user_groups: List of user groups for this service account.
         """
-        _ServiceAccountState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            active=active,
-            description=description,
-            identifier=identifier,
-            ingestion_policy=ingestion_policy,
-            permissions=permissions,
-            user_groups=user_groups,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             active: Optional[pulumi.Input[bool]] = None,
-             description: Optional[pulumi.Input[str]] = None,
-             identifier: Optional[pulumi.Input[str]] = None,
-             ingestion_policy: Optional[pulumi.Input[str]] = None,
-             permissions: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             user_groups: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if ingestion_policy is None and 'ingestionPolicy' in kwargs:
-            ingestion_policy = kwargs['ingestionPolicy']
-        if user_groups is None and 'userGroups' in kwargs:
-            user_groups = kwargs['userGroups']
-
         if active is not None:
-            _setter("active", active)
+            pulumi.set(__self__, "active", active)
         if description is not None:
-            _setter("description", description)
+            pulumi.set(__self__, "description", description)
         if identifier is not None:
-            _setter("identifier", identifier)
+            pulumi.set(__self__, "identifier", identifier)
         if ingestion_policy is not None:
-            _setter("ingestion_policy", ingestion_policy)
+            pulumi.set(__self__, "ingestion_policy", ingestion_policy)
         if permissions is not None:
-            _setter("permissions", permissions)
+            pulumi.set(__self__, "permissions", permissions)
         if user_groups is not None:
-            _setter("user_groups", user_groups)
+            pulumi.set(__self__, "user_groups", user_groups)
 
     @property
     @pulumi.getter
@@ -361,10 +309,6 @@ class ServiceAccount(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            ServiceAccountArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
