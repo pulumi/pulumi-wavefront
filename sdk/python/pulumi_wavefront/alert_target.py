@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 from . import outputs
 from ._inputs import *
@@ -44,71 +44,24 @@ class AlertTargetArgs:
         :param pulumi.Input[str] name: The name of the alert target as it is displayed in Wavefront.
         :param pulumi.Input[Sequence[pulumi.Input['AlertTargetRouteArgs']]] routes: List of routing targets that this alert target will notify. See Route
         """
-        AlertTargetArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            description=description,
-            recipient=recipient,
-            template=template,
-            triggers=triggers,
-            content_type=content_type,
-            custom_headers=custom_headers,
-            email_subject=email_subject,
-            is_html_content=is_html_content,
-            method=method,
-            name=name,
-            routes=routes,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             description: Optional[pulumi.Input[str]] = None,
-             recipient: Optional[pulumi.Input[str]] = None,
-             template: Optional[pulumi.Input[str]] = None,
-             triggers: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             content_type: Optional[pulumi.Input[str]] = None,
-             custom_headers: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
-             email_subject: Optional[pulumi.Input[str]] = None,
-             is_html_content: Optional[pulumi.Input[bool]] = None,
-             method: Optional[pulumi.Input[str]] = None,
-             name: Optional[pulumi.Input[str]] = None,
-             routes: Optional[pulumi.Input[Sequence[pulumi.Input['AlertTargetRouteArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if description is None:
-            raise TypeError("Missing 'description' argument")
-        if recipient is None:
-            raise TypeError("Missing 'recipient' argument")
-        if template is None:
-            raise TypeError("Missing 'template' argument")
-        if triggers is None:
-            raise TypeError("Missing 'triggers' argument")
-        if content_type is None and 'contentType' in kwargs:
-            content_type = kwargs['contentType']
-        if custom_headers is None and 'customHeaders' in kwargs:
-            custom_headers = kwargs['customHeaders']
-        if email_subject is None and 'emailSubject' in kwargs:
-            email_subject = kwargs['emailSubject']
-        if is_html_content is None and 'isHtmlContent' in kwargs:
-            is_html_content = kwargs['isHtmlContent']
-
-        _setter("description", description)
-        _setter("recipient", recipient)
-        _setter("template", template)
-        _setter("triggers", triggers)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "recipient", recipient)
+        pulumi.set(__self__, "template", template)
+        pulumi.set(__self__, "triggers", triggers)
         if content_type is not None:
-            _setter("content_type", content_type)
+            pulumi.set(__self__, "content_type", content_type)
         if custom_headers is not None:
-            _setter("custom_headers", custom_headers)
+            pulumi.set(__self__, "custom_headers", custom_headers)
         if email_subject is not None:
-            _setter("email_subject", email_subject)
+            pulumi.set(__self__, "email_subject", email_subject)
         if is_html_content is not None:
-            _setter("is_html_content", is_html_content)
+            pulumi.set(__self__, "is_html_content", is_html_content)
         if method is not None:
-            _setter("method", method)
+            pulumi.set(__self__, "method", method)
         if name is not None:
-            _setter("name", name)
+            pulumi.set(__self__, "name", name)
         if routes is not None:
-            _setter("routes", routes)
+            pulumi.set(__self__, "routes", routes)
 
     @property
     @pulumi.getter
@@ -279,73 +232,30 @@ class _AlertTargetState:
         :param pulumi.Input[Sequence[pulumi.Input[str]]] triggers: A list of occurrences on which this webhook will be fired. Valid values are `ALERT_OPENED`,
                `ALERT_UPDATED`, `ALERT_RESOLVED`, `ALERT_MAINTENANCE`, `ALERT_SNOOZED`, `ALERT_NO_DATA`, `ALERT_NO_DATA_RESOLVED`, `ALERT_NO_DATA_MAINTENANCE`.
         """
-        _AlertTargetState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            content_type=content_type,
-            custom_headers=custom_headers,
-            description=description,
-            email_subject=email_subject,
-            is_html_content=is_html_content,
-            method=method,
-            name=name,
-            recipient=recipient,
-            routes=routes,
-            target_id=target_id,
-            template=template,
-            triggers=triggers,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             content_type: Optional[pulumi.Input[str]] = None,
-             custom_headers: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
-             description: Optional[pulumi.Input[str]] = None,
-             email_subject: Optional[pulumi.Input[str]] = None,
-             is_html_content: Optional[pulumi.Input[bool]] = None,
-             method: Optional[pulumi.Input[str]] = None,
-             name: Optional[pulumi.Input[str]] = None,
-             recipient: Optional[pulumi.Input[str]] = None,
-             routes: Optional[pulumi.Input[Sequence[pulumi.Input['AlertTargetRouteArgs']]]] = None,
-             target_id: Optional[pulumi.Input[str]] = None,
-             template: Optional[pulumi.Input[str]] = None,
-             triggers: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if content_type is None and 'contentType' in kwargs:
-            content_type = kwargs['contentType']
-        if custom_headers is None and 'customHeaders' in kwargs:
-            custom_headers = kwargs['customHeaders']
-        if email_subject is None and 'emailSubject' in kwargs:
-            email_subject = kwargs['emailSubject']
-        if is_html_content is None and 'isHtmlContent' in kwargs:
-            is_html_content = kwargs['isHtmlContent']
-        if target_id is None and 'targetId' in kwargs:
-            target_id = kwargs['targetId']
-
         if content_type is not None:
-            _setter("content_type", content_type)
+            pulumi.set(__self__, "content_type", content_type)
         if custom_headers is not None:
-            _setter("custom_headers", custom_headers)
+            pulumi.set(__self__, "custom_headers", custom_headers)
         if description is not None:
-            _setter("description", description)
+            pulumi.set(__self__, "description", description)
         if email_subject is not None:
-            _setter("email_subject", email_subject)
+            pulumi.set(__self__, "email_subject", email_subject)
         if is_html_content is not None:
-            _setter("is_html_content", is_html_content)
+            pulumi.set(__self__, "is_html_content", is_html_content)
         if method is not None:
-            _setter("method", method)
+            pulumi.set(__self__, "method", method)
         if name is not None:
-            _setter("name", name)
+            pulumi.set(__self__, "name", name)
         if recipient is not None:
-            _setter("recipient", recipient)
+            pulumi.set(__self__, "recipient", recipient)
         if routes is not None:
-            _setter("routes", routes)
+            pulumi.set(__self__, "routes", routes)
         if target_id is not None:
-            _setter("target_id", target_id)
+            pulumi.set(__self__, "target_id", target_id)
         if template is not None:
-            _setter("template", template)
+            pulumi.set(__self__, "template", template)
         if triggers is not None:
-            _setter("triggers", triggers)
+            pulumi.set(__self__, "triggers", triggers)
 
     @property
     @pulumi.getter(name="contentType")
@@ -609,10 +519,6 @@ class AlertTarget(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            AlertTargetArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

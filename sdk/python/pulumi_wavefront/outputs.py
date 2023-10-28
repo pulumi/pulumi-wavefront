@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 from . import outputs
 
@@ -64,29 +64,10 @@ class AlertTargetRoute(dict):
         :param Mapping[str, str] filter: (Required) String that filters the route. Space delimited. Currently only allows a single key value pair.
                (e.g. `env prod`)
         """
-        AlertTargetRoute._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            method=method,
-            target=target,
-            filter=filter,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             method: Optional[str] = None,
-             target: Optional[str] = None,
-             filter: Optional[Mapping[str, str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if method is None:
-            raise TypeError("Missing 'method' argument")
-        if target is None:
-            raise TypeError("Missing 'target' argument")
-
-        _setter("method", method)
-        _setter("target", target)
+        pulumi.set(__self__, "method", method)
+        pulumi.set(__self__, "target", target)
         if filter is not None:
-            _setter("filter", filter)
+            pulumi.set(__self__, "filter", filter)
 
     @property
     @pulumi.getter
@@ -143,29 +124,8 @@ class CloudIntegrationNewRelicMetricFilter(dict):
         :param str app_name: The name of a NewRelic App.
         :param str metric_filter_regex: A regular expression that a metric name must match (case-insensitively) in order to be ingested.
         """
-        CloudIntegrationNewRelicMetricFilter._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            app_name=app_name,
-            metric_filter_regex=metric_filter_regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             app_name: Optional[str] = None,
-             metric_filter_regex: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if app_name is None and 'appName' in kwargs:
-            app_name = kwargs['appName']
-        if app_name is None:
-            raise TypeError("Missing 'app_name' argument")
-        if metric_filter_regex is None and 'metricFilterRegex' in kwargs:
-            metric_filter_regex = kwargs['metricFilterRegex']
-        if metric_filter_regex is None:
-            raise TypeError("Missing 'metric_filter_regex' argument")
-
-        _setter("app_name", app_name)
-        _setter("metric_filter_regex", metric_filter_regex)
+        pulumi.set(__self__, "app_name", app_name)
+        pulumi.set(__self__, "metric_filter_regex", metric_filter_regex)
 
     @property
     @pulumi.getter(name="appName")
@@ -238,71 +198,18 @@ class DashboardParameterDetail(dict):
         :param str query_value: For `DYNAMIC` parameter types, the query to execute to return values.
         :param str tag_key: for `TAG_KEY` dynamic field types, the tag key to return.
         """
-        DashboardParameterDetail._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            default_value=default_value,
-            hide_from_view=hide_from_view,
-            label=label,
-            name=name,
-            parameter_type=parameter_type,
-            values_to_readable_strings=values_to_readable_strings,
-            dynamic_field_type=dynamic_field_type,
-            query_value=query_value,
-            tag_key=tag_key,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             default_value: Optional[str] = None,
-             hide_from_view: Optional[bool] = None,
-             label: Optional[str] = None,
-             name: Optional[str] = None,
-             parameter_type: Optional[str] = None,
-             values_to_readable_strings: Optional[Mapping[str, str]] = None,
-             dynamic_field_type: Optional[str] = None,
-             query_value: Optional[str] = None,
-             tag_key: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if default_value is None and 'defaultValue' in kwargs:
-            default_value = kwargs['defaultValue']
-        if default_value is None:
-            raise TypeError("Missing 'default_value' argument")
-        if hide_from_view is None and 'hideFromView' in kwargs:
-            hide_from_view = kwargs['hideFromView']
-        if hide_from_view is None:
-            raise TypeError("Missing 'hide_from_view' argument")
-        if label is None:
-            raise TypeError("Missing 'label' argument")
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if parameter_type is None and 'parameterType' in kwargs:
-            parameter_type = kwargs['parameterType']
-        if parameter_type is None:
-            raise TypeError("Missing 'parameter_type' argument")
-        if values_to_readable_strings is None and 'valuesToReadableStrings' in kwargs:
-            values_to_readable_strings = kwargs['valuesToReadableStrings']
-        if values_to_readable_strings is None:
-            raise TypeError("Missing 'values_to_readable_strings' argument")
-        if dynamic_field_type is None and 'dynamicFieldType' in kwargs:
-            dynamic_field_type = kwargs['dynamicFieldType']
-        if query_value is None and 'queryValue' in kwargs:
-            query_value = kwargs['queryValue']
-        if tag_key is None and 'tagKey' in kwargs:
-            tag_key = kwargs['tagKey']
-
-        _setter("default_value", default_value)
-        _setter("hide_from_view", hide_from_view)
-        _setter("label", label)
-        _setter("name", name)
-        _setter("parameter_type", parameter_type)
-        _setter("values_to_readable_strings", values_to_readable_strings)
+        pulumi.set(__self__, "default_value", default_value)
+        pulumi.set(__self__, "hide_from_view", hide_from_view)
+        pulumi.set(__self__, "label", label)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "parameter_type", parameter_type)
+        pulumi.set(__self__, "values_to_readable_strings", values_to_readable_strings)
         if dynamic_field_type is not None:
-            _setter("dynamic_field_type", dynamic_field_type)
+            pulumi.set(__self__, "dynamic_field_type", dynamic_field_type)
         if query_value is not None:
-            _setter("query_value", query_value)
+            pulumi.set(__self__, "query_value", query_value)
         if tag_key is not None:
-            _setter("tag_key", tag_key)
+            pulumi.set(__self__, "tag_key", tag_key)
 
     @property
     @pulumi.getter(name="defaultValue")
@@ -388,25 +295,8 @@ class DashboardSection(dict):
         :param str name: Name of this section.
         :param Sequence['DashboardSectionRowArgs'] rows: See dashboard section rows.
         """
-        DashboardSection._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            rows=rows,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             rows: Optional[Sequence['outputs.DashboardSectionRow']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if rows is None:
-            raise TypeError("Missing 'rows' argument")
-
-        _setter("name", name)
-        _setter("rows", rows)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "rows", rows)
 
     @property
     @pulumi.getter
@@ -432,20 +322,7 @@ class DashboardSectionRow(dict):
         """
         :param Sequence['DashboardSectionRowChartArgs'] charts: Charts in this section. See dashboard chart.
         """
-        DashboardSectionRow._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            charts=charts,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             charts: Optional[Sequence['outputs.DashboardSectionRowChart']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if charts is None:
-            raise TypeError("Missing 'charts' argument")
-
-        _setter("charts", charts)
+        pulumi.set(__self__, "charts", charts)
 
     @property
     @pulumi.getter
@@ -500,62 +377,19 @@ class DashboardSectionRowChart(dict):
         :param str description: Description of the chart.
         :param bool no_default_events: Show events related to the sources included in queries
         """
-        DashboardSectionRowChart._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            chart_setting=chart_setting,
-            name=name,
-            sources=sources,
-            summarization=summarization,
-            units=units,
-            base=base,
-            chart_attribute=chart_attribute,
-            description=description,
-            no_default_events=no_default_events,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             chart_setting: Optional['outputs.DashboardSectionRowChartChartSetting'] = None,
-             name: Optional[str] = None,
-             sources: Optional[Sequence['outputs.DashboardSectionRowChartSource']] = None,
-             summarization: Optional[str] = None,
-             units: Optional[str] = None,
-             base: Optional[int] = None,
-             chart_attribute: Optional[str] = None,
-             description: Optional[str] = None,
-             no_default_events: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if chart_setting is None and 'chartSetting' in kwargs:
-            chart_setting = kwargs['chartSetting']
-        if chart_setting is None:
-            raise TypeError("Missing 'chart_setting' argument")
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if sources is None:
-            raise TypeError("Missing 'sources' argument")
-        if summarization is None:
-            raise TypeError("Missing 'summarization' argument")
-        if units is None:
-            raise TypeError("Missing 'units' argument")
-        if chart_attribute is None and 'chartAttribute' in kwargs:
-            chart_attribute = kwargs['chartAttribute']
-        if no_default_events is None and 'noDefaultEvents' in kwargs:
-            no_default_events = kwargs['noDefaultEvents']
-
-        _setter("chart_setting", chart_setting)
-        _setter("name", name)
-        _setter("sources", sources)
-        _setter("summarization", summarization)
-        _setter("units", units)
+        pulumi.set(__self__, "chart_setting", chart_setting)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "sources", sources)
+        pulumi.set(__self__, "summarization", summarization)
+        pulumi.set(__self__, "units", units)
         if base is not None:
-            _setter("base", base)
+            pulumi.set(__self__, "base", base)
         if chart_attribute is not None:
-            _setter("chart_attribute", chart_attribute)
+            pulumi.set(__self__, "chart_attribute", chart_attribute)
         if description is not None:
-            _setter("description", description)
+            pulumi.set(__self__, "description", description)
         if no_default_events is not None:
-            _setter("no_default_events", no_default_events)
+            pulumi.set(__self__, "no_default_events", no_default_events)
 
     @property
     @pulumi.getter(name="chartSetting")
@@ -882,338 +716,119 @@ class DashboardSectionRowChartChartSetting(dict):
         :param float ymax: For x-y scatterplots, max value for the Y-axis. Set to null for auto.
         :param float ymin: For x-y scatterplots, min value for the Y-axis. Set to null for auto.
         """
-        DashboardSectionRowChartChartSetting._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            type=type,
-            auto_column_tags=auto_column_tags,
-            column_tags=column_tags,
-            custom_tags=custom_tags,
-            expected_data_spacing=expected_data_spacing,
-            fixed_legend_display_stats=fixed_legend_display_stats,
-            fixed_legend_enabled=fixed_legend_enabled,
-            fixed_legend_filter_field=fixed_legend_filter_field,
-            fixed_legend_filter_limit=fixed_legend_filter_limit,
-            fixed_legend_filter_sort=fixed_legend_filter_sort,
-            fixed_legend_hide_label=fixed_legend_hide_label,
-            fixed_legend_position=fixed_legend_position,
-            fixed_legend_use_raw_stats=fixed_legend_use_raw_stats,
-            group_by_source=group_by_source,
-            invert_dynamic_legend_hover_control=invert_dynamic_legend_hover_control,
-            line_type=line_type,
-            max=max,
-            min=min,
-            num_tags=num_tags,
-            plain_markdown_content=plain_markdown_content,
-            show_hosts=show_hosts,
-            show_labels=show_labels,
-            show_raw_values=show_raw_values,
-            sort_values_descending=sort_values_descending,
-            sparkline_decimal_precision=sparkline_decimal_precision,
-            sparkline_display_color=sparkline_display_color,
-            sparkline_display_font_size=sparkline_display_font_size,
-            sparkline_display_horizontal_position=sparkline_display_horizontal_position,
-            sparkline_display_postfix=sparkline_display_postfix,
-            sparkline_display_prefix=sparkline_display_prefix,
-            sparkline_display_value_type=sparkline_display_value_type,
-            sparkline_display_vertical_position=sparkline_display_vertical_position,
-            sparkline_fill_color=sparkline_fill_color,
-            sparkline_line_color=sparkline_line_color,
-            sparkline_size=sparkline_size,
-            sparkline_value_color_map_apply_to=sparkline_value_color_map_apply_to,
-            sparkline_value_color_map_colors=sparkline_value_color_map_colors,
-            sparkline_value_color_map_values=sparkline_value_color_map_values,
-            sparkline_value_color_map_values_v2s=sparkline_value_color_map_values_v2s,
-            sparkline_value_text_map_texts=sparkline_value_text_map_texts,
-            sparkline_value_text_map_thresholds=sparkline_value_text_map_thresholds,
-            stack_type=stack_type,
-            tag_mode=tag_mode,
-            time_based_coloring=time_based_coloring,
-            window_size=window_size,
-            windowing=windowing,
-            xmax=xmax,
-            xmin=xmin,
-            y0_scale_si_by1024=y0_scale_si_by1024,
-            y0_unit_autoscaling=y0_unit_autoscaling,
-            y1_scale_si_by1024=y1_scale_si_by1024,
-            y1_unit_autoscaling=y1_unit_autoscaling,
-            y1_units=y1_units,
-            y1max=y1max,
-            y1min=y1min,
-            ymax=ymax,
-            ymin=ymin,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             type: Optional[str] = None,
-             auto_column_tags: Optional[bool] = None,
-             column_tags: Optional[str] = None,
-             custom_tags: Optional[Sequence[str]] = None,
-             expected_data_spacing: Optional[int] = None,
-             fixed_legend_display_stats: Optional[Sequence[str]] = None,
-             fixed_legend_enabled: Optional[bool] = None,
-             fixed_legend_filter_field: Optional[str] = None,
-             fixed_legend_filter_limit: Optional[int] = None,
-             fixed_legend_filter_sort: Optional[str] = None,
-             fixed_legend_hide_label: Optional[bool] = None,
-             fixed_legend_position: Optional[str] = None,
-             fixed_legend_use_raw_stats: Optional[bool] = None,
-             group_by_source: Optional[bool] = None,
-             invert_dynamic_legend_hover_control: Optional[bool] = None,
-             line_type: Optional[str] = None,
-             max: Optional[float] = None,
-             min: Optional[float] = None,
-             num_tags: Optional[int] = None,
-             plain_markdown_content: Optional[str] = None,
-             show_hosts: Optional[bool] = None,
-             show_labels: Optional[bool] = None,
-             show_raw_values: Optional[bool] = None,
-             sort_values_descending: Optional[bool] = None,
-             sparkline_decimal_precision: Optional[int] = None,
-             sparkline_display_color: Optional[str] = None,
-             sparkline_display_font_size: Optional[str] = None,
-             sparkline_display_horizontal_position: Optional[str] = None,
-             sparkline_display_postfix: Optional[str] = None,
-             sparkline_display_prefix: Optional[str] = None,
-             sparkline_display_value_type: Optional[str] = None,
-             sparkline_display_vertical_position: Optional[str] = None,
-             sparkline_fill_color: Optional[str] = None,
-             sparkline_line_color: Optional[str] = None,
-             sparkline_size: Optional[str] = None,
-             sparkline_value_color_map_apply_to: Optional[str] = None,
-             sparkline_value_color_map_colors: Optional[Sequence[str]] = None,
-             sparkline_value_color_map_values: Optional[Sequence[int]] = None,
-             sparkline_value_color_map_values_v2s: Optional[Sequence[float]] = None,
-             sparkline_value_text_map_texts: Optional[Sequence[str]] = None,
-             sparkline_value_text_map_thresholds: Optional[Sequence[float]] = None,
-             stack_type: Optional[str] = None,
-             tag_mode: Optional[str] = None,
-             time_based_coloring: Optional[bool] = None,
-             window_size: Optional[int] = None,
-             windowing: Optional[str] = None,
-             xmax: Optional[float] = None,
-             xmin: Optional[float] = None,
-             y0_scale_si_by1024: Optional[bool] = None,
-             y0_unit_autoscaling: Optional[bool] = None,
-             y1_scale_si_by1024: Optional[bool] = None,
-             y1_unit_autoscaling: Optional[bool] = None,
-             y1_units: Optional[str] = None,
-             y1max: Optional[float] = None,
-             y1min: Optional[float] = None,
-             ymax: Optional[float] = None,
-             ymin: Optional[float] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if type is None:
-            raise TypeError("Missing 'type' argument")
-        if auto_column_tags is None and 'autoColumnTags' in kwargs:
-            auto_column_tags = kwargs['autoColumnTags']
-        if column_tags is None and 'columnTags' in kwargs:
-            column_tags = kwargs['columnTags']
-        if custom_tags is None and 'customTags' in kwargs:
-            custom_tags = kwargs['customTags']
-        if expected_data_spacing is None and 'expectedDataSpacing' in kwargs:
-            expected_data_spacing = kwargs['expectedDataSpacing']
-        if fixed_legend_display_stats is None and 'fixedLegendDisplayStats' in kwargs:
-            fixed_legend_display_stats = kwargs['fixedLegendDisplayStats']
-        if fixed_legend_enabled is None and 'fixedLegendEnabled' in kwargs:
-            fixed_legend_enabled = kwargs['fixedLegendEnabled']
-        if fixed_legend_filter_field is None and 'fixedLegendFilterField' in kwargs:
-            fixed_legend_filter_field = kwargs['fixedLegendFilterField']
-        if fixed_legend_filter_limit is None and 'fixedLegendFilterLimit' in kwargs:
-            fixed_legend_filter_limit = kwargs['fixedLegendFilterLimit']
-        if fixed_legend_filter_sort is None and 'fixedLegendFilterSort' in kwargs:
-            fixed_legend_filter_sort = kwargs['fixedLegendFilterSort']
-        if fixed_legend_hide_label is None and 'fixedLegendHideLabel' in kwargs:
-            fixed_legend_hide_label = kwargs['fixedLegendHideLabel']
-        if fixed_legend_position is None and 'fixedLegendPosition' in kwargs:
-            fixed_legend_position = kwargs['fixedLegendPosition']
-        if fixed_legend_use_raw_stats is None and 'fixedLegendUseRawStats' in kwargs:
-            fixed_legend_use_raw_stats = kwargs['fixedLegendUseRawStats']
-        if group_by_source is None and 'groupBySource' in kwargs:
-            group_by_source = kwargs['groupBySource']
-        if invert_dynamic_legend_hover_control is None and 'invertDynamicLegendHoverControl' in kwargs:
-            invert_dynamic_legend_hover_control = kwargs['invertDynamicLegendHoverControl']
-        if line_type is None and 'lineType' in kwargs:
-            line_type = kwargs['lineType']
-        if num_tags is None and 'numTags' in kwargs:
-            num_tags = kwargs['numTags']
-        if plain_markdown_content is None and 'plainMarkdownContent' in kwargs:
-            plain_markdown_content = kwargs['plainMarkdownContent']
-        if show_hosts is None and 'showHosts' in kwargs:
-            show_hosts = kwargs['showHosts']
-        if show_labels is None and 'showLabels' in kwargs:
-            show_labels = kwargs['showLabels']
-        if show_raw_values is None and 'showRawValues' in kwargs:
-            show_raw_values = kwargs['showRawValues']
-        if sort_values_descending is None and 'sortValuesDescending' in kwargs:
-            sort_values_descending = kwargs['sortValuesDescending']
-        if sparkline_decimal_precision is None and 'sparklineDecimalPrecision' in kwargs:
-            sparkline_decimal_precision = kwargs['sparklineDecimalPrecision']
-        if sparkline_display_color is None and 'sparklineDisplayColor' in kwargs:
-            sparkline_display_color = kwargs['sparklineDisplayColor']
-        if sparkline_display_font_size is None and 'sparklineDisplayFontSize' in kwargs:
-            sparkline_display_font_size = kwargs['sparklineDisplayFontSize']
-        if sparkline_display_horizontal_position is None and 'sparklineDisplayHorizontalPosition' in kwargs:
-            sparkline_display_horizontal_position = kwargs['sparklineDisplayHorizontalPosition']
-        if sparkline_display_postfix is None and 'sparklineDisplayPostfix' in kwargs:
-            sparkline_display_postfix = kwargs['sparklineDisplayPostfix']
-        if sparkline_display_prefix is None and 'sparklineDisplayPrefix' in kwargs:
-            sparkline_display_prefix = kwargs['sparklineDisplayPrefix']
-        if sparkline_display_value_type is None and 'sparklineDisplayValueType' in kwargs:
-            sparkline_display_value_type = kwargs['sparklineDisplayValueType']
-        if sparkline_display_vertical_position is None and 'sparklineDisplayVerticalPosition' in kwargs:
-            sparkline_display_vertical_position = kwargs['sparklineDisplayVerticalPosition']
-        if sparkline_fill_color is None and 'sparklineFillColor' in kwargs:
-            sparkline_fill_color = kwargs['sparklineFillColor']
-        if sparkline_line_color is None and 'sparklineLineColor' in kwargs:
-            sparkline_line_color = kwargs['sparklineLineColor']
-        if sparkline_size is None and 'sparklineSize' in kwargs:
-            sparkline_size = kwargs['sparklineSize']
-        if sparkline_value_color_map_apply_to is None and 'sparklineValueColorMapApplyTo' in kwargs:
-            sparkline_value_color_map_apply_to = kwargs['sparklineValueColorMapApplyTo']
-        if sparkline_value_color_map_colors is None and 'sparklineValueColorMapColors' in kwargs:
-            sparkline_value_color_map_colors = kwargs['sparklineValueColorMapColors']
-        if sparkline_value_color_map_values is None and 'sparklineValueColorMapValues' in kwargs:
-            sparkline_value_color_map_values = kwargs['sparklineValueColorMapValues']
-        if sparkline_value_color_map_values_v2s is None and 'sparklineValueColorMapValuesV2s' in kwargs:
-            sparkline_value_color_map_values_v2s = kwargs['sparklineValueColorMapValuesV2s']
-        if sparkline_value_text_map_texts is None and 'sparklineValueTextMapTexts' in kwargs:
-            sparkline_value_text_map_texts = kwargs['sparklineValueTextMapTexts']
-        if sparkline_value_text_map_thresholds is None and 'sparklineValueTextMapThresholds' in kwargs:
-            sparkline_value_text_map_thresholds = kwargs['sparklineValueTextMapThresholds']
-        if stack_type is None and 'stackType' in kwargs:
-            stack_type = kwargs['stackType']
-        if tag_mode is None and 'tagMode' in kwargs:
-            tag_mode = kwargs['tagMode']
-        if time_based_coloring is None and 'timeBasedColoring' in kwargs:
-            time_based_coloring = kwargs['timeBasedColoring']
-        if window_size is None and 'windowSize' in kwargs:
-            window_size = kwargs['windowSize']
-        if y0_scale_si_by1024 is None and 'y0ScaleSiBy1024' in kwargs:
-            y0_scale_si_by1024 = kwargs['y0ScaleSiBy1024']
-        if y0_unit_autoscaling is None and 'y0UnitAutoscaling' in kwargs:
-            y0_unit_autoscaling = kwargs['y0UnitAutoscaling']
-        if y1_scale_si_by1024 is None and 'y1ScaleSiBy1024' in kwargs:
-            y1_scale_si_by1024 = kwargs['y1ScaleSiBy1024']
-        if y1_unit_autoscaling is None and 'y1UnitAutoscaling' in kwargs:
-            y1_unit_autoscaling = kwargs['y1UnitAutoscaling']
-        if y1_units is None and 'y1Units' in kwargs:
-            y1_units = kwargs['y1Units']
-
-        _setter("type", type)
+        pulumi.set(__self__, "type", type)
         if auto_column_tags is not None:
-            _setter("auto_column_tags", auto_column_tags)
+            pulumi.set(__self__, "auto_column_tags", auto_column_tags)
         if column_tags is not None:
-            _setter("column_tags", column_tags)
+            pulumi.set(__self__, "column_tags", column_tags)
         if custom_tags is not None:
-            _setter("custom_tags", custom_tags)
+            pulumi.set(__self__, "custom_tags", custom_tags)
         if expected_data_spacing is not None:
-            _setter("expected_data_spacing", expected_data_spacing)
+            pulumi.set(__self__, "expected_data_spacing", expected_data_spacing)
         if fixed_legend_display_stats is not None:
-            _setter("fixed_legend_display_stats", fixed_legend_display_stats)
+            pulumi.set(__self__, "fixed_legend_display_stats", fixed_legend_display_stats)
         if fixed_legend_enabled is not None:
-            _setter("fixed_legend_enabled", fixed_legend_enabled)
+            pulumi.set(__self__, "fixed_legend_enabled", fixed_legend_enabled)
         if fixed_legend_filter_field is not None:
-            _setter("fixed_legend_filter_field", fixed_legend_filter_field)
+            pulumi.set(__self__, "fixed_legend_filter_field", fixed_legend_filter_field)
         if fixed_legend_filter_limit is not None:
-            _setter("fixed_legend_filter_limit", fixed_legend_filter_limit)
+            pulumi.set(__self__, "fixed_legend_filter_limit", fixed_legend_filter_limit)
         if fixed_legend_filter_sort is not None:
-            _setter("fixed_legend_filter_sort", fixed_legend_filter_sort)
+            pulumi.set(__self__, "fixed_legend_filter_sort", fixed_legend_filter_sort)
         if fixed_legend_hide_label is not None:
-            _setter("fixed_legend_hide_label", fixed_legend_hide_label)
+            pulumi.set(__self__, "fixed_legend_hide_label", fixed_legend_hide_label)
         if fixed_legend_position is not None:
-            _setter("fixed_legend_position", fixed_legend_position)
+            pulumi.set(__self__, "fixed_legend_position", fixed_legend_position)
         if fixed_legend_use_raw_stats is not None:
-            _setter("fixed_legend_use_raw_stats", fixed_legend_use_raw_stats)
+            pulumi.set(__self__, "fixed_legend_use_raw_stats", fixed_legend_use_raw_stats)
         if group_by_source is not None:
-            _setter("group_by_source", group_by_source)
+            pulumi.set(__self__, "group_by_source", group_by_source)
         if invert_dynamic_legend_hover_control is not None:
-            _setter("invert_dynamic_legend_hover_control", invert_dynamic_legend_hover_control)
+            pulumi.set(__self__, "invert_dynamic_legend_hover_control", invert_dynamic_legend_hover_control)
         if line_type is not None:
-            _setter("line_type", line_type)
+            pulumi.set(__self__, "line_type", line_type)
         if max is not None:
-            _setter("max", max)
+            pulumi.set(__self__, "max", max)
         if min is not None:
-            _setter("min", min)
+            pulumi.set(__self__, "min", min)
         if num_tags is not None:
-            _setter("num_tags", num_tags)
+            pulumi.set(__self__, "num_tags", num_tags)
         if plain_markdown_content is not None:
-            _setter("plain_markdown_content", plain_markdown_content)
+            pulumi.set(__self__, "plain_markdown_content", plain_markdown_content)
         if show_hosts is not None:
-            _setter("show_hosts", show_hosts)
+            pulumi.set(__self__, "show_hosts", show_hosts)
         if show_labels is not None:
-            _setter("show_labels", show_labels)
+            pulumi.set(__self__, "show_labels", show_labels)
         if show_raw_values is not None:
-            _setter("show_raw_values", show_raw_values)
+            pulumi.set(__self__, "show_raw_values", show_raw_values)
         if sort_values_descending is not None:
-            _setter("sort_values_descending", sort_values_descending)
+            pulumi.set(__self__, "sort_values_descending", sort_values_descending)
         if sparkline_decimal_precision is not None:
-            _setter("sparkline_decimal_precision", sparkline_decimal_precision)
+            pulumi.set(__self__, "sparkline_decimal_precision", sparkline_decimal_precision)
         if sparkline_display_color is not None:
-            _setter("sparkline_display_color", sparkline_display_color)
+            pulumi.set(__self__, "sparkline_display_color", sparkline_display_color)
         if sparkline_display_font_size is not None:
-            _setter("sparkline_display_font_size", sparkline_display_font_size)
+            pulumi.set(__self__, "sparkline_display_font_size", sparkline_display_font_size)
         if sparkline_display_horizontal_position is not None:
-            _setter("sparkline_display_horizontal_position", sparkline_display_horizontal_position)
+            pulumi.set(__self__, "sparkline_display_horizontal_position", sparkline_display_horizontal_position)
         if sparkline_display_postfix is not None:
-            _setter("sparkline_display_postfix", sparkline_display_postfix)
+            pulumi.set(__self__, "sparkline_display_postfix", sparkline_display_postfix)
         if sparkline_display_prefix is not None:
-            _setter("sparkline_display_prefix", sparkline_display_prefix)
+            pulumi.set(__self__, "sparkline_display_prefix", sparkline_display_prefix)
         if sparkline_display_value_type is not None:
-            _setter("sparkline_display_value_type", sparkline_display_value_type)
+            pulumi.set(__self__, "sparkline_display_value_type", sparkline_display_value_type)
         if sparkline_display_vertical_position is not None:
-            _setter("sparkline_display_vertical_position", sparkline_display_vertical_position)
+            pulumi.set(__self__, "sparkline_display_vertical_position", sparkline_display_vertical_position)
         if sparkline_fill_color is not None:
-            _setter("sparkline_fill_color", sparkline_fill_color)
+            pulumi.set(__self__, "sparkline_fill_color", sparkline_fill_color)
         if sparkline_line_color is not None:
-            _setter("sparkline_line_color", sparkline_line_color)
+            pulumi.set(__self__, "sparkline_line_color", sparkline_line_color)
         if sparkline_size is not None:
-            _setter("sparkline_size", sparkline_size)
+            pulumi.set(__self__, "sparkline_size", sparkline_size)
         if sparkline_value_color_map_apply_to is not None:
-            _setter("sparkline_value_color_map_apply_to", sparkline_value_color_map_apply_to)
+            pulumi.set(__self__, "sparkline_value_color_map_apply_to", sparkline_value_color_map_apply_to)
         if sparkline_value_color_map_colors is not None:
-            _setter("sparkline_value_color_map_colors", sparkline_value_color_map_colors)
+            pulumi.set(__self__, "sparkline_value_color_map_colors", sparkline_value_color_map_colors)
         if sparkline_value_color_map_values is not None:
-            _setter("sparkline_value_color_map_values", sparkline_value_color_map_values)
+            pulumi.set(__self__, "sparkline_value_color_map_values", sparkline_value_color_map_values)
         if sparkline_value_color_map_values_v2s is not None:
-            _setter("sparkline_value_color_map_values_v2s", sparkline_value_color_map_values_v2s)
+            pulumi.set(__self__, "sparkline_value_color_map_values_v2s", sparkline_value_color_map_values_v2s)
         if sparkline_value_text_map_texts is not None:
-            _setter("sparkline_value_text_map_texts", sparkline_value_text_map_texts)
+            pulumi.set(__self__, "sparkline_value_text_map_texts", sparkline_value_text_map_texts)
         if sparkline_value_text_map_thresholds is not None:
-            _setter("sparkline_value_text_map_thresholds", sparkline_value_text_map_thresholds)
+            pulumi.set(__self__, "sparkline_value_text_map_thresholds", sparkline_value_text_map_thresholds)
         if stack_type is not None:
-            _setter("stack_type", stack_type)
+            pulumi.set(__self__, "stack_type", stack_type)
         if tag_mode is not None:
-            _setter("tag_mode", tag_mode)
+            pulumi.set(__self__, "tag_mode", tag_mode)
         if time_based_coloring is not None:
-            _setter("time_based_coloring", time_based_coloring)
+            pulumi.set(__self__, "time_based_coloring", time_based_coloring)
         if window_size is not None:
-            _setter("window_size", window_size)
+            pulumi.set(__self__, "window_size", window_size)
         if windowing is not None:
-            _setter("windowing", windowing)
+            pulumi.set(__self__, "windowing", windowing)
         if xmax is not None:
-            _setter("xmax", xmax)
+            pulumi.set(__self__, "xmax", xmax)
         if xmin is not None:
-            _setter("xmin", xmin)
+            pulumi.set(__self__, "xmin", xmin)
         if y0_scale_si_by1024 is not None:
-            _setter("y0_scale_si_by1024", y0_scale_si_by1024)
+            pulumi.set(__self__, "y0_scale_si_by1024", y0_scale_si_by1024)
         if y0_unit_autoscaling is not None:
-            _setter("y0_unit_autoscaling", y0_unit_autoscaling)
+            pulumi.set(__self__, "y0_unit_autoscaling", y0_unit_autoscaling)
         if y1_scale_si_by1024 is not None:
-            _setter("y1_scale_si_by1024", y1_scale_si_by1024)
+            pulumi.set(__self__, "y1_scale_si_by1024", y1_scale_si_by1024)
         if y1_unit_autoscaling is not None:
-            _setter("y1_unit_autoscaling", y1_unit_autoscaling)
+            pulumi.set(__self__, "y1_unit_autoscaling", y1_unit_autoscaling)
         if y1_units is not None:
-            _setter("y1_units", y1_units)
+            pulumi.set(__self__, "y1_units", y1_units)
         if y1max is not None:
-            _setter("y1max", y1max)
+            pulumi.set(__self__, "y1max", y1max)
         if y1min is not None:
-            _setter("y1min", y1min)
+            pulumi.set(__self__, "y1min", y1min)
         if ymax is not None:
-            _setter("ymax", ymax)
+            pulumi.set(__self__, "ymax", ymax)
         if ymin is not None:
-            _setter("ymin", ymin)
+            pulumi.set(__self__, "ymin", ymin)
 
     @property
     @pulumi.getter
@@ -1736,47 +1351,16 @@ class DashboardSectionRowChartSource(dict):
         :param str scatter_plot_source: For scatter plots, does this query source the X-axis or the Y-axis, `X`, or `Y`.
         :param str source_description: A description for the purpose of this source.
         """
-        DashboardSectionRowChartSource._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            query=query,
-            disabled=disabled,
-            query_builder_enabled=query_builder_enabled,
-            scatter_plot_source=scatter_plot_source,
-            source_description=source_description,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             query: Optional[str] = None,
-             disabled: Optional[bool] = None,
-             query_builder_enabled: Optional[bool] = None,
-             scatter_plot_source: Optional[str] = None,
-             source_description: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if query is None:
-            raise TypeError("Missing 'query' argument")
-        if query_builder_enabled is None and 'queryBuilderEnabled' in kwargs:
-            query_builder_enabled = kwargs['queryBuilderEnabled']
-        if scatter_plot_source is None and 'scatterPlotSource' in kwargs:
-            scatter_plot_source = kwargs['scatterPlotSource']
-        if source_description is None and 'sourceDescription' in kwargs:
-            source_description = kwargs['sourceDescription']
-
-        _setter("name", name)
-        _setter("query", query)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "query", query)
         if disabled is not None:
-            _setter("disabled", disabled)
+            pulumi.set(__self__, "disabled", disabled)
         if query_builder_enabled is not None:
-            _setter("query_builder_enabled", query_builder_enabled)
+            pulumi.set(__self__, "query_builder_enabled", query_builder_enabled)
         if scatter_plot_source is not None:
-            _setter("scatter_plot_source", scatter_plot_source)
+            pulumi.set(__self__, "scatter_plot_source", scatter_plot_source)
         if source_description is not None:
-            _setter("source_description", source_description)
+            pulumi.set(__self__, "source_description", source_description)
 
     @property
     @pulumi.getter
@@ -1832,25 +1416,8 @@ class IngestionPolicyTag(dict):
     def __init__(__self__, *,
                  key: str,
                  value: str):
-        IngestionPolicyTag._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            key=key,
-            value=value,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             key: Optional[str] = None,
-             value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if key is None:
-            raise TypeError("Missing 'key' argument")
-        if value is None:
-            raise TypeError("Missing 'value' argument")
-
-        _setter("key", key)
-        _setter("value", value)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
 
     @property
     @pulumi.getter
@@ -1911,66 +1478,19 @@ class MetricsPolicyPolicyRule(dict):
         :param Sequence['MetricsPolicyPolicyRuleTagArgs'] tags: List of Key/Value tags to select target metrics for policy.
         :param Sequence[str] user_group_ids: List of user group ids to apply Metrics Policy to. Must have at least one associated account_id, user_group_id, or role_id.
         """
-        MetricsPolicyPolicyRule._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            access_type=access_type,
-            description=description,
-            name=name,
-            prefixes=prefixes,
-            tags_anded=tags_anded,
-            account_ids=account_ids,
-            role_ids=role_ids,
-            tags=tags,
-            user_group_ids=user_group_ids,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             access_type: Optional[str] = None,
-             description: Optional[str] = None,
-             name: Optional[str] = None,
-             prefixes: Optional[Sequence[str]] = None,
-             tags_anded: Optional[bool] = None,
-             account_ids: Optional[Sequence[str]] = None,
-             role_ids: Optional[Sequence[str]] = None,
-             tags: Optional[Sequence['outputs.MetricsPolicyPolicyRuleTag']] = None,
-             user_group_ids: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if access_type is None and 'accessType' in kwargs:
-            access_type = kwargs['accessType']
-        if access_type is None:
-            raise TypeError("Missing 'access_type' argument")
-        if description is None:
-            raise TypeError("Missing 'description' argument")
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if prefixes is None:
-            raise TypeError("Missing 'prefixes' argument")
-        if tags_anded is None and 'tagsAnded' in kwargs:
-            tags_anded = kwargs['tagsAnded']
-        if tags_anded is None:
-            raise TypeError("Missing 'tags_anded' argument")
-        if account_ids is None and 'accountIds' in kwargs:
-            account_ids = kwargs['accountIds']
-        if role_ids is None and 'roleIds' in kwargs:
-            role_ids = kwargs['roleIds']
-        if user_group_ids is None and 'userGroupIds' in kwargs:
-            user_group_ids = kwargs['userGroupIds']
-
-        _setter("access_type", access_type)
-        _setter("description", description)
-        _setter("name", name)
-        _setter("prefixes", prefixes)
-        _setter("tags_anded", tags_anded)
+        pulumi.set(__self__, "access_type", access_type)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "prefixes", prefixes)
+        pulumi.set(__self__, "tags_anded", tags_anded)
         if account_ids is not None:
-            _setter("account_ids", account_ids)
+            pulumi.set(__self__, "account_ids", account_ids)
         if role_ids is not None:
-            _setter("role_ids", role_ids)
+            pulumi.set(__self__, "role_ids", role_ids)
         if tags is not None:
-            _setter("tags", tags)
+            pulumi.set(__self__, "tags", tags)
         if user_group_ids is not None:
-            _setter("user_group_ids", user_group_ids)
+            pulumi.set(__self__, "user_group_ids", user_group_ids)
 
     @property
     @pulumi.getter(name="accessType")
@@ -2054,25 +1574,8 @@ class MetricsPolicyPolicyRuleTag(dict):
         :param str key: The tag's key.
         :param str value: The tag's value.
         """
-        MetricsPolicyPolicyRuleTag._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            key=key,
-            value=value,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             key: Optional[str] = None,
-             value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if key is None:
-            raise TypeError("Missing 'key' argument")
-        if value is None:
-            raise TypeError("Missing 'value' argument")
-
-        _setter("key", key)
-        _setter("value", value)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
 
     @property
     @pulumi.getter
@@ -2096,25 +1599,8 @@ class GetAlertFailingHostLabelPairResult(dict):
     def __init__(__self__, *,
                  firing: int,
                  host: str):
-        GetAlertFailingHostLabelPairResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            firing=firing,
-            host=host,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             firing: Optional[int] = None,
-             host: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if firing is None:
-            raise TypeError("Missing 'firing' argument")
-        if host is None:
-            raise TypeError("Missing 'host' argument")
-
-        _setter("firing", firing)
-        _setter("host", host)
+        pulumi.set(__self__, "firing", firing)
+        pulumi.set(__self__, "host", host)
 
     @property
     @pulumi.getter
@@ -2132,25 +1618,8 @@ class GetAlertInMaintenanceHostLabelPairResult(dict):
     def __init__(__self__, *,
                  firing: int,
                  host: str):
-        GetAlertInMaintenanceHostLabelPairResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            firing=firing,
-            host=host,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             firing: Optional[int] = None,
-             host: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if firing is None:
-            raise TypeError("Missing 'firing' argument")
-        if host is None:
-            raise TypeError("Missing 'host' argument")
-
-        _setter("firing", firing)
-        _setter("host", host)
+        pulumi.set(__self__, "firing", firing)
+        pulumi.set(__self__, "host", host)
 
     @property
     @pulumi.getter
@@ -2213,155 +1682,30 @@ class GetAlertsAlertResult(dict):
         :param str target: An email address or integration endpoint (such as PagerDuty or webhook) to notify when the alert status changes.
         :param Mapping[str, str] targets: A comma-separated list of the email addresses or integration endpoints (such as PagerDuty or webhook) to notify when the alert status changes. Multiple target types can be in the list.
         """
-        GetAlertsAlertResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            additional_information=additional_information,
-            alert_type=alert_type,
-            can_modifies=can_modifies,
-            can_views=can_views,
-            condition=condition,
-            conditions=conditions,
-            display_expression=display_expression,
-            evaluate_realtime_data=evaluate_realtime_data,
-            failing_host_label_pairs=failing_host_label_pairs,
-            id=id,
-            in_maintenance_host_label_pairs=in_maintenance_host_label_pairs,
-            include_obsolete_metrics=include_obsolete_metrics,
-            minutes=minutes,
-            name=name,
-            notification_resend_frequency_minutes=notification_resend_frequency_minutes,
-            process_rate_minutes=process_rate_minutes,
-            resolve_after_minutes=resolve_after_minutes,
-            severity=severity,
-            severity_lists=severity_lists,
-            statuses=statuses,
-            tags=tags,
-            target=target,
-            targets=targets,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             additional_information: Optional[str] = None,
-             alert_type: Optional[str] = None,
-             can_modifies: Optional[Sequence[str]] = None,
-             can_views: Optional[Sequence[str]] = None,
-             condition: Optional[str] = None,
-             conditions: Optional[Mapping[str, str]] = None,
-             display_expression: Optional[str] = None,
-             evaluate_realtime_data: Optional[bool] = None,
-             failing_host_label_pairs: Optional[Sequence['outputs.GetAlertsAlertFailingHostLabelPairResult']] = None,
-             id: Optional[str] = None,
-             in_maintenance_host_label_pairs: Optional[Sequence['outputs.GetAlertsAlertInMaintenanceHostLabelPairResult']] = None,
-             include_obsolete_metrics: Optional[bool] = None,
-             minutes: Optional[int] = None,
-             name: Optional[str] = None,
-             notification_resend_frequency_minutes: Optional[int] = None,
-             process_rate_minutes: Optional[int] = None,
-             resolve_after_minutes: Optional[int] = None,
-             severity: Optional[str] = None,
-             severity_lists: Optional[Sequence[str]] = None,
-             statuses: Optional[Sequence[str]] = None,
-             tags: Optional[Sequence[str]] = None,
-             target: Optional[str] = None,
-             targets: Optional[Mapping[str, str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if additional_information is None and 'additionalInformation' in kwargs:
-            additional_information = kwargs['additionalInformation']
-        if additional_information is None:
-            raise TypeError("Missing 'additional_information' argument")
-        if alert_type is None and 'alertType' in kwargs:
-            alert_type = kwargs['alertType']
-        if alert_type is None:
-            raise TypeError("Missing 'alert_type' argument")
-        if can_modifies is None and 'canModifies' in kwargs:
-            can_modifies = kwargs['canModifies']
-        if can_modifies is None:
-            raise TypeError("Missing 'can_modifies' argument")
-        if can_views is None and 'canViews' in kwargs:
-            can_views = kwargs['canViews']
-        if can_views is None:
-            raise TypeError("Missing 'can_views' argument")
-        if condition is None:
-            raise TypeError("Missing 'condition' argument")
-        if conditions is None:
-            raise TypeError("Missing 'conditions' argument")
-        if display_expression is None and 'displayExpression' in kwargs:
-            display_expression = kwargs['displayExpression']
-        if display_expression is None:
-            raise TypeError("Missing 'display_expression' argument")
-        if evaluate_realtime_data is None and 'evaluateRealtimeData' in kwargs:
-            evaluate_realtime_data = kwargs['evaluateRealtimeData']
-        if evaluate_realtime_data is None:
-            raise TypeError("Missing 'evaluate_realtime_data' argument")
-        if failing_host_label_pairs is None and 'failingHostLabelPairs' in kwargs:
-            failing_host_label_pairs = kwargs['failingHostLabelPairs']
-        if failing_host_label_pairs is None:
-            raise TypeError("Missing 'failing_host_label_pairs' argument")
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-        if in_maintenance_host_label_pairs is None and 'inMaintenanceHostLabelPairs' in kwargs:
-            in_maintenance_host_label_pairs = kwargs['inMaintenanceHostLabelPairs']
-        if in_maintenance_host_label_pairs is None:
-            raise TypeError("Missing 'in_maintenance_host_label_pairs' argument")
-        if include_obsolete_metrics is None and 'includeObsoleteMetrics' in kwargs:
-            include_obsolete_metrics = kwargs['includeObsoleteMetrics']
-        if include_obsolete_metrics is None:
-            raise TypeError("Missing 'include_obsolete_metrics' argument")
-        if minutes is None:
-            raise TypeError("Missing 'minutes' argument")
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if notification_resend_frequency_minutes is None and 'notificationResendFrequencyMinutes' in kwargs:
-            notification_resend_frequency_minutes = kwargs['notificationResendFrequencyMinutes']
-        if notification_resend_frequency_minutes is None:
-            raise TypeError("Missing 'notification_resend_frequency_minutes' argument")
-        if process_rate_minutes is None and 'processRateMinutes' in kwargs:
-            process_rate_minutes = kwargs['processRateMinutes']
-        if process_rate_minutes is None:
-            raise TypeError("Missing 'process_rate_minutes' argument")
-        if resolve_after_minutes is None and 'resolveAfterMinutes' in kwargs:
-            resolve_after_minutes = kwargs['resolveAfterMinutes']
-        if resolve_after_minutes is None:
-            raise TypeError("Missing 'resolve_after_minutes' argument")
-        if severity is None:
-            raise TypeError("Missing 'severity' argument")
-        if severity_lists is None and 'severityLists' in kwargs:
-            severity_lists = kwargs['severityLists']
-        if severity_lists is None:
-            raise TypeError("Missing 'severity_lists' argument")
-        if statuses is None:
-            raise TypeError("Missing 'statuses' argument")
-        if tags is None:
-            raise TypeError("Missing 'tags' argument")
-        if target is None:
-            raise TypeError("Missing 'target' argument")
-
-        _setter("additional_information", additional_information)
-        _setter("alert_type", alert_type)
-        _setter("can_modifies", can_modifies)
-        _setter("can_views", can_views)
-        _setter("condition", condition)
-        _setter("conditions", conditions)
-        _setter("display_expression", display_expression)
-        _setter("evaluate_realtime_data", evaluate_realtime_data)
-        _setter("failing_host_label_pairs", failing_host_label_pairs)
-        _setter("id", id)
-        _setter("in_maintenance_host_label_pairs", in_maintenance_host_label_pairs)
-        _setter("include_obsolete_metrics", include_obsolete_metrics)
-        _setter("minutes", minutes)
-        _setter("name", name)
-        _setter("notification_resend_frequency_minutes", notification_resend_frequency_minutes)
-        _setter("process_rate_minutes", process_rate_minutes)
-        _setter("resolve_after_minutes", resolve_after_minutes)
-        _setter("severity", severity)
-        _setter("severity_lists", severity_lists)
-        _setter("statuses", statuses)
-        _setter("tags", tags)
-        _setter("target", target)
+        pulumi.set(__self__, "additional_information", additional_information)
+        pulumi.set(__self__, "alert_type", alert_type)
+        pulumi.set(__self__, "can_modifies", can_modifies)
+        pulumi.set(__self__, "can_views", can_views)
+        pulumi.set(__self__, "condition", condition)
+        pulumi.set(__self__, "conditions", conditions)
+        pulumi.set(__self__, "display_expression", display_expression)
+        pulumi.set(__self__, "evaluate_realtime_data", evaluate_realtime_data)
+        pulumi.set(__self__, "failing_host_label_pairs", failing_host_label_pairs)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "in_maintenance_host_label_pairs", in_maintenance_host_label_pairs)
+        pulumi.set(__self__, "include_obsolete_metrics", include_obsolete_metrics)
+        pulumi.set(__self__, "minutes", minutes)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "notification_resend_frequency_minutes", notification_resend_frequency_minutes)
+        pulumi.set(__self__, "process_rate_minutes", process_rate_minutes)
+        pulumi.set(__self__, "resolve_after_minutes", resolve_after_minutes)
+        pulumi.set(__self__, "severity", severity)
+        pulumi.set(__self__, "severity_lists", severity_lists)
+        pulumi.set(__self__, "statuses", statuses)
+        pulumi.set(__self__, "tags", tags)
+        pulumi.set(__self__, "target", target)
         if targets is not None:
-            _setter("targets", targets)
+            pulumi.set(__self__, "targets", targets)
 
     @property
     @pulumi.getter(name="additionalInformation")
@@ -2550,25 +1894,8 @@ class GetAlertsAlertFailingHostLabelPairResult(dict):
     def __init__(__self__, *,
                  firing: int,
                  host: str):
-        GetAlertsAlertFailingHostLabelPairResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            firing=firing,
-            host=host,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             firing: Optional[int] = None,
-             host: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if firing is None:
-            raise TypeError("Missing 'firing' argument")
-        if host is None:
-            raise TypeError("Missing 'host' argument")
-
-        _setter("firing", firing)
-        _setter("host", host)
+        pulumi.set(__self__, "firing", firing)
+        pulumi.set(__self__, "host", host)
 
     @property
     @pulumi.getter
@@ -2586,25 +1913,8 @@ class GetAlertsAlertInMaintenanceHostLabelPairResult(dict):
     def __init__(__self__, *,
                  firing: int,
                  host: str):
-        GetAlertsAlertInMaintenanceHostLabelPairResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            firing=firing,
-            host=host,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             firing: Optional[int] = None,
-             host: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if firing is None:
-            raise TypeError("Missing 'firing' argument")
-        if host is None:
-            raise TypeError("Missing 'host' argument")
-
-        _setter("firing", firing)
-        _setter("host", host)
+        pulumi.set(__self__, "firing", firing)
+        pulumi.set(__self__, "host", host)
 
     @property
     @pulumi.getter
@@ -2640,69 +1950,14 @@ class GetDashboardParameterDetailResult(dict):
         :param Mapping[str, str] values_to_readable_strings: A string to string map. At least one of the keys must match the value of
                `default_value`.
         """
-        GetDashboardParameterDetailResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            default_value=default_value,
-            dynamic_field_type=dynamic_field_type,
-            hide_from_view=hide_from_view,
-            label=label,
-            parameter_type=parameter_type,
-            query_value=query_value,
-            tag_key=tag_key,
-            values_to_readable_strings=values_to_readable_strings,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             default_value: Optional[str] = None,
-             dynamic_field_type: Optional[str] = None,
-             hide_from_view: Optional[bool] = None,
-             label: Optional[str] = None,
-             parameter_type: Optional[str] = None,
-             query_value: Optional[str] = None,
-             tag_key: Optional[str] = None,
-             values_to_readable_strings: Optional[Mapping[str, str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if default_value is None and 'defaultValue' in kwargs:
-            default_value = kwargs['defaultValue']
-        if default_value is None:
-            raise TypeError("Missing 'default_value' argument")
-        if dynamic_field_type is None and 'dynamicFieldType' in kwargs:
-            dynamic_field_type = kwargs['dynamicFieldType']
-        if dynamic_field_type is None:
-            raise TypeError("Missing 'dynamic_field_type' argument")
-        if hide_from_view is None and 'hideFromView' in kwargs:
-            hide_from_view = kwargs['hideFromView']
-        if hide_from_view is None:
-            raise TypeError("Missing 'hide_from_view' argument")
-        if label is None:
-            raise TypeError("Missing 'label' argument")
-        if parameter_type is None and 'parameterType' in kwargs:
-            parameter_type = kwargs['parameterType']
-        if parameter_type is None:
-            raise TypeError("Missing 'parameter_type' argument")
-        if query_value is None and 'queryValue' in kwargs:
-            query_value = kwargs['queryValue']
-        if query_value is None:
-            raise TypeError("Missing 'query_value' argument")
-        if tag_key is None and 'tagKey' in kwargs:
-            tag_key = kwargs['tagKey']
-        if tag_key is None:
-            raise TypeError("Missing 'tag_key' argument")
-        if values_to_readable_strings is None and 'valuesToReadableStrings' in kwargs:
-            values_to_readable_strings = kwargs['valuesToReadableStrings']
-        if values_to_readable_strings is None:
-            raise TypeError("Missing 'values_to_readable_strings' argument")
-
-        _setter("default_value", default_value)
-        _setter("dynamic_field_type", dynamic_field_type)
-        _setter("hide_from_view", hide_from_view)
-        _setter("label", label)
-        _setter("parameter_type", parameter_type)
-        _setter("query_value", query_value)
-        _setter("tag_key", tag_key)
-        _setter("values_to_readable_strings", values_to_readable_strings)
+        pulumi.set(__self__, "default_value", default_value)
+        pulumi.set(__self__, "dynamic_field_type", dynamic_field_type)
+        pulumi.set(__self__, "hide_from_view", hide_from_view)
+        pulumi.set(__self__, "label", label)
+        pulumi.set(__self__, "parameter_type", parameter_type)
+        pulumi.set(__self__, "query_value", query_value)
+        pulumi.set(__self__, "tag_key", tag_key)
+        pulumi.set(__self__, "values_to_readable_strings", values_to_readable_strings)
 
     @property
     @pulumi.getter(name="defaultValue")
@@ -2779,25 +2034,8 @@ class GetDashboardSectionResult(dict):
         """
         :param str name: The name of the parameters.
         """
-        GetDashboardSectionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            rows=rows,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             rows: Optional[Sequence['outputs.GetDashboardSectionRowResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if rows is None:
-            raise TypeError("Missing 'rows' argument")
-
-        _setter("name", name)
-        _setter("rows", rows)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "rows", rows)
 
     @property
     @pulumi.getter
@@ -2822,32 +2060,9 @@ class GetDashboardSectionRowResult(dict):
         """
         :param str name: The name of the parameters.
         """
-        GetDashboardSectionRowResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            charts=charts,
-            height_factor=height_factor,
-            name=name,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             charts: Optional[Sequence['outputs.GetDashboardSectionRowChartResult']] = None,
-             height_factor: Optional[int] = None,
-             name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if charts is None:
-            raise TypeError("Missing 'charts' argument")
-        if height_factor is None and 'heightFactor' in kwargs:
-            height_factor = kwargs['heightFactor']
-        if height_factor is None:
-            raise TypeError("Missing 'height_factor' argument")
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-
-        _setter("charts", charts)
-        _setter("height_factor", height_factor)
-        _setter("name", name)
+        pulumi.set(__self__, "charts", charts)
+        pulumi.set(__self__, "height_factor", height_factor)
+        pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter
@@ -2889,80 +2104,17 @@ class GetDashboardSectionRowChartResult(dict):
         :param str summarization: Summarization strategy for the chart. MEAN is default.
         :param str units: String to label the units of the chart on the Y-Axis.
         """
-        GetDashboardSectionRowChartResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            base=base,
-            chart_attributes=chart_attributes,
-            chart_settings=chart_settings,
-            description=description,
-            include_obsolete_metrics=include_obsolete_metrics,
-            interpolate_points_key=interpolate_points_key,
-            name=name,
-            no_default_events=no_default_events,
-            sources=sources,
-            summarization=summarization,
-            units=units,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             base: Optional[int] = None,
-             chart_attributes: Optional[str] = None,
-             chart_settings: Optional[Sequence['outputs.GetDashboardSectionRowChartChartSettingResult']] = None,
-             description: Optional[str] = None,
-             include_obsolete_metrics: Optional[bool] = None,
-             interpolate_points_key: Optional[bool] = None,
-             name: Optional[str] = None,
-             no_default_events: Optional[bool] = None,
-             sources: Optional[Sequence['outputs.GetDashboardSectionRowChartSourceResult']] = None,
-             summarization: Optional[str] = None,
-             units: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if base is None:
-            raise TypeError("Missing 'base' argument")
-        if chart_attributes is None and 'chartAttributes' in kwargs:
-            chart_attributes = kwargs['chartAttributes']
-        if chart_attributes is None:
-            raise TypeError("Missing 'chart_attributes' argument")
-        if chart_settings is None and 'chartSettings' in kwargs:
-            chart_settings = kwargs['chartSettings']
-        if chart_settings is None:
-            raise TypeError("Missing 'chart_settings' argument")
-        if description is None:
-            raise TypeError("Missing 'description' argument")
-        if include_obsolete_metrics is None and 'includeObsoleteMetrics' in kwargs:
-            include_obsolete_metrics = kwargs['includeObsoleteMetrics']
-        if include_obsolete_metrics is None:
-            raise TypeError("Missing 'include_obsolete_metrics' argument")
-        if interpolate_points_key is None and 'interpolatePointsKey' in kwargs:
-            interpolate_points_key = kwargs['interpolatePointsKey']
-        if interpolate_points_key is None:
-            raise TypeError("Missing 'interpolate_points_key' argument")
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if no_default_events is None and 'noDefaultEvents' in kwargs:
-            no_default_events = kwargs['noDefaultEvents']
-        if no_default_events is None:
-            raise TypeError("Missing 'no_default_events' argument")
-        if sources is None:
-            raise TypeError("Missing 'sources' argument")
-        if summarization is None:
-            raise TypeError("Missing 'summarization' argument")
-        if units is None:
-            raise TypeError("Missing 'units' argument")
-
-        _setter("base", base)
-        _setter("chart_attributes", chart_attributes)
-        _setter("chart_settings", chart_settings)
-        _setter("description", description)
-        _setter("include_obsolete_metrics", include_obsolete_metrics)
-        _setter("interpolate_points_key", interpolate_points_key)
-        _setter("name", name)
-        _setter("no_default_events", no_default_events)
-        _setter("sources", sources)
-        _setter("summarization", summarization)
-        _setter("units", units)
+        pulumi.set(__self__, "base", base)
+        pulumi.set(__self__, "chart_attributes", chart_attributes)
+        pulumi.set(__self__, "chart_settings", chart_settings)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "include_obsolete_metrics", include_obsolete_metrics)
+        pulumi.set(__self__, "interpolate_points_key", interpolate_points_key)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "no_default_events", no_default_events)
+        pulumi.set(__self__, "sources", sources)
+        pulumi.set(__self__, "summarization", summarization)
+        pulumi.set(__self__, "units", units)
 
     @property
     @pulumi.getter
@@ -3151,398 +2303,63 @@ class GetDashboardSectionRowChartChartSettingResult(dict):
         :param float ymax: For x-y scatterplots, max value for the Y-axis. Set to null for auto.
         :param float ymin: For x-y scatterplots, min value for the Y-axis. Set to null for auto.
         """
-        GetDashboardSectionRowChartChartSettingResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            auto_column_tags=auto_column_tags,
-            column_tags=column_tags,
-            custom_tags=custom_tags,
-            expected_data_spacing=expected_data_spacing,
-            fixed_legend_display_stats=fixed_legend_display_stats,
-            fixed_legend_enabled=fixed_legend_enabled,
-            fixed_legend_filter_field=fixed_legend_filter_field,
-            fixed_legend_filter_limit=fixed_legend_filter_limit,
-            fixed_legend_filter_sort=fixed_legend_filter_sort,
-            fixed_legend_hide_label=fixed_legend_hide_label,
-            fixed_legend_position=fixed_legend_position,
-            fixed_legend_use_raw_stats=fixed_legend_use_raw_stats,
-            group_by_source=group_by_source,
-            invert_dynamic_legend_hover_control=invert_dynamic_legend_hover_control,
-            line_type=line_type,
-            max=max,
-            min=min,
-            num_tags=num_tags,
-            plain_markdown_content=plain_markdown_content,
-            show_hosts=show_hosts,
-            show_labels=show_labels,
-            show_raw_values=show_raw_values,
-            sort_values_descending=sort_values_descending,
-            sparkline_decimal_precision=sparkline_decimal_precision,
-            sparkline_display_color=sparkline_display_color,
-            sparkline_display_font_size=sparkline_display_font_size,
-            sparkline_display_horizontal_position=sparkline_display_horizontal_position,
-            sparkline_display_postfix=sparkline_display_postfix,
-            sparkline_display_prefix=sparkline_display_prefix,
-            sparkline_display_value_type=sparkline_display_value_type,
-            sparkline_display_vertical_position=sparkline_display_vertical_position,
-            sparkline_fill_color=sparkline_fill_color,
-            sparkline_line_color=sparkline_line_color,
-            sparkline_size=sparkline_size,
-            sparkline_value_color_map_apply_to=sparkline_value_color_map_apply_to,
-            sparkline_value_color_map_colors=sparkline_value_color_map_colors,
-            sparkline_value_color_map_values=sparkline_value_color_map_values,
-            sparkline_value_color_map_values_v2s=sparkline_value_color_map_values_v2s,
-            sparkline_value_text_map_texts=sparkline_value_text_map_texts,
-            sparkline_value_text_map_thresholds=sparkline_value_text_map_thresholds,
-            stack_type=stack_type,
-            tag_mode=tag_mode,
-            time_based_coloring=time_based_coloring,
-            type=type,
-            window_size=window_size,
-            windowing=windowing,
-            xmax=xmax,
-            xmin=xmin,
-            y0_scale_si_by1024=y0_scale_si_by1024,
-            y0_unit_autoscaling=y0_unit_autoscaling,
-            y1_max=y1_max,
-            y1_min=y1_min,
-            y1_scale_si_by1024=y1_scale_si_by1024,
-            y1_unit_autoscaling=y1_unit_autoscaling,
-            y1_units=y1_units,
-            ymax=ymax,
-            ymin=ymin,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             auto_column_tags: Optional[bool] = None,
-             column_tags: Optional[str] = None,
-             custom_tags: Optional[Sequence[str]] = None,
-             expected_data_spacing: Optional[int] = None,
-             fixed_legend_display_stats: Optional[Sequence[str]] = None,
-             fixed_legend_enabled: Optional[bool] = None,
-             fixed_legend_filter_field: Optional[str] = None,
-             fixed_legend_filter_limit: Optional[int] = None,
-             fixed_legend_filter_sort: Optional[str] = None,
-             fixed_legend_hide_label: Optional[bool] = None,
-             fixed_legend_position: Optional[str] = None,
-             fixed_legend_use_raw_stats: Optional[bool] = None,
-             group_by_source: Optional[bool] = None,
-             invert_dynamic_legend_hover_control: Optional[bool] = None,
-             line_type: Optional[str] = None,
-             max: Optional[float] = None,
-             min: Optional[float] = None,
-             num_tags: Optional[int] = None,
-             plain_markdown_content: Optional[str] = None,
-             show_hosts: Optional[bool] = None,
-             show_labels: Optional[bool] = None,
-             show_raw_values: Optional[bool] = None,
-             sort_values_descending: Optional[bool] = None,
-             sparkline_decimal_precision: Optional[int] = None,
-             sparkline_display_color: Optional[str] = None,
-             sparkline_display_font_size: Optional[str] = None,
-             sparkline_display_horizontal_position: Optional[str] = None,
-             sparkline_display_postfix: Optional[str] = None,
-             sparkline_display_prefix: Optional[str] = None,
-             sparkline_display_value_type: Optional[str] = None,
-             sparkline_display_vertical_position: Optional[str] = None,
-             sparkline_fill_color: Optional[str] = None,
-             sparkline_line_color: Optional[str] = None,
-             sparkline_size: Optional[str] = None,
-             sparkline_value_color_map_apply_to: Optional[str] = None,
-             sparkline_value_color_map_colors: Optional[Sequence[str]] = None,
-             sparkline_value_color_map_values: Optional[Sequence[int]] = None,
-             sparkline_value_color_map_values_v2s: Optional[Sequence[float]] = None,
-             sparkline_value_text_map_texts: Optional[Sequence[str]] = None,
-             sparkline_value_text_map_thresholds: Optional[Sequence[float]] = None,
-             stack_type: Optional[str] = None,
-             tag_mode: Optional[str] = None,
-             time_based_coloring: Optional[bool] = None,
-             type: Optional[str] = None,
-             window_size: Optional[int] = None,
-             windowing: Optional[str] = None,
-             xmax: Optional[float] = None,
-             xmin: Optional[float] = None,
-             y0_scale_si_by1024: Optional[bool] = None,
-             y0_unit_autoscaling: Optional[bool] = None,
-             y1_max: Optional[float] = None,
-             y1_min: Optional[float] = None,
-             y1_scale_si_by1024: Optional[bool] = None,
-             y1_unit_autoscaling: Optional[bool] = None,
-             y1_units: Optional[str] = None,
-             ymax: Optional[float] = None,
-             ymin: Optional[float] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if auto_column_tags is None and 'autoColumnTags' in kwargs:
-            auto_column_tags = kwargs['autoColumnTags']
-        if auto_column_tags is None:
-            raise TypeError("Missing 'auto_column_tags' argument")
-        if column_tags is None and 'columnTags' in kwargs:
-            column_tags = kwargs['columnTags']
-        if column_tags is None:
-            raise TypeError("Missing 'column_tags' argument")
-        if custom_tags is None and 'customTags' in kwargs:
-            custom_tags = kwargs['customTags']
-        if custom_tags is None:
-            raise TypeError("Missing 'custom_tags' argument")
-        if expected_data_spacing is None and 'expectedDataSpacing' in kwargs:
-            expected_data_spacing = kwargs['expectedDataSpacing']
-        if expected_data_spacing is None:
-            raise TypeError("Missing 'expected_data_spacing' argument")
-        if fixed_legend_display_stats is None and 'fixedLegendDisplayStats' in kwargs:
-            fixed_legend_display_stats = kwargs['fixedLegendDisplayStats']
-        if fixed_legend_display_stats is None:
-            raise TypeError("Missing 'fixed_legend_display_stats' argument")
-        if fixed_legend_enabled is None and 'fixedLegendEnabled' in kwargs:
-            fixed_legend_enabled = kwargs['fixedLegendEnabled']
-        if fixed_legend_enabled is None:
-            raise TypeError("Missing 'fixed_legend_enabled' argument")
-        if fixed_legend_filter_field is None and 'fixedLegendFilterField' in kwargs:
-            fixed_legend_filter_field = kwargs['fixedLegendFilterField']
-        if fixed_legend_filter_field is None:
-            raise TypeError("Missing 'fixed_legend_filter_field' argument")
-        if fixed_legend_filter_limit is None and 'fixedLegendFilterLimit' in kwargs:
-            fixed_legend_filter_limit = kwargs['fixedLegendFilterLimit']
-        if fixed_legend_filter_limit is None:
-            raise TypeError("Missing 'fixed_legend_filter_limit' argument")
-        if fixed_legend_filter_sort is None and 'fixedLegendFilterSort' in kwargs:
-            fixed_legend_filter_sort = kwargs['fixedLegendFilterSort']
-        if fixed_legend_filter_sort is None:
-            raise TypeError("Missing 'fixed_legend_filter_sort' argument")
-        if fixed_legend_hide_label is None and 'fixedLegendHideLabel' in kwargs:
-            fixed_legend_hide_label = kwargs['fixedLegendHideLabel']
-        if fixed_legend_hide_label is None:
-            raise TypeError("Missing 'fixed_legend_hide_label' argument")
-        if fixed_legend_position is None and 'fixedLegendPosition' in kwargs:
-            fixed_legend_position = kwargs['fixedLegendPosition']
-        if fixed_legend_position is None:
-            raise TypeError("Missing 'fixed_legend_position' argument")
-        if fixed_legend_use_raw_stats is None and 'fixedLegendUseRawStats' in kwargs:
-            fixed_legend_use_raw_stats = kwargs['fixedLegendUseRawStats']
-        if fixed_legend_use_raw_stats is None:
-            raise TypeError("Missing 'fixed_legend_use_raw_stats' argument")
-        if group_by_source is None and 'groupBySource' in kwargs:
-            group_by_source = kwargs['groupBySource']
-        if group_by_source is None:
-            raise TypeError("Missing 'group_by_source' argument")
-        if invert_dynamic_legend_hover_control is None and 'invertDynamicLegendHoverControl' in kwargs:
-            invert_dynamic_legend_hover_control = kwargs['invertDynamicLegendHoverControl']
-        if invert_dynamic_legend_hover_control is None:
-            raise TypeError("Missing 'invert_dynamic_legend_hover_control' argument")
-        if line_type is None and 'lineType' in kwargs:
-            line_type = kwargs['lineType']
-        if line_type is None:
-            raise TypeError("Missing 'line_type' argument")
-        if max is None:
-            raise TypeError("Missing 'max' argument")
-        if min is None:
-            raise TypeError("Missing 'min' argument")
-        if num_tags is None and 'numTags' in kwargs:
-            num_tags = kwargs['numTags']
-        if num_tags is None:
-            raise TypeError("Missing 'num_tags' argument")
-        if plain_markdown_content is None and 'plainMarkdownContent' in kwargs:
-            plain_markdown_content = kwargs['plainMarkdownContent']
-        if plain_markdown_content is None:
-            raise TypeError("Missing 'plain_markdown_content' argument")
-        if show_hosts is None and 'showHosts' in kwargs:
-            show_hosts = kwargs['showHosts']
-        if show_hosts is None:
-            raise TypeError("Missing 'show_hosts' argument")
-        if show_labels is None and 'showLabels' in kwargs:
-            show_labels = kwargs['showLabels']
-        if show_labels is None:
-            raise TypeError("Missing 'show_labels' argument")
-        if show_raw_values is None and 'showRawValues' in kwargs:
-            show_raw_values = kwargs['showRawValues']
-        if show_raw_values is None:
-            raise TypeError("Missing 'show_raw_values' argument")
-        if sort_values_descending is None and 'sortValuesDescending' in kwargs:
-            sort_values_descending = kwargs['sortValuesDescending']
-        if sort_values_descending is None:
-            raise TypeError("Missing 'sort_values_descending' argument")
-        if sparkline_decimal_precision is None and 'sparklineDecimalPrecision' in kwargs:
-            sparkline_decimal_precision = kwargs['sparklineDecimalPrecision']
-        if sparkline_decimal_precision is None:
-            raise TypeError("Missing 'sparkline_decimal_precision' argument")
-        if sparkline_display_color is None and 'sparklineDisplayColor' in kwargs:
-            sparkline_display_color = kwargs['sparklineDisplayColor']
-        if sparkline_display_color is None:
-            raise TypeError("Missing 'sparkline_display_color' argument")
-        if sparkline_display_font_size is None and 'sparklineDisplayFontSize' in kwargs:
-            sparkline_display_font_size = kwargs['sparklineDisplayFontSize']
-        if sparkline_display_font_size is None:
-            raise TypeError("Missing 'sparkline_display_font_size' argument")
-        if sparkline_display_horizontal_position is None and 'sparklineDisplayHorizontalPosition' in kwargs:
-            sparkline_display_horizontal_position = kwargs['sparklineDisplayHorizontalPosition']
-        if sparkline_display_horizontal_position is None:
-            raise TypeError("Missing 'sparkline_display_horizontal_position' argument")
-        if sparkline_display_postfix is None and 'sparklineDisplayPostfix' in kwargs:
-            sparkline_display_postfix = kwargs['sparklineDisplayPostfix']
-        if sparkline_display_postfix is None:
-            raise TypeError("Missing 'sparkline_display_postfix' argument")
-        if sparkline_display_prefix is None and 'sparklineDisplayPrefix' in kwargs:
-            sparkline_display_prefix = kwargs['sparklineDisplayPrefix']
-        if sparkline_display_prefix is None:
-            raise TypeError("Missing 'sparkline_display_prefix' argument")
-        if sparkline_display_value_type is None and 'sparklineDisplayValueType' in kwargs:
-            sparkline_display_value_type = kwargs['sparklineDisplayValueType']
-        if sparkline_display_value_type is None:
-            raise TypeError("Missing 'sparkline_display_value_type' argument")
-        if sparkline_display_vertical_position is None and 'sparklineDisplayVerticalPosition' in kwargs:
-            sparkline_display_vertical_position = kwargs['sparklineDisplayVerticalPosition']
-        if sparkline_display_vertical_position is None:
-            raise TypeError("Missing 'sparkline_display_vertical_position' argument")
-        if sparkline_fill_color is None and 'sparklineFillColor' in kwargs:
-            sparkline_fill_color = kwargs['sparklineFillColor']
-        if sparkline_fill_color is None:
-            raise TypeError("Missing 'sparkline_fill_color' argument")
-        if sparkline_line_color is None and 'sparklineLineColor' in kwargs:
-            sparkline_line_color = kwargs['sparklineLineColor']
-        if sparkline_line_color is None:
-            raise TypeError("Missing 'sparkline_line_color' argument")
-        if sparkline_size is None and 'sparklineSize' in kwargs:
-            sparkline_size = kwargs['sparklineSize']
-        if sparkline_size is None:
-            raise TypeError("Missing 'sparkline_size' argument")
-        if sparkline_value_color_map_apply_to is None and 'sparklineValueColorMapApplyTo' in kwargs:
-            sparkline_value_color_map_apply_to = kwargs['sparklineValueColorMapApplyTo']
-        if sparkline_value_color_map_apply_to is None:
-            raise TypeError("Missing 'sparkline_value_color_map_apply_to' argument")
-        if sparkline_value_color_map_colors is None and 'sparklineValueColorMapColors' in kwargs:
-            sparkline_value_color_map_colors = kwargs['sparklineValueColorMapColors']
-        if sparkline_value_color_map_colors is None:
-            raise TypeError("Missing 'sparkline_value_color_map_colors' argument")
-        if sparkline_value_color_map_values is None and 'sparklineValueColorMapValues' in kwargs:
-            sparkline_value_color_map_values = kwargs['sparklineValueColorMapValues']
-        if sparkline_value_color_map_values is None:
-            raise TypeError("Missing 'sparkline_value_color_map_values' argument")
-        if sparkline_value_color_map_values_v2s is None and 'sparklineValueColorMapValuesV2s' in kwargs:
-            sparkline_value_color_map_values_v2s = kwargs['sparklineValueColorMapValuesV2s']
-        if sparkline_value_color_map_values_v2s is None:
-            raise TypeError("Missing 'sparkline_value_color_map_values_v2s' argument")
-        if sparkline_value_text_map_texts is None and 'sparklineValueTextMapTexts' in kwargs:
-            sparkline_value_text_map_texts = kwargs['sparklineValueTextMapTexts']
-        if sparkline_value_text_map_texts is None:
-            raise TypeError("Missing 'sparkline_value_text_map_texts' argument")
-        if sparkline_value_text_map_thresholds is None and 'sparklineValueTextMapThresholds' in kwargs:
-            sparkline_value_text_map_thresholds = kwargs['sparklineValueTextMapThresholds']
-        if sparkline_value_text_map_thresholds is None:
-            raise TypeError("Missing 'sparkline_value_text_map_thresholds' argument")
-        if stack_type is None and 'stackType' in kwargs:
-            stack_type = kwargs['stackType']
-        if stack_type is None:
-            raise TypeError("Missing 'stack_type' argument")
-        if tag_mode is None and 'tagMode' in kwargs:
-            tag_mode = kwargs['tagMode']
-        if tag_mode is None:
-            raise TypeError("Missing 'tag_mode' argument")
-        if time_based_coloring is None and 'timeBasedColoring' in kwargs:
-            time_based_coloring = kwargs['timeBasedColoring']
-        if time_based_coloring is None:
-            raise TypeError("Missing 'time_based_coloring' argument")
-        if type is None:
-            raise TypeError("Missing 'type' argument")
-        if window_size is None and 'windowSize' in kwargs:
-            window_size = kwargs['windowSize']
-        if window_size is None:
-            raise TypeError("Missing 'window_size' argument")
-        if windowing is None:
-            raise TypeError("Missing 'windowing' argument")
-        if xmax is None:
-            raise TypeError("Missing 'xmax' argument")
-        if xmin is None:
-            raise TypeError("Missing 'xmin' argument")
-        if y0_scale_si_by1024 is None and 'y0ScaleSiBy1024' in kwargs:
-            y0_scale_si_by1024 = kwargs['y0ScaleSiBy1024']
-        if y0_scale_si_by1024 is None:
-            raise TypeError("Missing 'y0_scale_si_by1024' argument")
-        if y0_unit_autoscaling is None and 'y0UnitAutoscaling' in kwargs:
-            y0_unit_autoscaling = kwargs['y0UnitAutoscaling']
-        if y0_unit_autoscaling is None:
-            raise TypeError("Missing 'y0_unit_autoscaling' argument")
-        if y1_max is None and 'y1Max' in kwargs:
-            y1_max = kwargs['y1Max']
-        if y1_max is None:
-            raise TypeError("Missing 'y1_max' argument")
-        if y1_min is None and 'y1Min' in kwargs:
-            y1_min = kwargs['y1Min']
-        if y1_min is None:
-            raise TypeError("Missing 'y1_min' argument")
-        if y1_scale_si_by1024 is None and 'y1ScaleSiBy1024' in kwargs:
-            y1_scale_si_by1024 = kwargs['y1ScaleSiBy1024']
-        if y1_scale_si_by1024 is None:
-            raise TypeError("Missing 'y1_scale_si_by1024' argument")
-        if y1_unit_autoscaling is None and 'y1UnitAutoscaling' in kwargs:
-            y1_unit_autoscaling = kwargs['y1UnitAutoscaling']
-        if y1_unit_autoscaling is None:
-            raise TypeError("Missing 'y1_unit_autoscaling' argument")
-        if y1_units is None and 'y1Units' in kwargs:
-            y1_units = kwargs['y1Units']
-        if y1_units is None:
-            raise TypeError("Missing 'y1_units' argument")
-        if ymax is None:
-            raise TypeError("Missing 'ymax' argument")
-        if ymin is None:
-            raise TypeError("Missing 'ymin' argument")
-
-        _setter("auto_column_tags", auto_column_tags)
-        _setter("column_tags", column_tags)
-        _setter("custom_tags", custom_tags)
-        _setter("expected_data_spacing", expected_data_spacing)
-        _setter("fixed_legend_display_stats", fixed_legend_display_stats)
-        _setter("fixed_legend_enabled", fixed_legend_enabled)
-        _setter("fixed_legend_filter_field", fixed_legend_filter_field)
-        _setter("fixed_legend_filter_limit", fixed_legend_filter_limit)
-        _setter("fixed_legend_filter_sort", fixed_legend_filter_sort)
-        _setter("fixed_legend_hide_label", fixed_legend_hide_label)
-        _setter("fixed_legend_position", fixed_legend_position)
-        _setter("fixed_legend_use_raw_stats", fixed_legend_use_raw_stats)
-        _setter("group_by_source", group_by_source)
-        _setter("invert_dynamic_legend_hover_control", invert_dynamic_legend_hover_control)
-        _setter("line_type", line_type)
-        _setter("max", max)
-        _setter("min", min)
-        _setter("num_tags", num_tags)
-        _setter("plain_markdown_content", plain_markdown_content)
-        _setter("show_hosts", show_hosts)
-        _setter("show_labels", show_labels)
-        _setter("show_raw_values", show_raw_values)
-        _setter("sort_values_descending", sort_values_descending)
-        _setter("sparkline_decimal_precision", sparkline_decimal_precision)
-        _setter("sparkline_display_color", sparkline_display_color)
-        _setter("sparkline_display_font_size", sparkline_display_font_size)
-        _setter("sparkline_display_horizontal_position", sparkline_display_horizontal_position)
-        _setter("sparkline_display_postfix", sparkline_display_postfix)
-        _setter("sparkline_display_prefix", sparkline_display_prefix)
-        _setter("sparkline_display_value_type", sparkline_display_value_type)
-        _setter("sparkline_display_vertical_position", sparkline_display_vertical_position)
-        _setter("sparkline_fill_color", sparkline_fill_color)
-        _setter("sparkline_line_color", sparkline_line_color)
-        _setter("sparkline_size", sparkline_size)
-        _setter("sparkline_value_color_map_apply_to", sparkline_value_color_map_apply_to)
-        _setter("sparkline_value_color_map_colors", sparkline_value_color_map_colors)
-        _setter("sparkline_value_color_map_values", sparkline_value_color_map_values)
-        _setter("sparkline_value_color_map_values_v2s", sparkline_value_color_map_values_v2s)
-        _setter("sparkline_value_text_map_texts", sparkline_value_text_map_texts)
-        _setter("sparkline_value_text_map_thresholds", sparkline_value_text_map_thresholds)
-        _setter("stack_type", stack_type)
-        _setter("tag_mode", tag_mode)
-        _setter("time_based_coloring", time_based_coloring)
-        _setter("type", type)
-        _setter("window_size", window_size)
-        _setter("windowing", windowing)
-        _setter("xmax", xmax)
-        _setter("xmin", xmin)
-        _setter("y0_scale_si_by1024", y0_scale_si_by1024)
-        _setter("y0_unit_autoscaling", y0_unit_autoscaling)
-        _setter("y1_max", y1_max)
-        _setter("y1_min", y1_min)
-        _setter("y1_scale_si_by1024", y1_scale_si_by1024)
-        _setter("y1_unit_autoscaling", y1_unit_autoscaling)
-        _setter("y1_units", y1_units)
-        _setter("ymax", ymax)
-        _setter("ymin", ymin)
+        pulumi.set(__self__, "auto_column_tags", auto_column_tags)
+        pulumi.set(__self__, "column_tags", column_tags)
+        pulumi.set(__self__, "custom_tags", custom_tags)
+        pulumi.set(__self__, "expected_data_spacing", expected_data_spacing)
+        pulumi.set(__self__, "fixed_legend_display_stats", fixed_legend_display_stats)
+        pulumi.set(__self__, "fixed_legend_enabled", fixed_legend_enabled)
+        pulumi.set(__self__, "fixed_legend_filter_field", fixed_legend_filter_field)
+        pulumi.set(__self__, "fixed_legend_filter_limit", fixed_legend_filter_limit)
+        pulumi.set(__self__, "fixed_legend_filter_sort", fixed_legend_filter_sort)
+        pulumi.set(__self__, "fixed_legend_hide_label", fixed_legend_hide_label)
+        pulumi.set(__self__, "fixed_legend_position", fixed_legend_position)
+        pulumi.set(__self__, "fixed_legend_use_raw_stats", fixed_legend_use_raw_stats)
+        pulumi.set(__self__, "group_by_source", group_by_source)
+        pulumi.set(__self__, "invert_dynamic_legend_hover_control", invert_dynamic_legend_hover_control)
+        pulumi.set(__self__, "line_type", line_type)
+        pulumi.set(__self__, "max", max)
+        pulumi.set(__self__, "min", min)
+        pulumi.set(__self__, "num_tags", num_tags)
+        pulumi.set(__self__, "plain_markdown_content", plain_markdown_content)
+        pulumi.set(__self__, "show_hosts", show_hosts)
+        pulumi.set(__self__, "show_labels", show_labels)
+        pulumi.set(__self__, "show_raw_values", show_raw_values)
+        pulumi.set(__self__, "sort_values_descending", sort_values_descending)
+        pulumi.set(__self__, "sparkline_decimal_precision", sparkline_decimal_precision)
+        pulumi.set(__self__, "sparkline_display_color", sparkline_display_color)
+        pulumi.set(__self__, "sparkline_display_font_size", sparkline_display_font_size)
+        pulumi.set(__self__, "sparkline_display_horizontal_position", sparkline_display_horizontal_position)
+        pulumi.set(__self__, "sparkline_display_postfix", sparkline_display_postfix)
+        pulumi.set(__self__, "sparkline_display_prefix", sparkline_display_prefix)
+        pulumi.set(__self__, "sparkline_display_value_type", sparkline_display_value_type)
+        pulumi.set(__self__, "sparkline_display_vertical_position", sparkline_display_vertical_position)
+        pulumi.set(__self__, "sparkline_fill_color", sparkline_fill_color)
+        pulumi.set(__self__, "sparkline_line_color", sparkline_line_color)
+        pulumi.set(__self__, "sparkline_size", sparkline_size)
+        pulumi.set(__self__, "sparkline_value_color_map_apply_to", sparkline_value_color_map_apply_to)
+        pulumi.set(__self__, "sparkline_value_color_map_colors", sparkline_value_color_map_colors)
+        pulumi.set(__self__, "sparkline_value_color_map_values", sparkline_value_color_map_values)
+        pulumi.set(__self__, "sparkline_value_color_map_values_v2s", sparkline_value_color_map_values_v2s)
+        pulumi.set(__self__, "sparkline_value_text_map_texts", sparkline_value_text_map_texts)
+        pulumi.set(__self__, "sparkline_value_text_map_thresholds", sparkline_value_text_map_thresholds)
+        pulumi.set(__self__, "stack_type", stack_type)
+        pulumi.set(__self__, "tag_mode", tag_mode)
+        pulumi.set(__self__, "time_based_coloring", time_based_coloring)
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "window_size", window_size)
+        pulumi.set(__self__, "windowing", windowing)
+        pulumi.set(__self__, "xmax", xmax)
+        pulumi.set(__self__, "xmin", xmin)
+        pulumi.set(__self__, "y0_scale_si_by1024", y0_scale_si_by1024)
+        pulumi.set(__self__, "y0_unit_autoscaling", y0_unit_autoscaling)
+        pulumi.set(__self__, "y1_max", y1_max)
+        pulumi.set(__self__, "y1_min", y1_min)
+        pulumi.set(__self__, "y1_scale_si_by1024", y1_scale_si_by1024)
+        pulumi.set(__self__, "y1_unit_autoscaling", y1_unit_autoscaling)
+        pulumi.set(__self__, "y1_units", y1_units)
+        pulumi.set(__self__, "ymax", ymax)
+        pulumi.set(__self__, "ymin", ymin)
 
     @property
     @pulumi.getter(name="autoColumnTags")
@@ -4008,65 +2825,14 @@ class GetDashboardSectionRowChartSourceResult(dict):
         :param str scatter_plot_source: For scatter plots, does this query source the X-axis or the Y-axis, `X`, or `Y`.
         :param str source_description: A description for the purpose of this source.
         """
-        GetDashboardSectionRowChartSourceResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            disabled=disabled,
-            name=name,
-            query=query,
-            querybuilder_enabled=querybuilder_enabled,
-            scatter_plot_source=scatter_plot_source,
-            secondary_axis=secondary_axis,
-            source_color=source_color,
-            source_description=source_description,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             disabled: Optional[bool] = None,
-             name: Optional[str] = None,
-             query: Optional[str] = None,
-             querybuilder_enabled: Optional[bool] = None,
-             scatter_plot_source: Optional[str] = None,
-             secondary_axis: Optional[bool] = None,
-             source_color: Optional[str] = None,
-             source_description: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if disabled is None:
-            raise TypeError("Missing 'disabled' argument")
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if query is None:
-            raise TypeError("Missing 'query' argument")
-        if querybuilder_enabled is None and 'querybuilderEnabled' in kwargs:
-            querybuilder_enabled = kwargs['querybuilderEnabled']
-        if querybuilder_enabled is None:
-            raise TypeError("Missing 'querybuilder_enabled' argument")
-        if scatter_plot_source is None and 'scatterPlotSource' in kwargs:
-            scatter_plot_source = kwargs['scatterPlotSource']
-        if scatter_plot_source is None:
-            raise TypeError("Missing 'scatter_plot_source' argument")
-        if secondary_axis is None and 'secondaryAxis' in kwargs:
-            secondary_axis = kwargs['secondaryAxis']
-        if secondary_axis is None:
-            raise TypeError("Missing 'secondary_axis' argument")
-        if source_color is None and 'sourceColor' in kwargs:
-            source_color = kwargs['sourceColor']
-        if source_color is None:
-            raise TypeError("Missing 'source_color' argument")
-        if source_description is None and 'sourceDescription' in kwargs:
-            source_description = kwargs['sourceDescription']
-        if source_description is None:
-            raise TypeError("Missing 'source_description' argument")
-
-        _setter("disabled", disabled)
-        _setter("name", name)
-        _setter("query", query)
-        _setter("querybuilder_enabled", querybuilder_enabled)
-        _setter("scatter_plot_source", scatter_plot_source)
-        _setter("secondary_axis", secondary_axis)
-        _setter("source_color", source_color)
-        _setter("source_description", source_description)
+        pulumi.set(__self__, "disabled", disabled)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "query", query)
+        pulumi.set(__self__, "querybuilder_enabled", querybuilder_enabled)
+        pulumi.set(__self__, "scatter_plot_source", scatter_plot_source)
+        pulumi.set(__self__, "secondary_axis", secondary_axis)
+        pulumi.set(__self__, "source_color", source_color)
+        pulumi.set(__self__, "source_description", source_description)
 
     @property
     @pulumi.getter
@@ -4175,238 +2941,41 @@ class GetDashboardsDashboardResult(dict):
         :param Sequence[str] tags: A set of tags to assign to this resource.
         :param str url: Unique identifier, also a URL slug of the dashboard.
         """
-        GetDashboardsDashboardResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            can_modifies=can_modifies,
-            can_views=can_views,
-            chart_title_bg_color=chart_title_bg_color,
-            chart_title_color=chart_title_color,
-            chart_title_scalar=chart_title_scalar,
-            created_epoch_millis=created_epoch_millis,
-            creator_id=creator_id,
-            customer=customer,
-            default_end_time=default_end_time,
-            default_start_time=default_start_time,
-            default_time_window=default_time_window,
-            deleted=deleted,
-            description=description,
-            display_description=display_description,
-            display_query_parameters=display_query_parameters,
-            display_section_table_of_contents=display_section_table_of_contents,
-            event_filter_type=event_filter_type,
-            event_query=event_query,
-            favorite=favorite,
-            hidden=hidden,
-            id=id,
-            name=name,
-            num_charts=num_charts,
-            num_favorites=num_favorites,
-            parameter_details=parameter_details,
-            parameters=parameters,
-            sections=sections,
-            system_owned=system_owned,
-            tags=tags,
-            updated_epoch_millis=updated_epoch_millis,
-            updater_id=updater_id,
-            url=url,
-            views_last_day=views_last_day,
-            views_last_month=views_last_month,
-            views_last_week=views_last_week,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             can_modifies: Optional[Sequence[str]] = None,
-             can_views: Optional[Sequence[str]] = None,
-             chart_title_bg_color: Optional[str] = None,
-             chart_title_color: Optional[str] = None,
-             chart_title_scalar: Optional[int] = None,
-             created_epoch_millis: Optional[int] = None,
-             creator_id: Optional[str] = None,
-             customer: Optional[str] = None,
-             default_end_time: Optional[int] = None,
-             default_start_time: Optional[int] = None,
-             default_time_window: Optional[str] = None,
-             deleted: Optional[bool] = None,
-             description: Optional[str] = None,
-             display_description: Optional[bool] = None,
-             display_query_parameters: Optional[bool] = None,
-             display_section_table_of_contents: Optional[bool] = None,
-             event_filter_type: Optional[str] = None,
-             event_query: Optional[str] = None,
-             favorite: Optional[bool] = None,
-             hidden: Optional[bool] = None,
-             id: Optional[str] = None,
-             name: Optional[str] = None,
-             num_charts: Optional[int] = None,
-             num_favorites: Optional[int] = None,
-             parameter_details: Optional[Sequence['outputs.GetDashboardsDashboardParameterDetailResult']] = None,
-             parameters: Optional[Mapping[str, Any]] = None,
-             sections: Optional[Sequence['outputs.GetDashboardsDashboardSectionResult']] = None,
-             system_owned: Optional[bool] = None,
-             tags: Optional[Sequence[str]] = None,
-             updated_epoch_millis: Optional[int] = None,
-             updater_id: Optional[str] = None,
-             url: Optional[str] = None,
-             views_last_day: Optional[int] = None,
-             views_last_month: Optional[int] = None,
-             views_last_week: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if can_modifies is None and 'canModifies' in kwargs:
-            can_modifies = kwargs['canModifies']
-        if can_modifies is None:
-            raise TypeError("Missing 'can_modifies' argument")
-        if can_views is None and 'canViews' in kwargs:
-            can_views = kwargs['canViews']
-        if can_views is None:
-            raise TypeError("Missing 'can_views' argument")
-        if chart_title_bg_color is None and 'chartTitleBgColor' in kwargs:
-            chart_title_bg_color = kwargs['chartTitleBgColor']
-        if chart_title_bg_color is None:
-            raise TypeError("Missing 'chart_title_bg_color' argument")
-        if chart_title_color is None and 'chartTitleColor' in kwargs:
-            chart_title_color = kwargs['chartTitleColor']
-        if chart_title_color is None:
-            raise TypeError("Missing 'chart_title_color' argument")
-        if chart_title_scalar is None and 'chartTitleScalar' in kwargs:
-            chart_title_scalar = kwargs['chartTitleScalar']
-        if chart_title_scalar is None:
-            raise TypeError("Missing 'chart_title_scalar' argument")
-        if created_epoch_millis is None and 'createdEpochMillis' in kwargs:
-            created_epoch_millis = kwargs['createdEpochMillis']
-        if created_epoch_millis is None:
-            raise TypeError("Missing 'created_epoch_millis' argument")
-        if creator_id is None and 'creatorId' in kwargs:
-            creator_id = kwargs['creatorId']
-        if creator_id is None:
-            raise TypeError("Missing 'creator_id' argument")
-        if customer is None:
-            raise TypeError("Missing 'customer' argument")
-        if default_end_time is None and 'defaultEndTime' in kwargs:
-            default_end_time = kwargs['defaultEndTime']
-        if default_end_time is None:
-            raise TypeError("Missing 'default_end_time' argument")
-        if default_start_time is None and 'defaultStartTime' in kwargs:
-            default_start_time = kwargs['defaultStartTime']
-        if default_start_time is None:
-            raise TypeError("Missing 'default_start_time' argument")
-        if default_time_window is None and 'defaultTimeWindow' in kwargs:
-            default_time_window = kwargs['defaultTimeWindow']
-        if default_time_window is None:
-            raise TypeError("Missing 'default_time_window' argument")
-        if deleted is None:
-            raise TypeError("Missing 'deleted' argument")
-        if description is None:
-            raise TypeError("Missing 'description' argument")
-        if display_description is None and 'displayDescription' in kwargs:
-            display_description = kwargs['displayDescription']
-        if display_description is None:
-            raise TypeError("Missing 'display_description' argument")
-        if display_query_parameters is None and 'displayQueryParameters' in kwargs:
-            display_query_parameters = kwargs['displayQueryParameters']
-        if display_query_parameters is None:
-            raise TypeError("Missing 'display_query_parameters' argument")
-        if display_section_table_of_contents is None and 'displaySectionTableOfContents' in kwargs:
-            display_section_table_of_contents = kwargs['displaySectionTableOfContents']
-        if display_section_table_of_contents is None:
-            raise TypeError("Missing 'display_section_table_of_contents' argument")
-        if event_filter_type is None and 'eventFilterType' in kwargs:
-            event_filter_type = kwargs['eventFilterType']
-        if event_filter_type is None:
-            raise TypeError("Missing 'event_filter_type' argument")
-        if event_query is None and 'eventQuery' in kwargs:
-            event_query = kwargs['eventQuery']
-        if event_query is None:
-            raise TypeError("Missing 'event_query' argument")
-        if favorite is None:
-            raise TypeError("Missing 'favorite' argument")
-        if hidden is None:
-            raise TypeError("Missing 'hidden' argument")
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if num_charts is None and 'numCharts' in kwargs:
-            num_charts = kwargs['numCharts']
-        if num_charts is None:
-            raise TypeError("Missing 'num_charts' argument")
-        if num_favorites is None and 'numFavorites' in kwargs:
-            num_favorites = kwargs['numFavorites']
-        if num_favorites is None:
-            raise TypeError("Missing 'num_favorites' argument")
-        if parameter_details is None and 'parameterDetails' in kwargs:
-            parameter_details = kwargs['parameterDetails']
-        if parameter_details is None:
-            raise TypeError("Missing 'parameter_details' argument")
-        if parameters is None:
-            raise TypeError("Missing 'parameters' argument")
-        if sections is None:
-            raise TypeError("Missing 'sections' argument")
-        if system_owned is None and 'systemOwned' in kwargs:
-            system_owned = kwargs['systemOwned']
-        if system_owned is None:
-            raise TypeError("Missing 'system_owned' argument")
-        if tags is None:
-            raise TypeError("Missing 'tags' argument")
-        if updated_epoch_millis is None and 'updatedEpochMillis' in kwargs:
-            updated_epoch_millis = kwargs['updatedEpochMillis']
-        if updated_epoch_millis is None:
-            raise TypeError("Missing 'updated_epoch_millis' argument")
-        if updater_id is None and 'updaterId' in kwargs:
-            updater_id = kwargs['updaterId']
-        if updater_id is None:
-            raise TypeError("Missing 'updater_id' argument")
-        if url is None:
-            raise TypeError("Missing 'url' argument")
-        if views_last_day is None and 'viewsLastDay' in kwargs:
-            views_last_day = kwargs['viewsLastDay']
-        if views_last_day is None:
-            raise TypeError("Missing 'views_last_day' argument")
-        if views_last_month is None and 'viewsLastMonth' in kwargs:
-            views_last_month = kwargs['viewsLastMonth']
-        if views_last_month is None:
-            raise TypeError("Missing 'views_last_month' argument")
-        if views_last_week is None and 'viewsLastWeek' in kwargs:
-            views_last_week = kwargs['viewsLastWeek']
-        if views_last_week is None:
-            raise TypeError("Missing 'views_last_week' argument")
-
-        _setter("can_modifies", can_modifies)
-        _setter("can_views", can_views)
-        _setter("chart_title_bg_color", chart_title_bg_color)
-        _setter("chart_title_color", chart_title_color)
-        _setter("chart_title_scalar", chart_title_scalar)
-        _setter("created_epoch_millis", created_epoch_millis)
-        _setter("creator_id", creator_id)
-        _setter("customer", customer)
-        _setter("default_end_time", default_end_time)
-        _setter("default_start_time", default_start_time)
-        _setter("default_time_window", default_time_window)
-        _setter("deleted", deleted)
-        _setter("description", description)
-        _setter("display_description", display_description)
-        _setter("display_query_parameters", display_query_parameters)
-        _setter("display_section_table_of_contents", display_section_table_of_contents)
-        _setter("event_filter_type", event_filter_type)
-        _setter("event_query", event_query)
-        _setter("favorite", favorite)
-        _setter("hidden", hidden)
-        _setter("id", id)
-        _setter("name", name)
-        _setter("num_charts", num_charts)
-        _setter("num_favorites", num_favorites)
-        _setter("parameter_details", parameter_details)
-        _setter("parameters", parameters)
-        _setter("sections", sections)
-        _setter("system_owned", system_owned)
-        _setter("tags", tags)
-        _setter("updated_epoch_millis", updated_epoch_millis)
-        _setter("updater_id", updater_id)
-        _setter("url", url)
-        _setter("views_last_day", views_last_day)
-        _setter("views_last_month", views_last_month)
-        _setter("views_last_week", views_last_week)
+        pulumi.set(__self__, "can_modifies", can_modifies)
+        pulumi.set(__self__, "can_views", can_views)
+        pulumi.set(__self__, "chart_title_bg_color", chart_title_bg_color)
+        pulumi.set(__self__, "chart_title_color", chart_title_color)
+        pulumi.set(__self__, "chart_title_scalar", chart_title_scalar)
+        pulumi.set(__self__, "created_epoch_millis", created_epoch_millis)
+        pulumi.set(__self__, "creator_id", creator_id)
+        pulumi.set(__self__, "customer", customer)
+        pulumi.set(__self__, "default_end_time", default_end_time)
+        pulumi.set(__self__, "default_start_time", default_start_time)
+        pulumi.set(__self__, "default_time_window", default_time_window)
+        pulumi.set(__self__, "deleted", deleted)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_description", display_description)
+        pulumi.set(__self__, "display_query_parameters", display_query_parameters)
+        pulumi.set(__self__, "display_section_table_of_contents", display_section_table_of_contents)
+        pulumi.set(__self__, "event_filter_type", event_filter_type)
+        pulumi.set(__self__, "event_query", event_query)
+        pulumi.set(__self__, "favorite", favorite)
+        pulumi.set(__self__, "hidden", hidden)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "num_charts", num_charts)
+        pulumi.set(__self__, "num_favorites", num_favorites)
+        pulumi.set(__self__, "parameter_details", parameter_details)
+        pulumi.set(__self__, "parameters", parameters)
+        pulumi.set(__self__, "sections", sections)
+        pulumi.set(__self__, "system_owned", system_owned)
+        pulumi.set(__self__, "tags", tags)
+        pulumi.set(__self__, "updated_epoch_millis", updated_epoch_millis)
+        pulumi.set(__self__, "updater_id", updater_id)
+        pulumi.set(__self__, "url", url)
+        pulumi.set(__self__, "views_last_day", views_last_day)
+        pulumi.set(__self__, "views_last_month", views_last_month)
+        pulumi.set(__self__, "views_last_week", views_last_week)
 
     @property
     @pulumi.getter(name="canModifies")
@@ -4638,69 +3207,14 @@ class GetDashboardsDashboardParameterDetailResult(dict):
         :param Mapping[str, str] values_to_readable_strings: A string to string map. At least one of the keys must match the value of
                `default_value`.
         """
-        GetDashboardsDashboardParameterDetailResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            default_value=default_value,
-            dynamic_field_type=dynamic_field_type,
-            hide_from_view=hide_from_view,
-            label=label,
-            parameter_type=parameter_type,
-            query_value=query_value,
-            tag_key=tag_key,
-            values_to_readable_strings=values_to_readable_strings,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             default_value: Optional[str] = None,
-             dynamic_field_type: Optional[str] = None,
-             hide_from_view: Optional[bool] = None,
-             label: Optional[str] = None,
-             parameter_type: Optional[str] = None,
-             query_value: Optional[str] = None,
-             tag_key: Optional[str] = None,
-             values_to_readable_strings: Optional[Mapping[str, str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if default_value is None and 'defaultValue' in kwargs:
-            default_value = kwargs['defaultValue']
-        if default_value is None:
-            raise TypeError("Missing 'default_value' argument")
-        if dynamic_field_type is None and 'dynamicFieldType' in kwargs:
-            dynamic_field_type = kwargs['dynamicFieldType']
-        if dynamic_field_type is None:
-            raise TypeError("Missing 'dynamic_field_type' argument")
-        if hide_from_view is None and 'hideFromView' in kwargs:
-            hide_from_view = kwargs['hideFromView']
-        if hide_from_view is None:
-            raise TypeError("Missing 'hide_from_view' argument")
-        if label is None:
-            raise TypeError("Missing 'label' argument")
-        if parameter_type is None and 'parameterType' in kwargs:
-            parameter_type = kwargs['parameterType']
-        if parameter_type is None:
-            raise TypeError("Missing 'parameter_type' argument")
-        if query_value is None and 'queryValue' in kwargs:
-            query_value = kwargs['queryValue']
-        if query_value is None:
-            raise TypeError("Missing 'query_value' argument")
-        if tag_key is None and 'tagKey' in kwargs:
-            tag_key = kwargs['tagKey']
-        if tag_key is None:
-            raise TypeError("Missing 'tag_key' argument")
-        if values_to_readable_strings is None and 'valuesToReadableStrings' in kwargs:
-            values_to_readable_strings = kwargs['valuesToReadableStrings']
-        if values_to_readable_strings is None:
-            raise TypeError("Missing 'values_to_readable_strings' argument")
-
-        _setter("default_value", default_value)
-        _setter("dynamic_field_type", dynamic_field_type)
-        _setter("hide_from_view", hide_from_view)
-        _setter("label", label)
-        _setter("parameter_type", parameter_type)
-        _setter("query_value", query_value)
-        _setter("tag_key", tag_key)
-        _setter("values_to_readable_strings", values_to_readable_strings)
+        pulumi.set(__self__, "default_value", default_value)
+        pulumi.set(__self__, "dynamic_field_type", dynamic_field_type)
+        pulumi.set(__self__, "hide_from_view", hide_from_view)
+        pulumi.set(__self__, "label", label)
+        pulumi.set(__self__, "parameter_type", parameter_type)
+        pulumi.set(__self__, "query_value", query_value)
+        pulumi.set(__self__, "tag_key", tag_key)
+        pulumi.set(__self__, "values_to_readable_strings", values_to_readable_strings)
 
     @property
     @pulumi.getter(name="defaultValue")
@@ -4777,25 +3291,8 @@ class GetDashboardsDashboardSectionResult(dict):
         """
         :param str name: The name of the parameters.
         """
-        GetDashboardsDashboardSectionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            rows=rows,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             rows: Optional[Sequence['outputs.GetDashboardsDashboardSectionRowResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if rows is None:
-            raise TypeError("Missing 'rows' argument")
-
-        _setter("name", name)
-        _setter("rows", rows)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "rows", rows)
 
     @property
     @pulumi.getter
@@ -4820,32 +3317,9 @@ class GetDashboardsDashboardSectionRowResult(dict):
         """
         :param str name: The name of the parameters.
         """
-        GetDashboardsDashboardSectionRowResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            charts=charts,
-            height_factor=height_factor,
-            name=name,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             charts: Optional[Sequence['outputs.GetDashboardsDashboardSectionRowChartResult']] = None,
-             height_factor: Optional[int] = None,
-             name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if charts is None:
-            raise TypeError("Missing 'charts' argument")
-        if height_factor is None and 'heightFactor' in kwargs:
-            height_factor = kwargs['heightFactor']
-        if height_factor is None:
-            raise TypeError("Missing 'height_factor' argument")
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-
-        _setter("charts", charts)
-        _setter("height_factor", height_factor)
-        _setter("name", name)
+        pulumi.set(__self__, "charts", charts)
+        pulumi.set(__self__, "height_factor", height_factor)
+        pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter
@@ -4887,80 +3361,17 @@ class GetDashboardsDashboardSectionRowChartResult(dict):
         :param str summarization: Summarization strategy for the chart. MEAN is default.
         :param str units: String to label the units of the chart on the Y-Axis.
         """
-        GetDashboardsDashboardSectionRowChartResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            base=base,
-            chart_attributes=chart_attributes,
-            chart_settings=chart_settings,
-            description=description,
-            include_obsolete_metrics=include_obsolete_metrics,
-            interpolate_points_key=interpolate_points_key,
-            name=name,
-            no_default_events=no_default_events,
-            sources=sources,
-            summarization=summarization,
-            units=units,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             base: Optional[int] = None,
-             chart_attributes: Optional[str] = None,
-             chart_settings: Optional[Sequence['outputs.GetDashboardsDashboardSectionRowChartChartSettingResult']] = None,
-             description: Optional[str] = None,
-             include_obsolete_metrics: Optional[bool] = None,
-             interpolate_points_key: Optional[bool] = None,
-             name: Optional[str] = None,
-             no_default_events: Optional[bool] = None,
-             sources: Optional[Sequence['outputs.GetDashboardsDashboardSectionRowChartSourceResult']] = None,
-             summarization: Optional[str] = None,
-             units: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if base is None:
-            raise TypeError("Missing 'base' argument")
-        if chart_attributes is None and 'chartAttributes' in kwargs:
-            chart_attributes = kwargs['chartAttributes']
-        if chart_attributes is None:
-            raise TypeError("Missing 'chart_attributes' argument")
-        if chart_settings is None and 'chartSettings' in kwargs:
-            chart_settings = kwargs['chartSettings']
-        if chart_settings is None:
-            raise TypeError("Missing 'chart_settings' argument")
-        if description is None:
-            raise TypeError("Missing 'description' argument")
-        if include_obsolete_metrics is None and 'includeObsoleteMetrics' in kwargs:
-            include_obsolete_metrics = kwargs['includeObsoleteMetrics']
-        if include_obsolete_metrics is None:
-            raise TypeError("Missing 'include_obsolete_metrics' argument")
-        if interpolate_points_key is None and 'interpolatePointsKey' in kwargs:
-            interpolate_points_key = kwargs['interpolatePointsKey']
-        if interpolate_points_key is None:
-            raise TypeError("Missing 'interpolate_points_key' argument")
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if no_default_events is None and 'noDefaultEvents' in kwargs:
-            no_default_events = kwargs['noDefaultEvents']
-        if no_default_events is None:
-            raise TypeError("Missing 'no_default_events' argument")
-        if sources is None:
-            raise TypeError("Missing 'sources' argument")
-        if summarization is None:
-            raise TypeError("Missing 'summarization' argument")
-        if units is None:
-            raise TypeError("Missing 'units' argument")
-
-        _setter("base", base)
-        _setter("chart_attributes", chart_attributes)
-        _setter("chart_settings", chart_settings)
-        _setter("description", description)
-        _setter("include_obsolete_metrics", include_obsolete_metrics)
-        _setter("interpolate_points_key", interpolate_points_key)
-        _setter("name", name)
-        _setter("no_default_events", no_default_events)
-        _setter("sources", sources)
-        _setter("summarization", summarization)
-        _setter("units", units)
+        pulumi.set(__self__, "base", base)
+        pulumi.set(__self__, "chart_attributes", chart_attributes)
+        pulumi.set(__self__, "chart_settings", chart_settings)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "include_obsolete_metrics", include_obsolete_metrics)
+        pulumi.set(__self__, "interpolate_points_key", interpolate_points_key)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "no_default_events", no_default_events)
+        pulumi.set(__self__, "sources", sources)
+        pulumi.set(__self__, "summarization", summarization)
+        pulumi.set(__self__, "units", units)
 
     @property
     @pulumi.getter
@@ -5148,398 +3559,63 @@ class GetDashboardsDashboardSectionRowChartChartSettingResult(dict):
         :param float ymax: For x-y scatterplots, max value for the Y-axis. Set to null for auto.
         :param float ymin: For x-y scatterplots, min value for the Y-axis. Set to null for auto.
         """
-        GetDashboardsDashboardSectionRowChartChartSettingResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            auto_column_tags=auto_column_tags,
-            column_tags=column_tags,
-            custom_tags=custom_tags,
-            expected_data_spacing=expected_data_spacing,
-            fixed_legend_display_stats=fixed_legend_display_stats,
-            fixed_legend_enabled=fixed_legend_enabled,
-            fixed_legend_filter_field=fixed_legend_filter_field,
-            fixed_legend_filter_limit=fixed_legend_filter_limit,
-            fixed_legend_filter_sort=fixed_legend_filter_sort,
-            fixed_legend_hide_label=fixed_legend_hide_label,
-            fixed_legend_position=fixed_legend_position,
-            fixed_legend_use_raw_stats=fixed_legend_use_raw_stats,
-            group_by_source=group_by_source,
-            invert_dynamic_legend_hover_control=invert_dynamic_legend_hover_control,
-            line_type=line_type,
-            max=max,
-            min=min,
-            num_tags=num_tags,
-            plain_markdown_content=plain_markdown_content,
-            show_hosts=show_hosts,
-            show_labels=show_labels,
-            show_raw_values=show_raw_values,
-            sort_values_descending=sort_values_descending,
-            sparkline_decimal_precision=sparkline_decimal_precision,
-            sparkline_display_color=sparkline_display_color,
-            sparkline_display_font_size=sparkline_display_font_size,
-            sparkline_display_horizontal_position=sparkline_display_horizontal_position,
-            sparkline_display_postfix=sparkline_display_postfix,
-            sparkline_display_prefix=sparkline_display_prefix,
-            sparkline_display_value_type=sparkline_display_value_type,
-            sparkline_display_vertical_position=sparkline_display_vertical_position,
-            sparkline_fill_color=sparkline_fill_color,
-            sparkline_line_color=sparkline_line_color,
-            sparkline_size=sparkline_size,
-            sparkline_value_color_map_apply_to=sparkline_value_color_map_apply_to,
-            sparkline_value_color_map_colors=sparkline_value_color_map_colors,
-            sparkline_value_color_map_values=sparkline_value_color_map_values,
-            sparkline_value_color_map_values_v2s=sparkline_value_color_map_values_v2s,
-            sparkline_value_text_map_texts=sparkline_value_text_map_texts,
-            sparkline_value_text_map_thresholds=sparkline_value_text_map_thresholds,
-            stack_type=stack_type,
-            tag_mode=tag_mode,
-            time_based_coloring=time_based_coloring,
-            type=type,
-            window_size=window_size,
-            windowing=windowing,
-            xmax=xmax,
-            xmin=xmin,
-            y0_scale_si_by1024=y0_scale_si_by1024,
-            y0_unit_autoscaling=y0_unit_autoscaling,
-            y1_max=y1_max,
-            y1_min=y1_min,
-            y1_scale_si_by1024=y1_scale_si_by1024,
-            y1_unit_autoscaling=y1_unit_autoscaling,
-            y1_units=y1_units,
-            ymax=ymax,
-            ymin=ymin,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             auto_column_tags: Optional[bool] = None,
-             column_tags: Optional[str] = None,
-             custom_tags: Optional[Sequence[str]] = None,
-             expected_data_spacing: Optional[int] = None,
-             fixed_legend_display_stats: Optional[Sequence[str]] = None,
-             fixed_legend_enabled: Optional[bool] = None,
-             fixed_legend_filter_field: Optional[str] = None,
-             fixed_legend_filter_limit: Optional[int] = None,
-             fixed_legend_filter_sort: Optional[str] = None,
-             fixed_legend_hide_label: Optional[bool] = None,
-             fixed_legend_position: Optional[str] = None,
-             fixed_legend_use_raw_stats: Optional[bool] = None,
-             group_by_source: Optional[bool] = None,
-             invert_dynamic_legend_hover_control: Optional[bool] = None,
-             line_type: Optional[str] = None,
-             max: Optional[float] = None,
-             min: Optional[float] = None,
-             num_tags: Optional[int] = None,
-             plain_markdown_content: Optional[str] = None,
-             show_hosts: Optional[bool] = None,
-             show_labels: Optional[bool] = None,
-             show_raw_values: Optional[bool] = None,
-             sort_values_descending: Optional[bool] = None,
-             sparkline_decimal_precision: Optional[int] = None,
-             sparkline_display_color: Optional[str] = None,
-             sparkline_display_font_size: Optional[str] = None,
-             sparkline_display_horizontal_position: Optional[str] = None,
-             sparkline_display_postfix: Optional[str] = None,
-             sparkline_display_prefix: Optional[str] = None,
-             sparkline_display_value_type: Optional[str] = None,
-             sparkline_display_vertical_position: Optional[str] = None,
-             sparkline_fill_color: Optional[str] = None,
-             sparkline_line_color: Optional[str] = None,
-             sparkline_size: Optional[str] = None,
-             sparkline_value_color_map_apply_to: Optional[str] = None,
-             sparkline_value_color_map_colors: Optional[Sequence[str]] = None,
-             sparkline_value_color_map_values: Optional[Sequence[int]] = None,
-             sparkline_value_color_map_values_v2s: Optional[Sequence[float]] = None,
-             sparkline_value_text_map_texts: Optional[Sequence[str]] = None,
-             sparkline_value_text_map_thresholds: Optional[Sequence[float]] = None,
-             stack_type: Optional[str] = None,
-             tag_mode: Optional[str] = None,
-             time_based_coloring: Optional[bool] = None,
-             type: Optional[str] = None,
-             window_size: Optional[int] = None,
-             windowing: Optional[str] = None,
-             xmax: Optional[float] = None,
-             xmin: Optional[float] = None,
-             y0_scale_si_by1024: Optional[bool] = None,
-             y0_unit_autoscaling: Optional[bool] = None,
-             y1_max: Optional[float] = None,
-             y1_min: Optional[float] = None,
-             y1_scale_si_by1024: Optional[bool] = None,
-             y1_unit_autoscaling: Optional[bool] = None,
-             y1_units: Optional[str] = None,
-             ymax: Optional[float] = None,
-             ymin: Optional[float] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if auto_column_tags is None and 'autoColumnTags' in kwargs:
-            auto_column_tags = kwargs['autoColumnTags']
-        if auto_column_tags is None:
-            raise TypeError("Missing 'auto_column_tags' argument")
-        if column_tags is None and 'columnTags' in kwargs:
-            column_tags = kwargs['columnTags']
-        if column_tags is None:
-            raise TypeError("Missing 'column_tags' argument")
-        if custom_tags is None and 'customTags' in kwargs:
-            custom_tags = kwargs['customTags']
-        if custom_tags is None:
-            raise TypeError("Missing 'custom_tags' argument")
-        if expected_data_spacing is None and 'expectedDataSpacing' in kwargs:
-            expected_data_spacing = kwargs['expectedDataSpacing']
-        if expected_data_spacing is None:
-            raise TypeError("Missing 'expected_data_spacing' argument")
-        if fixed_legend_display_stats is None and 'fixedLegendDisplayStats' in kwargs:
-            fixed_legend_display_stats = kwargs['fixedLegendDisplayStats']
-        if fixed_legend_display_stats is None:
-            raise TypeError("Missing 'fixed_legend_display_stats' argument")
-        if fixed_legend_enabled is None and 'fixedLegendEnabled' in kwargs:
-            fixed_legend_enabled = kwargs['fixedLegendEnabled']
-        if fixed_legend_enabled is None:
-            raise TypeError("Missing 'fixed_legend_enabled' argument")
-        if fixed_legend_filter_field is None and 'fixedLegendFilterField' in kwargs:
-            fixed_legend_filter_field = kwargs['fixedLegendFilterField']
-        if fixed_legend_filter_field is None:
-            raise TypeError("Missing 'fixed_legend_filter_field' argument")
-        if fixed_legend_filter_limit is None and 'fixedLegendFilterLimit' in kwargs:
-            fixed_legend_filter_limit = kwargs['fixedLegendFilterLimit']
-        if fixed_legend_filter_limit is None:
-            raise TypeError("Missing 'fixed_legend_filter_limit' argument")
-        if fixed_legend_filter_sort is None and 'fixedLegendFilterSort' in kwargs:
-            fixed_legend_filter_sort = kwargs['fixedLegendFilterSort']
-        if fixed_legend_filter_sort is None:
-            raise TypeError("Missing 'fixed_legend_filter_sort' argument")
-        if fixed_legend_hide_label is None and 'fixedLegendHideLabel' in kwargs:
-            fixed_legend_hide_label = kwargs['fixedLegendHideLabel']
-        if fixed_legend_hide_label is None:
-            raise TypeError("Missing 'fixed_legend_hide_label' argument")
-        if fixed_legend_position is None and 'fixedLegendPosition' in kwargs:
-            fixed_legend_position = kwargs['fixedLegendPosition']
-        if fixed_legend_position is None:
-            raise TypeError("Missing 'fixed_legend_position' argument")
-        if fixed_legend_use_raw_stats is None and 'fixedLegendUseRawStats' in kwargs:
-            fixed_legend_use_raw_stats = kwargs['fixedLegendUseRawStats']
-        if fixed_legend_use_raw_stats is None:
-            raise TypeError("Missing 'fixed_legend_use_raw_stats' argument")
-        if group_by_source is None and 'groupBySource' in kwargs:
-            group_by_source = kwargs['groupBySource']
-        if group_by_source is None:
-            raise TypeError("Missing 'group_by_source' argument")
-        if invert_dynamic_legend_hover_control is None and 'invertDynamicLegendHoverControl' in kwargs:
-            invert_dynamic_legend_hover_control = kwargs['invertDynamicLegendHoverControl']
-        if invert_dynamic_legend_hover_control is None:
-            raise TypeError("Missing 'invert_dynamic_legend_hover_control' argument")
-        if line_type is None and 'lineType' in kwargs:
-            line_type = kwargs['lineType']
-        if line_type is None:
-            raise TypeError("Missing 'line_type' argument")
-        if max is None:
-            raise TypeError("Missing 'max' argument")
-        if min is None:
-            raise TypeError("Missing 'min' argument")
-        if num_tags is None and 'numTags' in kwargs:
-            num_tags = kwargs['numTags']
-        if num_tags is None:
-            raise TypeError("Missing 'num_tags' argument")
-        if plain_markdown_content is None and 'plainMarkdownContent' in kwargs:
-            plain_markdown_content = kwargs['plainMarkdownContent']
-        if plain_markdown_content is None:
-            raise TypeError("Missing 'plain_markdown_content' argument")
-        if show_hosts is None and 'showHosts' in kwargs:
-            show_hosts = kwargs['showHosts']
-        if show_hosts is None:
-            raise TypeError("Missing 'show_hosts' argument")
-        if show_labels is None and 'showLabels' in kwargs:
-            show_labels = kwargs['showLabels']
-        if show_labels is None:
-            raise TypeError("Missing 'show_labels' argument")
-        if show_raw_values is None and 'showRawValues' in kwargs:
-            show_raw_values = kwargs['showRawValues']
-        if show_raw_values is None:
-            raise TypeError("Missing 'show_raw_values' argument")
-        if sort_values_descending is None and 'sortValuesDescending' in kwargs:
-            sort_values_descending = kwargs['sortValuesDescending']
-        if sort_values_descending is None:
-            raise TypeError("Missing 'sort_values_descending' argument")
-        if sparkline_decimal_precision is None and 'sparklineDecimalPrecision' in kwargs:
-            sparkline_decimal_precision = kwargs['sparklineDecimalPrecision']
-        if sparkline_decimal_precision is None:
-            raise TypeError("Missing 'sparkline_decimal_precision' argument")
-        if sparkline_display_color is None and 'sparklineDisplayColor' in kwargs:
-            sparkline_display_color = kwargs['sparklineDisplayColor']
-        if sparkline_display_color is None:
-            raise TypeError("Missing 'sparkline_display_color' argument")
-        if sparkline_display_font_size is None and 'sparklineDisplayFontSize' in kwargs:
-            sparkline_display_font_size = kwargs['sparklineDisplayFontSize']
-        if sparkline_display_font_size is None:
-            raise TypeError("Missing 'sparkline_display_font_size' argument")
-        if sparkline_display_horizontal_position is None and 'sparklineDisplayHorizontalPosition' in kwargs:
-            sparkline_display_horizontal_position = kwargs['sparklineDisplayHorizontalPosition']
-        if sparkline_display_horizontal_position is None:
-            raise TypeError("Missing 'sparkline_display_horizontal_position' argument")
-        if sparkline_display_postfix is None and 'sparklineDisplayPostfix' in kwargs:
-            sparkline_display_postfix = kwargs['sparklineDisplayPostfix']
-        if sparkline_display_postfix is None:
-            raise TypeError("Missing 'sparkline_display_postfix' argument")
-        if sparkline_display_prefix is None and 'sparklineDisplayPrefix' in kwargs:
-            sparkline_display_prefix = kwargs['sparklineDisplayPrefix']
-        if sparkline_display_prefix is None:
-            raise TypeError("Missing 'sparkline_display_prefix' argument")
-        if sparkline_display_value_type is None and 'sparklineDisplayValueType' in kwargs:
-            sparkline_display_value_type = kwargs['sparklineDisplayValueType']
-        if sparkline_display_value_type is None:
-            raise TypeError("Missing 'sparkline_display_value_type' argument")
-        if sparkline_display_vertical_position is None and 'sparklineDisplayVerticalPosition' in kwargs:
-            sparkline_display_vertical_position = kwargs['sparklineDisplayVerticalPosition']
-        if sparkline_display_vertical_position is None:
-            raise TypeError("Missing 'sparkline_display_vertical_position' argument")
-        if sparkline_fill_color is None and 'sparklineFillColor' in kwargs:
-            sparkline_fill_color = kwargs['sparklineFillColor']
-        if sparkline_fill_color is None:
-            raise TypeError("Missing 'sparkline_fill_color' argument")
-        if sparkline_line_color is None and 'sparklineLineColor' in kwargs:
-            sparkline_line_color = kwargs['sparklineLineColor']
-        if sparkline_line_color is None:
-            raise TypeError("Missing 'sparkline_line_color' argument")
-        if sparkline_size is None and 'sparklineSize' in kwargs:
-            sparkline_size = kwargs['sparklineSize']
-        if sparkline_size is None:
-            raise TypeError("Missing 'sparkline_size' argument")
-        if sparkline_value_color_map_apply_to is None and 'sparklineValueColorMapApplyTo' in kwargs:
-            sparkline_value_color_map_apply_to = kwargs['sparklineValueColorMapApplyTo']
-        if sparkline_value_color_map_apply_to is None:
-            raise TypeError("Missing 'sparkline_value_color_map_apply_to' argument")
-        if sparkline_value_color_map_colors is None and 'sparklineValueColorMapColors' in kwargs:
-            sparkline_value_color_map_colors = kwargs['sparklineValueColorMapColors']
-        if sparkline_value_color_map_colors is None:
-            raise TypeError("Missing 'sparkline_value_color_map_colors' argument")
-        if sparkline_value_color_map_values is None and 'sparklineValueColorMapValues' in kwargs:
-            sparkline_value_color_map_values = kwargs['sparklineValueColorMapValues']
-        if sparkline_value_color_map_values is None:
-            raise TypeError("Missing 'sparkline_value_color_map_values' argument")
-        if sparkline_value_color_map_values_v2s is None and 'sparklineValueColorMapValuesV2s' in kwargs:
-            sparkline_value_color_map_values_v2s = kwargs['sparklineValueColorMapValuesV2s']
-        if sparkline_value_color_map_values_v2s is None:
-            raise TypeError("Missing 'sparkline_value_color_map_values_v2s' argument")
-        if sparkline_value_text_map_texts is None and 'sparklineValueTextMapTexts' in kwargs:
-            sparkline_value_text_map_texts = kwargs['sparklineValueTextMapTexts']
-        if sparkline_value_text_map_texts is None:
-            raise TypeError("Missing 'sparkline_value_text_map_texts' argument")
-        if sparkline_value_text_map_thresholds is None and 'sparklineValueTextMapThresholds' in kwargs:
-            sparkline_value_text_map_thresholds = kwargs['sparklineValueTextMapThresholds']
-        if sparkline_value_text_map_thresholds is None:
-            raise TypeError("Missing 'sparkline_value_text_map_thresholds' argument")
-        if stack_type is None and 'stackType' in kwargs:
-            stack_type = kwargs['stackType']
-        if stack_type is None:
-            raise TypeError("Missing 'stack_type' argument")
-        if tag_mode is None and 'tagMode' in kwargs:
-            tag_mode = kwargs['tagMode']
-        if tag_mode is None:
-            raise TypeError("Missing 'tag_mode' argument")
-        if time_based_coloring is None and 'timeBasedColoring' in kwargs:
-            time_based_coloring = kwargs['timeBasedColoring']
-        if time_based_coloring is None:
-            raise TypeError("Missing 'time_based_coloring' argument")
-        if type is None:
-            raise TypeError("Missing 'type' argument")
-        if window_size is None and 'windowSize' in kwargs:
-            window_size = kwargs['windowSize']
-        if window_size is None:
-            raise TypeError("Missing 'window_size' argument")
-        if windowing is None:
-            raise TypeError("Missing 'windowing' argument")
-        if xmax is None:
-            raise TypeError("Missing 'xmax' argument")
-        if xmin is None:
-            raise TypeError("Missing 'xmin' argument")
-        if y0_scale_si_by1024 is None and 'y0ScaleSiBy1024' in kwargs:
-            y0_scale_si_by1024 = kwargs['y0ScaleSiBy1024']
-        if y0_scale_si_by1024 is None:
-            raise TypeError("Missing 'y0_scale_si_by1024' argument")
-        if y0_unit_autoscaling is None and 'y0UnitAutoscaling' in kwargs:
-            y0_unit_autoscaling = kwargs['y0UnitAutoscaling']
-        if y0_unit_autoscaling is None:
-            raise TypeError("Missing 'y0_unit_autoscaling' argument")
-        if y1_max is None and 'y1Max' in kwargs:
-            y1_max = kwargs['y1Max']
-        if y1_max is None:
-            raise TypeError("Missing 'y1_max' argument")
-        if y1_min is None and 'y1Min' in kwargs:
-            y1_min = kwargs['y1Min']
-        if y1_min is None:
-            raise TypeError("Missing 'y1_min' argument")
-        if y1_scale_si_by1024 is None and 'y1ScaleSiBy1024' in kwargs:
-            y1_scale_si_by1024 = kwargs['y1ScaleSiBy1024']
-        if y1_scale_si_by1024 is None:
-            raise TypeError("Missing 'y1_scale_si_by1024' argument")
-        if y1_unit_autoscaling is None and 'y1UnitAutoscaling' in kwargs:
-            y1_unit_autoscaling = kwargs['y1UnitAutoscaling']
-        if y1_unit_autoscaling is None:
-            raise TypeError("Missing 'y1_unit_autoscaling' argument")
-        if y1_units is None and 'y1Units' in kwargs:
-            y1_units = kwargs['y1Units']
-        if y1_units is None:
-            raise TypeError("Missing 'y1_units' argument")
-        if ymax is None:
-            raise TypeError("Missing 'ymax' argument")
-        if ymin is None:
-            raise TypeError("Missing 'ymin' argument")
-
-        _setter("auto_column_tags", auto_column_tags)
-        _setter("column_tags", column_tags)
-        _setter("custom_tags", custom_tags)
-        _setter("expected_data_spacing", expected_data_spacing)
-        _setter("fixed_legend_display_stats", fixed_legend_display_stats)
-        _setter("fixed_legend_enabled", fixed_legend_enabled)
-        _setter("fixed_legend_filter_field", fixed_legend_filter_field)
-        _setter("fixed_legend_filter_limit", fixed_legend_filter_limit)
-        _setter("fixed_legend_filter_sort", fixed_legend_filter_sort)
-        _setter("fixed_legend_hide_label", fixed_legend_hide_label)
-        _setter("fixed_legend_position", fixed_legend_position)
-        _setter("fixed_legend_use_raw_stats", fixed_legend_use_raw_stats)
-        _setter("group_by_source", group_by_source)
-        _setter("invert_dynamic_legend_hover_control", invert_dynamic_legend_hover_control)
-        _setter("line_type", line_type)
-        _setter("max", max)
-        _setter("min", min)
-        _setter("num_tags", num_tags)
-        _setter("plain_markdown_content", plain_markdown_content)
-        _setter("show_hosts", show_hosts)
-        _setter("show_labels", show_labels)
-        _setter("show_raw_values", show_raw_values)
-        _setter("sort_values_descending", sort_values_descending)
-        _setter("sparkline_decimal_precision", sparkline_decimal_precision)
-        _setter("sparkline_display_color", sparkline_display_color)
-        _setter("sparkline_display_font_size", sparkline_display_font_size)
-        _setter("sparkline_display_horizontal_position", sparkline_display_horizontal_position)
-        _setter("sparkline_display_postfix", sparkline_display_postfix)
-        _setter("sparkline_display_prefix", sparkline_display_prefix)
-        _setter("sparkline_display_value_type", sparkline_display_value_type)
-        _setter("sparkline_display_vertical_position", sparkline_display_vertical_position)
-        _setter("sparkline_fill_color", sparkline_fill_color)
-        _setter("sparkline_line_color", sparkline_line_color)
-        _setter("sparkline_size", sparkline_size)
-        _setter("sparkline_value_color_map_apply_to", sparkline_value_color_map_apply_to)
-        _setter("sparkline_value_color_map_colors", sparkline_value_color_map_colors)
-        _setter("sparkline_value_color_map_values", sparkline_value_color_map_values)
-        _setter("sparkline_value_color_map_values_v2s", sparkline_value_color_map_values_v2s)
-        _setter("sparkline_value_text_map_texts", sparkline_value_text_map_texts)
-        _setter("sparkline_value_text_map_thresholds", sparkline_value_text_map_thresholds)
-        _setter("stack_type", stack_type)
-        _setter("tag_mode", tag_mode)
-        _setter("time_based_coloring", time_based_coloring)
-        _setter("type", type)
-        _setter("window_size", window_size)
-        _setter("windowing", windowing)
-        _setter("xmax", xmax)
-        _setter("xmin", xmin)
-        _setter("y0_scale_si_by1024", y0_scale_si_by1024)
-        _setter("y0_unit_autoscaling", y0_unit_autoscaling)
-        _setter("y1_max", y1_max)
-        _setter("y1_min", y1_min)
-        _setter("y1_scale_si_by1024", y1_scale_si_by1024)
-        _setter("y1_unit_autoscaling", y1_unit_autoscaling)
-        _setter("y1_units", y1_units)
-        _setter("ymax", ymax)
-        _setter("ymin", ymin)
+        pulumi.set(__self__, "auto_column_tags", auto_column_tags)
+        pulumi.set(__self__, "column_tags", column_tags)
+        pulumi.set(__self__, "custom_tags", custom_tags)
+        pulumi.set(__self__, "expected_data_spacing", expected_data_spacing)
+        pulumi.set(__self__, "fixed_legend_display_stats", fixed_legend_display_stats)
+        pulumi.set(__self__, "fixed_legend_enabled", fixed_legend_enabled)
+        pulumi.set(__self__, "fixed_legend_filter_field", fixed_legend_filter_field)
+        pulumi.set(__self__, "fixed_legend_filter_limit", fixed_legend_filter_limit)
+        pulumi.set(__self__, "fixed_legend_filter_sort", fixed_legend_filter_sort)
+        pulumi.set(__self__, "fixed_legend_hide_label", fixed_legend_hide_label)
+        pulumi.set(__self__, "fixed_legend_position", fixed_legend_position)
+        pulumi.set(__self__, "fixed_legend_use_raw_stats", fixed_legend_use_raw_stats)
+        pulumi.set(__self__, "group_by_source", group_by_source)
+        pulumi.set(__self__, "invert_dynamic_legend_hover_control", invert_dynamic_legend_hover_control)
+        pulumi.set(__self__, "line_type", line_type)
+        pulumi.set(__self__, "max", max)
+        pulumi.set(__self__, "min", min)
+        pulumi.set(__self__, "num_tags", num_tags)
+        pulumi.set(__self__, "plain_markdown_content", plain_markdown_content)
+        pulumi.set(__self__, "show_hosts", show_hosts)
+        pulumi.set(__self__, "show_labels", show_labels)
+        pulumi.set(__self__, "show_raw_values", show_raw_values)
+        pulumi.set(__self__, "sort_values_descending", sort_values_descending)
+        pulumi.set(__self__, "sparkline_decimal_precision", sparkline_decimal_precision)
+        pulumi.set(__self__, "sparkline_display_color", sparkline_display_color)
+        pulumi.set(__self__, "sparkline_display_font_size", sparkline_display_font_size)
+        pulumi.set(__self__, "sparkline_display_horizontal_position", sparkline_display_horizontal_position)
+        pulumi.set(__self__, "sparkline_display_postfix", sparkline_display_postfix)
+        pulumi.set(__self__, "sparkline_display_prefix", sparkline_display_prefix)
+        pulumi.set(__self__, "sparkline_display_value_type", sparkline_display_value_type)
+        pulumi.set(__self__, "sparkline_display_vertical_position", sparkline_display_vertical_position)
+        pulumi.set(__self__, "sparkline_fill_color", sparkline_fill_color)
+        pulumi.set(__self__, "sparkline_line_color", sparkline_line_color)
+        pulumi.set(__self__, "sparkline_size", sparkline_size)
+        pulumi.set(__self__, "sparkline_value_color_map_apply_to", sparkline_value_color_map_apply_to)
+        pulumi.set(__self__, "sparkline_value_color_map_colors", sparkline_value_color_map_colors)
+        pulumi.set(__self__, "sparkline_value_color_map_values", sparkline_value_color_map_values)
+        pulumi.set(__self__, "sparkline_value_color_map_values_v2s", sparkline_value_color_map_values_v2s)
+        pulumi.set(__self__, "sparkline_value_text_map_texts", sparkline_value_text_map_texts)
+        pulumi.set(__self__, "sparkline_value_text_map_thresholds", sparkline_value_text_map_thresholds)
+        pulumi.set(__self__, "stack_type", stack_type)
+        pulumi.set(__self__, "tag_mode", tag_mode)
+        pulumi.set(__self__, "time_based_coloring", time_based_coloring)
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "window_size", window_size)
+        pulumi.set(__self__, "windowing", windowing)
+        pulumi.set(__self__, "xmax", xmax)
+        pulumi.set(__self__, "xmin", xmin)
+        pulumi.set(__self__, "y0_scale_si_by1024", y0_scale_si_by1024)
+        pulumi.set(__self__, "y0_unit_autoscaling", y0_unit_autoscaling)
+        pulumi.set(__self__, "y1_max", y1_max)
+        pulumi.set(__self__, "y1_min", y1_min)
+        pulumi.set(__self__, "y1_scale_si_by1024", y1_scale_si_by1024)
+        pulumi.set(__self__, "y1_unit_autoscaling", y1_unit_autoscaling)
+        pulumi.set(__self__, "y1_units", y1_units)
+        pulumi.set(__self__, "ymax", ymax)
+        pulumi.set(__self__, "ymin", ymin)
 
     @property
     @pulumi.getter(name="autoColumnTags")
@@ -6004,65 +4080,14 @@ class GetDashboardsDashboardSectionRowChartSourceResult(dict):
         :param str scatter_plot_source: For scatter plots, does this query source the X-axis or the Y-axis, `X`, or `Y`.
         :param str source_description: A description for the purpose of this source.
         """
-        GetDashboardsDashboardSectionRowChartSourceResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            disabled=disabled,
-            name=name,
-            query=query,
-            querybuilder_enabled=querybuilder_enabled,
-            scatter_plot_source=scatter_plot_source,
-            secondary_axis=secondary_axis,
-            source_color=source_color,
-            source_description=source_description,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             disabled: Optional[bool] = None,
-             name: Optional[str] = None,
-             query: Optional[str] = None,
-             querybuilder_enabled: Optional[bool] = None,
-             scatter_plot_source: Optional[str] = None,
-             secondary_axis: Optional[bool] = None,
-             source_color: Optional[str] = None,
-             source_description: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if disabled is None:
-            raise TypeError("Missing 'disabled' argument")
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if query is None:
-            raise TypeError("Missing 'query' argument")
-        if querybuilder_enabled is None and 'querybuilderEnabled' in kwargs:
-            querybuilder_enabled = kwargs['querybuilderEnabled']
-        if querybuilder_enabled is None:
-            raise TypeError("Missing 'querybuilder_enabled' argument")
-        if scatter_plot_source is None and 'scatterPlotSource' in kwargs:
-            scatter_plot_source = kwargs['scatterPlotSource']
-        if scatter_plot_source is None:
-            raise TypeError("Missing 'scatter_plot_source' argument")
-        if secondary_axis is None and 'secondaryAxis' in kwargs:
-            secondary_axis = kwargs['secondaryAxis']
-        if secondary_axis is None:
-            raise TypeError("Missing 'secondary_axis' argument")
-        if source_color is None and 'sourceColor' in kwargs:
-            source_color = kwargs['sourceColor']
-        if source_color is None:
-            raise TypeError("Missing 'source_color' argument")
-        if source_description is None and 'sourceDescription' in kwargs:
-            source_description = kwargs['sourceDescription']
-        if source_description is None:
-            raise TypeError("Missing 'source_description' argument")
-
-        _setter("disabled", disabled)
-        _setter("name", name)
-        _setter("query", query)
-        _setter("querybuilder_enabled", querybuilder_enabled)
-        _setter("scatter_plot_source", scatter_plot_source)
-        _setter("secondary_axis", secondary_axis)
-        _setter("source_color", source_color)
-        _setter("source_description", source_description)
+        pulumi.set(__self__, "disabled", disabled)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "query", query)
+        pulumi.set(__self__, "querybuilder_enabled", querybuilder_enabled)
+        pulumi.set(__self__, "scatter_plot_source", scatter_plot_source)
+        pulumi.set(__self__, "secondary_axis", secondary_axis)
+        pulumi.set(__self__, "source_color", source_color)
+        pulumi.set(__self__, "source_description", source_description)
 
     @property
     @pulumi.getter
@@ -6173,169 +4198,30 @@ class GetDerivedMetricsDerivedMetricResult(dict):
         :param str update_user_id: The ID of the user who updated the derived metric.
         :param int updated_epoch_millis: The timestamp in epoch milliseconds indicating when the derived metric is updated.
         """
-        GetDerivedMetricsDerivedMetricResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            additional_information=additional_information,
-            create_user_id=create_user_id,
-            created_epoch_millis=created_epoch_millis,
-            deleted=deleted,
-            hosts_useds=hosts_useds,
-            id=id,
-            in_trash=in_trash,
-            include_obsolete_metrics=include_obsolete_metrics,
-            last_error_message=last_error_message,
-            last_failed_time=last_failed_time,
-            last_processed_millis=last_processed_millis,
-            last_query_time=last_query_time,
-            metrics_useds=metrics_useds,
-            minutes=minutes,
-            name=name,
-            points_scanned_at_last_query=points_scanned_at_last_query,
-            process_rate_minutes=process_rate_minutes,
-            query=query,
-            query_failing=query_failing,
-            query_qb_enabled=query_qb_enabled,
-            statuses=statuses,
-            tags=tags,
-            update_user_id=update_user_id,
-            updated_epoch_millis=updated_epoch_millis,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             additional_information: Optional[str] = None,
-             create_user_id: Optional[str] = None,
-             created_epoch_millis: Optional[int] = None,
-             deleted: Optional[bool] = None,
-             hosts_useds: Optional[Sequence[str]] = None,
-             id: Optional[str] = None,
-             in_trash: Optional[bool] = None,
-             include_obsolete_metrics: Optional[bool] = None,
-             last_error_message: Optional[str] = None,
-             last_failed_time: Optional[int] = None,
-             last_processed_millis: Optional[int] = None,
-             last_query_time: Optional[int] = None,
-             metrics_useds: Optional[Sequence[str]] = None,
-             minutes: Optional[int] = None,
-             name: Optional[str] = None,
-             points_scanned_at_last_query: Optional[int] = None,
-             process_rate_minutes: Optional[int] = None,
-             query: Optional[str] = None,
-             query_failing: Optional[bool] = None,
-             query_qb_enabled: Optional[bool] = None,
-             statuses: Optional[Sequence[str]] = None,
-             tags: Optional[Sequence[str]] = None,
-             update_user_id: Optional[str] = None,
-             updated_epoch_millis: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if additional_information is None and 'additionalInformation' in kwargs:
-            additional_information = kwargs['additionalInformation']
-        if additional_information is None:
-            raise TypeError("Missing 'additional_information' argument")
-        if create_user_id is None and 'createUserId' in kwargs:
-            create_user_id = kwargs['createUserId']
-        if create_user_id is None:
-            raise TypeError("Missing 'create_user_id' argument")
-        if created_epoch_millis is None and 'createdEpochMillis' in kwargs:
-            created_epoch_millis = kwargs['createdEpochMillis']
-        if created_epoch_millis is None:
-            raise TypeError("Missing 'created_epoch_millis' argument")
-        if deleted is None:
-            raise TypeError("Missing 'deleted' argument")
-        if hosts_useds is None and 'hostsUseds' in kwargs:
-            hosts_useds = kwargs['hostsUseds']
-        if hosts_useds is None:
-            raise TypeError("Missing 'hosts_useds' argument")
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-        if in_trash is None and 'inTrash' in kwargs:
-            in_trash = kwargs['inTrash']
-        if in_trash is None:
-            raise TypeError("Missing 'in_trash' argument")
-        if include_obsolete_metrics is None and 'includeObsoleteMetrics' in kwargs:
-            include_obsolete_metrics = kwargs['includeObsoleteMetrics']
-        if include_obsolete_metrics is None:
-            raise TypeError("Missing 'include_obsolete_metrics' argument")
-        if last_error_message is None and 'lastErrorMessage' in kwargs:
-            last_error_message = kwargs['lastErrorMessage']
-        if last_error_message is None:
-            raise TypeError("Missing 'last_error_message' argument")
-        if last_failed_time is None and 'lastFailedTime' in kwargs:
-            last_failed_time = kwargs['lastFailedTime']
-        if last_failed_time is None:
-            raise TypeError("Missing 'last_failed_time' argument")
-        if last_processed_millis is None and 'lastProcessedMillis' in kwargs:
-            last_processed_millis = kwargs['lastProcessedMillis']
-        if last_processed_millis is None:
-            raise TypeError("Missing 'last_processed_millis' argument")
-        if last_query_time is None and 'lastQueryTime' in kwargs:
-            last_query_time = kwargs['lastQueryTime']
-        if last_query_time is None:
-            raise TypeError("Missing 'last_query_time' argument")
-        if metrics_useds is None and 'metricsUseds' in kwargs:
-            metrics_useds = kwargs['metricsUseds']
-        if metrics_useds is None:
-            raise TypeError("Missing 'metrics_useds' argument")
-        if minutes is None:
-            raise TypeError("Missing 'minutes' argument")
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if points_scanned_at_last_query is None and 'pointsScannedAtLastQuery' in kwargs:
-            points_scanned_at_last_query = kwargs['pointsScannedAtLastQuery']
-        if points_scanned_at_last_query is None:
-            raise TypeError("Missing 'points_scanned_at_last_query' argument")
-        if process_rate_minutes is None and 'processRateMinutes' in kwargs:
-            process_rate_minutes = kwargs['processRateMinutes']
-        if process_rate_minutes is None:
-            raise TypeError("Missing 'process_rate_minutes' argument")
-        if query is None:
-            raise TypeError("Missing 'query' argument")
-        if query_failing is None and 'queryFailing' in kwargs:
-            query_failing = kwargs['queryFailing']
-        if query_failing is None:
-            raise TypeError("Missing 'query_failing' argument")
-        if query_qb_enabled is None and 'queryQbEnabled' in kwargs:
-            query_qb_enabled = kwargs['queryQbEnabled']
-        if query_qb_enabled is None:
-            raise TypeError("Missing 'query_qb_enabled' argument")
-        if statuses is None:
-            raise TypeError("Missing 'statuses' argument")
-        if tags is None:
-            raise TypeError("Missing 'tags' argument")
-        if update_user_id is None and 'updateUserId' in kwargs:
-            update_user_id = kwargs['updateUserId']
-        if update_user_id is None:
-            raise TypeError("Missing 'update_user_id' argument")
-        if updated_epoch_millis is None and 'updatedEpochMillis' in kwargs:
-            updated_epoch_millis = kwargs['updatedEpochMillis']
-        if updated_epoch_millis is None:
-            raise TypeError("Missing 'updated_epoch_millis' argument")
-
-        _setter("additional_information", additional_information)
-        _setter("create_user_id", create_user_id)
-        _setter("created_epoch_millis", created_epoch_millis)
-        _setter("deleted", deleted)
-        _setter("hosts_useds", hosts_useds)
-        _setter("id", id)
-        _setter("in_trash", in_trash)
-        _setter("include_obsolete_metrics", include_obsolete_metrics)
-        _setter("last_error_message", last_error_message)
-        _setter("last_failed_time", last_failed_time)
-        _setter("last_processed_millis", last_processed_millis)
-        _setter("last_query_time", last_query_time)
-        _setter("metrics_useds", metrics_useds)
-        _setter("minutes", minutes)
-        _setter("name", name)
-        _setter("points_scanned_at_last_query", points_scanned_at_last_query)
-        _setter("process_rate_minutes", process_rate_minutes)
-        _setter("query", query)
-        _setter("query_failing", query_failing)
-        _setter("query_qb_enabled", query_qb_enabled)
-        _setter("statuses", statuses)
-        _setter("tags", tags)
-        _setter("update_user_id", update_user_id)
-        _setter("updated_epoch_millis", updated_epoch_millis)
+        pulumi.set(__self__, "additional_information", additional_information)
+        pulumi.set(__self__, "create_user_id", create_user_id)
+        pulumi.set(__self__, "created_epoch_millis", created_epoch_millis)
+        pulumi.set(__self__, "deleted", deleted)
+        pulumi.set(__self__, "hosts_useds", hosts_useds)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "in_trash", in_trash)
+        pulumi.set(__self__, "include_obsolete_metrics", include_obsolete_metrics)
+        pulumi.set(__self__, "last_error_message", last_error_message)
+        pulumi.set(__self__, "last_failed_time", last_failed_time)
+        pulumi.set(__self__, "last_processed_millis", last_processed_millis)
+        pulumi.set(__self__, "last_query_time", last_query_time)
+        pulumi.set(__self__, "metrics_useds", metrics_useds)
+        pulumi.set(__self__, "minutes", minutes)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "points_scanned_at_last_query", points_scanned_at_last_query)
+        pulumi.set(__self__, "process_rate_minutes", process_rate_minutes)
+        pulumi.set(__self__, "query", query)
+        pulumi.set(__self__, "query_failing", query_failing)
+        pulumi.set(__self__, "query_qb_enabled", query_qb_enabled)
+        pulumi.set(__self__, "statuses", statuses)
+        pulumi.set(__self__, "tags", tags)
+        pulumi.set(__self__, "update_user_id", update_user_id)
+        pulumi.set(__self__, "updated_epoch_millis", updated_epoch_millis)
 
     @property
     @pulumi.getter(name="additionalInformation")
@@ -6554,71 +4440,16 @@ class GetEventsEventResult(dict):
         :param Sequence[str] tags: A set of tags assigned to the event.
         :param str type: The type of the event.
         """
-        GetEventsEventResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            annotations=annotations,
-            details=details,
-            endtime_key=endtime_key,
-            id=id,
-            is_ephemeral=is_ephemeral,
-            name=name,
-            severity=severity,
-            start_time=start_time,
-            tags=tags,
-            type=type,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             annotations: Optional[Mapping[str, str]] = None,
-             details: Optional[str] = None,
-             endtime_key: Optional[int] = None,
-             id: Optional[str] = None,
-             is_ephemeral: Optional[bool] = None,
-             name: Optional[str] = None,
-             severity: Optional[str] = None,
-             start_time: Optional[int] = None,
-             tags: Optional[Sequence[str]] = None,
-             type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if annotations is None:
-            raise TypeError("Missing 'annotations' argument")
-        if details is None:
-            raise TypeError("Missing 'details' argument")
-        if endtime_key is None and 'endtimeKey' in kwargs:
-            endtime_key = kwargs['endtimeKey']
-        if endtime_key is None:
-            raise TypeError("Missing 'endtime_key' argument")
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-        if is_ephemeral is None and 'isEphemeral' in kwargs:
-            is_ephemeral = kwargs['isEphemeral']
-        if is_ephemeral is None:
-            raise TypeError("Missing 'is_ephemeral' argument")
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if severity is None:
-            raise TypeError("Missing 'severity' argument")
-        if start_time is None and 'startTime' in kwargs:
-            start_time = kwargs['startTime']
-        if start_time is None:
-            raise TypeError("Missing 'start_time' argument")
-        if tags is None:
-            raise TypeError("Missing 'tags' argument")
-        if type is None:
-            raise TypeError("Missing 'type' argument")
-
-        _setter("annotations", annotations)
-        _setter("details", details)
-        _setter("endtime_key", endtime_key)
-        _setter("id", id)
-        _setter("is_ephemeral", is_ephemeral)
-        _setter("name", name)
-        _setter("severity", severity)
-        _setter("start_time", start_time)
-        _setter("tags", tags)
-        _setter("type", type)
+        pulumi.set(__self__, "annotations", annotations)
+        pulumi.set(__self__, "details", details)
+        pulumi.set(__self__, "endtime_key", endtime_key)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_ephemeral", is_ephemeral)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "severity", severity)
+        pulumi.set(__self__, "start_time", start_time)
+        pulumi.set(__self__, "tags", tags)
+        pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter
@@ -6730,91 +4561,18 @@ class GetExternalLinksExternalLinkResult(dict):
         :param int updated_epoch_millis: The timestamp in epoch milliseconds indicating when the external link is updated.
         :param str updater_id: The ID of the user who updated the external link.
         """
-        GetExternalLinksExternalLinkResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            created_epoch_millis=created_epoch_millis,
-            creator_id=creator_id,
-            description=description,
-            id=id,
-            is_log_integration=is_log_integration,
-            metric_filter_regex=metric_filter_regex,
-            name=name,
-            point_tag_filter_regexes=point_tag_filter_regexes,
-            source_filter_regex=source_filter_regex,
-            template=template,
-            updated_epoch_millis=updated_epoch_millis,
-            updater_id=updater_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             created_epoch_millis: Optional[int] = None,
-             creator_id: Optional[str] = None,
-             description: Optional[str] = None,
-             id: Optional[str] = None,
-             is_log_integration: Optional[bool] = None,
-             metric_filter_regex: Optional[str] = None,
-             name: Optional[str] = None,
-             point_tag_filter_regexes: Optional[Mapping[str, str]] = None,
-             source_filter_regex: Optional[str] = None,
-             template: Optional[str] = None,
-             updated_epoch_millis: Optional[int] = None,
-             updater_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if created_epoch_millis is None and 'createdEpochMillis' in kwargs:
-            created_epoch_millis = kwargs['createdEpochMillis']
-        if created_epoch_millis is None:
-            raise TypeError("Missing 'created_epoch_millis' argument")
-        if creator_id is None and 'creatorId' in kwargs:
-            creator_id = kwargs['creatorId']
-        if creator_id is None:
-            raise TypeError("Missing 'creator_id' argument")
-        if description is None:
-            raise TypeError("Missing 'description' argument")
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-        if is_log_integration is None and 'isLogIntegration' in kwargs:
-            is_log_integration = kwargs['isLogIntegration']
-        if is_log_integration is None:
-            raise TypeError("Missing 'is_log_integration' argument")
-        if metric_filter_regex is None and 'metricFilterRegex' in kwargs:
-            metric_filter_regex = kwargs['metricFilterRegex']
-        if metric_filter_regex is None:
-            raise TypeError("Missing 'metric_filter_regex' argument")
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if point_tag_filter_regexes is None and 'pointTagFilterRegexes' in kwargs:
-            point_tag_filter_regexes = kwargs['pointTagFilterRegexes']
-        if point_tag_filter_regexes is None:
-            raise TypeError("Missing 'point_tag_filter_regexes' argument")
-        if source_filter_regex is None and 'sourceFilterRegex' in kwargs:
-            source_filter_regex = kwargs['sourceFilterRegex']
-        if source_filter_regex is None:
-            raise TypeError("Missing 'source_filter_regex' argument")
-        if template is None:
-            raise TypeError("Missing 'template' argument")
-        if updated_epoch_millis is None and 'updatedEpochMillis' in kwargs:
-            updated_epoch_millis = kwargs['updatedEpochMillis']
-        if updated_epoch_millis is None:
-            raise TypeError("Missing 'updated_epoch_millis' argument")
-        if updater_id is None and 'updaterId' in kwargs:
-            updater_id = kwargs['updaterId']
-        if updater_id is None:
-            raise TypeError("Missing 'updater_id' argument")
-
-        _setter("created_epoch_millis", created_epoch_millis)
-        _setter("creator_id", creator_id)
-        _setter("description", description)
-        _setter("id", id)
-        _setter("is_log_integration", is_log_integration)
-        _setter("metric_filter_regex", metric_filter_regex)
-        _setter("name", name)
-        _setter("point_tag_filter_regexes", point_tag_filter_regexes)
-        _setter("source_filter_regex", source_filter_regex)
-        _setter("template", template)
-        _setter("updated_epoch_millis", updated_epoch_millis)
-        _setter("updater_id", updater_id)
+        pulumi.set(__self__, "created_epoch_millis", created_epoch_millis)
+        pulumi.set(__self__, "creator_id", creator_id)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_log_integration", is_log_integration)
+        pulumi.set(__self__, "metric_filter_regex", metric_filter_regex)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "point_tag_filter_regexes", point_tag_filter_regexes)
+        pulumi.set(__self__, "source_filter_regex", source_filter_regex)
+        pulumi.set(__self__, "template", template)
+        pulumi.set(__self__, "updated_epoch_millis", updated_epoch_millis)
+        pulumi.set(__self__, "updater_id", updater_id)
 
     @property
     @pulumi.getter(name="createdEpochMillis")
@@ -6937,135 +4695,24 @@ class GetMaintenanceWindowAllMaintenanceWindowResult(dict):
                  title: str,
                  updated_epoch_millis: int,
                  updater_id: str):
-        GetMaintenanceWindowAllMaintenanceWindowResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            created_epoch_millis=created_epoch_millis,
-            creator_id=creator_id,
-            customer_id=customer_id,
-            end_time_in_seconds=end_time_in_seconds,
-            event_name=event_name,
-            host_tag_group_host_names_group_anded=host_tag_group_host_names_group_anded,
-            id=id,
-            reason=reason,
-            relevant_customer_tags=relevant_customer_tags,
-            relevant_host_names=relevant_host_names,
-            relevant_host_tags=relevant_host_tags,
-            relevant_host_tags_anded=relevant_host_tags_anded,
-            running_state=running_state,
-            sort_attr=sort_attr,
-            start_time_in_seconds=start_time_in_seconds,
-            title=title,
-            updated_epoch_millis=updated_epoch_millis,
-            updater_id=updater_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             created_epoch_millis: Optional[int] = None,
-             creator_id: Optional[str] = None,
-             customer_id: Optional[str] = None,
-             end_time_in_seconds: Optional[int] = None,
-             event_name: Optional[str] = None,
-             host_tag_group_host_names_group_anded: Optional[bool] = None,
-             id: Optional[str] = None,
-             reason: Optional[str] = None,
-             relevant_customer_tags: Optional[Sequence[str]] = None,
-             relevant_host_names: Optional[Sequence[str]] = None,
-             relevant_host_tags: Optional[Sequence[str]] = None,
-             relevant_host_tags_anded: Optional[bool] = None,
-             running_state: Optional[str] = None,
-             sort_attr: Optional[int] = None,
-             start_time_in_seconds: Optional[int] = None,
-             title: Optional[str] = None,
-             updated_epoch_millis: Optional[int] = None,
-             updater_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if created_epoch_millis is None and 'createdEpochMillis' in kwargs:
-            created_epoch_millis = kwargs['createdEpochMillis']
-        if created_epoch_millis is None:
-            raise TypeError("Missing 'created_epoch_millis' argument")
-        if creator_id is None and 'creatorId' in kwargs:
-            creator_id = kwargs['creatorId']
-        if creator_id is None:
-            raise TypeError("Missing 'creator_id' argument")
-        if customer_id is None and 'customerId' in kwargs:
-            customer_id = kwargs['customerId']
-        if customer_id is None:
-            raise TypeError("Missing 'customer_id' argument")
-        if end_time_in_seconds is None and 'endTimeInSeconds' in kwargs:
-            end_time_in_seconds = kwargs['endTimeInSeconds']
-        if end_time_in_seconds is None:
-            raise TypeError("Missing 'end_time_in_seconds' argument")
-        if event_name is None and 'eventName' in kwargs:
-            event_name = kwargs['eventName']
-        if event_name is None:
-            raise TypeError("Missing 'event_name' argument")
-        if host_tag_group_host_names_group_anded is None and 'hostTagGroupHostNamesGroupAnded' in kwargs:
-            host_tag_group_host_names_group_anded = kwargs['hostTagGroupHostNamesGroupAnded']
-        if host_tag_group_host_names_group_anded is None:
-            raise TypeError("Missing 'host_tag_group_host_names_group_anded' argument")
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-        if reason is None:
-            raise TypeError("Missing 'reason' argument")
-        if relevant_customer_tags is None and 'relevantCustomerTags' in kwargs:
-            relevant_customer_tags = kwargs['relevantCustomerTags']
-        if relevant_customer_tags is None:
-            raise TypeError("Missing 'relevant_customer_tags' argument")
-        if relevant_host_names is None and 'relevantHostNames' in kwargs:
-            relevant_host_names = kwargs['relevantHostNames']
-        if relevant_host_names is None:
-            raise TypeError("Missing 'relevant_host_names' argument")
-        if relevant_host_tags is None and 'relevantHostTags' in kwargs:
-            relevant_host_tags = kwargs['relevantHostTags']
-        if relevant_host_tags is None:
-            raise TypeError("Missing 'relevant_host_tags' argument")
-        if relevant_host_tags_anded is None and 'relevantHostTagsAnded' in kwargs:
-            relevant_host_tags_anded = kwargs['relevantHostTagsAnded']
-        if relevant_host_tags_anded is None:
-            raise TypeError("Missing 'relevant_host_tags_anded' argument")
-        if running_state is None and 'runningState' in kwargs:
-            running_state = kwargs['runningState']
-        if running_state is None:
-            raise TypeError("Missing 'running_state' argument")
-        if sort_attr is None and 'sortAttr' in kwargs:
-            sort_attr = kwargs['sortAttr']
-        if sort_attr is None:
-            raise TypeError("Missing 'sort_attr' argument")
-        if start_time_in_seconds is None and 'startTimeInSeconds' in kwargs:
-            start_time_in_seconds = kwargs['startTimeInSeconds']
-        if start_time_in_seconds is None:
-            raise TypeError("Missing 'start_time_in_seconds' argument")
-        if title is None:
-            raise TypeError("Missing 'title' argument")
-        if updated_epoch_millis is None and 'updatedEpochMillis' in kwargs:
-            updated_epoch_millis = kwargs['updatedEpochMillis']
-        if updated_epoch_millis is None:
-            raise TypeError("Missing 'updated_epoch_millis' argument")
-        if updater_id is None and 'updaterId' in kwargs:
-            updater_id = kwargs['updaterId']
-        if updater_id is None:
-            raise TypeError("Missing 'updater_id' argument")
-
-        _setter("created_epoch_millis", created_epoch_millis)
-        _setter("creator_id", creator_id)
-        _setter("customer_id", customer_id)
-        _setter("end_time_in_seconds", end_time_in_seconds)
-        _setter("event_name", event_name)
-        _setter("host_tag_group_host_names_group_anded", host_tag_group_host_names_group_anded)
-        _setter("id", id)
-        _setter("reason", reason)
-        _setter("relevant_customer_tags", relevant_customer_tags)
-        _setter("relevant_host_names", relevant_host_names)
-        _setter("relevant_host_tags", relevant_host_tags)
-        _setter("relevant_host_tags_anded", relevant_host_tags_anded)
-        _setter("running_state", running_state)
-        _setter("sort_attr", sort_attr)
-        _setter("start_time_in_seconds", start_time_in_seconds)
-        _setter("title", title)
-        _setter("updated_epoch_millis", updated_epoch_millis)
-        _setter("updater_id", updater_id)
+        pulumi.set(__self__, "created_epoch_millis", created_epoch_millis)
+        pulumi.set(__self__, "creator_id", creator_id)
+        pulumi.set(__self__, "customer_id", customer_id)
+        pulumi.set(__self__, "end_time_in_seconds", end_time_in_seconds)
+        pulumi.set(__self__, "event_name", event_name)
+        pulumi.set(__self__, "host_tag_group_host_names_group_anded", host_tag_group_host_names_group_anded)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "reason", reason)
+        pulumi.set(__self__, "relevant_customer_tags", relevant_customer_tags)
+        pulumi.set(__self__, "relevant_host_names", relevant_host_names)
+        pulumi.set(__self__, "relevant_host_tags", relevant_host_tags)
+        pulumi.set(__self__, "relevant_host_tags_anded", relevant_host_tags_anded)
+        pulumi.set(__self__, "running_state", running_state)
+        pulumi.set(__self__, "sort_attr", sort_attr)
+        pulumi.set(__self__, "start_time_in_seconds", start_time_in_seconds)
+        pulumi.set(__self__, "title", title)
+        pulumi.set(__self__, "updated_epoch_millis", updated_epoch_millis)
+        pulumi.set(__self__, "updater_id", updater_id)
 
     @property
     @pulumi.getter(name="createdEpochMillis")
@@ -7170,70 +4817,15 @@ class GetMetricsPolicyPolicyRuleResult(dict):
                  tags: Sequence['outputs.GetMetricsPolicyPolicyRuleTagResult'],
                  tags_anded: bool,
                  user_group_ids: Sequence[str]):
-        GetMetricsPolicyPolicyRuleResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            access_type=access_type,
-            account_ids=account_ids,
-            description=description,
-            name=name,
-            prefixes=prefixes,
-            role_ids=role_ids,
-            tags=tags,
-            tags_anded=tags_anded,
-            user_group_ids=user_group_ids,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             access_type: Optional[str] = None,
-             account_ids: Optional[Sequence[str]] = None,
-             description: Optional[str] = None,
-             name: Optional[str] = None,
-             prefixes: Optional[Sequence[str]] = None,
-             role_ids: Optional[Sequence[str]] = None,
-             tags: Optional[Sequence['outputs.GetMetricsPolicyPolicyRuleTagResult']] = None,
-             tags_anded: Optional[bool] = None,
-             user_group_ids: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if access_type is None and 'accessType' in kwargs:
-            access_type = kwargs['accessType']
-        if access_type is None:
-            raise TypeError("Missing 'access_type' argument")
-        if account_ids is None and 'accountIds' in kwargs:
-            account_ids = kwargs['accountIds']
-        if account_ids is None:
-            raise TypeError("Missing 'account_ids' argument")
-        if description is None:
-            raise TypeError("Missing 'description' argument")
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if prefixes is None:
-            raise TypeError("Missing 'prefixes' argument")
-        if role_ids is None and 'roleIds' in kwargs:
-            role_ids = kwargs['roleIds']
-        if role_ids is None:
-            raise TypeError("Missing 'role_ids' argument")
-        if tags is None:
-            raise TypeError("Missing 'tags' argument")
-        if tags_anded is None and 'tagsAnded' in kwargs:
-            tags_anded = kwargs['tagsAnded']
-        if tags_anded is None:
-            raise TypeError("Missing 'tags_anded' argument")
-        if user_group_ids is None and 'userGroupIds' in kwargs:
-            user_group_ids = kwargs['userGroupIds']
-        if user_group_ids is None:
-            raise TypeError("Missing 'user_group_ids' argument")
-
-        _setter("access_type", access_type)
-        _setter("account_ids", account_ids)
-        _setter("description", description)
-        _setter("name", name)
-        _setter("prefixes", prefixes)
-        _setter("role_ids", role_ids)
-        _setter("tags", tags)
-        _setter("tags_anded", tags_anded)
-        _setter("user_group_ids", user_group_ids)
+        pulumi.set(__self__, "access_type", access_type)
+        pulumi.set(__self__, "account_ids", account_ids)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "prefixes", prefixes)
+        pulumi.set(__self__, "role_ids", role_ids)
+        pulumi.set(__self__, "tags", tags)
+        pulumi.set(__self__, "tags_anded", tags_anded)
+        pulumi.set(__self__, "user_group_ids", user_group_ids)
 
     @property
     @pulumi.getter(name="accessType")
@@ -7286,25 +4878,8 @@ class GetMetricsPolicyPolicyRuleTagResult(dict):
     def __init__(__self__, *,
                  key: str,
                  value: str):
-        GetMetricsPolicyPolicyRuleTagResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            key=key,
-            value=value,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             key: Optional[str] = None,
-             value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if key is None:
-            raise TypeError("Missing 'key' argument")
-        if value is None:
-            raise TypeError("Missing 'value' argument")
-
-        _setter("key", key)
-        _setter("value", value)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
 
     @property
     @pulumi.getter
@@ -7330,35 +4905,10 @@ class GetRolesRoleResult(dict):
         :param str name: The Role Name.
         :param Sequence[str] permissions: List of Permissions (Strings) associated with Role.
         """
-        GetRolesRoleResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            description=description,
-            id=id,
-            name=name,
-            permissions=permissions,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             description: Optional[str] = None,
-             id: Optional[str] = None,
-             name: Optional[str] = None,
-             permissions: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if description is None:
-            raise TypeError("Missing 'description' argument")
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if permissions is None:
-            raise TypeError("Missing 'permissions' argument")
-
-        _setter("description", description)
-        _setter("id", id)
-        _setter("name", name)
-        _setter("permissions", permissions)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "permissions", permissions)
 
     @property
     @pulumi.getter
@@ -7408,40 +4958,11 @@ class GetUserGroupsUserGroupResult(dict):
         :param Sequence[str] roles: List of roles associated with the group.
         :param Sequence[str] users: List of users assigned to the group.
         """
-        GetUserGroupsUserGroupResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            description=description,
-            id=id,
-            name=name,
-            roles=roles,
-            users=users,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             description: Optional[str] = None,
-             id: Optional[str] = None,
-             name: Optional[str] = None,
-             roles: Optional[Sequence[str]] = None,
-             users: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if description is None:
-            raise TypeError("Missing 'description' argument")
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if roles is None:
-            raise TypeError("Missing 'roles' argument")
-        if users is None:
-            raise TypeError("Missing 'users' argument")
-
-        _setter("description", description)
-        _setter("id", id)
-        _setter("name", name)
-        _setter("roles", roles)
-        _setter("users", users)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "roles", roles)
+        pulumi.set(__self__, "users", users)
 
     @property
     @pulumi.getter
@@ -7498,44 +5019,11 @@ class GetUsersUserResult(dict):
         :param Sequence[str] permissions: List of permissions granted to a user.
         :param Sequence[str] user_group_ids: List of User Group Ids the user is a member of.
         """
-        GetUsersUserResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            customer=customer,
-            email=email,
-            last_successful_login=last_successful_login,
-            permissions=permissions,
-            user_group_ids=user_group_ids,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             customer: Optional[str] = None,
-             email: Optional[str] = None,
-             last_successful_login: Optional[int] = None,
-             permissions: Optional[Sequence[str]] = None,
-             user_group_ids: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if customer is None:
-            raise TypeError("Missing 'customer' argument")
-        if email is None:
-            raise TypeError("Missing 'email' argument")
-        if last_successful_login is None and 'lastSuccessfulLogin' in kwargs:
-            last_successful_login = kwargs['lastSuccessfulLogin']
-        if last_successful_login is None:
-            raise TypeError("Missing 'last_successful_login' argument")
-        if permissions is None:
-            raise TypeError("Missing 'permissions' argument")
-        if user_group_ids is None and 'userGroupIds' in kwargs:
-            user_group_ids = kwargs['userGroupIds']
-        if user_group_ids is None:
-            raise TypeError("Missing 'user_group_ids' argument")
-
-        _setter("customer", customer)
-        _setter("email", email)
-        _setter("last_successful_login", last_successful_login)
-        _setter("permissions", permissions)
-        _setter("user_group_ids", user_group_ids)
+        pulumi.set(__self__, "customer", customer)
+        pulumi.set(__self__, "email", email)
+        pulumi.set(__self__, "last_successful_login", last_successful_login)
+        pulumi.set(__self__, "permissions", permissions)
+        pulumi.set(__self__, "user_group_ids", user_group_ids)
 
     @property
     @pulumi.getter

@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 
 __all__ = ['EventArgs', 'Event']
@@ -26,40 +26,15 @@ class EventArgs:
         :param pulumi.Input[int] start_time: The start time of the event in epoch milliseconds.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] tags: A set of tags to assign to this resource.
         """
-        EventArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            annotations=annotations,
-            endtime_key=endtime_key,
-            name=name,
-            start_time=start_time,
-            tags=tags,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             annotations: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
-             endtime_key: Optional[pulumi.Input[int]] = None,
-             name: Optional[pulumi.Input[str]] = None,
-             start_time: Optional[pulumi.Input[int]] = None,
-             tags: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if annotations is None:
-            raise TypeError("Missing 'annotations' argument")
-        if endtime_key is None and 'endtimeKey' in kwargs:
-            endtime_key = kwargs['endtimeKey']
-        if start_time is None and 'startTime' in kwargs:
-            start_time = kwargs['startTime']
-
-        _setter("annotations", annotations)
+        pulumi.set(__self__, "annotations", annotations)
         if endtime_key is not None:
-            _setter("endtime_key", endtime_key)
+            pulumi.set(__self__, "endtime_key", endtime_key)
         if name is not None:
-            _setter("name", name)
+            pulumi.set(__self__, "name", name)
         if start_time is not None:
-            _setter("start_time", start_time)
+            pulumi.set(__self__, "start_time", start_time)
         if tags is not None:
-            _setter("tags", tags)
+            pulumi.set(__self__, "tags", tags)
 
     @property
     @pulumi.getter
@@ -134,39 +109,16 @@ class _EventState:
         :param pulumi.Input[int] start_time: The start time of the event in epoch milliseconds.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] tags: A set of tags to assign to this resource.
         """
-        _EventState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            annotations=annotations,
-            endtime_key=endtime_key,
-            name=name,
-            start_time=start_time,
-            tags=tags,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             annotations: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
-             endtime_key: Optional[pulumi.Input[int]] = None,
-             name: Optional[pulumi.Input[str]] = None,
-             start_time: Optional[pulumi.Input[int]] = None,
-             tags: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if endtime_key is None and 'endtimeKey' in kwargs:
-            endtime_key = kwargs['endtimeKey']
-        if start_time is None and 'startTime' in kwargs:
-            start_time = kwargs['startTime']
-
         if annotations is not None:
-            _setter("annotations", annotations)
+            pulumi.set(__self__, "annotations", annotations)
         if endtime_key is not None:
-            _setter("endtime_key", endtime_key)
+            pulumi.set(__self__, "endtime_key", endtime_key)
         if name is not None:
-            _setter("name", name)
+            pulumi.set(__self__, "name", name)
         if start_time is not None:
-            _setter("start_time", start_time)
+            pulumi.set(__self__, "start_time", start_time)
         if tags is not None:
-            _setter("tags", tags)
+            pulumi.set(__self__, "tags", tags)
 
     @property
     @pulumi.getter
@@ -312,10 +264,6 @@ class Event(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            EventArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
