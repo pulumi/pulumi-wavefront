@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-wavefront/sdk/v3/go/wavefront/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Use this data source to get information about a Wavefront alert by its ID.
@@ -144,12 +143,6 @@ func (o LookupAlertResultOutput) ToLookupAlertResultOutput() LookupAlertResultOu
 
 func (o LookupAlertResultOutput) ToLookupAlertResultOutputWithContext(ctx context.Context) LookupAlertResultOutput {
 	return o
-}
-
-func (o LookupAlertResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupAlertResult] {
-	return pulumix.Output[LookupAlertResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // User-supplied additional explanatory information about this alert.

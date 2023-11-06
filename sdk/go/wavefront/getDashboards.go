@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-wavefront/sdk/v3/go/wavefront/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Use this data source to get information about all Wavefront dashboards.
@@ -106,12 +105,6 @@ func (o GetDashboardsResultOutput) ToGetDashboardsResultOutput() GetDashboardsRe
 
 func (o GetDashboardsResultOutput) ToGetDashboardsResultOutputWithContext(ctx context.Context) GetDashboardsResultOutput {
 	return o
-}
-
-func (o GetDashboardsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDashboardsResult] {
-	return pulumix.Output[GetDashboardsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // List of all Wavefront dashboards. For each dashboard you will see a list of attributes.

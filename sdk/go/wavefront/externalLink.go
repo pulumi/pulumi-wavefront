@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-wavefront/sdk/v3/go/wavefront/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Provides a Wavefront External Link Resource. This allows external links to be created, updated, and deleted.
@@ -216,12 +215,6 @@ func (i *ExternalLink) ToExternalLinkOutputWithContext(ctx context.Context) Exte
 	return pulumi.ToOutputWithContext(ctx, i).(ExternalLinkOutput)
 }
 
-func (i *ExternalLink) ToOutput(ctx context.Context) pulumix.Output[*ExternalLink] {
-	return pulumix.Output[*ExternalLink]{
-		OutputState: i.ToExternalLinkOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ExternalLinkArrayInput is an input type that accepts ExternalLinkArray and ExternalLinkArrayOutput values.
 // You can construct a concrete instance of `ExternalLinkArrayInput` via:
 //
@@ -245,12 +238,6 @@ func (i ExternalLinkArray) ToExternalLinkArrayOutput() ExternalLinkArrayOutput {
 
 func (i ExternalLinkArray) ToExternalLinkArrayOutputWithContext(ctx context.Context) ExternalLinkArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ExternalLinkArrayOutput)
-}
-
-func (i ExternalLinkArray) ToOutput(ctx context.Context) pulumix.Output[[]*ExternalLink] {
-	return pulumix.Output[[]*ExternalLink]{
-		OutputState: i.ToExternalLinkArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ExternalLinkMapInput is an input type that accepts ExternalLinkMap and ExternalLinkMapOutput values.
@@ -278,12 +265,6 @@ func (i ExternalLinkMap) ToExternalLinkMapOutputWithContext(ctx context.Context)
 	return pulumi.ToOutputWithContext(ctx, i).(ExternalLinkMapOutput)
 }
 
-func (i ExternalLinkMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ExternalLink] {
-	return pulumix.Output[map[string]*ExternalLink]{
-		OutputState: i.ToExternalLinkMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ExternalLinkOutput struct{ *pulumi.OutputState }
 
 func (ExternalLinkOutput) ElementType() reflect.Type {
@@ -296,12 +277,6 @@ func (o ExternalLinkOutput) ToExternalLinkOutput() ExternalLinkOutput {
 
 func (o ExternalLinkOutput) ToExternalLinkOutputWithContext(ctx context.Context) ExternalLinkOutput {
 	return o
-}
-
-func (o ExternalLinkOutput) ToOutput(ctx context.Context) pulumix.Output[*ExternalLink] {
-	return pulumix.Output[*ExternalLink]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Human-readable description for this link.
@@ -356,12 +331,6 @@ func (o ExternalLinkArrayOutput) ToExternalLinkArrayOutputWithContext(ctx contex
 	return o
 }
 
-func (o ExternalLinkArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ExternalLink] {
-	return pulumix.Output[[]*ExternalLink]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o ExternalLinkArrayOutput) Index(i pulumi.IntInput) ExternalLinkOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *ExternalLink {
 		return vs[0].([]*ExternalLink)[vs[1].(int)]
@@ -380,12 +349,6 @@ func (o ExternalLinkMapOutput) ToExternalLinkMapOutput() ExternalLinkMapOutput {
 
 func (o ExternalLinkMapOutput) ToExternalLinkMapOutputWithContext(ctx context.Context) ExternalLinkMapOutput {
 	return o
-}
-
-func (o ExternalLinkMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ExternalLink] {
-	return pulumix.Output[map[string]*ExternalLink]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ExternalLinkMapOutput) MapIndex(k pulumi.StringInput) ExternalLinkOutput {
