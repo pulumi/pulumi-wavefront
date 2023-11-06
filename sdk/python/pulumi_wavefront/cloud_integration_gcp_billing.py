@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 
 __all__ = ['CloudIntegrationGcpBillingArgs', 'CloudIntegrationGcpBilling']
@@ -34,18 +34,63 @@ class CloudIntegrationGcpBillingArgs:
         :param pulumi.Input[str] name: The human-readable name of this integration.
         :param pulumi.Input[int] service_refresh_rate_in_minutes: How often, in minutes, to refresh the service.
         """
-        pulumi.set(__self__, "api_key", api_key)
-        pulumi.set(__self__, "json_key", json_key)
-        pulumi.set(__self__, "project_id", project_id)
-        pulumi.set(__self__, "service", service)
+        CloudIntegrationGcpBillingArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            api_key=api_key,
+            json_key=json_key,
+            project_id=project_id,
+            service=service,
+            additional_tags=additional_tags,
+            force_save=force_save,
+            name=name,
+            service_refresh_rate_in_minutes=service_refresh_rate_in_minutes,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             api_key: Optional[pulumi.Input[str]] = None,
+             json_key: Optional[pulumi.Input[str]] = None,
+             project_id: Optional[pulumi.Input[str]] = None,
+             service: Optional[pulumi.Input[str]] = None,
+             additional_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+             force_save: Optional[pulumi.Input[bool]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             service_refresh_rate_in_minutes: Optional[pulumi.Input[int]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if api_key is None and 'apiKey' in kwargs:
+            api_key = kwargs['apiKey']
+        if api_key is None:
+            raise TypeError("Missing 'api_key' argument")
+        if json_key is None and 'jsonKey' in kwargs:
+            json_key = kwargs['jsonKey']
+        if json_key is None:
+            raise TypeError("Missing 'json_key' argument")
+        if project_id is None and 'projectId' in kwargs:
+            project_id = kwargs['projectId']
+        if project_id is None:
+            raise TypeError("Missing 'project_id' argument")
+        if service is None:
+            raise TypeError("Missing 'service' argument")
+        if additional_tags is None and 'additionalTags' in kwargs:
+            additional_tags = kwargs['additionalTags']
+        if force_save is None and 'forceSave' in kwargs:
+            force_save = kwargs['forceSave']
+        if service_refresh_rate_in_minutes is None and 'serviceRefreshRateInMinutes' in kwargs:
+            service_refresh_rate_in_minutes = kwargs['serviceRefreshRateInMinutes']
+
+        _setter("api_key", api_key)
+        _setter("json_key", json_key)
+        _setter("project_id", project_id)
+        _setter("service", service)
         if additional_tags is not None:
-            pulumi.set(__self__, "additional_tags", additional_tags)
+            _setter("additional_tags", additional_tags)
         if force_save is not None:
-            pulumi.set(__self__, "force_save", force_save)
+            _setter("force_save", force_save)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if service_refresh_rate_in_minutes is not None:
-            pulumi.set(__self__, "service_refresh_rate_in_minutes", service_refresh_rate_in_minutes)
+            _setter("service_refresh_rate_in_minutes", service_refresh_rate_in_minutes)
 
     @property
     @pulumi.getter(name="apiKey")
@@ -168,22 +213,59 @@ class _CloudIntegrationGcpBillingState:
         :param pulumi.Input[str] service: A value denoting which cloud service this service integrates with.
         :param pulumi.Input[int] service_refresh_rate_in_minutes: How often, in minutes, to refresh the service.
         """
+        _CloudIntegrationGcpBillingState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            additional_tags=additional_tags,
+            api_key=api_key,
+            force_save=force_save,
+            json_key=json_key,
+            name=name,
+            project_id=project_id,
+            service=service,
+            service_refresh_rate_in_minutes=service_refresh_rate_in_minutes,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             additional_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+             api_key: Optional[pulumi.Input[str]] = None,
+             force_save: Optional[pulumi.Input[bool]] = None,
+             json_key: Optional[pulumi.Input[str]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             project_id: Optional[pulumi.Input[str]] = None,
+             service: Optional[pulumi.Input[str]] = None,
+             service_refresh_rate_in_minutes: Optional[pulumi.Input[int]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if additional_tags is None and 'additionalTags' in kwargs:
+            additional_tags = kwargs['additionalTags']
+        if api_key is None and 'apiKey' in kwargs:
+            api_key = kwargs['apiKey']
+        if force_save is None and 'forceSave' in kwargs:
+            force_save = kwargs['forceSave']
+        if json_key is None and 'jsonKey' in kwargs:
+            json_key = kwargs['jsonKey']
+        if project_id is None and 'projectId' in kwargs:
+            project_id = kwargs['projectId']
+        if service_refresh_rate_in_minutes is None and 'serviceRefreshRateInMinutes' in kwargs:
+            service_refresh_rate_in_minutes = kwargs['serviceRefreshRateInMinutes']
+
         if additional_tags is not None:
-            pulumi.set(__self__, "additional_tags", additional_tags)
+            _setter("additional_tags", additional_tags)
         if api_key is not None:
-            pulumi.set(__self__, "api_key", api_key)
+            _setter("api_key", api_key)
         if force_save is not None:
-            pulumi.set(__self__, "force_save", force_save)
+            _setter("force_save", force_save)
         if json_key is not None:
-            pulumi.set(__self__, "json_key", json_key)
+            _setter("json_key", json_key)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if project_id is not None:
-            pulumi.set(__self__, "project_id", project_id)
+            _setter("project_id", project_id)
         if service is not None:
-            pulumi.set(__self__, "service", service)
+            _setter("service", service)
         if service_refresh_rate_in_minutes is not None:
-            pulumi.set(__self__, "service_refresh_rate_in_minutes", service_refresh_rate_in_minutes)
+            _setter("service_refresh_rate_in_minutes", service_refresh_rate_in_minutes)
 
     @property
     @pulumi.getter(name="additionalTags")
@@ -377,6 +459,10 @@ class CloudIntegrationGcpBilling(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            CloudIntegrationGcpBillingArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

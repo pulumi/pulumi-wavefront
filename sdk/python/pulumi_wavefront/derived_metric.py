@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 
 __all__ = ['DerivedMetricArgs', 'DerivedMetric']
@@ -27,14 +27,39 @@ class DerivedMetricArgs:
         :param pulumi.Input[str] name: The name of the Derived Metric in Wavefront.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] tags: A set of tags to assign to this resource.
         """
-        pulumi.set(__self__, "minutes", minutes)
-        pulumi.set(__self__, "query", query)
+        DerivedMetricArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            minutes=minutes,
+            query=query,
+            additional_information=additional_information,
+            name=name,
+            tags=tags,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             minutes: Optional[pulumi.Input[int]] = None,
+             query: Optional[pulumi.Input[str]] = None,
+             additional_information: Optional[pulumi.Input[str]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             tags: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if minutes is None:
+            raise TypeError("Missing 'minutes' argument")
+        if query is None:
+            raise TypeError("Missing 'query' argument")
+        if additional_information is None and 'additionalInformation' in kwargs:
+            additional_information = kwargs['additionalInformation']
+
+        _setter("minutes", minutes)
+        _setter("query", query)
         if additional_information is not None:
-            pulumi.set(__self__, "additional_information", additional_information)
+            _setter("additional_information", additional_information)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if tags is not None:
-            pulumi.set(__self__, "tags", tags)
+            _setter("tags", tags)
 
     @property
     @pulumi.getter
@@ -113,16 +138,37 @@ class _DerivedMetricState:
         :param pulumi.Input[str] query: A Wavefront query that is evaluated at regular intervals (default is 1 minute).
         :param pulumi.Input[Sequence[pulumi.Input[str]]] tags: A set of tags to assign to this resource.
         """
+        _DerivedMetricState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            additional_information=additional_information,
+            minutes=minutes,
+            name=name,
+            query=query,
+            tags=tags,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             additional_information: Optional[pulumi.Input[str]] = None,
+             minutes: Optional[pulumi.Input[int]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             query: Optional[pulumi.Input[str]] = None,
+             tags: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if additional_information is None and 'additionalInformation' in kwargs:
+            additional_information = kwargs['additionalInformation']
+
         if additional_information is not None:
-            pulumi.set(__self__, "additional_information", additional_information)
+            _setter("additional_information", additional_information)
         if minutes is not None:
-            pulumi.set(__self__, "minutes", minutes)
+            _setter("minutes", minutes)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if query is not None:
-            pulumi.set(__self__, "query", query)
+            _setter("query", query)
         if tags is not None:
-            pulumi.set(__self__, "tags", tags)
+            _setter("tags", tags)
 
     @property
     @pulumi.getter(name="additionalInformation")
@@ -266,6 +312,10 @@ class DerivedMetric(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            DerivedMetricArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

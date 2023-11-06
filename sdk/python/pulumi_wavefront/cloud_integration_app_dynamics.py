@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 
 __all__ = ['CloudIntegrationAppDynamicsArgs', 'CloudIntegrationAppDynamics']
@@ -53,36 +53,117 @@ class CloudIntegrationAppDynamicsArgs:
         :param pulumi.Input[str] name: The human-readable name of this integration.
         :param pulumi.Input[int] service_refresh_rate_in_minutes: How often, in minutes, to refresh the service.
         """
-        pulumi.set(__self__, "controller_name", controller_name)
-        pulumi.set(__self__, "encrypted_password", encrypted_password)
-        pulumi.set(__self__, "service", service)
-        pulumi.set(__self__, "user_name", user_name)
+        CloudIntegrationAppDynamicsArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            controller_name=controller_name,
+            encrypted_password=encrypted_password,
+            service=service,
+            user_name=user_name,
+            additional_tags=additional_tags,
+            app_filter_regexes=app_filter_regexes,
+            enable_app_infra_metrics=enable_app_infra_metrics,
+            enable_backend_metrics=enable_backend_metrics,
+            enable_business_trx_metrics=enable_business_trx_metrics,
+            enable_error_metrics=enable_error_metrics,
+            enable_individual_node_metrics=enable_individual_node_metrics,
+            enable_overall_perf_metrics=enable_overall_perf_metrics,
+            enable_rollup=enable_rollup,
+            enable_service_endpoint_metrics=enable_service_endpoint_metrics,
+            force_save=force_save,
+            name=name,
+            service_refresh_rate_in_minutes=service_refresh_rate_in_minutes,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             controller_name: Optional[pulumi.Input[str]] = None,
+             encrypted_password: Optional[pulumi.Input[str]] = None,
+             service: Optional[pulumi.Input[str]] = None,
+             user_name: Optional[pulumi.Input[str]] = None,
+             additional_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+             app_filter_regexes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             enable_app_infra_metrics: Optional[pulumi.Input[bool]] = None,
+             enable_backend_metrics: Optional[pulumi.Input[bool]] = None,
+             enable_business_trx_metrics: Optional[pulumi.Input[bool]] = None,
+             enable_error_metrics: Optional[pulumi.Input[bool]] = None,
+             enable_individual_node_metrics: Optional[pulumi.Input[bool]] = None,
+             enable_overall_perf_metrics: Optional[pulumi.Input[bool]] = None,
+             enable_rollup: Optional[pulumi.Input[bool]] = None,
+             enable_service_endpoint_metrics: Optional[pulumi.Input[bool]] = None,
+             force_save: Optional[pulumi.Input[bool]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             service_refresh_rate_in_minutes: Optional[pulumi.Input[int]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if controller_name is None and 'controllerName' in kwargs:
+            controller_name = kwargs['controllerName']
+        if controller_name is None:
+            raise TypeError("Missing 'controller_name' argument")
+        if encrypted_password is None and 'encryptedPassword' in kwargs:
+            encrypted_password = kwargs['encryptedPassword']
+        if encrypted_password is None:
+            raise TypeError("Missing 'encrypted_password' argument")
+        if service is None:
+            raise TypeError("Missing 'service' argument")
+        if user_name is None and 'userName' in kwargs:
+            user_name = kwargs['userName']
+        if user_name is None:
+            raise TypeError("Missing 'user_name' argument")
+        if additional_tags is None and 'additionalTags' in kwargs:
+            additional_tags = kwargs['additionalTags']
+        if app_filter_regexes is None and 'appFilterRegexes' in kwargs:
+            app_filter_regexes = kwargs['appFilterRegexes']
+        if enable_app_infra_metrics is None and 'enableAppInfraMetrics' in kwargs:
+            enable_app_infra_metrics = kwargs['enableAppInfraMetrics']
+        if enable_backend_metrics is None and 'enableBackendMetrics' in kwargs:
+            enable_backend_metrics = kwargs['enableBackendMetrics']
+        if enable_business_trx_metrics is None and 'enableBusinessTrxMetrics' in kwargs:
+            enable_business_trx_metrics = kwargs['enableBusinessTrxMetrics']
+        if enable_error_metrics is None and 'enableErrorMetrics' in kwargs:
+            enable_error_metrics = kwargs['enableErrorMetrics']
+        if enable_individual_node_metrics is None and 'enableIndividualNodeMetrics' in kwargs:
+            enable_individual_node_metrics = kwargs['enableIndividualNodeMetrics']
+        if enable_overall_perf_metrics is None and 'enableOverallPerfMetrics' in kwargs:
+            enable_overall_perf_metrics = kwargs['enableOverallPerfMetrics']
+        if enable_rollup is None and 'enableRollup' in kwargs:
+            enable_rollup = kwargs['enableRollup']
+        if enable_service_endpoint_metrics is None and 'enableServiceEndpointMetrics' in kwargs:
+            enable_service_endpoint_metrics = kwargs['enableServiceEndpointMetrics']
+        if force_save is None and 'forceSave' in kwargs:
+            force_save = kwargs['forceSave']
+        if service_refresh_rate_in_minutes is None and 'serviceRefreshRateInMinutes' in kwargs:
+            service_refresh_rate_in_minutes = kwargs['serviceRefreshRateInMinutes']
+
+        _setter("controller_name", controller_name)
+        _setter("encrypted_password", encrypted_password)
+        _setter("service", service)
+        _setter("user_name", user_name)
         if additional_tags is not None:
-            pulumi.set(__self__, "additional_tags", additional_tags)
+            _setter("additional_tags", additional_tags)
         if app_filter_regexes is not None:
-            pulumi.set(__self__, "app_filter_regexes", app_filter_regexes)
+            _setter("app_filter_regexes", app_filter_regexes)
         if enable_app_infra_metrics is not None:
-            pulumi.set(__self__, "enable_app_infra_metrics", enable_app_infra_metrics)
+            _setter("enable_app_infra_metrics", enable_app_infra_metrics)
         if enable_backend_metrics is not None:
-            pulumi.set(__self__, "enable_backend_metrics", enable_backend_metrics)
+            _setter("enable_backend_metrics", enable_backend_metrics)
         if enable_business_trx_metrics is not None:
-            pulumi.set(__self__, "enable_business_trx_metrics", enable_business_trx_metrics)
+            _setter("enable_business_trx_metrics", enable_business_trx_metrics)
         if enable_error_metrics is not None:
-            pulumi.set(__self__, "enable_error_metrics", enable_error_metrics)
+            _setter("enable_error_metrics", enable_error_metrics)
         if enable_individual_node_metrics is not None:
-            pulumi.set(__self__, "enable_individual_node_metrics", enable_individual_node_metrics)
+            _setter("enable_individual_node_metrics", enable_individual_node_metrics)
         if enable_overall_perf_metrics is not None:
-            pulumi.set(__self__, "enable_overall_perf_metrics", enable_overall_perf_metrics)
+            _setter("enable_overall_perf_metrics", enable_overall_perf_metrics)
         if enable_rollup is not None:
-            pulumi.set(__self__, "enable_rollup", enable_rollup)
+            _setter("enable_rollup", enable_rollup)
         if enable_service_endpoint_metrics is not None:
-            pulumi.set(__self__, "enable_service_endpoint_metrics", enable_service_endpoint_metrics)
+            _setter("enable_service_endpoint_metrics", enable_service_endpoint_metrics)
         if force_save is not None:
-            pulumi.set(__self__, "force_save", force_save)
+            _setter("force_save", force_save)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if service_refresh_rate_in_minutes is not None:
-            pulumi.set(__self__, "service_refresh_rate_in_minutes", service_refresh_rate_in_minutes)
+            _setter("service_refresh_rate_in_minutes", service_refresh_rate_in_minutes)
 
     @property
     @pulumi.getter(name="controllerName")
@@ -333,40 +414,113 @@ class _CloudIntegrationAppDynamicsState:
         :param pulumi.Input[int] service_refresh_rate_in_minutes: How often, in minutes, to refresh the service.
         :param pulumi.Input[str] user_name: Username is a combination of userName and the account name.
         """
+        _CloudIntegrationAppDynamicsState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            additional_tags=additional_tags,
+            app_filter_regexes=app_filter_regexes,
+            controller_name=controller_name,
+            enable_app_infra_metrics=enable_app_infra_metrics,
+            enable_backend_metrics=enable_backend_metrics,
+            enable_business_trx_metrics=enable_business_trx_metrics,
+            enable_error_metrics=enable_error_metrics,
+            enable_individual_node_metrics=enable_individual_node_metrics,
+            enable_overall_perf_metrics=enable_overall_perf_metrics,
+            enable_rollup=enable_rollup,
+            enable_service_endpoint_metrics=enable_service_endpoint_metrics,
+            encrypted_password=encrypted_password,
+            force_save=force_save,
+            name=name,
+            service=service,
+            service_refresh_rate_in_minutes=service_refresh_rate_in_minutes,
+            user_name=user_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             additional_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+             app_filter_regexes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             controller_name: Optional[pulumi.Input[str]] = None,
+             enable_app_infra_metrics: Optional[pulumi.Input[bool]] = None,
+             enable_backend_metrics: Optional[pulumi.Input[bool]] = None,
+             enable_business_trx_metrics: Optional[pulumi.Input[bool]] = None,
+             enable_error_metrics: Optional[pulumi.Input[bool]] = None,
+             enable_individual_node_metrics: Optional[pulumi.Input[bool]] = None,
+             enable_overall_perf_metrics: Optional[pulumi.Input[bool]] = None,
+             enable_rollup: Optional[pulumi.Input[bool]] = None,
+             enable_service_endpoint_metrics: Optional[pulumi.Input[bool]] = None,
+             encrypted_password: Optional[pulumi.Input[str]] = None,
+             force_save: Optional[pulumi.Input[bool]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             service: Optional[pulumi.Input[str]] = None,
+             service_refresh_rate_in_minutes: Optional[pulumi.Input[int]] = None,
+             user_name: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if additional_tags is None and 'additionalTags' in kwargs:
+            additional_tags = kwargs['additionalTags']
+        if app_filter_regexes is None and 'appFilterRegexes' in kwargs:
+            app_filter_regexes = kwargs['appFilterRegexes']
+        if controller_name is None and 'controllerName' in kwargs:
+            controller_name = kwargs['controllerName']
+        if enable_app_infra_metrics is None and 'enableAppInfraMetrics' in kwargs:
+            enable_app_infra_metrics = kwargs['enableAppInfraMetrics']
+        if enable_backend_metrics is None and 'enableBackendMetrics' in kwargs:
+            enable_backend_metrics = kwargs['enableBackendMetrics']
+        if enable_business_trx_metrics is None and 'enableBusinessTrxMetrics' in kwargs:
+            enable_business_trx_metrics = kwargs['enableBusinessTrxMetrics']
+        if enable_error_metrics is None and 'enableErrorMetrics' in kwargs:
+            enable_error_metrics = kwargs['enableErrorMetrics']
+        if enable_individual_node_metrics is None and 'enableIndividualNodeMetrics' in kwargs:
+            enable_individual_node_metrics = kwargs['enableIndividualNodeMetrics']
+        if enable_overall_perf_metrics is None and 'enableOverallPerfMetrics' in kwargs:
+            enable_overall_perf_metrics = kwargs['enableOverallPerfMetrics']
+        if enable_rollup is None and 'enableRollup' in kwargs:
+            enable_rollup = kwargs['enableRollup']
+        if enable_service_endpoint_metrics is None and 'enableServiceEndpointMetrics' in kwargs:
+            enable_service_endpoint_metrics = kwargs['enableServiceEndpointMetrics']
+        if encrypted_password is None and 'encryptedPassword' in kwargs:
+            encrypted_password = kwargs['encryptedPassword']
+        if force_save is None and 'forceSave' in kwargs:
+            force_save = kwargs['forceSave']
+        if service_refresh_rate_in_minutes is None and 'serviceRefreshRateInMinutes' in kwargs:
+            service_refresh_rate_in_minutes = kwargs['serviceRefreshRateInMinutes']
+        if user_name is None and 'userName' in kwargs:
+            user_name = kwargs['userName']
+
         if additional_tags is not None:
-            pulumi.set(__self__, "additional_tags", additional_tags)
+            _setter("additional_tags", additional_tags)
         if app_filter_regexes is not None:
-            pulumi.set(__self__, "app_filter_regexes", app_filter_regexes)
+            _setter("app_filter_regexes", app_filter_regexes)
         if controller_name is not None:
-            pulumi.set(__self__, "controller_name", controller_name)
+            _setter("controller_name", controller_name)
         if enable_app_infra_metrics is not None:
-            pulumi.set(__self__, "enable_app_infra_metrics", enable_app_infra_metrics)
+            _setter("enable_app_infra_metrics", enable_app_infra_metrics)
         if enable_backend_metrics is not None:
-            pulumi.set(__self__, "enable_backend_metrics", enable_backend_metrics)
+            _setter("enable_backend_metrics", enable_backend_metrics)
         if enable_business_trx_metrics is not None:
-            pulumi.set(__self__, "enable_business_trx_metrics", enable_business_trx_metrics)
+            _setter("enable_business_trx_metrics", enable_business_trx_metrics)
         if enable_error_metrics is not None:
-            pulumi.set(__self__, "enable_error_metrics", enable_error_metrics)
+            _setter("enable_error_metrics", enable_error_metrics)
         if enable_individual_node_metrics is not None:
-            pulumi.set(__self__, "enable_individual_node_metrics", enable_individual_node_metrics)
+            _setter("enable_individual_node_metrics", enable_individual_node_metrics)
         if enable_overall_perf_metrics is not None:
-            pulumi.set(__self__, "enable_overall_perf_metrics", enable_overall_perf_metrics)
+            _setter("enable_overall_perf_metrics", enable_overall_perf_metrics)
         if enable_rollup is not None:
-            pulumi.set(__self__, "enable_rollup", enable_rollup)
+            _setter("enable_rollup", enable_rollup)
         if enable_service_endpoint_metrics is not None:
-            pulumi.set(__self__, "enable_service_endpoint_metrics", enable_service_endpoint_metrics)
+            _setter("enable_service_endpoint_metrics", enable_service_endpoint_metrics)
         if encrypted_password is not None:
-            pulumi.set(__self__, "encrypted_password", encrypted_password)
+            _setter("encrypted_password", encrypted_password)
         if force_save is not None:
-            pulumi.set(__self__, "force_save", force_save)
+            _setter("force_save", force_save)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if service is not None:
-            pulumi.set(__self__, "service", service)
+            _setter("service", service)
         if service_refresh_rate_in_minutes is not None:
-            pulumi.set(__self__, "service_refresh_rate_in_minutes", service_refresh_rate_in_minutes)
+            _setter("service_refresh_rate_in_minutes", service_refresh_rate_in_minutes)
         if user_name is not None:
-            pulumi.set(__self__, "user_name", user_name)
+            _setter("user_name", user_name)
 
     @property
     @pulumi.getter(name="additionalTags")
@@ -684,6 +838,10 @@ class CloudIntegrationAppDynamics(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            CloudIntegrationAppDynamicsArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

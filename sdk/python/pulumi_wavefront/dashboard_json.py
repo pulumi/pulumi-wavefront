@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 
 __all__ = ['DashboardJsonArgs', 'DashboardJson']
@@ -20,7 +20,22 @@ class DashboardJsonArgs:
         :param pulumi.Input[str] dashboard_json: See the [Wavefront API Documentation](https://docs.wavefront.com/wavefront_api.html#api-documentation-wavefront-instance)
                for instructions on how to get to your API documentation for more details.
         """
-        pulumi.set(__self__, "dashboard_json", dashboard_json)
+        DashboardJsonArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            dashboard_json=dashboard_json,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             dashboard_json: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if dashboard_json is None and 'dashboardJson' in kwargs:
+            dashboard_json = kwargs['dashboardJson']
+        if dashboard_json is None:
+            raise TypeError("Missing 'dashboard_json' argument")
+
+        _setter("dashboard_json", dashboard_json)
 
     @property
     @pulumi.getter(name="dashboardJson")
@@ -45,8 +60,21 @@ class _DashboardJsonState:
         :param pulumi.Input[str] dashboard_json: See the [Wavefront API Documentation](https://docs.wavefront.com/wavefront_api.html#api-documentation-wavefront-instance)
                for instructions on how to get to your API documentation for more details.
         """
+        _DashboardJsonState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            dashboard_json=dashboard_json,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             dashboard_json: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if dashboard_json is None and 'dashboardJson' in kwargs:
+            dashboard_json = kwargs['dashboardJson']
+
         if dashboard_json is not None:
-            pulumi.set(__self__, "dashboard_json", dashboard_json)
+            _setter("dashboard_json", dashboard_json)
 
     @property
     @pulumi.getter(name="dashboardJson")
@@ -378,6 +406,10 @@ class DashboardJson(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            DashboardJsonArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

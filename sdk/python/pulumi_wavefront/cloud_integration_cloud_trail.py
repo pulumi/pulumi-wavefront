@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 
 __all__ = ['CloudIntegrationCloudTrailArgs', 'CloudIntegrationCloudTrail']
@@ -39,23 +39,78 @@ class CloudIntegrationCloudTrailArgs:
         :param pulumi.Input[str] prefix: The common prefix, if any, appended to all CloudTrail log files.
         :param pulumi.Input[int] service_refresh_rate_in_minutes: How often, in minutes, to refresh the service.
         """
-        pulumi.set(__self__, "bucket_name", bucket_name)
-        pulumi.set(__self__, "external_id", external_id)
-        pulumi.set(__self__, "region", region)
-        pulumi.set(__self__, "role_arn", role_arn)
-        pulumi.set(__self__, "service", service)
+        CloudIntegrationCloudTrailArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bucket_name=bucket_name,
+            external_id=external_id,
+            region=region,
+            role_arn=role_arn,
+            service=service,
+            additional_tags=additional_tags,
+            filter_rule=filter_rule,
+            force_save=force_save,
+            name=name,
+            prefix=prefix,
+            service_refresh_rate_in_minutes=service_refresh_rate_in_minutes,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bucket_name: Optional[pulumi.Input[str]] = None,
+             external_id: Optional[pulumi.Input[str]] = None,
+             region: Optional[pulumi.Input[str]] = None,
+             role_arn: Optional[pulumi.Input[str]] = None,
+             service: Optional[pulumi.Input[str]] = None,
+             additional_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+             filter_rule: Optional[pulumi.Input[str]] = None,
+             force_save: Optional[pulumi.Input[bool]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             prefix: Optional[pulumi.Input[str]] = None,
+             service_refresh_rate_in_minutes: Optional[pulumi.Input[int]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if bucket_name is None and 'bucketName' in kwargs:
+            bucket_name = kwargs['bucketName']
+        if bucket_name is None:
+            raise TypeError("Missing 'bucket_name' argument")
+        if external_id is None and 'externalId' in kwargs:
+            external_id = kwargs['externalId']
+        if external_id is None:
+            raise TypeError("Missing 'external_id' argument")
+        if region is None:
+            raise TypeError("Missing 'region' argument")
+        if role_arn is None and 'roleArn' in kwargs:
+            role_arn = kwargs['roleArn']
+        if role_arn is None:
+            raise TypeError("Missing 'role_arn' argument")
+        if service is None:
+            raise TypeError("Missing 'service' argument")
+        if additional_tags is None and 'additionalTags' in kwargs:
+            additional_tags = kwargs['additionalTags']
+        if filter_rule is None and 'filterRule' in kwargs:
+            filter_rule = kwargs['filterRule']
+        if force_save is None and 'forceSave' in kwargs:
+            force_save = kwargs['forceSave']
+        if service_refresh_rate_in_minutes is None and 'serviceRefreshRateInMinutes' in kwargs:
+            service_refresh_rate_in_minutes = kwargs['serviceRefreshRateInMinutes']
+
+        _setter("bucket_name", bucket_name)
+        _setter("external_id", external_id)
+        _setter("region", region)
+        _setter("role_arn", role_arn)
+        _setter("service", service)
         if additional_tags is not None:
-            pulumi.set(__self__, "additional_tags", additional_tags)
+            _setter("additional_tags", additional_tags)
         if filter_rule is not None:
-            pulumi.set(__self__, "filter_rule", filter_rule)
+            _setter("filter_rule", filter_rule)
         if force_save is not None:
-            pulumi.set(__self__, "force_save", force_save)
+            _setter("force_save", force_save)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if prefix is not None:
-            pulumi.set(__self__, "prefix", prefix)
+            _setter("prefix", prefix)
         if service_refresh_rate_in_minutes is not None:
-            pulumi.set(__self__, "service_refresh_rate_in_minutes", service_refresh_rate_in_minutes)
+            _setter("service_refresh_rate_in_minutes", service_refresh_rate_in_minutes)
 
     @property
     @pulumi.getter(name="bucketName")
@@ -218,28 +273,73 @@ class _CloudIntegrationCloudTrailState:
         :param pulumi.Input[str] service: A value denoting which cloud service this service integrates with.
         :param pulumi.Input[int] service_refresh_rate_in_minutes: How often, in minutes, to refresh the service.
         """
+        _CloudIntegrationCloudTrailState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            additional_tags=additional_tags,
+            bucket_name=bucket_name,
+            external_id=external_id,
+            filter_rule=filter_rule,
+            force_save=force_save,
+            name=name,
+            prefix=prefix,
+            region=region,
+            role_arn=role_arn,
+            service=service,
+            service_refresh_rate_in_minutes=service_refresh_rate_in_minutes,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             additional_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+             bucket_name: Optional[pulumi.Input[str]] = None,
+             external_id: Optional[pulumi.Input[str]] = None,
+             filter_rule: Optional[pulumi.Input[str]] = None,
+             force_save: Optional[pulumi.Input[bool]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             prefix: Optional[pulumi.Input[str]] = None,
+             region: Optional[pulumi.Input[str]] = None,
+             role_arn: Optional[pulumi.Input[str]] = None,
+             service: Optional[pulumi.Input[str]] = None,
+             service_refresh_rate_in_minutes: Optional[pulumi.Input[int]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if additional_tags is None and 'additionalTags' in kwargs:
+            additional_tags = kwargs['additionalTags']
+        if bucket_name is None and 'bucketName' in kwargs:
+            bucket_name = kwargs['bucketName']
+        if external_id is None and 'externalId' in kwargs:
+            external_id = kwargs['externalId']
+        if filter_rule is None and 'filterRule' in kwargs:
+            filter_rule = kwargs['filterRule']
+        if force_save is None and 'forceSave' in kwargs:
+            force_save = kwargs['forceSave']
+        if role_arn is None and 'roleArn' in kwargs:
+            role_arn = kwargs['roleArn']
+        if service_refresh_rate_in_minutes is None and 'serviceRefreshRateInMinutes' in kwargs:
+            service_refresh_rate_in_minutes = kwargs['serviceRefreshRateInMinutes']
+
         if additional_tags is not None:
-            pulumi.set(__self__, "additional_tags", additional_tags)
+            _setter("additional_tags", additional_tags)
         if bucket_name is not None:
-            pulumi.set(__self__, "bucket_name", bucket_name)
+            _setter("bucket_name", bucket_name)
         if external_id is not None:
-            pulumi.set(__self__, "external_id", external_id)
+            _setter("external_id", external_id)
         if filter_rule is not None:
-            pulumi.set(__self__, "filter_rule", filter_rule)
+            _setter("filter_rule", filter_rule)
         if force_save is not None:
-            pulumi.set(__self__, "force_save", force_save)
+            _setter("force_save", force_save)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if prefix is not None:
-            pulumi.set(__self__, "prefix", prefix)
+            _setter("prefix", prefix)
         if region is not None:
-            pulumi.set(__self__, "region", region)
+            _setter("region", region)
         if role_arn is not None:
-            pulumi.set(__self__, "role_arn", role_arn)
+            _setter("role_arn", role_arn)
         if service is not None:
-            pulumi.set(__self__, "service", service)
+            _setter("service", service)
         if service_refresh_rate_in_minutes is not None:
-            pulumi.set(__self__, "service_refresh_rate_in_minutes", service_refresh_rate_in_minutes)
+            _setter("service_refresh_rate_in_minutes", service_refresh_rate_in_minutes)
 
     @property
     @pulumi.getter(name="additionalTags")
@@ -473,6 +573,10 @@ class CloudIntegrationCloudTrail(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            CloudIntegrationCloudTrailArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
