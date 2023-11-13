@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-wavefront/sdk/v3/go/wavefront/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Use this data source to get all User Groups in Wavefront.
@@ -106,12 +105,6 @@ func (o GetUserGroupsResultOutput) ToGetUserGroupsResultOutput() GetUserGroupsRe
 
 func (o GetUserGroupsResultOutput) ToGetUserGroupsResultOutputWithContext(ctx context.Context) GetUserGroupsResultOutput {
 	return o
-}
-
-func (o GetUserGroupsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetUserGroupsResult] {
-	return pulumix.Output[GetUserGroupsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The provider-assigned unique ID for this managed resource.

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-wavefront/sdk/v3/go/wavefront/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Use this data source to get information about a certain Wavefront dashboard by its ID.
@@ -143,12 +142,6 @@ func (o LookupDashboardResultOutput) ToLookupDashboardResultOutput() LookupDashb
 
 func (o LookupDashboardResultOutput) ToLookupDashboardResultOutputWithContext(ctx context.Context) LookupDashboardResultOutput {
 	return o
-}
-
-func (o LookupDashboardResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupDashboardResult] {
-	return pulumix.Output[LookupDashboardResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A list of users that have modify ACL access to the dashboard.

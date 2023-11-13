@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-wavefront/sdk/v3/go/wavefront/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Use this data source to get the Group ID of the `Everyone` group in Wavefront.
@@ -80,12 +79,6 @@ func (o GetDefaultUserGroupResultOutput) ToGetDefaultUserGroupResultOutput() Get
 
 func (o GetDefaultUserGroupResultOutput) ToGetDefaultUserGroupResultOutputWithContext(ctx context.Context) GetDefaultUserGroupResultOutput {
 	return o
-}
-
-func (o GetDefaultUserGroupResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDefaultUserGroupResult] {
-	return pulumix.Output[GetDefaultUserGroupResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Set to the Group ID of the `Everyone` group, suitable for referencing

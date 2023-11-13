@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-wavefront/sdk/v3/go/wavefront/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Use this data source to get information about all Wavefront alerts.
@@ -106,12 +105,6 @@ func (o GetAlertsResultOutput) ToGetAlertsResultOutput() GetAlertsResultOutput {
 
 func (o GetAlertsResultOutput) ToGetAlertsResultOutputWithContext(ctx context.Context) GetAlertsResultOutput {
 	return o
-}
-
-func (o GetAlertsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAlertsResult] {
-	return pulumix.Output[GetAlertsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // List of all alerts in Wavefront. For each alert you will see a list of attributes.
