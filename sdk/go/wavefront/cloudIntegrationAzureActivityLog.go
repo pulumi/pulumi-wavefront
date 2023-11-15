@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-wavefront/sdk/v3/go/wavefront/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Provides a Wavefront Cloud Integration for Azure Activity Logs. This allows Azure activity log cloud integrations to be created,
@@ -239,12 +238,6 @@ func (i *CloudIntegrationAzureActivityLog) ToCloudIntegrationAzureActivityLogOut
 	return pulumi.ToOutputWithContext(ctx, i).(CloudIntegrationAzureActivityLogOutput)
 }
 
-func (i *CloudIntegrationAzureActivityLog) ToOutput(ctx context.Context) pulumix.Output[*CloudIntegrationAzureActivityLog] {
-	return pulumix.Output[*CloudIntegrationAzureActivityLog]{
-		OutputState: i.ToCloudIntegrationAzureActivityLogOutputWithContext(ctx).OutputState,
-	}
-}
-
 // CloudIntegrationAzureActivityLogArrayInput is an input type that accepts CloudIntegrationAzureActivityLogArray and CloudIntegrationAzureActivityLogArrayOutput values.
 // You can construct a concrete instance of `CloudIntegrationAzureActivityLogArrayInput` via:
 //
@@ -268,12 +261,6 @@ func (i CloudIntegrationAzureActivityLogArray) ToCloudIntegrationAzureActivityLo
 
 func (i CloudIntegrationAzureActivityLogArray) ToCloudIntegrationAzureActivityLogArrayOutputWithContext(ctx context.Context) CloudIntegrationAzureActivityLogArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(CloudIntegrationAzureActivityLogArrayOutput)
-}
-
-func (i CloudIntegrationAzureActivityLogArray) ToOutput(ctx context.Context) pulumix.Output[[]*CloudIntegrationAzureActivityLog] {
-	return pulumix.Output[[]*CloudIntegrationAzureActivityLog]{
-		OutputState: i.ToCloudIntegrationAzureActivityLogArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // CloudIntegrationAzureActivityLogMapInput is an input type that accepts CloudIntegrationAzureActivityLogMap and CloudIntegrationAzureActivityLogMapOutput values.
@@ -301,12 +288,6 @@ func (i CloudIntegrationAzureActivityLogMap) ToCloudIntegrationAzureActivityLogM
 	return pulumi.ToOutputWithContext(ctx, i).(CloudIntegrationAzureActivityLogMapOutput)
 }
 
-func (i CloudIntegrationAzureActivityLogMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*CloudIntegrationAzureActivityLog] {
-	return pulumix.Output[map[string]*CloudIntegrationAzureActivityLog]{
-		OutputState: i.ToCloudIntegrationAzureActivityLogMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type CloudIntegrationAzureActivityLogOutput struct{ *pulumi.OutputState }
 
 func (CloudIntegrationAzureActivityLogOutput) ElementType() reflect.Type {
@@ -319,12 +300,6 @@ func (o CloudIntegrationAzureActivityLogOutput) ToCloudIntegrationAzureActivityL
 
 func (o CloudIntegrationAzureActivityLogOutput) ToCloudIntegrationAzureActivityLogOutputWithContext(ctx context.Context) CloudIntegrationAzureActivityLogOutput {
 	return o
-}
-
-func (o CloudIntegrationAzureActivityLogOutput) ToOutput(ctx context.Context) pulumix.Output[*CloudIntegrationAzureActivityLog] {
-	return pulumix.Output[*CloudIntegrationAzureActivityLog]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A list of point tag key-values to add to every point ingested using this integration.
@@ -386,12 +361,6 @@ func (o CloudIntegrationAzureActivityLogArrayOutput) ToCloudIntegrationAzureActi
 	return o
 }
 
-func (o CloudIntegrationAzureActivityLogArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*CloudIntegrationAzureActivityLog] {
-	return pulumix.Output[[]*CloudIntegrationAzureActivityLog]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o CloudIntegrationAzureActivityLogArrayOutput) Index(i pulumi.IntInput) CloudIntegrationAzureActivityLogOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *CloudIntegrationAzureActivityLog {
 		return vs[0].([]*CloudIntegrationAzureActivityLog)[vs[1].(int)]
@@ -410,12 +379,6 @@ func (o CloudIntegrationAzureActivityLogMapOutput) ToCloudIntegrationAzureActivi
 
 func (o CloudIntegrationAzureActivityLogMapOutput) ToCloudIntegrationAzureActivityLogMapOutputWithContext(ctx context.Context) CloudIntegrationAzureActivityLogMapOutput {
 	return o
-}
-
-func (o CloudIntegrationAzureActivityLogMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*CloudIntegrationAzureActivityLog] {
-	return pulumix.Output[map[string]*CloudIntegrationAzureActivityLog]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o CloudIntegrationAzureActivityLogMapOutput) MapIndex(k pulumi.StringInput) CloudIntegrationAzureActivityLogOutput {

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-wavefront/sdk/v3/go/wavefront/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Provides an External ID for use in Amazon Web Services IAM Roles. This allows External IDs to be created and deleted.
@@ -120,12 +119,6 @@ func (i *CloudIntegrationAwsExternalId) ToCloudIntegrationAwsExternalIdOutputWit
 	return pulumi.ToOutputWithContext(ctx, i).(CloudIntegrationAwsExternalIdOutput)
 }
 
-func (i *CloudIntegrationAwsExternalId) ToOutput(ctx context.Context) pulumix.Output[*CloudIntegrationAwsExternalId] {
-	return pulumix.Output[*CloudIntegrationAwsExternalId]{
-		OutputState: i.ToCloudIntegrationAwsExternalIdOutputWithContext(ctx).OutputState,
-	}
-}
-
 // CloudIntegrationAwsExternalIdArrayInput is an input type that accepts CloudIntegrationAwsExternalIdArray and CloudIntegrationAwsExternalIdArrayOutput values.
 // You can construct a concrete instance of `CloudIntegrationAwsExternalIdArrayInput` via:
 //
@@ -149,12 +142,6 @@ func (i CloudIntegrationAwsExternalIdArray) ToCloudIntegrationAwsExternalIdArray
 
 func (i CloudIntegrationAwsExternalIdArray) ToCloudIntegrationAwsExternalIdArrayOutputWithContext(ctx context.Context) CloudIntegrationAwsExternalIdArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(CloudIntegrationAwsExternalIdArrayOutput)
-}
-
-func (i CloudIntegrationAwsExternalIdArray) ToOutput(ctx context.Context) pulumix.Output[[]*CloudIntegrationAwsExternalId] {
-	return pulumix.Output[[]*CloudIntegrationAwsExternalId]{
-		OutputState: i.ToCloudIntegrationAwsExternalIdArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // CloudIntegrationAwsExternalIdMapInput is an input type that accepts CloudIntegrationAwsExternalIdMap and CloudIntegrationAwsExternalIdMapOutput values.
@@ -182,12 +169,6 @@ func (i CloudIntegrationAwsExternalIdMap) ToCloudIntegrationAwsExternalIdMapOutp
 	return pulumi.ToOutputWithContext(ctx, i).(CloudIntegrationAwsExternalIdMapOutput)
 }
 
-func (i CloudIntegrationAwsExternalIdMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*CloudIntegrationAwsExternalId] {
-	return pulumix.Output[map[string]*CloudIntegrationAwsExternalId]{
-		OutputState: i.ToCloudIntegrationAwsExternalIdMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type CloudIntegrationAwsExternalIdOutput struct{ *pulumi.OutputState }
 
 func (CloudIntegrationAwsExternalIdOutput) ElementType() reflect.Type {
@@ -202,12 +183,6 @@ func (o CloudIntegrationAwsExternalIdOutput) ToCloudIntegrationAwsExternalIdOutp
 	return o
 }
 
-func (o CloudIntegrationAwsExternalIdOutput) ToOutput(ctx context.Context) pulumix.Output[*CloudIntegrationAwsExternalId] {
-	return pulumix.Output[*CloudIntegrationAwsExternalId]{
-		OutputState: o.OutputState,
-	}
-}
-
 type CloudIntegrationAwsExternalIdArrayOutput struct{ *pulumi.OutputState }
 
 func (CloudIntegrationAwsExternalIdArrayOutput) ElementType() reflect.Type {
@@ -220,12 +195,6 @@ func (o CloudIntegrationAwsExternalIdArrayOutput) ToCloudIntegrationAwsExternalI
 
 func (o CloudIntegrationAwsExternalIdArrayOutput) ToCloudIntegrationAwsExternalIdArrayOutputWithContext(ctx context.Context) CloudIntegrationAwsExternalIdArrayOutput {
 	return o
-}
-
-func (o CloudIntegrationAwsExternalIdArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*CloudIntegrationAwsExternalId] {
-	return pulumix.Output[[]*CloudIntegrationAwsExternalId]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o CloudIntegrationAwsExternalIdArrayOutput) Index(i pulumi.IntInput) CloudIntegrationAwsExternalIdOutput {
@@ -246,12 +215,6 @@ func (o CloudIntegrationAwsExternalIdMapOutput) ToCloudIntegrationAwsExternalIdM
 
 func (o CloudIntegrationAwsExternalIdMapOutput) ToCloudIntegrationAwsExternalIdMapOutputWithContext(ctx context.Context) CloudIntegrationAwsExternalIdMapOutput {
 	return o
-}
-
-func (o CloudIntegrationAwsExternalIdMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*CloudIntegrationAwsExternalId] {
-	return pulumix.Output[map[string]*CloudIntegrationAwsExternalId]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o CloudIntegrationAwsExternalIdMapOutput) MapIndex(k pulumi.StringInput) CloudIntegrationAwsExternalIdOutput {

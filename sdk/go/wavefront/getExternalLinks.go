@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-wavefront/sdk/v3/go/wavefront/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Use this data source to get information about all Wavefront external links.
@@ -106,12 +105,6 @@ func (o GetExternalLinksResultOutput) ToGetExternalLinksResultOutput() GetExtern
 
 func (o GetExternalLinksResultOutput) ToGetExternalLinksResultOutputWithContext(ctx context.Context) GetExternalLinksResultOutput {
 	return o
-}
-
-func (o GetExternalLinksResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetExternalLinksResult] {
-	return pulumix.Output[GetExternalLinksResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // List of all external links in Wavefront. For each external link you will see a list of attributes.

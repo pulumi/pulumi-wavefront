@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-wavefront/sdk/v3/go/wavefront/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Use this data source to get information about a Wavefront maintenance window by its ID.
@@ -139,12 +138,6 @@ func (o LookupMaintenanceWindowResultOutput) ToLookupMaintenanceWindowResultOutp
 
 func (o LookupMaintenanceWindowResultOutput) ToLookupMaintenanceWindowResultOutputWithContext(ctx context.Context) LookupMaintenanceWindowResultOutput {
 	return o
-}
-
-func (o LookupMaintenanceWindowResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupMaintenanceWindowResult] {
-	return pulumix.Output[LookupMaintenanceWindowResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The timestamp in epoch milliseconds indicating when the maintenance window is created.

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-wavefront/sdk/v3/go/wavefront/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Use this data source to get information about all Wavefront derived metrics.
@@ -106,12 +105,6 @@ func (o GetDerivedMetricsResultOutput) ToGetDerivedMetricsResultOutput() GetDeri
 
 func (o GetDerivedMetricsResultOutput) ToGetDerivedMetricsResultOutputWithContext(ctx context.Context) GetDerivedMetricsResultOutput {
 	return o
-}
-
-func (o GetDerivedMetricsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDerivedMetricsResult] {
-	return pulumix.Output[GetDerivedMetricsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // List of all derived metrics in Wavefront. For each derived metric you will see a list of attributes.

@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-wavefront/sdk/v3/go/wavefront/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Provides a Wavefront Cloud Integration for Google Cloud Platform. This allows Google Cloud Platform cloud
@@ -257,12 +256,6 @@ func (i *CloudIntegrationGcp) ToCloudIntegrationGcpOutputWithContext(ctx context
 	return pulumi.ToOutputWithContext(ctx, i).(CloudIntegrationGcpOutput)
 }
 
-func (i *CloudIntegrationGcp) ToOutput(ctx context.Context) pulumix.Output[*CloudIntegrationGcp] {
-	return pulumix.Output[*CloudIntegrationGcp]{
-		OutputState: i.ToCloudIntegrationGcpOutputWithContext(ctx).OutputState,
-	}
-}
-
 // CloudIntegrationGcpArrayInput is an input type that accepts CloudIntegrationGcpArray and CloudIntegrationGcpArrayOutput values.
 // You can construct a concrete instance of `CloudIntegrationGcpArrayInput` via:
 //
@@ -286,12 +279,6 @@ func (i CloudIntegrationGcpArray) ToCloudIntegrationGcpArrayOutput() CloudIntegr
 
 func (i CloudIntegrationGcpArray) ToCloudIntegrationGcpArrayOutputWithContext(ctx context.Context) CloudIntegrationGcpArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(CloudIntegrationGcpArrayOutput)
-}
-
-func (i CloudIntegrationGcpArray) ToOutput(ctx context.Context) pulumix.Output[[]*CloudIntegrationGcp] {
-	return pulumix.Output[[]*CloudIntegrationGcp]{
-		OutputState: i.ToCloudIntegrationGcpArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // CloudIntegrationGcpMapInput is an input type that accepts CloudIntegrationGcpMap and CloudIntegrationGcpMapOutput values.
@@ -319,12 +306,6 @@ func (i CloudIntegrationGcpMap) ToCloudIntegrationGcpMapOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(CloudIntegrationGcpMapOutput)
 }
 
-func (i CloudIntegrationGcpMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*CloudIntegrationGcp] {
-	return pulumix.Output[map[string]*CloudIntegrationGcp]{
-		OutputState: i.ToCloudIntegrationGcpMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type CloudIntegrationGcpOutput struct{ *pulumi.OutputState }
 
 func (CloudIntegrationGcpOutput) ElementType() reflect.Type {
@@ -337,12 +318,6 @@ func (o CloudIntegrationGcpOutput) ToCloudIntegrationGcpOutput() CloudIntegratio
 
 func (o CloudIntegrationGcpOutput) ToCloudIntegrationGcpOutputWithContext(ctx context.Context) CloudIntegrationGcpOutput {
 	return o
-}
-
-func (o CloudIntegrationGcpOutput) ToOutput(ctx context.Context) pulumix.Output[*CloudIntegrationGcp] {
-	return pulumix.Output[*CloudIntegrationGcp]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A list of point tag key-values to add to every point ingested using this integration.
@@ -409,12 +384,6 @@ func (o CloudIntegrationGcpArrayOutput) ToCloudIntegrationGcpArrayOutputWithCont
 	return o
 }
 
-func (o CloudIntegrationGcpArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*CloudIntegrationGcp] {
-	return pulumix.Output[[]*CloudIntegrationGcp]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o CloudIntegrationGcpArrayOutput) Index(i pulumi.IntInput) CloudIntegrationGcpOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *CloudIntegrationGcp {
 		return vs[0].([]*CloudIntegrationGcp)[vs[1].(int)]
@@ -433,12 +402,6 @@ func (o CloudIntegrationGcpMapOutput) ToCloudIntegrationGcpMapOutput() CloudInte
 
 func (o CloudIntegrationGcpMapOutput) ToCloudIntegrationGcpMapOutputWithContext(ctx context.Context) CloudIntegrationGcpMapOutput {
 	return o
-}
-
-func (o CloudIntegrationGcpMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*CloudIntegrationGcp] {
-	return pulumix.Output[map[string]*CloudIntegrationGcp]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o CloudIntegrationGcpMapOutput) MapIndex(k pulumi.StringInput) CloudIntegrationGcpOutput {
