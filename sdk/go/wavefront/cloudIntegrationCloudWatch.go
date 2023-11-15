@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-wavefront/sdk/v3/go/wavefront/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Provides a Wavefront Cloud Integration for CloudWatch. This allows CloudWatch cloud integrations to be created,
@@ -285,12 +284,6 @@ func (i *CloudIntegrationCloudWatch) ToCloudIntegrationCloudWatchOutputWithConte
 	return pulumi.ToOutputWithContext(ctx, i).(CloudIntegrationCloudWatchOutput)
 }
 
-func (i *CloudIntegrationCloudWatch) ToOutput(ctx context.Context) pulumix.Output[*CloudIntegrationCloudWatch] {
-	return pulumix.Output[*CloudIntegrationCloudWatch]{
-		OutputState: i.ToCloudIntegrationCloudWatchOutputWithContext(ctx).OutputState,
-	}
-}
-
 // CloudIntegrationCloudWatchArrayInput is an input type that accepts CloudIntegrationCloudWatchArray and CloudIntegrationCloudWatchArrayOutput values.
 // You can construct a concrete instance of `CloudIntegrationCloudWatchArrayInput` via:
 //
@@ -314,12 +307,6 @@ func (i CloudIntegrationCloudWatchArray) ToCloudIntegrationCloudWatchArrayOutput
 
 func (i CloudIntegrationCloudWatchArray) ToCloudIntegrationCloudWatchArrayOutputWithContext(ctx context.Context) CloudIntegrationCloudWatchArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(CloudIntegrationCloudWatchArrayOutput)
-}
-
-func (i CloudIntegrationCloudWatchArray) ToOutput(ctx context.Context) pulumix.Output[[]*CloudIntegrationCloudWatch] {
-	return pulumix.Output[[]*CloudIntegrationCloudWatch]{
-		OutputState: i.ToCloudIntegrationCloudWatchArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // CloudIntegrationCloudWatchMapInput is an input type that accepts CloudIntegrationCloudWatchMap and CloudIntegrationCloudWatchMapOutput values.
@@ -347,12 +334,6 @@ func (i CloudIntegrationCloudWatchMap) ToCloudIntegrationCloudWatchMapOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(CloudIntegrationCloudWatchMapOutput)
 }
 
-func (i CloudIntegrationCloudWatchMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*CloudIntegrationCloudWatch] {
-	return pulumix.Output[map[string]*CloudIntegrationCloudWatch]{
-		OutputState: i.ToCloudIntegrationCloudWatchMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type CloudIntegrationCloudWatchOutput struct{ *pulumi.OutputState }
 
 func (CloudIntegrationCloudWatchOutput) ElementType() reflect.Type {
@@ -365,12 +346,6 @@ func (o CloudIntegrationCloudWatchOutput) ToCloudIntegrationCloudWatchOutput() C
 
 func (o CloudIntegrationCloudWatchOutput) ToCloudIntegrationCloudWatchOutputWithContext(ctx context.Context) CloudIntegrationCloudWatchOutput {
 	return o
-}
-
-func (o CloudIntegrationCloudWatchOutput) ToOutput(ctx context.Context) pulumix.Output[*CloudIntegrationCloudWatch] {
-	return pulumix.Output[*CloudIntegrationCloudWatch]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A list of point tag key-values to add to every point ingested using this integration.
@@ -452,12 +427,6 @@ func (o CloudIntegrationCloudWatchArrayOutput) ToCloudIntegrationCloudWatchArray
 	return o
 }
 
-func (o CloudIntegrationCloudWatchArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*CloudIntegrationCloudWatch] {
-	return pulumix.Output[[]*CloudIntegrationCloudWatch]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o CloudIntegrationCloudWatchArrayOutput) Index(i pulumi.IntInput) CloudIntegrationCloudWatchOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *CloudIntegrationCloudWatch {
 		return vs[0].([]*CloudIntegrationCloudWatch)[vs[1].(int)]
@@ -476,12 +445,6 @@ func (o CloudIntegrationCloudWatchMapOutput) ToCloudIntegrationCloudWatchMapOutp
 
 func (o CloudIntegrationCloudWatchMapOutput) ToCloudIntegrationCloudWatchMapOutputWithContext(ctx context.Context) CloudIntegrationCloudWatchMapOutput {
 	return o
-}
-
-func (o CloudIntegrationCloudWatchMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*CloudIntegrationCloudWatch] {
-	return pulumix.Output[map[string]*CloudIntegrationCloudWatch]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o CloudIntegrationCloudWatchMapOutput) MapIndex(k pulumi.StringInput) CloudIntegrationCloudWatchOutput {

@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-wavefront/sdk/v3/go/wavefront/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Provides a Wavefront Cloud Integration for CloudTrail. This allows CloudTrail cloud integrations to be created,
@@ -257,12 +256,6 @@ func (i *CloudIntegrationCloudTrail) ToCloudIntegrationCloudTrailOutputWithConte
 	return pulumi.ToOutputWithContext(ctx, i).(CloudIntegrationCloudTrailOutput)
 }
 
-func (i *CloudIntegrationCloudTrail) ToOutput(ctx context.Context) pulumix.Output[*CloudIntegrationCloudTrail] {
-	return pulumix.Output[*CloudIntegrationCloudTrail]{
-		OutputState: i.ToCloudIntegrationCloudTrailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // CloudIntegrationCloudTrailArrayInput is an input type that accepts CloudIntegrationCloudTrailArray and CloudIntegrationCloudTrailArrayOutput values.
 // You can construct a concrete instance of `CloudIntegrationCloudTrailArrayInput` via:
 //
@@ -286,12 +279,6 @@ func (i CloudIntegrationCloudTrailArray) ToCloudIntegrationCloudTrailArrayOutput
 
 func (i CloudIntegrationCloudTrailArray) ToCloudIntegrationCloudTrailArrayOutputWithContext(ctx context.Context) CloudIntegrationCloudTrailArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(CloudIntegrationCloudTrailArrayOutput)
-}
-
-func (i CloudIntegrationCloudTrailArray) ToOutput(ctx context.Context) pulumix.Output[[]*CloudIntegrationCloudTrail] {
-	return pulumix.Output[[]*CloudIntegrationCloudTrail]{
-		OutputState: i.ToCloudIntegrationCloudTrailArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // CloudIntegrationCloudTrailMapInput is an input type that accepts CloudIntegrationCloudTrailMap and CloudIntegrationCloudTrailMapOutput values.
@@ -319,12 +306,6 @@ func (i CloudIntegrationCloudTrailMap) ToCloudIntegrationCloudTrailMapOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(CloudIntegrationCloudTrailMapOutput)
 }
 
-func (i CloudIntegrationCloudTrailMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*CloudIntegrationCloudTrail] {
-	return pulumix.Output[map[string]*CloudIntegrationCloudTrail]{
-		OutputState: i.ToCloudIntegrationCloudTrailMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type CloudIntegrationCloudTrailOutput struct{ *pulumi.OutputState }
 
 func (CloudIntegrationCloudTrailOutput) ElementType() reflect.Type {
@@ -337,12 +318,6 @@ func (o CloudIntegrationCloudTrailOutput) ToCloudIntegrationCloudTrailOutput() C
 
 func (o CloudIntegrationCloudTrailOutput) ToCloudIntegrationCloudTrailOutputWithContext(ctx context.Context) CloudIntegrationCloudTrailOutput {
 	return o
-}
-
-func (o CloudIntegrationCloudTrailOutput) ToOutput(ctx context.Context) pulumix.Output[*CloudIntegrationCloudTrail] {
-	return pulumix.Output[*CloudIntegrationCloudTrail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A list of point tag key-values to add to every point ingested using this integration.
@@ -414,12 +389,6 @@ func (o CloudIntegrationCloudTrailArrayOutput) ToCloudIntegrationCloudTrailArray
 	return o
 }
 
-func (o CloudIntegrationCloudTrailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*CloudIntegrationCloudTrail] {
-	return pulumix.Output[[]*CloudIntegrationCloudTrail]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o CloudIntegrationCloudTrailArrayOutput) Index(i pulumi.IntInput) CloudIntegrationCloudTrailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *CloudIntegrationCloudTrail {
 		return vs[0].([]*CloudIntegrationCloudTrail)[vs[1].(int)]
@@ -438,12 +407,6 @@ func (o CloudIntegrationCloudTrailMapOutput) ToCloudIntegrationCloudTrailMapOutp
 
 func (o CloudIntegrationCloudTrailMapOutput) ToCloudIntegrationCloudTrailMapOutputWithContext(ctx context.Context) CloudIntegrationCloudTrailMapOutput {
 	return o
-}
-
-func (o CloudIntegrationCloudTrailMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*CloudIntegrationCloudTrail] {
-	return pulumix.Output[map[string]*CloudIntegrationCloudTrail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o CloudIntegrationCloudTrailMapOutput) MapIndex(k pulumi.StringInput) CloudIntegrationCloudTrailOutput {

@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-wavefront/sdk/v3/go/wavefront/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Provides a Wavefront Ingestion Policy Resource. This allows ingestion policies to be created, updated, and deleted.
@@ -180,12 +179,6 @@ func (i *IngestionPolicy) ToIngestionPolicyOutputWithContext(ctx context.Context
 	return pulumi.ToOutputWithContext(ctx, i).(IngestionPolicyOutput)
 }
 
-func (i *IngestionPolicy) ToOutput(ctx context.Context) pulumix.Output[*IngestionPolicy] {
-	return pulumix.Output[*IngestionPolicy]{
-		OutputState: i.ToIngestionPolicyOutputWithContext(ctx).OutputState,
-	}
-}
-
 // IngestionPolicyArrayInput is an input type that accepts IngestionPolicyArray and IngestionPolicyArrayOutput values.
 // You can construct a concrete instance of `IngestionPolicyArrayInput` via:
 //
@@ -209,12 +202,6 @@ func (i IngestionPolicyArray) ToIngestionPolicyArrayOutput() IngestionPolicyArra
 
 func (i IngestionPolicyArray) ToIngestionPolicyArrayOutputWithContext(ctx context.Context) IngestionPolicyArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(IngestionPolicyArrayOutput)
-}
-
-func (i IngestionPolicyArray) ToOutput(ctx context.Context) pulumix.Output[[]*IngestionPolicy] {
-	return pulumix.Output[[]*IngestionPolicy]{
-		OutputState: i.ToIngestionPolicyArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // IngestionPolicyMapInput is an input type that accepts IngestionPolicyMap and IngestionPolicyMapOutput values.
@@ -242,12 +229,6 @@ func (i IngestionPolicyMap) ToIngestionPolicyMapOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(IngestionPolicyMapOutput)
 }
 
-func (i IngestionPolicyMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*IngestionPolicy] {
-	return pulumix.Output[map[string]*IngestionPolicy]{
-		OutputState: i.ToIngestionPolicyMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type IngestionPolicyOutput struct{ *pulumi.OutputState }
 
 func (IngestionPolicyOutput) ElementType() reflect.Type {
@@ -260,12 +241,6 @@ func (o IngestionPolicyOutput) ToIngestionPolicyOutput() IngestionPolicyOutput {
 
 func (o IngestionPolicyOutput) ToIngestionPolicyOutputWithContext(ctx context.Context) IngestionPolicyOutput {
 	return o
-}
-
-func (o IngestionPolicyOutput) ToOutput(ctx context.Context) pulumix.Output[*IngestionPolicy] {
-	return pulumix.Output[*IngestionPolicy]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o IngestionPolicyOutput) Accounts() pulumi.StringArrayOutput {
@@ -316,12 +291,6 @@ func (o IngestionPolicyArrayOutput) ToIngestionPolicyArrayOutputWithContext(ctx 
 	return o
 }
 
-func (o IngestionPolicyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*IngestionPolicy] {
-	return pulumix.Output[[]*IngestionPolicy]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o IngestionPolicyArrayOutput) Index(i pulumi.IntInput) IngestionPolicyOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *IngestionPolicy {
 		return vs[0].([]*IngestionPolicy)[vs[1].(int)]
@@ -340,12 +309,6 @@ func (o IngestionPolicyMapOutput) ToIngestionPolicyMapOutput() IngestionPolicyMa
 
 func (o IngestionPolicyMapOutput) ToIngestionPolicyMapOutputWithContext(ctx context.Context) IngestionPolicyMapOutput {
 	return o
-}
-
-func (o IngestionPolicyMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*IngestionPolicy] {
-	return pulumix.Output[map[string]*IngestionPolicy]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o IngestionPolicyMapOutput) MapIndex(k pulumi.StringInput) IngestionPolicyOutput {

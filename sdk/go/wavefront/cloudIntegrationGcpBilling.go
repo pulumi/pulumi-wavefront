@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-wavefront/sdk/v3/go/wavefront/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Provides a Wavefront Cloud Integration for Google Cloud Billing. This allows GCP Billing cloud integrations to be created,
@@ -235,12 +234,6 @@ func (i *CloudIntegrationGcpBilling) ToCloudIntegrationGcpBillingOutputWithConte
 	return pulumi.ToOutputWithContext(ctx, i).(CloudIntegrationGcpBillingOutput)
 }
 
-func (i *CloudIntegrationGcpBilling) ToOutput(ctx context.Context) pulumix.Output[*CloudIntegrationGcpBilling] {
-	return pulumix.Output[*CloudIntegrationGcpBilling]{
-		OutputState: i.ToCloudIntegrationGcpBillingOutputWithContext(ctx).OutputState,
-	}
-}
-
 // CloudIntegrationGcpBillingArrayInput is an input type that accepts CloudIntegrationGcpBillingArray and CloudIntegrationGcpBillingArrayOutput values.
 // You can construct a concrete instance of `CloudIntegrationGcpBillingArrayInput` via:
 //
@@ -264,12 +257,6 @@ func (i CloudIntegrationGcpBillingArray) ToCloudIntegrationGcpBillingArrayOutput
 
 func (i CloudIntegrationGcpBillingArray) ToCloudIntegrationGcpBillingArrayOutputWithContext(ctx context.Context) CloudIntegrationGcpBillingArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(CloudIntegrationGcpBillingArrayOutput)
-}
-
-func (i CloudIntegrationGcpBillingArray) ToOutput(ctx context.Context) pulumix.Output[[]*CloudIntegrationGcpBilling] {
-	return pulumix.Output[[]*CloudIntegrationGcpBilling]{
-		OutputState: i.ToCloudIntegrationGcpBillingArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // CloudIntegrationGcpBillingMapInput is an input type that accepts CloudIntegrationGcpBillingMap and CloudIntegrationGcpBillingMapOutput values.
@@ -297,12 +284,6 @@ func (i CloudIntegrationGcpBillingMap) ToCloudIntegrationGcpBillingMapOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(CloudIntegrationGcpBillingMapOutput)
 }
 
-func (i CloudIntegrationGcpBillingMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*CloudIntegrationGcpBilling] {
-	return pulumix.Output[map[string]*CloudIntegrationGcpBilling]{
-		OutputState: i.ToCloudIntegrationGcpBillingMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type CloudIntegrationGcpBillingOutput struct{ *pulumi.OutputState }
 
 func (CloudIntegrationGcpBillingOutput) ElementType() reflect.Type {
@@ -315,12 +296,6 @@ func (o CloudIntegrationGcpBillingOutput) ToCloudIntegrationGcpBillingOutput() C
 
 func (o CloudIntegrationGcpBillingOutput) ToCloudIntegrationGcpBillingOutputWithContext(ctx context.Context) CloudIntegrationGcpBillingOutput {
 	return o
-}
-
-func (o CloudIntegrationGcpBillingOutput) ToOutput(ctx context.Context) pulumix.Output[*CloudIntegrationGcpBilling] {
-	return pulumix.Output[*CloudIntegrationGcpBilling]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A list of point tag key-values to add to every point ingested using this integration.
@@ -378,12 +353,6 @@ func (o CloudIntegrationGcpBillingArrayOutput) ToCloudIntegrationGcpBillingArray
 	return o
 }
 
-func (o CloudIntegrationGcpBillingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*CloudIntegrationGcpBilling] {
-	return pulumix.Output[[]*CloudIntegrationGcpBilling]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o CloudIntegrationGcpBillingArrayOutput) Index(i pulumi.IntInput) CloudIntegrationGcpBillingOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *CloudIntegrationGcpBilling {
 		return vs[0].([]*CloudIntegrationGcpBilling)[vs[1].(int)]
@@ -402,12 +371,6 @@ func (o CloudIntegrationGcpBillingMapOutput) ToCloudIntegrationGcpBillingMapOutp
 
 func (o CloudIntegrationGcpBillingMapOutput) ToCloudIntegrationGcpBillingMapOutputWithContext(ctx context.Context) CloudIntegrationGcpBillingMapOutput {
 	return o
-}
-
-func (o CloudIntegrationGcpBillingMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*CloudIntegrationGcpBilling] {
-	return pulumix.Output[map[string]*CloudIntegrationGcpBilling]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o CloudIntegrationGcpBillingMapOutput) MapIndex(k pulumi.StringInput) CloudIntegrationGcpBillingOutput {

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-wavefront/sdk/v3/go/wavefront/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func GetMaintenanceWindowAll(ctx *pulumi.Context, args *GetMaintenanceWindowAllArgs, opts ...pulumi.InvokeOption) (*GetMaintenanceWindowAllResult, error) {
@@ -73,12 +72,6 @@ func (o GetMaintenanceWindowAllResultOutput) ToGetMaintenanceWindowAllResultOutp
 
 func (o GetMaintenanceWindowAllResultOutput) ToGetMaintenanceWindowAllResultOutputWithContext(ctx context.Context) GetMaintenanceWindowAllResultOutput {
 	return o
-}
-
-func (o GetMaintenanceWindowAllResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetMaintenanceWindowAllResult] {
-	return pulumix.Output[GetMaintenanceWindowAllResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The provider-assigned unique ID for this managed resource.

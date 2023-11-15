@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-wavefront/sdk/v3/go/wavefront/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Use this data source to get information about all Wavefront events.
@@ -120,12 +119,6 @@ func (o GetEventsResultOutput) ToGetEventsResultOutput() GetEventsResultOutput {
 
 func (o GetEventsResultOutput) ToGetEventsResultOutputWithContext(ctx context.Context) GetEventsResultOutput {
 	return o
-}
-
-func (o GetEventsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetEventsResult] {
-	return pulumix.Output[GetEventsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Earliest start time in epoch milliseconds.

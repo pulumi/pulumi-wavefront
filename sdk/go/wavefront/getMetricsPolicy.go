@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-wavefront/sdk/v3/go/wavefront/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func LookupMetricsPolicy(ctx *pulumi.Context, opts ...pulumi.InvokeOption) (*LookupMetricsPolicyResult, error) {
@@ -56,12 +55,6 @@ func (o LookupMetricsPolicyResultOutput) ToLookupMetricsPolicyResultOutput() Loo
 
 func (o LookupMetricsPolicyResultOutput) ToLookupMetricsPolicyResultOutputWithContext(ctx context.Context) LookupMetricsPolicyResultOutput {
 	return o
-}
-
-func (o LookupMetricsPolicyResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupMetricsPolicyResult] {
-	return pulumix.Output[LookupMetricsPolicyResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o LookupMetricsPolicyResultOutput) Customer() pulumi.StringOutput {
