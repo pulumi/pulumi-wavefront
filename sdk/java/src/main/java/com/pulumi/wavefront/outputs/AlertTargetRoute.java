@@ -90,11 +90,11 @@ public final class AlertTargetRoute {
             return this;
         }
         public AlertTargetRoute build() {
-            final var o = new AlertTargetRoute();
-            o.filter = filter;
-            o.method = method;
-            o.target = target;
-            return o;
+            final var _resultValue = new AlertTargetRoute();
+            _resultValue.filter = filter;
+            _resultValue.method = method;
+            _resultValue.target = target;
+            return _resultValue;
         }
     }
 }

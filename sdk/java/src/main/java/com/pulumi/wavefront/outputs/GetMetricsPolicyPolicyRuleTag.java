@@ -49,10 +49,10 @@ public final class GetMetricsPolicyPolicyRuleTag {
             return this;
         }
         public GetMetricsPolicyPolicyRuleTag build() {
-            final var o = new GetMetricsPolicyPolicyRuleTag();
-            o.key = key;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetMetricsPolicyPolicyRuleTag();
+            _resultValue.key = key;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

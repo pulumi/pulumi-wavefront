@@ -484,31 +484,31 @@ public final class GetAlertsAlert {
             return this;
         }
         public GetAlertsAlert build() {
-            final var o = new GetAlertsAlert();
-            o.additionalInformation = additionalInformation;
-            o.alertType = alertType;
-            o.canModifies = canModifies;
-            o.canViews = canViews;
-            o.condition = condition;
-            o.conditions = conditions;
-            o.displayExpression = displayExpression;
-            o.evaluateRealtimeData = evaluateRealtimeData;
-            o.failingHostLabelPairs = failingHostLabelPairs;
-            o.id = id;
-            o.inMaintenanceHostLabelPairs = inMaintenanceHostLabelPairs;
-            o.includeObsoleteMetrics = includeObsoleteMetrics;
-            o.minutes = minutes;
-            o.name = name;
-            o.notificationResendFrequencyMinutes = notificationResendFrequencyMinutes;
-            o.processRateMinutes = processRateMinutes;
-            o.resolveAfterMinutes = resolveAfterMinutes;
-            o.severity = severity;
-            o.severityLists = severityLists;
-            o.statuses = statuses;
-            o.tags = tags;
-            o.target = target;
-            o.targets = targets;
-            return o;
+            final var _resultValue = new GetAlertsAlert();
+            _resultValue.additionalInformation = additionalInformation;
+            _resultValue.alertType = alertType;
+            _resultValue.canModifies = canModifies;
+            _resultValue.canViews = canViews;
+            _resultValue.condition = condition;
+            _resultValue.conditions = conditions;
+            _resultValue.displayExpression = displayExpression;
+            _resultValue.evaluateRealtimeData = evaluateRealtimeData;
+            _resultValue.failingHostLabelPairs = failingHostLabelPairs;
+            _resultValue.id = id;
+            _resultValue.inMaintenanceHostLabelPairs = inMaintenanceHostLabelPairs;
+            _resultValue.includeObsoleteMetrics = includeObsoleteMetrics;
+            _resultValue.minutes = minutes;
+            _resultValue.name = name;
+            _resultValue.notificationResendFrequencyMinutes = notificationResendFrequencyMinutes;
+            _resultValue.processRateMinutes = processRateMinutes;
+            _resultValue.resolveAfterMinutes = resolveAfterMinutes;
+            _resultValue.severity = severity;
+            _resultValue.severityLists = severityLists;
+            _resultValue.statuses = statuses;
+            _resultValue.tags = tags;
+            _resultValue.target = target;
+            _resultValue.targets = targets;
+            return _resultValue;
         }
     }
 }

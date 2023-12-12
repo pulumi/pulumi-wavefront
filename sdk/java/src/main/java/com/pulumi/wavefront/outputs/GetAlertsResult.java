@@ -95,12 +95,12 @@ public final class GetAlertsResult {
             return this;
         }
         public GetAlertsResult build() {
-            final var o = new GetAlertsResult();
-            o.alerts = alerts;
-            o.id = id;
-            o.limit = limit;
-            o.offset = offset;
-            return o;
+            final var _resultValue = new GetAlertsResult();
+            _resultValue.alerts = alerts;
+            _resultValue.id = id;
+            _resultValue.limit = limit;
+            _resultValue.offset = offset;
+            return _resultValue;
         }
     }
 }

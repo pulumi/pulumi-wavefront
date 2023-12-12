@@ -216,18 +216,18 @@ public final class GetEventsEvent {
             return this;
         }
         public GetEventsEvent build() {
-            final var o = new GetEventsEvent();
-            o.annotations = annotations;
-            o.details = details;
-            o.endtimeKey = endtimeKey;
-            o.id = id;
-            o.isEphemeral = isEphemeral;
-            o.name = name;
-            o.severity = severity;
-            o.startTime = startTime;
-            o.tags = tags;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetEventsEvent();
+            _resultValue.annotations = annotations;
+            _resultValue.details = details;
+            _resultValue.endtimeKey = endtimeKey;
+            _resultValue.id = id;
+            _resultValue.isEphemeral = isEphemeral;
+            _resultValue.name = name;
+            _resultValue.severity = severity;
+            _resultValue.startTime = startTime;
+            _resultValue.tags = tags;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

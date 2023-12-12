@@ -62,10 +62,10 @@ public final class GetDashboardSection {
             return rows(List.of(rows));
         }
         public GetDashboardSection build() {
-            final var o = new GetDashboardSection();
-            o.name = name;
-            o.rows = rows;
-            return o;
+            final var _resultValue = new GetDashboardSection();
+            _resultValue.name = name;
+            _resultValue.rows = rows;
+            return _resultValue;
         }
     }
 }

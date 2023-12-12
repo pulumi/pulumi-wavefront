@@ -67,10 +67,10 @@ public final class GetDefaultUserGroupResult {
             return this;
         }
         public GetDefaultUserGroupResult build() {
-            final var o = new GetDefaultUserGroupResult();
-            o.groupId = groupId;
-            o.id = id;
-            return o;
+            final var _resultValue = new GetDefaultUserGroupResult();
+            _resultValue.groupId = groupId;
+            _resultValue.id = id;
+            return _resultValue;
         }
     }
 }

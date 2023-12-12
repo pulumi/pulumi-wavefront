@@ -217,17 +217,17 @@ public final class MetricsPolicyPolicyRule {
             return userGroupIds(List.of(userGroupIds));
         }
         public MetricsPolicyPolicyRule build() {
-            final var o = new MetricsPolicyPolicyRule();
-            o.accessType = accessType;
-            o.accountIds = accountIds;
-            o.description = description;
-            o.name = name;
-            o.prefixes = prefixes;
-            o.roleIds = roleIds;
-            o.tags = tags;
-            o.tagsAnded = tagsAnded;
-            o.userGroupIds = userGroupIds;
-            return o;
+            final var _resultValue = new MetricsPolicyPolicyRule();
+            _resultValue.accessType = accessType;
+            _resultValue.accountIds = accountIds;
+            _resultValue.description = description;
+            _resultValue.name = name;
+            _resultValue.prefixes = prefixes;
+            _resultValue.roleIds = roleIds;
+            _resultValue.tags = tags;
+            _resultValue.tagsAnded = tagsAnded;
+            _resultValue.userGroupIds = userGroupIds;
+            return _resultValue;
         }
     }
 }

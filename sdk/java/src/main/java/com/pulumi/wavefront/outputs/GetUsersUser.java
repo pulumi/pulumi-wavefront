@@ -122,13 +122,13 @@ public final class GetUsersUser {
             return userGroupIds(List.of(userGroupIds));
         }
         public GetUsersUser build() {
-            final var o = new GetUsersUser();
-            o.customer = customer;
-            o.email = email;
-            o.lastSuccessfulLogin = lastSuccessfulLogin;
-            o.permissions = permissions;
-            o.userGroupIds = userGroupIds;
-            return o;
+            final var _resultValue = new GetUsersUser();
+            _resultValue.customer = customer;
+            _resultValue.email = email;
+            _resultValue.lastSuccessfulLogin = lastSuccessfulLogin;
+            _resultValue.permissions = permissions;
+            _resultValue.userGroupIds = userGroupIds;
+            return _resultValue;
         }
     }
 }

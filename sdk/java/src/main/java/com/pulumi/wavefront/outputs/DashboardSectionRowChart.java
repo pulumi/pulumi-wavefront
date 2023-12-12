@@ -202,17 +202,17 @@ public final class DashboardSectionRowChart {
             return this;
         }
         public DashboardSectionRowChart build() {
-            final var o = new DashboardSectionRowChart();
-            o.base = base;
-            o.chartAttribute = chartAttribute;
-            o.chartSetting = chartSetting;
-            o.description = description;
-            o.name = name;
-            o.noDefaultEvents = noDefaultEvents;
-            o.sources = sources;
-            o.summarization = summarization;
-            o.units = units;
-            return o;
+            final var _resultValue = new DashboardSectionRowChart();
+            _resultValue.base = base;
+            _resultValue.chartAttribute = chartAttribute;
+            _resultValue.chartSetting = chartSetting;
+            _resultValue.description = description;
+            _resultValue.name = name;
+            _resultValue.noDefaultEvents = noDefaultEvents;
+            _resultValue.sources = sources;
+            _resultValue.summarization = summarization;
+            _resultValue.units = units;
+            return _resultValue;
         }
     }
 }

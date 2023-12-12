@@ -50,10 +50,10 @@ public final class GetAlertInMaintenanceHostLabelPair {
             return this;
         }
         public GetAlertInMaintenanceHostLabelPair build() {
-            final var o = new GetAlertInMaintenanceHostLabelPair();
-            o.firing = firing;
-            o.host = host;
-            return o;
+            final var _resultValue = new GetAlertInMaintenanceHostLabelPair();
+            _resultValue.firing = firing;
+            _resultValue.host = host;
+            return _resultValue;
         }
     }
 }

@@ -96,13 +96,13 @@ public final class GetMetricsPolicyResult {
             return this;
         }
         public GetMetricsPolicyResult build() {
-            final var o = new GetMetricsPolicyResult();
-            o.customer = customer;
-            o.id = id;
-            o.policyRules = policyRules;
-            o.updatedEpochMillis = updatedEpochMillis;
-            o.updaterId = updaterId;
-            return o;
+            final var _resultValue = new GetMetricsPolicyResult();
+            _resultValue.customer = customer;
+            _resultValue.id = id;
+            _resultValue.policyRules = policyRules;
+            _resultValue.updatedEpochMillis = updatedEpochMillis;
+            _resultValue.updaterId = updaterId;
+            return _resultValue;
         }
     }
 }

@@ -70,10 +70,10 @@ public final class DashboardSection {
             return rows(List.of(rows));
         }
         public DashboardSection build() {
-            final var o = new DashboardSection();
-            o.name = name;
-            o.rows = rows;
-            return o;
+            final var _resultValue = new DashboardSection();
+            _resultValue.name = name;
+            _resultValue.rows = rows;
+            return _resultValue;
         }
     }
 }

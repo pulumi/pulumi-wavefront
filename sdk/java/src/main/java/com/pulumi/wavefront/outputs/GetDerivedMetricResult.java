@@ -498,32 +498,32 @@ public final class GetDerivedMetricResult {
             return this;
         }
         public GetDerivedMetricResult build() {
-            final var o = new GetDerivedMetricResult();
-            o.additionalInformation = additionalInformation;
-            o.createUserId = createUserId;
-            o.createdEpochMillis = createdEpochMillis;
-            o.deleted = deleted;
-            o.hostsUseds = hostsUseds;
-            o.id = id;
-            o.inTrash = inTrash;
-            o.includeObsoleteMetrics = includeObsoleteMetrics;
-            o.lastErrorMessage = lastErrorMessage;
-            o.lastFailedTime = lastFailedTime;
-            o.lastProcessedMillis = lastProcessedMillis;
-            o.lastQueryTime = lastQueryTime;
-            o.metricsUseds = metricsUseds;
-            o.minutes = minutes;
-            o.name = name;
-            o.pointsScannedAtLastQuery = pointsScannedAtLastQuery;
-            o.processRateMinutes = processRateMinutes;
-            o.query = query;
-            o.queryFailing = queryFailing;
-            o.queryQbEnabled = queryQbEnabled;
-            o.statuses = statuses;
-            o.tags = tags;
-            o.updateUserId = updateUserId;
-            o.updatedEpochMillis = updatedEpochMillis;
-            return o;
+            final var _resultValue = new GetDerivedMetricResult();
+            _resultValue.additionalInformation = additionalInformation;
+            _resultValue.createUserId = createUserId;
+            _resultValue.createdEpochMillis = createdEpochMillis;
+            _resultValue.deleted = deleted;
+            _resultValue.hostsUseds = hostsUseds;
+            _resultValue.id = id;
+            _resultValue.inTrash = inTrash;
+            _resultValue.includeObsoleteMetrics = includeObsoleteMetrics;
+            _resultValue.lastErrorMessage = lastErrorMessage;
+            _resultValue.lastFailedTime = lastFailedTime;
+            _resultValue.lastProcessedMillis = lastProcessedMillis;
+            _resultValue.lastQueryTime = lastQueryTime;
+            _resultValue.metricsUseds = metricsUseds;
+            _resultValue.minutes = minutes;
+            _resultValue.name = name;
+            _resultValue.pointsScannedAtLastQuery = pointsScannedAtLastQuery;
+            _resultValue.processRateMinutes = processRateMinutes;
+            _resultValue.query = query;
+            _resultValue.queryFailing = queryFailing;
+            _resultValue.queryQbEnabled = queryQbEnabled;
+            _resultValue.statuses = statuses;
+            _resultValue.tags = tags;
+            _resultValue.updateUserId = updateUserId;
+            _resultValue.updatedEpochMillis = updatedEpochMillis;
+            return _resultValue;
         }
     }
 }

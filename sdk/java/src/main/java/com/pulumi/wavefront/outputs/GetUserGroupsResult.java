@@ -95,12 +95,12 @@ public final class GetUserGroupsResult {
             return userGroups(List.of(userGroups));
         }
         public GetUserGroupsResult build() {
-            final var o = new GetUserGroupsResult();
-            o.id = id;
-            o.limit = limit;
-            o.offset = offset;
-            o.userGroups = userGroups;
-            return o;
+            final var _resultValue = new GetUserGroupsResult();
+            _resultValue.id = id;
+            _resultValue.limit = limit;
+            _resultValue.offset = offset;
+            _resultValue.userGroups = userGroups;
+            return _resultValue;
         }
     }
 }

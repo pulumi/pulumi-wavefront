@@ -87,12 +87,12 @@ public final class GetMaintenanceWindowAllResult {
             return this;
         }
         public GetMaintenanceWindowAllResult build() {
-            final var o = new GetMaintenanceWindowAllResult();
-            o.id = id;
-            o.limit = limit;
-            o.maintenanceWindows = maintenanceWindows;
-            o.offset = offset;
-            return o;
+            final var _resultValue = new GetMaintenanceWindowAllResult();
+            _resultValue.id = id;
+            _resultValue.limit = limit;
+            _resultValue.maintenanceWindows = maintenanceWindows;
+            _resultValue.offset = offset;
+            return _resultValue;
         }
     }
 }

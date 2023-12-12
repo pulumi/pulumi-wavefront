@@ -95,12 +95,12 @@ public final class GetRolesResult {
             return roles(List.of(roles));
         }
         public GetRolesResult build() {
-            final var o = new GetRolesResult();
-            o.id = id;
-            o.limit = limit;
-            o.offset = offset;
-            o.roles = roles;
-            return o;
+            final var _resultValue = new GetRolesResult();
+            _resultValue.id = id;
+            _resultValue.limit = limit;
+            _resultValue.offset = offset;
+            _resultValue.roles = roles;
+            return _resultValue;
         }
     }
 }

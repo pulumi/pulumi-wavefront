@@ -50,10 +50,10 @@ public final class GetAlertsAlertFailingHostLabelPair {
             return this;
         }
         public GetAlertsAlertFailingHostLabelPair build() {
-            final var o = new GetAlertsAlertFailingHostLabelPair();
-            o.firing = firing;
-            o.host = host;
-            return o;
+            final var _resultValue = new GetAlertsAlertFailingHostLabelPair();
+            _resultValue.firing = firing;
+            _resultValue.host = host;
+            return _resultValue;
         }
     }
 }

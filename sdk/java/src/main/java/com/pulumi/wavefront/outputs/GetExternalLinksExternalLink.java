@@ -264,20 +264,20 @@ public final class GetExternalLinksExternalLink {
             return this;
         }
         public GetExternalLinksExternalLink build() {
-            final var o = new GetExternalLinksExternalLink();
-            o.createdEpochMillis = createdEpochMillis;
-            o.creatorId = creatorId;
-            o.description = description;
-            o.id = id;
-            o.isLogIntegration = isLogIntegration;
-            o.metricFilterRegex = metricFilterRegex;
-            o.name = name;
-            o.pointTagFilterRegexes = pointTagFilterRegexes;
-            o.sourceFilterRegex = sourceFilterRegex;
-            o.template = template;
-            o.updatedEpochMillis = updatedEpochMillis;
-            o.updaterId = updaterId;
-            return o;
+            final var _resultValue = new GetExternalLinksExternalLink();
+            _resultValue.createdEpochMillis = createdEpochMillis;
+            _resultValue.creatorId = creatorId;
+            _resultValue.description = description;
+            _resultValue.id = id;
+            _resultValue.isLogIntegration = isLogIntegration;
+            _resultValue.metricFilterRegex = metricFilterRegex;
+            _resultValue.name = name;
+            _resultValue.pointTagFilterRegexes = pointTagFilterRegexes;
+            _resultValue.sourceFilterRegex = sourceFilterRegex;
+            _resultValue.template = template;
+            _resultValue.updatedEpochMillis = updatedEpochMillis;
+            _resultValue.updaterId = updaterId;
+            return _resultValue;
         }
     }
 }

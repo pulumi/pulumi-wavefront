@@ -49,10 +49,10 @@ public final class IngestionPolicyTag {
             return this;
         }
         public IngestionPolicyTag build() {
-            final var o = new IngestionPolicyTag();
-            o.key = key;
-            o.value = value;
-            return o;
+            final var _resultValue = new IngestionPolicyTag();
+            _resultValue.key = key;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

@@ -74,11 +74,11 @@ public final class GetDashboardsDashboardSectionRow {
             return this;
         }
         public GetDashboardsDashboardSectionRow build() {
-            final var o = new GetDashboardsDashboardSectionRow();
-            o.charts = charts;
-            o.heightFactor = heightFactor;
-            o.name = name;
-            return o;
+            final var _resultValue = new GetDashboardsDashboardSectionRow();
+            _resultValue.charts = charts;
+            _resultValue.heightFactor = heightFactor;
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }
