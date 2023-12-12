@@ -199,19 +199,19 @@ public final class GetDashboardsDashboardSectionRowChart {
             return this;
         }
         public GetDashboardsDashboardSectionRowChart build() {
-            final var o = new GetDashboardsDashboardSectionRowChart();
-            o.base = base;
-            o.chartAttributes = chartAttributes;
-            o.chartSettings = chartSettings;
-            o.description = description;
-            o.includeObsoleteMetrics = includeObsoleteMetrics;
-            o.interpolatePointsKey = interpolatePointsKey;
-            o.name = name;
-            o.noDefaultEvents = noDefaultEvents;
-            o.sources = sources;
-            o.summarization = summarization;
-            o.units = units;
-            return o;
+            final var _resultValue = new GetDashboardsDashboardSectionRowChart();
+            _resultValue.base = base;
+            _resultValue.chartAttributes = chartAttributes;
+            _resultValue.chartSettings = chartSettings;
+            _resultValue.description = description;
+            _resultValue.includeObsoleteMetrics = includeObsoleteMetrics;
+            _resultValue.interpolatePointsKey = interpolatePointsKey;
+            _resultValue.name = name;
+            _resultValue.noDefaultEvents = noDefaultEvents;
+            _resultValue.sources = sources;
+            _resultValue.summarization = summarization;
+            _resultValue.units = units;
+            return _resultValue;
         }
     }
 }

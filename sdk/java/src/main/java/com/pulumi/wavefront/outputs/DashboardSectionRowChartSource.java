@@ -144,14 +144,14 @@ public final class DashboardSectionRowChartSource {
             return this;
         }
         public DashboardSectionRowChartSource build() {
-            final var o = new DashboardSectionRowChartSource();
-            o.disabled = disabled;
-            o.name = name;
-            o.query = query;
-            o.queryBuilderEnabled = queryBuilderEnabled;
-            o.scatterPlotSource = scatterPlotSource;
-            o.sourceDescription = sourceDescription;
-            return o;
+            final var _resultValue = new DashboardSectionRowChartSource();
+            _resultValue.disabled = disabled;
+            _resultValue.name = name;
+            _resultValue.query = query;
+            _resultValue.queryBuilderEnabled = queryBuilderEnabled;
+            _resultValue.scatterPlotSource = scatterPlotSource;
+            _resultValue.sourceDescription = sourceDescription;
+            return _resultValue;
         }
     }
 }

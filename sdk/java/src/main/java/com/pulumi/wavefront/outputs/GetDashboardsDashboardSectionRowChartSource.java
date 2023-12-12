@@ -156,16 +156,16 @@ public final class GetDashboardsDashboardSectionRowChartSource {
             return this;
         }
         public GetDashboardsDashboardSectionRowChartSource build() {
-            final var o = new GetDashboardsDashboardSectionRowChartSource();
-            o.disabled = disabled;
-            o.name = name;
-            o.query = query;
-            o.querybuilderEnabled = querybuilderEnabled;
-            o.scatterPlotSource = scatterPlotSource;
-            o.secondaryAxis = secondaryAxis;
-            o.sourceColor = sourceColor;
-            o.sourceDescription = sourceDescription;
-            return o;
+            final var _resultValue = new GetDashboardsDashboardSectionRowChartSource();
+            _resultValue.disabled = disabled;
+            _resultValue.name = name;
+            _resultValue.query = query;
+            _resultValue.querybuilderEnabled = querybuilderEnabled;
+            _resultValue.scatterPlotSource = scatterPlotSource;
+            _resultValue.secondaryAxis = secondaryAxis;
+            _resultValue.sourceColor = sourceColor;
+            _resultValue.sourceDescription = sourceDescription;
+            return _resultValue;
         }
     }
 }

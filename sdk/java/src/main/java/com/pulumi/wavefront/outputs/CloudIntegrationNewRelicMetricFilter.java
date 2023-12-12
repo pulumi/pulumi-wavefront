@@ -65,10 +65,10 @@ public final class CloudIntegrationNewRelicMetricFilter {
             return this;
         }
         public CloudIntegrationNewRelicMetricFilter build() {
-            final var o = new CloudIntegrationNewRelicMetricFilter();
-            o.appName = appName;
-            o.metricFilterRegex = metricFilterRegex;
-            return o;
+            final var _resultValue = new CloudIntegrationNewRelicMetricFilter();
+            _resultValue.appName = appName;
+            _resultValue.metricFilterRegex = metricFilterRegex;
+            return _resultValue;
         }
     }
 }

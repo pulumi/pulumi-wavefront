@@ -133,14 +133,14 @@ public final class GetEventsResult {
             return this;
         }
         public GetEventsResult build() {
-            final var o = new GetEventsResult();
-            o.earliestStartTimeEpochMillis = earliestStartTimeEpochMillis;
-            o.events = events;
-            o.id = id;
-            o.latestStartTimeEpochMillis = latestStartTimeEpochMillis;
-            o.limit = limit;
-            o.offset = offset;
-            return o;
+            final var _resultValue = new GetEventsResult();
+            _resultValue.earliestStartTimeEpochMillis = earliestStartTimeEpochMillis;
+            _resultValue.events = events;
+            _resultValue.id = id;
+            _resultValue.latestStartTimeEpochMillis = latestStartTimeEpochMillis;
+            _resultValue.limit = limit;
+            _resultValue.offset = offset;
+            return _resultValue;
         }
     }
 }

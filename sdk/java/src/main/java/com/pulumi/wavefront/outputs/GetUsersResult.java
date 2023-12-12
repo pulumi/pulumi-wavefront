@@ -70,10 +70,10 @@ public final class GetUsersResult {
             return users(List.of(users));
         }
         public GetUsersResult build() {
-            final var o = new GetUsersResult();
-            o.id = id;
-            o.users = users;
-            return o;
+            final var _resultValue = new GetUsersResult();
+            _resultValue.id = id;
+            _resultValue.users = users;
+            return _resultValue;
         }
     }
 }

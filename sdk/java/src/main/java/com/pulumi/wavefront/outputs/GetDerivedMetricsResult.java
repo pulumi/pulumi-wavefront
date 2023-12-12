@@ -95,12 +95,12 @@ public final class GetDerivedMetricsResult {
             return this;
         }
         public GetDerivedMetricsResult build() {
-            final var o = new GetDerivedMetricsResult();
-            o.derivedMetrics = derivedMetrics;
-            o.id = id;
-            o.limit = limit;
-            o.offset = offset;
-            return o;
+            final var _resultValue = new GetDerivedMetricsResult();
+            _resultValue.derivedMetrics = derivedMetrics;
+            _resultValue.id = id;
+            _resultValue.limit = limit;
+            _resultValue.offset = offset;
+            return _resultValue;
         }
     }
 }

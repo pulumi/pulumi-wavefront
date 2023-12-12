@@ -237,26 +237,26 @@ public final class GetMaintenanceWindowAllMaintenanceWindow {
             return this;
         }
         public GetMaintenanceWindowAllMaintenanceWindow build() {
-            final var o = new GetMaintenanceWindowAllMaintenanceWindow();
-            o.createdEpochMillis = createdEpochMillis;
-            o.creatorId = creatorId;
-            o.customerId = customerId;
-            o.endTimeInSeconds = endTimeInSeconds;
-            o.eventName = eventName;
-            o.hostTagGroupHostNamesGroupAnded = hostTagGroupHostNamesGroupAnded;
-            o.id = id;
-            o.reason = reason;
-            o.relevantCustomerTags = relevantCustomerTags;
-            o.relevantHostNames = relevantHostNames;
-            o.relevantHostTags = relevantHostTags;
-            o.relevantHostTagsAnded = relevantHostTagsAnded;
-            o.runningState = runningState;
-            o.sortAttr = sortAttr;
-            o.startTimeInSeconds = startTimeInSeconds;
-            o.title = title;
-            o.updatedEpochMillis = updatedEpochMillis;
-            o.updaterId = updaterId;
-            return o;
+            final var _resultValue = new GetMaintenanceWindowAllMaintenanceWindow();
+            _resultValue.createdEpochMillis = createdEpochMillis;
+            _resultValue.creatorId = creatorId;
+            _resultValue.customerId = customerId;
+            _resultValue.endTimeInSeconds = endTimeInSeconds;
+            _resultValue.eventName = eventName;
+            _resultValue.hostTagGroupHostNamesGroupAnded = hostTagGroupHostNamesGroupAnded;
+            _resultValue.id = id;
+            _resultValue.reason = reason;
+            _resultValue.relevantCustomerTags = relevantCustomerTags;
+            _resultValue.relevantHostNames = relevantHostNames;
+            _resultValue.relevantHostTags = relevantHostTags;
+            _resultValue.relevantHostTagsAnded = relevantHostTagsAnded;
+            _resultValue.runningState = runningState;
+            _resultValue.sortAttr = sortAttr;
+            _resultValue.startTimeInSeconds = startTimeInSeconds;
+            _resultValue.title = title;
+            _resultValue.updatedEpochMillis = updatedEpochMillis;
+            _resultValue.updaterId = updaterId;
+            return _resultValue;
         }
     }
 }

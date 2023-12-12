@@ -107,12 +107,12 @@ public final class GetRoleResult {
             return permissions(List.of(permissions));
         }
         public GetRoleResult build() {
-            final var o = new GetRoleResult();
-            o.description = description;
-            o.id = id;
-            o.name = name;
-            o.permissions = permissions;
-            return o;
+            final var _resultValue = new GetRoleResult();
+            _resultValue.description = description;
+            _resultValue.id = id;
+            _resultValue.name = name;
+            _resultValue.permissions = permissions;
+            return _resultValue;
         }
     }
 }

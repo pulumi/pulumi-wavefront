@@ -141,14 +141,14 @@ public final class GetUserResult {
             return userGroupIds(List.of(userGroupIds));
         }
         public GetUserResult build() {
-            final var o = new GetUserResult();
-            o.customer = customer;
-            o.email = email;
-            o.id = id;
-            o.lastSuccessfulLogin = lastSuccessfulLogin;
-            o.permissions = permissions;
-            o.userGroupIds = userGroupIds;
-            return o;
+            final var _resultValue = new GetUserResult();
+            _resultValue.customer = customer;
+            _resultValue.email = email;
+            _resultValue.id = id;
+            _resultValue.lastSuccessfulLogin = lastSuccessfulLogin;
+            _resultValue.permissions = permissions;
+            _resultValue.userGroupIds = userGroupIds;
+            return _resultValue;
         }
     }
 }

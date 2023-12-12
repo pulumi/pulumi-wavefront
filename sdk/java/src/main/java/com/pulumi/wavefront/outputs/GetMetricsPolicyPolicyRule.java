@@ -144,17 +144,17 @@ public final class GetMetricsPolicyPolicyRule {
             return userGroupIds(List.of(userGroupIds));
         }
         public GetMetricsPolicyPolicyRule build() {
-            final var o = new GetMetricsPolicyPolicyRule();
-            o.accessType = accessType;
-            o.accountIds = accountIds;
-            o.description = description;
-            o.name = name;
-            o.prefixes = prefixes;
-            o.roleIds = roleIds;
-            o.tags = tags;
-            o.tagsAnded = tagsAnded;
-            o.userGroupIds = userGroupIds;
-            return o;
+            final var _resultValue = new GetMetricsPolicyPolicyRule();
+            _resultValue.accessType = accessType;
+            _resultValue.accountIds = accountIds;
+            _resultValue.description = description;
+            _resultValue.name = name;
+            _resultValue.prefixes = prefixes;
+            _resultValue.roleIds = roleIds;
+            _resultValue.tags = tags;
+            _resultValue.tagsAnded = tagsAnded;
+            _resultValue.userGroupIds = userGroupIds;
+            return _resultValue;
         }
     }
 }

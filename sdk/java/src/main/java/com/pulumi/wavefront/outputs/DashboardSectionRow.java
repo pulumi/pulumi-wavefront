@@ -50,9 +50,9 @@ public final class DashboardSectionRow {
             return charts(List.of(charts));
         }
         public DashboardSectionRow build() {
-            final var o = new DashboardSectionRow();
-            o.charts = charts;
-            return o;
+            final var _resultValue = new DashboardSectionRow();
+            _resultValue.charts = charts;
+            return _resultValue;
         }
     }
 }

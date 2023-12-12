@@ -129,13 +129,13 @@ public final class GetUserGroupResult {
             return users(List.of(users));
         }
         public GetUserGroupResult build() {
-            final var o = new GetUserGroupResult();
-            o.description = description;
-            o.id = id;
-            o.name = name;
-            o.roles = roles;
-            o.users = users;
-            return o;
+            final var _resultValue = new GetUserGroupResult();
+            _resultValue.description = description;
+            _resultValue.id = id;
+            _resultValue.name = name;
+            _resultValue.roles = roles;
+            _resultValue.users = users;
+            return _resultValue;
         }
     }
 }

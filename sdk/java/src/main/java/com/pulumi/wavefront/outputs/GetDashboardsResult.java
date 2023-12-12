@@ -95,12 +95,12 @@ public final class GetDashboardsResult {
             return this;
         }
         public GetDashboardsResult build() {
-            final var o = new GetDashboardsResult();
-            o.dashboards = dashboards;
-            o.id = id;
-            o.limit = limit;
-            o.offset = offset;
-            return o;
+            final var _resultValue = new GetDashboardsResult();
+            _resultValue.dashboards = dashboards;
+            _resultValue.id = id;
+            _resultValue.limit = limit;
+            _resultValue.offset = offset;
+            return _resultValue;
         }
     }
 }

@@ -185,16 +185,16 @@ public final class GetDashboardParameterDetail {
             return this;
         }
         public GetDashboardParameterDetail build() {
-            final var o = new GetDashboardParameterDetail();
-            o.defaultValue = defaultValue;
-            o.dynamicFieldType = dynamicFieldType;
-            o.hideFromView = hideFromView;
-            o.label = label;
-            o.parameterType = parameterType;
-            o.queryValue = queryValue;
-            o.tagKey = tagKey;
-            o.valuesToReadableStrings = valuesToReadableStrings;
-            return o;
+            final var _resultValue = new GetDashboardParameterDetail();
+            _resultValue.defaultValue = defaultValue;
+            _resultValue.dynamicFieldType = dynamicFieldType;
+            _resultValue.hideFromView = hideFromView;
+            _resultValue.label = label;
+            _resultValue.parameterType = parameterType;
+            _resultValue.queryValue = queryValue;
+            _resultValue.tagKey = tagKey;
+            _resultValue.valuesToReadableStrings = valuesToReadableStrings;
+            return _resultValue;
         }
     }
 }

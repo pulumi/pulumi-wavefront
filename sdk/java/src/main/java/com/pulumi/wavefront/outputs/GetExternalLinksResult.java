@@ -95,12 +95,12 @@ public final class GetExternalLinksResult {
             return this;
         }
         public GetExternalLinksResult build() {
-            final var o = new GetExternalLinksResult();
-            o.externalLinks = externalLinks;
-            o.id = id;
-            o.limit = limit;
-            o.offset = offset;
-            return o;
+            final var _resultValue = new GetExternalLinksResult();
+            _resultValue.externalLinks = externalLinks;
+            _resultValue.id = id;
+            _resultValue.limit = limit;
+            _resultValue.offset = offset;
+            return _resultValue;
         }
     }
 }
