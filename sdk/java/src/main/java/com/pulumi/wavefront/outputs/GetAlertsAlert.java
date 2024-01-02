@@ -4,6 +4,7 @@
 package com.pulumi.wavefront.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.wavefront.outputs.GetAlertsAlertFailingHostLabelPair;
 import com.pulumi.wavefront.outputs.GetAlertsAlertInMaintenanceHostLabelPair;
 import java.lang.Boolean;
@@ -349,17 +350,26 @@ public final class GetAlertsAlert {
 
         @CustomType.Setter
         public Builder additionalInformation(String additionalInformation) {
-            this.additionalInformation = Objects.requireNonNull(additionalInformation);
+            if (additionalInformation == null) {
+              throw new MissingRequiredPropertyException("GetAlertsAlert", "additionalInformation");
+            }
+            this.additionalInformation = additionalInformation;
             return this;
         }
         @CustomType.Setter
         public Builder alertType(String alertType) {
-            this.alertType = Objects.requireNonNull(alertType);
+            if (alertType == null) {
+              throw new MissingRequiredPropertyException("GetAlertsAlert", "alertType");
+            }
+            this.alertType = alertType;
             return this;
         }
         @CustomType.Setter
         public Builder canModifies(List<String> canModifies) {
-            this.canModifies = Objects.requireNonNull(canModifies);
+            if (canModifies == null) {
+              throw new MissingRequiredPropertyException("GetAlertsAlert", "canModifies");
+            }
+            this.canModifies = canModifies;
             return this;
         }
         public Builder canModifies(String... canModifies) {
@@ -367,7 +377,10 @@ public final class GetAlertsAlert {
         }
         @CustomType.Setter
         public Builder canViews(List<String> canViews) {
-            this.canViews = Objects.requireNonNull(canViews);
+            if (canViews == null) {
+              throw new MissingRequiredPropertyException("GetAlertsAlert", "canViews");
+            }
+            this.canViews = canViews;
             return this;
         }
         public Builder canViews(String... canViews) {
@@ -375,27 +388,42 @@ public final class GetAlertsAlert {
         }
         @CustomType.Setter
         public Builder condition(String condition) {
-            this.condition = Objects.requireNonNull(condition);
+            if (condition == null) {
+              throw new MissingRequiredPropertyException("GetAlertsAlert", "condition");
+            }
+            this.condition = condition;
             return this;
         }
         @CustomType.Setter
         public Builder conditions(Map<String,String> conditions) {
-            this.conditions = Objects.requireNonNull(conditions);
+            if (conditions == null) {
+              throw new MissingRequiredPropertyException("GetAlertsAlert", "conditions");
+            }
+            this.conditions = conditions;
             return this;
         }
         @CustomType.Setter
         public Builder displayExpression(String displayExpression) {
-            this.displayExpression = Objects.requireNonNull(displayExpression);
+            if (displayExpression == null) {
+              throw new MissingRequiredPropertyException("GetAlertsAlert", "displayExpression");
+            }
+            this.displayExpression = displayExpression;
             return this;
         }
         @CustomType.Setter
         public Builder evaluateRealtimeData(Boolean evaluateRealtimeData) {
-            this.evaluateRealtimeData = Objects.requireNonNull(evaluateRealtimeData);
+            if (evaluateRealtimeData == null) {
+              throw new MissingRequiredPropertyException("GetAlertsAlert", "evaluateRealtimeData");
+            }
+            this.evaluateRealtimeData = evaluateRealtimeData;
             return this;
         }
         @CustomType.Setter
         public Builder failingHostLabelPairs(List<GetAlertsAlertFailingHostLabelPair> failingHostLabelPairs) {
-            this.failingHostLabelPairs = Objects.requireNonNull(failingHostLabelPairs);
+            if (failingHostLabelPairs == null) {
+              throw new MissingRequiredPropertyException("GetAlertsAlert", "failingHostLabelPairs");
+            }
+            this.failingHostLabelPairs = failingHostLabelPairs;
             return this;
         }
         public Builder failingHostLabelPairs(GetAlertsAlertFailingHostLabelPair... failingHostLabelPairs) {
@@ -403,12 +431,18 @@ public final class GetAlertsAlert {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetAlertsAlert", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder inMaintenanceHostLabelPairs(List<GetAlertsAlertInMaintenanceHostLabelPair> inMaintenanceHostLabelPairs) {
-            this.inMaintenanceHostLabelPairs = Objects.requireNonNull(inMaintenanceHostLabelPairs);
+            if (inMaintenanceHostLabelPairs == null) {
+              throw new MissingRequiredPropertyException("GetAlertsAlert", "inMaintenanceHostLabelPairs");
+            }
+            this.inMaintenanceHostLabelPairs = inMaintenanceHostLabelPairs;
             return this;
         }
         public Builder inMaintenanceHostLabelPairs(GetAlertsAlertInMaintenanceHostLabelPair... inMaintenanceHostLabelPairs) {
@@ -416,42 +450,66 @@ public final class GetAlertsAlert {
         }
         @CustomType.Setter
         public Builder includeObsoleteMetrics(Boolean includeObsoleteMetrics) {
-            this.includeObsoleteMetrics = Objects.requireNonNull(includeObsoleteMetrics);
+            if (includeObsoleteMetrics == null) {
+              throw new MissingRequiredPropertyException("GetAlertsAlert", "includeObsoleteMetrics");
+            }
+            this.includeObsoleteMetrics = includeObsoleteMetrics;
             return this;
         }
         @CustomType.Setter
         public Builder minutes(Integer minutes) {
-            this.minutes = Objects.requireNonNull(minutes);
+            if (minutes == null) {
+              throw new MissingRequiredPropertyException("GetAlertsAlert", "minutes");
+            }
+            this.minutes = minutes;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetAlertsAlert", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder notificationResendFrequencyMinutes(Integer notificationResendFrequencyMinutes) {
-            this.notificationResendFrequencyMinutes = Objects.requireNonNull(notificationResendFrequencyMinutes);
+            if (notificationResendFrequencyMinutes == null) {
+              throw new MissingRequiredPropertyException("GetAlertsAlert", "notificationResendFrequencyMinutes");
+            }
+            this.notificationResendFrequencyMinutes = notificationResendFrequencyMinutes;
             return this;
         }
         @CustomType.Setter
         public Builder processRateMinutes(Integer processRateMinutes) {
-            this.processRateMinutes = Objects.requireNonNull(processRateMinutes);
+            if (processRateMinutes == null) {
+              throw new MissingRequiredPropertyException("GetAlertsAlert", "processRateMinutes");
+            }
+            this.processRateMinutes = processRateMinutes;
             return this;
         }
         @CustomType.Setter
         public Builder resolveAfterMinutes(Integer resolveAfterMinutes) {
-            this.resolveAfterMinutes = Objects.requireNonNull(resolveAfterMinutes);
+            if (resolveAfterMinutes == null) {
+              throw new MissingRequiredPropertyException("GetAlertsAlert", "resolveAfterMinutes");
+            }
+            this.resolveAfterMinutes = resolveAfterMinutes;
             return this;
         }
         @CustomType.Setter
         public Builder severity(String severity) {
-            this.severity = Objects.requireNonNull(severity);
+            if (severity == null) {
+              throw new MissingRequiredPropertyException("GetAlertsAlert", "severity");
+            }
+            this.severity = severity;
             return this;
         }
         @CustomType.Setter
         public Builder severityLists(List<String> severityLists) {
-            this.severityLists = Objects.requireNonNull(severityLists);
+            if (severityLists == null) {
+              throw new MissingRequiredPropertyException("GetAlertsAlert", "severityLists");
+            }
+            this.severityLists = severityLists;
             return this;
         }
         public Builder severityLists(String... severityLists) {
@@ -459,7 +517,10 @@ public final class GetAlertsAlert {
         }
         @CustomType.Setter
         public Builder statuses(List<String> statuses) {
-            this.statuses = Objects.requireNonNull(statuses);
+            if (statuses == null) {
+              throw new MissingRequiredPropertyException("GetAlertsAlert", "statuses");
+            }
+            this.statuses = statuses;
             return this;
         }
         public Builder statuses(String... statuses) {
@@ -467,7 +528,10 @@ public final class GetAlertsAlert {
         }
         @CustomType.Setter
         public Builder tags(List<String> tags) {
-            this.tags = Objects.requireNonNull(tags);
+            if (tags == null) {
+              throw new MissingRequiredPropertyException("GetAlertsAlert", "tags");
+            }
+            this.tags = tags;
             return this;
         }
         public Builder tags(String... tags) {
@@ -475,11 +539,15 @@ public final class GetAlertsAlert {
         }
         @CustomType.Setter
         public Builder target(String target) {
-            this.target = Objects.requireNonNull(target);
+            if (target == null) {
+              throw new MissingRequiredPropertyException("GetAlertsAlert", "target");
+            }
+            this.target = target;
             return this;
         }
         @CustomType.Setter
         public Builder targets(@Nullable Map<String,String> targets) {
+
             this.targets = targets;
             return this;
         }

@@ -4,6 +4,7 @@
 package com.pulumi.wavefront.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -56,12 +57,18 @@ public final class CloudIntegrationNewRelicMetricFilter {
 
         @CustomType.Setter
         public Builder appName(String appName) {
-            this.appName = Objects.requireNonNull(appName);
+            if (appName == null) {
+              throw new MissingRequiredPropertyException("CloudIntegrationNewRelicMetricFilter", "appName");
+            }
+            this.appName = appName;
             return this;
         }
         @CustomType.Setter
         public Builder metricFilterRegex(String metricFilterRegex) {
-            this.metricFilterRegex = Objects.requireNonNull(metricFilterRegex);
+            if (metricFilterRegex == null) {
+              throw new MissingRequiredPropertyException("CloudIntegrationNewRelicMetricFilter", "metricFilterRegex");
+            }
+            this.metricFilterRegex = metricFilterRegex;
             return this;
         }
         public CloudIntegrationNewRelicMetricFilter build() {

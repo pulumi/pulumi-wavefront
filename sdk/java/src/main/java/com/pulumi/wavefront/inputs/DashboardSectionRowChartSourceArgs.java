@@ -5,6 +5,7 @@ package com.pulumi.wavefront.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -262,8 +263,12 @@ public final class DashboardSectionRowChartSourceArgs extends com.pulumi.resourc
         }
 
         public DashboardSectionRowChartSourceArgs build() {
-            $.name = Objects.requireNonNull($.name, "expected parameter 'name' to be non-null");
-            $.query = Objects.requireNonNull($.query, "expected parameter 'query' to be non-null");
+            if ($.name == null) {
+                throw new MissingRequiredPropertyException("DashboardSectionRowChartSourceArgs", "name");
+            }
+            if ($.query == null) {
+                throw new MissingRequiredPropertyException("DashboardSectionRowChartSourceArgs", "query");
+            }
             return $;
         }
     }

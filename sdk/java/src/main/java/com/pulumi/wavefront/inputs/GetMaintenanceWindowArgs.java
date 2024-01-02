@@ -5,6 +5,7 @@ package com.pulumi.wavefront.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -74,7 +75,9 @@ public final class GetMaintenanceWindowArgs extends com.pulumi.resources.InvokeA
         }
 
         public GetMaintenanceWindowArgs build() {
-            $.id = Objects.requireNonNull($.id, "expected parameter 'id' to be non-null");
+            if ($.id == null) {
+                throw new MissingRequiredPropertyException("GetMaintenanceWindowArgs", "id");
+            }
             return $;
         }
     }

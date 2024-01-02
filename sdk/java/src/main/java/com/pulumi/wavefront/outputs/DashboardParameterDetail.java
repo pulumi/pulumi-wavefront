@@ -4,6 +4,7 @@
 package com.pulumi.wavefront.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Map;
@@ -162,47 +163,68 @@ public final class DashboardParameterDetail {
 
         @CustomType.Setter
         public Builder defaultValue(String defaultValue) {
-            this.defaultValue = Objects.requireNonNull(defaultValue);
+            if (defaultValue == null) {
+              throw new MissingRequiredPropertyException("DashboardParameterDetail", "defaultValue");
+            }
+            this.defaultValue = defaultValue;
             return this;
         }
         @CustomType.Setter
         public Builder dynamicFieldType(@Nullable String dynamicFieldType) {
+
             this.dynamicFieldType = dynamicFieldType;
             return this;
         }
         @CustomType.Setter
         public Builder hideFromView(Boolean hideFromView) {
-            this.hideFromView = Objects.requireNonNull(hideFromView);
+            if (hideFromView == null) {
+              throw new MissingRequiredPropertyException("DashboardParameterDetail", "hideFromView");
+            }
+            this.hideFromView = hideFromView;
             return this;
         }
         @CustomType.Setter
         public Builder label(String label) {
-            this.label = Objects.requireNonNull(label);
+            if (label == null) {
+              throw new MissingRequiredPropertyException("DashboardParameterDetail", "label");
+            }
+            this.label = label;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("DashboardParameterDetail", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder parameterType(String parameterType) {
-            this.parameterType = Objects.requireNonNull(parameterType);
+            if (parameterType == null) {
+              throw new MissingRequiredPropertyException("DashboardParameterDetail", "parameterType");
+            }
+            this.parameterType = parameterType;
             return this;
         }
         @CustomType.Setter
         public Builder queryValue(@Nullable String queryValue) {
+
             this.queryValue = queryValue;
             return this;
         }
         @CustomType.Setter
         public Builder tagKey(@Nullable String tagKey) {
+
             this.tagKey = tagKey;
             return this;
         }
         @CustomType.Setter
         public Builder valuesToReadableStrings(Map<String,String> valuesToReadableStrings) {
-            this.valuesToReadableStrings = Objects.requireNonNull(valuesToReadableStrings);
+            if (valuesToReadableStrings == null) {
+              throw new MissingRequiredPropertyException("DashboardParameterDetail", "valuesToReadableStrings");
+            }
+            this.valuesToReadableStrings = valuesToReadableStrings;
             return this;
         }
         public DashboardParameterDetail build() {

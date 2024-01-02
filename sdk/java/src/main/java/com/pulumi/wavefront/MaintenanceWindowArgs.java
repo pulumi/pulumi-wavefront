@@ -5,6 +5,7 @@ package com.pulumi.wavefront;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -455,10 +456,18 @@ public final class MaintenanceWindowArgs extends com.pulumi.resources.ResourceAr
         }
 
         public MaintenanceWindowArgs build() {
-            $.endTimeInSeconds = Objects.requireNonNull($.endTimeInSeconds, "expected parameter 'endTimeInSeconds' to be non-null");
-            $.reason = Objects.requireNonNull($.reason, "expected parameter 'reason' to be non-null");
-            $.startTimeInSeconds = Objects.requireNonNull($.startTimeInSeconds, "expected parameter 'startTimeInSeconds' to be non-null");
-            $.title = Objects.requireNonNull($.title, "expected parameter 'title' to be non-null");
+            if ($.endTimeInSeconds == null) {
+                throw new MissingRequiredPropertyException("MaintenanceWindowArgs", "endTimeInSeconds");
+            }
+            if ($.reason == null) {
+                throw new MissingRequiredPropertyException("MaintenanceWindowArgs", "reason");
+            }
+            if ($.startTimeInSeconds == null) {
+                throw new MissingRequiredPropertyException("MaintenanceWindowArgs", "startTimeInSeconds");
+            }
+            if ($.title == null) {
+                throw new MissingRequiredPropertyException("MaintenanceWindowArgs", "title");
+            }
             return $;
         }
     }

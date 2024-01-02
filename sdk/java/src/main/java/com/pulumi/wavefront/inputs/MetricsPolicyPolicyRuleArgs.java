@@ -5,6 +5,7 @@ package com.pulumi.wavefront.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.wavefront.inputs.MetricsPolicyPolicyRuleTagArgs;
 import java.lang.Boolean;
 import java.lang.String;
@@ -425,11 +426,21 @@ public final class MetricsPolicyPolicyRuleArgs extends com.pulumi.resources.Reso
         }
 
         public MetricsPolicyPolicyRuleArgs build() {
-            $.accessType = Objects.requireNonNull($.accessType, "expected parameter 'accessType' to be non-null");
-            $.description = Objects.requireNonNull($.description, "expected parameter 'description' to be non-null");
-            $.name = Objects.requireNonNull($.name, "expected parameter 'name' to be non-null");
-            $.prefixes = Objects.requireNonNull($.prefixes, "expected parameter 'prefixes' to be non-null");
-            $.tagsAnded = Objects.requireNonNull($.tagsAnded, "expected parameter 'tagsAnded' to be non-null");
+            if ($.accessType == null) {
+                throw new MissingRequiredPropertyException("MetricsPolicyPolicyRuleArgs", "accessType");
+            }
+            if ($.description == null) {
+                throw new MissingRequiredPropertyException("MetricsPolicyPolicyRuleArgs", "description");
+            }
+            if ($.name == null) {
+                throw new MissingRequiredPropertyException("MetricsPolicyPolicyRuleArgs", "name");
+            }
+            if ($.prefixes == null) {
+                throw new MissingRequiredPropertyException("MetricsPolicyPolicyRuleArgs", "prefixes");
+            }
+            if ($.tagsAnded == null) {
+                throw new MissingRequiredPropertyException("MetricsPolicyPolicyRuleArgs", "tagsAnded");
+            }
             return $;
         }
     }

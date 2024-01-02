@@ -4,6 +4,7 @@
 package com.pulumi.wavefront.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.wavefront.outputs.GetMetricsPolicyPolicyRule;
 import java.lang.Integer;
 import java.lang.String;
@@ -69,17 +70,26 @@ public final class GetMetricsPolicyResult {
 
         @CustomType.Setter
         public Builder customer(String customer) {
-            this.customer = Objects.requireNonNull(customer);
+            if (customer == null) {
+              throw new MissingRequiredPropertyException("GetMetricsPolicyResult", "customer");
+            }
+            this.customer = customer;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetMetricsPolicyResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder policyRules(List<GetMetricsPolicyPolicyRule> policyRules) {
-            this.policyRules = Objects.requireNonNull(policyRules);
+            if (policyRules == null) {
+              throw new MissingRequiredPropertyException("GetMetricsPolicyResult", "policyRules");
+            }
+            this.policyRules = policyRules;
             return this;
         }
         public Builder policyRules(GetMetricsPolicyPolicyRule... policyRules) {
@@ -87,12 +97,18 @@ public final class GetMetricsPolicyResult {
         }
         @CustomType.Setter
         public Builder updatedEpochMillis(Integer updatedEpochMillis) {
-            this.updatedEpochMillis = Objects.requireNonNull(updatedEpochMillis);
+            if (updatedEpochMillis == null) {
+              throw new MissingRequiredPropertyException("GetMetricsPolicyResult", "updatedEpochMillis");
+            }
+            this.updatedEpochMillis = updatedEpochMillis;
             return this;
         }
         @CustomType.Setter
         public Builder updaterId(String updaterId) {
-            this.updaterId = Objects.requireNonNull(updaterId);
+            if (updaterId == null) {
+              throw new MissingRequiredPropertyException("GetMetricsPolicyResult", "updaterId");
+            }
+            this.updaterId = updaterId;
             return this;
         }
         public GetMetricsPolicyResult build() {

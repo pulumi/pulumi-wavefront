@@ -5,6 +5,7 @@ package com.pulumi.wavefront.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
@@ -159,8 +160,12 @@ public final class AlertTargetRouteArgs extends com.pulumi.resources.ResourceArg
         }
 
         public AlertTargetRouteArgs build() {
-            $.method = Objects.requireNonNull($.method, "expected parameter 'method' to be non-null");
-            $.target = Objects.requireNonNull($.target, "expected parameter 'target' to be non-null");
+            if ($.method == null) {
+                throw new MissingRequiredPropertyException("AlertTargetRouteArgs", "method");
+            }
+            if ($.target == null) {
+                throw new MissingRequiredPropertyException("AlertTargetRouteArgs", "target");
+            }
             return $;
         }
     }

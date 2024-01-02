@@ -4,6 +4,7 @@
 package com.pulumi.wavefront.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.wavefront.outputs.GetAlertsAlert;
 import java.lang.Integer;
 import java.lang.String;
@@ -73,7 +74,10 @@ public final class GetAlertsResult {
 
         @CustomType.Setter
         public Builder alerts(List<GetAlertsAlert> alerts) {
-            this.alerts = Objects.requireNonNull(alerts);
+            if (alerts == null) {
+              throw new MissingRequiredPropertyException("GetAlertsResult", "alerts");
+            }
+            this.alerts = alerts;
             return this;
         }
         public Builder alerts(GetAlertsAlert... alerts) {
@@ -81,16 +85,21 @@ public final class GetAlertsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetAlertsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder limit(@Nullable Integer limit) {
+
             this.limit = limit;
             return this;
         }
         @CustomType.Setter
         public Builder offset(@Nullable Integer offset) {
+
             this.offset = offset;
             return this;
         }

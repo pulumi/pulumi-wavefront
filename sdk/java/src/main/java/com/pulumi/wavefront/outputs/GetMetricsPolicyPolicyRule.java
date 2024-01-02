@@ -4,6 +4,7 @@
 package com.pulumi.wavefront.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.wavefront.outputs.GetMetricsPolicyPolicyRuleTag;
 import java.lang.Boolean;
 import java.lang.String;
@@ -85,12 +86,18 @@ public final class GetMetricsPolicyPolicyRule {
 
         @CustomType.Setter
         public Builder accessType(String accessType) {
-            this.accessType = Objects.requireNonNull(accessType);
+            if (accessType == null) {
+              throw new MissingRequiredPropertyException("GetMetricsPolicyPolicyRule", "accessType");
+            }
+            this.accessType = accessType;
             return this;
         }
         @CustomType.Setter
         public Builder accountIds(List<String> accountIds) {
-            this.accountIds = Objects.requireNonNull(accountIds);
+            if (accountIds == null) {
+              throw new MissingRequiredPropertyException("GetMetricsPolicyPolicyRule", "accountIds");
+            }
+            this.accountIds = accountIds;
             return this;
         }
         public Builder accountIds(String... accountIds) {
@@ -98,17 +105,26 @@ public final class GetMetricsPolicyPolicyRule {
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetMetricsPolicyPolicyRule", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetMetricsPolicyPolicyRule", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder prefixes(List<String> prefixes) {
-            this.prefixes = Objects.requireNonNull(prefixes);
+            if (prefixes == null) {
+              throw new MissingRequiredPropertyException("GetMetricsPolicyPolicyRule", "prefixes");
+            }
+            this.prefixes = prefixes;
             return this;
         }
         public Builder prefixes(String... prefixes) {
@@ -116,7 +132,10 @@ public final class GetMetricsPolicyPolicyRule {
         }
         @CustomType.Setter
         public Builder roleIds(List<String> roleIds) {
-            this.roleIds = Objects.requireNonNull(roleIds);
+            if (roleIds == null) {
+              throw new MissingRequiredPropertyException("GetMetricsPolicyPolicyRule", "roleIds");
+            }
+            this.roleIds = roleIds;
             return this;
         }
         public Builder roleIds(String... roleIds) {
@@ -124,7 +143,10 @@ public final class GetMetricsPolicyPolicyRule {
         }
         @CustomType.Setter
         public Builder tags(List<GetMetricsPolicyPolicyRuleTag> tags) {
-            this.tags = Objects.requireNonNull(tags);
+            if (tags == null) {
+              throw new MissingRequiredPropertyException("GetMetricsPolicyPolicyRule", "tags");
+            }
+            this.tags = tags;
             return this;
         }
         public Builder tags(GetMetricsPolicyPolicyRuleTag... tags) {
@@ -132,12 +154,18 @@ public final class GetMetricsPolicyPolicyRule {
         }
         @CustomType.Setter
         public Builder tagsAnded(Boolean tagsAnded) {
-            this.tagsAnded = Objects.requireNonNull(tagsAnded);
+            if (tagsAnded == null) {
+              throw new MissingRequiredPropertyException("GetMetricsPolicyPolicyRule", "tagsAnded");
+            }
+            this.tagsAnded = tagsAnded;
             return this;
         }
         @CustomType.Setter
         public Builder userGroupIds(List<String> userGroupIds) {
-            this.userGroupIds = Objects.requireNonNull(userGroupIds);
+            if (userGroupIds == null) {
+              throw new MissingRequiredPropertyException("GetMetricsPolicyPolicyRule", "userGroupIds");
+            }
+            this.userGroupIds = userGroupIds;
             return this;
         }
         public Builder userGroupIds(String... userGroupIds) {

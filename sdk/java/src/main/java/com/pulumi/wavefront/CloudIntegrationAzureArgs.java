@@ -5,6 +5,7 @@ package com.pulumi.wavefront;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -470,10 +471,18 @@ public final class CloudIntegrationAzureArgs extends com.pulumi.resources.Resour
         }
 
         public CloudIntegrationAzureArgs build() {
-            $.clientId = Objects.requireNonNull($.clientId, "expected parameter 'clientId' to be non-null");
-            $.clientSecret = Objects.requireNonNull($.clientSecret, "expected parameter 'clientSecret' to be non-null");
-            $.service = Objects.requireNonNull($.service, "expected parameter 'service' to be non-null");
-            $.tenant = Objects.requireNonNull($.tenant, "expected parameter 'tenant' to be non-null");
+            if ($.clientId == null) {
+                throw new MissingRequiredPropertyException("CloudIntegrationAzureArgs", "clientId");
+            }
+            if ($.clientSecret == null) {
+                throw new MissingRequiredPropertyException("CloudIntegrationAzureArgs", "clientSecret");
+            }
+            if ($.service == null) {
+                throw new MissingRequiredPropertyException("CloudIntegrationAzureArgs", "service");
+            }
+            if ($.tenant == null) {
+                throw new MissingRequiredPropertyException("CloudIntegrationAzureArgs", "tenant");
+            }
             return $;
         }
     }
