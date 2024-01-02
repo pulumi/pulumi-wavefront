@@ -5,7 +5,7 @@ go 1.21
 require (
 	github.com/pulumi/pulumi-terraform-bridge/v3 v3.70.0
 	github.com/pulumi/pulumi/sdk/v3 v3.99.0
-	github.com/vmware/terraform-provider-wavefront v0.0.0-20231010210106-16a96b5db492
+	github.com/vmware/terraform-provider-wavefront v0.0.0-20231110100500-cef74e6f1b23
 )
 
 require (
@@ -36,7 +36,7 @@ require (
 	github.com/Masterminds/sprig/v3 v3.2.2 // indirect
 	github.com/Microsoft/go-winio v0.6.1 // indirect
 	github.com/ProtonMail/go-crypto v0.0.0-20230828082145-3c4c8a2d2371 // indirect
-	github.com/WavefrontHQ/go-wavefront-management-api/v2 v2.1.1 // indirect
+	github.com/WavefrontHQ/go-wavefront-management-api/v2 v2.2.1 // indirect
 	github.com/acomagu/bufpipe v1.0.4 // indirect
 	github.com/aead/chacha20 v0.0.0-20180709150244-8b13a72661da // indirect
 	github.com/agext/levenshtein v1.2.3 // indirect

@@ -10,6 +10,7 @@ import com.pulumi.core.internal.Codegen;
 import com.pulumi.wavefront.AlertArgs;
 import com.pulumi.wavefront.Utilities;
 import com.pulumi.wavefront.inputs.AlertState;
+import com.pulumi.wavefront.outputs.AlertAlertTriageDashboard;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -84,6 +85,20 @@ public class Alert extends com.pulumi.resources.CustomResource {
      */
     public Output<Optional<String>> additionalInformation() {
         return Codegen.optional(this.additionalInformation);
+    }
+    /**
+     * A set of user-supplied dashboard and parameters to create dashboard links for triaging alerts.
+     * 
+     */
+    @Export(name="alertTriageDashboards", refs={List.class,AlertAlertTriageDashboard.class}, tree="[0,1]")
+    private Output</* @Nullable */ List<AlertAlertTriageDashboard>> alertTriageDashboards;
+
+    /**
+     * @return A set of user-supplied dashboard and parameters to create dashboard links for triaging alerts.
+     * 
+     */
+    public Output<Optional<List<AlertAlertTriageDashboard>>> alertTriageDashboards() {
+        return Codegen.optional(this.alertTriageDashboards);
     }
     /**
      * The type of alert in Wavefront. Either `CLASSIC` (default)
@@ -258,6 +273,20 @@ public class Alert extends com.pulumi.resources.CustomResource {
      */
     public Output<Optional<Integer>> resolveAfterMinutes() {
         return Codegen.optional(this.resolveAfterMinutes);
+    }
+    /**
+     * A list of user-supplied runbook links for this alert.
+     * 
+     */
+    @Export(name="runbookLinks", refs={List.class,String.class}, tree="[0,1]")
+    private Output</* @Nullable */ List<String>> runbookLinks;
+
+    /**
+     * @return A list of user-supplied runbook links for this alert.
+     * 
+     */
+    public Output<Optional<List<String>>> runbookLinks() {
+        return Codegen.optional(this.runbookLinks);
     }
     /**
      * Severity of the alert, valid values are `INFO`, `SMOKE`, `WARN`, `SEVERE`.

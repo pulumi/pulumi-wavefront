@@ -5,6 +5,7 @@ package com.pulumi.wavefront.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.wavefront.outputs.GetAlertAlertTriageDashboard;
 import com.pulumi.wavefront.outputs.GetAlertFailingHostLabelPair;
 import com.pulumi.wavefront.outputs.GetAlertInMaintenanceHostLabelPair;
 import java.lang.Boolean;
@@ -22,6 +23,11 @@ public final class GetAlertResult {
      * 
      */
     private String additionalInformation;
+    /**
+     * @return A set of user-supplied dashboard and parameters to create dashboard links for triaging alerts.
+     * 
+     */
+    private List<GetAlertAlertTriageDashboard> alertTriageDashboards;
     /**
      * @return The type of alert in Wavefront.
      * 
@@ -103,6 +109,11 @@ public final class GetAlertResult {
      */
     private Integer resolveAfterMinutes;
     /**
+     * @return A list of user-supplied runbook links for this alert.
+     * 
+     */
+    private List<String> runbookLinks;
+    /**
      * @return The severity of the alert.
      * 
      */
@@ -136,6 +147,13 @@ public final class GetAlertResult {
      */
     public String additionalInformation() {
         return this.additionalInformation;
+    }
+    /**
+     * @return A set of user-supplied dashboard and parameters to create dashboard links for triaging alerts.
+     * 
+     */
+    public List<GetAlertAlertTriageDashboard> alertTriageDashboards() {
+        return this.alertTriageDashboards;
     }
     /**
      * @return The type of alert in Wavefront.
@@ -250,6 +268,13 @@ public final class GetAlertResult {
         return this.resolveAfterMinutes;
     }
     /**
+     * @return A list of user-supplied runbook links for this alert.
+     * 
+     */
+    public List<String> runbookLinks() {
+        return this.runbookLinks;
+    }
+    /**
      * @return The severity of the alert.
      * 
      */
@@ -298,6 +323,7 @@ public final class GetAlertResult {
     @CustomType.Builder
     public static final class Builder {
         private String additionalInformation;
+        private List<GetAlertAlertTriageDashboard> alertTriageDashboards;
         private String alertType;
         private List<String> canModifies;
         private List<String> canViews;
@@ -314,6 +340,7 @@ public final class GetAlertResult {
         private Integer notificationResendFrequencyMinutes;
         private Integer processRateMinutes;
         private Integer resolveAfterMinutes;
+        private List<String> runbookLinks;
         private String severity;
         private List<String> severityLists;
         private List<String> statuses;
@@ -324,6 +351,7 @@ public final class GetAlertResult {
         public Builder(GetAlertResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.additionalInformation = defaults.additionalInformation;
+    	      this.alertTriageDashboards = defaults.alertTriageDashboards;
     	      this.alertType = defaults.alertType;
     	      this.canModifies = defaults.canModifies;
     	      this.canViews = defaults.canViews;
@@ -340,6 +368,7 @@ public final class GetAlertResult {
     	      this.notificationResendFrequencyMinutes = defaults.notificationResendFrequencyMinutes;
     	      this.processRateMinutes = defaults.processRateMinutes;
     	      this.resolveAfterMinutes = defaults.resolveAfterMinutes;
+    	      this.runbookLinks = defaults.runbookLinks;
     	      this.severity = defaults.severity;
     	      this.severityLists = defaults.severityLists;
     	      this.statuses = defaults.statuses;
@@ -355,6 +384,17 @@ public final class GetAlertResult {
             }
             this.additionalInformation = additionalInformation;
             return this;
+        }
+        @CustomType.Setter
+        public Builder alertTriageDashboards(List<GetAlertAlertTriageDashboard> alertTriageDashboards) {
+            if (alertTriageDashboards == null) {
+              throw new MissingRequiredPropertyException("GetAlertResult", "alertTriageDashboards");
+            }
+            this.alertTriageDashboards = alertTriageDashboards;
+            return this;
+        }
+        public Builder alertTriageDashboards(GetAlertAlertTriageDashboard... alertTriageDashboards) {
+            return alertTriageDashboards(List.of(alertTriageDashboards));
         }
         @CustomType.Setter
         public Builder alertType(String alertType) {
@@ -497,6 +537,17 @@ public final class GetAlertResult {
             return this;
         }
         @CustomType.Setter
+        public Builder runbookLinks(List<String> runbookLinks) {
+            if (runbookLinks == null) {
+              throw new MissingRequiredPropertyException("GetAlertResult", "runbookLinks");
+            }
+            this.runbookLinks = runbookLinks;
+            return this;
+        }
+        public Builder runbookLinks(String... runbookLinks) {
+            return runbookLinks(List.of(runbookLinks));
+        }
+        @CustomType.Setter
         public Builder severity(String severity) {
             if (severity == null) {
               throw new MissingRequiredPropertyException("GetAlertResult", "severity");
@@ -554,6 +605,7 @@ public final class GetAlertResult {
         public GetAlertResult build() {
             final var _resultValue = new GetAlertResult();
             _resultValue.additionalInformation = additionalInformation;
+            _resultValue.alertTriageDashboards = alertTriageDashboards;
             _resultValue.alertType = alertType;
             _resultValue.canModifies = canModifies;
             _resultValue.canViews = canViews;
@@ -570,6 +622,7 @@ public final class GetAlertResult {
             _resultValue.notificationResendFrequencyMinutes = notificationResendFrequencyMinutes;
             _resultValue.processRateMinutes = processRateMinutes;
             _resultValue.resolveAfterMinutes = resolveAfterMinutes;
+            _resultValue.runbookLinks = runbookLinks;
             _resultValue.severity = severity;
             _resultValue.severityLists = severityLists;
             _resultValue.statuses = statuses;

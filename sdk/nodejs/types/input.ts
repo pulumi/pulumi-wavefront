@@ -5,6 +5,16 @@ import * as pulumi from "@pulumi/pulumi";
 import * as inputs from "../types/input";
 import * as outputs from "../types/output";
 
+export interface AlertAlertTriageDashboard {
+    dashboardId: pulumi.Input<string>;
+    description: pulumi.Input<string>;
+    parameters?: pulumi.Input<inputs.AlertAlertTriageDashboardParameters>;
+}
+
+export interface AlertAlertTriageDashboardParameters {
+    constants?: pulumi.Input<{[key: string]: any}>;
+}
+
 export interface AlertTargetRoute {
     /**
      * (Required) String that filters the route. Space delimited. Currently only allows a single key value pair.

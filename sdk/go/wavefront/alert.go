@@ -64,6 +64,8 @@ type Alert struct {
 	// User-supplied additional explanatory information for this alert.
 	// Useful for linking runbooks, migrations, etc.
 	AdditionalInformation pulumi.StringPtrOutput `pulumi:"additionalInformation"`
+	// A set of user-supplied dashboard and parameters to create dashboard links for triaging alerts.
+	AlertTriageDashboards AlertAlertTriageDashboardArrayOutput `pulumi:"alertTriageDashboards"`
 	// The type of alert in Wavefront. Either `CLASSIC` (default)
 	// or `THRESHOLD`.
 	AlertType pulumi.StringPtrOutput `pulumi:"alertType"`
@@ -96,6 +98,8 @@ type Alert struct {
 	// query must evaluate to "false" (zero value) before the alert resolves. When unset, this defaults to
 	// the same value as `minutes`.
 	ResolveAfterMinutes pulumi.IntPtrOutput `pulumi:"resolveAfterMinutes"`
+	// A list of user-supplied runbook links for this alert.
+	RunbookLinks pulumi.StringArrayOutput `pulumi:"runbookLinks"`
 	// Severity of the alert, valid values are `INFO`, `SMOKE`, `WARN`, `SEVERE`.
 	Severity pulumi.StringOutput `pulumi:"severity"`
 	// A set of tags to assign to this resource.
@@ -147,6 +151,8 @@ type alertState struct {
 	// User-supplied additional explanatory information for this alert.
 	// Useful for linking runbooks, migrations, etc.
 	AdditionalInformation *string `pulumi:"additionalInformation"`
+	// A set of user-supplied dashboard and parameters to create dashboard links for triaging alerts.
+	AlertTriageDashboards []AlertAlertTriageDashboard `pulumi:"alertTriageDashboards"`
 	// The type of alert in Wavefront. Either `CLASSIC` (default)
 	// or `THRESHOLD`.
 	AlertType *string `pulumi:"alertType"`
@@ -179,6 +185,8 @@ type alertState struct {
 	// query must evaluate to "false" (zero value) before the alert resolves. When unset, this defaults to
 	// the same value as `minutes`.
 	ResolveAfterMinutes *int `pulumi:"resolveAfterMinutes"`
+	// A list of user-supplied runbook links for this alert.
+	RunbookLinks []string `pulumi:"runbookLinks"`
 	// Severity of the alert, valid values are `INFO`, `SMOKE`, `WARN`, `SEVERE`.
 	Severity *string `pulumi:"severity"`
 	// A set of tags to assign to this resource.
@@ -195,6 +203,8 @@ type AlertState struct {
 	// User-supplied additional explanatory information for this alert.
 	// Useful for linking runbooks, migrations, etc.
 	AdditionalInformation pulumi.StringPtrInput
+	// A set of user-supplied dashboard and parameters to create dashboard links for triaging alerts.
+	AlertTriageDashboards AlertAlertTriageDashboardArrayInput
 	// The type of alert in Wavefront. Either `CLASSIC` (default)
 	// or `THRESHOLD`.
 	AlertType pulumi.StringPtrInput
@@ -227,6 +237,8 @@ type AlertState struct {
 	// query must evaluate to "false" (zero value) before the alert resolves. When unset, this defaults to
 	// the same value as `minutes`.
 	ResolveAfterMinutes pulumi.IntPtrInput
+	// A list of user-supplied runbook links for this alert.
+	RunbookLinks pulumi.StringArrayInput
 	// Severity of the alert, valid values are `INFO`, `SMOKE`, `WARN`, `SEVERE`.
 	Severity pulumi.StringPtrInput
 	// A set of tags to assign to this resource.
@@ -247,6 +259,8 @@ type alertArgs struct {
 	// User-supplied additional explanatory information for this alert.
 	// Useful for linking runbooks, migrations, etc.
 	AdditionalInformation *string `pulumi:"additionalInformation"`
+	// A set of user-supplied dashboard and parameters to create dashboard links for triaging alerts.
+	AlertTriageDashboards []AlertAlertTriageDashboard `pulumi:"alertTriageDashboards"`
 	// The type of alert in Wavefront. Either `CLASSIC` (default)
 	// or `THRESHOLD`.
 	AlertType *string `pulumi:"alertType"`
@@ -279,6 +293,8 @@ type alertArgs struct {
 	// query must evaluate to "false" (zero value) before the alert resolves. When unset, this defaults to
 	// the same value as `minutes`.
 	ResolveAfterMinutes *int `pulumi:"resolveAfterMinutes"`
+	// A list of user-supplied runbook links for this alert.
+	RunbookLinks []string `pulumi:"runbookLinks"`
 	// Severity of the alert, valid values are `INFO`, `SMOKE`, `WARN`, `SEVERE`.
 	Severity *string `pulumi:"severity"`
 	// A set of tags to assign to this resource.
@@ -296,6 +312,8 @@ type AlertArgs struct {
 	// User-supplied additional explanatory information for this alert.
 	// Useful for linking runbooks, migrations, etc.
 	AdditionalInformation pulumi.StringPtrInput
+	// A set of user-supplied dashboard and parameters to create dashboard links for triaging alerts.
+	AlertTriageDashboards AlertAlertTriageDashboardArrayInput
 	// The type of alert in Wavefront. Either `CLASSIC` (default)
 	// or `THRESHOLD`.
 	AlertType pulumi.StringPtrInput
@@ -328,6 +346,8 @@ type AlertArgs struct {
 	// query must evaluate to "false" (zero value) before the alert resolves. When unset, this defaults to
 	// the same value as `minutes`.
 	ResolveAfterMinutes pulumi.IntPtrInput
+	// A list of user-supplied runbook links for this alert.
+	RunbookLinks pulumi.StringArrayInput
 	// Severity of the alert, valid values are `INFO`, `SMOKE`, `WARN`, `SEVERE`.
 	Severity pulumi.StringPtrInput
 	// A set of tags to assign to this resource.
@@ -433,6 +453,11 @@ func (o AlertOutput) AdditionalInformation() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *Alert) pulumi.StringPtrOutput { return v.AdditionalInformation }).(pulumi.StringPtrOutput)
 }
 
+// A set of user-supplied dashboard and parameters to create dashboard links for triaging alerts.
+func (o AlertOutput) AlertTriageDashboards() AlertAlertTriageDashboardArrayOutput {
+	return o.ApplyT(func(v *Alert) AlertAlertTriageDashboardArrayOutput { return v.AlertTriageDashboards }).(AlertAlertTriageDashboardArrayOutput)
+}
+
 // The type of alert in Wavefront. Either `CLASSIC` (default)
 // or `THRESHOLD`.
 func (o AlertOutput) AlertType() pulumi.StringPtrOutput {
@@ -496,6 +521,11 @@ func (o AlertOutput) ProcessRateMinutes() pulumi.IntPtrOutput {
 // the same value as `minutes`.
 func (o AlertOutput) ResolveAfterMinutes() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *Alert) pulumi.IntPtrOutput { return v.ResolveAfterMinutes }).(pulumi.IntPtrOutput)
+}
+
+// A list of user-supplied runbook links for this alert.
+func (o AlertOutput) RunbookLinks() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *Alert) pulumi.StringArrayOutput { return v.RunbookLinks }).(pulumi.StringArrayOutput)
 }
 
 // Severity of the alert, valid values are `INFO`, `SMOKE`, `WARN`, `SEVERE`.

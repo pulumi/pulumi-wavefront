@@ -69,6 +69,35 @@
         ]
     },
     "types": {
+        "wavefront:index/AlertAlertTriageDashboard:AlertAlertTriageDashboard": {
+            "properties": {
+                "dashboardId": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "parameters": {
+                    "$ref": "#/types/wavefront:index/AlertAlertTriageDashboardParameters:AlertAlertTriageDashboardParameters"
+                }
+            },
+            "type": "object",
+            "required": [
+                "dashboardId",
+                "description"
+            ]
+        },
+        "wavefront:index/AlertAlertTriageDashboardParameters:AlertAlertTriageDashboardParameters": {
+            "properties": {
+                "constants": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "$ref": "pulumi.json#/Any"
+                    }
+                }
+            },
+            "type": "object"
+        },
         "wavefront:index/AlertTargetRoute:AlertTargetRoute": {
             "properties": {
                 "filter": {
@@ -643,6 +672,40 @@
                 "value"
             ]
         },
+        "wavefront:index/getAlertAlertTriageDashboard:getAlertAlertTriageDashboard": {
+            "properties": {
+                "dashboardId": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "parameters": {
+                    "$ref": "#/types/wavefront:index/getAlertAlertTriageDashboardParameters:getAlertAlertTriageDashboardParameters"
+                }
+            },
+            "type": "object",
+            "required": [
+                "dashboardId",
+                "description"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "wavefront:index/getAlertAlertTriageDashboardParameters:getAlertAlertTriageDashboardParameters": {
+            "properties": {
+                "constants": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "$ref": "pulumi.json#/Any"
+                    }
+                }
+            },
+            "type": "object"
+        },
         "wavefront:index/getAlertFailingHostLabelPair:getAlertFailingHostLabelPair": {
             "properties": {
                 "firing": {
@@ -688,6 +751,13 @@
                 "additionalInformation": {
                     "type": "string",
                     "description": "User-supplied additional explanatory information about this alert.\n"
+                },
+                "alertTriageDashboards": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/wavefront:index/getAlertsAlertAlertTriageDashboard:getAlertsAlertAlertTriageDashboard"
+                    },
+                    "description": "A set of user-supplied dashboard and parameters to create dashboard links for triaging alerts.\n"
                 },
                 "alertType": {
                     "type": "string",
@@ -768,6 +838,13 @@
                     "type": "integer",
                     "description": "The number of consecutive minutes that a firing series matching the condition query must evaluate to \"false\" (zero value) before the alert resolves.\n"
                 },
+                "runbookLinks": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "A list of user-supplied runbook links for this alert.\n"
+                },
                 "severity": {
                     "type": "string",
                     "description": "The severity of the alert.\n"
@@ -807,6 +884,7 @@
             "type": "object",
             "required": [
                 "additionalInformation",
+                "alertTriageDashboards",
                 "alertType",
                 "canModifies",
                 "canViews",
@@ -823,6 +901,7 @@
                 "notificationResendFrequencyMinutes",
                 "processRateMinutes",
                 "resolveAfterMinutes",
+                "runbookLinks",
                 "severity",
                 "severityLists",
                 "statuses",
@@ -834,6 +913,40 @@
                     "requiredInputs": []
                 }
             }
+        },
+        "wavefront:index/getAlertsAlertAlertTriageDashboard:getAlertsAlertAlertTriageDashboard": {
+            "properties": {
+                "dashboardId": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "parameters": {
+                    "$ref": "#/types/wavefront:index/getAlertsAlertAlertTriageDashboardParameters:getAlertsAlertAlertTriageDashboardParameters"
+                }
+            },
+            "type": "object",
+            "required": [
+                "dashboardId",
+                "description"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "wavefront:index/getAlertsAlertAlertTriageDashboardParameters:getAlertsAlertAlertTriageDashboardParameters": {
+            "properties": {
+                "constants": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "$ref": "pulumi.json#/Any"
+                    }
+                }
+            },
+            "type": "object"
         },
         "wavefront:index/getAlertsAlertFailingHostLabelPair:getAlertsAlertFailingHostLabelPair": {
             "properties": {
@@ -2753,6 +2866,13 @@
                     "type": "string",
                     "description": "User-supplied additional explanatory information for this alert.\nUseful for linking runbooks, migrations, etc.\n"
                 },
+                "alertTriageDashboards": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/wavefront:index/AlertAlertTriageDashboard:AlertAlertTriageDashboard"
+                    },
+                    "description": "A set of user-supplied dashboard and parameters to create dashboard links for triaging alerts.\n"
+                },
                 "alertType": {
                     "type": "string",
                     "description": "The type of alert in Wavefront. Either `CLASSIC` (default)\nor `THRESHOLD`.\n"
@@ -2805,6 +2925,13 @@
                 "resolveAfterMinutes": {
                     "type": "integer",
                     "description": "The number of consecutive minutes that a firing series matching the condition\nquery must evaluate to \"false\" (zero value) before the alert resolves. When unset, this defaults to\nthe same value as `minutes`.\n"
+                },
+                "runbookLinks": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "A list of user-supplied runbook links for this alert.\n"
                 },
                 "severity": {
                     "type": "string",
@@ -2841,6 +2968,13 @@
                     "type": "string",
                     "description": "User-supplied additional explanatory information for this alert.\nUseful for linking runbooks, migrations, etc.\n"
                 },
+                "alertTriageDashboards": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/wavefront:index/AlertAlertTriageDashboard:AlertAlertTriageDashboard"
+                    },
+                    "description": "A set of user-supplied dashboard and parameters to create dashboard links for triaging alerts.\n"
+                },
                 "alertType": {
                     "type": "string",
                     "description": "The type of alert in Wavefront. Either `CLASSIC` (default)\nor `THRESHOLD`.\n"
@@ -2894,6 +3028,13 @@
                     "type": "integer",
                     "description": "The number of consecutive minutes that a firing series matching the condition\nquery must evaluate to \"false\" (zero value) before the alert resolves. When unset, this defaults to\nthe same value as `minutes`.\n"
                 },
+                "runbookLinks": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "A list of user-supplied runbook links for this alert.\n"
+                },
                 "severity": {
                     "type": "string",
                     "description": "Severity of the alert, valid values are `INFO`, `SMOKE`, `WARN`, `SEVERE`.\n"
@@ -2927,6 +3068,13 @@
                     "additionalInformation": {
                         "type": "string",
                         "description": "User-supplied additional explanatory information for this alert.\nUseful for linking runbooks, migrations, etc.\n"
+                    },
+                    "alertTriageDashboards": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/wavefront:index/AlertAlertTriageDashboard:AlertAlertTriageDashboard"
+                        },
+                        "description": "A set of user-supplied dashboard and parameters to create dashboard links for triaging alerts.\n"
                     },
                     "alertType": {
                         "type": "string",
@@ -2980,6 +3128,13 @@
                     "resolveAfterMinutes": {
                         "type": "integer",
                         "description": "The number of consecutive minutes that a firing series matching the condition\nquery must evaluate to \"false\" (zero value) before the alert resolves. When unset, this defaults to\nthe same value as `minutes`.\n"
+                    },
+                    "runbookLinks": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "A list of user-supplied runbook links for this alert.\n"
                     },
                     "severity": {
                         "type": "string",
@@ -6061,6 +6216,13 @@
                         "type": "string",
                         "description": "User-supplied additional explanatory information about this alert.\n"
                     },
+                    "alertTriageDashboards": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/wavefront:index/getAlertAlertTriageDashboard:getAlertAlertTriageDashboard"
+                        },
+                        "description": "A set of user-supplied dashboard and parameters to create dashboard links for triaging alerts.\n"
+                    },
                     "alertType": {
                         "type": "string",
                         "description": "The type of alert in Wavefront.\n"
@@ -6140,6 +6302,13 @@
                         "type": "integer",
                         "description": "The number of consecutive minutes that a firing series matching the condition query must evaluate to \"false\" (zero value) before the alert resolves.\n"
                     },
+                    "runbookLinks": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "A list of user-supplied runbook links for this alert.\n"
+                    },
                     "severity": {
                         "type": "string",
                         "description": "The severity of the alert.\n"
@@ -6179,6 +6348,7 @@
                 "type": "object",
                 "required": [
                     "additionalInformation",
+                    "alertTriageDashboards",
                     "alertType",
                     "canModifies",
                     "canViews",
@@ -6195,6 +6365,7 @@
                     "notificationResendFrequencyMinutes",
                     "processRateMinutes",
                     "resolveAfterMinutes",
+                    "runbookLinks",
                     "severity",
                     "severityLists",
                     "statuses",

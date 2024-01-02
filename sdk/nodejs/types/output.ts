@@ -5,6 +5,16 @@ import * as pulumi from "@pulumi/pulumi";
 import * as inputs from "../types/input";
 import * as outputs from "../types/output";
 
+export interface AlertAlertTriageDashboard {
+    dashboardId: string;
+    description: string;
+    parameters?: outputs.AlertAlertTriageDashboardParameters;
+}
+
+export interface AlertAlertTriageDashboardParameters {
+    constants?: {[key: string]: any};
+}
+
 export interface AlertTargetRoute {
     /**
      * (Required) String that filters the route. Space delimited. Currently only allows a single key value pair.
@@ -413,6 +423,16 @@ export interface DashboardSectionRowChartSource {
     sourceDescription?: string;
 }
 
+export interface GetAlertAlertTriageDashboard {
+    dashboardId: string;
+    description: string;
+    parameters?: outputs.GetAlertAlertTriageDashboardParameters;
+}
+
+export interface GetAlertAlertTriageDashboardParameters {
+    constants?: {[key: string]: any};
+}
+
 export interface GetAlertFailingHostLabelPair {
     firing: number;
     host: string;
@@ -428,6 +448,10 @@ export interface GetAlertsAlert {
      * User-supplied additional explanatory information about this alert.
      */
     additionalInformation: string;
+    /**
+     * A set of user-supplied dashboard and parameters to create dashboard links for triaging alerts.
+     */
+    alertTriageDashboards: outputs.GetAlertsAlertAlertTriageDashboard[];
     /**
      * The type of alert in Wavefront.
      */
@@ -493,6 +517,10 @@ export interface GetAlertsAlert {
      */
     resolveAfterMinutes: number;
     /**
+     * A list of user-supplied runbook links for this alert.
+     */
+    runbookLinks: string[];
+    /**
      * The severity of the alert.
      */
     severity: string;
@@ -513,6 +541,16 @@ export interface GetAlertsAlert {
      * A comma-separated list of the email addresses or integration endpoints (such as PagerDuty or webhook) to notify when the alert status changes. Multiple target types can be in the list.
      */
     targets?: {[key: string]: string};
+}
+
+export interface GetAlertsAlertAlertTriageDashboard {
+    dashboardId: string;
+    description: string;
+    parameters?: outputs.GetAlertsAlertAlertTriageDashboardParameters;
+}
+
+export interface GetAlertsAlertAlertTriageDashboardParameters {
+    constants?: {[key: string]: any};
 }
 
 export interface GetAlertsAlertFailingHostLabelPair {

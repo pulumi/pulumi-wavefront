@@ -60,6 +60,8 @@ type LookupAlertArgs struct {
 type LookupAlertResult struct {
 	// User-supplied additional explanatory information about this alert.
 	AdditionalInformation string `pulumi:"additionalInformation"`
+	// A set of user-supplied dashboard and parameters to create dashboard links for triaging alerts.
+	AlertTriageDashboards []GetAlertAlertTriageDashboard `pulumi:"alertTriageDashboards"`
 	// The type of alert in Wavefront.
 	AlertType string `pulumi:"alertType"`
 	// A list of users or groups that can modify the alert.
@@ -92,6 +94,8 @@ type LookupAlertResult struct {
 	ProcessRateMinutes int `pulumi:"processRateMinutes"`
 	// The number of consecutive minutes that a firing series matching the condition query must evaluate to "false" (zero value) before the alert resolves.
 	ResolveAfterMinutes int `pulumi:"resolveAfterMinutes"`
+	// A list of user-supplied runbook links for this alert.
+	RunbookLinks []string `pulumi:"runbookLinks"`
 	// The severity of the alert.
 	Severity      string   `pulumi:"severity"`
 	SeverityLists []string `pulumi:"severityLists"`
@@ -148,6 +152,11 @@ func (o LookupAlertResultOutput) ToLookupAlertResultOutputWithContext(ctx contex
 // User-supplied additional explanatory information about this alert.
 func (o LookupAlertResultOutput) AdditionalInformation() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAlertResult) string { return v.AdditionalInformation }).(pulumi.StringOutput)
+}
+
+// A set of user-supplied dashboard and parameters to create dashboard links for triaging alerts.
+func (o LookupAlertResultOutput) AlertTriageDashboards() GetAlertAlertTriageDashboardArrayOutput {
+	return o.ApplyT(func(v LookupAlertResult) []GetAlertAlertTriageDashboard { return v.AlertTriageDashboards }).(GetAlertAlertTriageDashboardArrayOutput)
 }
 
 // The type of alert in Wavefront.
@@ -228,6 +237,11 @@ func (o LookupAlertResultOutput) ProcessRateMinutes() pulumi.IntOutput {
 // The number of consecutive minutes that a firing series matching the condition query must evaluate to "false" (zero value) before the alert resolves.
 func (o LookupAlertResultOutput) ResolveAfterMinutes() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupAlertResult) int { return v.ResolveAfterMinutes }).(pulumi.IntOutput)
+}
+
+// A list of user-supplied runbook links for this alert.
+func (o LookupAlertResultOutput) RunbookLinks() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v LookupAlertResult) []string { return v.RunbookLinks }).(pulumi.StringArrayOutput)
 }
 
 // The severity of the alert.

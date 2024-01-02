@@ -18,6 +18,10 @@ namespace Pulumi.Wavefront.Outputs
         /// </summary>
         public readonly string AdditionalInformation;
         /// <summary>
+        /// A set of user-supplied dashboard and parameters to create dashboard links for triaging alerts.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetAlertsAlertAlertTriageDashboardResult> AlertTriageDashboards;
+        /// <summary>
         /// The type of alert in Wavefront.
         /// </summary>
         public readonly string AlertType;
@@ -82,6 +86,10 @@ namespace Pulumi.Wavefront.Outputs
         /// </summary>
         public readonly int ResolveAfterMinutes;
         /// <summary>
+        /// A list of user-supplied runbook links for this alert.
+        /// </summary>
+        public readonly ImmutableArray<string> RunbookLinks;
+        /// <summary>
         /// The severity of the alert.
         /// </summary>
         public readonly string Severity;
@@ -106,6 +114,8 @@ namespace Pulumi.Wavefront.Outputs
         [OutputConstructor]
         private GetAlertsAlertResult(
             string additionalInformation,
+
+            ImmutableArray<Outputs.GetAlertsAlertAlertTriageDashboardResult> alertTriageDashboards,
 
             string alertType,
 
@@ -139,6 +149,8 @@ namespace Pulumi.Wavefront.Outputs
 
             int resolveAfterMinutes,
 
+            ImmutableArray<string> runbookLinks,
+
             string severity,
 
             ImmutableArray<string> severityLists,
@@ -152,6 +164,7 @@ namespace Pulumi.Wavefront.Outputs
             ImmutableDictionary<string, string>? targets)
         {
             AdditionalInformation = additionalInformation;
+            AlertTriageDashboards = alertTriageDashboards;
             AlertType = alertType;
             CanModifies = canModifies;
             CanViews = canViews;
@@ -168,6 +181,7 @@ namespace Pulumi.Wavefront.Outputs
             NotificationResendFrequencyMinutes = notificationResendFrequencyMinutes;
             ProcessRateMinutes = processRateMinutes;
             ResolveAfterMinutes = resolveAfterMinutes;
+            RunbookLinks = runbookLinks;
             Severity = severity;
             SeverityLists = severityLists;
             Statuses = statuses;

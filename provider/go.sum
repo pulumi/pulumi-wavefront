@@ -746,8 +746,8 @@ github.com/Shopify/logrus-bugsnag v0.0.0-20171204204709-577dee27f20d/go.mod h1:H
 github.com/Shopify/sarama v1.19.0/go.mod h1:FVkBWblsNy7DGZRfXLU0O9RCGt5g3g3yEuWXgklEdEo=
 github.com/Shopify/toxiproxy v2.1.4+incompatible/go.mod h1:OXgGpZ6Cli1/URJOF1DMxUHB2q5Ap20/P/eIdh4G0pI=
 github.com/VividCortex/gohistogram v1.0.0/go.mod h1:Pf5mBqqDxYaXu3hDrrU+w6nw50o/4+TcAqDqk/vUH7g=
-github.com/WavefrontHQ/go-wavefront-management-api/v2 v2.1.1 h1:Y2XZN5MoPOKIX7YVfAVFOnWYDkAQAh/65Y97Tt4Ez8g=
-github.com/WavefrontHQ/go-wavefront-management-api/v2 v2.1.1/go.mod h1:yOfesauybnZn9yYaovaLRe3RxlsLSRIswmHayvJO9O8=
+github.com/WavefrontHQ/go-wavefront-management-api/v2 v2.2.1 h1:9RWLxiaJ2NsKOGzLBEEDYBEQfqdAcELcIfiz2ETchp4=
+github.com/WavefrontHQ/go-wavefront-management-api/v2 v2.2.1/go.mod h1:yOfesauybnZn9yYaovaLRe3RxlsLSRIswmHayvJO9O8=
 github.com/acomagu/bufpipe v1.0.4 h1:e3H4WUzM3npvo5uv95QuJM3cQspFNtFBzvJ2oNjKIDQ=
 github.com/acomagu/bufpipe v1.0.4/go.mod h1:mxdxdup/WdsKVreO5GpW4+M/1CE2sMG4jeGJ2sYmHc4=
 github.com/aead/chacha20 v0.0.0-20180709150244-8b13a72661da h1:KjTM2ks9d14ZYCvmHS9iAKVt9AyzRSqNU1qabPih5BY=
@@ -2376,8 +2376,8 @@ github.com/vmihailenco/msgpack/v5 v5.4.1 h1:cQriyiUvjTwOHg8QZaPihLWeRAAVoCpE00IU
 github.com/vmihailenco/msgpack/v5 v5.4.1/go.mod h1:GaZTsDaehaPpQVyxrf5mtQlH+pc21PIudVV/E3rRQok=
 github.com/vmihailenco/tagparser/v2 v2.0.0 h1:y09buUbR+b5aycVFQs/g70pqKVZNBmxwAhO7/IwNM9g=
 github.com/vmihailenco/tagparser/v2 v2.0.0/go.mod h1:Wri+At7QHww0WTrCBeu4J6bNtoV6mEfg5OIWRZA9qds=
-github.com/vmware/terraform-provider-wavefront v0.0.0-20231010210106-16a96b5db492 h1:b24EJORK79r8e6U2ypHFUytCvb5jcZ5Vcyam+se3J6Y=
-github.com/vmware/terraform-provider-wavefront v0.0.0-20231010210106-16a96b5db492/go.mod h1:XPJ8tE4ROvMtL6Dir4y/g2k1ZdBa/cPPSxXjMyP4U0I=
+github.com/vmware/terraform-provider-wavefront v0.0.0-20231110100500-cef74e6f1b23 h1:amJdJpbWHCDlSB8mwvRx4hDQykZXrEMB7pysMtMKS0g=
+github.com/vmware/terraform-provider-wavefront v0.0.0-20231110100500-cef74e6f1b23/go.mod h1:Di5UAjEUCMtTbp/1S/oaNVQQOlR9guaCRt/nTb5I0ak=
 github.com/vultr/govultr/v2 v2.17.2/go.mod h1:ZFOKGWmgjytfyjeyAdhQlSWwTjh2ig+X49cAp50dzXI=
 github.com/willf/bitset v1.1.11-0.20200630133818-d5bec3311243/go.mod h1:RjeCKbqT1RxIR/KWY6phxZiaY1IyutSBfGjNPySAYV4=
 github.com/willf/bitset v1.1.11/go.mod h1:83CECat5yLh5zVOf4P1ErAgKA5UDvKtgyUABdr3+MjI=
