@@ -4,6 +4,7 @@
 package com.pulumi.wavefront.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.util.Objects;
 import java.util.Optional;
@@ -146,8 +147,12 @@ public final class GetEventsPlainArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         public GetEventsPlainArgs build() {
-            $.earliestStartTimeEpochMillis = Objects.requireNonNull($.earliestStartTimeEpochMillis, "expected parameter 'earliestStartTimeEpochMillis' to be non-null");
-            $.latestStartTimeEpochMillis = Objects.requireNonNull($.latestStartTimeEpochMillis, "expected parameter 'latestStartTimeEpochMillis' to be non-null");
+            if ($.earliestStartTimeEpochMillis == null) {
+                throw new MissingRequiredPropertyException("GetEventsPlainArgs", "earliestStartTimeEpochMillis");
+            }
+            if ($.latestStartTimeEpochMillis == null) {
+                throw new MissingRequiredPropertyException("GetEventsPlainArgs", "latestStartTimeEpochMillis");
+            }
             return $;
         }
     }

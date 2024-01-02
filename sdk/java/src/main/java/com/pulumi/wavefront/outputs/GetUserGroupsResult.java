@@ -4,6 +4,7 @@
 package com.pulumi.wavefront.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.wavefront.outputs.GetUserGroupsUserGroup;
 import java.lang.Integer;
 import java.lang.String;
@@ -73,22 +74,30 @@ public final class GetUserGroupsResult {
 
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetUserGroupsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder limit(@Nullable Integer limit) {
+
             this.limit = limit;
             return this;
         }
         @CustomType.Setter
         public Builder offset(@Nullable Integer offset) {
+
             this.offset = offset;
             return this;
         }
         @CustomType.Setter
         public Builder userGroups(List<GetUserGroupsUserGroup> userGroups) {
-            this.userGroups = Objects.requireNonNull(userGroups);
+            if (userGroups == null) {
+              throw new MissingRequiredPropertyException("GetUserGroupsResult", "userGroups");
+            }
+            this.userGroups = userGroups;
             return this;
         }
         public Builder userGroups(GetUserGroupsUserGroup... userGroups) {

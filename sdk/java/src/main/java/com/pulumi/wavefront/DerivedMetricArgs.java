@@ -5,6 +5,7 @@ package com.pulumi.wavefront;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -236,8 +237,12 @@ public final class DerivedMetricArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public DerivedMetricArgs build() {
-            $.minutes = Objects.requireNonNull($.minutes, "expected parameter 'minutes' to be non-null");
-            $.query = Objects.requireNonNull($.query, "expected parameter 'query' to be non-null");
+            if ($.minutes == null) {
+                throw new MissingRequiredPropertyException("DerivedMetricArgs", "minutes");
+            }
+            if ($.query == null) {
+                throw new MissingRequiredPropertyException("DerivedMetricArgs", "query");
+            }
             return $;
         }
     }

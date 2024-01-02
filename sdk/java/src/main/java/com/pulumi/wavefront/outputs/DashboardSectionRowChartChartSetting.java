@@ -4,6 +4,7 @@
 package com.pulumi.wavefront.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Double;
 import java.lang.Integer;
@@ -884,16 +885,19 @@ public final class DashboardSectionRowChartChartSetting {
 
         @CustomType.Setter
         public Builder autoColumnTags(@Nullable Boolean autoColumnTags) {
+
             this.autoColumnTags = autoColumnTags;
             return this;
         }
         @CustomType.Setter
         public Builder columnTags(@Nullable String columnTags) {
+
             this.columnTags = columnTags;
             return this;
         }
         @CustomType.Setter
         public Builder customTags(@Nullable List<String> customTags) {
+
             this.customTags = customTags;
             return this;
         }
@@ -902,11 +906,13 @@ public final class DashboardSectionRowChartChartSetting {
         }
         @CustomType.Setter
         public Builder expectedDataSpacing(@Nullable Integer expectedDataSpacing) {
+
             this.expectedDataSpacing = expectedDataSpacing;
             return this;
         }
         @CustomType.Setter
         public Builder fixedLegendDisplayStats(@Nullable List<String> fixedLegendDisplayStats) {
+
             this.fixedLegendDisplayStats = fixedLegendDisplayStats;
             return this;
         }
@@ -915,156 +921,187 @@ public final class DashboardSectionRowChartChartSetting {
         }
         @CustomType.Setter
         public Builder fixedLegendEnabled(@Nullable Boolean fixedLegendEnabled) {
+
             this.fixedLegendEnabled = fixedLegendEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder fixedLegendFilterField(@Nullable String fixedLegendFilterField) {
+
             this.fixedLegendFilterField = fixedLegendFilterField;
             return this;
         }
         @CustomType.Setter
         public Builder fixedLegendFilterLimit(@Nullable Integer fixedLegendFilterLimit) {
+
             this.fixedLegendFilterLimit = fixedLegendFilterLimit;
             return this;
         }
         @CustomType.Setter
         public Builder fixedLegendFilterSort(@Nullable String fixedLegendFilterSort) {
+
             this.fixedLegendFilterSort = fixedLegendFilterSort;
             return this;
         }
         @CustomType.Setter
         public Builder fixedLegendHideLabel(@Nullable Boolean fixedLegendHideLabel) {
+
             this.fixedLegendHideLabel = fixedLegendHideLabel;
             return this;
         }
         @CustomType.Setter
         public Builder fixedLegendPosition(@Nullable String fixedLegendPosition) {
+
             this.fixedLegendPosition = fixedLegendPosition;
             return this;
         }
         @CustomType.Setter
         public Builder fixedLegendUseRawStats(@Nullable Boolean fixedLegendUseRawStats) {
+
             this.fixedLegendUseRawStats = fixedLegendUseRawStats;
             return this;
         }
         @CustomType.Setter
         public Builder groupBySource(@Nullable Boolean groupBySource) {
+
             this.groupBySource = groupBySource;
             return this;
         }
         @CustomType.Setter
         public Builder invertDynamicLegendHoverControl(@Nullable Boolean invertDynamicLegendHoverControl) {
+
             this.invertDynamicLegendHoverControl = invertDynamicLegendHoverControl;
             return this;
         }
         @CustomType.Setter
         public Builder lineType(@Nullable String lineType) {
+
             this.lineType = lineType;
             return this;
         }
         @CustomType.Setter
         public Builder max(@Nullable Double max) {
+
             this.max = max;
             return this;
         }
         @CustomType.Setter
         public Builder min(@Nullable Double min) {
+
             this.min = min;
             return this;
         }
         @CustomType.Setter
         public Builder numTags(@Nullable Integer numTags) {
+
             this.numTags = numTags;
             return this;
         }
         @CustomType.Setter
         public Builder plainMarkdownContent(@Nullable String plainMarkdownContent) {
+
             this.plainMarkdownContent = plainMarkdownContent;
             return this;
         }
         @CustomType.Setter
         public Builder showHosts(@Nullable Boolean showHosts) {
+
             this.showHosts = showHosts;
             return this;
         }
         @CustomType.Setter
         public Builder showLabels(@Nullable Boolean showLabels) {
+
             this.showLabels = showLabels;
             return this;
         }
         @CustomType.Setter
         public Builder showRawValues(@Nullable Boolean showRawValues) {
+
             this.showRawValues = showRawValues;
             return this;
         }
         @CustomType.Setter
         public Builder sortValuesDescending(@Nullable Boolean sortValuesDescending) {
+
             this.sortValuesDescending = sortValuesDescending;
             return this;
         }
         @CustomType.Setter
         public Builder sparklineDecimalPrecision(@Nullable Integer sparklineDecimalPrecision) {
+
             this.sparklineDecimalPrecision = sparklineDecimalPrecision;
             return this;
         }
         @CustomType.Setter
         public Builder sparklineDisplayColor(@Nullable String sparklineDisplayColor) {
+
             this.sparklineDisplayColor = sparklineDisplayColor;
             return this;
         }
         @CustomType.Setter
         public Builder sparklineDisplayFontSize(@Nullable String sparklineDisplayFontSize) {
+
             this.sparklineDisplayFontSize = sparklineDisplayFontSize;
             return this;
         }
         @CustomType.Setter
         public Builder sparklineDisplayHorizontalPosition(@Nullable String sparklineDisplayHorizontalPosition) {
+
             this.sparklineDisplayHorizontalPosition = sparklineDisplayHorizontalPosition;
             return this;
         }
         @CustomType.Setter
         public Builder sparklineDisplayPostfix(@Nullable String sparklineDisplayPostfix) {
+
             this.sparklineDisplayPostfix = sparklineDisplayPostfix;
             return this;
         }
         @CustomType.Setter
         public Builder sparklineDisplayPrefix(@Nullable String sparklineDisplayPrefix) {
+
             this.sparklineDisplayPrefix = sparklineDisplayPrefix;
             return this;
         }
         @CustomType.Setter
         public Builder sparklineDisplayValueType(@Nullable String sparklineDisplayValueType) {
+
             this.sparklineDisplayValueType = sparklineDisplayValueType;
             return this;
         }
         @CustomType.Setter
         public Builder sparklineDisplayVerticalPosition(@Nullable String sparklineDisplayVerticalPosition) {
+
             this.sparklineDisplayVerticalPosition = sparklineDisplayVerticalPosition;
             return this;
         }
         @CustomType.Setter
         public Builder sparklineFillColor(@Nullable String sparklineFillColor) {
+
             this.sparklineFillColor = sparklineFillColor;
             return this;
         }
         @CustomType.Setter
         public Builder sparklineLineColor(@Nullable String sparklineLineColor) {
+
             this.sparklineLineColor = sparklineLineColor;
             return this;
         }
         @CustomType.Setter
         public Builder sparklineSize(@Nullable String sparklineSize) {
+
             this.sparklineSize = sparklineSize;
             return this;
         }
         @CustomType.Setter
         public Builder sparklineValueColorMapApplyTo(@Nullable String sparklineValueColorMapApplyTo) {
+
             this.sparklineValueColorMapApplyTo = sparklineValueColorMapApplyTo;
             return this;
         }
         @CustomType.Setter
         public Builder sparklineValueColorMapColors(@Nullable List<String> sparklineValueColorMapColors) {
+
             this.sparklineValueColorMapColors = sparklineValueColorMapColors;
             return this;
         }
@@ -1073,6 +1110,7 @@ public final class DashboardSectionRowChartChartSetting {
         }
         @CustomType.Setter
         public Builder sparklineValueColorMapValues(@Nullable List<Integer> sparklineValueColorMapValues) {
+
             this.sparklineValueColorMapValues = sparklineValueColorMapValues;
             return this;
         }
@@ -1081,6 +1119,7 @@ public final class DashboardSectionRowChartChartSetting {
         }
         @CustomType.Setter
         public Builder sparklineValueColorMapValuesV2s(@Nullable List<Double> sparklineValueColorMapValuesV2s) {
+
             this.sparklineValueColorMapValuesV2s = sparklineValueColorMapValuesV2s;
             return this;
         }
@@ -1089,6 +1128,7 @@ public final class DashboardSectionRowChartChartSetting {
         }
         @CustomType.Setter
         public Builder sparklineValueTextMapTexts(@Nullable List<String> sparklineValueTextMapTexts) {
+
             this.sparklineValueTextMapTexts = sparklineValueTextMapTexts;
             return this;
         }
@@ -1097,6 +1137,7 @@ public final class DashboardSectionRowChartChartSetting {
         }
         @CustomType.Setter
         public Builder sparklineValueTextMapThresholds(@Nullable List<Double> sparklineValueTextMapThresholds) {
+
             this.sparklineValueTextMapThresholds = sparklineValueTextMapThresholds;
             return this;
         }
@@ -1105,86 +1146,105 @@ public final class DashboardSectionRowChartChartSetting {
         }
         @CustomType.Setter
         public Builder stackType(@Nullable String stackType) {
+
             this.stackType = stackType;
             return this;
         }
         @CustomType.Setter
         public Builder tagMode(@Nullable String tagMode) {
+
             this.tagMode = tagMode;
             return this;
         }
         @CustomType.Setter
         public Builder timeBasedColoring(@Nullable Boolean timeBasedColoring) {
+
             this.timeBasedColoring = timeBasedColoring;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("DashboardSectionRowChartChartSetting", "type");
+            }
+            this.type = type;
             return this;
         }
         @CustomType.Setter
         public Builder windowSize(@Nullable Integer windowSize) {
+
             this.windowSize = windowSize;
             return this;
         }
         @CustomType.Setter
         public Builder windowing(@Nullable String windowing) {
+
             this.windowing = windowing;
             return this;
         }
         @CustomType.Setter
         public Builder xmax(@Nullable Double xmax) {
+
             this.xmax = xmax;
             return this;
         }
         @CustomType.Setter
         public Builder xmin(@Nullable Double xmin) {
+
             this.xmin = xmin;
             return this;
         }
         @CustomType.Setter
         public Builder y0ScaleSiBy1024(@Nullable Boolean y0ScaleSiBy1024) {
+
             this.y0ScaleSiBy1024 = y0ScaleSiBy1024;
             return this;
         }
         @CustomType.Setter
         public Builder y0UnitAutoscaling(@Nullable Boolean y0UnitAutoscaling) {
+
             this.y0UnitAutoscaling = y0UnitAutoscaling;
             return this;
         }
         @CustomType.Setter
         public Builder y1ScaleSiBy1024(@Nullable Boolean y1ScaleSiBy1024) {
+
             this.y1ScaleSiBy1024 = y1ScaleSiBy1024;
             return this;
         }
         @CustomType.Setter
         public Builder y1UnitAutoscaling(@Nullable Boolean y1UnitAutoscaling) {
+
             this.y1UnitAutoscaling = y1UnitAutoscaling;
             return this;
         }
         @CustomType.Setter
         public Builder y1Units(@Nullable String y1Units) {
+
             this.y1Units = y1Units;
             return this;
         }
         @CustomType.Setter
         public Builder y1max(@Nullable Double y1max) {
+
             this.y1max = y1max;
             return this;
         }
         @CustomType.Setter
         public Builder y1min(@Nullable Double y1min) {
+
             this.y1min = y1min;
             return this;
         }
         @CustomType.Setter
         public Builder ymax(@Nullable Double ymax) {
+
             this.ymax = ymax;
             return this;
         }
         @CustomType.Setter
         public Builder ymin(@Nullable Double ymin) {
+
             this.ymin = ymin;
             return this;
         }

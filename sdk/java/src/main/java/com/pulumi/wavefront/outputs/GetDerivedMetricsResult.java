@@ -4,6 +4,7 @@
 package com.pulumi.wavefront.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.wavefront.outputs.GetDerivedMetricsDerivedMetric;
 import java.lang.Integer;
 import java.lang.String;
@@ -73,7 +74,10 @@ public final class GetDerivedMetricsResult {
 
         @CustomType.Setter
         public Builder derivedMetrics(List<GetDerivedMetricsDerivedMetric> derivedMetrics) {
-            this.derivedMetrics = Objects.requireNonNull(derivedMetrics);
+            if (derivedMetrics == null) {
+              throw new MissingRequiredPropertyException("GetDerivedMetricsResult", "derivedMetrics");
+            }
+            this.derivedMetrics = derivedMetrics;
             return this;
         }
         public Builder derivedMetrics(GetDerivedMetricsDerivedMetric... derivedMetrics) {
@@ -81,16 +85,21 @@ public final class GetDerivedMetricsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDerivedMetricsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder limit(@Nullable Integer limit) {
+
             this.limit = limit;
             return this;
         }
         @CustomType.Setter
         public Builder offset(@Nullable Integer offset) {
+
             this.offset = offset;
             return this;
         }

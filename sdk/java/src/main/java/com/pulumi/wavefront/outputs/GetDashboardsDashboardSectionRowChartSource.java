@@ -4,6 +4,7 @@
 package com.pulumi.wavefront.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -117,42 +118,66 @@ public final class GetDashboardsDashboardSectionRowChartSource {
 
         @CustomType.Setter
         public Builder disabled(Boolean disabled) {
-            this.disabled = Objects.requireNonNull(disabled);
+            if (disabled == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsDashboardSectionRowChartSource", "disabled");
+            }
+            this.disabled = disabled;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsDashboardSectionRowChartSource", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder query(String query) {
-            this.query = Objects.requireNonNull(query);
+            if (query == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsDashboardSectionRowChartSource", "query");
+            }
+            this.query = query;
             return this;
         }
         @CustomType.Setter
         public Builder querybuilderEnabled(Boolean querybuilderEnabled) {
-            this.querybuilderEnabled = Objects.requireNonNull(querybuilderEnabled);
+            if (querybuilderEnabled == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsDashboardSectionRowChartSource", "querybuilderEnabled");
+            }
+            this.querybuilderEnabled = querybuilderEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder scatterPlotSource(String scatterPlotSource) {
-            this.scatterPlotSource = Objects.requireNonNull(scatterPlotSource);
+            if (scatterPlotSource == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsDashboardSectionRowChartSource", "scatterPlotSource");
+            }
+            this.scatterPlotSource = scatterPlotSource;
             return this;
         }
         @CustomType.Setter
         public Builder secondaryAxis(Boolean secondaryAxis) {
-            this.secondaryAxis = Objects.requireNonNull(secondaryAxis);
+            if (secondaryAxis == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsDashboardSectionRowChartSource", "secondaryAxis");
+            }
+            this.secondaryAxis = secondaryAxis;
             return this;
         }
         @CustomType.Setter
         public Builder sourceColor(String sourceColor) {
-            this.sourceColor = Objects.requireNonNull(sourceColor);
+            if (sourceColor == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsDashboardSectionRowChartSource", "sourceColor");
+            }
+            this.sourceColor = sourceColor;
             return this;
         }
         @CustomType.Setter
         public Builder sourceDescription(String sourceDescription) {
-            this.sourceDescription = Objects.requireNonNull(sourceDescription);
+            if (sourceDescription == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsDashboardSectionRowChartSource", "sourceDescription");
+            }
+            this.sourceDescription = sourceDescription;
             return this;
         }
         public GetDashboardsDashboardSectionRowChartSource build() {

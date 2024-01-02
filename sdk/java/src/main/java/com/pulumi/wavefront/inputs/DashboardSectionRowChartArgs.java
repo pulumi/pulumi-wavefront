@@ -5,6 +5,7 @@ package com.pulumi.wavefront.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.wavefront.inputs.DashboardSectionRowChartChartSettingArgs;
 import com.pulumi.wavefront.inputs.DashboardSectionRowChartSourceArgs;
 import java.lang.Boolean;
@@ -371,11 +372,21 @@ public final class DashboardSectionRowChartArgs extends com.pulumi.resources.Res
         }
 
         public DashboardSectionRowChartArgs build() {
-            $.chartSetting = Objects.requireNonNull($.chartSetting, "expected parameter 'chartSetting' to be non-null");
-            $.name = Objects.requireNonNull($.name, "expected parameter 'name' to be non-null");
-            $.sources = Objects.requireNonNull($.sources, "expected parameter 'sources' to be non-null");
-            $.summarization = Objects.requireNonNull($.summarization, "expected parameter 'summarization' to be non-null");
-            $.units = Objects.requireNonNull($.units, "expected parameter 'units' to be non-null");
+            if ($.chartSetting == null) {
+                throw new MissingRequiredPropertyException("DashboardSectionRowChartArgs", "chartSetting");
+            }
+            if ($.name == null) {
+                throw new MissingRequiredPropertyException("DashboardSectionRowChartArgs", "name");
+            }
+            if ($.sources == null) {
+                throw new MissingRequiredPropertyException("DashboardSectionRowChartArgs", "sources");
+            }
+            if ($.summarization == null) {
+                throw new MissingRequiredPropertyException("DashboardSectionRowChartArgs", "summarization");
+            }
+            if ($.units == null) {
+                throw new MissingRequiredPropertyException("DashboardSectionRowChartArgs", "units");
+            }
             return $;
         }
     }

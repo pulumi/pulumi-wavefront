@@ -5,6 +5,7 @@ package com.pulumi.wavefront;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -78,7 +79,9 @@ public final class DashboardJsonArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public DashboardJsonArgs build() {
-            $.dashboardJson = Objects.requireNonNull($.dashboardJson, "expected parameter 'dashboardJson' to be non-null");
+            if ($.dashboardJson == null) {
+                throw new MissingRequiredPropertyException("DashboardJsonArgs", "dashboardJson");
+            }
             return $;
         }
     }

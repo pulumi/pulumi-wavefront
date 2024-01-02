@@ -4,6 +4,7 @@
 package com.pulumi.wavefront.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.wavefront.outputs.GetDashboardsDashboard;
 import java.lang.Integer;
 import java.lang.String;
@@ -73,7 +74,10 @@ public final class GetDashboardsResult {
 
         @CustomType.Setter
         public Builder dashboards(List<GetDashboardsDashboard> dashboards) {
-            this.dashboards = Objects.requireNonNull(dashboards);
+            if (dashboards == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsResult", "dashboards");
+            }
+            this.dashboards = dashboards;
             return this;
         }
         public Builder dashboards(GetDashboardsDashboard... dashboards) {
@@ -81,16 +85,21 @@ public final class GetDashboardsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder limit(@Nullable Integer limit) {
+
             this.limit = limit;
             return this;
         }
         @CustomType.Setter
         public Builder offset(@Nullable Integer offset) {
+
             this.offset = offset;
             return this;
         }

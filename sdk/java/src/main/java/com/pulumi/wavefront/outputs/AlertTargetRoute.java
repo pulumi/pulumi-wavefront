@@ -4,6 +4,7 @@
 package com.pulumi.wavefront.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
@@ -76,17 +77,24 @@ public final class AlertTargetRoute {
 
         @CustomType.Setter
         public Builder filter(@Nullable Map<String,String> filter) {
+
             this.filter = filter;
             return this;
         }
         @CustomType.Setter
         public Builder method(String method) {
-            this.method = Objects.requireNonNull(method);
+            if (method == null) {
+              throw new MissingRequiredPropertyException("AlertTargetRoute", "method");
+            }
+            this.method = method;
             return this;
         }
         @CustomType.Setter
         public Builder target(String target) {
-            this.target = Objects.requireNonNull(target);
+            if (target == null) {
+              throw new MissingRequiredPropertyException("AlertTargetRoute", "target");
+            }
+            this.target = target;
             return this;
         }
         public AlertTargetRoute build() {

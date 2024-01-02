@@ -4,6 +4,7 @@
 package com.pulumi.wavefront.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.wavefront.outputs.MetricsPolicyPolicyRuleTag;
 import java.lang.Boolean;
 import java.lang.String;
@@ -158,11 +159,15 @@ public final class MetricsPolicyPolicyRule {
 
         @CustomType.Setter
         public Builder accessType(String accessType) {
-            this.accessType = Objects.requireNonNull(accessType);
+            if (accessType == null) {
+              throw new MissingRequiredPropertyException("MetricsPolicyPolicyRule", "accessType");
+            }
+            this.accessType = accessType;
             return this;
         }
         @CustomType.Setter
         public Builder accountIds(@Nullable List<String> accountIds) {
+
             this.accountIds = accountIds;
             return this;
         }
@@ -171,17 +176,26 @@ public final class MetricsPolicyPolicyRule {
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("MetricsPolicyPolicyRule", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("MetricsPolicyPolicyRule", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder prefixes(List<String> prefixes) {
-            this.prefixes = Objects.requireNonNull(prefixes);
+            if (prefixes == null) {
+              throw new MissingRequiredPropertyException("MetricsPolicyPolicyRule", "prefixes");
+            }
+            this.prefixes = prefixes;
             return this;
         }
         public Builder prefixes(String... prefixes) {
@@ -189,6 +203,7 @@ public final class MetricsPolicyPolicyRule {
         }
         @CustomType.Setter
         public Builder roleIds(@Nullable List<String> roleIds) {
+
             this.roleIds = roleIds;
             return this;
         }
@@ -197,6 +212,7 @@ public final class MetricsPolicyPolicyRule {
         }
         @CustomType.Setter
         public Builder tags(@Nullable List<MetricsPolicyPolicyRuleTag> tags) {
+
             this.tags = tags;
             return this;
         }
@@ -205,11 +221,15 @@ public final class MetricsPolicyPolicyRule {
         }
         @CustomType.Setter
         public Builder tagsAnded(Boolean tagsAnded) {
-            this.tagsAnded = Objects.requireNonNull(tagsAnded);
+            if (tagsAnded == null) {
+              throw new MissingRequiredPropertyException("MetricsPolicyPolicyRule", "tagsAnded");
+            }
+            this.tagsAnded = tagsAnded;
             return this;
         }
         @CustomType.Setter
         public Builder userGroupIds(@Nullable List<String> userGroupIds) {
+
             this.userGroupIds = userGroupIds;
             return this;
         }

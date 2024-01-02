@@ -5,6 +5,7 @@ package com.pulumi.wavefront;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -217,7 +218,9 @@ public final class EventArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public EventArgs build() {
-            $.annotations = Objects.requireNonNull($.annotations, "expected parameter 'annotations' to be non-null");
+            if ($.annotations == null) {
+                throw new MissingRequiredPropertyException("EventArgs", "annotations");
+            }
             return $;
         }
     }

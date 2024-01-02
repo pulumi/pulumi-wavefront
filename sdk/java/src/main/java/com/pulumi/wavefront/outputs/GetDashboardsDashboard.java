@@ -4,6 +4,7 @@
 package com.pulumi.wavefront.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.wavefront.outputs.GetDashboardsDashboardParameterDetail;
 import com.pulumi.wavefront.outputs.GetDashboardsDashboardSection;
 import java.lang.Boolean;
@@ -327,7 +328,10 @@ public final class GetDashboardsDashboard {
 
         @CustomType.Setter
         public Builder canModifies(List<String> canModifies) {
-            this.canModifies = Objects.requireNonNull(canModifies);
+            if (canModifies == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsDashboard", "canModifies");
+            }
+            this.canModifies = canModifies;
             return this;
         }
         public Builder canModifies(String... canModifies) {
@@ -335,7 +339,10 @@ public final class GetDashboardsDashboard {
         }
         @CustomType.Setter
         public Builder canViews(List<String> canViews) {
-            this.canViews = Objects.requireNonNull(canViews);
+            if (canViews == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsDashboard", "canViews");
+            }
+            this.canViews = canViews;
             return this;
         }
         public Builder canViews(String... canViews) {
@@ -343,117 +350,186 @@ public final class GetDashboardsDashboard {
         }
         @CustomType.Setter
         public Builder chartTitleBgColor(String chartTitleBgColor) {
-            this.chartTitleBgColor = Objects.requireNonNull(chartTitleBgColor);
+            if (chartTitleBgColor == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsDashboard", "chartTitleBgColor");
+            }
+            this.chartTitleBgColor = chartTitleBgColor;
             return this;
         }
         @CustomType.Setter
         public Builder chartTitleColor(String chartTitleColor) {
-            this.chartTitleColor = Objects.requireNonNull(chartTitleColor);
+            if (chartTitleColor == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsDashboard", "chartTitleColor");
+            }
+            this.chartTitleColor = chartTitleColor;
             return this;
         }
         @CustomType.Setter
         public Builder chartTitleScalar(Integer chartTitleScalar) {
-            this.chartTitleScalar = Objects.requireNonNull(chartTitleScalar);
+            if (chartTitleScalar == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsDashboard", "chartTitleScalar");
+            }
+            this.chartTitleScalar = chartTitleScalar;
             return this;
         }
         @CustomType.Setter
         public Builder createdEpochMillis(Integer createdEpochMillis) {
-            this.createdEpochMillis = Objects.requireNonNull(createdEpochMillis);
+            if (createdEpochMillis == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsDashboard", "createdEpochMillis");
+            }
+            this.createdEpochMillis = createdEpochMillis;
             return this;
         }
         @CustomType.Setter
         public Builder creatorId(String creatorId) {
-            this.creatorId = Objects.requireNonNull(creatorId);
+            if (creatorId == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsDashboard", "creatorId");
+            }
+            this.creatorId = creatorId;
             return this;
         }
         @CustomType.Setter
         public Builder customer(String customer) {
-            this.customer = Objects.requireNonNull(customer);
+            if (customer == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsDashboard", "customer");
+            }
+            this.customer = customer;
             return this;
         }
         @CustomType.Setter
         public Builder defaultEndTime(Integer defaultEndTime) {
-            this.defaultEndTime = Objects.requireNonNull(defaultEndTime);
+            if (defaultEndTime == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsDashboard", "defaultEndTime");
+            }
+            this.defaultEndTime = defaultEndTime;
             return this;
         }
         @CustomType.Setter
         public Builder defaultStartTime(Integer defaultStartTime) {
-            this.defaultStartTime = Objects.requireNonNull(defaultStartTime);
+            if (defaultStartTime == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsDashboard", "defaultStartTime");
+            }
+            this.defaultStartTime = defaultStartTime;
             return this;
         }
         @CustomType.Setter
         public Builder defaultTimeWindow(String defaultTimeWindow) {
-            this.defaultTimeWindow = Objects.requireNonNull(defaultTimeWindow);
+            if (defaultTimeWindow == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsDashboard", "defaultTimeWindow");
+            }
+            this.defaultTimeWindow = defaultTimeWindow;
             return this;
         }
         @CustomType.Setter
         public Builder deleted(Boolean deleted) {
-            this.deleted = Objects.requireNonNull(deleted);
+            if (deleted == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsDashboard", "deleted");
+            }
+            this.deleted = deleted;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsDashboard", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder displayDescription(Boolean displayDescription) {
-            this.displayDescription = Objects.requireNonNull(displayDescription);
+            if (displayDescription == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsDashboard", "displayDescription");
+            }
+            this.displayDescription = displayDescription;
             return this;
         }
         @CustomType.Setter
         public Builder displayQueryParameters(Boolean displayQueryParameters) {
-            this.displayQueryParameters = Objects.requireNonNull(displayQueryParameters);
+            if (displayQueryParameters == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsDashboard", "displayQueryParameters");
+            }
+            this.displayQueryParameters = displayQueryParameters;
             return this;
         }
         @CustomType.Setter
         public Builder displaySectionTableOfContents(Boolean displaySectionTableOfContents) {
-            this.displaySectionTableOfContents = Objects.requireNonNull(displaySectionTableOfContents);
+            if (displaySectionTableOfContents == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsDashboard", "displaySectionTableOfContents");
+            }
+            this.displaySectionTableOfContents = displaySectionTableOfContents;
             return this;
         }
         @CustomType.Setter
         public Builder eventFilterType(String eventFilterType) {
-            this.eventFilterType = Objects.requireNonNull(eventFilterType);
+            if (eventFilterType == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsDashboard", "eventFilterType");
+            }
+            this.eventFilterType = eventFilterType;
             return this;
         }
         @CustomType.Setter
         public Builder eventQuery(String eventQuery) {
-            this.eventQuery = Objects.requireNonNull(eventQuery);
+            if (eventQuery == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsDashboard", "eventQuery");
+            }
+            this.eventQuery = eventQuery;
             return this;
         }
         @CustomType.Setter
         public Builder favorite(Boolean favorite) {
-            this.favorite = Objects.requireNonNull(favorite);
+            if (favorite == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsDashboard", "favorite");
+            }
+            this.favorite = favorite;
             return this;
         }
         @CustomType.Setter
         public Builder hidden(Boolean hidden) {
-            this.hidden = Objects.requireNonNull(hidden);
+            if (hidden == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsDashboard", "hidden");
+            }
+            this.hidden = hidden;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsDashboard", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsDashboard", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder numCharts(Integer numCharts) {
-            this.numCharts = Objects.requireNonNull(numCharts);
+            if (numCharts == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsDashboard", "numCharts");
+            }
+            this.numCharts = numCharts;
             return this;
         }
         @CustomType.Setter
         public Builder numFavorites(Integer numFavorites) {
-            this.numFavorites = Objects.requireNonNull(numFavorites);
+            if (numFavorites == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsDashboard", "numFavorites");
+            }
+            this.numFavorites = numFavorites;
             return this;
         }
         @CustomType.Setter
         public Builder parameterDetails(List<GetDashboardsDashboardParameterDetail> parameterDetails) {
-            this.parameterDetails = Objects.requireNonNull(parameterDetails);
+            if (parameterDetails == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsDashboard", "parameterDetails");
+            }
+            this.parameterDetails = parameterDetails;
             return this;
         }
         public Builder parameterDetails(GetDashboardsDashboardParameterDetail... parameterDetails) {
@@ -461,12 +537,18 @@ public final class GetDashboardsDashboard {
         }
         @CustomType.Setter
         public Builder parameters(Map<String,Object> parameters) {
-            this.parameters = Objects.requireNonNull(parameters);
+            if (parameters == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsDashboard", "parameters");
+            }
+            this.parameters = parameters;
             return this;
         }
         @CustomType.Setter
         public Builder sections(List<GetDashboardsDashboardSection> sections) {
-            this.sections = Objects.requireNonNull(sections);
+            if (sections == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsDashboard", "sections");
+            }
+            this.sections = sections;
             return this;
         }
         public Builder sections(GetDashboardsDashboardSection... sections) {
@@ -474,12 +556,18 @@ public final class GetDashboardsDashboard {
         }
         @CustomType.Setter
         public Builder systemOwned(Boolean systemOwned) {
-            this.systemOwned = Objects.requireNonNull(systemOwned);
+            if (systemOwned == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsDashboard", "systemOwned");
+            }
+            this.systemOwned = systemOwned;
             return this;
         }
         @CustomType.Setter
         public Builder tags(List<String> tags) {
-            this.tags = Objects.requireNonNull(tags);
+            if (tags == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsDashboard", "tags");
+            }
+            this.tags = tags;
             return this;
         }
         public Builder tags(String... tags) {
@@ -487,32 +575,50 @@ public final class GetDashboardsDashboard {
         }
         @CustomType.Setter
         public Builder updatedEpochMillis(Integer updatedEpochMillis) {
-            this.updatedEpochMillis = Objects.requireNonNull(updatedEpochMillis);
+            if (updatedEpochMillis == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsDashboard", "updatedEpochMillis");
+            }
+            this.updatedEpochMillis = updatedEpochMillis;
             return this;
         }
         @CustomType.Setter
         public Builder updaterId(String updaterId) {
-            this.updaterId = Objects.requireNonNull(updaterId);
+            if (updaterId == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsDashboard", "updaterId");
+            }
+            this.updaterId = updaterId;
             return this;
         }
         @CustomType.Setter
         public Builder url(String url) {
-            this.url = Objects.requireNonNull(url);
+            if (url == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsDashboard", "url");
+            }
+            this.url = url;
             return this;
         }
         @CustomType.Setter
         public Builder viewsLastDay(Integer viewsLastDay) {
-            this.viewsLastDay = Objects.requireNonNull(viewsLastDay);
+            if (viewsLastDay == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsDashboard", "viewsLastDay");
+            }
+            this.viewsLastDay = viewsLastDay;
             return this;
         }
         @CustomType.Setter
         public Builder viewsLastMonth(Integer viewsLastMonth) {
-            this.viewsLastMonth = Objects.requireNonNull(viewsLastMonth);
+            if (viewsLastMonth == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsDashboard", "viewsLastMonth");
+            }
+            this.viewsLastMonth = viewsLastMonth;
             return this;
         }
         @CustomType.Setter
         public Builder viewsLastWeek(Integer viewsLastWeek) {
-            this.viewsLastWeek = Objects.requireNonNull(viewsLastWeek);
+            if (viewsLastWeek == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsDashboard", "viewsLastWeek");
+            }
+            this.viewsLastWeek = viewsLastWeek;
             return this;
         }
         public GetDashboardsDashboard build() {

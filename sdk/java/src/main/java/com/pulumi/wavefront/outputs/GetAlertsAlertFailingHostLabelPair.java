@@ -4,6 +4,7 @@
 package com.pulumi.wavefront.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -41,12 +42,18 @@ public final class GetAlertsAlertFailingHostLabelPair {
 
         @CustomType.Setter
         public Builder firing(Integer firing) {
-            this.firing = Objects.requireNonNull(firing);
+            if (firing == null) {
+              throw new MissingRequiredPropertyException("GetAlertsAlertFailingHostLabelPair", "firing");
+            }
+            this.firing = firing;
             return this;
         }
         @CustomType.Setter
         public Builder host(String host) {
-            this.host = Objects.requireNonNull(host);
+            if (host == null) {
+              throw new MissingRequiredPropertyException("GetAlertsAlertFailingHostLabelPair", "host");
+            }
+            this.host = host;
             return this;
         }
         public GetAlertsAlertFailingHostLabelPair build() {

@@ -5,6 +5,7 @@ package com.pulumi.wavefront;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Map;
@@ -312,8 +313,12 @@ public final class ExternalLinkArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public ExternalLinkArgs build() {
-            $.description = Objects.requireNonNull($.description, "expected parameter 'description' to be non-null");
-            $.template = Objects.requireNonNull($.template, "expected parameter 'template' to be non-null");
+            if ($.description == null) {
+                throw new MissingRequiredPropertyException("ExternalLinkArgs", "description");
+            }
+            if ($.template == null) {
+                throw new MissingRequiredPropertyException("ExternalLinkArgs", "template");
+            }
             return $;
         }
     }

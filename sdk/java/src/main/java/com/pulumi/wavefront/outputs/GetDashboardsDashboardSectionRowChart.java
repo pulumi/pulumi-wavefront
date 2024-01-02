@@ -4,6 +4,7 @@
 package com.pulumi.wavefront.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.wavefront.outputs.GetDashboardsDashboardSectionRowChartChartSetting;
 import com.pulumi.wavefront.outputs.GetDashboardsDashboardSectionRowChartSource;
 import java.lang.Boolean;
@@ -139,17 +140,26 @@ public final class GetDashboardsDashboardSectionRowChart {
 
         @CustomType.Setter
         public Builder base(Integer base) {
-            this.base = Objects.requireNonNull(base);
+            if (base == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsDashboardSectionRowChart", "base");
+            }
+            this.base = base;
             return this;
         }
         @CustomType.Setter
         public Builder chartAttributes(String chartAttributes) {
-            this.chartAttributes = Objects.requireNonNull(chartAttributes);
+            if (chartAttributes == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsDashboardSectionRowChart", "chartAttributes");
+            }
+            this.chartAttributes = chartAttributes;
             return this;
         }
         @CustomType.Setter
         public Builder chartSettings(List<GetDashboardsDashboardSectionRowChartChartSetting> chartSettings) {
-            this.chartSettings = Objects.requireNonNull(chartSettings);
+            if (chartSettings == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsDashboardSectionRowChart", "chartSettings");
+            }
+            this.chartSettings = chartSettings;
             return this;
         }
         public Builder chartSettings(GetDashboardsDashboardSectionRowChartChartSetting... chartSettings) {
@@ -157,32 +167,50 @@ public final class GetDashboardsDashboardSectionRowChart {
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsDashboardSectionRowChart", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder includeObsoleteMetrics(Boolean includeObsoleteMetrics) {
-            this.includeObsoleteMetrics = Objects.requireNonNull(includeObsoleteMetrics);
+            if (includeObsoleteMetrics == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsDashboardSectionRowChart", "includeObsoleteMetrics");
+            }
+            this.includeObsoleteMetrics = includeObsoleteMetrics;
             return this;
         }
         @CustomType.Setter
         public Builder interpolatePointsKey(Boolean interpolatePointsKey) {
-            this.interpolatePointsKey = Objects.requireNonNull(interpolatePointsKey);
+            if (interpolatePointsKey == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsDashboardSectionRowChart", "interpolatePointsKey");
+            }
+            this.interpolatePointsKey = interpolatePointsKey;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsDashboardSectionRowChart", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder noDefaultEvents(Boolean noDefaultEvents) {
-            this.noDefaultEvents = Objects.requireNonNull(noDefaultEvents);
+            if (noDefaultEvents == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsDashboardSectionRowChart", "noDefaultEvents");
+            }
+            this.noDefaultEvents = noDefaultEvents;
             return this;
         }
         @CustomType.Setter
         public Builder sources(List<GetDashboardsDashboardSectionRowChartSource> sources) {
-            this.sources = Objects.requireNonNull(sources);
+            if (sources == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsDashboardSectionRowChart", "sources");
+            }
+            this.sources = sources;
             return this;
         }
         public Builder sources(GetDashboardsDashboardSectionRowChartSource... sources) {
@@ -190,12 +218,18 @@ public final class GetDashboardsDashboardSectionRowChart {
         }
         @CustomType.Setter
         public Builder summarization(String summarization) {
-            this.summarization = Objects.requireNonNull(summarization);
+            if (summarization == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsDashboardSectionRowChart", "summarization");
+            }
+            this.summarization = summarization;
             return this;
         }
         @CustomType.Setter
         public Builder units(String units) {
-            this.units = Objects.requireNonNull(units);
+            if (units == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsDashboardSectionRowChart", "units");
+            }
+            this.units = units;
             return this;
         }
         public GetDashboardsDashboardSectionRowChart build() {
