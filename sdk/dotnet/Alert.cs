@@ -59,6 +59,12 @@ namespace Pulumi.Wavefront
         public Output<string?> AdditionalInformation { get; private set; } = null!;
 
         /// <summary>
+        /// A set of user-supplied dashboard and parameters to create dashboard links for triaging alerts.
+        /// </summary>
+        [Output("alertTriageDashboards")]
+        public Output<ImmutableArray<Outputs.AlertAlertTriageDashboard>> AlertTriageDashboards { get; private set; } = null!;
+
+        /// <summary>
         /// The type of alert in Wavefront. Either `CLASSIC` (default)
         /// or `THRESHOLD`.
         /// </summary>
@@ -133,6 +139,12 @@ namespace Pulumi.Wavefront
         /// </summary>
         [Output("resolveAfterMinutes")]
         public Output<int?> ResolveAfterMinutes { get; private set; } = null!;
+
+        /// <summary>
+        /// A list of user-supplied runbook links for this alert.
+        /// </summary>
+        [Output("runbookLinks")]
+        public Output<ImmutableArray<string>> RunbookLinks { get; private set; } = null!;
 
         /// <summary>
         /// Severity of the alert, valid values are `INFO`, `SMOKE`, `WARN`, `SEVERE`.
@@ -212,6 +224,18 @@ namespace Pulumi.Wavefront
         /// </summary>
         [Input("additionalInformation")]
         public Input<string>? AdditionalInformation { get; set; }
+
+        [Input("alertTriageDashboards")]
+        private InputList<Inputs.AlertAlertTriageDashboardArgs>? _alertTriageDashboards;
+
+        /// <summary>
+        /// A set of user-supplied dashboard and parameters to create dashboard links for triaging alerts.
+        /// </summary>
+        public InputList<Inputs.AlertAlertTriageDashboardArgs> AlertTriageDashboards
+        {
+            get => _alertTriageDashboards ?? (_alertTriageDashboards = new InputList<Inputs.AlertAlertTriageDashboardArgs>());
+            set => _alertTriageDashboards = value;
+        }
 
         /// <summary>
         /// The type of alert in Wavefront. Either `CLASSIC` (default)
@@ -307,6 +331,18 @@ namespace Pulumi.Wavefront
         [Input("resolveAfterMinutes")]
         public Input<int>? ResolveAfterMinutes { get; set; }
 
+        [Input("runbookLinks")]
+        private InputList<string>? _runbookLinks;
+
+        /// <summary>
+        /// A list of user-supplied runbook links for this alert.
+        /// </summary>
+        public InputList<string> RunbookLinks
+        {
+            get => _runbookLinks ?? (_runbookLinks = new InputList<string>());
+            set => _runbookLinks = value;
+        }
+
         /// <summary>
         /// Severity of the alert, valid values are `INFO`, `SMOKE`, `WARN`, `SEVERE`.
         /// </summary>
@@ -359,6 +395,18 @@ namespace Pulumi.Wavefront
         /// </summary>
         [Input("additionalInformation")]
         public Input<string>? AdditionalInformation { get; set; }
+
+        [Input("alertTriageDashboards")]
+        private InputList<Inputs.AlertAlertTriageDashboardGetArgs>? _alertTriageDashboards;
+
+        /// <summary>
+        /// A set of user-supplied dashboard and parameters to create dashboard links for triaging alerts.
+        /// </summary>
+        public InputList<Inputs.AlertAlertTriageDashboardGetArgs> AlertTriageDashboards
+        {
+            get => _alertTriageDashboards ?? (_alertTriageDashboards = new InputList<Inputs.AlertAlertTriageDashboardGetArgs>());
+            set => _alertTriageDashboards = value;
+        }
 
         /// <summary>
         /// The type of alert in Wavefront. Either `CLASSIC` (default)
@@ -453,6 +501,18 @@ namespace Pulumi.Wavefront
         /// </summary>
         [Input("resolveAfterMinutes")]
         public Input<int>? ResolveAfterMinutes { get; set; }
+
+        [Input("runbookLinks")]
+        private InputList<string>? _runbookLinks;
+
+        /// <summary>
+        /// A list of user-supplied runbook links for this alert.
+        /// </summary>
+        public InputList<string> RunbookLinks
+        {
+            get => _runbookLinks ?? (_runbookLinks = new InputList<string>());
+            set => _runbookLinks = value;
+        }
 
         /// <summary>
         /// Severity of the alert, valid values are `INFO`, `SMOKE`, `WARN`, `SEVERE`.

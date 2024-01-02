@@ -11,6 +11,8 @@ from . import _utilities
 from . import outputs
 
 __all__ = [
+    'AlertAlertTriageDashboard',
+    'AlertAlertTriageDashboardParameters',
     'AlertTargetRoute',
     'CloudIntegrationNewRelicMetricFilter',
     'DashboardParameterDetail',
@@ -22,9 +24,13 @@ __all__ = [
     'IngestionPolicyTag',
     'MetricsPolicyPolicyRule',
     'MetricsPolicyPolicyRuleTag',
+    'GetAlertAlertTriageDashboardResult',
+    'GetAlertAlertTriageDashboardParametersResult',
     'GetAlertFailingHostLabelPairResult',
     'GetAlertInMaintenanceHostLabelPairResult',
     'GetAlertsAlertResult',
+    'GetAlertsAlertAlertTriageDashboardResult',
+    'GetAlertsAlertAlertTriageDashboardParametersResult',
     'GetAlertsAlertFailingHostLabelPairResult',
     'GetAlertsAlertInMaintenanceHostLabelPairResult',
     'GetDashboardParameterDetailResult',
@@ -50,6 +56,63 @@ __all__ = [
     'GetUserGroupsUserGroupResult',
     'GetUsersUserResult',
 ]
+
+@pulumi.output_type
+class AlertAlertTriageDashboard(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "dashboardId":
+            suggest = "dashboard_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AlertAlertTriageDashboard. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AlertAlertTriageDashboard.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AlertAlertTriageDashboard.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 dashboard_id: str,
+                 description: str,
+                 parameters: Optional['outputs.AlertAlertTriageDashboardParameters'] = None):
+        pulumi.set(__self__, "dashboard_id", dashboard_id)
+        pulumi.set(__self__, "description", description)
+        if parameters is not None:
+            pulumi.set(__self__, "parameters", parameters)
+
+    @property
+    @pulumi.getter(name="dashboardId")
+    def dashboard_id(self) -> str:
+        return pulumi.get(self, "dashboard_id")
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter
+    def parameters(self) -> Optional['outputs.AlertAlertTriageDashboardParameters']:
+        return pulumi.get(self, "parameters")
+
+
+@pulumi.output_type
+class AlertAlertTriageDashboardParameters(dict):
+    def __init__(__self__, *,
+                 constants: Optional[Mapping[str, Any]] = None):
+        if constants is not None:
+            pulumi.set(__self__, "constants", constants)
+
+    @property
+    @pulumi.getter
+    def constants(self) -> Optional[Mapping[str, Any]]:
+        return pulumi.get(self, "constants")
+
 
 @pulumi.output_type
 class AlertTargetRoute(dict):
@@ -1595,6 +1658,46 @@ class MetricsPolicyPolicyRuleTag(dict):
 
 
 @pulumi.output_type
+class GetAlertAlertTriageDashboardResult(dict):
+    def __init__(__self__, *,
+                 dashboard_id: str,
+                 description: str,
+                 parameters: Optional['outputs.GetAlertAlertTriageDashboardParametersResult'] = None):
+        pulumi.set(__self__, "dashboard_id", dashboard_id)
+        pulumi.set(__self__, "description", description)
+        if parameters is not None:
+            pulumi.set(__self__, "parameters", parameters)
+
+    @property
+    @pulumi.getter(name="dashboardId")
+    def dashboard_id(self) -> str:
+        return pulumi.get(self, "dashboard_id")
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter
+    def parameters(self) -> Optional['outputs.GetAlertAlertTriageDashboardParametersResult']:
+        return pulumi.get(self, "parameters")
+
+
+@pulumi.output_type
+class GetAlertAlertTriageDashboardParametersResult(dict):
+    def __init__(__self__, *,
+                 constants: Optional[Mapping[str, Any]] = None):
+        if constants is not None:
+            pulumi.set(__self__, "constants", constants)
+
+    @property
+    @pulumi.getter
+    def constants(self) -> Optional[Mapping[str, Any]]:
+        return pulumi.get(self, "constants")
+
+
+@pulumi.output_type
 class GetAlertFailingHostLabelPairResult(dict):
     def __init__(__self__, *,
                  firing: int,
@@ -1636,6 +1739,7 @@ class GetAlertInMaintenanceHostLabelPairResult(dict):
 class GetAlertsAlertResult(dict):
     def __init__(__self__, *,
                  additional_information: str,
+                 alert_triage_dashboards: Sequence['outputs.GetAlertsAlertAlertTriageDashboardResult'],
                  alert_type: str,
                  can_modifies: Sequence[str],
                  can_views: Sequence[str],
@@ -1652,6 +1756,7 @@ class GetAlertsAlertResult(dict):
                  notification_resend_frequency_minutes: int,
                  process_rate_minutes: int,
                  resolve_after_minutes: int,
+                 runbook_links: Sequence[str],
                  severity: str,
                  severity_lists: Sequence[str],
                  statuses: Sequence[str],
@@ -1660,6 +1765,7 @@ class GetAlertsAlertResult(dict):
                  targets: Optional[Mapping[str, str]] = None):
         """
         :param str additional_information: User-supplied additional explanatory information about this alert.
+        :param Sequence['GetAlertsAlertAlertTriageDashboardArgs'] alert_triage_dashboards: A set of user-supplied dashboard and parameters to create dashboard links for triaging alerts.
         :param str alert_type: The type of alert in Wavefront.
         :param Sequence[str] can_modifies: A list of users or groups that can modify the alert.
         :param Sequence[str] can_views: A list of users or groups that can view the alert.
@@ -1676,6 +1782,7 @@ class GetAlertsAlertResult(dict):
         :param int notification_resend_frequency_minutes: How often to re-trigger a continually failing alert.
         :param int process_rate_minutes: The specified query is executed every `process_rate_minutes` minutes.
         :param int resolve_after_minutes: The number of consecutive minutes that a firing series matching the condition query must evaluate to "false" (zero value) before the alert resolves.
+        :param Sequence[str] runbook_links: A list of user-supplied runbook links for this alert.
         :param str severity: The severity of the alert.
         :param Sequence[str] statuses: The status of the alert.
         :param Sequence[str] tags: A set of tags assigned to the alert.
@@ -1683,6 +1790,7 @@ class GetAlertsAlertResult(dict):
         :param Mapping[str, str] targets: A comma-separated list of the email addresses or integration endpoints (such as PagerDuty or webhook) to notify when the alert status changes. Multiple target types can be in the list.
         """
         pulumi.set(__self__, "additional_information", additional_information)
+        pulumi.set(__self__, "alert_triage_dashboards", alert_triage_dashboards)
         pulumi.set(__self__, "alert_type", alert_type)
         pulumi.set(__self__, "can_modifies", can_modifies)
         pulumi.set(__self__, "can_views", can_views)
@@ -1699,6 +1807,7 @@ class GetAlertsAlertResult(dict):
         pulumi.set(__self__, "notification_resend_frequency_minutes", notification_resend_frequency_minutes)
         pulumi.set(__self__, "process_rate_minutes", process_rate_minutes)
         pulumi.set(__self__, "resolve_after_minutes", resolve_after_minutes)
+        pulumi.set(__self__, "runbook_links", runbook_links)
         pulumi.set(__self__, "severity", severity)
         pulumi.set(__self__, "severity_lists", severity_lists)
         pulumi.set(__self__, "statuses", statuses)
@@ -1714,6 +1823,14 @@ class GetAlertsAlertResult(dict):
         User-supplied additional explanatory information about this alert.
         """
         return pulumi.get(self, "additional_information")
+
+    @property
+    @pulumi.getter(name="alertTriageDashboards")
+    def alert_triage_dashboards(self) -> Sequence['outputs.GetAlertsAlertAlertTriageDashboardResult']:
+        """
+        A set of user-supplied dashboard and parameters to create dashboard links for triaging alerts.
+        """
+        return pulumi.get(self, "alert_triage_dashboards")
 
     @property
     @pulumi.getter(name="alertType")
@@ -1844,6 +1961,14 @@ class GetAlertsAlertResult(dict):
         return pulumi.get(self, "resolve_after_minutes")
 
     @property
+    @pulumi.getter(name="runbookLinks")
+    def runbook_links(self) -> Sequence[str]:
+        """
+        A list of user-supplied runbook links for this alert.
+        """
+        return pulumi.get(self, "runbook_links")
+
+    @property
     @pulumi.getter
     def severity(self) -> str:
         """
@@ -1887,6 +2012,46 @@ class GetAlertsAlertResult(dict):
         A comma-separated list of the email addresses or integration endpoints (such as PagerDuty or webhook) to notify when the alert status changes. Multiple target types can be in the list.
         """
         return pulumi.get(self, "targets")
+
+
+@pulumi.output_type
+class GetAlertsAlertAlertTriageDashboardResult(dict):
+    def __init__(__self__, *,
+                 dashboard_id: str,
+                 description: str,
+                 parameters: Optional['outputs.GetAlertsAlertAlertTriageDashboardParametersResult'] = None):
+        pulumi.set(__self__, "dashboard_id", dashboard_id)
+        pulumi.set(__self__, "description", description)
+        if parameters is not None:
+            pulumi.set(__self__, "parameters", parameters)
+
+    @property
+    @pulumi.getter(name="dashboardId")
+    def dashboard_id(self) -> str:
+        return pulumi.get(self, "dashboard_id")
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter
+    def parameters(self) -> Optional['outputs.GetAlertsAlertAlertTriageDashboardParametersResult']:
+        return pulumi.get(self, "parameters")
+
+
+@pulumi.output_type
+class GetAlertsAlertAlertTriageDashboardParametersResult(dict):
+    def __init__(__self__, *,
+                 constants: Optional[Mapping[str, Any]] = None):
+        if constants is not None:
+            pulumi.set(__self__, "constants", constants)
+
+    @property
+    @pulumi.getter
+    def constants(self) -> Optional[Mapping[str, Any]]:
+        return pulumi.get(self, "constants")
 
 
 @pulumi.output_type

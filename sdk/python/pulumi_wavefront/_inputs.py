@@ -10,6 +10,8 @@ from typing import Any, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 
 __all__ = [
+    'AlertAlertTriageDashboardArgs',
+    'AlertAlertTriageDashboardParametersArgs',
     'AlertTargetRouteArgs',
     'CloudIntegrationNewRelicMetricFilterArgs',
     'DashboardParameterDetailArgs',
@@ -22,6 +24,62 @@ __all__ = [
     'MetricsPolicyPolicyRuleArgs',
     'MetricsPolicyPolicyRuleTagArgs',
 ]
+
+@pulumi.input_type
+class AlertAlertTriageDashboardArgs:
+    def __init__(__self__, *,
+                 dashboard_id: pulumi.Input[str],
+                 description: pulumi.Input[str],
+                 parameters: Optional[pulumi.Input['AlertAlertTriageDashboardParametersArgs']] = None):
+        pulumi.set(__self__, "dashboard_id", dashboard_id)
+        pulumi.set(__self__, "description", description)
+        if parameters is not None:
+            pulumi.set(__self__, "parameters", parameters)
+
+    @property
+    @pulumi.getter(name="dashboardId")
+    def dashboard_id(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "dashboard_id")
+
+    @dashboard_id.setter
+    def dashboard_id(self, value: pulumi.Input[str]):
+        pulumi.set(self, "dashboard_id", value)
+
+    @property
+    @pulumi.getter
+    def description(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: pulumi.Input[str]):
+        pulumi.set(self, "description", value)
+
+    @property
+    @pulumi.getter
+    def parameters(self) -> Optional[pulumi.Input['AlertAlertTriageDashboardParametersArgs']]:
+        return pulumi.get(self, "parameters")
+
+    @parameters.setter
+    def parameters(self, value: Optional[pulumi.Input['AlertAlertTriageDashboardParametersArgs']]):
+        pulumi.set(self, "parameters", value)
+
+
+@pulumi.input_type
+class AlertAlertTriageDashboardParametersArgs:
+    def __init__(__self__, *,
+                 constants: Optional[pulumi.Input[Mapping[str, Any]]] = None):
+        if constants is not None:
+            pulumi.set(__self__, "constants", constants)
+
+    @property
+    @pulumi.getter
+    def constants(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+        return pulumi.get(self, "constants")
+
+    @constants.setter
+    def constants(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+        pulumi.set(self, "constants", value)
+
 
 @pulumi.input_type
 class AlertTargetRouteArgs:

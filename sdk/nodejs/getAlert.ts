@@ -52,6 +52,10 @@ export interface GetAlertResult {
      */
     readonly additionalInformation: string;
     /**
+     * A set of user-supplied dashboard and parameters to create dashboard links for triaging alerts.
+     */
+    readonly alertTriageDashboards: outputs.GetAlertAlertTriageDashboard[];
+    /**
      * The type of alert in Wavefront.
      */
     readonly alertType: string;
@@ -115,6 +119,10 @@ export interface GetAlertResult {
      * The number of consecutive minutes that a firing series matching the condition query must evaluate to "false" (zero value) before the alert resolves.
      */
     readonly resolveAfterMinutes: number;
+    /**
+     * A list of user-supplied runbook links for this alert.
+     */
+    readonly runbookLinks: string[];
     /**
      * The severity of the alert.
      */

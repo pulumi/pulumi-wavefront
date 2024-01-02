@@ -22,10 +22,13 @@ class GetAlertResult:
     """
     A collection of values returned by getAlert.
     """
-    def __init__(__self__, additional_information=None, alert_type=None, can_modifies=None, can_views=None, condition=None, conditions=None, display_expression=None, evaluate_realtime_data=None, failing_host_label_pairs=None, id=None, in_maintenance_host_label_pairs=None, include_obsolete_metrics=None, minutes=None, name=None, notification_resend_frequency_minutes=None, process_rate_minutes=None, resolve_after_minutes=None, severity=None, severity_lists=None, statuses=None, tags=None, target=None, targets=None):
+    def __init__(__self__, additional_information=None, alert_triage_dashboards=None, alert_type=None, can_modifies=None, can_views=None, condition=None, conditions=None, display_expression=None, evaluate_realtime_data=None, failing_host_label_pairs=None, id=None, in_maintenance_host_label_pairs=None, include_obsolete_metrics=None, minutes=None, name=None, notification_resend_frequency_minutes=None, process_rate_minutes=None, resolve_after_minutes=None, runbook_links=None, severity=None, severity_lists=None, statuses=None, tags=None, target=None, targets=None):
         if additional_information and not isinstance(additional_information, str):
             raise TypeError("Expected argument 'additional_information' to be a str")
         pulumi.set(__self__, "additional_information", additional_information)
+        if alert_triage_dashboards and not isinstance(alert_triage_dashboards, list):
+            raise TypeError("Expected argument 'alert_triage_dashboards' to be a list")
+        pulumi.set(__self__, "alert_triage_dashboards", alert_triage_dashboards)
         if alert_type and not isinstance(alert_type, str):
             raise TypeError("Expected argument 'alert_type' to be a str")
         pulumi.set(__self__, "alert_type", alert_type)
@@ -74,6 +77,9 @@ class GetAlertResult:
         if resolve_after_minutes and not isinstance(resolve_after_minutes, int):
             raise TypeError("Expected argument 'resolve_after_minutes' to be a int")
         pulumi.set(__self__, "resolve_after_minutes", resolve_after_minutes)
+        if runbook_links and not isinstance(runbook_links, list):
+            raise TypeError("Expected argument 'runbook_links' to be a list")
+        pulumi.set(__self__, "runbook_links", runbook_links)
         if severity and not isinstance(severity, str):
             raise TypeError("Expected argument 'severity' to be a str")
         pulumi.set(__self__, "severity", severity)
@@ -100,6 +106,14 @@ class GetAlertResult:
         User-supplied additional explanatory information about this alert.
         """
         return pulumi.get(self, "additional_information")
+
+    @property
+    @pulumi.getter(name="alertTriageDashboards")
+    def alert_triage_dashboards(self) -> Sequence['outputs.GetAlertAlertTriageDashboardResult']:
+        """
+        A set of user-supplied dashboard and parameters to create dashboard links for triaging alerts.
+        """
+        return pulumi.get(self, "alert_triage_dashboards")
 
     @property
     @pulumi.getter(name="alertType")
@@ -230,6 +244,14 @@ class GetAlertResult:
         return pulumi.get(self, "resolve_after_minutes")
 
     @property
+    @pulumi.getter(name="runbookLinks")
+    def runbook_links(self) -> Sequence[str]:
+        """
+        A list of user-supplied runbook links for this alert.
+        """
+        return pulumi.get(self, "runbook_links")
+
+    @property
     @pulumi.getter
     def severity(self) -> str:
         """
@@ -282,6 +304,7 @@ class AwaitableGetAlertResult(GetAlertResult):
             yield self
         return GetAlertResult(
             additional_information=self.additional_information,
+            alert_triage_dashboards=self.alert_triage_dashboards,
             alert_type=self.alert_type,
             can_modifies=self.can_modifies,
             can_views=self.can_views,
@@ -298,6 +321,7 @@ class AwaitableGetAlertResult(GetAlertResult):
             notification_resend_frequency_minutes=self.notification_resend_frequency_minutes,
             process_rate_minutes=self.process_rate_minutes,
             resolve_after_minutes=self.resolve_after_minutes,
+            runbook_links=self.runbook_links,
             severity=self.severity,
             severity_lists=self.severity_lists,
             statuses=self.statuses,
@@ -333,6 +357,7 @@ def get_alert(id: Optional[str] = None,
 
     return AwaitableGetAlertResult(
         additional_information=pulumi.get(__ret__, 'additional_information'),
+        alert_triage_dashboards=pulumi.get(__ret__, 'alert_triage_dashboards'),
         alert_type=pulumi.get(__ret__, 'alert_type'),
         can_modifies=pulumi.get(__ret__, 'can_modifies'),
         can_views=pulumi.get(__ret__, 'can_views'),
@@ -349,6 +374,7 @@ def get_alert(id: Optional[str] = None,
         notification_resend_frequency_minutes=pulumi.get(__ret__, 'notification_resend_frequency_minutes'),
         process_rate_minutes=pulumi.get(__ret__, 'process_rate_minutes'),
         resolve_after_minutes=pulumi.get(__ret__, 'resolve_after_minutes'),
+        runbook_links=pulumi.get(__ret__, 'runbook_links'),
         severity=pulumi.get(__ret__, 'severity'),
         severity_lists=pulumi.get(__ret__, 'severity_lists'),
         statuses=pulumi.get(__ret__, 'statuses'),

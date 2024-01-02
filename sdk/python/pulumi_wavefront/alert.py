@@ -8,6 +8,8 @@ import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
+from . import outputs
+from ._inputs import *
 
 __all__ = ['AlertArgs', 'Alert']
 
@@ -17,6 +19,7 @@ class AlertArgs:
                  minutes: pulumi.Input[int],
                  tags: pulumi.Input[Sequence[pulumi.Input[str]]],
                  additional_information: Optional[pulumi.Input[str]] = None,
+                 alert_triage_dashboards: Optional[pulumi.Input[Sequence[pulumi.Input['AlertAlertTriageDashboardArgs']]]] = None,
                  alert_type: Optional[pulumi.Input[str]] = None,
                  can_modifies: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  can_views: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
@@ -27,6 +30,7 @@ class AlertArgs:
                  notification_resend_frequency_minutes: Optional[pulumi.Input[int]] = None,
                  process_rate_minutes: Optional[pulumi.Input[int]] = None,
                  resolve_after_minutes: Optional[pulumi.Input[int]] = None,
+                 runbook_links: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  severity: Optional[pulumi.Input[str]] = None,
                  target: Optional[pulumi.Input[str]] = None,
                  threshold_targets: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None):
@@ -37,6 +41,7 @@ class AlertArgs:
         :param pulumi.Input[Sequence[pulumi.Input[str]]] tags: A set of tags to assign to this resource.
         :param pulumi.Input[str] additional_information: User-supplied additional explanatory information for this alert.
                Useful for linking runbooks, migrations, etc.
+        :param pulumi.Input[Sequence[pulumi.Input['AlertAlertTriageDashboardArgs']]] alert_triage_dashboards: A set of user-supplied dashboard and parameters to create dashboard links for triaging alerts.
         :param pulumi.Input[str] alert_type: The type of alert in Wavefront. Either `CLASSIC` (default)
                or `THRESHOLD`.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] can_modifies: A list of valid users or groups that can modify this resource on a tenant.
@@ -56,6 +61,7 @@ class AlertArgs:
         :param pulumi.Input[int] resolve_after_minutes: The number of consecutive minutes that a firing series matching the condition
                query must evaluate to "false" (zero value) before the alert resolves. When unset, this defaults to
                the same value as `minutes`.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] runbook_links: A list of user-supplied runbook links for this alert.
         :param pulumi.Input[str] severity: Severity of the alert, valid values are `INFO`, `SMOKE`, `WARN`, `SEVERE`.
         :param pulumi.Input[str] target: A comma-separated list of the email address or integration endpoint
                (such as PagerDuty or webhook) to notify when the alert status changes. Multiple target types can be in the list.
@@ -66,6 +72,8 @@ class AlertArgs:
         pulumi.set(__self__, "tags", tags)
         if additional_information is not None:
             pulumi.set(__self__, "additional_information", additional_information)
+        if alert_triage_dashboards is not None:
+            pulumi.set(__self__, "alert_triage_dashboards", alert_triage_dashboards)
         if alert_type is not None:
             pulumi.set(__self__, "alert_type", alert_type)
         if can_modifies is not None:
@@ -86,6 +94,8 @@ class AlertArgs:
             pulumi.set(__self__, "process_rate_minutes", process_rate_minutes)
         if resolve_after_minutes is not None:
             pulumi.set(__self__, "resolve_after_minutes", resolve_after_minutes)
+        if runbook_links is not None:
+            pulumi.set(__self__, "runbook_links", runbook_links)
         if severity is not None:
             pulumi.set(__self__, "severity", severity)
         if target is not None:
@@ -130,6 +140,18 @@ class AlertArgs:
     @additional_information.setter
     def additional_information(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "additional_information", value)
+
+    @property
+    @pulumi.getter(name="alertTriageDashboards")
+    def alert_triage_dashboards(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AlertAlertTriageDashboardArgs']]]]:
+        """
+        A set of user-supplied dashboard and parameters to create dashboard links for triaging alerts.
+        """
+        return pulumi.get(self, "alert_triage_dashboards")
+
+    @alert_triage_dashboards.setter
+    def alert_triage_dashboards(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AlertAlertTriageDashboardArgs']]]]):
+        pulumi.set(self, "alert_triage_dashboards", value)
 
     @property
     @pulumi.getter(name="alertType")
@@ -261,6 +283,18 @@ class AlertArgs:
         pulumi.set(self, "resolve_after_minutes", value)
 
     @property
+    @pulumi.getter(name="runbookLinks")
+    def runbook_links(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        A list of user-supplied runbook links for this alert.
+        """
+        return pulumi.get(self, "runbook_links")
+
+    @runbook_links.setter
+    def runbook_links(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "runbook_links", value)
+
+    @property
     @pulumi.getter
     def severity(self) -> Optional[pulumi.Input[str]]:
         """
@@ -303,6 +337,7 @@ class AlertArgs:
 class _AlertState:
     def __init__(__self__, *,
                  additional_information: Optional[pulumi.Input[str]] = None,
+                 alert_triage_dashboards: Optional[pulumi.Input[Sequence[pulumi.Input['AlertAlertTriageDashboardArgs']]]] = None,
                  alert_type: Optional[pulumi.Input[str]] = None,
                  can_modifies: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  can_views: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
@@ -314,6 +349,7 @@ class _AlertState:
                  notification_resend_frequency_minutes: Optional[pulumi.Input[int]] = None,
                  process_rate_minutes: Optional[pulumi.Input[int]] = None,
                  resolve_after_minutes: Optional[pulumi.Input[int]] = None,
+                 runbook_links: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  severity: Optional[pulumi.Input[str]] = None,
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  target: Optional[pulumi.Input[str]] = None,
@@ -322,6 +358,7 @@ class _AlertState:
         Input properties used for looking up and filtering Alert resources.
         :param pulumi.Input[str] additional_information: User-supplied additional explanatory information for this alert.
                Useful for linking runbooks, migrations, etc.
+        :param pulumi.Input[Sequence[pulumi.Input['AlertAlertTriageDashboardArgs']]] alert_triage_dashboards: A set of user-supplied dashboard and parameters to create dashboard links for triaging alerts.
         :param pulumi.Input[str] alert_type: The type of alert in Wavefront. Either `CLASSIC` (default)
                or `THRESHOLD`.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] can_modifies: A list of valid users or groups that can modify this resource on a tenant.
@@ -343,6 +380,7 @@ class _AlertState:
         :param pulumi.Input[int] resolve_after_minutes: The number of consecutive minutes that a firing series matching the condition
                query must evaluate to "false" (zero value) before the alert resolves. When unset, this defaults to
                the same value as `minutes`.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] runbook_links: A list of user-supplied runbook links for this alert.
         :param pulumi.Input[str] severity: Severity of the alert, valid values are `INFO`, `SMOKE`, `WARN`, `SEVERE`.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] tags: A set of tags to assign to this resource.
         :param pulumi.Input[str] target: A comma-separated list of the email address or integration endpoint
@@ -352,6 +390,8 @@ class _AlertState:
         """
         if additional_information is not None:
             pulumi.set(__self__, "additional_information", additional_information)
+        if alert_triage_dashboards is not None:
+            pulumi.set(__self__, "alert_triage_dashboards", alert_triage_dashboards)
         if alert_type is not None:
             pulumi.set(__self__, "alert_type", alert_type)
         if can_modifies is not None:
@@ -374,6 +414,8 @@ class _AlertState:
             pulumi.set(__self__, "process_rate_minutes", process_rate_minutes)
         if resolve_after_minutes is not None:
             pulumi.set(__self__, "resolve_after_minutes", resolve_after_minutes)
+        if runbook_links is not None:
+            pulumi.set(__self__, "runbook_links", runbook_links)
         if severity is not None:
             pulumi.set(__self__, "severity", severity)
         if tags is not None:
@@ -395,6 +437,18 @@ class _AlertState:
     @additional_information.setter
     def additional_information(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "additional_information", value)
+
+    @property
+    @pulumi.getter(name="alertTriageDashboards")
+    def alert_triage_dashboards(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AlertAlertTriageDashboardArgs']]]]:
+        """
+        A set of user-supplied dashboard and parameters to create dashboard links for triaging alerts.
+        """
+        return pulumi.get(self, "alert_triage_dashboards")
+
+    @alert_triage_dashboards.setter
+    def alert_triage_dashboards(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AlertAlertTriageDashboardArgs']]]]):
+        pulumi.set(self, "alert_triage_dashboards", value)
 
     @property
     @pulumi.getter(name="alertType")
@@ -539,6 +593,18 @@ class _AlertState:
         pulumi.set(self, "resolve_after_minutes", value)
 
     @property
+    @pulumi.getter(name="runbookLinks")
+    def runbook_links(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        A list of user-supplied runbook links for this alert.
+        """
+        return pulumi.get(self, "runbook_links")
+
+    @runbook_links.setter
+    def runbook_links(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "runbook_links", value)
+
+    @property
     @pulumi.getter
     def severity(self) -> Optional[pulumi.Input[str]]:
         """
@@ -595,6 +661,7 @@ class Alert(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  additional_information: Optional[pulumi.Input[str]] = None,
+                 alert_triage_dashboards: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AlertAlertTriageDashboardArgs']]]]] = None,
                  alert_type: Optional[pulumi.Input[str]] = None,
                  can_modifies: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  can_views: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
@@ -606,6 +673,7 @@ class Alert(pulumi.CustomResource):
                  notification_resend_frequency_minutes: Optional[pulumi.Input[int]] = None,
                  process_rate_minutes: Optional[pulumi.Input[int]] = None,
                  resolve_after_minutes: Optional[pulumi.Input[int]] = None,
+                 runbook_links: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  severity: Optional[pulumi.Input[str]] = None,
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  target: Optional[pulumi.Input[str]] = None,
@@ -645,6 +713,7 @@ class Alert(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] additional_information: User-supplied additional explanatory information for this alert.
                Useful for linking runbooks, migrations, etc.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AlertAlertTriageDashboardArgs']]]] alert_triage_dashboards: A set of user-supplied dashboard and parameters to create dashboard links for triaging alerts.
         :param pulumi.Input[str] alert_type: The type of alert in Wavefront. Either `CLASSIC` (default)
                or `THRESHOLD`.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] can_modifies: A list of valid users or groups that can modify this resource on a tenant.
@@ -666,6 +735,7 @@ class Alert(pulumi.CustomResource):
         :param pulumi.Input[int] resolve_after_minutes: The number of consecutive minutes that a firing series matching the condition
                query must evaluate to "false" (zero value) before the alert resolves. When unset, this defaults to
                the same value as `minutes`.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] runbook_links: A list of user-supplied runbook links for this alert.
         :param pulumi.Input[str] severity: Severity of the alert, valid values are `INFO`, `SMOKE`, `WARN`, `SEVERE`.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] tags: A set of tags to assign to this resource.
         :param pulumi.Input[str] target: A comma-separated list of the email address or integration endpoint
@@ -725,6 +795,7 @@ class Alert(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  additional_information: Optional[pulumi.Input[str]] = None,
+                 alert_triage_dashboards: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AlertAlertTriageDashboardArgs']]]]] = None,
                  alert_type: Optional[pulumi.Input[str]] = None,
                  can_modifies: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  can_views: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
@@ -736,6 +807,7 @@ class Alert(pulumi.CustomResource):
                  notification_resend_frequency_minutes: Optional[pulumi.Input[int]] = None,
                  process_rate_minutes: Optional[pulumi.Input[int]] = None,
                  resolve_after_minutes: Optional[pulumi.Input[int]] = None,
+                 runbook_links: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  severity: Optional[pulumi.Input[str]] = None,
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  target: Optional[pulumi.Input[str]] = None,
@@ -750,6 +822,7 @@ class Alert(pulumi.CustomResource):
             __props__ = AlertArgs.__new__(AlertArgs)
 
             __props__.__dict__["additional_information"] = additional_information
+            __props__.__dict__["alert_triage_dashboards"] = alert_triage_dashboards
             __props__.__dict__["alert_type"] = alert_type
             __props__.__dict__["can_modifies"] = can_modifies
             __props__.__dict__["can_views"] = can_views
@@ -763,6 +836,7 @@ class Alert(pulumi.CustomResource):
             __props__.__dict__["notification_resend_frequency_minutes"] = notification_resend_frequency_minutes
             __props__.__dict__["process_rate_minutes"] = process_rate_minutes
             __props__.__dict__["resolve_after_minutes"] = resolve_after_minutes
+            __props__.__dict__["runbook_links"] = runbook_links
             __props__.__dict__["severity"] = severity
             if tags is None and not opts.urn:
                 raise TypeError("Missing required property 'tags'")
@@ -780,6 +854,7 @@ class Alert(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             additional_information: Optional[pulumi.Input[str]] = None,
+            alert_triage_dashboards: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AlertAlertTriageDashboardArgs']]]]] = None,
             alert_type: Optional[pulumi.Input[str]] = None,
             can_modifies: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             can_views: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
@@ -791,6 +866,7 @@ class Alert(pulumi.CustomResource):
             notification_resend_frequency_minutes: Optional[pulumi.Input[int]] = None,
             process_rate_minutes: Optional[pulumi.Input[int]] = None,
             resolve_after_minutes: Optional[pulumi.Input[int]] = None,
+            runbook_links: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             severity: Optional[pulumi.Input[str]] = None,
             tags: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             target: Optional[pulumi.Input[str]] = None,
@@ -804,6 +880,7 @@ class Alert(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] additional_information: User-supplied additional explanatory information for this alert.
                Useful for linking runbooks, migrations, etc.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AlertAlertTriageDashboardArgs']]]] alert_triage_dashboards: A set of user-supplied dashboard and parameters to create dashboard links for triaging alerts.
         :param pulumi.Input[str] alert_type: The type of alert in Wavefront. Either `CLASSIC` (default)
                or `THRESHOLD`.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] can_modifies: A list of valid users or groups that can modify this resource on a tenant.
@@ -825,6 +902,7 @@ class Alert(pulumi.CustomResource):
         :param pulumi.Input[int] resolve_after_minutes: The number of consecutive minutes that a firing series matching the condition
                query must evaluate to "false" (zero value) before the alert resolves. When unset, this defaults to
                the same value as `minutes`.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] runbook_links: A list of user-supplied runbook links for this alert.
         :param pulumi.Input[str] severity: Severity of the alert, valid values are `INFO`, `SMOKE`, `WARN`, `SEVERE`.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] tags: A set of tags to assign to this resource.
         :param pulumi.Input[str] target: A comma-separated list of the email address or integration endpoint
@@ -837,6 +915,7 @@ class Alert(pulumi.CustomResource):
         __props__ = _AlertState.__new__(_AlertState)
 
         __props__.__dict__["additional_information"] = additional_information
+        __props__.__dict__["alert_triage_dashboards"] = alert_triage_dashboards
         __props__.__dict__["alert_type"] = alert_type
         __props__.__dict__["can_modifies"] = can_modifies
         __props__.__dict__["can_views"] = can_views
@@ -848,6 +927,7 @@ class Alert(pulumi.CustomResource):
         __props__.__dict__["notification_resend_frequency_minutes"] = notification_resend_frequency_minutes
         __props__.__dict__["process_rate_minutes"] = process_rate_minutes
         __props__.__dict__["resolve_after_minutes"] = resolve_after_minutes
+        __props__.__dict__["runbook_links"] = runbook_links
         __props__.__dict__["severity"] = severity
         __props__.__dict__["tags"] = tags
         __props__.__dict__["target"] = target
@@ -862,6 +942,14 @@ class Alert(pulumi.CustomResource):
         Useful for linking runbooks, migrations, etc.
         """
         return pulumi.get(self, "additional_information")
+
+    @property
+    @pulumi.getter(name="alertTriageDashboards")
+    def alert_triage_dashboards(self) -> pulumi.Output[Optional[Sequence['outputs.AlertAlertTriageDashboard']]]:
+        """
+        A set of user-supplied dashboard and parameters to create dashboard links for triaging alerts.
+        """
+        return pulumi.get(self, "alert_triage_dashboards")
 
     @property
     @pulumi.getter(name="alertType")
@@ -960,6 +1048,14 @@ class Alert(pulumi.CustomResource):
         the same value as `minutes`.
         """
         return pulumi.get(self, "resolve_after_minutes")
+
+    @property
+    @pulumi.getter(name="runbookLinks")
+    def runbook_links(self) -> pulumi.Output[Optional[Sequence[str]]]:
+        """
+        A list of user-supplied runbook links for this alert.
+        """
+        return pulumi.get(self, "runbook_links")
 
     @property
     @pulumi.getter

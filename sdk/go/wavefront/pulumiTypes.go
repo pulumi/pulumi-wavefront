@@ -13,6 +13,245 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type AlertAlertTriageDashboard struct {
+	DashboardId string                               `pulumi:"dashboardId"`
+	Description string                               `pulumi:"description"`
+	Parameters  *AlertAlertTriageDashboardParameters `pulumi:"parameters"`
+}
+
+// AlertAlertTriageDashboardInput is an input type that accepts AlertAlertTriageDashboardArgs and AlertAlertTriageDashboardOutput values.
+// You can construct a concrete instance of `AlertAlertTriageDashboardInput` via:
+//
+//	AlertAlertTriageDashboardArgs{...}
+type AlertAlertTriageDashboardInput interface {
+	pulumi.Input
+
+	ToAlertAlertTriageDashboardOutput() AlertAlertTriageDashboardOutput
+	ToAlertAlertTriageDashboardOutputWithContext(context.Context) AlertAlertTriageDashboardOutput
+}
+
+type AlertAlertTriageDashboardArgs struct {
+	DashboardId pulumi.StringInput                          `pulumi:"dashboardId"`
+	Description pulumi.StringInput                          `pulumi:"description"`
+	Parameters  AlertAlertTriageDashboardParametersPtrInput `pulumi:"parameters"`
+}
+
+func (AlertAlertTriageDashboardArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AlertAlertTriageDashboard)(nil)).Elem()
+}
+
+func (i AlertAlertTriageDashboardArgs) ToAlertAlertTriageDashboardOutput() AlertAlertTriageDashboardOutput {
+	return i.ToAlertAlertTriageDashboardOutputWithContext(context.Background())
+}
+
+func (i AlertAlertTriageDashboardArgs) ToAlertAlertTriageDashboardOutputWithContext(ctx context.Context) AlertAlertTriageDashboardOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AlertAlertTriageDashboardOutput)
+}
+
+// AlertAlertTriageDashboardArrayInput is an input type that accepts AlertAlertTriageDashboardArray and AlertAlertTriageDashboardArrayOutput values.
+// You can construct a concrete instance of `AlertAlertTriageDashboardArrayInput` via:
+//
+//	AlertAlertTriageDashboardArray{ AlertAlertTriageDashboardArgs{...} }
+type AlertAlertTriageDashboardArrayInput interface {
+	pulumi.Input
+
+	ToAlertAlertTriageDashboardArrayOutput() AlertAlertTriageDashboardArrayOutput
+	ToAlertAlertTriageDashboardArrayOutputWithContext(context.Context) AlertAlertTriageDashboardArrayOutput
+}
+
+type AlertAlertTriageDashboardArray []AlertAlertTriageDashboardInput
+
+func (AlertAlertTriageDashboardArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AlertAlertTriageDashboard)(nil)).Elem()
+}
+
+func (i AlertAlertTriageDashboardArray) ToAlertAlertTriageDashboardArrayOutput() AlertAlertTriageDashboardArrayOutput {
+	return i.ToAlertAlertTriageDashboardArrayOutputWithContext(context.Background())
+}
+
+func (i AlertAlertTriageDashboardArray) ToAlertAlertTriageDashboardArrayOutputWithContext(ctx context.Context) AlertAlertTriageDashboardArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AlertAlertTriageDashboardArrayOutput)
+}
+
+type AlertAlertTriageDashboardOutput struct{ *pulumi.OutputState }
+
+func (AlertAlertTriageDashboardOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AlertAlertTriageDashboard)(nil)).Elem()
+}
+
+func (o AlertAlertTriageDashboardOutput) ToAlertAlertTriageDashboardOutput() AlertAlertTriageDashboardOutput {
+	return o
+}
+
+func (o AlertAlertTriageDashboardOutput) ToAlertAlertTriageDashboardOutputWithContext(ctx context.Context) AlertAlertTriageDashboardOutput {
+	return o
+}
+
+func (o AlertAlertTriageDashboardOutput) DashboardId() pulumi.StringOutput {
+	return o.ApplyT(func(v AlertAlertTriageDashboard) string { return v.DashboardId }).(pulumi.StringOutput)
+}
+
+func (o AlertAlertTriageDashboardOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v AlertAlertTriageDashboard) string { return v.Description }).(pulumi.StringOutput)
+}
+
+func (o AlertAlertTriageDashboardOutput) Parameters() AlertAlertTriageDashboardParametersPtrOutput {
+	return o.ApplyT(func(v AlertAlertTriageDashboard) *AlertAlertTriageDashboardParameters { return v.Parameters }).(AlertAlertTriageDashboardParametersPtrOutput)
+}
+
+type AlertAlertTriageDashboardArrayOutput struct{ *pulumi.OutputState }
+
+func (AlertAlertTriageDashboardArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AlertAlertTriageDashboard)(nil)).Elem()
+}
+
+func (o AlertAlertTriageDashboardArrayOutput) ToAlertAlertTriageDashboardArrayOutput() AlertAlertTriageDashboardArrayOutput {
+	return o
+}
+
+func (o AlertAlertTriageDashboardArrayOutput) ToAlertAlertTriageDashboardArrayOutputWithContext(ctx context.Context) AlertAlertTriageDashboardArrayOutput {
+	return o
+}
+
+func (o AlertAlertTriageDashboardArrayOutput) Index(i pulumi.IntInput) AlertAlertTriageDashboardOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) AlertAlertTriageDashboard {
+		return vs[0].([]AlertAlertTriageDashboard)[vs[1].(int)]
+	}).(AlertAlertTriageDashboardOutput)
+}
+
+type AlertAlertTriageDashboardParameters struct {
+	Constants map[string]interface{} `pulumi:"constants"`
+}
+
+// AlertAlertTriageDashboardParametersInput is an input type that accepts AlertAlertTriageDashboardParametersArgs and AlertAlertTriageDashboardParametersOutput values.
+// You can construct a concrete instance of `AlertAlertTriageDashboardParametersInput` via:
+//
+//	AlertAlertTriageDashboardParametersArgs{...}
+type AlertAlertTriageDashboardParametersInput interface {
+	pulumi.Input
+
+	ToAlertAlertTriageDashboardParametersOutput() AlertAlertTriageDashboardParametersOutput
+	ToAlertAlertTriageDashboardParametersOutputWithContext(context.Context) AlertAlertTriageDashboardParametersOutput
+}
+
+type AlertAlertTriageDashboardParametersArgs struct {
+	Constants pulumi.MapInput `pulumi:"constants"`
+}
+
+func (AlertAlertTriageDashboardParametersArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AlertAlertTriageDashboardParameters)(nil)).Elem()
+}
+
+func (i AlertAlertTriageDashboardParametersArgs) ToAlertAlertTriageDashboardParametersOutput() AlertAlertTriageDashboardParametersOutput {
+	return i.ToAlertAlertTriageDashboardParametersOutputWithContext(context.Background())
+}
+
+func (i AlertAlertTriageDashboardParametersArgs) ToAlertAlertTriageDashboardParametersOutputWithContext(ctx context.Context) AlertAlertTriageDashboardParametersOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AlertAlertTriageDashboardParametersOutput)
+}
+
+func (i AlertAlertTriageDashboardParametersArgs) ToAlertAlertTriageDashboardParametersPtrOutput() AlertAlertTriageDashboardParametersPtrOutput {
+	return i.ToAlertAlertTriageDashboardParametersPtrOutputWithContext(context.Background())
+}
+
+func (i AlertAlertTriageDashboardParametersArgs) ToAlertAlertTriageDashboardParametersPtrOutputWithContext(ctx context.Context) AlertAlertTriageDashboardParametersPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AlertAlertTriageDashboardParametersOutput).ToAlertAlertTriageDashboardParametersPtrOutputWithContext(ctx)
+}
+
+// AlertAlertTriageDashboardParametersPtrInput is an input type that accepts AlertAlertTriageDashboardParametersArgs, AlertAlertTriageDashboardParametersPtr and AlertAlertTriageDashboardParametersPtrOutput values.
+// You can construct a concrete instance of `AlertAlertTriageDashboardParametersPtrInput` via:
+//
+//	        AlertAlertTriageDashboardParametersArgs{...}
+//
+//	or:
+//
+//	        nil
+type AlertAlertTriageDashboardParametersPtrInput interface {
+	pulumi.Input
+
+	ToAlertAlertTriageDashboardParametersPtrOutput() AlertAlertTriageDashboardParametersPtrOutput
+	ToAlertAlertTriageDashboardParametersPtrOutputWithContext(context.Context) AlertAlertTriageDashboardParametersPtrOutput
+}
+
+type alertAlertTriageDashboardParametersPtrType AlertAlertTriageDashboardParametersArgs
+
+func AlertAlertTriageDashboardParametersPtr(v *AlertAlertTriageDashboardParametersArgs) AlertAlertTriageDashboardParametersPtrInput {
+	return (*alertAlertTriageDashboardParametersPtrType)(v)
+}
+
+func (*alertAlertTriageDashboardParametersPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**AlertAlertTriageDashboardParameters)(nil)).Elem()
+}
+
+func (i *alertAlertTriageDashboardParametersPtrType) ToAlertAlertTriageDashboardParametersPtrOutput() AlertAlertTriageDashboardParametersPtrOutput {
+	return i.ToAlertAlertTriageDashboardParametersPtrOutputWithContext(context.Background())
+}
+
+func (i *alertAlertTriageDashboardParametersPtrType) ToAlertAlertTriageDashboardParametersPtrOutputWithContext(ctx context.Context) AlertAlertTriageDashboardParametersPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AlertAlertTriageDashboardParametersPtrOutput)
+}
+
+type AlertAlertTriageDashboardParametersOutput struct{ *pulumi.OutputState }
+
+func (AlertAlertTriageDashboardParametersOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AlertAlertTriageDashboardParameters)(nil)).Elem()
+}
+
+func (o AlertAlertTriageDashboardParametersOutput) ToAlertAlertTriageDashboardParametersOutput() AlertAlertTriageDashboardParametersOutput {
+	return o
+}
+
+func (o AlertAlertTriageDashboardParametersOutput) ToAlertAlertTriageDashboardParametersOutputWithContext(ctx context.Context) AlertAlertTriageDashboardParametersOutput {
+	return o
+}
+
+func (o AlertAlertTriageDashboardParametersOutput) ToAlertAlertTriageDashboardParametersPtrOutput() AlertAlertTriageDashboardParametersPtrOutput {
+	return o.ToAlertAlertTriageDashboardParametersPtrOutputWithContext(context.Background())
+}
+
+func (o AlertAlertTriageDashboardParametersOutput) ToAlertAlertTriageDashboardParametersPtrOutputWithContext(ctx context.Context) AlertAlertTriageDashboardParametersPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v AlertAlertTriageDashboardParameters) *AlertAlertTriageDashboardParameters {
+		return &v
+	}).(AlertAlertTriageDashboardParametersPtrOutput)
+}
+
+func (o AlertAlertTriageDashboardParametersOutput) Constants() pulumi.MapOutput {
+	return o.ApplyT(func(v AlertAlertTriageDashboardParameters) map[string]interface{} { return v.Constants }).(pulumi.MapOutput)
+}
+
+type AlertAlertTriageDashboardParametersPtrOutput struct{ *pulumi.OutputState }
+
+func (AlertAlertTriageDashboardParametersPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**AlertAlertTriageDashboardParameters)(nil)).Elem()
+}
+
+func (o AlertAlertTriageDashboardParametersPtrOutput) ToAlertAlertTriageDashboardParametersPtrOutput() AlertAlertTriageDashboardParametersPtrOutput {
+	return o
+}
+
+func (o AlertAlertTriageDashboardParametersPtrOutput) ToAlertAlertTriageDashboardParametersPtrOutputWithContext(ctx context.Context) AlertAlertTriageDashboardParametersPtrOutput {
+	return o
+}
+
+func (o AlertAlertTriageDashboardParametersPtrOutput) Elem() AlertAlertTriageDashboardParametersOutput {
+	return o.ApplyT(func(v *AlertAlertTriageDashboardParameters) AlertAlertTriageDashboardParameters {
+		if v != nil {
+			return *v
+		}
+		var ret AlertAlertTriageDashboardParameters
+		return ret
+	}).(AlertAlertTriageDashboardParametersOutput)
+}
+
+func (o AlertAlertTriageDashboardParametersPtrOutput) Constants() pulumi.MapOutput {
+	return o.ApplyT(func(v *AlertAlertTriageDashboardParameters) map[string]interface{} {
+		if v == nil {
+			return nil
+		}
+		return v.Constants
+	}).(pulumi.MapOutput)
+}
+
 type AlertTargetRoute struct {
 	// (Required) String that filters the route. Space delimited. Currently only allows a single key value pair.
 	// (e.g. `env prod`)
@@ -1938,6 +2177,245 @@ func (o MetricsPolicyPolicyRuleTagArrayOutput) Index(i pulumi.IntInput) MetricsP
 	}).(MetricsPolicyPolicyRuleTagOutput)
 }
 
+type GetAlertAlertTriageDashboard struct {
+	DashboardId string                                  `pulumi:"dashboardId"`
+	Description string                                  `pulumi:"description"`
+	Parameters  *GetAlertAlertTriageDashboardParameters `pulumi:"parameters"`
+}
+
+// GetAlertAlertTriageDashboardInput is an input type that accepts GetAlertAlertTriageDashboardArgs and GetAlertAlertTriageDashboardOutput values.
+// You can construct a concrete instance of `GetAlertAlertTriageDashboardInput` via:
+//
+//	GetAlertAlertTriageDashboardArgs{...}
+type GetAlertAlertTriageDashboardInput interface {
+	pulumi.Input
+
+	ToGetAlertAlertTriageDashboardOutput() GetAlertAlertTriageDashboardOutput
+	ToGetAlertAlertTriageDashboardOutputWithContext(context.Context) GetAlertAlertTriageDashboardOutput
+}
+
+type GetAlertAlertTriageDashboardArgs struct {
+	DashboardId pulumi.StringInput                             `pulumi:"dashboardId"`
+	Description pulumi.StringInput                             `pulumi:"description"`
+	Parameters  GetAlertAlertTriageDashboardParametersPtrInput `pulumi:"parameters"`
+}
+
+func (GetAlertAlertTriageDashboardArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAlertAlertTriageDashboard)(nil)).Elem()
+}
+
+func (i GetAlertAlertTriageDashboardArgs) ToGetAlertAlertTriageDashboardOutput() GetAlertAlertTriageDashboardOutput {
+	return i.ToGetAlertAlertTriageDashboardOutputWithContext(context.Background())
+}
+
+func (i GetAlertAlertTriageDashboardArgs) ToGetAlertAlertTriageDashboardOutputWithContext(ctx context.Context) GetAlertAlertTriageDashboardOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAlertAlertTriageDashboardOutput)
+}
+
+// GetAlertAlertTriageDashboardArrayInput is an input type that accepts GetAlertAlertTriageDashboardArray and GetAlertAlertTriageDashboardArrayOutput values.
+// You can construct a concrete instance of `GetAlertAlertTriageDashboardArrayInput` via:
+//
+//	GetAlertAlertTriageDashboardArray{ GetAlertAlertTriageDashboardArgs{...} }
+type GetAlertAlertTriageDashboardArrayInput interface {
+	pulumi.Input
+
+	ToGetAlertAlertTriageDashboardArrayOutput() GetAlertAlertTriageDashboardArrayOutput
+	ToGetAlertAlertTriageDashboardArrayOutputWithContext(context.Context) GetAlertAlertTriageDashboardArrayOutput
+}
+
+type GetAlertAlertTriageDashboardArray []GetAlertAlertTriageDashboardInput
+
+func (GetAlertAlertTriageDashboardArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAlertAlertTriageDashboard)(nil)).Elem()
+}
+
+func (i GetAlertAlertTriageDashboardArray) ToGetAlertAlertTriageDashboardArrayOutput() GetAlertAlertTriageDashboardArrayOutput {
+	return i.ToGetAlertAlertTriageDashboardArrayOutputWithContext(context.Background())
+}
+
+func (i GetAlertAlertTriageDashboardArray) ToGetAlertAlertTriageDashboardArrayOutputWithContext(ctx context.Context) GetAlertAlertTriageDashboardArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAlertAlertTriageDashboardArrayOutput)
+}
+
+type GetAlertAlertTriageDashboardOutput struct{ *pulumi.OutputState }
+
+func (GetAlertAlertTriageDashboardOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAlertAlertTriageDashboard)(nil)).Elem()
+}
+
+func (o GetAlertAlertTriageDashboardOutput) ToGetAlertAlertTriageDashboardOutput() GetAlertAlertTriageDashboardOutput {
+	return o
+}
+
+func (o GetAlertAlertTriageDashboardOutput) ToGetAlertAlertTriageDashboardOutputWithContext(ctx context.Context) GetAlertAlertTriageDashboardOutput {
+	return o
+}
+
+func (o GetAlertAlertTriageDashboardOutput) DashboardId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlertAlertTriageDashboard) string { return v.DashboardId }).(pulumi.StringOutput)
+}
+
+func (o GetAlertAlertTriageDashboardOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlertAlertTriageDashboard) string { return v.Description }).(pulumi.StringOutput)
+}
+
+func (o GetAlertAlertTriageDashboardOutput) Parameters() GetAlertAlertTriageDashboardParametersPtrOutput {
+	return o.ApplyT(func(v GetAlertAlertTriageDashboard) *GetAlertAlertTriageDashboardParameters { return v.Parameters }).(GetAlertAlertTriageDashboardParametersPtrOutput)
+}
+
+type GetAlertAlertTriageDashboardArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAlertAlertTriageDashboardArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAlertAlertTriageDashboard)(nil)).Elem()
+}
+
+func (o GetAlertAlertTriageDashboardArrayOutput) ToGetAlertAlertTriageDashboardArrayOutput() GetAlertAlertTriageDashboardArrayOutput {
+	return o
+}
+
+func (o GetAlertAlertTriageDashboardArrayOutput) ToGetAlertAlertTriageDashboardArrayOutputWithContext(ctx context.Context) GetAlertAlertTriageDashboardArrayOutput {
+	return o
+}
+
+func (o GetAlertAlertTriageDashboardArrayOutput) Index(i pulumi.IntInput) GetAlertAlertTriageDashboardOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAlertAlertTriageDashboard {
+		return vs[0].([]GetAlertAlertTriageDashboard)[vs[1].(int)]
+	}).(GetAlertAlertTriageDashboardOutput)
+}
+
+type GetAlertAlertTriageDashboardParameters struct {
+	Constants map[string]interface{} `pulumi:"constants"`
+}
+
+// GetAlertAlertTriageDashboardParametersInput is an input type that accepts GetAlertAlertTriageDashboardParametersArgs and GetAlertAlertTriageDashboardParametersOutput values.
+// You can construct a concrete instance of `GetAlertAlertTriageDashboardParametersInput` via:
+//
+//	GetAlertAlertTriageDashboardParametersArgs{...}
+type GetAlertAlertTriageDashboardParametersInput interface {
+	pulumi.Input
+
+	ToGetAlertAlertTriageDashboardParametersOutput() GetAlertAlertTriageDashboardParametersOutput
+	ToGetAlertAlertTriageDashboardParametersOutputWithContext(context.Context) GetAlertAlertTriageDashboardParametersOutput
+}
+
+type GetAlertAlertTriageDashboardParametersArgs struct {
+	Constants pulumi.MapInput `pulumi:"constants"`
+}
+
+func (GetAlertAlertTriageDashboardParametersArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAlertAlertTriageDashboardParameters)(nil)).Elem()
+}
+
+func (i GetAlertAlertTriageDashboardParametersArgs) ToGetAlertAlertTriageDashboardParametersOutput() GetAlertAlertTriageDashboardParametersOutput {
+	return i.ToGetAlertAlertTriageDashboardParametersOutputWithContext(context.Background())
+}
+
+func (i GetAlertAlertTriageDashboardParametersArgs) ToGetAlertAlertTriageDashboardParametersOutputWithContext(ctx context.Context) GetAlertAlertTriageDashboardParametersOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAlertAlertTriageDashboardParametersOutput)
+}
+
+func (i GetAlertAlertTriageDashboardParametersArgs) ToGetAlertAlertTriageDashboardParametersPtrOutput() GetAlertAlertTriageDashboardParametersPtrOutput {
+	return i.ToGetAlertAlertTriageDashboardParametersPtrOutputWithContext(context.Background())
+}
+
+func (i GetAlertAlertTriageDashboardParametersArgs) ToGetAlertAlertTriageDashboardParametersPtrOutputWithContext(ctx context.Context) GetAlertAlertTriageDashboardParametersPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAlertAlertTriageDashboardParametersOutput).ToGetAlertAlertTriageDashboardParametersPtrOutputWithContext(ctx)
+}
+
+// GetAlertAlertTriageDashboardParametersPtrInput is an input type that accepts GetAlertAlertTriageDashboardParametersArgs, GetAlertAlertTriageDashboardParametersPtr and GetAlertAlertTriageDashboardParametersPtrOutput values.
+// You can construct a concrete instance of `GetAlertAlertTriageDashboardParametersPtrInput` via:
+//
+//	        GetAlertAlertTriageDashboardParametersArgs{...}
+//
+//	or:
+//
+//	        nil
+type GetAlertAlertTriageDashboardParametersPtrInput interface {
+	pulumi.Input
+
+	ToGetAlertAlertTriageDashboardParametersPtrOutput() GetAlertAlertTriageDashboardParametersPtrOutput
+	ToGetAlertAlertTriageDashboardParametersPtrOutputWithContext(context.Context) GetAlertAlertTriageDashboardParametersPtrOutput
+}
+
+type getAlertAlertTriageDashboardParametersPtrType GetAlertAlertTriageDashboardParametersArgs
+
+func GetAlertAlertTriageDashboardParametersPtr(v *GetAlertAlertTriageDashboardParametersArgs) GetAlertAlertTriageDashboardParametersPtrInput {
+	return (*getAlertAlertTriageDashboardParametersPtrType)(v)
+}
+
+func (*getAlertAlertTriageDashboardParametersPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**GetAlertAlertTriageDashboardParameters)(nil)).Elem()
+}
+
+func (i *getAlertAlertTriageDashboardParametersPtrType) ToGetAlertAlertTriageDashboardParametersPtrOutput() GetAlertAlertTriageDashboardParametersPtrOutput {
+	return i.ToGetAlertAlertTriageDashboardParametersPtrOutputWithContext(context.Background())
+}
+
+func (i *getAlertAlertTriageDashboardParametersPtrType) ToGetAlertAlertTriageDashboardParametersPtrOutputWithContext(ctx context.Context) GetAlertAlertTriageDashboardParametersPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAlertAlertTriageDashboardParametersPtrOutput)
+}
+
+type GetAlertAlertTriageDashboardParametersOutput struct{ *pulumi.OutputState }
+
+func (GetAlertAlertTriageDashboardParametersOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAlertAlertTriageDashboardParameters)(nil)).Elem()
+}
+
+func (o GetAlertAlertTriageDashboardParametersOutput) ToGetAlertAlertTriageDashboardParametersOutput() GetAlertAlertTriageDashboardParametersOutput {
+	return o
+}
+
+func (o GetAlertAlertTriageDashboardParametersOutput) ToGetAlertAlertTriageDashboardParametersOutputWithContext(ctx context.Context) GetAlertAlertTriageDashboardParametersOutput {
+	return o
+}
+
+func (o GetAlertAlertTriageDashboardParametersOutput) ToGetAlertAlertTriageDashboardParametersPtrOutput() GetAlertAlertTriageDashboardParametersPtrOutput {
+	return o.ToGetAlertAlertTriageDashboardParametersPtrOutputWithContext(context.Background())
+}
+
+func (o GetAlertAlertTriageDashboardParametersOutput) ToGetAlertAlertTriageDashboardParametersPtrOutputWithContext(ctx context.Context) GetAlertAlertTriageDashboardParametersPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v GetAlertAlertTriageDashboardParameters) *GetAlertAlertTriageDashboardParameters {
+		return &v
+	}).(GetAlertAlertTriageDashboardParametersPtrOutput)
+}
+
+func (o GetAlertAlertTriageDashboardParametersOutput) Constants() pulumi.MapOutput {
+	return o.ApplyT(func(v GetAlertAlertTriageDashboardParameters) map[string]interface{} { return v.Constants }).(pulumi.MapOutput)
+}
+
+type GetAlertAlertTriageDashboardParametersPtrOutput struct{ *pulumi.OutputState }
+
+func (GetAlertAlertTriageDashboardParametersPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**GetAlertAlertTriageDashboardParameters)(nil)).Elem()
+}
+
+func (o GetAlertAlertTriageDashboardParametersPtrOutput) ToGetAlertAlertTriageDashboardParametersPtrOutput() GetAlertAlertTriageDashboardParametersPtrOutput {
+	return o
+}
+
+func (o GetAlertAlertTriageDashboardParametersPtrOutput) ToGetAlertAlertTriageDashboardParametersPtrOutputWithContext(ctx context.Context) GetAlertAlertTriageDashboardParametersPtrOutput {
+	return o
+}
+
+func (o GetAlertAlertTriageDashboardParametersPtrOutput) Elem() GetAlertAlertTriageDashboardParametersOutput {
+	return o.ApplyT(func(v *GetAlertAlertTriageDashboardParameters) GetAlertAlertTriageDashboardParameters {
+		if v != nil {
+			return *v
+		}
+		var ret GetAlertAlertTriageDashboardParameters
+		return ret
+	}).(GetAlertAlertTriageDashboardParametersOutput)
+}
+
+func (o GetAlertAlertTriageDashboardParametersPtrOutput) Constants() pulumi.MapOutput {
+	return o.ApplyT(func(v *GetAlertAlertTriageDashboardParameters) map[string]interface{} {
+		if v == nil {
+			return nil
+		}
+		return v.Constants
+	}).(pulumi.MapOutput)
+}
+
 type GetAlertFailingHostLabelPair struct {
 	Firing int    `pulumi:"firing"`
 	Host   string `pulumi:"host"`
@@ -2141,6 +2619,8 @@ func (o GetAlertInMaintenanceHostLabelPairArrayOutput) Index(i pulumi.IntInput) 
 type GetAlertsAlert struct {
 	// User-supplied additional explanatory information about this alert.
 	AdditionalInformation string `pulumi:"additionalInformation"`
+	// A set of user-supplied dashboard and parameters to create dashboard links for triaging alerts.
+	AlertTriageDashboards []GetAlertsAlertAlertTriageDashboard `pulumi:"alertTriageDashboards"`
 	// The type of alert in Wavefront.
 	AlertType string `pulumi:"alertType"`
 	// A list of users or groups that can modify the alert.
@@ -2173,6 +2653,8 @@ type GetAlertsAlert struct {
 	ProcessRateMinutes int `pulumi:"processRateMinutes"`
 	// The number of consecutive minutes that a firing series matching the condition query must evaluate to "false" (zero value) before the alert resolves.
 	ResolveAfterMinutes int `pulumi:"resolveAfterMinutes"`
+	// A list of user-supplied runbook links for this alert.
+	RunbookLinks []string `pulumi:"runbookLinks"`
 	// The severity of the alert.
 	Severity      string   `pulumi:"severity"`
 	SeverityLists []string `pulumi:"severityLists"`
@@ -2200,6 +2682,8 @@ type GetAlertsAlertInput interface {
 type GetAlertsAlertArgs struct {
 	// User-supplied additional explanatory information about this alert.
 	AdditionalInformation pulumi.StringInput `pulumi:"additionalInformation"`
+	// A set of user-supplied dashboard and parameters to create dashboard links for triaging alerts.
+	AlertTriageDashboards GetAlertsAlertAlertTriageDashboardArrayInput `pulumi:"alertTriageDashboards"`
 	// The type of alert in Wavefront.
 	AlertType pulumi.StringInput `pulumi:"alertType"`
 	// A list of users or groups that can modify the alert.
@@ -2232,6 +2716,8 @@ type GetAlertsAlertArgs struct {
 	ProcessRateMinutes pulumi.IntInput `pulumi:"processRateMinutes"`
 	// The number of consecutive minutes that a firing series matching the condition query must evaluate to "false" (zero value) before the alert resolves.
 	ResolveAfterMinutes pulumi.IntInput `pulumi:"resolveAfterMinutes"`
+	// A list of user-supplied runbook links for this alert.
+	RunbookLinks pulumi.StringArrayInput `pulumi:"runbookLinks"`
 	// The severity of the alert.
 	Severity      pulumi.StringInput      `pulumi:"severity"`
 	SeverityLists pulumi.StringArrayInput `pulumi:"severityLists"`
@@ -2299,6 +2785,11 @@ func (o GetAlertsAlertOutput) ToGetAlertsAlertOutputWithContext(ctx context.Cont
 // User-supplied additional explanatory information about this alert.
 func (o GetAlertsAlertOutput) AdditionalInformation() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAlertsAlert) string { return v.AdditionalInformation }).(pulumi.StringOutput)
+}
+
+// A set of user-supplied dashboard and parameters to create dashboard links for triaging alerts.
+func (o GetAlertsAlertOutput) AlertTriageDashboards() GetAlertsAlertAlertTriageDashboardArrayOutput {
+	return o.ApplyT(func(v GetAlertsAlert) []GetAlertsAlertAlertTriageDashboard { return v.AlertTriageDashboards }).(GetAlertsAlertAlertTriageDashboardArrayOutput)
 }
 
 // The type of alert in Wavefront.
@@ -2383,6 +2874,11 @@ func (o GetAlertsAlertOutput) ResolveAfterMinutes() pulumi.IntOutput {
 	return o.ApplyT(func(v GetAlertsAlert) int { return v.ResolveAfterMinutes }).(pulumi.IntOutput)
 }
 
+// A list of user-supplied runbook links for this alert.
+func (o GetAlertsAlertOutput) RunbookLinks() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetAlertsAlert) []string { return v.RunbookLinks }).(pulumi.StringArrayOutput)
+}
+
 // The severity of the alert.
 func (o GetAlertsAlertOutput) Severity() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAlertsAlert) string { return v.Severity }).(pulumi.StringOutput)
@@ -2430,6 +2926,247 @@ func (o GetAlertsAlertArrayOutput) Index(i pulumi.IntInput) GetAlertsAlertOutput
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAlertsAlert {
 		return vs[0].([]GetAlertsAlert)[vs[1].(int)]
 	}).(GetAlertsAlertOutput)
+}
+
+type GetAlertsAlertAlertTriageDashboard struct {
+	DashboardId string                                        `pulumi:"dashboardId"`
+	Description string                                        `pulumi:"description"`
+	Parameters  *GetAlertsAlertAlertTriageDashboardParameters `pulumi:"parameters"`
+}
+
+// GetAlertsAlertAlertTriageDashboardInput is an input type that accepts GetAlertsAlertAlertTriageDashboardArgs and GetAlertsAlertAlertTriageDashboardOutput values.
+// You can construct a concrete instance of `GetAlertsAlertAlertTriageDashboardInput` via:
+//
+//	GetAlertsAlertAlertTriageDashboardArgs{...}
+type GetAlertsAlertAlertTriageDashboardInput interface {
+	pulumi.Input
+
+	ToGetAlertsAlertAlertTriageDashboardOutput() GetAlertsAlertAlertTriageDashboardOutput
+	ToGetAlertsAlertAlertTriageDashboardOutputWithContext(context.Context) GetAlertsAlertAlertTriageDashboardOutput
+}
+
+type GetAlertsAlertAlertTriageDashboardArgs struct {
+	DashboardId pulumi.StringInput                                   `pulumi:"dashboardId"`
+	Description pulumi.StringInput                                   `pulumi:"description"`
+	Parameters  GetAlertsAlertAlertTriageDashboardParametersPtrInput `pulumi:"parameters"`
+}
+
+func (GetAlertsAlertAlertTriageDashboardArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAlertsAlertAlertTriageDashboard)(nil)).Elem()
+}
+
+func (i GetAlertsAlertAlertTriageDashboardArgs) ToGetAlertsAlertAlertTriageDashboardOutput() GetAlertsAlertAlertTriageDashboardOutput {
+	return i.ToGetAlertsAlertAlertTriageDashboardOutputWithContext(context.Background())
+}
+
+func (i GetAlertsAlertAlertTriageDashboardArgs) ToGetAlertsAlertAlertTriageDashboardOutputWithContext(ctx context.Context) GetAlertsAlertAlertTriageDashboardOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAlertsAlertAlertTriageDashboardOutput)
+}
+
+// GetAlertsAlertAlertTriageDashboardArrayInput is an input type that accepts GetAlertsAlertAlertTriageDashboardArray and GetAlertsAlertAlertTriageDashboardArrayOutput values.
+// You can construct a concrete instance of `GetAlertsAlertAlertTriageDashboardArrayInput` via:
+//
+//	GetAlertsAlertAlertTriageDashboardArray{ GetAlertsAlertAlertTriageDashboardArgs{...} }
+type GetAlertsAlertAlertTriageDashboardArrayInput interface {
+	pulumi.Input
+
+	ToGetAlertsAlertAlertTriageDashboardArrayOutput() GetAlertsAlertAlertTriageDashboardArrayOutput
+	ToGetAlertsAlertAlertTriageDashboardArrayOutputWithContext(context.Context) GetAlertsAlertAlertTriageDashboardArrayOutput
+}
+
+type GetAlertsAlertAlertTriageDashboardArray []GetAlertsAlertAlertTriageDashboardInput
+
+func (GetAlertsAlertAlertTriageDashboardArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAlertsAlertAlertTriageDashboard)(nil)).Elem()
+}
+
+func (i GetAlertsAlertAlertTriageDashboardArray) ToGetAlertsAlertAlertTriageDashboardArrayOutput() GetAlertsAlertAlertTriageDashboardArrayOutput {
+	return i.ToGetAlertsAlertAlertTriageDashboardArrayOutputWithContext(context.Background())
+}
+
+func (i GetAlertsAlertAlertTriageDashboardArray) ToGetAlertsAlertAlertTriageDashboardArrayOutputWithContext(ctx context.Context) GetAlertsAlertAlertTriageDashboardArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAlertsAlertAlertTriageDashboardArrayOutput)
+}
+
+type GetAlertsAlertAlertTriageDashboardOutput struct{ *pulumi.OutputState }
+
+func (GetAlertsAlertAlertTriageDashboardOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAlertsAlertAlertTriageDashboard)(nil)).Elem()
+}
+
+func (o GetAlertsAlertAlertTriageDashboardOutput) ToGetAlertsAlertAlertTriageDashboardOutput() GetAlertsAlertAlertTriageDashboardOutput {
+	return o
+}
+
+func (o GetAlertsAlertAlertTriageDashboardOutput) ToGetAlertsAlertAlertTriageDashboardOutputWithContext(ctx context.Context) GetAlertsAlertAlertTriageDashboardOutput {
+	return o
+}
+
+func (o GetAlertsAlertAlertTriageDashboardOutput) DashboardId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlertsAlertAlertTriageDashboard) string { return v.DashboardId }).(pulumi.StringOutput)
+}
+
+func (o GetAlertsAlertAlertTriageDashboardOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlertsAlertAlertTriageDashboard) string { return v.Description }).(pulumi.StringOutput)
+}
+
+func (o GetAlertsAlertAlertTriageDashboardOutput) Parameters() GetAlertsAlertAlertTriageDashboardParametersPtrOutput {
+	return o.ApplyT(func(v GetAlertsAlertAlertTriageDashboard) *GetAlertsAlertAlertTriageDashboardParameters {
+		return v.Parameters
+	}).(GetAlertsAlertAlertTriageDashboardParametersPtrOutput)
+}
+
+type GetAlertsAlertAlertTriageDashboardArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAlertsAlertAlertTriageDashboardArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAlertsAlertAlertTriageDashboard)(nil)).Elem()
+}
+
+func (o GetAlertsAlertAlertTriageDashboardArrayOutput) ToGetAlertsAlertAlertTriageDashboardArrayOutput() GetAlertsAlertAlertTriageDashboardArrayOutput {
+	return o
+}
+
+func (o GetAlertsAlertAlertTriageDashboardArrayOutput) ToGetAlertsAlertAlertTriageDashboardArrayOutputWithContext(ctx context.Context) GetAlertsAlertAlertTriageDashboardArrayOutput {
+	return o
+}
+
+func (o GetAlertsAlertAlertTriageDashboardArrayOutput) Index(i pulumi.IntInput) GetAlertsAlertAlertTriageDashboardOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAlertsAlertAlertTriageDashboard {
+		return vs[0].([]GetAlertsAlertAlertTriageDashboard)[vs[1].(int)]
+	}).(GetAlertsAlertAlertTriageDashboardOutput)
+}
+
+type GetAlertsAlertAlertTriageDashboardParameters struct {
+	Constants map[string]interface{} `pulumi:"constants"`
+}
+
+// GetAlertsAlertAlertTriageDashboardParametersInput is an input type that accepts GetAlertsAlertAlertTriageDashboardParametersArgs and GetAlertsAlertAlertTriageDashboardParametersOutput values.
+// You can construct a concrete instance of `GetAlertsAlertAlertTriageDashboardParametersInput` via:
+//
+//	GetAlertsAlertAlertTriageDashboardParametersArgs{...}
+type GetAlertsAlertAlertTriageDashboardParametersInput interface {
+	pulumi.Input
+
+	ToGetAlertsAlertAlertTriageDashboardParametersOutput() GetAlertsAlertAlertTriageDashboardParametersOutput
+	ToGetAlertsAlertAlertTriageDashboardParametersOutputWithContext(context.Context) GetAlertsAlertAlertTriageDashboardParametersOutput
+}
+
+type GetAlertsAlertAlertTriageDashboardParametersArgs struct {
+	Constants pulumi.MapInput `pulumi:"constants"`
+}
+
+func (GetAlertsAlertAlertTriageDashboardParametersArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAlertsAlertAlertTriageDashboardParameters)(nil)).Elem()
+}
+
+func (i GetAlertsAlertAlertTriageDashboardParametersArgs) ToGetAlertsAlertAlertTriageDashboardParametersOutput() GetAlertsAlertAlertTriageDashboardParametersOutput {
+	return i.ToGetAlertsAlertAlertTriageDashboardParametersOutputWithContext(context.Background())
+}
+
+func (i GetAlertsAlertAlertTriageDashboardParametersArgs) ToGetAlertsAlertAlertTriageDashboardParametersOutputWithContext(ctx context.Context) GetAlertsAlertAlertTriageDashboardParametersOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAlertsAlertAlertTriageDashboardParametersOutput)
+}
+
+func (i GetAlertsAlertAlertTriageDashboardParametersArgs) ToGetAlertsAlertAlertTriageDashboardParametersPtrOutput() GetAlertsAlertAlertTriageDashboardParametersPtrOutput {
+	return i.ToGetAlertsAlertAlertTriageDashboardParametersPtrOutputWithContext(context.Background())
+}
+
+func (i GetAlertsAlertAlertTriageDashboardParametersArgs) ToGetAlertsAlertAlertTriageDashboardParametersPtrOutputWithContext(ctx context.Context) GetAlertsAlertAlertTriageDashboardParametersPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAlertsAlertAlertTriageDashboardParametersOutput).ToGetAlertsAlertAlertTriageDashboardParametersPtrOutputWithContext(ctx)
+}
+
+// GetAlertsAlertAlertTriageDashboardParametersPtrInput is an input type that accepts GetAlertsAlertAlertTriageDashboardParametersArgs, GetAlertsAlertAlertTriageDashboardParametersPtr and GetAlertsAlertAlertTriageDashboardParametersPtrOutput values.
+// You can construct a concrete instance of `GetAlertsAlertAlertTriageDashboardParametersPtrInput` via:
+//
+//	        GetAlertsAlertAlertTriageDashboardParametersArgs{...}
+//
+//	or:
+//
+//	        nil
+type GetAlertsAlertAlertTriageDashboardParametersPtrInput interface {
+	pulumi.Input
+
+	ToGetAlertsAlertAlertTriageDashboardParametersPtrOutput() GetAlertsAlertAlertTriageDashboardParametersPtrOutput
+	ToGetAlertsAlertAlertTriageDashboardParametersPtrOutputWithContext(context.Context) GetAlertsAlertAlertTriageDashboardParametersPtrOutput
+}
+
+type getAlertsAlertAlertTriageDashboardParametersPtrType GetAlertsAlertAlertTriageDashboardParametersArgs
+
+func GetAlertsAlertAlertTriageDashboardParametersPtr(v *GetAlertsAlertAlertTriageDashboardParametersArgs) GetAlertsAlertAlertTriageDashboardParametersPtrInput {
+	return (*getAlertsAlertAlertTriageDashboardParametersPtrType)(v)
+}
+
+func (*getAlertsAlertAlertTriageDashboardParametersPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**GetAlertsAlertAlertTriageDashboardParameters)(nil)).Elem()
+}
+
+func (i *getAlertsAlertAlertTriageDashboardParametersPtrType) ToGetAlertsAlertAlertTriageDashboardParametersPtrOutput() GetAlertsAlertAlertTriageDashboardParametersPtrOutput {
+	return i.ToGetAlertsAlertAlertTriageDashboardParametersPtrOutputWithContext(context.Background())
+}
+
+func (i *getAlertsAlertAlertTriageDashboardParametersPtrType) ToGetAlertsAlertAlertTriageDashboardParametersPtrOutputWithContext(ctx context.Context) GetAlertsAlertAlertTriageDashboardParametersPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAlertsAlertAlertTriageDashboardParametersPtrOutput)
+}
+
+type GetAlertsAlertAlertTriageDashboardParametersOutput struct{ *pulumi.OutputState }
+
+func (GetAlertsAlertAlertTriageDashboardParametersOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAlertsAlertAlertTriageDashboardParameters)(nil)).Elem()
+}
+
+func (o GetAlertsAlertAlertTriageDashboardParametersOutput) ToGetAlertsAlertAlertTriageDashboardParametersOutput() GetAlertsAlertAlertTriageDashboardParametersOutput {
+	return o
+}
+
+func (o GetAlertsAlertAlertTriageDashboardParametersOutput) ToGetAlertsAlertAlertTriageDashboardParametersOutputWithContext(ctx context.Context) GetAlertsAlertAlertTriageDashboardParametersOutput {
+	return o
+}
+
+func (o GetAlertsAlertAlertTriageDashboardParametersOutput) ToGetAlertsAlertAlertTriageDashboardParametersPtrOutput() GetAlertsAlertAlertTriageDashboardParametersPtrOutput {
+	return o.ToGetAlertsAlertAlertTriageDashboardParametersPtrOutputWithContext(context.Background())
+}
+
+func (o GetAlertsAlertAlertTriageDashboardParametersOutput) ToGetAlertsAlertAlertTriageDashboardParametersPtrOutputWithContext(ctx context.Context) GetAlertsAlertAlertTriageDashboardParametersPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v GetAlertsAlertAlertTriageDashboardParameters) *GetAlertsAlertAlertTriageDashboardParameters {
+		return &v
+	}).(GetAlertsAlertAlertTriageDashboardParametersPtrOutput)
+}
+
+func (o GetAlertsAlertAlertTriageDashboardParametersOutput) Constants() pulumi.MapOutput {
+	return o.ApplyT(func(v GetAlertsAlertAlertTriageDashboardParameters) map[string]interface{} { return v.Constants }).(pulumi.MapOutput)
+}
+
+type GetAlertsAlertAlertTriageDashboardParametersPtrOutput struct{ *pulumi.OutputState }
+
+func (GetAlertsAlertAlertTriageDashboardParametersPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**GetAlertsAlertAlertTriageDashboardParameters)(nil)).Elem()
+}
+
+func (o GetAlertsAlertAlertTriageDashboardParametersPtrOutput) ToGetAlertsAlertAlertTriageDashboardParametersPtrOutput() GetAlertsAlertAlertTriageDashboardParametersPtrOutput {
+	return o
+}
+
+func (o GetAlertsAlertAlertTriageDashboardParametersPtrOutput) ToGetAlertsAlertAlertTriageDashboardParametersPtrOutputWithContext(ctx context.Context) GetAlertsAlertAlertTriageDashboardParametersPtrOutput {
+	return o
+}
+
+func (o GetAlertsAlertAlertTriageDashboardParametersPtrOutput) Elem() GetAlertsAlertAlertTriageDashboardParametersOutput {
+	return o.ApplyT(func(v *GetAlertsAlertAlertTriageDashboardParameters) GetAlertsAlertAlertTriageDashboardParameters {
+		if v != nil {
+			return *v
+		}
+		var ret GetAlertsAlertAlertTriageDashboardParameters
+		return ret
+	}).(GetAlertsAlertAlertTriageDashboardParametersOutput)
+}
+
+func (o GetAlertsAlertAlertTriageDashboardParametersPtrOutput) Constants() pulumi.MapOutput {
+	return o.ApplyT(func(v *GetAlertsAlertAlertTriageDashboardParameters) map[string]interface{} {
+		if v == nil {
+			return nil
+		}
+		return v.Constants
+	}).(pulumi.MapOutput)
 }
 
 type GetAlertsAlertFailingHostLabelPair struct {
@@ -7070,6 +7807,10 @@ func (o GetUsersUserArrayOutput) Index(i pulumi.IntInput) GetUsersUserOutput {
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*AlertAlertTriageDashboardInput)(nil)).Elem(), AlertAlertTriageDashboardArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AlertAlertTriageDashboardArrayInput)(nil)).Elem(), AlertAlertTriageDashboardArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AlertAlertTriageDashboardParametersInput)(nil)).Elem(), AlertAlertTriageDashboardParametersArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AlertAlertTriageDashboardParametersPtrInput)(nil)).Elem(), AlertAlertTriageDashboardParametersArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AlertTargetRouteInput)(nil)).Elem(), AlertTargetRouteArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AlertTargetRouteArrayInput)(nil)).Elem(), AlertTargetRouteArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*CloudIntegrationNewRelicMetricFilterInput)(nil)).Elem(), CloudIntegrationNewRelicMetricFilterArgs{})
@@ -7091,12 +7832,20 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*MetricsPolicyPolicyRuleArrayInput)(nil)).Elem(), MetricsPolicyPolicyRuleArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MetricsPolicyPolicyRuleTagInput)(nil)).Elem(), MetricsPolicyPolicyRuleTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MetricsPolicyPolicyRuleTagArrayInput)(nil)).Elem(), MetricsPolicyPolicyRuleTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAlertAlertTriageDashboardInput)(nil)).Elem(), GetAlertAlertTriageDashboardArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAlertAlertTriageDashboardArrayInput)(nil)).Elem(), GetAlertAlertTriageDashboardArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAlertAlertTriageDashboardParametersInput)(nil)).Elem(), GetAlertAlertTriageDashboardParametersArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAlertAlertTriageDashboardParametersPtrInput)(nil)).Elem(), GetAlertAlertTriageDashboardParametersArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAlertFailingHostLabelPairInput)(nil)).Elem(), GetAlertFailingHostLabelPairArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAlertFailingHostLabelPairArrayInput)(nil)).Elem(), GetAlertFailingHostLabelPairArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAlertInMaintenanceHostLabelPairInput)(nil)).Elem(), GetAlertInMaintenanceHostLabelPairArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAlertInMaintenanceHostLabelPairArrayInput)(nil)).Elem(), GetAlertInMaintenanceHostLabelPairArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAlertsAlertInput)(nil)).Elem(), GetAlertsAlertArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAlertsAlertArrayInput)(nil)).Elem(), GetAlertsAlertArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAlertsAlertAlertTriageDashboardInput)(nil)).Elem(), GetAlertsAlertAlertTriageDashboardArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAlertsAlertAlertTriageDashboardArrayInput)(nil)).Elem(), GetAlertsAlertAlertTriageDashboardArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAlertsAlertAlertTriageDashboardParametersInput)(nil)).Elem(), GetAlertsAlertAlertTriageDashboardParametersArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAlertsAlertAlertTriageDashboardParametersPtrInput)(nil)).Elem(), GetAlertsAlertAlertTriageDashboardParametersArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAlertsAlertFailingHostLabelPairInput)(nil)).Elem(), GetAlertsAlertFailingHostLabelPairArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAlertsAlertFailingHostLabelPairArrayInput)(nil)).Elem(), GetAlertsAlertFailingHostLabelPairArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAlertsAlertInMaintenanceHostLabelPairInput)(nil)).Elem(), GetAlertsAlertInMaintenanceHostLabelPairArgs{})
@@ -7145,6 +7894,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetUserGroupsUserGroupArrayInput)(nil)).Elem(), GetUserGroupsUserGroupArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetUsersUserInput)(nil)).Elem(), GetUsersUserArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetUsersUserArrayInput)(nil)).Elem(), GetUsersUserArray{})
+	pulumi.RegisterOutputType(AlertAlertTriageDashboardOutput{})
+	pulumi.RegisterOutputType(AlertAlertTriageDashboardArrayOutput{})
+	pulumi.RegisterOutputType(AlertAlertTriageDashboardParametersOutput{})
+	pulumi.RegisterOutputType(AlertAlertTriageDashboardParametersPtrOutput{})
 	pulumi.RegisterOutputType(AlertTargetRouteOutput{})
 	pulumi.RegisterOutputType(AlertTargetRouteArrayOutput{})
 	pulumi.RegisterOutputType(CloudIntegrationNewRelicMetricFilterOutput{})
@@ -7166,12 +7919,20 @@ func init() {
 	pulumi.RegisterOutputType(MetricsPolicyPolicyRuleArrayOutput{})
 	pulumi.RegisterOutputType(MetricsPolicyPolicyRuleTagOutput{})
 	pulumi.RegisterOutputType(MetricsPolicyPolicyRuleTagArrayOutput{})
+	pulumi.RegisterOutputType(GetAlertAlertTriageDashboardOutput{})
+	pulumi.RegisterOutputType(GetAlertAlertTriageDashboardArrayOutput{})
+	pulumi.RegisterOutputType(GetAlertAlertTriageDashboardParametersOutput{})
+	pulumi.RegisterOutputType(GetAlertAlertTriageDashboardParametersPtrOutput{})
 	pulumi.RegisterOutputType(GetAlertFailingHostLabelPairOutput{})
 	pulumi.RegisterOutputType(GetAlertFailingHostLabelPairArrayOutput{})
 	pulumi.RegisterOutputType(GetAlertInMaintenanceHostLabelPairOutput{})
 	pulumi.RegisterOutputType(GetAlertInMaintenanceHostLabelPairArrayOutput{})
 	pulumi.RegisterOutputType(GetAlertsAlertOutput{})
 	pulumi.RegisterOutputType(GetAlertsAlertArrayOutput{})
+	pulumi.RegisterOutputType(GetAlertsAlertAlertTriageDashboardOutput{})
+	pulumi.RegisterOutputType(GetAlertsAlertAlertTriageDashboardArrayOutput{})
+	pulumi.RegisterOutputType(GetAlertsAlertAlertTriageDashboardParametersOutput{})
+	pulumi.RegisterOutputType(GetAlertsAlertAlertTriageDashboardParametersPtrOutput{})
 	pulumi.RegisterOutputType(GetAlertsAlertFailingHostLabelPairOutput{})
 	pulumi.RegisterOutputType(GetAlertsAlertFailingHostLabelPairArrayOutput{})
 	pulumi.RegisterOutputType(GetAlertsAlertInMaintenanceHostLabelPairOutput{})

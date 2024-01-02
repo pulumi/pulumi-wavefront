@@ -2,6 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
+import * as inputs from "./types/input";
+import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 /**
@@ -69,6 +71,10 @@ export class Alert extends pulumi.CustomResource {
      */
     public readonly additionalInformation!: pulumi.Output<string | undefined>;
     /**
+     * A set of user-supplied dashboard and parameters to create dashboard links for triaging alerts.
+     */
+    public readonly alertTriageDashboards!: pulumi.Output<outputs.AlertAlertTriageDashboard[] | undefined>;
+    /**
      * The type of alert in Wavefront. Either `CLASSIC` (default)
      * or `THRESHOLD`.
      */
@@ -123,6 +129,10 @@ export class Alert extends pulumi.CustomResource {
      */
     public readonly resolveAfterMinutes!: pulumi.Output<number | undefined>;
     /**
+     * A list of user-supplied runbook links for this alert.
+     */
+    public readonly runbookLinks!: pulumi.Output<string[] | undefined>;
+    /**
      * Severity of the alert, valid values are `INFO`, `SMOKE`, `WARN`, `SEVERE`.
      */
     public readonly severity!: pulumi.Output<string>;
@@ -155,6 +165,7 @@ export class Alert extends pulumi.CustomResource {
         if (opts.id) {
             const state = argsOrState as AlertState | undefined;
             resourceInputs["additionalInformation"] = state ? state.additionalInformation : undefined;
+            resourceInputs["alertTriageDashboards"] = state ? state.alertTriageDashboards : undefined;
             resourceInputs["alertType"] = state ? state.alertType : undefined;
             resourceInputs["canModifies"] = state ? state.canModifies : undefined;
             resourceInputs["canViews"] = state ? state.canViews : undefined;
@@ -166,6 +177,7 @@ export class Alert extends pulumi.CustomResource {
             resourceInputs["notificationResendFrequencyMinutes"] = state ? state.notificationResendFrequencyMinutes : undefined;
             resourceInputs["processRateMinutes"] = state ? state.processRateMinutes : undefined;
             resourceInputs["resolveAfterMinutes"] = state ? state.resolveAfterMinutes : undefined;
+            resourceInputs["runbookLinks"] = state ? state.runbookLinks : undefined;
             resourceInputs["severity"] = state ? state.severity : undefined;
             resourceInputs["tags"] = state ? state.tags : undefined;
             resourceInputs["target"] = state ? state.target : undefined;
@@ -179,6 +191,7 @@ export class Alert extends pulumi.CustomResource {
                 throw new Error("Missing required property 'tags'");
             }
             resourceInputs["additionalInformation"] = args ? args.additionalInformation : undefined;
+            resourceInputs["alertTriageDashboards"] = args ? args.alertTriageDashboards : undefined;
             resourceInputs["alertType"] = args ? args.alertType : undefined;
             resourceInputs["canModifies"] = args ? args.canModifies : undefined;
             resourceInputs["canViews"] = args ? args.canViews : undefined;
@@ -190,6 +203,7 @@ export class Alert extends pulumi.CustomResource {
             resourceInputs["notificationResendFrequencyMinutes"] = args ? args.notificationResendFrequencyMinutes : undefined;
             resourceInputs["processRateMinutes"] = args ? args.processRateMinutes : undefined;
             resourceInputs["resolveAfterMinutes"] = args ? args.resolveAfterMinutes : undefined;
+            resourceInputs["runbookLinks"] = args ? args.runbookLinks : undefined;
             resourceInputs["severity"] = args ? args.severity : undefined;
             resourceInputs["tags"] = args ? args.tags : undefined;
             resourceInputs["target"] = args ? args.target : undefined;
@@ -209,6 +223,10 @@ export interface AlertState {
      * Useful for linking runbooks, migrations, etc.
      */
     additionalInformation?: pulumi.Input<string>;
+    /**
+     * A set of user-supplied dashboard and parameters to create dashboard links for triaging alerts.
+     */
+    alertTriageDashboards?: pulumi.Input<pulumi.Input<inputs.AlertAlertTriageDashboard>[]>;
     /**
      * The type of alert in Wavefront. Either `CLASSIC` (default)
      * or `THRESHOLD`.
@@ -264,6 +282,10 @@ export interface AlertState {
      */
     resolveAfterMinutes?: pulumi.Input<number>;
     /**
+     * A list of user-supplied runbook links for this alert.
+     */
+    runbookLinks?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
      * Severity of the alert, valid values are `INFO`, `SMOKE`, `WARN`, `SEVERE`.
      */
     severity?: pulumi.Input<string>;
@@ -292,6 +314,10 @@ export interface AlertArgs {
      * Useful for linking runbooks, migrations, etc.
      */
     additionalInformation?: pulumi.Input<string>;
+    /**
+     * A set of user-supplied dashboard and parameters to create dashboard links for triaging alerts.
+     */
+    alertTriageDashboards?: pulumi.Input<pulumi.Input<inputs.AlertAlertTriageDashboard>[]>;
     /**
      * The type of alert in Wavefront. Either `CLASSIC` (default)
      * or `THRESHOLD`.
@@ -346,6 +372,10 @@ export interface AlertArgs {
      * the same value as `minutes`.
      */
     resolveAfterMinutes?: pulumi.Input<number>;
+    /**
+     * A list of user-supplied runbook links for this alert.
+     */
+    runbookLinks?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * Severity of the alert, valid values are `INFO`, `SMOKE`, `WARN`, `SEVERE`.
      */

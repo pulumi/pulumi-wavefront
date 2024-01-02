@@ -5,6 +5,7 @@ package com.pulumi.wavefront.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.wavefront.inputs.AlertAlertTriageDashboardArgs;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -33,6 +34,21 @@ public final class AlertState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<String>> additionalInformation() {
         return Optional.ofNullable(this.additionalInformation);
+    }
+
+    /**
+     * A set of user-supplied dashboard and parameters to create dashboard links for triaging alerts.
+     * 
+     */
+    @Import(name="alertTriageDashboards")
+    private @Nullable Output<List<AlertAlertTriageDashboardArgs>> alertTriageDashboards;
+
+    /**
+     * @return A set of user-supplied dashboard and parameters to create dashboard links for triaging alerts.
+     * 
+     */
+    public Optional<Output<List<AlertAlertTriageDashboardArgs>>> alertTriageDashboards() {
+        return Optional.ofNullable(this.alertTriageDashboards);
     }
 
     /**
@@ -221,6 +237,21 @@ public final class AlertState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * A list of user-supplied runbook links for this alert.
+     * 
+     */
+    @Import(name="runbookLinks")
+    private @Nullable Output<List<String>> runbookLinks;
+
+    /**
+     * @return A list of user-supplied runbook links for this alert.
+     * 
+     */
+    public Optional<Output<List<String>>> runbookLinks() {
+        return Optional.ofNullable(this.runbookLinks);
+    }
+
+    /**
      * Severity of the alert, valid values are `INFO`, `SMOKE`, `WARN`, `SEVERE`.
      * 
      */
@@ -288,6 +319,7 @@ public final class AlertState extends com.pulumi.resources.ResourceArgs {
 
     private AlertState(AlertState $) {
         this.additionalInformation = $.additionalInformation;
+        this.alertTriageDashboards = $.alertTriageDashboards;
         this.alertType = $.alertType;
         this.canModifies = $.canModifies;
         this.canViews = $.canViews;
@@ -299,6 +331,7 @@ public final class AlertState extends com.pulumi.resources.ResourceArgs {
         this.notificationResendFrequencyMinutes = $.notificationResendFrequencyMinutes;
         this.processRateMinutes = $.processRateMinutes;
         this.resolveAfterMinutes = $.resolveAfterMinutes;
+        this.runbookLinks = $.runbookLinks;
         this.severity = $.severity;
         this.tags = $.tags;
         this.target = $.target;
@@ -344,6 +377,37 @@ public final class AlertState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder additionalInformation(String additionalInformation) {
             return additionalInformation(Output.of(additionalInformation));
+        }
+
+        /**
+         * @param alertTriageDashboards A set of user-supplied dashboard and parameters to create dashboard links for triaging alerts.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder alertTriageDashboards(@Nullable Output<List<AlertAlertTriageDashboardArgs>> alertTriageDashboards) {
+            $.alertTriageDashboards = alertTriageDashboards;
+            return this;
+        }
+
+        /**
+         * @param alertTriageDashboards A set of user-supplied dashboard and parameters to create dashboard links for triaging alerts.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder alertTriageDashboards(List<AlertAlertTriageDashboardArgs> alertTriageDashboards) {
+            return alertTriageDashboards(Output.of(alertTriageDashboards));
+        }
+
+        /**
+         * @param alertTriageDashboards A set of user-supplied dashboard and parameters to create dashboard links for triaging alerts.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder alertTriageDashboards(AlertAlertTriageDashboardArgs... alertTriageDashboards) {
+            return alertTriageDashboards(List.of(alertTriageDashboards));
         }
 
         /**
@@ -615,6 +679,37 @@ public final class AlertState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder resolveAfterMinutes(Integer resolveAfterMinutes) {
             return resolveAfterMinutes(Output.of(resolveAfterMinutes));
+        }
+
+        /**
+         * @param runbookLinks A list of user-supplied runbook links for this alert.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder runbookLinks(@Nullable Output<List<String>> runbookLinks) {
+            $.runbookLinks = runbookLinks;
+            return this;
+        }
+
+        /**
+         * @param runbookLinks A list of user-supplied runbook links for this alert.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder runbookLinks(List<String> runbookLinks) {
+            return runbookLinks(Output.of(runbookLinks));
+        }
+
+        /**
+         * @param runbookLinks A list of user-supplied runbook links for this alert.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder runbookLinks(String... runbookLinks) {
+            return runbookLinks(List.of(runbookLinks));
         }
 
         /**
