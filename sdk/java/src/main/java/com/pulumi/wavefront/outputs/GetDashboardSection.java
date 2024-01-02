@@ -4,6 +4,7 @@
 package com.pulumi.wavefront.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.wavefront.outputs.GetDashboardSectionRow;
 import java.lang.String;
 import java.util.List;
@@ -50,12 +51,18 @@ public final class GetDashboardSection {
 
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetDashboardSection", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder rows(List<GetDashboardSectionRow> rows) {
-            this.rows = Objects.requireNonNull(rows);
+            if (rows == null) {
+              throw new MissingRequiredPropertyException("GetDashboardSection", "rows");
+            }
+            this.rows = rows;
             return this;
         }
         public Builder rows(GetDashboardSectionRow... rows) {

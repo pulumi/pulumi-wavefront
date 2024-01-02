@@ -4,6 +4,7 @@
 package com.pulumi.wavefront.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -205,62 +206,98 @@ public final class GetExternalLinkResult {
 
         @CustomType.Setter
         public Builder createdEpochMillis(Integer createdEpochMillis) {
-            this.createdEpochMillis = Objects.requireNonNull(createdEpochMillis);
+            if (createdEpochMillis == null) {
+              throw new MissingRequiredPropertyException("GetExternalLinkResult", "createdEpochMillis");
+            }
+            this.createdEpochMillis = createdEpochMillis;
             return this;
         }
         @CustomType.Setter
         public Builder creatorId(String creatorId) {
-            this.creatorId = Objects.requireNonNull(creatorId);
+            if (creatorId == null) {
+              throw new MissingRequiredPropertyException("GetExternalLinkResult", "creatorId");
+            }
+            this.creatorId = creatorId;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetExternalLinkResult", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetExternalLinkResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isLogIntegration(Boolean isLogIntegration) {
-            this.isLogIntegration = Objects.requireNonNull(isLogIntegration);
+            if (isLogIntegration == null) {
+              throw new MissingRequiredPropertyException("GetExternalLinkResult", "isLogIntegration");
+            }
+            this.isLogIntegration = isLogIntegration;
             return this;
         }
         @CustomType.Setter
         public Builder metricFilterRegex(String metricFilterRegex) {
-            this.metricFilterRegex = Objects.requireNonNull(metricFilterRegex);
+            if (metricFilterRegex == null) {
+              throw new MissingRequiredPropertyException("GetExternalLinkResult", "metricFilterRegex");
+            }
+            this.metricFilterRegex = metricFilterRegex;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetExternalLinkResult", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder pointTagFilterRegexes(Map<String,String> pointTagFilterRegexes) {
-            this.pointTagFilterRegexes = Objects.requireNonNull(pointTagFilterRegexes);
+            if (pointTagFilterRegexes == null) {
+              throw new MissingRequiredPropertyException("GetExternalLinkResult", "pointTagFilterRegexes");
+            }
+            this.pointTagFilterRegexes = pointTagFilterRegexes;
             return this;
         }
         @CustomType.Setter
         public Builder sourceFilterRegex(String sourceFilterRegex) {
-            this.sourceFilterRegex = Objects.requireNonNull(sourceFilterRegex);
+            if (sourceFilterRegex == null) {
+              throw new MissingRequiredPropertyException("GetExternalLinkResult", "sourceFilterRegex");
+            }
+            this.sourceFilterRegex = sourceFilterRegex;
             return this;
         }
         @CustomType.Setter
         public Builder template(String template) {
-            this.template = Objects.requireNonNull(template);
+            if (template == null) {
+              throw new MissingRequiredPropertyException("GetExternalLinkResult", "template");
+            }
+            this.template = template;
             return this;
         }
         @CustomType.Setter
         public Builder updatedEpochMillis(Integer updatedEpochMillis) {
-            this.updatedEpochMillis = Objects.requireNonNull(updatedEpochMillis);
+            if (updatedEpochMillis == null) {
+              throw new MissingRequiredPropertyException("GetExternalLinkResult", "updatedEpochMillis");
+            }
+            this.updatedEpochMillis = updatedEpochMillis;
             return this;
         }
         @CustomType.Setter
         public Builder updaterId(String updaterId) {
-            this.updaterId = Objects.requireNonNull(updaterId);
+            if (updaterId == null) {
+              throw new MissingRequiredPropertyException("GetExternalLinkResult", "updaterId");
+            }
+            this.updaterId = updaterId;
             return this;
         }
         public GetExternalLinkResult build() {

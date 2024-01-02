@@ -5,6 +5,7 @@ package com.pulumi.wavefront;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -716,8 +717,12 @@ public final class AlertArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public AlertArgs build() {
-            $.minutes = Objects.requireNonNull($.minutes, "expected parameter 'minutes' to be non-null");
-            $.tags = Objects.requireNonNull($.tags, "expected parameter 'tags' to be non-null");
+            if ($.minutes == null) {
+                throw new MissingRequiredPropertyException("AlertArgs", "minutes");
+            }
+            if ($.tags == null) {
+                throw new MissingRequiredPropertyException("AlertArgs", "tags");
+            }
             return $;
         }
     }

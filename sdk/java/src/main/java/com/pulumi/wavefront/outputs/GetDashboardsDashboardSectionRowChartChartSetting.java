@@ -4,6 +4,7 @@
 package com.pulumi.wavefront.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Double;
 import java.lang.Integer;
@@ -798,17 +799,26 @@ public final class GetDashboardsDashboardSectionRowChartChartSetting {
 
         @CustomType.Setter
         public Builder autoColumnTags(Boolean autoColumnTags) {
-            this.autoColumnTags = Objects.requireNonNull(autoColumnTags);
+            if (autoColumnTags == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsDashboardSectionRowChartChartSetting", "autoColumnTags");
+            }
+            this.autoColumnTags = autoColumnTags;
             return this;
         }
         @CustomType.Setter
         public Builder columnTags(String columnTags) {
-            this.columnTags = Objects.requireNonNull(columnTags);
+            if (columnTags == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsDashboardSectionRowChartChartSetting", "columnTags");
+            }
+            this.columnTags = columnTags;
             return this;
         }
         @CustomType.Setter
         public Builder customTags(List<String> customTags) {
-            this.customTags = Objects.requireNonNull(customTags);
+            if (customTags == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsDashboardSectionRowChartChartSetting", "customTags");
+            }
+            this.customTags = customTags;
             return this;
         }
         public Builder customTags(String... customTags) {
@@ -816,12 +826,18 @@ public final class GetDashboardsDashboardSectionRowChartChartSetting {
         }
         @CustomType.Setter
         public Builder expectedDataSpacing(Integer expectedDataSpacing) {
-            this.expectedDataSpacing = Objects.requireNonNull(expectedDataSpacing);
+            if (expectedDataSpacing == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsDashboardSectionRowChartChartSetting", "expectedDataSpacing");
+            }
+            this.expectedDataSpacing = expectedDataSpacing;
             return this;
         }
         @CustomType.Setter
         public Builder fixedLegendDisplayStats(List<String> fixedLegendDisplayStats) {
-            this.fixedLegendDisplayStats = Objects.requireNonNull(fixedLegendDisplayStats);
+            if (fixedLegendDisplayStats == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsDashboardSectionRowChartChartSetting", "fixedLegendDisplayStats");
+            }
+            this.fixedLegendDisplayStats = fixedLegendDisplayStats;
             return this;
         }
         public Builder fixedLegendDisplayStats(String... fixedLegendDisplayStats) {
@@ -829,157 +845,250 @@ public final class GetDashboardsDashboardSectionRowChartChartSetting {
         }
         @CustomType.Setter
         public Builder fixedLegendEnabled(Boolean fixedLegendEnabled) {
-            this.fixedLegendEnabled = Objects.requireNonNull(fixedLegendEnabled);
+            if (fixedLegendEnabled == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsDashboardSectionRowChartChartSetting", "fixedLegendEnabled");
+            }
+            this.fixedLegendEnabled = fixedLegendEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder fixedLegendFilterField(String fixedLegendFilterField) {
-            this.fixedLegendFilterField = Objects.requireNonNull(fixedLegendFilterField);
+            if (fixedLegendFilterField == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsDashboardSectionRowChartChartSetting", "fixedLegendFilterField");
+            }
+            this.fixedLegendFilterField = fixedLegendFilterField;
             return this;
         }
         @CustomType.Setter
         public Builder fixedLegendFilterLimit(Integer fixedLegendFilterLimit) {
-            this.fixedLegendFilterLimit = Objects.requireNonNull(fixedLegendFilterLimit);
+            if (fixedLegendFilterLimit == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsDashboardSectionRowChartChartSetting", "fixedLegendFilterLimit");
+            }
+            this.fixedLegendFilterLimit = fixedLegendFilterLimit;
             return this;
         }
         @CustomType.Setter
         public Builder fixedLegendFilterSort(String fixedLegendFilterSort) {
-            this.fixedLegendFilterSort = Objects.requireNonNull(fixedLegendFilterSort);
+            if (fixedLegendFilterSort == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsDashboardSectionRowChartChartSetting", "fixedLegendFilterSort");
+            }
+            this.fixedLegendFilterSort = fixedLegendFilterSort;
             return this;
         }
         @CustomType.Setter
         public Builder fixedLegendHideLabel(Boolean fixedLegendHideLabel) {
-            this.fixedLegendHideLabel = Objects.requireNonNull(fixedLegendHideLabel);
+            if (fixedLegendHideLabel == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsDashboardSectionRowChartChartSetting", "fixedLegendHideLabel");
+            }
+            this.fixedLegendHideLabel = fixedLegendHideLabel;
             return this;
         }
         @CustomType.Setter
         public Builder fixedLegendPosition(String fixedLegendPosition) {
-            this.fixedLegendPosition = Objects.requireNonNull(fixedLegendPosition);
+            if (fixedLegendPosition == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsDashboardSectionRowChartChartSetting", "fixedLegendPosition");
+            }
+            this.fixedLegendPosition = fixedLegendPosition;
             return this;
         }
         @CustomType.Setter
         public Builder fixedLegendUseRawStats(Boolean fixedLegendUseRawStats) {
-            this.fixedLegendUseRawStats = Objects.requireNonNull(fixedLegendUseRawStats);
+            if (fixedLegendUseRawStats == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsDashboardSectionRowChartChartSetting", "fixedLegendUseRawStats");
+            }
+            this.fixedLegendUseRawStats = fixedLegendUseRawStats;
             return this;
         }
         @CustomType.Setter
         public Builder groupBySource(Boolean groupBySource) {
-            this.groupBySource = Objects.requireNonNull(groupBySource);
+            if (groupBySource == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsDashboardSectionRowChartChartSetting", "groupBySource");
+            }
+            this.groupBySource = groupBySource;
             return this;
         }
         @CustomType.Setter
         public Builder invertDynamicLegendHoverControl(Boolean invertDynamicLegendHoverControl) {
-            this.invertDynamicLegendHoverControl = Objects.requireNonNull(invertDynamicLegendHoverControl);
+            if (invertDynamicLegendHoverControl == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsDashboardSectionRowChartChartSetting", "invertDynamicLegendHoverControl");
+            }
+            this.invertDynamicLegendHoverControl = invertDynamicLegendHoverControl;
             return this;
         }
         @CustomType.Setter
         public Builder lineType(String lineType) {
-            this.lineType = Objects.requireNonNull(lineType);
+            if (lineType == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsDashboardSectionRowChartChartSetting", "lineType");
+            }
+            this.lineType = lineType;
             return this;
         }
         @CustomType.Setter
         public Builder max(Double max) {
-            this.max = Objects.requireNonNull(max);
+            if (max == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsDashboardSectionRowChartChartSetting", "max");
+            }
+            this.max = max;
             return this;
         }
         @CustomType.Setter
         public Builder min(Double min) {
-            this.min = Objects.requireNonNull(min);
+            if (min == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsDashboardSectionRowChartChartSetting", "min");
+            }
+            this.min = min;
             return this;
         }
         @CustomType.Setter
         public Builder numTags(Integer numTags) {
-            this.numTags = Objects.requireNonNull(numTags);
+            if (numTags == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsDashboardSectionRowChartChartSetting", "numTags");
+            }
+            this.numTags = numTags;
             return this;
         }
         @CustomType.Setter
         public Builder plainMarkdownContent(String plainMarkdownContent) {
-            this.plainMarkdownContent = Objects.requireNonNull(plainMarkdownContent);
+            if (plainMarkdownContent == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsDashboardSectionRowChartChartSetting", "plainMarkdownContent");
+            }
+            this.plainMarkdownContent = plainMarkdownContent;
             return this;
         }
         @CustomType.Setter
         public Builder showHosts(Boolean showHosts) {
-            this.showHosts = Objects.requireNonNull(showHosts);
+            if (showHosts == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsDashboardSectionRowChartChartSetting", "showHosts");
+            }
+            this.showHosts = showHosts;
             return this;
         }
         @CustomType.Setter
         public Builder showLabels(Boolean showLabels) {
-            this.showLabels = Objects.requireNonNull(showLabels);
+            if (showLabels == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsDashboardSectionRowChartChartSetting", "showLabels");
+            }
+            this.showLabels = showLabels;
             return this;
         }
         @CustomType.Setter
         public Builder showRawValues(Boolean showRawValues) {
-            this.showRawValues = Objects.requireNonNull(showRawValues);
+            if (showRawValues == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsDashboardSectionRowChartChartSetting", "showRawValues");
+            }
+            this.showRawValues = showRawValues;
             return this;
         }
         @CustomType.Setter
         public Builder sortValuesDescending(Boolean sortValuesDescending) {
-            this.sortValuesDescending = Objects.requireNonNull(sortValuesDescending);
+            if (sortValuesDescending == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsDashboardSectionRowChartChartSetting", "sortValuesDescending");
+            }
+            this.sortValuesDescending = sortValuesDescending;
             return this;
         }
         @CustomType.Setter
         public Builder sparklineDecimalPrecision(Integer sparklineDecimalPrecision) {
-            this.sparklineDecimalPrecision = Objects.requireNonNull(sparklineDecimalPrecision);
+            if (sparklineDecimalPrecision == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsDashboardSectionRowChartChartSetting", "sparklineDecimalPrecision");
+            }
+            this.sparklineDecimalPrecision = sparklineDecimalPrecision;
             return this;
         }
         @CustomType.Setter
         public Builder sparklineDisplayColor(String sparklineDisplayColor) {
-            this.sparklineDisplayColor = Objects.requireNonNull(sparklineDisplayColor);
+            if (sparklineDisplayColor == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsDashboardSectionRowChartChartSetting", "sparklineDisplayColor");
+            }
+            this.sparklineDisplayColor = sparklineDisplayColor;
             return this;
         }
         @CustomType.Setter
         public Builder sparklineDisplayFontSize(String sparklineDisplayFontSize) {
-            this.sparklineDisplayFontSize = Objects.requireNonNull(sparklineDisplayFontSize);
+            if (sparklineDisplayFontSize == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsDashboardSectionRowChartChartSetting", "sparklineDisplayFontSize");
+            }
+            this.sparklineDisplayFontSize = sparklineDisplayFontSize;
             return this;
         }
         @CustomType.Setter
         public Builder sparklineDisplayHorizontalPosition(String sparklineDisplayHorizontalPosition) {
-            this.sparklineDisplayHorizontalPosition = Objects.requireNonNull(sparklineDisplayHorizontalPosition);
+            if (sparklineDisplayHorizontalPosition == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsDashboardSectionRowChartChartSetting", "sparklineDisplayHorizontalPosition");
+            }
+            this.sparklineDisplayHorizontalPosition = sparklineDisplayHorizontalPosition;
             return this;
         }
         @CustomType.Setter
         public Builder sparklineDisplayPostfix(String sparklineDisplayPostfix) {
-            this.sparklineDisplayPostfix = Objects.requireNonNull(sparklineDisplayPostfix);
+            if (sparklineDisplayPostfix == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsDashboardSectionRowChartChartSetting", "sparklineDisplayPostfix");
+            }
+            this.sparklineDisplayPostfix = sparklineDisplayPostfix;
             return this;
         }
         @CustomType.Setter
         public Builder sparklineDisplayPrefix(String sparklineDisplayPrefix) {
-            this.sparklineDisplayPrefix = Objects.requireNonNull(sparklineDisplayPrefix);
+            if (sparklineDisplayPrefix == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsDashboardSectionRowChartChartSetting", "sparklineDisplayPrefix");
+            }
+            this.sparklineDisplayPrefix = sparklineDisplayPrefix;
             return this;
         }
         @CustomType.Setter
         public Builder sparklineDisplayValueType(String sparklineDisplayValueType) {
-            this.sparklineDisplayValueType = Objects.requireNonNull(sparklineDisplayValueType);
+            if (sparklineDisplayValueType == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsDashboardSectionRowChartChartSetting", "sparklineDisplayValueType");
+            }
+            this.sparklineDisplayValueType = sparklineDisplayValueType;
             return this;
         }
         @CustomType.Setter
         public Builder sparklineDisplayVerticalPosition(String sparklineDisplayVerticalPosition) {
-            this.sparklineDisplayVerticalPosition = Objects.requireNonNull(sparklineDisplayVerticalPosition);
+            if (sparklineDisplayVerticalPosition == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsDashboardSectionRowChartChartSetting", "sparklineDisplayVerticalPosition");
+            }
+            this.sparklineDisplayVerticalPosition = sparklineDisplayVerticalPosition;
             return this;
         }
         @CustomType.Setter
         public Builder sparklineFillColor(String sparklineFillColor) {
-            this.sparklineFillColor = Objects.requireNonNull(sparklineFillColor);
+            if (sparklineFillColor == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsDashboardSectionRowChartChartSetting", "sparklineFillColor");
+            }
+            this.sparklineFillColor = sparklineFillColor;
             return this;
         }
         @CustomType.Setter
         public Builder sparklineLineColor(String sparklineLineColor) {
-            this.sparklineLineColor = Objects.requireNonNull(sparklineLineColor);
+            if (sparklineLineColor == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsDashboardSectionRowChartChartSetting", "sparklineLineColor");
+            }
+            this.sparklineLineColor = sparklineLineColor;
             return this;
         }
         @CustomType.Setter
         public Builder sparklineSize(String sparklineSize) {
-            this.sparklineSize = Objects.requireNonNull(sparklineSize);
+            if (sparklineSize == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsDashboardSectionRowChartChartSetting", "sparklineSize");
+            }
+            this.sparklineSize = sparklineSize;
             return this;
         }
         @CustomType.Setter
         public Builder sparklineValueColorMapApplyTo(String sparklineValueColorMapApplyTo) {
-            this.sparklineValueColorMapApplyTo = Objects.requireNonNull(sparklineValueColorMapApplyTo);
+            if (sparklineValueColorMapApplyTo == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsDashboardSectionRowChartChartSetting", "sparklineValueColorMapApplyTo");
+            }
+            this.sparklineValueColorMapApplyTo = sparklineValueColorMapApplyTo;
             return this;
         }
         @CustomType.Setter
         public Builder sparklineValueColorMapColors(List<String> sparklineValueColorMapColors) {
-            this.sparklineValueColorMapColors = Objects.requireNonNull(sparklineValueColorMapColors);
+            if (sparklineValueColorMapColors == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsDashboardSectionRowChartChartSetting", "sparklineValueColorMapColors");
+            }
+            this.sparklineValueColorMapColors = sparklineValueColorMapColors;
             return this;
         }
         public Builder sparklineValueColorMapColors(String... sparklineValueColorMapColors) {
@@ -987,7 +1096,10 @@ public final class GetDashboardsDashboardSectionRowChartChartSetting {
         }
         @CustomType.Setter
         public Builder sparklineValueColorMapValues(List<Integer> sparklineValueColorMapValues) {
-            this.sparklineValueColorMapValues = Objects.requireNonNull(sparklineValueColorMapValues);
+            if (sparklineValueColorMapValues == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsDashboardSectionRowChartChartSetting", "sparklineValueColorMapValues");
+            }
+            this.sparklineValueColorMapValues = sparklineValueColorMapValues;
             return this;
         }
         public Builder sparklineValueColorMapValues(Integer... sparklineValueColorMapValues) {
@@ -995,7 +1107,10 @@ public final class GetDashboardsDashboardSectionRowChartChartSetting {
         }
         @CustomType.Setter
         public Builder sparklineValueColorMapValuesV2s(List<Double> sparklineValueColorMapValuesV2s) {
-            this.sparklineValueColorMapValuesV2s = Objects.requireNonNull(sparklineValueColorMapValuesV2s);
+            if (sparklineValueColorMapValuesV2s == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsDashboardSectionRowChartChartSetting", "sparklineValueColorMapValuesV2s");
+            }
+            this.sparklineValueColorMapValuesV2s = sparklineValueColorMapValuesV2s;
             return this;
         }
         public Builder sparklineValueColorMapValuesV2s(Double... sparklineValueColorMapValuesV2s) {
@@ -1003,7 +1118,10 @@ public final class GetDashboardsDashboardSectionRowChartChartSetting {
         }
         @CustomType.Setter
         public Builder sparklineValueTextMapTexts(List<String> sparklineValueTextMapTexts) {
-            this.sparklineValueTextMapTexts = Objects.requireNonNull(sparklineValueTextMapTexts);
+            if (sparklineValueTextMapTexts == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsDashboardSectionRowChartChartSetting", "sparklineValueTextMapTexts");
+            }
+            this.sparklineValueTextMapTexts = sparklineValueTextMapTexts;
             return this;
         }
         public Builder sparklineValueTextMapTexts(String... sparklineValueTextMapTexts) {
@@ -1011,7 +1129,10 @@ public final class GetDashboardsDashboardSectionRowChartChartSetting {
         }
         @CustomType.Setter
         public Builder sparklineValueTextMapThresholds(List<Double> sparklineValueTextMapThresholds) {
-            this.sparklineValueTextMapThresholds = Objects.requireNonNull(sparklineValueTextMapThresholds);
+            if (sparklineValueTextMapThresholds == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsDashboardSectionRowChartChartSetting", "sparklineValueTextMapThresholds");
+            }
+            this.sparklineValueTextMapThresholds = sparklineValueTextMapThresholds;
             return this;
         }
         public Builder sparklineValueTextMapThresholds(Double... sparklineValueTextMapThresholds) {
@@ -1019,87 +1140,138 @@ public final class GetDashboardsDashboardSectionRowChartChartSetting {
         }
         @CustomType.Setter
         public Builder stackType(String stackType) {
-            this.stackType = Objects.requireNonNull(stackType);
+            if (stackType == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsDashboardSectionRowChartChartSetting", "stackType");
+            }
+            this.stackType = stackType;
             return this;
         }
         @CustomType.Setter
         public Builder tagMode(String tagMode) {
-            this.tagMode = Objects.requireNonNull(tagMode);
+            if (tagMode == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsDashboardSectionRowChartChartSetting", "tagMode");
+            }
+            this.tagMode = tagMode;
             return this;
         }
         @CustomType.Setter
         public Builder timeBasedColoring(Boolean timeBasedColoring) {
-            this.timeBasedColoring = Objects.requireNonNull(timeBasedColoring);
+            if (timeBasedColoring == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsDashboardSectionRowChartChartSetting", "timeBasedColoring");
+            }
+            this.timeBasedColoring = timeBasedColoring;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsDashboardSectionRowChartChartSetting", "type");
+            }
+            this.type = type;
             return this;
         }
         @CustomType.Setter
         public Builder windowSize(Integer windowSize) {
-            this.windowSize = Objects.requireNonNull(windowSize);
+            if (windowSize == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsDashboardSectionRowChartChartSetting", "windowSize");
+            }
+            this.windowSize = windowSize;
             return this;
         }
         @CustomType.Setter
         public Builder windowing(String windowing) {
-            this.windowing = Objects.requireNonNull(windowing);
+            if (windowing == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsDashboardSectionRowChartChartSetting", "windowing");
+            }
+            this.windowing = windowing;
             return this;
         }
         @CustomType.Setter
         public Builder xmax(Double xmax) {
-            this.xmax = Objects.requireNonNull(xmax);
+            if (xmax == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsDashboardSectionRowChartChartSetting", "xmax");
+            }
+            this.xmax = xmax;
             return this;
         }
         @CustomType.Setter
         public Builder xmin(Double xmin) {
-            this.xmin = Objects.requireNonNull(xmin);
+            if (xmin == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsDashboardSectionRowChartChartSetting", "xmin");
+            }
+            this.xmin = xmin;
             return this;
         }
         @CustomType.Setter
         public Builder y0ScaleSiBy1024(Boolean y0ScaleSiBy1024) {
-            this.y0ScaleSiBy1024 = Objects.requireNonNull(y0ScaleSiBy1024);
+            if (y0ScaleSiBy1024 == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsDashboardSectionRowChartChartSetting", "y0ScaleSiBy1024");
+            }
+            this.y0ScaleSiBy1024 = y0ScaleSiBy1024;
             return this;
         }
         @CustomType.Setter
         public Builder y0UnitAutoscaling(Boolean y0UnitAutoscaling) {
-            this.y0UnitAutoscaling = Objects.requireNonNull(y0UnitAutoscaling);
+            if (y0UnitAutoscaling == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsDashboardSectionRowChartChartSetting", "y0UnitAutoscaling");
+            }
+            this.y0UnitAutoscaling = y0UnitAutoscaling;
             return this;
         }
         @CustomType.Setter
         public Builder y1Max(Double y1Max) {
-            this.y1Max = Objects.requireNonNull(y1Max);
+            if (y1Max == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsDashboardSectionRowChartChartSetting", "y1Max");
+            }
+            this.y1Max = y1Max;
             return this;
         }
         @CustomType.Setter
         public Builder y1Min(Double y1Min) {
-            this.y1Min = Objects.requireNonNull(y1Min);
+            if (y1Min == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsDashboardSectionRowChartChartSetting", "y1Min");
+            }
+            this.y1Min = y1Min;
             return this;
         }
         @CustomType.Setter
         public Builder y1ScaleSiBy1024(Boolean y1ScaleSiBy1024) {
-            this.y1ScaleSiBy1024 = Objects.requireNonNull(y1ScaleSiBy1024);
+            if (y1ScaleSiBy1024 == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsDashboardSectionRowChartChartSetting", "y1ScaleSiBy1024");
+            }
+            this.y1ScaleSiBy1024 = y1ScaleSiBy1024;
             return this;
         }
         @CustomType.Setter
         public Builder y1UnitAutoscaling(Boolean y1UnitAutoscaling) {
-            this.y1UnitAutoscaling = Objects.requireNonNull(y1UnitAutoscaling);
+            if (y1UnitAutoscaling == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsDashboardSectionRowChartChartSetting", "y1UnitAutoscaling");
+            }
+            this.y1UnitAutoscaling = y1UnitAutoscaling;
             return this;
         }
         @CustomType.Setter
         public Builder y1Units(String y1Units) {
-            this.y1Units = Objects.requireNonNull(y1Units);
+            if (y1Units == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsDashboardSectionRowChartChartSetting", "y1Units");
+            }
+            this.y1Units = y1Units;
             return this;
         }
         @CustomType.Setter
         public Builder ymax(Double ymax) {
-            this.ymax = Objects.requireNonNull(ymax);
+            if (ymax == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsDashboardSectionRowChartChartSetting", "ymax");
+            }
+            this.ymax = ymax;
             return this;
         }
         @CustomType.Setter
         public Builder ymin(Double ymin) {
-            this.ymin = Objects.requireNonNull(ymin);
+            if (ymin == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsDashboardSectionRowChartChartSetting", "ymin");
+            }
+            this.ymin = ymin;
             return this;
         }
         public GetDashboardsDashboardSectionRowChartChartSetting build() {

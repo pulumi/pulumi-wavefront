@@ -4,6 +4,7 @@
 package com.pulumi.wavefront.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Map;
@@ -146,42 +147,66 @@ public final class GetDashboardsDashboardParameterDetail {
 
         @CustomType.Setter
         public Builder defaultValue(String defaultValue) {
-            this.defaultValue = Objects.requireNonNull(defaultValue);
+            if (defaultValue == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsDashboardParameterDetail", "defaultValue");
+            }
+            this.defaultValue = defaultValue;
             return this;
         }
         @CustomType.Setter
         public Builder dynamicFieldType(String dynamicFieldType) {
-            this.dynamicFieldType = Objects.requireNonNull(dynamicFieldType);
+            if (dynamicFieldType == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsDashboardParameterDetail", "dynamicFieldType");
+            }
+            this.dynamicFieldType = dynamicFieldType;
             return this;
         }
         @CustomType.Setter
         public Builder hideFromView(Boolean hideFromView) {
-            this.hideFromView = Objects.requireNonNull(hideFromView);
+            if (hideFromView == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsDashboardParameterDetail", "hideFromView");
+            }
+            this.hideFromView = hideFromView;
             return this;
         }
         @CustomType.Setter
         public Builder label(String label) {
-            this.label = Objects.requireNonNull(label);
+            if (label == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsDashboardParameterDetail", "label");
+            }
+            this.label = label;
             return this;
         }
         @CustomType.Setter
         public Builder parameterType(String parameterType) {
-            this.parameterType = Objects.requireNonNull(parameterType);
+            if (parameterType == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsDashboardParameterDetail", "parameterType");
+            }
+            this.parameterType = parameterType;
             return this;
         }
         @CustomType.Setter
         public Builder queryValue(String queryValue) {
-            this.queryValue = Objects.requireNonNull(queryValue);
+            if (queryValue == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsDashboardParameterDetail", "queryValue");
+            }
+            this.queryValue = queryValue;
             return this;
         }
         @CustomType.Setter
         public Builder tagKey(String tagKey) {
-            this.tagKey = Objects.requireNonNull(tagKey);
+            if (tagKey == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsDashboardParameterDetail", "tagKey");
+            }
+            this.tagKey = tagKey;
             return this;
         }
         @CustomType.Setter
         public Builder valuesToReadableStrings(Map<String,String> valuesToReadableStrings) {
-            this.valuesToReadableStrings = Objects.requireNonNull(valuesToReadableStrings);
+            if (valuesToReadableStrings == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsDashboardParameterDetail", "valuesToReadableStrings");
+            }
+            this.valuesToReadableStrings = valuesToReadableStrings;
             return this;
         }
         public GetDashboardsDashboardParameterDetail build() {

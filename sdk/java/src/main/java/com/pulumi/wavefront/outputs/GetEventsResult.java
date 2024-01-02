@@ -4,6 +4,7 @@
 package com.pulumi.wavefront.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.wavefront.outputs.GetEventsEvent;
 import java.lang.Integer;
 import java.lang.String;
@@ -101,12 +102,18 @@ public final class GetEventsResult {
 
         @CustomType.Setter
         public Builder earliestStartTimeEpochMillis(Integer earliestStartTimeEpochMillis) {
-            this.earliestStartTimeEpochMillis = Objects.requireNonNull(earliestStartTimeEpochMillis);
+            if (earliestStartTimeEpochMillis == null) {
+              throw new MissingRequiredPropertyException("GetEventsResult", "earliestStartTimeEpochMillis");
+            }
+            this.earliestStartTimeEpochMillis = earliestStartTimeEpochMillis;
             return this;
         }
         @CustomType.Setter
         public Builder events(List<GetEventsEvent> events) {
-            this.events = Objects.requireNonNull(events);
+            if (events == null) {
+              throw new MissingRequiredPropertyException("GetEventsResult", "events");
+            }
+            this.events = events;
             return this;
         }
         public Builder events(GetEventsEvent... events) {
@@ -114,21 +121,29 @@ public final class GetEventsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetEventsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder latestStartTimeEpochMillis(Integer latestStartTimeEpochMillis) {
-            this.latestStartTimeEpochMillis = Objects.requireNonNull(latestStartTimeEpochMillis);
+            if (latestStartTimeEpochMillis == null) {
+              throw new MissingRequiredPropertyException("GetEventsResult", "latestStartTimeEpochMillis");
+            }
+            this.latestStartTimeEpochMillis = latestStartTimeEpochMillis;
             return this;
         }
         @CustomType.Setter
         public Builder limit(@Nullable Integer limit) {
+
             this.limit = limit;
             return this;
         }
         @CustomType.Setter
         public Builder offset(@Nullable Integer offset) {
+
             this.offset = offset;
             return this;
         }

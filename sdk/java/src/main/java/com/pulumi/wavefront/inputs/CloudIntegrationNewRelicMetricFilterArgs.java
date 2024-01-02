@@ -5,6 +5,7 @@ package com.pulumi.wavefront.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -111,8 +112,12 @@ public final class CloudIntegrationNewRelicMetricFilterArgs extends com.pulumi.r
         }
 
         public CloudIntegrationNewRelicMetricFilterArgs build() {
-            $.appName = Objects.requireNonNull($.appName, "expected parameter 'appName' to be non-null");
-            $.metricFilterRegex = Objects.requireNonNull($.metricFilterRegex, "expected parameter 'metricFilterRegex' to be non-null");
+            if ($.appName == null) {
+                throw new MissingRequiredPropertyException("CloudIntegrationNewRelicMetricFilterArgs", "appName");
+            }
+            if ($.metricFilterRegex == null) {
+                throw new MissingRequiredPropertyException("CloudIntegrationNewRelicMetricFilterArgs", "metricFilterRegex");
+            }
             return $;
         }
     }

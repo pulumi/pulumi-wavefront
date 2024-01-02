@@ -5,6 +5,7 @@ package com.pulumi.wavefront;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -449,11 +450,21 @@ public final class CloudIntegrationCloudTrailArgs extends com.pulumi.resources.R
         }
 
         public CloudIntegrationCloudTrailArgs build() {
-            $.bucketName = Objects.requireNonNull($.bucketName, "expected parameter 'bucketName' to be non-null");
-            $.externalId = Objects.requireNonNull($.externalId, "expected parameter 'externalId' to be non-null");
-            $.region = Objects.requireNonNull($.region, "expected parameter 'region' to be non-null");
-            $.roleArn = Objects.requireNonNull($.roleArn, "expected parameter 'roleArn' to be non-null");
-            $.service = Objects.requireNonNull($.service, "expected parameter 'service' to be non-null");
+            if ($.bucketName == null) {
+                throw new MissingRequiredPropertyException("CloudIntegrationCloudTrailArgs", "bucketName");
+            }
+            if ($.externalId == null) {
+                throw new MissingRequiredPropertyException("CloudIntegrationCloudTrailArgs", "externalId");
+            }
+            if ($.region == null) {
+                throw new MissingRequiredPropertyException("CloudIntegrationCloudTrailArgs", "region");
+            }
+            if ($.roleArn == null) {
+                throw new MissingRequiredPropertyException("CloudIntegrationCloudTrailArgs", "roleArn");
+            }
+            if ($.service == null) {
+                throw new MissingRequiredPropertyException("CloudIntegrationCloudTrailArgs", "service");
+            }
             return $;
         }
     }

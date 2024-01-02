@@ -4,6 +4,7 @@
 package com.pulumi.wavefront.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -367,27 +368,42 @@ public final class GetDerivedMetricResult {
 
         @CustomType.Setter
         public Builder additionalInformation(String additionalInformation) {
-            this.additionalInformation = Objects.requireNonNull(additionalInformation);
+            if (additionalInformation == null) {
+              throw new MissingRequiredPropertyException("GetDerivedMetricResult", "additionalInformation");
+            }
+            this.additionalInformation = additionalInformation;
             return this;
         }
         @CustomType.Setter
         public Builder createUserId(String createUserId) {
-            this.createUserId = Objects.requireNonNull(createUserId);
+            if (createUserId == null) {
+              throw new MissingRequiredPropertyException("GetDerivedMetricResult", "createUserId");
+            }
+            this.createUserId = createUserId;
             return this;
         }
         @CustomType.Setter
         public Builder createdEpochMillis(Integer createdEpochMillis) {
-            this.createdEpochMillis = Objects.requireNonNull(createdEpochMillis);
+            if (createdEpochMillis == null) {
+              throw new MissingRequiredPropertyException("GetDerivedMetricResult", "createdEpochMillis");
+            }
+            this.createdEpochMillis = createdEpochMillis;
             return this;
         }
         @CustomType.Setter
         public Builder deleted(Boolean deleted) {
-            this.deleted = Objects.requireNonNull(deleted);
+            if (deleted == null) {
+              throw new MissingRequiredPropertyException("GetDerivedMetricResult", "deleted");
+            }
+            this.deleted = deleted;
             return this;
         }
         @CustomType.Setter
         public Builder hostsUseds(List<String> hostsUseds) {
-            this.hostsUseds = Objects.requireNonNull(hostsUseds);
+            if (hostsUseds == null) {
+              throw new MissingRequiredPropertyException("GetDerivedMetricResult", "hostsUseds");
+            }
+            this.hostsUseds = hostsUseds;
             return this;
         }
         public Builder hostsUseds(String... hostsUseds) {
@@ -395,42 +411,66 @@ public final class GetDerivedMetricResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDerivedMetricResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder inTrash(Boolean inTrash) {
-            this.inTrash = Objects.requireNonNull(inTrash);
+            if (inTrash == null) {
+              throw new MissingRequiredPropertyException("GetDerivedMetricResult", "inTrash");
+            }
+            this.inTrash = inTrash;
             return this;
         }
         @CustomType.Setter
         public Builder includeObsoleteMetrics(Boolean includeObsoleteMetrics) {
-            this.includeObsoleteMetrics = Objects.requireNonNull(includeObsoleteMetrics);
+            if (includeObsoleteMetrics == null) {
+              throw new MissingRequiredPropertyException("GetDerivedMetricResult", "includeObsoleteMetrics");
+            }
+            this.includeObsoleteMetrics = includeObsoleteMetrics;
             return this;
         }
         @CustomType.Setter
         public Builder lastErrorMessage(String lastErrorMessage) {
-            this.lastErrorMessage = Objects.requireNonNull(lastErrorMessage);
+            if (lastErrorMessage == null) {
+              throw new MissingRequiredPropertyException("GetDerivedMetricResult", "lastErrorMessage");
+            }
+            this.lastErrorMessage = lastErrorMessage;
             return this;
         }
         @CustomType.Setter
         public Builder lastFailedTime(Integer lastFailedTime) {
-            this.lastFailedTime = Objects.requireNonNull(lastFailedTime);
+            if (lastFailedTime == null) {
+              throw new MissingRequiredPropertyException("GetDerivedMetricResult", "lastFailedTime");
+            }
+            this.lastFailedTime = lastFailedTime;
             return this;
         }
         @CustomType.Setter
         public Builder lastProcessedMillis(Integer lastProcessedMillis) {
-            this.lastProcessedMillis = Objects.requireNonNull(lastProcessedMillis);
+            if (lastProcessedMillis == null) {
+              throw new MissingRequiredPropertyException("GetDerivedMetricResult", "lastProcessedMillis");
+            }
+            this.lastProcessedMillis = lastProcessedMillis;
             return this;
         }
         @CustomType.Setter
         public Builder lastQueryTime(Integer lastQueryTime) {
-            this.lastQueryTime = Objects.requireNonNull(lastQueryTime);
+            if (lastQueryTime == null) {
+              throw new MissingRequiredPropertyException("GetDerivedMetricResult", "lastQueryTime");
+            }
+            this.lastQueryTime = lastQueryTime;
             return this;
         }
         @CustomType.Setter
         public Builder metricsUseds(List<String> metricsUseds) {
-            this.metricsUseds = Objects.requireNonNull(metricsUseds);
+            if (metricsUseds == null) {
+              throw new MissingRequiredPropertyException("GetDerivedMetricResult", "metricsUseds");
+            }
+            this.metricsUseds = metricsUseds;
             return this;
         }
         public Builder metricsUseds(String... metricsUseds) {
@@ -438,42 +478,66 @@ public final class GetDerivedMetricResult {
         }
         @CustomType.Setter
         public Builder minutes(Integer minutes) {
-            this.minutes = Objects.requireNonNull(minutes);
+            if (minutes == null) {
+              throw new MissingRequiredPropertyException("GetDerivedMetricResult", "minutes");
+            }
+            this.minutes = minutes;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetDerivedMetricResult", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder pointsScannedAtLastQuery(Integer pointsScannedAtLastQuery) {
-            this.pointsScannedAtLastQuery = Objects.requireNonNull(pointsScannedAtLastQuery);
+            if (pointsScannedAtLastQuery == null) {
+              throw new MissingRequiredPropertyException("GetDerivedMetricResult", "pointsScannedAtLastQuery");
+            }
+            this.pointsScannedAtLastQuery = pointsScannedAtLastQuery;
             return this;
         }
         @CustomType.Setter
         public Builder processRateMinutes(Integer processRateMinutes) {
-            this.processRateMinutes = Objects.requireNonNull(processRateMinutes);
+            if (processRateMinutes == null) {
+              throw new MissingRequiredPropertyException("GetDerivedMetricResult", "processRateMinutes");
+            }
+            this.processRateMinutes = processRateMinutes;
             return this;
         }
         @CustomType.Setter
         public Builder query(String query) {
-            this.query = Objects.requireNonNull(query);
+            if (query == null) {
+              throw new MissingRequiredPropertyException("GetDerivedMetricResult", "query");
+            }
+            this.query = query;
             return this;
         }
         @CustomType.Setter
         public Builder queryFailing(Boolean queryFailing) {
-            this.queryFailing = Objects.requireNonNull(queryFailing);
+            if (queryFailing == null) {
+              throw new MissingRequiredPropertyException("GetDerivedMetricResult", "queryFailing");
+            }
+            this.queryFailing = queryFailing;
             return this;
         }
         @CustomType.Setter
         public Builder queryQbEnabled(Boolean queryQbEnabled) {
-            this.queryQbEnabled = Objects.requireNonNull(queryQbEnabled);
+            if (queryQbEnabled == null) {
+              throw new MissingRequiredPropertyException("GetDerivedMetricResult", "queryQbEnabled");
+            }
+            this.queryQbEnabled = queryQbEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder statuses(List<String> statuses) {
-            this.statuses = Objects.requireNonNull(statuses);
+            if (statuses == null) {
+              throw new MissingRequiredPropertyException("GetDerivedMetricResult", "statuses");
+            }
+            this.statuses = statuses;
             return this;
         }
         public Builder statuses(String... statuses) {
@@ -481,7 +545,10 @@ public final class GetDerivedMetricResult {
         }
         @CustomType.Setter
         public Builder tags(List<String> tags) {
-            this.tags = Objects.requireNonNull(tags);
+            if (tags == null) {
+              throw new MissingRequiredPropertyException("GetDerivedMetricResult", "tags");
+            }
+            this.tags = tags;
             return this;
         }
         public Builder tags(String... tags) {
@@ -489,12 +556,18 @@ public final class GetDerivedMetricResult {
         }
         @CustomType.Setter
         public Builder updateUserId(String updateUserId) {
-            this.updateUserId = Objects.requireNonNull(updateUserId);
+            if (updateUserId == null) {
+              throw new MissingRequiredPropertyException("GetDerivedMetricResult", "updateUserId");
+            }
+            this.updateUserId = updateUserId;
             return this;
         }
         @CustomType.Setter
         public Builder updatedEpochMillis(Integer updatedEpochMillis) {
-            this.updatedEpochMillis = Objects.requireNonNull(updatedEpochMillis);
+            if (updatedEpochMillis == null) {
+              throw new MissingRequiredPropertyException("GetDerivedMetricResult", "updatedEpochMillis");
+            }
+            this.updatedEpochMillis = updatedEpochMillis;
             return this;
         }
         public GetDerivedMetricResult build() {

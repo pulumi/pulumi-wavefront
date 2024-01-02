@@ -4,6 +4,7 @@
 package com.pulumi.wavefront.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -139,47 +140,74 @@ public final class GetMaintenanceWindowAllMaintenanceWindow {
 
         @CustomType.Setter
         public Builder createdEpochMillis(Integer createdEpochMillis) {
-            this.createdEpochMillis = Objects.requireNonNull(createdEpochMillis);
+            if (createdEpochMillis == null) {
+              throw new MissingRequiredPropertyException("GetMaintenanceWindowAllMaintenanceWindow", "createdEpochMillis");
+            }
+            this.createdEpochMillis = createdEpochMillis;
             return this;
         }
         @CustomType.Setter
         public Builder creatorId(String creatorId) {
-            this.creatorId = Objects.requireNonNull(creatorId);
+            if (creatorId == null) {
+              throw new MissingRequiredPropertyException("GetMaintenanceWindowAllMaintenanceWindow", "creatorId");
+            }
+            this.creatorId = creatorId;
             return this;
         }
         @CustomType.Setter
         public Builder customerId(String customerId) {
-            this.customerId = Objects.requireNonNull(customerId);
+            if (customerId == null) {
+              throw new MissingRequiredPropertyException("GetMaintenanceWindowAllMaintenanceWindow", "customerId");
+            }
+            this.customerId = customerId;
             return this;
         }
         @CustomType.Setter
         public Builder endTimeInSeconds(Integer endTimeInSeconds) {
-            this.endTimeInSeconds = Objects.requireNonNull(endTimeInSeconds);
+            if (endTimeInSeconds == null) {
+              throw new MissingRequiredPropertyException("GetMaintenanceWindowAllMaintenanceWindow", "endTimeInSeconds");
+            }
+            this.endTimeInSeconds = endTimeInSeconds;
             return this;
         }
         @CustomType.Setter
         public Builder eventName(String eventName) {
-            this.eventName = Objects.requireNonNull(eventName);
+            if (eventName == null) {
+              throw new MissingRequiredPropertyException("GetMaintenanceWindowAllMaintenanceWindow", "eventName");
+            }
+            this.eventName = eventName;
             return this;
         }
         @CustomType.Setter
         public Builder hostTagGroupHostNamesGroupAnded(Boolean hostTagGroupHostNamesGroupAnded) {
-            this.hostTagGroupHostNamesGroupAnded = Objects.requireNonNull(hostTagGroupHostNamesGroupAnded);
+            if (hostTagGroupHostNamesGroupAnded == null) {
+              throw new MissingRequiredPropertyException("GetMaintenanceWindowAllMaintenanceWindow", "hostTagGroupHostNamesGroupAnded");
+            }
+            this.hostTagGroupHostNamesGroupAnded = hostTagGroupHostNamesGroupAnded;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetMaintenanceWindowAllMaintenanceWindow", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder reason(String reason) {
-            this.reason = Objects.requireNonNull(reason);
+            if (reason == null) {
+              throw new MissingRequiredPropertyException("GetMaintenanceWindowAllMaintenanceWindow", "reason");
+            }
+            this.reason = reason;
             return this;
         }
         @CustomType.Setter
         public Builder relevantCustomerTags(List<String> relevantCustomerTags) {
-            this.relevantCustomerTags = Objects.requireNonNull(relevantCustomerTags);
+            if (relevantCustomerTags == null) {
+              throw new MissingRequiredPropertyException("GetMaintenanceWindowAllMaintenanceWindow", "relevantCustomerTags");
+            }
+            this.relevantCustomerTags = relevantCustomerTags;
             return this;
         }
         public Builder relevantCustomerTags(String... relevantCustomerTags) {
@@ -187,7 +215,10 @@ public final class GetMaintenanceWindowAllMaintenanceWindow {
         }
         @CustomType.Setter
         public Builder relevantHostNames(List<String> relevantHostNames) {
-            this.relevantHostNames = Objects.requireNonNull(relevantHostNames);
+            if (relevantHostNames == null) {
+              throw new MissingRequiredPropertyException("GetMaintenanceWindowAllMaintenanceWindow", "relevantHostNames");
+            }
+            this.relevantHostNames = relevantHostNames;
             return this;
         }
         public Builder relevantHostNames(String... relevantHostNames) {
@@ -195,7 +226,10 @@ public final class GetMaintenanceWindowAllMaintenanceWindow {
         }
         @CustomType.Setter
         public Builder relevantHostTags(List<String> relevantHostTags) {
-            this.relevantHostTags = Objects.requireNonNull(relevantHostTags);
+            if (relevantHostTags == null) {
+              throw new MissingRequiredPropertyException("GetMaintenanceWindowAllMaintenanceWindow", "relevantHostTags");
+            }
+            this.relevantHostTags = relevantHostTags;
             return this;
         }
         public Builder relevantHostTags(String... relevantHostTags) {
@@ -203,37 +237,58 @@ public final class GetMaintenanceWindowAllMaintenanceWindow {
         }
         @CustomType.Setter
         public Builder relevantHostTagsAnded(Boolean relevantHostTagsAnded) {
-            this.relevantHostTagsAnded = Objects.requireNonNull(relevantHostTagsAnded);
+            if (relevantHostTagsAnded == null) {
+              throw new MissingRequiredPropertyException("GetMaintenanceWindowAllMaintenanceWindow", "relevantHostTagsAnded");
+            }
+            this.relevantHostTagsAnded = relevantHostTagsAnded;
             return this;
         }
         @CustomType.Setter
         public Builder runningState(String runningState) {
-            this.runningState = Objects.requireNonNull(runningState);
+            if (runningState == null) {
+              throw new MissingRequiredPropertyException("GetMaintenanceWindowAllMaintenanceWindow", "runningState");
+            }
+            this.runningState = runningState;
             return this;
         }
         @CustomType.Setter
         public Builder sortAttr(Integer sortAttr) {
-            this.sortAttr = Objects.requireNonNull(sortAttr);
+            if (sortAttr == null) {
+              throw new MissingRequiredPropertyException("GetMaintenanceWindowAllMaintenanceWindow", "sortAttr");
+            }
+            this.sortAttr = sortAttr;
             return this;
         }
         @CustomType.Setter
         public Builder startTimeInSeconds(Integer startTimeInSeconds) {
-            this.startTimeInSeconds = Objects.requireNonNull(startTimeInSeconds);
+            if (startTimeInSeconds == null) {
+              throw new MissingRequiredPropertyException("GetMaintenanceWindowAllMaintenanceWindow", "startTimeInSeconds");
+            }
+            this.startTimeInSeconds = startTimeInSeconds;
             return this;
         }
         @CustomType.Setter
         public Builder title(String title) {
-            this.title = Objects.requireNonNull(title);
+            if (title == null) {
+              throw new MissingRequiredPropertyException("GetMaintenanceWindowAllMaintenanceWindow", "title");
+            }
+            this.title = title;
             return this;
         }
         @CustomType.Setter
         public Builder updatedEpochMillis(Integer updatedEpochMillis) {
-            this.updatedEpochMillis = Objects.requireNonNull(updatedEpochMillis);
+            if (updatedEpochMillis == null) {
+              throw new MissingRequiredPropertyException("GetMaintenanceWindowAllMaintenanceWindow", "updatedEpochMillis");
+            }
+            this.updatedEpochMillis = updatedEpochMillis;
             return this;
         }
         @CustomType.Setter
         public Builder updaterId(String updaterId) {
-            this.updaterId = Objects.requireNonNull(updaterId);
+            if (updaterId == null) {
+              throw new MissingRequiredPropertyException("GetMaintenanceWindowAllMaintenanceWindow", "updaterId");
+            }
+            this.updaterId = updaterId;
             return this;
         }
         public GetMaintenanceWindowAllMaintenanceWindow build() {

@@ -5,6 +5,7 @@ package com.pulumi.wavefront;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.wavefront.inputs.CloudIntegrationNewRelicMetricFilterArgs;
 import java.lang.Boolean;
 import java.lang.Integer;
@@ -387,8 +388,12 @@ public final class CloudIntegrationNewRelicArgs extends com.pulumi.resources.Res
         }
 
         public CloudIntegrationNewRelicArgs build() {
-            $.apiKey = Objects.requireNonNull($.apiKey, "expected parameter 'apiKey' to be non-null");
-            $.service = Objects.requireNonNull($.service, "expected parameter 'service' to be non-null");
+            if ($.apiKey == null) {
+                throw new MissingRequiredPropertyException("CloudIntegrationNewRelicArgs", "apiKey");
+            }
+            if ($.service == null) {
+                throw new MissingRequiredPropertyException("CloudIntegrationNewRelicArgs", "service");
+            }
             return $;
         }
     }

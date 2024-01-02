@@ -4,6 +4,7 @@
 package com.pulumi.wavefront.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -92,22 +93,34 @@ public final class GetUsersUser {
 
         @CustomType.Setter
         public Builder customer(String customer) {
-            this.customer = Objects.requireNonNull(customer);
+            if (customer == null) {
+              throw new MissingRequiredPropertyException("GetUsersUser", "customer");
+            }
+            this.customer = customer;
             return this;
         }
         @CustomType.Setter
         public Builder email(String email) {
-            this.email = Objects.requireNonNull(email);
+            if (email == null) {
+              throw new MissingRequiredPropertyException("GetUsersUser", "email");
+            }
+            this.email = email;
             return this;
         }
         @CustomType.Setter
         public Builder lastSuccessfulLogin(Integer lastSuccessfulLogin) {
-            this.lastSuccessfulLogin = Objects.requireNonNull(lastSuccessfulLogin);
+            if (lastSuccessfulLogin == null) {
+              throw new MissingRequiredPropertyException("GetUsersUser", "lastSuccessfulLogin");
+            }
+            this.lastSuccessfulLogin = lastSuccessfulLogin;
             return this;
         }
         @CustomType.Setter
         public Builder permissions(List<String> permissions) {
-            this.permissions = Objects.requireNonNull(permissions);
+            if (permissions == null) {
+              throw new MissingRequiredPropertyException("GetUsersUser", "permissions");
+            }
+            this.permissions = permissions;
             return this;
         }
         public Builder permissions(String... permissions) {
@@ -115,7 +128,10 @@ public final class GetUsersUser {
         }
         @CustomType.Setter
         public Builder userGroupIds(List<String> userGroupIds) {
-            this.userGroupIds = Objects.requireNonNull(userGroupIds);
+            if (userGroupIds == null) {
+              throw new MissingRequiredPropertyException("GetUsersUser", "userGroupIds");
+            }
+            this.userGroupIds = userGroupIds;
             return this;
         }
         public Builder userGroupIds(String... userGroupIds) {

@@ -5,6 +5,7 @@ package com.pulumi.wavefront;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -410,9 +411,15 @@ public final class CloudIntegrationGcpArgs extends com.pulumi.resources.Resource
         }
 
         public CloudIntegrationGcpArgs build() {
-            $.jsonKey = Objects.requireNonNull($.jsonKey, "expected parameter 'jsonKey' to be non-null");
-            $.projectId = Objects.requireNonNull($.projectId, "expected parameter 'projectId' to be non-null");
-            $.service = Objects.requireNonNull($.service, "expected parameter 'service' to be non-null");
+            if ($.jsonKey == null) {
+                throw new MissingRequiredPropertyException("CloudIntegrationGcpArgs", "jsonKey");
+            }
+            if ($.projectId == null) {
+                throw new MissingRequiredPropertyException("CloudIntegrationGcpArgs", "projectId");
+            }
+            if ($.service == null) {
+                throw new MissingRequiredPropertyException("CloudIntegrationGcpArgs", "service");
+            }
             return $;
         }
     }

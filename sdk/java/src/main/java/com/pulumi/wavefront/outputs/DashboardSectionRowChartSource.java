@@ -4,6 +4,7 @@
 package com.pulumi.wavefront.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -115,31 +116,41 @@ public final class DashboardSectionRowChartSource {
 
         @CustomType.Setter
         public Builder disabled(@Nullable Boolean disabled) {
+
             this.disabled = disabled;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("DashboardSectionRowChartSource", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder query(String query) {
-            this.query = Objects.requireNonNull(query);
+            if (query == null) {
+              throw new MissingRequiredPropertyException("DashboardSectionRowChartSource", "query");
+            }
+            this.query = query;
             return this;
         }
         @CustomType.Setter
         public Builder queryBuilderEnabled(@Nullable Boolean queryBuilderEnabled) {
+
             this.queryBuilderEnabled = queryBuilderEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder scatterPlotSource(@Nullable String scatterPlotSource) {
+
             this.scatterPlotSource = scatterPlotSource;
             return this;
         }
         @CustomType.Setter
         public Builder sourceDescription(@Nullable String sourceDescription) {
+
             this.sourceDescription = sourceDescription;
             return this;
         }

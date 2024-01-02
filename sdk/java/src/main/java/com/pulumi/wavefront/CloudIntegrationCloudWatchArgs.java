@@ -5,6 +5,7 @@ package com.pulumi.wavefront;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -517,9 +518,15 @@ public final class CloudIntegrationCloudWatchArgs extends com.pulumi.resources.R
         }
 
         public CloudIntegrationCloudWatchArgs build() {
-            $.externalId = Objects.requireNonNull($.externalId, "expected parameter 'externalId' to be non-null");
-            $.roleArn = Objects.requireNonNull($.roleArn, "expected parameter 'roleArn' to be non-null");
-            $.service = Objects.requireNonNull($.service, "expected parameter 'service' to be non-null");
+            if ($.externalId == null) {
+                throw new MissingRequiredPropertyException("CloudIntegrationCloudWatchArgs", "externalId");
+            }
+            if ($.roleArn == null) {
+                throw new MissingRequiredPropertyException("CloudIntegrationCloudWatchArgs", "roleArn");
+            }
+            if ($.service == null) {
+                throw new MissingRequiredPropertyException("CloudIntegrationCloudWatchArgs", "service");
+            }
             return $;
         }
     }
