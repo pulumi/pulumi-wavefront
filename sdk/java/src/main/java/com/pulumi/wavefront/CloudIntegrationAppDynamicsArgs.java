@@ -5,6 +5,7 @@ package com.pulumi.wavefront;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -691,10 +692,18 @@ public final class CloudIntegrationAppDynamicsArgs extends com.pulumi.resources.
         }
 
         public CloudIntegrationAppDynamicsArgs build() {
-            $.controllerName = Objects.requireNonNull($.controllerName, "expected parameter 'controllerName' to be non-null");
-            $.encryptedPassword = Objects.requireNonNull($.encryptedPassword, "expected parameter 'encryptedPassword' to be non-null");
-            $.service = Objects.requireNonNull($.service, "expected parameter 'service' to be non-null");
-            $.userName = Objects.requireNonNull($.userName, "expected parameter 'userName' to be non-null");
+            if ($.controllerName == null) {
+                throw new MissingRequiredPropertyException("CloudIntegrationAppDynamicsArgs", "controllerName");
+            }
+            if ($.encryptedPassword == null) {
+                throw new MissingRequiredPropertyException("CloudIntegrationAppDynamicsArgs", "encryptedPassword");
+            }
+            if ($.service == null) {
+                throw new MissingRequiredPropertyException("CloudIntegrationAppDynamicsArgs", "service");
+            }
+            if ($.userName == null) {
+                throw new MissingRequiredPropertyException("CloudIntegrationAppDynamicsArgs", "userName");
+            }
             return $;
         }
     }

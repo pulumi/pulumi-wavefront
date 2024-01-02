@@ -4,6 +4,7 @@
 package com.pulumi.wavefront.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.wavefront.outputs.GetDashboardsDashboardSectionRowChart;
 import java.lang.Integer;
 import java.lang.String;
@@ -57,7 +58,10 @@ public final class GetDashboardsDashboardSectionRow {
 
         @CustomType.Setter
         public Builder charts(List<GetDashboardsDashboardSectionRowChart> charts) {
-            this.charts = Objects.requireNonNull(charts);
+            if (charts == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsDashboardSectionRow", "charts");
+            }
+            this.charts = charts;
             return this;
         }
         public Builder charts(GetDashboardsDashboardSectionRowChart... charts) {
@@ -65,12 +69,18 @@ public final class GetDashboardsDashboardSectionRow {
         }
         @CustomType.Setter
         public Builder heightFactor(Integer heightFactor) {
-            this.heightFactor = Objects.requireNonNull(heightFactor);
+            if (heightFactor == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsDashboardSectionRow", "heightFactor");
+            }
+            this.heightFactor = heightFactor;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetDashboardsDashboardSectionRow", "name");
+            }
+            this.name = name;
             return this;
         }
         public GetDashboardsDashboardSectionRow build() {

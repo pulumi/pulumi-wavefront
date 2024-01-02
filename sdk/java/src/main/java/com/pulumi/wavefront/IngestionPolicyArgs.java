@@ -5,6 +5,7 @@ package com.pulumi.wavefront;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.wavefront.inputs.IngestionPolicyTagArgs;
 import java.lang.String;
 import java.util.List;
@@ -237,8 +238,12 @@ public final class IngestionPolicyArgs extends com.pulumi.resources.ResourceArgs
         }
 
         public IngestionPolicyArgs build() {
-            $.description = Objects.requireNonNull($.description, "expected parameter 'description' to be non-null");
-            $.scope = Objects.requireNonNull($.scope, "expected parameter 'scope' to be non-null");
+            if ($.description == null) {
+                throw new MissingRequiredPropertyException("IngestionPolicyArgs", "description");
+            }
+            if ($.scope == null) {
+                throw new MissingRequiredPropertyException("IngestionPolicyArgs", "scope");
+            }
             return $;
         }
     }

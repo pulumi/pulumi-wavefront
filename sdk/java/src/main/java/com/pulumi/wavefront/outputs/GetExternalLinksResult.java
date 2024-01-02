@@ -4,6 +4,7 @@
 package com.pulumi.wavefront.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.wavefront.outputs.GetExternalLinksExternalLink;
 import java.lang.Integer;
 import java.lang.String;
@@ -73,7 +74,10 @@ public final class GetExternalLinksResult {
 
         @CustomType.Setter
         public Builder externalLinks(List<GetExternalLinksExternalLink> externalLinks) {
-            this.externalLinks = Objects.requireNonNull(externalLinks);
+            if (externalLinks == null) {
+              throw new MissingRequiredPropertyException("GetExternalLinksResult", "externalLinks");
+            }
+            this.externalLinks = externalLinks;
             return this;
         }
         public Builder externalLinks(GetExternalLinksExternalLink... externalLinks) {
@@ -81,16 +85,21 @@ public final class GetExternalLinksResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetExternalLinksResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder limit(@Nullable Integer limit) {
+
             this.limit = limit;
             return this;
         }
         @CustomType.Setter
         public Builder offset(@Nullable Integer offset) {
+
             this.offset = offset;
             return this;
         }

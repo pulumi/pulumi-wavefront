@@ -5,6 +5,7 @@ package com.pulumi.wavefront;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.wavefront.inputs.AlertTargetRouteArgs;
 import java.lang.Boolean;
 import java.lang.String;
@@ -483,10 +484,18 @@ public final class AlertTargetArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public AlertTargetArgs build() {
-            $.description = Objects.requireNonNull($.description, "expected parameter 'description' to be non-null");
-            $.recipient = Objects.requireNonNull($.recipient, "expected parameter 'recipient' to be non-null");
-            $.template = Objects.requireNonNull($.template, "expected parameter 'template' to be non-null");
-            $.triggers = Objects.requireNonNull($.triggers, "expected parameter 'triggers' to be non-null");
+            if ($.description == null) {
+                throw new MissingRequiredPropertyException("AlertTargetArgs", "description");
+            }
+            if ($.recipient == null) {
+                throw new MissingRequiredPropertyException("AlertTargetArgs", "recipient");
+            }
+            if ($.template == null) {
+                throw new MissingRequiredPropertyException("AlertTargetArgs", "template");
+            }
+            if ($.triggers == null) {
+                throw new MissingRequiredPropertyException("AlertTargetArgs", "triggers");
+            }
             return $;
         }
     }

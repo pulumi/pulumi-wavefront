@@ -4,6 +4,7 @@
 package com.pulumi.wavefront.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.wavefront.outputs.DashboardSectionRowChart;
 import java.util.List;
 import java.util.Objects;
@@ -43,7 +44,10 @@ public final class DashboardSectionRow {
 
         @CustomType.Setter
         public Builder charts(List<DashboardSectionRowChart> charts) {
-            this.charts = Objects.requireNonNull(charts);
+            if (charts == null) {
+              throw new MissingRequiredPropertyException("DashboardSectionRow", "charts");
+            }
+            this.charts = charts;
             return this;
         }
         public Builder charts(DashboardSectionRowChart... charts) {

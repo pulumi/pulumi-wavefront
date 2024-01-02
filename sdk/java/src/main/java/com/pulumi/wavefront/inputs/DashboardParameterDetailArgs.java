@@ -5,6 +5,7 @@ package com.pulumi.wavefront.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Map;
@@ -382,12 +383,24 @@ public final class DashboardParameterDetailArgs extends com.pulumi.resources.Res
         }
 
         public DashboardParameterDetailArgs build() {
-            $.defaultValue = Objects.requireNonNull($.defaultValue, "expected parameter 'defaultValue' to be non-null");
-            $.hideFromView = Objects.requireNonNull($.hideFromView, "expected parameter 'hideFromView' to be non-null");
-            $.label = Objects.requireNonNull($.label, "expected parameter 'label' to be non-null");
-            $.name = Objects.requireNonNull($.name, "expected parameter 'name' to be non-null");
-            $.parameterType = Objects.requireNonNull($.parameterType, "expected parameter 'parameterType' to be non-null");
-            $.valuesToReadableStrings = Objects.requireNonNull($.valuesToReadableStrings, "expected parameter 'valuesToReadableStrings' to be non-null");
+            if ($.defaultValue == null) {
+                throw new MissingRequiredPropertyException("DashboardParameterDetailArgs", "defaultValue");
+            }
+            if ($.hideFromView == null) {
+                throw new MissingRequiredPropertyException("DashboardParameterDetailArgs", "hideFromView");
+            }
+            if ($.label == null) {
+                throw new MissingRequiredPropertyException("DashboardParameterDetailArgs", "label");
+            }
+            if ($.name == null) {
+                throw new MissingRequiredPropertyException("DashboardParameterDetailArgs", "name");
+            }
+            if ($.parameterType == null) {
+                throw new MissingRequiredPropertyException("DashboardParameterDetailArgs", "parameterType");
+            }
+            if ($.valuesToReadableStrings == null) {
+                throw new MissingRequiredPropertyException("DashboardParameterDetailArgs", "valuesToReadableStrings");
+            }
             return $;
         }
     }

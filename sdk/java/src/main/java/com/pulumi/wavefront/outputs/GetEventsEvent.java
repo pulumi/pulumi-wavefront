@@ -4,6 +4,7 @@
 package com.pulumi.wavefront.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -164,47 +165,74 @@ public final class GetEventsEvent {
 
         @CustomType.Setter
         public Builder annotations(Map<String,String> annotations) {
-            this.annotations = Objects.requireNonNull(annotations);
+            if (annotations == null) {
+              throw new MissingRequiredPropertyException("GetEventsEvent", "annotations");
+            }
+            this.annotations = annotations;
             return this;
         }
         @CustomType.Setter
         public Builder details(String details) {
-            this.details = Objects.requireNonNull(details);
+            if (details == null) {
+              throw new MissingRequiredPropertyException("GetEventsEvent", "details");
+            }
+            this.details = details;
             return this;
         }
         @CustomType.Setter
         public Builder endtimeKey(Integer endtimeKey) {
-            this.endtimeKey = Objects.requireNonNull(endtimeKey);
+            if (endtimeKey == null) {
+              throw new MissingRequiredPropertyException("GetEventsEvent", "endtimeKey");
+            }
+            this.endtimeKey = endtimeKey;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetEventsEvent", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isEphemeral(Boolean isEphemeral) {
-            this.isEphemeral = Objects.requireNonNull(isEphemeral);
+            if (isEphemeral == null) {
+              throw new MissingRequiredPropertyException("GetEventsEvent", "isEphemeral");
+            }
+            this.isEphemeral = isEphemeral;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetEventsEvent", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder severity(String severity) {
-            this.severity = Objects.requireNonNull(severity);
+            if (severity == null) {
+              throw new MissingRequiredPropertyException("GetEventsEvent", "severity");
+            }
+            this.severity = severity;
             return this;
         }
         @CustomType.Setter
         public Builder startTime(Integer startTime) {
-            this.startTime = Objects.requireNonNull(startTime);
+            if (startTime == null) {
+              throw new MissingRequiredPropertyException("GetEventsEvent", "startTime");
+            }
+            this.startTime = startTime;
             return this;
         }
         @CustomType.Setter
         public Builder tags(List<String> tags) {
-            this.tags = Objects.requireNonNull(tags);
+            if (tags == null) {
+              throw new MissingRequiredPropertyException("GetEventsEvent", "tags");
+            }
+            this.tags = tags;
             return this;
         }
         public Builder tags(String... tags) {
@@ -212,7 +240,10 @@ public final class GetEventsEvent {
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetEventsEvent", "type");
+            }
+            this.type = type;
             return this;
         }
         public GetEventsEvent build() {

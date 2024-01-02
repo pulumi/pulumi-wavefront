@@ -5,6 +5,7 @@ package com.pulumi.wavefront;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.wavefront.inputs.MetricsPolicyPolicyRuleArgs;
 import java.util.List;
 import java.util.Objects;
@@ -85,7 +86,9 @@ public final class MetricsPolicyArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public MetricsPolicyArgs build() {
-            $.policyRules = Objects.requireNonNull($.policyRules, "expected parameter 'policyRules' to be non-null");
+            if ($.policyRules == null) {
+                throw new MissingRequiredPropertyException("MetricsPolicyArgs", "policyRules");
+            }
             return $;
         }
     }

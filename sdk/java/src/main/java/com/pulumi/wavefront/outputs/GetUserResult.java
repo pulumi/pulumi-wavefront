@@ -4,6 +4,7 @@
 package com.pulumi.wavefront.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -106,27 +107,42 @@ public final class GetUserResult {
 
         @CustomType.Setter
         public Builder customer(String customer) {
-            this.customer = Objects.requireNonNull(customer);
+            if (customer == null) {
+              throw new MissingRequiredPropertyException("GetUserResult", "customer");
+            }
+            this.customer = customer;
             return this;
         }
         @CustomType.Setter
         public Builder email(String email) {
-            this.email = Objects.requireNonNull(email);
+            if (email == null) {
+              throw new MissingRequiredPropertyException("GetUserResult", "email");
+            }
+            this.email = email;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetUserResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder lastSuccessfulLogin(Integer lastSuccessfulLogin) {
-            this.lastSuccessfulLogin = Objects.requireNonNull(lastSuccessfulLogin);
+            if (lastSuccessfulLogin == null) {
+              throw new MissingRequiredPropertyException("GetUserResult", "lastSuccessfulLogin");
+            }
+            this.lastSuccessfulLogin = lastSuccessfulLogin;
             return this;
         }
         @CustomType.Setter
         public Builder permissions(List<String> permissions) {
-            this.permissions = Objects.requireNonNull(permissions);
+            if (permissions == null) {
+              throw new MissingRequiredPropertyException("GetUserResult", "permissions");
+            }
+            this.permissions = permissions;
             return this;
         }
         public Builder permissions(String... permissions) {
@@ -134,7 +150,10 @@ public final class GetUserResult {
         }
         @CustomType.Setter
         public Builder userGroupIds(List<String> userGroupIds) {
-            this.userGroupIds = Objects.requireNonNull(userGroupIds);
+            if (userGroupIds == null) {
+              throw new MissingRequiredPropertyException("GetUserResult", "userGroupIds");
+            }
+            this.userGroupIds = userGroupIds;
             return this;
         }
         public Builder userGroupIds(String... userGroupIds) {
