@@ -14,7 +14,9 @@ import (
 var _ = internal.GetEnvOrDefault
 
 type AlertAlertTriageDashboard struct {
-	DashboardId string                               `pulumi:"dashboardId"`
+	// Dashboard ID
+	DashboardId string `pulumi:"dashboardId"`
+	// Dashboard Description
 	Description string                               `pulumi:"description"`
 	Parameters  *AlertAlertTriageDashboardParameters `pulumi:"parameters"`
 }
@@ -31,7 +33,9 @@ type AlertAlertTriageDashboardInput interface {
 }
 
 type AlertAlertTriageDashboardArgs struct {
-	DashboardId pulumi.StringInput                          `pulumi:"dashboardId"`
+	// Dashboard ID
+	DashboardId pulumi.StringInput `pulumi:"dashboardId"`
+	// Dashboard Description
 	Description pulumi.StringInput                          `pulumi:"description"`
 	Parameters  AlertAlertTriageDashboardParametersPtrInput `pulumi:"parameters"`
 }
@@ -87,10 +91,12 @@ func (o AlertAlertTriageDashboardOutput) ToAlertAlertTriageDashboardOutputWithCo
 	return o
 }
 
+// Dashboard ID
 func (o AlertAlertTriageDashboardOutput) DashboardId() pulumi.StringOutput {
 	return o.ApplyT(func(v AlertAlertTriageDashboard) string { return v.DashboardId }).(pulumi.StringOutput)
 }
 
+// Dashboard Description
 func (o AlertAlertTriageDashboardOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v AlertAlertTriageDashboard) string { return v.Description }).(pulumi.StringOutput)
 }
@@ -2178,7 +2184,9 @@ func (o MetricsPolicyPolicyRuleTagArrayOutput) Index(i pulumi.IntInput) MetricsP
 }
 
 type GetAlertAlertTriageDashboard struct {
-	DashboardId string                                  `pulumi:"dashboardId"`
+	// Dashboard ID
+	DashboardId string `pulumi:"dashboardId"`
+	// Dashboard Description
 	Description string                                  `pulumi:"description"`
 	Parameters  *GetAlertAlertTriageDashboardParameters `pulumi:"parameters"`
 }
@@ -2195,7 +2203,9 @@ type GetAlertAlertTriageDashboardInput interface {
 }
 
 type GetAlertAlertTriageDashboardArgs struct {
-	DashboardId pulumi.StringInput                             `pulumi:"dashboardId"`
+	// Dashboard ID
+	DashboardId pulumi.StringInput `pulumi:"dashboardId"`
+	// Dashboard Description
 	Description pulumi.StringInput                             `pulumi:"description"`
 	Parameters  GetAlertAlertTriageDashboardParametersPtrInput `pulumi:"parameters"`
 }
@@ -2251,10 +2261,12 @@ func (o GetAlertAlertTriageDashboardOutput) ToGetAlertAlertTriageDashboardOutput
 	return o
 }
 
+// Dashboard ID
 func (o GetAlertAlertTriageDashboardOutput) DashboardId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAlertAlertTriageDashboard) string { return v.DashboardId }).(pulumi.StringOutput)
 }
 
+// Dashboard Description
 func (o GetAlertAlertTriageDashboardOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAlertAlertTriageDashboard) string { return v.Description }).(pulumi.StringOutput)
 }
@@ -2929,7 +2941,9 @@ func (o GetAlertsAlertArrayOutput) Index(i pulumi.IntInput) GetAlertsAlertOutput
 }
 
 type GetAlertsAlertAlertTriageDashboard struct {
-	DashboardId string                                        `pulumi:"dashboardId"`
+	// Dashboard ID
+	DashboardId string `pulumi:"dashboardId"`
+	// Dashboard Description
 	Description string                                        `pulumi:"description"`
 	Parameters  *GetAlertsAlertAlertTriageDashboardParameters `pulumi:"parameters"`
 }
@@ -2946,7 +2960,9 @@ type GetAlertsAlertAlertTriageDashboardInput interface {
 }
 
 type GetAlertsAlertAlertTriageDashboardArgs struct {
-	DashboardId pulumi.StringInput                                   `pulumi:"dashboardId"`
+	// Dashboard ID
+	DashboardId pulumi.StringInput `pulumi:"dashboardId"`
+	// Dashboard Description
 	Description pulumi.StringInput                                   `pulumi:"description"`
 	Parameters  GetAlertsAlertAlertTriageDashboardParametersPtrInput `pulumi:"parameters"`
 }
@@ -3002,10 +3018,12 @@ func (o GetAlertsAlertAlertTriageDashboardOutput) ToGetAlertsAlertAlertTriageDas
 	return o
 }
 
+// Dashboard ID
 func (o GetAlertsAlertAlertTriageDashboardOutput) DashboardId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAlertsAlertAlertTriageDashboard) string { return v.DashboardId }).(pulumi.StringOutput)
 }
 
+// Dashboard Description
 func (o GetAlertsAlertAlertTriageDashboardOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAlertsAlertAlertTriageDashboard) string { return v.Description }).(pulumi.StringOutput)
 }

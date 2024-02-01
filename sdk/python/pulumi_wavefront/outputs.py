@@ -80,6 +80,10 @@ class AlertAlertTriageDashboard(dict):
                  dashboard_id: str,
                  description: str,
                  parameters: Optional['outputs.AlertAlertTriageDashboardParameters'] = None):
+        """
+        :param str dashboard_id: Dashboard ID
+        :param str description: Dashboard Description
+        """
         pulumi.set(__self__, "dashboard_id", dashboard_id)
         pulumi.set(__self__, "description", description)
         if parameters is not None:
@@ -88,11 +92,17 @@ class AlertAlertTriageDashboard(dict):
     @property
     @pulumi.getter(name="dashboardId")
     def dashboard_id(self) -> str:
+        """
+        Dashboard ID
+        """
         return pulumi.get(self, "dashboard_id")
 
     @property
     @pulumi.getter
     def description(self) -> str:
+        """
+        Dashboard Description
+        """
         return pulumi.get(self, "description")
 
     @property
@@ -1663,6 +1673,10 @@ class GetAlertAlertTriageDashboardResult(dict):
                  dashboard_id: str,
                  description: str,
                  parameters: Optional['outputs.GetAlertAlertTriageDashboardParametersResult'] = None):
+        """
+        :param str dashboard_id: Dashboard ID
+        :param str description: Dashboard Description
+        """
         pulumi.set(__self__, "dashboard_id", dashboard_id)
         pulumi.set(__self__, "description", description)
         if parameters is not None:
@@ -1671,11 +1685,17 @@ class GetAlertAlertTriageDashboardResult(dict):
     @property
     @pulumi.getter(name="dashboardId")
     def dashboard_id(self) -> str:
+        """
+        Dashboard ID
+        """
         return pulumi.get(self, "dashboard_id")
 
     @property
     @pulumi.getter
     def description(self) -> str:
+        """
+        Dashboard Description
+        """
         return pulumi.get(self, "description")
 
     @property
@@ -2020,6 +2040,10 @@ class GetAlertsAlertAlertTriageDashboardResult(dict):
                  dashboard_id: str,
                  description: str,
                  parameters: Optional['outputs.GetAlertsAlertAlertTriageDashboardParametersResult'] = None):
+        """
+        :param str dashboard_id: Dashboard ID
+        :param str description: Dashboard Description
+        """
         pulumi.set(__self__, "dashboard_id", dashboard_id)
         pulumi.set(__self__, "description", description)
         if parameters is not None:
@@ -2028,11 +2052,17 @@ class GetAlertsAlertAlertTriageDashboardResult(dict):
     @property
     @pulumi.getter(name="dashboardId")
     def dashboard_id(self) -> str:
+        """
+        Dashboard ID
+        """
         return pulumi.get(self, "dashboard_id")
 
     @property
     @pulumi.getter
     def description(self) -> str:
+        """
+        Dashboard Description
+        """
         return pulumi.get(self, "description")
 
     @property

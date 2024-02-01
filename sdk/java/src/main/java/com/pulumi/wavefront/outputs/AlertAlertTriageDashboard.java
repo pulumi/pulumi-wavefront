@@ -13,14 +13,30 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class AlertAlertTriageDashboard {
+    /**
+     * @return Dashboard ID
+     * 
+     */
     private String dashboardId;
+    /**
+     * @return Dashboard Description
+     * 
+     */
     private String description;
     private @Nullable AlertAlertTriageDashboardParameters parameters;
 
     private AlertAlertTriageDashboard() {}
+    /**
+     * @return Dashboard ID
+     * 
+     */
     public String dashboardId() {
         return this.dashboardId;
     }
+    /**
+     * @return Dashboard Description
+     * 
+     */
     public String description() {
         return this.description;
     }
