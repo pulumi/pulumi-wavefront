@@ -31,6 +31,10 @@ class AlertAlertTriageDashboardArgs:
                  dashboard_id: pulumi.Input[str],
                  description: pulumi.Input[str],
                  parameters: Optional[pulumi.Input['AlertAlertTriageDashboardParametersArgs']] = None):
+        """
+        :param pulumi.Input[str] dashboard_id: Dashboard ID
+        :param pulumi.Input[str] description: Dashboard Description
+        """
         pulumi.set(__self__, "dashboard_id", dashboard_id)
         pulumi.set(__self__, "description", description)
         if parameters is not None:
@@ -39,6 +43,9 @@ class AlertAlertTriageDashboardArgs:
     @property
     @pulumi.getter(name="dashboardId")
     def dashboard_id(self) -> pulumi.Input[str]:
+        """
+        Dashboard ID
+        """
         return pulumi.get(self, "dashboard_id")
 
     @dashboard_id.setter
@@ -48,6 +55,9 @@ class AlertAlertTriageDashboardArgs:
     @property
     @pulumi.getter
     def description(self) -> pulumi.Input[str]:
+        """
+        Dashboard Description
+        """
         return pulumi.get(self, "description")
 
     @description.setter
