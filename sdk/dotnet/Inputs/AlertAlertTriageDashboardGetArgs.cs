@@ -12,9 +12,15 @@ namespace Pulumi.Wavefront.Inputs
 
     public sealed class AlertAlertTriageDashboardGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Dashboard ID
+        /// </summary>
         [Input("dashboardId", required: true)]
         public Input<string> DashboardId { get; set; } = null!;
 
+        /// <summary>
+        /// Dashboard Description
+        /// </summary>
         [Input("description", required: true)]
         public Input<string> Description { get; set; } = null!;
 

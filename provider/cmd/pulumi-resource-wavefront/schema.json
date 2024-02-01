@@ -72,10 +72,12 @@
         "wavefront:index/AlertAlertTriageDashboard:AlertAlertTriageDashboard": {
             "properties": {
                 "dashboardId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Dashboard ID\n"
                 },
                 "description": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Dashboard Description\n"
                 },
                 "parameters": {
                     "$ref": "#/types/wavefront:index/AlertAlertTriageDashboardParameters:AlertAlertTriageDashboardParameters"
@@ -675,10 +677,12 @@
         "wavefront:index/getAlertAlertTriageDashboard:getAlertAlertTriageDashboard": {
             "properties": {
                 "dashboardId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Dashboard ID\n"
                 },
                 "description": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Dashboard Description\n"
                 },
                 "parameters": {
                     "$ref": "#/types/wavefront:index/getAlertAlertTriageDashboardParameters:getAlertAlertTriageDashboardParameters"
@@ -917,10 +921,12 @@
         "wavefront:index/getAlertsAlertAlertTriageDashboard:getAlertsAlertAlertTriageDashboard": {
             "properties": {
                 "dashboardId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Dashboard ID\n"
                 },
                 "description": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Dashboard Description\n"
                 },
                 "parameters": {
                     "$ref": "#/types/wavefront:index/getAlertsAlertAlertTriageDashboardParameters:getAlertsAlertAlertTriageDashboardParameters"

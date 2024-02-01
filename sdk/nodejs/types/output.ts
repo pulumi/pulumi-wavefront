@@ -6,7 +6,13 @@ import * as inputs from "../types/input";
 import * as outputs from "../types/output";
 
 export interface AlertAlertTriageDashboard {
+    /**
+     * Dashboard ID
+     */
     dashboardId: string;
+    /**
+     * Dashboard Description
+     */
     description: string;
     parameters?: outputs.AlertAlertTriageDashboardParameters;
 }
@@ -424,7 +430,13 @@ export interface DashboardSectionRowChartSource {
 }
 
 export interface GetAlertAlertTriageDashboard {
+    /**
+     * Dashboard ID
+     */
     dashboardId: string;
+    /**
+     * Dashboard Description
+     */
     description: string;
     parameters?: outputs.GetAlertAlertTriageDashboardParameters;
 }
@@ -544,7 +556,13 @@ export interface GetAlertsAlert {
 }
 
 export interface GetAlertsAlertAlertTriageDashboard {
+    /**
+     * Dashboard ID
+     */
     dashboardId: string;
+    /**
+     * Dashboard Description
+     */
     description: string;
     parameters?: outputs.GetAlertsAlertAlertTriageDashboardParameters;
 }

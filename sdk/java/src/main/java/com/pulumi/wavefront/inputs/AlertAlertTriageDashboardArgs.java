@@ -17,16 +17,32 @@ public final class AlertAlertTriageDashboardArgs extends com.pulumi.resources.Re
 
     public static final AlertAlertTriageDashboardArgs Empty = new AlertAlertTriageDashboardArgs();
 
+    /**
+     * Dashboard ID
+     * 
+     */
     @Import(name="dashboardId", required=true)
     private Output<String> dashboardId;
 
+    /**
+     * @return Dashboard ID
+     * 
+     */
     public Output<String> dashboardId() {
         return this.dashboardId;
     }
 
+    /**
+     * Dashboard Description
+     * 
+     */
     @Import(name="description", required=true)
     private Output<String> description;
 
+    /**
+     * @return Dashboard Description
+     * 
+     */
     public Output<String> description() {
         return this.description;
     }
@@ -64,20 +80,44 @@ public final class AlertAlertTriageDashboardArgs extends com.pulumi.resources.Re
             $ = new AlertAlertTriageDashboardArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param dashboardId Dashboard ID
+         * 
+         * @return builder
+         * 
+         */
         public Builder dashboardId(Output<String> dashboardId) {
             $.dashboardId = dashboardId;
             return this;
         }
 
+        /**
+         * @param dashboardId Dashboard ID
+         * 
+         * @return builder
+         * 
+         */
         public Builder dashboardId(String dashboardId) {
             return dashboardId(Output.of(dashboardId));
         }
 
+        /**
+         * @param description Dashboard Description
+         * 
+         * @return builder
+         * 
+         */
         public Builder description(Output<String> description) {
             $.description = description;
             return this;
         }
 
+        /**
+         * @param description Dashboard Description
+         * 
+         * @return builder
+         * 
+         */
         public Builder description(String description) {
             return description(Output.of(description));
         }

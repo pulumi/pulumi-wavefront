@@ -6,7 +6,13 @@ import * as inputs from "../types/input";
 import * as outputs from "../types/output";
 
 export interface AlertAlertTriageDashboard {
+    /**
+     * Dashboard ID
+     */
     dashboardId: pulumi.Input<string>;
+    /**
+     * Dashboard Description
+     */
     description: pulumi.Input<string>;
     parameters?: pulumi.Input<inputs.AlertAlertTriageDashboardParameters>;
 }
