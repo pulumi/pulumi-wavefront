@@ -13,7 +13,13 @@ namespace Pulumi.Wavefront.Outputs
     [OutputType]
     public sealed class GetAlertsAlertAlertTriageDashboardResult
     {
+        /// <summary>
+        /// Dashboard ID
+        /// </summary>
         public readonly string DashboardId;
+        /// <summary>
+        /// Dashboard Description
+        /// </summary>
         public readonly string Description;
         public readonly Outputs.GetAlertsAlertAlertTriageDashboardParametersResult? Parameters;
 
