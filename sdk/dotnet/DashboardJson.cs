@@ -14,6 +14,7 @@ namespace Pulumi.Wavefront
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -149,6 +150,7 @@ namespace Pulumi.Wavefront
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// * 
     /// *Note:
@@ -159,7 +161,7 @@ namespace Pulumi.Wavefront
     /// Dashboard JSON can be imported by using the `id`, e.g.:
     /// 
     /// ```sh
-    ///  $ pulumi import wavefront:index/dashboardJson:DashboardJson dashboard_json tftestimport
+    /// $ pulumi import wavefront:index/dashboardJson:DashboardJson dashboard_json tftestimport
     /// ```
     /// </summary>
     [WavefrontResourceType("wavefront:index/dashboardJson:DashboardJson")]

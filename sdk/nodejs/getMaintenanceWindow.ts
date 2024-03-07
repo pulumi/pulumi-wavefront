@@ -9,6 +9,7 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as wavefront from "@pulumi/wavefront";
@@ -17,6 +18,7 @@ import * as utilities from "./utilities";
  *     id: "sample-maintenance-window-id",
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getMaintenanceWindow(args: GetMaintenanceWindowArgs, opts?: pulumi.InvokeOptions): Promise<GetMaintenanceWindowResult> {
 
@@ -124,6 +126,7 @@ export interface GetMaintenanceWindowResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as wavefront from "@pulumi/wavefront";
@@ -132,6 +135,7 @@ export interface GetMaintenanceWindowResult {
  *     id: "sample-maintenance-window-id",
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getMaintenanceWindowOutput(args: GetMaintenanceWindowOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMaintenanceWindowResult> {
     return pulumi.output(args).apply((a: any) => getMaintenanceWindow(a, opts))

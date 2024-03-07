@@ -327,12 +327,14 @@ def get_derived_metric(id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_wavefront as wavefront
 
     example = wavefront.get_derived_metric(id="derived_metric_id")
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str id: The ID associated with the derived metric data to be fetched.
@@ -377,12 +379,14 @@ def get_derived_metric_output(id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_wavefront as wavefront
 
     example = wavefront.get_derived_metric(id="derived_metric_id")
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str id: The ID associated with the derived metric data to be fetched.

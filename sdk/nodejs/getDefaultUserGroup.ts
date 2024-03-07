@@ -9,12 +9,14 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as wavefront from "@pulumi/wavefront";
  *
  * const everyoneGroup = wavefront.getDefaultUserGroup({});
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getDefaultUserGroup(opts?: pulumi.InvokeOptions): Promise<GetDefaultUserGroupResult> {
 
@@ -42,12 +44,14 @@ export interface GetDefaultUserGroupResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as wavefront from "@pulumi/wavefront";
  *
  * const everyoneGroup = wavefront.getDefaultUserGroup({});
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getDefaultUserGroupOutput(opts?: pulumi.InvokeOptions): pulumi.Output<GetDefaultUserGroupResult> {
     return pulumi.output(getDefaultUserGroup(opts))

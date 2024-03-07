@@ -120,6 +120,7 @@ class MetricsPolicy(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_wavefront as wavefront
@@ -134,12 +135,15 @@ class MetricsPolicy(pulumi.CustomResource):
             user_group_ids=[everyone.group_id],
         )])
         ```
+        <!--End PulumiCodeChooser -->
+
         ## Data Source
 
         Provides a Wavefront Metrics Policy Data Source. This allows looking up the current policy and associated rules.
 
         ### Example
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_wavefront as wavefront
@@ -147,13 +151,14 @@ class MetricsPolicy(pulumi.CustomResource):
         policy_metrics_policy = wavefront.get_metrics_policy()
         pulumi.export("policy", policy_metrics_policy)
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Users can be imported by using the `updated_epoch_millis`, e.g.:
 
         ```sh
-         $ pulumi import wavefront:index/metricsPolicy:MetricsPolicy some_metrics_policy 1651846476678
+        $ pulumi import wavefront:index/metricsPolicy:MetricsPolicy some_metrics_policy 1651846476678
         ```
 
         :param str resource_name: The name of the resource.
@@ -171,6 +176,7 @@ class MetricsPolicy(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_wavefront as wavefront
@@ -185,12 +191,15 @@ class MetricsPolicy(pulumi.CustomResource):
             user_group_ids=[everyone.group_id],
         )])
         ```
+        <!--End PulumiCodeChooser -->
+
         ## Data Source
 
         Provides a Wavefront Metrics Policy Data Source. This allows looking up the current policy and associated rules.
 
         ### Example
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_wavefront as wavefront
@@ -198,13 +207,14 @@ class MetricsPolicy(pulumi.CustomResource):
         policy_metrics_policy = wavefront.get_metrics_policy()
         pulumi.export("policy", policy_metrics_policy)
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Users can be imported by using the `updated_epoch_millis`, e.g.:
 
         ```sh
-         $ pulumi import wavefront:index/metricsPolicy:MetricsPolicy some_metrics_policy 1651846476678
+        $ pulumi import wavefront:index/metricsPolicy:MetricsPolicy some_metrics_policy 1651846476678
         ```
 
         :param str resource_name: The name of the resource.

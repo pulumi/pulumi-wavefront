@@ -16,6 +16,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -48,15 +49,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // Alerts can be imported using the `id`, e.g.
 //
 // ```sh
-//
-//	$ pulumi import wavefront:index/alert:Alert alert_target 1479868728473
-//
+// $ pulumi import wavefront:index/alert:Alert alert_target 1479868728473
 // ```
 type Alert struct {
 	pulumi.CustomResourceState

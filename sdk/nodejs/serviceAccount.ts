@@ -9,6 +9,7 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as wavefront from "@pulumi/wavefront";
@@ -18,13 +19,14 @@ import * as utilities from "./utilities";
  *     identifier: "sa::tftesting",
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * Service accounts can be imported by using `identifier`, e.g.:
  *
  * ```sh
- *  $ pulumi import wavefront:index/serviceAccount:ServiceAccount basic sa::tftesting
+ * $ pulumi import wavefront:index/serviceAccount:ServiceAccount basic sa::tftesting
  * ```
  */
 export class ServiceAccount extends pulumi.CustomResource {

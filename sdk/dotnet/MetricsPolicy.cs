@@ -14,6 +14,7 @@ namespace Pulumi.Wavefront
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -48,12 +49,15 @@ namespace Pulumi.Wavefront
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
+    /// 
     /// ## Data Source
     /// 
     /// Provides a Wavefront Metrics Policy Data Source. This allows looking up the current policy and associated rules.
     /// 
     /// ### Example
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -70,13 +74,14 @@ namespace Pulumi.Wavefront
     ///     };
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// Users can be imported by using the `updated_epoch_millis`, e.g.:
     /// 
     /// ```sh
-    ///  $ pulumi import wavefront:index/metricsPolicy:MetricsPolicy some_metrics_policy 1651846476678
+    /// $ pulumi import wavefront:index/metricsPolicy:MetricsPolicy some_metrics_policy 1651846476678
     /// ```
     /// </summary>
     [WavefrontResourceType("wavefront:index/metricsPolicy:MetricsPolicy")]

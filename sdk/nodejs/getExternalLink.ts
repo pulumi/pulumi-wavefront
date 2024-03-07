@@ -9,6 +9,7 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as wavefront from "@pulumi/wavefront";
@@ -17,6 +18,7 @@ import * as utilities from "./utilities";
  *     id: "sample-external-link-id",
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getExternalLink(args: GetExternalLinkArgs, opts?: pulumi.InvokeOptions): Promise<GetExternalLinkResult> {
 
@@ -97,6 +99,7 @@ export interface GetExternalLinkResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as wavefront from "@pulumi/wavefront";
@@ -105,6 +108,7 @@ export interface GetExternalLinkResult {
  *     id: "sample-external-link-id",
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getExternalLinkOutput(args: GetExternalLinkOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExternalLinkResult> {
     return pulumi.output(args).apply((a: any) => getExternalLink(a, opts))

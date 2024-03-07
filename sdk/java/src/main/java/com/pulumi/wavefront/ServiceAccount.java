@@ -20,6 +20,8 @@ import javax.annotation.Nullable;
  * Provides a Wavefront Service Account Resource. This allows service accounts to be created, updated, and deleted.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -49,13 +51,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * Service accounts can be imported by using `identifier`, e.g.:
  * 
  * ```sh
- *  $ pulumi import wavefront:index/serviceAccount:ServiceAccount basic sa::tftesting
+ * $ pulumi import wavefront:index/serviceAccount:ServiceAccount basic sa::tftesting
  * ```
  * 
  */

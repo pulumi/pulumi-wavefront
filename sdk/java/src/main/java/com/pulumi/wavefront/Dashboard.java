@@ -23,6 +23,7 @@ import javax.annotation.Nullable;
  * 
  * ## Example Usage
  * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -97,13 +98,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * Dashboards can be imported by using the `id`, e.g.:
  * 
  * ```sh
- *  $ pulumi import wavefront:index/dashboard:Dashboard dashboard tftestimport
+ * $ pulumi import wavefront:index/dashboard:Dashboard dashboard tftestimport
  * ```
  * 
  */

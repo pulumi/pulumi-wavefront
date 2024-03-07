@@ -9,6 +9,7 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as wavefront from "@pulumi/wavefront";
@@ -18,13 +19,14 @@ import * as utilities from "./utilities";
  *     template: "https://example.com/source={{{source}}}&startTime={{startEpochMillis}}",
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * Maintenance windows can be imported by using the `id`, e.g.:
  *
  * ```sh
- *  $ pulumi import wavefront:index/externalLink:ExternalLink basic fVj6fz6zYC4aBkID
+ * $ pulumi import wavefront:index/externalLink:ExternalLink basic fVj6fz6zYC4aBkID
  * ```
  */
 export class ExternalLink extends pulumi.CustomResource {

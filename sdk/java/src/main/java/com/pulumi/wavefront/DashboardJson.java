@@ -17,6 +17,8 @@ import javax.annotation.Nullable;
  * Provides a Wavefront Dashboard JSON resource. This allows dashboards to be created, updated, and deleted.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -166,6 +168,7 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * * 
  * *Note:
@@ -176,7 +179,7 @@ import javax.annotation.Nullable;
  * Dashboard JSON can be imported by using the `id`, e.g.:
  * 
  * ```sh
- *  $ pulumi import wavefront:index/dashboardJson:DashboardJson dashboard_json tftestimport
+ * $ pulumi import wavefront:index/dashboardJson:DashboardJson dashboard_json tftestimport
  * ```
  * 
  */

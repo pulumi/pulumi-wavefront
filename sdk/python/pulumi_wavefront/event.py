@@ -194,6 +194,7 @@ class Event(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_wavefront as wavefront
@@ -206,13 +207,14 @@ class Event(pulumi.CustomResource):
             },
             tags=["eventTag1"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         You can import events by using the id, for example:
 
         ```sh
-         $ pulumi import wavefront:index/event:Event event 1479868728473
+        $ pulumi import wavefront:index/event:Event event 1479868728473
         ```
 
         :param str resource_name: The name of the resource.
@@ -233,6 +235,7 @@ class Event(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_wavefront as wavefront
@@ -245,13 +248,14 @@ class Event(pulumi.CustomResource):
             },
             tags=["eventTag1"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         You can import events by using the id, for example:
 
         ```sh
-         $ pulumi import wavefront:index/event:Event event 1479868728473
+        $ pulumi import wavefront:index/event:Event event 1479868728473
         ```
 
         :param str resource_name: The name of the resource.
