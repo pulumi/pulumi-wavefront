@@ -375,6 +375,7 @@ class MaintenanceWindow(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_wavefront as wavefront
@@ -389,13 +390,14 @@ class MaintenanceWindow(pulumi.CustomResource):
             start_time_in_seconds=1600123456,
             title="Routine maintenance")
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Maintenance windows can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import wavefront:index/maintenanceWindow:MaintenanceWindow basic 1600383357095
+        $ pulumi import wavefront:index/maintenanceWindow:MaintenanceWindow basic 1600383357095
         ```
 
         :param str resource_name: The name of the resource.
@@ -432,6 +434,7 @@ class MaintenanceWindow(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_wavefront as wavefront
@@ -446,13 +449,14 @@ class MaintenanceWindow(pulumi.CustomResource):
             start_time_in_seconds=1600123456,
             title="Routine maintenance")
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Maintenance windows can be imported using the `id`, e.g.
 
         ```sh
-         $ pulumi import wavefront:index/maintenanceWindow:MaintenanceWindow basic 1600383357095
+        $ pulumi import wavefront:index/maintenanceWindow:MaintenanceWindow basic 1600383357095
         ```
 
         :param str resource_name: The name of the resource.

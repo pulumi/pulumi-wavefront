@@ -14,6 +14,7 @@ namespace Pulumi.Wavefront
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -26,13 +27,14 @@ namespace Pulumi.Wavefront
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// External IDs can be imported by using the `id`, e.g.:
     /// 
     /// ```sh
-    ///  $ pulumi import wavefront:index/cloudIntegrationAwsExternalId:CloudIntegrationAwsExternalId external_id uGJdkH3k
+    /// $ pulumi import wavefront:index/cloudIntegrationAwsExternalId:CloudIntegrationAwsExternalId external_id uGJdkH3k
     /// ```
     /// </summary>
     [WavefrontResourceType("wavefront:index/cloudIntegrationAwsExternalId:CloudIntegrationAwsExternalId")]

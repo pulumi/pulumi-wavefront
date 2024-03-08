@@ -31,19 +31,21 @@ class CloudIntegrationAwsExternalId(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_wavefront as wavefront
 
         external_id = wavefront.CloudIntegrationAwsExternalId("externalId")
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         External IDs can be imported by using the `id`, e.g.:
 
         ```sh
-         $ pulumi import wavefront:index/cloudIntegrationAwsExternalId:CloudIntegrationAwsExternalId external_id uGJdkH3k
+        $ pulumi import wavefront:index/cloudIntegrationAwsExternalId:CloudIntegrationAwsExternalId external_id uGJdkH3k
         ```
 
         :param str resource_name: The name of the resource.
@@ -60,19 +62,21 @@ class CloudIntegrationAwsExternalId(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_wavefront as wavefront
 
         external_id = wavefront.CloudIntegrationAwsExternalId("externalId")
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         External IDs can be imported by using the `id`, e.g.:
 
         ```sh
-         $ pulumi import wavefront:index/cloudIntegrationAwsExternalId:CloudIntegrationAwsExternalId external_id uGJdkH3k
+        $ pulumi import wavefront:index/cloudIntegrationAwsExternalId:CloudIntegrationAwsExternalId external_id uGJdkH3k
         ```
 
         :param str resource_name: The name of the resource.

@@ -16,6 +16,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -39,15 +40,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // Users can be imported by using the `id`, e.g.:
 //
 // ```sh
-//
-//	$ pulumi import wavefront:index/user:User some_user test@example.com
-//
+// $ pulumi import wavefront:index/user:User some_user test@example.com
 // ```
 type User struct {
 	pulumi.CustomResourceState

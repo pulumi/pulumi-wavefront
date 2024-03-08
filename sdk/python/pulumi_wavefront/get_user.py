@@ -108,12 +108,14 @@ def get_user(email: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_wavefront as wavefront
 
     example = wavefront.get_user(email="example.user@example.com")
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str email: The email associated with the user data to be fetched.
@@ -140,12 +142,14 @@ def get_user_output(email: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_wavefront as wavefront
 
     example = wavefront.get_user(email="example.user@example.com")
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str email: The email associated with the user data to be fetched.

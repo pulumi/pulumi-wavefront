@@ -11,6 +11,7 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as wavefront from "@pulumi/wavefront";
@@ -22,6 +23,7 @@ import * as utilities from "./utilities";
  *     offset: 0,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getEvents(args: GetEventsArgs, opts?: pulumi.InvokeOptions): Promise<GetEventsResult> {
 
@@ -84,6 +86,7 @@ export interface GetEventsResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as wavefront from "@pulumi/wavefront";
@@ -95,6 +98,7 @@ export interface GetEventsResult {
  *     offset: 0,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getEventsOutput(args: GetEventsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetEventsResult> {
     return pulumi.output(args).apply((a: any) => getEvents(a, opts))

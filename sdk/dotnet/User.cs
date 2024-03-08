@@ -14,6 +14,7 @@ namespace Pulumi.Wavefront
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -29,13 +30,14 @@ namespace Pulumi.Wavefront
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// Users can be imported by using the `id`, e.g.:
     /// 
     /// ```sh
-    ///  $ pulumi import wavefront:index/user:User some_user test@example.com
+    /// $ pulumi import wavefront:index/user:User some_user test@example.com
     /// ```
     /// </summary>
     [WavefrontResourceType("wavefront:index/user:User")]

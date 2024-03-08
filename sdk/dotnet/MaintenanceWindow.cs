@@ -14,6 +14,7 @@ namespace Pulumi.Wavefront
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -37,13 +38,14 @@ namespace Pulumi.Wavefront
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// Maintenance windows can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import wavefront:index/maintenanceWindow:MaintenanceWindow basic 1600383357095
+    /// $ pulumi import wavefront:index/maintenanceWindow:MaintenanceWindow basic 1600383357095
     /// ```
     /// </summary>
     [WavefrontResourceType("wavefront:index/maintenanceWindow:MaintenanceWindow")]

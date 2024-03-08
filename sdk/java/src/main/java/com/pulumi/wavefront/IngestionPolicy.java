@@ -20,6 +20,8 @@ import javax.annotation.Nullable;
  * Provides a Wavefront Ingestion Policy Resource. This allows ingestion policies to be created, updated, and deleted.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -48,13 +50,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * ingestion policies can be imported by using the `id`, e.g.:
  * 
  * ```sh
- *  $ pulumi import wavefront:index/ingestionPolicy:IngestionPolicy basic test_ingestion-1611946841064
+ * $ pulumi import wavefront:index/ingestionPolicy:IngestionPolicy basic test_ingestion-1611946841064
  * ```
  * 
  */

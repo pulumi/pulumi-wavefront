@@ -109,6 +109,7 @@ def get_events(earliest_start_time_epoch_millis: Optional[int] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_wavefront as wavefront
@@ -118,6 +119,7 @@ def get_events(earliest_start_time_epoch_millis: Optional[int] = None,
         limit=10,
         offset=0)
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param int earliest_start_time_epoch_millis: The earliest start time in epoch milliseconds.
@@ -153,6 +155,7 @@ def get_events_output(earliest_start_time_epoch_millis: Optional[pulumi.Input[in
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_wavefront as wavefront
@@ -162,6 +165,7 @@ def get_events_output(earliest_start_time_epoch_millis: Optional[pulumi.Input[in
         limit=10,
         offset=0)
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param int earliest_start_time_epoch_millis: The earliest start time in epoch milliseconds.

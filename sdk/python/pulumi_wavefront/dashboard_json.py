@@ -74,6 +74,7 @@ class DashboardJson(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_wavefront as wavefront
@@ -200,6 +201,7 @@ class DashboardJson(pulumi.CustomResource):
 
         \"\"\")
         ```
+        <!--End PulumiCodeChooser -->
 
         * 
         *Note:
@@ -210,7 +212,7 @@ class DashboardJson(pulumi.CustomResource):
         Dashboard JSON can be imported by using the `id`, e.g.:
 
         ```sh
-         $ pulumi import wavefront:index/dashboardJson:DashboardJson dashboard_json tftestimport
+        $ pulumi import wavefront:index/dashboardJson:DashboardJson dashboard_json tftestimport
         ```
 
         :param str resource_name: The name of the resource.
@@ -229,6 +231,7 @@ class DashboardJson(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_wavefront as wavefront
@@ -355,6 +358,7 @@ class DashboardJson(pulumi.CustomResource):
 
         \"\"\")
         ```
+        <!--End PulumiCodeChooser -->
 
         * 
         *Note:
@@ -365,7 +369,7 @@ class DashboardJson(pulumi.CustomResource):
         Dashboard JSON can be imported by using the `id`, e.g.:
 
         ```sh
-         $ pulumi import wavefront:index/dashboardJson:DashboardJson dashboard_json tftestimport
+        $ pulumi import wavefront:index/dashboardJson:DashboardJson dashboard_json tftestimport
         ```
 
         :param str resource_name: The name of the resource.

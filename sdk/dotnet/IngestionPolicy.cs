@@ -14,6 +14,7 @@ namespace Pulumi.Wavefront
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -29,13 +30,14 @@ namespace Pulumi.Wavefront
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// ingestion policies can be imported by using the `id`, e.g.:
     /// 
     /// ```sh
-    ///  $ pulumi import wavefront:index/ingestionPolicy:IngestionPolicy basic test_ingestion-1611946841064
+    /// $ pulumi import wavefront:index/ingestionPolicy:IngestionPolicy basic test_ingestion-1611946841064
     /// ```
     /// </summary>
     [WavefrontResourceType("wavefront:index/ingestionPolicy:IngestionPolicy")]

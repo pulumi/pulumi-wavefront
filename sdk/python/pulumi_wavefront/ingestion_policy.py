@@ -254,19 +254,21 @@ class IngestionPolicy(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_wavefront as wavefront
 
         basic = wavefront.IngestionPolicy("basic", description="An ingestion policy for testing")
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         ingestion policies can be imported by using the `id`, e.g.:
 
         ```sh
-         $ pulumi import wavefront:index/ingestionPolicy:IngestionPolicy basic test_ingestion-1611946841064
+        $ pulumi import wavefront:index/ingestionPolicy:IngestionPolicy basic test_ingestion-1611946841064
         ```
 
         :param str resource_name: The name of the resource.
@@ -285,19 +287,21 @@ class IngestionPolicy(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_wavefront as wavefront
 
         basic = wavefront.IngestionPolicy("basic", description="An ingestion policy for testing")
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         ingestion policies can be imported by using the `id`, e.g.:
 
         ```sh
-         $ pulumi import wavefront:index/ingestionPolicy:IngestionPolicy basic test_ingestion-1611946841064
+        $ pulumi import wavefront:index/ingestionPolicy:IngestionPolicy basic test_ingestion-1611946841064
         ```
 
         :param str resource_name: The name of the resource.

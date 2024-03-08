@@ -16,6 +16,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -40,15 +41,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // Maintenance windows can be imported by using the `id`, e.g.:
 //
 // ```sh
-//
-//	$ pulumi import wavefront:index/externalLink:ExternalLink basic fVj6fz6zYC4aBkID
-//
+// $ pulumi import wavefront:index/externalLink:ExternalLink basic fVj6fz6zYC4aBkID
 // ```
 type ExternalLink struct {
 	pulumi.CustomResourceState

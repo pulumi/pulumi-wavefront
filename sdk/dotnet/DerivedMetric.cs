@@ -15,6 +15,7 @@ namespace Pulumi.Wavefront
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -31,13 +32,14 @@ namespace Pulumi.Wavefront
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// Derived Metrics can be imported by using the `id`, e.g.:
     /// 
     /// ```sh
-    ///  $ pulumi import wavefront:index/derivedMetric:DerivedMetric derived_metric 1577102900578
+    /// $ pulumi import wavefront:index/derivedMetric:DerivedMetric derived_metric 1577102900578
     /// ```
     /// </summary>
     [WavefrontResourceType("wavefront:index/derivedMetric:DerivedMetric")]

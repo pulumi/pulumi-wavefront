@@ -11,6 +11,7 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as wavefront from "@pulumi/wavefront";
@@ -25,12 +26,15 @@ import * as utilities from "./utilities";
  *     userGroupIds: [everyone.then(everyone => everyone.groupId)],
  * }]});
  * ```
+ * <!--End PulumiCodeChooser -->
+ *
  * ## Data Source
  *
  * Provides a Wavefront Metrics Policy Data Source. This allows looking up the current policy and associated rules.
  *
  * ### Example
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as wavefront from "@pulumi/wavefront";
@@ -38,13 +42,14 @@ import * as utilities from "./utilities";
  * const policyMetricsPolicy = wavefront.getMetricsPolicy({});
  * export const policy = policyMetricsPolicy;
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * Users can be imported by using the `updated_epoch_millis`, e.g.:
  *
  * ```sh
- *  $ pulumi import wavefront:index/metricsPolicy:MetricsPolicy some_metrics_policy 1651846476678
+ * $ pulumi import wavefront:index/metricsPolicy:MetricsPolicy some_metrics_policy 1651846476678
  * ```
  */
 export class MetricsPolicy extends pulumi.CustomResource {
