@@ -9,6 +9,7 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as wavefront from "@pulumi/wavefront";
@@ -22,13 +23,14 @@ import * as utilities from "./utilities";
  *     tags: ["eventTag1"],
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * You can import events by using the id, for example:
  *
  * ```sh
- *  $ pulumi import wavefront:index/event:Event event 1479868728473
+ * $ pulumi import wavefront:index/event:Event event 1479868728473
  * ```
  */
 export class Event extends pulumi.CustomResource {

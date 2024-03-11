@@ -332,6 +332,7 @@ class CloudIntegrationAzureActivityLog(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_wavefront as wavefront
@@ -342,13 +343,14 @@ class CloudIntegrationAzureActivityLog(pulumi.CustomResource):
             client_secret="client-secret2",
             tenant="my-tenant2")
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Azure Activity Log Cloud Integrations can be imported by using the `id`, e.g.:
 
         ```sh
-         $ pulumi import wavefront:index/cloudIntegrationAzureActivityLog:CloudIntegrationAzureActivityLog azure_al a411c16b-3cf7-4f03-bf11-8ca05aab898d
+        $ pulumi import wavefront:index/cloudIntegrationAzureActivityLog:CloudIntegrationAzureActivityLog azure_al a411c16b-3cf7-4f03-bf11-8ca05aab898d
         ```
 
         :param str resource_name: The name of the resource.
@@ -375,6 +377,7 @@ class CloudIntegrationAzureActivityLog(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_wavefront as wavefront
@@ -385,13 +388,14 @@ class CloudIntegrationAzureActivityLog(pulumi.CustomResource):
             client_secret="client-secret2",
             tenant="my-tenant2")
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Azure Activity Log Cloud Integrations can be imported by using the `id`, e.g.:
 
         ```sh
-         $ pulumi import wavefront:index/cloudIntegrationAzureActivityLog:CloudIntegrationAzureActivityLog azure_al a411c16b-3cf7-4f03-bf11-8ca05aab898d
+        $ pulumi import wavefront:index/cloudIntegrationAzureActivityLog:CloudIntegrationAzureActivityLog azure_al a411c16b-3cf7-4f03-bf11-8ca05aab898d
         ```
 
         :param str resource_name: The name of the resource.

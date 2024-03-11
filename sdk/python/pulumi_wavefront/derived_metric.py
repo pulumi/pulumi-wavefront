@@ -202,6 +202,7 @@ class DerivedMetric(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_wavefront as wavefront
@@ -210,13 +211,14 @@ class DerivedMetric(pulumi.CustomResource):
             minutes=5,
             query="aliasMetric(5, \\"some.metric\\")")
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Derived Metrics can be imported by using the `id`, e.g.:
 
         ```sh
-         $ pulumi import wavefront:index/derivedMetric:DerivedMetric derived_metric 1577102900578
+        $ pulumi import wavefront:index/derivedMetric:DerivedMetric derived_metric 1577102900578
         ```
 
         :param str resource_name: The name of the resource.
@@ -239,6 +241,7 @@ class DerivedMetric(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_wavefront as wavefront
@@ -247,13 +250,14 @@ class DerivedMetric(pulumi.CustomResource):
             minutes=5,
             query="aliasMetric(5, \\"some.metric\\")")
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Derived Metrics can be imported by using the `id`, e.g.:
 
         ```sh
-         $ pulumi import wavefront:index/derivedMetric:DerivedMetric derived_metric 1577102900578
+        $ pulumi import wavefront:index/derivedMetric:DerivedMetric derived_metric 1577102900578
         ```
 
         :param str resource_name: The name of the resource.

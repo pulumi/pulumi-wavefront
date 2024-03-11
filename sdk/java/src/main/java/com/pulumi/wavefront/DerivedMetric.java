@@ -21,6 +21,8 @@ import javax.annotation.Nullable;
  * updated, and deleted.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -50,13 +52,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * Derived Metrics can be imported by using the `id`, e.g.:
  * 
  * ```sh
- *  $ pulumi import wavefront:index/derivedMetric:DerivedMetric derived_metric 1577102900578
+ * $ pulumi import wavefront:index/derivedMetric:DerivedMetric derived_metric 1577102900578
  * ```
  * 
  */

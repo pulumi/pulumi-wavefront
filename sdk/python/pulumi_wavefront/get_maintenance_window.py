@@ -261,12 +261,14 @@ def get_maintenance_window(id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_wavefront as wavefront
 
     example = wavefront.get_maintenance_window(id="sample-maintenance-window-id")
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str id: The ID of the maintenance window.
@@ -305,12 +307,14 @@ def get_maintenance_window_output(id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_wavefront as wavefront
 
     example = wavefront.get_maintenance_window(id="sample-maintenance-window-id")
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str id: The ID of the maintenance window.

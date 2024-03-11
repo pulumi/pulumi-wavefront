@@ -11,6 +11,7 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as wavefront from "@pulumi/wavefront";
@@ -20,6 +21,7 @@ import * as utilities from "./utilities";
  *     offset: 0,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getAlerts(args?: GetAlertsArgs, opts?: pulumi.InvokeOptions): Promise<GetAlertsResult> {
     args = args || {};
@@ -65,6 +67,7 @@ export interface GetAlertsResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as wavefront from "@pulumi/wavefront";
@@ -74,6 +77,7 @@ export interface GetAlertsResult {
  *     offset: 0,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getAlertsOutput(args?: GetAlertsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAlertsResult> {
     return pulumi.output(args).apply((a: any) => getAlerts(a, opts))

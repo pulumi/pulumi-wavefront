@@ -177,19 +177,21 @@ class User(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_wavefront as wavefront
 
         basic = wavefront.User("basic", email="test+tftesting@example.com")
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Users can be imported by using the `id`, e.g.:
 
         ```sh
-         $ pulumi import wavefront:index/user:User some_user test@example.com
+        $ pulumi import wavefront:index/user:User some_user test@example.com
         ```
 
         :param str resource_name: The name of the resource.
@@ -212,19 +214,21 @@ class User(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_wavefront as wavefront
 
         basic = wavefront.User("basic", email="test+tftesting@example.com")
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Users can be imported by using the `id`, e.g.:
 
         ```sh
-         $ pulumi import wavefront:index/user:User some_user test@example.com
+        $ pulumi import wavefront:index/user:User some_user test@example.com
         ```
 
         :param str resource_name: The name of the resource.

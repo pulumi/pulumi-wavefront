@@ -9,6 +9,7 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as wavefront from "@pulumi/wavefront";
@@ -135,6 +136,7 @@ import * as utilities from "./utilities";
  *
  * `});
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * * 
  * *Note:
@@ -145,7 +147,7 @@ import * as utilities from "./utilities";
  * Dashboard JSON can be imported by using the `id`, e.g.:
  *
  * ```sh
- *  $ pulumi import wavefront:index/dashboardJson:DashboardJson dashboard_json tftestimport
+ * $ pulumi import wavefront:index/dashboardJson:DashboardJson dashboard_json tftestimport
  * ```
  */
 export class DashboardJson extends pulumi.CustomResource {

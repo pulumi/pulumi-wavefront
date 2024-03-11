@@ -303,6 +303,7 @@ class CloudIntegrationGcpBilling(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_wavefront as wavefront
@@ -314,13 +315,14 @@ class CloudIntegrationGcpBilling(pulumi.CustomResource):
         \"\"\",
             project_id="example-gcp-project")
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         GCP Billing Cloud Integrations can be imported by using the `id`, e.g.:
 
         ```sh
-         $ pulumi import wavefront:index/cloudIntegrationGcpBilling:CloudIntegrationGcpBilling gcp_billing a411c16b-3cf7-4f03-bf11-8ca05aab898d
+        $ pulumi import wavefront:index/cloudIntegrationGcpBilling:CloudIntegrationGcpBilling gcp_billing a411c16b-3cf7-4f03-bf11-8ca05aab898d
         ```
 
         :param str resource_name: The name of the resource.
@@ -347,6 +349,7 @@ class CloudIntegrationGcpBilling(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_wavefront as wavefront
@@ -358,13 +361,14 @@ class CloudIntegrationGcpBilling(pulumi.CustomResource):
         \"\"\",
             project_id="example-gcp-project")
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         GCP Billing Cloud Integrations can be imported by using the `id`, e.g.:
 
         ```sh
-         $ pulumi import wavefront:index/cloudIntegrationGcpBilling:CloudIntegrationGcpBilling gcp_billing a411c16b-3cf7-4f03-bf11-8ca05aab898d
+        $ pulumi import wavefront:index/cloudIntegrationGcpBilling:CloudIntegrationGcpBilling gcp_billing a411c16b-3cf7-4f03-bf11-8ca05aab898d
         ```
 
         :param str resource_name: The name of the resource.

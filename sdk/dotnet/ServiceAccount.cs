@@ -14,6 +14,7 @@ namespace Pulumi.Wavefront
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -30,13 +31,14 @@ namespace Pulumi.Wavefront
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// Service accounts can be imported by using `identifier`, e.g.:
     /// 
     /// ```sh
-    ///  $ pulumi import wavefront:index/serviceAccount:ServiceAccount basic sa::tftesting
+    /// $ pulumi import wavefront:index/serviceAccount:ServiceAccount basic sa::tftesting
     /// ```
     /// </summary>
     [WavefrontResourceType("wavefront:index/serviceAccount:ServiceAccount")]

@@ -83,6 +83,7 @@ def get_roles(limit: Optional[int] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_wavefront as wavefront
@@ -90,6 +91,7 @@ def get_roles(limit: Optional[int] = None,
     roles = wavefront.get_roles(limit=10,
         offset=0)
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param int limit: Limit is the maximum number of results to be returned. Defaults to 100.
@@ -117,6 +119,7 @@ def get_roles_output(limit: Optional[pulumi.Input[Optional[int]]] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_wavefront as wavefront
@@ -124,6 +127,7 @@ def get_roles_output(limit: Optional[pulumi.Input[Optional[int]]] = None,
     roles = wavefront.get_roles(limit=10,
         offset=0)
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param int limit: Limit is the maximum number of results to be returned. Defaults to 100.

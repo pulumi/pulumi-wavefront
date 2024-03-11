@@ -14,6 +14,7 @@ namespace Pulumi.Wavefront
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -38,13 +39,14 @@ namespace Pulumi.Wavefront
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// You can import events by using the id, for example:
     /// 
     /// ```sh
-    ///  $ pulumi import wavefront:index/event:Event event 1479868728473
+    /// $ pulumi import wavefront:index/event:Event event 1479868728473
     /// ```
     /// </summary>
     [WavefrontResourceType("wavefront:index/event:Event")]

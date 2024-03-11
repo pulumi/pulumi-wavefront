@@ -21,6 +21,8 @@ import javax.annotation.Nullable;
  * Provides a Wavefront event resource. This allows events to be created, updated, and deleted.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -54,13 +56,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * You can import events by using the id, for example:
  * 
  * ```sh
- *  $ pulumi import wavefront:index/event:Event event 1479868728473
+ * $ pulumi import wavefront:index/event:Event event 1479868728473
  * ```
  * 
  */

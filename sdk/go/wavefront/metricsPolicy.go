@@ -16,6 +16,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -56,12 +57,15 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
+//
 // ## Data Source
 //
 // Provides a Wavefront Metrics Policy Data Source. This allows looking up the current policy and associated rules.
 //
 // ### Example
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -84,15 +88,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // Users can be imported by using the `updated_epoch_millis`, e.g.:
 //
 // ```sh
-//
-//	$ pulumi import wavefront:index/metricsPolicy:MetricsPolicy some_metrics_policy 1651846476678
-//
+// $ pulumi import wavefront:index/metricsPolicy:MetricsPolicy some_metrics_policy 1651846476678
 // ```
 type MetricsPolicy struct {
 	pulumi.CustomResourceState

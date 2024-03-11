@@ -16,6 +16,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -46,15 +47,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // You can import events by using the id, for example:
 //
 // ```sh
-//
-//	$ pulumi import wavefront:index/event:Event event 1479868728473
-//
+// $ pulumi import wavefront:index/event:Event event 1479868728473
 // ```
 type Event struct {
 	pulumi.CustomResourceState

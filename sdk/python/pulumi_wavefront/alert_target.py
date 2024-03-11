@@ -427,6 +427,7 @@ class AlertTarget(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_wavefront as wavefront
@@ -445,13 +446,14 @@ class AlertTarget(pulumi.CustomResource):
                 "ALERT_RESOLVED",
             ])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Alert Targets can be imported using the `id`, e.g.:
 
         ```sh
-         $ pulumi import wavefront:index/alertTarget:AlertTarget alert_target abcdEFGhijKLMNO
+        $ pulumi import wavefront:index/alertTarget:AlertTarget alert_target abcdEFGhijKLMNO
         ```
 
         :param str resource_name: The name of the resource.
@@ -482,6 +484,7 @@ class AlertTarget(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_wavefront as wavefront
@@ -500,13 +503,14 @@ class AlertTarget(pulumi.CustomResource):
                 "ALERT_RESOLVED",
             ])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Alert Targets can be imported using the `id`, e.g.:
 
         ```sh
-         $ pulumi import wavefront:index/alertTarget:AlertTarget alert_target abcdEFGhijKLMNO
+        $ pulumi import wavefront:index/alertTarget:AlertTarget alert_target abcdEFGhijKLMNO
         ```
 
         :param str resource_name: The name of the resource.

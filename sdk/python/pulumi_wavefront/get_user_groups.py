@@ -83,6 +83,7 @@ def get_user_groups(limit: Optional[int] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_wavefront as wavefront
@@ -90,6 +91,7 @@ def get_user_groups(limit: Optional[int] = None,
     groups = wavefront.get_user_groups(limit=10,
         offset=0)
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param int limit: Limit is the maximum number of results to be returned. Defaults to 100.
@@ -117,6 +119,7 @@ def get_user_groups_output(limit: Optional[pulumi.Input[Optional[int]]] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_wavefront as wavefront
@@ -124,6 +127,7 @@ def get_user_groups_output(limit: Optional[pulumi.Input[Optional[int]]] = None,
     groups = wavefront.get_user_groups(limit=10,
         offset=0)
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param int limit: Limit is the maximum number of results to be returned. Defaults to 100.

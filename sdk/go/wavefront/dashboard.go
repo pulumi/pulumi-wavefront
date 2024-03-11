@@ -19,9 +19,7 @@ import (
 // Dashboards can be imported by using the `id`, e.g.:
 //
 // ```sh
-//
-//	$ pulumi import wavefront:index/dashboard:Dashboard dashboard tftestimport
-//
+// $ pulumi import wavefront:index/dashboard:Dashboard dashboard tftestimport
 // ```
 type Dashboard struct {
 	pulumi.CustomResourceState
