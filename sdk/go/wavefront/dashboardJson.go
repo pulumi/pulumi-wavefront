@@ -16,6 +16,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -160,6 +161,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // *
 // *Note:
@@ -170,9 +172,7 @@ import (
 // Dashboard JSON can be imported by using the `id`, e.g.:
 //
 // ```sh
-//
-//	$ pulumi import wavefront:index/dashboardJson:DashboardJson dashboard_json tftestimport
-//
+// $ pulumi import wavefront:index/dashboardJson:DashboardJson dashboard_json tftestimport
 // ```
 type DashboardJson struct {
 	pulumi.CustomResourceState

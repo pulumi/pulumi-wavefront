@@ -11,6 +11,7 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as wavefront from "@pulumi/wavefront";
@@ -20,6 +21,7 @@ import * as utilities from "./utilities";
  *     offset: 0,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getDashboards(args?: GetDashboardsArgs, opts?: pulumi.InvokeOptions): Promise<GetDashboardsResult> {
     args = args || {};
@@ -65,6 +67,7 @@ export interface GetDashboardsResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as wavefront from "@pulumi/wavefront";
@@ -74,6 +77,7 @@ export interface GetDashboardsResult {
  *     offset: 0,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getDashboardsOutput(args?: GetDashboardsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDashboardsResult> {
     return pulumi.output(args).apply((a: any) => getDashboards(a, opts))

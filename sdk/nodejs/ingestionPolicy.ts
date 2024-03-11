@@ -11,19 +11,21 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as wavefront from "@pulumi/wavefront";
  *
  * const basic = new wavefront.IngestionPolicy("basic", {description: "An ingestion policy for testing"});
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * ingestion policies can be imported by using the `id`, e.g.:
  *
  * ```sh
- *  $ pulumi import wavefront:index/ingestionPolicy:IngestionPolicy basic test_ingestion-1611946841064
+ * $ pulumi import wavefront:index/ingestionPolicy:IngestionPolicy basic test_ingestion-1611946841064
  * ```
  */
 export class IngestionPolicy extends pulumi.CustomResource {

@@ -9,6 +9,7 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as wavefront from "@pulumi/wavefront";
@@ -24,13 +25,14 @@ import * as utilities from "./utilities";
  *     title: "Routine maintenance",
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * Maintenance windows can be imported using the `id`, e.g.
  *
  * ```sh
- *  $ pulumi import wavefront:index/maintenanceWindow:MaintenanceWindow basic 1600383357095
+ * $ pulumi import wavefront:index/maintenanceWindow:MaintenanceWindow basic 1600383357095
  * ```
  */
 export class MaintenanceWindow extends pulumi.CustomResource {

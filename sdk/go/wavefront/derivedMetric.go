@@ -17,6 +17,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -41,15 +42,14 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
 // Derived Metrics can be imported by using the `id`, e.g.:
 //
 // ```sh
-//
-//	$ pulumi import wavefront:index/derivedMetric:DerivedMetric derived_metric 1577102900578
-//
+// $ pulumi import wavefront:index/derivedMetric:DerivedMetric derived_metric 1577102900578
 // ```
 type DerivedMetric struct {
 	pulumi.CustomResourceState

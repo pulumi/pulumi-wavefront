@@ -21,6 +21,8 @@ import javax.annotation.Nullable;
  * Provides a Wavefront Maintenance Window Resource. This allows maintenance windows to be created, updated, and deleted.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -55,13 +57,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * Maintenance windows can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import wavefront:index/maintenanceWindow:MaintenanceWindow basic 1600383357095
+ * $ pulumi import wavefront:index/maintenanceWindow:MaintenanceWindow basic 1600383357095
  * ```
  * 
  */

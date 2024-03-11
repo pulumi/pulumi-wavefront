@@ -9,6 +9,7 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as wavefront from "@pulumi/wavefront";
@@ -17,6 +18,7 @@ import * as utilities from "./utilities";
  *     id: "derived_metric_id",
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getDerivedMetric(args: GetDerivedMetricArgs, opts?: pulumi.InvokeOptions): Promise<GetDerivedMetricResult> {
 
@@ -142,6 +144,7 @@ export interface GetDerivedMetricResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as wavefront from "@pulumi/wavefront";
@@ -150,6 +153,7 @@ export interface GetDerivedMetricResult {
  *     id: "derived_metric_id",
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getDerivedMetricOutput(args: GetDerivedMetricOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDerivedMetricResult> {
     return pulumi.output(args).apply((a: any) => getDerivedMetric(a, opts))

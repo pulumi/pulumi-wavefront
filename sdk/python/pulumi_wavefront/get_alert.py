@@ -338,12 +338,14 @@ def get_alert(id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_wavefront as wavefront
 
     example = wavefront.get_alert(id="alert-id")
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str id: The ID associated with the alert data to be fetched.
@@ -392,12 +394,14 @@ def get_alert_output(id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_wavefront as wavefront
 
     example = wavefront.get_alert(id="alert-id")
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str id: The ID associated with the alert data to be fetched.

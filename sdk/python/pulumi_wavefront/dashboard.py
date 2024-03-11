@@ -414,7 +414,7 @@ class Dashboard(pulumi.CustomResource):
         Dashboards can be imported by using the `id`, e.g.:
 
         ```sh
-         $ pulumi import wavefront:index/dashboard:Dashboard dashboard tftestimport
+        $ pulumi import wavefront:index/dashboard:Dashboard dashboard tftestimport
         ```
 
         :param str resource_name: The name of the resource.
@@ -448,7 +448,7 @@ class Dashboard(pulumi.CustomResource):
         Dashboards can be imported by using the `id`, e.g.:
 
         ```sh
-         $ pulumi import wavefront:index/dashboard:Dashboard dashboard tftestimport
+        $ pulumi import wavefront:index/dashboard:Dashboard dashboard tftestimport
         ```
 
         :param str resource_name: The name of the resource.

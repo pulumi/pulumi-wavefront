@@ -9,19 +9,21 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as wavefront from "@pulumi/wavefront";
  *
  * const externalId = new wavefront.CloudIntegrationAwsExternalId("externalId", {});
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * External IDs can be imported by using the `id`, e.g.:
  *
  * ```sh
- *  $ pulumi import wavefront:index/cloudIntegrationAwsExternalId:CloudIntegrationAwsExternalId external_id uGJdkH3k
+ * $ pulumi import wavefront:index/cloudIntegrationAwsExternalId:CloudIntegrationAwsExternalId external_id uGJdkH3k
  * ```
  */
 export class CloudIntegrationAwsExternalId extends pulumi.CustomResource {

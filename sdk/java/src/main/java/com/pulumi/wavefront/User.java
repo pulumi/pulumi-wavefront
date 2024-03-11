@@ -18,6 +18,8 @@ import javax.annotation.Nullable;
  * Provides a Wavefront User Resource. This allows user accounts to be created, updated, and deleted.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -46,13 +48,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * Users can be imported by using the `id`, e.g.:
  * 
  * ```sh
- *  $ pulumi import wavefront:index/user:User some_user test@example.com
+ * $ pulumi import wavefront:index/user:User some_user test@example.com
  * ```
  * 
  */

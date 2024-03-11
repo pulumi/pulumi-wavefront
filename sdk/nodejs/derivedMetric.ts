@@ -10,6 +10,7 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as wavefront from "@pulumi/wavefront";
@@ -19,13 +20,14 @@ import * as utilities from "./utilities";
  *     query: "aliasMetric(5, \"some.metric\")",
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * Derived Metrics can be imported by using the `id`, e.g.:
  *
  * ```sh
- *  $ pulumi import wavefront:index/derivedMetric:DerivedMetric derived_metric 1577102900578
+ * $ pulumi import wavefront:index/derivedMetric:DerivedMetric derived_metric 1577102900578
  * ```
  */
 export class DerivedMetric extends pulumi.CustomResource {

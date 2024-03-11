@@ -14,6 +14,7 @@ namespace Pulumi.Wavefront
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -39,13 +40,14 @@ namespace Pulumi.Wavefront
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
     /// Alerts can be imported using the `id`, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import wavefront:index/alert:Alert alert_target 1479868728473
+    /// $ pulumi import wavefront:index/alert:Alert alert_target 1479868728473
     /// ```
     /// </summary>
     [WavefrontResourceType("wavefront:index/alert:Alert")]

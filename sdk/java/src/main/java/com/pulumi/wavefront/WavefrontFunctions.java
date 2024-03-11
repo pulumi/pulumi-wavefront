@@ -70,6 +70,8 @@ public final class WavefrontFunctions {
      * Use this data source to get information about a Wavefront alert by its ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -98,6 +100,7 @@ public final class WavefrontFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAlertResult> getAlert(GetAlertArgs args) {
@@ -107,6 +110,8 @@ public final class WavefrontFunctions {
      * Use this data source to get information about a Wavefront alert by its ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -135,6 +140,7 @@ public final class WavefrontFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAlertResult> getAlertPlain(GetAlertPlainArgs args) {
@@ -144,6 +150,8 @@ public final class WavefrontFunctions {
      * Use this data source to get information about a Wavefront alert by its ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -172,6 +180,7 @@ public final class WavefrontFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAlertResult> getAlert(GetAlertArgs args, InvokeOptions options) {
@@ -181,6 +190,8 @@ public final class WavefrontFunctions {
      * Use this data source to get information about a Wavefront alert by its ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -209,6 +220,7 @@ public final class WavefrontFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAlertResult> getAlertPlain(GetAlertPlainArgs args, InvokeOptions options) {
@@ -218,6 +230,8 @@ public final class WavefrontFunctions {
      * Use this data source to get information about all Wavefront alerts.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -247,6 +261,7 @@ public final class WavefrontFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAlertsResult> getAlerts() {
@@ -256,6 +271,8 @@ public final class WavefrontFunctions {
      * Use this data source to get information about all Wavefront alerts.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -285,6 +302,7 @@ public final class WavefrontFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAlertsResult> getAlertsPlain() {
@@ -294,6 +312,8 @@ public final class WavefrontFunctions {
      * Use this data source to get information about all Wavefront alerts.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -323,6 +343,7 @@ public final class WavefrontFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAlertsResult> getAlerts(GetAlertsArgs args) {
@@ -332,6 +353,8 @@ public final class WavefrontFunctions {
      * Use this data source to get information about all Wavefront alerts.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -361,6 +384,7 @@ public final class WavefrontFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAlertsResult> getAlertsPlain(GetAlertsPlainArgs args) {
@@ -370,6 +394,8 @@ public final class WavefrontFunctions {
      * Use this data source to get information about all Wavefront alerts.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -399,6 +425,7 @@ public final class WavefrontFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetAlertsResult> getAlerts(GetAlertsArgs args, InvokeOptions options) {
@@ -408,6 +435,8 @@ public final class WavefrontFunctions {
      * Use this data source to get information about all Wavefront alerts.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -437,6 +466,7 @@ public final class WavefrontFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetAlertsResult> getAlertsPlain(GetAlertsPlainArgs args, InvokeOptions options) {
@@ -446,6 +476,8 @@ public final class WavefrontFunctions {
      * Use this data source to get information about a certain Wavefront dashboard by its ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -474,6 +506,7 @@ public final class WavefrontFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDashboardResult> getDashboard(GetDashboardArgs args) {
@@ -483,6 +516,8 @@ public final class WavefrontFunctions {
      * Use this data source to get information about a certain Wavefront dashboard by its ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -511,6 +546,7 @@ public final class WavefrontFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDashboardResult> getDashboardPlain(GetDashboardPlainArgs args) {
@@ -520,6 +556,8 @@ public final class WavefrontFunctions {
      * Use this data source to get information about a certain Wavefront dashboard by its ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -548,6 +586,7 @@ public final class WavefrontFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDashboardResult> getDashboard(GetDashboardArgs args, InvokeOptions options) {
@@ -557,6 +596,8 @@ public final class WavefrontFunctions {
      * Use this data source to get information about a certain Wavefront dashboard by its ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -585,6 +626,7 @@ public final class WavefrontFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDashboardResult> getDashboardPlain(GetDashboardPlainArgs args, InvokeOptions options) {
@@ -594,6 +636,8 @@ public final class WavefrontFunctions {
      * Use this data source to get information about all Wavefront dashboards.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -623,6 +667,7 @@ public final class WavefrontFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDashboardsResult> getDashboards() {
@@ -632,6 +677,8 @@ public final class WavefrontFunctions {
      * Use this data source to get information about all Wavefront dashboards.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -661,6 +708,7 @@ public final class WavefrontFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDashboardsResult> getDashboardsPlain() {
@@ -670,6 +718,8 @@ public final class WavefrontFunctions {
      * Use this data source to get information about all Wavefront dashboards.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -699,6 +749,7 @@ public final class WavefrontFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDashboardsResult> getDashboards(GetDashboardsArgs args) {
@@ -708,6 +759,8 @@ public final class WavefrontFunctions {
      * Use this data source to get information about all Wavefront dashboards.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -737,6 +790,7 @@ public final class WavefrontFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDashboardsResult> getDashboardsPlain(GetDashboardsPlainArgs args) {
@@ -746,6 +800,8 @@ public final class WavefrontFunctions {
      * Use this data source to get information about all Wavefront dashboards.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -775,6 +831,7 @@ public final class WavefrontFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDashboardsResult> getDashboards(GetDashboardsArgs args, InvokeOptions options) {
@@ -784,6 +841,8 @@ public final class WavefrontFunctions {
      * Use this data source to get information about all Wavefront dashboards.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -813,6 +872,7 @@ public final class WavefrontFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDashboardsResult> getDashboardsPlain(GetDashboardsPlainArgs args, InvokeOptions options) {
@@ -822,6 +882,8 @@ public final class WavefrontFunctions {
      * Use this data source to get the Group ID of the `Everyone` group in Wavefront.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -847,6 +909,7 @@ public final class WavefrontFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDefaultUserGroupResult> getDefaultUserGroup() {
@@ -856,6 +919,8 @@ public final class WavefrontFunctions {
      * Use this data source to get the Group ID of the `Everyone` group in Wavefront.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -881,6 +946,7 @@ public final class WavefrontFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDefaultUserGroupResult> getDefaultUserGroupPlain() {
@@ -890,6 +956,8 @@ public final class WavefrontFunctions {
      * Use this data source to get the Group ID of the `Everyone` group in Wavefront.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -915,6 +983,7 @@ public final class WavefrontFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDefaultUserGroupResult> getDefaultUserGroup(InvokeArgs args) {
@@ -924,6 +993,8 @@ public final class WavefrontFunctions {
      * Use this data source to get the Group ID of the `Everyone` group in Wavefront.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -949,6 +1020,7 @@ public final class WavefrontFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDefaultUserGroupResult> getDefaultUserGroupPlain(InvokeArgs args) {
@@ -958,6 +1030,8 @@ public final class WavefrontFunctions {
      * Use this data source to get the Group ID of the `Everyone` group in Wavefront.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -983,6 +1057,7 @@ public final class WavefrontFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDefaultUserGroupResult> getDefaultUserGroup(InvokeArgs args, InvokeOptions options) {
@@ -992,6 +1067,8 @@ public final class WavefrontFunctions {
      * Use this data source to get the Group ID of the `Everyone` group in Wavefront.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1017,6 +1094,7 @@ public final class WavefrontFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDefaultUserGroupResult> getDefaultUserGroupPlain(InvokeArgs args, InvokeOptions options) {
@@ -1026,6 +1104,8 @@ public final class WavefrontFunctions {
      * Use this data source to get information about a certain Wavefront derived metric by its ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1054,6 +1134,7 @@ public final class WavefrontFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDerivedMetricResult> getDerivedMetric(GetDerivedMetricArgs args) {
@@ -1063,6 +1144,8 @@ public final class WavefrontFunctions {
      * Use this data source to get information about a certain Wavefront derived metric by its ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1091,6 +1174,7 @@ public final class WavefrontFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDerivedMetricResult> getDerivedMetricPlain(GetDerivedMetricPlainArgs args) {
@@ -1100,6 +1184,8 @@ public final class WavefrontFunctions {
      * Use this data source to get information about a certain Wavefront derived metric by its ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1128,6 +1214,7 @@ public final class WavefrontFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDerivedMetricResult> getDerivedMetric(GetDerivedMetricArgs args, InvokeOptions options) {
@@ -1137,6 +1224,8 @@ public final class WavefrontFunctions {
      * Use this data source to get information about a certain Wavefront derived metric by its ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1165,6 +1254,7 @@ public final class WavefrontFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDerivedMetricResult> getDerivedMetricPlain(GetDerivedMetricPlainArgs args, InvokeOptions options) {
@@ -1174,6 +1264,8 @@ public final class WavefrontFunctions {
      * Use this data source to get information about all Wavefront derived metrics.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1203,6 +1295,7 @@ public final class WavefrontFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDerivedMetricsResult> getDerivedMetrics() {
@@ -1212,6 +1305,8 @@ public final class WavefrontFunctions {
      * Use this data source to get information about all Wavefront derived metrics.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1241,6 +1336,7 @@ public final class WavefrontFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDerivedMetricsResult> getDerivedMetricsPlain() {
@@ -1250,6 +1346,8 @@ public final class WavefrontFunctions {
      * Use this data source to get information about all Wavefront derived metrics.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1279,6 +1377,7 @@ public final class WavefrontFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDerivedMetricsResult> getDerivedMetrics(GetDerivedMetricsArgs args) {
@@ -1288,6 +1387,8 @@ public final class WavefrontFunctions {
      * Use this data source to get information about all Wavefront derived metrics.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1317,6 +1418,7 @@ public final class WavefrontFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDerivedMetricsResult> getDerivedMetricsPlain(GetDerivedMetricsPlainArgs args) {
@@ -1326,6 +1428,8 @@ public final class WavefrontFunctions {
      * Use this data source to get information about all Wavefront derived metrics.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1355,6 +1459,7 @@ public final class WavefrontFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetDerivedMetricsResult> getDerivedMetrics(GetDerivedMetricsArgs args, InvokeOptions options) {
@@ -1364,6 +1469,8 @@ public final class WavefrontFunctions {
      * Use this data source to get information about all Wavefront derived metrics.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1393,6 +1500,7 @@ public final class WavefrontFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetDerivedMetricsResult> getDerivedMetricsPlain(GetDerivedMetricsPlainArgs args, InvokeOptions options) {
@@ -1402,6 +1510,8 @@ public final class WavefrontFunctions {
      * Use this data source to get information about a certain Wavefront event.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1430,6 +1540,7 @@ public final class WavefrontFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetEventResult> getEvent(GetEventArgs args) {
@@ -1439,6 +1550,8 @@ public final class WavefrontFunctions {
      * Use this data source to get information about a certain Wavefront event.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1467,6 +1580,7 @@ public final class WavefrontFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetEventResult> getEventPlain(GetEventPlainArgs args) {
@@ -1476,6 +1590,8 @@ public final class WavefrontFunctions {
      * Use this data source to get information about a certain Wavefront event.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1504,6 +1620,7 @@ public final class WavefrontFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetEventResult> getEvent(GetEventArgs args, InvokeOptions options) {
@@ -1513,6 +1630,8 @@ public final class WavefrontFunctions {
      * Use this data source to get information about a certain Wavefront event.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1541,6 +1660,7 @@ public final class WavefrontFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetEventResult> getEventPlain(GetEventPlainArgs args, InvokeOptions options) {
@@ -1550,6 +1670,8 @@ public final class WavefrontFunctions {
      * Use this data source to get information about all Wavefront events.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1581,6 +1703,7 @@ public final class WavefrontFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetEventsResult> getEvents(GetEventsArgs args) {
@@ -1590,6 +1713,8 @@ public final class WavefrontFunctions {
      * Use this data source to get information about all Wavefront events.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1621,6 +1746,7 @@ public final class WavefrontFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetEventsResult> getEventsPlain(GetEventsPlainArgs args) {
@@ -1630,6 +1756,8 @@ public final class WavefrontFunctions {
      * Use this data source to get information about all Wavefront events.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1661,6 +1789,7 @@ public final class WavefrontFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetEventsResult> getEvents(GetEventsArgs args, InvokeOptions options) {
@@ -1670,6 +1799,8 @@ public final class WavefrontFunctions {
      * Use this data source to get information about all Wavefront events.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1701,6 +1832,7 @@ public final class WavefrontFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetEventsResult> getEventsPlain(GetEventsPlainArgs args, InvokeOptions options) {
@@ -1710,6 +1842,8 @@ public final class WavefrontFunctions {
      * Use this data source to get information about a Wavefront external link by its ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1738,6 +1872,7 @@ public final class WavefrontFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExternalLinkResult> getExternalLink(GetExternalLinkArgs args) {
@@ -1747,6 +1882,8 @@ public final class WavefrontFunctions {
      * Use this data source to get information about a Wavefront external link by its ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1775,6 +1912,7 @@ public final class WavefrontFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExternalLinkResult> getExternalLinkPlain(GetExternalLinkPlainArgs args) {
@@ -1784,6 +1922,8 @@ public final class WavefrontFunctions {
      * Use this data source to get information about a Wavefront external link by its ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1812,6 +1952,7 @@ public final class WavefrontFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExternalLinkResult> getExternalLink(GetExternalLinkArgs args, InvokeOptions options) {
@@ -1821,6 +1962,8 @@ public final class WavefrontFunctions {
      * Use this data source to get information about a Wavefront external link by its ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1849,6 +1992,7 @@ public final class WavefrontFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExternalLinkResult> getExternalLinkPlain(GetExternalLinkPlainArgs args, InvokeOptions options) {
@@ -1858,6 +2002,8 @@ public final class WavefrontFunctions {
      * Use this data source to get information about all Wavefront external links.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1887,6 +2033,7 @@ public final class WavefrontFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExternalLinksResult> getExternalLinks() {
@@ -1896,6 +2043,8 @@ public final class WavefrontFunctions {
      * Use this data source to get information about all Wavefront external links.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1925,6 +2074,7 @@ public final class WavefrontFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExternalLinksResult> getExternalLinksPlain() {
@@ -1934,6 +2084,8 @@ public final class WavefrontFunctions {
      * Use this data source to get information about all Wavefront external links.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1963,6 +2115,7 @@ public final class WavefrontFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExternalLinksResult> getExternalLinks(GetExternalLinksArgs args) {
@@ -1972,6 +2125,8 @@ public final class WavefrontFunctions {
      * Use this data source to get information about all Wavefront external links.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2001,6 +2156,7 @@ public final class WavefrontFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExternalLinksResult> getExternalLinksPlain(GetExternalLinksPlainArgs args) {
@@ -2010,6 +2166,8 @@ public final class WavefrontFunctions {
      * Use this data source to get information about all Wavefront external links.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2039,6 +2197,7 @@ public final class WavefrontFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetExternalLinksResult> getExternalLinks(GetExternalLinksArgs args, InvokeOptions options) {
@@ -2048,6 +2207,8 @@ public final class WavefrontFunctions {
      * Use this data source to get information about all Wavefront external links.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2077,6 +2238,7 @@ public final class WavefrontFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetExternalLinksResult> getExternalLinksPlain(GetExternalLinksPlainArgs args, InvokeOptions options) {
@@ -2086,6 +2248,8 @@ public final class WavefrontFunctions {
      * Use this data source to get information about a Wavefront maintenance window by its ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2114,6 +2278,7 @@ public final class WavefrontFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMaintenanceWindowResult> getMaintenanceWindow(GetMaintenanceWindowArgs args) {
@@ -2123,6 +2288,8 @@ public final class WavefrontFunctions {
      * Use this data source to get information about a Wavefront maintenance window by its ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2151,6 +2318,7 @@ public final class WavefrontFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMaintenanceWindowResult> getMaintenanceWindowPlain(GetMaintenanceWindowPlainArgs args) {
@@ -2160,6 +2328,8 @@ public final class WavefrontFunctions {
      * Use this data source to get information about a Wavefront maintenance window by its ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2188,6 +2358,7 @@ public final class WavefrontFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetMaintenanceWindowResult> getMaintenanceWindow(GetMaintenanceWindowArgs args, InvokeOptions options) {
@@ -2197,6 +2368,8 @@ public final class WavefrontFunctions {
      * Use this data source to get information about a Wavefront maintenance window by its ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2225,6 +2398,7 @@ public final class WavefrontFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetMaintenanceWindowResult> getMaintenanceWindowPlain(GetMaintenanceWindowPlainArgs args, InvokeOptions options) {
@@ -2270,6 +2444,8 @@ public final class WavefrontFunctions {
      * Use this data source to get information about a Wavefront role by its ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2298,6 +2474,7 @@ public final class WavefrontFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetRoleResult> getRole(GetRoleArgs args) {
@@ -2307,6 +2484,8 @@ public final class WavefrontFunctions {
      * Use this data source to get information about a Wavefront role by its ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2335,6 +2514,7 @@ public final class WavefrontFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetRoleResult> getRolePlain(GetRolePlainArgs args) {
@@ -2344,6 +2524,8 @@ public final class WavefrontFunctions {
      * Use this data source to get information about a Wavefront role by its ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2372,6 +2554,7 @@ public final class WavefrontFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetRoleResult> getRole(GetRoleArgs args, InvokeOptions options) {
@@ -2381,6 +2564,8 @@ public final class WavefrontFunctions {
      * Use this data source to get information about a Wavefront role by its ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2409,6 +2594,7 @@ public final class WavefrontFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetRoleResult> getRolePlain(GetRolePlainArgs args, InvokeOptions options) {
@@ -2418,6 +2604,8 @@ public final class WavefrontFunctions {
      * Use this data source to get all Roles in Wavefront.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2447,6 +2635,7 @@ public final class WavefrontFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetRolesResult> getRoles() {
@@ -2456,6 +2645,8 @@ public final class WavefrontFunctions {
      * Use this data source to get all Roles in Wavefront.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2485,6 +2676,7 @@ public final class WavefrontFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetRolesResult> getRolesPlain() {
@@ -2494,6 +2686,8 @@ public final class WavefrontFunctions {
      * Use this data source to get all Roles in Wavefront.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2523,6 +2717,7 @@ public final class WavefrontFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetRolesResult> getRoles(GetRolesArgs args) {
@@ -2532,6 +2727,8 @@ public final class WavefrontFunctions {
      * Use this data source to get all Roles in Wavefront.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2561,6 +2758,7 @@ public final class WavefrontFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetRolesResult> getRolesPlain(GetRolesPlainArgs args) {
@@ -2570,6 +2768,8 @@ public final class WavefrontFunctions {
      * Use this data source to get all Roles in Wavefront.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2599,6 +2799,7 @@ public final class WavefrontFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetRolesResult> getRoles(GetRolesArgs args, InvokeOptions options) {
@@ -2608,6 +2809,8 @@ public final class WavefrontFunctions {
      * Use this data source to get all Roles in Wavefront.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2637,6 +2840,7 @@ public final class WavefrontFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetRolesResult> getRolesPlain(GetRolesPlainArgs args, InvokeOptions options) {
@@ -2646,6 +2850,8 @@ public final class WavefrontFunctions {
      * Use this data source to get information for a given user by email from Wavefront.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2674,6 +2880,7 @@ public final class WavefrontFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetUserResult> getUser(GetUserArgs args) {
@@ -2683,6 +2890,8 @@ public final class WavefrontFunctions {
      * Use this data source to get information for a given user by email from Wavefront.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2711,6 +2920,7 @@ public final class WavefrontFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetUserResult> getUserPlain(GetUserPlainArgs args) {
@@ -2720,6 +2930,8 @@ public final class WavefrontFunctions {
      * Use this data source to get information for a given user by email from Wavefront.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2748,6 +2960,7 @@ public final class WavefrontFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetUserResult> getUser(GetUserArgs args, InvokeOptions options) {
@@ -2757,6 +2970,8 @@ public final class WavefrontFunctions {
      * Use this data source to get information for a given user by email from Wavefront.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2785,6 +3000,7 @@ public final class WavefrontFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetUserResult> getUserPlain(GetUserPlainArgs args, InvokeOptions options) {
@@ -2794,6 +3010,8 @@ public final class WavefrontFunctions {
      * Use this data source to get information about a Wavefront user group by its ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2822,6 +3040,7 @@ public final class WavefrontFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetUserGroupResult> getUserGroup(GetUserGroupArgs args) {
@@ -2831,6 +3050,8 @@ public final class WavefrontFunctions {
      * Use this data source to get information about a Wavefront user group by its ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2859,6 +3080,7 @@ public final class WavefrontFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetUserGroupResult> getUserGroupPlain(GetUserGroupPlainArgs args) {
@@ -2868,6 +3090,8 @@ public final class WavefrontFunctions {
      * Use this data source to get information about a Wavefront user group by its ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2896,6 +3120,7 @@ public final class WavefrontFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetUserGroupResult> getUserGroup(GetUserGroupArgs args, InvokeOptions options) {
@@ -2905,6 +3130,8 @@ public final class WavefrontFunctions {
      * Use this data source to get information about a Wavefront user group by its ID.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2933,6 +3160,7 @@ public final class WavefrontFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetUserGroupResult> getUserGroupPlain(GetUserGroupPlainArgs args, InvokeOptions options) {
@@ -2942,6 +3170,8 @@ public final class WavefrontFunctions {
      * Use this data source to get all User Groups in Wavefront.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -2971,6 +3201,7 @@ public final class WavefrontFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetUserGroupsResult> getUserGroups() {
@@ -2980,6 +3211,8 @@ public final class WavefrontFunctions {
      * Use this data source to get all User Groups in Wavefront.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3009,6 +3242,7 @@ public final class WavefrontFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetUserGroupsResult> getUserGroupsPlain() {
@@ -3018,6 +3252,8 @@ public final class WavefrontFunctions {
      * Use this data source to get all User Groups in Wavefront.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3047,6 +3283,7 @@ public final class WavefrontFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetUserGroupsResult> getUserGroups(GetUserGroupsArgs args) {
@@ -3056,6 +3293,8 @@ public final class WavefrontFunctions {
      * Use this data source to get all User Groups in Wavefront.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3085,6 +3324,7 @@ public final class WavefrontFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetUserGroupsResult> getUserGroupsPlain(GetUserGroupsPlainArgs args) {
@@ -3094,6 +3334,8 @@ public final class WavefrontFunctions {
      * Use this data source to get all User Groups in Wavefront.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3123,6 +3365,7 @@ public final class WavefrontFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetUserGroupsResult> getUserGroups(GetUserGroupsArgs args, InvokeOptions options) {
@@ -3132,6 +3375,8 @@ public final class WavefrontFunctions {
      * Use this data source to get all User Groups in Wavefront.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3161,6 +3406,7 @@ public final class WavefrontFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetUserGroupsResult> getUserGroupsPlain(GetUserGroupsPlainArgs args, InvokeOptions options) {
@@ -3170,6 +3416,8 @@ public final class WavefrontFunctions {
      * Use this data source to get all users in Wavefront.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3195,6 +3443,7 @@ public final class WavefrontFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetUsersResult> getUsers() {
@@ -3204,6 +3453,8 @@ public final class WavefrontFunctions {
      * Use this data source to get all users in Wavefront.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3229,6 +3480,7 @@ public final class WavefrontFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetUsersResult> getUsersPlain() {
@@ -3238,6 +3490,8 @@ public final class WavefrontFunctions {
      * Use this data source to get all users in Wavefront.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3263,6 +3517,7 @@ public final class WavefrontFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetUsersResult> getUsers(InvokeArgs args) {
@@ -3272,6 +3527,8 @@ public final class WavefrontFunctions {
      * Use this data source to get all users in Wavefront.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3297,6 +3554,7 @@ public final class WavefrontFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetUsersResult> getUsersPlain(InvokeArgs args) {
@@ -3306,6 +3564,8 @@ public final class WavefrontFunctions {
      * Use this data source to get all users in Wavefront.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3331,6 +3591,7 @@ public final class WavefrontFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetUsersResult> getUsers(InvokeArgs args, InvokeOptions options) {
@@ -3340,6 +3601,8 @@ public final class WavefrontFunctions {
      * Use this data source to get all users in Wavefront.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -3365,6 +3628,7 @@ public final class WavefrontFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetUsersResult> getUsersPlain(InvokeArgs args, InvokeOptions options) {

@@ -15,6 +15,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -39,6 +40,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 func GetExternalLinks(ctx *pulumi.Context, args *GetExternalLinksArgs, opts ...pulumi.InvokeOption) (*GetExternalLinksResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetExternalLinksResult

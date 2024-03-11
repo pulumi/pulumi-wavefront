@@ -22,6 +22,8 @@ import javax.annotation.Nullable;
  * Provides a wavefront Alert Target resource. This allows alert targets to created, updated, and deleted.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -58,13 +60,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * Alert Targets can be imported using the `id`, e.g.:
  * 
  * ```sh
- *  $ pulumi import wavefront:index/alertTarget:AlertTarget alert_target abcdEFGhijKLMNO
+ * $ pulumi import wavefront:index/alertTarget:AlertTarget alert_target abcdEFGhijKLMNO
  * ```
  * 
  */

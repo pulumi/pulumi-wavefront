@@ -243,6 +243,7 @@ class ServiceAccount(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_wavefront as wavefront
@@ -251,13 +252,14 @@ class ServiceAccount(pulumi.CustomResource):
             active=True,
             identifier="sa::tftesting")
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Service accounts can be imported by using `identifier`, e.g.:
 
         ```sh
-         $ pulumi import wavefront:index/serviceAccount:ServiceAccount basic sa::tftesting
+        $ pulumi import wavefront:index/serviceAccount:ServiceAccount basic sa::tftesting
         ```
 
         :param str resource_name: The name of the resource.
@@ -282,6 +284,7 @@ class ServiceAccount(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_wavefront as wavefront
@@ -290,13 +293,14 @@ class ServiceAccount(pulumi.CustomResource):
             active=True,
             identifier="sa::tftesting")
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
         Service accounts can be imported by using `identifier`, e.g.:
 
         ```sh
-         $ pulumi import wavefront:index/serviceAccount:ServiceAccount basic sa::tftesting
+        $ pulumi import wavefront:index/serviceAccount:ServiceAccount basic sa::tftesting
         ```
 
         :param str resource_name: The name of the resource.

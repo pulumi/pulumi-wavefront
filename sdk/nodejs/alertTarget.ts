@@ -11,6 +11,7 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as wavefront from "@pulumi/wavefront";
@@ -30,13 +31,14 @@ import * as utilities from "./utilities";
  *     ],
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
  * Alert Targets can be imported using the `id`, e.g.:
  *
  * ```sh
- *  $ pulumi import wavefront:index/alertTarget:AlertTarget alert_target abcdEFGhijKLMNO
+ * $ pulumi import wavefront:index/alertTarget:AlertTarget alert_target abcdEFGhijKLMNO
  * ```
  */
 export class AlertTarget extends pulumi.CustomResource {

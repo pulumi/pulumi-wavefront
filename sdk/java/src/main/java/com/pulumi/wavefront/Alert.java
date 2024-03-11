@@ -22,6 +22,8 @@ import javax.annotation.Nullable;
  * Provides a Wavefront Alert resource. This allows alerts to be created, updated, and deleted.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -58,13 +60,14 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
  * Alerts can be imported using the `id`, e.g.
  * 
  * ```sh
- *  $ pulumi import wavefront:index/alert:Alert alert_target 1479868728473
+ * $ pulumi import wavefront:index/alert:Alert alert_target 1479868728473
  * ```
  * 
  */
