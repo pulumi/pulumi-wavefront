@@ -44,7 +44,7 @@ import (
 //						TagsAnded:  pulumi.Bool(false),
 //						AccessType: pulumi.String("ALLOW"),
 //						UserGroupIds: pulumi.StringArray{
-//							*pulumi.String(everyone.GroupId),
+//							pulumi.String(everyone.GroupId),
 //						},
 //					},
 //				},
