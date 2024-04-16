@@ -66,11 +66,11 @@ namespace Pulumi.Wavefront
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var policyMetricsPolicy = Wavefront.GetMetricsPolicy.Invoke();
+    ///     var policy = Wavefront.GetMetricsPolicy.Invoke();
     /// 
     ///     return new Dictionary&lt;string, object?&gt;
     ///     {
-    ///         ["policy"] = policyMetricsPolicy,
+    ///         ["policy"] = policy,
     ///     };
     /// });
     /// ```

@@ -30,6 +30,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := wavefront.NewIngestionPolicy(ctx, "basic", &wavefront.IngestionPolicyArgs{
+//				Name:        pulumi.String("test_ingestion"),
 //				Description: pulumi.String("An ingestion policy for testing"),
 //			})
 //			if err != nil {

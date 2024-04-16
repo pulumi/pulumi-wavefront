@@ -25,6 +25,7 @@ namespace Pulumi.Wavefront
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
+        ///     // Get the information about a Wavefront event by its ID.
         ///     var example = Wavefront.GetEvent.Invoke(new()
         ///     {
         ///         Id = "sample-event-id",
@@ -51,6 +52,7 @@ namespace Pulumi.Wavefront
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
+        ///     // Get the information about a Wavefront event by its ID.
         ///     var example = Wavefront.GetEvent.Invoke(new()
         ///     {
         ///         Id = "sample-event-id",

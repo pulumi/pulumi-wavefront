@@ -88,6 +88,7 @@ def get_derived_metrics(limit: Optional[int] = None,
     import pulumi
     import pulumi_wavefront as wavefront
 
+    # Get the information about all derived metrics.
     example = wavefront.get_derived_metrics(limit=10,
         offset=0)
     ```
@@ -124,6 +125,7 @@ def get_derived_metrics_output(limit: Optional[pulumi.Input[Optional[int]]] = No
     import pulumi
     import pulumi_wavefront as wavefront
 
+    # Get the information about all derived metrics.
     example = wavefront.get_derived_metrics(limit=10,
         offset=0)
     ```

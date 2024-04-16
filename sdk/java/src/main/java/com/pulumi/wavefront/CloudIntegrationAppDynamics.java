@@ -47,9 +47,10 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var appDynamics = new CloudIntegrationAppDynamics(&#34;appDynamics&#34;, CloudIntegrationAppDynamicsArgs.builder()        
+ *             .name(&#34;Test Integration&#34;)
+ *             .userName(&#34;example&#34;)
  *             .controllerName(&#34;exampleController&#34;)
  *             .encryptedPassword(&#34;encryptedPassword&#34;)
- *             .userName(&#34;example&#34;)
  *             .build());
  * 
  *     }

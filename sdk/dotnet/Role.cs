@@ -23,7 +23,10 @@ namespace Pulumi.Wavefront
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var role = new Wavefront.Role("role");
+    ///     var role = new Wavefront.Role("role", new()
+    ///     {
+    ///         Name = "Test Role",
+    ///     });
     /// 
     /// });
     /// ```

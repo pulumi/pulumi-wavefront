@@ -28,6 +28,7 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
+//			// Get the information about the role.
 //			_, err := wavefront.LookupRole(ctx, &wavefront.LookupRoleArgs{
 //				Id: "role-id",
 //			}, nil)

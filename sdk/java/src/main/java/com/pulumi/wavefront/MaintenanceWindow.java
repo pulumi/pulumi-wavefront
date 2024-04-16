@@ -45,13 +45,13 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var basic = new MaintenanceWindow(&#34;basic&#34;, MaintenanceWindowArgs.builder()        
- *             .endTimeInSeconds(1601123456)
  *             .reason(&#34;Routine maintenance for 2020&#34;)
+ *             .title(&#34;Routine maintenance&#34;)
+ *             .startTimeInSeconds(1600123456)
+ *             .endTimeInSeconds(1601123456)
  *             .relevantHostNames(            
  *                 &#34;my_hostname&#34;,
  *                 &#34;my_other_hostname&#34;)
- *             .startTimeInSeconds(1600123456)
- *             .title(&#34;Routine maintenance&#34;)
  *             .build());
  * 
  *     }

@@ -16,14 +16,15 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as wavefront from "@pulumi/wavefront";
  *
- * const testTarget = new wavefront.AlertTarget("testTarget", {
+ * const testTarget = new wavefront.AlertTarget("test_target", {
+ *     name: "Terraform Test Target",
+ *     description: "Test target",
+ *     method: "WEBHOOK",
+ *     recipient: "https://hooks.slack.com/services/test/me",
  *     contentType: "application/json",
  *     customHeaders: {
  *         Testing: "true",
  *     },
- *     description: "Test target",
- *     method: "WEBHOOK",
- *     recipient: "https://hooks.slack.com/services/test/me",
  *     template: "{}",
  *     triggers: [
  *         "ALERT_OPENED",

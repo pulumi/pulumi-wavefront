@@ -16,10 +16,9 @@ import * as utilities from "./utilities";
  * import * as wavefront from "@pulumi/wavefront";
  *
  * const gcp = new wavefront.CloudIntegrationGcp("gcp", {
- *     jsonKey: `{...your gcp key ...}
- *
- * `,
+ *     name: "Test Integration",
  *     projectId: "example-gcp-project",
+ *     jsonKey: "{...your gcp key ...}\n",
  * });
  * ```
  * <!--End PulumiCodeChooser -->

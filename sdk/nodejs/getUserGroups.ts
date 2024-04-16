@@ -16,6 +16,7 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as wavefront from "@pulumi/wavefront";
  *
+ * // Get all user groups
  * const groups = wavefront.getUserGroups({
  *     limit: 10,
  *     offset: 0,
@@ -72,6 +73,7 @@ export interface GetUserGroupsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as wavefront from "@pulumi/wavefront";
  *
+ * // Get all user groups
  * const groups = wavefront.getUserGroups({
  *     limit: 10,
  *     offset: 0,

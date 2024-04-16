@@ -25,6 +25,7 @@ namespace Pulumi.Wavefront
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
+        ///     //Get the information about a derived metric.
         ///     var example = Wavefront.GetDerivedMetric.Invoke(new()
         ///     {
         ///         Id = "derived_metric_id",
@@ -51,6 +52,7 @@ namespace Pulumi.Wavefront
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
+        ///     //Get the information about a derived metric.
         ///     var example = Wavefront.GetDerivedMetric.Invoke(new()
         ///     {
         ///         Id = "derived_metric_id",

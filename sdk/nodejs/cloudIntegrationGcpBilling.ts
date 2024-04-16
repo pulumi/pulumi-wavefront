@@ -15,12 +15,11 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as wavefront from "@pulumi/wavefront";
  *
- * const gcpBilling = new wavefront.CloudIntegrationGcpBilling("gcpBilling", {
- *     apiKey: "example-api-key",
- *     jsonKey: `{...your gcp key ...}
- *
- * `,
+ * const gcpBilling = new wavefront.CloudIntegrationGcpBilling("gcp_billing", {
+ *     name: "Test Integration",
  *     projectId: "example-gcp-project",
+ *     apiKey: "example-api-key",
+ *     jsonKey: "{...your gcp key ...}\n",
  * });
  * ```
  * <!--End PulumiCodeChooser -->

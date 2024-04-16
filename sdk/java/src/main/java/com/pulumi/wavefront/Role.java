@@ -28,6 +28,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
  * import com.pulumi.wavefront.Role;
+ * import com.pulumi.wavefront.RoleArgs;
  * import java.util.List;
  * import java.util.ArrayList;
  * import java.util.Map;
@@ -41,7 +42,9 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var role = new Role(&#34;role&#34;);
+ *         var role = new Role(&#34;role&#34;, RoleArgs.builder()        
+ *             .name(&#34;Test Role&#34;)
+ *             .build());
  * 
  *     }
  * }

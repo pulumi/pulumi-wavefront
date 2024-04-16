@@ -25,6 +25,7 @@ namespace Pulumi.Wavefront
     /// {
     ///     var basic = new Wavefront.IngestionPolicy("basic", new()
     ///     {
+    ///         Name = "test_ingestion",
     ///         Description = "An ingestion policy for testing",
     ///     });
     /// 

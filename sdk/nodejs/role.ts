@@ -14,7 +14,7 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as wavefront from "@pulumi/wavefront";
  *
- * const role = new wavefront.Role("role", {});
+ * const role = new wavefront.Role("role", {name: "Test Role"});
  * ```
  * <!--End PulumiCodeChooser -->
  *

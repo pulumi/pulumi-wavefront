@@ -25,11 +25,12 @@ namespace Pulumi.Wavefront
     /// {
     ///     var @event = new Wavefront.Event("event", new()
     ///     {
+    ///         Name = "terraform-test",
     ///         Annotations = 
     ///         {
-    ///             { "details", "description" },
     ///             { "severity", "info" },
     ///             { "type", "event type" },
+    ///             { "details", "description" },
     ///         },
     ///         Tags = new[]
     ///         {

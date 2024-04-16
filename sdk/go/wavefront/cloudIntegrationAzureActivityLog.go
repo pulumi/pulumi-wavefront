@@ -30,7 +30,8 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := wavefront.NewCloudIntegrationAzureActivityLog(ctx, "azureActivityLog", &wavefront.CloudIntegrationAzureActivityLogArgs{
+//			_, err := wavefront.NewCloudIntegrationAzureActivityLog(ctx, "azure_activity_log", &wavefront.CloudIntegrationAzureActivityLogArgs{
+//				Name: pulumi.String("Test Integration"),
 //				CategoryFilters: pulumi.StringArray{
 //					pulumi.String("ADMINISTRATIVE"),
 //				},

@@ -28,7 +28,7 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := wavefront.NewCloudIntegrationAwsExternalId(ctx, "externalId", nil)
+//			_, err := wavefront.NewCloudIntegrationAwsExternalId(ctx, "external_id", nil)
 //			if err != nil {
 //				return err
 //			}

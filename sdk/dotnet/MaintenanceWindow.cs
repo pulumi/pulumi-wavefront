@@ -25,15 +25,15 @@ namespace Pulumi.Wavefront
     /// {
     ///     var basic = new Wavefront.MaintenanceWindow("basic", new()
     ///     {
-    ///         EndTimeInSeconds = 1601123456,
     ///         Reason = "Routine maintenance for 2020",
+    ///         Title = "Routine maintenance",
+    ///         StartTimeInSeconds = 1600123456,
+    ///         EndTimeInSeconds = 1601123456,
     ///         RelevantHostNames = new[]
     ///         {
     ///             "my_hostname",
     ///             "my_other_hostname",
     ///         },
-    ///         StartTimeInSeconds = 1600123456,
-    ///         Title = "Routine maintenance",
     ///     });
     /// 
     /// });

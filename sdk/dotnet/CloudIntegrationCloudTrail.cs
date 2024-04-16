@@ -24,10 +24,11 @@ namespace Pulumi.Wavefront
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var extId = new Wavefront.CloudIntegrationAwsExternalId("extId");
+    ///     var extId = new Wavefront.CloudIntegrationAwsExternalId("ext_id");
     /// 
     ///     var cloudtrail = new Wavefront.CloudIntegrationCloudTrail("cloudtrail", new()
     ///     {
+    ///         Name = "Test Integration",
     ///         RoleArn = "arn:aws::1234567:role/example-arn",
     ///         ExternalId = extId.Id,
     ///         Region = "us-west-2",

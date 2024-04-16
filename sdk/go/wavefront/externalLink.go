@@ -30,6 +30,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := wavefront.NewExternalLink(ctx, "basic", &wavefront.ExternalLinkArgs{
+//				Name:        pulumi.String("External Link"),
 //				Description: pulumi.String("An external link description"),
 //				Template:    pulumi.String("https://example.com/source={{{source}}}&startTime={{startEpochMillis}}"),
 //			})

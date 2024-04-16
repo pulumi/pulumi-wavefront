@@ -23,7 +23,7 @@ namespace Pulumi.Wavefront
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var externalId = new Wavefront.CloudIntegrationAwsExternalId("externalId");
+    ///     var externalId = new Wavefront.CloudIntegrationAwsExternalId("external_id");
     /// 
     /// });
     /// ```

@@ -25,6 +25,7 @@ namespace Pulumi.Wavefront
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
+        ///     // Get the information about a specific external links.
         ///     var example = Wavefront.GetExternalLink.Invoke(new()
         ///     {
         ///         Id = "sample-external-link-id",
@@ -51,6 +52,7 @@ namespace Pulumi.Wavefront
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
+        ///     // Get the information about a specific external links.
         ///     var example = Wavefront.GetExternalLink.Invoke(new()
         ///     {
         ///         Id = "sample-external-link-id",

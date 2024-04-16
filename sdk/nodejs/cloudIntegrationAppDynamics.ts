@@ -15,10 +15,11 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as wavefront from "@pulumi/wavefront";
  *
- * const appDynamics = new wavefront.CloudIntegrationAppDynamics("appDynamics", {
+ * const appDynamics = new wavefront.CloudIntegrationAppDynamics("app_dynamics", {
+ *     name: "Test Integration",
+ *     userName: "example",
  *     controllerName: "exampleController",
  *     encryptedPassword: "encryptedPassword",
- *     userName: "example",
  * });
  * ```
  * <!--End PulumiCodeChooser -->

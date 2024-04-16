@@ -30,6 +30,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := wavefront.NewAlert(ctx, "foobar", &wavefront.AlertArgs{
+//				Name:                pulumi.String("Test Alert"),
+//				Target:              pulumi.String("test@example.com,target:alert-target-id"),
 //				Condition:           pulumi.String("100-ts(\"cpu.usage_idle\", environment=preprod and cpu=cpu-total ) > 80"),
 //				DisplayExpression:   pulumi.String("100-ts(\"cpu.usage_idle\", environment=preprod and cpu=cpu-total )"),
 //				Minutes:             pulumi.Int(5),
@@ -39,7 +41,6 @@ import (
 //					pulumi.String("terraform"),
 //					pulumi.String("test"),
 //				},
-//				Target: pulumi.String("test@example.com,target:alert-target-id"),
 //			})
 //			if err != nil {
 //				return err

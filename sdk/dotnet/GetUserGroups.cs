@@ -25,6 +25,7 @@ namespace Pulumi.Wavefront
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
+        ///     // Get all user groups
         ///     var groups = Wavefront.GetUserGroups.Invoke(new()
         ///     {
         ///         Limit = 10,
@@ -52,6 +53,7 @@ namespace Pulumi.Wavefront
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
+        ///     // Get all user groups
         ///     var groups = Wavefront.GetUserGroups.Invoke(new()
         ///     {
         ///         Limit = 10,

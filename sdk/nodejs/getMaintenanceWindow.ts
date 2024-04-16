@@ -14,6 +14,7 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as wavefront from "@pulumi/wavefront";
  *
+ * // Get the information about specific maintenance window.
  * const example = wavefront.getMaintenanceWindow({
  *     id: "sample-maintenance-window-id",
  * });
@@ -131,6 +132,7 @@ export interface GetMaintenanceWindowResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as wavefront from "@pulumi/wavefront";
  *
+ * // Get the information about specific maintenance window.
  * const example = wavefront.getMaintenanceWindow({
  *     id: "sample-maintenance-window-id",
  * });

@@ -28,7 +28,9 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := wavefront.NewRole(ctx, "role", nil)
+//			_, err := wavefront.NewRole(ctx, "role", &wavefront.RoleArgs{
+//				Name: pulumi.String("Test Role"),
+//			})
 //			if err != nil {
 //				return err
 //			}

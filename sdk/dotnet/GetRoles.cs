@@ -25,6 +25,7 @@ namespace Pulumi.Wavefront
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
+        ///     // Get all Roles
         ///     var roles = Wavefront.GetRoles.Invoke(new()
         ///     {
         ///         Limit = 10,
@@ -52,6 +53,7 @@ namespace Pulumi.Wavefront
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
+        ///     // Get all Roles
         ///     var roles = Wavefront.GetRoles.Invoke(new()
         ///     {
         ///         Limit = 10,

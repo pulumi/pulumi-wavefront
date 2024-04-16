@@ -30,10 +30,11 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := wavefront.NewEvent(ctx, "event", &wavefront.EventArgs{
+//				Name: pulumi.String("terraform-test"),
 //				Annotations: pulumi.StringMap{
-//					"details":  pulumi.String("description"),
 //					"severity": pulumi.String("info"),
 //					"type":     pulumi.String("event type"),
+//					"details":  pulumi.String("description"),
 //				},
 //				Tags: pulumi.StringArray{
 //					pulumi.String("eventTag1"),

@@ -308,12 +308,11 @@ class CloudIntegrationGcpBilling(pulumi.CustomResource):
         import pulumi
         import pulumi_wavefront as wavefront
 
-        gcp_billing = wavefront.CloudIntegrationGcpBilling("gcpBilling",
+        gcp_billing = wavefront.CloudIntegrationGcpBilling("gcp_billing",
+            name="Test Integration",
+            project_id="example-gcp-project",
             api_key="example-api-key",
-            json_key=\"\"\"{...your gcp key ...}
-
-        \"\"\",
-            project_id="example-gcp-project")
+            json_key="{...your gcp key ...}\\n")
         ```
         <!--End PulumiCodeChooser -->
 
@@ -354,12 +353,11 @@ class CloudIntegrationGcpBilling(pulumi.CustomResource):
         import pulumi
         import pulumi_wavefront as wavefront
 
-        gcp_billing = wavefront.CloudIntegrationGcpBilling("gcpBilling",
+        gcp_billing = wavefront.CloudIntegrationGcpBilling("gcp_billing",
+            name="Test Integration",
+            project_id="example-gcp-project",
             api_key="example-api-key",
-            json_key=\"\"\"{...your gcp key ...}
-
-        \"\"\",
-            project_id="example-gcp-project")
+            json_key="{...your gcp key ...}\\n")
         ```
         <!--End PulumiCodeChooser -->
 

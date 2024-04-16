@@ -30,8 +30,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := wavefront.NewServiceAccount(ctx, "basic", &wavefront.ServiceAccountArgs{
-//				Active:     pulumi.Bool(true),
 //				Identifier: pulumi.String("sa::tftesting"),
+//				Active:     pulumi.Bool(true),
 //			})
 //			if err != nil {
 //				return err

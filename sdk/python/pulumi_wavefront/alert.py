@@ -690,6 +690,8 @@ class Alert(pulumi.CustomResource):
         import pulumi_wavefront as wavefront
 
         foobar = wavefront.Alert("foobar",
+            name="Test Alert",
+            target="test@example.com,target:alert-target-id",
             condition="100-ts(\\"cpu.usage_idle\\", environment=preprod and cpu=cpu-total ) > 80",
             display_expression="100-ts(\\"cpu.usage_idle\\", environment=preprod and cpu=cpu-total )",
             minutes=5,
@@ -698,8 +700,7 @@ class Alert(pulumi.CustomResource):
             tags=[
                 "terraform",
                 "test",
-            ],
-            target="test@example.com,target:alert-target-id")
+            ])
         ```
         <!--End PulumiCodeChooser -->
 
@@ -762,6 +763,8 @@ class Alert(pulumi.CustomResource):
         import pulumi_wavefront as wavefront
 
         foobar = wavefront.Alert("foobar",
+            name="Test Alert",
+            target="test@example.com,target:alert-target-id",
             condition="100-ts(\\"cpu.usage_idle\\", environment=preprod and cpu=cpu-total ) > 80",
             display_expression="100-ts(\\"cpu.usage_idle\\", environment=preprod and cpu=cpu-total )",
             minutes=5,
@@ -770,8 +773,7 @@ class Alert(pulumi.CustomResource):
             tags=[
                 "terraform",
                 "test",
-            ],
-            target="test@example.com,target:alert-target-id")
+            ])
         ```
         <!--End PulumiCodeChooser -->
 

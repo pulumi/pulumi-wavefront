@@ -25,8 +25,8 @@ namespace Pulumi.Wavefront
     /// {
     ///     var basic = new Wavefront.ServiceAccount("basic", new()
     ///     {
-    ///         Active = true,
     ///         Identifier = "sa::tftesting",
+    ///         Active = true,
     ///     });
     /// 
     /// });

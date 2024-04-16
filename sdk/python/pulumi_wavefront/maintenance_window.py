@@ -381,14 +381,14 @@ class MaintenanceWindow(pulumi.CustomResource):
         import pulumi_wavefront as wavefront
 
         basic = wavefront.MaintenanceWindow("basic",
-            end_time_in_seconds=1601123456,
             reason="Routine maintenance for 2020",
+            title="Routine maintenance",
+            start_time_in_seconds=1600123456,
+            end_time_in_seconds=1601123456,
             relevant_host_names=[
                 "my_hostname",
                 "my_other_hostname",
-            ],
-            start_time_in_seconds=1600123456,
-            title="Routine maintenance")
+            ])
         ```
         <!--End PulumiCodeChooser -->
 
@@ -440,14 +440,14 @@ class MaintenanceWindow(pulumi.CustomResource):
         import pulumi_wavefront as wavefront
 
         basic = wavefront.MaintenanceWindow("basic",
-            end_time_in_seconds=1601123456,
             reason="Routine maintenance for 2020",
+            title="Routine maintenance",
+            start_time_in_seconds=1600123456,
+            end_time_in_seconds=1601123456,
             relevant_host_names=[
                 "my_hostname",
                 "my_other_hostname",
-            ],
-            start_time_in_seconds=1600123456,
-            title="Routine maintenance")
+            ])
         ```
         <!--End PulumiCodeChooser -->
 

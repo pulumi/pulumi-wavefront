@@ -359,10 +359,9 @@ class CloudIntegrationGcp(pulumi.CustomResource):
         import pulumi_wavefront as wavefront
 
         gcp = wavefront.CloudIntegrationGcp("gcp",
-            json_key=\"\"\"{...your gcp key ...}
-
-        \"\"\",
-            project_id="example-gcp-project")
+            name="Test Integration",
+            project_id="example-gcp-project",
+            json_key="{...your gcp key ...}\\n")
         ```
         <!--End PulumiCodeChooser -->
 
@@ -409,10 +408,9 @@ class CloudIntegrationGcp(pulumi.CustomResource):
         import pulumi_wavefront as wavefront
 
         gcp = wavefront.CloudIntegrationGcp("gcp",
-            json_key=\"\"\"{...your gcp key ...}
-
-        \"\"\",
-            project_id="example-gcp-project")
+            name="Test Integration",
+            project_id="example-gcp-project",
+            json_key="{...your gcp key ...}\\n")
         ```
         <!--End PulumiCodeChooser -->
 

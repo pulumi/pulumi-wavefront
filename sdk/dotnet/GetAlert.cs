@@ -25,6 +25,7 @@ namespace Pulumi.Wavefront
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
+        ///     // Get the information about the alert.
         ///     var example = Wavefront.GetAlert.Invoke(new()
         ///     {
         ///         Id = "alert-id",
@@ -51,6 +52,7 @@ namespace Pulumi.Wavefront
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
+        ///     // Get the information about the alert.
         ///     var example = Wavefront.GetAlert.Invoke(new()
         ///     {
         ///         Id = "alert-id",

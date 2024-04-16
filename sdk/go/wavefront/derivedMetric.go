@@ -31,6 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := wavefront.NewDerivedMetric(ctx, "derived", &wavefront.DerivedMetricArgs{
+//				Name:    pulumi.String("dummy derived metric"),
 //				Minutes: pulumi.Int(5),
 //				Query:   pulumi.String("aliasMetric(5, \"some.metric\")"),
 //			})

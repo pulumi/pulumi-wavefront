@@ -25,12 +25,13 @@ namespace Pulumi.Wavefront
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
+        ///     // Get the information about all events
         ///     var example = Wavefront.GetEvents.Invoke(new()
         ///     {
-        ///         EarliestStartTimeEpochMillis = 1665427195,
-        ///         LatestStartTimeEpochMillis = 1665427195,
         ///         Limit = 10,
         ///         Offset = 0,
+        ///         LatestStartTimeEpochMillis = 1665427195,
+        ///         EarliestStartTimeEpochMillis = 1665427195,
         ///     });
         /// 
         /// });
@@ -54,12 +55,13 @@ namespace Pulumi.Wavefront
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
+        ///     // Get the information about all events
         ///     var example = Wavefront.GetEvents.Invoke(new()
         ///     {
-        ///         EarliestStartTimeEpochMillis = 1665427195,
-        ///         LatestStartTimeEpochMillis = 1665427195,
         ///         Limit = 10,
         ///         Offset = 0,
+        ///         LatestStartTimeEpochMillis = 1665427195,
+        ///         EarliestStartTimeEpochMillis = 1665427195,
         ///     });
         /// 
         /// });

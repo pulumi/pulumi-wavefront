@@ -16,6 +16,7 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as wavefront from "@pulumi/wavefront";
  *
+ * // Get all users
  * const users = wavefront.getUsers({});
  * ```
  * <!--End PulumiCodeChooser -->
@@ -50,6 +51,7 @@ export interface GetUsersResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as wavefront from "@pulumi/wavefront";
  *
+ * // Get all users
  * const users = wavefront.getUsers({});
  * ```
  * <!--End PulumiCodeChooser -->

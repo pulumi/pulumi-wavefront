@@ -88,6 +88,7 @@ def get_external_links(limit: Optional[int] = None,
     import pulumi
     import pulumi_wavefront as wavefront
 
+    # Get the information about all external links.
     example = wavefront.get_external_links(limit=10,
         offset=0)
     ```
@@ -124,6 +125,7 @@ def get_external_links_output(limit: Optional[pulumi.Input[Optional[int]]] = Non
     import pulumi
     import pulumi_wavefront as wavefront
 
+    # Get the information about all external links.
     example = wavefront.get_external_links(limit=10,
         offset=0)
     ```

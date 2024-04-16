@@ -28,6 +28,7 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
+//			// Get the information about a Wavefront event by its ID.
 //			_, err := wavefront.LookupEvent(ctx, &wavefront.LookupEventArgs{
 //				Id: "sample-event-id",
 //			}, nil)

@@ -88,6 +88,7 @@ def get_dashboards(limit: Optional[int] = None,
     import pulumi
     import pulumi_wavefront as wavefront
 
+    # Get the information about all dashboards.
     example = wavefront.get_dashboards(limit=10,
         offset=0)
     ```
@@ -124,6 +125,7 @@ def get_dashboards_output(limit: Optional[pulumi.Input[Optional[int]]] = None,
     import pulumi
     import pulumi_wavefront as wavefront
 
+    # Get the information about all dashboards.
     example = wavefront.get_dashboards(limit=10,
         offset=0)
     ```

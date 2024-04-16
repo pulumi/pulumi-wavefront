@@ -46,11 +46,12 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testTarget = new AlertTarget(&#34;testTarget&#34;, AlertTargetArgs.builder()        
- *             .contentType(&#34;application/json&#34;)
- *             .customHeaders(Map.of(&#34;Testing&#34;, &#34;true&#34;))
+ *             .name(&#34;Terraform Test Target&#34;)
  *             .description(&#34;Test target&#34;)
  *             .method(&#34;WEBHOOK&#34;)
  *             .recipient(&#34;https://hooks.slack.com/services/test/me&#34;)
+ *             .contentType(&#34;application/json&#34;)
+ *             .customHeaders(Map.of(&#34;Testing&#34;, &#34;true&#34;))
  *             .template(&#34;{}&#34;)
  *             .triggers(            
  *                 &#34;ALERT_OPENED&#34;,

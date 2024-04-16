@@ -39,8 +39,12 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as wavefront from "@pulumi/wavefront";
  *
- * const policyMetricsPolicy = wavefront.getMetricsPolicy({});
- * export const policy = policyMetricsPolicy;
+ * export = async () => {
+ *     const policy = await wavefront.getMetricsPolicy({});
+ *     return {
+ *         policy: policy,
+ *     };
+ * }
  * ```
  * <!--End PulumiCodeChooser -->
  *

@@ -23,16 +23,17 @@ namespace Pulumi.Wavefront
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testTarget = new Wavefront.AlertTarget("testTarget", new()
+    ///     var testTarget = new Wavefront.AlertTarget("test_target", new()
     ///     {
+    ///         Name = "Terraform Test Target",
+    ///         Description = "Test target",
+    ///         Method = "WEBHOOK",
+    ///         Recipient = "https://hooks.slack.com/services/test/me",
     ///         ContentType = "application/json",
     ///         CustomHeaders = 
     ///         {
     ///             { "Testing", "true" },
     ///         },
-    ///         Description = "Test target",
-    ///         Method = "WEBHOOK",
-    ///         Recipient = "https://hooks.slack.com/services/test/me",
     ///         Template = "{}",
     ///         Triggers = new[]
     ///         {

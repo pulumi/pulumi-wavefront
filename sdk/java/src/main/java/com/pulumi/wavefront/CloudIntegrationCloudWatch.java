@@ -50,6 +50,7 @@ import javax.annotation.Nullable;
  *         var extId = new CloudIntegrationAwsExternalId(&#34;extId&#34;);
  * 
  *         var cloudwatch = new CloudIntegrationCloudWatch(&#34;cloudwatch&#34;, CloudIntegrationCloudWatchArgs.builder()        
+ *             .name(&#34;Test Integration&#34;)
  *             .forceSave(true)
  *             .roleArn(&#34;arn:aws::1234567:role/example-arn&#34;)
  *             .externalId(extId.id())

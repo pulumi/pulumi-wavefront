@@ -68,6 +68,7 @@ def get_users(opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetUsersR
     import pulumi
     import pulumi_wavefront as wavefront
 
+    # Get all users
     users = wavefront.get_users()
     ```
     <!--End PulumiCodeChooser -->
@@ -93,6 +94,7 @@ def get_users_output(opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Outp
     import pulumi
     import pulumi_wavefront as wavefront
 
+    # Get all users
     users = wavefront.get_users()
     ```
     <!--End PulumiCodeChooser -->

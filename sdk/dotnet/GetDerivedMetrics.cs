@@ -25,6 +25,7 @@ namespace Pulumi.Wavefront
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
+        ///     // Get the information about all derived metrics.
         ///     var example = Wavefront.GetDerivedMetrics.Invoke(new()
         ///     {
         ///         Limit = 10,
@@ -52,6 +53,7 @@ namespace Pulumi.Wavefront
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
+        ///     // Get the information about all derived metrics.
         ///     var example = Wavefront.GetDerivedMetrics.Invoke(new()
         ///     {
         ///         Limit = 10,

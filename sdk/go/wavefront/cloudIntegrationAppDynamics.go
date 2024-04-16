@@ -30,10 +30,11 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := wavefront.NewCloudIntegrationAppDynamics(ctx, "appDynamics", &wavefront.CloudIntegrationAppDynamicsArgs{
+//			_, err := wavefront.NewCloudIntegrationAppDynamics(ctx, "app_dynamics", &wavefront.CloudIntegrationAppDynamicsArgs{
+//				Name:              pulumi.String("Test Integration"),
+//				UserName:          pulumi.String("example"),
 //				ControllerName:    pulumi.String("exampleController"),
 //				EncryptedPassword: pulumi.String("encryptedPassword"),
-//				UserName:          pulumi.String("example"),
 //			})
 //			if err != nil {
 //				return err

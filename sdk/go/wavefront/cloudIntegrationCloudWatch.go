@@ -30,11 +30,12 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			extId, err := wavefront.NewCloudIntegrationAwsExternalId(ctx, "extId", nil)
+//			extId, err := wavefront.NewCloudIntegrationAwsExternalId(ctx, "ext_id", nil)
 //			if err != nil {
 //				return err
 //			}
 //			_, err = wavefront.NewCloudIntegrationCloudWatch(ctx, "cloudwatch", &wavefront.CloudIntegrationCloudWatchArgs{
+//				Name:       pulumi.String("Test Integration"),
 //				ForceSave:  pulumi.Bool(true),
 //				RoleArn:    pulumi.String("arn:aws::1234567:role/example-arn"),
 //				ExternalId: extId.ID(),

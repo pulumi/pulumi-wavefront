@@ -28,11 +28,12 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
+//			// Get the information about all events
 //			_, err := wavefront.GetEvents(ctx, &wavefront.GetEventsArgs{
-//				EarliestStartTimeEpochMillis: 1665427195,
-//				LatestStartTimeEpochMillis:   1665427195,
 //				Limit:                        pulumi.IntRef(10),
 //				Offset:                       pulumi.IntRef(0),
+//				LatestStartTimeEpochMillis:   1665427195,
+//				EarliestStartTimeEpochMillis: 1665427195,
 //			}, nil)
 //			if err != nil {
 //				return err

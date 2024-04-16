@@ -104,6 +104,7 @@ def get_user_group(id: Optional[str] = None,
     import pulumi
     import pulumi_wavefront as wavefront
 
+    # Get the information about the user group.
     example = wavefront.get_user_group(id="user-group-id")
     ```
     <!--End PulumiCodeChooser -->
@@ -137,6 +138,7 @@ def get_user_group_output(id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_wavefront as wavefront
 
+    # Get the information about the user group.
     example = wavefront.get_user_group(id="user-group-id")
     ```
     <!--End PulumiCodeChooser -->

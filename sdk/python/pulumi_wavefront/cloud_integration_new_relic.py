@@ -341,7 +341,9 @@ class CloudIntegrationNewRelic(pulumi.CustomResource):
         import pulumi
         import pulumi_wavefront as wavefront
 
-        newrelic = wavefront.CloudIntegrationNewRelic("newrelic", api_key="example-api-key")
+        newrelic = wavefront.CloudIntegrationNewRelic("newrelic",
+            name="Test Integration",
+            api_key="example-api-key")
         ```
         <!--End PulumiCodeChooser -->
 
@@ -382,7 +384,9 @@ class CloudIntegrationNewRelic(pulumi.CustomResource):
         import pulumi
         import pulumi_wavefront as wavefront
 
-        newrelic = wavefront.CloudIntegrationNewRelic("newrelic", api_key="example-api-key")
+        newrelic = wavefront.CloudIntegrationNewRelic("newrelic",
+            name="Test Integration",
+            api_key="example-api-key")
         ```
         <!--End PulumiCodeChooser -->
 

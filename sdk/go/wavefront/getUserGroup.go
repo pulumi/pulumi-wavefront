@@ -28,6 +28,7 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
+//			// Get the information about the user group.
 //			_, err := wavefront.LookupUserGroup(ctx, &wavefront.LookupUserGroupArgs{
 //				Id: "user-group-id",
 //			}, nil)

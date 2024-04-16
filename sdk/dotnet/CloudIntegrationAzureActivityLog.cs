@@ -24,8 +24,9 @@ namespace Pulumi.Wavefront
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var azureActivityLog = new Wavefront.CloudIntegrationAzureActivityLog("azureActivityLog", new()
+    ///     var azureActivityLog = new Wavefront.CloudIntegrationAzureActivityLog("azure_activity_log", new()
     ///     {
+    ///         Name = "Test Integration",
     ///         CategoryFilters = new[]
     ///         {
     ///             "ADMINISTRATIVE",

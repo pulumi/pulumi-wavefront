@@ -31,8 +31,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := wavefront.NewCloudIntegrationGcp(ctx, "gcp", &wavefront.CloudIntegrationGcpArgs{
-//				JsonKey:   pulumi.String("{...your gcp key ...}\n\n"),
+//				Name:      pulumi.String("Test Integration"),
 //				ProjectId: pulumi.String("example-gcp-project"),
+//				JsonKey:   pulumi.String("{...your gcp key ...}\n"),
 //			})
 //			if err != nil {
 //				return err

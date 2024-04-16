@@ -30,14 +30,14 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := wavefront.NewMaintenanceWindow(ctx, "basic", &wavefront.MaintenanceWindowArgs{
-//				EndTimeInSeconds: pulumi.Int(1601123456),
-//				Reason:           pulumi.String("Routine maintenance for 2020"),
+//				Reason:             pulumi.String("Routine maintenance for 2020"),
+//				Title:              pulumi.String("Routine maintenance"),
+//				StartTimeInSeconds: pulumi.Int(1600123456),
+//				EndTimeInSeconds:   pulumi.Int(1601123456),
 //				RelevantHostNames: pulumi.StringArray{
 //					pulumi.String("my_hostname"),
 //					pulumi.String("my_other_hostname"),
 //				},
-//				StartTimeInSeconds: pulumi.Int(1600123456),
-//				Title:              pulumi.String("Routine maintenance"),
 //			})
 //			if err != nil {
 //				return err

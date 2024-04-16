@@ -14,6 +14,7 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as wavefront from "@pulumi/wavefront";
  *
+ * // Get the info for user "example.user@example.com"
  * const example = wavefront.getUser({
  *     email: "example.user@example.com",
  * });
@@ -74,6 +75,7 @@ export interface GetUserResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as wavefront from "@pulumi/wavefront";
  *
+ * // Get the info for user "example.user@example.com"
  * const example = wavefront.getUser({
  *     email: "example.user@example.com",
  * });

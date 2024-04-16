@@ -14,6 +14,7 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as wavefront from "@pulumi/wavefront";
  *
+ * // Get the information about a Wavefront event by its ID.
  * const example = wavefront.getEvent({
  *     id: "sample-event-id",
  * });
@@ -90,6 +91,7 @@ export interface GetEventResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as wavefront from "@pulumi/wavefront";
  *
+ * // Get the information about a Wavefront event by its ID.
  * const example = wavefront.getEvent({
  *     id: "sample-event-id",
  * });

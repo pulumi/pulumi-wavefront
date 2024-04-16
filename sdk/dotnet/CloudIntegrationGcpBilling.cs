@@ -24,13 +24,13 @@ namespace Pulumi.Wavefront
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var gcpBilling = new Wavefront.CloudIntegrationGcpBilling("gcpBilling", new()
+    ///     var gcpBilling = new Wavefront.CloudIntegrationGcpBilling("gcp_billing", new()
     ///     {
+    ///         Name = "Test Integration",
+    ///         ProjectId = "example-gcp-project",
     ///         ApiKey = "example-api-key",
     ///         JsonKey = @"{...your gcp key ...}
-    /// 
     /// ",
-    ///         ProjectId = "example-gcp-project",
     ///     });
     /// 
     /// });

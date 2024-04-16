@@ -161,6 +161,7 @@ def get_event(id: Optional[str] = None,
     import pulumi
     import pulumi_wavefront as wavefront
 
+    # Get the information about a Wavefront event by its ID.
     example = wavefront.get_event(id="sample-event-id")
     ```
     <!--End PulumiCodeChooser -->
@@ -199,6 +200,7 @@ def get_event_output(id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_wavefront as wavefront
 
+    # Get the information about a Wavefront event by its ID.
     example = wavefront.get_event(id="sample-event-id")
     ```
     <!--End PulumiCodeChooser -->

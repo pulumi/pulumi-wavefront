@@ -15,8 +15,9 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as wavefront from "@pulumi/wavefront";
  *
- * const extId = new wavefront.CloudIntegrationAwsExternalId("extId", {});
+ * const extId = new wavefront.CloudIntegrationAwsExternalId("ext_id", {});
  * const ec2 = new wavefront.CloudIntegrationEc2("ec2", {
+ *     name: "Test Integration",
  *     roleArn: "arn:aws::1234567:role/example-arn",
  *     externalId: extId.id,
  * });

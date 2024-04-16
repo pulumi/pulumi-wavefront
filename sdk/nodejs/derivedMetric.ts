@@ -16,6 +16,7 @@ import * as utilities from "./utilities";
  * import * as wavefront from "@pulumi/wavefront";
  *
  * const derived = new wavefront.DerivedMetric("derived", {
+ *     name: "dummy derived metric",
  *     minutes: 5,
  *     query: "aliasMetric(5, \"some.metric\")",
  * });

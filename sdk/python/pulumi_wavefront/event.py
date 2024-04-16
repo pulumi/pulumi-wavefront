@@ -200,10 +200,11 @@ class Event(pulumi.CustomResource):
         import pulumi_wavefront as wavefront
 
         event = wavefront.Event("event",
+            name="terraform-test",
             annotations={
-                "details": "description",
                 "severity": "info",
                 "type": "event type",
+                "details": "description",
             },
             tags=["eventTag1"])
         ```
@@ -241,10 +242,11 @@ class Event(pulumi.CustomResource):
         import pulumi_wavefront as wavefront
 
         event = wavefront.Event("event",
+            name="terraform-test",
             annotations={
-                "details": "description",
                 "severity": "info",
                 "type": "event type",
+                "details": "description",
             },
             tags=["eventTag1"])
         ```
