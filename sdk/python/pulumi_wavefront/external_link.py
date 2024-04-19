@@ -285,6 +285,7 @@ class ExternalLink(pulumi.CustomResource):
         import pulumi_wavefront as wavefront
 
         basic = wavefront.ExternalLink("basic",
+            name="External Link",
             description="An external link description",
             template="https://example.com/source={{{source}}}&startTime={{startEpochMillis}}")
         ```
@@ -328,6 +329,7 @@ class ExternalLink(pulumi.CustomResource):
         import pulumi_wavefront as wavefront
 
         basic = wavefront.ExternalLink("basic",
+            name="External Link",
             description="An external link description",
             template="https://example.com/source={{{source}}}&startTime={{startEpochMillis}}")
         ```

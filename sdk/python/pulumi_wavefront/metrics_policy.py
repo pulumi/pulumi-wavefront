@@ -148,8 +148,8 @@ class MetricsPolicy(pulumi.CustomResource):
         import pulumi
         import pulumi_wavefront as wavefront
 
-        policy_metrics_policy = wavefront.get_metrics_policy()
-        pulumi.export("policy", policy_metrics_policy)
+        policy = wavefront.get_metrics_policy()
+        pulumi.export("policy", policy)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -204,8 +204,8 @@ class MetricsPolicy(pulumi.CustomResource):
         import pulumi
         import pulumi_wavefront as wavefront
 
-        policy_metrics_policy = wavefront.get_metrics_policy()
-        pulumi.export("policy", policy_metrics_policy)
+        policy = wavefront.get_metrics_policy()
+        pulumi.export("policy", policy)
         ```
         <!--End PulumiCodeChooser -->
 

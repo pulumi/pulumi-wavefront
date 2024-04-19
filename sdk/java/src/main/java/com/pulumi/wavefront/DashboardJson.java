@@ -42,126 +42,125 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testDashboardJson = new DashboardJson(&#34;testDashboardJson&#34;, DashboardJsonArgs.builder()        
  *             .dashboardJson(&#34;&#34;&#34;
- *   {
- *     &#34;acl&#34;: {
- *       &#34;canModify&#34;: [
- *         &#34;group-uuid&#34;,
- *         &#34;role-uuid&#34;
- *       ],
- *       &#34;canView&#34;: [
- *         &#34;group-uuid&#34;,
- *         &#34;role-uuid&#34;
- *       ]
- *     },
- *     &#34;name&#34;: &#34;Terraform Test Dashboard Json&#34;,
- *     &#34;description&#34;: &#34;a&#34;,
- *     &#34;eventFilterType&#34;: &#34;BYCHART&#34;,
- *     &#34;eventQuery&#34;: &#34;&#34;,
- *     &#34;defaultTimeWindow&#34;: &#34;&#34;,
- *     &#34;url&#34;: &#34;tftestimport&#34;,
- *     &#34;displayDescription&#34;: false,
- *     &#34;displaySectionTableOfContents&#34;: true,
- *     &#34;displayQueryParameters&#34;: false,
- *     &#34;sections&#34;: [
- *       {
- *         &#34;name&#34;: &#34;section 1&#34;,
- *         &#34;rows&#34;: [
- *           {
- *             &#34;charts&#34;: [
- *               {
- *                 &#34;name&#34;: &#34;chart 1&#34;,
- *                 &#34;sources&#34;: [
- *                   {
- *                     &#34;name&#34;: &#34;source 1&#34;,
- *                     &#34;query&#34;: &#34;ts()&#34;,
- *                     &#34;scatterPlotSource&#34;: &#34;Y&#34;,
- *                     &#34;querybuilderEnabled&#34;: false,
- *                     &#34;sourceDescription&#34;: &#34;&#34;
- *                   }
- *                 ],
- *                 &#34;units&#34;: &#34;someunit&#34;,
- *                 &#34;base&#34;: 0,
- *                 &#34;noDefaultEvents&#34;: false,
- *                 &#34;interpolatePoints&#34;: false,
- *                 &#34;includeObsoleteMetrics&#34;: false,
- *                 &#34;description&#34;: &#34;This is chart 1, showing something&#34;,
- *                 &#34;chartSettings&#34;: {
- *                   &#34;type&#34;: &#34;markdown-widget&#34;,
- *                   &#34;max&#34;: 100,
- *                   &#34;expectedDataSpacing&#34;: 120,
- *                   &#34;windowing&#34;: &#34;full&#34;,
- *                   &#34;windowSize&#34;: 10,
- *                   &#34;autoColumnTags&#34;: false,
- *                   &#34;columnTags&#34;: &#34;deprecated&#34;,
- *                   &#34;tagMode&#34;: &#34;all&#34;,
- *                   &#34;numTags&#34;: 2,
- *                   &#34;customTags&#34;: [
- *                     &#34;tag1&#34;,
- *                     &#34;tag2&#34;
- *                   ],
- *                   &#34;groupBySource&#34;: true,
- *                   &#34;y1Max&#34;: 100,
- *                   &#34;y1Units&#34;: &#34;units&#34;,
- *                   &#34;y0ScaleSIBy1024&#34;: true,
- *                   &#34;y1ScaleSIBy1024&#34;: true,
- *                   &#34;y0UnitAutoscaling&#34;: true,
- *                   &#34;y1UnitAutoscaling&#34;: true,
- *                   &#34;fixedLegendEnabled&#34;: true,
- *                   &#34;fixedLegendUseRawStats&#34;: true,
- *                   &#34;fixedLegendPosition&#34;: &#34;RIGHT&#34;,
- *                   &#34;fixedLegendDisplayStats&#34;: [
- *                     &#34;stat1&#34;,
- *                     &#34;stat2&#34;
- *                   ],
- *                   &#34;fixedLegendFilterSort&#34;: &#34;TOP&#34;,
- *                   &#34;fixedLegendFilterLimit&#34;: 1,
- *                   &#34;fixedLegendFilterField&#34;: &#34;CURRENT&#34;,
- *                   &#34;plainMarkdownContent&#34;: &#34;markdown content&#34;
- *                 },
- *                 &#34;chartAttributes&#34;: {
- *                   &#34;dashboardLinks&#34;: {
- *                     &#34;*&#34;: {
- *                       &#34;variables&#34;: {
- *                         &#34;xxx&#34;: &#34;xxx&#34;
- *                       },
- *                       &#34;destination&#34;: &#34;/dashboards/xxxx&#34;
- *                     }
- *                   }
- *                 },
- *                 &#34;summarization&#34;: &#34;MEAN&#34;
- *               }
- *             ],
- *             &#34;heightFactor&#34;: 50
- *           }
- *         ]
- *       }
+ * {
+ *   &#34;acl&#34;: {
+ *     &#34;canModify&#34;: [
+ *       &#34;group-uuid&#34;,
+ *       &#34;role-uuid&#34;
  *     ],
- *     &#34;parameterDetails&#34;: {
- *       &#34;param&#34;: {
- *         &#34;hideFromView&#34;: false,
- *         &#34;description&#34;: null,
- *         &#34;allowAll&#34;: null,
- *         &#34;tagKey&#34;: null,
- *         &#34;queryValue&#34;: null,
- *         &#34;dynamicFieldType&#34;: null,
- *         &#34;reverseDynSort&#34;: null,
- *         &#34;parameterType&#34;: &#34;SIMPLE&#34;,
- *         &#34;label&#34;: &#34;test&#34;,
- *         &#34;defaultValue&#34;: &#34;Label&#34;,
- *         &#34;valuesToReadableStrings&#34;: {
- *           &#34;Label&#34;: &#34;test&#34;
- *         },
- *         &#34;selectedLabel&#34;: &#34;Label&#34;,
- *         &#34;value&#34;: &#34;test&#34;
- *       }
- *     },
- *     &#34;tags&#34;: {
- *       &#34;customerTags&#34;: [
- *         &#34;terraform&#34;
+ *     &#34;canView&#34;: [
+ *       &#34;group-uuid&#34;,
+ *       &#34;role-uuid&#34;
+ *     ]
+ *   },
+ *   &#34;name&#34;: &#34;Terraform Test Dashboard Json&#34;,
+ *   &#34;description&#34;: &#34;a&#34;,
+ *   &#34;eventFilterType&#34;: &#34;BYCHART&#34;,
+ *   &#34;eventQuery&#34;: &#34;&#34;,
+ *   &#34;defaultTimeWindow&#34;: &#34;&#34;,
+ *   &#34;url&#34;: &#34;tftestimport&#34;,
+ *   &#34;displayDescription&#34;: false,
+ *   &#34;displaySectionTableOfContents&#34;: true,
+ *   &#34;displayQueryParameters&#34;: false,
+ *   &#34;sections&#34;: [
+ *     {
+ *       &#34;name&#34;: &#34;section 1&#34;,
+ *       &#34;rows&#34;: [
+ *         {
+ *           &#34;charts&#34;: [
+ *             {
+ *               &#34;name&#34;: &#34;chart 1&#34;,
+ *               &#34;sources&#34;: [
+ *                 {
+ *                   &#34;name&#34;: &#34;source 1&#34;,
+ *                   &#34;query&#34;: &#34;ts()&#34;,
+ *                   &#34;scatterPlotSource&#34;: &#34;Y&#34;,
+ *                   &#34;querybuilderEnabled&#34;: false,
+ *                   &#34;sourceDescription&#34;: &#34;&#34;
+ *                 }
+ *               ],
+ *               &#34;units&#34;: &#34;someunit&#34;,
+ *               &#34;base&#34;: 0,
+ *               &#34;noDefaultEvents&#34;: false,
+ *               &#34;interpolatePoints&#34;: false,
+ *               &#34;includeObsoleteMetrics&#34;: false,
+ *               &#34;description&#34;: &#34;This is chart 1, showing something&#34;,
+ *               &#34;chartSettings&#34;: {
+ *                 &#34;type&#34;: &#34;markdown-widget&#34;,
+ *                 &#34;max&#34;: 100,
+ *                 &#34;expectedDataSpacing&#34;: 120,
+ *                 &#34;windowing&#34;: &#34;full&#34;,
+ *                 &#34;windowSize&#34;: 10,
+ *                 &#34;autoColumnTags&#34;: false,
+ *                 &#34;columnTags&#34;: &#34;deprecated&#34;,
+ *                 &#34;tagMode&#34;: &#34;all&#34;,
+ *                 &#34;numTags&#34;: 2,
+ *                 &#34;customTags&#34;: [
+ *                   &#34;tag1&#34;,
+ *                   &#34;tag2&#34;
+ *                 ],
+ *                 &#34;groupBySource&#34;: true,
+ *                 &#34;y1Max&#34;: 100,
+ *                 &#34;y1Units&#34;: &#34;units&#34;,
+ *                 &#34;y0ScaleSIBy1024&#34;: true,
+ *                 &#34;y1ScaleSIBy1024&#34;: true,
+ *                 &#34;y0UnitAutoscaling&#34;: true,
+ *                 &#34;y1UnitAutoscaling&#34;: true,
+ *                 &#34;fixedLegendEnabled&#34;: true,
+ *                 &#34;fixedLegendUseRawStats&#34;: true,
+ *                 &#34;fixedLegendPosition&#34;: &#34;RIGHT&#34;,
+ *                 &#34;fixedLegendDisplayStats&#34;: [
+ *                   &#34;stat1&#34;,
+ *                   &#34;stat2&#34;
+ *                 ],
+ *                 &#34;fixedLegendFilterSort&#34;: &#34;TOP&#34;,
+ *                 &#34;fixedLegendFilterLimit&#34;: 1,
+ *                 &#34;fixedLegendFilterField&#34;: &#34;CURRENT&#34;,
+ *                 &#34;plainMarkdownContent&#34;: &#34;markdown content&#34;
+ *               },
+ *               &#34;chartAttributes&#34;: {
+ *                 &#34;dashboardLinks&#34;: {
+ *                   &#34;*&#34;: {
+ *                     &#34;variables&#34;: {
+ *                       &#34;xxx&#34;: &#34;xxx&#34;
+ *                     },
+ *                     &#34;destination&#34;: &#34;/dashboards/xxxx&#34;
+ *                   }
+ *                 }
+ *               },
+ *               &#34;summarization&#34;: &#34;MEAN&#34;
+ *             }
+ *           ],
+ *           &#34;heightFactor&#34;: 50
+ *         }
  *       ]
  *     }
+ *   ],
+ *   &#34;parameterDetails&#34;: {
+ *     &#34;param&#34;: {
+ *       &#34;hideFromView&#34;: false,
+ *       &#34;description&#34;: null,
+ *       &#34;allowAll&#34;: null,
+ *       &#34;tagKey&#34;: null,
+ *       &#34;queryValue&#34;: null,
+ *       &#34;dynamicFieldType&#34;: null,
+ *       &#34;reverseDynSort&#34;: null,
+ *       &#34;parameterType&#34;: &#34;SIMPLE&#34;,
+ *       &#34;label&#34;: &#34;test&#34;,
+ *       &#34;defaultValue&#34;: &#34;Label&#34;,
+ *       &#34;valuesToReadableStrings&#34;: {
+ *         &#34;Label&#34;: &#34;test&#34;
+ *       },
+ *       &#34;selectedLabel&#34;: &#34;Label&#34;,
+ *       &#34;value&#34;: &#34;test&#34;
+ *     }
+ *   },
+ *   &#34;tags&#34;: {
+ *     &#34;customerTags&#34;: [
+ *       &#34;terraform&#34;
+ *     ]
  *   }
- * 
+ * }
  *             &#34;&#34;&#34;)
  *             .build());
  * 

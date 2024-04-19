@@ -609,10 +609,11 @@ class CloudIntegrationAppDynamics(pulumi.CustomResource):
         import pulumi
         import pulumi_wavefront as wavefront
 
-        app_dynamics = wavefront.CloudIntegrationAppDynamics("appDynamics",
+        app_dynamics = wavefront.CloudIntegrationAppDynamics("app_dynamics",
+            name="Test Integration",
+            user_name="example",
             controller_name="exampleController",
-            encrypted_password="encryptedPassword",
-            user_name="example")
+            encrypted_password="encryptedPassword")
         ```
         <!--End PulumiCodeChooser -->
 
@@ -663,10 +664,11 @@ class CloudIntegrationAppDynamics(pulumi.CustomResource):
         import pulumi
         import pulumi_wavefront as wavefront
 
-        app_dynamics = wavefront.CloudIntegrationAppDynamics("appDynamics",
+        app_dynamics = wavefront.CloudIntegrationAppDynamics("app_dynamics",
+            name="Test Integration",
+            user_name="example",
             controller_name="exampleController",
-            encrypted_password="encryptedPassword",
-            user_name="example")
+            encrypted_password="encryptedPassword")
         ```
         <!--End PulumiCodeChooser -->
 

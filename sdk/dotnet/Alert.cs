@@ -25,6 +25,8 @@ namespace Pulumi.Wavefront
     /// {
     ///     var foobar = new Wavefront.Alert("foobar", new()
     ///     {
+    ///         Name = "Test Alert",
+    ///         Target = "test@example.com,target:alert-target-id",
     ///         Condition = "100-ts(\"cpu.usage_idle\", environment=preprod and cpu=cpu-total ) &gt; 80",
     ///         DisplayExpression = "100-ts(\"cpu.usage_idle\", environment=preprod and cpu=cpu-total )",
     ///         Minutes = 5,
@@ -35,7 +37,6 @@ namespace Pulumi.Wavefront
     ///             "terraform",
     ///             "test",
     ///         },
-    ///         Target = "test@example.com,target:alert-target-id",
     ///     });
     /// 
     /// });

@@ -28,6 +28,7 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
+//			// Get the information about all external links.
 //			_, err := wavefront.GetExternalLinks(ctx, &wavefront.GetExternalLinksArgs{
 //				Limit:  pulumi.IntRef(10),
 //				Offset: pulumi.IntRef(0),

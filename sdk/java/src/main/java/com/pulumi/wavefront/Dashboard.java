@@ -57,6 +57,7 @@ import javax.annotation.Nullable;
  *             .build());
  * 
  *         var testDashboard = new Dashboard(&#34;testDashboard&#34;, DashboardArgs.builder()        
+ *             .name(&#34;Terraform Test Dashboard&#34;)
  *             .description(&#34;testing, testing&#34;)
  *             .url(&#34;tftestcreate&#34;)
  *             .displaySectionTableOfContents(true)

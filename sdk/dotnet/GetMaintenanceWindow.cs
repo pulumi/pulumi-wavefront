@@ -25,6 +25,7 @@ namespace Pulumi.Wavefront
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
+        ///     // Get the information about specific maintenance window.
         ///     var example = Wavefront.GetMaintenanceWindow.Invoke(new()
         ///     {
         ///         Id = "sample-maintenance-window-id",
@@ -51,6 +52,7 @@ namespace Pulumi.Wavefront
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
+        ///     // Get the information about specific maintenance window.
         ///     var example = Wavefront.GetMaintenanceWindow.Invoke(new()
         ///     {
         ///         Id = "sample-maintenance-window-id",

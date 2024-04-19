@@ -15,8 +15,8 @@ import * as utilities from "./utilities";
  * import * as wavefront from "@pulumi/wavefront";
  *
  * const basic = new wavefront.ServiceAccount("basic", {
- *     active: true,
  *     identifier: "sa::tftesting",
+ *     active: true,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

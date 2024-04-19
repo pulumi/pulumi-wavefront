@@ -26,6 +26,7 @@ namespace Pulumi.Wavefront
     /// {
     ///     var derived = new Wavefront.DerivedMetric("derived", new()
     ///     {
+    ///         Name = "dummy derived metric",
     ///         Minutes = 5,
     ///         Query = "aliasMetric(5, \"some.metric\")",
     ///     });

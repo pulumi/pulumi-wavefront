@@ -14,6 +14,7 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as wavefront from "@pulumi/wavefront";
  *
+ * //Get the information about a derived metric.
  * const example = wavefront.getDerivedMetric({
  *     id: "derived_metric_id",
  * });
@@ -149,6 +150,7 @@ export interface GetDerivedMetricResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as wavefront from "@pulumi/wavefront";
  *
+ * //Get the information about a derived metric.
  * const example = wavefront.getDerivedMetric({
  *     id: "derived_metric_id",
  * });

@@ -16,11 +16,12 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as wavefront from "@pulumi/wavefront";
  *
+ * // Get the information about all events
  * const example = wavefront.getEvents({
- *     earliestStartTimeEpochMillis: 1665427195,
- *     latestStartTimeEpochMillis: 1665427195,
  *     limit: 10,
  *     offset: 0,
+ *     latestStartTimeEpochMillis: 1665427195,
+ *     earliestStartTimeEpochMillis: 1665427195,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -91,11 +92,12 @@ export interface GetEventsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as wavefront from "@pulumi/wavefront";
  *
+ * // Get the information about all events
  * const example = wavefront.getEvents({
- *     earliestStartTimeEpochMillis: 1665427195,
- *     latestStartTimeEpochMillis: 1665427195,
  *     limit: 10,
  *     offset: 0,
+ *     latestStartTimeEpochMillis: 1665427195,
+ *     earliestStartTimeEpochMillis: 1665427195,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

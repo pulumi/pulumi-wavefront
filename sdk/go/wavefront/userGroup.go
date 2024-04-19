@@ -30,6 +30,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := wavefront.NewUserGroup(ctx, "basic", &wavefront.UserGroupArgs{
+//				Name:        pulumi.String("Basic User Group"),
 //				Description: pulumi.String("Basic User Group for Unit Tests"),
 //			})
 //			if err != nil {

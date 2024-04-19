@@ -16,6 +16,7 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as wavefront from "@pulumi/wavefront";
  *
+ * // Get the information about all external links.
  * const example = wavefront.getExternalLinks({
  *     limit: 10,
  *     offset: 0,
@@ -72,6 +73,7 @@ export interface GetExternalLinksResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as wavefront from "@pulumi/wavefront";
  *
+ * // Get the information about all external links.
  * const example = wavefront.getExternalLinks({
  *     limit: 10,
  *     offset: 0,

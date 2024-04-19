@@ -28,6 +28,7 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
+//			// Get the information about a derived metric.
 //			_, err := wavefront.LookupDerivedMetric(ctx, &wavefront.LookupDerivedMetricArgs{
 //				Id: "derived_metric_id",
 //			}, nil)

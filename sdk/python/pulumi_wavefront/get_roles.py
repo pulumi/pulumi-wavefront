@@ -88,6 +88,7 @@ def get_roles(limit: Optional[int] = None,
     import pulumi
     import pulumi_wavefront as wavefront
 
+    # Get all Roles
     roles = wavefront.get_roles(limit=10,
         offset=0)
     ```
@@ -124,6 +125,7 @@ def get_roles_output(limit: Optional[pulumi.Input[Optional[int]]] = None,
     import pulumi
     import pulumi_wavefront as wavefront
 
+    # Get all Roles
     roles = wavefront.get_roles(limit=10,
         offset=0)
     ```

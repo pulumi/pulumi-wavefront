@@ -29,15 +29,16 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := wavefront.NewAlertTarget(ctx, "testTarget", &wavefront.AlertTargetArgs{
+//			_, err := wavefront.NewAlertTarget(ctx, "test_target", &wavefront.AlertTargetArgs{
+//				Name:        pulumi.String("Terraform Test Target"),
+//				Description: pulumi.String("Test target"),
+//				Method:      pulumi.String("WEBHOOK"),
+//				Recipient:   pulumi.String("https://hooks.slack.com/services/test/me"),
 //				ContentType: pulumi.String("application/json"),
 //				CustomHeaders: pulumi.StringMap{
 //					"Testing": pulumi.String("true"),
 //				},
-//				Description: pulumi.String("Test target"),
-//				Method:      pulumi.String("WEBHOOK"),
-//				Recipient:   pulumi.String("https://hooks.slack.com/services/test/me"),
-//				Template:    pulumi.String("{}"),
+//				Template: pulumi.String("{}"),
 //				Triggers: pulumi.StringArray{
 //					pulumi.String("ALERT_OPENED"),
 //					pulumi.String("ALERT_RESOLVED"),

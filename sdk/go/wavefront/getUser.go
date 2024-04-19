@@ -28,6 +28,7 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
+//			// Get the info for user "example.user@example.com"
 //			_, err := wavefront.LookupUser(ctx, &wavefront.LookupUserArgs{
 //				Email: "example.user@example.com",
 //			}, nil)

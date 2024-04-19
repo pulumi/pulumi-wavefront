@@ -88,6 +88,7 @@ def get_user_groups(limit: Optional[int] = None,
     import pulumi
     import pulumi_wavefront as wavefront
 
+    # Get all user groups
     groups = wavefront.get_user_groups(limit=10,
         offset=0)
     ```
@@ -124,6 +125,7 @@ def get_user_groups_output(limit: Optional[pulumi.Input[Optional[int]]] = None,
     import pulumi
     import pulumi_wavefront as wavefront
 
+    # Get all user groups
     groups = wavefront.get_user_groups(limit=10,
         offset=0)
     ```

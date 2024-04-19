@@ -15,14 +15,14 @@ import * as utilities from "./utilities";
  * import * as wavefront from "@pulumi/wavefront";
  *
  * const basic = new wavefront.MaintenanceWindow("basic", {
- *     endTimeInSeconds: 1601123456,
  *     reason: "Routine maintenance for 2020",
+ *     title: "Routine maintenance",
+ *     startTimeInSeconds: 1600123456,
+ *     endTimeInSeconds: 1601123456,
  *     relevantHostNames: [
  *         "my_hostname",
  *         "my_other_hostname",
  *     ],
- *     startTimeInSeconds: 1600123456,
- *     title: "Routine maintenance",
  * });
  * ```
  * <!--End PulumiCodeChooser -->

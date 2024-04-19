@@ -45,10 +45,11 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var event = new Event(&#34;event&#34;, EventArgs.builder()        
+ *             .name(&#34;terraform-test&#34;)
  *             .annotations(Map.ofEntries(
- *                 Map.entry(&#34;details&#34;, &#34;description&#34;),
  *                 Map.entry(&#34;severity&#34;, &#34;info&#34;),
- *                 Map.entry(&#34;type&#34;, &#34;event type&#34;)
+ *                 Map.entry(&#34;type&#34;, &#34;event type&#34;),
+ *                 Map.entry(&#34;details&#34;, &#34;description&#34;)
  *             ))
  *             .tags(&#34;eventTag1&#34;)
  *             .build());

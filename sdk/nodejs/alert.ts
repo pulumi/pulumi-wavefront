@@ -17,6 +17,8 @@ import * as utilities from "./utilities";
  * import * as wavefront from "@pulumi/wavefront";
  *
  * const foobar = new wavefront.Alert("foobar", {
+ *     name: "Test Alert",
+ *     target: "test@example.com,target:alert-target-id",
  *     condition: "100-ts(\"cpu.usage_idle\", environment=preprod and cpu=cpu-total ) > 80",
  *     displayExpression: "100-ts(\"cpu.usage_idle\", environment=preprod and cpu=cpu-total )",
  *     minutes: 5,
@@ -26,7 +28,6 @@ import * as utilities from "./utilities";
  *         "terraform",
  *         "test",
  *     ],
- *     target: "test@example.com,target:alert-target-id",
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -25,6 +25,7 @@ namespace Pulumi.Wavefront
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
+        ///     // Get the info for user "example.user@example.com"
         ///     var example = Wavefront.GetUser.Invoke(new()
         ///     {
         ///         Email = "example.user@example.com",
@@ -51,6 +52,7 @@ namespace Pulumi.Wavefront
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
+        ///     // Get the info for user "example.user@example.com"
         ///     var example = Wavefront.GetUser.Invoke(new()
         ///     {
         ///         Email = "example.user@example.com",

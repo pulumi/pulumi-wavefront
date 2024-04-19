@@ -259,7 +259,9 @@ class IngestionPolicy(pulumi.CustomResource):
         import pulumi
         import pulumi_wavefront as wavefront
 
-        basic = wavefront.IngestionPolicy("basic", description="An ingestion policy for testing")
+        basic = wavefront.IngestionPolicy("basic",
+            name="test_ingestion",
+            description="An ingestion policy for testing")
         ```
         <!--End PulumiCodeChooser -->
 
@@ -292,7 +294,9 @@ class IngestionPolicy(pulumi.CustomResource):
         import pulumi
         import pulumi_wavefront as wavefront
 
-        basic = wavefront.IngestionPolicy("basic", description="An ingestion policy for testing")
+        basic = wavefront.IngestionPolicy("basic",
+            name="test_ingestion",
+            description="An ingestion policy for testing")
         ```
         <!--End PulumiCodeChooser -->
 

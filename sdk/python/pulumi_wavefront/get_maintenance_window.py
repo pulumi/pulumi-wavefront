@@ -266,6 +266,7 @@ def get_maintenance_window(id: Optional[str] = None,
     import pulumi
     import pulumi_wavefront as wavefront
 
+    # Get the information about specific maintenance window.
     example = wavefront.get_maintenance_window(id="sample-maintenance-window-id")
     ```
     <!--End PulumiCodeChooser -->
@@ -312,6 +313,7 @@ def get_maintenance_window_output(id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_wavefront as wavefront
 
+    # Get the information about specific maintenance window.
     example = wavefront.get_maintenance_window(id="sample-maintenance-window-id")
     ```
     <!--End PulumiCodeChooser -->

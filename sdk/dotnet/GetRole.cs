@@ -25,6 +25,7 @@ namespace Pulumi.Wavefront
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
+        ///     // Get the information about the role.
         ///     var example = Wavefront.GetRole.Invoke(new()
         ///     {
         ///         Id = "role-id",
@@ -51,6 +52,7 @@ namespace Pulumi.Wavefront
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
+        ///     // Get the information about the role.
         ///     var example = Wavefront.GetRole.Invoke(new()
         ///     {
         ///         Id = "role-id",

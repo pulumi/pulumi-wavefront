@@ -44,6 +44,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var basic = new ExternalLink(&#34;basic&#34;, ExternalLinkArgs.builder()        
+ *             .name(&#34;External Link&#34;)
  *             .description(&#34;An external link description&#34;)
  *             .template(&#34;https://example.com/source={{{source}}}&amp;startTime={{startEpochMillis}}&#34;)
  *             .build());

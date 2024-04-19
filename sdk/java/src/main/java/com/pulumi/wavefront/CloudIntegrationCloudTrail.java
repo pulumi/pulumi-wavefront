@@ -49,6 +49,7 @@ import javax.annotation.Nullable;
  *         var extId = new CloudIntegrationAwsExternalId(&#34;extId&#34;);
  * 
  *         var cloudtrail = new CloudIntegrationCloudTrail(&#34;cloudtrail&#34;, CloudIntegrationCloudTrailArgs.builder()        
+ *             .name(&#34;Test Integration&#34;)
  *             .roleArn(&#34;arn:aws::1234567:role/example-arn&#34;)
  *             .externalId(extId.id())
  *             .region(&#34;us-west-2&#34;)

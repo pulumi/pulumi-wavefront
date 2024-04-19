@@ -25,6 +25,7 @@ namespace Pulumi.Wavefront
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
+        ///     // Get the default user group "Everyone"
         ///     var everyoneGroup = Wavefront.GetDefaultUserGroup.Invoke();
         /// 
         /// });
@@ -48,6 +49,7 @@ namespace Pulumi.Wavefront
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
+        ///     // Get the default user group "Everyone"
         ///     var everyoneGroup = Wavefront.GetDefaultUserGroup.Invoke();
         /// 
         /// });

@@ -108,7 +108,9 @@ class UserGroup(pulumi.CustomResource):
         import pulumi
         import pulumi_wavefront as wavefront
 
-        basic = wavefront.UserGroup("basic", description="Basic User Group for Unit Tests")
+        basic = wavefront.UserGroup("basic",
+            name="Basic User Group",
+            description="Basic User Group for Unit Tests")
         ```
         <!--End PulumiCodeChooser -->
 
@@ -141,7 +143,9 @@ class UserGroup(pulumi.CustomResource):
         import pulumi
         import pulumi_wavefront as wavefront
 
-        basic = wavefront.UserGroup("basic", description="Basic User Group for Unit Tests")
+        basic = wavefront.UserGroup("basic",
+            name="Basic User Group",
+            description="Basic User Group for Unit Tests")
         ```
         <!--End PulumiCodeChooser -->
 

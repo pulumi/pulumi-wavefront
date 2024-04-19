@@ -25,6 +25,7 @@ namespace Pulumi.Wavefront
     /// {
     ///     var basic = new Wavefront.UserGroup("basic", new()
     ///     {
+    ///         Name = "Basic User Group",
     ///         Description = "Basic User Group for Unit Tests",
     ///     });
     /// 

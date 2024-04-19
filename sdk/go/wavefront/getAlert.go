@@ -28,6 +28,7 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
+//			// Get the information about the alert.
 //			_, err := wavefront.LookupAlert(ctx, &wavefront.LookupAlertArgs{
 //				Id: "alert-id",
 //			}, nil)

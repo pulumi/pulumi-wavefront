@@ -78,11 +78,11 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			policyMetricsPolicy, err := wavefront.LookupMetricsPolicy(ctx, nil, nil)
+//			policy, err := wavefront.LookupMetricsPolicy(ctx, nil, nil)
 //			if err != nil {
 //				return err
 //			}
-//			ctx.Export("policy", policyMetricsPolicy)
+//			ctx.Export("policy", policy)
 //			return nil
 //		})
 //	}

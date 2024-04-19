@@ -25,6 +25,7 @@ namespace Pulumi.Wavefront
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
+        ///     // Get the information about a dashboard.
         ///     var example = Wavefront.GetDashboard.Invoke(new()
         ///     {
         ///         Id = "dashboard-id",
@@ -51,6 +52,7 @@ namespace Pulumi.Wavefront
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
+        ///     // Get the information about a dashboard.
         ///     var example = Wavefront.GetDashboard.Invoke(new()
         ///     {
         ///         Id = "dashboard-id",

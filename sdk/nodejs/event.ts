@@ -15,10 +15,11 @@ import * as utilities from "./utilities";
  * import * as wavefront from "@pulumi/wavefront";
  *
  * const event = new wavefront.Event("event", {
+ *     name: "terraform-test",
  *     annotations: {
- *         details: "description",
  *         severity: "info",
  *         type: "event type",
+ *         details: "description",
  *     },
  *     tags: ["eventTag1"],
  * });

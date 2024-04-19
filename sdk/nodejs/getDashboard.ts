@@ -16,6 +16,7 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as wavefront from "@pulumi/wavefront";
  *
+ * // Get the information about a dashboard.
  * const example = wavefront.getDashboard({
  *     id: "dashboard-id",
  * });
@@ -123,6 +124,7 @@ export interface GetDashboardResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as wavefront from "@pulumi/wavefront";
  *
+ * // Get the information about a dashboard.
  * const example = wavefront.getDashboard({
  *     id: "dashboard-id",
  * });

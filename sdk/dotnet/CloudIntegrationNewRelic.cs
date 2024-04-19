@@ -26,6 +26,7 @@ namespace Pulumi.Wavefront
     /// {
     ///     var newrelic = new Wavefront.CloudIntegrationNewRelic("newrelic", new()
     ///     {
+    ///         Name = "Test Integration",
     ///         ApiKey = "example-api-key",
     ///     });
     /// 

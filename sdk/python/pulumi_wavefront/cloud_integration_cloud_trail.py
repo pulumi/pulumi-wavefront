@@ -402,8 +402,9 @@ class CloudIntegrationCloudTrail(pulumi.CustomResource):
         import pulumi
         import pulumi_wavefront as wavefront
 
-        ext_id = wavefront.CloudIntegrationAwsExternalId("extId")
+        ext_id = wavefront.CloudIntegrationAwsExternalId("ext_id")
         cloudtrail = wavefront.CloudIntegrationCloudTrail("cloudtrail",
+            name="Test Integration",
             role_arn="arn:aws::1234567:role/example-arn",
             external_id=ext_id.id,
             region="us-west-2",
@@ -450,8 +451,9 @@ class CloudIntegrationCloudTrail(pulumi.CustomResource):
         import pulumi
         import pulumi_wavefront as wavefront
 
-        ext_id = wavefront.CloudIntegrationAwsExternalId("extId")
+        ext_id = wavefront.CloudIntegrationAwsExternalId("ext_id")
         cloudtrail = wavefront.CloudIntegrationCloudTrail("cloudtrail",
+            name="Test Integration",
             role_arn="arn:aws::1234567:role/example-arn",
             external_id=ext_id.id,
             region="us-west-2",

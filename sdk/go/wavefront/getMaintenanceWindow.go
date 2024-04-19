@@ -28,6 +28,7 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
+//			// Get the information about specific maintenance window.
 //			_, err := wavefront.LookupMaintenanceWindow(ctx, &wavefront.LookupMaintenanceWindowArgs{
 //				Id: "sample-maintenance-window-id",
 //			}, nil)

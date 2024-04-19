@@ -249,8 +249,8 @@ class ServiceAccount(pulumi.CustomResource):
         import pulumi_wavefront as wavefront
 
         basic = wavefront.ServiceAccount("basic",
-            active=True,
-            identifier="sa::tftesting")
+            identifier="sa::tftesting",
+            active=True)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -290,8 +290,8 @@ class ServiceAccount(pulumi.CustomResource):
         import pulumi_wavefront as wavefront
 
         basic = wavefront.ServiceAccount("basic",
-            active=True,
-            identifier="sa::tftesting")
+            identifier="sa::tftesting",
+            active=True)
         ```
         <!--End PulumiCodeChooser -->
 

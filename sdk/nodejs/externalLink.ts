@@ -15,6 +15,7 @@ import * as utilities from "./utilities";
  * import * as wavefront from "@pulumi/wavefront";
  *
  * const basic = new wavefront.ExternalLink("basic", {
+ *     name: "External Link",
  *     description: "An external link description",
  *     template: "https://example.com/source={{{source}}}&startTime={{startEpochMillis}}",
  * });

@@ -14,6 +14,7 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as wavefront from "@pulumi/wavefront";
  *
+ * // Get the default user group "Everyone"
  * const everyoneGroup = wavefront.getDefaultUserGroup({});
  * ```
  * <!--End PulumiCodeChooser -->
@@ -49,6 +50,7 @@ export interface GetDefaultUserGroupResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as wavefront from "@pulumi/wavefront";
  *
+ * // Get the default user group "Everyone"
  * const everyoneGroup = wavefront.getDefaultUserGroup({});
  * ```
  * <!--End PulumiCodeChooser -->

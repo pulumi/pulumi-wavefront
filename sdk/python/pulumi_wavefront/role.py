@@ -183,7 +183,7 @@ class Role(pulumi.CustomResource):
         import pulumi
         import pulumi_wavefront as wavefront
 
-        role = wavefront.Role("role")
+        role = wavefront.Role("role", name="Test Role")
         ```
         <!--End PulumiCodeChooser -->
 
@@ -220,7 +220,7 @@ class Role(pulumi.CustomResource):
         import pulumi
         import pulumi_wavefront as wavefront
 
-        role = wavefront.Role("role")
+        role = wavefront.Role("role", name="Test Role")
         ```
         <!--End PulumiCodeChooser -->
 

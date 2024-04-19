@@ -17,7 +17,10 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as wavefront from "@pulumi/wavefront";
  *
- * const newrelic = new wavefront.CloudIntegrationNewRelic("newrelic", {apiKey: "example-api-key"});
+ * const newrelic = new wavefront.CloudIntegrationNewRelic("newrelic", {
+ *     name: "Test Integration",
+ *     apiKey: "example-api-key",
+ * });
  * ```
  * <!--End PulumiCodeChooser -->
  *

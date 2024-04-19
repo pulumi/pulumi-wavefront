@@ -25,6 +25,7 @@ namespace Pulumi.Wavefront
     /// {
     ///     var basic = new Wavefront.ExternalLink("basic", new()
     ///     {
+    ///         Name = "External Link",
     ///         Description = "An external link description",
     ///         Template = "https://example.com/source={{{source}}}&amp;startTime={{startEpochMillis}}",
     ///     });

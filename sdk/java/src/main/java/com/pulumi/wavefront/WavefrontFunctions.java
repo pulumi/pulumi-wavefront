@@ -93,6 +93,7 @@ public final class WavefrontFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
+     *         // Get the information about the alert.
      *         final var example = WavefrontFunctions.getAlert(GetAlertArgs.builder()
      *             .id(&#34;alert-id&#34;)
      *             .build());
@@ -133,6 +134,7 @@ public final class WavefrontFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
+     *         // Get the information about the alert.
      *         final var example = WavefrontFunctions.getAlert(GetAlertArgs.builder()
      *             .id(&#34;alert-id&#34;)
      *             .build());
@@ -173,6 +175,7 @@ public final class WavefrontFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
+     *         // Get the information about the alert.
      *         final var example = WavefrontFunctions.getAlert(GetAlertArgs.builder()
      *             .id(&#34;alert-id&#34;)
      *             .build());
@@ -213,6 +216,7 @@ public final class WavefrontFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
+     *         // Get the information about the alert.
      *         final var example = WavefrontFunctions.getAlert(GetAlertArgs.builder()
      *             .id(&#34;alert-id&#34;)
      *             .build());
@@ -253,6 +257,7 @@ public final class WavefrontFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
+     *         // Get the information about all alerts.
      *         final var example = WavefrontFunctions.getAlerts(GetAlertsArgs.builder()
      *             .limit(10)
      *             .offset(0)
@@ -294,6 +299,7 @@ public final class WavefrontFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
+     *         // Get the information about all alerts.
      *         final var example = WavefrontFunctions.getAlerts(GetAlertsArgs.builder()
      *             .limit(10)
      *             .offset(0)
@@ -335,6 +341,7 @@ public final class WavefrontFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
+     *         // Get the information about all alerts.
      *         final var example = WavefrontFunctions.getAlerts(GetAlertsArgs.builder()
      *             .limit(10)
      *             .offset(0)
@@ -376,6 +383,7 @@ public final class WavefrontFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
+     *         // Get the information about all alerts.
      *         final var example = WavefrontFunctions.getAlerts(GetAlertsArgs.builder()
      *             .limit(10)
      *             .offset(0)
@@ -417,6 +425,7 @@ public final class WavefrontFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
+     *         // Get the information about all alerts.
      *         final var example = WavefrontFunctions.getAlerts(GetAlertsArgs.builder()
      *             .limit(10)
      *             .offset(0)
@@ -458,6 +467,7 @@ public final class WavefrontFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
+     *         // Get the information about all alerts.
      *         final var example = WavefrontFunctions.getAlerts(GetAlertsArgs.builder()
      *             .limit(10)
      *             .offset(0)
@@ -499,6 +509,7 @@ public final class WavefrontFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
+     *         // Get the information about a dashboard.
      *         final var example = WavefrontFunctions.getDashboard(GetDashboardArgs.builder()
      *             .id(&#34;dashboard-id&#34;)
      *             .build());
@@ -539,6 +550,7 @@ public final class WavefrontFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
+     *         // Get the information about a dashboard.
      *         final var example = WavefrontFunctions.getDashboard(GetDashboardArgs.builder()
      *             .id(&#34;dashboard-id&#34;)
      *             .build());
@@ -579,6 +591,7 @@ public final class WavefrontFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
+     *         // Get the information about a dashboard.
      *         final var example = WavefrontFunctions.getDashboard(GetDashboardArgs.builder()
      *             .id(&#34;dashboard-id&#34;)
      *             .build());
@@ -619,6 +632,7 @@ public final class WavefrontFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
+     *         // Get the information about a dashboard.
      *         final var example = WavefrontFunctions.getDashboard(GetDashboardArgs.builder()
      *             .id(&#34;dashboard-id&#34;)
      *             .build());
@@ -659,6 +673,7 @@ public final class WavefrontFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
+     *         // Get the information about all dashboards.
      *         final var example = WavefrontFunctions.getDashboards(GetDashboardsArgs.builder()
      *             .limit(10)
      *             .offset(0)
@@ -700,6 +715,7 @@ public final class WavefrontFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
+     *         // Get the information about all dashboards.
      *         final var example = WavefrontFunctions.getDashboards(GetDashboardsArgs.builder()
      *             .limit(10)
      *             .offset(0)
@@ -741,6 +757,7 @@ public final class WavefrontFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
+     *         // Get the information about all dashboards.
      *         final var example = WavefrontFunctions.getDashboards(GetDashboardsArgs.builder()
      *             .limit(10)
      *             .offset(0)
@@ -782,6 +799,7 @@ public final class WavefrontFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
+     *         // Get the information about all dashboards.
      *         final var example = WavefrontFunctions.getDashboards(GetDashboardsArgs.builder()
      *             .limit(10)
      *             .offset(0)
@@ -823,6 +841,7 @@ public final class WavefrontFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
+     *         // Get the information about all dashboards.
      *         final var example = WavefrontFunctions.getDashboards(GetDashboardsArgs.builder()
      *             .limit(10)
      *             .offset(0)
@@ -864,6 +883,7 @@ public final class WavefrontFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
+     *         // Get the information about all dashboards.
      *         final var example = WavefrontFunctions.getDashboards(GetDashboardsArgs.builder()
      *             .limit(10)
      *             .offset(0)
@@ -904,6 +924,7 @@ public final class WavefrontFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
+     *         // Get the default user group &#34;Everyone&#34;
      *         final var everyoneGroup = WavefrontFunctions.getDefaultUserGroup();
      * 
      *     }
@@ -941,6 +962,7 @@ public final class WavefrontFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
+     *         // Get the default user group &#34;Everyone&#34;
      *         final var everyoneGroup = WavefrontFunctions.getDefaultUserGroup();
      * 
      *     }
@@ -978,6 +1000,7 @@ public final class WavefrontFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
+     *         // Get the default user group &#34;Everyone&#34;
      *         final var everyoneGroup = WavefrontFunctions.getDefaultUserGroup();
      * 
      *     }
@@ -1015,6 +1038,7 @@ public final class WavefrontFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
+     *         // Get the default user group &#34;Everyone&#34;
      *         final var everyoneGroup = WavefrontFunctions.getDefaultUserGroup();
      * 
      *     }
@@ -1052,6 +1076,7 @@ public final class WavefrontFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
+     *         // Get the default user group &#34;Everyone&#34;
      *         final var everyoneGroup = WavefrontFunctions.getDefaultUserGroup();
      * 
      *     }
@@ -1089,6 +1114,7 @@ public final class WavefrontFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
+     *         // Get the default user group &#34;Everyone&#34;
      *         final var everyoneGroup = WavefrontFunctions.getDefaultUserGroup();
      * 
      *     }
@@ -1127,6 +1153,7 @@ public final class WavefrontFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
+     *         //Get the information about a derived metric.
      *         final var example = WavefrontFunctions.getDerivedMetric(GetDerivedMetricArgs.builder()
      *             .id(&#34;derived_metric_id&#34;)
      *             .build());
@@ -1167,6 +1194,7 @@ public final class WavefrontFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
+     *         //Get the information about a derived metric.
      *         final var example = WavefrontFunctions.getDerivedMetric(GetDerivedMetricArgs.builder()
      *             .id(&#34;derived_metric_id&#34;)
      *             .build());
@@ -1207,6 +1235,7 @@ public final class WavefrontFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
+     *         //Get the information about a derived metric.
      *         final var example = WavefrontFunctions.getDerivedMetric(GetDerivedMetricArgs.builder()
      *             .id(&#34;derived_metric_id&#34;)
      *             .build());
@@ -1247,6 +1276,7 @@ public final class WavefrontFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
+     *         //Get the information about a derived metric.
      *         final var example = WavefrontFunctions.getDerivedMetric(GetDerivedMetricArgs.builder()
      *             .id(&#34;derived_metric_id&#34;)
      *             .build());
@@ -1287,6 +1317,7 @@ public final class WavefrontFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
+     *         // Get the information about all derived metrics.
      *         final var example = WavefrontFunctions.getDerivedMetrics(GetDerivedMetricsArgs.builder()
      *             .limit(10)
      *             .offset(0)
@@ -1328,6 +1359,7 @@ public final class WavefrontFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
+     *         // Get the information about all derived metrics.
      *         final var example = WavefrontFunctions.getDerivedMetrics(GetDerivedMetricsArgs.builder()
      *             .limit(10)
      *             .offset(0)
@@ -1369,6 +1401,7 @@ public final class WavefrontFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
+     *         // Get the information about all derived metrics.
      *         final var example = WavefrontFunctions.getDerivedMetrics(GetDerivedMetricsArgs.builder()
      *             .limit(10)
      *             .offset(0)
@@ -1410,6 +1443,7 @@ public final class WavefrontFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
+     *         // Get the information about all derived metrics.
      *         final var example = WavefrontFunctions.getDerivedMetrics(GetDerivedMetricsArgs.builder()
      *             .limit(10)
      *             .offset(0)
@@ -1451,6 +1485,7 @@ public final class WavefrontFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
+     *         // Get the information about all derived metrics.
      *         final var example = WavefrontFunctions.getDerivedMetrics(GetDerivedMetricsArgs.builder()
      *             .limit(10)
      *             .offset(0)
@@ -1492,6 +1527,7 @@ public final class WavefrontFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
+     *         // Get the information about all derived metrics.
      *         final var example = WavefrontFunctions.getDerivedMetrics(GetDerivedMetricsArgs.builder()
      *             .limit(10)
      *             .offset(0)
@@ -1533,6 +1569,7 @@ public final class WavefrontFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
+     *         // Get the information about a Wavefront event by its ID.
      *         final var example = WavefrontFunctions.getEvent(GetEventArgs.builder()
      *             .id(&#34;sample-event-id&#34;)
      *             .build());
@@ -1573,6 +1610,7 @@ public final class WavefrontFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
+     *         // Get the information about a Wavefront event by its ID.
      *         final var example = WavefrontFunctions.getEvent(GetEventArgs.builder()
      *             .id(&#34;sample-event-id&#34;)
      *             .build());
@@ -1613,6 +1651,7 @@ public final class WavefrontFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
+     *         // Get the information about a Wavefront event by its ID.
      *         final var example = WavefrontFunctions.getEvent(GetEventArgs.builder()
      *             .id(&#34;sample-event-id&#34;)
      *             .build());
@@ -1653,6 +1692,7 @@ public final class WavefrontFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
+     *         // Get the information about a Wavefront event by its ID.
      *         final var example = WavefrontFunctions.getEvent(GetEventArgs.builder()
      *             .id(&#34;sample-event-id&#34;)
      *             .build());
@@ -1693,11 +1733,12 @@ public final class WavefrontFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
+     *         // Get the information about all events
      *         final var example = WavefrontFunctions.getEvents(GetEventsArgs.builder()
-     *             .earliestStartTimeEpochMillis(1665427195)
-     *             .latestStartTimeEpochMillis(1665427195)
      *             .limit(10)
      *             .offset(0)
+     *             .latestStartTimeEpochMillis(1665427195)
+     *             .earliestStartTimeEpochMillis(1665427195)
      *             .build());
      * 
      *     }
@@ -1736,11 +1777,12 @@ public final class WavefrontFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
+     *         // Get the information about all events
      *         final var example = WavefrontFunctions.getEvents(GetEventsArgs.builder()
-     *             .earliestStartTimeEpochMillis(1665427195)
-     *             .latestStartTimeEpochMillis(1665427195)
      *             .limit(10)
      *             .offset(0)
+     *             .latestStartTimeEpochMillis(1665427195)
+     *             .earliestStartTimeEpochMillis(1665427195)
      *             .build());
      * 
      *     }
@@ -1779,11 +1821,12 @@ public final class WavefrontFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
+     *         // Get the information about all events
      *         final var example = WavefrontFunctions.getEvents(GetEventsArgs.builder()
-     *             .earliestStartTimeEpochMillis(1665427195)
-     *             .latestStartTimeEpochMillis(1665427195)
      *             .limit(10)
      *             .offset(0)
+     *             .latestStartTimeEpochMillis(1665427195)
+     *             .earliestStartTimeEpochMillis(1665427195)
      *             .build());
      * 
      *     }
@@ -1822,11 +1865,12 @@ public final class WavefrontFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
+     *         // Get the information about all events
      *         final var example = WavefrontFunctions.getEvents(GetEventsArgs.builder()
-     *             .earliestStartTimeEpochMillis(1665427195)
-     *             .latestStartTimeEpochMillis(1665427195)
      *             .limit(10)
      *             .offset(0)
+     *             .latestStartTimeEpochMillis(1665427195)
+     *             .earliestStartTimeEpochMillis(1665427195)
      *             .build());
      * 
      *     }
@@ -1865,6 +1909,7 @@ public final class WavefrontFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
+     *         // Get the information about a specific external links.
      *         final var example = WavefrontFunctions.getExternalLink(GetExternalLinkArgs.builder()
      *             .id(&#34;sample-external-link-id&#34;)
      *             .build());
@@ -1905,6 +1950,7 @@ public final class WavefrontFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
+     *         // Get the information about a specific external links.
      *         final var example = WavefrontFunctions.getExternalLink(GetExternalLinkArgs.builder()
      *             .id(&#34;sample-external-link-id&#34;)
      *             .build());
@@ -1945,6 +1991,7 @@ public final class WavefrontFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
+     *         // Get the information about a specific external links.
      *         final var example = WavefrontFunctions.getExternalLink(GetExternalLinkArgs.builder()
      *             .id(&#34;sample-external-link-id&#34;)
      *             .build());
@@ -1985,6 +2032,7 @@ public final class WavefrontFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
+     *         // Get the information about a specific external links.
      *         final var example = WavefrontFunctions.getExternalLink(GetExternalLinkArgs.builder()
      *             .id(&#34;sample-external-link-id&#34;)
      *             .build());
@@ -2025,6 +2073,7 @@ public final class WavefrontFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
+     *         // Get the information about all external links.
      *         final var example = WavefrontFunctions.getExternalLinks(GetExternalLinksArgs.builder()
      *             .limit(10)
      *             .offset(0)
@@ -2066,6 +2115,7 @@ public final class WavefrontFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
+     *         // Get the information about all external links.
      *         final var example = WavefrontFunctions.getExternalLinks(GetExternalLinksArgs.builder()
      *             .limit(10)
      *             .offset(0)
@@ -2107,6 +2157,7 @@ public final class WavefrontFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
+     *         // Get the information about all external links.
      *         final var example = WavefrontFunctions.getExternalLinks(GetExternalLinksArgs.builder()
      *             .limit(10)
      *             .offset(0)
@@ -2148,6 +2199,7 @@ public final class WavefrontFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
+     *         // Get the information about all external links.
      *         final var example = WavefrontFunctions.getExternalLinks(GetExternalLinksArgs.builder()
      *             .limit(10)
      *             .offset(0)
@@ -2189,6 +2241,7 @@ public final class WavefrontFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
+     *         // Get the information about all external links.
      *         final var example = WavefrontFunctions.getExternalLinks(GetExternalLinksArgs.builder()
      *             .limit(10)
      *             .offset(0)
@@ -2230,6 +2283,7 @@ public final class WavefrontFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
+     *         // Get the information about all external links.
      *         final var example = WavefrontFunctions.getExternalLinks(GetExternalLinksArgs.builder()
      *             .limit(10)
      *             .offset(0)
@@ -2271,6 +2325,7 @@ public final class WavefrontFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
+     *         // Get the information about specific maintenance window.
      *         final var example = WavefrontFunctions.getMaintenanceWindow(GetMaintenanceWindowArgs.builder()
      *             .id(&#34;sample-maintenance-window-id&#34;)
      *             .build());
@@ -2311,6 +2366,7 @@ public final class WavefrontFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
+     *         // Get the information about specific maintenance window.
      *         final var example = WavefrontFunctions.getMaintenanceWindow(GetMaintenanceWindowArgs.builder()
      *             .id(&#34;sample-maintenance-window-id&#34;)
      *             .build());
@@ -2351,6 +2407,7 @@ public final class WavefrontFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
+     *         // Get the information about specific maintenance window.
      *         final var example = WavefrontFunctions.getMaintenanceWindow(GetMaintenanceWindowArgs.builder()
      *             .id(&#34;sample-maintenance-window-id&#34;)
      *             .build());
@@ -2391,6 +2448,7 @@ public final class WavefrontFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
+     *         // Get the information about specific maintenance window.
      *         final var example = WavefrontFunctions.getMaintenanceWindow(GetMaintenanceWindowArgs.builder()
      *             .id(&#34;sample-maintenance-window-id&#34;)
      *             .build());
@@ -2467,6 +2525,7 @@ public final class WavefrontFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
+     *         // Get the information about the role.
      *         final var example = WavefrontFunctions.getRole(GetRoleArgs.builder()
      *             .id(&#34;role-id&#34;)
      *             .build());
@@ -2507,6 +2566,7 @@ public final class WavefrontFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
+     *         // Get the information about the role.
      *         final var example = WavefrontFunctions.getRole(GetRoleArgs.builder()
      *             .id(&#34;role-id&#34;)
      *             .build());
@@ -2547,6 +2607,7 @@ public final class WavefrontFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
+     *         // Get the information about the role.
      *         final var example = WavefrontFunctions.getRole(GetRoleArgs.builder()
      *             .id(&#34;role-id&#34;)
      *             .build());
@@ -2587,6 +2648,7 @@ public final class WavefrontFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
+     *         // Get the information about the role.
      *         final var example = WavefrontFunctions.getRole(GetRoleArgs.builder()
      *             .id(&#34;role-id&#34;)
      *             .build());
@@ -2627,6 +2689,7 @@ public final class WavefrontFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
+     *         // Get all Roles
      *         final var roles = WavefrontFunctions.getRoles(GetRolesArgs.builder()
      *             .limit(10)
      *             .offset(0)
@@ -2668,6 +2731,7 @@ public final class WavefrontFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
+     *         // Get all Roles
      *         final var roles = WavefrontFunctions.getRoles(GetRolesArgs.builder()
      *             .limit(10)
      *             .offset(0)
@@ -2709,6 +2773,7 @@ public final class WavefrontFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
+     *         // Get all Roles
      *         final var roles = WavefrontFunctions.getRoles(GetRolesArgs.builder()
      *             .limit(10)
      *             .offset(0)
@@ -2750,6 +2815,7 @@ public final class WavefrontFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
+     *         // Get all Roles
      *         final var roles = WavefrontFunctions.getRoles(GetRolesArgs.builder()
      *             .limit(10)
      *             .offset(0)
@@ -2791,6 +2857,7 @@ public final class WavefrontFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
+     *         // Get all Roles
      *         final var roles = WavefrontFunctions.getRoles(GetRolesArgs.builder()
      *             .limit(10)
      *             .offset(0)
@@ -2832,6 +2899,7 @@ public final class WavefrontFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
+     *         // Get all Roles
      *         final var roles = WavefrontFunctions.getRoles(GetRolesArgs.builder()
      *             .limit(10)
      *             .offset(0)
@@ -2873,6 +2941,7 @@ public final class WavefrontFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
+     *         // Get the info for user &#34;example.user@example.com&#34;
      *         final var example = WavefrontFunctions.getUser(GetUserArgs.builder()
      *             .email(&#34;example.user@example.com&#34;)
      *             .build());
@@ -2913,6 +2982,7 @@ public final class WavefrontFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
+     *         // Get the info for user &#34;example.user@example.com&#34;
      *         final var example = WavefrontFunctions.getUser(GetUserArgs.builder()
      *             .email(&#34;example.user@example.com&#34;)
      *             .build());
@@ -2953,6 +3023,7 @@ public final class WavefrontFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
+     *         // Get the info for user &#34;example.user@example.com&#34;
      *         final var example = WavefrontFunctions.getUser(GetUserArgs.builder()
      *             .email(&#34;example.user@example.com&#34;)
      *             .build());
@@ -2993,6 +3064,7 @@ public final class WavefrontFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
+     *         // Get the info for user &#34;example.user@example.com&#34;
      *         final var example = WavefrontFunctions.getUser(GetUserArgs.builder()
      *             .email(&#34;example.user@example.com&#34;)
      *             .build());
@@ -3033,6 +3105,7 @@ public final class WavefrontFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
+     *         // Get the information about the user group.
      *         final var example = WavefrontFunctions.getUserGroup(GetUserGroupArgs.builder()
      *             .id(&#34;user-group-id&#34;)
      *             .build());
@@ -3073,6 +3146,7 @@ public final class WavefrontFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
+     *         // Get the information about the user group.
      *         final var example = WavefrontFunctions.getUserGroup(GetUserGroupArgs.builder()
      *             .id(&#34;user-group-id&#34;)
      *             .build());
@@ -3113,6 +3187,7 @@ public final class WavefrontFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
+     *         // Get the information about the user group.
      *         final var example = WavefrontFunctions.getUserGroup(GetUserGroupArgs.builder()
      *             .id(&#34;user-group-id&#34;)
      *             .build());
@@ -3153,6 +3228,7 @@ public final class WavefrontFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
+     *         // Get the information about the user group.
      *         final var example = WavefrontFunctions.getUserGroup(GetUserGroupArgs.builder()
      *             .id(&#34;user-group-id&#34;)
      *             .build());
@@ -3193,6 +3269,7 @@ public final class WavefrontFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
+     *         // Get all user groups
      *         final var groups = WavefrontFunctions.getUserGroups(GetUserGroupsArgs.builder()
      *             .limit(10)
      *             .offset(0)
@@ -3234,6 +3311,7 @@ public final class WavefrontFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
+     *         // Get all user groups
      *         final var groups = WavefrontFunctions.getUserGroups(GetUserGroupsArgs.builder()
      *             .limit(10)
      *             .offset(0)
@@ -3275,6 +3353,7 @@ public final class WavefrontFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
+     *         // Get all user groups
      *         final var groups = WavefrontFunctions.getUserGroups(GetUserGroupsArgs.builder()
      *             .limit(10)
      *             .offset(0)
@@ -3316,6 +3395,7 @@ public final class WavefrontFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
+     *         // Get all user groups
      *         final var groups = WavefrontFunctions.getUserGroups(GetUserGroupsArgs.builder()
      *             .limit(10)
      *             .offset(0)
@@ -3357,6 +3437,7 @@ public final class WavefrontFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
+     *         // Get all user groups
      *         final var groups = WavefrontFunctions.getUserGroups(GetUserGroupsArgs.builder()
      *             .limit(10)
      *             .offset(0)
@@ -3398,6 +3479,7 @@ public final class WavefrontFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
+     *         // Get all user groups
      *         final var groups = WavefrontFunctions.getUserGroups(GetUserGroupsArgs.builder()
      *             .limit(10)
      *             .offset(0)
@@ -3438,6 +3520,7 @@ public final class WavefrontFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
+     *         // Get all users
      *         final var users = WavefrontFunctions.getUsers();
      * 
      *     }
@@ -3475,6 +3558,7 @@ public final class WavefrontFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
+     *         // Get all users
      *         final var users = WavefrontFunctions.getUsers();
      * 
      *     }
@@ -3512,6 +3596,7 @@ public final class WavefrontFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
+     *         // Get all users
      *         final var users = WavefrontFunctions.getUsers();
      * 
      *     }
@@ -3549,6 +3634,7 @@ public final class WavefrontFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
+     *         // Get all users
      *         final var users = WavefrontFunctions.getUsers();
      * 
      *     }
@@ -3586,6 +3672,7 @@ public final class WavefrontFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
+     *         // Get all users
      *         final var users = WavefrontFunctions.getUsers();
      * 
      *     }
@@ -3623,6 +3710,7 @@ public final class WavefrontFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
+     *         // Get all users
      *         final var users = WavefrontFunctions.getUsers();
      * 
      *     }

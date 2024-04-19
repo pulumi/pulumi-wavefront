@@ -25,6 +25,7 @@ namespace Pulumi.Wavefront
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
+        ///     // Get all users
         ///     var users = Wavefront.GetUsers.Invoke();
         /// 
         /// });
@@ -48,6 +49,7 @@ namespace Pulumi.Wavefront
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
+        ///     // Get all users
         ///     var users = Wavefront.GetUsers.Invoke();
         /// 
         /// });

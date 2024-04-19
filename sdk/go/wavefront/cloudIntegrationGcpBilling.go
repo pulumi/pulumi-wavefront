@@ -30,10 +30,11 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := wavefront.NewCloudIntegrationGcpBilling(ctx, "gcpBilling", &wavefront.CloudIntegrationGcpBillingArgs{
-//				ApiKey:    pulumi.String("example-api-key"),
-//				JsonKey:   pulumi.String("{...your gcp key ...}\n\n"),
+//			_, err := wavefront.NewCloudIntegrationGcpBilling(ctx, "gcp_billing", &wavefront.CloudIntegrationGcpBillingArgs{
+//				Name:      pulumi.String("Test Integration"),
 //				ProjectId: pulumi.String("example-gcp-project"),
+//				ApiKey:    pulumi.String("example-api-key"),
+//				JsonKey:   pulumi.String("{...your gcp key ...}\n"),
 //			})
 //			if err != nil {
 //				return err

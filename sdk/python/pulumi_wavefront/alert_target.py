@@ -432,14 +432,15 @@ class AlertTarget(pulumi.CustomResource):
         import pulumi
         import pulumi_wavefront as wavefront
 
-        test_target = wavefront.AlertTarget("testTarget",
+        test_target = wavefront.AlertTarget("test_target",
+            name="Terraform Test Target",
+            description="Test target",
+            method="WEBHOOK",
+            recipient="https://hooks.slack.com/services/test/me",
             content_type="application/json",
             custom_headers={
                 "Testing": "true",
             },
-            description="Test target",
-            method="WEBHOOK",
-            recipient="https://hooks.slack.com/services/test/me",
             template="{}",
             triggers=[
                 "ALERT_OPENED",
@@ -489,14 +490,15 @@ class AlertTarget(pulumi.CustomResource):
         import pulumi
         import pulumi_wavefront as wavefront
 
-        test_target = wavefront.AlertTarget("testTarget",
+        test_target = wavefront.AlertTarget("test_target",
+            name="Terraform Test Target",
+            description="Test target",
+            method="WEBHOOK",
+            recipient="https://hooks.slack.com/services/test/me",
             content_type="application/json",
             custom_headers={
                 "Testing": "true",
             },
-            description="Test target",
-            method="WEBHOOK",
-            recipient="https://hooks.slack.com/services/test/me",
             template="{}",
             triggers=[
                 "ALERT_OPENED",

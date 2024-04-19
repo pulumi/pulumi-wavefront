@@ -393,6 +393,7 @@ def get_dashboard(id: Optional[str] = None,
     import pulumi
     import pulumi_wavefront as wavefront
 
+    # Get the information about a dashboard.
     example = wavefront.get_dashboard(id="dashboard-id")
     ```
     <!--End PulumiCodeChooser -->
@@ -456,6 +457,7 @@ def get_dashboard_output(id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_wavefront as wavefront
 
+    # Get the information about a dashboard.
     example = wavefront.get_dashboard(id="dashboard-id")
     ```
     <!--End PulumiCodeChooser -->

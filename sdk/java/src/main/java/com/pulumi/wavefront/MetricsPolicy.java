@@ -90,9 +90,9 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         final var policyMetricsPolicy = WavefrontFunctions.getMetricsPolicy();
+ *         final var policy = WavefrontFunctions.getMetricsPolicy();
  * 
- *         ctx.export(&#34;policy&#34;, policyMetricsPolicy.applyValue(getMetricsPolicyResult -&gt; getMetricsPolicyResult));
+ *         ctx.export(&#34;policy&#34;, policy.applyValue(getMetricsPolicyResult -&gt; getMetricsPolicyResult));
  *     }
  * }
  * ```

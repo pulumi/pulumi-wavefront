@@ -25,6 +25,7 @@ namespace Pulumi.Wavefront
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
+        ///     // Get the information about the user group.
         ///     var example = Wavefront.GetUserGroup.Invoke(new()
         ///     {
         ///         Id = "user-group-id",
@@ -51,6 +52,7 @@ namespace Pulumi.Wavefront
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
+        ///     // Get the information about the user group.
         ///     var example = Wavefront.GetUserGroup.Invoke(new()
         ///     {
         ///         Id = "user-group-id",

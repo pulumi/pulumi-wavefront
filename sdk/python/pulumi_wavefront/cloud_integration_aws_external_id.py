@@ -36,7 +36,7 @@ class CloudIntegrationAwsExternalId(pulumi.CustomResource):
         import pulumi
         import pulumi_wavefront as wavefront
 
-        external_id = wavefront.CloudIntegrationAwsExternalId("externalId")
+        external_id = wavefront.CloudIntegrationAwsExternalId("external_id")
         ```
         <!--End PulumiCodeChooser -->
 
@@ -67,7 +67,7 @@ class CloudIntegrationAwsExternalId(pulumi.CustomResource):
         import pulumi
         import pulumi_wavefront as wavefront
 
-        external_id = wavefront.CloudIntegrationAwsExternalId("externalId")
+        external_id = wavefront.CloudIntegrationAwsExternalId("external_id")
         ```
         <!--End PulumiCodeChooser -->
 

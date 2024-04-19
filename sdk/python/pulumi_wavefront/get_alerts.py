@@ -88,6 +88,7 @@ def get_alerts(limit: Optional[int] = None,
     import pulumi
     import pulumi_wavefront as wavefront
 
+    # Get the information about all alerts.
     example = wavefront.get_alerts(limit=10,
         offset=0)
     ```
@@ -124,6 +125,7 @@ def get_alerts_output(limit: Optional[pulumi.Input[Optional[int]]] = None,
     import pulumi
     import pulumi_wavefront as wavefront
 
+    # Get the information about all alerts.
     example = wavefront.get_alerts(limit=10,
         offset=0)
     ```

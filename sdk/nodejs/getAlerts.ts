@@ -16,6 +16,7 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as wavefront from "@pulumi/wavefront";
  *
+ * // Get the information about all alerts.
  * const example = wavefront.getAlerts({
  *     limit: 10,
  *     offset: 0,
@@ -72,6 +73,7 @@ export interface GetAlertsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as wavefront from "@pulumi/wavefront";
  *
+ * // Get the information about all alerts.
  * const example = wavefront.getAlerts({
  *     limit: 10,
  *     offset: 0,

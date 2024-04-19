@@ -343,6 +343,7 @@ def get_alert(id: Optional[str] = None,
     import pulumi
     import pulumi_wavefront as wavefront
 
+    # Get the information about the alert.
     example = wavefront.get_alert(id="alert-id")
     ```
     <!--End PulumiCodeChooser -->
@@ -399,6 +400,7 @@ def get_alert_output(id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_wavefront as wavefront
 
+    # Get the information about the alert.
     example = wavefront.get_alert(id="alert-id")
     ```
     <!--End PulumiCodeChooser -->

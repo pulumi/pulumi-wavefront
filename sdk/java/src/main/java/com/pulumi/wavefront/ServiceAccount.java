@@ -44,8 +44,8 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var basic = new ServiceAccount(&#34;basic&#34;, ServiceAccountArgs.builder()        
- *             .active(true)
  *             .identifier(&#34;sa::tftesting&#34;)
+ *             .active(true)
  *             .build());
  * 
  *     }

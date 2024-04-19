@@ -403,7 +403,8 @@ class CloudIntegrationAzure(pulumi.CustomResource):
         import pulumi
         import pulumi_wavefront as wavefront
 
-        azure_activity_log = wavefront.CloudIntegrationAzureActivityLog("azureActivityLog",
+        azure_activity_log = wavefront.CloudIntegrationAzureActivityLog("azure_activity_log",
+            name="Test Integration",
             client_id="client-id2",
             client_secret="client-secret2",
             tenant="my-tenant2")
@@ -449,7 +450,8 @@ class CloudIntegrationAzure(pulumi.CustomResource):
         import pulumi
         import pulumi_wavefront as wavefront
 
-        azure_activity_log = wavefront.CloudIntegrationAzureActivityLog("azureActivityLog",
+        azure_activity_log = wavefront.CloudIntegrationAzureActivityLog("azure_activity_log",
+            name="Test Integration",
             client_id="client-id2",
             client_secret="client-secret2",
             tenant="my-tenant2")

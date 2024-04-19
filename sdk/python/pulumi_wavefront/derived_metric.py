@@ -208,6 +208,7 @@ class DerivedMetric(pulumi.CustomResource):
         import pulumi_wavefront as wavefront
 
         derived = wavefront.DerivedMetric("derived",
+            name="dummy derived metric",
             minutes=5,
             query="aliasMetric(5, \\"some.metric\\")")
         ```
@@ -247,6 +248,7 @@ class DerivedMetric(pulumi.CustomResource):
         import pulumi_wavefront as wavefront
 
         derived = wavefront.DerivedMetric("derived",
+            name="dummy derived metric",
             minutes=5,
             query="aliasMetric(5, \\"some.metric\\")")
         ```

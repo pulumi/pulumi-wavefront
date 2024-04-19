@@ -31,6 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := wavefront.NewCloudIntegrationNewRelic(ctx, "newrelic", &wavefront.CloudIntegrationNewRelicArgs{
+//				Name:   pulumi.String("Test Integration"),
 //				ApiKey: pulumi.String("example-api-key"),
 //			})
 //			if err != nil {

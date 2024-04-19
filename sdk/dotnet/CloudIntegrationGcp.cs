@@ -26,10 +26,10 @@ namespace Pulumi.Wavefront
     /// {
     ///     var gcp = new Wavefront.CloudIntegrationGcp("gcp", new()
     ///     {
-    ///         JsonKey = @"{...your gcp key ...}
-    /// 
-    /// ",
+    ///         Name = "Test Integration",
     ///         ProjectId = "example-gcp-project",
+    ///         JsonKey = @"{...your gcp key ...}
+    /// ",
     ///     });
     /// 
     /// });

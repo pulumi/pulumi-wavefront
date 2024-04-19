@@ -114,10 +114,11 @@ def get_events(earliest_start_time_epoch_millis: Optional[int] = None,
     import pulumi
     import pulumi_wavefront as wavefront
 
-    example = wavefront.get_events(earliest_start_time_epoch_millis=1665427195,
+    # Get the information about all events
+    example = wavefront.get_events(limit=10,
+        offset=0,
         latest_start_time_epoch_millis=1665427195,
-        limit=10,
-        offset=0)
+        earliest_start_time_epoch_millis=1665427195)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -160,10 +161,11 @@ def get_events_output(earliest_start_time_epoch_millis: Optional[pulumi.Input[in
     import pulumi
     import pulumi_wavefront as wavefront
 
-    example = wavefront.get_events(earliest_start_time_epoch_millis=1665427195,
+    # Get the information about all events
+    example = wavefront.get_events(limit=10,
+        offset=0,
         latest_start_time_epoch_millis=1665427195,
-        limit=10,
-        offset=0)
+        earliest_start_time_epoch_millis=1665427195)
     ```
     <!--End PulumiCodeChooser -->
 

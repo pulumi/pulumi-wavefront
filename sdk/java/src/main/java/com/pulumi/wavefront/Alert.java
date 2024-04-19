@@ -46,6 +46,8 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var foobar = new Alert(&#34;foobar&#34;, AlertArgs.builder()        
+ *             .name(&#34;Test Alert&#34;)
+ *             .target(&#34;test@example.com,target:alert-target-id&#34;)
  *             .condition(&#34;100-ts(\&#34;cpu.usage_idle\&#34;, environment=preprod and cpu=cpu-total ) &gt; 80&#34;)
  *             .displayExpression(&#34;100-ts(\&#34;cpu.usage_idle\&#34;, environment=preprod and cpu=cpu-total )&#34;)
  *             .minutes(5)
@@ -54,7 +56,6 @@ import javax.annotation.Nullable;
  *             .tags(            
  *                 &#34;terraform&#34;,
  *                 &#34;test&#34;)
- *             .target(&#34;test@example.com,target:alert-target-id&#34;)
  *             .build());
  * 
  *     }

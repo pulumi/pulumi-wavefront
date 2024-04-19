@@ -24,11 +24,12 @@ namespace Pulumi.Wavefront
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var appDynamics = new Wavefront.CloudIntegrationAppDynamics("appDynamics", new()
+    ///     var appDynamics = new Wavefront.CloudIntegrationAppDynamics("app_dynamics", new()
     ///     {
+    ///         Name = "Test Integration",
+    ///         UserName = "example",
     ///         ControllerName = "exampleController",
     ///         EncryptedPassword = "encryptedPassword",
-    ///         UserName = "example",
     ///     });
     /// 
     /// });

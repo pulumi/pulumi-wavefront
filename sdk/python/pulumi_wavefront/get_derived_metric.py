@@ -332,6 +332,7 @@ def get_derived_metric(id: Optional[str] = None,
     import pulumi
     import pulumi_wavefront as wavefront
 
+    #Get the information about a derived metric.
     example = wavefront.get_derived_metric(id="derived_metric_id")
     ```
     <!--End PulumiCodeChooser -->
@@ -384,6 +385,7 @@ def get_derived_metric_output(id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_wavefront as wavefront
 
+    #Get the information about a derived metric.
     example = wavefront.get_derived_metric(id="derived_metric_id")
     ```
     <!--End PulumiCodeChooser -->
