@@ -375,7 +375,6 @@ class MaintenanceWindow(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_wavefront as wavefront
@@ -390,7 +389,6 @@ class MaintenanceWindow(pulumi.CustomResource):
                 "my_other_hostname",
             ])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -434,7 +432,6 @@ class MaintenanceWindow(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_wavefront as wavefront
@@ -449,7 +446,6 @@ class MaintenanceWindow(pulumi.CustomResource):
                 "my_other_hostname",
             ])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

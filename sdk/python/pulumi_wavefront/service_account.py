@@ -243,7 +243,6 @@ class ServiceAccount(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_wavefront as wavefront
@@ -252,7 +251,6 @@ class ServiceAccount(pulumi.CustomResource):
             identifier="sa::tftesting",
             active=True)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -284,7 +282,6 @@ class ServiceAccount(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_wavefront as wavefront
@@ -293,7 +290,6 @@ class ServiceAccount(pulumi.CustomResource):
             identifier="sa::tftesting",
             active=True)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

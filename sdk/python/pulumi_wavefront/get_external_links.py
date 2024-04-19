@@ -83,7 +83,6 @@ def get_external_links(limit: Optional[int] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_wavefront as wavefront
@@ -92,7 +91,6 @@ def get_external_links(limit: Optional[int] = None,
     example = wavefront.get_external_links(limit=10,
         offset=0)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param int limit: Limit is the maximum number of results to be returned. Defaults to 100.
@@ -120,7 +118,6 @@ def get_external_links_output(limit: Optional[pulumi.Input[Optional[int]]] = Non
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_wavefront as wavefront
@@ -129,7 +126,6 @@ def get_external_links_output(limit: Optional[pulumi.Input[Optional[int]]] = Non
     example = wavefront.get_external_links(limit=10,
         offset=0)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param int limit: Limit is the maximum number of results to be returned. Defaults to 100.

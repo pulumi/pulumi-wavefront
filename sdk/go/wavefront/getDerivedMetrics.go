@@ -15,7 +15,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -41,7 +40,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetDerivedMetrics(ctx *pulumi.Context, args *GetDerivedMetricsArgs, opts ...pulumi.InvokeOption) (*GetDerivedMetricsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetDerivedMetricsResult

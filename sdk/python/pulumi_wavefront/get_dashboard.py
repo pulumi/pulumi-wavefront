@@ -388,7 +388,6 @@ def get_dashboard(id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_wavefront as wavefront
@@ -396,7 +395,6 @@ def get_dashboard(id: Optional[str] = None,
     # Get the information about a dashboard.
     example = wavefront.get_dashboard(id="dashboard-id")
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str id: The ID associated with the dashboard data to be fetched.
@@ -452,7 +450,6 @@ def get_dashboard_output(id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_wavefront as wavefront
@@ -460,7 +457,6 @@ def get_dashboard_output(id: Optional[pulumi.Input[str]] = None,
     # Get the information about a dashboard.
     example = wavefront.get_dashboard(id="dashboard-id")
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str id: The ID associated with the dashboard data to be fetched.

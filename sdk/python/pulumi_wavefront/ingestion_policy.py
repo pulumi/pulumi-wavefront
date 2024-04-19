@@ -254,7 +254,6 @@ class IngestionPolicy(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_wavefront as wavefront
@@ -263,7 +262,6 @@ class IngestionPolicy(pulumi.CustomResource):
             name="test_ingestion",
             description="An ingestion policy for testing")
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -289,7 +287,6 @@ class IngestionPolicy(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_wavefront as wavefront
@@ -298,7 +295,6 @@ class IngestionPolicy(pulumi.CustomResource):
             name="test_ingestion",
             description="An ingestion policy for testing")
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

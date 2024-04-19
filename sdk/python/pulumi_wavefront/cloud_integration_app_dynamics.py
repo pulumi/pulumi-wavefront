@@ -604,7 +604,6 @@ class CloudIntegrationAppDynamics(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_wavefront as wavefront
@@ -615,7 +614,6 @@ class CloudIntegrationAppDynamics(pulumi.CustomResource):
             controller_name="exampleController",
             encrypted_password="encryptedPassword")
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -659,7 +657,6 @@ class CloudIntegrationAppDynamics(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_wavefront as wavefront
@@ -670,7 +667,6 @@ class CloudIntegrationAppDynamics(pulumi.CustomResource):
             controller_name="exampleController",
             encrypted_password="encryptedPassword")
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

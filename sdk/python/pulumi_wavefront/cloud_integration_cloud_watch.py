@@ -452,7 +452,6 @@ class CloudIntegrationCloudWatch(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_wavefront as wavefront
@@ -464,7 +463,6 @@ class CloudIntegrationCloudWatch(pulumi.CustomResource):
             role_arn="arn:aws::1234567:role/example-arn",
             external_id=ext_id.id)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -506,7 +504,6 @@ class CloudIntegrationCloudWatch(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_wavefront as wavefront
@@ -518,7 +515,6 @@ class CloudIntegrationCloudWatch(pulumi.CustomResource):
             role_arn="arn:aws::1234567:role/example-arn",
             external_id=ext_id.id)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

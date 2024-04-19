@@ -120,7 +120,6 @@ class MetricsPolicy(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_wavefront as wavefront
@@ -135,7 +134,6 @@ class MetricsPolicy(pulumi.CustomResource):
             user_group_ids=[everyone.group_id],
         )])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Data Source
 
@@ -143,7 +141,6 @@ class MetricsPolicy(pulumi.CustomResource):
 
         ### Example
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_wavefront as wavefront
@@ -151,7 +148,6 @@ class MetricsPolicy(pulumi.CustomResource):
         policy = wavefront.get_metrics_policy()
         pulumi.export("policy", policy)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -176,7 +172,6 @@ class MetricsPolicy(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_wavefront as wavefront
@@ -191,7 +186,6 @@ class MetricsPolicy(pulumi.CustomResource):
             user_group_ids=[everyone.group_id],
         )])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Data Source
 
@@ -199,7 +193,6 @@ class MetricsPolicy(pulumi.CustomResource):
 
         ### Example
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_wavefront as wavefront
@@ -207,7 +200,6 @@ class MetricsPolicy(pulumi.CustomResource):
         policy = wavefront.get_metrics_policy()
         pulumi.export("policy", policy)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

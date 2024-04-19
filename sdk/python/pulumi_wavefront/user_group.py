@@ -103,7 +103,6 @@ class UserGroup(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_wavefront as wavefront
@@ -112,7 +111,6 @@ class UserGroup(pulumi.CustomResource):
             name="Basic User Group",
             description="Basic User Group for Unit Tests")
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -138,7 +136,6 @@ class UserGroup(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_wavefront as wavefront
@@ -147,7 +144,6 @@ class UserGroup(pulumi.CustomResource):
             name="Basic User Group",
             description="Basic User Group for Unit Tests")
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
