@@ -11,7 +11,6 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as wavefront from "@pulumi/wavefront";
@@ -22,7 +21,6 @@ import * as utilities from "./utilities";
  *     offset: 0,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getRoles(args?: GetRolesArgs, opts?: pulumi.InvokeOptions): Promise<GetRolesResult> {
     args = args || {};
@@ -68,7 +66,6 @@ export interface GetRolesResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as wavefront from "@pulumi/wavefront";
@@ -79,7 +76,6 @@ export interface GetRolesResult {
  *     offset: 0,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getRolesOutput(args?: GetRolesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRolesResult> {
     return pulumi.output(args).apply((a: any) => getRoles(a, opts))

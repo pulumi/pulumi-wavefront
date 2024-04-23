@@ -9,7 +9,6 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as wavefront from "@pulumi/wavefront";
@@ -19,7 +18,6 @@ import * as utilities from "./utilities";
  *     id: "user-group-id",
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getUserGroup(args: GetUserGroupArgs, opts?: pulumi.InvokeOptions): Promise<GetUserGroupResult> {
 
@@ -69,7 +67,6 @@ export interface GetUserGroupResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as wavefront from "@pulumi/wavefront";
@@ -79,7 +76,6 @@ export interface GetUserGroupResult {
  *     id: "user-group-id",
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getUserGroupOutput(args: GetUserGroupOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetUserGroupResult> {
     return pulumi.output(args).apply((a: any) => getUserGroup(a, opts))

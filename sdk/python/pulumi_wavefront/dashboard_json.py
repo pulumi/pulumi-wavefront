@@ -74,7 +74,6 @@ class DashboardJson(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_wavefront as wavefront
@@ -200,7 +199,6 @@ class DashboardJson(pulumi.CustomResource):
         }
         \"\"\")
         ```
-        <!--End PulumiCodeChooser -->
 
         * 
         *Note:
@@ -230,7 +228,6 @@ class DashboardJson(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_wavefront as wavefront
@@ -356,7 +353,6 @@ class DashboardJson(pulumi.CustomResource):
         }
         \"\"\")
         ```
-        <!--End PulumiCodeChooser -->
 
         * 
         *Note:

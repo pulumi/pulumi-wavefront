@@ -11,7 +11,6 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as wavefront from "@pulumi/wavefront";
@@ -19,7 +18,6 @@ import * as utilities from "./utilities";
  * // Get all users
  * const users = wavefront.getUsers({});
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getUsers(opts?: pulumi.InvokeOptions): Promise<GetUsersResult> {
 
@@ -46,7 +44,6 @@ export interface GetUsersResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as wavefront from "@pulumi/wavefront";
@@ -54,7 +51,6 @@ export interface GetUsersResult {
  * // Get all users
  * const users = wavefront.getUsers({});
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getUsersOutput(opts?: pulumi.InvokeOptions): pulumi.Output<GetUsersResult> {
     return pulumi.output(getUsers(opts))

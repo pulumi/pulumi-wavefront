@@ -11,7 +11,6 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as wavefront from "@pulumi/wavefront";
@@ -21,7 +20,6 @@ import * as utilities from "./utilities";
  *     description: "An ingestion policy for testing",
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *

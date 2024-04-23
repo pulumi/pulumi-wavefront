@@ -397,7 +397,6 @@ class CloudIntegrationCloudTrail(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_wavefront as wavefront
@@ -410,7 +409,6 @@ class CloudIntegrationCloudTrail(pulumi.CustomResource):
             region="us-west-2",
             bucket_name="example-s3-bucket")
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -446,7 +444,6 @@ class CloudIntegrationCloudTrail(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_wavefront as wavefront
@@ -459,7 +456,6 @@ class CloudIntegrationCloudTrail(pulumi.CustomResource):
             region="us-west-2",
             bucket_name="example-s3-bucket")
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

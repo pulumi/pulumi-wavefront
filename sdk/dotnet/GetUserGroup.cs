@@ -16,7 +16,6 @@ namespace Pulumi.Wavefront
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -33,7 +32,6 @@ namespace Pulumi.Wavefront
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetUserGroupResult> InvokeAsync(GetUserGroupArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetUserGroupResult>("wavefront:index/getUserGroup:getUserGroup", args ?? new GetUserGroupArgs(), options.WithDefaults());
@@ -43,7 +41,6 @@ namespace Pulumi.Wavefront
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -60,7 +57,6 @@ namespace Pulumi.Wavefront
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetUserGroupResult> Invoke(GetUserGroupInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetUserGroupResult>("wavefront:index/getUserGroup:getUserGroup", args ?? new GetUserGroupInvokeArgs(), options.WithDefaults());

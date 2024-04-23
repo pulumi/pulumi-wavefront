@@ -279,7 +279,6 @@ class ExternalLink(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_wavefront as wavefront
@@ -289,7 +288,6 @@ class ExternalLink(pulumi.CustomResource):
             description="An external link description",
             template="https://example.com/source={{{source}}}&startTime={{startEpochMillis}}")
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -323,7 +321,6 @@ class ExternalLink(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_wavefront as wavefront
@@ -333,7 +330,6 @@ class ExternalLink(pulumi.CustomResource):
             description="An external link description",
             template="https://example.com/source={{{source}}}&startTime={{startEpochMillis}}")
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

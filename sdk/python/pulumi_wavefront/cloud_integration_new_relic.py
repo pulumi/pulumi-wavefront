@@ -336,7 +336,6 @@ class CloudIntegrationNewRelic(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_wavefront as wavefront
@@ -345,7 +344,6 @@ class CloudIntegrationNewRelic(pulumi.CustomResource):
             name="Test Integration",
             api_key="example-api-key")
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -379,7 +377,6 @@ class CloudIntegrationNewRelic(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_wavefront as wavefront
@@ -388,7 +385,6 @@ class CloudIntegrationNewRelic(pulumi.CustomResource):
             name="Test Integration",
             api_key="example-api-key")
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

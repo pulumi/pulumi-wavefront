@@ -427,7 +427,6 @@ class AlertTarget(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_wavefront as wavefront
@@ -447,7 +446,6 @@ class AlertTarget(pulumi.CustomResource):
                 "ALERT_RESOLVED",
             ])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -485,7 +483,6 @@ class AlertTarget(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_wavefront as wavefront
@@ -505,7 +502,6 @@ class AlertTarget(pulumi.CustomResource):
                 "ALERT_RESOLVED",
             ])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

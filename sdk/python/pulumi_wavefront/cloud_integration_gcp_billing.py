@@ -303,7 +303,6 @@ class CloudIntegrationGcpBilling(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_wavefront as wavefront
@@ -314,7 +313,6 @@ class CloudIntegrationGcpBilling(pulumi.CustomResource):
             api_key="example-api-key",
             json_key="{...your gcp key ...}\\n")
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -348,7 +346,6 @@ class CloudIntegrationGcpBilling(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_wavefront as wavefront
@@ -359,7 +356,6 @@ class CloudIntegrationGcpBilling(pulumi.CustomResource):
             api_key="example-api-key",
             json_key="{...your gcp key ...}\\n")
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

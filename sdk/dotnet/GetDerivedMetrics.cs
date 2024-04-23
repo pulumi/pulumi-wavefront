@@ -16,7 +16,6 @@ namespace Pulumi.Wavefront
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -34,7 +33,6 @@ namespace Pulumi.Wavefront
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetDerivedMetricsResult> InvokeAsync(GetDerivedMetricsArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetDerivedMetricsResult>("wavefront:index/getDerivedMetrics:getDerivedMetrics", args ?? new GetDerivedMetricsArgs(), options.WithDefaults());
@@ -44,7 +42,6 @@ namespace Pulumi.Wavefront
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -62,7 +59,6 @@ namespace Pulumi.Wavefront
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetDerivedMetricsResult> Invoke(GetDerivedMetricsInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDerivedMetricsResult>("wavefront:index/getDerivedMetrics:getDerivedMetrics", args ?? new GetDerivedMetricsInvokeArgs(), options.WithDefaults());

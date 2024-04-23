@@ -31,14 +31,12 @@ class CloudIntegrationAwsExternalId(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_wavefront as wavefront
 
         external_id = wavefront.CloudIntegrationAwsExternalId("external_id")
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -62,14 +60,12 @@ class CloudIntegrationAwsExternalId(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_wavefront as wavefront
 
         external_id = wavefront.CloudIntegrationAwsExternalId("external_id")
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
