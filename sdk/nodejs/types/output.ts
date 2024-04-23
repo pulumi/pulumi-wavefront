@@ -1645,13 +1645,7 @@ export interface MetricsPolicyPolicyRule {
 }
 
 export interface MetricsPolicyPolicyRuleTag {
-    /**
-     * The tag's key.
-     */
     key: string;
-    /**
-     * The tag's value.
-     */
     value: string;
 }
 

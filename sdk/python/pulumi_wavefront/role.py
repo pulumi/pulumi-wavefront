@@ -178,14 +178,12 @@ class Role(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_wavefront as wavefront
 
         role = wavefront.Role("role", name="Test Role")
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -215,14 +213,12 @@ class Role(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_wavefront as wavefront
 
         role = wavefront.Role("role", name="Test Role")
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

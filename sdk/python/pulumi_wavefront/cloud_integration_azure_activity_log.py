@@ -332,7 +332,6 @@ class CloudIntegrationAzureActivityLog(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_wavefront as wavefront
@@ -344,7 +343,6 @@ class CloudIntegrationAzureActivityLog(pulumi.CustomResource):
             client_secret="client-secret2",
             tenant="my-tenant2")
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -378,7 +376,6 @@ class CloudIntegrationAzureActivityLog(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_wavefront as wavefront
@@ -390,7 +387,6 @@ class CloudIntegrationAzureActivityLog(pulumi.CustomResource):
             client_secret="client-secret2",
             tenant="my-tenant2")
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

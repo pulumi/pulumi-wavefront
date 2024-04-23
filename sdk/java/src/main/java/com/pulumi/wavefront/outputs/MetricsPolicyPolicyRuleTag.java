@@ -10,29 +10,13 @@ import java.util.Objects;
 
 @CustomType
 public final class MetricsPolicyPolicyRuleTag {
-    /**
-     * @return The tag&#39;s key.
-     * 
-     */
     private String key;
-    /**
-     * @return The tag&#39;s value.
-     * 
-     */
     private String value;
 
     private MetricsPolicyPolicyRuleTag() {}
-    /**
-     * @return The tag&#39;s key.
-     * 
-     */
     public String key() {
         return this.key;
     }
-    /**
-     * @return The tag&#39;s value.
-     * 
-     */
     public String value() {
         return this.value;
     }

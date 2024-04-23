@@ -13,13 +13,7 @@ namespace Pulumi.Wavefront.Outputs
     [OutputType]
     public sealed class MetricsPolicyPolicyRuleTag
     {
-        /// <summary>
-        /// The tag's key.
-        /// </summary>
         public readonly string Key;
-        /// <summary>
-        /// The tag's value.
-        /// </summary>
         public readonly string Value;
 
         [OutputConstructor]

@@ -83,7 +83,6 @@ def get_derived_metrics(limit: Optional[int] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_wavefront as wavefront
@@ -92,7 +91,6 @@ def get_derived_metrics(limit: Optional[int] = None,
     example = wavefront.get_derived_metrics(limit=10,
         offset=0)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param int limit: Limit is the maximum number of results to be returned. Defaults to 100.
@@ -120,7 +118,6 @@ def get_derived_metrics_output(limit: Optional[pulumi.Input[Optional[int]]] = No
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_wavefront as wavefront
@@ -129,7 +126,6 @@ def get_derived_metrics_output(limit: Optional[pulumi.Input[Optional[int]]] = No
     example = wavefront.get_derived_metrics(limit=10,
         offset=0)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param int limit: Limit is the maximum number of results to be returned. Defaults to 100.

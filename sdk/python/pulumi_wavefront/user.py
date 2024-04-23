@@ -177,14 +177,12 @@ class User(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_wavefront as wavefront
 
         basic = wavefront.User("basic", email="test+tftesting@example.com")
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -214,14 +212,12 @@ class User(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_wavefront as wavefront
 
         basic = wavefront.User("basic", email="test+tftesting@example.com")
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
