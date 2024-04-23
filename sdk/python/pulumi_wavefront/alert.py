@@ -684,7 +684,6 @@ class Alert(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_wavefront as wavefront
@@ -702,7 +701,6 @@ class Alert(pulumi.CustomResource):
                 "test",
             ])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -757,7 +755,6 @@ class Alert(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_wavefront as wavefront
@@ -775,7 +772,6 @@ class Alert(pulumi.CustomResource):
                 "test",
             ])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

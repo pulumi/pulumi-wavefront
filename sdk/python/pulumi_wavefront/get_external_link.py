@@ -186,7 +186,6 @@ def get_external_link(id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_wavefront as wavefront
@@ -194,7 +193,6 @@ def get_external_link(id: Optional[str] = None,
     # Get the information about a specific external links.
     example = wavefront.get_external_link(id="sample-external-link-id")
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str id: The ID of the external link.
@@ -227,7 +225,6 @@ def get_external_link_output(id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_wavefront as wavefront
@@ -235,7 +232,6 @@ def get_external_link_output(id: Optional[pulumi.Input[str]] = None,
     # Get the information about a specific external links.
     example = wavefront.get_external_link(id="sample-external-link-id")
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str id: The ID of the external link.

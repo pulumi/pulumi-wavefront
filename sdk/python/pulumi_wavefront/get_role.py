@@ -87,7 +87,6 @@ def get_role(id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_wavefront as wavefront
@@ -95,7 +94,6 @@ def get_role(id: Optional[str] = None,
     # Get the information about the role.
     example = wavefront.get_role(id="role-id")
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str id: The ID associated with the role data to be fetched.
@@ -120,7 +118,6 @@ def get_role_output(id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_wavefront as wavefront
@@ -128,7 +125,6 @@ def get_role_output(id: Optional[pulumi.Input[str]] = None,
     # Get the information about the role.
     example = wavefront.get_role(id="role-id")
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str id: The ID associated with the role data to be fetched.

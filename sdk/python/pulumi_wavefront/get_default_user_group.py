@@ -63,7 +63,6 @@ def get_default_user_group(opts: Optional[pulumi.InvokeOptions] = None) -> Await
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_wavefront as wavefront
@@ -71,7 +70,6 @@ def get_default_user_group(opts: Optional[pulumi.InvokeOptions] = None) -> Await
     # Get the default user group "Everyone"
     everyone_group = wavefront.get_default_user_group()
     ```
-    <!--End PulumiCodeChooser -->
     """
     __args__ = dict()
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
@@ -89,7 +87,6 @@ def get_default_user_group_output(opts: Optional[pulumi.InvokeOptions] = None) -
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_wavefront as wavefront
@@ -97,6 +94,5 @@ def get_default_user_group_output(opts: Optional[pulumi.InvokeOptions] = None) -
     # Get the default user group "Everyone"
     everyone_group = wavefront.get_default_user_group()
     ```
-    <!--End PulumiCodeChooser -->
     """
     ...

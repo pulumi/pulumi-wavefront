@@ -202,7 +202,6 @@ class DerivedMetric(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_wavefront as wavefront
@@ -212,7 +211,6 @@ class DerivedMetric(pulumi.CustomResource):
             minutes=5,
             query="aliasMetric(5, \\"some.metric\\")")
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -242,7 +240,6 @@ class DerivedMetric(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_wavefront as wavefront
@@ -252,7 +249,6 @@ class DerivedMetric(pulumi.CustomResource):
             minutes=5,
             query="aliasMetric(5, \\"some.metric\\")")
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

@@ -9,14 +9,12 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as wavefront from "@pulumi/wavefront";
  *
  * const role = new wavefront.Role("role", {name: "Test Role"});
  * ```
- * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
