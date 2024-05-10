@@ -25,7 +25,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -47,17 +48,18 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var extId = new CloudIntegrationAwsExternalId(&#34;extId&#34;);
+ *         var extId = new CloudIntegrationAwsExternalId("extId");
  * 
- *         var ec2 = new CloudIntegrationEc2(&#34;ec2&#34;, CloudIntegrationEc2Args.builder()        
- *             .name(&#34;Test Integration&#34;)
- *             .roleArn(&#34;arn:aws::1234567:role/example-arn&#34;)
+ *         var ec2 = new CloudIntegrationEc2("ec2", CloudIntegrationEc2Args.builder()        
+ *             .name("Test Integration")
+ *             .roleArn("arn:aws::1234567:role/example-arn")
  *             .externalId(extId.id())
  *             .build());
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

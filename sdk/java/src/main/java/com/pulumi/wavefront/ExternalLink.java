@@ -22,7 +22,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -43,15 +44,16 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var basic = new ExternalLink(&#34;basic&#34;, ExternalLinkArgs.builder()        
- *             .name(&#34;External Link&#34;)
- *             .description(&#34;An external link description&#34;)
- *             .template(&#34;https://example.com/source={{{source}}}&amp;startTime={{startEpochMillis}}&#34;)
+ *         var basic = new ExternalLink("basic", ExternalLinkArgs.builder()        
+ *             .name("External Link")
+ *             .description("An external link description")
+ *             .template("https://example.com/source={{{source}}}&startTime={{startEpochMillis}}")
  *             .build());
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

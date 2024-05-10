@@ -19,7 +19,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -40,14 +41,15 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var basic = new UserGroup(&#34;basic&#34;, UserGroupArgs.builder()        
- *             .name(&#34;Basic User Group&#34;)
- *             .description(&#34;Basic User Group for Unit Tests&#34;)
+ *         var basic = new UserGroup("basic", UserGroupArgs.builder()        
+ *             .name("Basic User Group")
+ *             .description("Basic User Group for Unit Tests")
  *             .build());
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

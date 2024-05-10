@@ -25,7 +25,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -46,17 +47,18 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var azureActivityLog = new CloudIntegrationAzureActivityLog(&#34;azureActivityLog&#34;, CloudIntegrationAzureActivityLogArgs.builder()        
- *             .name(&#34;Test Integration&#34;)
- *             .categoryFilters(&#34;ADMINISTRATIVE&#34;)
- *             .clientId(&#34;client-id2&#34;)
- *             .clientSecret(&#34;client-secret2&#34;)
- *             .tenant(&#34;my-tenant2&#34;)
+ *         var azureActivityLog = new CloudIntegrationAzureActivityLog("azureActivityLog", CloudIntegrationAzureActivityLogArgs.builder()        
+ *             .name("Test Integration")
+ *             .categoryFilters("ADMINISTRATIVE")
+ *             .clientId("client-id2")
+ *             .clientSecret("client-secret2")
+ *             .tenant("my-tenant2")
  *             .build());
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

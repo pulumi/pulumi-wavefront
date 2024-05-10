@@ -24,7 +24,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -45,22 +46,23 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var foobar = new Alert(&#34;foobar&#34;, AlertArgs.builder()        
- *             .name(&#34;Test Alert&#34;)
- *             .target(&#34;test@example.com,target:alert-target-id&#34;)
- *             .condition(&#34;100-ts(\&#34;cpu.usage_idle\&#34;, environment=preprod and cpu=cpu-total ) &gt; 80&#34;)
- *             .displayExpression(&#34;100-ts(\&#34;cpu.usage_idle\&#34;, environment=preprod and cpu=cpu-total )&#34;)
+ *         var foobar = new Alert("foobar", AlertArgs.builder()        
+ *             .name("Test Alert")
+ *             .target("test{@literal @}example.com,target:alert-target-id")
+ *             .condition("100-ts(\"cpu.usage_idle\", environment=preprod and cpu=cpu-total ) > 80")
+ *             .displayExpression("100-ts(\"cpu.usage_idle\", environment=preprod and cpu=cpu-total )")
  *             .minutes(5)
  *             .resolveAfterMinutes(5)
- *             .severity(&#34;WARN&#34;)
+ *             .severity("WARN")
  *             .tags(            
- *                 &#34;terraform&#34;,
- *                 &#34;test&#34;)
+ *                 "terraform",
+ *                 "test")
  *             .build());
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

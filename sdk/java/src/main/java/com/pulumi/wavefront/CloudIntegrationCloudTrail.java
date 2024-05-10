@@ -24,7 +24,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -46,19 +47,20 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var extId = new CloudIntegrationAwsExternalId(&#34;extId&#34;);
+ *         var extId = new CloudIntegrationAwsExternalId("extId");
  * 
- *         var cloudtrail = new CloudIntegrationCloudTrail(&#34;cloudtrail&#34;, CloudIntegrationCloudTrailArgs.builder()        
- *             .name(&#34;Test Integration&#34;)
- *             .roleArn(&#34;arn:aws::1234567:role/example-arn&#34;)
+ *         var cloudtrail = new CloudIntegrationCloudTrail("cloudtrail", CloudIntegrationCloudTrailArgs.builder()        
+ *             .name("Test Integration")
+ *             .roleArn("arn:aws::1234567:role/example-arn")
  *             .externalId(extId.id())
- *             .region(&#34;us-west-2&#34;)
- *             .bucketName(&#34;example-s3-bucket&#34;)
+ *             .region("us-west-2")
+ *             .bucketName("example-s3-bucket")
  *             .build());
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

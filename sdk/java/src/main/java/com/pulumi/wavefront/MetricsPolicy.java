@@ -22,7 +22,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -47,20 +48,21 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         final var everyone = WavefrontFunctions.getDefaultUserGroup();
  * 
- *         var main = new MetricsPolicy(&#34;main&#34;, MetricsPolicyArgs.builder()        
+ *         var main = new MetricsPolicy("main", MetricsPolicyArgs.builder()        
  *             .policyRules(MetricsPolicyPolicyRuleArgs.builder()
- *                 .name(&#34;Allow All Metrics&#34;)
- *                 .description(&#34;Predefined policy rule. Allows access to all metrics (timeseries, histograms, and counters) for all accounts. If this rule is removed, all accounts can access all metrics if there are no matching blocking rules.&#34;)
- *                 .prefixes(&#34;*&#34;)
+ *                 .name("Allow All Metrics")
+ *                 .description("Predefined policy rule. Allows access to all metrics (timeseries, histograms, and counters) for all accounts. If this rule is removed, all accounts can access all metrics if there are no matching blocking rules.")
+ *                 .prefixes("*")
  *                 .tagsAnded(false)
- *                 .accessType(&#34;ALLOW&#34;)
- *                 .userGroupIds(everyone.applyValue(getDefaultUserGroupResult -&gt; getDefaultUserGroupResult.groupId()))
+ *                 .accessType("ALLOW")
+ *                 .userGroupIds(everyone.applyValue(getDefaultUserGroupResult -> getDefaultUserGroupResult.groupId()))
  *                 .build())
  *             .build());
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Data Source
@@ -70,7 +72,8 @@ import javax.annotation.Nullable;
  * ### Example
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -92,10 +95,11 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         final var policy = WavefrontFunctions.getMetricsPolicy();
  * 
- *         ctx.export(&#34;policy&#34;, policy.applyValue(getMetricsPolicyResult -&gt; getMetricsPolicyResult));
+ *         ctx.export("policy", policy.applyValue(getMetricsPolicyResult -> getMetricsPolicyResult));
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

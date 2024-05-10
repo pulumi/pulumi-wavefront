@@ -22,7 +22,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -43,14 +44,15 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var basic = new ServiceAccount(&#34;basic&#34;, ServiceAccountArgs.builder()        
- *             .identifier(&#34;sa::tftesting&#34;)
+ *         var basic = new ServiceAccount("basic", ServiceAccountArgs.builder()        
+ *             .identifier("sa::tftesting")
  *             .active(true)
  *             .build());
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

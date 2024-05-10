@@ -25,7 +25,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -46,16 +47,17 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var appDynamics = new CloudIntegrationAppDynamics(&#34;appDynamics&#34;, CloudIntegrationAppDynamicsArgs.builder()        
- *             .name(&#34;Test Integration&#34;)
- *             .userName(&#34;example&#34;)
- *             .controllerName(&#34;exampleController&#34;)
- *             .encryptedPassword(&#34;encryptedPassword&#34;)
+ *         var appDynamics = new CloudIntegrationAppDynamics("appDynamics", CloudIntegrationAppDynamicsArgs.builder()        
+ *             .name("Test Integration")
+ *             .userName("example")
+ *             .controllerName("exampleController")
+ *             .encryptedPassword("encryptedPassword")
  *             .build());
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

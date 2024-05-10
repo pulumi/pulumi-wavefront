@@ -24,7 +24,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -45,22 +46,23 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testTarget = new AlertTarget(&#34;testTarget&#34;, AlertTargetArgs.builder()        
- *             .name(&#34;Terraform Test Target&#34;)
- *             .description(&#34;Test target&#34;)
- *             .method(&#34;WEBHOOK&#34;)
- *             .recipient(&#34;https://hooks.slack.com/services/test/me&#34;)
- *             .contentType(&#34;application/json&#34;)
- *             .customHeaders(Map.of(&#34;Testing&#34;, &#34;true&#34;))
- *             .template(&#34;{}&#34;)
+ *         var testTarget = new AlertTarget("testTarget", AlertTargetArgs.builder()        
+ *             .name("Terraform Test Target")
+ *             .description("Test target")
+ *             .method("WEBHOOK")
+ *             .recipient("https://hooks.slack.com/services/test/me")
+ *             .contentType("application/json")
+ *             .customHeaders(Map.of("Testing", "true"))
+ *             .template("{}")
  *             .triggers(            
- *                 &#34;ALERT_OPENED&#34;,
- *                 &#34;ALERT_RESOLVED&#34;)
+ *                 "ALERT_OPENED",
+ *                 "ALERT_RESOLVED")
  *             .build());
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
