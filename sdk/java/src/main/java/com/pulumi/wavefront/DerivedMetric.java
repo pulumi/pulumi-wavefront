@@ -23,7 +23,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -44,15 +45,16 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var derived = new DerivedMetric(&#34;derived&#34;, DerivedMetricArgs.builder()        
- *             .name(&#34;dummy derived metric&#34;)
+ *         var derived = new DerivedMetric("derived", DerivedMetricArgs.builder()        
+ *             .name("dummy derived metric")
  *             .minutes(5)
- *             .query(&#34;aliasMetric(5, \&#34;some.metric\&#34;)&#34;)
+ *             .query("aliasMetric(5, \"some.metric\")")
  *             .build());
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

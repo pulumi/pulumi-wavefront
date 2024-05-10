@@ -24,7 +24,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -49,56 +50,57 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var basic = new User(&#34;basic&#34;, UserArgs.builder()        
- *             .email(&#34;test+tftesting@example.com&#34;)
+ *         var basic = new User("basic", UserArgs.builder()        
+ *             .email("test+tftesting{@literal @}example.com")
  *             .groups(            
- *                 &#34;agent_management&#34;,
- *                 &#34;alerts_management&#34;)
+ *                 "agent_management",
+ *                 "alerts_management")
  *             .build());
  * 
- *         var testDashboard = new Dashboard(&#34;testDashboard&#34;, DashboardArgs.builder()        
- *             .name(&#34;Terraform Test Dashboard&#34;)
- *             .description(&#34;testing, testing&#34;)
- *             .url(&#34;tftestcreate&#34;)
+ *         var testDashboard = new Dashboard("testDashboard", DashboardArgs.builder()        
+ *             .name("Terraform Test Dashboard")
+ *             .description("testing, testing")
+ *             .url("tftestcreate")
  *             .displaySectionTableOfContents(true)
  *             .displayQueryParameters(true)
  *             .canViews(basic.id())
  *             .sections(DashboardSectionArgs.builder()
- *                 .name(&#34;section 1&#34;)
+ *                 .name("section 1")
  *                 .rows(DashboardSectionRowArgs.builder()
  *                     .charts(DashboardSectionRowChartArgs.builder()
- *                         .name(&#34;chart 1&#34;)
- *                         .description(&#34;chart number 1&#34;)
- *                         .units(&#34;something per unit&#34;)
+ *                         .name("chart 1")
+ *                         .description("chart number 1")
+ *                         .units("something per unit")
  *                         .sources(DashboardSectionRowChartSourceArgs.builder()
- *                             .name(&#34;source name&#34;)
- *                             .query(&#34;ts()&#34;)
+ *                             .name("source name")
+ *                             .query("ts()")
  *                             .build())
  *                         .chartSetting(DashboardSectionRowChartChartSettingArgs.builder()
- *                             .type(&#34;linear&#34;)
+ *                             .type("linear")
  *                             .build())
- *                         .summarization(&#34;MEAN&#34;)
+ *                         .summarization("MEAN")
  *                         .build())
  *                     .build())
  *                 .build())
  *             .parameterDetails(DashboardParameterDetailArgs.builder()
- *                 .name(&#34;param1&#34;)
- *                 .label(&#34;param1&#34;)
- *                 .defaultValue(&#34;Label&#34;)
+ *                 .name("param1")
+ *                 .label("param1")
+ *                 .defaultValue("Label")
  *                 .hideFromView(false)
- *                 .parameterType(&#34;SIMPLE&#34;)
- *                 .valuesToReadableStrings(Map.of(&#34;Label&#34;, &#34;test&#34;))
+ *                 .parameterType("SIMPLE")
+ *                 .valuesToReadableStrings(Map.of("Label", "test"))
  *                 .build())
  *             .tags(            
- *                 &#34;b&#34;,
- *                 &#34;terraform&#34;,
- *                 &#34;a&#34;,
- *                 &#34;test&#34;)
+ *                 "b",
+ *                 "terraform",
+ *                 "a",
+ *                 "test")
  *             .build());
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

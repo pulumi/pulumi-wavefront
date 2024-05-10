@@ -25,7 +25,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -46,18 +47,19 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var gcpBilling = new CloudIntegrationGcpBilling(&#34;gcpBilling&#34;, CloudIntegrationGcpBillingArgs.builder()        
- *             .name(&#34;Test Integration&#34;)
- *             .projectId(&#34;example-gcp-project&#34;)
- *             .apiKey(&#34;example-api-key&#34;)
- *             .jsonKey(&#34;&#34;&#34;
+ *         var gcpBilling = new CloudIntegrationGcpBilling("gcpBilling", CloudIntegrationGcpBillingArgs.builder()        
+ *             .name("Test Integration")
+ *             .projectId("example-gcp-project")
+ *             .apiKey("example-api-key")
+ *             .jsonKey("""
  * {...your gcp key ...}
- *             &#34;&#34;&#34;)
+ *             """)
  *             .build());
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

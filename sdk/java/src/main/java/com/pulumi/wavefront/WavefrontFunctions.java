@@ -72,7 +72,8 @@ public final class WavefrontFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -95,12 +96,13 @@ public final class WavefrontFunctions {
      *     public static void stack(Context ctx) {
      *         // Get the information about the alert.
      *         final var example = WavefrontFunctions.getAlert(GetAlertArgs.builder()
-     *             .id(&#34;alert-id&#34;)
+     *             .id("alert-id")
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -113,7 +115,8 @@ public final class WavefrontFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -136,12 +139,13 @@ public final class WavefrontFunctions {
      *     public static void stack(Context ctx) {
      *         // Get the information about the alert.
      *         final var example = WavefrontFunctions.getAlert(GetAlertArgs.builder()
-     *             .id(&#34;alert-id&#34;)
+     *             .id("alert-id")
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -154,7 +158,8 @@ public final class WavefrontFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -177,12 +182,13 @@ public final class WavefrontFunctions {
      *     public static void stack(Context ctx) {
      *         // Get the information about the alert.
      *         final var example = WavefrontFunctions.getAlert(GetAlertArgs.builder()
-     *             .id(&#34;alert-id&#34;)
+     *             .id("alert-id")
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -195,7 +201,8 @@ public final class WavefrontFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -218,12 +225,13 @@ public final class WavefrontFunctions {
      *     public static void stack(Context ctx) {
      *         // Get the information about the alert.
      *         final var example = WavefrontFunctions.getAlert(GetAlertArgs.builder()
-     *             .id(&#34;alert-id&#34;)
+     *             .id("alert-id")
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -236,7 +244,8 @@ public final class WavefrontFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -265,7 +274,8 @@ public final class WavefrontFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -278,7 +288,8 @@ public final class WavefrontFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -307,7 +318,8 @@ public final class WavefrontFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -320,7 +332,8 @@ public final class WavefrontFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -349,7 +362,8 @@ public final class WavefrontFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -362,7 +376,8 @@ public final class WavefrontFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -391,7 +406,8 @@ public final class WavefrontFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -404,7 +420,8 @@ public final class WavefrontFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -433,7 +450,8 @@ public final class WavefrontFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -446,7 +464,8 @@ public final class WavefrontFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -475,7 +494,8 @@ public final class WavefrontFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -488,7 +508,8 @@ public final class WavefrontFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -511,12 +532,13 @@ public final class WavefrontFunctions {
      *     public static void stack(Context ctx) {
      *         // Get the information about a dashboard.
      *         final var example = WavefrontFunctions.getDashboard(GetDashboardArgs.builder()
-     *             .id(&#34;dashboard-id&#34;)
+     *             .id("dashboard-id")
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -529,7 +551,8 @@ public final class WavefrontFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -552,12 +575,13 @@ public final class WavefrontFunctions {
      *     public static void stack(Context ctx) {
      *         // Get the information about a dashboard.
      *         final var example = WavefrontFunctions.getDashboard(GetDashboardArgs.builder()
-     *             .id(&#34;dashboard-id&#34;)
+     *             .id("dashboard-id")
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -570,7 +594,8 @@ public final class WavefrontFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -593,12 +618,13 @@ public final class WavefrontFunctions {
      *     public static void stack(Context ctx) {
      *         // Get the information about a dashboard.
      *         final var example = WavefrontFunctions.getDashboard(GetDashboardArgs.builder()
-     *             .id(&#34;dashboard-id&#34;)
+     *             .id("dashboard-id")
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -611,7 +637,8 @@ public final class WavefrontFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -634,12 +661,13 @@ public final class WavefrontFunctions {
      *     public static void stack(Context ctx) {
      *         // Get the information about a dashboard.
      *         final var example = WavefrontFunctions.getDashboard(GetDashboardArgs.builder()
-     *             .id(&#34;dashboard-id&#34;)
+     *             .id("dashboard-id")
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -652,7 +680,8 @@ public final class WavefrontFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -681,7 +710,8 @@ public final class WavefrontFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -694,7 +724,8 @@ public final class WavefrontFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -723,7 +754,8 @@ public final class WavefrontFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -736,7 +768,8 @@ public final class WavefrontFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -765,7 +798,8 @@ public final class WavefrontFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -778,7 +812,8 @@ public final class WavefrontFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -807,7 +842,8 @@ public final class WavefrontFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -820,7 +856,8 @@ public final class WavefrontFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -849,7 +886,8 @@ public final class WavefrontFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -862,7 +900,8 @@ public final class WavefrontFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -891,7 +930,8 @@ public final class WavefrontFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -904,7 +944,8 @@ public final class WavefrontFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -924,12 +965,13 @@ public final class WavefrontFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         // Get the default user group &#34;Everyone&#34;
+     *         // Get the default user group "Everyone"
      *         final var everyoneGroup = WavefrontFunctions.getDefaultUserGroup();
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -942,7 +984,8 @@ public final class WavefrontFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -962,12 +1005,13 @@ public final class WavefrontFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         // Get the default user group &#34;Everyone&#34;
+     *         // Get the default user group "Everyone"
      *         final var everyoneGroup = WavefrontFunctions.getDefaultUserGroup();
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -980,7 +1024,8 @@ public final class WavefrontFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -1000,12 +1045,13 @@ public final class WavefrontFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         // Get the default user group &#34;Everyone&#34;
+     *         // Get the default user group "Everyone"
      *         final var everyoneGroup = WavefrontFunctions.getDefaultUserGroup();
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -1018,7 +1064,8 @@ public final class WavefrontFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -1038,12 +1085,13 @@ public final class WavefrontFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         // Get the default user group &#34;Everyone&#34;
+     *         // Get the default user group "Everyone"
      *         final var everyoneGroup = WavefrontFunctions.getDefaultUserGroup();
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -1056,7 +1104,8 @@ public final class WavefrontFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -1076,12 +1125,13 @@ public final class WavefrontFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         // Get the default user group &#34;Everyone&#34;
+     *         // Get the default user group "Everyone"
      *         final var everyoneGroup = WavefrontFunctions.getDefaultUserGroup();
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -1094,7 +1144,8 @@ public final class WavefrontFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -1114,12 +1165,13 @@ public final class WavefrontFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         // Get the default user group &#34;Everyone&#34;
+     *         // Get the default user group "Everyone"
      *         final var everyoneGroup = WavefrontFunctions.getDefaultUserGroup();
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -1132,7 +1184,8 @@ public final class WavefrontFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -1155,12 +1208,13 @@ public final class WavefrontFunctions {
      *     public static void stack(Context ctx) {
      *         //Get the information about a derived metric.
      *         final var example = WavefrontFunctions.getDerivedMetric(GetDerivedMetricArgs.builder()
-     *             .id(&#34;derived_metric_id&#34;)
+     *             .id("derived_metric_id")
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -1173,7 +1227,8 @@ public final class WavefrontFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -1196,12 +1251,13 @@ public final class WavefrontFunctions {
      *     public static void stack(Context ctx) {
      *         //Get the information about a derived metric.
      *         final var example = WavefrontFunctions.getDerivedMetric(GetDerivedMetricArgs.builder()
-     *             .id(&#34;derived_metric_id&#34;)
+     *             .id("derived_metric_id")
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -1214,7 +1270,8 @@ public final class WavefrontFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -1237,12 +1294,13 @@ public final class WavefrontFunctions {
      *     public static void stack(Context ctx) {
      *         //Get the information about a derived metric.
      *         final var example = WavefrontFunctions.getDerivedMetric(GetDerivedMetricArgs.builder()
-     *             .id(&#34;derived_metric_id&#34;)
+     *             .id("derived_metric_id")
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -1255,7 +1313,8 @@ public final class WavefrontFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -1278,12 +1337,13 @@ public final class WavefrontFunctions {
      *     public static void stack(Context ctx) {
      *         //Get the information about a derived metric.
      *         final var example = WavefrontFunctions.getDerivedMetric(GetDerivedMetricArgs.builder()
-     *             .id(&#34;derived_metric_id&#34;)
+     *             .id("derived_metric_id")
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -1296,7 +1356,8 @@ public final class WavefrontFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -1325,7 +1386,8 @@ public final class WavefrontFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -1338,7 +1400,8 @@ public final class WavefrontFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -1367,7 +1430,8 @@ public final class WavefrontFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -1380,7 +1444,8 @@ public final class WavefrontFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -1409,7 +1474,8 @@ public final class WavefrontFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -1422,7 +1488,8 @@ public final class WavefrontFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -1451,7 +1518,8 @@ public final class WavefrontFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -1464,7 +1532,8 @@ public final class WavefrontFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -1493,7 +1562,8 @@ public final class WavefrontFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -1506,7 +1576,8 @@ public final class WavefrontFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -1535,7 +1606,8 @@ public final class WavefrontFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -1548,7 +1620,8 @@ public final class WavefrontFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -1571,12 +1644,13 @@ public final class WavefrontFunctions {
      *     public static void stack(Context ctx) {
      *         // Get the information about a Wavefront event by its ID.
      *         final var example = WavefrontFunctions.getEvent(GetEventArgs.builder()
-     *             .id(&#34;sample-event-id&#34;)
+     *             .id("sample-event-id")
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -1589,7 +1663,8 @@ public final class WavefrontFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -1612,12 +1687,13 @@ public final class WavefrontFunctions {
      *     public static void stack(Context ctx) {
      *         // Get the information about a Wavefront event by its ID.
      *         final var example = WavefrontFunctions.getEvent(GetEventArgs.builder()
-     *             .id(&#34;sample-event-id&#34;)
+     *             .id("sample-event-id")
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -1630,7 +1706,8 @@ public final class WavefrontFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -1653,12 +1730,13 @@ public final class WavefrontFunctions {
      *     public static void stack(Context ctx) {
      *         // Get the information about a Wavefront event by its ID.
      *         final var example = WavefrontFunctions.getEvent(GetEventArgs.builder()
-     *             .id(&#34;sample-event-id&#34;)
+     *             .id("sample-event-id")
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -1671,7 +1749,8 @@ public final class WavefrontFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -1694,12 +1773,13 @@ public final class WavefrontFunctions {
      *     public static void stack(Context ctx) {
      *         // Get the information about a Wavefront event by its ID.
      *         final var example = WavefrontFunctions.getEvent(GetEventArgs.builder()
-     *             .id(&#34;sample-event-id&#34;)
+     *             .id("sample-event-id")
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -1712,7 +1792,8 @@ public final class WavefrontFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -1743,7 +1824,8 @@ public final class WavefrontFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -1756,7 +1838,8 @@ public final class WavefrontFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -1787,7 +1870,8 @@ public final class WavefrontFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -1800,7 +1884,8 @@ public final class WavefrontFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -1831,7 +1916,8 @@ public final class WavefrontFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -1844,7 +1930,8 @@ public final class WavefrontFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -1875,7 +1962,8 @@ public final class WavefrontFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -1888,7 +1976,8 @@ public final class WavefrontFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -1911,12 +2000,13 @@ public final class WavefrontFunctions {
      *     public static void stack(Context ctx) {
      *         // Get the information about a specific external links.
      *         final var example = WavefrontFunctions.getExternalLink(GetExternalLinkArgs.builder()
-     *             .id(&#34;sample-external-link-id&#34;)
+     *             .id("sample-external-link-id")
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -1929,7 +2019,8 @@ public final class WavefrontFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -1952,12 +2043,13 @@ public final class WavefrontFunctions {
      *     public static void stack(Context ctx) {
      *         // Get the information about a specific external links.
      *         final var example = WavefrontFunctions.getExternalLink(GetExternalLinkArgs.builder()
-     *             .id(&#34;sample-external-link-id&#34;)
+     *             .id("sample-external-link-id")
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -1970,7 +2062,8 @@ public final class WavefrontFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -1993,12 +2086,13 @@ public final class WavefrontFunctions {
      *     public static void stack(Context ctx) {
      *         // Get the information about a specific external links.
      *         final var example = WavefrontFunctions.getExternalLink(GetExternalLinkArgs.builder()
-     *             .id(&#34;sample-external-link-id&#34;)
+     *             .id("sample-external-link-id")
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -2011,7 +2105,8 @@ public final class WavefrontFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -2034,12 +2129,13 @@ public final class WavefrontFunctions {
      *     public static void stack(Context ctx) {
      *         // Get the information about a specific external links.
      *         final var example = WavefrontFunctions.getExternalLink(GetExternalLinkArgs.builder()
-     *             .id(&#34;sample-external-link-id&#34;)
+     *             .id("sample-external-link-id")
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -2052,7 +2148,8 @@ public final class WavefrontFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -2081,7 +2178,8 @@ public final class WavefrontFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -2094,7 +2192,8 @@ public final class WavefrontFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -2123,7 +2222,8 @@ public final class WavefrontFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -2136,7 +2236,8 @@ public final class WavefrontFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -2165,7 +2266,8 @@ public final class WavefrontFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -2178,7 +2280,8 @@ public final class WavefrontFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -2207,7 +2310,8 @@ public final class WavefrontFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -2220,7 +2324,8 @@ public final class WavefrontFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -2249,7 +2354,8 @@ public final class WavefrontFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -2262,7 +2368,8 @@ public final class WavefrontFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -2291,7 +2398,8 @@ public final class WavefrontFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -2304,7 +2412,8 @@ public final class WavefrontFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -2327,12 +2436,13 @@ public final class WavefrontFunctions {
      *     public static void stack(Context ctx) {
      *         // Get the information about specific maintenance window.
      *         final var example = WavefrontFunctions.getMaintenanceWindow(GetMaintenanceWindowArgs.builder()
-     *             .id(&#34;sample-maintenance-window-id&#34;)
+     *             .id("sample-maintenance-window-id")
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -2345,7 +2455,8 @@ public final class WavefrontFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -2368,12 +2479,13 @@ public final class WavefrontFunctions {
      *     public static void stack(Context ctx) {
      *         // Get the information about specific maintenance window.
      *         final var example = WavefrontFunctions.getMaintenanceWindow(GetMaintenanceWindowArgs.builder()
-     *             .id(&#34;sample-maintenance-window-id&#34;)
+     *             .id("sample-maintenance-window-id")
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -2386,7 +2498,8 @@ public final class WavefrontFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -2409,12 +2522,13 @@ public final class WavefrontFunctions {
      *     public static void stack(Context ctx) {
      *         // Get the information about specific maintenance window.
      *         final var example = WavefrontFunctions.getMaintenanceWindow(GetMaintenanceWindowArgs.builder()
-     *             .id(&#34;sample-maintenance-window-id&#34;)
+     *             .id("sample-maintenance-window-id")
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -2427,7 +2541,8 @@ public final class WavefrontFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -2450,12 +2565,13 @@ public final class WavefrontFunctions {
      *     public static void stack(Context ctx) {
      *         // Get the information about specific maintenance window.
      *         final var example = WavefrontFunctions.getMaintenanceWindow(GetMaintenanceWindowArgs.builder()
-     *             .id(&#34;sample-maintenance-window-id&#34;)
+     *             .id("sample-maintenance-window-id")
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -2504,7 +2620,8 @@ public final class WavefrontFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -2527,12 +2644,13 @@ public final class WavefrontFunctions {
      *     public static void stack(Context ctx) {
      *         // Get the information about the role.
      *         final var example = WavefrontFunctions.getRole(GetRoleArgs.builder()
-     *             .id(&#34;role-id&#34;)
+     *             .id("role-id")
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -2545,7 +2663,8 @@ public final class WavefrontFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -2568,12 +2687,13 @@ public final class WavefrontFunctions {
      *     public static void stack(Context ctx) {
      *         // Get the information about the role.
      *         final var example = WavefrontFunctions.getRole(GetRoleArgs.builder()
-     *             .id(&#34;role-id&#34;)
+     *             .id("role-id")
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -2586,7 +2706,8 @@ public final class WavefrontFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -2609,12 +2730,13 @@ public final class WavefrontFunctions {
      *     public static void stack(Context ctx) {
      *         // Get the information about the role.
      *         final var example = WavefrontFunctions.getRole(GetRoleArgs.builder()
-     *             .id(&#34;role-id&#34;)
+     *             .id("role-id")
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -2627,7 +2749,8 @@ public final class WavefrontFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -2650,12 +2773,13 @@ public final class WavefrontFunctions {
      *     public static void stack(Context ctx) {
      *         // Get the information about the role.
      *         final var example = WavefrontFunctions.getRole(GetRoleArgs.builder()
-     *             .id(&#34;role-id&#34;)
+     *             .id("role-id")
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -2668,7 +2792,8 @@ public final class WavefrontFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -2697,7 +2822,8 @@ public final class WavefrontFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -2710,7 +2836,8 @@ public final class WavefrontFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -2739,7 +2866,8 @@ public final class WavefrontFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -2752,7 +2880,8 @@ public final class WavefrontFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -2781,7 +2910,8 @@ public final class WavefrontFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -2794,7 +2924,8 @@ public final class WavefrontFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -2823,7 +2954,8 @@ public final class WavefrontFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -2836,7 +2968,8 @@ public final class WavefrontFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -2865,7 +2998,8 @@ public final class WavefrontFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -2878,7 +3012,8 @@ public final class WavefrontFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -2907,7 +3042,8 @@ public final class WavefrontFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -2920,7 +3056,8 @@ public final class WavefrontFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -2941,14 +3078,15 @@ public final class WavefrontFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         // Get the info for user &#34;example.user@example.com&#34;
+     *         // Get the info for user "example.user{@literal @}example.com"
      *         final var example = WavefrontFunctions.getUser(GetUserArgs.builder()
-     *             .email(&#34;example.user@example.com&#34;)
+     *             .email("example.user{@literal @}example.com")
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -2961,7 +3099,8 @@ public final class WavefrontFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -2982,14 +3121,15 @@ public final class WavefrontFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         // Get the info for user &#34;example.user@example.com&#34;
+     *         // Get the info for user "example.user{@literal @}example.com"
      *         final var example = WavefrontFunctions.getUser(GetUserArgs.builder()
-     *             .email(&#34;example.user@example.com&#34;)
+     *             .email("example.user{@literal @}example.com")
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -3002,7 +3142,8 @@ public final class WavefrontFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -3023,14 +3164,15 @@ public final class WavefrontFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         // Get the info for user &#34;example.user@example.com&#34;
+     *         // Get the info for user "example.user{@literal @}example.com"
      *         final var example = WavefrontFunctions.getUser(GetUserArgs.builder()
-     *             .email(&#34;example.user@example.com&#34;)
+     *             .email("example.user{@literal @}example.com")
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -3043,7 +3185,8 @@ public final class WavefrontFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -3064,14 +3207,15 @@ public final class WavefrontFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         // Get the info for user &#34;example.user@example.com&#34;
+     *         // Get the info for user "example.user{@literal @}example.com"
      *         final var example = WavefrontFunctions.getUser(GetUserArgs.builder()
-     *             .email(&#34;example.user@example.com&#34;)
+     *             .email("example.user{@literal @}example.com")
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -3084,7 +3228,8 @@ public final class WavefrontFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -3107,12 +3252,13 @@ public final class WavefrontFunctions {
      *     public static void stack(Context ctx) {
      *         // Get the information about the user group.
      *         final var example = WavefrontFunctions.getUserGroup(GetUserGroupArgs.builder()
-     *             .id(&#34;user-group-id&#34;)
+     *             .id("user-group-id")
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -3125,7 +3271,8 @@ public final class WavefrontFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -3148,12 +3295,13 @@ public final class WavefrontFunctions {
      *     public static void stack(Context ctx) {
      *         // Get the information about the user group.
      *         final var example = WavefrontFunctions.getUserGroup(GetUserGroupArgs.builder()
-     *             .id(&#34;user-group-id&#34;)
+     *             .id("user-group-id")
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -3166,7 +3314,8 @@ public final class WavefrontFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -3189,12 +3338,13 @@ public final class WavefrontFunctions {
      *     public static void stack(Context ctx) {
      *         // Get the information about the user group.
      *         final var example = WavefrontFunctions.getUserGroup(GetUserGroupArgs.builder()
-     *             .id(&#34;user-group-id&#34;)
+     *             .id("user-group-id")
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -3207,7 +3357,8 @@ public final class WavefrontFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -3230,12 +3381,13 @@ public final class WavefrontFunctions {
      *     public static void stack(Context ctx) {
      *         // Get the information about the user group.
      *         final var example = WavefrontFunctions.getUserGroup(GetUserGroupArgs.builder()
-     *             .id(&#34;user-group-id&#34;)
+     *             .id("user-group-id")
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -3248,7 +3400,8 @@ public final class WavefrontFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -3277,7 +3430,8 @@ public final class WavefrontFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -3290,7 +3444,8 @@ public final class WavefrontFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -3319,7 +3474,8 @@ public final class WavefrontFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -3332,7 +3488,8 @@ public final class WavefrontFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -3361,7 +3518,8 @@ public final class WavefrontFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -3374,7 +3532,8 @@ public final class WavefrontFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -3403,7 +3562,8 @@ public final class WavefrontFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -3416,7 +3576,8 @@ public final class WavefrontFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -3445,7 +3606,8 @@ public final class WavefrontFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -3458,7 +3620,8 @@ public final class WavefrontFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -3487,7 +3650,8 @@ public final class WavefrontFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -3500,7 +3664,8 @@ public final class WavefrontFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -3525,7 +3690,8 @@ public final class WavefrontFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -3538,7 +3704,8 @@ public final class WavefrontFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -3563,7 +3730,8 @@ public final class WavefrontFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -3576,7 +3744,8 @@ public final class WavefrontFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -3601,7 +3770,8 @@ public final class WavefrontFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -3614,7 +3784,8 @@ public final class WavefrontFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -3639,7 +3810,8 @@ public final class WavefrontFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -3652,7 +3824,8 @@ public final class WavefrontFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -3677,7 +3850,8 @@ public final class WavefrontFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -3690,7 +3864,8 @@ public final class WavefrontFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -3715,7 +3890,8 @@ public final class WavefrontFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
