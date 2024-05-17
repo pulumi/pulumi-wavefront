@@ -49,7 +49,7 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var extId = new CloudIntegrationAwsExternalId("extId");
  * 
- *         var cloudtrail = new CloudIntegrationCloudTrail("cloudtrail", CloudIntegrationCloudTrailArgs.builder()        
+ *         var cloudtrail = new CloudIntegrationCloudTrail("cloudtrail", CloudIntegrationCloudTrailArgs.builder()
  *             .name("Test Integration")
  *             .roleArn("arn:aws::1234567:role/example-arn")
  *             .externalId(extId.id())

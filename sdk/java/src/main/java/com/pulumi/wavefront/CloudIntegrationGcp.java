@@ -47,7 +47,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var gcp = new CloudIntegrationGcp("gcp", CloudIntegrationGcpArgs.builder()        
+ *         var gcp = new CloudIntegrationGcp("gcp", CloudIntegrationGcpArgs.builder()
  *             .name("Test Integration")
  *             .projectId("example-gcp-project")
  *             .jsonKey("""

@@ -46,7 +46,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testTarget = new AlertTarget("testTarget", AlertTargetArgs.builder()        
+ *         var testTarget = new AlertTarget("testTarget", AlertTargetArgs.builder()
  *             .name("Terraform Test Target")
  *             .description("Test target")
  *             .method("WEBHOOK")
