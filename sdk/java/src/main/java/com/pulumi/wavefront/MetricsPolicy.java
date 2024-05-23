@@ -48,7 +48,7 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         final var everyone = WavefrontFunctions.getDefaultUserGroup();
  * 
- *         var main = new MetricsPolicy("main", MetricsPolicyArgs.builder()        
+ *         var main = new MetricsPolicy("main", MetricsPolicyArgs.builder()
  *             .policyRules(MetricsPolicyPolicyRuleArgs.builder()
  *                 .name("Allow All Metrics")
  *                 .description("Predefined policy rule. Allows access to all metrics (timeseries, histograms, and counters) for all accounts. If this rule is removed, all accounts can access all metrics if there are no matching blocking rules.")

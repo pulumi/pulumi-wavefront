@@ -1643,17 +1643,27 @@ class MetricsPolicyPolicyRuleTag(dict):
     def __init__(__self__, *,
                  key: str,
                  value: str):
+        """
+        :param str key: The tag's key.
+        :param str value: The tag's value.
+        """
         pulumi.set(__self__, "key", key)
         pulumi.set(__self__, "value", value)
 
     @property
     @pulumi.getter
     def key(self) -> str:
+        """
+        The tag's key.
+        """
         return pulumi.get(self, "key")
 
     @property
     @pulumi.getter
     def value(self) -> str:
+        """
+        The tag's value.
+        """
         return pulumi.get(self, "value")
 
 

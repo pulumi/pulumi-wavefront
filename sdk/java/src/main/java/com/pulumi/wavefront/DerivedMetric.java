@@ -45,7 +45,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var derived = new DerivedMetric("derived", DerivedMetricArgs.builder()        
+ *         var derived = new DerivedMetric("derived", DerivedMetricArgs.builder()
  *             .name("dummy derived metric")
  *             .minutes(5)
  *             .query("aliasMetric(5, \"some.metric\")")

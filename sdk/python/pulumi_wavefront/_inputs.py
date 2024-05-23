@@ -1786,12 +1786,19 @@ class MetricsPolicyPolicyRuleTagArgs:
     def __init__(__self__, *,
                  key: pulumi.Input[str],
                  value: pulumi.Input[str]):
+        """
+        :param pulumi.Input[str] key: The tag's key.
+        :param pulumi.Input[str] value: The tag's value.
+        """
         pulumi.set(__self__, "key", key)
         pulumi.set(__self__, "value", value)
 
     @property
     @pulumi.getter
     def key(self) -> pulumi.Input[str]:
+        """
+        The tag's key.
+        """
         return pulumi.get(self, "key")
 
     @key.setter
@@ -1801,6 +1808,9 @@ class MetricsPolicyPolicyRuleTagArgs:
     @property
     @pulumi.getter
     def value(self) -> pulumi.Input[str]:
+        """
+        The tag's value.
+        """
         return pulumi.get(self, "value")
 
     @value.setter
