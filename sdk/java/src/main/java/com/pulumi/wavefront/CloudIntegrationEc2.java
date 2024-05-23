@@ -50,7 +50,7 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var extId = new CloudIntegrationAwsExternalId("extId");
  * 
- *         var ec2 = new CloudIntegrationEc2("ec2", CloudIntegrationEc2Args.builder()        
+ *         var ec2 = new CloudIntegrationEc2("ec2", CloudIntegrationEc2Args.builder()
  *             .name("Test Integration")
  *             .roleArn("arn:aws::1234567:role/example-arn")
  *             .externalId(extId.id())

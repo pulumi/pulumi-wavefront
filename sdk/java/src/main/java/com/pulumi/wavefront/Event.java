@@ -45,7 +45,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var event = new Event("event", EventArgs.builder()        
+ *         var event = new Event("event", EventArgs.builder()
  *             .name("terraform-test")
  *             .annotations(Map.ofEntries(
  *                 Map.entry("severity", "info"),

@@ -44,7 +44,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var basic = new IngestionPolicy("basic", IngestionPolicyArgs.builder()        
+ *         var basic = new IngestionPolicy("basic", IngestionPolicyArgs.builder()
  *             .name("test_ingestion")
  *             .description("An ingestion policy for testing")
  *             .build());

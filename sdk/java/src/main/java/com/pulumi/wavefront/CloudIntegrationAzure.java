@@ -47,7 +47,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var azureActivityLog = new CloudIntegrationAzureActivityLog("azureActivityLog", CloudIntegrationAzureActivityLogArgs.builder()        
+ *         var azureActivityLog = new CloudIntegrationAzureActivityLog("azureActivityLog", CloudIntegrationAzureActivityLogArgs.builder()
  *             .name("Test Integration")
  *             .clientId("client-id2")
  *             .clientSecret("client-secret2")

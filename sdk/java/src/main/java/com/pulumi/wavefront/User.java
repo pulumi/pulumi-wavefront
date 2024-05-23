@@ -42,7 +42,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var basic = new User("basic", UserArgs.builder()        
+ *         var basic = new User("basic", UserArgs.builder()
  *             .email("test+tftesting{@literal @}example.com")
  *             .build());
  * 

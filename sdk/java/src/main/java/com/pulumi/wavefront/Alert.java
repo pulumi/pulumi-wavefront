@@ -46,7 +46,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var foobar = new Alert("foobar", AlertArgs.builder()        
+ *         var foobar = new Alert("foobar", AlertArgs.builder()
  *             .name("Test Alert")
  *             .target("test{@literal @}example.com,target:alert-target-id")
  *             .condition("100-ts(\"cpu.usage_idle\", environment=preprod and cpu=cpu-total ) > 80")

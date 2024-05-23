@@ -41,7 +41,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testDashboardJson = new DashboardJson("testDashboardJson", DashboardJsonArgs.builder()        
+ *         var testDashboardJson = new DashboardJson("testDashboardJson", DashboardJsonArgs.builder()
  *             .dashboardJson("""
  * {
  *   "acl": {
