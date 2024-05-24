@@ -45,7 +45,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var basic = new MaintenanceWindow("basic", MaintenanceWindowArgs.builder()        
+ *         var basic = new MaintenanceWindow("basic", MaintenanceWindowArgs.builder()
  *             .reason("Routine maintenance for 2020")
  *             .title("Routine maintenance")
  *             .startTimeInSeconds(1600123456)

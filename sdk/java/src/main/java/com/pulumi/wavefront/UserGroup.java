@@ -41,7 +41,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var basic = new UserGroup("basic", UserGroupArgs.builder()        
+ *         var basic = new UserGroup("basic", UserGroupArgs.builder()
  *             .name("Basic User Group")
  *             .description("Basic User Group for Unit Tests")
  *             .build());
