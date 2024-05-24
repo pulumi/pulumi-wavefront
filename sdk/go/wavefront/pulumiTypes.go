@@ -2078,7 +2078,9 @@ func (o MetricsPolicyPolicyRuleArrayOutput) Index(i pulumi.IntInput) MetricsPoli
 }
 
 type MetricsPolicyPolicyRuleTag struct {
-	Key   string `pulumi:"key"`
+	// The tag's key.
+	Key string `pulumi:"key"`
+	// The tag's value.
 	Value string `pulumi:"value"`
 }
 
@@ -2094,7 +2096,9 @@ type MetricsPolicyPolicyRuleTagInput interface {
 }
 
 type MetricsPolicyPolicyRuleTagArgs struct {
-	Key   pulumi.StringInput `pulumi:"key"`
+	// The tag's key.
+	Key pulumi.StringInput `pulumi:"key"`
+	// The tag's value.
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -2149,10 +2153,12 @@ func (o MetricsPolicyPolicyRuleTagOutput) ToMetricsPolicyPolicyRuleTagOutputWith
 	return o
 }
 
+// The tag's key.
 func (o MetricsPolicyPolicyRuleTagOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v MetricsPolicyPolicyRuleTag) string { return v.Key }).(pulumi.StringOutput)
 }
 
+// The tag's value.
 func (o MetricsPolicyPolicyRuleTagOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v MetricsPolicyPolicyRuleTag) string { return v.Value }).(pulumi.StringOutput)
 }

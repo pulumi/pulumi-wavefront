@@ -48,7 +48,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var newrelic = new CloudIntegrationNewRelic("newrelic", CloudIntegrationNewRelicArgs.builder()        
+ *         var newrelic = new CloudIntegrationNewRelic("newrelic", CloudIntegrationNewRelicArgs.builder()
  *             .name("Test Integration")
  *             .apiKey("example-api-key")
  *             .build());

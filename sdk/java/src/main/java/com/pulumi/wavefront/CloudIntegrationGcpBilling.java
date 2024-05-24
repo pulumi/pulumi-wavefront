@@ -47,7 +47,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var gcpBilling = new CloudIntegrationGcpBilling("gcpBilling", CloudIntegrationGcpBillingArgs.builder()        
+ *         var gcpBilling = new CloudIntegrationGcpBilling("gcpBilling", CloudIntegrationGcpBillingArgs.builder()
  *             .name("Test Integration")
  *             .projectId("example-gcp-project")
  *             .apiKey("example-api-key")
