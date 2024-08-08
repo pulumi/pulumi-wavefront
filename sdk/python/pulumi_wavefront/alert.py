@@ -661,7 +661,7 @@ class Alert(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  additional_information: Optional[pulumi.Input[str]] = None,
-                 alert_triage_dashboards: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AlertAlertTriageDashboardArgs']]]]] = None,
+                 alert_triage_dashboards: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AlertAlertTriageDashboardArgs', 'AlertAlertTriageDashboardArgsDict']]]]] = None,
                  alert_type: Optional[pulumi.Input[str]] = None,
                  can_modifies: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  can_views: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
@@ -714,7 +714,7 @@ class Alert(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] additional_information: User-supplied additional explanatory information for this alert.
                Useful for linking runbooks, migrations, etc.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AlertAlertTriageDashboardArgs']]]] alert_triage_dashboards: A set of user-supplied dashboard and parameters to create dashboard links for triaging alerts.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AlertAlertTriageDashboardArgs', 'AlertAlertTriageDashboardArgsDict']]]] alert_triage_dashboards: A set of user-supplied dashboard and parameters to create dashboard links for triaging alerts.
         :param pulumi.Input[str] alert_type: The type of alert in Wavefront. Either `CLASSIC` (default)
                or `THRESHOLD`.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] can_modifies: A list of valid users or groups that can modify this resource on a tenant.
@@ -797,7 +797,7 @@ class Alert(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  additional_information: Optional[pulumi.Input[str]] = None,
-                 alert_triage_dashboards: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AlertAlertTriageDashboardArgs']]]]] = None,
+                 alert_triage_dashboards: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AlertAlertTriageDashboardArgs', 'AlertAlertTriageDashboardArgsDict']]]]] = None,
                  alert_type: Optional[pulumi.Input[str]] = None,
                  can_modifies: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  can_views: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
@@ -856,7 +856,7 @@ class Alert(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             additional_information: Optional[pulumi.Input[str]] = None,
-            alert_triage_dashboards: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AlertAlertTriageDashboardArgs']]]]] = None,
+            alert_triage_dashboards: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AlertAlertTriageDashboardArgs', 'AlertAlertTriageDashboardArgsDict']]]]] = None,
             alert_type: Optional[pulumi.Input[str]] = None,
             can_modifies: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             can_views: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
@@ -882,7 +882,7 @@ class Alert(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] additional_information: User-supplied additional explanatory information for this alert.
                Useful for linking runbooks, migrations, etc.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AlertAlertTriageDashboardArgs']]]] alert_triage_dashboards: A set of user-supplied dashboard and parameters to create dashboard links for triaging alerts.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AlertAlertTriageDashboardArgs', 'AlertAlertTriageDashboardArgsDict']]]] alert_triage_dashboards: A set of user-supplied dashboard and parameters to create dashboard links for triaging alerts.
         :param pulumi.Input[str] alert_type: The type of alert in Wavefront. Either `CLASSIC` (default)
                or `THRESHOLD`.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] can_modifies: A list of valid users or groups that can modify this resource on a tenant.
