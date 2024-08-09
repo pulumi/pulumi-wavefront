@@ -401,8 +401,8 @@ class Dashboard(pulumi.CustomResource):
                  display_section_table_of_contents: Optional[pulumi.Input[bool]] = None,
                  event_filter_type: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
-                 parameter_details: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DashboardParameterDetailArgs']]]]] = None,
-                 sections: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DashboardSectionArgs']]]]] = None,
+                 parameter_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DashboardParameterDetailArgs', 'DashboardParameterDetailArgsDict']]]]] = None,
+                 sections: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DashboardSectionArgs', 'DashboardSectionArgsDict']]]]] = None,
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  url: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -429,8 +429,8 @@ class Dashboard(pulumi.CustomResource):
         :param pulumi.Input[str] event_filter_type: How charts belonging to this dashboard should display events. `BYCHART` is default if
                unspecified. Valid options are: `BYCHART`, `AUTOMATIC`, `ALL`, `NONE`, `BYDASHBOARD`, and `BYCHARTANDDASHBOARD`.
         :param pulumi.Input[str] name: Name of the dashboard.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DashboardParameterDetailArgs']]]] parameter_details: The current JSON representation of dashboard parameters. See parameter details.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DashboardSectionArgs']]]] sections: Dashboard chart sections. See dashboard sections.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DashboardParameterDetailArgs', 'DashboardParameterDetailArgsDict']]]] parameter_details: The current JSON representation of dashboard parameters. See parameter details.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DashboardSectionArgs', 'DashboardSectionArgsDict']]]] sections: Dashboard chart sections. See dashboard sections.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] tags: A set of tags to assign to this resource.
         :param pulumi.Input[str] url: Unique identifier, also a URL slug of the dashboard.
         """
@@ -473,8 +473,8 @@ class Dashboard(pulumi.CustomResource):
                  display_section_table_of_contents: Optional[pulumi.Input[bool]] = None,
                  event_filter_type: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
-                 parameter_details: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DashboardParameterDetailArgs']]]]] = None,
-                 sections: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DashboardSectionArgs']]]]] = None,
+                 parameter_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DashboardParameterDetailArgs', 'DashboardParameterDetailArgsDict']]]]] = None,
+                 sections: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DashboardSectionArgs', 'DashboardSectionArgsDict']]]]] = None,
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  url: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -522,8 +522,8 @@ class Dashboard(pulumi.CustomResource):
             display_section_table_of_contents: Optional[pulumi.Input[bool]] = None,
             event_filter_type: Optional[pulumi.Input[str]] = None,
             name: Optional[pulumi.Input[str]] = None,
-            parameter_details: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DashboardParameterDetailArgs']]]]] = None,
-            sections: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DashboardSectionArgs']]]]] = None,
+            parameter_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DashboardParameterDetailArgs', 'DashboardParameterDetailArgsDict']]]]] = None,
+            sections: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DashboardSectionArgs', 'DashboardSectionArgsDict']]]]] = None,
             tags: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             url: Optional[pulumi.Input[str]] = None) -> 'Dashboard':
         """
@@ -543,8 +543,8 @@ class Dashboard(pulumi.CustomResource):
         :param pulumi.Input[str] event_filter_type: How charts belonging to this dashboard should display events. `BYCHART` is default if
                unspecified. Valid options are: `BYCHART`, `AUTOMATIC`, `ALL`, `NONE`, `BYDASHBOARD`, and `BYCHARTANDDASHBOARD`.
         :param pulumi.Input[str] name: Name of the dashboard.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DashboardParameterDetailArgs']]]] parameter_details: The current JSON representation of dashboard parameters. See parameter details.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DashboardSectionArgs']]]] sections: Dashboard chart sections. See dashboard sections.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DashboardParameterDetailArgs', 'DashboardParameterDetailArgsDict']]]] parameter_details: The current JSON representation of dashboard parameters. See parameter details.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DashboardSectionArgs', 'DashboardSectionArgsDict']]]] sections: Dashboard chart sections. See dashboard sections.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] tags: A set of tags to assign to this resource.
         :param pulumi.Input[str] url: Unique identifier, also a URL slug of the dashboard.
         """

@@ -247,7 +247,7 @@ class IngestionPolicy(pulumi.CustomResource):
                  namespaces: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  scope: Optional[pulumi.Input[str]] = None,
                  sources: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['IngestionPolicyTagArgs']]]]] = None,
+                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IngestionPolicyTagArgs', 'IngestionPolicyTagArgsDict']]]]] = None,
                  __props__=None):
         """
         Provides a Wavefront Ingestion Policy Resource. This allows ingestion policies to be created, updated, and deleted.
@@ -326,7 +326,7 @@ class IngestionPolicy(pulumi.CustomResource):
                  namespaces: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  scope: Optional[pulumi.Input[str]] = None,
                  sources: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['IngestionPolicyTagArgs']]]]] = None,
+                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IngestionPolicyTagArgs', 'IngestionPolicyTagArgsDict']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -365,7 +365,7 @@ class IngestionPolicy(pulumi.CustomResource):
             namespaces: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             scope: Optional[pulumi.Input[str]] = None,
             sources: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-            tags: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['IngestionPolicyTagArgs']]]]] = None) -> 'IngestionPolicy':
+            tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IngestionPolicyTagArgs', 'IngestionPolicyTagArgsDict']]]]] = None) -> 'IngestionPolicy':
         """
         Get an existing IngestionPolicy resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

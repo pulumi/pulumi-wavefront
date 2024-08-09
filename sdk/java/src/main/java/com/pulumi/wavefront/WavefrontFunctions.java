@@ -3072,19 +3072,19 @@ public final class WavefrontFunctions {
      * import java.nio.file.Files;
      * import java.nio.file.Paths;
      * 
-     * public class App {
-     *     public static void main(String[] args) {
+     * public class App }{{@code
+     *     public static void main(String[] args) }{{@code
      *         Pulumi.run(App::stack);
-     *     }
+     *     }}{@code
      * 
-     *     public static void stack(Context ctx) {
-     *         // Get the info for user "example.user{@literal @}example.com"
+     *     public static void stack(Context ctx) }{{@code
+     *         // Get the info for user "example.user}{@literal @}{@code example.com"
      *         final var example = WavefrontFunctions.getUser(GetUserArgs.builder()
-     *             .email("example.user{@literal @}example.com")
+     *             .email("example.user}{@literal @}{@code example.com")
      *             .build());
      * 
-     *     }
-     * }
+     *     }}{@code
+     * }}{@code
      * }
      * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
@@ -3115,19 +3115,19 @@ public final class WavefrontFunctions {
      * import java.nio.file.Files;
      * import java.nio.file.Paths;
      * 
-     * public class App {
-     *     public static void main(String[] args) {
+     * public class App }{{@code
+     *     public static void main(String[] args) }{{@code
      *         Pulumi.run(App::stack);
-     *     }
+     *     }}{@code
      * 
-     *     public static void stack(Context ctx) {
-     *         // Get the info for user "example.user{@literal @}example.com"
+     *     public static void stack(Context ctx) }{{@code
+     *         // Get the info for user "example.user}{@literal @}{@code example.com"
      *         final var example = WavefrontFunctions.getUser(GetUserArgs.builder()
-     *             .email("example.user{@literal @}example.com")
+     *             .email("example.user}{@literal @}{@code example.com")
      *             .build());
      * 
-     *     }
-     * }
+     *     }}{@code
+     * }}{@code
      * }
      * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
@@ -3158,19 +3158,19 @@ public final class WavefrontFunctions {
      * import java.nio.file.Files;
      * import java.nio.file.Paths;
      * 
-     * public class App {
-     *     public static void main(String[] args) {
+     * public class App }{{@code
+     *     public static void main(String[] args) }{{@code
      *         Pulumi.run(App::stack);
-     *     }
+     *     }}{@code
      * 
-     *     public static void stack(Context ctx) {
-     *         // Get the info for user "example.user{@literal @}example.com"
+     *     public static void stack(Context ctx) }{{@code
+     *         // Get the info for user "example.user}{@literal @}{@code example.com"
      *         final var example = WavefrontFunctions.getUser(GetUserArgs.builder()
-     *             .email("example.user{@literal @}example.com")
+     *             .email("example.user}{@literal @}{@code example.com")
      *             .build());
      * 
-     *     }
-     * }
+     *     }}{@code
+     * }}{@code
      * }
      * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
@@ -3201,19 +3201,19 @@ public final class WavefrontFunctions {
      * import java.nio.file.Files;
      * import java.nio.file.Paths;
      * 
-     * public class App {
-     *     public static void main(String[] args) {
+     * public class App }{{@code
+     *     public static void main(String[] args) }{{@code
      *         Pulumi.run(App::stack);
-     *     }
+     *     }}{@code
      * 
-     *     public static void stack(Context ctx) {
-     *         // Get the info for user "example.user{@literal @}example.com"
+     *     public static void stack(Context ctx) }{{@code
+     *         // Get the info for user "example.user}{@literal @}{@code example.com"
      *         final var example = WavefrontFunctions.getUser(GetUserArgs.builder()
-     *             .email("example.user{@literal @}example.com")
+     *             .email("example.user}{@literal @}{@code example.com")
      *             .build());
      * 
-     *     }
-     * }
+     *     }}{@code
+     * }}{@code
      * }
      * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;

@@ -192,7 +192,7 @@ public class CloudIntegrationGcpBilling extends com.pulumi.resources.CustomResou
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public CloudIntegrationGcpBilling(String name) {
+    public CloudIntegrationGcpBilling(java.lang.String name) {
         this(name, CloudIntegrationGcpBillingArgs.Empty);
     }
     /**
@@ -200,7 +200,7 @@ public class CloudIntegrationGcpBilling extends com.pulumi.resources.CustomResou
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public CloudIntegrationGcpBilling(String name, CloudIntegrationGcpBillingArgs args) {
+    public CloudIntegrationGcpBilling(java.lang.String name, CloudIntegrationGcpBillingArgs args) {
         this(name, args, null);
     }
     /**
@@ -209,15 +209,22 @@ public class CloudIntegrationGcpBilling extends com.pulumi.resources.CustomResou
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public CloudIntegrationGcpBilling(String name, CloudIntegrationGcpBillingArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("wavefront:index/cloudIntegrationGcpBilling:CloudIntegrationGcpBilling", name, args == null ? CloudIntegrationGcpBillingArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+    public CloudIntegrationGcpBilling(java.lang.String name, CloudIntegrationGcpBillingArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("wavefront:index/cloudIntegrationGcpBilling:CloudIntegrationGcpBilling", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private CloudIntegrationGcpBilling(String name, Output<String> id, @Nullable CloudIntegrationGcpBillingState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("wavefront:index/cloudIntegrationGcpBilling:CloudIntegrationGcpBilling", name, state, makeResourceOptions(options, id));
+    private CloudIntegrationGcpBilling(java.lang.String name, Output<java.lang.String> id, @Nullable CloudIntegrationGcpBillingState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("wavefront:index/cloudIntegrationGcpBilling:CloudIntegrationGcpBilling", name, state, makeResourceOptions(options, id), false);
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static CloudIntegrationGcpBillingArgs makeArgs(CloudIntegrationGcpBillingArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? CloudIntegrationGcpBillingArgs.Empty : args;
+    }
+
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .additionalSecretOutputs(List.of(
@@ -237,7 +244,7 @@ public class CloudIntegrationGcpBilling extends com.pulumi.resources.CustomResou
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static CloudIntegrationGcpBilling get(String name, Output<String> id, @Nullable CloudIntegrationGcpBillingState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static CloudIntegrationGcpBilling get(java.lang.String name, Output<java.lang.String> id, @Nullable CloudIntegrationGcpBillingState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new CloudIntegrationGcpBilling(name, id, state, options);
     }
 }

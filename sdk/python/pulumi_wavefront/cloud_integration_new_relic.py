@@ -325,7 +325,7 @@ class CloudIntegrationNewRelic(pulumi.CustomResource):
                  app_filter_regex: Optional[pulumi.Input[str]] = None,
                  force_save: Optional[pulumi.Input[bool]] = None,
                  host_filter_regex: Optional[pulumi.Input[str]] = None,
-                 metric_filters: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CloudIntegrationNewRelicMetricFilterArgs']]]]] = None,
+                 metric_filters: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CloudIntegrationNewRelicMetricFilterArgs', 'CloudIntegrationNewRelicMetricFilterArgsDict']]]]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  service: Optional[pulumi.Input[str]] = None,
                  service_refresh_rate_in_minutes: Optional[pulumi.Input[int]] = None,
@@ -360,7 +360,7 @@ class CloudIntegrationNewRelic(pulumi.CustomResource):
         :param pulumi.Input[str] app_filter_regex: A regular expression that an application name must match (case-insensitively) in order to collect metrics.
         :param pulumi.Input[bool] force_save: Forces this resource to save, even if errors are present.
         :param pulumi.Input[str] host_filter_regex: A regular expression that a host name must match (case-insensitively) in order to collect metrics.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CloudIntegrationNewRelicMetricFilterArgs']]]] metric_filters: See Metric Filter.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['CloudIntegrationNewRelicMetricFilterArgs', 'CloudIntegrationNewRelicMetricFilterArgsDict']]]] metric_filters: See Metric Filter.
         :param pulumi.Input[str] name: The human-readable name of this integration.
         :param pulumi.Input[str] service: A value denoting which cloud service this service integrates with.
         :param pulumi.Input[int] service_refresh_rate_in_minutes: How often, in minutes, to refresh the service.
@@ -414,7 +414,7 @@ class CloudIntegrationNewRelic(pulumi.CustomResource):
                  app_filter_regex: Optional[pulumi.Input[str]] = None,
                  force_save: Optional[pulumi.Input[bool]] = None,
                  host_filter_regex: Optional[pulumi.Input[str]] = None,
-                 metric_filters: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CloudIntegrationNewRelicMetricFilterArgs']]]]] = None,
+                 metric_filters: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CloudIntegrationNewRelicMetricFilterArgs', 'CloudIntegrationNewRelicMetricFilterArgsDict']]]]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  service: Optional[pulumi.Input[str]] = None,
                  service_refresh_rate_in_minutes: Optional[pulumi.Input[int]] = None,
@@ -457,7 +457,7 @@ class CloudIntegrationNewRelic(pulumi.CustomResource):
             app_filter_regex: Optional[pulumi.Input[str]] = None,
             force_save: Optional[pulumi.Input[bool]] = None,
             host_filter_regex: Optional[pulumi.Input[str]] = None,
-            metric_filters: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CloudIntegrationNewRelicMetricFilterArgs']]]]] = None,
+            metric_filters: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CloudIntegrationNewRelicMetricFilterArgs', 'CloudIntegrationNewRelicMetricFilterArgsDict']]]]] = None,
             name: Optional[pulumi.Input[str]] = None,
             service: Optional[pulumi.Input[str]] = None,
             service_refresh_rate_in_minutes: Optional[pulumi.Input[int]] = None) -> 'CloudIntegrationNewRelic':
@@ -473,7 +473,7 @@ class CloudIntegrationNewRelic(pulumi.CustomResource):
         :param pulumi.Input[str] app_filter_regex: A regular expression that an application name must match (case-insensitively) in order to collect metrics.
         :param pulumi.Input[bool] force_save: Forces this resource to save, even if errors are present.
         :param pulumi.Input[str] host_filter_regex: A regular expression that a host name must match (case-insensitively) in order to collect metrics.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CloudIntegrationNewRelicMetricFilterArgs']]]] metric_filters: See Metric Filter.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['CloudIntegrationNewRelicMetricFilterArgs', 'CloudIntegrationNewRelicMetricFilterArgsDict']]]] metric_filters: See Metric Filter.
         :param pulumi.Input[str] name: The human-readable name of this integration.
         :param pulumi.Input[str] service: A value denoting which cloud service this service integrates with.
         :param pulumi.Input[int] service_refresh_rate_in_minutes: How often, in minutes, to refresh the service.

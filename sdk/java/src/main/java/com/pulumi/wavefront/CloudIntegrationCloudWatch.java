@@ -257,7 +257,7 @@ public class CloudIntegrationCloudWatch extends com.pulumi.resources.CustomResou
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public CloudIntegrationCloudWatch(String name) {
+    public CloudIntegrationCloudWatch(java.lang.String name) {
         this(name, CloudIntegrationCloudWatchArgs.Empty);
     }
     /**
@@ -265,7 +265,7 @@ public class CloudIntegrationCloudWatch extends com.pulumi.resources.CustomResou
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public CloudIntegrationCloudWatch(String name, CloudIntegrationCloudWatchArgs args) {
+    public CloudIntegrationCloudWatch(java.lang.String name, CloudIntegrationCloudWatchArgs args) {
         this(name, args, null);
     }
     /**
@@ -274,15 +274,22 @@ public class CloudIntegrationCloudWatch extends com.pulumi.resources.CustomResou
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public CloudIntegrationCloudWatch(String name, CloudIntegrationCloudWatchArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("wavefront:index/cloudIntegrationCloudWatch:CloudIntegrationCloudWatch", name, args == null ? CloudIntegrationCloudWatchArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+    public CloudIntegrationCloudWatch(java.lang.String name, CloudIntegrationCloudWatchArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("wavefront:index/cloudIntegrationCloudWatch:CloudIntegrationCloudWatch", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private CloudIntegrationCloudWatch(String name, Output<String> id, @Nullable CloudIntegrationCloudWatchState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("wavefront:index/cloudIntegrationCloudWatch:CloudIntegrationCloudWatch", name, state, makeResourceOptions(options, id));
+    private CloudIntegrationCloudWatch(java.lang.String name, Output<java.lang.String> id, @Nullable CloudIntegrationCloudWatchState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("wavefront:index/cloudIntegrationCloudWatch:CloudIntegrationCloudWatch", name, state, makeResourceOptions(options, id), false);
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static CloudIntegrationCloudWatchArgs makeArgs(CloudIntegrationCloudWatchArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? CloudIntegrationCloudWatchArgs.Empty : args;
+    }
+
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -298,7 +305,7 @@ public class CloudIntegrationCloudWatch extends com.pulumi.resources.CustomResou
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static CloudIntegrationCloudWatch get(String name, Output<String> id, @Nullable CloudIntegrationCloudWatchState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static CloudIntegrationCloudWatch get(java.lang.String name, Output<java.lang.String> id, @Nullable CloudIntegrationCloudWatchState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new CloudIntegrationCloudWatch(name, id, state, options);
     }
 }

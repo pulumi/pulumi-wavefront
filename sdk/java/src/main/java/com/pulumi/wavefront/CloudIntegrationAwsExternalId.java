@@ -61,7 +61,7 @@ public class CloudIntegrationAwsExternalId extends com.pulumi.resources.CustomRe
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public CloudIntegrationAwsExternalId(String name) {
+    public CloudIntegrationAwsExternalId(java.lang.String name) {
         this(name, CloudIntegrationAwsExternalIdArgs.Empty);
     }
     /**
@@ -69,7 +69,7 @@ public class CloudIntegrationAwsExternalId extends com.pulumi.resources.CustomRe
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public CloudIntegrationAwsExternalId(String name, @Nullable CloudIntegrationAwsExternalIdArgs args) {
+    public CloudIntegrationAwsExternalId(java.lang.String name, @Nullable CloudIntegrationAwsExternalIdArgs args) {
         this(name, args, null);
     }
     /**
@@ -78,15 +78,22 @@ public class CloudIntegrationAwsExternalId extends com.pulumi.resources.CustomRe
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public CloudIntegrationAwsExternalId(String name, @Nullable CloudIntegrationAwsExternalIdArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("wavefront:index/cloudIntegrationAwsExternalId:CloudIntegrationAwsExternalId", name, args == null ? CloudIntegrationAwsExternalIdArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+    public CloudIntegrationAwsExternalId(java.lang.String name, @Nullable CloudIntegrationAwsExternalIdArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("wavefront:index/cloudIntegrationAwsExternalId:CloudIntegrationAwsExternalId", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private CloudIntegrationAwsExternalId(String name, Output<String> id, @Nullable CloudIntegrationAwsExternalIdState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("wavefront:index/cloudIntegrationAwsExternalId:CloudIntegrationAwsExternalId", name, state, makeResourceOptions(options, id));
+    private CloudIntegrationAwsExternalId(java.lang.String name, Output<java.lang.String> id, @Nullable CloudIntegrationAwsExternalIdState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("wavefront:index/cloudIntegrationAwsExternalId:CloudIntegrationAwsExternalId", name, state, makeResourceOptions(options, id), false);
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static CloudIntegrationAwsExternalIdArgs makeArgs(@Nullable CloudIntegrationAwsExternalIdArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? CloudIntegrationAwsExternalIdArgs.Empty : args;
+    }
+
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -102,7 +109,7 @@ public class CloudIntegrationAwsExternalId extends com.pulumi.resources.CustomRe
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static CloudIntegrationAwsExternalId get(String name, Output<String> id, @Nullable CloudIntegrationAwsExternalIdState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static CloudIntegrationAwsExternalId get(java.lang.String name, Output<java.lang.String> id, @Nullable CloudIntegrationAwsExternalIdState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new CloudIntegrationAwsExternalId(name, id, state, options);
     }
 }
