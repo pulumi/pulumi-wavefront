@@ -143,7 +143,7 @@ public class DerivedMetric extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public DerivedMetric(String name) {
+    public DerivedMetric(java.lang.String name) {
         this(name, DerivedMetricArgs.Empty);
     }
     /**
@@ -151,7 +151,7 @@ public class DerivedMetric extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public DerivedMetric(String name, DerivedMetricArgs args) {
+    public DerivedMetric(java.lang.String name, DerivedMetricArgs args) {
         this(name, args, null);
     }
     /**
@@ -160,15 +160,22 @@ public class DerivedMetric extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public DerivedMetric(String name, DerivedMetricArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("wavefront:index/derivedMetric:DerivedMetric", name, args == null ? DerivedMetricArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+    public DerivedMetric(java.lang.String name, DerivedMetricArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("wavefront:index/derivedMetric:DerivedMetric", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private DerivedMetric(String name, Output<String> id, @Nullable DerivedMetricState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("wavefront:index/derivedMetric:DerivedMetric", name, state, makeResourceOptions(options, id));
+    private DerivedMetric(java.lang.String name, Output<java.lang.String> id, @Nullable DerivedMetricState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("wavefront:index/derivedMetric:DerivedMetric", name, state, makeResourceOptions(options, id), false);
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static DerivedMetricArgs makeArgs(DerivedMetricArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? DerivedMetricArgs.Empty : args;
+    }
+
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -184,7 +191,7 @@ public class DerivedMetric extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static DerivedMetric get(String name, Output<String> id, @Nullable DerivedMetricState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static DerivedMetric get(java.lang.String name, Output<java.lang.String> id, @Nullable DerivedMetricState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new DerivedMetric(name, id, state, options);
     }
 }

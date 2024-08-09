@@ -418,7 +418,7 @@ class AlertTarget(pulumi.CustomResource):
                  method: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  recipient: Optional[pulumi.Input[str]] = None,
-                 routes: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AlertTargetRouteArgs']]]]] = None,
+                 routes: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AlertTargetRouteArgs', 'AlertTargetRouteArgsDict']]]]] = None,
                  template: Optional[pulumi.Input[str]] = None,
                  triggers: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  __props__=None):
@@ -467,7 +467,7 @@ class AlertTarget(pulumi.CustomResource):
         :param pulumi.Input[str] name: The name of the alert target as it is displayed in Wavefront.
         :param pulumi.Input[str] recipient: The end point for the notification Target.  `EMAIL`: email address. `PAGERDUTY`: PagerDuty
                routing key. `WEBHOOK`: URL endpoint.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AlertTargetRouteArgs']]]] routes: List of routing targets that this alert target will notify. See Route
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AlertTargetRouteArgs', 'AlertTargetRouteArgsDict']]]] routes: List of routing targets that this alert target will notify. See Route
         :param pulumi.Input[str] template: A mustache template that will form the body of the POST request, email, and summary of the PagerDuty.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] triggers: A list of occurrences on which this webhook will be fired. Valid values are `ALERT_OPENED`,
                `ALERT_UPDATED`, `ALERT_RESOLVED`, `ALERT_MAINTENANCE`, `ALERT_SNOOZED`, `ALERT_NO_DATA`, `ALERT_NO_DATA_RESOLVED`, `ALERT_NO_DATA_MAINTENANCE`.
@@ -534,7 +534,7 @@ class AlertTarget(pulumi.CustomResource):
                  method: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  recipient: Optional[pulumi.Input[str]] = None,
-                 routes: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AlertTargetRouteArgs']]]]] = None,
+                 routes: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AlertTargetRouteArgs', 'AlertTargetRouteArgsDict']]]]] = None,
                  template: Optional[pulumi.Input[str]] = None,
                  triggers: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  __props__=None):
@@ -584,7 +584,7 @@ class AlertTarget(pulumi.CustomResource):
             method: Optional[pulumi.Input[str]] = None,
             name: Optional[pulumi.Input[str]] = None,
             recipient: Optional[pulumi.Input[str]] = None,
-            routes: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AlertTargetRouteArgs']]]]] = None,
+            routes: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AlertTargetRouteArgs', 'AlertTargetRouteArgsDict']]]]] = None,
             target_id: Optional[pulumi.Input[str]] = None,
             template: Optional[pulumi.Input[str]] = None,
             triggers: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None) -> 'AlertTarget':
@@ -605,7 +605,7 @@ class AlertTarget(pulumi.CustomResource):
         :param pulumi.Input[str] name: The name of the alert target as it is displayed in Wavefront.
         :param pulumi.Input[str] recipient: The end point for the notification Target.  `EMAIL`: email address. `PAGERDUTY`: PagerDuty
                routing key. `WEBHOOK`: URL endpoint.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AlertTargetRouteArgs']]]] routes: List of routing targets that this alert target will notify. See Route
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AlertTargetRouteArgs', 'AlertTargetRouteArgsDict']]]] routes: List of routing targets that this alert target will notify. See Route
         :param pulumi.Input[str] target_id: The target ID prefixed with `target:` for interpolating into a Wavefront Alert.
         :param pulumi.Input[str] template: A mustache template that will form the body of the POST request, email, and summary of the PagerDuty.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] triggers: A list of occurrences on which this webhook will be fired. Valid values are `ALERT_OPENED`,

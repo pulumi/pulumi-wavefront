@@ -176,7 +176,7 @@ public class ExternalLink extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public ExternalLink(String name) {
+    public ExternalLink(java.lang.String name) {
         this(name, ExternalLinkArgs.Empty);
     }
     /**
@@ -184,7 +184,7 @@ public class ExternalLink extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public ExternalLink(String name, ExternalLinkArgs args) {
+    public ExternalLink(java.lang.String name, ExternalLinkArgs args) {
         this(name, args, null);
     }
     /**
@@ -193,15 +193,22 @@ public class ExternalLink extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public ExternalLink(String name, ExternalLinkArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("wavefront:index/externalLink:ExternalLink", name, args == null ? ExternalLinkArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+    public ExternalLink(java.lang.String name, ExternalLinkArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("wavefront:index/externalLink:ExternalLink", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private ExternalLink(String name, Output<String> id, @Nullable ExternalLinkState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("wavefront:index/externalLink:ExternalLink", name, state, makeResourceOptions(options, id));
+    private ExternalLink(java.lang.String name, Output<java.lang.String> id, @Nullable ExternalLinkState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("wavefront:index/externalLink:ExternalLink", name, state, makeResourceOptions(options, id), false);
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static ExternalLinkArgs makeArgs(ExternalLinkArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? ExternalLinkArgs.Empty : args;
+    }
+
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -217,7 +224,7 @@ public class ExternalLink extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static ExternalLink get(String name, Output<String> id, @Nullable ExternalLinkState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static ExternalLink get(java.lang.String name, Output<java.lang.String> id, @Nullable ExternalLinkState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new ExternalLink(name, id, state, options);
     }
 }
