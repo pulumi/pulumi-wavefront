@@ -201,7 +201,7 @@ public class CloudIntegrationNewRelic extends com.pulumi.resources.CustomResourc
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public CloudIntegrationNewRelic(String name) {
+    public CloudIntegrationNewRelic(java.lang.String name) {
         this(name, CloudIntegrationNewRelicArgs.Empty);
     }
     /**
@@ -209,7 +209,7 @@ public class CloudIntegrationNewRelic extends com.pulumi.resources.CustomResourc
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public CloudIntegrationNewRelic(String name, CloudIntegrationNewRelicArgs args) {
+    public CloudIntegrationNewRelic(java.lang.String name, CloudIntegrationNewRelicArgs args) {
         this(name, args, null);
     }
     /**
@@ -218,15 +218,22 @@ public class CloudIntegrationNewRelic extends com.pulumi.resources.CustomResourc
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public CloudIntegrationNewRelic(String name, CloudIntegrationNewRelicArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("wavefront:index/cloudIntegrationNewRelic:CloudIntegrationNewRelic", name, args == null ? CloudIntegrationNewRelicArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+    public CloudIntegrationNewRelic(java.lang.String name, CloudIntegrationNewRelicArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("wavefront:index/cloudIntegrationNewRelic:CloudIntegrationNewRelic", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private CloudIntegrationNewRelic(String name, Output<String> id, @Nullable CloudIntegrationNewRelicState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("wavefront:index/cloudIntegrationNewRelic:CloudIntegrationNewRelic", name, state, makeResourceOptions(options, id));
+    private CloudIntegrationNewRelic(java.lang.String name, Output<java.lang.String> id, @Nullable CloudIntegrationNewRelicState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("wavefront:index/cloudIntegrationNewRelic:CloudIntegrationNewRelic", name, state, makeResourceOptions(options, id), false);
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static CloudIntegrationNewRelicArgs makeArgs(CloudIntegrationNewRelicArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? CloudIntegrationNewRelicArgs.Empty : args;
+    }
+
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .additionalSecretOutputs(List.of(
@@ -245,7 +252,7 @@ public class CloudIntegrationNewRelic extends com.pulumi.resources.CustomResourc
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static CloudIntegrationNewRelic get(String name, Output<String> id, @Nullable CloudIntegrationNewRelicState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static CloudIntegrationNewRelic get(java.lang.String name, Output<java.lang.String> id, @Nullable CloudIntegrationNewRelicState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new CloudIntegrationNewRelic(name, id, state, options);
     }
 }

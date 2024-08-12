@@ -233,7 +233,7 @@ public class CloudIntegrationCloudTrail extends com.pulumi.resources.CustomResou
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public CloudIntegrationCloudTrail(String name) {
+    public CloudIntegrationCloudTrail(java.lang.String name) {
         this(name, CloudIntegrationCloudTrailArgs.Empty);
     }
     /**
@@ -241,7 +241,7 @@ public class CloudIntegrationCloudTrail extends com.pulumi.resources.CustomResou
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public CloudIntegrationCloudTrail(String name, CloudIntegrationCloudTrailArgs args) {
+    public CloudIntegrationCloudTrail(java.lang.String name, CloudIntegrationCloudTrailArgs args) {
         this(name, args, null);
     }
     /**
@@ -250,15 +250,22 @@ public class CloudIntegrationCloudTrail extends com.pulumi.resources.CustomResou
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public CloudIntegrationCloudTrail(String name, CloudIntegrationCloudTrailArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("wavefront:index/cloudIntegrationCloudTrail:CloudIntegrationCloudTrail", name, args == null ? CloudIntegrationCloudTrailArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+    public CloudIntegrationCloudTrail(java.lang.String name, CloudIntegrationCloudTrailArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("wavefront:index/cloudIntegrationCloudTrail:CloudIntegrationCloudTrail", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private CloudIntegrationCloudTrail(String name, Output<String> id, @Nullable CloudIntegrationCloudTrailState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("wavefront:index/cloudIntegrationCloudTrail:CloudIntegrationCloudTrail", name, state, makeResourceOptions(options, id));
+    private CloudIntegrationCloudTrail(java.lang.String name, Output<java.lang.String> id, @Nullable CloudIntegrationCloudTrailState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("wavefront:index/cloudIntegrationCloudTrail:CloudIntegrationCloudTrail", name, state, makeResourceOptions(options, id), false);
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static CloudIntegrationCloudTrailArgs makeArgs(CloudIntegrationCloudTrailArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? CloudIntegrationCloudTrailArgs.Empty : args;
+    }
+
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -274,7 +281,7 @@ public class CloudIntegrationCloudTrail extends com.pulumi.resources.CustomResou
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static CloudIntegrationCloudTrail get(String name, Output<String> id, @Nullable CloudIntegrationCloudTrailState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static CloudIntegrationCloudTrail get(java.lang.String name, Output<java.lang.String> id, @Nullable CloudIntegrationCloudTrailState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new CloudIntegrationCloudTrail(name, id, state, options);
     }
 }
