@@ -126,7 +126,7 @@ func (o AlertAlertTriageDashboardArrayOutput) Index(i pulumi.IntInput) AlertAler
 }
 
 type AlertAlertTriageDashboardParameters struct {
-	Constants map[string]interface{} `pulumi:"constants"`
+	Constants map[string]string `pulumi:"constants"`
 }
 
 // AlertAlertTriageDashboardParametersInput is an input type that accepts AlertAlertTriageDashboardParametersArgs and AlertAlertTriageDashboardParametersOutput values.
@@ -141,7 +141,7 @@ type AlertAlertTriageDashboardParametersInput interface {
 }
 
 type AlertAlertTriageDashboardParametersArgs struct {
-	Constants pulumi.MapInput `pulumi:"constants"`
+	Constants pulumi.StringMapInput `pulumi:"constants"`
 }
 
 func (AlertAlertTriageDashboardParametersArgs) ElementType() reflect.Type {
@@ -221,8 +221,8 @@ func (o AlertAlertTriageDashboardParametersOutput) ToAlertAlertTriageDashboardPa
 	}).(AlertAlertTriageDashboardParametersPtrOutput)
 }
 
-func (o AlertAlertTriageDashboardParametersOutput) Constants() pulumi.MapOutput {
-	return o.ApplyT(func(v AlertAlertTriageDashboardParameters) map[string]interface{} { return v.Constants }).(pulumi.MapOutput)
+func (o AlertAlertTriageDashboardParametersOutput) Constants() pulumi.StringMapOutput {
+	return o.ApplyT(func(v AlertAlertTriageDashboardParameters) map[string]string { return v.Constants }).(pulumi.StringMapOutput)
 }
 
 type AlertAlertTriageDashboardParametersPtrOutput struct{ *pulumi.OutputState }
@@ -249,13 +249,13 @@ func (o AlertAlertTriageDashboardParametersPtrOutput) Elem() AlertAlertTriageDas
 	}).(AlertAlertTriageDashboardParametersOutput)
 }
 
-func (o AlertAlertTriageDashboardParametersPtrOutput) Constants() pulumi.MapOutput {
-	return o.ApplyT(func(v *AlertAlertTriageDashboardParameters) map[string]interface{} {
+func (o AlertAlertTriageDashboardParametersPtrOutput) Constants() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *AlertAlertTriageDashboardParameters) map[string]string {
 		if v == nil {
 			return nil
 		}
 		return v.Constants
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 type AlertTargetRoute struct {
@@ -2296,7 +2296,7 @@ func (o GetAlertAlertTriageDashboardArrayOutput) Index(i pulumi.IntInput) GetAle
 }
 
 type GetAlertAlertTriageDashboardParameters struct {
-	Constants map[string]interface{} `pulumi:"constants"`
+	Constants map[string]string `pulumi:"constants"`
 }
 
 // GetAlertAlertTriageDashboardParametersInput is an input type that accepts GetAlertAlertTriageDashboardParametersArgs and GetAlertAlertTriageDashboardParametersOutput values.
@@ -2311,7 +2311,7 @@ type GetAlertAlertTriageDashboardParametersInput interface {
 }
 
 type GetAlertAlertTriageDashboardParametersArgs struct {
-	Constants pulumi.MapInput `pulumi:"constants"`
+	Constants pulumi.StringMapInput `pulumi:"constants"`
 }
 
 func (GetAlertAlertTriageDashboardParametersArgs) ElementType() reflect.Type {
@@ -2391,8 +2391,8 @@ func (o GetAlertAlertTriageDashboardParametersOutput) ToGetAlertAlertTriageDashb
 	}).(GetAlertAlertTriageDashboardParametersPtrOutput)
 }
 
-func (o GetAlertAlertTriageDashboardParametersOutput) Constants() pulumi.MapOutput {
-	return o.ApplyT(func(v GetAlertAlertTriageDashboardParameters) map[string]interface{} { return v.Constants }).(pulumi.MapOutput)
+func (o GetAlertAlertTriageDashboardParametersOutput) Constants() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetAlertAlertTriageDashboardParameters) map[string]string { return v.Constants }).(pulumi.StringMapOutput)
 }
 
 type GetAlertAlertTriageDashboardParametersPtrOutput struct{ *pulumi.OutputState }
@@ -2419,13 +2419,13 @@ func (o GetAlertAlertTriageDashboardParametersPtrOutput) Elem() GetAlertAlertTri
 	}).(GetAlertAlertTriageDashboardParametersOutput)
 }
 
-func (o GetAlertAlertTriageDashboardParametersPtrOutput) Constants() pulumi.MapOutput {
-	return o.ApplyT(func(v *GetAlertAlertTriageDashboardParameters) map[string]interface{} {
+func (o GetAlertAlertTriageDashboardParametersPtrOutput) Constants() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *GetAlertAlertTriageDashboardParameters) map[string]string {
 		if v == nil {
 			return nil
 		}
 		return v.Constants
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 type GetAlertFailingHostLabelPair struct {
@@ -3055,7 +3055,7 @@ func (o GetAlertsAlertAlertTriageDashboardArrayOutput) Index(i pulumi.IntInput) 
 }
 
 type GetAlertsAlertAlertTriageDashboardParameters struct {
-	Constants map[string]interface{} `pulumi:"constants"`
+	Constants map[string]string `pulumi:"constants"`
 }
 
 // GetAlertsAlertAlertTriageDashboardParametersInput is an input type that accepts GetAlertsAlertAlertTriageDashboardParametersArgs and GetAlertsAlertAlertTriageDashboardParametersOutput values.
@@ -3070,7 +3070,7 @@ type GetAlertsAlertAlertTriageDashboardParametersInput interface {
 }
 
 type GetAlertsAlertAlertTriageDashboardParametersArgs struct {
-	Constants pulumi.MapInput `pulumi:"constants"`
+	Constants pulumi.StringMapInput `pulumi:"constants"`
 }
 
 func (GetAlertsAlertAlertTriageDashboardParametersArgs) ElementType() reflect.Type {
@@ -3150,8 +3150,8 @@ func (o GetAlertsAlertAlertTriageDashboardParametersOutput) ToGetAlertsAlertAler
 	}).(GetAlertsAlertAlertTriageDashboardParametersPtrOutput)
 }
 
-func (o GetAlertsAlertAlertTriageDashboardParametersOutput) Constants() pulumi.MapOutput {
-	return o.ApplyT(func(v GetAlertsAlertAlertTriageDashboardParameters) map[string]interface{} { return v.Constants }).(pulumi.MapOutput)
+func (o GetAlertsAlertAlertTriageDashboardParametersOutput) Constants() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetAlertsAlertAlertTriageDashboardParameters) map[string]string { return v.Constants }).(pulumi.StringMapOutput)
 }
 
 type GetAlertsAlertAlertTriageDashboardParametersPtrOutput struct{ *pulumi.OutputState }
@@ -3178,13 +3178,13 @@ func (o GetAlertsAlertAlertTriageDashboardParametersPtrOutput) Elem() GetAlertsA
 	}).(GetAlertsAlertAlertTriageDashboardParametersOutput)
 }
 
-func (o GetAlertsAlertAlertTriageDashboardParametersPtrOutput) Constants() pulumi.MapOutput {
-	return o.ApplyT(func(v *GetAlertsAlertAlertTriageDashboardParameters) map[string]interface{} {
+func (o GetAlertsAlertAlertTriageDashboardParametersPtrOutput) Constants() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *GetAlertsAlertAlertTriageDashboardParameters) map[string]string {
 		if v == nil {
 			return nil
 		}
 		return v.Constants
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 type GetAlertsAlertFailingHostLabelPair struct {
@@ -4712,7 +4712,7 @@ type GetDashboardsDashboard struct {
 	NumFavorites int    `pulumi:"numFavorites"`
 	// The current JSON representation of dashboard parameters. See parameter details.
 	ParameterDetails []GetDashboardsDashboardParameterDetail `pulumi:"parameterDetails"`
-	Parameters       map[string]interface{}                  `pulumi:"parameters"`
+	Parameters       map[string]string                       `pulumi:"parameters"`
 	Sections         []GetDashboardsDashboardSection         `pulumi:"sections"`
 	SystemOwned      bool                                    `pulumi:"systemOwned"`
 	// A set of tags to assign to this resource.
@@ -4772,7 +4772,7 @@ type GetDashboardsDashboardArgs struct {
 	NumFavorites pulumi.IntInput    `pulumi:"numFavorites"`
 	// The current JSON representation of dashboard parameters. See parameter details.
 	ParameterDetails GetDashboardsDashboardParameterDetailArrayInput `pulumi:"parameterDetails"`
-	Parameters       pulumi.MapInput                                 `pulumi:"parameters"`
+	Parameters       pulumi.StringMapInput                           `pulumi:"parameters"`
 	Sections         GetDashboardsDashboardSectionArrayInput         `pulumi:"sections"`
 	SystemOwned      pulumi.BoolInput                                `pulumi:"systemOwned"`
 	// A set of tags to assign to this resource.
@@ -4946,8 +4946,8 @@ func (o GetDashboardsDashboardOutput) ParameterDetails() GetDashboardsDashboardP
 	return o.ApplyT(func(v GetDashboardsDashboard) []GetDashboardsDashboardParameterDetail { return v.ParameterDetails }).(GetDashboardsDashboardParameterDetailArrayOutput)
 }
 
-func (o GetDashboardsDashboardOutput) Parameters() pulumi.MapOutput {
-	return o.ApplyT(func(v GetDashboardsDashboard) map[string]interface{} { return v.Parameters }).(pulumi.MapOutput)
+func (o GetDashboardsDashboardOutput) Parameters() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDashboardsDashboard) map[string]string { return v.Parameters }).(pulumi.StringMapOutput)
 }
 
 func (o GetDashboardsDashboardOutput) Sections() GetDashboardsDashboardSectionArrayOutput {

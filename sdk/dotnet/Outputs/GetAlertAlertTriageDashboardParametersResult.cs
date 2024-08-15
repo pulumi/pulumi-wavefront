@@ -13,10 +13,10 @@ namespace Pulumi.Wavefront.Outputs
     [OutputType]
     public sealed class GetAlertAlertTriageDashboardParametersResult
     {
-        public readonly ImmutableDictionary<string, object>? Constants;
+        public readonly ImmutableDictionary<string, string>? Constants;
 
         [OutputConstructor]
-        private GetAlertAlertTriageDashboardParametersResult(ImmutableDictionary<string, object>? constants)
+        private GetAlertAlertTriageDashboardParametersResult(ImmutableDictionary<string, string>? constants)
         {
             Constants = constants;
         }

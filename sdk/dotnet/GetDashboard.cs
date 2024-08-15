@@ -147,7 +147,7 @@ namespace Pulumi.Wavefront
         /// The current JSON representation of dashboard parameters. See parameter details.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDashboardParameterDetailResult> ParameterDetails;
-        public readonly ImmutableDictionary<string, object> Parameters;
+        public readonly ImmutableDictionary<string, string> Parameters;
         public readonly ImmutableArray<Outputs.GetDashboardSectionResult> Sections;
         public readonly bool SystemOwned;
         /// <summary>
@@ -216,7 +216,7 @@ namespace Pulumi.Wavefront
 
             ImmutableArray<Outputs.GetDashboardParameterDetailResult> parameterDetails,
 
-            ImmutableDictionary<string, object> parameters,
+            ImmutableDictionary<string, string> parameters,
 
             ImmutableArray<Outputs.GetDashboardSectionResult> sections,
 

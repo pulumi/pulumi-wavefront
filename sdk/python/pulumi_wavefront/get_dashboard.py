@@ -283,7 +283,7 @@ class GetDashboardResult:
 
     @property
     @pulumi.getter
-    def parameters(self) -> Mapping[str, Any]:
+    def parameters(self) -> Mapping[str, str]:
         return pulumi.get(self, "parameters")
 
     @property
