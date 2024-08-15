@@ -98,7 +98,7 @@
                 "constants": {
                     "type": "object",
                     "additionalProperties": {
-                        "$ref": "pulumi.json#/Any"
+                        "type": "string"
                     }
                 }
             },
@@ -708,7 +708,7 @@
                 "constants": {
                     "type": "object",
                     "additionalProperties": {
-                        "$ref": "pulumi.json#/Any"
+                        "type": "string"
                     }
                 }
             },
@@ -952,7 +952,7 @@
                 "constants": {
                     "type": "object",
                     "additionalProperties": {
-                        "$ref": "pulumi.json#/Any"
+                        "type": "string"
                     }
                 }
             },
@@ -1632,7 +1632,7 @@
                 "parameters": {
                     "type": "object",
                     "additionalProperties": {
-                        "$ref": "pulumi.json#/Any"
+                        "type": "string"
                     }
                 },
                 "sections": {
@@ -6540,7 +6540,7 @@
                     },
                     "parameters": {
                         "additionalProperties": {
-                            "$ref": "pulumi.json#/Any"
+                            "type": "string"
                         },
                         "type": "object"
                     },
