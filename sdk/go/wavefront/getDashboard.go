@@ -93,7 +93,7 @@ type LookupDashboardResult struct {
 	NumFavorites int    `pulumi:"numFavorites"`
 	// The current JSON representation of dashboard parameters. See parameter details.
 	ParameterDetails []GetDashboardParameterDetail `pulumi:"parameterDetails"`
-	Parameters       map[string]interface{}        `pulumi:"parameters"`
+	Parameters       map[string]string             `pulumi:"parameters"`
 	Sections         []GetDashboardSection         `pulumi:"sections"`
 	SystemOwned      bool                          `pulumi:"systemOwned"`
 	// A set of tags to assign to this resource.
@@ -256,8 +256,8 @@ func (o LookupDashboardResultOutput) ParameterDetails() GetDashboardParameterDet
 	return o.ApplyT(func(v LookupDashboardResult) []GetDashboardParameterDetail { return v.ParameterDetails }).(GetDashboardParameterDetailArrayOutput)
 }
 
-func (o LookupDashboardResultOutput) Parameters() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupDashboardResult) map[string]interface{} { return v.Parameters }).(pulumi.MapOutput)
+func (o LookupDashboardResultOutput) Parameters() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupDashboardResult) map[string]string { return v.Parameters }).(pulumi.StringMapOutput)
 }
 
 func (o LookupDashboardResultOutput) Sections() GetDashboardSectionArrayOutput {

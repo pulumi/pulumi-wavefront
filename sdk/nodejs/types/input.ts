@@ -18,7 +18,7 @@ export interface AlertAlertTriageDashboard {
 }
 
 export interface AlertAlertTriageDashboardParameters {
-    constants?: pulumi.Input<{[key: string]: any}>;
+    constants?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
 }
 
 export interface AlertTargetRoute {

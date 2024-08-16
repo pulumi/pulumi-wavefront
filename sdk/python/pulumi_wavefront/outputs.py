@@ -114,13 +114,13 @@ class AlertAlertTriageDashboard(dict):
 @pulumi.output_type
 class AlertAlertTriageDashboardParameters(dict):
     def __init__(__self__, *,
-                 constants: Optional[Mapping[str, Any]] = None):
+                 constants: Optional[Mapping[str, str]] = None):
         if constants is not None:
             pulumi.set(__self__, "constants", constants)
 
     @property
     @pulumi.getter
-    def constants(self) -> Optional[Mapping[str, Any]]:
+    def constants(self) -> Optional[Mapping[str, str]]:
         return pulumi.get(self, "constants")
 
 
@@ -1707,13 +1707,13 @@ class GetAlertAlertTriageDashboardResult(dict):
 @pulumi.output_type
 class GetAlertAlertTriageDashboardParametersResult(dict):
     def __init__(__self__, *,
-                 constants: Optional[Mapping[str, Any]] = None):
+                 constants: Optional[Mapping[str, str]] = None):
         if constants is not None:
             pulumi.set(__self__, "constants", constants)
 
     @property
     @pulumi.getter
-    def constants(self) -> Optional[Mapping[str, Any]]:
+    def constants(self) -> Optional[Mapping[str, str]]:
         return pulumi.get(self, "constants")
 
 
@@ -2074,13 +2074,13 @@ class GetAlertsAlertAlertTriageDashboardResult(dict):
 @pulumi.output_type
 class GetAlertsAlertAlertTriageDashboardParametersResult(dict):
     def __init__(__self__, *,
-                 constants: Optional[Mapping[str, Any]] = None):
+                 constants: Optional[Mapping[str, str]] = None):
         if constants is not None:
             pulumi.set(__self__, "constants", constants)
 
     @property
     @pulumi.getter
-    def constants(self) -> Optional[Mapping[str, Any]]:
+    def constants(self) -> Optional[Mapping[str, str]]:
         return pulumi.get(self, "constants")
 
 
@@ -3113,7 +3113,7 @@ class GetDashboardsDashboardResult(dict):
                  num_charts: int,
                  num_favorites: int,
                  parameter_details: Sequence['outputs.GetDashboardsDashboardParameterDetailResult'],
-                 parameters: Mapping[str, Any],
+                 parameters: Mapping[str, str],
                  sections: Sequence['outputs.GetDashboardsDashboardSectionResult'],
                  system_owned: bool,
                  tags: Sequence[str],
@@ -3324,7 +3324,7 @@ class GetDashboardsDashboardResult(dict):
 
     @property
     @pulumi.getter
-    def parameters(self) -> Mapping[str, Any]:
+    def parameters(self) -> Mapping[str, str]:
         return pulumi.get(self, "parameters")
 
     @property

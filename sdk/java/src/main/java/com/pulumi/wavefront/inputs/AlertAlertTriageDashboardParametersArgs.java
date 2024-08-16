@@ -5,7 +5,6 @@ package com.pulumi.wavefront.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
-import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
@@ -18,9 +17,9 @@ public final class AlertAlertTriageDashboardParametersArgs extends com.pulumi.re
     public static final AlertAlertTriageDashboardParametersArgs Empty = new AlertAlertTriageDashboardParametersArgs();
 
     @Import(name="constants")
-    private @Nullable Output<Map<String,Object>> constants;
+    private @Nullable Output<Map<String,String>> constants;
 
-    public Optional<Output<Map<String,Object>>> constants() {
+    public Optional<Output<Map<String,String>>> constants() {
         return Optional.ofNullable(this.constants);
     }
 
@@ -48,12 +47,12 @@ public final class AlertAlertTriageDashboardParametersArgs extends com.pulumi.re
             $ = new AlertAlertTriageDashboardParametersArgs(Objects.requireNonNull(defaults));
         }
 
-        public Builder constants(@Nullable Output<Map<String,Object>> constants) {
+        public Builder constants(@Nullable Output<Map<String,String>> constants) {
             $.constants = constants;
             return this;
         }
 
-        public Builder constants(Map<String,Object> constants) {
+        public Builder constants(Map<String,String> constants) {
             return constants(Output.of(constants));
         }
 
