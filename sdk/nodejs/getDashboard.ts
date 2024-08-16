@@ -95,7 +95,7 @@ export interface GetDashboardResult {
      * The current JSON representation of dashboard parameters. See parameter details.
      */
     readonly parameterDetails: outputs.GetDashboardParameterDetail[];
-    readonly parameters: {[key: string]: any};
+    readonly parameters: {[key: string]: string};
     readonly sections: outputs.GetDashboardSection[];
     readonly systemOwned: boolean;
     /**

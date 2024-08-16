@@ -13,10 +13,10 @@ namespace Pulumi.Wavefront.Inputs
     public sealed class AlertAlertTriageDashboardParametersGetArgs : global::Pulumi.ResourceArgs
     {
         [Input("constants")]
-        private InputMap<object>? _constants;
-        public InputMap<object> Constants
+        private InputMap<string>? _constants;
+        public InputMap<string> Constants
         {
-            get => _constants ?? (_constants = new InputMap<object>());
+            get => _constants ?? (_constants = new InputMap<string>());
             set => _constants = value;
         }
 

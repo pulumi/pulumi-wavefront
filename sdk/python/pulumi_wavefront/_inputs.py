@@ -77,17 +77,17 @@ class AlertAlertTriageDashboardArgs:
 @pulumi.input_type
 class AlertAlertTriageDashboardParametersArgs:
     def __init__(__self__, *,
-                 constants: Optional[pulumi.Input[Mapping[str, Any]]] = None):
+                 constants: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None):
         if constants is not None:
             pulumi.set(__self__, "constants", constants)
 
     @property
     @pulumi.getter
-    def constants(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def constants(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         return pulumi.get(self, "constants")
 
     @constants.setter
-    def constants(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def constants(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "constants", value)
 
 

@@ -18,7 +18,7 @@ export interface AlertAlertTriageDashboard {
 }
 
 export interface AlertAlertTriageDashboardParameters {
-    constants?: {[key: string]: any};
+    constants?: {[key: string]: string};
 }
 
 export interface AlertTargetRoute {
@@ -442,7 +442,7 @@ export interface GetAlertAlertTriageDashboard {
 }
 
 export interface GetAlertAlertTriageDashboardParameters {
-    constants?: {[key: string]: any};
+    constants?: {[key: string]: string};
 }
 
 export interface GetAlertFailingHostLabelPair {
@@ -568,7 +568,7 @@ export interface GetAlertsAlertAlertTriageDashboard {
 }
 
 export interface GetAlertsAlertAlertTriageDashboardParameters {
-    constants?: {[key: string]: any};
+    constants?: {[key: string]: string};
 }
 
 export interface GetAlertsAlertFailingHostLabelPair {
@@ -961,7 +961,7 @@ export interface GetDashboardsDashboard {
      * The current JSON representation of dashboard parameters. See parameter details.
      */
     parameterDetails: outputs.GetDashboardsDashboardParameterDetail[];
-    parameters: {[key: string]: any};
+    parameters: {[key: string]: string};
     sections: outputs.GetDashboardsDashboardSection[];
     systemOwned: boolean;
     /**

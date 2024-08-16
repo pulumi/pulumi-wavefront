@@ -4,7 +4,6 @@
 package com.pulumi.wavefront.outputs;
 
 import com.pulumi.core.annotations.CustomType;
-import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
@@ -12,10 +11,10 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAlertsAlertAlertTriageDashboardParameters {
-    private @Nullable Map<String,Object> constants;
+    private @Nullable Map<String,String> constants;
 
     private GetAlertsAlertAlertTriageDashboardParameters() {}
-    public Map<String,Object> constants() {
+    public Map<String,String> constants() {
         return this.constants == null ? Map.of() : this.constants;
     }
 
@@ -28,7 +27,7 @@ public final class GetAlertsAlertAlertTriageDashboardParameters {
     }
     @CustomType.Builder
     public static final class Builder {
-        private @Nullable Map<String,Object> constants;
+        private @Nullable Map<String,String> constants;
         public Builder() {}
         public Builder(GetAlertsAlertAlertTriageDashboardParameters defaults) {
     	      Objects.requireNonNull(defaults);
@@ -36,7 +35,7 @@ public final class GetAlertsAlertAlertTriageDashboardParameters {
         }
 
         @CustomType.Setter
-        public Builder constants(@Nullable Map<String,Object> constants) {
+        public Builder constants(@Nullable Map<String,String> constants) {
 
             this.constants = constants;
             return this;

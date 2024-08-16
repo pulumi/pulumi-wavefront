@@ -9,7 +9,6 @@ import com.pulumi.wavefront.outputs.GetDashboardParameterDetail;
 import com.pulumi.wavefront.outputs.GetDashboardSection;
 import java.lang.Boolean;
 import java.lang.Integer;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -77,7 +76,7 @@ public final class GetDashboardResult {
      * 
      */
     private List<GetDashboardParameterDetail> parameterDetails;
-    private Map<String,Object> parameters;
+    private Map<String,String> parameters;
     private List<GetDashboardSection> sections;
     private Boolean systemOwned;
     /**
@@ -207,7 +206,7 @@ public final class GetDashboardResult {
     public List<GetDashboardParameterDetail> parameterDetails() {
         return this.parameterDetails;
     }
-    public Map<String,Object> parameters() {
+    public Map<String,String> parameters() {
         return this.parameters;
     }
     public List<GetDashboardSection> sections() {
@@ -280,7 +279,7 @@ public final class GetDashboardResult {
         private Integer numCharts;
         private Integer numFavorites;
         private List<GetDashboardParameterDetail> parameterDetails;
-        private Map<String,Object> parameters;
+        private Map<String,String> parameters;
         private List<GetDashboardSection> sections;
         private Boolean systemOwned;
         private List<String> tags;
@@ -540,7 +539,7 @@ public final class GetDashboardResult {
             return parameterDetails(List.of(parameterDetails));
         }
         @CustomType.Setter
-        public Builder parameters(Map<String,Object> parameters) {
+        public Builder parameters(Map<String,String> parameters) {
             if (parameters == null) {
               throw new MissingRequiredPropertyException("GetDashboardResult", "parameters");
             }
