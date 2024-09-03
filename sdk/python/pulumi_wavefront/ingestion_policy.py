@@ -252,7 +252,7 @@ class IngestionPolicy(pulumi.CustomResource):
         """
         Provides a Wavefront Ingestion Policy Resource. This allows ingestion policies to be created, updated, and deleted.
 
-        ## Example Usage
+        ## Example usage
 
         ```python
         import pulumi
@@ -285,7 +285,7 @@ class IngestionPolicy(pulumi.CustomResource):
         """
         Provides a Wavefront Ingestion Policy Resource. This allows ingestion policies to be created, updated, and deleted.
 
-        ## Example Usage
+        ## Example usage
 
         ```python
         import pulumi

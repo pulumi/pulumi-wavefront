@@ -7,7 +7,7 @@ import * as utilities from "./utilities";
 /**
  * Provides a Wavefront External Link Resource. This allows external links to be created, updated, and deleted.
  *
- * ## Example Usage
+ * ## Example usage
  *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";

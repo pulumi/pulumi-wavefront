@@ -176,7 +176,7 @@ class Role(pulumi.CustomResource):
         """
         Provides a Wavefront Role Resource. This allows roles to be created, updated, and deleted.
 
-        ## Example Usage
+        ## Example usage
 
         ```python
         import pulumi
@@ -211,7 +211,7 @@ class Role(pulumi.CustomResource):
         """
         Provides a Wavefront Role Resource. This allows roles to be created, updated, and deleted.
 
-        ## Example Usage
+        ## Example usage
 
         ```python
         import pulumi

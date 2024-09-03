@@ -395,7 +395,7 @@ class CloudIntegrationCloudTrail(pulumi.CustomResource):
         Provides a Wavefront Cloud Integration for CloudTrail. This allows CloudTrail cloud integrations to be created,
         updated, and deleted.
 
-        ## Example Usage
+        ## Example usage
 
         ```python
         import pulumi
@@ -442,7 +442,7 @@ class CloudIntegrationCloudTrail(pulumi.CustomResource):
         Provides a Wavefront Cloud Integration for CloudTrail. This allows CloudTrail cloud integrations to be created,
         updated, and deleted.
 
-        ## Example Usage
+        ## Example usage
 
         ```python
         import pulumi

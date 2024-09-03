@@ -8,7 +8,7 @@ import * as utilities from "./utilities";
  * Provides a Wavefront Derived Metric Resource. This allows derived metrics to be created,
  * updated, and deleted.
  *
- * ## Example Usage
+ * ## Example usage
  *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";

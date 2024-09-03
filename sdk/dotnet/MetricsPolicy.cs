@@ -10,9 +10,17 @@ using Pulumi.Serialization;
 namespace Pulumi.Wavefront
 {
     /// <summary>
+    /// layout: "wavefront"
+    /// page_title: "Wavefront: Metrics Policy"
+    /// description: |-
+    /// Provides a Wavefront Metrics Policy Resource. This allows management of Metrics Policy to control access to time series, histograms, and delta counters
+    /// &lt;!-- yaml: line 5: could not find expected ':' --&gt;
+    /// 
+    /// # Resource : wavefront.MetricsPolicy
+    /// 
     /// Provides a Wavefront Metrics Policy Resource. This allows management of Metrics Policy to control access to time series, histograms, and delta counters
     /// 
-    /// ## Example Usage
+    /// ## Example usage
     /// 
     /// ```csharp
     /// using System.Collections.Generic;

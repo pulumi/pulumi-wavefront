@@ -15,7 +15,7 @@ import (
 // Provides a Wavefront Derived Metric Resource. This allows derived metrics to be created,
 // updated, and deleted.
 //
-// ## Example Usage
+// ## Example usage
 //
 // ```go
 // package main

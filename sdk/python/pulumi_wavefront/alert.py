@@ -682,7 +682,7 @@ class Alert(pulumi.CustomResource):
         """
         Provides a Wavefront Alert resource. This allows alerts to be created, updated, and deleted.
 
-        ## Example Usage
+        ## Example usage
 
         ```python
         import pulumi
@@ -753,7 +753,7 @@ class Alert(pulumi.CustomResource):
         """
         Provides a Wavefront Alert resource. This allows alerts to be created, updated, and deleted.
 
-        ## Example Usage
+        ## Example usage
 
         ```python
         import pulumi

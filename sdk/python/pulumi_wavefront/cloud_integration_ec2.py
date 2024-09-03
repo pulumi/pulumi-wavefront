@@ -306,7 +306,7 @@ class CloudIntegrationEc2(pulumi.CustomResource):
         Provides a Wavefront Cloud Integration for EC2. This allows EC2 cloud integrations to be created,
         updated, and deleted.
 
-        ## Example Usage
+        ## Example usage
 
         ```python
         import pulumi
@@ -350,7 +350,7 @@ class CloudIntegrationEc2(pulumi.CustomResource):
         Provides a Wavefront Cloud Integration for EC2. This allows EC2 cloud integrations to be created,
         updated, and deleted.
 
-        ## Example Usage
+        ## Example usage
 
         ```python
         import pulumi

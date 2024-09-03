@@ -14,7 +14,7 @@ import javax.annotation.Nullable;
 /**
  * Provides an External ID for use in Amazon Web Services IAM Roles. This allows External IDs to be created and deleted.
  * 
- * ## Example Usage
+ * ## Example usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>

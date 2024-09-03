@@ -116,9 +116,17 @@ class MetricsPolicy(pulumi.CustomResource):
                  policy_rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MetricsPolicyPolicyRuleArgs', 'MetricsPolicyPolicyRuleArgsDict']]]]] = None,
                  __props__=None):
         """
+        layout: "wavefront"
+        page_title: "Wavefront: Metrics Policy"
+        description: |-
+        Provides a Wavefront Metrics Policy Resource. This allows management of Metrics Policy to control access to time series, histograms, and delta counters
+        <!-- yaml: line 5: could not find expected ':' -->
+
+        # Resource : MetricsPolicy
+
         Provides a Wavefront Metrics Policy Resource. This allows management of Metrics Policy to control access to time series, histograms, and delta counters
 
-        ## Example Usage
+        ## Example usage
 
         ```python
         import pulumi
@@ -168,9 +176,17 @@ class MetricsPolicy(pulumi.CustomResource):
                  args: MetricsPolicyArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        layout: "wavefront"
+        page_title: "Wavefront: Metrics Policy"
+        description: |-
+        Provides a Wavefront Metrics Policy Resource. This allows management of Metrics Policy to control access to time series, histograms, and delta counters
+        <!-- yaml: line 5: could not find expected ':' -->
+
+        # Resource : MetricsPolicy
+
         Provides a Wavefront Metrics Policy Resource. This allows management of Metrics Policy to control access to time series, histograms, and delta counters
 
-        ## Example Usage
+        ## Example usage
 
         ```python
         import pulumi

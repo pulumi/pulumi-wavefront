@@ -373,7 +373,7 @@ class MaintenanceWindow(pulumi.CustomResource):
         """
         Provides a Wavefront Maintenance Window Resource. This allows maintenance windows to be created, updated, and deleted.
 
-        ## Example Usage
+        ## Example usage
 
         ```python
         import pulumi
@@ -430,7 +430,7 @@ class MaintenanceWindow(pulumi.CustomResource):
         """
         Provides a Wavefront Maintenance Window Resource. This allows maintenance windows to be created, updated, and deleted.
 
-        ## Example Usage
+        ## Example usage
 
         ```python
         import pulumi

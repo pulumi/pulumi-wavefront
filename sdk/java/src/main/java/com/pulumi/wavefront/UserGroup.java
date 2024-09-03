@@ -16,7 +16,7 @@ import javax.annotation.Nullable;
 /**
  * Provides a Wavefront User Group Resource. This allows user groups to be created, updated, and deleted.
  * 
- * ## Example Usage
+ * ## Example usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>

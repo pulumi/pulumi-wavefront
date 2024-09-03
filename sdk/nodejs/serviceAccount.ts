@@ -7,7 +7,7 @@ import * as utilities from "./utilities";
 /**
  * Provides a Wavefront Service Account Resource. This allows service accounts to be created, updated, and deleted.
  *
- * ## Example Usage
+ * ## Example usage
  *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";

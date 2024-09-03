@@ -277,7 +277,7 @@ class ExternalLink(pulumi.CustomResource):
         """
         Provides a Wavefront External Link Resource. This allows external links to be created, updated, and deleted.
 
-        ## Example Usage
+        ## Example usage
 
         ```python
         import pulumi
@@ -319,7 +319,7 @@ class ExternalLink(pulumi.CustomResource):
         """
         Provides a Wavefront External Link Resource. This allows external links to be created, updated, and deleted.
 
-        ## Example Usage
+        ## Example usage
 
         ```python
         import pulumi

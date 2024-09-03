@@ -396,7 +396,7 @@ class CloudIntegrationAzure(pulumi.CustomResource):
         Provides a Wavefront Cloud Integration for Microsoft Azure. This allows Azure cloud integrations to be created,
         updated, and deleted.
 
-        ## Example Usage
+        ## Example usage
 
         ```python
         import pulumi
@@ -441,7 +441,7 @@ class CloudIntegrationAzure(pulumi.CustomResource):
         Provides a Wavefront Cloud Integration for Microsoft Azure. This allows Azure cloud integrations to be created,
         updated, and deleted.
 
-        ## Example Usage
+        ## Example usage
 
         ```python
         import pulumi

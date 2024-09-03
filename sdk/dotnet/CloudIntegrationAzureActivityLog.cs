@@ -13,7 +13,7 @@ namespace Pulumi.Wavefront
     /// Provides a Wavefront Cloud Integration for Azure Activity Logs. This allows Azure activity log cloud integrations to be created,
     /// updated, and deleted.
     /// 
-    /// ## Example Usage
+    /// ## Example usage
     /// 
     /// ```csharp
     /// using System.Collections.Generic;

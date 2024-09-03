@@ -12,7 +12,7 @@ namespace Pulumi.Wavefront
     /// <summary>
     /// Provides a wavefront Alert Target resource. This allows alert targets to created, updated, and deleted.
     /// 
-    /// ## Example Usage
+    /// ## Example usage
     /// 
     /// ```csharp
     /// using System.Collections.Generic;

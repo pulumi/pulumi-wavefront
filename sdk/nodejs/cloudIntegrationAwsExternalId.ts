@@ -7,7 +7,7 @@ import * as utilities from "./utilities";
 /**
  * Provides an External ID for use in Amazon Web Services IAM Roles. This allows External IDs to be created and deleted.
  *
- * ## Example Usage
+ * ## Example usage
  *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";

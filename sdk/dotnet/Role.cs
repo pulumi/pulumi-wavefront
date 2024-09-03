@@ -12,7 +12,7 @@ namespace Pulumi.Wavefront
     /// <summary>
     /// Provides a Wavefront Role Resource. This allows roles to be created, updated, and deleted.
     /// 
-    /// ## Example Usage
+    /// ## Example usage
     /// 
     /// ```csharp
     /// using System.Collections.Generic;

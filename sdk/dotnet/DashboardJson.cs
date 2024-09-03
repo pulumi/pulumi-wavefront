@@ -12,7 +12,7 @@ namespace Pulumi.Wavefront
     /// <summary>
     /// Provides a Wavefront Dashboard JSON resource. This allows dashboards to be created, updated, and deleted.
     /// 
-    /// ## Example Usage
+    /// ## Example usage
     /// 
     /// ```csharp
     /// using System.Collections.Generic;
@@ -149,7 +149,6 @@ namespace Pulumi.Wavefront
     /// });
     /// ```
     /// 
-    /// * 
     /// *Note:
     /// ** If there are dynamic variables in the Wavefront dashboard json, then these variables must be present in a separate file as mentioned in the section below.
     /// 

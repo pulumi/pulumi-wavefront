@@ -351,7 +351,7 @@ class CloudIntegrationGcp(pulumi.CustomResource):
         Provides a Wavefront Cloud Integration for Google Cloud Platform. This allows Google Cloud Platform cloud
         integrations to be created, updated, and deleted.
 
-        ## Example Usage
+        ## Example usage
 
         ```python
         import pulumi
@@ -398,7 +398,7 @@ class CloudIntegrationGcp(pulumi.CustomResource):
         Provides a Wavefront Cloud Integration for Google Cloud Platform. This allows Google Cloud Platform cloud
         integrations to be created, updated, and deleted.
 
-        ## Example Usage
+        ## Example usage
 
         ```python
         import pulumi

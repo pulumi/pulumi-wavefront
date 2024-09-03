@@ -14,7 +14,7 @@ import (
 
 // Provides a Wavefront Ingestion Policy Resource. This allows ingestion policies to be created, updated, and deleted.
 //
-// ## Example Usage
+// ## Example usage
 //
 // ```go
 // package main

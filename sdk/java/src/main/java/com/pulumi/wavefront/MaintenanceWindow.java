@@ -20,7 +20,7 @@ import javax.annotation.Nullable;
 /**
  * Provides a Wavefront Maintenance Window Resource. This allows maintenance windows to be created, updated, and deleted.
  * 
- * ## Example Usage
+ * ## Example usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>

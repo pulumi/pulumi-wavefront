@@ -17,9 +17,17 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
+ * layout: &#34;wavefront&#34;
+ * page_title: &#34;Wavefront: Metrics Policy&#34;
+ * description: |-
+ * Provides a Wavefront Metrics Policy Resource. This allows management of Metrics Policy to control access to time series, histograms, and delta counters
+ * &lt;!-- yaml: line 5: could not find expected &#39;:&#39; --&gt;
+ * 
+ * # Resource : wavefront.MetricsPolicy
+ * 
  * Provides a Wavefront Metrics Policy Resource. This allows management of Metrics Policy to control access to time series, histograms, and delta counters
  * 
- * ## Example Usage
+ * ## Example usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>

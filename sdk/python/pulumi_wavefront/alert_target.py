@@ -425,7 +425,7 @@ class AlertTarget(pulumi.CustomResource):
         """
         Provides a wavefront Alert Target resource. This allows alert targets to created, updated, and deleted.
 
-        ## Example Usage
+        ## Example usage
 
         ```python
         import pulumi
@@ -481,7 +481,7 @@ class AlertTarget(pulumi.CustomResource):
         """
         Provides a wavefront Alert Target resource. This allows alert targets to created, updated, and deleted.
 
-        ## Example Usage
+        ## Example usage
 
         ```python
         import pulumi

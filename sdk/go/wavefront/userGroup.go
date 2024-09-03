@@ -14,7 +14,7 @@ import (
 
 // Provides a Wavefront User Group Resource. This allows user groups to be created, updated, and deleted.
 //
-// ## Example Usage
+// ## Example usage
 //
 // ```go
 // package main
