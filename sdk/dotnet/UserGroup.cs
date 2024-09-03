@@ -12,7 +12,7 @@ namespace Pulumi.Wavefront
     /// <summary>
     /// Provides a Wavefront User Group Resource. This allows user groups to be created, updated, and deleted.
     /// 
-    /// ## Example Usage
+    /// ## Example usage
     /// 
     /// ```csharp
     /// using System.Collections.Generic;

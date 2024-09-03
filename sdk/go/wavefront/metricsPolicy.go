@@ -12,9 +12,17 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// layout: "wavefront"
+// page_title: "Wavefront: Metrics Policy"
+// description: |-
+// Provides a Wavefront Metrics Policy Resource. This allows management of Metrics Policy to control access to time series, histograms, and delta counters
+// <!-- yaml: line 5: could not find expected ':' -->
+//
+// # Resource : MetricsPolicy
+//
 // Provides a Wavefront Metrics Policy Resource. This allows management of Metrics Policy to control access to time series, histograms, and delta counters
 //
-// ## Example Usage
+// ## Example usage
 //
 // ```go
 // package main

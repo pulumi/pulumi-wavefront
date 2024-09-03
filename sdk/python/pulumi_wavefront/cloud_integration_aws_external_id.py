@@ -29,7 +29,7 @@ class CloudIntegrationAwsExternalId(pulumi.CustomResource):
         """
         Provides an External ID for use in Amazon Web Services IAM Roles. This allows External IDs to be created and deleted.
 
-        ## Example Usage
+        ## Example usage
 
         ```python
         import pulumi
@@ -58,7 +58,7 @@ class CloudIntegrationAwsExternalId(pulumi.CustomResource):
         """
         Provides an External ID for use in Amazon Web Services IAM Roles. This allows External IDs to be created and deleted.
 
-        ## Example Usage
+        ## Example usage
 
         ```python
         import pulumi

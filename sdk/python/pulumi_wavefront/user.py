@@ -175,7 +175,7 @@ class User(pulumi.CustomResource):
         """
         Provides a Wavefront User Resource. This allows user accounts to be created, updated, and deleted.
 
-        ## Example Usage
+        ## Example usage
 
         ```python
         import pulumi
@@ -210,7 +210,7 @@ class User(pulumi.CustomResource):
         """
         Provides a Wavefront User Resource. This allows user accounts to be created, updated, and deleted.
 
-        ## Example Usage
+        ## Example usage
 
         ```python
         import pulumi

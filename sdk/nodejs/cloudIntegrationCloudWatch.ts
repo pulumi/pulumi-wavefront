@@ -8,7 +8,7 @@ import * as utilities from "./utilities";
  * Provides a Wavefront Cloud Integration for CloudWatch. This allows CloudWatch cloud integrations to be created,
  * updated, and deleted.
  *
- * ## Example Usage
+ * ## Example usage
  *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";

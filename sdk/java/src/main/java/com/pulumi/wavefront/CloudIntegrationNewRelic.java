@@ -23,7 +23,7 @@ import javax.annotation.Nullable;
  * Provides a Wavefront Cloud Integration for New Relic. This allows New Relic cloud integrations to be created,
  * updated, and deleted.
  * 
- * ## Example Usage
+ * ## Example usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>

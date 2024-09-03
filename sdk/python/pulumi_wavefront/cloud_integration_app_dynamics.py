@@ -602,7 +602,7 @@ class CloudIntegrationAppDynamics(pulumi.CustomResource):
         Provides a Wavefront Cloud Integration for AppDynamics. This allows AppDynamics cloud integrations to be created,
         updated, and deleted.
 
-        ## Example Usage
+        ## Example usage
 
         ```python
         import pulumi
@@ -655,7 +655,7 @@ class CloudIntegrationAppDynamics(pulumi.CustomResource):
         Provides a Wavefront Cloud Integration for AppDynamics. This allows AppDynamics cloud integrations to be created,
         updated, and deleted.
 
-        ## Example Usage
+        ## Example usage
 
         ```python
         import pulumi

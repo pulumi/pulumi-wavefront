@@ -13,7 +13,7 @@ namespace Pulumi.Wavefront
     /// Provides a Wavefront Cloud Integration for EC2. This allows EC2 cloud integrations to be created,
     /// updated, and deleted.
     /// 
-    /// ## Example Usage
+    /// ## Example usage
     /// 
     /// ```csharp
     /// using System.Collections.Generic;

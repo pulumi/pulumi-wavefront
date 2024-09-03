@@ -7,9 +7,17 @@ import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 /**
+ * layout: "wavefront"
+ * page_title: "Wavefront: Metrics Policy"
+ * description: |-
+ * Provides a Wavefront Metrics Policy Resource. This allows management of Metrics Policy to control access to time series, histograms, and delta counters
+ * <!-- yaml: line 5: could not find expected ':' -->
+ *
+ * # Resource : wavefront.MetricsPolicy
+ *
  * Provides a Wavefront Metrics Policy Resource. This allows management of Metrics Policy to control access to time series, histograms, and delta counters
  *
- * ## Example Usage
+ * ## Example usage
  *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";

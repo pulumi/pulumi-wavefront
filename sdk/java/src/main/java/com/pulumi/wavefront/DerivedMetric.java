@@ -20,7 +20,7 @@ import javax.annotation.Nullable;
  * Provides a Wavefront Derived Metric Resource. This allows derived metrics to be created,
  * updated, and deleted.
  * 
- * ## Example Usage
+ * ## Example usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>

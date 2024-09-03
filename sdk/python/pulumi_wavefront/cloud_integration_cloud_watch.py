@@ -450,7 +450,7 @@ class CloudIntegrationCloudWatch(pulumi.CustomResource):
         Provides a Wavefront Cloud Integration for CloudWatch. This allows CloudWatch cloud integrations to be created,
         updated, and deleted.
 
-        ## Example Usage
+        ## Example usage
 
         ```python
         import pulumi
@@ -502,7 +502,7 @@ class CloudIntegrationCloudWatch(pulumi.CustomResource):
         Provides a Wavefront Cloud Integration for CloudWatch. This allows CloudWatch cloud integrations to be created,
         updated, and deleted.
 
-        ## Example Usage
+        ## Example usage
 
         ```python
         import pulumi

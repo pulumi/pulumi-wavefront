@@ -200,7 +200,7 @@ class DerivedMetric(pulumi.CustomResource):
         Provides a Wavefront Derived Metric Resource. This allows derived metrics to be created,
         updated, and deleted.
 
-        ## Example Usage
+        ## Example usage
 
         ```python
         import pulumi
@@ -238,7 +238,7 @@ class DerivedMetric(pulumi.CustomResource):
         Provides a Wavefront Derived Metric Resource. This allows derived metrics to be created,
         updated, and deleted.
 
-        ## Example Usage
+        ## Example usage
 
         ```python
         import pulumi

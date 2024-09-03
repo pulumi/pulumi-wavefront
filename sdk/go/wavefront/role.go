@@ -13,7 +13,7 @@ import (
 
 // Provides a Wavefront Role Resource. This allows roles to be created, updated, and deleted.
 //
-// ## Example Usage
+// ## Example usage
 //
 // ```go
 // package main

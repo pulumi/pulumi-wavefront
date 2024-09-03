@@ -19,7 +19,7 @@ import javax.annotation.Nullable;
 /**
  * Provides a Wavefront Ingestion Policy Resource. This allows ingestion policies to be created, updated, and deleted.
  * 
- * ## Example Usage
+ * ## Example usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>

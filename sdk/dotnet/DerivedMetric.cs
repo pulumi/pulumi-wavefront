@@ -13,7 +13,7 @@ namespace Pulumi.Wavefront
     /// Provides a Wavefront Derived Metric Resource. This allows derived metrics to be created,
     /// updated, and deleted.
     /// 
-    /// ## Example Usage
+    /// ## Example usage
     /// 
     /// ```csharp
     /// using System.Collections.Generic;

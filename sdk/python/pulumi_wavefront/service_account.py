@@ -241,7 +241,7 @@ class ServiceAccount(pulumi.CustomResource):
         """
         Provides a Wavefront Service Account Resource. This allows service accounts to be created, updated, and deleted.
 
-        ## Example Usage
+        ## Example usage
 
         ```python
         import pulumi
@@ -280,7 +280,7 @@ class ServiceAccount(pulumi.CustomResource):
         """
         Provides a Wavefront Service Account Resource. This allows service accounts to be created, updated, and deleted.
 
-        ## Example Usage
+        ## Example usage
 
         ```python
         import pulumi

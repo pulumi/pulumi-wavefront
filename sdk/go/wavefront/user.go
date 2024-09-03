@@ -14,7 +14,7 @@ import (
 
 // Provides a Wavefront User Resource. This allows user accounts to be created, updated, and deleted.
 //
-// ## Example Usage
+// ## Example usage
 //
 // ```go
 // package main

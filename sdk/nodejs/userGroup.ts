@@ -7,7 +7,7 @@ import * as utilities from "./utilities";
 /**
  * Provides a Wavefront User Group Resource. This allows user groups to be created, updated, and deleted.
  *
- * ## Example Usage
+ * ## Example usage
  *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";

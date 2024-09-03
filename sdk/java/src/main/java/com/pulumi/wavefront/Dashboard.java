@@ -21,7 +21,7 @@ import javax.annotation.Nullable;
 /**
  * Provides a Wavefront Dashboard resource. This allows dashboards to be created, updated, and deleted.
  * 
- * ## Example Usage
+ * ## Example usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * &lt;!--End PulumiCodeChooser --&gt;

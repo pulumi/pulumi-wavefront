@@ -21,7 +21,7 @@ import javax.annotation.Nullable;
 /**
  * Provides a wavefront Alert Target resource. This allows alert targets to created, updated, and deleted.
  * 
- * ## Example Usage
+ * ## Example usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>

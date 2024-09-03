@@ -9,7 +9,7 @@ import * as utilities from "./utilities";
 /**
  * Provides a Wavefront Ingestion Policy Resource. This allows ingestion policies to be created, updated, and deleted.
  *
- * ## Example Usage
+ * ## Example usage
  *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";

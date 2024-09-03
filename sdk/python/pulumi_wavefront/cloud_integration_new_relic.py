@@ -334,7 +334,7 @@ class CloudIntegrationNewRelic(pulumi.CustomResource):
         Provides a Wavefront Cloud Integration for New Relic. This allows New Relic cloud integrations to be created,
         updated, and deleted.
 
-        ## Example Usage
+        ## Example usage
 
         ```python
         import pulumi
@@ -375,7 +375,7 @@ class CloudIntegrationNewRelic(pulumi.CustomResource):
         Provides a Wavefront Cloud Integration for New Relic. This allows New Relic cloud integrations to be created,
         updated, and deleted.
 
-        ## Example Usage
+        ## Example usage
 
         ```python
         import pulumi

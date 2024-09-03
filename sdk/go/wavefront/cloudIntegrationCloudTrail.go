@@ -15,7 +15,7 @@ import (
 // Provides a Wavefront Cloud Integration for CloudTrail. This allows CloudTrail cloud integrations to be created,
 // updated, and deleted.
 //
-// ## Example Usage
+// ## Example usage
 //
 // ```go
 // package main

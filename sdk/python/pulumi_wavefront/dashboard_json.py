@@ -72,7 +72,7 @@ class DashboardJson(pulumi.CustomResource):
         """
         Provides a Wavefront Dashboard JSON resource. This allows dashboards to be created, updated, and deleted.
 
-        ## Example Usage
+        ## Example usage
 
         ```python
         import pulumi
@@ -200,7 +200,6 @@ class DashboardJson(pulumi.CustomResource):
         \"\"\")
         ```
 
-        * 
         *Note:
         ** If there are dynamic variables in the Wavefront dashboard json, then these variables must be present in a separate file as mentioned in the section below.
 
@@ -226,7 +225,7 @@ class DashboardJson(pulumi.CustomResource):
         """
         Provides a Wavefront Dashboard JSON resource. This allows dashboards to be created, updated, and deleted.
 
-        ## Example Usage
+        ## Example usage
 
         ```python
         import pulumi
@@ -354,7 +353,6 @@ class DashboardJson(pulumi.CustomResource):
         \"\"\")
         ```
 
-        * 
         *Note:
         ** If there are dynamic variables in the Wavefront dashboard json, then these variables must be present in a separate file as mentioned in the section below.
 

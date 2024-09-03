@@ -22,7 +22,7 @@ import javax.annotation.Nullable;
  * Provides a Wavefront Cloud Integration for Google Cloud Platform. This allows Google Cloud Platform cloud
  * integrations to be created, updated, and deleted.
  * 
- * ## Example Usage
+ * ## Example usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>

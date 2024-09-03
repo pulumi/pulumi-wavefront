@@ -15,7 +15,7 @@ import (
 // Provides a Wavefront Cloud Integration for AppDynamics. This allows AppDynamics cloud integrations to be created,
 // updated, and deleted.
 //
-// ## Example Usage
+// ## Example usage
 //
 // ```go
 // package main

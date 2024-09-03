@@ -18,7 +18,7 @@ import javax.annotation.Nullable;
 /**
  * Provides a Wavefront Role Resource. This allows roles to be created, updated, and deleted.
  * 
- * ## Example Usage
+ * ## Example usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
