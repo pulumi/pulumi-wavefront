@@ -24,7 +24,6 @@ import * as utilities from "./utilities";
  */
 export function getDerivedMetrics(args?: GetDerivedMetricsArgs, opts?: pulumi.InvokeOptions): Promise<GetDerivedMetricsResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("wavefront:index/getDerivedMetrics:getDerivedMetrics", {
         "limit": args.limit,
@@ -78,7 +77,12 @@ export interface GetDerivedMetricsResult {
  * ```
  */
 export function getDerivedMetricsOutput(args?: GetDerivedMetricsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDerivedMetricsResult> {
-    return pulumi.output(args).apply((a: any) => getDerivedMetrics(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("wavefront:index/getDerivedMetrics:getDerivedMetrics", {
+        "limit": args.limit,
+        "offset": args.offset,
+    }, opts);
 }
 
 /**

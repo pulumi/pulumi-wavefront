@@ -24,7 +24,6 @@ import * as utilities from "./utilities";
  */
 export function getAlerts(args?: GetAlertsArgs, opts?: pulumi.InvokeOptions): Promise<GetAlertsResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("wavefront:index/getAlerts:getAlerts", {
         "limit": args.limit,
@@ -78,7 +77,12 @@ export interface GetAlertsResult {
  * ```
  */
 export function getAlertsOutput(args?: GetAlertsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAlertsResult> {
-    return pulumi.output(args).apply((a: any) => getAlerts(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("wavefront:index/getAlerts:getAlerts", {
+        "limit": args.limit,
+        "offset": args.offset,
+    }, opts);
 }
 
 /**

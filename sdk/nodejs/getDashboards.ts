@@ -24,7 +24,6 @@ import * as utilities from "./utilities";
  */
 export function getDashboards(args?: GetDashboardsArgs, opts?: pulumi.InvokeOptions): Promise<GetDashboardsResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("wavefront:index/getDashboards:getDashboards", {
         "limit": args.limit,
@@ -78,7 +77,12 @@ export interface GetDashboardsResult {
  * ```
  */
 export function getDashboardsOutput(args?: GetDashboardsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDashboardsResult> {
-    return pulumi.output(args).apply((a: any) => getDashboards(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("wavefront:index/getDashboards:getDashboards", {
+        "limit": args.limit,
+        "offset": args.offset,
+    }, opts);
 }
 
 /**

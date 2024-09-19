@@ -24,7 +24,6 @@ import * as utilities from "./utilities";
  */
 export function getUserGroups(args?: GetUserGroupsArgs, opts?: pulumi.InvokeOptions): Promise<GetUserGroupsResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("wavefront:index/getUserGroups:getUserGroups", {
         "limit": args.limit,
@@ -78,7 +77,12 @@ export interface GetUserGroupsResult {
  * ```
  */
 export function getUserGroupsOutput(args?: GetUserGroupsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetUserGroupsResult> {
-    return pulumi.output(args).apply((a: any) => getUserGroups(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("wavefront:index/getUserGroups:getUserGroups", {
+        "limit": args.limit,
+        "offset": args.offset,
+    }, opts);
 }
 
 /**

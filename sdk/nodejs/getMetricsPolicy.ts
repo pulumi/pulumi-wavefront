@@ -7,7 +7,6 @@ import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 export function getMetricsPolicy(opts?: pulumi.InvokeOptions): Promise<GetMetricsPolicyResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("wavefront:index/getMetricsPolicy:getMetricsPolicy", {
     }, opts);
@@ -27,5 +26,7 @@ export interface GetMetricsPolicyResult {
     readonly updaterId: string;
 }
 export function getMetricsPolicyOutput(opts?: pulumi.InvokeOptions): pulumi.Output<GetMetricsPolicyResult> {
-    return pulumi.output(getMetricsPolicy(opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("wavefront:index/getMetricsPolicy:getMetricsPolicy", {
+    }, opts);
 }
