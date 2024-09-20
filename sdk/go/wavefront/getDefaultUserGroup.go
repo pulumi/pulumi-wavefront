@@ -57,13 +57,19 @@ type GetDefaultUserGroupResult struct {
 }
 
 func GetDefaultUserGroupOutput(ctx *pulumi.Context, opts ...pulumi.InvokeOption) GetDefaultUserGroupResultOutput {
-	return pulumi.ToOutput(0).ApplyT(func(int) (GetDefaultUserGroupResult, error) {
-		r, err := GetDefaultUserGroup(ctx, opts...)
-		var s GetDefaultUserGroupResult
-		if r != nil {
-			s = *r
+	return pulumi.ToOutput(0).ApplyT(func(int) (GetDefaultUserGroupResultOutput, error) {
+		opts = internal.PkgInvokeDefaultOpts(opts)
+		var rv GetDefaultUserGroupResult
+		secret, err := ctx.InvokePackageRaw("wavefront:index/getDefaultUserGroup:getDefaultUserGroup", nil, &rv, "", opts...)
+		if err != nil {
+			return GetDefaultUserGroupResultOutput{}, err
 		}
-		return s, err
+
+		output := pulumi.ToOutput(rv).(GetDefaultUserGroupResultOutput)
+		if secret {
+			return pulumi.ToSecret(output).(GetDefaultUserGroupResultOutput), nil
+		}
+		return output, nil
 	}).(GetDefaultUserGroupResultOutput)
 }
 

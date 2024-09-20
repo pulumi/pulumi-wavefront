@@ -88,14 +88,20 @@ type LookupExternalLinkResult struct {
 
 func LookupExternalLinkOutput(ctx *pulumi.Context, args LookupExternalLinkOutputArgs, opts ...pulumi.InvokeOption) LookupExternalLinkResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupExternalLinkResult, error) {
+		ApplyT(func(v interface{}) (LookupExternalLinkResultOutput, error) {
 			args := v.(LookupExternalLinkArgs)
-			r, err := LookupExternalLink(ctx, &args, opts...)
-			var s LookupExternalLinkResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupExternalLinkResult
+			secret, err := ctx.InvokePackageRaw("wavefront:index/getExternalLink:getExternalLink", args, &rv, "", opts...)
+			if err != nil {
+				return LookupExternalLinkResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupExternalLinkResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupExternalLinkResultOutput), nil
+			}
+			return output, nil
 		}).(LookupExternalLinkResultOutput)
 }
 

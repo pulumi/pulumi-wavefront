@@ -25,7 +25,6 @@ import * as utilities from "./utilities";
  * ```
  */
 export function getEvents(args: GetEventsArgs, opts?: pulumi.InvokeOptions): Promise<GetEventsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("wavefront:index/getEvents:getEvents", {
         "earliestStartTimeEpochMillis": args.earliestStartTimeEpochMillis,
@@ -99,7 +98,13 @@ export interface GetEventsResult {
  * ```
  */
 export function getEventsOutput(args: GetEventsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetEventsResult> {
-    return pulumi.output(args).apply((a: any) => getEvents(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("wavefront:index/getEvents:getEvents", {
+        "earliestStartTimeEpochMillis": args.earliestStartTimeEpochMillis,
+        "latestStartTimeEpochMillis": args.latestStartTimeEpochMillis,
+        "limit": args.limit,
+        "offset": args.offset,
+    }, opts);
 }
 
 /**
