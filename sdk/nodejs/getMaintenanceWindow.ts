@@ -20,7 +20,6 @@ import * as utilities from "./utilities";
  * ```
  */
 export function getMaintenanceWindow(args: GetMaintenanceWindowArgs, opts?: pulumi.InvokeOptions): Promise<GetMaintenanceWindowResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("wavefront:index/getMaintenanceWindow:getMaintenanceWindow", {
         "id": args.id,
@@ -136,7 +135,10 @@ export interface GetMaintenanceWindowResult {
  * ```
  */
 export function getMaintenanceWindowOutput(args: GetMaintenanceWindowOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMaintenanceWindowResult> {
-    return pulumi.output(args).apply((a: any) => getMaintenanceWindow(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("wavefront:index/getMaintenanceWindow:getMaintenanceWindow", {
+        "id": args.id,
+    }, opts);
 }
 
 /**

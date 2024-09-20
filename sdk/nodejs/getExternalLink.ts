@@ -20,7 +20,6 @@ import * as utilities from "./utilities";
  * ```
  */
 export function getExternalLink(args: GetExternalLinkArgs, opts?: pulumi.InvokeOptions): Promise<GetExternalLinkResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("wavefront:index/getExternalLink:getExternalLink", {
         "id": args.id,
@@ -109,7 +108,10 @@ export interface GetExternalLinkResult {
  * ```
  */
 export function getExternalLinkOutput(args: GetExternalLinkOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExternalLinkResult> {
-    return pulumi.output(args).apply((a: any) => getExternalLink(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("wavefront:index/getExternalLink:getExternalLink", {
+        "id": args.id,
+    }, opts);
 }
 
 /**

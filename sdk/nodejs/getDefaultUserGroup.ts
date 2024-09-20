@@ -18,7 +18,6 @@ import * as utilities from "./utilities";
  * ```
  */
 export function getDefaultUserGroup(opts?: pulumi.InvokeOptions): Promise<GetDefaultUserGroupResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("wavefront:index/getDefaultUserGroup:getDefaultUserGroup", {
     }, opts);
@@ -52,5 +51,7 @@ export interface GetDefaultUserGroupResult {
  * ```
  */
 export function getDefaultUserGroupOutput(opts?: pulumi.InvokeOptions): pulumi.Output<GetDefaultUserGroupResult> {
-    return pulumi.output(getDefaultUserGroup(opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("wavefront:index/getDefaultUserGroup:getDefaultUserGroup", {
+    }, opts);
 }

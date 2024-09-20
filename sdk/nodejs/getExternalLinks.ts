@@ -24,7 +24,6 @@ import * as utilities from "./utilities";
  */
 export function getExternalLinks(args?: GetExternalLinksArgs, opts?: pulumi.InvokeOptions): Promise<GetExternalLinksResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("wavefront:index/getExternalLinks:getExternalLinks", {
         "limit": args.limit,
@@ -78,7 +77,12 @@ export interface GetExternalLinksResult {
  * ```
  */
 export function getExternalLinksOutput(args?: GetExternalLinksOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExternalLinksResult> {
-    return pulumi.output(args).apply((a: any) => getExternalLinks(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("wavefront:index/getExternalLinks:getExternalLinks", {
+        "limit": args.limit,
+        "offset": args.offset,
+    }, opts);
 }
 
 /**
