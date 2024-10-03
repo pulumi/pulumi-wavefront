@@ -28,7 +28,7 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			everyone, err := wavefront.GetDefaultUserGroup(ctx, nil, nil)
+//			everyone, err := wavefront.GetDefaultUserGroup(ctx, map[string]interface{}{}, nil)
 //			if err != nil {
 //				return err
 //			}
@@ -75,7 +75,7 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			policy, err := wavefront.LookupMetricsPolicy(ctx, nil, nil)
+//			policy, err := wavefront.LookupMetricsPolicy(ctx, map[string]interface{}{}, nil)
 //			if err != nil {
 //				return err
 //			}

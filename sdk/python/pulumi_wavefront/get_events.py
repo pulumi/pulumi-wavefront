@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 from . import outputs
 
@@ -141,9 +146,6 @@ def get_events(earliest_start_time_epoch_millis: Optional[int] = None,
         latest_start_time_epoch_millis=pulumi.get(__ret__, 'latest_start_time_epoch_millis'),
         limit=pulumi.get(__ret__, 'limit'),
         offset=pulumi.get(__ret__, 'offset'))
-
-
-@_utilities.lift_output_func(get_events)
 def get_events_output(earliest_start_time_epoch_millis: Optional[pulumi.Input[int]] = None,
                       latest_start_time_epoch_millis: Optional[pulumi.Input[int]] = None,
                       limit: Optional[pulumi.Input[Optional[int]]] = None,
@@ -171,4 +173,17 @@ def get_events_output(earliest_start_time_epoch_millis: Optional[pulumi.Input[in
     :param int limit: Limit is the maximum number of results to be returned. Defaults to 100.
     :param int offset: Offset is the offset from the first result to be returned. Defaults to 0.
     """
-    ...
+    __args__ = dict()
+    __args__['earliestStartTimeEpochMillis'] = earliest_start_time_epoch_millis
+    __args__['latestStartTimeEpochMillis'] = latest_start_time_epoch_millis
+    __args__['limit'] = limit
+    __args__['offset'] = offset
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('wavefront:index/getEvents:getEvents', __args__, opts=opts, typ=GetEventsResult)
+    return __ret__.apply(lambda __response__: GetEventsResult(
+        earliest_start_time_epoch_millis=pulumi.get(__response__, 'earliest_start_time_epoch_millis'),
+        events=pulumi.get(__response__, 'events'),
+        id=pulumi.get(__response__, 'id'),
+        latest_start_time_epoch_millis=pulumi.get(__response__, 'latest_start_time_epoch_millis'),
+        limit=pulumi.get(__response__, 'limit'),
+        offset=pulumi.get(__response__, 'offset')))
