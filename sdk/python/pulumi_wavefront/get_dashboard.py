@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 from . import outputs
 
@@ -440,9 +445,6 @@ def get_dashboard(id: Optional[str] = None,
         views_last_day=pulumi.get(__ret__, 'views_last_day'),
         views_last_month=pulumi.get(__ret__, 'views_last_month'),
         views_last_week=pulumi.get(__ret__, 'views_last_week'))
-
-
-@_utilities.lift_output_func(get_dashboard)
 def get_dashboard_output(id: Optional[pulumi.Input[str]] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDashboardResult]:
     """
@@ -461,4 +463,43 @@ def get_dashboard_output(id: Optional[pulumi.Input[str]] = None,
 
     :param str id: The ID associated with the dashboard data to be fetched.
     """
-    ...
+    __args__ = dict()
+    __args__['id'] = id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('wavefront:index/getDashboard:getDashboard', __args__, opts=opts, typ=GetDashboardResult)
+    return __ret__.apply(lambda __response__: GetDashboardResult(
+        can_modifies=pulumi.get(__response__, 'can_modifies'),
+        can_views=pulumi.get(__response__, 'can_views'),
+        chart_title_bg_color=pulumi.get(__response__, 'chart_title_bg_color'),
+        chart_title_color=pulumi.get(__response__, 'chart_title_color'),
+        chart_title_scalar=pulumi.get(__response__, 'chart_title_scalar'),
+        created_epoch_millis=pulumi.get(__response__, 'created_epoch_millis'),
+        creator_id=pulumi.get(__response__, 'creator_id'),
+        customer=pulumi.get(__response__, 'customer'),
+        default_end_time=pulumi.get(__response__, 'default_end_time'),
+        default_start_time=pulumi.get(__response__, 'default_start_time'),
+        default_time_window=pulumi.get(__response__, 'default_time_window'),
+        deleted=pulumi.get(__response__, 'deleted'),
+        description=pulumi.get(__response__, 'description'),
+        display_description=pulumi.get(__response__, 'display_description'),
+        display_query_parameters=pulumi.get(__response__, 'display_query_parameters'),
+        display_section_table_of_contents=pulumi.get(__response__, 'display_section_table_of_contents'),
+        event_filter_type=pulumi.get(__response__, 'event_filter_type'),
+        event_query=pulumi.get(__response__, 'event_query'),
+        favorite=pulumi.get(__response__, 'favorite'),
+        hidden=pulumi.get(__response__, 'hidden'),
+        id=pulumi.get(__response__, 'id'),
+        name=pulumi.get(__response__, 'name'),
+        num_charts=pulumi.get(__response__, 'num_charts'),
+        num_favorites=pulumi.get(__response__, 'num_favorites'),
+        parameter_details=pulumi.get(__response__, 'parameter_details'),
+        parameters=pulumi.get(__response__, 'parameters'),
+        sections=pulumi.get(__response__, 'sections'),
+        system_owned=pulumi.get(__response__, 'system_owned'),
+        tags=pulumi.get(__response__, 'tags'),
+        updated_epoch_millis=pulumi.get(__response__, 'updated_epoch_millis'),
+        updater_id=pulumi.get(__response__, 'updater_id'),
+        url=pulumi.get(__response__, 'url'),
+        views_last_day=pulumi.get(__response__, 'views_last_day'),
+        views_last_month=pulumi.get(__response__, 'views_last_month'),
+        views_last_week=pulumi.get(__response__, 'views_last_week')))

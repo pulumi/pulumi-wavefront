@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 
 __all__ = [
@@ -78,9 +83,6 @@ def get_default_user_group(opts: Optional[pulumi.InvokeOptions] = None) -> Await
     return AwaitableGetDefaultUserGroupResult(
         group_id=pulumi.get(__ret__, 'group_id'),
         id=pulumi.get(__ret__, 'id'))
-
-
-@_utilities.lift_output_func(get_default_user_group)
 def get_default_user_group_output(opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDefaultUserGroupResult]:
     """
     Use this data source to get the Group ID of the `Everyone` group in Wavefront.
@@ -95,4 +97,9 @@ def get_default_user_group_output(opts: Optional[pulumi.InvokeOptions] = None) -
     everyone_group = wavefront.get_default_user_group()
     ```
     """
-    ...
+    __args__ = dict()
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('wavefront:index/getDefaultUserGroup:getDefaultUserGroup', __args__, opts=opts, typ=GetDefaultUserGroupResult)
+    return __ret__.apply(lambda __response__: GetDefaultUserGroupResult(
+        group_id=pulumi.get(__response__, 'group_id'),
+        id=pulumi.get(__response__, 'id')))

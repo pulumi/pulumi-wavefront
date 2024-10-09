@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 
 __all__ = [
@@ -183,9 +188,6 @@ def get_event(id: Optional[str] = None,
         start_time=pulumi.get(__ret__, 'start_time'),
         tags=pulumi.get(__ret__, 'tags'),
         type=pulumi.get(__ret__, 'type'))
-
-
-@_utilities.lift_output_func(get_event)
 def get_event_output(id: Optional[pulumi.Input[str]] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetEventResult]:
     """
@@ -204,4 +206,18 @@ def get_event_output(id: Optional[pulumi.Input[str]] = None,
 
     :param str id: The ID associated with the event data to be fetched.
     """
-    ...
+    __args__ = dict()
+    __args__['id'] = id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('wavefront:index/getEvent:getEvent', __args__, opts=opts, typ=GetEventResult)
+    return __ret__.apply(lambda __response__: GetEventResult(
+        annotations=pulumi.get(__response__, 'annotations'),
+        details=pulumi.get(__response__, 'details'),
+        endtime_key=pulumi.get(__response__, 'endtime_key'),
+        id=pulumi.get(__response__, 'id'),
+        is_ephemeral=pulumi.get(__response__, 'is_ephemeral'),
+        name=pulumi.get(__response__, 'name'),
+        severity=pulumi.get(__response__, 'severity'),
+        start_time=pulumi.get(__response__, 'start_time'),
+        tags=pulumi.get(__response__, 'tags'),
+        type=pulumi.get(__response__, 'type')))

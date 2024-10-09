@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 from . import outputs
 
@@ -107,9 +112,6 @@ def get_roles(limit: Optional[int] = None,
         limit=pulumi.get(__ret__, 'limit'),
         offset=pulumi.get(__ret__, 'offset'),
         roles=pulumi.get(__ret__, 'roles'))
-
-
-@_utilities.lift_output_func(get_roles)
 def get_roles_output(limit: Optional[pulumi.Input[Optional[int]]] = None,
                      offset: Optional[pulumi.Input[Optional[int]]] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetRolesResult]:
@@ -131,4 +133,13 @@ def get_roles_output(limit: Optional[pulumi.Input[Optional[int]]] = None,
     :param int limit: Limit is the maximum number of results to be returned. Defaults to 100.
     :param int offset: Offset is the offset from the first result to be returned. Defaults to 0.
     """
-    ...
+    __args__ = dict()
+    __args__['limit'] = limit
+    __args__['offset'] = offset
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('wavefront:index/getRoles:getRoles', __args__, opts=opts, typ=GetRolesResult)
+    return __ret__.apply(lambda __response__: GetRolesResult(
+        id=pulumi.get(__response__, 'id'),
+        limit=pulumi.get(__response__, 'limit'),
+        offset=pulumi.get(__response__, 'offset'),
+        roles=pulumi.get(__response__, 'roles')))

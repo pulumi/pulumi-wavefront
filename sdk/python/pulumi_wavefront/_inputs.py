@@ -4,26 +4,60 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 
 __all__ = [
     'AlertAlertTriageDashboardArgs',
+    'AlertAlertTriageDashboardArgsDict',
     'AlertAlertTriageDashboardParametersArgs',
+    'AlertAlertTriageDashboardParametersArgsDict',
     'AlertTargetRouteArgs',
+    'AlertTargetRouteArgsDict',
     'CloudIntegrationNewRelicMetricFilterArgs',
+    'CloudIntegrationNewRelicMetricFilterArgsDict',
     'DashboardParameterDetailArgs',
+    'DashboardParameterDetailArgsDict',
     'DashboardSectionArgs',
+    'DashboardSectionArgsDict',
     'DashboardSectionRowArgs',
+    'DashboardSectionRowArgsDict',
     'DashboardSectionRowChartArgs',
+    'DashboardSectionRowChartArgsDict',
     'DashboardSectionRowChartChartSettingArgs',
+    'DashboardSectionRowChartChartSettingArgsDict',
     'DashboardSectionRowChartSourceArgs',
+    'DashboardSectionRowChartSourceArgsDict',
     'IngestionPolicyTagArgs',
+    'IngestionPolicyTagArgsDict',
     'MetricsPolicyPolicyRuleArgs',
+    'MetricsPolicyPolicyRuleArgsDict',
     'MetricsPolicyPolicyRuleTagArgs',
+    'MetricsPolicyPolicyRuleTagArgsDict',
 ]
+
+MYPY = False
+
+if not MYPY:
+    class AlertAlertTriageDashboardArgsDict(TypedDict):
+        dashboard_id: pulumi.Input[str]
+        """
+        Dashboard ID
+        """
+        description: pulumi.Input[str]
+        """
+        Dashboard Description
+        """
+        parameters: NotRequired[pulumi.Input['AlertAlertTriageDashboardParametersArgsDict']]
+elif False:
+    AlertAlertTriageDashboardArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class AlertAlertTriageDashboardArgs:
@@ -74,6 +108,12 @@ class AlertAlertTriageDashboardArgs:
         pulumi.set(self, "parameters", value)
 
 
+if not MYPY:
+    class AlertAlertTriageDashboardParametersArgsDict(TypedDict):
+        constants: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+elif False:
+    AlertAlertTriageDashboardParametersArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class AlertAlertTriageDashboardParametersArgs:
     def __init__(__self__, *,
@@ -90,6 +130,25 @@ class AlertAlertTriageDashboardParametersArgs:
     def constants(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "constants", value)
 
+
+if not MYPY:
+    class AlertTargetRouteArgsDict(TypedDict):
+        method: pulumi.Input[str]
+        """
+        The notification method used for notification target. One of `WEBHOOK`, `EMAIL`, `PAGERDUTY`.
+        """
+        target: pulumi.Input[str]
+        """
+        (Required) The endpoint for the alert route. `EMAIL`: email address. `PAGERDUTY`: PagerDuty routing
+        key. `WEBHOOK`: URL endpoint.
+        """
+        filter: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+        """
+        (Required) String that filters the route. Space delimited. Currently only allows a single key value pair.
+        (e.g. `env prod`)
+        """
+elif False:
+    AlertTargetRouteArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class AlertTargetRouteArgs:
@@ -148,6 +207,19 @@ class AlertTargetRouteArgs:
         pulumi.set(self, "filter", value)
 
 
+if not MYPY:
+    class CloudIntegrationNewRelicMetricFilterArgsDict(TypedDict):
+        app_name: pulumi.Input[str]
+        """
+        The name of a NewRelic App.
+        """
+        metric_filter_regex: pulumi.Input[str]
+        """
+        A regular expression that a metric name must match (case-insensitively) in order to be ingested.
+        """
+elif False:
+    CloudIntegrationNewRelicMetricFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class CloudIntegrationNewRelicMetricFilterArgs:
     def __init__(__self__, *,
@@ -184,6 +256,49 @@ class CloudIntegrationNewRelicMetricFilterArgs:
     def metric_filter_regex(self, value: pulumi.Input[str]):
         pulumi.set(self, "metric_filter_regex", value)
 
+
+if not MYPY:
+    class DashboardParameterDetailArgsDict(TypedDict):
+        default_value: pulumi.Input[str]
+        """
+        The default value of the parameter.
+        """
+        hide_from_view: pulumi.Input[bool]
+        """
+        If `true` the parameter will only be shown on the edit view of the dashboard.
+        """
+        label: pulumi.Input[str]
+        """
+        The label for the parameter.
+        """
+        name: pulumi.Input[str]
+        """
+        The name of the parameters.
+        """
+        parameter_type: pulumi.Input[str]
+        """
+        The type of the parameter. `SIMPLE`, `LIST`, or `DYNAMIC`.
+        """
+        values_to_readable_strings: pulumi.Input[Mapping[str, pulumi.Input[str]]]
+        """
+        A string->string map. At least one of the keys must match the value of
+        `default_value`.
+        """
+        dynamic_field_type: NotRequired[pulumi.Input[str]]
+        """
+        For `DYNAMIC` parameter types, the type of the field. Valid options are `SOURCE`,
+        `SOURCE_TAG`, `METRIC_NAME`, `TAG_KEY`, and `MATCHING_SOURCE_TAG`.
+        """
+        query_value: NotRequired[pulumi.Input[str]]
+        """
+        For `DYNAMIC` parameter types, the query to execute to return values.
+        """
+        tag_key: NotRequired[pulumi.Input[str]]
+        """
+        for `TAG_KEY` dynamic field types, the tag key to return.
+        """
+elif False:
+    DashboardParameterDetailArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class DashboardParameterDetailArgs:
@@ -334,6 +449,19 @@ class DashboardParameterDetailArgs:
         pulumi.set(self, "tag_key", value)
 
 
+if not MYPY:
+    class DashboardSectionArgsDict(TypedDict):
+        name: pulumi.Input[str]
+        """
+        Name of this section.
+        """
+        rows: pulumi.Input[Sequence[pulumi.Input['DashboardSectionRowArgsDict']]]
+        """
+        See dashboard section rows.
+        """
+elif False:
+    DashboardSectionArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class DashboardSectionArgs:
     def __init__(__self__, *,
@@ -371,6 +499,15 @@ class DashboardSectionArgs:
         pulumi.set(self, "rows", value)
 
 
+if not MYPY:
+    class DashboardSectionRowArgsDict(TypedDict):
+        charts: pulumi.Input[Sequence[pulumi.Input['DashboardSectionRowChartArgsDict']]]
+        """
+        Charts in this section. See dashboard chart.
+        """
+elif False:
+    DashboardSectionRowArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class DashboardSectionRowArgs:
     def __init__(__self__, *,
@@ -392,6 +529,45 @@ class DashboardSectionRowArgs:
     def charts(self, value: pulumi.Input[Sequence[pulumi.Input['DashboardSectionRowChartArgs']]]):
         pulumi.set(self, "charts", value)
 
+
+if not MYPY:
+    class DashboardSectionRowChartArgsDict(TypedDict):
+        chart_setting: pulumi.Input['DashboardSectionRowChartChartSettingArgsDict']
+        """
+        Chart settings. See chart settings.
+        """
+        name: pulumi.Input[str]
+        """
+        Name of the source.
+        """
+        sources: pulumi.Input[Sequence[pulumi.Input['DashboardSectionRowChartSourceArgsDict']]]
+        """
+        Query expression to plot on the chart. See chart source queries.
+        """
+        summarization: pulumi.Input[str]
+        """
+        Summarization strategy for the chart. MEAN is default. Valid options are, `MEAN`,
+        `MEDIAN`, `MIN`, `MAX`, `SUM`, `COUNT`, `LAST`, `FIRST`.
+        """
+        units: pulumi.Input[str]
+        """
+        String to label the units of the chart on the Y-Axis.
+        """
+        base: NotRequired[pulumi.Input[int]]
+        """
+        The base of logarithmic scale charts. Omit or set to 0 for the default linear scale. Usually set to 10 for the traditional logarithmic scale.
+        """
+        chart_attribute: NotRequired[pulumi.Input[str]]
+        description: NotRequired[pulumi.Input[str]]
+        """
+        Description of the chart.
+        """
+        no_default_events: NotRequired[pulumi.Input[bool]]
+        """
+        Show events related to the sources included in queries
+        """
+elif False:
+    DashboardSectionRowChartArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class DashboardSectionRowChartArgs:
@@ -536,6 +712,265 @@ class DashboardSectionRowChartArgs:
     def no_default_events(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "no_default_events", value)
 
+
+if not MYPY:
+    class DashboardSectionRowChartChartSettingArgsDict(TypedDict):
+        type: pulumi.Input[str]
+        """
+        Chart Type. `line` refers to the Line Plot, `scatter` to the Point Plot, `stacked-area` to
+        the Stacked Area plot, `table` to the Tabular View, `scatterplot-xy` to Scatter Plot, `markdown-widget` to the
+        Markdown display, and `sparkline` to the Single Stat view. Valid options are`line`, `scatterplot`,
+        `stacked-area`, `stacked-column`, `table`, `scatterplot-xy`, `markdown-widget`, `sparkline`, `globe`, `nodemap`,
+        `top-k`, `status-list`, and `histogram`.
+        """
+        auto_column_tags: NotRequired[pulumi.Input[bool]]
+        """
+        This setting is deprecated.
+        """
+        column_tags: NotRequired[pulumi.Input[str]]
+        """
+        This setting is deprecated.
+        """
+        custom_tags: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        For the tabular view, a list of point tags to display when using the `custom` tag display mode.
+        """
+        expected_data_spacing: NotRequired[pulumi.Input[int]]
+        """
+        Threshold (in seconds) for time delta between consecutive points in a series
+        above which a dotted line will replace a solid in in line plots. Default is 60.
+        """
+        fixed_legend_display_stats: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        For a chart with a fixed legend, a list of statistics to display in the legend.
+        """
+        fixed_legend_enabled: NotRequired[pulumi.Input[bool]]
+        """
+        Whether to enable a fixed tabular legend adjacent to the chart.
+        """
+        fixed_legend_filter_field: NotRequired[pulumi.Input[str]]
+        """
+        Statistic to use for determining whether a series is displayed on the fixed legend.
+        Valid options are `CURRENT`, `MEAN`, `MEDIAN`, `SUM`, `MIN`, `MAX`, and `COUNT`.
+        """
+        fixed_legend_filter_limit: NotRequired[pulumi.Input[int]]
+        """
+        Number of series to include in the fixed legend.
+        """
+        fixed_legend_filter_sort: NotRequired[pulumi.Input[str]]
+        """
+        Whether to display `TOP` or `BOTTOM` ranked series in a fixed legend. Valid options
+        are `TOP`, and `BOTTOM`.
+        """
+        fixed_legend_hide_label: NotRequired[pulumi.Input[bool]]
+        """
+        This setting is deprecated.
+        """
+        fixed_legend_position: NotRequired[pulumi.Input[str]]
+        """
+        Where the fixed legend should be displayed with respect to the chart.
+        Valid options are `RIGHT`, `TOP`, `LEFT`, `BOTTOM`.
+        """
+        fixed_legend_use_raw_stats: NotRequired[pulumi.Input[bool]]
+        """
+        If `true`, the legend uses non-summarized stats instead of summarized.
+        """
+        group_by_source: NotRequired[pulumi.Input[bool]]
+        """
+        For the tabular view, whether to group multi metrics into a single row by a common source.
+        If `false`, each source is displayed in its own row. if `true`, multiple metrics for the same host are displayed as different
+        columns in the same row.
+        """
+        invert_dynamic_legend_hover_control: NotRequired[pulumi.Input[bool]]
+        """
+        Whether to disable the display of the floating legend (but
+        reenable it when the ctrl-key is pressed).
+        """
+        line_type: NotRequired[pulumi.Input[str]]
+        """
+        Plot interpolation type.  `linear` is default. Valid options are `linear`, `step-before`,
+        `step-after`, `basis`, `cardinal`, and `monotone`.
+        """
+        max: NotRequired[pulumi.Input[float]]
+        """
+        Max value of the Y-axis. Set to null or leave blank for auto.
+        """
+        min: NotRequired[pulumi.Input[float]]
+        """
+        Min value of the Y-axis. Set to null or leave blank for auto.
+        """
+        num_tags: NotRequired[pulumi.Input[int]]
+        """
+        For the tabular view defines how many point tags to display.
+        """
+        plain_markdown_content: NotRequired[pulumi.Input[str]]
+        """
+        The markdown content for a Markdown display, in plain text.
+        """
+        show_hosts: NotRequired[pulumi.Input[bool]]
+        """
+        For the tabular view, whether to display sources. Default is `true`.
+        """
+        show_labels: NotRequired[pulumi.Input[bool]]
+        """
+        For the tabular view, whether to display labels. Default is `true`.
+        """
+        show_raw_values: NotRequired[pulumi.Input[bool]]
+        """
+        For the tabular view, whether to display raw values. Default is `false`.
+        """
+        sort_values_descending: NotRequired[pulumi.Input[bool]]
+        """
+        For the tabular view, whether to display values in descending order. Default is `false`.
+        """
+        sparkline_decimal_precision: NotRequired[pulumi.Input[int]]
+        """
+        For the single stat view, the decimal precision of the displayed number.
+        """
+        sparkline_display_color: NotRequired[pulumi.Input[str]]
+        """
+        For the single stat view, the color of the displayed text (when not dynamically determined).
+        Values should be in `rgba(,,,,)` format.
+        """
+        sparkline_display_font_size: NotRequired[pulumi.Input[str]]
+        """
+        For the single stat view, the font size of the displayed text, in percent.
+        """
+        sparkline_display_horizontal_position: NotRequired[pulumi.Input[str]]
+        """
+        For the single stat view, the horizontal position of the displayed text.
+        Valid options are `MIDDLE`, `LEFT`, `RIGHT`.
+        """
+        sparkline_display_postfix: NotRequired[pulumi.Input[str]]
+        """
+        For the single stat view, a string to append to the displayed text.
+        """
+        sparkline_display_prefix: NotRequired[pulumi.Input[str]]
+        """
+        For the single stat view, a string to add before the displayed text.
+        """
+        sparkline_display_value_type: NotRequired[pulumi.Input[str]]
+        """
+        For the single stat view, where to display the name of the query or the value of the query.
+        Valid options are `VALUE` or `LABEL`.
+        """
+        sparkline_display_vertical_position: NotRequired[pulumi.Input[str]]
+        """
+        This setting is deprecated.
+        """
+        sparkline_fill_color: NotRequired[pulumi.Input[str]]
+        """
+        For the single stat view, the color of the background fill. Values should be
+        in `rgba(,,,,)`.
+        """
+        sparkline_line_color: NotRequired[pulumi.Input[str]]
+        """
+        For the single stat view, the color of the line. Values should be in `rgba(,,,,)` format.
+        """
+        sparkline_size: NotRequired[pulumi.Input[str]]
+        """
+        For the single stat view, this determines whether the sparkline of the statistic is displayed in the chart.
+        Valid options are `BACKGROUND`, `BOTTOM`, `NONE`.
+        """
+        sparkline_value_color_map_apply_to: NotRequired[pulumi.Input[str]]
+        """
+        For the single stat view, whether to apply dynamic color settings to
+        the displayed `TEXT` or `BACKGROUND`. Valid options are `TEXT` or `BACKGROUND`.
+        """
+        sparkline_value_color_map_colors: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        For the single stat view, A list of colors that differing query values map to.
+        Must contain one more element than `sparkline_value_color_map_values_v2`. Values should be in `rgba(,,,,)`.
+        """
+        sparkline_value_color_map_values: NotRequired[pulumi.Input[Sequence[pulumi.Input[int]]]]
+        """
+        This setting is deprecated.
+        """
+        sparkline_value_color_map_values_v2s: NotRequired[pulumi.Input[Sequence[pulumi.Input[float]]]]
+        """
+        For the single stat view, a list of boundaries for mapping different
+        query values to colors. Must contain one element less than `sparkline_value_color_map_colors`.
+        """
+        sparkline_value_text_map_texts: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        For the single stat view, a list of display text values that different query
+        values map to. Must contain one more element than `sparkline_value_text_map_thresholds`.
+        """
+        sparkline_value_text_map_thresholds: NotRequired[pulumi.Input[Sequence[pulumi.Input[float]]]]
+        """
+        For the single stat view, a list of threshold boundaries for
+        mapping different query values to display text. Must contain one element less than `sparkline_value_text_map_text`.
+        """
+        stack_type: NotRequired[pulumi.Input[str]]
+        """
+        Type of stacked chart (applicable only if chart type is `stacked`). `zero` (default) means
+        stacked from y=0. `expand` means normalized from 0 to 1.  `wiggle` means minimize weighted changes. `silhouette` means to
+        center the stream. Valid options are `zero`, `expand`, `wiggle`, `silhouette`, and `bars`.
+        """
+        tag_mode: NotRequired[pulumi.Input[str]]
+        """
+        For the tabular view, which mode to use to determine which point tags to display.
+        Valid options are `all`, `top`, or `custom`.
+        """
+        time_based_coloring: NotRequired[pulumi.Input[bool]]
+        """
+        For x-y scatterplots, whether to color more recent points as darker than older points.
+        """
+        window_size: NotRequired[pulumi.Input[int]]
+        """
+        Width, in minutes, of the time window to use for `last` windowing.
+        """
+        windowing: NotRequired[pulumi.Input[str]]
+        """
+        For the tabular view, whether to use the full time window for the query or the last X minutes.
+        Valid options are `full` or `last`.
+        """
+        xmax: NotRequired[pulumi.Input[float]]
+        """
+        For x-y scatterplots, max value for the X-axis. Set to null for auto.
+        """
+        xmin: NotRequired[pulumi.Input[float]]
+        """
+        For x-y scatterplots, min value for the X-axis. Set to null for auto.
+        """
+        y0_scale_si_by1024: NotRequired[pulumi.Input[bool]]
+        """
+        Whether to scale numerical magnitude labels for left Y-axis by 1024 in the IEC/Binary manner (instead of by 1000 like SI).
+        """
+        y0_unit_autoscaling: NotRequired[pulumi.Input[bool]]
+        """
+        Whether to automatically adjust magnitude labels and units for the left Y-axis to favor smaller magnitudes and larger units.
+        """
+        y1_scale_si_by1024: NotRequired[pulumi.Input[bool]]
+        """
+        Whether to scale numerical magnitude labels for right Y-axis by 1024 in the IEC/Binary manner (instead of by 1000 like SI).
+        """
+        y1_unit_autoscaling: NotRequired[pulumi.Input[bool]]
+        """
+        Whether to automatically adjust magnitude labels and units for the right Y-axis to favor smaller magnitudes and larger units.
+        """
+        y1_units: NotRequired[pulumi.Input[str]]
+        """
+        For plots with multiple Y-axes, units for right side Y-axis.
+        """
+        y1max: NotRequired[pulumi.Input[float]]
+        """
+        For plots with multiple Y-axes, max value for the right side Y-axis. Set null for auto.
+        """
+        y1min: NotRequired[pulumi.Input[float]]
+        """
+        For plots with multiple Y-axes, min value for the right side Y-axis. Set null for auto.
+        """
+        ymax: NotRequired[pulumi.Input[float]]
+        """
+        For x-y scatterplots, max value for the Y-axis. Set to null for auto.
+        """
+        ymin: NotRequired[pulumi.Input[float]]
+        """
+        For x-y scatterplots, min value for the Y-axis. Set to null for auto.
+        """
+elif False:
+    DashboardSectionRowChartChartSettingArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class DashboardSectionRowChartChartSettingArgs:
@@ -1507,6 +1942,35 @@ class DashboardSectionRowChartChartSettingArgs:
         pulumi.set(self, "ymin", value)
 
 
+if not MYPY:
+    class DashboardSectionRowChartSourceArgsDict(TypedDict):
+        name: pulumi.Input[str]
+        """
+        Name of the source.
+        """
+        query: pulumi.Input[str]
+        """
+        Query expression to plot on the chart.
+        """
+        disabled: NotRequired[pulumi.Input[bool]]
+        """
+        Whether the source is disabled.
+        """
+        query_builder_enabled: NotRequired[pulumi.Input[bool]]
+        """
+        Whether or not this source line should have the query builder enabled.
+        """
+        scatter_plot_source: NotRequired[pulumi.Input[str]]
+        """
+        For scatter plots, does this query source the X-axis or the Y-axis, `X`, or `Y`.
+        """
+        source_description: NotRequired[pulumi.Input[str]]
+        """
+        A description for the purpose of this source.
+        """
+elif False:
+    DashboardSectionRowChartSourceArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class DashboardSectionRowChartSourceArgs:
     def __init__(__self__, *,
@@ -1608,6 +2072,13 @@ class DashboardSectionRowChartSourceArgs:
         pulumi.set(self, "source_description", value)
 
 
+if not MYPY:
+    class IngestionPolicyTagArgsDict(TypedDict):
+        key: pulumi.Input[str]
+        value: pulumi.Input[str]
+elif False:
+    IngestionPolicyTagArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class IngestionPolicyTagArgs:
     def __init__(__self__, *,
@@ -1634,6 +2105,47 @@ class IngestionPolicyTagArgs:
     def value(self, value: pulumi.Input[str]):
         pulumi.set(self, "value", value)
 
+
+if not MYPY:
+    class MetricsPolicyPolicyRuleArgsDict(TypedDict):
+        access_type: pulumi.Input[str]
+        """
+        Valid options are `ALLOW` and `BLOCK`.
+        """
+        description: pulumi.Input[str]
+        """
+        A detailed description of the Metrics Policy. The description is visible only when you edit the rule.
+        """
+        name: pulumi.Input[str]
+        """
+        The unique name identifier for a Metrics Policy. The name is visible on the Metrics Security Policy page.
+        """
+        prefixes: pulumi.Input[Sequence[pulumi.Input[str]]]
+        """
+        List of prefixes to match metrics on. You can specify the full metric name or use a wildcard character in metric names, sources, or point tags. The wildcard character alone (*) means all metrics.
+        """
+        tags_anded: pulumi.Input[bool]
+        """
+        Bool where `true` require all tags are met by selected metrics, else `false` select metrics that match any give tag.
+        """
+        account_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        List of account ids to apply Metrics Policy to. Must have at least one associated account_id, user_group_id, or role_id.
+        """
+        role_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        List of role ids to apply Metrics Policy to. Must have at least one associated account_id, user_group_id, or role_id.
+        """
+        tags: NotRequired[pulumi.Input[Sequence[pulumi.Input['MetricsPolicyPolicyRuleTagArgsDict']]]]
+        """
+        List of Key/Value tags to select target metrics for policy.
+        """
+        user_group_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        List of user group ids to apply Metrics Policy to. Must have at least one associated account_id, user_group_id, or role_id.
+        """
+elif False:
+    MetricsPolicyPolicyRuleArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class MetricsPolicyPolicyRuleArgs:
@@ -1780,6 +2292,19 @@ class MetricsPolicyPolicyRuleArgs:
     def user_group_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
         pulumi.set(self, "user_group_ids", value)
 
+
+if not MYPY:
+    class MetricsPolicyPolicyRuleTagArgsDict(TypedDict):
+        key: pulumi.Input[str]
+        """
+        The tag's key.
+        """
+        value: pulumi.Input[str]
+        """
+        The tag's value.
+        """
+elif False:
+    MetricsPolicyPolicyRuleTagArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class MetricsPolicyPolicyRuleTagArgs:

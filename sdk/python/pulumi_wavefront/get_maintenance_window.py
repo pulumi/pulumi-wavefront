@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 
 __all__ = [
@@ -296,9 +301,6 @@ def get_maintenance_window(id: Optional[str] = None,
         title=pulumi.get(__ret__, 'title'),
         updated_epoch_millis=pulumi.get(__ret__, 'updated_epoch_millis'),
         updater_id=pulumi.get(__ret__, 'updater_id'))
-
-
-@_utilities.lift_output_func(get_maintenance_window)
 def get_maintenance_window_output(id: Optional[pulumi.Input[str]] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMaintenanceWindowResult]:
     """
@@ -317,4 +319,26 @@ def get_maintenance_window_output(id: Optional[pulumi.Input[str]] = None,
 
     :param str id: The ID of the maintenance window.
     """
-    ...
+    __args__ = dict()
+    __args__['id'] = id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('wavefront:index/getMaintenanceWindow:getMaintenanceWindow', __args__, opts=opts, typ=GetMaintenanceWindowResult)
+    return __ret__.apply(lambda __response__: GetMaintenanceWindowResult(
+        created_epoch_millis=pulumi.get(__response__, 'created_epoch_millis'),
+        creator_id=pulumi.get(__response__, 'creator_id'),
+        customer_id=pulumi.get(__response__, 'customer_id'),
+        end_time_in_seconds=pulumi.get(__response__, 'end_time_in_seconds'),
+        event_name=pulumi.get(__response__, 'event_name'),
+        host_tag_group_host_names_group_anded=pulumi.get(__response__, 'host_tag_group_host_names_group_anded'),
+        id=pulumi.get(__response__, 'id'),
+        reason=pulumi.get(__response__, 'reason'),
+        relevant_customer_tags=pulumi.get(__response__, 'relevant_customer_tags'),
+        relevant_host_names=pulumi.get(__response__, 'relevant_host_names'),
+        relevant_host_tags=pulumi.get(__response__, 'relevant_host_tags'),
+        relevant_host_tags_anded=pulumi.get(__response__, 'relevant_host_tags_anded'),
+        running_state=pulumi.get(__response__, 'running_state'),
+        sort_attr=pulumi.get(__response__, 'sort_attr'),
+        start_time_in_seconds=pulumi.get(__response__, 'start_time_in_seconds'),
+        title=pulumi.get(__response__, 'title'),
+        updated_epoch_millis=pulumi.get(__response__, 'updated_epoch_millis'),
+        updater_id=pulumi.get(__response__, 'updater_id')))

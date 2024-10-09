@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 
 __all__ = [
@@ -131,9 +136,6 @@ def get_user(email: Optional[str] = None,
         last_successful_login=pulumi.get(__ret__, 'last_successful_login'),
         permissions=pulumi.get(__ret__, 'permissions'),
         user_group_ids=pulumi.get(__ret__, 'user_group_ids'))
-
-
-@_utilities.lift_output_func(get_user)
 def get_user_output(email: Optional[pulumi.Input[str]] = None,
                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetUserResult]:
     """
@@ -152,4 +154,14 @@ def get_user_output(email: Optional[pulumi.Input[str]] = None,
 
     :param str email: The email associated with the user data to be fetched.
     """
-    ...
+    __args__ = dict()
+    __args__['email'] = email
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('wavefront:index/getUser:getUser', __args__, opts=opts, typ=GetUserResult)
+    return __ret__.apply(lambda __response__: GetUserResult(
+        customer=pulumi.get(__response__, 'customer'),
+        email=pulumi.get(__response__, 'email'),
+        id=pulumi.get(__response__, 'id'),
+        last_successful_login=pulumi.get(__response__, 'last_successful_login'),
+        permissions=pulumi.get(__response__, 'permissions'),
+        user_group_ids=pulumi.get(__response__, 'user_group_ids')))
