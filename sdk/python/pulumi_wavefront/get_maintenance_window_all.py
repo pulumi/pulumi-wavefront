@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 from . import outputs
 
@@ -89,13 +94,19 @@ def get_maintenance_window_all(limit: Optional[int] = None,
         limit=pulumi.get(__ret__, 'limit'),
         maintenance_windows=pulumi.get(__ret__, 'maintenance_windows'),
         offset=pulumi.get(__ret__, 'offset'))
-
-
-@_utilities.lift_output_func(get_maintenance_window_all)
 def get_maintenance_window_all_output(limit: Optional[pulumi.Input[Optional[int]]] = None,
                                       offset: Optional[pulumi.Input[Optional[int]]] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMaintenanceWindowAllResult]:
     """
     Use this data source to access information about an existing resource.
     """
-    ...
+    __args__ = dict()
+    __args__['limit'] = limit
+    __args__['offset'] = offset
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('wavefront:index/getMaintenanceWindowAll:getMaintenanceWindowAll', __args__, opts=opts, typ=GetMaintenanceWindowAllResult)
+    return __ret__.apply(lambda __response__: GetMaintenanceWindowAllResult(
+        id=pulumi.get(__response__, 'id'),
+        limit=pulumi.get(__response__, 'limit'),
+        maintenance_windows=pulumi.get(__response__, 'maintenance_windows'),
+        offset=pulumi.get(__response__, 'offset')))
