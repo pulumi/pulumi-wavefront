@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 from . import outputs
 
@@ -382,9 +387,6 @@ def get_alert(id: Optional[str] = None,
         tags=pulumi.get(__ret__, 'tags'),
         target=pulumi.get(__ret__, 'target'),
         targets=pulumi.get(__ret__, 'targets'))
-
-
-@_utilities.lift_output_func(get_alert)
 def get_alert_output(id: Optional[pulumi.Input[str]] = None,
                      targets: Optional[pulumi.Input[Optional[Mapping[str, str]]]] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAlertResult]:
@@ -405,4 +407,34 @@ def get_alert_output(id: Optional[pulumi.Input[str]] = None,
     :param str id: The ID associated with the alert data to be fetched.
     :param Mapping[str, str] targets: A comma-separated list of the email addresses or integration endpoints (such as PagerDuty or webhook) to notify when the alert status changes. Multiple target types can be in the list.
     """
-    ...
+    __args__ = dict()
+    __args__['id'] = id
+    __args__['targets'] = targets
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('wavefront:index/getAlert:getAlert', __args__, opts=opts, typ=GetAlertResult)
+    return __ret__.apply(lambda __response__: GetAlertResult(
+        additional_information=pulumi.get(__response__, 'additional_information'),
+        alert_triage_dashboards=pulumi.get(__response__, 'alert_triage_dashboards'),
+        alert_type=pulumi.get(__response__, 'alert_type'),
+        can_modifies=pulumi.get(__response__, 'can_modifies'),
+        can_views=pulumi.get(__response__, 'can_views'),
+        condition=pulumi.get(__response__, 'condition'),
+        conditions=pulumi.get(__response__, 'conditions'),
+        display_expression=pulumi.get(__response__, 'display_expression'),
+        evaluate_realtime_data=pulumi.get(__response__, 'evaluate_realtime_data'),
+        failing_host_label_pairs=pulumi.get(__response__, 'failing_host_label_pairs'),
+        id=pulumi.get(__response__, 'id'),
+        in_maintenance_host_label_pairs=pulumi.get(__response__, 'in_maintenance_host_label_pairs'),
+        include_obsolete_metrics=pulumi.get(__response__, 'include_obsolete_metrics'),
+        minutes=pulumi.get(__response__, 'minutes'),
+        name=pulumi.get(__response__, 'name'),
+        notification_resend_frequency_minutes=pulumi.get(__response__, 'notification_resend_frequency_minutes'),
+        process_rate_minutes=pulumi.get(__response__, 'process_rate_minutes'),
+        resolve_after_minutes=pulumi.get(__response__, 'resolve_after_minutes'),
+        runbook_links=pulumi.get(__response__, 'runbook_links'),
+        severity=pulumi.get(__response__, 'severity'),
+        severity_lists=pulumi.get(__response__, 'severity_lists'),
+        statuses=pulumi.get(__response__, 'statuses'),
+        tags=pulumi.get(__response__, 'tags'),
+        target=pulumi.get(__response__, 'target'),
+        targets=pulumi.get(__response__, 'targets')))

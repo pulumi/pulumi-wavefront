@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 
 __all__ = [
@@ -368,9 +373,6 @@ def get_derived_metric(id: Optional[str] = None,
         tags=pulumi.get(__ret__, 'tags'),
         update_user_id=pulumi.get(__ret__, 'update_user_id'),
         updated_epoch_millis=pulumi.get(__ret__, 'updated_epoch_millis'))
-
-
-@_utilities.lift_output_func(get_derived_metric)
 def get_derived_metric_output(id: Optional[pulumi.Input[str]] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDerivedMetricResult]:
     """
@@ -389,4 +391,32 @@ def get_derived_metric_output(id: Optional[pulumi.Input[str]] = None,
 
     :param str id: The ID associated with the derived metric data to be fetched.
     """
-    ...
+    __args__ = dict()
+    __args__['id'] = id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('wavefront:index/getDerivedMetric:getDerivedMetric', __args__, opts=opts, typ=GetDerivedMetricResult)
+    return __ret__.apply(lambda __response__: GetDerivedMetricResult(
+        additional_information=pulumi.get(__response__, 'additional_information'),
+        create_user_id=pulumi.get(__response__, 'create_user_id'),
+        created_epoch_millis=pulumi.get(__response__, 'created_epoch_millis'),
+        deleted=pulumi.get(__response__, 'deleted'),
+        hosts_useds=pulumi.get(__response__, 'hosts_useds'),
+        id=pulumi.get(__response__, 'id'),
+        in_trash=pulumi.get(__response__, 'in_trash'),
+        include_obsolete_metrics=pulumi.get(__response__, 'include_obsolete_metrics'),
+        last_error_message=pulumi.get(__response__, 'last_error_message'),
+        last_failed_time=pulumi.get(__response__, 'last_failed_time'),
+        last_processed_millis=pulumi.get(__response__, 'last_processed_millis'),
+        last_query_time=pulumi.get(__response__, 'last_query_time'),
+        metrics_useds=pulumi.get(__response__, 'metrics_useds'),
+        minutes=pulumi.get(__response__, 'minutes'),
+        name=pulumi.get(__response__, 'name'),
+        points_scanned_at_last_query=pulumi.get(__response__, 'points_scanned_at_last_query'),
+        process_rate_minutes=pulumi.get(__response__, 'process_rate_minutes'),
+        query=pulumi.get(__response__, 'query'),
+        query_failing=pulumi.get(__response__, 'query_failing'),
+        query_qb_enabled=pulumi.get(__response__, 'query_qb_enabled'),
+        statuses=pulumi.get(__response__, 'statuses'),
+        tags=pulumi.get(__response__, 'tags'),
+        update_user_id=pulumi.get(__response__, 'update_user_id'),
+        updated_epoch_millis=pulumi.get(__response__, 'updated_epoch_millis')))

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 from . import outputs
 
@@ -107,9 +112,6 @@ def get_user_groups(limit: Optional[int] = None,
         limit=pulumi.get(__ret__, 'limit'),
         offset=pulumi.get(__ret__, 'offset'),
         user_groups=pulumi.get(__ret__, 'user_groups'))
-
-
-@_utilities.lift_output_func(get_user_groups)
 def get_user_groups_output(limit: Optional[pulumi.Input[Optional[int]]] = None,
                            offset: Optional[pulumi.Input[Optional[int]]] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetUserGroupsResult]:
@@ -131,4 +133,13 @@ def get_user_groups_output(limit: Optional[pulumi.Input[Optional[int]]] = None,
     :param int limit: Limit is the maximum number of results to be returned. Defaults to 100.
     :param int offset: Offset is the offset from the first result to be returned. Defaults to 0.
     """
-    ...
+    __args__ = dict()
+    __args__['limit'] = limit
+    __args__['offset'] = offset
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('wavefront:index/getUserGroups:getUserGroups', __args__, opts=opts, typ=GetUserGroupsResult)
+    return __ret__.apply(lambda __response__: GetUserGroupsResult(
+        id=pulumi.get(__response__, 'id'),
+        limit=pulumi.get(__response__, 'limit'),
+        offset=pulumi.get(__response__, 'offset'),
+        user_groups=pulumi.get(__response__, 'user_groups')))

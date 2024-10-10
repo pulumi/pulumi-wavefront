@@ -28,7 +28,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			// Get the default user group "Everyone"
-//			_, err := wavefront.GetDefaultUserGroup(ctx, nil, nil)
+//			_, err := wavefront.GetDefaultUserGroup(ctx, map[string]interface{}{}, nil)
 //			if err != nil {
 //				return err
 //			}
