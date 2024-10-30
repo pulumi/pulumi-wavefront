@@ -218,9 +218,6 @@ The Wavefront provider offers two ways of providing credentials for authenticati
 * Environment variables
 ### Static credentials
 
-⚠️ **Warning:** It is not recommended to hard-code credentials into any Pulumi configuration.
-There's a risk of secret leakage if this file is ever committed to a public version control system.
-
 Static credentials can be provided by adding an `address` and `token` in-line in
 the Wavefront provider configuration.
 
@@ -383,7 +380,7 @@ $ pulumi preview
 
 In addition to generic `provider` arguments
 (e.g. `alias` and `version`), the following arguments are supported in the Wavefront
-`provider` block:
+provider configuration:
 
 * `address` - (Optional) The URL of your Wavefront cluster that you access Wavefront from without the
   leading `https://` or trailing `/` (e.g. `https://longboard.wavefront.com/` becomes `longboard.wavefront.com`)

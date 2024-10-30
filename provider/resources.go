@@ -15,6 +15,7 @@
 package wavefront
 
 import (
+	"bytes"
 	"fmt"
 	"path/filepath"
 	"unicode"
@@ -80,6 +81,7 @@ func Provider() tfbridge.ProviderInfo {
 		Repository:  "https://github.com/pulumi/pulumi-wavefront",
 		GitHubOrg:   "vmware",
 		Config:      map[string]*tfbridge.SchemaInfo{},
+		DocRules:    &tfbridge.DocRuleInfo{EditRules: docEditRules},
 		Resources: map[string]*tfbridge.ResourceInfo{
 			"wavefront_alert":                                {Tok: makeResource(mainMod, "Alert")},
 			"wavefront_alert_target":                         {Tok: makeResource(mainMod, "AlertTarget")},
@@ -187,4 +189,36 @@ func Provider() tfbridge.ProviderInfo {
 
 var noUpstreamDocs = &tfbridge.DocInfo{
 	Markdown: []byte(" "),
+}
+
+func docEditRules(defaults []tfbridge.DocsEdit) []tfbridge.DocsEdit {
+	return append(
+		defaults,
+		removeSecretsWarning,
+	)
+}
+
+// Pulumi secrets are safe, so no warning necessary.
+var removeSecretsWarning = tfbridge.DocsEdit{
+	Path: "index.md",
+	Edit: func(_ string, content []byte) ([]byte, error) {
+		inputs := [][]byte{
+			[]byte("⚠️ **Warning:** It is not recommended to hard-code credentials into any Terraform configuration.\n" +
+				"There's a risk of secret leakage if this file is ever committed to a public version control system."),
+		}
+		for _, input := range inputs {
+
+			if bytes.Contains(content, input) {
+				content = bytes.ReplaceAll(
+					content,
+					input,
+					nil)
+			} else {
+				// Hard error to ensure we keep this content up to date
+				return nil, fmt.Errorf("could not find text in upstream index.md, "+
+					"please verify input at removeGuideText \n*****\n%s\n*****\n", string(input))
+			}
+		}
+		return content, nil
+	},
 }
