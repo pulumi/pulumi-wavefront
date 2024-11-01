@@ -207,7 +207,6 @@ var removeSecretsWarning = tfbridge.DocsEdit{
 				"There's a risk of secret leakage if this file is ever committed to a public version control system."),
 		}
 		for _, input := range inputs {
-
 			if bytes.Contains(content, input) {
 				content = bytes.ReplaceAll(
 					content,
