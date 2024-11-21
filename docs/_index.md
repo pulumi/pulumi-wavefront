@@ -6,7 +6,7 @@ layout: package
 ---
 ## Installation
 
-The wavefront provider is available as a package in all Pulumi languages:
+The Wavefront provider is available as a package in all Pulumi languages:
 
 * JavaScript/TypeScript: [`@pulumi/wavefront`](https://www.npmjs.com/package/@pulumi/wavefront)
 * Python: [`pulumi-wavefront`](https://pypi.org/project/pulumi-wavefront/)
