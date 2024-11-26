@@ -28,3 +28,7 @@ sdk/java/gradlew.bat
 provider/**/schema-embed.json
 
 sdk/python/venv
+
+
+# Ignore local build tracking directory
+.make
