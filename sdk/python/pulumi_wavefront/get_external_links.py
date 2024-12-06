@@ -114,7 +114,7 @@ def get_external_links(limit: Optional[int] = None,
         offset=pulumi.get(__ret__, 'offset'))
 def get_external_links_output(limit: Optional[pulumi.Input[Optional[int]]] = None,
                               offset: Optional[pulumi.Input[Optional[int]]] = None,
-                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetExternalLinksResult]:
+                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetExternalLinksResult]:
     """
     Use this data source to get information about all Wavefront external links.
 
@@ -136,7 +136,7 @@ def get_external_links_output(limit: Optional[pulumi.Input[Optional[int]]] = Non
     __args__ = dict()
     __args__['limit'] = limit
     __args__['offset'] = offset
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('wavefront:index/getExternalLinks:getExternalLinks', __args__, opts=opts, typ=GetExternalLinksResult)
     return __ret__.apply(lambda __response__: GetExternalLinksResult(
         external_links=pulumi.get(__response__, 'external_links'),

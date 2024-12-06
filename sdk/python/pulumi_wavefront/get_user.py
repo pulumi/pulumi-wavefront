@@ -137,7 +137,7 @@ def get_user(email: Optional[str] = None,
         permissions=pulumi.get(__ret__, 'permissions'),
         user_group_ids=pulumi.get(__ret__, 'user_group_ids'))
 def get_user_output(email: Optional[pulumi.Input[str]] = None,
-                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetUserResult]:
+                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetUserResult]:
     """
     Use this data source to get information for a given user by email from Wavefront.
 
@@ -156,7 +156,7 @@ def get_user_output(email: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['email'] = email
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('wavefront:index/getUser:getUser', __args__, opts=opts, typ=GetUserResult)
     return __ret__.apply(lambda __response__: GetUserResult(
         customer=pulumi.get(__response__, 'customer'),

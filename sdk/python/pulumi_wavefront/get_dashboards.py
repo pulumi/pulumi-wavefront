@@ -114,7 +114,7 @@ def get_dashboards(limit: Optional[int] = None,
         offset=pulumi.get(__ret__, 'offset'))
 def get_dashboards_output(limit: Optional[pulumi.Input[Optional[int]]] = None,
                           offset: Optional[pulumi.Input[Optional[int]]] = None,
-                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDashboardsResult]:
+                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDashboardsResult]:
     """
     Use this data source to get information about all Wavefront dashboards.
 
@@ -136,7 +136,7 @@ def get_dashboards_output(limit: Optional[pulumi.Input[Optional[int]]] = None,
     __args__ = dict()
     __args__['limit'] = limit
     __args__['offset'] = offset
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('wavefront:index/getDashboards:getDashboards', __args__, opts=opts, typ=GetDashboardsResult)
     return __ret__.apply(lambda __response__: GetDashboardsResult(
         dashboards=pulumi.get(__response__, 'dashboards'),
