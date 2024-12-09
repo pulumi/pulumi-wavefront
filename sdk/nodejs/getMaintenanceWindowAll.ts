@@ -35,7 +35,7 @@ export interface GetMaintenanceWindowAllResult {
     readonly maintenanceWindows: outputs.GetMaintenanceWindowAllMaintenanceWindow[];
     readonly offset?: number;
 }
-export function getMaintenanceWindowAllOutput(args?: GetMaintenanceWindowAllOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMaintenanceWindowAllResult> {
+export function getMaintenanceWindowAllOutput(args?: GetMaintenanceWindowAllOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetMaintenanceWindowAllResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("wavefront:index/getMaintenanceWindowAll:getMaintenanceWindowAll", {
