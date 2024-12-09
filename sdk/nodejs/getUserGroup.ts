@@ -76,7 +76,7 @@ export interface GetUserGroupResult {
  * });
  * ```
  */
-export function getUserGroupOutput(args: GetUserGroupOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetUserGroupResult> {
+export function getUserGroupOutput(args: GetUserGroupOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetUserGroupResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("wavefront:index/getUserGroup:getUserGroup", {
         "id": args.id,

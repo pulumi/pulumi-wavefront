@@ -114,7 +114,7 @@ def get_user_groups(limit: Optional[int] = None,
         user_groups=pulumi.get(__ret__, 'user_groups'))
 def get_user_groups_output(limit: Optional[pulumi.Input[Optional[int]]] = None,
                            offset: Optional[pulumi.Input[Optional[int]]] = None,
-                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetUserGroupsResult]:
+                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetUserGroupsResult]:
     """
     Use this data source to get all User Groups in Wavefront.
 
@@ -136,7 +136,7 @@ def get_user_groups_output(limit: Optional[pulumi.Input[Optional[int]]] = None,
     __args__ = dict()
     __args__['limit'] = limit
     __args__['offset'] = offset
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('wavefront:index/getUserGroups:getUserGroups', __args__, opts=opts, typ=GetUserGroupsResult)
     return __ret__.apply(lambda __response__: GetUserGroupsResult(
         id=pulumi.get(__response__, 'id'),

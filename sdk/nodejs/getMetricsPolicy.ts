@@ -25,7 +25,7 @@ export interface GetMetricsPolicyResult {
     readonly updatedEpochMillis: number;
     readonly updaterId: string;
 }
-export function getMetricsPolicyOutput(opts?: pulumi.InvokeOptions): pulumi.Output<GetMetricsPolicyResult> {
+export function getMetricsPolicyOutput(opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetMetricsPolicyResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("wavefront:index/getMetricsPolicy:getMetricsPolicy", {
     }, opts);
