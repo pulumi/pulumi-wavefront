@@ -302,7 +302,7 @@ def get_maintenance_window(id: Optional[str] = None,
         updated_epoch_millis=pulumi.get(__ret__, 'updated_epoch_millis'),
         updater_id=pulumi.get(__ret__, 'updater_id'))
 def get_maintenance_window_output(id: Optional[pulumi.Input[str]] = None,
-                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMaintenanceWindowResult]:
+                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMaintenanceWindowResult]:
     """
     Use this data source to get information about a Wavefront maintenance window by its ID.
 
@@ -321,7 +321,7 @@ def get_maintenance_window_output(id: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['id'] = id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('wavefront:index/getMaintenanceWindow:getMaintenanceWindow', __args__, opts=opts, typ=GetMaintenanceWindowResult)
     return __ret__.apply(lambda __response__: GetMaintenanceWindowResult(
         created_epoch_millis=pulumi.get(__response__, 'created_epoch_millis'),

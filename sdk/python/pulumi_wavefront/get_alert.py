@@ -389,7 +389,7 @@ def get_alert(id: Optional[str] = None,
         targets=pulumi.get(__ret__, 'targets'))
 def get_alert_output(id: Optional[pulumi.Input[str]] = None,
                      targets: Optional[pulumi.Input[Optional[Mapping[str, str]]]] = None,
-                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAlertResult]:
+                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAlertResult]:
     """
     Use this data source to get information about a Wavefront alert by its ID.
 
@@ -410,7 +410,7 @@ def get_alert_output(id: Optional[pulumi.Input[str]] = None,
     __args__ = dict()
     __args__['id'] = id
     __args__['targets'] = targets
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('wavefront:index/getAlert:getAlert', __args__, opts=opts, typ=GetAlertResult)
     return __ret__.apply(lambda __response__: GetAlertResult(
         additional_information=pulumi.get(__response__, 'additional_information'),

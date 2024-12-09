@@ -76,7 +76,7 @@ export interface GetDerivedMetricsResult {
  * });
  * ```
  */
-export function getDerivedMetricsOutput(args?: GetDerivedMetricsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDerivedMetricsResult> {
+export function getDerivedMetricsOutput(args?: GetDerivedMetricsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDerivedMetricsResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("wavefront:index/getDerivedMetrics:getDerivedMetrics", {

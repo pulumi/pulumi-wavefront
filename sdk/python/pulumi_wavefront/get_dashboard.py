@@ -446,7 +446,7 @@ def get_dashboard(id: Optional[str] = None,
         views_last_month=pulumi.get(__ret__, 'views_last_month'),
         views_last_week=pulumi.get(__ret__, 'views_last_week'))
 def get_dashboard_output(id: Optional[pulumi.Input[str]] = None,
-                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDashboardResult]:
+                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDashboardResult]:
     """
     Use this data source to get information about a certain Wavefront dashboard by its ID.
 
@@ -465,7 +465,7 @@ def get_dashboard_output(id: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['id'] = id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('wavefront:index/getDashboard:getDashboard', __args__, opts=opts, typ=GetDashboardResult)
     return __ret__.apply(lambda __response__: GetDashboardResult(
         can_modifies=pulumi.get(__response__, 'can_modifies'),

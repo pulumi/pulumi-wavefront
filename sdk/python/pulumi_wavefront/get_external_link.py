@@ -221,7 +221,7 @@ def get_external_link(id: Optional[str] = None,
         updated_epoch_millis=pulumi.get(__ret__, 'updated_epoch_millis'),
         updater_id=pulumi.get(__ret__, 'updater_id'))
 def get_external_link_output(id: Optional[pulumi.Input[str]] = None,
-                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetExternalLinkResult]:
+                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetExternalLinkResult]:
     """
     Use this data source to get information about a Wavefront external link by its ID.
 
@@ -240,7 +240,7 @@ def get_external_link_output(id: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['id'] = id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('wavefront:index/getExternalLink:getExternalLink', __args__, opts=opts, typ=GetExternalLinkResult)
     return __ret__.apply(lambda __response__: GetExternalLinkResult(
         created_epoch_millis=pulumi.get(__response__, 'created_epoch_millis'),
