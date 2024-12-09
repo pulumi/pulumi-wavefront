@@ -51,7 +51,7 @@ export interface GetUsersResult {
  * const users = wavefront.getUsers({});
  * ```
  */
-export function getUsersOutput(opts?: pulumi.InvokeOptions): pulumi.Output<GetUsersResult> {
+export function getUsersOutput(opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetUsersResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("wavefront:index/getUsers:getUsers", {
     }, opts);
