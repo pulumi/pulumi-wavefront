@@ -150,7 +150,7 @@ def get_events_output(earliest_start_time_epoch_millis: Optional[pulumi.Input[in
                       latest_start_time_epoch_millis: Optional[pulumi.Input[int]] = None,
                       limit: Optional[pulumi.Input[Optional[int]]] = None,
                       offset: Optional[pulumi.Input[Optional[int]]] = None,
-                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetEventsResult]:
+                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetEventsResult]:
     """
     Use this data source to get information about all Wavefront events.
 
@@ -178,7 +178,7 @@ def get_events_output(earliest_start_time_epoch_millis: Optional[pulumi.Input[in
     __args__['latestStartTimeEpochMillis'] = latest_start_time_epoch_millis
     __args__['limit'] = limit
     __args__['offset'] = offset
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('wavefront:index/getEvents:getEvents', __args__, opts=opts, typ=GetEventsResult)
     return __ret__.apply(lambda __response__: GetEventsResult(
         earliest_start_time_epoch_millis=pulumi.get(__response__, 'earliest_start_time_epoch_millis'),

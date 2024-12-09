@@ -107,7 +107,7 @@ export interface GetExternalLinkResult {
  * });
  * ```
  */
-export function getExternalLinkOutput(args: GetExternalLinkOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExternalLinkResult> {
+export function getExternalLinkOutput(args: GetExternalLinkOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetExternalLinkResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("wavefront:index/getExternalLink:getExternalLink", {
         "id": args.id,

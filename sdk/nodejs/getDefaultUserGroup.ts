@@ -50,7 +50,7 @@ export interface GetDefaultUserGroupResult {
  * const everyoneGroup = wavefront.getDefaultUserGroup({});
  * ```
  */
-export function getDefaultUserGroupOutput(opts?: pulumi.InvokeOptions): pulumi.Output<GetDefaultUserGroupResult> {
+export function getDefaultUserGroupOutput(opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDefaultUserGroupResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("wavefront:index/getDefaultUserGroup:getDefaultUserGroup", {
     }, opts);

@@ -100,12 +100,12 @@ def get_metrics_policy(opts: Optional[pulumi.InvokeOptions] = None) -> Awaitable
         policy_rules=pulumi.get(__ret__, 'policy_rules'),
         updated_epoch_millis=pulumi.get(__ret__, 'updated_epoch_millis'),
         updater_id=pulumi.get(__ret__, 'updater_id'))
-def get_metrics_policy_output(opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMetricsPolicyResult]:
+def get_metrics_policy_output(opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMetricsPolicyResult]:
     """
     Use this data source to access information about an existing resource.
     """
     __args__ = dict()
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('wavefront:index/getMetricsPolicy:getMetricsPolicy', __args__, opts=opts, typ=GetMetricsPolicyResult)
     return __ret__.apply(lambda __response__: GetMetricsPolicyResult(
         customer=pulumi.get(__response__, 'customer'),

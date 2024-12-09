@@ -76,7 +76,7 @@ export interface GetDashboardsResult {
  * });
  * ```
  */
-export function getDashboardsOutput(args?: GetDashboardsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDashboardsResult> {
+export function getDashboardsOutput(args?: GetDashboardsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDashboardsResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("wavefront:index/getDashboards:getDashboards", {

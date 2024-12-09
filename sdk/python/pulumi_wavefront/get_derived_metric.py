@@ -374,7 +374,7 @@ def get_derived_metric(id: Optional[str] = None,
         update_user_id=pulumi.get(__ret__, 'update_user_id'),
         updated_epoch_millis=pulumi.get(__ret__, 'updated_epoch_millis'))
 def get_derived_metric_output(id: Optional[pulumi.Input[str]] = None,
-                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDerivedMetricResult]:
+                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDerivedMetricResult]:
     """
     Use this data source to get information about a certain Wavefront derived metric by its ID.
 
@@ -393,7 +393,7 @@ def get_derived_metric_output(id: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['id'] = id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('wavefront:index/getDerivedMetric:getDerivedMetric', __args__, opts=opts, typ=GetDerivedMetricResult)
     return __ret__.apply(lambda __response__: GetDerivedMetricResult(
         additional_information=pulumi.get(__response__, 'additional_information'),
