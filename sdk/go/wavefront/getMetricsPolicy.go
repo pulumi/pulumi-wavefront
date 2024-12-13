@@ -33,18 +33,8 @@ type LookupMetricsPolicyResult struct {
 
 func LookupMetricsPolicyOutput(ctx *pulumi.Context, opts ...pulumi.InvokeOption) LookupMetricsPolicyResultOutput {
 	return pulumi.ToOutput(0).ApplyT(func(int) (LookupMetricsPolicyResultOutput, error) {
-		opts = internal.PkgInvokeDefaultOpts(opts)
-		var rv LookupMetricsPolicyResult
-		secret, err := ctx.InvokePackageRaw("wavefront:index/getMetricsPolicy:getMetricsPolicy", nil, &rv, "", opts...)
-		if err != nil {
-			return LookupMetricsPolicyResultOutput{}, err
-		}
-
-		output := pulumi.ToOutput(rv).(LookupMetricsPolicyResultOutput)
-		if secret {
-			return pulumi.ToSecret(output).(LookupMetricsPolicyResultOutput), nil
-		}
-		return output, nil
+		options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+		return ctx.InvokeOutput("wavefront:index/getMetricsPolicy:getMetricsPolicy", nil, LookupMetricsPolicyResultOutput{}, options).(LookupMetricsPolicyResultOutput), nil
 	}).(LookupMetricsPolicyResultOutput)
 }
 

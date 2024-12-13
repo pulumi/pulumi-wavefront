@@ -60,6 +60,31 @@ namespace Pulumi.Wavefront
         /// </summary>
         public static Output<GetDerivedMetricResult> Invoke(GetDerivedMetricInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDerivedMetricResult>("wavefront:index/getDerivedMetric:getDerivedMetric", args ?? new GetDerivedMetricInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// Use this data source to get information about a certain Wavefront derived metric by its ID.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Wavefront = Pulumi.Wavefront;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     //Get the information about a derived metric.
+        ///     var example = Wavefront.GetDerivedMetric.Invoke(new()
+        ///     {
+        ///         Id = "derived_metric_id",
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDerivedMetricResult> Invoke(GetDerivedMetricInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDerivedMetricResult>("wavefront:index/getDerivedMetric:getDerivedMetric", args ?? new GetDerivedMetricInvokeArgs(), options.WithDefaults());
     }
 
 
