@@ -62,6 +62,32 @@ namespace Pulumi.Wavefront
         /// </summary>
         public static Output<GetRolesResult> Invoke(GetRolesInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetRolesResult>("wavefront:index/getRoles:getRoles", args ?? new GetRolesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// Use this data source to get all Roles in Wavefront.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Wavefront = Pulumi.Wavefront;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     // Get all Roles
+        ///     var roles = Wavefront.GetRoles.Invoke(new()
+        ///     {
+        ///         Limit = 10,
+        ///         Offset = 0,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetRolesResult> Invoke(GetRolesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetRolesResult>("wavefront:index/getRoles:getRoles", args ?? new GetRolesInvokeArgs(), options.WithDefaults());
     }
 
 

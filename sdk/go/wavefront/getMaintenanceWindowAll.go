@@ -37,21 +37,11 @@ type GetMaintenanceWindowAllResult struct {
 }
 
 func GetMaintenanceWindowAllOutput(ctx *pulumi.Context, args GetMaintenanceWindowAllOutputArgs, opts ...pulumi.InvokeOption) GetMaintenanceWindowAllResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetMaintenanceWindowAllResultOutput, error) {
 			args := v.(GetMaintenanceWindowAllArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetMaintenanceWindowAllResult
-			secret, err := ctx.InvokePackageRaw("wavefront:index/getMaintenanceWindowAll:getMaintenanceWindowAll", args, &rv, "", opts...)
-			if err != nil {
-				return GetMaintenanceWindowAllResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetMaintenanceWindowAllResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetMaintenanceWindowAllResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("wavefront:index/getMaintenanceWindowAll:getMaintenanceWindowAll", args, GetMaintenanceWindowAllResultOutput{}, options).(GetMaintenanceWindowAllResultOutput), nil
 		}).(GetMaintenanceWindowAllResultOutput)
 }
 

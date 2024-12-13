@@ -62,6 +62,32 @@ namespace Pulumi.Wavefront
         /// </summary>
         public static Output<GetExternalLinksResult> Invoke(GetExternalLinksInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetExternalLinksResult>("wavefront:index/getExternalLinks:getExternalLinks", args ?? new GetExternalLinksInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// Use this data source to get information about all Wavefront external links.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Wavefront = Pulumi.Wavefront;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     // Get the information about all external links.
+        ///     var example = Wavefront.GetExternalLinks.Invoke(new()
+        ///     {
+        ///         Limit = 10,
+        ///         Offset = 0,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetExternalLinksResult> Invoke(GetExternalLinksInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetExternalLinksResult>("wavefront:index/getExternalLinks:getExternalLinks", args ?? new GetExternalLinksInvokeArgs(), options.WithDefaults());
     }
 
 

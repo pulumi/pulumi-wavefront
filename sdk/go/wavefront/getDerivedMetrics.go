@@ -69,21 +69,11 @@ type GetDerivedMetricsResult struct {
 }
 
 func GetDerivedMetricsOutput(ctx *pulumi.Context, args GetDerivedMetricsOutputArgs, opts ...pulumi.InvokeOption) GetDerivedMetricsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetDerivedMetricsResultOutput, error) {
 			args := v.(GetDerivedMetricsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetDerivedMetricsResult
-			secret, err := ctx.InvokePackageRaw("wavefront:index/getDerivedMetrics:getDerivedMetrics", args, &rv, "", opts...)
-			if err != nil {
-				return GetDerivedMetricsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetDerivedMetricsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetDerivedMetricsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("wavefront:index/getDerivedMetrics:getDerivedMetrics", args, GetDerivedMetricsResultOutput{}, options).(GetDerivedMetricsResultOutput), nil
 		}).(GetDerivedMetricsResultOutput)
 }
 

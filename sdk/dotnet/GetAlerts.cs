@@ -62,6 +62,32 @@ namespace Pulumi.Wavefront
         /// </summary>
         public static Output<GetAlertsResult> Invoke(GetAlertsInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAlertsResult>("wavefront:index/getAlerts:getAlerts", args ?? new GetAlertsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// Use this data source to get information about all Wavefront alerts.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Wavefront = Pulumi.Wavefront;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     // Get the information about all alerts.
+        ///     var example = Wavefront.GetAlerts.Invoke(new()
+        ///     {
+        ///         Limit = 10,
+        ///         Offset = 0,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetAlertsResult> Invoke(GetAlertsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAlertsResult>("wavefront:index/getAlerts:getAlerts", args ?? new GetAlertsInvokeArgs(), options.WithDefaults());
     }
 
 
