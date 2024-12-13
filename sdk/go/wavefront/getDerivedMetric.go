@@ -108,21 +108,11 @@ type LookupDerivedMetricResult struct {
 }
 
 func LookupDerivedMetricOutput(ctx *pulumi.Context, args LookupDerivedMetricOutputArgs, opts ...pulumi.InvokeOption) LookupDerivedMetricResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupDerivedMetricResultOutput, error) {
 			args := v.(LookupDerivedMetricArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupDerivedMetricResult
-			secret, err := ctx.InvokePackageRaw("wavefront:index/getDerivedMetric:getDerivedMetric", args, &rv, "", opts...)
-			if err != nil {
-				return LookupDerivedMetricResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupDerivedMetricResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupDerivedMetricResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("wavefront:index/getDerivedMetric:getDerivedMetric", args, LookupDerivedMetricResultOutput{}, options).(LookupDerivedMetricResultOutput), nil
 		}).(LookupDerivedMetricResultOutput)
 }
 

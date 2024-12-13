@@ -16,6 +16,9 @@ namespace Pulumi.Wavefront
 
         public static Output<GetMaintenanceWindowAllResult> Invoke(GetMaintenanceWindowAllInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetMaintenanceWindowAllResult>("wavefront:index/getMaintenanceWindowAll:getMaintenanceWindowAll", args ?? new GetMaintenanceWindowAllInvokeArgs(), options.WithDefaults());
+
+        public static Output<GetMaintenanceWindowAllResult> Invoke(GetMaintenanceWindowAllInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetMaintenanceWindowAllResult>("wavefront:index/getMaintenanceWindowAll:getMaintenanceWindowAll", args ?? new GetMaintenanceWindowAllInvokeArgs(), options.WithDefaults());
     }
 
 

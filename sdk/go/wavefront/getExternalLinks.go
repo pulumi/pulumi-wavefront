@@ -69,21 +69,11 @@ type GetExternalLinksResult struct {
 }
 
 func GetExternalLinksOutput(ctx *pulumi.Context, args GetExternalLinksOutputArgs, opts ...pulumi.InvokeOption) GetExternalLinksResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetExternalLinksResultOutput, error) {
 			args := v.(GetExternalLinksArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetExternalLinksResult
-			secret, err := ctx.InvokePackageRaw("wavefront:index/getExternalLinks:getExternalLinks", args, &rv, "", opts...)
-			if err != nil {
-				return GetExternalLinksResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetExternalLinksResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetExternalLinksResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("wavefront:index/getExternalLinks:getExternalLinks", args, GetExternalLinksResultOutput{}, options).(GetExternalLinksResultOutput), nil
 		}).(GetExternalLinksResultOutput)
 }
 

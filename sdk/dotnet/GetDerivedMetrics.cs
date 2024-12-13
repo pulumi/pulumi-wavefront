@@ -62,6 +62,32 @@ namespace Pulumi.Wavefront
         /// </summary>
         public static Output<GetDerivedMetricsResult> Invoke(GetDerivedMetricsInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDerivedMetricsResult>("wavefront:index/getDerivedMetrics:getDerivedMetrics", args ?? new GetDerivedMetricsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// Use this data source to get information about all Wavefront derived metrics.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Wavefront = Pulumi.Wavefront;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     // Get the information about all derived metrics.
+        ///     var example = Wavefront.GetDerivedMetrics.Invoke(new()
+        ///     {
+        ///         Limit = 10,
+        ///         Offset = 0,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetDerivedMetricsResult> Invoke(GetDerivedMetricsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDerivedMetricsResult>("wavefront:index/getDerivedMetrics:getDerivedMetrics", args ?? new GetDerivedMetricsInvokeArgs(), options.WithDefaults());
     }
 
 

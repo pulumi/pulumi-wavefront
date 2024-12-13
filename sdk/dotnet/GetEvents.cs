@@ -66,6 +66,34 @@ namespace Pulumi.Wavefront
         /// </summary>
         public static Output<GetEventsResult> Invoke(GetEventsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetEventsResult>("wavefront:index/getEvents:getEvents", args ?? new GetEventsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// Use this data source to get information about all Wavefront events.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Wavefront = Pulumi.Wavefront;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     // Get the information about all events
+        ///     var example = Wavefront.GetEvents.Invoke(new()
+        ///     {
+        ///         Limit = 10,
+        ///         Offset = 0,
+        ///         LatestStartTimeEpochMillis = 1665427195,
+        ///         EarliestStartTimeEpochMillis = 1665427195,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetEventsResult> Invoke(GetEventsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetEventsResult>("wavefront:index/getEvents:getEvents", args ?? new GetEventsInvokeArgs(), options.WithDefaults());
     }
 
 
