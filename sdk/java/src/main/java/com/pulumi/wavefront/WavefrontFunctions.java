@@ -1141,7 +1141,7 @@ public final class WavefrontFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         // Get the default user group "Everyone"
-     *         final var everyoneGroup = WavefrontFunctions.getDefaultUserGroup();
+     *         final var everyoneGroup = WavefrontFunctions.getDefaultUserGroup(%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference);
      * 
      *     }
      * }
@@ -1181,7 +1181,7 @@ public final class WavefrontFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         // Get the default user group "Everyone"
-     *         final var everyoneGroup = WavefrontFunctions.getDefaultUserGroup();
+     *         final var everyoneGroup = WavefrontFunctions.getDefaultUserGroup(%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference);
      * 
      *     }
      * }
@@ -1221,7 +1221,7 @@ public final class WavefrontFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         // Get the default user group "Everyone"
-     *         final var everyoneGroup = WavefrontFunctions.getDefaultUserGroup();
+     *         final var everyoneGroup = WavefrontFunctions.getDefaultUserGroup(%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference);
      * 
      *     }
      * }
@@ -1261,7 +1261,7 @@ public final class WavefrontFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         // Get the default user group "Everyone"
-     *         final var everyoneGroup = WavefrontFunctions.getDefaultUserGroup();
+     *         final var everyoneGroup = WavefrontFunctions.getDefaultUserGroup(%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference);
      * 
      *     }
      * }
@@ -1301,7 +1301,7 @@ public final class WavefrontFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         // Get the default user group "Everyone"
-     *         final var everyoneGroup = WavefrontFunctions.getDefaultUserGroup();
+     *         final var everyoneGroup = WavefrontFunctions.getDefaultUserGroup(%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference);
      * 
      *     }
      * }
@@ -1341,7 +1341,7 @@ public final class WavefrontFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         // Get the default user group "Everyone"
-     *         final var everyoneGroup = WavefrontFunctions.getDefaultUserGroup();
+     *         final var everyoneGroup = WavefrontFunctions.getDefaultUserGroup(%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference);
      * 
      *     }
      * }
@@ -1381,7 +1381,7 @@ public final class WavefrontFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         // Get the default user group "Everyone"
-     *         final var everyoneGroup = WavefrontFunctions.getDefaultUserGroup();
+     *         final var everyoneGroup = WavefrontFunctions.getDefaultUserGroup(%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference);
      * 
      *     }
      * }
@@ -4430,7 +4430,7 @@ public final class WavefrontFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         // Get all users
-     *         final var users = WavefrontFunctions.getUsers();
+     *         final var users = WavefrontFunctions.getUsers(%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference);
      * 
      *     }
      * }
@@ -4470,7 +4470,7 @@ public final class WavefrontFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         // Get all users
-     *         final var users = WavefrontFunctions.getUsers();
+     *         final var users = WavefrontFunctions.getUsers(%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference);
      * 
      *     }
      * }
@@ -4510,7 +4510,7 @@ public final class WavefrontFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         // Get all users
-     *         final var users = WavefrontFunctions.getUsers();
+     *         final var users = WavefrontFunctions.getUsers(%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference);
      * 
      *     }
      * }
@@ -4550,7 +4550,7 @@ public final class WavefrontFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         // Get all users
-     *         final var users = WavefrontFunctions.getUsers();
+     *         final var users = WavefrontFunctions.getUsers(%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference);
      * 
      *     }
      * }
@@ -4590,7 +4590,7 @@ public final class WavefrontFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         // Get all users
-     *         final var users = WavefrontFunctions.getUsers();
+     *         final var users = WavefrontFunctions.getUsers(%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference);
      * 
      *     }
      * }
@@ -4630,7 +4630,7 @@ public final class WavefrontFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         // Get all users
-     *         final var users = WavefrontFunctions.getUsers();
+     *         final var users = WavefrontFunctions.getUsers(%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference);
      * 
      *     }
      * }
@@ -4670,7 +4670,7 @@ public final class WavefrontFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         // Get all users
-     *         final var users = WavefrontFunctions.getUsers();
+     *         final var users = WavefrontFunctions.getUsers(%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference);
      * 
      *     }
      * }
