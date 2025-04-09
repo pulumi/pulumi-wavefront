@@ -46,7 +46,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         final var everyone = WavefrontFunctions.getDefaultUserGroup();
+ *         final var everyone = WavefrontFunctions.getDefaultUserGroup(%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference);
  * 
  *         var main = new MetricsPolicy("main", MetricsPolicyArgs.builder()
  *             .policyRules(MetricsPolicyPolicyRuleArgs.builder()
@@ -55,7 +55,7 @@ import javax.annotation.Nullable;
  *                 .prefixes("*")
  *                 .tagsAnded(false)
  *                 .accessType("ALLOW")
- *                 .userGroupIds(everyone.applyValue(getDefaultUserGroupResult -> getDefaultUserGroupResult.groupId()))
+ *                 .userGroupIds(everyone.groupId())
  *                 .build())
  *             .build());
  * 
@@ -93,9 +93,9 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         final var policy = WavefrontFunctions.getMetricsPolicy();
+ *         final var policy = WavefrontFunctions.getMetricsPolicy(%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference);
  * 
- *         ctx.export("policy", policy.applyValue(getMetricsPolicyResult -> getMetricsPolicyResult));
+ *         ctx.export("policy", policy);
  *     }
  * }
  * }
