@@ -242,6 +242,9 @@ class _IngestionPolicyState:
 
 
 class IngestionPolicy(pulumi.CustomResource):
+
+    pulumi_type = "wavefront:index/ingestionPolicy:IngestionPolicy"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

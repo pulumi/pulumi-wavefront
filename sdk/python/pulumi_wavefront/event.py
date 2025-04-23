@@ -185,6 +185,9 @@ class _EventState:
 
 
 class Event(pulumi.CustomResource):
+
+    pulumi_type = "wavefront:index/event:Event"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

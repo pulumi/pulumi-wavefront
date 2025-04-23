@@ -435,6 +435,9 @@ class _CloudIntegrationCloudWatchState:
 
 
 class CloudIntegrationCloudWatch(pulumi.CustomResource):
+
+    pulumi_type = "wavefront:index/cloudIntegrationCloudWatch:CloudIntegrationCloudWatch"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

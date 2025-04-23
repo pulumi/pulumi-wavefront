@@ -322,6 +322,9 @@ class _CloudIntegrationNewRelicState:
 
 
 class CloudIntegrationNewRelic(pulumi.CustomResource):
+
+    pulumi_type = "wavefront:index/cloudIntegrationNewRelic:CloudIntegrationNewRelic"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

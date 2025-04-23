@@ -115,6 +115,9 @@ class _MetricsPolicyState:
 
 
 class MetricsPolicy(pulumi.CustomResource):
+
+    pulumi_type = "wavefront:index/metricsPolicy:MetricsPolicy"
+
     @overload
     def __init__(__self__,
                  resource_name: str,
