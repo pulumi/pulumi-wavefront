@@ -396,6 +396,9 @@ class _DashboardState:
 
 
 class Dashboard(pulumi.CustomResource):
+
+    pulumi_type = "wavefront:index/dashboard:Dashboard"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

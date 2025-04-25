@@ -290,6 +290,9 @@ class _CloudIntegrationGcpBillingState:
 
 
 class CloudIntegrationGcpBilling(pulumi.CustomResource):
+
+    pulumi_type = "wavefront:index/cloudIntegrationGcpBilling:CloudIntegrationGcpBilling"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

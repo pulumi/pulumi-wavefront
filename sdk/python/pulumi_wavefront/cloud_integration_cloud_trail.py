@@ -381,6 +381,9 @@ class _CloudIntegrationCloudTrailState:
 
 
 class CloudIntegrationCloudTrail(pulumi.CustomResource):
+
+    pulumi_type = "wavefront:index/cloudIntegrationCloudTrail:CloudIntegrationCloudTrail"
+
     @overload
     def __init__(__self__,
                  resource_name: str,
