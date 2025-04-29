@@ -412,6 +412,9 @@ class _AlertTargetState:
 
 
 class AlertTarget(pulumi.CustomResource):
+
+    pulumi_type = "wavefront:index/alertTarget:AlertTarget"
+
     @overload
     def __init__(__self__,
                  resource_name: str,
