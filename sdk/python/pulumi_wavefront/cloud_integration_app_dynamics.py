@@ -582,6 +582,9 @@ class _CloudIntegrationAppDynamicsState:
 
 
 class CloudIntegrationAppDynamics(pulumi.CustomResource):
+
+    pulumi_type = "wavefront:index/cloudIntegrationAppDynamics:CloudIntegrationAppDynamics"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

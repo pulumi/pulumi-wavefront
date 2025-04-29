@@ -382,6 +382,9 @@ class _CloudIntegrationAzureState:
 
 
 class CloudIntegrationAzure(pulumi.CustomResource):
+
+    pulumi_type = "wavefront:index/cloudIntegrationAzure:CloudIntegrationAzure"
+
     @overload
     def __init__(__self__,
                  resource_name: str,
