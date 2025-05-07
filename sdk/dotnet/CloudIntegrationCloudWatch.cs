@@ -248,8 +248,8 @@ namespace Pulumi.Wavefront
         /// <summary>
         /// A value denoting which cloud service this service integrates with.
         /// </summary>
-        [Input("service", required: true)]
-        public Input<string> Service { get; set; } = null!;
+        [Input("service")]
+        public Input<string>? Service { get; set; }
 
         /// <summary>
         /// How often, in minutes, to refresh the service.

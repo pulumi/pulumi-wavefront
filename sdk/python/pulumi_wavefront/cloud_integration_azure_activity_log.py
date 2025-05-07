@@ -22,28 +22,27 @@ class CloudIntegrationAzureActivityLogArgs:
     def __init__(__self__, *,
                  client_id: pulumi.Input[builtins.str],
                  client_secret: pulumi.Input[builtins.str],
-                 service: pulumi.Input[builtins.str],
                  tenant: pulumi.Input[builtins.str],
                  additional_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
                  category_filters: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  force_save: Optional[pulumi.Input[builtins.bool]] = None,
                  name: Optional[pulumi.Input[builtins.str]] = None,
+                 service: Optional[pulumi.Input[builtins.str]] = None,
                  service_refresh_rate_in_minutes: Optional[pulumi.Input[builtins.int]] = None):
         """
         The set of arguments for constructing a CloudIntegrationAzureActivityLog resource.
         :param pulumi.Input[builtins.str] client_id: Client ID for an Azure service account within your project.
         :param pulumi.Input[builtins.str] client_secret: Client secret for an Azure service account within your project.
-        :param pulumi.Input[builtins.str] service: A value denoting which cloud service this service integrates with.
         :param pulumi.Input[builtins.str] tenant: Tenant ID for an Azure service account within your project.
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] additional_tags: A list of point tag key-values to add to every point ingested using this integration.
         :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] category_filters: A list of Azure services (such as Microsoft.Compute/virtualMachines) from which to pull metrics.
         :param pulumi.Input[builtins.bool] force_save: Forces this resource to save, even if errors are present.
         :param pulumi.Input[builtins.str] name: The human-readable name of this integration.
+        :param pulumi.Input[builtins.str] service: A value denoting which cloud service this service integrates with.
         :param pulumi.Input[builtins.int] service_refresh_rate_in_minutes: How often, in minutes, to refresh the service.
         """
         pulumi.set(__self__, "client_id", client_id)
         pulumi.set(__self__, "client_secret", client_secret)
-        pulumi.set(__self__, "service", service)
         pulumi.set(__self__, "tenant", tenant)
         if additional_tags is not None:
             pulumi.set(__self__, "additional_tags", additional_tags)
@@ -53,6 +52,8 @@ class CloudIntegrationAzureActivityLogArgs:
             pulumi.set(__self__, "force_save", force_save)
         if name is not None:
             pulumi.set(__self__, "name", name)
+        if service is not None:
+            pulumi.set(__self__, "service", service)
         if service_refresh_rate_in_minutes is not None:
             pulumi.set(__self__, "service_refresh_rate_in_minutes", service_refresh_rate_in_minutes)
 
@@ -79,18 +80,6 @@ class CloudIntegrationAzureActivityLogArgs:
     @client_secret.setter
     def client_secret(self, value: pulumi.Input[builtins.str]):
         pulumi.set(self, "client_secret", value)
-
-    @property
-    @pulumi.getter
-    def service(self) -> pulumi.Input[builtins.str]:
-        """
-        A value denoting which cloud service this service integrates with.
-        """
-        return pulumi.get(self, "service")
-
-    @service.setter
-    def service(self, value: pulumi.Input[builtins.str]):
-        pulumi.set(self, "service", value)
 
     @property
     @pulumi.getter
@@ -151,6 +140,18 @@ class CloudIntegrationAzureActivityLogArgs:
     @name.setter
     def name(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def service(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        A value denoting which cloud service this service integrates with.
+        """
+        return pulumi.get(self, "service")
+
+    @service.setter
+    def service(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "service", value)
 
     @property
     @pulumi.getter(name="serviceRefreshRateInMinutes")
@@ -317,10 +318,8 @@ class _CloudIntegrationAzureActivityLogState:
         pulumi.set(self, "tenant", value)
 
 
+@pulumi.type_token("wavefront:index/cloudIntegrationAzureActivityLog:CloudIntegrationAzureActivityLog")
 class CloudIntegrationAzureActivityLog(pulumi.CustomResource):
-
-    pulumi_type = "wavefront:index/cloudIntegrationAzureActivityLog:CloudIntegrationAzureActivityLog"
-
     @overload
     def __init__(__self__,
                  resource_name: str,
@@ -448,8 +447,6 @@ class CloudIntegrationAzureActivityLog(pulumi.CustomResource):
             __props__.__dict__["client_secret"] = None if client_secret is None else pulumi.Output.secret(client_secret)
             __props__.__dict__["force_save"] = force_save
             __props__.__dict__["name"] = name
-            if service is None and not opts.urn:
-                raise TypeError("Missing required property 'service'")
             __props__.__dict__["service"] = service
             __props__.__dict__["service_refresh_rate_in_minutes"] = service_refresh_rate_in_minutes
             if tenant is None and not opts.urn:

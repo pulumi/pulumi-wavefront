@@ -22,7 +22,6 @@ class CloudIntegrationAppDynamicsArgs:
     def __init__(__self__, *,
                  controller_name: pulumi.Input[builtins.str],
                  encrypted_password: pulumi.Input[builtins.str],
-                 service: pulumi.Input[builtins.str],
                  user_name: pulumi.Input[builtins.str],
                  additional_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
                  app_filter_regexes: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
@@ -36,12 +35,12 @@ class CloudIntegrationAppDynamicsArgs:
                  enable_service_endpoint_metrics: Optional[pulumi.Input[builtins.bool]] = None,
                  force_save: Optional[pulumi.Input[builtins.bool]] = None,
                  name: Optional[pulumi.Input[builtins.str]] = None,
+                 service: Optional[pulumi.Input[builtins.str]] = None,
                  service_refresh_rate_in_minutes: Optional[pulumi.Input[builtins.int]] = None):
         """
         The set of arguments for constructing a CloudIntegrationAppDynamics resource.
         :param pulumi.Input[builtins.str] controller_name: Name of the SaaS controller.
         :param pulumi.Input[builtins.str] encrypted_password: Password for AppDynamics user.
-        :param pulumi.Input[builtins.str] service: A value denoting which cloud service this service integrates with.
         :param pulumi.Input[builtins.str] user_name: Username is a combination of userName and the account name.
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] additional_tags: A list of point tag key-values to add to every point ingested using this integration.
         :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] app_filter_regexes: List of regular expressions that an application name must match (case-insensitively)
@@ -57,11 +56,11 @@ class CloudIntegrationAppDynamicsArgs:
         :param pulumi.Input[builtins.bool] enable_service_endpoint_metrics: Boolean flag to control Service End point metric ingestion.
         :param pulumi.Input[builtins.bool] force_save: Forces this resource to save, even if errors are present.
         :param pulumi.Input[builtins.str] name: The human-readable name of this integration.
+        :param pulumi.Input[builtins.str] service: A value denoting which cloud service this service integrates with.
         :param pulumi.Input[builtins.int] service_refresh_rate_in_minutes: How often, in minutes, to refresh the service.
         """
         pulumi.set(__self__, "controller_name", controller_name)
         pulumi.set(__self__, "encrypted_password", encrypted_password)
-        pulumi.set(__self__, "service", service)
         pulumi.set(__self__, "user_name", user_name)
         if additional_tags is not None:
             pulumi.set(__self__, "additional_tags", additional_tags)
@@ -87,6 +86,8 @@ class CloudIntegrationAppDynamicsArgs:
             pulumi.set(__self__, "force_save", force_save)
         if name is not None:
             pulumi.set(__self__, "name", name)
+        if service is not None:
+            pulumi.set(__self__, "service", service)
         if service_refresh_rate_in_minutes is not None:
             pulumi.set(__self__, "service_refresh_rate_in_minutes", service_refresh_rate_in_minutes)
 
@@ -113,18 +114,6 @@ class CloudIntegrationAppDynamicsArgs:
     @encrypted_password.setter
     def encrypted_password(self, value: pulumi.Input[builtins.str]):
         pulumi.set(self, "encrypted_password", value)
-
-    @property
-    @pulumi.getter
-    def service(self) -> pulumi.Input[builtins.str]:
-        """
-        A value denoting which cloud service this service integrates with.
-        """
-        return pulumi.get(self, "service")
-
-    @service.setter
-    def service(self, value: pulumi.Input[builtins.str]):
-        pulumi.set(self, "service", value)
 
     @property
     @pulumi.getter(name="userName")
@@ -283,6 +272,18 @@ class CloudIntegrationAppDynamicsArgs:
     @name.setter
     def name(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def service(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        A value denoting which cloud service this service integrates with.
+        """
+        return pulumi.get(self, "service")
+
+    @service.setter
+    def service(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "service", value)
 
     @property
     @pulumi.getter(name="serviceRefreshRateInMinutes")
@@ -581,10 +582,8 @@ class _CloudIntegrationAppDynamicsState:
         pulumi.set(self, "user_name", value)
 
 
+@pulumi.type_token("wavefront:index/cloudIntegrationAppDynamics:CloudIntegrationAppDynamics")
 class CloudIntegrationAppDynamics(pulumi.CustomResource):
-
-    pulumi_type = "wavefront:index/cloudIntegrationAppDynamics:CloudIntegrationAppDynamics"
-
     @overload
     def __init__(__self__,
                  resource_name: str,
@@ -744,8 +743,6 @@ class CloudIntegrationAppDynamics(pulumi.CustomResource):
             __props__.__dict__["encrypted_password"] = None if encrypted_password is None else pulumi.Output.secret(encrypted_password)
             __props__.__dict__["force_save"] = force_save
             __props__.__dict__["name"] = name
-            if service is None and not opts.urn:
-                raise TypeError("Missing required property 'service'")
             __props__.__dict__["service"] = service
             __props__.__dict__["service_refresh_rate_in_minutes"] = service_refresh_rate_in_minutes
             if user_name is None and not opts.urn:

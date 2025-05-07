@@ -20,34 +20,27 @@ __all__ = ['ProviderArgs', 'Provider']
 @pulumi.input_type
 class ProviderArgs:
     def __init__(__self__, *,
-                 address: pulumi.Input[builtins.str],
-                 token: pulumi.Input[builtins.str],
-                 http_proxy: Optional[pulumi.Input[builtins.str]] = None):
+                 address: Optional[pulumi.Input[builtins.str]] = None,
+                 http_proxy: Optional[pulumi.Input[builtins.str]] = None,
+                 token: Optional[pulumi.Input[builtins.str]] = None):
         """
         The set of arguments for constructing a Provider resource.
         """
-        pulumi.set(__self__, "address", address)
-        pulumi.set(__self__, "token", token)
+        if address is not None:
+            pulumi.set(__self__, "address", address)
         if http_proxy is not None:
             pulumi.set(__self__, "http_proxy", http_proxy)
+        if token is not None:
+            pulumi.set(__self__, "token", token)
 
     @property
     @pulumi.getter
-    def address(self) -> pulumi.Input[builtins.str]:
+    def address(self) -> Optional[pulumi.Input[builtins.str]]:
         return pulumi.get(self, "address")
 
     @address.setter
-    def address(self, value: pulumi.Input[builtins.str]):
+    def address(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "address", value)
-
-    @property
-    @pulumi.getter
-    def token(self) -> pulumi.Input[builtins.str]:
-        return pulumi.get(self, "token")
-
-    @token.setter
-    def token(self, value: pulumi.Input[builtins.str]):
-        pulumi.set(self, "token", value)
 
     @property
     @pulumi.getter(name="httpProxy")
@@ -58,11 +51,18 @@ class ProviderArgs:
     def http_proxy(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "http_proxy", value)
 
+    @property
+    @pulumi.getter
+    def token(self) -> Optional[pulumi.Input[builtins.str]]:
+        return pulumi.get(self, "token")
 
+    @token.setter
+    def token(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "token", value)
+
+
+@pulumi.type_token("pulumi:providers:wavefront")
 class Provider(pulumi.ProviderResource):
-
-    pulumi_type = "pulumi:providers:wavefront"
-
     @overload
     def __init__(__self__,
                  resource_name: str,
@@ -84,7 +84,7 @@ class Provider(pulumi.ProviderResource):
     @overload
     def __init__(__self__,
                  resource_name: str,
-                 args: ProviderArgs,
+                 args: Optional[ProviderArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         The provider type for the wavefront package. By default, resources use package-wide configuration
@@ -119,12 +119,8 @@ class Provider(pulumi.ProviderResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = ProviderArgs.__new__(ProviderArgs)
 
-            if address is None and not opts.urn:
-                raise TypeError("Missing required property 'address'")
             __props__.__dict__["address"] = address
             __props__.__dict__["http_proxy"] = http_proxy
-            if token is None and not opts.urn:
-                raise TypeError("Missing required property 'token'")
             __props__.__dict__["token"] = token
         super(Provider, __self__).__init__(
             'wavefront',
@@ -134,7 +130,7 @@ class Provider(pulumi.ProviderResource):
 
     @property
     @pulumi.getter
-    def address(self) -> pulumi.Output[builtins.str]:
+    def address(self) -> pulumi.Output[Optional[builtins.str]]:
         return pulumi.get(self, "address")
 
     @property
@@ -144,6 +140,26 @@ class Provider(pulumi.ProviderResource):
 
     @property
     @pulumi.getter
-    def token(self) -> pulumi.Output[builtins.str]:
+    def token(self) -> pulumi.Output[Optional[builtins.str]]:
         return pulumi.get(self, "token")
+
+    @pulumi.output_type
+    class TerraformConfigResult:
+        def __init__(__self__, result=None):
+            if result and not isinstance(result, dict):
+                raise TypeError("Expected argument 'result' to be a dict")
+            pulumi.set(__self__, "result", result)
+
+        @property
+        @pulumi.getter
+        def result(self) -> Mapping[str, Any]:
+            return pulumi.get(self, "result")
+
+    def terraform_config(__self__) -> pulumi.Output['Provider.TerraformConfigResult']:
+        """
+        This function returns a Terraform config object with terraform-namecased keys,to be used with the Terraform Module Provider.
+        """
+        __args__ = dict()
+        __args__['__self__'] = __self__
+        return pulumi.runtime.call('pulumi:providers:wavefront/terraformConfig', __args__, res=__self__, typ=Provider.TerraformConfigResult)
 

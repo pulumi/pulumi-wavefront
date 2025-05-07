@@ -105,9 +105,6 @@ func NewCloudIntegrationAppDynamics(ctx *pulumi.Context,
 	if args.EncryptedPassword == nil {
 		return nil, errors.New("invalid value for required argument 'EncryptedPassword'")
 	}
-	if args.Service == nil {
-		return nil, errors.New("invalid value for required argument 'Service'")
-	}
 	if args.UserName == nil {
 		return nil, errors.New("invalid value for required argument 'UserName'")
 	}
@@ -254,7 +251,7 @@ type cloudIntegrationAppDynamicsArgs struct {
 	// The human-readable name of this integration.
 	Name *string `pulumi:"name"`
 	// A value denoting which cloud service this service integrates with.
-	Service string `pulumi:"service"`
+	Service *string `pulumi:"service"`
 	// How often, in minutes, to refresh the service.
 	ServiceRefreshRateInMinutes *int `pulumi:"serviceRefreshRateInMinutes"`
 	// Username is a combination of userName and the account name.
@@ -294,7 +291,7 @@ type CloudIntegrationAppDynamicsArgs struct {
 	// The human-readable name of this integration.
 	Name pulumi.StringPtrInput
 	// A value denoting which cloud service this service integrates with.
-	Service pulumi.StringInput
+	Service pulumi.StringPtrInput
 	// How often, in minutes, to refresh the service.
 	ServiceRefreshRateInMinutes pulumi.IntPtrInput
 	// Username is a combination of userName and the account name.

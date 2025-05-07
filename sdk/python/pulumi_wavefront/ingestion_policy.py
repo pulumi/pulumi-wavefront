@@ -241,10 +241,8 @@ class _IngestionPolicyState:
         pulumi.set(self, "tags", value)
 
 
+@pulumi.type_token("wavefront:index/ingestionPolicy:IngestionPolicy")
 class IngestionPolicy(pulumi.CustomResource):
-
-    pulumi_type = "wavefront:index/ingestionPolicy:IngestionPolicy"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

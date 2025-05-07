@@ -22,28 +22,27 @@ class CloudIntegrationEc2Args:
     def __init__(__self__, *,
                  external_id: pulumi.Input[builtins.str],
                  role_arn: pulumi.Input[builtins.str],
-                 service: pulumi.Input[builtins.str],
                  additional_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
                  force_save: Optional[pulumi.Input[builtins.bool]] = None,
                  hostname_tags: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  name: Optional[pulumi.Input[builtins.str]] = None,
+                 service: Optional[pulumi.Input[builtins.str]] = None,
                  service_refresh_rate_in_minutes: Optional[pulumi.Input[builtins.int]] = None):
         """
         The set of arguments for constructing a CloudIntegrationEc2 resource.
         :param pulumi.Input[builtins.str] external_id: The Role ARN that the customer has created in AWS IAM to allow access to Wavefront.
         :param pulumi.Input[builtins.str] role_arn: The external ID corresponding to the Role ARN.
-        :param pulumi.Input[builtins.str] service: A value denoting which cloud service this service integrates with.
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] additional_tags: A list of point tag key-values to add to every point ingested using this integration.
         :param pulumi.Input[builtins.bool] force_save: Forces this resource to save, even if errors are present.
         :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] hostname_tags: A list of AWS instance tags to use as the `source` name
                in a series. Default is `["hostname", "host", "name"]`. If no tag in the list is found, the series source
                is set to the instance id.
         :param pulumi.Input[builtins.str] name: The human-readable name of this integration.
+        :param pulumi.Input[builtins.str] service: A value denoting which cloud service this service integrates with.
         :param pulumi.Input[builtins.int] service_refresh_rate_in_minutes: How often, in minutes, to refresh the service.
         """
         pulumi.set(__self__, "external_id", external_id)
         pulumi.set(__self__, "role_arn", role_arn)
-        pulumi.set(__self__, "service", service)
         if additional_tags is not None:
             pulumi.set(__self__, "additional_tags", additional_tags)
         if force_save is not None:
@@ -52,6 +51,8 @@ class CloudIntegrationEc2Args:
             pulumi.set(__self__, "hostname_tags", hostname_tags)
         if name is not None:
             pulumi.set(__self__, "name", name)
+        if service is not None:
+            pulumi.set(__self__, "service", service)
         if service_refresh_rate_in_minutes is not None:
             pulumi.set(__self__, "service_refresh_rate_in_minutes", service_refresh_rate_in_minutes)
 
@@ -78,18 +79,6 @@ class CloudIntegrationEc2Args:
     @role_arn.setter
     def role_arn(self, value: pulumi.Input[builtins.str]):
         pulumi.set(self, "role_arn", value)
-
-    @property
-    @pulumi.getter
-    def service(self) -> pulumi.Input[builtins.str]:
-        """
-        A value denoting which cloud service this service integrates with.
-        """
-        return pulumi.get(self, "service")
-
-    @service.setter
-    def service(self, value: pulumi.Input[builtins.str]):
-        pulumi.set(self, "service", value)
 
     @property
     @pulumi.getter(name="additionalTags")
@@ -140,6 +129,18 @@ class CloudIntegrationEc2Args:
     @name.setter
     def name(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def service(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        A value denoting which cloud service this service integrates with.
+        """
+        return pulumi.get(self, "service")
+
+    @service.setter
+    def service(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "service", value)
 
     @property
     @pulumi.getter(name="serviceRefreshRateInMinutes")
@@ -294,10 +295,8 @@ class _CloudIntegrationEc2State:
         pulumi.set(self, "service_refresh_rate_in_minutes", value)
 
 
+@pulumi.type_token("wavefront:index/cloudIntegrationEc2:CloudIntegrationEc2")
 class CloudIntegrationEc2(pulumi.CustomResource):
-
-    pulumi_type = "wavefront:index/cloudIntegrationEc2:CloudIntegrationEc2"
-
     @overload
     def __init__(__self__,
                  resource_name: str,
@@ -422,8 +421,6 @@ class CloudIntegrationEc2(pulumi.CustomResource):
             if role_arn is None and not opts.urn:
                 raise TypeError("Missing required property 'role_arn'")
             __props__.__dict__["role_arn"] = role_arn
-            if service is None and not opts.urn:
-                raise TypeError("Missing required property 'service'")
             __props__.__dict__["service"] = service
             __props__.__dict__["service_refresh_rate_in_minutes"] = service_refresh_rate_in_minutes
         super(CloudIntegrationEc2, __self__).__init__(

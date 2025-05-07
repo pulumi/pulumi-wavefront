@@ -114,10 +114,8 @@ class _MetricsPolicyState:
         pulumi.set(self, "updater_id", value)
 
 
+@pulumi.type_token("wavefront:index/metricsPolicy:MetricsPolicy")
 class MetricsPolicy(pulumi.CustomResource):
-
-    pulumi_type = "wavefront:index/metricsPolicy:MetricsPolicy"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

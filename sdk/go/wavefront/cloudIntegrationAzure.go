@@ -91,9 +91,6 @@ func NewCloudIntegrationAzure(ctx *pulumi.Context,
 	if args.ClientSecret == nil {
 		return nil, errors.New("invalid value for required argument 'ClientSecret'")
 	}
-	if args.Service == nil {
-		return nil, errors.New("invalid value for required argument 'Service'")
-	}
 	if args.Tenant == nil {
 		return nil, errors.New("invalid value for required argument 'Tenant'")
 	}
@@ -198,7 +195,7 @@ type cloudIntegrationAzureArgs struct {
 	// A list of Azure resource groups from which to pull metrics.
 	ResourceGroupFilters []string `pulumi:"resourceGroupFilters"`
 	// A value denoting which cloud service this service integrates with.
-	Service string `pulumi:"service"`
+	Service *string `pulumi:"service"`
 	// How often, in minutes, to refresh the service.
 	ServiceRefreshRateInMinutes *int `pulumi:"serviceRefreshRateInMinutes"`
 	// Tenant ID for an Azure service account within your project.
@@ -224,7 +221,7 @@ type CloudIntegrationAzureArgs struct {
 	// A list of Azure resource groups from which to pull metrics.
 	ResourceGroupFilters pulumi.StringArrayInput
 	// A value denoting which cloud service this service integrates with.
-	Service pulumi.StringInput
+	Service pulumi.StringPtrInput
 	// How often, in minutes, to refresh the service.
 	ServiceRefreshRateInMinutes pulumi.IntPtrInput
 	// Tenant ID for an Azure service account within your project.

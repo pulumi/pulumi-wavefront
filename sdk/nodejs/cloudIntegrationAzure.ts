@@ -135,9 +135,6 @@ export class CloudIntegrationAzure extends pulumi.CustomResource {
             if ((!args || args.clientSecret === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'clientSecret'");
             }
-            if ((!args || args.service === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'service'");
-            }
             if ((!args || args.tenant === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'tenant'");
             }
@@ -249,7 +246,7 @@ export interface CloudIntegrationAzureArgs {
     /**
      * A value denoting which cloud service this service integrates with.
      */
-    service: pulumi.Input<string>;
+    service?: pulumi.Input<string>;
     /**
      * How often, in minutes, to refresh the service.
      */

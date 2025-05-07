@@ -102,9 +102,6 @@ func NewCloudIntegrationCloudWatch(ctx *pulumi.Context,
 	if args.RoleArn == nil {
 		return nil, errors.New("invalid value for required argument 'RoleArn'")
 	}
-	if args.Service == nil {
-		return nil, errors.New("invalid value for required argument 'Service'")
-	}
 	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource CloudIntegrationCloudWatch
 	err := ctx.RegisterResource("wavefront:index/cloudIntegrationCloudWatch:CloudIntegrationCloudWatch", name, args, &resource, opts...)
@@ -218,7 +215,7 @@ type cloudIntegrationCloudWatchArgs struct {
 	// The external ID corresponding to the Role ARN.
 	RoleArn string `pulumi:"roleArn"`
 	// A value denoting which cloud service this service integrates with.
-	Service string `pulumi:"service"`
+	Service *string `pulumi:"service"`
 	// How often, in minutes, to refresh the service.
 	ServiceRefreshRateInMinutes *int `pulumi:"serviceRefreshRateInMinutes"`
 	// A string->string map of allow list of volume tag-value pairs (in AWS).
@@ -251,7 +248,7 @@ type CloudIntegrationCloudWatchArgs struct {
 	// The external ID corresponding to the Role ARN.
 	RoleArn pulumi.StringInput
 	// A value denoting which cloud service this service integrates with.
-	Service pulumi.StringInput
+	Service pulumi.StringPtrInput
 	// How often, in minutes, to refresh the service.
 	ServiceRefreshRateInMinutes pulumi.IntPtrInput
 	// A string->string map of allow list of volume tag-value pairs (in AWS).

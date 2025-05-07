@@ -82,9 +82,6 @@ func NewCloudIntegrationNewRelic(ctx *pulumi.Context,
 	if args.ApiKey == nil {
 		return nil, errors.New("invalid value for required argument 'ApiKey'")
 	}
-	if args.Service == nil {
-		return nil, errors.New("invalid value for required argument 'Service'")
-	}
 	if args.ApiKey != nil {
 		args.ApiKey = pulumi.ToSecret(args.ApiKey).(pulumi.StringInput)
 	}
@@ -176,7 +173,7 @@ type cloudIntegrationNewRelicArgs struct {
 	// The human-readable name of this integration.
 	Name *string `pulumi:"name"`
 	// A value denoting which cloud service this service integrates with.
-	Service string `pulumi:"service"`
+	Service *string `pulumi:"service"`
 	// How often, in minutes, to refresh the service.
 	ServiceRefreshRateInMinutes *int `pulumi:"serviceRefreshRateInMinutes"`
 }
@@ -198,7 +195,7 @@ type CloudIntegrationNewRelicArgs struct {
 	// The human-readable name of this integration.
 	Name pulumi.StringPtrInput
 	// A value denoting which cloud service this service integrates with.
-	Service pulumi.StringInput
+	Service pulumi.StringPtrInput
 	// How often, in minutes, to refresh the service.
 	ServiceRefreshRateInMinutes pulumi.IntPtrInput
 }
