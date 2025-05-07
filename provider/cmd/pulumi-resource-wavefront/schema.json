@@ -2842,10 +2842,6 @@
                 "type": "string"
             }
         },
-        "required": [
-            "address",
-            "token"
-        ],
         "inputProperties": {
             "address": {
                 "type": "string"
@@ -2857,10 +2853,9 @@
                 "type": "string"
             }
         },
-        "requiredInputs": [
-            "address",
-            "token"
-        ]
+        "methods": {
+            "terraformConfig": "pulumi:providers:wavefront/terraformConfig"
+        }
     },
     "resources": {
         "wavefront:index/alert:Alert": {
@@ -3527,7 +3522,6 @@
             "requiredInputs": [
                 "controllerName",
                 "encryptedPassword",
-                "service",
                 "userName"
             ],
             "stateInputs": {
@@ -3745,7 +3739,6 @@
             "requiredInputs": [
                 "clientId",
                 "clientSecret",
-                "service",
                 "tenant"
             ],
             "stateInputs": {
@@ -3913,7 +3906,6 @@
             "requiredInputs": [
                 "clientId",
                 "clientSecret",
-                "service",
                 "tenant"
             ],
             "stateInputs": {
@@ -4081,8 +4073,7 @@
                 "bucketName",
                 "externalId",
                 "region",
-                "roleArn",
-                "service"
+                "roleArn"
             ],
             "stateInputs": {
                 "description": "Input properties used for looking up and filtering CloudIntegrationCloudTrail resources.\n",
@@ -4276,8 +4267,7 @@
             },
             "requiredInputs": [
                 "externalId",
-                "roleArn",
-                "service"
+                "roleArn"
             ],
             "stateInputs": {
                 "description": "Input properties used for looking up and filtering CloudIntegrationCloudWatch resources.\n",
@@ -4440,8 +4430,7 @@
             },
             "requiredInputs": [
                 "externalId",
-                "roleArn",
-                "service"
+                "roleArn"
             ],
             "stateInputs": {
                 "description": "Input properties used for looking up and filtering CloudIntegrationEc2 resources.\n",
@@ -4591,8 +4580,7 @@
             },
             "requiredInputs": [
                 "jsonKey",
-                "projectId",
-                "service"
+                "projectId"
             ],
             "stateInputs": {
                 "description": "Input properties used for looking up and filtering CloudIntegrationGcp resources.\n",
@@ -4736,8 +4724,7 @@
             "requiredInputs": [
                 "apiKey",
                 "jsonKey",
-                "projectId",
-                "service"
+                "projectId"
             ],
             "stateInputs": {
                 "description": "Input properties used for looking up and filtering CloudIntegrationGcpBilling resources.\n",
@@ -4883,8 +4870,7 @@
                 }
             },
             "requiredInputs": [
-                "apiKey",
-                "service"
+                "apiKey"
             ],
             "stateInputs": {
                 "description": "Input properties used for looking up and filtering CloudIntegrationNewRelic resources.\n",
@@ -6191,6 +6177,35 @@
         }
     },
     "functions": {
+        "pulumi:providers:wavefront/terraformConfig": {
+            "description": "This function returns a Terraform config object with terraform-namecased keys,to be used with the Terraform Module Provider.",
+            "inputs": {
+                "properties": {
+                    "__self__": {
+                        "type": "ref",
+                        "$ref": "#/resources/pulumi:providers:wavefront"
+                    }
+                },
+                "type": "pulumi:providers:wavefront/terraformConfig",
+                "required": [
+                    "__self__"
+                ]
+            },
+            "outputs": {
+                "properties": {
+                    "result": {
+                        "additionalProperties": {
+                            "$ref": "pulumi.json#/Any"
+                        },
+                        "type": "object"
+                    }
+                },
+                "required": [
+                    "result"
+                ],
+                "type": "object"
+            }
+        },
         "wavefront:index/getAlert:getAlert": {
             "description": "Use this data source to get information about a Wavefront alert by its ID.\n\n## Example Usage\n\n\u003c!--Start PulumiCodeChooser --\u003e\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as wavefront from \"@pulumi/wavefront\";\n\n// Get the information about the alert.\nconst example = wavefront.getAlert({\n    id: \"alert-id\",\n});\n```\n```python\nimport pulumi\nimport pulumi_wavefront as wavefront\n\n# Get the information about the alert.\nexample = wavefront.get_alert(id=\"alert-id\")\n```\n```csharp\nusing System.Collections.Generic;\nusing System.Linq;\nusing Pulumi;\nusing Wavefront = Pulumi.Wavefront;\n\nreturn await Deployment.RunAsync(() =\u003e \n{\n    // Get the information about the alert.\n    var example = Wavefront.GetAlert.Invoke(new()\n    {\n        Id = \"alert-id\",\n    });\n\n});\n```\n```go\npackage main\n\nimport (\n\t\"github.com/pulumi/pulumi-wavefront/sdk/v3/go/wavefront\"\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t// Get the information about the alert.\n\t\t_, err := wavefront.LookupAlert(ctx, \u0026wavefront.LookupAlertArgs{\n\t\t\tId: \"alert-id\",\n\t\t}, nil)\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n```java\npackage generated_program;\n\nimport com.pulumi.Context;\nimport com.pulumi.Pulumi;\nimport com.pulumi.core.Output;\nimport com.pulumi.wavefront.WavefrontFunctions;\nimport com.pulumi.wavefront.inputs.GetAlertArgs;\nimport java.util.List;\nimport java.util.ArrayList;\nimport java.util.Map;\nimport java.io.File;\nimport java.nio.file.Files;\nimport java.nio.file.Paths;\n\npublic class App {\n    public static void main(String[] args) {\n        Pulumi.run(App::stack);\n    }\n\n    public static void stack(Context ctx) {\n        // Get the information about the alert.\n        final var example = WavefrontFunctions.getAlert(GetAlertArgs.builder()\n            .id(\"alert-id\")\n            .build());\n\n    }\n}\n```\n```yaml\nvariables:\n  # Get the information about the alert.\n  example:\n    fn::invoke:\n      function: wavefront:getAlert\n      arguments:\n        id: alert-id\n```\n\u003c!--End PulumiCodeChooser --\u003e\n",
             "inputs": {
