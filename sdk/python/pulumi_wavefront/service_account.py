@@ -232,10 +232,8 @@ class _ServiceAccountState:
         pulumi.set(self, "user_groups", value)
 
 
+@pulumi.type_token("wavefront:index/serviceAccount:ServiceAccount")
 class ServiceAccount(pulumi.CustomResource):
-
-    pulumi_type = "wavefront:index/serviceAccount:ServiceAccount"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

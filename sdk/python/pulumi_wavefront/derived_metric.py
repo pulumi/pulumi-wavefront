@@ -191,10 +191,8 @@ class _DerivedMetricState:
         pulumi.set(self, "tags", value)
 
 
+@pulumi.type_token("wavefront:index/derivedMetric:DerivedMetric")
 class DerivedMetric(pulumi.CustomResource):
-
-    pulumi_type = "wavefront:index/derivedMetric:DerivedMetric"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

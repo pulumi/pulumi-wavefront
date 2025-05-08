@@ -321,10 +321,8 @@ class _CloudIntegrationNewRelicState:
         pulumi.set(self, "service_refresh_rate_in_minutes", value)
 
 
+@pulumi.type_token("wavefront:index/cloudIntegrationNewRelic:CloudIntegrationNewRelic")
 class CloudIntegrationNewRelic(pulumi.CustomResource):
-
-    pulumi_type = "wavefront:index/cloudIntegrationNewRelic:CloudIntegrationNewRelic"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

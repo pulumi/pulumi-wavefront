@@ -661,10 +661,8 @@ class _AlertState:
         pulumi.set(self, "threshold_targets", value)
 
 
+@pulumi.type_token("wavefront:index/alert:Alert")
 class Alert(pulumi.CustomResource):
-
-    pulumi_type = "wavefront:index/alert:Alert"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

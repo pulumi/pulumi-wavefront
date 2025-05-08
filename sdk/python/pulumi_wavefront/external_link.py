@@ -267,10 +267,8 @@ class _ExternalLinkState:
         pulumi.set(self, "template", value)
 
 
+@pulumi.type_token("wavefront:index/externalLink:ExternalLink")
 class ExternalLink(pulumi.CustomResource):
-
-    pulumi_type = "wavefront:index/externalLink:ExternalLink"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

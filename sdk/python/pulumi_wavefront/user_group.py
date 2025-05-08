@@ -96,10 +96,8 @@ class _UserGroupState:
         pulumi.set(self, "name", value)
 
 
+@pulumi.type_token("wavefront:index/userGroup:UserGroup")
 class UserGroup(pulumi.CustomResource):
-
-    pulumi_type = "wavefront:index/userGroup:UserGroup"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

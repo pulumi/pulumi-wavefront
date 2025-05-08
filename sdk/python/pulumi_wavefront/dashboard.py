@@ -395,10 +395,8 @@ class _DashboardState:
         pulumi.set(self, "url", value)
 
 
+@pulumi.type_token("wavefront:index/dashboard:Dashboard")
 class Dashboard(pulumi.CustomResource):
-
-    pulumi_type = "wavefront:index/dashboard:Dashboard"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

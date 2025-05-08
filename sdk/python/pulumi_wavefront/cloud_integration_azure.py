@@ -381,10 +381,8 @@ class _CloudIntegrationAzureState:
         pulumi.set(self, "tenant", value)
 
 
+@pulumi.type_token("wavefront:index/cloudIntegrationAzure:CloudIntegrationAzure")
 class CloudIntegrationAzure(pulumi.CustomResource):
-
-    pulumi_type = "wavefront:index/cloudIntegrationAzure:CloudIntegrationAzure"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

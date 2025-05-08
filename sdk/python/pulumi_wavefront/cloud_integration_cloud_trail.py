@@ -380,10 +380,8 @@ class _CloudIntegrationCloudTrailState:
         pulumi.set(self, "service_refresh_rate_in_minutes", value)
 
 
+@pulumi.type_token("wavefront:index/cloudIntegrationCloudTrail:CloudIntegrationCloudTrail")
 class CloudIntegrationCloudTrail(pulumi.CustomResource):
-
-    pulumi_type = "wavefront:index/cloudIntegrationCloudTrail:CloudIntegrationCloudTrail"
-
     @overload
     def __init__(__self__,
                  resource_name: str,
