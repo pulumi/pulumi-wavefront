@@ -434,10 +434,8 @@ class _CloudIntegrationCloudWatchState:
         pulumi.set(self, "volume_selection_tags", value)
 
 
+@pulumi.type_token("wavefront:index/cloudIntegrationCloudWatch:CloudIntegrationCloudWatch")
 class CloudIntegrationCloudWatch(pulumi.CustomResource):
-
-    pulumi_type = "wavefront:index/cloudIntegrationCloudWatch:CloudIntegrationCloudWatch"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

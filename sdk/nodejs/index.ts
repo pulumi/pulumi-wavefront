@@ -205,10 +205,8 @@ export type MetricsPolicy = import("./metricsPolicy").MetricsPolicy;
 export const MetricsPolicy: typeof import("./metricsPolicy").MetricsPolicy = null as any;
 utilities.lazyLoad(exports, ["MetricsPolicy"], () => require("./metricsPolicy"));
 
-export { ProviderArgs } from "./provider";
-export type Provider = import("./provider").Provider;
-export const Provider: typeof import("./provider").Provider = null as any;
-utilities.lazyLoad(exports, ["Provider"], () => require("./provider"));
+export * from "./provider";
+import { Provider } from "./provider";
 
 export { RoleArgs, RoleState } from "./role";
 export type Role = import("./role").Role;

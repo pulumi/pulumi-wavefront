@@ -317,10 +317,8 @@ class _CloudIntegrationAzureActivityLogState:
         pulumi.set(self, "tenant", value)
 
 
+@pulumi.type_token("wavefront:index/cloudIntegrationAzureActivityLog:CloudIntegrationAzureActivityLog")
 class CloudIntegrationAzureActivityLog(pulumi.CustomResource):
-
-    pulumi_type = "wavefront:index/cloudIntegrationAzureActivityLog:CloudIntegrationAzureActivityLog"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

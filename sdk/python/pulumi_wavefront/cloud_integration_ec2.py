@@ -294,10 +294,8 @@ class _CloudIntegrationEc2State:
         pulumi.set(self, "service_refresh_rate_in_minutes", value)
 
 
+@pulumi.type_token("wavefront:index/cloudIntegrationEc2:CloudIntegrationEc2")
 class CloudIntegrationEc2(pulumi.CustomResource):
-
-    pulumi_type = "wavefront:index/cloudIntegrationEc2:CloudIntegrationEc2"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

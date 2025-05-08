@@ -581,10 +581,8 @@ class _CloudIntegrationAppDynamicsState:
         pulumi.set(self, "user_name", value)
 
 
+@pulumi.type_token("wavefront:index/cloudIntegrationAppDynamics:CloudIntegrationAppDynamics")
 class CloudIntegrationAppDynamics(pulumi.CustomResource):
-
-    pulumi_type = "wavefront:index/cloudIntegrationAppDynamics:CloudIntegrationAppDynamics"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

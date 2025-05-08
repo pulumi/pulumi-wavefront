@@ -289,10 +289,8 @@ class _CloudIntegrationGcpBillingState:
         pulumi.set(self, "service_refresh_rate_in_minutes", value)
 
 
+@pulumi.type_token("wavefront:index/cloudIntegrationGcpBilling:CloudIntegrationGcpBilling")
 class CloudIntegrationGcpBilling(pulumi.CustomResource):
-
-    pulumi_type = "wavefront:index/cloudIntegrationGcpBilling:CloudIntegrationGcpBilling"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

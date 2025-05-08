@@ -184,10 +184,8 @@ class _EventState:
         pulumi.set(self, "tags", value)
 
 
+@pulumi.type_token("wavefront:index/event:Event")
 class Event(pulumi.CustomResource):
-
-    pulumi_type = "wavefront:index/event:Event"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

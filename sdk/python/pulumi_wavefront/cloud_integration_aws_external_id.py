@@ -26,10 +26,8 @@ class CloudIntegrationAwsExternalIdArgs:
         pass
 
 
+@pulumi.type_token("wavefront:index/cloudIntegrationAwsExternalId:CloudIntegrationAwsExternalId")
 class CloudIntegrationAwsExternalId(pulumi.CustomResource):
-
-    pulumi_type = "wavefront:index/cloudIntegrationAwsExternalId:CloudIntegrationAwsExternalId"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

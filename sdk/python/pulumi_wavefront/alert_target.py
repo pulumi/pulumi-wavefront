@@ -411,10 +411,8 @@ class _AlertTargetState:
         pulumi.set(self, "triggers", value)
 
 
+@pulumi.type_token("wavefront:index/alertTarget:AlertTarget")
 class AlertTarget(pulumi.CustomResource):
-
-    pulumi_type = "wavefront:index/alertTarget:AlertTarget"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

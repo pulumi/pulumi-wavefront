@@ -68,10 +68,8 @@ class _DashboardJsonState:
         pulumi.set(self, "dashboard_json", value)
 
 
+@pulumi.type_token("wavefront:index/dashboardJson:DashboardJson")
 class DashboardJson(pulumi.CustomResource):
-
-    pulumi_type = "wavefront:index/dashboardJson:DashboardJson"
-
     @overload
     def __init__(__self__,
                  resource_name: str,
