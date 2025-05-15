@@ -124,9 +124,6 @@ export class CloudIntegrationGcpBilling extends pulumi.CustomResource {
             if ((!args || args.projectId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'projectId'");
             }
-            if ((!args || args.service === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'service'");
-            }
             resourceInputs["additionalTags"] = args ? args.additionalTags : undefined;
             resourceInputs["apiKey"] = args?.apiKey ? pulumi.secret(args.apiKey) : undefined;
             resourceInputs["forceSave"] = args ? args.forceSave : undefined;
@@ -214,7 +211,7 @@ export interface CloudIntegrationGcpBillingArgs {
     /**
      * A value denoting which cloud service this service integrates with.
      */
-    service: pulumi.Input<string>;
+    service?: pulumi.Input<string>;
     /**
      * How often, in minutes, to refresh the service.
      */

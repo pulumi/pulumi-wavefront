@@ -91,9 +91,6 @@ func NewCloudIntegrationGcp(ctx *pulumi.Context,
 	if args.ProjectId == nil {
 		return nil, errors.New("invalid value for required argument 'ProjectId'")
 	}
-	if args.Service == nil {
-		return nil, errors.New("invalid value for required argument 'Service'")
-	}
 	if args.JsonKey != nil {
 		args.JsonKey = pulumi.ToSecret(args.JsonKey).(pulumi.StringInput)
 	}
@@ -200,7 +197,7 @@ type cloudIntegrationGcpArgs struct {
 	// The Google Cloud Platform (GCP) Project ID.
 	ProjectId string `pulumi:"projectId"`
 	// A value denoting which cloud service this service integrates with.
-	Service string `pulumi:"service"`
+	Service *string `pulumi:"service"`
 	// How often, in minutes, to refresh the service.
 	ServiceRefreshRateInMinutes *int `pulumi:"serviceRefreshRateInMinutes"`
 }
@@ -227,7 +224,7 @@ type CloudIntegrationGcpArgs struct {
 	// The Google Cloud Platform (GCP) Project ID.
 	ProjectId pulumi.StringInput
 	// A value denoting which cloud service this service integrates with.
-	Service pulumi.StringInput
+	Service pulumi.StringPtrInput
 	// How often, in minutes, to refresh the service.
 	ServiceRefreshRateInMinutes pulumi.IntPtrInput
 }

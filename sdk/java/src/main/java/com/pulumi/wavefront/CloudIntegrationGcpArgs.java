@@ -139,15 +139,15 @@ public final class CloudIntegrationGcpArgs extends com.pulumi.resources.Resource
      * A value denoting which cloud service this service integrates with.
      * 
      */
-    @Import(name="service", required=true)
-    private Output<String> service;
+    @Import(name="service")
+    private @Nullable Output<String> service;
 
     /**
      * @return A value denoting which cloud service this service integrates with.
      * 
      */
-    public Output<String> service() {
-        return this.service;
+    public Optional<Output<String>> service() {
+        return Optional.ofNullable(this.service);
     }
 
     /**
@@ -374,7 +374,7 @@ public final class CloudIntegrationGcpArgs extends com.pulumi.resources.Resource
          * @return builder
          * 
          */
-        public Builder service(Output<String> service) {
+        public Builder service(@Nullable Output<String> service) {
             $.service = service;
             return this;
         }
@@ -416,9 +416,6 @@ public final class CloudIntegrationGcpArgs extends com.pulumi.resources.Resource
             }
             if ($.projectId == null) {
                 throw new MissingRequiredPropertyException("CloudIntegrationGcpArgs", "projectId");
-            }
-            if ($.service == null) {
-                throw new MissingRequiredPropertyException("CloudIntegrationGcpArgs", "service");
             }
             return $;
         }

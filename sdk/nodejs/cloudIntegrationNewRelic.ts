@@ -122,9 +122,6 @@ export class CloudIntegrationNewRelic extends pulumi.CustomResource {
             if ((!args || args.apiKey === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'apiKey'");
             }
-            if ((!args || args.service === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'service'");
-            }
             resourceInputs["additionalTags"] = args ? args.additionalTags : undefined;
             resourceInputs["apiKey"] = args?.apiKey ? pulumi.secret(args.apiKey) : undefined;
             resourceInputs["appFilterRegex"] = args ? args.appFilterRegex : undefined;
@@ -219,7 +216,7 @@ export interface CloudIntegrationNewRelicArgs {
     /**
      * A value denoting which cloud service this service integrates with.
      */
-    service: pulumi.Input<string>;
+    service?: pulumi.Input<string>;
     /**
      * How often, in minutes, to refresh the service.
      */
