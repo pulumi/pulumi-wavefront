@@ -2842,10 +2842,6 @@
                 "type": "string"
             }
         },
-        "required": [
-            "address",
-            "token"
-        ],
         "inputProperties": {
             "address": {
                 "type": "string"
@@ -2857,10 +2853,6 @@
                 "type": "string"
             }
         },
-        "requiredInputs": [
-            "address",
-            "token"
-        ],
         "methods": {
             "terraformConfig": "pulumi:providers:wavefront/terraformConfig"
         }
@@ -3530,7 +3522,6 @@
             "requiredInputs": [
                 "controllerName",
                 "encryptedPassword",
-                "service",
                 "userName"
             ],
             "stateInputs": {
@@ -3748,7 +3739,6 @@
             "requiredInputs": [
                 "clientId",
                 "clientSecret",
-                "service",
                 "tenant"
             ],
             "stateInputs": {
@@ -3916,7 +3906,6 @@
             "requiredInputs": [
                 "clientId",
                 "clientSecret",
-                "service",
                 "tenant"
             ],
             "stateInputs": {
@@ -4084,8 +4073,7 @@
                 "bucketName",
                 "externalId",
                 "region",
-                "roleArn",
-                "service"
+                "roleArn"
             ],
             "stateInputs": {
                 "description": "Input properties used for looking up and filtering CloudIntegrationCloudTrail resources.\n",
@@ -4279,8 +4267,7 @@
             },
             "requiredInputs": [
                 "externalId",
-                "roleArn",
-                "service"
+                "roleArn"
             ],
             "stateInputs": {
                 "description": "Input properties used for looking up and filtering CloudIntegrationCloudWatch resources.\n",
@@ -4443,8 +4430,7 @@
             },
             "requiredInputs": [
                 "externalId",
-                "roleArn",
-                "service"
+                "roleArn"
             ],
             "stateInputs": {
                 "description": "Input properties used for looking up and filtering CloudIntegrationEc2 resources.\n",
@@ -4594,8 +4580,7 @@
             },
             "requiredInputs": [
                 "jsonKey",
-                "projectId",
-                "service"
+                "projectId"
             ],
             "stateInputs": {
                 "description": "Input properties used for looking up and filtering CloudIntegrationGcp resources.\n",
@@ -4739,8 +4724,7 @@
             "requiredInputs": [
                 "apiKey",
                 "jsonKey",
-                "projectId",
-                "service"
+                "projectId"
             ],
             "stateInputs": {
                 "description": "Input properties used for looking up and filtering CloudIntegrationGcpBilling resources.\n",
@@ -4886,8 +4870,7 @@
                 }
             },
             "requiredInputs": [
-                "apiKey",
-                "service"
+                "apiKey"
             ],
             "stateInputs": {
                 "description": "Input properties used for looking up and filtering CloudIntegrationNewRelic resources.\n",
