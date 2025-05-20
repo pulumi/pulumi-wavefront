@@ -238,15 +238,15 @@ public final class CloudIntegrationAppDynamicsArgs extends com.pulumi.resources.
      * A value denoting which cloud service this service integrates with.
      * 
      */
-    @Import(name="service", required=true)
-    private Output<String> service;
+    @Import(name="service")
+    private @Nullable Output<String> service;
 
     /**
      * @return A value denoting which cloud service this service integrates with.
      * 
      */
-    public Output<String> service() {
-        return this.service;
+    public Optional<Output<String>> service() {
+        return Optional.ofNullable(this.service);
     }
 
     /**
@@ -634,7 +634,7 @@ public final class CloudIntegrationAppDynamicsArgs extends com.pulumi.resources.
          * @return builder
          * 
          */
-        public Builder service(Output<String> service) {
+        public Builder service(@Nullable Output<String> service) {
             $.service = service;
             return this;
         }
@@ -697,9 +697,6 @@ public final class CloudIntegrationAppDynamicsArgs extends com.pulumi.resources.
             }
             if ($.encryptedPassword == null) {
                 throw new MissingRequiredPropertyException("CloudIntegrationAppDynamicsArgs", "encryptedPassword");
-            }
-            if ($.service == null) {
-                throw new MissingRequiredPropertyException("CloudIntegrationAppDynamicsArgs", "service");
             }
             if ($.userName == null) {
                 throw new MissingRequiredPropertyException("CloudIntegrationAppDynamicsArgs", "userName");

@@ -122,9 +122,6 @@ export class CloudIntegrationEc2 extends pulumi.CustomResource {
             if ((!args || args.roleArn === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'roleArn'");
             }
-            if ((!args || args.service === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'service'");
-            }
             resourceInputs["additionalTags"] = args ? args.additionalTags : undefined;
             resourceInputs["externalId"] = args ? args.externalId : undefined;
             resourceInputs["forceSave"] = args ? args.forceSave : undefined;
@@ -212,7 +209,7 @@ export interface CloudIntegrationEc2Args {
     /**
      * A value denoting which cloud service this service integrates with.
      */
-    service: pulumi.Input<string>;
+    service?: pulumi.Input<string>;
     /**
      * How often, in minutes, to refresh the service.
      */

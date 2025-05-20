@@ -167,9 +167,6 @@ export class CloudIntegrationAppDynamics extends pulumi.CustomResource {
             if ((!args || args.encryptedPassword === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'encryptedPassword'");
             }
-            if ((!args || args.service === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'service'");
-            }
             if ((!args || args.userName === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'userName'");
             }
@@ -339,7 +336,7 @@ export interface CloudIntegrationAppDynamicsArgs {
     /**
      * A value denoting which cloud service this service integrates with.
      */
-    service: pulumi.Input<string>;
+    service?: pulumi.Input<string>;
     /**
      * How often, in minutes, to refresh the service.
      */
