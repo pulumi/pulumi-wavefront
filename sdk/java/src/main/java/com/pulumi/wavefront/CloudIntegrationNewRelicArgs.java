@@ -130,15 +130,15 @@ public final class CloudIntegrationNewRelicArgs extends com.pulumi.resources.Res
      * A value denoting which cloud service this service integrates with.
      * 
      */
-    @Import(name="service", required=true)
-    private Output<String> service;
+    @Import(name="service")
+    private @Nullable Output<String> service;
 
     /**
      * @return A value denoting which cloud service this service integrates with.
      * 
      */
-    public Output<String> service() {
-        return this.service;
+    public Optional<Output<String>> service() {
+        return Optional.ofNullable(this.service);
     }
 
     /**
@@ -351,7 +351,7 @@ public final class CloudIntegrationNewRelicArgs extends com.pulumi.resources.Res
          * @return builder
          * 
          */
-        public Builder service(Output<String> service) {
+        public Builder service(@Nullable Output<String> service) {
             $.service = service;
             return this;
         }
@@ -390,9 +390,6 @@ public final class CloudIntegrationNewRelicArgs extends com.pulumi.resources.Res
         public CloudIntegrationNewRelicArgs build() {
             if ($.apiKey == null) {
                 throw new MissingRequiredPropertyException("CloudIntegrationNewRelicArgs", "apiKey");
-            }
-            if ($.service == null) {
-                throw new MissingRequiredPropertyException("CloudIntegrationNewRelicArgs", "service");
             }
             return $;
         }

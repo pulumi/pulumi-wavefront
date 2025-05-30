@@ -23,10 +23,10 @@ import javax.annotation.Nullable;
 @ResourceType(type="pulumi:providers:wavefront")
 public class Provider extends com.pulumi.resources.ProviderResource {
     @Export(name="address", refs={String.class}, tree="[0]")
-    private Output<String> address;
+    private Output</* @Nullable */ String> address;
 
-    public Output<String> address() {
-        return this.address;
+    public Output<Optional<String>> address() {
+        return Codegen.optional(this.address);
     }
     @Export(name="httpProxy", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> httpProxy;
@@ -35,10 +35,10 @@ public class Provider extends com.pulumi.resources.ProviderResource {
         return Codegen.optional(this.httpProxy);
     }
     @Export(name="token", refs={String.class}, tree="[0]")
-    private Output<String> token;
+    private Output</* @Nullable */ String> token;
 
-    public Output<String> token() {
-        return this.token;
+    public Output<Optional<String>> token() {
+        return Codegen.optional(this.token);
     }
 
     /**
@@ -53,7 +53,7 @@ public class Provider extends com.pulumi.resources.ProviderResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public Provider(java.lang.String name, ProviderArgs args) {
+    public Provider(java.lang.String name, @Nullable ProviderArgs args) {
         this(name, args, null);
     }
     /**
@@ -62,11 +62,11 @@ public class Provider extends com.pulumi.resources.ProviderResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public Provider(java.lang.String name, ProviderArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public Provider(java.lang.String name, @Nullable ProviderArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("wavefront", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private static ProviderArgs makeArgs(ProviderArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    private static ProviderArgs makeArgs(@Nullable ProviderArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         if (options != null && options.getUrn().isPresent()) {
             return null;
         }
