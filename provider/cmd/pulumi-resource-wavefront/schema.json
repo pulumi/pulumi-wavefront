@@ -6183,7 +6183,7 @@
                 "properties": {
                     "__self__": {
                         "type": "ref",
-                        "$ref": "#/resources/pulumi:providers:wavefront"
+                        "$ref": "#/provider"
                     }
                 },
                 "type": "pulumi:providers:wavefront/terraformConfig",
