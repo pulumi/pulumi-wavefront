@@ -61,39 +61,39 @@ export class CloudIntegrationNewRelic extends pulumi.CustomResource {
     /**
      * A list of point tag key-values to add to every point ingested using this integration.
      */
-    public readonly additionalTags!: pulumi.Output<{[key: string]: string} | undefined>;
+    declare public readonly additionalTags: pulumi.Output<{[key: string]: string} | undefined>;
     /**
      * New Relic REST API key.
      */
-    public readonly apiKey!: pulumi.Output<string>;
+    declare public readonly apiKey: pulumi.Output<string>;
     /**
      * A regular expression that an application name must match (case-insensitively) in order to collect metrics.
      */
-    public readonly appFilterRegex!: pulumi.Output<string | undefined>;
+    declare public readonly appFilterRegex: pulumi.Output<string | undefined>;
     /**
      * Forces this resource to save, even if errors are present.
      */
-    public readonly forceSave!: pulumi.Output<boolean | undefined>;
+    declare public readonly forceSave: pulumi.Output<boolean | undefined>;
     /**
      * A regular expression that a host name must match (case-insensitively) in order to collect metrics.
      */
-    public readonly hostFilterRegex!: pulumi.Output<string | undefined>;
+    declare public readonly hostFilterRegex: pulumi.Output<string | undefined>;
     /**
      * See Metric Filter.
      */
-    public readonly metricFilters!: pulumi.Output<outputs.CloudIntegrationNewRelicMetricFilter[] | undefined>;
+    declare public readonly metricFilters: pulumi.Output<outputs.CloudIntegrationNewRelicMetricFilter[] | undefined>;
     /**
      * The human-readable name of this integration.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * A value denoting which cloud service this service integrates with.
      */
-    public readonly service!: pulumi.Output<string>;
+    declare public readonly service: pulumi.Output<string>;
     /**
      * How often, in minutes, to refresh the service.
      */
-    public readonly serviceRefreshRateInMinutes!: pulumi.Output<number | undefined>;
+    declare public readonly serviceRefreshRateInMinutes: pulumi.Output<number | undefined>;
 
     /**
      * Create a CloudIntegrationNewRelic resource with the given unique name, arguments, and options.
@@ -108,29 +108,29 @@ export class CloudIntegrationNewRelic extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as CloudIntegrationNewRelicState | undefined;
-            resourceInputs["additionalTags"] = state ? state.additionalTags : undefined;
-            resourceInputs["apiKey"] = state ? state.apiKey : undefined;
-            resourceInputs["appFilterRegex"] = state ? state.appFilterRegex : undefined;
-            resourceInputs["forceSave"] = state ? state.forceSave : undefined;
-            resourceInputs["hostFilterRegex"] = state ? state.hostFilterRegex : undefined;
-            resourceInputs["metricFilters"] = state ? state.metricFilters : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["service"] = state ? state.service : undefined;
-            resourceInputs["serviceRefreshRateInMinutes"] = state ? state.serviceRefreshRateInMinutes : undefined;
+            resourceInputs["additionalTags"] = state?.additionalTags;
+            resourceInputs["apiKey"] = state?.apiKey;
+            resourceInputs["appFilterRegex"] = state?.appFilterRegex;
+            resourceInputs["forceSave"] = state?.forceSave;
+            resourceInputs["hostFilterRegex"] = state?.hostFilterRegex;
+            resourceInputs["metricFilters"] = state?.metricFilters;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["service"] = state?.service;
+            resourceInputs["serviceRefreshRateInMinutes"] = state?.serviceRefreshRateInMinutes;
         } else {
             const args = argsOrState as CloudIntegrationNewRelicArgs | undefined;
-            if ((!args || args.apiKey === undefined) && !opts.urn) {
+            if (args?.apiKey === undefined && !opts.urn) {
                 throw new Error("Missing required property 'apiKey'");
             }
-            resourceInputs["additionalTags"] = args ? args.additionalTags : undefined;
+            resourceInputs["additionalTags"] = args?.additionalTags;
             resourceInputs["apiKey"] = args?.apiKey ? pulumi.secret(args.apiKey) : undefined;
-            resourceInputs["appFilterRegex"] = args ? args.appFilterRegex : undefined;
-            resourceInputs["forceSave"] = args ? args.forceSave : undefined;
-            resourceInputs["hostFilterRegex"] = args ? args.hostFilterRegex : undefined;
-            resourceInputs["metricFilters"] = args ? args.metricFilters : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["service"] = args ? args.service : undefined;
-            resourceInputs["serviceRefreshRateInMinutes"] = args ? args.serviceRefreshRateInMinutes : undefined;
+            resourceInputs["appFilterRegex"] = args?.appFilterRegex;
+            resourceInputs["forceSave"] = args?.forceSave;
+            resourceInputs["hostFilterRegex"] = args?.hostFilterRegex;
+            resourceInputs["metricFilters"] = args?.metricFilters;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["service"] = args?.service;
+            resourceInputs["serviceRefreshRateInMinutes"] = args?.serviceRefreshRateInMinutes;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         const secretOpts = { additionalSecretOutputs: ["apiKey"] };

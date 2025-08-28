@@ -62,56 +62,56 @@ export class CloudIntegrationCloudWatch extends pulumi.CustomResource {
     /**
      * A list of point tag key-values to add to every point ingested using this integration.
      */
-    public readonly additionalTags!: pulumi.Output<{[key: string]: string} | undefined>;
+    declare public readonly additionalTags: pulumi.Output<{[key: string]: string} | undefined>;
     /**
      * The Role ARN that the customer has created in AWS IAM to allow access to Wavefront.
      */
-    public readonly externalId!: pulumi.Output<string>;
+    declare public readonly externalId: pulumi.Output<string>;
     /**
      * Forces this resource to save, even if errors are present.
      */
-    public readonly forceSave!: pulumi.Output<boolean | undefined>;
+    declare public readonly forceSave: pulumi.Output<boolean | undefined>;
     /**
      * A string->string map allow list of instance tag-value pairs (in AWS).
      * If the instance's AWS tags match this allow list, CloudWatch data about this instance is ingested.
      * Multiple entries are OR'ed.
      */
-    public readonly instanceSelectionTags!: pulumi.Output<{[key: string]: string} | undefined>;
+    declare public readonly instanceSelectionTags: pulumi.Output<{[key: string]: string} | undefined>;
     /**
      * A regular expression that a CloudWatch metric name must match (case-insensitively) in order to be ingested.
      */
-    public readonly metricFilterRegex!: pulumi.Output<string | undefined>;
+    declare public readonly metricFilterRegex: pulumi.Output<string | undefined>;
     /**
      * The human-readable name of this integration.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * A list of namespaces that limit what we query from CloudWatch.
      */
-    public readonly namespaces!: pulumi.Output<string[] | undefined>;
+    declare public readonly namespaces: pulumi.Output<string[] | undefined>;
     /**
      * A regular expression that AWS tag key name must match (case-insensitively)
      * in order to be ingested.
      */
-    public readonly pointTagFilterRegex!: pulumi.Output<string | undefined>;
+    declare public readonly pointTagFilterRegex: pulumi.Output<string | undefined>;
     /**
      * The external ID corresponding to the Role ARN.
      */
-    public readonly roleArn!: pulumi.Output<string>;
+    declare public readonly roleArn: pulumi.Output<string>;
     /**
      * A value denoting which cloud service this service integrates with.
      */
-    public readonly service!: pulumi.Output<string>;
+    declare public readonly service: pulumi.Output<string>;
     /**
      * How often, in minutes, to refresh the service.
      */
-    public readonly serviceRefreshRateInMinutes!: pulumi.Output<number | undefined>;
+    declare public readonly serviceRefreshRateInMinutes: pulumi.Output<number | undefined>;
     /**
      * A string->string map of allow list of volume tag-value pairs (in AWS).
      * If the volume's AWS tags match this allow list, CloudWatch data about this volume is ingested.
      * Multiple entries are OR'ed.
      */
-    public readonly volumeSelectionTags!: pulumi.Output<{[key: string]: string} | undefined>;
+    declare public readonly volumeSelectionTags: pulumi.Output<{[key: string]: string} | undefined>;
 
     /**
      * Create a CloudIntegrationCloudWatch resource with the given unique name, arguments, and options.
@@ -126,38 +126,38 @@ export class CloudIntegrationCloudWatch extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as CloudIntegrationCloudWatchState | undefined;
-            resourceInputs["additionalTags"] = state ? state.additionalTags : undefined;
-            resourceInputs["externalId"] = state ? state.externalId : undefined;
-            resourceInputs["forceSave"] = state ? state.forceSave : undefined;
-            resourceInputs["instanceSelectionTags"] = state ? state.instanceSelectionTags : undefined;
-            resourceInputs["metricFilterRegex"] = state ? state.metricFilterRegex : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["namespaces"] = state ? state.namespaces : undefined;
-            resourceInputs["pointTagFilterRegex"] = state ? state.pointTagFilterRegex : undefined;
-            resourceInputs["roleArn"] = state ? state.roleArn : undefined;
-            resourceInputs["service"] = state ? state.service : undefined;
-            resourceInputs["serviceRefreshRateInMinutes"] = state ? state.serviceRefreshRateInMinutes : undefined;
-            resourceInputs["volumeSelectionTags"] = state ? state.volumeSelectionTags : undefined;
+            resourceInputs["additionalTags"] = state?.additionalTags;
+            resourceInputs["externalId"] = state?.externalId;
+            resourceInputs["forceSave"] = state?.forceSave;
+            resourceInputs["instanceSelectionTags"] = state?.instanceSelectionTags;
+            resourceInputs["metricFilterRegex"] = state?.metricFilterRegex;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["namespaces"] = state?.namespaces;
+            resourceInputs["pointTagFilterRegex"] = state?.pointTagFilterRegex;
+            resourceInputs["roleArn"] = state?.roleArn;
+            resourceInputs["service"] = state?.service;
+            resourceInputs["serviceRefreshRateInMinutes"] = state?.serviceRefreshRateInMinutes;
+            resourceInputs["volumeSelectionTags"] = state?.volumeSelectionTags;
         } else {
             const args = argsOrState as CloudIntegrationCloudWatchArgs | undefined;
-            if ((!args || args.externalId === undefined) && !opts.urn) {
+            if (args?.externalId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'externalId'");
             }
-            if ((!args || args.roleArn === undefined) && !opts.urn) {
+            if (args?.roleArn === undefined && !opts.urn) {
                 throw new Error("Missing required property 'roleArn'");
             }
-            resourceInputs["additionalTags"] = args ? args.additionalTags : undefined;
-            resourceInputs["externalId"] = args ? args.externalId : undefined;
-            resourceInputs["forceSave"] = args ? args.forceSave : undefined;
-            resourceInputs["instanceSelectionTags"] = args ? args.instanceSelectionTags : undefined;
-            resourceInputs["metricFilterRegex"] = args ? args.metricFilterRegex : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["namespaces"] = args ? args.namespaces : undefined;
-            resourceInputs["pointTagFilterRegex"] = args ? args.pointTagFilterRegex : undefined;
-            resourceInputs["roleArn"] = args ? args.roleArn : undefined;
-            resourceInputs["service"] = args ? args.service : undefined;
-            resourceInputs["serviceRefreshRateInMinutes"] = args ? args.serviceRefreshRateInMinutes : undefined;
-            resourceInputs["volumeSelectionTags"] = args ? args.volumeSelectionTags : undefined;
+            resourceInputs["additionalTags"] = args?.additionalTags;
+            resourceInputs["externalId"] = args?.externalId;
+            resourceInputs["forceSave"] = args?.forceSave;
+            resourceInputs["instanceSelectionTags"] = args?.instanceSelectionTags;
+            resourceInputs["metricFilterRegex"] = args?.metricFilterRegex;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["namespaces"] = args?.namespaces;
+            resourceInputs["pointTagFilterRegex"] = args?.pointTagFilterRegex;
+            resourceInputs["roleArn"] = args?.roleArn;
+            resourceInputs["service"] = args?.service;
+            resourceInputs["serviceRefreshRateInMinutes"] = args?.serviceRefreshRateInMinutes;
+            resourceInputs["volumeSelectionTags"] = args?.volumeSelectionTags;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(CloudIntegrationCloudWatch.__pulumiType, name, resourceInputs, opts);

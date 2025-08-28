@@ -60,23 +60,23 @@ export class DerivedMetric extends pulumi.CustomResource {
     /**
      * User-supplied additional explanatory information for the derived metric.
      */
-    public readonly additionalInformation!: pulumi.Output<string | undefined>;
+    declare public readonly additionalInformation: pulumi.Output<string | undefined>;
     /**
      * How frequently the query generating the derived metric is run.
      */
-    public readonly minutes!: pulumi.Output<number>;
+    declare public readonly minutes: pulumi.Output<number>;
     /**
      * The name of the Derived Metric in Wavefront.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * A Wavefront query that is evaluated at regular intervals (default is 1 minute).
      */
-    public readonly query!: pulumi.Output<string>;
+    declare public readonly query: pulumi.Output<string>;
     /**
      * A set of tags to assign to this resource.
      */
-    public readonly tags!: pulumi.Output<string[] | undefined>;
+    declare public readonly tags: pulumi.Output<string[] | undefined>;
 
     /**
      * Create a DerivedMetric resource with the given unique name, arguments, and options.
@@ -91,24 +91,24 @@ export class DerivedMetric extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as DerivedMetricState | undefined;
-            resourceInputs["additionalInformation"] = state ? state.additionalInformation : undefined;
-            resourceInputs["minutes"] = state ? state.minutes : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["query"] = state ? state.query : undefined;
-            resourceInputs["tags"] = state ? state.tags : undefined;
+            resourceInputs["additionalInformation"] = state?.additionalInformation;
+            resourceInputs["minutes"] = state?.minutes;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["query"] = state?.query;
+            resourceInputs["tags"] = state?.tags;
         } else {
             const args = argsOrState as DerivedMetricArgs | undefined;
-            if ((!args || args.minutes === undefined) && !opts.urn) {
+            if (args?.minutes === undefined && !opts.urn) {
                 throw new Error("Missing required property 'minutes'");
             }
-            if ((!args || args.query === undefined) && !opts.urn) {
+            if (args?.query === undefined && !opts.urn) {
                 throw new Error("Missing required property 'query'");
             }
-            resourceInputs["additionalInformation"] = args ? args.additionalInformation : undefined;
-            resourceInputs["minutes"] = args ? args.minutes : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["query"] = args ? args.query : undefined;
-            resourceInputs["tags"] = args ? args.tags : undefined;
+            resourceInputs["additionalInformation"] = args?.additionalInformation;
+            resourceInputs["minutes"] = args?.minutes;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["query"] = args?.query;
+            resourceInputs["tags"] = args?.tags;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(DerivedMetric.__pulumiType, name, resourceInputs, opts);

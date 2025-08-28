@@ -55,21 +55,21 @@ export class Role extends pulumi.CustomResource {
     /**
      * A list of user groups or accounts to assign to this role.
      */
-    public readonly assignees!: pulumi.Output<string[] | undefined>;
+    declare public readonly assignees: pulumi.Output<string[] | undefined>;
     /**
      * A short description of the role.
      */
-    public readonly description!: pulumi.Output<string | undefined>;
+    declare public readonly description: pulumi.Output<string | undefined>;
     /**
      * The name of the role.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * A list of permissions to assign to this role. Valid options are
      * `agentManagement`, `alertsManagement`, `dashboardManagement`, `embeddedCharts`, `eventsManagement`, `externalLinksManagement`,
      * `hostTagManagement`, `metricsManagement`, and `userManagement`.
      */
-    public readonly permissions!: pulumi.Output<string[] | undefined>;
+    declare public readonly permissions: pulumi.Output<string[] | undefined>;
 
     /**
      * Create a Role resource with the given unique name, arguments, and options.
@@ -84,16 +84,16 @@ export class Role extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as RoleState | undefined;
-            resourceInputs["assignees"] = state ? state.assignees : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["permissions"] = state ? state.permissions : undefined;
+            resourceInputs["assignees"] = state?.assignees;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["permissions"] = state?.permissions;
         } else {
             const args = argsOrState as RoleArgs | undefined;
-            resourceInputs["assignees"] = args ? args.assignees : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["permissions"] = args ? args.permissions : undefined;
+            resourceInputs["assignees"] = args?.assignees;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["permissions"] = args?.permissions;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(Role.__pulumiType, name, resourceInputs, opts);

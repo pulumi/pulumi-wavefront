@@ -63,47 +63,47 @@ export class CloudIntegrationCloudTrail extends pulumi.CustomResource {
     /**
      * A list of point tag key-values to add to every point ingested using this integration.
      */
-    public readonly additionalTags!: pulumi.Output<{[key: string]: string} | undefined>;
+    declare public readonly additionalTags: pulumi.Output<{[key: string]: string} | undefined>;
     /**
      * Name of the S3 bucket where CloudTrail logs are stored.
      */
-    public readonly bucketName!: pulumi.Output<string>;
+    declare public readonly bucketName: pulumi.Output<string>;
     /**
      * The Role ARN that the customer has created in AWS IAM to allow access to Wavefront.
      */
-    public readonly externalId!: pulumi.Output<string>;
+    declare public readonly externalId: pulumi.Output<string>;
     /**
      * Rule to filter CloudTrail log event.
      */
-    public readonly filterRule!: pulumi.Output<string | undefined>;
+    declare public readonly filterRule: pulumi.Output<string | undefined>;
     /**
      * Forces this resource to save, even if errors are present.
      */
-    public readonly forceSave!: pulumi.Output<boolean | undefined>;
+    declare public readonly forceSave: pulumi.Output<boolean | undefined>;
     /**
      * The human-readable name of this integration.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * The common prefix, if any, appended to all CloudTrail log files.
      */
-    public readonly prefix!: pulumi.Output<string | undefined>;
+    declare public readonly prefix: pulumi.Output<string | undefined>;
     /**
      * The AWS region of the S3 bucket where CloudTrail logs are stored.
      */
-    public readonly region!: pulumi.Output<string>;
+    declare public readonly region: pulumi.Output<string>;
     /**
      * The external ID corresponding to the Role ARN.
      */
-    public readonly roleArn!: pulumi.Output<string>;
+    declare public readonly roleArn: pulumi.Output<string>;
     /**
      * A value denoting which cloud service this service integrates with.
      */
-    public readonly service!: pulumi.Output<string>;
+    declare public readonly service: pulumi.Output<string>;
     /**
      * How often, in minutes, to refresh the service.
      */
-    public readonly serviceRefreshRateInMinutes!: pulumi.Output<number | undefined>;
+    declare public readonly serviceRefreshRateInMinutes: pulumi.Output<number | undefined>;
 
     /**
      * Create a CloudIntegrationCloudTrail resource with the given unique name, arguments, and options.
@@ -118,42 +118,42 @@ export class CloudIntegrationCloudTrail extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as CloudIntegrationCloudTrailState | undefined;
-            resourceInputs["additionalTags"] = state ? state.additionalTags : undefined;
-            resourceInputs["bucketName"] = state ? state.bucketName : undefined;
-            resourceInputs["externalId"] = state ? state.externalId : undefined;
-            resourceInputs["filterRule"] = state ? state.filterRule : undefined;
-            resourceInputs["forceSave"] = state ? state.forceSave : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["prefix"] = state ? state.prefix : undefined;
-            resourceInputs["region"] = state ? state.region : undefined;
-            resourceInputs["roleArn"] = state ? state.roleArn : undefined;
-            resourceInputs["service"] = state ? state.service : undefined;
-            resourceInputs["serviceRefreshRateInMinutes"] = state ? state.serviceRefreshRateInMinutes : undefined;
+            resourceInputs["additionalTags"] = state?.additionalTags;
+            resourceInputs["bucketName"] = state?.bucketName;
+            resourceInputs["externalId"] = state?.externalId;
+            resourceInputs["filterRule"] = state?.filterRule;
+            resourceInputs["forceSave"] = state?.forceSave;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["prefix"] = state?.prefix;
+            resourceInputs["region"] = state?.region;
+            resourceInputs["roleArn"] = state?.roleArn;
+            resourceInputs["service"] = state?.service;
+            resourceInputs["serviceRefreshRateInMinutes"] = state?.serviceRefreshRateInMinutes;
         } else {
             const args = argsOrState as CloudIntegrationCloudTrailArgs | undefined;
-            if ((!args || args.bucketName === undefined) && !opts.urn) {
+            if (args?.bucketName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'bucketName'");
             }
-            if ((!args || args.externalId === undefined) && !opts.urn) {
+            if (args?.externalId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'externalId'");
             }
-            if ((!args || args.region === undefined) && !opts.urn) {
+            if (args?.region === undefined && !opts.urn) {
                 throw new Error("Missing required property 'region'");
             }
-            if ((!args || args.roleArn === undefined) && !opts.urn) {
+            if (args?.roleArn === undefined && !opts.urn) {
                 throw new Error("Missing required property 'roleArn'");
             }
-            resourceInputs["additionalTags"] = args ? args.additionalTags : undefined;
-            resourceInputs["bucketName"] = args ? args.bucketName : undefined;
-            resourceInputs["externalId"] = args ? args.externalId : undefined;
-            resourceInputs["filterRule"] = args ? args.filterRule : undefined;
-            resourceInputs["forceSave"] = args ? args.forceSave : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["prefix"] = args ? args.prefix : undefined;
-            resourceInputs["region"] = args ? args.region : undefined;
-            resourceInputs["roleArn"] = args ? args.roleArn : undefined;
-            resourceInputs["service"] = args ? args.service : undefined;
-            resourceInputs["serviceRefreshRateInMinutes"] = args ? args.serviceRefreshRateInMinutes : undefined;
+            resourceInputs["additionalTags"] = args?.additionalTags;
+            resourceInputs["bucketName"] = args?.bucketName;
+            resourceInputs["externalId"] = args?.externalId;
+            resourceInputs["filterRule"] = args?.filterRule;
+            resourceInputs["forceSave"] = args?.forceSave;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["prefix"] = args?.prefix;
+            resourceInputs["region"] = args?.region;
+            resourceInputs["roleArn"] = args?.roleArn;
+            resourceInputs["service"] = args?.service;
+            resourceInputs["serviceRefreshRateInMinutes"] = args?.serviceRefreshRateInMinutes;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(CloudIntegrationCloudTrail.__pulumiType, name, resourceInputs, opts);

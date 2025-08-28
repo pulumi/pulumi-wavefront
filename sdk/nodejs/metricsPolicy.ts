@@ -83,19 +83,19 @@ export class MetricsPolicy extends pulumi.CustomResource {
     /**
      * The customer the user is associated with.
      */
-    public /*out*/ readonly customer!: pulumi.Output<string>;
+    declare public /*out*/ readonly customer: pulumi.Output<string>;
     /**
      * List of Metrics Policies, must have at least one entry.
      */
-    public readonly policyRules!: pulumi.Output<outputs.MetricsPolicyPolicyRule[]>;
+    declare public readonly policyRules: pulumi.Output<outputs.MetricsPolicyPolicyRule[]>;
     /**
      * When the policy was applied in epoch_millis.
      */
-    public /*out*/ readonly updatedEpochMillis!: pulumi.Output<number>;
+    declare public /*out*/ readonly updatedEpochMillis: pulumi.Output<number>;
     /**
      * The accountId who applied the current policy.
      */
-    public /*out*/ readonly updaterId!: pulumi.Output<string>;
+    declare public /*out*/ readonly updaterId: pulumi.Output<string>;
 
     /**
      * Create a MetricsPolicy resource with the given unique name, arguments, and options.
@@ -110,16 +110,16 @@ export class MetricsPolicy extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as MetricsPolicyState | undefined;
-            resourceInputs["customer"] = state ? state.customer : undefined;
-            resourceInputs["policyRules"] = state ? state.policyRules : undefined;
-            resourceInputs["updatedEpochMillis"] = state ? state.updatedEpochMillis : undefined;
-            resourceInputs["updaterId"] = state ? state.updaterId : undefined;
+            resourceInputs["customer"] = state?.customer;
+            resourceInputs["policyRules"] = state?.policyRules;
+            resourceInputs["updatedEpochMillis"] = state?.updatedEpochMillis;
+            resourceInputs["updaterId"] = state?.updaterId;
         } else {
             const args = argsOrState as MetricsPolicyArgs | undefined;
-            if ((!args || args.policyRules === undefined) && !opts.urn) {
+            if (args?.policyRules === undefined && !opts.urn) {
                 throw new Error("Missing required property 'policyRules'");
             }
-            resourceInputs["policyRules"] = args ? args.policyRules : undefined;
+            resourceInputs["policyRules"] = args?.policyRules;
             resourceInputs["customer"] = undefined /*out*/;
             resourceInputs["updatedEpochMillis"] = undefined /*out*/;
             resourceInputs["updaterId"] = undefined /*out*/;

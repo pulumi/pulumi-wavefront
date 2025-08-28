@@ -58,29 +58,29 @@ export class ServiceAccount extends pulumi.CustomResource {
     /**
      * Whether or not the service account is active.
      */
-    public readonly active!: pulumi.Output<boolean | undefined>;
+    declare public readonly active: pulumi.Output<boolean | undefined>;
     /**
      * The description of the service account.
      */
-    public readonly description!: pulumi.Output<string | undefined>;
+    declare public readonly description: pulumi.Output<string | undefined>;
     /**
      * The unique identifier of the service account to create. Must have the prefix `sa::`.
      */
-    public readonly identifier!: pulumi.Output<string>;
+    declare public readonly identifier: pulumi.Output<string>;
     /**
      * ID of ingestion policy.
      */
-    public readonly ingestionPolicy!: pulumi.Output<string | undefined>;
+    declare public readonly ingestionPolicy: pulumi.Output<string | undefined>;
     /**
      * List of permission to grant to this service account. Valid options are
      * `agentManagement`, `alertsManagement`, `dashboardManagement`, `embeddedCharts`, `eventsManagement`, `externalLinksManagement`,
      * `hostTagManagement`, `metricsManagement`, and `userManagement`.
      */
-    public readonly permissions!: pulumi.Output<string[]>;
+    declare public readonly permissions: pulumi.Output<string[]>;
     /**
      * List of user groups for this service account.
      */
-    public readonly userGroups!: pulumi.Output<string[]>;
+    declare public readonly userGroups: pulumi.Output<string[]>;
 
     /**
      * Create a ServiceAccount resource with the given unique name, arguments, and options.
@@ -95,23 +95,23 @@ export class ServiceAccount extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ServiceAccountState | undefined;
-            resourceInputs["active"] = state ? state.active : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["identifier"] = state ? state.identifier : undefined;
-            resourceInputs["ingestionPolicy"] = state ? state.ingestionPolicy : undefined;
-            resourceInputs["permissions"] = state ? state.permissions : undefined;
-            resourceInputs["userGroups"] = state ? state.userGroups : undefined;
+            resourceInputs["active"] = state?.active;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["identifier"] = state?.identifier;
+            resourceInputs["ingestionPolicy"] = state?.ingestionPolicy;
+            resourceInputs["permissions"] = state?.permissions;
+            resourceInputs["userGroups"] = state?.userGroups;
         } else {
             const args = argsOrState as ServiceAccountArgs | undefined;
-            if ((!args || args.identifier === undefined) && !opts.urn) {
+            if (args?.identifier === undefined && !opts.urn) {
                 throw new Error("Missing required property 'identifier'");
             }
-            resourceInputs["active"] = args ? args.active : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["identifier"] = args ? args.identifier : undefined;
-            resourceInputs["ingestionPolicy"] = args ? args.ingestionPolicy : undefined;
-            resourceInputs["permissions"] = args ? args.permissions : undefined;
-            resourceInputs["userGroups"] = args ? args.userGroups : undefined;
+            resourceInputs["active"] = args?.active;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["identifier"] = args?.identifier;
+            resourceInputs["ingestionPolicy"] = args?.ingestionPolicy;
+            resourceInputs["permissions"] = args?.permissions;
+            resourceInputs["userGroups"] = args?.userGroups;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(ServiceAccount.__pulumiType, name, resourceInputs, opts);

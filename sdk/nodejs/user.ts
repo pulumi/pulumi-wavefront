@@ -55,21 +55,21 @@ export class User extends pulumi.CustomResource {
     /**
      * The customer the user is associated with.
      */
-    public readonly customer!: pulumi.Output<string>;
+    declare public readonly customer: pulumi.Output<string>;
     /**
      * The unique identifier of the user account to create. Must be a valid email address.
      */
-    public readonly email!: pulumi.Output<string>;
+    declare public readonly email: pulumi.Output<string>;
     /**
      * List of permission to grant to this user. Valid options are
      * `agentManagement`, `alertsManagement`, `dashboardManagement`, `embeddedCharts`, `eventsManagement`, `externalLinksManagement`,
      * `hostTagManagement`, `metricsManagement`, and `userManagement`.
      */
-    public readonly permissions!: pulumi.Output<string[]>;
+    declare public readonly permissions: pulumi.Output<string[]>;
     /**
      * List of user groups to this user.
      */
-    public readonly userGroups!: pulumi.Output<string[]>;
+    declare public readonly userGroups: pulumi.Output<string[]>;
 
     /**
      * Create a User resource with the given unique name, arguments, and options.
@@ -84,19 +84,19 @@ export class User extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as UserState | undefined;
-            resourceInputs["customer"] = state ? state.customer : undefined;
-            resourceInputs["email"] = state ? state.email : undefined;
-            resourceInputs["permissions"] = state ? state.permissions : undefined;
-            resourceInputs["userGroups"] = state ? state.userGroups : undefined;
+            resourceInputs["customer"] = state?.customer;
+            resourceInputs["email"] = state?.email;
+            resourceInputs["permissions"] = state?.permissions;
+            resourceInputs["userGroups"] = state?.userGroups;
         } else {
             const args = argsOrState as UserArgs | undefined;
-            if ((!args || args.email === undefined) && !opts.urn) {
+            if (args?.email === undefined && !opts.urn) {
                 throw new Error("Missing required property 'email'");
             }
-            resourceInputs["customer"] = args ? args.customer : undefined;
-            resourceInputs["email"] = args ? args.email : undefined;
-            resourceInputs["permissions"] = args ? args.permissions : undefined;
-            resourceInputs["userGroups"] = args ? args.userGroups : undefined;
+            resourceInputs["customer"] = args?.customer;
+            resourceInputs["email"] = args?.email;
+            resourceInputs["permissions"] = args?.permissions;
+            resourceInputs["userGroups"] = args?.userGroups;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(User.__pulumiType, name, resourceInputs, opts);
