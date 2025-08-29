@@ -61,47 +61,47 @@ export class CloudIntegrationAzure extends pulumi.CustomResource {
     /**
      * A list of point tag key-values to add to every point ingested using this integration.
      */
-    public readonly additionalTags!: pulumi.Output<{[key: string]: string} | undefined>;
+    declare public readonly additionalTags: pulumi.Output<{[key: string]: string} | undefined>;
     /**
      * A list of Azure Activity Log categories.
      */
-    public readonly categoryFilters!: pulumi.Output<string[] | undefined>;
+    declare public readonly categoryFilters: pulumi.Output<string[] | undefined>;
     /**
      * Client ID for an Azure service account within your project.
      */
-    public readonly clientId!: pulumi.Output<string>;
+    declare public readonly clientId: pulumi.Output<string>;
     /**
      * Client secret for an Azure service account within your project.
      */
-    public readonly clientSecret!: pulumi.Output<string>;
+    declare public readonly clientSecret: pulumi.Output<string>;
     /**
      * Forces this resource to save, even if errors are present.
      */
-    public readonly forceSave!: pulumi.Output<boolean | undefined>;
+    declare public readonly forceSave: pulumi.Output<boolean | undefined>;
     /**
      * A regular expression that a metric name must match (case-insensitively) in order to be ingested.
      */
-    public readonly metricFilterRegex!: pulumi.Output<string | undefined>;
+    declare public readonly metricFilterRegex: pulumi.Output<string | undefined>;
     /**
      * The human-readable name of this integration.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * A list of Azure resource groups from which to pull metrics.
      */
-    public readonly resourceGroupFilters!: pulumi.Output<string[] | undefined>;
+    declare public readonly resourceGroupFilters: pulumi.Output<string[] | undefined>;
     /**
      * A value denoting which cloud service this service integrates with.
      */
-    public readonly service!: pulumi.Output<string>;
+    declare public readonly service: pulumi.Output<string>;
     /**
      * How often, in minutes, to refresh the service.
      */
-    public readonly serviceRefreshRateInMinutes!: pulumi.Output<number | undefined>;
+    declare public readonly serviceRefreshRateInMinutes: pulumi.Output<number | undefined>;
     /**
      * Tenant ID for an Azure service account within your project.
      */
-    public readonly tenant!: pulumi.Output<string>;
+    declare public readonly tenant: pulumi.Output<string>;
 
     /**
      * Create a CloudIntegrationAzure resource with the given unique name, arguments, and options.
@@ -116,39 +116,39 @@ export class CloudIntegrationAzure extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as CloudIntegrationAzureState | undefined;
-            resourceInputs["additionalTags"] = state ? state.additionalTags : undefined;
-            resourceInputs["categoryFilters"] = state ? state.categoryFilters : undefined;
-            resourceInputs["clientId"] = state ? state.clientId : undefined;
-            resourceInputs["clientSecret"] = state ? state.clientSecret : undefined;
-            resourceInputs["forceSave"] = state ? state.forceSave : undefined;
-            resourceInputs["metricFilterRegex"] = state ? state.metricFilterRegex : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["resourceGroupFilters"] = state ? state.resourceGroupFilters : undefined;
-            resourceInputs["service"] = state ? state.service : undefined;
-            resourceInputs["serviceRefreshRateInMinutes"] = state ? state.serviceRefreshRateInMinutes : undefined;
-            resourceInputs["tenant"] = state ? state.tenant : undefined;
+            resourceInputs["additionalTags"] = state?.additionalTags;
+            resourceInputs["categoryFilters"] = state?.categoryFilters;
+            resourceInputs["clientId"] = state?.clientId;
+            resourceInputs["clientSecret"] = state?.clientSecret;
+            resourceInputs["forceSave"] = state?.forceSave;
+            resourceInputs["metricFilterRegex"] = state?.metricFilterRegex;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["resourceGroupFilters"] = state?.resourceGroupFilters;
+            resourceInputs["service"] = state?.service;
+            resourceInputs["serviceRefreshRateInMinutes"] = state?.serviceRefreshRateInMinutes;
+            resourceInputs["tenant"] = state?.tenant;
         } else {
             const args = argsOrState as CloudIntegrationAzureArgs | undefined;
-            if ((!args || args.clientId === undefined) && !opts.urn) {
+            if (args?.clientId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'clientId'");
             }
-            if ((!args || args.clientSecret === undefined) && !opts.urn) {
+            if (args?.clientSecret === undefined && !opts.urn) {
                 throw new Error("Missing required property 'clientSecret'");
             }
-            if ((!args || args.tenant === undefined) && !opts.urn) {
+            if (args?.tenant === undefined && !opts.urn) {
                 throw new Error("Missing required property 'tenant'");
             }
-            resourceInputs["additionalTags"] = args ? args.additionalTags : undefined;
-            resourceInputs["categoryFilters"] = args ? args.categoryFilters : undefined;
-            resourceInputs["clientId"] = args ? args.clientId : undefined;
+            resourceInputs["additionalTags"] = args?.additionalTags;
+            resourceInputs["categoryFilters"] = args?.categoryFilters;
+            resourceInputs["clientId"] = args?.clientId;
             resourceInputs["clientSecret"] = args?.clientSecret ? pulumi.secret(args.clientSecret) : undefined;
-            resourceInputs["forceSave"] = args ? args.forceSave : undefined;
-            resourceInputs["metricFilterRegex"] = args ? args.metricFilterRegex : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["resourceGroupFilters"] = args ? args.resourceGroupFilters : undefined;
-            resourceInputs["service"] = args ? args.service : undefined;
-            resourceInputs["serviceRefreshRateInMinutes"] = args ? args.serviceRefreshRateInMinutes : undefined;
-            resourceInputs["tenant"] = args ? args.tenant : undefined;
+            resourceInputs["forceSave"] = args?.forceSave;
+            resourceInputs["metricFilterRegex"] = args?.metricFilterRegex;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["resourceGroupFilters"] = args?.resourceGroupFilters;
+            resourceInputs["service"] = args?.service;
+            resourceInputs["serviceRefreshRateInMinutes"] = args?.serviceRefreshRateInMinutes;
+            resourceInputs["tenant"] = args?.tenant;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         const secretOpts = { additionalSecretOutputs: ["clientSecret"] };

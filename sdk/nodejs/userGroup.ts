@@ -58,11 +58,11 @@ export class UserGroup extends pulumi.CustomResource {
     /**
      * A short description of the user group.
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * The name of the user group.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
 
     /**
      * Create a UserGroup resource with the given unique name, arguments, and options.
@@ -77,15 +77,15 @@ export class UserGroup extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as UserGroupState | undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["name"] = state?.name;
         } else {
             const args = argsOrState as UserGroupArgs | undefined;
-            if ((!args || args.description === undefined) && !opts.urn) {
+            if (args?.description === undefined && !opts.urn) {
                 throw new Error("Missing required property 'description'");
             }
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["name"] = args?.name;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(UserGroup.__pulumiType, name, resourceInputs, opts);

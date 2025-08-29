@@ -64,50 +64,50 @@ export class MaintenanceWindow extends pulumi.CustomResource {
     /**
      * end time in seconds after 1 Jan 1970 GMT.
      */
-    public readonly endTimeInSeconds!: pulumi.Output<number>;
+    declare public readonly endTimeInSeconds: pulumi.Output<number>;
     /**
      * If `true`, a source/host must be in `relevantHostNames`
      * and have tags matching the specification formed by `relevantHostTags` and `relevantHostTagsAnded` in
      * order for this maintenance window to apply. If `false`, a source/host must either be in `relevantHostNames`
      * or match `relevantHostTags` and `relevantHostTagsAnded`. Default: `false`.
      */
-    public readonly hostTagGroupHostNamesGroupAnded!: pulumi.Output<boolean | undefined>;
+    declare public readonly hostTagGroupHostNamesGroupAnded: pulumi.Output<boolean | undefined>;
     /**
      * The reason for the maintenance window.
      */
-    public readonly reason!: pulumi.Output<string>;
+    declare public readonly reason: pulumi.Output<string>;
     /**
      * List of alert tags whose matching alerts will be put into maintenance because
      * of this maintenance window. At least one of `relevantCustomerTags`, `relevantHostTags`, or `relevantHostNames`
      * is required.
      */
-    public readonly relevantCustomerTags!: pulumi.Output<string[] | undefined>;
+    declare public readonly relevantCustomerTags: pulumi.Output<string[] | undefined>;
     /**
      * List of source/host names that will be put into maintenance because of this
      * maintenance window. At least one of `relevantCustomerTags`, `relevantHostTags`, or `relevantHostNames`
      * is required.
      */
-    public readonly relevantHostNames!: pulumi.Output<string[] | undefined>;
+    declare public readonly relevantHostNames: pulumi.Output<string[] | undefined>;
     /**
      * List of source/host tags whose matching sources/hosts will be put into maintenance
      * because of this maintenance window. At least one of `relevantCustomerTags`, `relevantHostTags`, or
      * `relevantHostNames` is required.
      */
-    public readonly relevantHostTags!: pulumi.Output<string[] | undefined>;
+    declare public readonly relevantHostTags: pulumi.Output<string[] | undefined>;
     /**
      * Whether to AND source/host tags listed in `relevantHostTags`.
      * If `true`, a source/host must contain all tags in order for the maintenance window to apply. If `false`,
      * the tags are OR'ed, and a source/host must contain one of the tags. Default: `false`.
      */
-    public readonly relevantHostTagsAnded!: pulumi.Output<boolean | undefined>;
+    declare public readonly relevantHostTagsAnded: pulumi.Output<boolean | undefined>;
     /**
      * start time in seconds after 1 Jan 1970 GMT.
      */
-    public readonly startTimeInSeconds!: pulumi.Output<number>;
+    declare public readonly startTimeInSeconds: pulumi.Output<number>;
     /**
      * The title of the maintenance window.
      */
-    public readonly title!: pulumi.Output<string>;
+    declare public readonly title: pulumi.Output<string>;
 
     /**
      * Create a MaintenanceWindow resource with the given unique name, arguments, and options.
@@ -122,38 +122,38 @@ export class MaintenanceWindow extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as MaintenanceWindowState | undefined;
-            resourceInputs["endTimeInSeconds"] = state ? state.endTimeInSeconds : undefined;
-            resourceInputs["hostTagGroupHostNamesGroupAnded"] = state ? state.hostTagGroupHostNamesGroupAnded : undefined;
-            resourceInputs["reason"] = state ? state.reason : undefined;
-            resourceInputs["relevantCustomerTags"] = state ? state.relevantCustomerTags : undefined;
-            resourceInputs["relevantHostNames"] = state ? state.relevantHostNames : undefined;
-            resourceInputs["relevantHostTags"] = state ? state.relevantHostTags : undefined;
-            resourceInputs["relevantHostTagsAnded"] = state ? state.relevantHostTagsAnded : undefined;
-            resourceInputs["startTimeInSeconds"] = state ? state.startTimeInSeconds : undefined;
-            resourceInputs["title"] = state ? state.title : undefined;
+            resourceInputs["endTimeInSeconds"] = state?.endTimeInSeconds;
+            resourceInputs["hostTagGroupHostNamesGroupAnded"] = state?.hostTagGroupHostNamesGroupAnded;
+            resourceInputs["reason"] = state?.reason;
+            resourceInputs["relevantCustomerTags"] = state?.relevantCustomerTags;
+            resourceInputs["relevantHostNames"] = state?.relevantHostNames;
+            resourceInputs["relevantHostTags"] = state?.relevantHostTags;
+            resourceInputs["relevantHostTagsAnded"] = state?.relevantHostTagsAnded;
+            resourceInputs["startTimeInSeconds"] = state?.startTimeInSeconds;
+            resourceInputs["title"] = state?.title;
         } else {
             const args = argsOrState as MaintenanceWindowArgs | undefined;
-            if ((!args || args.endTimeInSeconds === undefined) && !opts.urn) {
+            if (args?.endTimeInSeconds === undefined && !opts.urn) {
                 throw new Error("Missing required property 'endTimeInSeconds'");
             }
-            if ((!args || args.reason === undefined) && !opts.urn) {
+            if (args?.reason === undefined && !opts.urn) {
                 throw new Error("Missing required property 'reason'");
             }
-            if ((!args || args.startTimeInSeconds === undefined) && !opts.urn) {
+            if (args?.startTimeInSeconds === undefined && !opts.urn) {
                 throw new Error("Missing required property 'startTimeInSeconds'");
             }
-            if ((!args || args.title === undefined) && !opts.urn) {
+            if (args?.title === undefined && !opts.urn) {
                 throw new Error("Missing required property 'title'");
             }
-            resourceInputs["endTimeInSeconds"] = args ? args.endTimeInSeconds : undefined;
-            resourceInputs["hostTagGroupHostNamesGroupAnded"] = args ? args.hostTagGroupHostNamesGroupAnded : undefined;
-            resourceInputs["reason"] = args ? args.reason : undefined;
-            resourceInputs["relevantCustomerTags"] = args ? args.relevantCustomerTags : undefined;
-            resourceInputs["relevantHostNames"] = args ? args.relevantHostNames : undefined;
-            resourceInputs["relevantHostTags"] = args ? args.relevantHostTags : undefined;
-            resourceInputs["relevantHostTagsAnded"] = args ? args.relevantHostTagsAnded : undefined;
-            resourceInputs["startTimeInSeconds"] = args ? args.startTimeInSeconds : undefined;
-            resourceInputs["title"] = args ? args.title : undefined;
+            resourceInputs["endTimeInSeconds"] = args?.endTimeInSeconds;
+            resourceInputs["hostTagGroupHostNamesGroupAnded"] = args?.hostTagGroupHostNamesGroupAnded;
+            resourceInputs["reason"] = args?.reason;
+            resourceInputs["relevantCustomerTags"] = args?.relevantCustomerTags;
+            resourceInputs["relevantHostNames"] = args?.relevantHostNames;
+            resourceInputs["relevantHostTags"] = args?.relevantHostTags;
+            resourceInputs["relevantHostTagsAnded"] = args?.relevantHostTagsAnded;
+            resourceInputs["startTimeInSeconds"] = args?.startTimeInSeconds;
+            resourceInputs["title"] = args?.title;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(MaintenanceWindow.__pulumiType, name, resourceInputs, opts);

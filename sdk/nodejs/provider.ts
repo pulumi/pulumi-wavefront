@@ -25,9 +25,9 @@ export class Provider extends pulumi.ProviderResource {
         return obj['__pulumiType'] === "pulumi:providers:" + Provider.__pulumiType;
     }
 
-    public readonly address!: pulumi.Output<string | undefined>;
-    public readonly httpProxy!: pulumi.Output<string | undefined>;
-    public readonly token!: pulumi.Output<string | undefined>;
+    declare public readonly address: pulumi.Output<string | undefined>;
+    declare public readonly httpProxy: pulumi.Output<string | undefined>;
+    declare public readonly token: pulumi.Output<string | undefined>;
 
     /**
      * Create a Provider resource with the given unique name, arguments, and options.
@@ -40,9 +40,9 @@ export class Provider extends pulumi.ProviderResource {
         let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         {
-            resourceInputs["address"] = args ? args.address : undefined;
-            resourceInputs["httpProxy"] = args ? args.httpProxy : undefined;
-            resourceInputs["token"] = args ? args.token : undefined;
+            resourceInputs["address"] = args?.address;
+            resourceInputs["httpProxy"] = args?.httpProxy;
+            resourceInputs["token"] = args?.token;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(Provider.__pulumiType, name, resourceInputs, opts);

@@ -61,37 +61,37 @@ export class CloudIntegrationEc2 extends pulumi.CustomResource {
     /**
      * A list of point tag key-values to add to every point ingested using this integration.
      */
-    public readonly additionalTags!: pulumi.Output<{[key: string]: string} | undefined>;
+    declare public readonly additionalTags: pulumi.Output<{[key: string]: string} | undefined>;
     /**
      * The Role ARN that the customer has created in AWS IAM to allow access to Wavefront.
      */
-    public readonly externalId!: pulumi.Output<string>;
+    declare public readonly externalId: pulumi.Output<string>;
     /**
      * Forces this resource to save, even if errors are present.
      */
-    public readonly forceSave!: pulumi.Output<boolean | undefined>;
+    declare public readonly forceSave: pulumi.Output<boolean | undefined>;
     /**
      * A list of AWS instance tags to use as the `source` name
      * in a series. Default is `["hostname", "host", "name"]`. If no tag in the list is found, the series source
      * is set to the instance id.
      */
-    public readonly hostnameTags!: pulumi.Output<string[] | undefined>;
+    declare public readonly hostnameTags: pulumi.Output<string[] | undefined>;
     /**
      * The human-readable name of this integration.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * The external ID corresponding to the Role ARN.
      */
-    public readonly roleArn!: pulumi.Output<string>;
+    declare public readonly roleArn: pulumi.Output<string>;
     /**
      * A value denoting which cloud service this service integrates with.
      */
-    public readonly service!: pulumi.Output<string>;
+    declare public readonly service: pulumi.Output<string>;
     /**
      * How often, in minutes, to refresh the service.
      */
-    public readonly serviceRefreshRateInMinutes!: pulumi.Output<number | undefined>;
+    declare public readonly serviceRefreshRateInMinutes: pulumi.Output<number | undefined>;
 
     /**
      * Create a CloudIntegrationEc2 resource with the given unique name, arguments, and options.
@@ -106,30 +106,30 @@ export class CloudIntegrationEc2 extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as CloudIntegrationEc2State | undefined;
-            resourceInputs["additionalTags"] = state ? state.additionalTags : undefined;
-            resourceInputs["externalId"] = state ? state.externalId : undefined;
-            resourceInputs["forceSave"] = state ? state.forceSave : undefined;
-            resourceInputs["hostnameTags"] = state ? state.hostnameTags : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["roleArn"] = state ? state.roleArn : undefined;
-            resourceInputs["service"] = state ? state.service : undefined;
-            resourceInputs["serviceRefreshRateInMinutes"] = state ? state.serviceRefreshRateInMinutes : undefined;
+            resourceInputs["additionalTags"] = state?.additionalTags;
+            resourceInputs["externalId"] = state?.externalId;
+            resourceInputs["forceSave"] = state?.forceSave;
+            resourceInputs["hostnameTags"] = state?.hostnameTags;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["roleArn"] = state?.roleArn;
+            resourceInputs["service"] = state?.service;
+            resourceInputs["serviceRefreshRateInMinutes"] = state?.serviceRefreshRateInMinutes;
         } else {
             const args = argsOrState as CloudIntegrationEc2Args | undefined;
-            if ((!args || args.externalId === undefined) && !opts.urn) {
+            if (args?.externalId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'externalId'");
             }
-            if ((!args || args.roleArn === undefined) && !opts.urn) {
+            if (args?.roleArn === undefined && !opts.urn) {
                 throw new Error("Missing required property 'roleArn'");
             }
-            resourceInputs["additionalTags"] = args ? args.additionalTags : undefined;
-            resourceInputs["externalId"] = args ? args.externalId : undefined;
-            resourceInputs["forceSave"] = args ? args.forceSave : undefined;
-            resourceInputs["hostnameTags"] = args ? args.hostnameTags : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["roleArn"] = args ? args.roleArn : undefined;
-            resourceInputs["service"] = args ? args.service : undefined;
-            resourceInputs["serviceRefreshRateInMinutes"] = args ? args.serviceRefreshRateInMinutes : undefined;
+            resourceInputs["additionalTags"] = args?.additionalTags;
+            resourceInputs["externalId"] = args?.externalId;
+            resourceInputs["forceSave"] = args?.forceSave;
+            resourceInputs["hostnameTags"] = args?.hostnameTags;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["roleArn"] = args?.roleArn;
+            resourceInputs["service"] = args?.service;
+            resourceInputs["serviceRefreshRateInMinutes"] = args?.serviceRefreshRateInMinutes;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(CloudIntegrationEc2.__pulumiType, name, resourceInputs, opts);

@@ -59,34 +59,34 @@ export class ExternalLink extends pulumi.CustomResource {
     /**
      * Human-readable description for this link.
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * Whether this is a "Log Integration" subType of external link.
      */
-    public readonly isLogIntegration!: pulumi.Output<boolean | undefined>;
+    declare public readonly isLogIntegration: pulumi.Output<boolean | undefined>;
     /**
      * Controls whether a link is displayed in the context menu of a highlighted series. If present, the metric name of the highlighted series must match this regular expression in order for the link to be displayed.
      */
-    public readonly metricFilterRegex!: pulumi.Output<string | undefined>;
+    declare public readonly metricFilterRegex: pulumi.Output<string | undefined>;
     /**
      * The name of the external link.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * Controls whether a link is displayed in the context menu of a highlighted
      * series. This is a map from string to regular expression. The highlighted series must contain point tags whose
      * keys are present in the keys of this map and whose values match the regular expressions associated with those
      * keys in order for the link to be displayed.
      */
-    public readonly pointTagFilterRegexes!: pulumi.Output<{[key: string]: string} | undefined>;
+    declare public readonly pointTagFilterRegexes: pulumi.Output<{[key: string]: string} | undefined>;
     /**
      * Controls whether a link is displayed in the context menu of a highlighted series. If present, the source name of the highlighted series must match this regular expression in order for the link to be displayed.
      */
-    public readonly sourceFilterRegex!: pulumi.Output<string | undefined>;
+    declare public readonly sourceFilterRegex: pulumi.Output<string | undefined>;
     /**
      * The mustache template for this link. The template must expand to a full URL, including scheme, origin, etc.
      */
-    public readonly template!: pulumi.Output<string>;
+    declare public readonly template: pulumi.Output<string>;
 
     /**
      * Create a ExternalLink resource with the given unique name, arguments, and options.
@@ -101,28 +101,28 @@ export class ExternalLink extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ExternalLinkState | undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["isLogIntegration"] = state ? state.isLogIntegration : undefined;
-            resourceInputs["metricFilterRegex"] = state ? state.metricFilterRegex : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["pointTagFilterRegexes"] = state ? state.pointTagFilterRegexes : undefined;
-            resourceInputs["sourceFilterRegex"] = state ? state.sourceFilterRegex : undefined;
-            resourceInputs["template"] = state ? state.template : undefined;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["isLogIntegration"] = state?.isLogIntegration;
+            resourceInputs["metricFilterRegex"] = state?.metricFilterRegex;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["pointTagFilterRegexes"] = state?.pointTagFilterRegexes;
+            resourceInputs["sourceFilterRegex"] = state?.sourceFilterRegex;
+            resourceInputs["template"] = state?.template;
         } else {
             const args = argsOrState as ExternalLinkArgs | undefined;
-            if ((!args || args.description === undefined) && !opts.urn) {
+            if (args?.description === undefined && !opts.urn) {
                 throw new Error("Missing required property 'description'");
             }
-            if ((!args || args.template === undefined) && !opts.urn) {
+            if (args?.template === undefined && !opts.urn) {
                 throw new Error("Missing required property 'template'");
             }
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["isLogIntegration"] = args ? args.isLogIntegration : undefined;
-            resourceInputs["metricFilterRegex"] = args ? args.metricFilterRegex : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["pointTagFilterRegexes"] = args ? args.pointTagFilterRegexes : undefined;
-            resourceInputs["sourceFilterRegex"] = args ? args.sourceFilterRegex : undefined;
-            resourceInputs["template"] = args ? args.template : undefined;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["isLogIntegration"] = args?.isLogIntegration;
+            resourceInputs["metricFilterRegex"] = args?.metricFilterRegex;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["pointTagFilterRegexes"] = args?.pointTagFilterRegexes;
+            resourceInputs["sourceFilterRegex"] = args?.sourceFilterRegex;
+            resourceInputs["template"] = args?.template;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(ExternalLink.__pulumiType, name, resourceInputs, opts);

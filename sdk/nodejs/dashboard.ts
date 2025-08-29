@@ -48,50 +48,50 @@ export class Dashboard extends pulumi.CustomResource {
     /**
      * A list of users/groups/roles that can modify the dashboard.
      */
-    public readonly canModifies!: pulumi.Output<string[]>;
+    declare public readonly canModifies: pulumi.Output<string[]>;
     /**
      * A list of users/groups/roles that can view the dashboard.
      */
-    public readonly canViews!: pulumi.Output<string[] | undefined>;
+    declare public readonly canViews: pulumi.Output<string[] | undefined>;
     /**
      * Human-readable description of the dashboard.
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * Whether the dashboard parameters section is opened by default when the dashboard
      * is shown.
      */
-    public readonly displayQueryParameters!: pulumi.Output<boolean | undefined>;
+    declare public readonly displayQueryParameters: pulumi.Output<boolean | undefined>;
     /**
      * Whether the "pills" quick-linked the sections of the dashboard are
      * displayed by default when the dashboard is shown.
      */
-    public readonly displaySectionTableOfContents!: pulumi.Output<boolean | undefined>;
+    declare public readonly displaySectionTableOfContents: pulumi.Output<boolean | undefined>;
     /**
      * How charts belonging to this dashboard should display events. `BYCHART` is default if
      * unspecified. Valid options are: `BYCHART`, `AUTOMATIC`, `ALL`, `NONE`, `BYDASHBOARD`, and `BYCHARTANDDASHBOARD`.
      */
-    public readonly eventFilterType!: pulumi.Output<string | undefined>;
+    declare public readonly eventFilterType: pulumi.Output<string | undefined>;
     /**
      * Name of the dashboard.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * The current JSON representation of dashboard parameters. See parameter details.
      */
-    public readonly parameterDetails!: pulumi.Output<outputs.DashboardParameterDetail[] | undefined>;
+    declare public readonly parameterDetails: pulumi.Output<outputs.DashboardParameterDetail[] | undefined>;
     /**
      * Dashboard chart sections. See dashboard sections.
      */
-    public readonly sections!: pulumi.Output<outputs.DashboardSection[]>;
+    declare public readonly sections: pulumi.Output<outputs.DashboardSection[]>;
     /**
      * A set of tags to assign to this resource.
      */
-    public readonly tags!: pulumi.Output<string[]>;
+    declare public readonly tags: pulumi.Output<string[]>;
     /**
      * Unique identifier, also a URL slug of the dashboard.
      */
-    public readonly url!: pulumi.Output<string>;
+    declare public readonly url: pulumi.Output<string>;
 
     /**
      * Create a Dashboard resource with the given unique name, arguments, and options.
@@ -106,42 +106,42 @@ export class Dashboard extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as DashboardState | undefined;
-            resourceInputs["canModifies"] = state ? state.canModifies : undefined;
-            resourceInputs["canViews"] = state ? state.canViews : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["displayQueryParameters"] = state ? state.displayQueryParameters : undefined;
-            resourceInputs["displaySectionTableOfContents"] = state ? state.displaySectionTableOfContents : undefined;
-            resourceInputs["eventFilterType"] = state ? state.eventFilterType : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["parameterDetails"] = state ? state.parameterDetails : undefined;
-            resourceInputs["sections"] = state ? state.sections : undefined;
-            resourceInputs["tags"] = state ? state.tags : undefined;
-            resourceInputs["url"] = state ? state.url : undefined;
+            resourceInputs["canModifies"] = state?.canModifies;
+            resourceInputs["canViews"] = state?.canViews;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["displayQueryParameters"] = state?.displayQueryParameters;
+            resourceInputs["displaySectionTableOfContents"] = state?.displaySectionTableOfContents;
+            resourceInputs["eventFilterType"] = state?.eventFilterType;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["parameterDetails"] = state?.parameterDetails;
+            resourceInputs["sections"] = state?.sections;
+            resourceInputs["tags"] = state?.tags;
+            resourceInputs["url"] = state?.url;
         } else {
             const args = argsOrState as DashboardArgs | undefined;
-            if ((!args || args.description === undefined) && !opts.urn) {
+            if (args?.description === undefined && !opts.urn) {
                 throw new Error("Missing required property 'description'");
             }
-            if ((!args || args.sections === undefined) && !opts.urn) {
+            if (args?.sections === undefined && !opts.urn) {
                 throw new Error("Missing required property 'sections'");
             }
-            if ((!args || args.tags === undefined) && !opts.urn) {
+            if (args?.tags === undefined && !opts.urn) {
                 throw new Error("Missing required property 'tags'");
             }
-            if ((!args || args.url === undefined) && !opts.urn) {
+            if (args?.url === undefined && !opts.urn) {
                 throw new Error("Missing required property 'url'");
             }
-            resourceInputs["canModifies"] = args ? args.canModifies : undefined;
-            resourceInputs["canViews"] = args ? args.canViews : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["displayQueryParameters"] = args ? args.displayQueryParameters : undefined;
-            resourceInputs["displaySectionTableOfContents"] = args ? args.displaySectionTableOfContents : undefined;
-            resourceInputs["eventFilterType"] = args ? args.eventFilterType : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["parameterDetails"] = args ? args.parameterDetails : undefined;
-            resourceInputs["sections"] = args ? args.sections : undefined;
-            resourceInputs["tags"] = args ? args.tags : undefined;
-            resourceInputs["url"] = args ? args.url : undefined;
+            resourceInputs["canModifies"] = args?.canModifies;
+            resourceInputs["canViews"] = args?.canViews;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["displayQueryParameters"] = args?.displayQueryParameters;
+            resourceInputs["displaySectionTableOfContents"] = args?.displaySectionTableOfContents;
+            resourceInputs["eventFilterType"] = args?.eventFilterType;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["parameterDetails"] = args?.parameterDetails;
+            resourceInputs["sections"] = args?.sections;
+            resourceInputs["tags"] = args?.tags;
+            resourceInputs["url"] = args?.url;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(Dashboard.__pulumiType, name, resourceInputs, opts);

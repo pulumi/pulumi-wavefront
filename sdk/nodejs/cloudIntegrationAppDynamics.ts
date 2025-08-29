@@ -61,73 +61,73 @@ export class CloudIntegrationAppDynamics extends pulumi.CustomResource {
     /**
      * A list of point tag key-values to add to every point ingested using this integration.
      */
-    public readonly additionalTags!: pulumi.Output<{[key: string]: string} | undefined>;
+    declare public readonly additionalTags: pulumi.Output<{[key: string]: string} | undefined>;
     /**
      * List of regular expressions that an application name must match (case-insensitively)
      * in order to be ingested.
      */
-    public readonly appFilterRegexes!: pulumi.Output<string[] | undefined>;
+    declare public readonly appFilterRegexes: pulumi.Output<string[] | undefined>;
     /**
      * Name of the SaaS controller.
      */
-    public readonly controllerName!: pulumi.Output<string>;
+    declare public readonly controllerName: pulumi.Output<string>;
     /**
      * Boolean flag to control Application Infrastructure metric ingestion.
      */
-    public readonly enableAppInfraMetrics!: pulumi.Output<boolean | undefined>;
+    declare public readonly enableAppInfraMetrics: pulumi.Output<boolean | undefined>;
     /**
      * Boolean flag to control Backend metric ingestion.
      */
-    public readonly enableBackendMetrics!: pulumi.Output<boolean | undefined>;
+    declare public readonly enableBackendMetrics: pulumi.Output<boolean | undefined>;
     /**
      * Boolean flag to control Business Transaction metric ingestion.
      */
-    public readonly enableBusinessTrxMetrics!: pulumi.Output<boolean | undefined>;
+    declare public readonly enableBusinessTrxMetrics: pulumi.Output<boolean | undefined>;
     /**
      * Boolean flag to control Error metric ingestion.
      */
-    public readonly enableErrorMetrics!: pulumi.Output<boolean | undefined>;
+    declare public readonly enableErrorMetrics: pulumi.Output<boolean | undefined>;
     /**
      * Boolean flag to control Individual Node metric ingestion.
      */
-    public readonly enableIndividualNodeMetrics!: pulumi.Output<boolean | undefined>;
+    declare public readonly enableIndividualNodeMetrics: pulumi.Output<boolean | undefined>;
     /**
      * Boolean flag to control Overall Performance metric ingestion.
      */
-    public readonly enableOverallPerfMetrics!: pulumi.Output<boolean | undefined>;
+    declare public readonly enableOverallPerfMetrics: pulumi.Output<boolean | undefined>;
     /**
      * Set this to `false` to get separate results for all values within the time range,
      * by default it is `true`.
      */
-    public readonly enableRollup!: pulumi.Output<boolean | undefined>;
+    declare public readonly enableRollup: pulumi.Output<boolean | undefined>;
     /**
      * Boolean flag to control Service End point metric ingestion.
      */
-    public readonly enableServiceEndpointMetrics!: pulumi.Output<boolean | undefined>;
+    declare public readonly enableServiceEndpointMetrics: pulumi.Output<boolean | undefined>;
     /**
      * Password for AppDynamics user.
      */
-    public readonly encryptedPassword!: pulumi.Output<string>;
+    declare public readonly encryptedPassword: pulumi.Output<string>;
     /**
      * Forces this resource to save, even if errors are present.
      */
-    public readonly forceSave!: pulumi.Output<boolean | undefined>;
+    declare public readonly forceSave: pulumi.Output<boolean | undefined>;
     /**
      * The human-readable name of this integration.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * A value denoting which cloud service this service integrates with.
      */
-    public readonly service!: pulumi.Output<string>;
+    declare public readonly service: pulumi.Output<string>;
     /**
      * How often, in minutes, to refresh the service.
      */
-    public readonly serviceRefreshRateInMinutes!: pulumi.Output<number | undefined>;
+    declare public readonly serviceRefreshRateInMinutes: pulumi.Output<number | undefined>;
     /**
      * Username is a combination of userName and the account name.
      */
-    public readonly userName!: pulumi.Output<string>;
+    declare public readonly userName: pulumi.Output<string>;
 
     /**
      * Create a CloudIntegrationAppDynamics resource with the given unique name, arguments, and options.
@@ -142,51 +142,51 @@ export class CloudIntegrationAppDynamics extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as CloudIntegrationAppDynamicsState | undefined;
-            resourceInputs["additionalTags"] = state ? state.additionalTags : undefined;
-            resourceInputs["appFilterRegexes"] = state ? state.appFilterRegexes : undefined;
-            resourceInputs["controllerName"] = state ? state.controllerName : undefined;
-            resourceInputs["enableAppInfraMetrics"] = state ? state.enableAppInfraMetrics : undefined;
-            resourceInputs["enableBackendMetrics"] = state ? state.enableBackendMetrics : undefined;
-            resourceInputs["enableBusinessTrxMetrics"] = state ? state.enableBusinessTrxMetrics : undefined;
-            resourceInputs["enableErrorMetrics"] = state ? state.enableErrorMetrics : undefined;
-            resourceInputs["enableIndividualNodeMetrics"] = state ? state.enableIndividualNodeMetrics : undefined;
-            resourceInputs["enableOverallPerfMetrics"] = state ? state.enableOverallPerfMetrics : undefined;
-            resourceInputs["enableRollup"] = state ? state.enableRollup : undefined;
-            resourceInputs["enableServiceEndpointMetrics"] = state ? state.enableServiceEndpointMetrics : undefined;
-            resourceInputs["encryptedPassword"] = state ? state.encryptedPassword : undefined;
-            resourceInputs["forceSave"] = state ? state.forceSave : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["service"] = state ? state.service : undefined;
-            resourceInputs["serviceRefreshRateInMinutes"] = state ? state.serviceRefreshRateInMinutes : undefined;
-            resourceInputs["userName"] = state ? state.userName : undefined;
+            resourceInputs["additionalTags"] = state?.additionalTags;
+            resourceInputs["appFilterRegexes"] = state?.appFilterRegexes;
+            resourceInputs["controllerName"] = state?.controllerName;
+            resourceInputs["enableAppInfraMetrics"] = state?.enableAppInfraMetrics;
+            resourceInputs["enableBackendMetrics"] = state?.enableBackendMetrics;
+            resourceInputs["enableBusinessTrxMetrics"] = state?.enableBusinessTrxMetrics;
+            resourceInputs["enableErrorMetrics"] = state?.enableErrorMetrics;
+            resourceInputs["enableIndividualNodeMetrics"] = state?.enableIndividualNodeMetrics;
+            resourceInputs["enableOverallPerfMetrics"] = state?.enableOverallPerfMetrics;
+            resourceInputs["enableRollup"] = state?.enableRollup;
+            resourceInputs["enableServiceEndpointMetrics"] = state?.enableServiceEndpointMetrics;
+            resourceInputs["encryptedPassword"] = state?.encryptedPassword;
+            resourceInputs["forceSave"] = state?.forceSave;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["service"] = state?.service;
+            resourceInputs["serviceRefreshRateInMinutes"] = state?.serviceRefreshRateInMinutes;
+            resourceInputs["userName"] = state?.userName;
         } else {
             const args = argsOrState as CloudIntegrationAppDynamicsArgs | undefined;
-            if ((!args || args.controllerName === undefined) && !opts.urn) {
+            if (args?.controllerName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'controllerName'");
             }
-            if ((!args || args.encryptedPassword === undefined) && !opts.urn) {
+            if (args?.encryptedPassword === undefined && !opts.urn) {
                 throw new Error("Missing required property 'encryptedPassword'");
             }
-            if ((!args || args.userName === undefined) && !opts.urn) {
+            if (args?.userName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'userName'");
             }
-            resourceInputs["additionalTags"] = args ? args.additionalTags : undefined;
-            resourceInputs["appFilterRegexes"] = args ? args.appFilterRegexes : undefined;
-            resourceInputs["controllerName"] = args ? args.controllerName : undefined;
-            resourceInputs["enableAppInfraMetrics"] = args ? args.enableAppInfraMetrics : undefined;
-            resourceInputs["enableBackendMetrics"] = args ? args.enableBackendMetrics : undefined;
-            resourceInputs["enableBusinessTrxMetrics"] = args ? args.enableBusinessTrxMetrics : undefined;
-            resourceInputs["enableErrorMetrics"] = args ? args.enableErrorMetrics : undefined;
-            resourceInputs["enableIndividualNodeMetrics"] = args ? args.enableIndividualNodeMetrics : undefined;
-            resourceInputs["enableOverallPerfMetrics"] = args ? args.enableOverallPerfMetrics : undefined;
-            resourceInputs["enableRollup"] = args ? args.enableRollup : undefined;
-            resourceInputs["enableServiceEndpointMetrics"] = args ? args.enableServiceEndpointMetrics : undefined;
+            resourceInputs["additionalTags"] = args?.additionalTags;
+            resourceInputs["appFilterRegexes"] = args?.appFilterRegexes;
+            resourceInputs["controllerName"] = args?.controllerName;
+            resourceInputs["enableAppInfraMetrics"] = args?.enableAppInfraMetrics;
+            resourceInputs["enableBackendMetrics"] = args?.enableBackendMetrics;
+            resourceInputs["enableBusinessTrxMetrics"] = args?.enableBusinessTrxMetrics;
+            resourceInputs["enableErrorMetrics"] = args?.enableErrorMetrics;
+            resourceInputs["enableIndividualNodeMetrics"] = args?.enableIndividualNodeMetrics;
+            resourceInputs["enableOverallPerfMetrics"] = args?.enableOverallPerfMetrics;
+            resourceInputs["enableRollup"] = args?.enableRollup;
+            resourceInputs["enableServiceEndpointMetrics"] = args?.enableServiceEndpointMetrics;
             resourceInputs["encryptedPassword"] = args?.encryptedPassword ? pulumi.secret(args.encryptedPassword) : undefined;
-            resourceInputs["forceSave"] = args ? args.forceSave : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["service"] = args ? args.service : undefined;
-            resourceInputs["serviceRefreshRateInMinutes"] = args ? args.serviceRefreshRateInMinutes : undefined;
-            resourceInputs["userName"] = args ? args.userName : undefined;
+            resourceInputs["forceSave"] = args?.forceSave;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["service"] = args?.service;
+            resourceInputs["serviceRefreshRateInMinutes"] = args?.serviceRefreshRateInMinutes;
+            resourceInputs["userName"] = args?.userName;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         const secretOpts = { additionalSecretOutputs: ["encryptedPassword"] };

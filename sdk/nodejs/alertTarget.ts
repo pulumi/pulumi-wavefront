@@ -71,54 +71,54 @@ export class AlertTarget extends pulumi.CustomResource {
     /**
      * The value of the `Content-Type` header of the webhook.
      */
-    public readonly contentType!: pulumi.Output<string | undefined>;
+    declare public readonly contentType: pulumi.Output<string | undefined>;
     /**
      * A `string->string` map specifying the custom HTTP header key/value pairs that will be
      * sent in the requests with a method of `WEBHOOK`.
      */
-    public readonly customHeaders!: pulumi.Output<{[key: string]: string} | undefined>;
+    declare public readonly customHeaders: pulumi.Output<{[key: string]: string} | undefined>;
     /**
      * Description describing this alert target.
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * The subject title of an email notification target.
      */
-    public readonly emailSubject!: pulumi.Output<string | undefined>;
+    declare public readonly emailSubject: pulumi.Output<string | undefined>;
     /**
      * Determine whether the email alert content is sent as HTML or text.
      */
-    public readonly isHtmlContent!: pulumi.Output<boolean | undefined>;
+    declare public readonly isHtmlContent: pulumi.Output<boolean | undefined>;
     /**
      * The notification method used for notification target. One of `WEBHOOK`, `EMAIL`, `PAGERDUTY`.
      */
-    public readonly method!: pulumi.Output<string | undefined>;
+    declare public readonly method: pulumi.Output<string | undefined>;
     /**
      * The name of the alert target as it is displayed in Wavefront.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * The end point for the notification Target.  `EMAIL`: email address. `PAGERDUTY`: PagerDuty
      * routing key. `WEBHOOK`: URL endpoint.
      */
-    public readonly recipient!: pulumi.Output<string>;
+    declare public readonly recipient: pulumi.Output<string>;
     /**
      * List of routing targets that this alert target will notify. See Route
      */
-    public readonly routes!: pulumi.Output<outputs.AlertTargetRoute[] | undefined>;
+    declare public readonly routes: pulumi.Output<outputs.AlertTargetRoute[] | undefined>;
     /**
      * The target ID prefixed with `target:` for interpolating into a Wavefront Alert.
      */
-    public /*out*/ readonly targetId!: pulumi.Output<string>;
+    declare public /*out*/ readonly targetId: pulumi.Output<string>;
     /**
      * A mustache template that will form the body of the POST request, email, and summary of the PagerDuty.
      */
-    public readonly template!: pulumi.Output<string>;
+    declare public readonly template: pulumi.Output<string>;
     /**
      * A list of occurrences on which this webhook will be fired. Valid values are `ALERT_OPENED`,
      * `ALERT_UPDATED`, `ALERT_RESOLVED`, `ALERT_MAINTENANCE`, `ALERT_SNOOZED`, `ALERT_NO_DATA`, `ALERT_NO_DATA_RESOLVED`, `ALERT_NO_DATA_MAINTENANCE`.
      */
-    public readonly triggers!: pulumi.Output<string[]>;
+    declare public readonly triggers: pulumi.Output<string[]>;
 
     /**
      * Create a AlertTarget resource with the given unique name, arguments, and options.
@@ -133,43 +133,43 @@ export class AlertTarget extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AlertTargetState | undefined;
-            resourceInputs["contentType"] = state ? state.contentType : undefined;
-            resourceInputs["customHeaders"] = state ? state.customHeaders : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["emailSubject"] = state ? state.emailSubject : undefined;
-            resourceInputs["isHtmlContent"] = state ? state.isHtmlContent : undefined;
-            resourceInputs["method"] = state ? state.method : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["recipient"] = state ? state.recipient : undefined;
-            resourceInputs["routes"] = state ? state.routes : undefined;
-            resourceInputs["targetId"] = state ? state.targetId : undefined;
-            resourceInputs["template"] = state ? state.template : undefined;
-            resourceInputs["triggers"] = state ? state.triggers : undefined;
+            resourceInputs["contentType"] = state?.contentType;
+            resourceInputs["customHeaders"] = state?.customHeaders;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["emailSubject"] = state?.emailSubject;
+            resourceInputs["isHtmlContent"] = state?.isHtmlContent;
+            resourceInputs["method"] = state?.method;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["recipient"] = state?.recipient;
+            resourceInputs["routes"] = state?.routes;
+            resourceInputs["targetId"] = state?.targetId;
+            resourceInputs["template"] = state?.template;
+            resourceInputs["triggers"] = state?.triggers;
         } else {
             const args = argsOrState as AlertTargetArgs | undefined;
-            if ((!args || args.description === undefined) && !opts.urn) {
+            if (args?.description === undefined && !opts.urn) {
                 throw new Error("Missing required property 'description'");
             }
-            if ((!args || args.recipient === undefined) && !opts.urn) {
+            if (args?.recipient === undefined && !opts.urn) {
                 throw new Error("Missing required property 'recipient'");
             }
-            if ((!args || args.template === undefined) && !opts.urn) {
+            if (args?.template === undefined && !opts.urn) {
                 throw new Error("Missing required property 'template'");
             }
-            if ((!args || args.triggers === undefined) && !opts.urn) {
+            if (args?.triggers === undefined && !opts.urn) {
                 throw new Error("Missing required property 'triggers'");
             }
-            resourceInputs["contentType"] = args ? args.contentType : undefined;
-            resourceInputs["customHeaders"] = args ? args.customHeaders : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["emailSubject"] = args ? args.emailSubject : undefined;
-            resourceInputs["isHtmlContent"] = args ? args.isHtmlContent : undefined;
-            resourceInputs["method"] = args ? args.method : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["recipient"] = args ? args.recipient : undefined;
-            resourceInputs["routes"] = args ? args.routes : undefined;
-            resourceInputs["template"] = args ? args.template : undefined;
-            resourceInputs["triggers"] = args ? args.triggers : undefined;
+            resourceInputs["contentType"] = args?.contentType;
+            resourceInputs["customHeaders"] = args?.customHeaders;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["emailSubject"] = args?.emailSubject;
+            resourceInputs["isHtmlContent"] = args?.isHtmlContent;
+            resourceInputs["method"] = args?.method;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["recipient"] = args?.recipient;
+            resourceInputs["routes"] = args?.routes;
+            resourceInputs["template"] = args?.template;
+            resourceInputs["triggers"] = args?.triggers;
             resourceInputs["targetId"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
