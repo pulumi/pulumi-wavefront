@@ -63,20 +63,20 @@ export class Event extends pulumi.CustomResource {
     /**
      * The annotations associated with the event.
      */
-    public readonly annotations!: pulumi.Output<{[key: string]: string}>;
-    public readonly endtimeKey!: pulumi.Output<number | undefined>;
+    declare public readonly annotations: pulumi.Output<{[key: string]: string}>;
+    declare public readonly endtimeKey: pulumi.Output<number | undefined>;
     /**
      * The name of the event as it is displayed in Wavefront.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * The start time of the event in epoch milliseconds.
      */
-    public readonly startTime!: pulumi.Output<number | undefined>;
+    declare public readonly startTime: pulumi.Output<number | undefined>;
     /**
      * A set of tags to assign to this resource.
      */
-    public readonly tags!: pulumi.Output<string[] | undefined>;
+    declare public readonly tags: pulumi.Output<string[] | undefined>;
 
     /**
      * Create a Event resource with the given unique name, arguments, and options.
@@ -91,21 +91,21 @@ export class Event extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as EventState | undefined;
-            resourceInputs["annotations"] = state ? state.annotations : undefined;
-            resourceInputs["endtimeKey"] = state ? state.endtimeKey : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["startTime"] = state ? state.startTime : undefined;
-            resourceInputs["tags"] = state ? state.tags : undefined;
+            resourceInputs["annotations"] = state?.annotations;
+            resourceInputs["endtimeKey"] = state?.endtimeKey;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["startTime"] = state?.startTime;
+            resourceInputs["tags"] = state?.tags;
         } else {
             const args = argsOrState as EventArgs | undefined;
-            if ((!args || args.annotations === undefined) && !opts.urn) {
+            if (args?.annotations === undefined && !opts.urn) {
                 throw new Error("Missing required property 'annotations'");
             }
-            resourceInputs["annotations"] = args ? args.annotations : undefined;
-            resourceInputs["endtimeKey"] = args ? args.endtimeKey : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["startTime"] = args ? args.startTime : undefined;
-            resourceInputs["tags"] = args ? args.tags : undefined;
+            resourceInputs["annotations"] = args?.annotations;
+            resourceInputs["endtimeKey"] = args?.endtimeKey;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["startTime"] = args?.startTime;
+            resourceInputs["tags"] = args?.tags;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(Event.__pulumiType, name, resourceInputs, opts);

@@ -179,7 +179,7 @@ export class DashboardJson extends pulumi.CustomResource {
      * See the [Wavefront API Documentation](https://docs.wavefront.com/wavefront_api.html#api-documentation-wavefront-instance)
      * for instructions on how to get to your API documentation for more details.
      */
-    public readonly dashboardJson!: pulumi.Output<string>;
+    declare public readonly dashboardJson: pulumi.Output<string>;
 
     /**
      * Create a DashboardJson resource with the given unique name, arguments, and options.
@@ -194,13 +194,13 @@ export class DashboardJson extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as DashboardJsonState | undefined;
-            resourceInputs["dashboardJson"] = state ? state.dashboardJson : undefined;
+            resourceInputs["dashboardJson"] = state?.dashboardJson;
         } else {
             const args = argsOrState as DashboardJsonArgs | undefined;
-            if ((!args || args.dashboardJson === undefined) && !opts.urn) {
+            if (args?.dashboardJson === undefined && !opts.urn) {
                 throw new Error("Missing required property 'dashboardJson'");
             }
-            resourceInputs["dashboardJson"] = args ? args.dashboardJson : undefined;
+            resourceInputs["dashboardJson"] = args?.dashboardJson;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(DashboardJson.__pulumiType, name, resourceInputs, opts);

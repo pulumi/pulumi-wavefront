@@ -57,20 +57,20 @@ export class IngestionPolicy extends pulumi.CustomResource {
         return obj['__pulumiType'] === IngestionPolicy.__pulumiType;
     }
 
-    public readonly accounts!: pulumi.Output<string[] | undefined>;
+    declare public readonly accounts: pulumi.Output<string[] | undefined>;
     /**
      * The description of the ingestion policy.
      */
-    public readonly description!: pulumi.Output<string>;
-    public readonly groups!: pulumi.Output<string[] | undefined>;
+    declare public readonly description: pulumi.Output<string>;
+    declare public readonly groups: pulumi.Output<string[] | undefined>;
     /**
      * The name of the ingestion policy.
      */
-    public readonly name!: pulumi.Output<string>;
-    public readonly namespaces!: pulumi.Output<string[] | undefined>;
-    public readonly scope!: pulumi.Output<string>;
-    public readonly sources!: pulumi.Output<string[] | undefined>;
-    public readonly tags!: pulumi.Output<outputs.IngestionPolicyTag[] | undefined>;
+    declare public readonly name: pulumi.Output<string>;
+    declare public readonly namespaces: pulumi.Output<string[] | undefined>;
+    declare public readonly scope: pulumi.Output<string>;
+    declare public readonly sources: pulumi.Output<string[] | undefined>;
+    declare public readonly tags: pulumi.Output<outputs.IngestionPolicyTag[] | undefined>;
 
     /**
      * Create a IngestionPolicy resource with the given unique name, arguments, and options.
@@ -85,30 +85,30 @@ export class IngestionPolicy extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as IngestionPolicyState | undefined;
-            resourceInputs["accounts"] = state ? state.accounts : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["groups"] = state ? state.groups : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["namespaces"] = state ? state.namespaces : undefined;
-            resourceInputs["scope"] = state ? state.scope : undefined;
-            resourceInputs["sources"] = state ? state.sources : undefined;
-            resourceInputs["tags"] = state ? state.tags : undefined;
+            resourceInputs["accounts"] = state?.accounts;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["groups"] = state?.groups;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["namespaces"] = state?.namespaces;
+            resourceInputs["scope"] = state?.scope;
+            resourceInputs["sources"] = state?.sources;
+            resourceInputs["tags"] = state?.tags;
         } else {
             const args = argsOrState as IngestionPolicyArgs | undefined;
-            if ((!args || args.description === undefined) && !opts.urn) {
+            if (args?.description === undefined && !opts.urn) {
                 throw new Error("Missing required property 'description'");
             }
-            if ((!args || args.scope === undefined) && !opts.urn) {
+            if (args?.scope === undefined && !opts.urn) {
                 throw new Error("Missing required property 'scope'");
             }
-            resourceInputs["accounts"] = args ? args.accounts : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["groups"] = args ? args.groups : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["namespaces"] = args ? args.namespaces : undefined;
-            resourceInputs["scope"] = args ? args.scope : undefined;
-            resourceInputs["sources"] = args ? args.sources : undefined;
-            resourceInputs["tags"] = args ? args.tags : undefined;
+            resourceInputs["accounts"] = args?.accounts;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["groups"] = args?.groups;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["namespaces"] = args?.namespaces;
+            resourceInputs["scope"] = args?.scope;
+            resourceInputs["sources"] = args?.sources;
+            resourceInputs["tags"] = args?.tags;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(IngestionPolicy.__pulumiType, name, resourceInputs, opts);
