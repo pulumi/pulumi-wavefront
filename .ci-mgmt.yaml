@@ -1,5 +1,7 @@
 provider: wavefront
 major-version: 3
+esc:
+  enabled: true
 env:
   WAVEFRONT_ADDRESS: ${{ secrets.WAVEFRONT_ADDRESS }}
   WAVEFRONT_TOKEN: ${{ secrets.WAVEFRONT_TOKEN }}
