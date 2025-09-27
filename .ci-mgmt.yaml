@@ -1,15 +1,15 @@
 provider: wavefront
 major-version: 3
 esc:
-  enabled: true
+    enabled: true
 env:
-  WAVEFRONT_ADDRESS: ${{ secrets.WAVEFRONT_ADDRESS }}
-  WAVEFRONT_TOKEN: ${{ secrets.WAVEFRONT_TOKEN }}
+    WAVEFRONT_ADDRESS: ${{ secrets.WAVEFRONT_ADDRESS }}
+    WAVEFRONT_TOKEN: ${{ secrets.WAVEFRONT_TOKEN }}
 makeTemplate: bridged
 team: ecosystem
 pulumiConvert: 1
 registryDocs: true
 plugins:
-  - name: terraform
-    version: "1.0.16"
-    kind: converter
+    - name: terraform
+      version: "1.0.16"
+      kind: converter
