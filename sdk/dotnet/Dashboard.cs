@@ -12,6 +12,99 @@ namespace Pulumi.Wavefront
     /// <summary>
     /// Provides a Wavefront Dashboard resource. This allows dashboards to be created, updated, and deleted.
     /// 
+    /// ## Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Wavefront = Pulumi.Wavefront;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var basic = new Wavefront.User("basic", new()
+    ///     {
+    ///         Email = "test+tftesting@example.com",
+    ///         Groups = new[]
+    ///         {
+    ///             "agent_management",
+    ///             "alerts_management",
+    ///         },
+    ///     });
+    /// 
+    ///     var testDashboard = new Wavefront.Dashboard("test_dashboard", new()
+    ///     {
+    ///         Name = "Terraform Test Dashboard",
+    ///         Description = "testing, testing",
+    ///         Url = "tftestcreate",
+    ///         DisplaySectionTableOfContents = true,
+    ///         DisplayQueryParameters = true,
+    ///         CanViews = new[]
+    ///         {
+    ///             basic.Id,
+    ///         },
+    ///         Sections = new[]
+    ///         {
+    ///             new Wavefront.Inputs.DashboardSectionArgs
+    ///             {
+    ///                 Name = "section 1",
+    ///                 Rows = new[]
+    ///                 {
+    ///                     new Wavefront.Inputs.DashboardSectionRowArgs
+    ///                     {
+    ///                         Charts = new[]
+    ///                         {
+    ///                             new Wavefront.Inputs.DashboardSectionRowChartArgs
+    ///                             {
+    ///                                 Name = "chart 1",
+    ///                                 Description = "chart number 1",
+    ///                                 Units = "something per unit",
+    ///                                 Sources = new[]
+    ///                                 {
+    ///                                     new Wavefront.Inputs.DashboardSectionRowChartSourceArgs
+    ///                                     {
+    ///                                         Name = "source name",
+    ///                                         Query = "ts()",
+    ///                                     },
+    ///                                 },
+    ///                                 ChartSetting = new Wavefront.Inputs.DashboardSectionRowChartChartSettingArgs
+    ///                                 {
+    ///                                     Type = "linear",
+    ///                                 },
+    ///                                 Summarization = "MEAN",
+    ///                             },
+    ///                         },
+    ///                     },
+    ///                 },
+    ///             },
+    ///         },
+    ///         ParameterDetails = new[]
+    ///         {
+    ///             new Wavefront.Inputs.DashboardParameterDetailArgs
+    ///             {
+    ///                 Name = "param1",
+    ///                 Label = "param1",
+    ///                 DefaultValue = "Label",
+    ///                 HideFromView = false,
+    ///                 ParameterType = "SIMPLE",
+    ///                 ValuesToReadableStrings = 
+    ///                 {
+    ///                     { "Label", "test" },
+    ///                 },
+    ///             },
+    ///         },
+    ///         Tags = new[]
+    ///         {
+    ///             "b",
+    ///             "terraform",
+    ///             "a",
+    ///             "test",
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// 
     /// ## Import
     /// 
     /// Dashboards can be imported by using the `id`, e.g.:

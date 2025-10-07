@@ -42,7 +42,7 @@ namespace Pulumi.Wavefront.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.MetricsPolicyPolicyRuleTag> Tags;
         /// <summary>
-        /// Bool where `true` require all tags are met by selected metrics, else `false` select metrics that match any give tag.
+        /// Bool where `True` require all tags are met by selected metrics, else `False` select metrics that match any give tag.
         /// </summary>
         public readonly bool TagsAnded;
         /// <summary>
