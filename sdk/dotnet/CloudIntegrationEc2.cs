@@ -65,7 +65,7 @@ namespace Pulumi.Wavefront
         public Output<bool?> ForceSave { get; private set; } = null!;
 
         /// <summary>
-        /// A list of AWS instance tags to use as the `source` name
+        /// A list of AWS instance tags to use as the `Source` name
         /// in a series. Default is `["hostname", "host", "name"]`. If no tag in the list is found, the series source
         /// is set to the instance id.
         /// </summary>
@@ -170,7 +170,7 @@ namespace Pulumi.Wavefront
         private InputList<string>? _hostnameTags;
 
         /// <summary>
-        /// A list of AWS instance tags to use as the `source` name
+        /// A list of AWS instance tags to use as the `Source` name
         /// in a series. Default is `["hostname", "host", "name"]`. If no tag in the list is found, the series source
         /// is set to the instance id.
         /// </summary>
@@ -240,7 +240,7 @@ namespace Pulumi.Wavefront
         private InputList<string>? _hostnameTags;
 
         /// <summary>
-        /// A list of AWS instance tags to use as the `source` name
+        /// A list of AWS instance tags to use as the `Source` name
         /// in a series. Default is `["hostname", "host", "name"]`. If no tag in the list is found, the series source
         /// is set to the instance id.
         /// </summary>

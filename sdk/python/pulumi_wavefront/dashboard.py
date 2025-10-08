@@ -415,6 +415,61 @@ class Dashboard(pulumi.CustomResource):
         """
         Provides a Wavefront Dashboard resource. This allows dashboards to be created, updated, and deleted.
 
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_wavefront as wavefront
+
+        basic = wavefront.User("basic",
+            email="test+tftesting@example.com",
+            groups=[
+                "agent_management",
+                "alerts_management",
+            ])
+        test_dashboard = wavefront.Dashboard("test_dashboard",
+            name="Terraform Test Dashboard",
+            description="testing, testing",
+            url="tftestcreate",
+            display_section_table_of_contents=True,
+            display_query_parameters=True,
+            can_views=[basic.id],
+            sections=[{
+                "name": "section 1",
+                "rows": [{
+                    "charts": [{
+                        "name": "chart 1",
+                        "description": "chart number 1",
+                        "units": "something per unit",
+                        "sources": [{
+                            "name": "source name",
+                            "query": "ts()",
+                        }],
+                        "chart_setting": {
+                            "type": "linear",
+                        },
+                        "summarization": "MEAN",
+                    }],
+                }],
+            }],
+            parameter_details=[{
+                "name": "param1",
+                "label": "param1",
+                "default_value": "Label",
+                "hide_from_view": False,
+                "parameter_type": "SIMPLE",
+                "values_to_readable_strings": {
+                    "Label": "test",
+                },
+            }],
+            tags=[
+                "b",
+                "terraform",
+                "a",
+                "test",
+            ])
+        ```
+
         ## Import
 
         Dashboards can be imported by using the `id`, e.g.:
@@ -448,6 +503,61 @@ class Dashboard(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Provides a Wavefront Dashboard resource. This allows dashboards to be created, updated, and deleted.
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_wavefront as wavefront
+
+        basic = wavefront.User("basic",
+            email="test+tftesting@example.com",
+            groups=[
+                "agent_management",
+                "alerts_management",
+            ])
+        test_dashboard = wavefront.Dashboard("test_dashboard",
+            name="Terraform Test Dashboard",
+            description="testing, testing",
+            url="tftestcreate",
+            display_section_table_of_contents=True,
+            display_query_parameters=True,
+            can_views=[basic.id],
+            sections=[{
+                "name": "section 1",
+                "rows": [{
+                    "charts": [{
+                        "name": "chart 1",
+                        "description": "chart number 1",
+                        "units": "something per unit",
+                        "sources": [{
+                            "name": "source name",
+                            "query": "ts()",
+                        }],
+                        "chart_setting": {
+                            "type": "linear",
+                        },
+                        "summarization": "MEAN",
+                    }],
+                }],
+            }],
+            parameter_details=[{
+                "name": "param1",
+                "label": "param1",
+                "default_value": "Label",
+                "hide_from_view": False,
+                "parameter_type": "SIMPLE",
+                "values_to_readable_strings": {
+                    "Label": "test",
+                },
+            }],
+            tags=[
+                "b",
+                "terraform",
+                "a",
+                "test",
+            ])
+        ```
 
         ## Import
 

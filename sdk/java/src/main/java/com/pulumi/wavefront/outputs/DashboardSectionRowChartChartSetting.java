@@ -207,7 +207,7 @@ public final class DashboardSectionRowChartChartSetting {
     private @Nullable String sparklineValueColorMapApplyTo;
     /**
      * @return For the single stat view, A list of colors that differing query values map to.
-     * Must contain one more element than `sparkline_value_color_map_values_v2`. Values should be in `rgba(,,,,)`.
+     * Must contain one more element than `sparklineValueColorMapValuesV2`. Values should be in `rgba(,,,,)`.
      * 
      */
     private @Nullable List<String> sparklineValueColorMapColors;
@@ -218,19 +218,19 @@ public final class DashboardSectionRowChartChartSetting {
     private @Nullable List<Integer> sparklineValueColorMapValues;
     /**
      * @return For the single stat view, a list of boundaries for mapping different
-     * query values to colors. Must contain one element less than `sparkline_value_color_map_colors`.
+     * query values to colors. Must contain one element less than `sparklineValueColorMapColors`.
      * 
      */
     private @Nullable List<Double> sparklineValueColorMapValuesV2s;
     /**
      * @return For the single stat view, a list of display text values that different query
-     * values map to. Must contain one more element than `sparkline_value_text_map_thresholds`.
+     * values map to. Must contain one more element than `sparklineValueTextMapThresholds`.
      * 
      */
     private @Nullable List<String> sparklineValueTextMapTexts;
     /**
      * @return For the single stat view, a list of threshold boundaries for
-     * mapping different query values to display text. Must contain one element less than `sparkline_value_text_map_text`.
+     * mapping different query values to display text. Must contain one element less than `sparklineValueTextMapText`.
      * 
      */
     private @Nullable List<Double> sparklineValueTextMapThresholds;
@@ -590,7 +590,7 @@ public final class DashboardSectionRowChartChartSetting {
     }
     /**
      * @return For the single stat view, A list of colors that differing query values map to.
-     * Must contain one more element than `sparkline_value_color_map_values_v2`. Values should be in `rgba(,,,,)`.
+     * Must contain one more element than `sparklineValueColorMapValuesV2`. Values should be in `rgba(,,,,)`.
      * 
      */
     public List<String> sparklineValueColorMapColors() {
@@ -605,7 +605,7 @@ public final class DashboardSectionRowChartChartSetting {
     }
     /**
      * @return For the single stat view, a list of boundaries for mapping different
-     * query values to colors. Must contain one element less than `sparkline_value_color_map_colors`.
+     * query values to colors. Must contain one element less than `sparklineValueColorMapColors`.
      * 
      */
     public List<Double> sparklineValueColorMapValuesV2s() {
@@ -613,7 +613,7 @@ public final class DashboardSectionRowChartChartSetting {
     }
     /**
      * @return For the single stat view, a list of display text values that different query
-     * values map to. Must contain one more element than `sparkline_value_text_map_thresholds`.
+     * values map to. Must contain one more element than `sparklineValueTextMapThresholds`.
      * 
      */
     public List<String> sparklineValueTextMapTexts() {
@@ -621,7 +621,7 @@ public final class DashboardSectionRowChartChartSetting {
     }
     /**
      * @return For the single stat view, a list of threshold boundaries for
-     * mapping different query values to display text. Must contain one element less than `sparkline_value_text_map_text`.
+     * mapping different query values to display text. Must contain one element less than `sparklineValueTextMapText`.
      * 
      */
     public List<Double> sparklineValueTextMapThresholds() {

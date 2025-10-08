@@ -94,7 +94,7 @@ public final class GetDerivedMetricsDerivedMetric {
      */
     private Integer pointsScannedAtLastQuery;
     /**
-     * @return The specified query is executed every `process_rate_minutes` minutes.
+     * @return The specified query is executed every `processRateMinutes` minutes.
      * 
      */
     private Integer processRateMinutes;
@@ -109,7 +109,7 @@ public final class GetDerivedMetricsDerivedMetric {
      */
     private Boolean queryFailing;
     /**
-     * @return A Boolean flag for enabling `query_qb`
+     * @return A Boolean flag for enabling `queryQb`
      * 
      */
     private Boolean queryQbEnabled;
@@ -248,7 +248,7 @@ public final class GetDerivedMetricsDerivedMetric {
         return this.pointsScannedAtLastQuery;
     }
     /**
-     * @return The specified query is executed every `process_rate_minutes` minutes.
+     * @return The specified query is executed every `processRateMinutes` minutes.
      * 
      */
     public Integer processRateMinutes() {
@@ -269,7 +269,7 @@ public final class GetDerivedMetricsDerivedMetric {
         return this.queryFailing;
     }
     /**
-     * @return A Boolean flag for enabling `query_qb`
+     * @return A Boolean flag for enabling `queryQb`
      * 
      */
     public Boolean queryQbEnabled() {
