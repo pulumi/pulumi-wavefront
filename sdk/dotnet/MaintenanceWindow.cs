@@ -56,10 +56,10 @@ namespace Pulumi.Wavefront
         public Output<int> EndTimeInSeconds { get; private set; } = null!;
 
         /// <summary>
-        /// If `true`, a source/host must be in `relevant_host_names`
-        /// and have tags matching the specification formed by `relevant_host_tags` and `relevant_host_tags_anded` in
-        /// order for this maintenance window to apply. If `false`, a source/host must either be in `relevant_host_names`
-        /// or match `relevant_host_tags` and `relevant_host_tags_anded`. Default: `false`.
+        /// If `True`, a source/host must be in `RelevantHostNames`
+        /// and have tags matching the specification formed by `RelevantHostTags` and `RelevantHostTagsAnded` in
+        /// order for this maintenance window to apply. If `False`, a source/host must either be in `RelevantHostNames`
+        /// or match `RelevantHostTags` and `RelevantHostTagsAnded`. Default: `False`.
         /// </summary>
         [Output("hostTagGroupHostNamesGroupAnded")]
         public Output<bool?> HostTagGroupHostNamesGroupAnded { get; private set; } = null!;
@@ -72,7 +72,7 @@ namespace Pulumi.Wavefront
 
         /// <summary>
         /// List of alert tags whose matching alerts will be put into maintenance because
-        /// of this maintenance window. At least one of `relevant_customer_tags`, `relevant_host_tags`, or `relevant_host_names`
+        /// of this maintenance window. At least one of `RelevantCustomerTags`, `RelevantHostTags`, or `RelevantHostNames`
         /// is required.
         /// </summary>
         [Output("relevantCustomerTags")]
@@ -80,7 +80,7 @@ namespace Pulumi.Wavefront
 
         /// <summary>
         /// List of source/host names that will be put into maintenance because of this
-        /// maintenance window. At least one of `relevant_customer_tags`, `relevant_host_tags`, or `relevant_host_names`
+        /// maintenance window. At least one of `RelevantCustomerTags`, `RelevantHostTags`, or `RelevantHostNames`
         /// is required.
         /// </summary>
         [Output("relevantHostNames")]
@@ -88,16 +88,16 @@ namespace Pulumi.Wavefront
 
         /// <summary>
         /// List of source/host tags whose matching sources/hosts will be put into maintenance
-        /// because of this maintenance window. At least one of `relevant_customer_tags`, `relevant_host_tags`, or
-        /// `relevant_host_names` is required.
+        /// because of this maintenance window. At least one of `RelevantCustomerTags`, `RelevantHostTags`, or
+        /// `RelevantHostNames` is required.
         /// </summary>
         [Output("relevantHostTags")]
         public Output<ImmutableArray<string>> RelevantHostTags { get; private set; } = null!;
 
         /// <summary>
-        /// Whether to AND source/host tags listed in `relevant_host_tags`.
-        /// If `true`, a source/host must contain all tags in order for the maintenance window to apply. If `false`,
-        /// the tags are OR'ed, and a source/host must contain one of the tags. Default: `false`.
+        /// Whether to AND source/host tags listed in `RelevantHostTags`.
+        /// If `True`, a source/host must contain all tags in order for the maintenance window to apply. If `False`,
+        /// the tags are OR'ed, and a source/host must contain one of the tags. Default: `False`.
         /// </summary>
         [Output("relevantHostTagsAnded")]
         public Output<bool?> RelevantHostTagsAnded { get; private set; } = null!;
@@ -167,10 +167,10 @@ namespace Pulumi.Wavefront
         public Input<int> EndTimeInSeconds { get; set; } = null!;
 
         /// <summary>
-        /// If `true`, a source/host must be in `relevant_host_names`
-        /// and have tags matching the specification formed by `relevant_host_tags` and `relevant_host_tags_anded` in
-        /// order for this maintenance window to apply. If `false`, a source/host must either be in `relevant_host_names`
-        /// or match `relevant_host_tags` and `relevant_host_tags_anded`. Default: `false`.
+        /// If `True`, a source/host must be in `RelevantHostNames`
+        /// and have tags matching the specification formed by `RelevantHostTags` and `RelevantHostTagsAnded` in
+        /// order for this maintenance window to apply. If `False`, a source/host must either be in `RelevantHostNames`
+        /// or match `RelevantHostTags` and `RelevantHostTagsAnded`. Default: `False`.
         /// </summary>
         [Input("hostTagGroupHostNamesGroupAnded")]
         public Input<bool>? HostTagGroupHostNamesGroupAnded { get; set; }
@@ -186,7 +186,7 @@ namespace Pulumi.Wavefront
 
         /// <summary>
         /// List of alert tags whose matching alerts will be put into maintenance because
-        /// of this maintenance window. At least one of `relevant_customer_tags`, `relevant_host_tags`, or `relevant_host_names`
+        /// of this maintenance window. At least one of `RelevantCustomerTags`, `RelevantHostTags`, or `RelevantHostNames`
         /// is required.
         /// </summary>
         public InputList<string> RelevantCustomerTags
@@ -200,7 +200,7 @@ namespace Pulumi.Wavefront
 
         /// <summary>
         /// List of source/host names that will be put into maintenance because of this
-        /// maintenance window. At least one of `relevant_customer_tags`, `relevant_host_tags`, or `relevant_host_names`
+        /// maintenance window. At least one of `RelevantCustomerTags`, `RelevantHostTags`, or `RelevantHostNames`
         /// is required.
         /// </summary>
         public InputList<string> RelevantHostNames
@@ -214,8 +214,8 @@ namespace Pulumi.Wavefront
 
         /// <summary>
         /// List of source/host tags whose matching sources/hosts will be put into maintenance
-        /// because of this maintenance window. At least one of `relevant_customer_tags`, `relevant_host_tags`, or
-        /// `relevant_host_names` is required.
+        /// because of this maintenance window. At least one of `RelevantCustomerTags`, `RelevantHostTags`, or
+        /// `RelevantHostNames` is required.
         /// </summary>
         public InputList<string> RelevantHostTags
         {
@@ -224,9 +224,9 @@ namespace Pulumi.Wavefront
         }
 
         /// <summary>
-        /// Whether to AND source/host tags listed in `relevant_host_tags`.
-        /// If `true`, a source/host must contain all tags in order for the maintenance window to apply. If `false`,
-        /// the tags are OR'ed, and a source/host must contain one of the tags. Default: `false`.
+        /// Whether to AND source/host tags listed in `RelevantHostTags`.
+        /// If `True`, a source/host must contain all tags in order for the maintenance window to apply. If `False`,
+        /// the tags are OR'ed, and a source/host must contain one of the tags. Default: `False`.
         /// </summary>
         [Input("relevantHostTagsAnded")]
         public Input<bool>? RelevantHostTagsAnded { get; set; }
@@ -258,10 +258,10 @@ namespace Pulumi.Wavefront
         public Input<int>? EndTimeInSeconds { get; set; }
 
         /// <summary>
-        /// If `true`, a source/host must be in `relevant_host_names`
-        /// and have tags matching the specification formed by `relevant_host_tags` and `relevant_host_tags_anded` in
-        /// order for this maintenance window to apply. If `false`, a source/host must either be in `relevant_host_names`
-        /// or match `relevant_host_tags` and `relevant_host_tags_anded`. Default: `false`.
+        /// If `True`, a source/host must be in `RelevantHostNames`
+        /// and have tags matching the specification formed by `RelevantHostTags` and `RelevantHostTagsAnded` in
+        /// order for this maintenance window to apply. If `False`, a source/host must either be in `RelevantHostNames`
+        /// or match `RelevantHostTags` and `RelevantHostTagsAnded`. Default: `False`.
         /// </summary>
         [Input("hostTagGroupHostNamesGroupAnded")]
         public Input<bool>? HostTagGroupHostNamesGroupAnded { get; set; }
@@ -277,7 +277,7 @@ namespace Pulumi.Wavefront
 
         /// <summary>
         /// List of alert tags whose matching alerts will be put into maintenance because
-        /// of this maintenance window. At least one of `relevant_customer_tags`, `relevant_host_tags`, or `relevant_host_names`
+        /// of this maintenance window. At least one of `RelevantCustomerTags`, `RelevantHostTags`, or `RelevantHostNames`
         /// is required.
         /// </summary>
         public InputList<string> RelevantCustomerTags
@@ -291,7 +291,7 @@ namespace Pulumi.Wavefront
 
         /// <summary>
         /// List of source/host names that will be put into maintenance because of this
-        /// maintenance window. At least one of `relevant_customer_tags`, `relevant_host_tags`, or `relevant_host_names`
+        /// maintenance window. At least one of `RelevantCustomerTags`, `RelevantHostTags`, or `RelevantHostNames`
         /// is required.
         /// </summary>
         public InputList<string> RelevantHostNames
@@ -305,8 +305,8 @@ namespace Pulumi.Wavefront
 
         /// <summary>
         /// List of source/host tags whose matching sources/hosts will be put into maintenance
-        /// because of this maintenance window. At least one of `relevant_customer_tags`, `relevant_host_tags`, or
-        /// `relevant_host_names` is required.
+        /// because of this maintenance window. At least one of `RelevantCustomerTags`, `RelevantHostTags`, or
+        /// `RelevantHostNames` is required.
         /// </summary>
         public InputList<string> RelevantHostTags
         {
@@ -315,9 +315,9 @@ namespace Pulumi.Wavefront
         }
 
         /// <summary>
-        /// Whether to AND source/host tags listed in `relevant_host_tags`.
-        /// If `true`, a source/host must contain all tags in order for the maintenance window to apply. If `false`,
-        /// the tags are OR'ed, and a source/host must contain one of the tags. Default: `false`.
+        /// Whether to AND source/host tags listed in `RelevantHostTags`.
+        /// If `True`, a source/host must contain all tags in order for the maintenance window to apply. If `False`,
+        /// the tags are OR'ed, and a source/host must contain one of the tags. Default: `False`.
         /// </summary>
         [Input("relevantHostTagsAnded")]
         public Input<bool>? RelevantHostTagsAnded { get; set; }

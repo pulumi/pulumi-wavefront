@@ -247,14 +247,14 @@ public class Alert extends com.pulumi.resources.CustomResource {
         return Codegen.optional(this.notificationResendFrequencyMinutes);
     }
     /**
-     * The specified query is executed every `process_rate_minutes` minutes. Default value is 5 minutes.
+     * The specified query is executed every `processRateMinutes` minutes. Default value is 5 minutes.
      * 
      */
     @Export(name="processRateMinutes", refs={Integer.class}, tree="[0]")
     private Output</* @Nullable */ Integer> processRateMinutes;
 
     /**
-     * @return The specified query is executed every `process_rate_minutes` minutes. Default value is 5 minutes.
+     * @return The specified query is executed every `processRateMinutes` minutes. Default value is 5 minutes.
      * 
      */
     public Output<Optional<Integer>> processRateMinutes() {

@@ -99,7 +99,7 @@ public final class GetAlertsAlert {
      */
     private Integer notificationResendFrequencyMinutes;
     /**
-     * @return The specified query is executed every `process_rate_minutes` minutes.
+     * @return The specified query is executed every `processRateMinutes` minutes.
      * 
      */
     private Integer processRateMinutes;
@@ -254,7 +254,7 @@ public final class GetAlertsAlert {
         return this.notificationResendFrequencyMinutes;
     }
     /**
-     * @return The specified query is executed every `process_rate_minutes` minutes.
+     * @return The specified query is executed every `processRateMinutes` minutes.
      * 
      */
     public Integer processRateMinutes() {
