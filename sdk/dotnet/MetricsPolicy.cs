@@ -102,7 +102,7 @@ namespace Pulumi.Wavefront
         public Output<int> UpdatedEpochMillis { get; private set; } = null!;
 
         /// <summary>
-        /// The account_id who applied the current policy.
+        /// The AccountId who applied the current policy.
         /// </summary>
         [Output("updaterId")]
         public Output<string> UpdaterId { get; private set; } = null!;
@@ -198,7 +198,7 @@ namespace Pulumi.Wavefront
         public Input<int>? UpdatedEpochMillis { get; set; }
 
         /// <summary>
-        /// The account_id who applied the current policy.
+        /// The AccountId who applied the current policy.
         /// </summary>
         [Input("updaterId")]
         public Input<string>? UpdaterId { get; set; }

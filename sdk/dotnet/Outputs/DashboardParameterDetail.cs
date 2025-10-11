@@ -23,7 +23,7 @@ namespace Pulumi.Wavefront.Outputs
         /// </summary>
         public readonly string? DynamicFieldType;
         /// <summary>
-        /// If `true` the parameter will only be shown on the edit view of the dashboard.
+        /// If `True` the parameter will only be shown on the edit view of the dashboard.
         /// </summary>
         public readonly bool HideFromView;
         /// <summary>
@@ -48,7 +48,7 @@ namespace Pulumi.Wavefront.Outputs
         public readonly string? TagKey;
         /// <summary>
         /// A string-&gt;string map. At least one of the keys must match the value of
-        /// `default_value`.
+        /// `DefaultValue`.
         /// </summary>
         public readonly ImmutableDictionary<string, string> ValuesToReadableStrings;
 
