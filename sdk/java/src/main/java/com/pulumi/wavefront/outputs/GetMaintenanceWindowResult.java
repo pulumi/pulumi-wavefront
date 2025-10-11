@@ -39,8 +39,8 @@ public final class GetMaintenanceWindowResult {
      */
     private String eventName;
     /**
-     * @return If set to `true`, the source or host must be in `relevant_host_names` and must have tags matching the specification formed by `relevant_host_tags` and `relevant_host_tags_anded` in for this maintenance window to apply.
-     * If set to false, the source or host must either be in `relevant_host_names` or match `relevant_host_tags` and `relevant_host_tags_anded`. Default value is `false`.
+     * @return If set to `true`, the source or host must be in `relevantHostNames` and must have tags matching the specification formed by `relevantHostTags` and `relevantHostTagsAnded` in for this maintenance window to apply.
+     * If set to false, the source or host must either be in `relevantHostNames` or match `relevantHostTags` and `relevantHostTagsAnded`. Default value is `false`.
      * 
      */
     private Boolean hostTagGroupHostNamesGroupAnded;
@@ -56,27 +56,27 @@ public final class GetMaintenanceWindowResult {
     private String reason;
     /**
      * @return The list of alert tags whose matching alerts will be put into maintenance because
-     * of this maintenance window. At least one of `relevant_customer_tags`, `relevant_host_tags`, or `relevant_host_names`
+     * of this maintenance window. At least one of `relevantCustomerTags`, `relevantHostTags`, or `relevantHostNames`
      * is required.
      * 
      */
     private List<String> relevantCustomerTags;
     /**
      * @return The list of source or host names that will be put into maintenance because of this
-     * maintenance window. At least one of `relevant_customer_tags`, `relevant_host_tags`, or `relevant_host_names`
+     * maintenance window. At least one of `relevantCustomerTags`, `relevantHostTags`, or `relevantHostNames`
      * is required.
      * 
      */
     private List<String> relevantHostNames;
     /**
      * @return The list of source or host tags whose matching sources or hosts will be put into maintenance
-     * because of this maintenance window. At least one of `relevant_customer_tags`, `relevant_host_tags`, or
-     * `relevant_host_names` is required.
+     * because of this maintenance window. At least one of `relevantCustomerTags`, `relevantHostTags`, or
+     * `relevantHostNames` is required.
      * 
      */
     private List<String> relevantHostTags;
     /**
-     * @return Whether to AND source or host tags listed in `relevant_host_tags`.
+     * @return Whether to AND source or host tags listed in `relevantHostTags`.
      * If set to `true`, the source or host must contain all tags for the maintenance window to apply. If set to `false`,
      * the tags are OR&#39;ed, and the source or host must contain one of the tags. Default value is `false`.
      * 
@@ -146,8 +146,8 @@ public final class GetMaintenanceWindowResult {
         return this.eventName;
     }
     /**
-     * @return If set to `true`, the source or host must be in `relevant_host_names` and must have tags matching the specification formed by `relevant_host_tags` and `relevant_host_tags_anded` in for this maintenance window to apply.
-     * If set to false, the source or host must either be in `relevant_host_names` or match `relevant_host_tags` and `relevant_host_tags_anded`. Default value is `false`.
+     * @return If set to `true`, the source or host must be in `relevantHostNames` and must have tags matching the specification formed by `relevantHostTags` and `relevantHostTagsAnded` in for this maintenance window to apply.
+     * If set to false, the source or host must either be in `relevantHostNames` or match `relevantHostTags` and `relevantHostTagsAnded`. Default value is `false`.
      * 
      */
     public Boolean hostTagGroupHostNamesGroupAnded() {
@@ -169,7 +169,7 @@ public final class GetMaintenanceWindowResult {
     }
     /**
      * @return The list of alert tags whose matching alerts will be put into maintenance because
-     * of this maintenance window. At least one of `relevant_customer_tags`, `relevant_host_tags`, or `relevant_host_names`
+     * of this maintenance window. At least one of `relevantCustomerTags`, `relevantHostTags`, or `relevantHostNames`
      * is required.
      * 
      */
@@ -178,7 +178,7 @@ public final class GetMaintenanceWindowResult {
     }
     /**
      * @return The list of source or host names that will be put into maintenance because of this
-     * maintenance window. At least one of `relevant_customer_tags`, `relevant_host_tags`, or `relevant_host_names`
+     * maintenance window. At least one of `relevantCustomerTags`, `relevantHostTags`, or `relevantHostNames`
      * is required.
      * 
      */
@@ -187,15 +187,15 @@ public final class GetMaintenanceWindowResult {
     }
     /**
      * @return The list of source or host tags whose matching sources or hosts will be put into maintenance
-     * because of this maintenance window. At least one of `relevant_customer_tags`, `relevant_host_tags`, or
-     * `relevant_host_names` is required.
+     * because of this maintenance window. At least one of `relevantCustomerTags`, `relevantHostTags`, or
+     * `relevantHostNames` is required.
      * 
      */
     public List<String> relevantHostTags() {
         return this.relevantHostTags;
     }
     /**
-     * @return Whether to AND source or host tags listed in `relevant_host_tags`.
+     * @return Whether to AND source or host tags listed in `relevantHostTags`.
      * If set to `true`, the source or host must contain all tags for the maintenance window to apply. If set to `false`,
      * the tags are OR&#39;ed, and the source or host must contain one of the tags. Default value is `false`.
      * 

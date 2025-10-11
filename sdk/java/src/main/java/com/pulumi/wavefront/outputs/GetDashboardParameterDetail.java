@@ -50,7 +50,7 @@ public final class GetDashboardParameterDetail {
     private String tagKey;
     /**
      * @return A string to string map. At least one of the keys must match the value of
-     * `default_value`.
+     * `defaultValue`.
      * 
      */
     private Map<String,String> valuesToReadableStrings;
@@ -108,7 +108,7 @@ public final class GetDashboardParameterDetail {
     }
     /**
      * @return A string to string map. At least one of the keys must match the value of
-     * `default_value`.
+     * `defaultValue`.
      * 
      */
     public Map<String,String> valuesToReadableStrings() {

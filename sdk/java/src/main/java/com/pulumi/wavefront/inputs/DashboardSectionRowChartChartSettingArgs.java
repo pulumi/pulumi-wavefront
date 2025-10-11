@@ -575,7 +575,7 @@ public final class DashboardSectionRowChartChartSettingArgs extends com.pulumi.r
 
     /**
      * For the single stat view, A list of colors that differing query values map to.
-     * Must contain one more element than `sparkline_value_color_map_values_v2`. Values should be in `rgba(,,,,)`.
+     * Must contain one more element than `sparklineValueColorMapValuesV2`. Values should be in `rgba(,,,,)`.
      * 
      */
     @Import(name="sparklineValueColorMapColors")
@@ -583,7 +583,7 @@ public final class DashboardSectionRowChartChartSettingArgs extends com.pulumi.r
 
     /**
      * @return For the single stat view, A list of colors that differing query values map to.
-     * Must contain one more element than `sparkline_value_color_map_values_v2`. Values should be in `rgba(,,,,)`.
+     * Must contain one more element than `sparklineValueColorMapValuesV2`. Values should be in `rgba(,,,,)`.
      * 
      */
     public Optional<Output<List<String>>> sparklineValueColorMapColors() {
@@ -607,7 +607,7 @@ public final class DashboardSectionRowChartChartSettingArgs extends com.pulumi.r
 
     /**
      * For the single stat view, a list of boundaries for mapping different
-     * query values to colors. Must contain one element less than `sparkline_value_color_map_colors`.
+     * query values to colors. Must contain one element less than `sparklineValueColorMapColors`.
      * 
      */
     @Import(name="sparklineValueColorMapValuesV2s")
@@ -615,7 +615,7 @@ public final class DashboardSectionRowChartChartSettingArgs extends com.pulumi.r
 
     /**
      * @return For the single stat view, a list of boundaries for mapping different
-     * query values to colors. Must contain one element less than `sparkline_value_color_map_colors`.
+     * query values to colors. Must contain one element less than `sparklineValueColorMapColors`.
      * 
      */
     public Optional<Output<List<Double>>> sparklineValueColorMapValuesV2s() {
@@ -624,7 +624,7 @@ public final class DashboardSectionRowChartChartSettingArgs extends com.pulumi.r
 
     /**
      * For the single stat view, a list of display text values that different query
-     * values map to. Must contain one more element than `sparkline_value_text_map_thresholds`.
+     * values map to. Must contain one more element than `sparklineValueTextMapThresholds`.
      * 
      */
     @Import(name="sparklineValueTextMapTexts")
@@ -632,7 +632,7 @@ public final class DashboardSectionRowChartChartSettingArgs extends com.pulumi.r
 
     /**
      * @return For the single stat view, a list of display text values that different query
-     * values map to. Must contain one more element than `sparkline_value_text_map_thresholds`.
+     * values map to. Must contain one more element than `sparklineValueTextMapThresholds`.
      * 
      */
     public Optional<Output<List<String>>> sparklineValueTextMapTexts() {
@@ -641,7 +641,7 @@ public final class DashboardSectionRowChartChartSettingArgs extends com.pulumi.r
 
     /**
      * For the single stat view, a list of threshold boundaries for
-     * mapping different query values to display text. Must contain one element less than `sparkline_value_text_map_text`.
+     * mapping different query values to display text. Must contain one element less than `sparklineValueTextMapText`.
      * 
      */
     @Import(name="sparklineValueTextMapThresholds")
@@ -649,7 +649,7 @@ public final class DashboardSectionRowChartChartSettingArgs extends com.pulumi.r
 
     /**
      * @return For the single stat view, a list of threshold boundaries for
-     * mapping different query values to display text. Must contain one element less than `sparkline_value_text_map_text`.
+     * mapping different query values to display text. Must contain one element less than `sparklineValueTextMapText`.
      * 
      */
     public Optional<Output<List<Double>>> sparklineValueTextMapThresholds() {
@@ -1792,7 +1792,7 @@ public final class DashboardSectionRowChartChartSettingArgs extends com.pulumi.r
 
         /**
          * @param sparklineValueColorMapColors For the single stat view, A list of colors that differing query values map to.
-         * Must contain one more element than `sparkline_value_color_map_values_v2`. Values should be in `rgba(,,,,)`.
+         * Must contain one more element than `sparklineValueColorMapValuesV2`. Values should be in `rgba(,,,,)`.
          * 
          * @return builder
          * 
@@ -1804,7 +1804,7 @@ public final class DashboardSectionRowChartChartSettingArgs extends com.pulumi.r
 
         /**
          * @param sparklineValueColorMapColors For the single stat view, A list of colors that differing query values map to.
-         * Must contain one more element than `sparkline_value_color_map_values_v2`. Values should be in `rgba(,,,,)`.
+         * Must contain one more element than `sparklineValueColorMapValuesV2`. Values should be in `rgba(,,,,)`.
          * 
          * @return builder
          * 
@@ -1815,7 +1815,7 @@ public final class DashboardSectionRowChartChartSettingArgs extends com.pulumi.r
 
         /**
          * @param sparklineValueColorMapColors For the single stat view, A list of colors that differing query values map to.
-         * Must contain one more element than `sparkline_value_color_map_values_v2`. Values should be in `rgba(,,,,)`.
+         * Must contain one more element than `sparklineValueColorMapValuesV2`. Values should be in `rgba(,,,,)`.
          * 
          * @return builder
          * 
@@ -1857,7 +1857,7 @@ public final class DashboardSectionRowChartChartSettingArgs extends com.pulumi.r
 
         /**
          * @param sparklineValueColorMapValuesV2s For the single stat view, a list of boundaries for mapping different
-         * query values to colors. Must contain one element less than `sparkline_value_color_map_colors`.
+         * query values to colors. Must contain one element less than `sparklineValueColorMapColors`.
          * 
          * @return builder
          * 
@@ -1869,7 +1869,7 @@ public final class DashboardSectionRowChartChartSettingArgs extends com.pulumi.r
 
         /**
          * @param sparklineValueColorMapValuesV2s For the single stat view, a list of boundaries for mapping different
-         * query values to colors. Must contain one element less than `sparkline_value_color_map_colors`.
+         * query values to colors. Must contain one element less than `sparklineValueColorMapColors`.
          * 
          * @return builder
          * 
@@ -1880,7 +1880,7 @@ public final class DashboardSectionRowChartChartSettingArgs extends com.pulumi.r
 
         /**
          * @param sparklineValueColorMapValuesV2s For the single stat view, a list of boundaries for mapping different
-         * query values to colors. Must contain one element less than `sparkline_value_color_map_colors`.
+         * query values to colors. Must contain one element less than `sparklineValueColorMapColors`.
          * 
          * @return builder
          * 
@@ -1891,7 +1891,7 @@ public final class DashboardSectionRowChartChartSettingArgs extends com.pulumi.r
 
         /**
          * @param sparklineValueTextMapTexts For the single stat view, a list of display text values that different query
-         * values map to. Must contain one more element than `sparkline_value_text_map_thresholds`.
+         * values map to. Must contain one more element than `sparklineValueTextMapThresholds`.
          * 
          * @return builder
          * 
@@ -1903,7 +1903,7 @@ public final class DashboardSectionRowChartChartSettingArgs extends com.pulumi.r
 
         /**
          * @param sparklineValueTextMapTexts For the single stat view, a list of display text values that different query
-         * values map to. Must contain one more element than `sparkline_value_text_map_thresholds`.
+         * values map to. Must contain one more element than `sparklineValueTextMapThresholds`.
          * 
          * @return builder
          * 
@@ -1914,7 +1914,7 @@ public final class DashboardSectionRowChartChartSettingArgs extends com.pulumi.r
 
         /**
          * @param sparklineValueTextMapTexts For the single stat view, a list of display text values that different query
-         * values map to. Must contain one more element than `sparkline_value_text_map_thresholds`.
+         * values map to. Must contain one more element than `sparklineValueTextMapThresholds`.
          * 
          * @return builder
          * 
@@ -1925,7 +1925,7 @@ public final class DashboardSectionRowChartChartSettingArgs extends com.pulumi.r
 
         /**
          * @param sparklineValueTextMapThresholds For the single stat view, a list of threshold boundaries for
-         * mapping different query values to display text. Must contain one element less than `sparkline_value_text_map_text`.
+         * mapping different query values to display text. Must contain one element less than `sparklineValueTextMapText`.
          * 
          * @return builder
          * 
@@ -1937,7 +1937,7 @@ public final class DashboardSectionRowChartChartSettingArgs extends com.pulumi.r
 
         /**
          * @param sparklineValueTextMapThresholds For the single stat view, a list of threshold boundaries for
-         * mapping different query values to display text. Must contain one element less than `sparkline_value_text_map_text`.
+         * mapping different query values to display text. Must contain one element less than `sparklineValueTextMapText`.
          * 
          * @return builder
          * 
@@ -1948,7 +1948,7 @@ public final class DashboardSectionRowChartChartSettingArgs extends com.pulumi.r
 
         /**
          * @param sparklineValueTextMapThresholds For the single stat view, a list of threshold boundaries for
-         * mapping different query values to display text. Must contain one element less than `sparkline_value_text_map_text`.
+         * mapping different query values to display text. Must contain one element less than `sparklineValueTextMapText`.
          * 
          * @return builder
          * 

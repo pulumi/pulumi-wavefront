@@ -34,20 +34,20 @@ public final class MaintenanceWindowState extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * If `true`, a source/host must be in `relevant_host_names`
-     * and have tags matching the specification formed by `relevant_host_tags` and `relevant_host_tags_anded` in
-     * order for this maintenance window to apply. If `false`, a source/host must either be in `relevant_host_names`
-     * or match `relevant_host_tags` and `relevant_host_tags_anded`. Default: `false`.
+     * If `true`, a source/host must be in `relevantHostNames`
+     * and have tags matching the specification formed by `relevantHostTags` and `relevantHostTagsAnded` in
+     * order for this maintenance window to apply. If `false`, a source/host must either be in `relevantHostNames`
+     * or match `relevantHostTags` and `relevantHostTagsAnded`. Default: `false`.
      * 
      */
     @Import(name="hostTagGroupHostNamesGroupAnded")
     private @Nullable Output<Boolean> hostTagGroupHostNamesGroupAnded;
 
     /**
-     * @return If `true`, a source/host must be in `relevant_host_names`
-     * and have tags matching the specification formed by `relevant_host_tags` and `relevant_host_tags_anded` in
-     * order for this maintenance window to apply. If `false`, a source/host must either be in `relevant_host_names`
-     * or match `relevant_host_tags` and `relevant_host_tags_anded`. Default: `false`.
+     * @return If `true`, a source/host must be in `relevantHostNames`
+     * and have tags matching the specification formed by `relevantHostTags` and `relevantHostTagsAnded` in
+     * order for this maintenance window to apply. If `false`, a source/host must either be in `relevantHostNames`
+     * or match `relevantHostTags` and `relevantHostTagsAnded`. Default: `false`.
      * 
      */
     public Optional<Output<Boolean>> hostTagGroupHostNamesGroupAnded() {
@@ -71,7 +71,7 @@ public final class MaintenanceWindowState extends com.pulumi.resources.ResourceA
 
     /**
      * List of alert tags whose matching alerts will be put into maintenance because
-     * of this maintenance window. At least one of `relevant_customer_tags`, `relevant_host_tags`, or `relevant_host_names`
+     * of this maintenance window. At least one of `relevantCustomerTags`, `relevantHostTags`, or `relevantHostNames`
      * is required.
      * 
      */
@@ -80,7 +80,7 @@ public final class MaintenanceWindowState extends com.pulumi.resources.ResourceA
 
     /**
      * @return List of alert tags whose matching alerts will be put into maintenance because
-     * of this maintenance window. At least one of `relevant_customer_tags`, `relevant_host_tags`, or `relevant_host_names`
+     * of this maintenance window. At least one of `relevantCustomerTags`, `relevantHostTags`, or `relevantHostNames`
      * is required.
      * 
      */
@@ -90,7 +90,7 @@ public final class MaintenanceWindowState extends com.pulumi.resources.ResourceA
 
     /**
      * List of source/host names that will be put into maintenance because of this
-     * maintenance window. At least one of `relevant_customer_tags`, `relevant_host_tags`, or `relevant_host_names`
+     * maintenance window. At least one of `relevantCustomerTags`, `relevantHostTags`, or `relevantHostNames`
      * is required.
      * 
      */
@@ -99,7 +99,7 @@ public final class MaintenanceWindowState extends com.pulumi.resources.ResourceA
 
     /**
      * @return List of source/host names that will be put into maintenance because of this
-     * maintenance window. At least one of `relevant_customer_tags`, `relevant_host_tags`, or `relevant_host_names`
+     * maintenance window. At least one of `relevantCustomerTags`, `relevantHostTags`, or `relevantHostNames`
      * is required.
      * 
      */
@@ -109,8 +109,8 @@ public final class MaintenanceWindowState extends com.pulumi.resources.ResourceA
 
     /**
      * List of source/host tags whose matching sources/hosts will be put into maintenance
-     * because of this maintenance window. At least one of `relevant_customer_tags`, `relevant_host_tags`, or
-     * `relevant_host_names` is required.
+     * because of this maintenance window. At least one of `relevantCustomerTags`, `relevantHostTags`, or
+     * `relevantHostNames` is required.
      * 
      */
     @Import(name="relevantHostTags")
@@ -118,8 +118,8 @@ public final class MaintenanceWindowState extends com.pulumi.resources.ResourceA
 
     /**
      * @return List of source/host tags whose matching sources/hosts will be put into maintenance
-     * because of this maintenance window. At least one of `relevant_customer_tags`, `relevant_host_tags`, or
-     * `relevant_host_names` is required.
+     * because of this maintenance window. At least one of `relevantCustomerTags`, `relevantHostTags`, or
+     * `relevantHostNames` is required.
      * 
      */
     public Optional<Output<List<String>>> relevantHostTags() {
@@ -127,7 +127,7 @@ public final class MaintenanceWindowState extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * Whether to AND source/host tags listed in `relevant_host_tags`.
+     * Whether to AND source/host tags listed in `relevantHostTags`.
      * If `true`, a source/host must contain all tags in order for the maintenance window to apply. If `false`,
      * the tags are OR&#39;ed, and a source/host must contain one of the tags. Default: `false`.
      * 
@@ -136,7 +136,7 @@ public final class MaintenanceWindowState extends com.pulumi.resources.ResourceA
     private @Nullable Output<Boolean> relevantHostTagsAnded;
 
     /**
-     * @return Whether to AND source/host tags listed in `relevant_host_tags`.
+     * @return Whether to AND source/host tags listed in `relevantHostTags`.
      * If `true`, a source/host must contain all tags in order for the maintenance window to apply. If `false`,
      * the tags are OR&#39;ed, and a source/host must contain one of the tags. Default: `false`.
      * 
@@ -229,10 +229,10 @@ public final class MaintenanceWindowState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param hostTagGroupHostNamesGroupAnded If `true`, a source/host must be in `relevant_host_names`
-         * and have tags matching the specification formed by `relevant_host_tags` and `relevant_host_tags_anded` in
-         * order for this maintenance window to apply. If `false`, a source/host must either be in `relevant_host_names`
-         * or match `relevant_host_tags` and `relevant_host_tags_anded`. Default: `false`.
+         * @param hostTagGroupHostNamesGroupAnded If `true`, a source/host must be in `relevantHostNames`
+         * and have tags matching the specification formed by `relevantHostTags` and `relevantHostTagsAnded` in
+         * order for this maintenance window to apply. If `false`, a source/host must either be in `relevantHostNames`
+         * or match `relevantHostTags` and `relevantHostTagsAnded`. Default: `false`.
          * 
          * @return builder
          * 
@@ -243,10 +243,10 @@ public final class MaintenanceWindowState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param hostTagGroupHostNamesGroupAnded If `true`, a source/host must be in `relevant_host_names`
-         * and have tags matching the specification formed by `relevant_host_tags` and `relevant_host_tags_anded` in
-         * order for this maintenance window to apply. If `false`, a source/host must either be in `relevant_host_names`
-         * or match `relevant_host_tags` and `relevant_host_tags_anded`. Default: `false`.
+         * @param hostTagGroupHostNamesGroupAnded If `true`, a source/host must be in `relevantHostNames`
+         * and have tags matching the specification formed by `relevantHostTags` and `relevantHostTagsAnded` in
+         * order for this maintenance window to apply. If `false`, a source/host must either be in `relevantHostNames`
+         * or match `relevantHostTags` and `relevantHostTagsAnded`. Default: `false`.
          * 
          * @return builder
          * 
@@ -278,7 +278,7 @@ public final class MaintenanceWindowState extends com.pulumi.resources.ResourceA
 
         /**
          * @param relevantCustomerTags List of alert tags whose matching alerts will be put into maintenance because
-         * of this maintenance window. At least one of `relevant_customer_tags`, `relevant_host_tags`, or `relevant_host_names`
+         * of this maintenance window. At least one of `relevantCustomerTags`, `relevantHostTags`, or `relevantHostNames`
          * is required.
          * 
          * @return builder
@@ -291,7 +291,7 @@ public final class MaintenanceWindowState extends com.pulumi.resources.ResourceA
 
         /**
          * @param relevantCustomerTags List of alert tags whose matching alerts will be put into maintenance because
-         * of this maintenance window. At least one of `relevant_customer_tags`, `relevant_host_tags`, or `relevant_host_names`
+         * of this maintenance window. At least one of `relevantCustomerTags`, `relevantHostTags`, or `relevantHostNames`
          * is required.
          * 
          * @return builder
@@ -303,7 +303,7 @@ public final class MaintenanceWindowState extends com.pulumi.resources.ResourceA
 
         /**
          * @param relevantCustomerTags List of alert tags whose matching alerts will be put into maintenance because
-         * of this maintenance window. At least one of `relevant_customer_tags`, `relevant_host_tags`, or `relevant_host_names`
+         * of this maintenance window. At least one of `relevantCustomerTags`, `relevantHostTags`, or `relevantHostNames`
          * is required.
          * 
          * @return builder
@@ -315,7 +315,7 @@ public final class MaintenanceWindowState extends com.pulumi.resources.ResourceA
 
         /**
          * @param relevantHostNames List of source/host names that will be put into maintenance because of this
-         * maintenance window. At least one of `relevant_customer_tags`, `relevant_host_tags`, or `relevant_host_names`
+         * maintenance window. At least one of `relevantCustomerTags`, `relevantHostTags`, or `relevantHostNames`
          * is required.
          * 
          * @return builder
@@ -328,7 +328,7 @@ public final class MaintenanceWindowState extends com.pulumi.resources.ResourceA
 
         /**
          * @param relevantHostNames List of source/host names that will be put into maintenance because of this
-         * maintenance window. At least one of `relevant_customer_tags`, `relevant_host_tags`, or `relevant_host_names`
+         * maintenance window. At least one of `relevantCustomerTags`, `relevantHostTags`, or `relevantHostNames`
          * is required.
          * 
          * @return builder
@@ -340,7 +340,7 @@ public final class MaintenanceWindowState extends com.pulumi.resources.ResourceA
 
         /**
          * @param relevantHostNames List of source/host names that will be put into maintenance because of this
-         * maintenance window. At least one of `relevant_customer_tags`, `relevant_host_tags`, or `relevant_host_names`
+         * maintenance window. At least one of `relevantCustomerTags`, `relevantHostTags`, or `relevantHostNames`
          * is required.
          * 
          * @return builder
@@ -352,8 +352,8 @@ public final class MaintenanceWindowState extends com.pulumi.resources.ResourceA
 
         /**
          * @param relevantHostTags List of source/host tags whose matching sources/hosts will be put into maintenance
-         * because of this maintenance window. At least one of `relevant_customer_tags`, `relevant_host_tags`, or
-         * `relevant_host_names` is required.
+         * because of this maintenance window. At least one of `relevantCustomerTags`, `relevantHostTags`, or
+         * `relevantHostNames` is required.
          * 
          * @return builder
          * 
@@ -365,8 +365,8 @@ public final class MaintenanceWindowState extends com.pulumi.resources.ResourceA
 
         /**
          * @param relevantHostTags List of source/host tags whose matching sources/hosts will be put into maintenance
-         * because of this maintenance window. At least one of `relevant_customer_tags`, `relevant_host_tags`, or
-         * `relevant_host_names` is required.
+         * because of this maintenance window. At least one of `relevantCustomerTags`, `relevantHostTags`, or
+         * `relevantHostNames` is required.
          * 
          * @return builder
          * 
@@ -377,8 +377,8 @@ public final class MaintenanceWindowState extends com.pulumi.resources.ResourceA
 
         /**
          * @param relevantHostTags List of source/host tags whose matching sources/hosts will be put into maintenance
-         * because of this maintenance window. At least one of `relevant_customer_tags`, `relevant_host_tags`, or
-         * `relevant_host_names` is required.
+         * because of this maintenance window. At least one of `relevantCustomerTags`, `relevantHostTags`, or
+         * `relevantHostNames` is required.
          * 
          * @return builder
          * 
@@ -388,7 +388,7 @@ public final class MaintenanceWindowState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param relevantHostTagsAnded Whether to AND source/host tags listed in `relevant_host_tags`.
+         * @param relevantHostTagsAnded Whether to AND source/host tags listed in `relevantHostTags`.
          * If `true`, a source/host must contain all tags in order for the maintenance window to apply. If `false`,
          * the tags are OR&#39;ed, and a source/host must contain one of the tags. Default: `false`.
          * 
@@ -401,7 +401,7 @@ public final class MaintenanceWindowState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param relevantHostTagsAnded Whether to AND source/host tags listed in `relevant_host_tags`.
+         * @param relevantHostTagsAnded Whether to AND source/host tags listed in `relevantHostTags`.
          * If `true`, a source/host must contain all tags in order for the maintenance window to apply. If `false`,
          * the tags are OR&#39;ed, and a source/host must contain one of the tags. Default: `false`.
          * 

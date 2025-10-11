@@ -63,8 +63,8 @@ public final class RoleState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * A list of permissions to assign to this role. Valid options are
-     * `agent_management`, `alerts_management`, `dashboard_management`, `embedded_charts`, `events_management`, `external_links_management`,
-     * `host_tag_management`, `metrics_management`, and `user_management`.
+     * `agentManagement`, `alertsManagement`, `dashboardManagement`, `embeddedCharts`, `eventsManagement`, `externalLinksManagement`,
+     * `hostTagManagement`, `metricsManagement`, and `userManagement`.
      * 
      */
     @Import(name="permissions")
@@ -72,8 +72,8 @@ public final class RoleState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * @return A list of permissions to assign to this role. Valid options are
-     * `agent_management`, `alerts_management`, `dashboard_management`, `embedded_charts`, `events_management`, `external_links_management`,
-     * `host_tag_management`, `metrics_management`, and `user_management`.
+     * `agentManagement`, `alertsManagement`, `dashboardManagement`, `embeddedCharts`, `eventsManagement`, `externalLinksManagement`,
+     * `hostTagManagement`, `metricsManagement`, and `userManagement`.
      * 
      */
     public Optional<Output<List<String>>> permissions() {
@@ -182,8 +182,8 @@ public final class RoleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param permissions A list of permissions to assign to this role. Valid options are
-         * `agent_management`, `alerts_management`, `dashboard_management`, `embedded_charts`, `events_management`, `external_links_management`,
-         * `host_tag_management`, `metrics_management`, and `user_management`.
+         * `agentManagement`, `alertsManagement`, `dashboardManagement`, `embeddedCharts`, `eventsManagement`, `externalLinksManagement`,
+         * `hostTagManagement`, `metricsManagement`, and `userManagement`.
          * 
          * @return builder
          * 
@@ -195,8 +195,8 @@ public final class RoleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param permissions A list of permissions to assign to this role. Valid options are
-         * `agent_management`, `alerts_management`, `dashboard_management`, `embedded_charts`, `events_management`, `external_links_management`,
-         * `host_tag_management`, `metrics_management`, and `user_management`.
+         * `agentManagement`, `alertsManagement`, `dashboardManagement`, `embeddedCharts`, `eventsManagement`, `externalLinksManagement`,
+         * `hostTagManagement`, `metricsManagement`, and `userManagement`.
          * 
          * @return builder
          * 
@@ -207,8 +207,8 @@ public final class RoleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param permissions A list of permissions to assign to this role. Valid options are
-         * `agent_management`, `alerts_management`, `dashboard_management`, `embedded_charts`, `events_management`, `external_links_management`,
-         * `host_tag_management`, `metrics_management`, and `user_management`.
+         * `agentManagement`, `alertsManagement`, `dashboardManagement`, `embeddedCharts`, `eventsManagement`, `externalLinksManagement`,
+         * `hostTagManagement`, `metricsManagement`, and `userManagement`.
          * 
          * @return builder
          * 

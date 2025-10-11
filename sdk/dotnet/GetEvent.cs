@@ -134,7 +134,7 @@ namespace Pulumi.Wavefront
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// A Boolean flag. If set to `true`, creates a point-in-time event (i.e. with no duration).
+        /// A Boolean flag. If set to `True`, creates a point-in-time event (i.e. with no duration).
         /// </summary>
         public readonly bool IsEphemeral;
         /// <summary>

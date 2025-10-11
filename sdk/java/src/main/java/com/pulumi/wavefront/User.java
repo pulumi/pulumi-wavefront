@@ -91,8 +91,8 @@ public class User extends com.pulumi.resources.CustomResource {
     }
     /**
      * List of permission to grant to this user. Valid options are
-     * `agent_management`, `alerts_management`, `dashboard_management`, `embedded_charts`, `events_management`, `external_links_management`,
-     * `host_tag_management`, `metrics_management`, and `user_management`.
+     * `agentManagement`, `alertsManagement`, `dashboardManagement`, `embeddedCharts`, `eventsManagement`, `externalLinksManagement`,
+     * `hostTagManagement`, `metricsManagement`, and `userManagement`.
      * 
      */
     @Export(name="permissions", refs={List.class,String.class}, tree="[0,1]")
@@ -100,8 +100,8 @@ public class User extends com.pulumi.resources.CustomResource {
 
     /**
      * @return List of permission to grant to this user. Valid options are
-     * `agent_management`, `alerts_management`, `dashboard_management`, `embedded_charts`, `events_management`, `external_links_management`,
-     * `host_tag_management`, `metrics_management`, and `user_management`.
+     * `agentManagement`, `alertsManagement`, `dashboardManagement`, `embeddedCharts`, `eventsManagement`, `externalLinksManagement`,
+     * `hostTagManagement`, `metricsManagement`, and `userManagement`.
      * 
      */
     public Output<List<String>> permissions() {

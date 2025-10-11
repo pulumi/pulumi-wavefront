@@ -79,7 +79,7 @@ namespace Pulumi.Wavefront.Inputs
         }
 
         /// <summary>
-        /// Bool where `true` require all tags are met by selected metrics, else `false` select metrics that match any give tag.
+        /// Bool where `True` require all tags are met by selected metrics, else `False` select metrics that match any give tag.
         /// </summary>
         [Input("tagsAnded", required: true)]
         public Input<bool> TagsAnded { get; set; } = null!;

@@ -57,7 +57,7 @@ public final class DashboardParameterDetail {
     private @Nullable String tagKey;
     /**
      * @return A string-&gt;string map. At least one of the keys must match the value of
-     * `default_value`.
+     * `defaultValue`.
      * 
      */
     private Map<String,String> valuesToReadableStrings;
@@ -122,7 +122,7 @@ public final class DashboardParameterDetail {
     }
     /**
      * @return A string-&gt;string map. At least one of the keys must match the value of
-     * `default_value`.
+     * `defaultValue`.
      * 
      */
     public Map<String,String> valuesToReadableStrings() {

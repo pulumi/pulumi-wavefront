@@ -185,7 +185,7 @@ namespace Pulumi.Wavefront
         /// </summary>
         public readonly int PointsScannedAtLastQuery;
         /// <summary>
-        /// The specified query is executed every `process_rate_minutes` minutes.
+        /// The specified query is executed every `ProcessRateMinutes` minutes.
         /// </summary>
         public readonly int ProcessRateMinutes;
         /// <summary>
@@ -197,7 +197,7 @@ namespace Pulumi.Wavefront
         /// </summary>
         public readonly bool QueryFailing;
         /// <summary>
-        /// A Boolean flag for enabling `query_qb`
+        /// A Boolean flag for enabling `QueryQb`
         /// </summary>
         public readonly bool QueryQbEnabled;
         /// <summary>

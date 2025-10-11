@@ -78,7 +78,7 @@ namespace Pulumi.Wavefront.Outputs
         /// </summary>
         public readonly int NotificationResendFrequencyMinutes;
         /// <summary>
-        /// The specified query is executed every `process_rate_minutes` minutes.
+        /// The specified query is executed every `ProcessRateMinutes` minutes.
         /// </summary>
         public readonly int ProcessRateMinutes;
         /// <summary>

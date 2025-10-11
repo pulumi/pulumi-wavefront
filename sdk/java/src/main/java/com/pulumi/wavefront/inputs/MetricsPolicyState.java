@@ -64,14 +64,14 @@ public final class MetricsPolicyState extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * The account_id who applied the current policy.
+     * The accountId who applied the current policy.
      * 
      */
     @Import(name="updaterId")
     private @Nullable Output<String> updaterId;
 
     /**
-     * @return The account_id who applied the current policy.
+     * @return The accountId who applied the current policy.
      * 
      */
     public Optional<Output<String>> updaterId() {
@@ -179,7 +179,7 @@ public final class MetricsPolicyState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param updaterId The account_id who applied the current policy.
+         * @param updaterId The accountId who applied the current policy.
          * 
          * @return builder
          * 
@@ -190,7 +190,7 @@ public final class MetricsPolicyState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param updaterId The account_id who applied the current policy.
+         * @param updaterId The accountId who applied the current policy.
          * 
          * @return builder
          * 

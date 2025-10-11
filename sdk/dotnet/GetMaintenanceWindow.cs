@@ -141,8 +141,8 @@ namespace Pulumi.Wavefront
         /// </summary>
         public readonly string EventName;
         /// <summary>
-        /// If set to `true`, the source or host must be in `relevant_host_names` and must have tags matching the specification formed by `relevant_host_tags` and `relevant_host_tags_anded` in for this maintenance window to apply.
-        /// If set to false, the source or host must either be in `relevant_host_names` or match `relevant_host_tags` and `relevant_host_tags_anded`. Default value is `false`.
+        /// If set to `True`, the source or host must be in `RelevantHostNames` and must have tags matching the specification formed by `RelevantHostTags` and `RelevantHostTagsAnded` in for this maintenance window to apply.
+        /// If set to false, the source or host must either be in `RelevantHostNames` or match `RelevantHostTags` and `RelevantHostTagsAnded`. Default value is `False`.
         /// </summary>
         public readonly bool HostTagGroupHostNamesGroupAnded;
         /// <summary>
@@ -155,26 +155,26 @@ namespace Pulumi.Wavefront
         public readonly string Reason;
         /// <summary>
         /// The list of alert tags whose matching alerts will be put into maintenance because
-        /// of this maintenance window. At least one of `relevant_customer_tags`, `relevant_host_tags`, or `relevant_host_names`
+        /// of this maintenance window. At least one of `RelevantCustomerTags`, `RelevantHostTags`, or `RelevantHostNames`
         /// is required.
         /// </summary>
         public readonly ImmutableArray<string> RelevantCustomerTags;
         /// <summary>
         /// The list of source or host names that will be put into maintenance because of this
-        /// maintenance window. At least one of `relevant_customer_tags`, `relevant_host_tags`, or `relevant_host_names`
+        /// maintenance window. At least one of `RelevantCustomerTags`, `RelevantHostTags`, or `RelevantHostNames`
         /// is required.
         /// </summary>
         public readonly ImmutableArray<string> RelevantHostNames;
         /// <summary>
         /// The list of source or host tags whose matching sources or hosts will be put into maintenance
-        /// because of this maintenance window. At least one of `relevant_customer_tags`, `relevant_host_tags`, or
-        /// `relevant_host_names` is required.
+        /// because of this maintenance window. At least one of `RelevantCustomerTags`, `RelevantHostTags`, or
+        /// `RelevantHostNames` is required.
         /// </summary>
         public readonly ImmutableArray<string> RelevantHostTags;
         /// <summary>
-        /// Whether to AND source or host tags listed in `relevant_host_tags`.
-        /// If set to `true`, the source or host must contain all tags for the maintenance window to apply. If set to `false`,
-        /// the tags are OR'ed, and the source or host must contain one of the tags. Default value is `false`.
+        /// Whether to AND source or host tags listed in `RelevantHostTags`.
+        /// If set to `True`, the source or host must contain all tags for the maintenance window to apply. If set to `False`,
+        /// the tags are OR'ed, and the source or host must contain one of the tags. Default value is `False`.
         /// </summary>
         public readonly bool RelevantHostTagsAnded;
         /// <summary>

@@ -21,6 +21,8 @@ import javax.annotation.Nullable;
 /**
  * Provides a Wavefront Dashboard resource. This allows dashboards to be created, updated, and deleted.
  * 
+ * ## Example Usage
+ * 
  * ## Import
  * 
  * Dashboards can be imported by using the `id`, e.g.:

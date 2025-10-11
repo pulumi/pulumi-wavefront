@@ -55,8 +55,8 @@ namespace Pulumi.Wavefront
 
         /// <summary>
         /// List of permission to grant to this user. Valid options are
-        /// `agent_management`, `alerts_management`, `dashboard_management`, `embedded_charts`, `events_management`, `external_links_management`,
-        /// `host_tag_management`, `metrics_management`, and `user_management`.
+        /// `AgentManagement`, `AlertsManagement`, `DashboardManagement`, `EmbeddedCharts`, `EventsManagement`, `ExternalLinksManagement`,
+        /// `HostTagManagement`, `MetricsManagement`, and `UserManagement`.
         /// </summary>
         [Output("permissions")]
         public Output<ImmutableArray<string>> Permissions { get; private set; } = null!;
@@ -130,8 +130,8 @@ namespace Pulumi.Wavefront
 
         /// <summary>
         /// List of permission to grant to this user. Valid options are
-        /// `agent_management`, `alerts_management`, `dashboard_management`, `embedded_charts`, `events_management`, `external_links_management`,
-        /// `host_tag_management`, `metrics_management`, and `user_management`.
+        /// `AgentManagement`, `AlertsManagement`, `DashboardManagement`, `EmbeddedCharts`, `EventsManagement`, `ExternalLinksManagement`,
+        /// `HostTagManagement`, `MetricsManagement`, and `UserManagement`.
         /// </summary>
         public InputList<string> Permissions
         {
@@ -176,8 +176,8 @@ namespace Pulumi.Wavefront
 
         /// <summary>
         /// List of permission to grant to this user. Valid options are
-        /// `agent_management`, `alerts_management`, `dashboard_management`, `embedded_charts`, `events_management`, `external_links_management`,
-        /// `host_tag_management`, `metrics_management`, and `user_management`.
+        /// `AgentManagement`, `AlertsManagement`, `DashboardManagement`, `EmbeddedCharts`, `EventsManagement`, `ExternalLinksManagement`,
+        /// `HostTagManagement`, `MetricsManagement`, and `UserManagement`.
         /// </summary>
         public InputList<string> Permissions
         {

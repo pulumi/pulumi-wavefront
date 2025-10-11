@@ -22,7 +22,7 @@ namespace Pulumi.Wavefront.Outputs
         /// </summary>
         public readonly string ColumnTags;
         /// <summary>
-        /// For the tabular view, a list of point tags to display when using the `custom` tag display mode.
+        /// For the tabular view, a list of point tags to display when using the `Custom` tag display mode.
         /// </summary>
         public readonly ImmutableArray<string> CustomTags;
         /// <summary>
@@ -58,11 +58,11 @@ namespace Pulumi.Wavefront.Outputs
         /// </summary>
         public readonly string FixedLegendPosition;
         /// <summary>
-        /// (Optional) If `true`, the legend uses non-summarized stats instead of summarized.
+        /// (Optional) If `True`, the legend uses non-summarized stats instead of summarized.
         /// </summary>
         public readonly bool FixedLegendUseRawStats;
         /// <summary>
-        /// For the tabular view, whether to group multi metrics into a single row by a common source. If set to `false`, each source is displayed in its own row. If set to `true`, multiple metrics for the same host are displayed as different columns in the same row.
+        /// For the tabular view, whether to group multi metrics into a single row by a common source. If set to `False`, each source is displayed in its own row. If set to `True`, multiple metrics for the same host are displayed as different columns in the same row.
         /// </summary>
         public readonly bool GroupBySource;
         /// <summary>
@@ -70,7 +70,7 @@ namespace Pulumi.Wavefront.Outputs
         /// </summary>
         public readonly bool InvertDynamicLegendHoverControl;
         /// <summary>
-        /// Plot interpolation type.  `linear` is default. Valid options are `linear`, `step-before`, `step-after`, `basis`, `cardinal`, and `monotone`.
+        /// Plot interpolation type.  `Linear` is default. Valid options are `Linear`, `step-before`, `step-after`, `Basis`, `Cardinal`, and `Monotone`.
         /// </summary>
         public readonly string LineType;
         /// <summary>
@@ -90,19 +90,19 @@ namespace Pulumi.Wavefront.Outputs
         /// </summary>
         public readonly string PlainMarkdownContent;
         /// <summary>
-        /// For the tabular view, whether to display sources. Default is `true`.
+        /// For the tabular view, whether to display sources. Default is `True`.
         /// </summary>
         public readonly bool ShowHosts;
         /// <summary>
-        /// For the tabular view, whether to display labels. Default is `true`.
+        /// For the tabular view, whether to display labels. Default is `True`.
         /// </summary>
         public readonly bool ShowLabels;
         /// <summary>
-        /// For the tabular view, whether to display raw values. Default is `false`.
+        /// For the tabular view, whether to display raw values. Default is `False`.
         /// </summary>
         public readonly bool ShowRawValues;
         /// <summary>
-        /// For the tabular view, whether to display values in descending order. Default is `false`.
+        /// For the tabular view, whether to display values in descending order. Default is `False`.
         /// </summary>
         public readonly bool SortValuesDescending;
         /// <summary>
@@ -154,7 +154,7 @@ namespace Pulumi.Wavefront.Outputs
         /// </summary>
         public readonly string SparklineValueColorMapApplyTo;
         /// <summary>
-        /// For the single stat view, a list of colors that differing query values map to. Must contain one more element than `sparkline_value_color_map_values_v2`. Values should be in RGBA format.
+        /// For the single stat view, a list of colors that differing query values map to. Must contain one more element than `SparklineValueColorMapValuesV2`. Values should be in RGBA format.
         /// </summary>
         public readonly ImmutableArray<string> SparklineValueColorMapColors;
         /// <summary>
@@ -162,23 +162,23 @@ namespace Pulumi.Wavefront.Outputs
         /// </summary>
         public readonly ImmutableArray<int> SparklineValueColorMapValues;
         /// <summary>
-        /// For the single stat view, a list of boundaries for mapping different query values to colors. Must contain one element less than `sparkline_value_color_map_colors`.
+        /// For the single stat view, a list of boundaries for mapping different query values to colors. Must contain one element less than `SparklineValueColorMapColors`.
         /// </summary>
         public readonly ImmutableArray<double> SparklineValueColorMapValuesV2s;
         /// <summary>
-        /// For the single stat view, a list of display text values that different query values map to. Must contain one more element than `sparkline_value_text_map_thresholds`.
+        /// For the single stat view, a list of display text values that different query values map to. Must contain one more element than `SparklineValueTextMapThresholds`.
         /// </summary>
         public readonly ImmutableArray<string> SparklineValueTextMapTexts;
         /// <summary>
-        /// For the single stat view, a list of threshold boundaries for mapping different query values to display text. Must contain one element less than `sparkline_value_text_map_text`.
+        /// For the single stat view, a list of threshold boundaries for mapping different query values to display text. Must contain one element less than `SparklineValueTextMapText`.
         /// </summary>
         public readonly ImmutableArray<double> SparklineValueTextMapThresholds;
         /// <summary>
-        /// Type of stacked chart (applicable only if chart type is `stacked`). `zero` (default) means stacked from y=0. `expand` means normalized from 0 to 1.  `wiggle` means minimize weighted changes. `silhouette` means to center the stream. Valid options are `zero`, `expand`, `wiggle`, `silhouette`, and `bars`.
+        /// Type of stacked chart (applicable only if chart type is `Stacked`). `Zero` (default) means stacked from y=0. `Expand` means normalized from 0 to 1.  `Wiggle` means minimize weighted changes. `Silhouette` means to center the stream. Valid options are `Zero`, `Expand`, `Wiggle`, `Silhouette`, and `Bars`.
         /// </summary>
         public readonly string StackType;
         /// <summary>
-        /// For the tabular view, which mode to use to determine which point tags to display. Valid options are `all`, `top`, or `custom`.
+        /// For the tabular view, which mode to use to determine which point tags to display. Valid options are `All`, `Top`, or `Custom`.
         /// </summary>
         public readonly string TagMode;
         /// <summary>
@@ -186,16 +186,16 @@ namespace Pulumi.Wavefront.Outputs
         /// </summary>
         public readonly bool TimeBasedColoring;
         /// <summary>
-        /// Chart Type. `line` refers to the Line Plot, `scatter` to the Point Plot, `stacked-area` to the Stacked Area plot, `table` to the Tabular View, `scatterplot-xy` to Scatter Plot, `markdown-widget` to the Markdown display, and `sparkline` to the Single Stat view. Valid options are`line`, `scatterplot`,
-        /// `stacked-area`, `stacked-column`, `table`, `scatterplot-xy`, `markdown-widget`, `sparkline`, `globe`, `nodemap`, `top-k`, `status-list`, and `histogram`.
+        /// Chart Type. `Line` refers to the Line Plot, `Scatter` to the Point Plot, `stacked-area` to the Stacked Area plot, `Table` to the Tabular View, `scatterplot-xy` to Scatter Plot, `markdown-widget` to the Markdown display, and `Sparkline` to the Single Stat view. Valid options are`Line`, `Scatterplot`,
+        /// `stacked-area`, `stacked-column`, `Table`, `scatterplot-xy`, `markdown-widget`, `Sparkline`, `Globe`, `Nodemap`, `top-k`, `status-list`, and `Histogram`.
         /// </summary>
         public readonly string Type;
         /// <summary>
-        /// Width, in minutes, of the time window to use for `last` windowing.
+        /// Width, in minutes, of the time window to use for `Last` windowing.
         /// </summary>
         public readonly int WindowSize;
         /// <summary>
-        /// For the tabular view, whether to use the full time window for the query or the last X minutes. Valid options are `full` or `last`.
+        /// For the tabular view, whether to use the full time window for the query or the last X minutes. Valid options are `Full` or `Last`.
         /// </summary>
         public readonly string Windowing;
         /// <summary>

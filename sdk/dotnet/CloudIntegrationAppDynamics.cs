@@ -101,8 +101,8 @@ namespace Pulumi.Wavefront
         public Output<bool?> EnableOverallPerfMetrics { get; private set; } = null!;
 
         /// <summary>
-        /// Set this to `false` to get separate results for all values within the time range,
-        /// by default it is `true`.
+        /// Set this to `False` to get separate results for all values within the time range,
+        /// by default it is `True`.
         /// </summary>
         [Output("enableRollup")]
         public Output<bool?> EnableRollup { get; private set; } = null!;
@@ -267,8 +267,8 @@ namespace Pulumi.Wavefront
         public Input<bool>? EnableOverallPerfMetrics { get; set; }
 
         /// <summary>
-        /// Set this to `false` to get separate results for all values within the time range,
-        /// by default it is `true`.
+        /// Set this to `False` to get separate results for all values within the time range,
+        /// by default it is `True`.
         /// </summary>
         [Input("enableRollup")]
         public Input<bool>? EnableRollup { get; set; }
@@ -401,8 +401,8 @@ namespace Pulumi.Wavefront
         public Input<bool>? EnableOverallPerfMetrics { get; set; }
 
         /// <summary>
-        /// Set this to `false` to get separate results for all values within the time range,
-        /// by default it is `true`.
+        /// Set this to `False` to get separate results for all values within the time range,
+        /// by default it is `True`.
         /// </summary>
         [Input("enableRollup")]
         public Input<bool>? EnableRollup { get; set; }

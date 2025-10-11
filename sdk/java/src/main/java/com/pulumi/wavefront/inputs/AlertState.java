@@ -203,14 +203,14 @@ public final class AlertState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The specified query is executed every `process_rate_minutes` minutes. Default value is 5 minutes.
+     * The specified query is executed every `processRateMinutes` minutes. Default value is 5 minutes.
      * 
      */
     @Import(name="processRateMinutes")
     private @Nullable Output<Integer> processRateMinutes;
 
     /**
-     * @return The specified query is executed every `process_rate_minutes` minutes. Default value is 5 minutes.
+     * @return The specified query is executed every `processRateMinutes` minutes. Default value is 5 minutes.
      * 
      */
     public Optional<Output<Integer>> processRateMinutes() {
@@ -636,7 +636,7 @@ public final class AlertState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param processRateMinutes The specified query is executed every `process_rate_minutes` minutes. Default value is 5 minutes.
+         * @param processRateMinutes The specified query is executed every `processRateMinutes` minutes. Default value is 5 minutes.
          * 
          * @return builder
          * 
@@ -647,7 +647,7 @@ public final class AlertState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param processRateMinutes The specified query is executed every `process_rate_minutes` minutes. Default value is 5 minutes.
+         * @param processRateMinutes The specified query is executed every `processRateMinutes` minutes. Default value is 5 minutes.
          * 
          * @return builder
          * 

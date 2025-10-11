@@ -152,14 +152,14 @@ public class MetricsPolicy extends com.pulumi.resources.CustomResource {
         return this.updatedEpochMillis;
     }
     /**
-     * The account_id who applied the current policy.
+     * The accountId who applied the current policy.
      * 
      */
     @Export(name="updaterId", refs={String.class}, tree="[0]")
     private Output<String> updaterId;
 
     /**
-     * @return The account_id who applied the current policy.
+     * @return The accountId who applied the current policy.
      * 
      */
     public Output<String> updaterId() {
