@@ -26,7 +26,7 @@ namespace Pulumi.Wavefront.Inputs
         public Input<string>? DynamicFieldType { get; set; }
 
         /// <summary>
-        /// If `true` the parameter will only be shown on the edit view of the dashboard.
+        /// If `True` the parameter will only be shown on the edit view of the dashboard.
         /// </summary>
         [Input("hideFromView", required: true)]
         public Input<bool> HideFromView { get; set; } = null!;
@@ -66,7 +66,7 @@ namespace Pulumi.Wavefront.Inputs
 
         /// <summary>
         /// A string-&gt;string map. At least one of the keys must match the value of
-        /// `default_value`.
+        /// `DefaultValue`.
         /// </summary>
         public InputMap<string> ValuesToReadableStrings
         {

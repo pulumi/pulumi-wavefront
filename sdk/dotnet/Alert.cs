@@ -93,7 +93,7 @@ namespace Pulumi.Wavefront
         public Output<string?> Condition { get; private set; } = null!;
 
         /// <summary>
-        /// a string-&gt;string map of `severity` to `condition`
+        /// a string-&gt;string map of `Severity` to `Condition`
         /// for which this alert will trigger.
         /// </summary>
         [Output("conditions")]
@@ -128,7 +128,7 @@ namespace Pulumi.Wavefront
         public Output<int?> NotificationResendFrequencyMinutes { get; private set; } = null!;
 
         /// <summary>
-        /// The specified query is executed every `process_rate_minutes` minutes. Default value is 5 minutes.
+        /// The specified query is executed every `ProcessRateMinutes` minutes. Default value is 5 minutes.
         /// </summary>
         [Output("processRateMinutes")]
         public Output<int?> ProcessRateMinutes { get; private set; } = null!;
@@ -136,7 +136,7 @@ namespace Pulumi.Wavefront
         /// <summary>
         /// The number of consecutive minutes that a firing series matching the condition
         /// query must evaluate to "false" (zero value) before the alert resolves. When unset, this defaults to
-        /// the same value as `minutes`.
+        /// the same value as `Minutes`.
         /// </summary>
         [Output("resolveAfterMinutes")]
         public Output<int?> ResolveAfterMinutes { get; private set; } = null!;
@@ -281,7 +281,7 @@ namespace Pulumi.Wavefront
         private InputMap<string>? _conditions;
 
         /// <summary>
-        /// a string-&gt;string map of `severity` to `condition`
+        /// a string-&gt;string map of `Severity` to `Condition`
         /// for which this alert will trigger.
         /// </summary>
         public InputMap<string> Conditions
@@ -319,7 +319,7 @@ namespace Pulumi.Wavefront
         public Input<int>? NotificationResendFrequencyMinutes { get; set; }
 
         /// <summary>
-        /// The specified query is executed every `process_rate_minutes` minutes. Default value is 5 minutes.
+        /// The specified query is executed every `ProcessRateMinutes` minutes. Default value is 5 minutes.
         /// </summary>
         [Input("processRateMinutes")]
         public Input<int>? ProcessRateMinutes { get; set; }
@@ -327,7 +327,7 @@ namespace Pulumi.Wavefront
         /// <summary>
         /// The number of consecutive minutes that a firing series matching the condition
         /// query must evaluate to "false" (zero value) before the alert resolves. When unset, this defaults to
-        /// the same value as `minutes`.
+        /// the same value as `Minutes`.
         /// </summary>
         [Input("resolveAfterMinutes")]
         public Input<int>? ResolveAfterMinutes { get; set; }
@@ -452,7 +452,7 @@ namespace Pulumi.Wavefront
         private InputMap<string>? _conditions;
 
         /// <summary>
-        /// a string-&gt;string map of `severity` to `condition`
+        /// a string-&gt;string map of `Severity` to `Condition`
         /// for which this alert will trigger.
         /// </summary>
         public InputMap<string> Conditions
@@ -490,7 +490,7 @@ namespace Pulumi.Wavefront
         public Input<int>? NotificationResendFrequencyMinutes { get; set; }
 
         /// <summary>
-        /// The specified query is executed every `process_rate_minutes` minutes. Default value is 5 minutes.
+        /// The specified query is executed every `ProcessRateMinutes` minutes. Default value is 5 minutes.
         /// </summary>
         [Input("processRateMinutes")]
         public Input<int>? ProcessRateMinutes { get; set; }
@@ -498,7 +498,7 @@ namespace Pulumi.Wavefront
         /// <summary>
         /// The number of consecutive minutes that a firing series matching the condition
         /// query must evaluate to "false" (zero value) before the alert resolves. When unset, this defaults to
-        /// the same value as `minutes`.
+        /// the same value as `Minutes`.
         /// </summary>
         [Input("resolveAfterMinutes")]
         public Input<int>? ResolveAfterMinutes { get; set; }

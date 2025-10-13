@@ -190,7 +190,7 @@ public final class GetDashboardSectionRowChartChartSetting {
      */
     private String sparklineValueColorMapApplyTo;
     /**
-     * @return For the single stat view, a list of colors that differing query values map to. Must contain one more element than `sparkline_value_color_map_values_v2`. Values should be in RGBA format.
+     * @return For the single stat view, a list of colors that differing query values map to. Must contain one more element than `sparklineValueColorMapValuesV2`. Values should be in RGBA format.
      * 
      */
     private List<String> sparklineValueColorMapColors;
@@ -200,17 +200,17 @@ public final class GetDashboardSectionRowChartChartSetting {
      */
     private List<Integer> sparklineValueColorMapValues;
     /**
-     * @return For the single stat view, a list of boundaries for mapping different query values to colors. Must contain one element less than `sparkline_value_color_map_colors`.
+     * @return For the single stat view, a list of boundaries for mapping different query values to colors. Must contain one element less than `sparklineValueColorMapColors`.
      * 
      */
     private List<Double> sparklineValueColorMapValuesV2s;
     /**
-     * @return For the single stat view, a list of display text values that different query values map to. Must contain one more element than `sparkline_value_text_map_thresholds`.
+     * @return For the single stat view, a list of display text values that different query values map to. Must contain one more element than `sparklineValueTextMapThresholds`.
      * 
      */
     private List<String> sparklineValueTextMapTexts;
     /**
-     * @return For the single stat view, a list of threshold boundaries for mapping different query values to display text. Must contain one element less than `sparkline_value_text_map_text`.
+     * @return For the single stat view, a list of threshold boundaries for mapping different query values to display text. Must contain one element less than `sparklineValueTextMapText`.
      * 
      */
     private List<Double> sparklineValueTextMapThresholds;
@@ -532,7 +532,7 @@ public final class GetDashboardSectionRowChartChartSetting {
         return this.sparklineValueColorMapApplyTo;
     }
     /**
-     * @return For the single stat view, a list of colors that differing query values map to. Must contain one more element than `sparkline_value_color_map_values_v2`. Values should be in RGBA format.
+     * @return For the single stat view, a list of colors that differing query values map to. Must contain one more element than `sparklineValueColorMapValuesV2`. Values should be in RGBA format.
      * 
      */
     public List<String> sparklineValueColorMapColors() {
@@ -546,21 +546,21 @@ public final class GetDashboardSectionRowChartChartSetting {
         return this.sparklineValueColorMapValues;
     }
     /**
-     * @return For the single stat view, a list of boundaries for mapping different query values to colors. Must contain one element less than `sparkline_value_color_map_colors`.
+     * @return For the single stat view, a list of boundaries for mapping different query values to colors. Must contain one element less than `sparklineValueColorMapColors`.
      * 
      */
     public List<Double> sparklineValueColorMapValuesV2s() {
         return this.sparklineValueColorMapValuesV2s;
     }
     /**
-     * @return For the single stat view, a list of display text values that different query values map to. Must contain one more element than `sparkline_value_text_map_thresholds`.
+     * @return For the single stat view, a list of display text values that different query values map to. Must contain one more element than `sparklineValueTextMapThresholds`.
      * 
      */
     public List<String> sparklineValueTextMapTexts() {
         return this.sparklineValueTextMapTexts;
     }
     /**
-     * @return For the single stat view, a list of threshold boundaries for mapping different query values to display text. Must contain one element less than `sparkline_value_text_map_text`.
+     * @return For the single stat view, a list of threshold boundaries for mapping different query values to display text. Must contain one element less than `sparklineValueTextMapText`.
      * 
      */
     public List<Double> sparklineValueTextMapThresholds() {
