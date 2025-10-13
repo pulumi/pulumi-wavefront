@@ -1,3 +1,0 @@
-name: user-py
-runtime: python
-description: A minimal Python Pulumi program to create a Wavefront user
