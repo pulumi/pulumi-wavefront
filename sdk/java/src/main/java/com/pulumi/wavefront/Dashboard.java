@@ -23,6 +23,84 @@ import javax.annotation.Nullable;
  * 
  * ## Example Usage
  * 
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.wavefront.User;
+ * import com.pulumi.wavefront.UserArgs;
+ * import com.pulumi.wavefront.Dashboard;
+ * import com.pulumi.wavefront.DashboardArgs;
+ * import com.pulumi.wavefront.inputs.DashboardSectionArgs;
+ * import com.pulumi.wavefront.inputs.DashboardParameterDetailArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App }{{@code
+ *     public static void main(String[] args) }{{@code
+ *         Pulumi.run(App::stack);
+ *     }}{@code
+ * 
+ *     public static void stack(Context ctx) }{{@code
+ *         var basic = new User("basic", UserArgs.builder()
+ *             .email("test+tftesting}{@literal @}{@code example.com")
+ *             .groups(List.of(            
+ *                 "agent_management",
+ *                 "alerts_management"))
+ *             .build());
+ * 
+ *         var testDashboard = new Dashboard("testDashboard", DashboardArgs.builder()
+ *             .name("Terraform Test Dashboard")
+ *             .description("testing, testing")
+ *             .url("tftestcreate")
+ *             .displaySectionTableOfContents(true)
+ *             .displayQueryParameters(true)
+ *             .canViews(basic.id())
+ *             .sections(DashboardSectionArgs.builder()
+ *                 .name("section 1")
+ *                 .rows(DashboardSectionRowArgs.builder()
+ *                     .charts(DashboardSectionRowChartArgs.builder()
+ *                         .name("chart 1")
+ *                         .description("chart number 1")
+ *                         .units("something per unit")
+ *                         .sources(DashboardSectionRowChartSourceArgs.builder()
+ *                             .name("source name")
+ *                             .query("ts()")
+ *                             .build())
+ *                         .chartSetting(DashboardSectionRowChartChartSettingArgs.builder()
+ *                             .type("linear")
+ *                             .build())
+ *                         .summarization("MEAN")
+ *                         .build())
+ *                     .build())
+ *                 .build())
+ *             .parameterDetails(DashboardParameterDetailArgs.builder()
+ *                 .name("param1")
+ *                 .label("param1")
+ *                 .defaultValue("Label")
+ *                 .hideFromView(false)
+ *                 .parameterType("SIMPLE")
+ *                 .valuesToReadableStrings(Map.of("Label", "test"))
+ *                 .build())
+ *             .tags(            
+ *                 "b",
+ *                 "terraform",
+ *                 "a",
+ *                 "test")
+ *             .build());
+ * 
+ *     }}{@code
+ * }}{@code
+ * }
+ * </pre>
+ * 
  * ## Import
  * 
  * Dashboards can be imported by using the `id`, e.g.:
