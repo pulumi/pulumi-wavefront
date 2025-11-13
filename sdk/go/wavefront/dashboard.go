@@ -16,6 +16,91 @@ import (
 //
 // ## Example Usage
 //
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-wavefront/sdk/v3/go/wavefront"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			basic, err := wavefront.NewUser(ctx, "basic", &wavefront.UserArgs{
+//				Email: pulumi.String("test+tftesting@example.com"),
+//				Groups: []string{
+//					"agent_management",
+//					"alerts_management",
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			_, err = wavefront.NewDashboard(ctx, "test_dashboard", &wavefront.DashboardArgs{
+//				Name:                          pulumi.String("Terraform Test Dashboard"),
+//				Description:                   pulumi.String("testing, testing"),
+//				Url:                           pulumi.String("tftestcreate"),
+//				DisplaySectionTableOfContents: pulumi.Bool(true),
+//				DisplayQueryParameters:        pulumi.Bool(true),
+//				CanViews: pulumi.StringArray{
+//					basic.ID(),
+//				},
+//				Sections: wavefront.DashboardSectionArray{
+//					&wavefront.DashboardSectionArgs{
+//						Name: pulumi.String("section 1"),
+//						Rows: wavefront.DashboardSectionRowArray{
+//							&wavefront.DashboardSectionRowArgs{
+//								Charts: wavefront.DashboardSectionRowChartArray{
+//									&wavefront.DashboardSectionRowChartArgs{
+//										Name:        pulumi.String("chart 1"),
+//										Description: pulumi.String("chart number 1"),
+//										Units:       pulumi.String("something per unit"),
+//										Sources: wavefront.DashboardSectionRowChartSourceArray{
+//											&wavefront.DashboardSectionRowChartSourceArgs{
+//												Name:  pulumi.String("source name"),
+//												Query: pulumi.String("ts()"),
+//											},
+//										},
+//										ChartSetting: &wavefront.DashboardSectionRowChartChartSettingArgs{
+//											Type: pulumi.String("linear"),
+//										},
+//										Summarization: pulumi.String("MEAN"),
+//									},
+//								},
+//							},
+//						},
+//					},
+//				},
+//				ParameterDetails: wavefront.DashboardParameterDetailArray{
+//					&wavefront.DashboardParameterDetailArgs{
+//						Name:          pulumi.String("param1"),
+//						Label:         pulumi.String("param1"),
+//						DefaultValue:  pulumi.String("Label"),
+//						HideFromView:  pulumi.Bool(false),
+//						ParameterType: pulumi.String("SIMPLE"),
+//						ValuesToReadableStrings: pulumi.StringMap{
+//							"Label": pulumi.String("test"),
+//						},
+//					},
+//				},
+//				Tags: pulumi.StringArray{
+//					pulumi.String("b"),
+//					pulumi.String("terraform"),
+//					pulumi.String("a"),
+//					pulumi.String("test"),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+//
 // ## Import
 //
 // Dashboards can be imported by using the `id`, e.g.:
