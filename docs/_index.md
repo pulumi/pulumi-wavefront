@@ -31,6 +31,7 @@ name: configuration-example
 runtime: nodejs
 
 ```
+
 ```typescript
 import * as pulumi from "@pulumi/pulumi";
 import * as wavefront from "@pulumi/wavefront";
@@ -48,6 +49,7 @@ const testAlert = new wavefront.Alert("test_alert", {
     ],
 });
 ```
+
 {{% /choosable %}}
 {{% choosable language python %}}
 ```yaml
@@ -56,6 +58,7 @@ name: configuration-example
 runtime: python
 
 ```
+
 ```python
 import pulumi
 import pulumi_wavefront as wavefront
@@ -72,6 +75,7 @@ test_alert = wavefront.Alert("test_alert",
         "cpu.total",
     ])
 ```
+
 {{% /choosable %}}
 {{% choosable language csharp %}}
 ```yaml
@@ -80,6 +84,7 @@ name: configuration-example
 runtime: dotnet
 
 ```
+
 ```csharp
 using System.Collections.Generic;
 using System.Linq;
@@ -106,6 +111,7 @@ return await Deployment.RunAsync(() =>
 });
 
 ```
+
 {{% /choosable %}}
 {{% choosable language go %}}
 ```yaml
@@ -114,6 +120,7 @@ name: configuration-example
 runtime: go
 
 ```
+
 ```go
 package main
 
@@ -143,6 +150,7 @@ func main() {
 	})
 }
 ```
+
 {{% /choosable %}}
 {{% choosable language yaml %}}
 ```yaml
@@ -151,6 +159,7 @@ name: configuration-example
 runtime: yaml
 
 ```
+
 ```yaml
 resources:
   testAlert:
@@ -167,6 +176,7 @@ resources:
         - env.preprod
         - cpu.total
 ```
+
 {{% /choosable %}}
 {{% choosable language java %}}
 ```yaml
@@ -175,6 +185,7 @@ name: configuration-example
 runtime: java
 
 ```
+
 ```java
 package generated_program;
 
@@ -211,6 +222,7 @@ public class App {
     }
 }
 ```
+
 {{% /choosable %}}
 {{< /chooser >}}
 ## Authentication
