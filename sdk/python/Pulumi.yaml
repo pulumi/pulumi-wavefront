@@ -1,0 +1,3 @@
+name: wavefront
+description: A Pulumi resource provider for wavefront.
+language: python
