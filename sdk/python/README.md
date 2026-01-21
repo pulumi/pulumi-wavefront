@@ -10,6 +10,12 @@
 
 The Wavefront Resource Provider lets you manage Wavefront resources.
 
+>[!NOTE] As of v3.1.12, this provider is DEPRECATED and will no longer be maintained by Pulumi.
+> We recommend using the [Local Provider](https://www.pulumi.com/blog/any-terraform-provider/) version of this package,
+> which can be generated from the Wavefront Terraform provider as follows:
+> `pulumi package add terraform-provider vmware/wavefront <version optional>`
+> and follow the instructions.
+
 ## Installing
 
 This package is available in many languages in the standard packaging formats.
